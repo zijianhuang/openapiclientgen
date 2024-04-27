@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from ListSettings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudResourcesettingsV1ListSettingsResponse
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// The schema for settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudResourcesettingsV1Setting
 	{
 		
@@ -80,8 +78,7 @@ namespace MyNS
 	/// <summary>
 	/// The data in a setting value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudResourcesettingsV1Value
 	{
 		
@@ -125,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// A enum value that can hold any enum type setting values. Each enum type is represented by a number, this representation is stored in the definitions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudResourcesettingsV1ValueEnumValue
 	{
 		
@@ -140,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// A string->string map value that can hold a map of string keys to string values. The maximum length of each string is 200 characters and there can be a maximum of 50 key-value pairs in the map.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudResourcesettingsV1ValueStringMap
 	{
 		
@@ -155,8 +150,7 @@ namespace MyNS
 	/// <summary>
 	/// A string set value that can hold a set of strings. The maximum length of each string is 200 characters and there can be a maximum of 50 strings in the string set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudResourcesettingsV1ValueStringSet
 	{
 		
@@ -170,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about a setting which is not editable by the end user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudResourcesettingsV1SettingMetadata
 	{
 		
@@ -206,31 +199,29 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ReadOnly { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudResourcesettingsV1SettingMetadataDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING_SET = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENUM_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENUM_VALUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DURATION_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DURATION_VALUE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING_MAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING_MAP = 6,
 	}
 	
@@ -370,16 +361,16 @@ namespace MyNS
 	public enum Resourcesettings_projects_settings_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SETTING_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SETTING_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SETTING_VIEW_BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SETTING_VIEW_BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SETTING_VIEW_EFFECTIVE_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SETTING_VIEW_EFFECTIVE_VALUE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SETTING_VIEW_LOCAL_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SETTING_VIEW_LOCAL_VALUE = 3,
 	}
 }

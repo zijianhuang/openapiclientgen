@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Submission Model - Handles all the fields required to attach documents to an online maintenance job
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaintenanceDocumentModel
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Submission Model - Handles all fields required to submit an online maintenance job
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaintenanceIssueModel
 	{
 		
@@ -167,24 +165,21 @@ namespace MyNS
 		public string TenantTitle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MaintenanceIssueModelIssuePriority
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Low = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Medium = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="High")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		High = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Object
 	{
 	}

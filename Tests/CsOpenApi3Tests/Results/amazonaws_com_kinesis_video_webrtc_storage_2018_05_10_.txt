@@ -17,32 +17,27 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArgumentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JoinStorageSessionInput
 	{
 		

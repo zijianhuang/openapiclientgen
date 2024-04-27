@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRealtimeContactAnalysisSegmentsResponse
 	{
 		
@@ -36,8 +35,7 @@ namespace MyNS
 	/// <summary>
 	/// An analyzed segment for a real-time analysis session.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RealtimeContactAnalysisSegment
 	{
 		
@@ -51,8 +49,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of messages in the session.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transcript
 	{
 		
@@ -109,27 +106,24 @@ namespace MyNS
 		public IssueDetected[] IssuesDetected { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SentimentValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSITIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEUTRAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEUTRAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEGATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEGATIVE = 2,
 	}
 	
 	/// <summary>
 	/// Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IssueDetected
 	{
 		
@@ -144,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	/// For characters that were detected as issues, where they occur in the transcript.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CharacterOffsets
 	{
 		
@@ -167,8 +160,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the category rules that are used to automatically categorize contacts based on uttered keywords and phrases.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Categories
 	{
 		
@@ -187,38 +179,32 @@ namespace MyNS
 		public MatchedDetails MatchedDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchedDetails
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
@@ -226,8 +212,7 @@ namespace MyNS
 	/// <summary>
 	/// The section of the contact audio where that category rule was detected.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PointOfInterest
 	{
 		
@@ -249,8 +234,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the category rule that was matched.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryDetails
 	{
 		
@@ -262,8 +246,7 @@ namespace MyNS
 		public PointOfInterest[] PointsOfInterest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRealtimeContactAnalysisSegmentsRequest
 	{
 		

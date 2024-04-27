@@ -17,56 +17,47 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Data_Availability
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Data_Constraints
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Data_Values
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity_Lookup
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity_Relationships
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Map_Creation
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Search_Datasets
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Search_Questions
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Suggestions
 	{
 	}
@@ -427,42 +418,42 @@ namespace MyNS
 	public enum Get_values_for_variablesFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="google")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		google = 0,
 	}
 	
 	public enum Find_the_relatives_of_an_entityRelation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="parent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		parent = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="child")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		child = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sibling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sibling = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="peer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		peer = 3,
 	}
 	
 	public enum Get_suggestionsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="entity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		entity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="category")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		category = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publisher")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publisher = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dataset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dataset = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="question")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		question = 4,
 	}
 }

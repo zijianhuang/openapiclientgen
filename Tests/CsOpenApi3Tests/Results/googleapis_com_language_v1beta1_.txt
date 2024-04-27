@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The entity analysis request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeEntitiesRequest
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input to API methods.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Document
 	{
 		
@@ -71,46 +69,41 @@ namespace MyNS
 		public System.Nullable<DocumentType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAIN_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAIN_TEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnalyzeEntitiesRequestEncodingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTF8")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTF8 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTF16")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTF16 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTF32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTF32 = 3,
 	}
 	
 	/// <summary>
 	/// The entity analysis response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeEntitiesResponse
 	{
 		
@@ -130,8 +123,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a phrase in the text that is a known entity, such as a person, an organization, or location. The API associates information, such as salience and mentions, with entities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity
 	{
 		
@@ -169,8 +161,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a mention for an entity in the text. Currently, proper noun mentions are supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityMention
 	{
 		
@@ -190,8 +181,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an output piece of text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextSpan
 	{
 		
@@ -208,58 +198,53 @@ namespace MyNS
 		public string Content { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityMentionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_OF_ART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_OF_ART = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSUMER_GOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSUMER_GOOD = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 7,
 	}
 	
 	/// <summary>
 	/// The sentiment analysis request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeSentimentRequest
 	{
 		
@@ -279,8 +264,7 @@ namespace MyNS
 	/// <summary>
 	/// The sentiment analysis response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeSentimentResponse
 	{
 		
@@ -306,8 +290,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the feeling associated with the entire text or entities in the text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sentiment
 	{
 		
@@ -333,8 +316,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a sentence in the input document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sentence
 	{
 		
@@ -354,8 +336,7 @@ namespace MyNS
 	/// <summary>
 	/// The syntax analysis request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeSyntaxRequest
 	{
 		
@@ -375,8 +356,7 @@ namespace MyNS
 	/// <summary>
 	/// The syntax analysis response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeSyntaxResponse
 	{
 		
@@ -402,8 +382,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the smallest syntactic building block of the text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Token
 	{
 		
@@ -435,8 +414,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents dependency parse tree information for a token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DependencyEdge
 	{
 		
@@ -453,267 +431,264 @@ namespace MyNS
 		public System.Nullable<DependencyEdgeLabel> Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DependencyEdgeLabel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABBREV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABBREV = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACOMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACOMP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADVCL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADVCL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADVMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADVMOD = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMOD = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPOS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUX = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUXPASS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUXPASS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CC = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CCOMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CCOMP = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONJ = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSUBJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSUBJ = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSUBJPASS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSUBJPASS = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEP = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DET = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCOURSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCOURSE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOBJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOBJ = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPL = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOESWITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOESWITH = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOBJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOBJ = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARK = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MWE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MWE = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MWV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MWV = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEG = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NN = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NPADVMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NPADVMOD = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSUBJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSUBJ = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSUBJPASS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSUBJPASS = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUM = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARATAXIS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARATAXIS = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTMOD = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCOMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCOMP = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POBJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POBJ = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSS = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTNEG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTNEG = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRECOMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRECOMP = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRECONJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRECONJ = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREDET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREDET = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREF = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREP = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRONL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRONL = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRT = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PS = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUANTMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUANTMOD = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RCMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RCMOD = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RCMODREL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RCMODREL = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RDROP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RDROP = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REF = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMNANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMNANT = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPARANDUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPARANDUM = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROOT = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNUM = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUFF = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TMOD = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOPIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOPIC = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VMOD = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOCATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOCATIVE = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XCOMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XCOMP = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUFFIX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUFFIX = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TITLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TITLE = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADVPHMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADVPHMOD = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUXCAUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUXCAUS = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUXVV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUXVV = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DTMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DTMOD = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOREIGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOREIGN = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KW = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIST = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOMC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOMC = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOMCSUBJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOMCSUBJ = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOMCSUBJPASS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOMCSUBJPASS = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMC = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COP = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISLOCATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISLOCATED = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASP = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GMOD = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOBJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOBJ = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFMOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFMOD = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MES = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NCOMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NCOMP = 82,
 	}
 	
 	/// <summary>
 	/// Represents part of speech information for a token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartOfSpeech
 	{
 		
@@ -790,341 +765,316 @@ namespace MyNS
 		public System.Nullable<PartOfSpeechVoice> Voice { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechAspect
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASPECT_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASPECT_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERFECTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERFECTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPERFECTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPERFECTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRESSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRESSIVE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechCase
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CASE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CASE_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCUSATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCUSATIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADVERBIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADVERBIAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLEMENTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLEMENTIVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENITIVE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTRUMENTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTRUMENTAL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATIVE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOMINATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOMINATIVE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBLIQUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBLIQUE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTITIVE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREPOSITIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREPOSITIONAL = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFLEXIVE_CASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REFLEXIVE_CASE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELATIVE_CASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELATIVE_CASE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOCATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOCATIVE = 14,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechForm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORM_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORM_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADNOMIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADNOMIAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUXILIARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUXILIARY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLEMENTIZER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLEMENTIZER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINAL_ENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINAL_ENDING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GERUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GERUND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REALIS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REALIS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IRREALIS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IRREALIS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHORT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LONG = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORDER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPECIFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPECIFIC = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENDER_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENDER_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEMININE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEMININE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MASCULINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MASCULINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEUTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEUTER = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechMood
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOOD_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOOD_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONDITIONAL_MOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONDITIONAL_MOOD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPERATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPERATIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDICATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDICATIVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERROGATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERROGATIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JUSSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JUSSIVE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBJUNCTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBJUNCTIVE = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechNumber
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGULAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGULAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLURAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLURAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DUAL = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechPerson
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSON_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSON_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECOND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THIRD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THIRD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFLEXIVE_PERSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REFLEXIVE_PERSON = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechProper
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPER_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPER_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_PROPER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_PROPER = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechReciprocity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECIPROCITY_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECIPROCITY_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECIPROCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECIPROCAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_RECIPROCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_RECIPROCAL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechTag
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADJ = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADV = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONJ = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DET = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOUN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOUN = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUM = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRON = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUNCT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUNCT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERB = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="X")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		X = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFFIX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AFFIX = 13,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechTense
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TENSE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TENSE_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONDITIONAL_TENSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONDITIONAL_TENSE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FUTURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FUTURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAST = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRESENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRESENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPERFECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPERFECT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLUPERFECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLUPERFECT = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechVoice
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOICE_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAUSATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAUSATIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSIVE = 3,
 	}
 	
 	/// <summary>
 	/// The request message for the text annotation API, which can perform multiple analysis types (sentiment, entities, and syntax) in one call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnnotateTextRequest
 	{
 		
@@ -1150,8 +1100,7 @@ namespace MyNS
 	/// <summary>
 	/// All available features for sentiment, syntax, and semantic analysis. Setting each one to true will enable that specific analysis for the input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Features
 	{
 		
@@ -1177,8 +1126,7 @@ namespace MyNS
 	/// <summary>
 	/// The text annotations response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnnotateTextResponse
 	{
 		
@@ -1216,8 +1164,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		

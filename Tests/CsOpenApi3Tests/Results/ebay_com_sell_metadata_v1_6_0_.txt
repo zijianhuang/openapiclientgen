@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutomotivePartsCompatibilityPolicy
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxNumberOfCompatibleVehicles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutomotivePartsCompatibilityPolicyResponse
 	{
 		
@@ -74,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// A container that defines the elements of error and warning messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -137,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for a error parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorParameter
 	{
 		
@@ -158,8 +154,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the attributes of an Extended Producer Responsibility policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedProducerResponsibility
 	{
 		
@@ -185,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the Extended Producer Responsibility policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedProducerResponsibilityPolicy
 	{
 		
@@ -212,8 +206,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the response fields for the <b>getExtendedProducerResponsibilityPolicies</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedProducerResponsibilityPolicyResponse
 	{
 		
@@ -233,8 +226,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that describes hazard statements for hazardous materials labels
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HazardStatement
 	{
 		
@@ -254,8 +246,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the response fields for the <b>getHazardousMaterialsLabels</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HazardousMaterialDetailsResponse
 	{
 		
@@ -281,8 +272,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that describes pictograms for hazardous materials labels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pictogram
 	{
 		
@@ -308,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that describes signal words for hazardous materials labels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignalWord
 	{
 		
@@ -329,8 +318,7 @@ namespace MyNS
 	/// <summary>
 	/// <span class="tablenote"><b>Note: </b>In all eBay marketplaces, Condition ID 2000 now maps to an item condition of 'Certified Refurbished', and not 'Manufacturer Refurbished'. To list an item as 'Certified Refurbished', a seller must be pre-qualified by eBay for this feature. Any seller who is not eligible for this feature will be blocked if they try to create a new listing or revise an existing listing with this item condition. Any active listings on any eBay marketplace that had 'Manufacturer Refurbished' as the item condition should have been automatically updated by eBay to the 'Seller Refurbished' item condition (Condition ID 2500). <br><br> Any seller that is interested in eligibility requirements to list with 'Certified Refurbished' should see the <a href="https://pages.ebay.com/seller-center/listing-and-marketing/certified-refurbished-program.html " target="_blank">Certified refurbished program</a> page in Seller Center. </span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemCondition
 	{
 		
@@ -353,8 +341,7 @@ namespace MyNS
 		public string Usage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemConditionPolicy
 	{
 		
@@ -383,8 +370,7 @@ namespace MyNS
 		public ItemCondition[] ItemConditions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemConditionPolicyResponse
 	{
 		
@@ -401,8 +387,7 @@ namespace MyNS
 		public Error[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListingStructurePolicy
 	{
 		
@@ -425,8 +410,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> VariationsSupported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListingStructurePolicyResponse
 	{
 		
@@ -443,8 +427,7 @@ namespace MyNS
 		public Error[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NegotiatedPricePolicy
 	{
 		
@@ -479,8 +462,7 @@ namespace MyNS
 		public string CategoryTreeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NegotiatedPricePolicyResponse
 	{
 		
@@ -497,8 +479,7 @@ namespace MyNS
 		public Error[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReturnPolicy
 	{
 		
@@ -536,8 +517,7 @@ namespace MyNS
 	/// <summary>
 	/// This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReturnPolicyDetails
 	{
 		
@@ -581,8 +561,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that specifies a period of time using a specified time-measurement unit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeDuration
 	{
 		
@@ -599,8 +578,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReturnPolicyResponse
 	{
 		
@@ -620,8 +598,7 @@ namespace MyNS
 	/// <summary>
 	/// A unique ID for a sales tax jurisdiction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesTaxJurisdiction
 	{
 		
@@ -635,8 +612,7 @@ namespace MyNS
 	/// <summary>
 	/// This complex type contains a list of sales tax jurisdictions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesTaxJurisdictions
 	{
 		

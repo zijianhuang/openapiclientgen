@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Amazon ML returns the following elements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsOutput
 	{
 		
@@ -32,27 +31,24 @@ namespace MyNS
 		public TaggableResourceType ResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TaggableResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchPrediction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BatchPrediction = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DataSource = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Evaluation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Evaluation = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MLModel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MLModel = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsInput
 	{
 		
@@ -81,8 +77,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom key-value pair associated with an ML object, such as an ML model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -93,32 +88,27 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidInputException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTagException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
@@ -126,8 +116,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBatchPredictionOutput
 	{
 		
@@ -135,8 +124,7 @@ namespace MyNS
 		public string BatchPredictionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBatchPredictionInput
 	{
 		
@@ -172,8 +160,7 @@ namespace MyNS
 		public string OutputUri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdempotentParameterMismatchException
 	{
 	}
@@ -181,8 +168,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataSourceFromRDSOutput
 	{
 		
@@ -190,8 +176,7 @@ namespace MyNS
 		public string DataSourceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataSourceFromRDSInput
 	{
 		
@@ -226,8 +211,7 @@ namespace MyNS
 	/// <summary>
 	/// The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RDSDataSpec
 	{
 		
@@ -300,8 +284,7 @@ namespace MyNS
 	/// <summary>
 	/// The database details of an Amazon RDS database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RDSDatabase
 	{
 		
@@ -328,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// The database credentials to connect to a database on an RDS DB instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RDSDatabaseCredentials
 	{
 		
@@ -361,8 +343,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataSourceFromRedshiftOutput
 	{
 		
@@ -370,8 +351,7 @@ namespace MyNS
 		public string DataSourceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataSourceFromRedshiftInput
 	{
 		
@@ -406,8 +386,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the data specification of an Amazon Redshift <code>DataSource</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedshiftDataSpec
 	{
 		
@@ -452,8 +431,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the database details required to connect to an Amazon Redshift database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedshiftDatabase
 	{
 		
@@ -489,8 +467,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the database credentials for connecting to a database on an Amazon Redshift cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedshiftDatabaseCredentials
 	{
 		
@@ -522,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataSourceFromS3Output
 	{
 		
@@ -531,8 +507,7 @@ namespace MyNS
 		public string DataSourceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataSourceFromS3Input
 	{
 		
@@ -560,8 +535,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the data specification of a <code>DataSource</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3DataSpec
 	{
 		
@@ -585,8 +559,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p> <code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEvaluationOutput
 	{
 		
@@ -594,8 +567,7 @@ namespace MyNS
 		public string EvaluationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEvaluationInput
 	{
 		
@@ -627,8 +599,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMLModelOutput
 	{
 		
@@ -636,8 +607,7 @@ namespace MyNS
 		public string MLModelId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMLModelInput
 	{
 		
@@ -675,24 +645,21 @@ namespace MyNS
 		public string RecipeUri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MLModelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGRESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGRESSION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BINARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BINARY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTICLASS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTICLASS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrainingParameters
 	{
 	}
@@ -700,8 +667,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the output of an <code>CreateRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p> <p> <b>Note:</b> The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRealtimeEndpointOutput
 	{
 		
@@ -715,8 +681,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the real-time endpoint information for an <code>MLModel</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RealtimeEndpointInfo
 	{
 		
@@ -733,27 +698,24 @@ namespace MyNS
 		public RealtimeEndpointStatus EndpointStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RealtimeEndpointStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRealtimeEndpointInput
 	{
 		
@@ -768,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>DeleteBatchPrediction</code> operation.</p> <p>You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBatchPredictionOutput
 	{
 		
@@ -777,8 +738,7 @@ namespace MyNS
 		public string BatchPredictionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBatchPredictionInput
 	{
 		
@@ -793,8 +753,7 @@ namespace MyNS
 	/// <summary>
 	///  Represents the output of a <code>DeleteDataSource</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDataSourceOutput
 	{
 		
@@ -802,8 +761,7 @@ namespace MyNS
 		public string DataSourceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDataSourceInput
 	{
 		
@@ -818,8 +776,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p> <p>You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEvaluationOutput
 	{
 		
@@ -827,8 +784,7 @@ namespace MyNS
 		public string EvaluationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEvaluationInput
 	{
 		
@@ -843,8 +799,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the output of a <code>DeleteMLModel</code> operation.</p> <p>You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMLModelOutput
 	{
 		
@@ -852,8 +807,7 @@ namespace MyNS
 		public string MLModelId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMLModelInput
 	{
 		
@@ -868,8 +822,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRealtimeEndpointOutput
 	{
 		
@@ -880,8 +833,7 @@ namespace MyNS
 		public RealtimeEndpointInfo RealtimeEndpointInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRealtimeEndpointInput
 	{
 		
@@ -896,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// Amazon ML returns the following elements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTagsOutput
 	{
 		
@@ -908,8 +859,7 @@ namespace MyNS
 		public TaggableResourceType ResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTagsInput
 	{
 		
@@ -938,8 +888,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBatchPredictionsOutput
 	{
 		
@@ -953,8 +902,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p> <p> The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPrediction
 	{
 		
@@ -1025,30 +973,27 @@ namespace MyNS
 	/// <summary>
 	/// <p>Object status with the following possible values:</p> <ul> <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>INPROGRESS</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>DELETED</code> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INPROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INPROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBatchPredictionsInput
 	{
 		
@@ -1089,58 +1034,53 @@ namespace MyNS
 	/// <summary>
 	/// <p>A list of the variables to use in searching or filtering <code>BatchPrediction</code>.</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date.</p> </li> <li> <p> <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code> <code>Name</code>.</p> </li> <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li> <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li> <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchPredictionFilterVariable
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreatedAt = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastUpdatedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastUpdatedAt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Status = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Name = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IAMUser")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IAMUser = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MLModelId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MLModelId = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DataSourceId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DataSourceId = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DataURI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DataURI = 7,
 	}
 	
 	/// <summary>
 	/// <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <p> <code>asc</code> - Present the information in ascending order (from A-Z).</p> </li> <li> <p> <code>dsc</code> - Present the information in descending order (from Z-A).</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dsc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dsc = 1,
 	}
 	
 	/// <summary>
 	/// Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataSourcesOutput
 	{
 		
@@ -1154,8 +1094,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of the <code>GetDataSource</code> operation. </p> <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSource
 	{
 		
@@ -1239,8 +1178,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the <code>DataSource</code> details specific to Amazon Redshift.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedshiftMetadata
 	{
 		
@@ -1267,8 +1205,7 @@ namespace MyNS
 	/// <summary>
 	/// The datasource details that are specific to Amazon RDS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RDSMetadata
 	{
 		
@@ -1298,8 +1235,7 @@ namespace MyNS
 		public string DataPipelineId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataSourcesInput
 	{
 		
@@ -1340,36 +1276,33 @@ namespace MyNS
 	/// <summary>
 	/// <p>A list of the variables to use in searching or filtering <code>DataSource</code>.</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date.</p> </li> <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li> <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li> </ul> <p> <b>Note:</b> The variable names should match the variable names in the <code>DataSource</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataSourceFilterVariable
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreatedAt = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastUpdatedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastUpdatedAt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Status = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Name = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DataLocationS3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DataLocationS3 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IAMUser")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IAMUser = 5,
 	}
 	
 	/// <summary>
 	/// Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEvaluationsOutput
 	{
 		
@@ -1383,8 +1316,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of <code>GetEvaluation</code> operation. </p> <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Evaluation
 	{
 		
@@ -1443,8 +1375,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul> <li> <p>BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li> </ul> <p> For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PerformanceMetrics
 	{
 		
@@ -1452,14 +1383,12 @@ namespace MyNS
 		public PerformanceMetricsProperties Properties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PerformanceMetricsProperties
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEvaluationsInput
 	{
 		
@@ -1500,8 +1429,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMLModelsOutput
 	{
 		
@@ -1515,8 +1443,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Represents the output of a <code>GetMLModel</code> operation. </p> <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MLModel
 	{
 		
@@ -1593,18 +1520,15 @@ namespace MyNS
 	/// <summary>
 	/// <p>The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:</p> <ul> <li> <p> <code>SGD</code> - Stochastic Gradient Descent.</p> </li> <li> <p> <code>RandomForest</code> - Random forest of decision trees.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Algorithm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sgd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sgd = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMLModelsInput
 	{
 		
@@ -1642,48 +1566,45 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MLModelFilterVariable
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreatedAt = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastUpdatedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastUpdatedAt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Status = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Name = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IAMUser")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IAMUser = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TrainingDataSourceId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TrainingDataSourceId = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RealtimeEndpointStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RealtimeEndpointStatus = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MLModelType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MLModelType = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Algorithm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Algorithm = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TrainingDataURI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TrainingDataURI = 9,
 	}
 	
 	/// <summary>
 	/// Amazon ML returns the following elements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTagsOutput
 	{
 		
@@ -1697,8 +1618,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTagsInput
 	{
 		
@@ -1720,8 +1640,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBatchPredictionOutput
 	{
 		
@@ -1777,8 +1696,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> InvalidRecordCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBatchPredictionInput
 	{
 		
@@ -1793,8 +1711,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataSourceOutput
 	{
 		
@@ -1872,8 +1789,7 @@ namespace MyNS
 		public string DataSourceSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataSourceInput
 	{
 		
@@ -1891,8 +1807,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEvaluationOutput
 	{
 		
@@ -1942,8 +1857,7 @@ namespace MyNS
 		public System.DateTimeOffset StartedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEvaluationInput
 	{
 		
@@ -1958,8 +1872,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMLModelOutput
 	{
 		
@@ -2030,8 +1943,7 @@ namespace MyNS
 		public string Schema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMLModelInput
 	{
 		
@@ -2046,8 +1958,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Verbose { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PredictOutput
 	{
 		
@@ -2061,8 +1972,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Prediction
 	{
 		
@@ -2088,8 +1998,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the raw classification score corresponding to each label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoreValuePerLabelMap
 	{
 	}
@@ -2097,14 +2006,12 @@ namespace MyNS
 	/// <summary>
 	/// Provides any additional details regarding the prediction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetailsMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PredictInput
 	{
 		
@@ -2138,20 +2045,17 @@ namespace MyNS
 	/// <summary>
 	/// A map of variable name-value pairs that represent an observation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Record
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PredictorNotMountedException
 	{
 	}
@@ -2159,8 +2063,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBatchPredictionOutput
 	{
 		
@@ -2168,8 +2071,7 @@ namespace MyNS
 		public string BatchPredictionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBatchPredictionInput
 	{
 		
@@ -2191,8 +2093,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the output of an <code>UpdateDataSource</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataSourceOutput
 	{
 		
@@ -2200,8 +2101,7 @@ namespace MyNS
 		public string DataSourceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataSourceInput
 	{
 		
@@ -2223,8 +2123,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p> <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEvaluationOutput
 	{
 		
@@ -2232,8 +2131,7 @@ namespace MyNS
 		public string EvaluationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEvaluationInput
 	{
 		
@@ -2255,8 +2153,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the output of an <code>UpdateMLModel</code> operation.</p> <p>You can see the updated content by using the <code>GetMLModel</code> operation.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMLModelOutput
 	{
 		
@@ -2264,8 +2161,7 @@ namespace MyNS
 		public string MLModelId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMLModelInput
 	{
 		
@@ -2286,50 +2182,46 @@ namespace MyNS
 	/// <summary>
 	/// <p>A list of the variables to use in searching or filtering <code>Evaluation</code>.</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>Evaluation</code> creation date.</p> </li> <li> <p> <code>Status</code> - Sets the search criteria to <code>Evaluation</code> status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an evaluation.</p> </li> <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>Predictor</code> that was evaluated.</p> </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in evaluation.</p> </li> <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in evaluation. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EvaluationFilterVariable
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreatedAt = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastUpdatedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastUpdatedAt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Status = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Name = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IAMUser")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IAMUser = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MLModelId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MLModelId = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DataSourceId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DataSourceId = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DataURI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DataURI = 7,
 	}
 	
 	/// <summary>
 	/// <p>Contains the key values of <code>DetailsMap</code>:</p> <ul> <li> <p> <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>.</p> </li> <li> <p> <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DetailsAttributes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PredictiveModelType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PredictiveModelType = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Algorithm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Algorithm = 1,
 	}
 	

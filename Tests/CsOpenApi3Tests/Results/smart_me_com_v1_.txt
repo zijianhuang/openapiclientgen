@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Container Class for the Put action of an Access Token
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessTokenToPut
 	{
 		
@@ -42,8 +41,7 @@ namespace MyNS
 	/// <summary>
 	/// The Information about an Action of a device
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionInformation
 	{
 		
@@ -78,24 +76,21 @@ namespace MyNS
 		public string ObisCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionInformationActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OnOffAction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OnOffAction = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AnalogAction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AnalogAction = 1,
 	}
 	
 	/// <summary>
 	/// Container Class for an action to post
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionToPost
 	{
 		
@@ -115,8 +110,7 @@ namespace MyNS
 	/// <summary>
 	/// Container class for an action item
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionToPostItem
 	{
 		
@@ -136,8 +130,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional Information For a device
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdditionalDeviceInformation
 	{
 		
@@ -182,8 +175,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for the auto export functionality of a meter
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoExportSettings
 	{
 		
@@ -212,42 +204,39 @@ namespace MyNS
 		public string UploadType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoExportSettingsExportInterval
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoExport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoExport = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hourly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hourly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Daily = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Weekly = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Monthly = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QuaterYearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QuaterYearly = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HalfYearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HalfYearly = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yearly = 7,
 	}
 	
 	/// <summary>
 	/// Container Class for the Web API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDeviceToPost
 	{
 		
@@ -285,8 +274,7 @@ namespace MyNS
 	/// <summary>
 	/// Container Class for the Custom Device Values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDeviceValues
 	{
 		
@@ -306,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// Container Class for the Web API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Device
 	{
 		
@@ -594,207 +581,198 @@ namespace MyNS
 		public System.Nullable<System.Double> VoltageL3 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceChargingStationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Booting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Booting = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReadyNoCarConnected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReadyNoCarConnected = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReadyCarConnected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReadyCarConnected = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StartedWaitForCar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StartedWaitForCar = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Charging")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Charging = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Installation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Installation = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Authorize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Authorize = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Offline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Offline = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceDeviceEnergyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeUnknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeUnknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeElectricity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeElectricity = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeWater")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeWater = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeGas")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeGas = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeHeat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeHeat = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeHCA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeHCA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeAllMeters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeAllMeters = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeTemperature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeTemperature = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeMBusGateway")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeMBusGateway = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeRS485Gateway")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeRS485Gateway = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeCustomDevice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeCustomDevice = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeCompressedAir")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeCompressedAir = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeSolarLog")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeSolarLog = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeVirtualMeter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeVirtualMeter = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterTypeWMBusGateway")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterTypeWMBusGateway = 14,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceFamilyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeUnknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeUnknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMeConnectV1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMeConnectV1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamiliyTypeSmartMeMeter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamiliyTypeSmartMeMeter = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamiliyTypeSmartMeMeterWithSwitch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamiliyTypeSmartMeMeterWithSwitch = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeMBusGatewayV1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeMBusGatewayV1 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeRS485GatewayV1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeRS485GatewayV1 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeKamstrupModule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeKamstrupModule = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe3PhaseMeter80A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe3PhaseMeter80A = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe3PhaseMeter32A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe3PhaseMeter32A = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe3PhaseTelstarTransformer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe3PhaseTelstarTransformer = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeLandisGyrModule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeLandisGyrModule = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeFnnOpticalModule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeFnnOpticalModule = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe3PhaseTelstar80AWiFi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe3PhaseTelstar80AWiFi = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe3PhaseTelstar80AMobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe3PhaseTelstar80AMobile = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe1PhaseMeter80AV2WiFi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe1PhaseMeter80AV2WiFi = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe1PhaseMeter32AV2WiFi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe1PhaseMeter32AV2WiFi = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe1PhaseMeter80AGprs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe1PhaseMeter80AGprs = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe1PhaseMeter32AGprs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe1PhaseMeter32AGprs = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeWMBusGatewayV1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeWMBusGatewayV1 = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeSmartMe3PhaseTelstarTransformerMobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeSmartMe3PhaseTelstarTransformerMobile = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeMithralHallV1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeMithralHallV1 = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeRestApiMeter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeRestApiMeter = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterFamilyTypeVirtualBillingMeter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterFamilyTypeVirtualBillingMeter = 22,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceMeterSubType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeUnknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeUnknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeCold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeCold = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeHeat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeHeat = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeChargingStation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeChargingStation = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeElectricity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeElectricity = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeWater")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeWater = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeGas")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeGas = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeElectricityHeat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeElectricityHeat = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeTemperature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeTemperature = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterSubTypeVirtualBattery")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterSubTypeVirtualBattery = 9,
 	}
 	
 	/// <summary>
 	/// Container Class for the Web API. Conatinas the MeterValues in the Past
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceInPast
 	{
 		
@@ -916,8 +894,7 @@ namespace MyNS
 	/// <summary>
 	/// Container Class for the Web API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceToPost
 	{
 		
@@ -1087,8 +1064,7 @@ namespace MyNS
 	/// <summary>
 	/// Container class for the folder API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderData
 	{
 		
@@ -1144,8 +1120,7 @@ namespace MyNS
 	/// <summary>
 	/// Container Class for the Web API representing a folder menu and it's items
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderMenuConfiguration
 	{
 		
@@ -1168,8 +1143,7 @@ namespace MyNS
 	/// <summary>
 	/// A folder menu item
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderMenuItem
 	{
 		
@@ -1229,90 +1203,87 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FolderMenuItemFolderType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Folder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Folder = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Location")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Location = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Factory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Factory = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="House")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		House = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Office")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Office = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Machine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Machine = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VirtualMeter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VirtualMeter = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ElecticityFolder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ElecticityFolder = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WaterFolder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WaterFolder = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HeatFolder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HeatFolder = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GasFolder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GasFolder = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemperatureFolder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TemperatureFolder = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sun")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sun = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Light")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Light = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ice = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sofa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sofa = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Food")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Food = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Coffee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Coffee = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Car")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Car = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChargingStation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChargingStation = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Meter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Meter = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="User")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		User = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Trash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Trash = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GridPhotovoltaicPowerSystem")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GridPhotovoltaicPowerSystem = 23,
 	}
 	
 	/// <summary>
 	/// Container for the folder settings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderSettings
 	{
 		
@@ -1380,8 +1351,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for the input of a meter (digital inputs)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputConfigurationContainer
 	{
 		
@@ -1416,24 +1386,21 @@ namespace MyNS
 		public System.Nullable<InputConfigurationContainerType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InputConfigurationContainerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TariffInput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TariffInput = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DigitalInput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DigitalInput = 1,
 	}
 	
 	/// <summary>
 	/// Informations about the Inputs of a Meter or Folder
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputInformation
 	{
 		
@@ -1450,8 +1417,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MBusData
 	{
 		
@@ -1472,8 +1438,7 @@ namespace MyNS
 	/// <summary>
 	/// Container Class for the Web API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MeterFolderInformation
 	{
 		
@@ -1529,8 +1494,7 @@ namespace MyNS
 	/// <summary>
 	/// Informations about the Outputs of a Meter or Folder
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputInformation
 	{
 		
@@ -1562,8 +1526,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for a Meter or Folder Information to Post
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MeterFolderInformationToPost
 	{
 		
@@ -1580,8 +1543,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Object
 	{
 	}
@@ -1589,8 +1551,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for the outputs of a meter (analog/digital outputs)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputConfigurationContainer
 	{
 		
@@ -1625,71 +1586,64 @@ namespace MyNS
 		public System.Nullable<OutputConfigurationContainerType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputConfigurationContainerDigitalOutputNoConnectionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nothing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nothing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TurnOff")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TurnOff = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TurnOn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TurnOn = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetPwmValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetPwmValue = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputConfigurationContainerS0PulseValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PulseValue1000Kwh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PulseValue1000Kwh = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PulseValue10000Kwh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PulseValue10000Kwh = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputConfigurationContainerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ImpulseOutputActiveEnergy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ImpulseOutputActiveEnergy = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ImpulseOutputActiveEnergyImport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ImpulseOutputActiveEnergyImport = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ImpulseOutputActiveEnergyExport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ImpulseOutputActiveEnergyExport = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ImpulseOutputReactiveEnergy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ImpulseOutputReactiveEnergy = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DigitalOutput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DigitalOutput = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AnalogPwmSignalOutput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AnalogPwmSignalOutput = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 6,
 	}
 	
 	/// <summary>
 	/// Container class for the pico charging station API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PicoChargingData
 	{
 		
@@ -1797,131 +1751,124 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ValueDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PicoChargingDataConnectionMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkToCloudConnectionMode_NoConnection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkToCloudConnectionMode_NoConnection = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkToCloudConnectionMode_DirectWiFiConnection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkToCloudConnectionMode_DirectWiFiConnection = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkToCloudConnectionMode_GPRSConnection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkToCloudConnectionMode_GPRSConnection = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkToCloudConnectionMode_NBIotConnection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkToCloudConnectionMode_NBIotConnection = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkToCloudConnectionMode_LteCatM1Connection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkToCloudConnectionMode_LteCatM1Connection = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkToCloudConnectionMode_MeshWiFiConnection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkToCloudConnectionMode_MeshWiFiConnection = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkToCloudConnectionMode_MeshMobileConnection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkToCloudConnectionMode_MeshMobileConnection = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PicoChargingDataLastWarningOrError
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterDataloggerEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterDataloggerEvent = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterRestart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterRestart = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PowerDown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PowerDown = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MissingPhaseL1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MissingPhaseL1 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MissingPhaseL2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MissingPhaseL2 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MissingPhaseL3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MissingPhaseL3 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TamperDetectionCover")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TamperDetectionCover = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MagneticFieldDetection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MagneticFieldDetection = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClockAdjusted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClockAdjusted = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overvoltage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Overvoltage = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Undervoltage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Undervoltage = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OvervoltageL1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OvervoltageL1 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OvervoltageL2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OvervoltageL2 = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OvervoltageL3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OvervoltageL3 = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChargingTransaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChargingTransaction = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PicoErrorControllerPanic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PicoErrorControllerPanic = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PicoErrorMidServicePanic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PicoErrorMidServicePanic = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PicoWarningRcdTriggered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PicoWarningRcdTriggered = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PicoWarningCableLockError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PicoWarningCableLockError = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PicoWarningDiodeFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PicoWarningDiodeFailure = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PicoWarningOverload")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PicoWarningOverload = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PicoWarningHighTemperature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PicoWarningHighTemperature = 21,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PicoChargingDataLoadSheddingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MaxCurrent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MaxCurrent = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HalfCurrent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HalfCurrent = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MinCurrent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MinCurrent = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoCurrent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoCurrent = 3,
 	}
 	
 	/// <summary>
 	/// Api container for the charging station history
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PicoChargingHistoryData
 	{
 		
@@ -1947,45 +1894,42 @@ namespace MyNS
 		public System.Nullable<PicoChargingHistoryDataTransactionStopReason> TransactionStopReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PicoChargingHistoryDataTransactionStopReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CarDisconnected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CarDisconnected = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoteStop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RemoteStop = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ErrorStop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ErrorStop = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InstallationMode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InstallationMode = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CableError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CableError = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiodeError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DiodeError = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RcdError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RcdError = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OverloadError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OverloadError = 8,
 	}
 	
 	/// <summary>
 	/// DTO for the pico loadmanagement group
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PicoLoadmanagementGroupDto
 	{
 		
@@ -2017,8 +1961,7 @@ namespace MyNS
 	/// <summary>
 	/// DTO for the pico charging station settings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PicoSettingsDto
 	{
 		
@@ -2101,24 +2044,21 @@ namespace MyNS
 		public string SerialNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PicoSettingsDtoAuthenticationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Backend")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Backend = 1,
 	}
 	
 	/// <summary>
 	/// Container class for the register realtime API API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterRealtimeApiData
 	{
 		
@@ -2166,27 +2106,24 @@ namespace MyNS
 		public string SerialNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RegisterRealtimeApiDataRegistrationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SingleMeterRegistration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SingleMeterRegistration = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UserRegistration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UserRegistration = 2,
 	}
 	
 	/// <summary>
 	/// API Container class for the meter configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SmartMeDeviceConfigurationContainer
 	{
 		
@@ -2251,27 +2188,24 @@ namespace MyNS
 		public System.Nullable<SmartMeDeviceConfigurationContainerUploadInterval> UploadInterval { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SmartMeDeviceConfigurationContainerDnsUpdateState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoUpdate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoUpdate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DnsUpdatePublicIp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DnsUpdatePublicIp = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DnsUpdateInternalIp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DnsUpdateInternalIp = 2,
 	}
 	
 	/// <summary>
 	/// The configuration for a phase switch
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SwitchConfigurationContainer
 	{
 		
@@ -2288,54 +2222,51 @@ namespace MyNS
 		public System.Nullable<System.Int32> Number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SmartMeDeviceConfigurationContainerUploadInterval
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_1s")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_1s = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_5s")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_5s = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_10s")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_10s = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_30s")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_30s = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_60s")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_60s = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_5min")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_5min = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_15min")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_15min = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_30min")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_30min = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_60min")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_60min = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_6h")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_6h = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_12h")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_12h = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadInterval_24h")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadInterval_24h = 11,
 	}
 	
 	/// <summary>
 	/// Container data for the sub user
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubUserData
 	{
 		
@@ -2382,24 +2313,21 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubUserDataPermissionLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SelectedFolderAndSubfoldersMeters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SelectedFolderAndSubfoldersMeters = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SelectedFolderOnly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SelectedFolderOnly = 1,
 	}
 	
 	/// <summary>
 	/// Container Class for the Web API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -2449,8 +2377,7 @@ namespace MyNS
 	/// <summary>
 	/// Actives a virtual Meter
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VMeterToActivate
 	{
 		
@@ -2464,8 +2391,7 @@ namespace MyNS
 	/// <summary>
 	/// Deactivates a virtual Meter
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VMeterToDeactivate
 	{
 		
@@ -2479,8 +2405,7 @@ namespace MyNS
 	/// <summary>
 	/// API Container for a (Device) Value
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValueData
 	{
 		
@@ -2502,8 +2427,7 @@ namespace MyNS
 	/// <summary>
 	/// API Container for a Meter Value
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValuesData
 	{
 		
@@ -2526,8 +2450,7 @@ namespace MyNS
 		public ValueData[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VirtualTariff
 	{
 		
@@ -2556,27 +2479,24 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VirtualTariffType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Battery")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Battery = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Solar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Solar = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 	}
 	
 	/// <summary>
 	/// Container class for the virtual tariff consumption
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VirtualTariffConsumptionData
 	{
 		
@@ -2611,8 +2531,7 @@ namespace MyNS
 		public VirtualTariffType TariffType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VirtualTariffsOfFolder
 	{
 		

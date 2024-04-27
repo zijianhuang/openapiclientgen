@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address
 	{
 		
@@ -167,36 +166,33 @@ namespace MyNS
 		public string Website { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddressType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="primary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		primary = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="secondary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		secondary = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="home")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		home = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="office")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		office = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shipping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shipping = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="billing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		billing = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestResponse
 	{
 		
@@ -237,8 +233,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateItemResponse
 	{
 		
@@ -290,8 +285,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnifiedId
 	{
 		
@@ -304,8 +298,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLocationResponse
 	{
 		
@@ -357,8 +350,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMerchantResponse
 	{
 		
@@ -410,8 +402,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateModifierGroupResponse
 	{
 		
@@ -463,8 +454,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateModifierResponse
 	{
 		
@@ -516,8 +506,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOrderResponse
 	{
 		
@@ -569,8 +558,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOrderTypeResponse
 	{
 		
@@ -622,8 +610,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePosPaymentResponse
 	{
 		
@@ -675,8 +662,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTenderResponse
 	{
 		
@@ -731,564 +717,561 @@ namespace MyNS
 	/// <summary>
 	/// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Currency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_CURRENCY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AFN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMD = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANG = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AOA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AOA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUD = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWG = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AZN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AZN = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAM = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BBD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BBD = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BDT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BDT = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BGN = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BHD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BHD = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIF = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BMD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BMD = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BND = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOB = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOV = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BRL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BRL = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BSD = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BTN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BTN = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BWP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BWP = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BYR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BYR = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BZD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BZD = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAD = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CDF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CDF = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHE = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHF = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHW = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLF = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLP = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CNY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CNY = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COP = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COU = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRC = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUC = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUP = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CVE = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CZK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CZK = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DJF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DJF = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DKK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DKK = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOP = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DZD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DZD = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EGP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EGP = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERN = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ETB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ETB = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EUR = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FJD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FJD = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FKP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FKP = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GBP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GBP = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEL = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GHS = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GIP = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GMD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GMD = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GNF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GNF = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GTQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GTQ = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GYD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GYD = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HKD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HKD = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HNL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HNL = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HRK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HRK = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTG = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HUF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HUF = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IDR = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ILS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ILS = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INR = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IQD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IQD = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IRR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IRR = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ISK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ISK = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JMD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JMD = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOD = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JPY = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KES = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KGS = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KHR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KHR = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMF = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KPW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KPW = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KRW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KRW = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KWD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KWD = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KYD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KYD = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KZT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KZT = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAK = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LBP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LBP = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LKR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LKR = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LRD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LRD = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LSL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LSL = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LTL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LTL = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LVL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LVL = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LYD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LYD = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAD = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MDL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MDL = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MGA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MGA = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MKD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MKD = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MMK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MMK = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MNT = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOP = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MRO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MRO = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MUR = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MVR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MVR = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MWK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MWK = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MXN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MXN = 102,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MXV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MXV = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MYR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MYR = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MZN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MZN = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAD = 106,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NGN = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NIO = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOK = 109,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NPR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NPR = 110,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NZD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NZD = 111,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OMR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OMR = 112,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAB = 113,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PEN = 114,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PGK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PGK = 115,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHP = 116,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PKR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PKR = 117,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLN = 118,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PYG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PYG = 119,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QAR = 120,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RON = 121,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSD = 122,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUB = 123,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RWF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RWF = 124,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAR = 125,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SBD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SBD = 126,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCR = 127,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SDG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SDG = 128,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEK = 129,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SGD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SGD = 130,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHP = 131,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SLL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SLL = 132,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOS = 133,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SRD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SRD = 134,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSP = 135,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STD = 136,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SVC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SVC = 137,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYP = 138,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SZL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SZL = 139,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THB = 140,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TJS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TJS = 141,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TMT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TMT = 142,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TND = 143,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP = 144,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRC = 145,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRY = 146,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TTD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TTD = 147,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWD = 148,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TZS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TZS = 149,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UAH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UAH = 150,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UGX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UGX = 151,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USD = 152,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USN = 153,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USS = 154,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UYI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UYI = 155,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UYU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UYU = 156,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UZS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UZS = 157,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VEF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VEF = 158,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VND = 159,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VUV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VUV = 160,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WST = 161,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XAF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XAF = 162,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XAG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XAG = 163,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XAU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XAU = 164,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XBA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XBA = 165,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XBB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XBB = 166,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XBC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XBC = 167,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XBD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XBD = 168,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XCD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XCD = 169,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XDR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XDR = 170,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XOF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XOF = 171,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XPD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XPD = 172,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XPF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XPF = 173,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XPT = 174,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XTS = 175,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XXX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XXX = 176,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YER = 177,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZAR = 178,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZMK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZMK = 179,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZMW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZMW = 180,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BTC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BTC = 181,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ETH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ETH = 182,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomField
 	{
 		
@@ -1319,14 +1302,12 @@ namespace MyNS
 	/// <summary>
 	/// When custom mappings are configured on the resource, the result is included here.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomMappings
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteItemResponse
 	{
 		
@@ -1378,8 +1359,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLocationResponse
 	{
 		
@@ -1431,8 +1411,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMerchantResponse
 	{
 		
@@ -1484,8 +1463,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteModifierGroupResponse
 	{
 		
@@ -1537,8 +1515,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteModifierResponse
 	{
 		
@@ -1590,8 +1567,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteOrderResponse
 	{
 		
@@ -1643,8 +1619,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteOrderTypeResponse
 	{
 		
@@ -1696,8 +1671,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePosPaymentResponse
 	{
 		
@@ -1749,8 +1723,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTenderResponse
 	{
 		
@@ -1802,8 +1775,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Email
 	{
 		
@@ -1830,33 +1802,30 @@ namespace MyNS
 		public System.Nullable<EmailType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EmailType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="primary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		primary = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="secondary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		secondary = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="work")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		work = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="personal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		personal = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="billing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		billing = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetItemResponse
 	{
 		
@@ -1908,8 +1877,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Item
 	{
 		
@@ -2100,35 +2068,31 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ItemPricing_type
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="variable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		variable = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="per_unit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		per_unit = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ItemProduct_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regular = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 1,
 	}
 	
@@ -2193,24 +2157,21 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ItemVariationsPricing_type
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="variable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		variable = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetItemsResponse
 	{
 		
@@ -2277,8 +2238,7 @@ namespace MyNS
 	/// <summary>
 	/// Links to navigate to previous or next pages through the API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Links
 	{
 		
@@ -2304,8 +2264,7 @@ namespace MyNS
 	/// <summary>
 	/// Response metadata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Meta
 	{
 		
@@ -2344,8 +2303,7 @@ namespace MyNS
 		public string Previous { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLocationResponse
 	{
 		
@@ -2397,8 +2355,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -2469,24 +2426,21 @@ namespace MyNS
 		public string Updated_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LocationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLocationsResponse
 	{
 		
@@ -2550,8 +2504,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMerchantResponse
 	{
 		
@@ -2603,8 +2556,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Merchant
 	{
 		
@@ -2684,8 +2636,7 @@ namespace MyNS
 		public string Updated_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceCharge
 	{
 		
@@ -2726,21 +2677,18 @@ namespace MyNS
 		public System.Nullable<ServiceChargeType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServiceChargeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="auto_gratuity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		auto_gratuity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMerchantsResponse
 	{
 		
@@ -2804,8 +2752,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModifierGroupResponse
 	{
 		
@@ -2857,8 +2804,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifierGroup
 	{
 		
@@ -2957,21 +2903,18 @@ namespace MyNS
 		public System.Nullable<System.Double> Price_amount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ModifierGroupSelection_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="single")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		single = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="multiple")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		multiple = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModifierGroupsResponse
 	{
 		
@@ -3035,8 +2978,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModifierResponse
 	{
 		
@@ -3088,8 +3030,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Modifier
 	{
 		
@@ -3167,8 +3108,7 @@ namespace MyNS
 		public string Updated_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModifiersResponse
 	{
 		
@@ -3232,8 +3172,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrderResponse
 	{
 		
@@ -3285,8 +3224,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Order
 	{
 		
@@ -3494,8 +3432,7 @@ namespace MyNS
 		public PhoneNumber[] Phone_numbers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhoneNumber
 	{
 		
@@ -3540,43 +3477,41 @@ namespace MyNS
 		public System.Nullable<PhoneNumberType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PhoneNumberType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="primary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		primary = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="secondary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		secondary = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="home")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		home = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="work")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		work = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="office")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		office = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mobile = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="assistant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		assistant = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fax")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fax = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="direct-dial-in")]
 		directMinusdialMinusin = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="personal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		personal = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 10,
 	}
 	
@@ -3618,29 +3553,25 @@ namespace MyNS
 		public OrderDiscountsType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderDiscountsScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="order")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		order = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="line_item")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		line_item = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderDiscountsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="flat_fee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		flat_fee = 1,
 	}
 	
@@ -3827,54 +3758,48 @@ namespace MyNS
 		public PhoneNumber Phone_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderFulfillmentsPickup_detailsSchedule_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderFulfillmentsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="proposed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		proposed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reserved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reserved = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="prepared")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		prepared = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cancelled = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderFulfillmentsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pickup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pickup = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shipment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shipment = 1,
 	}
 	
@@ -3990,31 +3915,29 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderPayment_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="paid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		paid = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="refunded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		refunded = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credited = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="partially_paid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		partially_paid = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="partially_refunded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		partially_refunded = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 6,
 	}
 	
@@ -4080,81 +4003,75 @@ namespace MyNS
 		public string Transaction_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderRefundsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="approved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		approved = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderSource
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-store")]
 		inMinusstore = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="online")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		online = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="opt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		opt = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="api")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		api = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kiosk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kiosk = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="caller-id")]
 		callerMinusid = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="google")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		google = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invoice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invoice = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="draft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		draft = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delayed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delayed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voided")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voided = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hidden")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hidden = 6,
 	}
 	
@@ -4195,19 +4112,17 @@ namespace MyNS
 		public System.Nullable<OrderTaxesType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderTaxesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="additive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		additive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inclusive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inclusive = 2,
 	}
 	
@@ -4314,8 +4229,7 @@ namespace MyNS
 	/// <summary>
 	/// A card's non-confidential details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentCard
 	{
 		
@@ -4392,28 +4306,26 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PaymentCardCard_brand
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="visa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		visa = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mastercard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mastercard = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="amex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		amex = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="discover")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		discover = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="discover-diners")]
 		discoverMinusdiners = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jcb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jcb = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="china-unionpay")]
@@ -4425,116 +4337,105 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="square-capital-card")]
 		squareMinuscapitalMinuscard = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="interac")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		interac = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eftpos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eftpos = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="felica")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		felica = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ebt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ebt = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 13,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PaymentCardCard_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="debit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		debit = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="prepaid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		prepaid = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PaymentCardPrepaid_type
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="non-prepaid")]
 		nonMinusprepaid = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="prepaid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		prepaid = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderTendersCard_entry_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="evm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		evm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="swiped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		swiped = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="keyed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		keyed = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="on-file")]
 		onMinusfile = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contactless")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contactless = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderTendersCard_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authorized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="captured")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		captured = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voided")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voided = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderTendersType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cash = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrderTypeResponse
 	{
 		
@@ -4586,8 +4487,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderType
 	{
 		
@@ -4628,8 +4528,7 @@ namespace MyNS
 		public string Updated_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrderTypesResponse
 	{
 		
@@ -4693,8 +4592,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrdersResponse
 	{
 		
@@ -4758,8 +4656,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPosPaymentResponse
 	{
 		
@@ -4811,8 +4708,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosPayment
 	{
 		
@@ -5001,8 +4897,7 @@ namespace MyNS
 	/// <summary>
 	/// Card details for this payment. This field is currently not available. Reach out to our team for more info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosBankAccount
 	{
 		
@@ -5171,46 +5066,44 @@ namespace MyNS
 		public PosPaymentExternal_detailsType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PosPaymentExternal_detailsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bank_transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bank_transfer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other_gift_card")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other_gift_card = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="crypto")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		crypto = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="square_cash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		square_cash = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="social")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		social = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="emoney")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		emoney = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stored_balance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stored_balance = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="food_voucher")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		food_voucher = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 11,
 	}
 	
@@ -5227,69 +5120,63 @@ namespace MyNS
 		public System.Nullable<PosPaymentProcessing_feesProcessing_type> Processing_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PosPaymentProcessing_feesProcessing_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initial")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initial = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="adjustment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		adjustment = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PosPaymentSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bank_account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bank_account = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wallet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wallet = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bnpl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bnpl = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cash = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PosPaymentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="approved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		approved = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 5,
 	}
 	
@@ -5305,30 +5192,27 @@ namespace MyNS
 		public System.Nullable<PosPaymentWalletStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PosPaymentWalletStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authorized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="captured")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		captured = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voided")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voided = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPosPaymentsResponse
 	{
 		
@@ -5392,8 +5276,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTenderResponse
 	{
 		
@@ -5445,8 +5328,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tender
 	{
 		
@@ -5514,8 +5396,7 @@ namespace MyNS
 		public string Updated_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTendersResponse
 	{
 		
@@ -5579,8 +5460,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifierGroupFilter
 	{
 		
@@ -5591,8 +5471,7 @@ namespace MyNS
 		public string Modifier_group_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundResponse
 	{
 		
@@ -5633,8 +5512,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotImplementedResponse
 	{
 		
@@ -5675,8 +5553,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentRequiredResponse
 	{
 		
@@ -5721,8 +5598,7 @@ namespace MyNS
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SocialLink
 	{
 		
@@ -5749,8 +5625,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsResponse
 	{
 		
@@ -5798,8 +5673,7 @@ namespace MyNS
 		public string Error { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnauthorizedResponse
 	{
 		
@@ -5840,8 +5714,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnexpectedErrorResponse
 	{
 		
@@ -5882,8 +5755,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnprocessableResponse
 	{
 		
@@ -5924,8 +5796,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateItemResponse
 	{
 		
@@ -5977,8 +5848,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLocationResponse
 	{
 		
@@ -6030,8 +5900,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMerchantResponse
 	{
 		
@@ -6083,8 +5952,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateModifierGroupResponse
 	{
 		
@@ -6136,8 +6004,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateModifierResponse
 	{
 		
@@ -6189,8 +6056,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateOrderResponse
 	{
 		
@@ -6242,8 +6108,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateOrderTypeResponse
 	{
 		
@@ -6295,8 +6160,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePosPaymentResponse
 	{
 		
@@ -6348,8 +6212,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTenderResponse
 	{
 		
@@ -6401,8 +6264,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Website
 	{
 		
@@ -6429,25 +6291,23 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebsiteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="primary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		primary = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="secondary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		secondary = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="work")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		work = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="personal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		personal = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 4,
 	}
 	

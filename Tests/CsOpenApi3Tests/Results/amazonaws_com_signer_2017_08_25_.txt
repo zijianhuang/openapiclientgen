@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddProfilePermissionResponse
 	{
 		
@@ -26,50 +25,42 @@ namespace MyNS
 		public string RevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSigningJobResponse
 	{
 		
@@ -134,8 +125,7 @@ namespace MyNS
 	/// <summary>
 	/// An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Source
 	{
 		
@@ -146,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the S3 bucket where you saved your unsigned code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Source
 	{
 		
@@ -176,8 +165,7 @@ namespace MyNS
 	/// <summary>
 	/// The ACM certificate that is used to sign your code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningMaterial
 	{
 		
@@ -192,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// Any overrides that are applied to the signing configuration of a code signing platform.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningPlatformOverrides
 	{
 		
@@ -207,8 +194,7 @@ namespace MyNS
 	/// <summary>
 	/// A signing configuration that overrides the default encryption or hash algorithm of a signing job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningConfigurationOverrides
 	{
 		
@@ -219,75 +205,65 @@ namespace MyNS
 		public HashAlgorithm HashAlgorithm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionAlgorithm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECDSA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECDSA = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HashAlgorithm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA256 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSONEmbedded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSONEmbedded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSONDetached")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSONDetached = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningParameters
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SigningStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 2,
 	}
 	
 	/// <summary>
 	/// Revocation information for a signing job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningJobRevocationRecord
 	{
 		
@@ -304,8 +280,7 @@ namespace MyNS
 	/// <summary>
 	/// Points to an <code>S3SignedObject</code> object that contains information about your signed code image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignedObject
 	{
 		
@@ -316,8 +291,7 @@ namespace MyNS
 	/// <summary>
 	/// The S3 bucket name and key where code signing saved your signed code image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3SignedObject
 	{
 		
@@ -328,8 +302,7 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRevocationStatusResponse
 	{
 		
@@ -337,8 +310,7 @@ namespace MyNS
 		public string[] RevokedEntities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSigningPlatformResponse
 	{
 		
@@ -370,21 +342,18 @@ namespace MyNS
 		public System.Nullable<System.Boolean> RevocationSupported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Category
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSIoT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSIoT = 0,
 	}
 	
 	/// <summary>
 	/// The configuration of a code signing operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningConfiguration
 	{
 		
@@ -406,8 +375,7 @@ namespace MyNS
 	/// <summary>
 	/// The encryption algorithm options that are available to a code signing job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionAlgorithmOptions
 	{
 		
@@ -429,8 +397,7 @@ namespace MyNS
 	/// <summary>
 	/// The hash algorithms that are available to a code signing job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HashAlgorithmOptions
 	{
 		
@@ -452,8 +419,7 @@ namespace MyNS
 	/// <summary>
 	/// The image format of a code signing platform or profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningImageFormat
 	{
 		
@@ -472,8 +438,7 @@ namespace MyNS
 		public ImageFormat DefaultFormat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSigningProfileResponse
 	{
 		
@@ -529,8 +494,7 @@ namespace MyNS
 	/// <summary>
 	/// Revocation information for a signing profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningProfileRevocationRecord
 	{
 		
@@ -547,8 +511,7 @@ namespace MyNS
 	/// <summary>
 	/// The validity period for a signing job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignatureValidityPeriod
 	{
 		
@@ -559,46 +522,40 @@ namespace MyNS
 		public ValidityType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValidityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAYS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEARS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEARS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SigningProfileStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Revoked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Revoked = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfilePermissionsResponse
 	{
 		
@@ -618,8 +575,7 @@ namespace MyNS
 	/// <summary>
 	/// A cross-account permission for a signing profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Permission
 	{
 		
@@ -636,8 +592,7 @@ namespace MyNS
 		public string ProfileVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSigningJobsResponse
 	{
 		
@@ -651,8 +606,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a signing job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningJob
 	{
 		
@@ -699,8 +653,7 @@ namespace MyNS
 		public string JobInvoker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSigningPlatformsResponse
 	{
 		
@@ -714,8 +667,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the signing configurations and parameters that are used to perform a code signing job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningPlatform
 	{
 		
@@ -750,8 +702,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> RevocationSupported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSigningProfilesResponse
 	{
 		
@@ -765,8 +716,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigningProfile
 	{
 		
@@ -804,8 +754,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -813,20 +762,17 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSigningProfileResponse
 	{
 		
@@ -840,8 +786,7 @@ namespace MyNS
 		public string ProfileVersionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveProfilePermissionResponse
 	{
 		
@@ -849,8 +794,7 @@ namespace MyNS
 		public string RevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignPayloadResponse
 	{
 		
@@ -867,14 +811,12 @@ namespace MyNS
 		public string Signature { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metadata
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSigningJobResponse
 	{
 		
@@ -888,8 +830,7 @@ namespace MyNS
 	/// <summary>
 	/// The name and prefix of the S3 bucket where code signing saves your signed objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Destination
 	{
 		
@@ -900,26 +841,22 @@ namespace MyNS
 		public string Prefix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddProfilePermissionRequest
 	{
 		
@@ -951,14 +888,12 @@ namespace MyNS
 		public string StatementId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelSigningProfileRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSigningJobRequest
 	{
 	}
@@ -966,8 +901,7 @@ namespace MyNS
 	/// <summary>
 	/// Points to an <code>S3Destination</code> object that contains information about your S3 bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Destination
 	{
 		
@@ -975,56 +909,47 @@ namespace MyNS
 		public S3Destination S3 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRevocationStatusRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSigningPlatformRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSigningProfileRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfilePermissionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSigningJobsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSigningPlatformsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSigningProfilesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSigningProfileRequest
 	{
 		
@@ -1051,14 +976,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveProfilePermissionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeSignatureRequest
 	{
 		
@@ -1073,8 +996,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeSigningProfileRequest
 	{
 		
@@ -1100,8 +1022,7 @@ namespace MyNS
 		public System.DateTimeOffset EffectiveTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignPayloadRequest
 	{
 		
@@ -1130,8 +1051,7 @@ namespace MyNS
 		public string PayloadFormat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSigningJobRequest
 	{
 		
@@ -1167,8 +1087,7 @@ namespace MyNS
 		public string ProfileOwner { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1180,8 +1099,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}

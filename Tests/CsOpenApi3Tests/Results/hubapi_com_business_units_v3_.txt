@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A response object containing a collection of Business Units
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionResponsePublicBusinessUnitNoPaging
 	{
 		
@@ -37,8 +36,7 @@ namespace MyNS
 	/// <summary>
 	/// A Business Unit
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicBusinessUnit
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// A Business Unit's logo metadata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicBusinessUnitLogoMetadata
 	{
 		
@@ -92,8 +89,7 @@ namespace MyNS
 		public string ResizedUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -146,8 +142,7 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		

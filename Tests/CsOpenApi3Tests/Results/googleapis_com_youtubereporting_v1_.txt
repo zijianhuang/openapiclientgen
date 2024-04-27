@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataBlobstore2Info
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataCompositeMedia
 	{
 		
@@ -143,8 +140,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataObjectId
 	{
 		
@@ -167,33 +163,30 @@ namespace MyNS
 		public string ObjectName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GdataCompositeMediaReferenceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOB_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOB_REF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INLINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGSTORE_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGSTORE_REF = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COSMO_BINARY_REFERENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COSMO_BINARY_REFERENCE = 4,
 	}
 	
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataContentTypeInfo
 	{
 		
@@ -231,8 +224,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffChecksumsResponse
 	{
 		
@@ -270,8 +262,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffDownloadResponse
 	{
 		
@@ -285,8 +276,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffUploadRequest
 	{
 		
@@ -312,8 +302,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffUploadResponse
 	{
 		
@@ -333,8 +322,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffVersionResponse
 	{
 		
@@ -354,8 +342,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDownloadParameters
 	{
 		
@@ -375,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// gdata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataMedia
 	{
 		
@@ -561,57 +547,54 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GdataMediaReferenceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOB_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOB_REF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INLINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET_MEDIA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPOSITE_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPOSITE_MEDIA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGSTORE_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGSTORE_REF = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_VERSION_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_VERSION_RESPONSE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_CHECKSUMS_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_CHECKSUMS_RESPONSE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_DOWNLOAD_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_DOWNLOAD_RESPONSE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_UPLOAD_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_UPLOAD_REQUEST = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_UPLOAD_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_UPLOAD_RESPONSE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COSMO_BINARY_REFERENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COSMO_BINARY_REFERENCE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARBITRARY_BYTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARBITRARY_BYTES = 12,
 	}
 	
 	/// <summary>
 	/// A job creating reports of a specific type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Job
 	{
 		
@@ -655,8 +638,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ReportingService.ListJobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsResponse
 	{
 		
@@ -676,8 +658,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ReportingService.ListReportTypes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReportTypesResponse
 	{
 		
@@ -697,8 +678,7 @@ namespace MyNS
 	/// <summary>
 	/// A report type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportType
 	{
 		
@@ -730,8 +710,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ReportingService.ListReports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReportsResponse
 	{
 		
@@ -751,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// A report's metadata including the URL from which the report itself can be downloaded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Report
 	{
 		

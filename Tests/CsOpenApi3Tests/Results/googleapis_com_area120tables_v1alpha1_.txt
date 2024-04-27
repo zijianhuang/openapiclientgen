@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for TablesService.BatchCreateRows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateRowsRequest
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for TablesService.CreateRow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRowRequest
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// A single row in a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Row
 	{
 		
@@ -92,24 +89,21 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, object> Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateRowRequestView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLUMN_ID_VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLUMN_ID_VIEW = 1,
 	}
 	
 	/// <summary>
 	/// Response message for TablesService.BatchCreateRows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateRowsResponse
 	{
 		
@@ -123,8 +117,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for TablesService.BatchDeleteRows
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteRowsRequest
 	{
 		
@@ -138,8 +131,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for TablesService.BatchUpdateRows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateRowsRequest
 	{
 		
@@ -153,8 +145,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for TablesService.UpdateRow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRowRequest
 	{
 		
@@ -180,8 +171,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for TablesService.BatchUpdateRows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateRowsResponse
 	{
 		
@@ -195,8 +185,7 @@ namespace MyNS
 	/// <summary>
 	/// Details on a column in the table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnDescription
 	{
 		
@@ -258,8 +247,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a date column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateDetails
 	{
 		
@@ -273,8 +261,7 @@ namespace MyNS
 	/// <summary>
 	/// A single item in a labeled column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabeledItem
 	{
 		
@@ -294,8 +281,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a lookup column whose value comes from the associated relationship.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupDetails
 	{
 		
@@ -315,8 +301,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a relationship column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelationshipDetails
 	{
 		
@@ -330,8 +315,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -339,8 +323,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for TablesService.ListRows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRowsResponse
 	{
 		
@@ -360,8 +343,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for TablesService.ListTables.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTablesResponse
 	{
 		
@@ -381,8 +363,7 @@ namespace MyNS
 	/// <summary>
 	/// A single table. NextId: 8
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Table
 	{
 		
@@ -432,8 +413,7 @@ namespace MyNS
 	/// <summary>
 	/// A saved view of a table. NextId: 3
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavedView
 	{
 		
@@ -453,8 +433,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for TablesService.ListWorkspaces.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkspacesResponse
 	{
 		
@@ -474,8 +453,7 @@ namespace MyNS
 	/// <summary>
 	/// A single workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Workspace
 	{
 		

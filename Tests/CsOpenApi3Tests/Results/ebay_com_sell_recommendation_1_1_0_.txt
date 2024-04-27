@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains recommendations and information on how to configure Promoted Listings ad campaigns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ad
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that returns data related to Promoted Listings bid percentages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BidPercentages
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that can be returned in an error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -122,8 +119,7 @@ namespace MyNS
 		public string Subdomain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorParameter
 	{
 		
@@ -143,8 +139,7 @@ namespace MyNS
 	/// <summary>
 	/// An list of listing ID values for which you want Promoted Listings ad configuration information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindListingRecommendationRequest
 	{
 		
@@ -158,8 +153,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the ID of an actively listed item and a set of related listing recommendations. The recommendations contain information the seller can use to optimize their listing configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListingRecommendation
 	{
 		
@@ -179,8 +173,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about how a seller can improve their listing configurations. The AD object contains Promoted Listings recommendations and information, which the seller can use to improve buyer conversions. The response can also contain an optional message about the returned data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MarketingRecommendation
 	{
 		
@@ -200,8 +193,7 @@ namespace MyNS
 	/// <summary>
 	/// The high-level object used to return a set of Promoted Listings ad recommendations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PagedListingRecommendationCollection
 	{
 		

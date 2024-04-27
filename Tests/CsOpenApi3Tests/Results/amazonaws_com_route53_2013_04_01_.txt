@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivateKeySigningKeyResponse
 	{
 		
@@ -34,8 +33,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that describes change information about changes made to your hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeInfo
 	{
 		
@@ -64,51 +62,43 @@ namespace MyNS
 		public string Comment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChangeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSYNC = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModification
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchKeySigningKey
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidKeySigningKeyStatus
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSigningStatus
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidKMSArn
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidInput
 	{
 	}
@@ -116,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateVPCWithHostedZoneResponse
 	{
 		
@@ -129,9 +118,7 @@ namespace MyNS
 		public ChangeInfo ChangeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VPCRegion
 	{
 		
@@ -238,50 +225,42 @@ namespace MyNS
 		ilMinuscentralMinus1 = 33,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchHostedZone
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotAuthorizedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidVPCId
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicZoneVPCAssociation
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictingDomainExists
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitsExceeded
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PriorRequestNotComplete
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeCidrCollectionResponse
 	{
 		
@@ -296,8 +275,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the CIDR collection change.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CidrCollectionChange
 	{
 		
@@ -323,33 +301,28 @@ namespace MyNS
 		public string[] CidrList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CidrCollectionChangeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_IF_EXISTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_IF_EXISTS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchCidrCollectionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CidrCollectionVersionMismatchException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CidrBlockInUseException
 	{
 	}
@@ -357,8 +330,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type containing the response for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeResourceRecordSetsResponse
 	{
 		
@@ -370,14 +342,12 @@ namespace MyNS
 		public ChangeInfo ChangeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchHealthCheck
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidChangeBatch
 	{
 	}
@@ -385,8 +355,7 @@ namespace MyNS
 	/// <summary>
 	/// Empty response for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeTagsForResourceResponse
 	{
 	}
@@ -394,8 +363,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -406,14 +374,12 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCidrCollectionResponse
 	{
 		
@@ -424,8 +390,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that identifies a CIDR collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CidrCollection
 	{
 		
@@ -442,8 +407,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CidrCollectionAlreadyExistsException
 	{
 	}
@@ -451,8 +415,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type containing the response information for the new health check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHealthCheckResponse
 	{
 		
@@ -467,8 +430,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about one health check that is associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthCheck
 	{
 		
@@ -510,8 +472,7 @@ namespace MyNS
 	/// <summary>
 	/// If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkedService
 	{
 		
@@ -525,8 +486,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the health check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthCheckConfig
 	{
 		
@@ -589,42 +549,39 @@ namespace MyNS
 		public string RoutingControlArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HealthCheckType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTPS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP_STR_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP_STR_MATCH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTPS_STR_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTPS_STR_MATCH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TCP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TCP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CALCULATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CALCULATED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUDWATCH_METRIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUDWATCH_METRIC = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECOVERY_CONTROL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECOVERY_CONTROL = 7,
 	}
 	
 	/// <summary>
 	/// A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlarmIdentifier
 	{
 		
@@ -643,9 +600,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudWatchRegion
 	{
 		
@@ -755,27 +710,24 @@ namespace MyNS
 		ilMinuscentralMinus1 = 34,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InsufficientDataHealthStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Healthy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Healthy = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unhealthy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unhealthy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastKnownStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastKnownStatus = 2,
 	}
 	
 	/// <summary>
 	/// A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchAlarmConfiguration
 	{
 		
@@ -832,55 +784,49 @@ namespace MyNS
 		public string[] Dimensions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreaterThanOrEqualToThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreaterThanOrEqualToThreshold = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreaterThanThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreaterThanThreshold = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThanThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThanThreshold = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThanOrEqualToThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThanOrEqualToThreshold = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Statistic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sum = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SampleCount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SampleCount = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maximum = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Minimum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Minimum = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyHealthChecks
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthCheckAlreadyExists
 	{
 	}
@@ -888,8 +834,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type containing the response information for the hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHostedZoneResponse
 	{
 		
@@ -921,8 +866,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains general information about the hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZone
 	{
 		
@@ -960,8 +904,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZoneConfig
 	{
 		
@@ -975,8 +918,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DelegationSet
 	{
 		
@@ -997,8 +939,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>(Private hosted zones only) A complex type that contains information about an Amazon VPC.</p> <p>If you associate a private hosted zone with an Amazon VPC when you make a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a> request, the following parameters are also required.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPC
 	{
 		
@@ -1014,44 +955,37 @@ namespace MyNS
 		public string VPCId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDomainName
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZoneAlreadyExists
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyHostedZones
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DelegationSetNotAvailable
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchDelegationSet
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DelegationSetNotReusable
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateKeySigningKeyResponse
 	{
 		
@@ -1074,8 +1008,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to generate a digital signature for the zone signing key (ZSK). The public key is stored in the DNS and is used to authenticate the ZSK. A KSK is always associated with a hosted zone; it cannot exist by itself.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeySigningKey
 	{
 		
@@ -1128,32 +1061,27 @@ namespace MyNS
 		public System.DateTimeOffset LastModifiedDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArgument
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidKeySigningKeyName
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeySigningKeyAlreadyExists
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyKeySigningKeys
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateQueryLoggingConfigResponse
 	{
 		
@@ -1168,8 +1096,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about a configuration for DNS query logging.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryLoggingConfig
 	{
 		
@@ -1195,26 +1122,22 @@ namespace MyNS
 		public string CloudWatchLogsLogGroupArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchCloudWatchLogsLogGroup
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryLoggingConfigAlreadyExists
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientCloudWatchLogsResourcePolicy
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReusableDelegationSetResponse
 	{
 		
@@ -1226,20 +1149,17 @@ namespace MyNS
 		public DelegationSet DelegationSet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DelegationSetAlreadyCreated
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZoneNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DelegationSetAlreadyReusable
 	{
 	}
@@ -1247,8 +1167,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the <code>CreateTrafficPolicy</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrafficPolicyResponse
 	{
 		
@@ -1263,8 +1182,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains settings for a traffic policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrafficPolicy
 	{
 		
@@ -1307,66 +1225,61 @@ namespace MyNS
 		public string Comment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RRType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TXT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CNAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CNAME = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MX = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAPTR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAPTR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PTR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PTR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SRV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SRV = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPF = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAAA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAAA = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAA = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DS = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTrafficPolicies
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrafficPolicyAlreadyExists
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTrafficPolicyDocument
 	{
 	}
@@ -1374,8 +1287,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the <code>CreateTrafficPolicyInstance</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrafficPolicyInstanceResponse
 	{
 		
@@ -1390,8 +1302,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains settings for the new traffic policy instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrafficPolicyInstance
 	{
 		
@@ -1459,20 +1370,17 @@ namespace MyNS
 		public RRType TrafficPolicyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTrafficPolicyInstances
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchTrafficPolicy
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrafficPolicyInstanceAlreadyExists
 	{
 	}
@@ -1480,8 +1388,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrafficPolicyVersionResponse
 	{
 		
@@ -1493,8 +1400,7 @@ namespace MyNS
 		public TrafficPolicy TrafficPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTrafficPolicyVersionsForCurrentPolicy
 	{
 	}
@@ -1502,8 +1408,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVPCAssociationAuthorizationResponse
 	{
 		
@@ -1522,14 +1427,12 @@ namespace MyNS
 		public VPC VPC { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyVPCAssociationAuthorizations
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeactivateKeySigningKeyResponse
 	{
 		
@@ -1542,26 +1445,22 @@ namespace MyNS
 		public ChangeInfo ChangeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeySigningKeyInUse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeySigningKeyInParentDSRecord
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCidrCollectionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CidrCollectionInUseException
 	{
 	}
@@ -1569,14 +1468,12 @@ namespace MyNS
 	/// <summary>
 	/// An empty element.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHealthCheckResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthCheckInUse
 	{
 	}
@@ -1584,8 +1481,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to a <code>DeleteHostedZone</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHostedZoneResponse
 	{
 		
@@ -1597,14 +1493,12 @@ namespace MyNS
 		public ChangeInfo ChangeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZoneNotEmpty
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteKeySigningKeyResponse
 	{
 		
@@ -1617,14 +1511,12 @@ namespace MyNS
 		public ChangeInfo ChangeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteQueryLoggingConfigResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchQueryLoggingConfig
 	{
 	}
@@ -1632,14 +1524,12 @@ namespace MyNS
 	/// <summary>
 	/// An empty element.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReusableDelegationSetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DelegationSetInUse
 	{
 	}
@@ -1647,14 +1537,12 @@ namespace MyNS
 	/// <summary>
 	/// An empty element.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTrafficPolicyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrafficPolicyInUse
 	{
 	}
@@ -1662,14 +1550,12 @@ namespace MyNS
 	/// <summary>
 	/// An empty element.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTrafficPolicyInstanceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchTrafficPolicyInstance
 	{
 	}
@@ -1677,20 +1563,17 @@ namespace MyNS
 	/// <summary>
 	/// Empty response for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVPCAssociationAuthorizationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPCAssociationAuthorizationNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableHostedZoneDNSSECResponse
 	{
 		
@@ -1703,8 +1586,7 @@ namespace MyNS
 		public ChangeInfo ChangeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DNSSECNotFound
 	{
 	}
@@ -1712,8 +1594,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the disassociate request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateVPCFromHostedZoneResponse
 	{
 		
@@ -1725,20 +1606,17 @@ namespace MyNS
 		public ChangeInfo ChangeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPCAssociationNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LastVPCAssociation
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableHostedZoneDNSSECResponse
 	{
 		
@@ -1751,14 +1629,12 @@ namespace MyNS
 		public ChangeInfo ChangeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeySigningKeyWithActiveStatusNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZonePartiallyDelegated
 	{
 	}
@@ -1766,8 +1642,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the requested limit. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountLimitResponse
 	{
 		
@@ -1789,8 +1664,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the type of limit that you specified in the request and the current value for that limit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountLimit
 	{
 		
@@ -1809,33 +1683,30 @@ namespace MyNS
 		public int Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountLimitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_HEALTH_CHECKS_BY_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_HEALTH_CHECKS_BY_OWNER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_HOSTED_ZONES_BY_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_HOSTED_ZONES_BY_OWNER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_REUSABLE_DELEGATION_SETS_BY_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_TRAFFIC_POLICIES_BY_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_TRAFFIC_POLICIES_BY_OWNER = 4,
 	}
 	
 	/// <summary>
 	/// A complex type that contains the <code>ChangeInfo</code> element.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetChangeResponse
 	{
 		
@@ -1847,8 +1718,7 @@ namespace MyNS
 		public ChangeInfo ChangeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchChange
 	{
 	}
@@ -1856,8 +1726,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the <code>CheckerIpRanges</code> element.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCheckerIpRangesResponse
 	{
 		
@@ -1869,8 +1738,7 @@ namespace MyNS
 		public string[] CheckerIpRanges { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDNSSECResponse
 	{
 		
@@ -1892,8 +1760,7 @@ namespace MyNS
 	/// <summary>
 	/// A string repesenting the status of DNSSEC signing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DNSSECStatus
 	{
 		
@@ -1907,8 +1774,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the specified geolocation code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGeoLocationResponse
 	{
 		
@@ -1923,8 +1789,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoLocationDetails
 	{
 		
@@ -1947,8 +1812,7 @@ namespace MyNS
 		public string SubdivisionName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchGeoLocation
 	{
 	}
@@ -1956,8 +1820,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to a <code>GetHealthCheck</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHealthCheckResponse
 	{
 		
@@ -1969,8 +1832,7 @@ namespace MyNS
 		public HealthCheck HealthCheck { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncompatibleVersion
 	{
 	}
@@ -1978,8 +1840,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to a <code>GetHealthCheckCount</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHealthCheckCountResponse
 	{
 		
@@ -1994,8 +1855,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHealthCheckLastFailureReasonResponse
 	{
 		
@@ -2010,8 +1870,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to a <code>GetHealthCheck</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHealthCheckStatusResponse
 	{
 		
@@ -2026,8 +1885,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contain the response to a <code>GetHostedZone</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHostedZoneResponse
 	{
 		
@@ -2048,8 +1906,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to a <code>GetHostedZoneCount</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHostedZoneCountResponse
 	{
 		
@@ -2064,8 +1921,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the requested limit. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHostedZoneLimitResponse
 	{
 		
@@ -2087,8 +1943,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the type of limit that you specified in the request and the current value for that limit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZoneLimit
 	{
 		
@@ -2107,27 +1962,23 @@ namespace MyNS
 		public int Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HostedZoneLimitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_RRSETS_BY_ZONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_RRSETS_BY_ZONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_VPCS_ASSOCIATED_BY_ZONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_VPCS_ASSOCIATED_BY_ZONE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZoneNotPrivate
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueryLoggingConfigResponse
 	{
 		
@@ -2142,8 +1993,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to the <code>GetReusableDelegationSet</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReusableDelegationSetResponse
 	{
 		
@@ -2158,8 +2008,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the requested limit. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReusableDelegationSetLimitResponse
 	{
 		
@@ -2181,8 +2030,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the type of limit that you specified in the request and the current value for that limit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReusableDelegationSetLimit
 	{
 		
@@ -2201,21 +2049,18 @@ namespace MyNS
 		public int Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReusableDelegationSetLimitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ZONES_BY_REUSABLE_DELEGATION_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_ZONES_BY_REUSABLE_DELEGATION_SET = 0,
 	}
 	
 	/// <summary>
 	/// A complex type that contains the response information for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTrafficPolicyResponse
 	{
 		
@@ -2230,8 +2075,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTrafficPolicyInstanceResponse
 	{
 		
@@ -2246,8 +2090,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTrafficPolicyInstanceCountResponse
 	{
 		
@@ -2259,8 +2102,7 @@ namespace MyNS
 		public int TrafficPolicyInstanceCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCidrBlocksResponse
 	{
 		
@@ -2274,8 +2116,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that lists the CIDR blocks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CidrBlockSummary
 	{
 		
@@ -2286,14 +2127,12 @@ namespace MyNS
 		public string LocationName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchCidrLocationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCidrCollectionsResponse
 	{
 		
@@ -2307,8 +2146,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that is an entry in an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CidrCollection.html">CidrCollection</a> array.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionSummary
 	{
 		
@@ -2325,8 +2163,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCidrLocationsResponse
 	{
 		
@@ -2340,8 +2177,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the CIDR location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationSummary
 	{
 		
@@ -2352,8 +2188,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type containing the response information for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGeoLocationsResponse
 	{
 		
@@ -2391,8 +2226,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to a <code>ListHealthChecks</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHealthChecksResponse
 	{
 		
@@ -2428,8 +2262,7 @@ namespace MyNS
 		public string MaxItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHostedZonesResponse
 	{
 		
@@ -2468,8 +2301,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHostedZonesByNameResponse
 	{
 		
@@ -2507,8 +2339,7 @@ namespace MyNS
 		public string MaxItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHostedZonesByVPCResponse
 	{
 		
@@ -2530,14 +2361,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidPaginationToken
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueryLoggingConfigsResponse
 	{
 		
@@ -2555,8 +2384,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains list information for the resource record set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceRecordSetsResponse
 	{
 		
@@ -2594,8 +2422,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the reusable delegation sets that are associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReusableDelegationSetsResponse
 	{
 		
@@ -2634,8 +2461,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the health checks or hosted zones for which you want to list tags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -2650,8 +2476,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type containing a resource and its associated tags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceTagSet
 	{
 		
@@ -2665,24 +2490,21 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TagResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="healthcheck")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		healthcheck = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hostedzone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hostedzone = 1,
 	}
 	
 	/// <summary>
 	/// A complex type containing tags for the specified resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourcesResponse
 	{
 		
@@ -2697,8 +2519,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPoliciesResponse
 	{
 		
@@ -2734,8 +2555,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPolicyInstancesResponse
 	{
 		
@@ -2773,8 +2593,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPolicyInstancesByHostedZoneResponse
 	{
 		
@@ -2809,8 +2628,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPolicyInstancesByPolicyResponse
 	{
 		
@@ -2848,8 +2666,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPolicyVersionsResponse
 	{
 		
@@ -2885,8 +2702,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVPCAssociationAuthorizationsResponse
 	{
 		
@@ -2911,8 +2727,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to a <code>TestDNSAnswer</code> request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestDNSAnswerResponse
 	{
 		
@@ -2962,8 +2777,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to the <code>UpdateHealthCheck</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHealthCheckResponse
 	{
 		
@@ -2975,9 +2789,7 @@ namespace MyNS
 		public HealthCheck HealthCheck { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HealthCheckRegion
 	{
 		
@@ -3006,27 +2818,24 @@ namespace MyNS
 		saMinuseastMinus1 = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResettableElementName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FullyQualifiedDomainName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FullyQualifiedDomainName = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Regions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Regions = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourcePath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourcePath = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChildHealthChecks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChildHealthChecks = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthCheckVersionMismatch
 	{
 	}
@@ -3034,8 +2843,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHostedZoneCommentResponse
 	{
 		
@@ -3050,8 +2858,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the response information for the traffic policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTrafficPolicyCommentResponse
 	{
 		
@@ -3066,8 +2873,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTrafficPolicyInstanceResponse
 	{
 		
@@ -3079,14 +2885,12 @@ namespace MyNS
 		public TrafficPolicyInstance TrafficPolicyInstance { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictingTypes
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivateKeySigningKeyRequest
 	{
 	}
@@ -3094,8 +2898,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p> <p>When creating resource record sets for a private hosted zone, note the following:</p> <ul> <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AliasTarget
 	{
 		
@@ -3124,8 +2927,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the request to associate a VPC with a private hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateVPCWithHostedZoneRequest
 	{
 		
@@ -3140,27 +2942,24 @@ namespace MyNS
 		public string Comment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChangeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPSERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPSERT = 2,
 	}
 	
 	/// <summary>
 	/// Information about the resource record set to create or delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceRecordSet
 	{
 		
@@ -3218,9 +3017,7 @@ namespace MyNS
 		public CidrRoutingConfig CidrRoutingConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceRecordSetRegion
 	{
 		
@@ -3318,8 +3115,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about a geographic location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoLocation
 	{
 		
@@ -3333,24 +3129,21 @@ namespace MyNS
 		public string SubdivisionCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceRecordSetFailover
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMARY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECONDARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECONDARY = 1,
 	}
 	
 	/// <summary>
 	/// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p> <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CidrRoutingConfig
 	{
 		
@@ -3372,8 +3165,7 @@ namespace MyNS
 	/// <summary>
 	/// The information for each resource record set that you want to change.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Change
 	{
 		
@@ -3395,8 +3187,7 @@ namespace MyNS
 	/// <summary>
 	/// The information for a change request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeBatch
 	{
 		
@@ -3411,8 +3202,7 @@ namespace MyNS
 		public string[] Changes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeCidrCollectionRequest
 	{
 		
@@ -3430,8 +3220,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains change information for the resource record set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeResourceRecordSetsRequest
 	{
 		
@@ -3446,8 +3235,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the tags that you want to add, edit, or delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeTagsForResourceRequest
 	{
 		
@@ -3458,8 +3246,7 @@ namespace MyNS
 		public string[] RemoveTagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCidrCollectionRequest
 	{
 		
@@ -3481,8 +3268,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the health check request information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHealthCheckRequest
 	{
 		
@@ -3504,8 +3290,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the request to create a public or private hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHostedZoneRequest
 	{
 		
@@ -3533,8 +3318,7 @@ namespace MyNS
 		public string DelegationSetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateKeySigningKeyRequest
 	{
 		
@@ -3574,8 +3358,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateQueryLoggingConfigRequest
 	{
 		
@@ -3594,8 +3377,7 @@ namespace MyNS
 		public string CloudWatchLogsLogGroupArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReusableDelegationSetRequest
 	{
 		
@@ -3613,8 +3395,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the resource record sets that you want to create based on a specified traffic policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrafficPolicyInstanceRequest
 	{
 		
@@ -3657,8 +3438,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the traffic policy that you want to create.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrafficPolicyRequest
 	{
 		
@@ -3683,8 +3463,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the traffic policy that you want to create a new version for.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrafficPolicyVersionRequest
 	{
 		
@@ -3702,8 +3481,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the request to authorize associating a VPC with your private hosted zone. Authorization is only required when a private hosted zone and a VPC were created by using different accounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVPCAssociationAuthorizationRequest
 	{
 		
@@ -3715,14 +3493,12 @@ namespace MyNS
 		public VPC VPC { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeactivateKeySigningKeyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCidrCollectionRequest
 	{
 	}
@@ -3730,8 +3506,7 @@ namespace MyNS
 	/// <summary>
 	/// This action deletes a health check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHealthCheckRequest
 	{
 	}
@@ -3739,20 +3514,17 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete a hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHostedZoneRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteKeySigningKeyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteQueryLoggingConfigRequest
 	{
 	}
@@ -3760,8 +3532,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete a reusable delegation set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReusableDelegationSetRequest
 	{
 	}
@@ -3769,8 +3540,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete a specified traffic policy instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTrafficPolicyInstanceRequest
 	{
 	}
@@ -3778,8 +3548,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete a specified traffic policy version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTrafficPolicyRequest
 	{
 	}
@@ -3787,8 +3556,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the request to remove authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVPCAssociationAuthorizationRequest
 	{
 		
@@ -3803,8 +3571,7 @@ namespace MyNS
 	/// <summary>
 	/// For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimension
 	{
 		
@@ -3823,8 +3590,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableHostedZoneDNSSECRequest
 	{
 	}
@@ -3832,8 +3598,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the VPC that you want to disassociate from a specified private hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateVPCFromHostedZoneRequest
 	{
 		
@@ -3848,8 +3613,7 @@ namespace MyNS
 		public string Comment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableHostedZoneDNSSECRequest
 	{
 	}
@@ -3857,8 +3621,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the request to create a hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountLimitRequest
 	{
 	}
@@ -3866,8 +3629,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for a GetChange request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetChangeRequest
 	{
 	}
@@ -3875,14 +3637,12 @@ namespace MyNS
 	/// <summary>
 	/// Empty request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCheckerIpRangesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDNSSECRequest
 	{
 	}
@@ -3890,8 +3650,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGeoLocationRequest
 	{
 	}
@@ -3899,8 +3658,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for the number of health checks that are associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHealthCheckCountRequest
 	{
 	}
@@ -3908,8 +3666,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for the reason that a health check failed most recently.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHealthCheckLastFailureReasonRequest
 	{
 	}
@@ -3917,8 +3674,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to get information about a specified health check. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHealthCheckRequest
 	{
 	}
@@ -3926,8 +3682,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to get the status for a health check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHealthCheckStatusRequest
 	{
 	}
@@ -3935,8 +3690,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to retrieve a count of all the hosted zones that are associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHostedZoneCountRequest
 	{
 	}
@@ -3944,8 +3698,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the request to create a hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHostedZoneLimitRequest
 	{
 	}
@@ -3953,14 +3706,12 @@ namespace MyNS
 	/// <summary>
 	/// A request to get information about a specified hosted zone. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHostedZoneRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueryLoggingConfigRequest
 	{
 	}
@@ -3968,8 +3719,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the request to create a hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReusableDelegationSetLimitRequest
 	{
 	}
@@ -3977,8 +3727,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to get information about a specified reusable delegation set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReusableDelegationSetRequest
 	{
 	}
@@ -3986,8 +3735,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to get the number of traffic policy instances that are associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTrafficPolicyInstanceCountRequest
 	{
 	}
@@ -3995,8 +3743,7 @@ namespace MyNS
 	/// <summary>
 	/// Gets information about a specified traffic policy instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTrafficPolicyInstanceRequest
 	{
 	}
@@ -4004,8 +3751,7 @@ namespace MyNS
 	/// <summary>
 	/// Gets information about a specific traffic policy version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTrafficPolicyRequest
 	{
 	}
@@ -4013,8 +3759,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusReport
 	{
 		
@@ -4028,8 +3773,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthCheckObservation
 	{
 		
@@ -4046,8 +3790,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that identifies a hosted zone that a specified Amazon VPC is associated with and the owner of the hosted zone. If there is a value for <code>OwningAccount</code>, there is no value for <code>OwningService</code>, and vice versa. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZoneOwner
 	{
 		
@@ -4061,8 +3804,7 @@ namespace MyNS
 	/// <summary>
 	/// In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code> element contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostedZoneSummary
 	{
 		
@@ -4088,20 +3830,17 @@ namespace MyNS
 		public HostedZoneOwner Owner { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCidrBlocksRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCidrCollectionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCidrLocationsRequest
 	{
 	}
@@ -4109,8 +3848,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to get a list of geographic locations that Amazon Route 53 supports for geolocation resource record sets. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGeoLocationsRequest
 	{
 	}
@@ -4118,8 +3856,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to retrieve a list of the health checks that are associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHealthChecksRequest
 	{
 	}
@@ -4127,8 +3864,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves a list of the public and private hosted zones that are associated with the current Amazon Web Services account in ASCII order by domain name. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHostedZonesByNameRequest
 	{
 	}
@@ -4136,8 +3872,7 @@ namespace MyNS
 	/// <summary>
 	/// Lists all the private hosted zones that a specified VPC is associated with, regardless of which Amazon Web Services account created the hosted zones.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHostedZonesByVPCRequest
 	{
 	}
@@ -4145,14 +3880,12 @@ namespace MyNS
 	/// <summary>
 	/// A request to retrieve a list of the public and private hosted zones that are associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHostedZonesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueryLoggingConfigsRequest
 	{
 	}
@@ -4160,8 +3893,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for the resource record sets that are associated with a specified hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceRecordSetsRequest
 	{
 	}
@@ -4169,8 +3901,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to get a list of the reusable delegation sets that are associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReusableDelegationSetsRequest
 	{
 	}
@@ -4178,8 +3909,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type containing information about a request for a list of the tags that are associated with an individual resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
@@ -4187,8 +3917,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the health checks or hosted zones for which you want to list tags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourcesRequest
 	{
 		
@@ -4203,8 +3932,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the information about the request to list the traffic policies that are associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPoliciesRequest
 	{
 	}
@@ -4212,8 +3940,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for the traffic policy instances that you created in a specified hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPolicyInstancesByHostedZoneRequest
 	{
 	}
@@ -4221,8 +3948,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the information about the request to list your traffic policy instances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPolicyInstancesByPolicyRequest
 	{
 	}
@@ -4230,8 +3956,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to get information about the traffic policy instances that you created by using the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPolicyInstancesRequest
 	{
 	}
@@ -4239,8 +3964,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains the information about the request to list your traffic policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrafficPolicyVersionsRequest
 	{
 	}
@@ -4248,8 +3972,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about that can be associated with your hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVPCAssociationAuthorizationsRequest
 	{
 	}
@@ -4257,8 +3980,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information specific to the resource record.</p> <note> <p>If you're creating an alias resource record set, omit <code>ResourceRecord</code>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceRecord
 	{
 		
@@ -4273,8 +3995,7 @@ namespace MyNS
 	/// <summary>
 	/// Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestDNSAnswerRequest
 	{
 	}
@@ -4282,8 +4003,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the latest version of one traffic policy that is associated with the current Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrafficPolicySummary
 	{
 		
@@ -4326,8 +4046,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about a request to update a health check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHealthCheckRequest
 	{
 		
@@ -4383,8 +4102,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to update the comment for a hosted zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHostedZoneCommentRequest
 	{
 		
@@ -4395,8 +4113,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the traffic policy that you want to update the comment for.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTrafficPolicyCommentRequest
 	{
 		
@@ -4411,8 +4128,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that contains information about the resource record sets that you want to update based on a specified traffic policy instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTrafficPolicyInstanceRequest
 	{
 		

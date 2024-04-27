@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBotVersionResponse
 	{
 		
@@ -77,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies the specific version of an intent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Intent
 	{
 		
@@ -100,8 +98,7 @@ namespace MyNS
 	/// <summary>
 	/// Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Prompt
 	{
 		
@@ -126,8 +123,7 @@ namespace MyNS
 	/// <summary>
 	/// The message object that provides the message text and its type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -149,27 +145,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> GroupNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PlainText")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PlainText = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSML = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CustomPayload")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CustomPayload = 2,
 	}
 	
 	/// <summary>
 	/// A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Statement
 	{
 		
@@ -184,31 +177,27 @@ namespace MyNS
 		public string ResponseCard { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUILDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUILDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY_BASIC_TESTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY_BASIC_TESTING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_BUILT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_BUILT = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Locale
 	{
 		
@@ -252,44 +241,37 @@ namespace MyNS
 		koMinusKR = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalFailureException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PreconditionFailedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIntentVersionResponse
 	{
 		
@@ -351,8 +333,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies the version of a specific slot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Slot
 	{
 		
@@ -398,37 +379,32 @@ namespace MyNS
 		public SlotDefaultValueSpec DefaultValueSpec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SlotConstraint
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Required")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Required = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Optional")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Optional = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ObfuscationSetting
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT_OBFUSCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT_OBFUSCATION = 1,
 	}
 	
 	/// <summary>
 	/// Contains the default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlotDefaultValueSpec
 	{
 		
@@ -443,8 +419,7 @@ namespace MyNS
 	/// <summary>
 	/// A default value for a slot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlotDefaultValue
 	{
 		
@@ -459,8 +434,7 @@ namespace MyNS
 	/// <summary>
 	/// A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FollowUpPrompt
 	{
 		
@@ -482,8 +456,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeHook
 	{
 		
@@ -505,8 +478,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FulfillmentActivity
 	{
 		
@@ -521,24 +493,21 @@ namespace MyNS
 		public CodeHook CodeHook { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FulfillmentActivityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReturnIntent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReturnIntent = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CodeHook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CodeHook = 1,
 	}
 	
 	/// <summary>
 	/// Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html"> AMAZON.KendraSearchIntent</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KendraConfiguration
 	{
 		
@@ -563,8 +532,7 @@ namespace MyNS
 	/// <summary>
 	/// The name of a context that must be active for an intent to be selected by Amazon Lex.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputContext
 	{
 		
@@ -579,8 +547,7 @@ namespace MyNS
 	/// <summary>
 	/// The specification of an output context that is set when an intent is fulfilled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputContext
 	{
 		
@@ -606,8 +573,7 @@ namespace MyNS
 		public int TurnsToLive { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSlotTypeVersionResponse
 	{
 		
@@ -645,8 +611,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Each slot type can have a set of values. Each enumeration value represents a value the slot type can take. </p> <p>For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values </p> <ul> <li> <p>thick</p> </li> <li> <p>thin</p> </li> <li> <p>stuffed</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnumerationValue
 	{
 		
@@ -661,24 +626,21 @@ namespace MyNS
 		public string[] Synonyms { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SlotValueSelectionStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORIGINAL_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORIGINAL_VALUE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP_RESOLUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP_RESOLUTION = 1,
 	}
 	
 	/// <summary>
 	/// Provides configuration information for a slot type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlotTypeConfiguration
 	{
 		
@@ -689,8 +651,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a regular expression used to validate the value of a slot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlotTypeRegexConfiguration
 	{
 		
@@ -702,14 +663,12 @@ namespace MyNS
 		public string Pattern { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotResponse
 	{
 		
@@ -768,8 +727,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DetectSentiment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotAliasResponse
 	{
 		
@@ -801,8 +759,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about conversation log settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConversationLogsResponse
 	{
 		
@@ -816,8 +773,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for conversation logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogSettingsResponse
 	{
 		
@@ -837,34 +793,29 @@ namespace MyNS
 		public string ResourcePrefix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LogType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Destination
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUDWATCH_LOGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUDWATCH_LOGS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotAliasesResponse
 	{
 		
@@ -878,8 +829,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a bot alias.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BotAliasMetadata
 	{
 		
@@ -908,8 +858,7 @@ namespace MyNS
 		public ConversationLogsResponse ConversationLogs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotChannelAssociationResponse
 	{
 		
@@ -941,49 +890,43 @@ namespace MyNS
 		public string FailureReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Facebook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Facebook = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Slack")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Slack = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Twilio-Sms")]
 		TwilioMinusSms = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kik")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kik = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChannelConfigurationMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotChannelAssociationsResponse
 	{
 		
@@ -997,8 +940,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an association between an Amazon Lex bot and an external messaging platform.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BotChannelAssociation
 	{
 		
@@ -1030,8 +972,7 @@ namespace MyNS
 		public string FailureReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotVersionsResponse
 	{
 		
@@ -1045,8 +986,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a bot. .
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BotMetadata
 	{
 		
@@ -1069,8 +1009,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotsResponse
 	{
 		
@@ -1081,8 +1020,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBuiltinIntentResponse
 	{
 		
@@ -1099,8 +1037,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a slot used in a built-in intent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuiltinIntentSlot
 	{
 		
@@ -1108,8 +1045,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBuiltinIntentsResponse
 	{
 		
@@ -1123,8 +1059,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides metadata for a built-in intent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuiltinIntentMetadata
 	{
 		
@@ -1135,8 +1070,7 @@ namespace MyNS
 		public Locale[] SupportedLocales { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBuiltinSlotTypesResponse
 	{
 		
@@ -1150,8 +1084,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a built in slot type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuiltinSlotTypeMetadata
 	{
 		
@@ -1162,8 +1095,7 @@ namespace MyNS
 		public Locale[] SupportedLocales { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExportResponse
 	{
 		
@@ -1189,53 +1121,46 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SLOT_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SLOT_TYPE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALEXA_SKILLS_KIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALEXA_SKILLS_KIT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEX = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImportResponse
 	{
 		
@@ -1261,37 +1186,32 @@ namespace MyNS
 		public System.DateTimeOffset CreatedDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MergeStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVERWRITE_LATEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVERWRITE_LATEST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAIL_ON_CONFLICT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAIL_ON_CONFLICT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImportStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntentResponse
 	{
 		
@@ -1350,8 +1270,7 @@ namespace MyNS
 		public OutputContext[] OutputContexts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntentVersionsResponse
 	{
 		
@@ -1365,8 +1284,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about an intent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntentMetadata
 	{
 		
@@ -1386,8 +1304,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntentsResponse
 	{
 		
@@ -1398,8 +1315,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMigrationResponse
 	{
 		
@@ -1434,40 +1350,35 @@ namespace MyNS
 		public MigrationAlert[] Alerts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MigrationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MigrationStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_NEW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_EXISTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_EXISTING = 1,
 	}
 	
 	/// <summary>
 	/// Provides information about alerts and warnings that Amazon Lex sends during a migration. The alerts include information about how to resolve the issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MigrationAlert
 	{
 		
@@ -1484,21 +1395,18 @@ namespace MyNS
 		public string[] ReferenceURLs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MigrationAlertType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARN = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMigrationsResponse
 	{
 		
@@ -1512,8 +1420,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about migrating a bot from Amazon Lex V1 to Amazon Lex V2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MigrationSummary
 	{
 		
@@ -1545,8 +1452,7 @@ namespace MyNS
 		public System.DateTimeOffset MigrationTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSlotTypeResponse
 	{
 		
@@ -1581,8 +1487,7 @@ namespace MyNS
 		public SlotTypeConfiguration[] SlotTypeConfigurations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSlotTypeVersionsResponse
 	{
 		
@@ -1596,8 +1501,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a slot type..
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlotTypeMetadata
 	{
 		
@@ -1617,8 +1521,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSlotTypesResponse
 	{
 		
@@ -1629,8 +1532,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUtterancesViewResponse
 	{
 		
@@ -1644,8 +1546,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UtteranceList
 	{
 		
@@ -1659,8 +1560,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a single utterance that was made to your bot. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UtteranceData
 	{
 		
@@ -1680,8 +1580,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUtteredDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -1692,8 +1591,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of key/value pairs that identify a bot, bot alias, or bot channel. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1712,8 +1610,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutBotResponse
 	{
 		
@@ -1778,8 +1675,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutBotAliasResponse
 	{
 		
@@ -1814,8 +1710,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings used to configure delivery mode and destination for conversation logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogSettingsRequest
 	{
 		
@@ -1844,8 +1739,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutIntentResponse
 	{
 		
@@ -1907,8 +1801,7 @@ namespace MyNS
 		public OutputContext[] OutputContexts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSlotTypeResponse
 	{
 		
@@ -1946,8 +1839,7 @@ namespace MyNS
 		public SlotTypeConfiguration[] SlotTypeConfigurations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartImportResponse
 	{
 		
@@ -1973,8 +1865,7 @@ namespace MyNS
 		public System.DateTimeOffset CreatedDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMigrationResponse
 	{
 		
@@ -2003,20 +1894,17 @@ namespace MyNS
 		public System.DateTimeOffset MigrationTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
@@ -2024,8 +1912,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the settings needed for conversation logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConversationLogsRequest
 	{
 		
@@ -2044,8 +1931,7 @@ namespace MyNS
 		public string IamRoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBotVersionRequest
 	{
 		
@@ -2053,8 +1939,7 @@ namespace MyNS
 		public string Checksum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIntentVersionRequest
 	{
 		
@@ -2062,8 +1947,7 @@ namespace MyNS
 		public string Checksum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSlotTypeVersionRequest
 	{
 		
@@ -2071,246 +1955,206 @@ namespace MyNS
 		public string Checksum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBotAliasRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBotChannelAssociationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBotRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBotVersionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIntentRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIntentVersionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSlotTypeRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSlotTypeVersionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteUtterancesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotAliasRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotAliasesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotChannelAssociationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotChannelAssociationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotVersionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBotsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBuiltinIntentRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBuiltinIntentsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBuiltinSlotTypesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExportRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImportRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntentRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntentVersionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntentsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMigrationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MigrationSortAttribute
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V1_BOT_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V1_BOT_NAME = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATION_DATE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATION_DATE_TIME = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMigrationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSlotTypeRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSlotTypeVersionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSlotTypesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Detected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Detected = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Missed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Missed = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUtterancesViewRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProcessBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUILD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUILD = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutBotAliasRequest
 	{
 		
@@ -2334,8 +2178,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutBotRequest
 	{
 		
@@ -2393,8 +2236,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutIntentRequest
 	{
 		
@@ -2444,8 +2286,7 @@ namespace MyNS
 		public OutputContext[] OutputContexts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSlotTypeRequest
 	{
 		
@@ -2471,8 +2312,7 @@ namespace MyNS
 		public SlotTypeConfiguration[] SlotTypeConfigurations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartImportRequest
 	{
 		
@@ -2501,8 +2341,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMigrationRequest
 	{
 		
@@ -2542,8 +2381,7 @@ namespace MyNS
 		public MigrationStrategy MigrationStrategy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -2555,8 +2393,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -4460,7 +4297,7 @@ namespace MyNS
 	public enum GetUtterancesViewView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aggregation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aggregation = 0,
 	}
 	
@@ -4615,9 +4452,7 @@ namespace MyNS
 		public string ResponseCard { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PutBotPutBodyLocale
 	{
 		

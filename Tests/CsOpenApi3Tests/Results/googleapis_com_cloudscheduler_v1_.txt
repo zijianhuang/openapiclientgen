@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// App Engine target. The job will be pushed to a job handler by means of an HTTP request via an http_method such as HTTP POST, HTTP GET, etc. The job is acknowledged by means of an HTTP response code in the range [200 - 299]. Error 503 is considered an App Engine system error instead of an application error. Requests returning error 503 will be retried regardless of retry configuration and not counted against retry counts. Any other response code, or a failure to receive a response before the deadline, constitutes a failed attempt.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppEngineHttpTarget
 	{
 		
@@ -59,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// App Engine Routing. For more information about services, versions, and instances see [An Overview of App Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine), [Microservices Architecture on Google App Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine), [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed), and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppEngineRouting
 	{
 		
@@ -89,42 +87,39 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppEngineHttpTargetHttpMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP_METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP_METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEAD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATCH = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIONS = 7,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -132,8 +127,7 @@ namespace MyNS
 	/// <summary>
 	/// Http target. The job will be pushed to the job handler by means of an HTTP request via an http_method such as HTTP POST, HTTP GET, etc. The job is acknowledged by means of an HTTP response code in the range [200 - 299]. A failure to receive a response constitutes a failed execution. For a redirected request, the response returned by the redirected request is considered.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpTarget
 	{
 		
@@ -177,8 +171,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information needed for generating an [OAuth token](https://developers.google.com/identity/protocols/OAuth2). This type of authorization should generally only be used when calling Google APIs hosted on *.googleapis.com.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OAuthToken
 	{
 		
@@ -198,8 +191,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information needed for generating an [OpenID Connect token](https://developers.google.com/identity/protocols/OpenIDConnect). This type of authorization can be used for many scenarios, including calling Cloud Run, or endpoints where you intend to validate the token yourself.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OidcToken
 	{
 		
@@ -219,8 +211,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a job. The maximum allowed size for a job is 1MB.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Job
 	{
 		
@@ -312,8 +303,7 @@ namespace MyNS
 	/// <summary>
 	/// Pub/Sub target. The job will be delivered by publishing a message to the given Pub/Sub topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PubsubTarget
 	{
 		
@@ -339,8 +329,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings that determine the retry behavior. By default, if a job does not complete successfully (meaning that an acknowledgement is not received from the handler, then it will be retried with exponential backoff according to the settings in RetryConfig.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetryConfig
 	{
 		
@@ -375,33 +364,30 @@ namespace MyNS
 		public System.Nullable<System.Int32> RetryCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 4,
 	}
 	
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -427,8 +413,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing jobs using ListJobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsResponse
 	{
 		
@@ -448,8 +433,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -469,8 +453,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -508,8 +491,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for PauseJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PauseJobRequest
 	{
 	}
@@ -517,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// A message that is published by publishers and consumed by subscribers. The message must contain either a non-empty data field or at least one attribute. Note that client libraries represent this object differently depending on the language. See the corresponding [client library documentation](https://cloud.google.com/pubsub/docs/reference/libraries) for more information. See [quotas and limits] (https://cloud.google.com/pubsub/quotas) for more information about message limits.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PubsubMessage
 	{
 		
@@ -556,8 +537,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ResumeJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResumeJobRequest
 	{
 	}
@@ -565,8 +545,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for forcing a job to run now using RunJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunJobRequest
 	{
 	}

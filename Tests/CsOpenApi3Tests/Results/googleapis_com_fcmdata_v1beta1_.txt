@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Message delivery data for a given date, app, and analytics label combination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseFcmDataV1beta1AndroidDeliveryData
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Data detailing messaging delivery
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseFcmDataV1beta1Data
 	{
 		
@@ -86,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// Overview of delivery performance for messages that were successfully delivered. All percentages are calculated with countMessagesAccepted as the denominator. These categories are not mutually exclusive; a message can be delayed for multiple reasons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseFcmDataV1beta1DeliveryPerformancePercents
 	{
 		
@@ -125,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information about message delivery. All percentages are calculated with countMessagesAccepted as the denominator.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseFcmDataV1beta1MessageInsightPercents
 	{
 		
@@ -140,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// Percentage breakdown of message delivery outcomes. These categories are mutually exclusive. All percentages are calculated with countMessagesAccepted as the denominator. These categories may not account for all message outcomes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseFcmDataV1beta1MessageOutcomePercents
 	{
 		
@@ -179,8 +174,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDate
 	{
 		
@@ -206,8 +200,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListAndroidDeliveryData.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseFcmDataV1beta1ListAndroidDeliveryDataResponse
 	{
 		

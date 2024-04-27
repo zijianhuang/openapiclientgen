@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A light reference to an audit by id, used to group and weight audits in a given category.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditRefs
 	{
 		
@@ -59,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// A proportion of data in the total distribution, bucketed by a min/max percentage. Each bucket's range is bounded by min <= x < max, In millisecond.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bucket
 	{
 		
@@ -86,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// The categories in a Lighthouse run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Categories
 	{
 		
@@ -125,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// A Lighthouse category.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LighthouseCategoryV5
 	{
 		
@@ -170,8 +166,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing a category
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryGroupV5
 	{
 		
@@ -191,8 +186,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing the configuration settings for the Lighthouse run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigSettings
 	{
 		
@@ -230,8 +224,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing environment configuration for a Lighthouse run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Environment
 	{
 		
@@ -263,8 +256,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing the i18n data for the LHR - Version 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class I18n
 	{
 		
@@ -278,8 +270,7 @@ namespace MyNS
 	/// <summary>
 	/// Message holding the formatted strings used in the renderer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RendererFormattedStrings
 	{
 		
@@ -575,8 +566,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing an Entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LhrEntity
 	{
 		
@@ -620,8 +610,7 @@ namespace MyNS
 	/// <summary>
 	/// An audit's result object in a Lighthouse result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LighthouseAuditResultV5
 	{
 		
@@ -701,8 +690,7 @@ namespace MyNS
 	/// <summary>
 	/// The Lighthouse result object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LighthouseResultV5
 	{
 		
@@ -824,8 +812,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing a runtime error config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuntimeError
 	{
 		
@@ -845,8 +832,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing Stack Pack information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StackPack
 	{
 		
@@ -878,8 +864,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing the performance timing data for the Lighthouse run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timing
 	{
 		
@@ -893,8 +878,7 @@ namespace MyNS
 	/// <summary>
 	/// The CrUX loading experience object that contains CrUX data breakdowns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PagespeedApiLoadingExperienceV5
 	{
 		
@@ -932,8 +916,7 @@ namespace MyNS
 	/// <summary>
 	/// A CrUX metric object for a single metric and form factor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserPageLoadMetricV5
 	{
 		
@@ -977,8 +960,7 @@ namespace MyNS
 	/// <summary>
 	/// The Pagespeed API response object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PagespeedApiPagespeedResponseV5
 	{
 		
@@ -1034,8 +1016,7 @@ namespace MyNS
 	/// <summary>
 	/// The Pagespeed Version object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PagespeedVersion
 	{
 		
@@ -1115,13 +1096,13 @@ namespace MyNS
 	public enum Pagespeedonline_pagespeedapi_runpagespeedStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRATEGY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRATEGY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESKTOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE = 2,
 	}
 }

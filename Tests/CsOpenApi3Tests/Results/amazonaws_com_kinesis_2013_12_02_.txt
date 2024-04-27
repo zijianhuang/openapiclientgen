@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <code>AddTagsToStream</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsToStreamInput
 	{
 		
@@ -39,38 +38,32 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArgumentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
@@ -78,8 +71,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <code>CreateStream</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStreamInput
 	{
 		
@@ -100,8 +92,7 @@ namespace MyNS
 	/// <summary>
 	///  Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamModeDetails
 	{
 		
@@ -113,24 +104,21 @@ namespace MyNS
 		public StreamMode StreamMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StreamMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON_DEMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON_DEMAND = 1,
 	}
 	
 	/// <summary>
 	/// Represents the input for <a>DecreaseStreamRetentionPeriod</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DecreaseStreamRetentionPeriodInput
 	{
 		
@@ -151,8 +139,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <a>DeleteStream</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStreamInput
 	{
 		
@@ -166,8 +153,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterStreamConsumerInput
 	{
 		
@@ -181,8 +167,7 @@ namespace MyNS
 		public string ConsumerARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLimitsOutput
 	{
 		
@@ -215,8 +200,7 @@ namespace MyNS
 		public int OnDemandStreamCountLimit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLimitsInput
 	{
 	}
@@ -224,8 +208,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <code>DescribeStream</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamOutput
 	{
 		
@@ -240,8 +223,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <a>DescribeStream</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamDescription
 	{
 		
@@ -311,30 +293,27 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StreamStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 3,
 	}
 	
 	/// <summary>
 	/// A uniquely identified group of data records in a Kinesis data stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shard
 	{
 		
@@ -369,8 +348,7 @@ namespace MyNS
 	/// <summary>
 	/// The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HashKeyRange
 	{
 		
@@ -392,8 +370,7 @@ namespace MyNS
 	/// <summary>
 	/// The range of possible sequence numbers for the shard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SequenceNumberRange
 	{
 		
@@ -411,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents enhanced metrics types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnhancedMetrics
 	{
 		
@@ -420,55 +396,50 @@ namespace MyNS
 		public MetricsName[] ShardLevelMetrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricsName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IncomingBytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IncomingBytes = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IncomingRecords")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IncomingRecords = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OutgoingBytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OutgoingBytes = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OutgoingRecords")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OutgoingRecords = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WriteProvisionedThroughputExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WriteProvisionedThroughputExceeded = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReadProvisionedThroughputExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReadProvisionedThroughputExceeded = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IteratorAgeMilliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IteratorAgeMilliseconds = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS = 1,
 	}
 	
 	/// <summary>
 	/// Represents the input for <code>DescribeStream</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamInput
 	{
 		
@@ -485,8 +456,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamConsumerOutput
 	{
 		
@@ -501,8 +471,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the details of a registered consumer. This type of object is returned by <a>DescribeStreamConsumer</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConsumerDescription
 	{
 		
@@ -542,24 +511,21 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConsumerStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamConsumerInput
 	{
 		
@@ -573,8 +539,7 @@ namespace MyNS
 		public string ConsumerARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamSummaryOutput
 	{
 		
@@ -589,8 +554,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <a>DescribeStreamSummary</a> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamDescriptionSummary
 	{
 		
@@ -656,8 +620,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ConsumerCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamSummaryInput
 	{
 		
@@ -671,8 +634,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <a>EnableEnhancedMonitoring</a> and <a>DisableEnhancedMonitoring</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnhancedMonitoringOutput
 	{
 		
@@ -692,8 +654,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <a>DisableEnhancedMonitoring</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableEnhancedMonitoringInput
 	{
 		
@@ -714,8 +675,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <a>EnableEnhancedMonitoring</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableEnhancedMonitoringInput
 	{
 		
@@ -736,8 +696,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <a>GetRecords</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecordsOutput
 	{
 		
@@ -761,8 +720,7 @@ namespace MyNS
 	/// <summary>
 	/// The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Record
 	{
 		
@@ -797,8 +755,7 @@ namespace MyNS
 	/// <summary>
 	/// Output parameter of the GetRecords API. The existing child shard of the current shard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChildShard
 	{
 		
@@ -828,8 +785,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <a>GetRecords</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecordsInput
 	{
 		
@@ -847,50 +803,42 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisionedThroughputExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiredIteratorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSDisabledException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSInvalidStateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSAccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSOptInRequired
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSThrottlingException
 	{
 	}
@@ -898,8 +846,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <code>GetShardIterator</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetShardIteratorOutput
 	{
 		
@@ -910,8 +857,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <code>GetShardIterator</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetShardIteratorInput
 	{
 		
@@ -942,33 +888,30 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShardIteratorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AT_SEQUENCE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AT_SEQUENCE_NUMBER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFTER_SEQUENCE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AFTER_SEQUENCE_NUMBER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIM_HORIZON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIM_HORIZON = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATEST = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AT_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AT_TIMESTAMP = 4,
 	}
 	
 	/// <summary>
 	/// Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncreaseStreamRetentionPeriodInput
 	{
 		
@@ -986,8 +929,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListShardsOutput
 	{
 		
@@ -998,8 +940,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListShardsInput
 	{
 		
@@ -1028,8 +969,7 @@ namespace MyNS
 	/// <summary>
 	/// The request parameter used to filter out the response of the <code>ListShards</code> API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShardFilter
 	{
 		
@@ -1047,39 +987,35 @@ namespace MyNS
 		public System.DateTimeOffset Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShardFilterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFTER_SHARD_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AFTER_SHARD_ID = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AT_TRIM_HORIZON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AT_TRIM_HORIZON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FROM_TRIM_HORIZON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FROM_TRIM_HORIZON = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AT_LATEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AT_LATEST = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AT_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AT_TIMESTAMP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FROM_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FROM_TIMESTAMP = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiredNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStreamConsumersOutput
 	{
 		
@@ -1093,8 +1029,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the details of the consumer you registered. This type of object is returned by <a>RegisterStreamConsumer</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Consumer
 	{
 		
@@ -1127,8 +1062,7 @@ namespace MyNS
 		public System.DateTimeOffset ConsumerCreationTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStreamConsumersInput
 	{
 		
@@ -1152,8 +1086,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <code>ListStreams</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStreamsOutput
 	{
 		
@@ -1181,8 +1114,7 @@ namespace MyNS
 	/// <summary>
 	/// The summary of a stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamSummary
 	{
 		
@@ -1220,8 +1152,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <code>ListStreams</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStreamsInput
 	{
 		
@@ -1238,8 +1169,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <code>ListTagsForStream</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForStreamOutput
 	{
 		
@@ -1261,8 +1191,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata assigned to the stream, consisting of a key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1280,8 +1209,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <code>ListTagsForStream</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForStreamInput
 	{
 		
@@ -1301,8 +1229,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <code>MergeShards</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MergeShardsInput
 	{
 		
@@ -1327,8 +1254,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
@@ -1336,8 +1262,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <code>PutRecord</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordOutput
 	{
 		
@@ -1362,8 +1287,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <code>PutRecord</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordInput
 	{
 		
@@ -1397,8 +1321,7 @@ namespace MyNS
 	/// <summary>
 	///  <code>PutRecords</code> results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordsOutput
 	{
 		
@@ -1419,8 +1342,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordsResultEntry
 	{
 		
@@ -1440,8 +1362,7 @@ namespace MyNS
 	/// <summary>
 	/// A <code>PutRecords</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordsInput
 	{
 		
@@ -1462,8 +1383,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output for <code>PutRecords</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordsRequestEntry
 	{
 		
@@ -1485,8 +1405,7 @@ namespace MyNS
 		public string PartitionKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterStreamConsumerOutput
 	{
 		
@@ -1498,8 +1417,7 @@ namespace MyNS
 		public Consumer Consumer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterStreamConsumerInput
 	{
 		
@@ -1521,8 +1439,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <code>RemoveTagsFromStream</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsFromStreamInput
 	{
 		
@@ -1543,8 +1460,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input for <code>SplitShard</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SplitShardInput
 	{
 		
@@ -1569,8 +1485,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartStreamEncryptionInput
 	{
 		
@@ -1595,8 +1510,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopStreamEncryptionInput
 	{
 		
@@ -1621,8 +1535,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateShardCountOutput
 	{
 		
@@ -1639,8 +1552,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateShardCountInput
 	{
 		
@@ -1665,18 +1577,15 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIFORM_SCALING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIFORM_SCALING = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStreamModeInput
 	{
 		

@@ -17,38 +17,32 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSolFunctionPackageOutput
 	{
 		
@@ -91,62 +85,53 @@ namespace MyNS
 		public UsageState UsageState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OnboardingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationalState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UsageState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_USE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN_USE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSolNetworkInstanceOutput
 	{
 		
@@ -182,8 +167,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSolNetworkPackageOutput
 	{
 		
@@ -226,8 +210,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionInstanceOutput
 	{
 		
@@ -303,8 +286,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information about the network function.</p> <p>A network function instance is a function in a function package .</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolVnfInfo
 	{
 		
@@ -315,24 +297,21 @@ namespace MyNS
 		public GetSolVnfcResourceInfo[] VnfcResourceInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VnfOperationalState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 1,
 	}
 	
 	/// <summary>
 	/// <p>Details of resource associated with a network function.</p> <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolVnfcResourceInfo
 	{
 		
@@ -343,8 +322,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The metadata of a network function.</p> <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolVnfcResourceInfoMetadata
 	{
 		
@@ -358,24 +336,21 @@ namespace MyNS
 		public string NodeGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VnfInstantiationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANTIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANTIATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_INSTANTIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_INSTANTIATED = 1,
 	}
 	
 	/// <summary>
 	/// <p>The metadata of a network function instance.</p> <p>A network function instance is a function in a function package .</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionInstanceMetadata
 	{
 		
@@ -394,8 +369,7 @@ namespace MyNS
 		public System.DateTimeOffset LastModified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionPackageOutput
 	{
 		
@@ -459,8 +433,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Metadata related to the function package.</p> <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionPackageMetadata
 	{
 		
@@ -485,8 +458,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Metadata for function package artifacts.</p> <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FunctionArtifactMeta
 	{
 		
@@ -497,8 +469,7 @@ namespace MyNS
 	/// <summary>
 	/// Overrides of the TOSCA node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ToscaOverride
 	{
 		
@@ -509,8 +480,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionPackageContentOutput
 	{
 		
@@ -518,8 +488,7 @@ namespace MyNS
 		public string PackageContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionPackageDescriptorOutput
 	{
 		
@@ -527,8 +496,7 @@ namespace MyNS
 		public string Vnfd { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkInstanceOutput
 	{
 		
@@ -598,8 +566,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Lifecycle management operation details on the network instance.</p> <p>Lifecycle management operations are deploy, update, or delete operations.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LcmOperationInfo
 	{
 		
@@ -614,8 +581,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The metadata of a network instance.</p> <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkInstanceMetadata
 	{
 		
@@ -634,39 +600,36 @@ namespace MyNS
 		public System.DateTimeOffset LastModified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NsState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANTIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANTIATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_INSTANTIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_INSTANTIATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPAIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPAIRED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANTIATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANTIATE_IN_PROGRESS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_IN_PROGRESS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE_IN_PROGRESS = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkOperationOutput
 	{
 		
@@ -705,8 +668,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to problems with AWS TNB resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProblemDetails
 	{
 		
@@ -721,27 +683,24 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LcmOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANTIATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANTIATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE = 2,
 	}
 	
 	/// <summary>
 	/// <p>Metadata related to a network operation occurrence.</p> <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkOperationMetadata
 	{
 		
@@ -760,33 +719,30 @@ namespace MyNS
 		public System.DateTimeOffset LastModified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NsLcmOperationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 	}
 	
 	/// <summary>
 	/// <p>Gets the details of a network operation.</p> <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkOperationTaskDetails
 	{
 		
@@ -809,8 +765,7 @@ namespace MyNS
 		public TaskStatus TaskStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StringMap
 	{
 	}
@@ -818,8 +773,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides error information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorInfo
 	{
 		
@@ -830,36 +784,33 @@ namespace MyNS
 		public string Details { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TaskStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEDULED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIPPED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkPackageOutput
 	{
 		
@@ -941,8 +892,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Metadata associated with a network package.</p> <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkPackageMetadata
 	{
 		
@@ -967,8 +917,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Metadata for network package artifacts.</p> <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkArtifactMeta
 	{
 		
@@ -976,8 +925,7 @@ namespace MyNS
 		public ToscaOverride[] Overrides { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkPackageContentOutput
 	{
 		
@@ -985,8 +933,7 @@ namespace MyNS
 		public string NsdContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkPackageDescriptorOutput
 	{
 		
@@ -994,8 +941,7 @@ namespace MyNS
 		public string Nsd { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstantiateSolNetworkInstanceOutput
 	{
 		
@@ -1010,8 +956,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolFunctionInstancesOutput
 	{
 		
@@ -1025,8 +970,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Lists information about a network function instance.</p> <p>A network function instance is a function in a function package .</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolFunctionInstanceInfo
 	{
 		
@@ -1085,8 +1029,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information about a network function.</p> <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolInstantiatedVnfInfo
 	{
 		
@@ -1097,8 +1040,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Lists network function instance metadata.</p> <p>A network function instance is a function in a function package .</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolFunctionInstanceMetadata
 	{
 		
@@ -1117,8 +1059,7 @@ namespace MyNS
 		public System.DateTimeOffset LastModified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolFunctionPackagesOutput
 	{
 		
@@ -1136,8 +1077,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information about a function package.</p> <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolFunctionPackageInfo
 	{
 		
@@ -1195,8 +1135,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Details for the function package metadata.</p> <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolFunctionPackageMetadata
 	{
 		
@@ -1215,8 +1154,7 @@ namespace MyNS
 		public System.DateTimeOffset LastModified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkInstancesOutput
 	{
 		
@@ -1230,8 +1168,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Info about the specific network instance.</p> <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkInstanceInfo
 	{
 		
@@ -1295,8 +1232,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Metadata details for a network instance.</p> <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkInstanceMetadata
 	{
 		
@@ -1315,8 +1251,7 @@ namespace MyNS
 		public System.DateTimeOffset LastModified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkOperationsOutput
 	{
 		
@@ -1330,8 +1265,7 @@ namespace MyNS
 	/// <summary>
 	/// Information parameters for a network operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkOperationsInfo
 	{
 		
@@ -1380,8 +1314,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Metadata related to a network operation.</p> <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkOperationsMetadata
 	{
 		
@@ -1400,8 +1333,7 @@ namespace MyNS
 		public System.DateTimeOffset LastModified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkPackagesOutput
 	{
 		
@@ -1419,8 +1351,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Details of a network package.</p> <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkPackageInfo
 	{
 		
@@ -1488,8 +1419,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Metadata related to a network package.</p> <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkPackageMetadata
 	{
 		
@@ -1508,8 +1438,7 @@ namespace MyNS
 		public System.DateTimeOffset LastModified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceOutput
 	{
 		
@@ -1521,8 +1450,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSolFunctionPackageContentOutput
 	{
 		
@@ -1572,8 +1500,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Update metadata in a function package.</p> <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSolFunctionPackageContentMetadata
 	{
 		
@@ -1584,8 +1511,7 @@ namespace MyNS
 		public FunctionArtifactMeta Vnfd { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSolNetworkPackageContentOutput
 	{
 		
@@ -1642,8 +1568,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Update metadata in a network package.</p> <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSolNetworkPackageContentMetadata
 	{
 		
@@ -1654,14 +1579,12 @@ namespace MyNS
 		public NetworkArtifactMeta Nsd { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TerminateSolNetworkInstanceOutput
 	{
 		
@@ -1672,14 +1595,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSolFunctionPackageOutput
 	{
 		
@@ -1691,8 +1612,7 @@ namespace MyNS
 		public OperationalState OperationalState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSolNetworkInstanceOutput
 	{
 		
@@ -1703,14 +1623,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Document
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSolNetworkPackageOutput
 	{
 		
@@ -1722,8 +1640,7 @@ namespace MyNS
 		public OperationalState NsdOperationalState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateSolFunctionPackageContentOutput
 	{
 		
@@ -1773,8 +1690,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Validates function package content metadata.</p> <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateSolFunctionPackageContentMetadata
 	{
 		
@@ -1785,8 +1701,7 @@ namespace MyNS
 		public FunctionArtifactMeta Vnfd { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateSolNetworkPackageContentOutput
 	{
 		
@@ -1843,8 +1758,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Validates network package content metadata.</p> <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateSolNetworkPackageContentMetadata
 	{
 		
@@ -1855,14 +1769,12 @@ namespace MyNS
 		public NetworkArtifactMeta Nsd { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelSolNetworkOperationInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSolFunctionPackageInput
 	{
 		
@@ -1870,8 +1782,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSolNetworkInstanceInput
 	{
 		
@@ -1896,8 +1807,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSolNetworkPackageInput
 	{
 		
@@ -1905,69 +1815,58 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NsdOnboardingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NsdOperationalState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NsdUsageState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_USE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN_USE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSolFunctionPackageInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSolNetworkInstanceInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSolNetworkPackageInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DescriptorContentType
 	{
 		
@@ -1975,15 +1874,12 @@ namespace MyNS
 		text_plain = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionInstanceInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PackageContentType
 	{
 		
@@ -1991,56 +1887,47 @@ namespace MyNS
 		application_zip = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionPackageContentInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionPackageDescriptorInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolFunctionPackageInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkInstanceInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkOperationInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkPackageContentInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkPackageDescriptorInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSolNetworkPackageInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstantiateSolNetworkInstanceInput
 	{
 		
@@ -2051,44 +1938,37 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolFunctionInstancesInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolFunctionPackagesInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkInstancesInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkOperationsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSolNetworkPackagesInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSolFunctionPackageContentInput
 	{
 		
@@ -2100,8 +1980,7 @@ namespace MyNS
 		public string File { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSolNetworkPackageContentInput
 	{
 		
@@ -2113,8 +1992,7 @@ namespace MyNS
 		public string File { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceInput
 	{
 		
@@ -2126,8 +2004,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TerminateSolNetworkInstanceInput
 	{
 		
@@ -2135,14 +2012,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSolFunctionPackageInput
 	{
 		
@@ -2157,8 +2032,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information parameters and/or the configurable properties for a network function.</p> <p>A network function instance is a function in a function package .</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSolNetworkModify
 	{
 		
@@ -2177,18 +2051,15 @@ namespace MyNS
 		public string VnfInstanceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateSolNetworkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODIFY_VNF_INFORMATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODIFY_VNF_INFORMATION = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSolNetworkInstanceInput
 	{
 		
@@ -2206,8 +2077,7 @@ namespace MyNS
 		public UpdateSolNetworkType UpdateType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSolNetworkPackageInput
 	{
 		
@@ -2219,8 +2089,7 @@ namespace MyNS
 		public OperationalState NsdOperationalState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateSolFunctionPackageContentInput
 	{
 		
@@ -2232,8 +2101,7 @@ namespace MyNS
 		public string File { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateSolNetworkPackageContentInput
 	{
 		

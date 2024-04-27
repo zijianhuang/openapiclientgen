@@ -40,25 +40,25 @@ namespace MyNS
 	public enum ConvertAPIFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="swagger10")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		swagger10 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="swagger20")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		swagger20 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="swaggeryaml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		swaggeryaml = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="apiblueprint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		apiblueprint = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wadl2009")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wadl2009 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="raml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		raml = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="apimatic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		apimatic = 6,
 	}
 }

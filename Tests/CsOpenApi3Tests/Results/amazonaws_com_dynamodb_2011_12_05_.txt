@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetItemOutput
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Table names and the respective item attributes from the tables.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetResponseMap
 	{
 	}
@@ -44,14 +42,12 @@ namespace MyNS
 	/// <summary>
 	/// A map of the table name and corresponding items to get by primary key. While requesting items, each table name can be invoked only once per operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetRequestMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetItemInput
 	{
 		
@@ -64,26 +60,22 @@ namespace MyNS
 		public BatchGetRequestMap RequestItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisionedThroughputExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestLimitExceeded
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerError
 	{
 	}
@@ -91,8 +83,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for <code>BatchWriteItem</code> response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteItemOutput
 	{
 		
@@ -103,8 +94,7 @@ namespace MyNS
 		public BatchWriteItemRequestMap UnprocessedItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteResponseMap
 	{
 	}
@@ -112,14 +102,12 @@ namespace MyNS
 	/// <summary>
 	/// <p>A map of table name to list-of-write-requests.</p> <p>Key: The table name corresponding to the list of requests</p> <p>Value: Essentially a list of request items. Each request item could contain either a <code>PutRequest</code> or <code>DeleteRequest</code>. Never both.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteItemRequestMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteItemInput
 	{
 		
@@ -131,14 +119,12 @@ namespace MyNS
 		public BatchWriteItemRequestMap RequestItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTableOutput
 	{
 		
@@ -146,8 +132,7 @@ namespace MyNS
 		public TableDescription TableDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableDescription
 	{
 		
@@ -179,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// The KeySchema identifies the primary key as a one attribute primary key (hash) or a composite two attribute (hash-and-range) primary key. Single attribute primary keys have one index value: a <code>HashKeyElement</code>. A composite hash-and-range primary key contains two attribute values: a <code>HashKeyElement</code> and a <code>RangeKeyElement</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeySchema
 	{
 		
@@ -198,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// <code>KeySchemaElement</code> is the primary key (hash or hash-and-range) structure for the table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeySchemaElement
 	{
 		
@@ -218,43 +201,38 @@ namespace MyNS
 		public ScalarAttributeType AttributeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalarAttributeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="N")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		N = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="B")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		B = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TableDescriptionTableStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisionedThroughputDescription
 	{
 		
@@ -286,8 +264,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> WriteCapacityUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTableInput
 	{
 		
@@ -318,8 +295,7 @@ namespace MyNS
 	/// <summary>
 	/// Provisioned throughput reserves the required read and write resources for your table in terms of <code>ReadCapacityUnits</code> and <code>WriteCapacityUnits</code>. Values for provisioned throughput depend upon your expected read/write rates, item size, and consistency. Provide the expected number of read and write operations, assuming an item size of 1k and strictly consistent reads. For 2k item size, double the value. For 3k, triple the value, etc. Eventually-consistent reads consume half the resources of strictly consistent reads.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisionedThroughput
 	{
 		
@@ -338,14 +314,12 @@ namespace MyNS
 		public int WriteCapacityUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteItemOutput
 	{
 		
@@ -359,14 +333,12 @@ namespace MyNS
 		public System.Nullable<System.Double> ConsumedCapacityUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteItemInput
 	{
 		
@@ -401,8 +373,7 @@ namespace MyNS
 	/// <summary>
 	/// The primary key that uniquely identifies each item in a table. A primary key can be a one attribute (hash) primary key or a two attribute (hash-and-range) primary key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Key
 	{
 		
@@ -420,8 +391,7 @@ namespace MyNS
 	/// <summary>
 	/// AttributeValue can be <code>String</code>, <code>Number</code>, <code>Binary</code>, <code>StringSet</code>, <code>NumberSet</code>, <code>BinarySet</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeValue
 	{
 		
@@ -447,42 +417,37 @@ namespace MyNS
 	/// <summary>
 	/// Designates an attribute for a conditional modification. The <code>Expected</code> parameter allows you to provide an attribute name, and whether or not Amazon DynamoDB should check to see if the attribute has a particular value before modifying it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpectedAttributeMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeleteItemInputReturnValues
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_OLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_OLD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED_OLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED_OLD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_NEW = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED_NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED_NEW = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConditionalCheckFailedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTableOutput
 	{
 		
@@ -490,8 +455,7 @@ namespace MyNS
 		public TableDescription TableDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTableInput
 	{
 		
@@ -503,8 +467,7 @@ namespace MyNS
 		public string TableName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTableOutput
 	{
 		
@@ -512,8 +475,7 @@ namespace MyNS
 		public TableDescription Table { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTableInput
 	{
 		
@@ -525,8 +487,7 @@ namespace MyNS
 		public string TableName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetItemOutput
 	{
 		
@@ -540,8 +501,7 @@ namespace MyNS
 		public System.Nullable<System.Double> ConsumedCapacityUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetItemInput
 	{
 		
@@ -575,8 +535,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ConsistentRead { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTablesOutput
 	{
 		
@@ -587,8 +546,7 @@ namespace MyNS
 		public string LastEvaluatedTableName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTablesInput
 	{
 		
@@ -605,8 +563,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutItemOutput
 	{
 		
@@ -620,8 +577,7 @@ namespace MyNS
 		public System.Nullable<System.Double> ConsumedCapacityUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutItemInput
 	{
 		
@@ -656,14 +612,12 @@ namespace MyNS
 	/// <summary>
 	/// A map of the attributes for the item, and must include the primary key values that define the item. Other attribute name-value pairs can be provided for the item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutItemInputAttributeMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryOutput
 	{
 		
@@ -683,8 +637,7 @@ namespace MyNS
 		public System.Nullable<System.Double> ConsumedCapacityUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryInput
 	{
 		
@@ -732,8 +685,7 @@ namespace MyNS
 		public Key ExclusiveStartKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Condition
 	{
 		
@@ -752,54 +704,51 @@ namespace MyNS
 		public ConditionComparisonOperator ComparisonOperator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConditionComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BETWEEN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_NULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_NULL = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NULL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_CONTAINS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScanOutput
 	{
 		
@@ -822,8 +771,7 @@ namespace MyNS
 		public System.Nullable<System.Double> ConsumedCapacityUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScanInput
 	{
 		
@@ -855,14 +803,12 @@ namespace MyNS
 		public Key ExclusiveStartKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterConditionMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateItemOutput
 	{
 		
@@ -876,8 +822,7 @@ namespace MyNS
 		public System.Nullable<System.Double> ConsumedCapacityUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateItemInput
 	{
 		
@@ -920,14 +865,12 @@ namespace MyNS
 	/// <summary>
 	/// Map of attribute name to the new value and action for the update. The attribute names specify the attributes to modify, and cannot contain any primary key attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeUpdates
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTableOutput
 	{
 		
@@ -935,8 +878,7 @@ namespace MyNS
 		public TableDescription TableDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTableInput
 	{
 		
@@ -959,27 +901,24 @@ namespace MyNS
 	/// <summary>
 	/// The type of action for an item update operation. Only use the add action for numbers or sets; the specified value is added to the existing value. If a set of values is specified, the values are added to the existing set. Adds the specified attribute. If the attribute exists, it is replaced by the new value. If no value is specified, this removes the attribute and its value. If a set of values is specified, then the values in the specified set are removed from the old set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AttributeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 2,
 	}
 	
 	/// <summary>
 	/// Specifies the attribute to update and how to perform the update. Possible values: <code>PUT</code> (default), <code>ADD</code> or <code>DELETE</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeValueUpdate
 	{
 		
@@ -996,8 +935,7 @@ namespace MyNS
 		public AttributeAction Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeysAndAttributes
 	{
 		
@@ -1030,8 +968,7 @@ namespace MyNS
 	/// <summary>
 	/// The item attributes from a response in a specific table, along with the read resources consumed on the table during the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchResponse
 	{
 		
@@ -1048,8 +985,7 @@ namespace MyNS
 	/// <summary>
 	/// This structure is a Union of PutRequest and DeleteRequest. It can contain exactly one of <code>PutRequest</code> or <code>DeleteRequest</code>. Never Both. This is enforced in the code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteRequest
 	{
 		
@@ -1069,8 +1005,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for a Put BatchWrite request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRequest
 	{
 		
@@ -1085,8 +1020,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for a Delete BatchWrite request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRequest
 	{
 		
@@ -1098,8 +1032,7 @@ namespace MyNS
 		public Key Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteResponse
 	{
 		
@@ -1113,82 +1046,77 @@ namespace MyNS
 	/// <summary>
 	/// <p>A comparison operator is an enumeration of several operations:</p> <ul> <li><code>EQ</code> for <em>equal</em>.</li> <li><code>NE</code> for <em>not equal</em>.</li> <li><code>IN</code> checks for exact matches.</li> <li><code>LE</code> for <em>less than or equal to</em>.</li> <li><code>LT</code> for <em>less than</em>.</li> <li><code>GE</code> for <em>greater than or equal to</em>.</li> <li><code>GT</code> for <em>greater than</em>.</li> <li><code>BETWEEN</code> for <em>between</em>.</li> <li><code>NOT_NULL</code> for <em>exists</em>.</li> <li><code>NULL</code> for <em>not exists</em>.</li> <li><code>CONTAINS</code> for substring or value in a set.</li> <li><code>NOT_CONTAINS</code> for absence of a substring or absence of a value in a set.</li> <li><code>BEGINS_WITH</code> for a substring prefix.</li> </ul> <p>Scan operations support all available comparison operators.</p> <p>Query operations support a subset of the available comparison operators: EQ, LE, LT, GE, GT, BETWEEN, and BEGINS_WITH.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BETWEEN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_NULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_NULL = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NULL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_CONTAINS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 12,
 	}
 	
 	/// <summary>
 	/// <p>Use this parameter if you want to get the attribute name-value pairs before or after they are modified. For <code>PUT</code> operations, the possible parameter values are <code>NONE</code> (default) or <code>ALL_OLD</code>. For update operations, the possible parameter values are <code>NONE</code> (default) or <code>ALL_OLD</code>, <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or <code>UPDATED_NEW</code>.</p> <ul> <li><code>NONE</code>: Nothing is returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the item as they were before the operation.</li> <li><code>UPDATED_OLD</code>: Returns the values of the updated attributes, only, as they were before the operation.</li> <li><code>ALL_NEW</code>: Returns all the attributes and their new values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns the values of the updated attributes, only, as they are after the operation.</li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReturnValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_OLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_OLD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED_OLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED_OLD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_NEW = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED_NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED_NEW = 4,
 	}
 	
 	/// <summary>
 	/// Allows you to provide an attribute name, and whether or not Amazon DynamoDB should check to see if the attribute value already exists; or if the attribute value exists and has a particular value before changing it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpectedAttributeValue
 	{
 		
@@ -1199,22 +1127,20 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Exists { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TableStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 3,
 	}
 	

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An instance of a Callback created by an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Callback
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the CancelExecution method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelExecutionRequest
 	{
 	}
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// Error describes why the execution was abnormally terminated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -89,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of stack elements (frames) where an error occurred.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StackTrace
 	{
 		
@@ -104,8 +100,7 @@ namespace MyNS
 	/// <summary>
 	/// A single stack element (frame) where an error occurred.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StackTraceElement
 	{
 		
@@ -131,8 +126,7 @@ namespace MyNS
 	/// <summary>
 	/// Position contains source position information about the stack trace element such as line number, column number and length of the code block in bytes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Position
 	{
 		
@@ -158,8 +152,7 @@ namespace MyNS
 	/// <summary>
 	/// Exception describes why the step entry failed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Exception
 	{
 		
@@ -173,8 +166,7 @@ namespace MyNS
 	/// <summary>
 	/// A running instance of a [Workflow](/workflows/docs/reference/rest/v1/projects.locations.workflows).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Execution
 	{
 		
@@ -257,58 +249,53 @@ namespace MyNS
 		public string WorkflowRevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecutionCallLogLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CALL_LOG_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CALL_LOG_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_ALL_CALLS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_ALL_CALLS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_ERRORS_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_ERRORS_ONLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_NONE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecutionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAVAILABLE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEUED = 6,
 	}
 	
 	/// <summary>
 	/// Describes an error related to the current state of the Execution resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateError
 	{
 		
@@ -325,24 +312,21 @@ namespace MyNS
 		public System.Nullable<StateErrorType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StateErrorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS_ERROR = 1,
 	}
 	
 	/// <summary>
 	/// Represents the current status of this execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -356,8 +340,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a step of the workflow this execution is running.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Step
 	{
 		
@@ -377,8 +360,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ExportData method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportDataResponse
 	{
 		
@@ -392,8 +374,7 @@ namespace MyNS
 	/// <summary>
 	/// RPC response object for the ListCallbacks method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCallbacksResponse
 	{
 		
@@ -413,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ListExecutions method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListExecutionsResponse
 	{
 		
@@ -434,8 +414,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ExecutionHistory.ListStepEntries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStepEntriesResponse
 	{
 		
@@ -461,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// An StepEntry contains debugging information for a step transition in a workflow execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepEntry
 	{
 		
@@ -536,8 +514,7 @@ namespace MyNS
 	/// <summary>
 	/// NavigationInfo describes what steps if any come before or after this step, or what steps are parents or children of this step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NavigationInfo
 	{
 		
@@ -566,30 +543,27 @@ namespace MyNS
 		public string Previous { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StepEntryState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_SUCCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_FAILED = 3,
 	}
 	
 	/// <summary>
 	/// StepEntryMetadata contains metadata information about this step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepEntryMetadata
 	{
 		
@@ -612,103 +586,98 @@ namespace MyNS
 		public string ThreadId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StepEntryMetadataProgressType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRESS_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRESS_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRESS_TYPE_FOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRESS_TYPE_FOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRESS_TYPE_SWITCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRESS_TYPE_SWITCH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRESS_TYPE_RETRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRESS_TYPE_RETRY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRESS_TYPE_PARALLEL_FOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRESS_TYPE_PARALLEL_FOR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRESS_TYPE_PARALLEL_BRANCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRESS_TYPE_PARALLEL_BRANCH = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StepEntryStepType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_ASSIGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_ASSIGN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_STD_LIB_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_STD_LIB_CALL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_CONNECTOR_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_CONNECTOR_CALL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_SUBWORKFLOW_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_SUBWORKFLOW_CALL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_CALL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_SWITCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_SWITCH = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_CONDITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_CONDITION = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_FOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_FOR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_FOR_ITERATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_FOR_ITERATION = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_PARALLEL_FOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_PARALLEL_FOR = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_PARALLEL_BRANCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_PARALLEL_BRANCH = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_PARALLEL_BRANCH_ENTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_PARALLEL_BRANCH_ENTRY = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_TRY_RETRY_EXCEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_TRY_RETRY_EXCEPT = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_TRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_TRY = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_RETRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_RETRY = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_EXCEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_EXCEPT = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_RETURN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_RETURN = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_RAISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_RAISE = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_GOTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_GOTO = 19,
 	}
 	
 	/// <summary>
 	/// A message that is published by publishers and consumed by subscribers. The message must contain either a non-empty data field or at least one attribute. Note that client libraries represent this object differently depending on the language. See the corresponding [client library documentation](https://cloud.google.com/pubsub/docs/reference/libraries) for more information. See [quotas and limits] (https://cloud.google.com/pubsub/quotas) for more information about message limits.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PubsubMessage
 	{
 		
@@ -746,8 +715,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the TriggerPubsubExecution method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TriggerPubsubExecutionRequest
 	{
 		
@@ -1105,13 +1073,13 @@ namespace MyNS
 	public enum Workflowexecutions_projects_locations_workflows_executions_stepEntries_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTION_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTION_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

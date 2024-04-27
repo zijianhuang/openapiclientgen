@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeResponse
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CoursesPage
 	{
 		
@@ -49,8 +47,7 @@ namespace MyNS
 		public int Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__courses__Course
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 		public string Region_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dam
 	{
 		
@@ -99,8 +95,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DamClassAnalysis
 	{
 		
@@ -140,8 +135,7 @@ namespace MyNS
 		public int Total_runners { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__dams__Class
 	{
 		
@@ -209,8 +203,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DamDistanceAnalysis
 	{
 		
@@ -250,8 +243,7 @@ namespace MyNS
 		public int Total_runners { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__dams__Distance
 	{
 		
@@ -340,8 +332,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dams
 	{
 		
@@ -353,8 +344,7 @@ namespace MyNS
 		public Dam[] Search_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Damsire
 	{
 		
@@ -369,8 +359,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DamsireClassAnalysis
 	{
 		
@@ -410,8 +399,7 @@ namespace MyNS
 		public int Total_runners { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__damsires__Class
 	{
 		
@@ -479,8 +467,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DamsireDistanceAnalysis
 	{
 		
@@ -520,8 +507,7 @@ namespace MyNS
 		public int Total_runners { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__damsires__Distance
 	{
 		
@@ -610,8 +596,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Damsires
 	{
 		
@@ -623,8 +608,7 @@ namespace MyNS
 		public Damsire[] Search_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Distances
 	{
 		
@@ -720,8 +704,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimesGoing
 	{
 		
@@ -768,8 +751,7 @@ namespace MyNS
 		public string Time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntriesResponse
 	{
 		
@@ -823,8 +805,7 @@ namespace MyNS
 		public App__models__na_entries__WeatherResponse Weather { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__na_entries__RaceResponse
 	{
 		
@@ -945,8 +926,7 @@ namespace MyNS
 		public string Track_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__na_entries__RaceKeyResponse
 	{
 		
@@ -957,8 +937,7 @@ namespace MyNS
 		public string Race_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RacePoolResponse
 	{
 		
@@ -984,8 +963,7 @@ namespace MyNS
 		public string Race_list { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__na_entries__RunnerResponse
 	{
 		
@@ -1047,8 +1025,7 @@ namespace MyNS
 		public string Weight { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JockeyResponse
 	{
 		
@@ -1071,8 +1048,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrainerResponse
 	{
 		
@@ -1095,8 +1071,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__na_entries__WeatherResponse
 	{
 		
@@ -1116,8 +1091,7 @@ namespace MyNS
 		public string Forecast_weather_description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FractionResponse
 	{
 		
@@ -1140,8 +1114,7 @@ namespace MyNS
 		public TimeDataResponse Winning_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeDataResponse
 	{
 		
@@ -1170,8 +1143,7 @@ namespace MyNS
 		public string Time_in_hundredths { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HTTPValidationError
 	{
 		
@@ -1179,8 +1151,7 @@ namespace MyNS
 		public ValidationError[] Detail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationError
 	{
 		
@@ -1206,8 +1177,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Horse
 	{
 		
@@ -1240,8 +1210,7 @@ namespace MyNS
 		public string Sire_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HorseAges
 	{
 		
@@ -1309,8 +1278,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HorseDistanceTimeAnalysis
 	{
 		
@@ -1392,8 +1360,7 @@ namespace MyNS
 		public int Total_runs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Horses
 	{
 		
@@ -1405,8 +1372,7 @@ namespace MyNS
 		public Horse[] Search_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JockeyCourseAnalysis
 	{
 		
@@ -1446,8 +1412,7 @@ namespace MyNS
 		public int Total_rides { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__jockeys__Course
 	{
 		
@@ -1522,8 +1487,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JockeyDistanceAnalysis
 	{
 		
@@ -1563,8 +1527,7 @@ namespace MyNS
 		public int Total_rides { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__jockeys__Distance
 	{
 		
@@ -1653,8 +1616,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JockeyOwnerAnalysis
 	{
 		
@@ -1694,8 +1656,7 @@ namespace MyNS
 		public int Total_rides { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__jockeys__Owner
 	{
 		
@@ -1770,8 +1731,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JockeyTrainerAnalysis
 	{
 		
@@ -1811,8 +1771,7 @@ namespace MyNS
 		public App__models__jockeys__Trainer[] Trainers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__jockeys__Trainer
 	{
 		
@@ -1887,8 +1846,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Jockeys
 	{
 		
@@ -1900,8 +1858,7 @@ namespace MyNS
 		public App__models__jockeys__Jockey[] Search_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__jockeys__Jockey
 	{
 		
@@ -1916,8 +1873,7 @@ namespace MyNS
 		public string Jockey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MeetResponse
 	{
 		
@@ -1957,8 +1913,7 @@ namespace MyNS
 		public string Track_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MeetsResponse
 	{
 		
@@ -1987,8 +1942,7 @@ namespace MyNS
 		public int Skip { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerCourseAnalysis
 	{
 		
@@ -2028,8 +1982,7 @@ namespace MyNS
 		public int Total_runners { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__owners__Course
 	{
 		
@@ -2104,8 +2057,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerDistanceAnalysis
 	{
 		
@@ -2145,8 +2097,7 @@ namespace MyNS
 		public int Total_runners { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__owners__Distance
 	{
 		
@@ -2235,8 +2186,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerJockeyAnalysis
 	{
 		
@@ -2276,8 +2226,7 @@ namespace MyNS
 		public int Total_runners { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__owners__Jockey
 	{
 		
@@ -2352,8 +2301,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerTrainerAnalysis
 	{
 		
@@ -2393,8 +2341,7 @@ namespace MyNS
 		public App__models__owners__Trainer[] Trainers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__owners__Trainer
 	{
 		
@@ -2469,8 +2416,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Owners
 	{
 		
@@ -2482,8 +2428,7 @@ namespace MyNS
 		public App__models__owners__Owner[] Search_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__owners__Owner
 	{
 		
@@ -2498,8 +2443,7 @@ namespace MyNS
 		public string Owner { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PayoffResponse
 	{
 		
@@ -2531,8 +2475,7 @@ namespace MyNS
 		public string Winning_numbers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Racecard
 	{
 		
@@ -2694,8 +2637,7 @@ namespace MyNS
 		public string Weather { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__racecards__Runner
 	{
 		
@@ -2939,8 +2881,7 @@ namespace MyNS
 		public string Wind_surgery_run { get; set; } = "";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunnerMedical
 	{
 		
@@ -2953,8 +2894,7 @@ namespace MyNS
 		public string Type { get; set; } = "";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunnerPrevOwner
 	{
 		
@@ -2971,8 +2911,7 @@ namespace MyNS
 		public string Owner_id { get; set; } = "";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunnerPrevTrainer
 	{
 		
@@ -2989,8 +2928,7 @@ namespace MyNS
 		public string Trainer_id { get; set; } = "";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunnerQuote
 	{
 		
@@ -3023,8 +2961,7 @@ namespace MyNS
 		public string Race { get; set; } = "";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunnerStableTour
 	{
 		
@@ -3033,8 +2970,7 @@ namespace MyNS
 		public string Quote { get; set; } = "";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunnerTrainer14Days
 	{
 		
@@ -3051,8 +2987,7 @@ namespace MyNS
 		public string Wins { get; set; } = "";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RacecardBasic
 	{
 		
@@ -3168,8 +3103,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunnerBasic
 	{
 		
@@ -3291,8 +3225,7 @@ namespace MyNS
 		public string Trainer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RacecardOdds
 	{
 		
@@ -3458,8 +3391,7 @@ namespace MyNS
 		public string Weather { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunnerOdds
 	{
 		
@@ -3706,8 +3638,7 @@ namespace MyNS
 		public string Wind_surgery_run { get; set; } = "";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RacecardSummary
 	{
 		
@@ -3771,8 +3702,7 @@ namespace MyNS
 		public string Region { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Racecards
 	{
 		
@@ -3791,8 +3721,7 @@ namespace MyNS
 		public Racecard[] Racecards1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RacecardsBasic
 	{
 		
@@ -3811,8 +3740,7 @@ namespace MyNS
 		public RacecardBasic[] Racecards { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RacecardsOdds
 	{
 		
@@ -3831,8 +3759,7 @@ namespace MyNS
 		public RacecardOdds[] Racecards { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RacecardsSummary
 	{
 		
@@ -3851,8 +3778,7 @@ namespace MyNS
 		public RacecardSummary[] Racecard_summaries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Region
 	{
 		
@@ -3871,8 +3797,7 @@ namespace MyNS
 		public string Region_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Result
 	{
 		
@@ -4017,8 +3942,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__result__Runner
 	{
 		
@@ -4251,8 +4175,7 @@ namespace MyNS
 		public string Weight_lbs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResultsPage
 	{
 		
@@ -4288,8 +4211,7 @@ namespace MyNS
 		public int Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResultsResponse
 	{
 		
@@ -4335,8 +4257,7 @@ namespace MyNS
 		public App__models__na_results__WeatherResponse Weather { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__na_results__RaceResponse
 	{
 		
@@ -4440,8 +4361,7 @@ namespace MyNS
 		public WagerTypeResponse[] Wager_types { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__na_results__RaceKeyResponse
 	{
 		
@@ -4452,8 +4372,7 @@ namespace MyNS
 		public string Race_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__na_results__RunnerResponse
 	{
 		
@@ -4506,8 +4425,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Win_payoff { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WagerTypeResponse
 	{
 		
@@ -4521,8 +4439,7 @@ namespace MyNS
 		public string Wager_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__na_results__WeatherResponse
 	{
 		
@@ -4548,8 +4465,7 @@ namespace MyNS
 		public string Forecast_weather_description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sire
 	{
 		
@@ -4564,8 +4480,7 @@ namespace MyNS
 		public string Sire1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SireClassAnalysis
 	{
 		
@@ -4605,8 +4520,7 @@ namespace MyNS
 		public int Total_runners { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__sires__Class
 	{
 		
@@ -4674,8 +4588,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SireDistanceAnalysis
 	{
 		
@@ -4715,8 +4628,7 @@ namespace MyNS
 		public int Total_runners { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__sires__Distance
 	{
 		
@@ -4805,8 +4717,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sires
 	{
 		
@@ -4818,8 +4729,7 @@ namespace MyNS
 		public Sire[] Search_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrainerCourseAnalysis
 	{
 		
@@ -4859,8 +4769,7 @@ namespace MyNS
 		public string Trainer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__trainers__Course
 	{
 		
@@ -4935,8 +4844,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrainerDistanceAnalysis
 	{
 		
@@ -4976,8 +4884,7 @@ namespace MyNS
 		public string Trainer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__trainers__Distance
 	{
 		
@@ -5066,8 +4973,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrainerHorseAgeAnalysis
 	{
 		
@@ -5107,8 +5013,7 @@ namespace MyNS
 		public string Trainer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrainerJockeyAnalysis
 	{
 		
@@ -5148,8 +5053,7 @@ namespace MyNS
 		public string Trainer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__trainers__Jockey
 	{
 		
@@ -5224,8 +5128,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrainerOwnerAnalysis
 	{
 		
@@ -5265,8 +5168,7 @@ namespace MyNS
 		public string Trainer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__trainers__Owner
 	{
 		
@@ -5341,8 +5243,7 @@ namespace MyNS
 		public double Win_Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Trainers
 	{
 		
@@ -5354,8 +5255,7 @@ namespace MyNS
 		public App__models__trainers__Trainer[] Search_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App__models__trainers__Trainer
 	{
 		

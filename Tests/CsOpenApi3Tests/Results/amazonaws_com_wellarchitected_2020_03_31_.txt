@@ -17,44 +17,37 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLensShareOutput
 	{
 		
@@ -67,14 +60,12 @@ namespace MyNS
 		public string ShareId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLensVersionOutput
 	{
 		
@@ -88,8 +79,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a create milestone call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMilestoneOutput
 	{
 		
@@ -115,8 +105,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MilestoneNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProfileOutput
 	{
 		
@@ -130,8 +119,7 @@ namespace MyNS
 	/// <summary>
 	/// An update to a profile question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileQuestionUpdate
 	{
 		
@@ -149,8 +137,7 @@ namespace MyNS
 		public string[] SelectedChoiceIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProfileShareOutput
 	{
 		
@@ -169,8 +156,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a create workload call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkloadOutput
 	{
 		
@@ -193,37 +179,32 @@ namespace MyNS
 		public string WorkloadArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TrustedAdvisorIntegrationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DefinitionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKLOAD_METADATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKLOAD_METADATA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_REGISTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_REGISTRY = 1,
 	}
 	
 	/// <summary>
 	/// Input for Create Workload Share
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkloadShareOutput
 	{
 		
@@ -248,8 +229,7 @@ namespace MyNS
 		public string ShareId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportLensOutput
 	{
 		
@@ -260,8 +240,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a get answer call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAnswerOutput
 	{
 		
@@ -309,8 +288,7 @@ namespace MyNS
 	/// <summary>
 	/// An answer of the question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Answer
 	{
 		
@@ -419,8 +397,7 @@ namespace MyNS
 	/// <summary>
 	/// A choice available to answer question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Choice
 	{
 		
@@ -467,8 +444,7 @@ namespace MyNS
 	/// <summary>
 	/// The choice content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChoiceContent
 	{
 		
@@ -482,8 +458,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The choice level additional resources for a custom lens.</p> <p>This field does not apply to Amazon Web Services official lenses.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdditionalResources
 	{
 		
@@ -494,24 +469,21 @@ namespace MyNS
 		public ChoiceContent[] Content { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdditionalResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HELPFUL_RESOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HELPFUL_RESOURCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPROVEMENT_PLAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPROVEMENT_PLAN = 1,
 	}
 	
 	/// <summary>
 	/// A choice that has been answered on a question in your workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChoiceAnswer
 	{
 		
@@ -535,68 +507,61 @@ namespace MyNS
 		public string Notes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChoiceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELECTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_APPLICABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_APPLICABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSELECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSELECTED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChoiceReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_SCOPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_SCOPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_PRIORITIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_PRIORITIES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHITECTURE_CONSTRAINTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHITECTURE_CONSTRAINTS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnswerRisk
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNANSWERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNANSWERED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_APPLICABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_APPLICABLE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConsolidatedReportOutput
 	{
 		
@@ -619,8 +584,7 @@ namespace MyNS
 	/// <summary>
 	/// A metric that contributes to the consolidated report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConsolidatedReportMetric
 	{
 		
@@ -674,21 +638,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> LensesAppliedCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKLOAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKLOAD = 0,
 	}
 	
 	/// <summary>
 	/// A map from risk names to the count of how many questions have that rating.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RiskCounts
 	{
 	}
@@ -696,8 +657,7 @@ namespace MyNS
 	/// <summary>
 	/// A metric for a particular lens in a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LensMetric
 	{
 		
@@ -717,8 +677,7 @@ namespace MyNS
 	/// <summary>
 	/// A metric for a particular pillar in a lens.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PillarMetric
 	{
 		
@@ -745,8 +704,7 @@ namespace MyNS
 	/// <summary>
 	/// A metric for a particular question in the pillar. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuestionMetric
 	{
 		
@@ -773,8 +731,7 @@ namespace MyNS
 	/// <summary>
 	/// A best practice, or question choice, that has been identified as a risk in this question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BestPractice
 	{
 		
@@ -799,8 +756,7 @@ namespace MyNS
 		public string ChoiceTitle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLensOutput
 	{
 		
@@ -811,8 +767,7 @@ namespace MyNS
 	/// <summary>
 	/// A lens return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Lens
 	{
 		
@@ -852,8 +807,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
@@ -861,8 +815,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a get lens review call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLensReviewOutput
 	{
 		
@@ -897,8 +850,7 @@ namespace MyNS
 	/// <summary>
 	/// A lens review of a question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LensReview
 	{
 		
@@ -973,33 +925,30 @@ namespace MyNS
 		public RiskCounts PrioritizedRiskCounts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LensStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_CURRENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_CURRENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPRECATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPRECATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSHARED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSHARED = 4,
 	}
 	
 	/// <summary>
 	/// A pillar review summary of a lens review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PillarReviewSummary
 	{
 		
@@ -1047,8 +996,7 @@ namespace MyNS
 	/// <summary>
 	/// The profile associated with a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkloadProfile
 	{
 		
@@ -1062,8 +1010,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a get lens review report call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLensReviewReportOutput
 	{
 		
@@ -1098,8 +1045,7 @@ namespace MyNS
 	/// <summary>
 	/// A report of a lens review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LensReviewReport
 	{
 		
@@ -1123,8 +1069,7 @@ namespace MyNS
 		public string Base64String { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLensVersionDifferenceOutput
 	{
 		
@@ -1160,8 +1105,7 @@ namespace MyNS
 	/// <summary>
 	/// The differences between the base and latest versions of the lens.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionDifferences
 	{
 		
@@ -1172,8 +1116,7 @@ namespace MyNS
 	/// <summary>
 	/// A pillar difference return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PillarDifference
 	{
 		
@@ -1204,27 +1147,24 @@ namespace MyNS
 		public QuestionDifference[] QuestionDifferences { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DifferenceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 2,
 	}
 	
 	/// <summary>
 	/// A question difference return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuestionDifference
 	{
 		
@@ -1255,8 +1195,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a get milestone call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMilestoneOutput
 	{
 		
@@ -1282,8 +1221,7 @@ namespace MyNS
 	/// <summary>
 	/// A milestone return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Milestone
 	{
 		
@@ -1322,8 +1260,7 @@ namespace MyNS
 	/// <summary>
 	/// A workload return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Workload
 	{
 		
@@ -1512,46 +1449,41 @@ namespace MyNS
 		public RiskCounts PrioritizedRiskCounts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkloadEnvironment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREPRODUCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREPRODUCTION = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkloadImprovementStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_APPLICABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_APPLICABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_STARTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RISK_ACKNOWLEDGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RISK_ACKNOWLEDGED = 4,
 	}
 	
 	/// <summary>
 	/// Discovery configuration associated to the workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkloadDiscoveryConfig
 	{
 		
@@ -1562,8 +1494,7 @@ namespace MyNS
 		public DefinitionType[] WorkloadResourceDefinition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProfileOutput
 	{
 		
@@ -1574,8 +1505,7 @@ namespace MyNS
 	/// <summary>
 	/// A profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Profile
 	{
 		
@@ -1628,8 +1558,7 @@ namespace MyNS
 	/// <summary>
 	/// A profile question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileQuestion
 	{
 		
@@ -1679,8 +1608,7 @@ namespace MyNS
 	/// <summary>
 	/// The profile choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileChoice
 	{
 		
@@ -1715,8 +1643,7 @@ namespace MyNS
 		public string ChoiceDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProfileTemplateOutput
 	{
 		
@@ -1727,8 +1654,7 @@ namespace MyNS
 	/// <summary>
 	/// The profile template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileTemplate
 	{
 		
@@ -1754,8 +1680,7 @@ namespace MyNS
 	/// <summary>
 	/// A profile template question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileTemplateQuestion
 	{
 		
@@ -1802,8 +1727,7 @@ namespace MyNS
 	/// <summary>
 	/// A profile template choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileTemplateChoice
 	{
 		
@@ -1841,8 +1765,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a get workload call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorkloadOutput
 	{
 		
@@ -1853,8 +1776,7 @@ namespace MyNS
 		public Workload Workload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportLensOutput
 	{
 		
@@ -1865,27 +1787,24 @@ namespace MyNS
 		public ImportLensStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImportLensStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 	}
 	
 	/// <summary>
 	/// Output of a list answers call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnswersOutput
 	{
 		
@@ -1939,8 +1858,7 @@ namespace MyNS
 	/// <summary>
 	/// An answer summary of a lens review in a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnswerSummary
 	{
 		
@@ -2011,8 +1929,7 @@ namespace MyNS
 	/// <summary>
 	/// A choice summary that has been answered on a question in your workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChoiceAnswerSummary
 	{
 		
@@ -2033,21 +1950,18 @@ namespace MyNS
 		public ChoiceReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QuestionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIORITIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIORITIZED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_PRIORITIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_PRIORITIZED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCheckDetailsOutput
 	{
 		
@@ -2064,8 +1978,7 @@ namespace MyNS
 	/// <summary>
 	/// Account details for a Well-Architected best practice in relation to Trusted Advisor checks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckDetail
 	{
 		
@@ -2142,59 +2055,52 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> UpdatedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckProvider
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRUSTED_ADVISOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRUSTED_ADVISOR = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OKAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OKAY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_AVAILABLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FETCH_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FETCH_FAILED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckFailureReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSUME_ROLE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSUME_ROLE_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESS_DENIED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREMIUM_SUPPORT_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREMIUM_SUPPORT_REQUIRED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCheckSummariesOutput
 	{
 		
@@ -2211,8 +2117,7 @@ namespace MyNS
 	/// <summary>
 	/// Trusted Advisor check summary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckSummary
 	{
 		
@@ -2277,8 +2182,7 @@ namespace MyNS
 	/// <summary>
 	/// Account summary for a Well-Architected best practice in relation to Trusted Advisor checks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountSummary
 	{
 	}
@@ -2286,8 +2190,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a list lens review improvements call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLensReviewImprovementsOutput
 	{
 		
@@ -2341,8 +2244,7 @@ namespace MyNS
 	/// <summary>
 	/// An improvement summary of a lens review in a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImprovementSummary
 	{
 		
@@ -2399,8 +2301,7 @@ namespace MyNS
 	/// <summary>
 	/// The choice level improvement plan.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChoiceImprovementPlan
 	{
 		
@@ -2431,8 +2332,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a list lens reviews call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLensReviewsOutput
 	{
 		
@@ -2473,8 +2373,7 @@ namespace MyNS
 	/// <summary>
 	/// A lens review summary of a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LensReviewSummary
 	{
 		
@@ -2529,8 +2428,7 @@ namespace MyNS
 		public RiskCounts PrioritizedRiskCounts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLensSharesOutput
 	{
 		
@@ -2547,8 +2445,7 @@ namespace MyNS
 	/// <summary>
 	/// A lens share summary return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LensShareSummary
 	{
 		
@@ -2580,42 +2477,39 @@ namespace MyNS
 		public string StatusMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LensShareSummaryStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVOKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVOKED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 7,
 	}
 	
 	/// <summary>
 	/// Output of a list lenses call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLensesOutput
 	{
 		
@@ -2635,8 +2529,7 @@ namespace MyNS
 	/// <summary>
 	/// A lens summary of a lens.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LensSummary
 	{
 		
@@ -2707,27 +2600,24 @@ namespace MyNS
 		public LensStatus LensStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LensType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_OFFICIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_OFFICIAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_SHARED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_SHARED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_SELF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_SELF = 2,
 	}
 	
 	/// <summary>
 	/// Output of a list milestones call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMilestonesOutput
 	{
 		
@@ -2759,8 +2649,7 @@ namespace MyNS
 	/// <summary>
 	/// A milestone summary return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MilestoneSummary
 	{
 		
@@ -2799,8 +2688,7 @@ namespace MyNS
 	/// <summary>
 	/// A workload summary return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkloadSummary
 	{
 		
@@ -2878,8 +2766,7 @@ namespace MyNS
 		public RiskCounts PrioritizedRiskCounts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNotificationsOutput
 	{
 		
@@ -2896,8 +2783,7 @@ namespace MyNS
 	/// <summary>
 	/// A notification summary return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationSummary
 	{
 		
@@ -2908,24 +2794,21 @@ namespace MyNS
 		public LensUpgradeSummary LensUpgradeSummary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LENS_VERSION_UPGRADED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LENS_VERSION_UPGRADED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LENS_VERSION_DEPRECATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LENS_VERSION_DEPRECATED = 1,
 	}
 	
 	/// <summary>
 	/// Lens upgrade summary return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LensUpgradeSummary
 	{
 		
@@ -2971,8 +2854,7 @@ namespace MyNS
 		public string LatestLensVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfileNotificationsOutput
 	{
 		
@@ -2989,8 +2871,7 @@ namespace MyNS
 	/// <summary>
 	/// The profile notification summary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileNotificationSummary
 	{
 		
@@ -3032,21 +2913,18 @@ namespace MyNS
 		public string WorkloadName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProfileNotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE_ANSWERS_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE_ANSWERS_UPDATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE_DELETED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfileSharesOutput
 	{
 		
@@ -3063,8 +2941,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary of a profile share.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileShareSummary
 	{
 		
@@ -3096,8 +2973,7 @@ namespace MyNS
 		public string StatusMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfilesOutput
 	{
 		
@@ -3114,8 +2990,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary of a profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileSummary
 	{
 		
@@ -3159,8 +3034,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for List Share Invitations
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListShareInvitationsOutput
 	{
 		
@@ -3177,8 +3051,7 @@ namespace MyNS
 	/// <summary>
 	/// A share invitation summary return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShareInvitationSummary
 	{
 		
@@ -3258,37 +3131,32 @@ namespace MyNS
 		public string ProfileArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShareInvitationSummaryPermissionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READONLY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTRIBUTOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTRIBUTOR = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShareResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKLOAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKLOAD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LENS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LENS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceOutput
 	{
 		
@@ -3299,8 +3167,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for List Workload Share
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkloadSharesOutput
 	{
 		
@@ -3332,8 +3199,7 @@ namespace MyNS
 	/// <summary>
 	/// A workload share summary return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkloadShareSummary
 	{
 		
@@ -3374,8 +3240,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a list workloads call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkloadsOutput
 	{
 		
@@ -3392,14 +3257,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceOutput
 	{
 	}
@@ -3407,8 +3270,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a update answer call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAnswerOutput
 	{
 		
@@ -3447,8 +3309,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of choices to be updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChoiceUpdate
 	{
 		
@@ -3469,8 +3330,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of a update lens review call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLensReviewOutput
 	{
 		
@@ -3493,8 +3353,7 @@ namespace MyNS
 		public LensReview LensReview { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateProfileOutput
 	{
 		
@@ -3502,8 +3361,7 @@ namespace MyNS
 		public Profile Profile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateShareInvitationOutput
 	{
 		
@@ -3514,8 +3372,7 @@ namespace MyNS
 	/// <summary>
 	/// The share invitation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShareInvitation
 	{
 		
@@ -3557,8 +3414,7 @@ namespace MyNS
 	/// <summary>
 	/// Output of an update workload call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkloadOutput
 	{
 		
@@ -3572,8 +3428,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for Update Workload Share
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkloadShareOutput
 	{
 		
@@ -3599,8 +3454,7 @@ namespace MyNS
 	/// <summary>
 	/// A workload share return object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkloadShare
 	{
 		
@@ -3672,55 +3526,50 @@ namespace MyNS
 	/// <summary>
 	/// The risk for a given workload, lens review, pillar, or question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Risk
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNANSWERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNANSWERED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_APPLICABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_APPLICABLE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnswerReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_SCOPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_SCOPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_PRIORITIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_PRIORITIES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHITECTURE_CONSTRAINTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHITECTURE_CONSTRAINTS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 4,
 	}
 	
 	/// <summary>
 	/// Input to associate lens reviews.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateLensesInput
 	{
 		
@@ -3735,8 +3584,7 @@ namespace MyNS
 		public string[] LensAliases { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateProfilesInput
 	{
 		
@@ -3748,14 +3596,12 @@ namespace MyNS
 		public string[] ProfileArns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChoiceUpdates
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLensShareInput
 	{
 		
@@ -3784,8 +3630,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLensVersionInput
 	{
 		
@@ -3815,8 +3660,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for milestone creation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMilestoneInput
 	{
 		
@@ -3845,8 +3689,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProfileInput
 	{
 		
@@ -3887,8 +3730,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProfileShareInput
 	{
 		
@@ -3920,8 +3762,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for workload creation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkloadInput
 	{
 		
@@ -4067,24 +3908,21 @@ namespace MyNS
 	/// <summary>
 	/// Permission granted on a share request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READONLY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTRIBUTOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTRIBUTOR = 1,
 	}
 	
 	/// <summary>
 	/// Input for Create Workload Share
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkloadShareInput
 	{
 		
@@ -4121,42 +3959,36 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LensStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLensInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLensShareInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteProfileInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteProfileShareInput
 	{
 	}
@@ -4164,8 +3996,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for workload deletion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkloadInput
 	{
 	}
@@ -4173,8 +4004,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for Delete Workload Share
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkloadShareInput
 	{
 	}
@@ -4182,8 +4012,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to disassociate lens reviews.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateLensesInput
 	{
 		
@@ -4198,8 +4027,7 @@ namespace MyNS
 		public string[] LensAliases { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateProfilesInput
 	{
 		
@@ -4211,21 +4039,18 @@ namespace MyNS
 		public string[] ProfileArns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DiscoveryIntegrationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportLensInput
 	{
 	}
@@ -4233,33 +4058,28 @@ namespace MyNS
 	/// <summary>
 	/// Input to get answer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAnswerInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PDF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PDF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConsolidatedReportInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLensInput
 	{
 	}
@@ -4267,8 +4087,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to get lens review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLensReviewInput
 	{
 	}
@@ -4276,14 +4095,12 @@ namespace MyNS
 	/// <summary>
 	/// Input to get lens review report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLensReviewReportInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLensVersionDifferenceInput
 	{
 	}
@@ -4291,20 +4108,17 @@ namespace MyNS
 	/// <summary>
 	/// Input to get a milestone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMilestoneInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProfileInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProfileTemplateInput
 	{
 	}
@@ -4312,14 +4126,12 @@ namespace MyNS
 	/// <summary>
 	/// Input to get a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorkloadInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportLensInput
 	{
 		
@@ -4359,61 +4171,55 @@ namespace MyNS
 	/// <summary>
 	/// The status of the share request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShareStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVOKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVOKED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QuestionPriority
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIORITIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIORITIZED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 	}
 	
 	/// <summary>
 	/// Input to list answers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnswersInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCheckDetailsInput
 	{
 		
@@ -4476,8 +4282,7 @@ namespace MyNS
 		public string ChoiceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCheckSummariesInput
 	{
 		
@@ -4543,8 +4348,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to list lens review improvements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLensReviewImprovementsInput
 	{
 	}
@@ -4552,14 +4356,12 @@ namespace MyNS
 	/// <summary>
 	/// Input to list lens reviews.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLensReviewsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLensSharesInput
 	{
 	}
@@ -4567,8 +4369,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to list lenses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLensesInput
 	{
 	}
@@ -4576,8 +4377,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to list all milestones for a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMilestonesInput
 	{
 		
@@ -4597,8 +4397,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNotificationsInput
 	{
 		
@@ -4624,33 +4423,28 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfileNotificationsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfileSharesInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProfileOwnerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHARED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHARED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfilesInput
 	{
 	}
@@ -4658,14 +4452,12 @@ namespace MyNS
 	/// <summary>
 	/// Input for List Share Invitations
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListShareInvitationsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceInput
 	{
 	}
@@ -4673,8 +4465,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for List Workload Share
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkloadSharesInput
 	{
 	}
@@ -4682,8 +4473,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to list all workloads.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkloadsInput
 	{
 		
@@ -4705,24 +4495,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrganizationSharingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// List of pillar notes of a lens review in a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PillarNotes
 	{
 	}
@@ -4730,21 +4517,18 @@ namespace MyNS
 	/// <summary>
 	/// Share invitation action taken by contributor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShareInvitationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceInput
 	{
 		
@@ -4756,8 +4540,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceInput
 	{
 	}
@@ -4765,8 +4548,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to update answer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAnswerInput
 	{
 		
@@ -4797,8 +4579,7 @@ namespace MyNS
 		public ChoiceReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGlobalSettingsInput
 	{
 		
@@ -4812,8 +4593,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for update lens review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLensReviewInput
 	{
 		
@@ -4832,8 +4612,7 @@ namespace MyNS
 		public PillarNotes PillarNotes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateProfileInput
 	{
 		
@@ -4847,8 +4626,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for Update Share Invitation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateShareInvitationInput
 	{
 		
@@ -4864,8 +4642,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to update a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkloadInput
 	{
 		
@@ -4988,8 +4765,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for Update Workload Share
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkloadShareInput
 	{
 		
@@ -5002,8 +4778,7 @@ namespace MyNS
 		public ShareInvitationSummaryPermissionType PermissionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeLensReviewInput
 	{
 		
@@ -5030,8 +4805,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeProfileVersionInput
 	{
 		

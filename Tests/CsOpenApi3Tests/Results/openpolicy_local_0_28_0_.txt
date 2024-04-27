@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _400
 	{
 		
@@ -97,8 +96,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Row { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _404
 	{
 		
@@ -123,8 +121,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _200Explanations
 	{
 		
@@ -240,46 +237,41 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum _200ExplanationsExplanationOp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enter = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="exit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		exit = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eval = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fail = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="redo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		redo = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum _200ExplanationsExplanationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expr = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rule = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="body")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		body = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _200Metrics
 	{
 		
@@ -417,8 +409,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Timer_server_read_bytes_ns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _200Provenance
 	{
 		
@@ -460,8 +451,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _200Result
 	{
 		
@@ -534,16 +524,14 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum _200ResultResultAstPackagePathType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="import")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		import = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="package")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		package = 1,
 	}
 	
@@ -634,8 +622,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _200SingleResult
 	{
 		
@@ -791,20 +778,17 @@ namespace MyNS
 		public string Service { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSchema
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputSchema
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartialQuerySchema
 	{
 	}
@@ -812,8 +796,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON patch operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchesSchemaElement
 	{
 		
@@ -851,45 +834,40 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, object> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchesSchemaElementOp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		add = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="remove")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		remove = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="replace")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		replace = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="move")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		move = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="copy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		copy = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="test")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		test = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QSchema
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryInputSchema
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookInputSchema
 	{
 	}

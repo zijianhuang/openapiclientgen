@@ -17,56 +17,47 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivateAnomalyDetectorResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackTestAnomalyDetectorResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAlertResponse
 	{
 		
@@ -77,8 +68,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNSConfiguration
 	{
 		
@@ -100,27 +90,24 @@ namespace MyNS
 		public SnsFormat SnsFormat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnsFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LONG_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LONG_TEXT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHORT_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHORT_TEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 2,
 	}
 	
 	/// <summary>
 	/// Contains information about a Lambda configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaConfiguration
 	{
 		
@@ -142,8 +129,7 @@ namespace MyNS
 	/// <summary>
 	/// The dimension filter, containing DimensionName and DimensionValueList.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionFilter
 	{
 		
@@ -154,14 +140,12 @@ namespace MyNS
 		public string[] DimensionValueList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAnomalyDetectorResponse
 	{
 		
@@ -169,27 +153,24 @@ namespace MyNS
 		public string AnomalyDetectorArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Frequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P1D")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P1D = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PT1H")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PT1H = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PT10M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PT10M = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PT5M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PT5M = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMetricSetResponse
 	{
 		
@@ -200,8 +181,7 @@ namespace MyNS
 	/// <summary>
 	/// A calculation made by contrasting a measure and a dimension from your source data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metric
 	{
 		
@@ -223,24 +203,21 @@ namespace MyNS
 		public string Namespace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AggregationFunction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVG = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUM = 1,
 	}
 	
 	/// <summary>
 	/// Contains information about the configuration of the S3 bucket that contains source files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3SourceConfig
 	{
 		
@@ -260,8 +237,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a source file's formatting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileFormatDescriptor
 	{
 		
@@ -275,8 +251,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about how a source CSV data file should be analyzed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CsvFormatDescriptor
 	{
 		
@@ -299,24 +274,21 @@ namespace MyNS
 		public string QuoteSymbol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CSVFileCompression
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GZIP = 1,
 	}
 	
 	/// <summary>
 	/// Contains information about how a source JSON data file should be analyzed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JsonFormatDescriptor
 	{
 		
@@ -330,8 +302,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about an Amazon AppFlow flow datasource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppFlowConfig
 	{
 		
@@ -345,8 +316,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about an Amazon CloudWatch datasource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchConfig
 	{
 		
@@ -360,8 +330,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for backtest mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackTestConfiguration
 	{
 		
@@ -376,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the Amazon Relational Database Service (RDS) configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RDSSourceConfig
 	{
 		
@@ -409,8 +377,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains configuration information about the Amazon Virtual Private Cloud (VPC).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfiguration
 	{
 		
@@ -432,8 +399,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the Amazon Redshift database configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedshiftSourceConfig
 	{
 		
@@ -465,8 +431,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about an Amazon Athena datasource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AthenaSourceConfig
 	{
 		
@@ -495,8 +460,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a list of filters for choosing a subset of dimension values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricSetDimensionFilter
 	{
 		
@@ -510,8 +474,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -522,36 +485,30 @@ namespace MyNS
 		public FilterOperation FilterOperation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilterOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUALS = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeactivateAnomalyDetectorResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAlertResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAnomalyDetectorResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlertResponse
 	{
 		
@@ -562,8 +519,7 @@ namespace MyNS
 	/// <summary>
 	/// A configuration for Amazon SNS-integrated notifications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alert
 	{
 		
@@ -604,8 +560,7 @@ namespace MyNS
 	/// <summary>
 	/// A configuration that specifies the action to perform when anomalies are detected.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Action
 	{
 		
@@ -616,37 +571,32 @@ namespace MyNS
 		public LambdaConfiguration LambdaConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlertType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAMBDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAMBDA = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlertStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 1,
 	}
 	
 	/// <summary>
 	/// The configuration of the alert filters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertFilters
 	{
 		
@@ -657,8 +607,7 @@ namespace MyNS
 		public DimensionFilter[] DimensionFilterList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAnomalyDetectionExecutionsResponse
 	{
 		
@@ -672,8 +621,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of an anomaly detector run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionStatus
 	{
 		
@@ -687,30 +635,27 @@ namespace MyNS
 		public string FailureReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnomalyDetectionTaskStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_TO_SCHEDULE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_TO_SCHEDULE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAnomalyDetectorResponse
 	{
 		
@@ -748,8 +693,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a detector's configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyDetectorConfigSummary
 	{
 		
@@ -757,67 +701,62 @@ namespace MyNS
 		public Frequency AnomalyDetectorFrequency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnomalyDetectorStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEARNING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACK_TEST_ACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACK_TEST_ACTIVATING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACK_TEST_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACK_TEST_ACTIVE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACK_TEST_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACK_TEST_COMPLETE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEACTIVATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEACTIVATED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEACTIVATING = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnomalyDetectorFailureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATION_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATION_FAILURE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACK_TEST_ACTIVATION_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACK_TEST_ACTIVATION_FAILURE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETION_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETION_FAILURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEACTIVATION_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEACTIVATION_FAILURE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMetricSetResponse
 	{
 		
@@ -867,8 +806,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the column used to track time in a source data file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimestampColumn
 	{
 		
@@ -882,8 +820,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about source data used to generate metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricSource
 	{
 		
@@ -909,8 +846,7 @@ namespace MyNS
 		public AthenaSourceConfig AthenaSourceConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectMetricSetConfigResponse
 	{
 		
@@ -921,8 +857,7 @@ namespace MyNS
 	/// <summary>
 	/// An inferred dataset configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedMetricSetConfig
 	{
 		
@@ -939,8 +874,7 @@ namespace MyNS
 	/// <summary>
 	/// An inferred field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedField
 	{
 		
@@ -957,8 +891,7 @@ namespace MyNS
 	/// <summary>
 	/// An attribute value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeValue
 	{
 		
@@ -981,27 +914,24 @@ namespace MyNS
 		public string[] BS { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Confidence
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 2,
 	}
 	
 	/// <summary>
 	/// An inferred data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedMetricSource
 	{
 		
@@ -1012,8 +942,7 @@ namespace MyNS
 	/// <summary>
 	/// An inferred source configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedS3SourceConfig
 	{
 		
@@ -1024,8 +953,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of an inferred data format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedFileFormatDescriptor
 	{
 		
@@ -1039,8 +967,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of an inferred CSV format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedCsvFormatDescriptor
 	{
 		
@@ -1066,8 +993,7 @@ namespace MyNS
 	/// <summary>
 	/// A detected JSON format descriptor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedJsonFormatDescriptor
 	{
 		
@@ -1081,8 +1007,7 @@ namespace MyNS
 	/// <summary>
 	/// An auto detection source config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoDetectionS3SourceConfig
 	{
 		
@@ -1093,8 +1018,7 @@ namespace MyNS
 		public string[] HistoricalDataPathList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAnomalyGroupResponse
 	{
 		
@@ -1105,8 +1029,7 @@ namespace MyNS
 	/// <summary>
 	/// A group of anomalous metrics
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyGroup
 	{
 		
@@ -1132,8 +1055,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a measure affected by an anomaly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricLevelImpact
 	{
 		
@@ -1150,8 +1072,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about dimensions that contributed to an anomaly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContributionMatrix
 	{
 		
@@ -1162,8 +1083,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a dimension that contributed to an anomaly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionContribution
 	{
 		
@@ -1177,8 +1097,7 @@ namespace MyNS
 	/// <summary>
 	/// The severity of a value of a dimension that contributed to an anomaly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionValueContribution
 	{
 		
@@ -1189,8 +1108,7 @@ namespace MyNS
 		public System.Nullable<System.Double> ContributionScore { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataQualityMetricsResponse
 	{
 		
@@ -1201,8 +1119,7 @@ namespace MyNS
 	/// <summary>
 	/// Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <a>GetDataQualityMetrics</a> object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyDetectorDataQualityMetric
 	{
 		
@@ -1216,8 +1133,7 @@ namespace MyNS
 	/// <summary>
 	/// An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricSetDataQualityMetric
 	{
 		
@@ -1231,8 +1147,7 @@ namespace MyNS
 	/// <summary>
 	/// An array that describes a data quality metric. Each <code>DataQualityMetric</code> object contains the data quality metric name, its value, a description of the metric, and the affected column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataQualityMetric
 	{
 		
@@ -1249,45 +1164,42 @@ namespace MyNS
 		public System.Nullable<System.Double> MetricValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataQualityMetricType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLUMN_COMPLETENESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLUMN_COMPLETENESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION_UNIQUENESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION_UNIQUENESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_SERIES_COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_SERIES_COUNT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROWS_PROCESSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROWS_PROCESSED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROWS_PARTIAL_COMPLIANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROWS_PARTIAL_COMPLIANCE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ROWS_COMPLIANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_ROWS_COMPLIANCE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKTEST_TRAINING_DATA_START_TIME_STAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKTEST_TRAINING_DATA_START_TIME_STAMP = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKTEST_TRAINING_DATA_END_TIME_STAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKTEST_TRAINING_DATA_END_TIME_STAMP = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKTEST_INFERENCE_DATA_START_TIME_STAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKTEST_INFERENCE_DATA_START_TIME_STAMP = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKTEST_INFERENCE_DATA_END_TIME_STAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKTEST_INFERENCE_DATA_END_TIME_STAMP = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFeedbackResponse
 	{
 		
@@ -1301,8 +1213,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about feedback submitted for an anomalous metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSeriesFeedback
 	{
 		
@@ -1313,8 +1224,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsAnomaly { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSampleDataResponse
 	{
 		
@@ -1325,8 +1235,7 @@ namespace MyNS
 		public string[][] SampleRows { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAlertsResponse
 	{
 		
@@ -1340,8 +1249,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a summary of an alert's configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertSummary
 	{
 		
@@ -1373,14 +1281,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnomalyDetectorsResponse
 	{
 		
@@ -1394,8 +1300,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an an anomaly detector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyDetectorSummary
 	{
 		
@@ -1421,8 +1326,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnomalyGroupRelatedMetricsResponse
 	{
 		
@@ -1436,8 +1340,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p> <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InterMetricImpactDetails
 	{
 		
@@ -1454,21 +1357,18 @@ namespace MyNS
 		public System.Nullable<System.Double> ContributionPercentage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RelationshipType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAUSE_OF_INPUT_ANOMALY_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAUSE_OF_INPUT_ANOMALY_GROUP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFFECT_OF_INPUT_ANOMALY_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EFFECT_OF_INPUT_ANOMALY_GROUP = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnomalyGroupSummariesResponse
 	{
 		
@@ -1485,8 +1385,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a group of anomalous metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyGroupSummary
 	{
 		
@@ -1509,8 +1408,7 @@ namespace MyNS
 	/// <summary>
 	/// Aggregated statistics for a group of anomalous metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyGroupStatistics
 	{
 		
@@ -1527,8 +1425,7 @@ namespace MyNS
 	/// <summary>
 	/// Aggregated statistics about a measure affected by an anomaly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemizedMetricStats
 	{
 		
@@ -1539,8 +1436,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> OccurrenceCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnomalyGroupTimeSeriesResponse
 	{
 		
@@ -1563,8 +1459,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as <i>availability</i> in the <i>us-east-1</i> Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSeries
 	{
 		
@@ -1593,8 +1488,7 @@ namespace MyNS
 	/// <summary>
 	/// A dimension name and value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionNameValue
 	{
 		
@@ -1613,8 +1507,7 @@ namespace MyNS
 		public string DimensionValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMetricSetsResponse
 	{
 		
@@ -1628,8 +1521,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricSetSummary
 	{
 		
@@ -1655,8 +1547,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -1664,26 +1555,22 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutFeedbackResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAlertResponse
 	{
 		
@@ -1691,8 +1578,7 @@ namespace MyNS
 		public string AlertArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAnomalyDetectorResponse
 	{
 		
@@ -1700,8 +1586,7 @@ namespace MyNS
 		public string AnomalyDetectorArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMetricSetResponse
 	{
 		
@@ -1709,8 +1594,7 @@ namespace MyNS
 		public string MetricSetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivateAnomalyDetectorRequest
 	{
 		
@@ -1725,8 +1609,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a detector's configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyDetectorConfig
 	{
 		
@@ -1737,8 +1620,7 @@ namespace MyNS
 	/// <summary>
 	/// An anomalous metric in an anomaly group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyGroupTimeSeries
 	{
 		
@@ -1756,8 +1638,7 @@ namespace MyNS
 	/// <summary>
 	/// Feedback for an anomalous metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyGroupTimeSeriesFeedback
 	{
 		
@@ -1786,8 +1667,7 @@ namespace MyNS
 	/// <summary>
 	/// An auto detection metric source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoDetectionMetricSource
 	{
 		
@@ -1795,8 +1675,7 @@ namespace MyNS
 		public AutoDetectionS3SourceConfig S3SourceConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackTestAnomalyDetectorRequest
 	{
 		
@@ -1808,8 +1687,7 @@ namespace MyNS
 		public string AnomalyDetectorArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAlertRequest
 	{
 		
@@ -1847,8 +1725,7 @@ namespace MyNS
 		public AlertFilters AlertFilters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAnomalyDetectorRequest
 	{
 		
@@ -1876,8 +1753,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMetricSetRequest
 	{
 		
@@ -1934,8 +1810,7 @@ namespace MyNS
 		public MetricSetDimensionFilter[] DimensionFilterList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeactivateAnomalyDetectorRequest
 	{
 		
@@ -1947,8 +1822,7 @@ namespace MyNS
 		public string AnomalyDetectorArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAlertRequest
 	{
 		
@@ -1960,8 +1834,7 @@ namespace MyNS
 		public string AlertArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAnomalyDetectorRequest
 	{
 		
@@ -1973,8 +1846,7 @@ namespace MyNS
 		public string AnomalyDetectorArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlertRequest
 	{
 		
@@ -1986,8 +1858,7 @@ namespace MyNS
 		public string AlertArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAnomalyDetectionExecutionsRequest
 	{
 		
@@ -2008,8 +1879,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAnomalyDetectorRequest
 	{
 		
@@ -2021,8 +1891,7 @@ namespace MyNS
 		public string AnomalyDetectorArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMetricSetRequest
 	{
 		
@@ -2034,8 +1903,7 @@ namespace MyNS
 		public string MetricSetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectMetricSetConfigRequest
 	{
 		
@@ -2054,8 +1922,7 @@ namespace MyNS
 		public AutoDetectionMetricSource AutoDetectionMetricSource { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAnomalyGroupRequest
 	{
 		
@@ -2074,8 +1941,7 @@ namespace MyNS
 		public string AnomalyDetectorArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataQualityMetricsRequest
 	{
 		
@@ -2090,8 +1956,7 @@ namespace MyNS
 		public string MetricSetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFeedbackRequest
 	{
 		
@@ -2119,8 +1984,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the source configuration in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SampleDataS3SourceConfig
 	{
 		
@@ -2146,8 +2010,7 @@ namespace MyNS
 		public FileFormatDescriptor FileFormatDescriptor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSampleDataRequest
 	{
 		
@@ -2155,21 +2018,18 @@ namespace MyNS
 		public SampleDataS3SourceConfig S3SourceConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JsonFileCompression
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GZIP = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAlertsRequest
 	{
 		
@@ -2183,8 +2043,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnomalyDetectorsRequest
 	{
 		
@@ -2195,8 +2054,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnomalyGroupRelatedMetricsRequest
 	{
 		
@@ -2224,8 +2082,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnomalyGroupSummariesRequest
 	{
 		
@@ -2250,8 +2107,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnomalyGroupTimeSeriesRequest
 	{
 		
@@ -2283,8 +2139,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMetricSetsRequest
 	{
 		
@@ -2298,14 +2153,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutFeedbackRequest
 	{
 		
@@ -2324,8 +2177,7 @@ namespace MyNS
 		public AnomalyGroupTimeSeriesFeedback AnomalyGroupTimeSeriesFeedback { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -2337,14 +2189,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAlertRequest
 	{
 		
@@ -2368,8 +2218,7 @@ namespace MyNS
 		public AlertFilters AlertFilters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAnomalyDetectorRequest
 	{
 		
@@ -2390,8 +2239,7 @@ namespace MyNS
 		public AnomalyDetectorConfig AnomalyDetectorConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMetricSetRequest
 	{
 		

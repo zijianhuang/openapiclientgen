@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddVoiceResponseModel
 	{
 		
@@ -30,8 +29,7 @@ namespace MyNS
 		public string Voice_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body_Add_voice_v1_voices_add_post
 	{
 		
@@ -64,8 +62,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body_Delete_history_items_v1_history_delete_post
 	{
 		
@@ -78,8 +75,7 @@ namespace MyNS
 		public string[] History_item_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body_Download_history_items_v1_history_download_post
 	{
 		
@@ -92,8 +88,7 @@ namespace MyNS
 		public string[] History_item_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body_Edit_voice_v1_voices__voice_id__edit_post
 	{
 		
@@ -124,8 +119,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body_Text_to_speech_v1_text_to_speech__voice_id__post
 	{
 		
@@ -144,8 +138,7 @@ namespace MyNS
 		public VoiceSettingsResponseModel Voice_settings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceSettingsResponseModel
 	{
 		
@@ -164,8 +157,7 @@ namespace MyNS
 		public double Stability { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body_Text_to_speech_v1_text_to_speech__voice_id__stream_post
 	{
 		
@@ -184,8 +176,7 @@ namespace MyNS
 		public VoiceSettingsResponseModel Voice_settings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedSubscriptionResponseModel
 	{
 		
@@ -302,8 +293,7 @@ namespace MyNS
 		public int Voice_limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TTSModelResponseModel
 	{
 		
@@ -329,8 +319,7 @@ namespace MyNS
 		public LanguageResponseModel[] Supported_language { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguageResponseModel
 	{
 		
@@ -349,21 +338,18 @@ namespace MyNS
 		public string Iso_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExtendedSubscriptionResponseModelCurrency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="usd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		usd = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eur")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eur = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvoiceResponseModel
 	{
 		
@@ -382,39 +368,36 @@ namespace MyNS
 		public int Next_payment_attempt_unix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExtendedSubscriptionResponseModelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trialing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trialing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="incomplete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		incomplete = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="incomplete_expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		incomplete_expired = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="past_due")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		past_due = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unpaid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unpaid = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="free")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		free = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedbackResponseModel
 	{
 		
@@ -472,8 +455,7 @@ namespace MyNS
 		public bool Thumbs_up { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FineTuningResponseModel
 	{
 		
@@ -534,24 +516,21 @@ namespace MyNS
 		public string[] Verification_failures { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FineTuningResponseModelFinetuning_state
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_started")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_started = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="is_fine_tuning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		is_fine_tuning = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fine_tuned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fine_tuned = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerificationAttemptResponseModel
 	{
 		
@@ -598,8 +577,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordingResponseModel
 	{
 		
@@ -639,8 +617,7 @@ namespace MyNS
 		public int Upload_date_unix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHistoryResponseModel
 	{
 		
@@ -652,8 +629,7 @@ namespace MyNS
 		public HistoryItemResponseModel[] History { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoryItemResponseModel
 	{
 		
@@ -742,24 +718,21 @@ namespace MyNS
 		public string Voice_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HistoryItemResponseModelState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		processing = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVoicesResponseModel
 	{
 		
@@ -771,8 +744,7 @@ namespace MyNS
 		public VoiceResponseModel[] Voices { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceResponseModel
 	{
 		
@@ -847,8 +819,7 @@ namespace MyNS
 		public string Voice_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SampleResponseModel
 	{
 		
@@ -888,8 +859,7 @@ namespace MyNS
 		public int Size_bytes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HTTPValidationError
 	{
 		
@@ -897,8 +867,7 @@ namespace MyNS
 		public ValidationError[] Detail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationError
 	{
 		
@@ -924,8 +893,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionResponseModel
 	{
 		
@@ -1035,8 +1003,7 @@ namespace MyNS
 		public int Voice_limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserResponseModel
 	{
 		

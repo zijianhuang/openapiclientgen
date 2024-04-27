@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApiResponse
 	{
 		
@@ -74,8 +73,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cors
 	{
 		
@@ -101,54 +99,46 @@ namespace MyNS
 	/// <summary>
 	/// Represents a protocol type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProtocolType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEBSOCKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEBSOCKET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP = 1,
 	}
 	
 	/// <summary>
 	/// Represents a collection of tags associated with the resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tags
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApiMappingResponse
 	{
 		
@@ -165,8 +155,7 @@ namespace MyNS
 		public string Stage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAuthorizerResponse
 	{
 		
@@ -207,24 +196,21 @@ namespace MyNS
 	/// <summary>
 	/// The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthorizerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JWT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JWT = 1,
 	}
 	
 	/// <summary>
 	/// Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JWTConfiguration
 	{
 		
@@ -235,8 +221,7 @@ namespace MyNS
 		public string Issuer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeploymentResponse
 	{
 		
@@ -262,24 +247,21 @@ namespace MyNS
 	/// <summary>
 	/// Represents a deployment status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeploymentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPLOYED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPLOYED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDomainNameResponse
 	{
 		
@@ -302,8 +284,7 @@ namespace MyNS
 	/// <summary>
 	/// The domain name configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainNameConfiguration
 	{
 		
@@ -341,59 +322,52 @@ namespace MyNS
 	/// <summary>
 	/// The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainNameStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_CERTIFICATE_REIMPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_CERTIFICATE_REIMPORT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_OWNERSHIP_VERIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_OWNERSHIP_VERIFICATION = 3,
 	}
 	
 	/// <summary>
 	/// Represents an endpoint type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EndpointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGIONAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDGE = 1,
 	}
 	
 	/// <summary>
 	/// The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SecurityPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TLS_1_0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TLS_1_0 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TLS_1_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TLS_1_2 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MutualTlsAuthentication
 	{
 		
@@ -407,14 +381,12 @@ namespace MyNS
 		public string[] TruststoreWarnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIntegrationResult
 	{
 		
@@ -482,76 +454,68 @@ namespace MyNS
 	/// <summary>
 	/// Represents a connection type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConnectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC_LINK = 1,
 	}
 	
 	/// <summary>
 	/// Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContentHandlingStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONVERT_TO_BINARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONVERT_TO_BINARY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONVERT_TO_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONVERT_TO_TEXT = 1,
 	}
 	
 	/// <summary>
 	/// Represents an API method integration type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IntegrationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOCK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP_PROXY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP_PROXY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_PROXY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_PROXY = 4,
 	}
 	
 	/// <summary>
 	/// Represents passthrough behavior for an integration response. Supported only for WebSocket APIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PassthroughBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WHEN_NO_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WHEN_NO_MATCH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WHEN_NO_TEMPLATES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WHEN_NO_TEMPLATES = 2,
 	}
 	
@@ -563,8 +527,7 @@ namespace MyNS
 	///            <replaceable>{name}</replaceable>
 	///           must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntegrationParameters
 	{
 	}
@@ -572,8 +535,7 @@ namespace MyNS
 	/// <summary>
 	/// A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateMap
 	{
 	}
@@ -581,8 +543,7 @@ namespace MyNS
 	/// <summary>
 	/// Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseParameters
 	{
 	}
@@ -590,8 +551,7 @@ namespace MyNS
 	/// <summary>
 	/// The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TlsConfig
 	{
 		
@@ -599,8 +559,7 @@ namespace MyNS
 		public string ServerNameToVerify { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIntegrationResponseResponse
 	{
 		
@@ -623,8 +582,7 @@ namespace MyNS
 		public string TemplateSelectionExpression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateModelResponse
 	{
 		
@@ -644,8 +602,7 @@ namespace MyNS
 		public string Schema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRouteResult
 	{
 		
@@ -692,30 +649,27 @@ namespace MyNS
 	/// <summary>
 	/// The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthorizationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_IAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_IAM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JWT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JWT = 3,
 	}
 	
 	/// <summary>
 	/// The route models.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteModels
 	{
 	}
@@ -723,8 +677,7 @@ namespace MyNS
 	/// <summary>
 	/// The route parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteParameters
 	{
 	}
@@ -732,8 +685,7 @@ namespace MyNS
 	/// <summary>
 	/// Validation constraints imposed on parameters of a request (path, query string, headers).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParameterConstraints
 	{
 		
@@ -741,8 +693,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Required { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRouteResponseResponse
 	{
 		
@@ -762,8 +713,7 @@ namespace MyNS
 		public string RouteResponseKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStageResponse
 	{
 		
@@ -813,8 +763,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for logging access in a stage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessLogSettings
 	{
 		
@@ -828,8 +777,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a collection of route settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteSettings
 	{
 		
@@ -852,27 +800,24 @@ namespace MyNS
 	/// <summary>
 	/// The logging level.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LoggingLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 2,
 	}
 	
 	/// <summary>
 	/// The route settings map.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteSettingsMap
 	{
 	}
@@ -880,14 +825,12 @@ namespace MyNS
 	/// <summary>
 	/// The stage variable map.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StageVariablesMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcLinkResponse
 	{
 		
@@ -922,49 +865,43 @@ namespace MyNS
 	/// <summary>
 	/// The status of the VPC link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VpcLinkStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 4,
 	}
 	
 	/// <summary>
 	/// The version of the VPC link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VpcLinkVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V2 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcLinkResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportApiResponse
 	{
 		
@@ -975,8 +912,7 @@ namespace MyNS
 		public string Body { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApiResponse
 	{
 		
@@ -1029,8 +965,7 @@ namespace MyNS
 		public string[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApiMappingResponse
 	{
 		
@@ -1047,8 +982,7 @@ namespace MyNS
 		public string Stage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApiMappingsResponse
 	{
 		
@@ -1062,8 +996,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an API mapping.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiMapping
 	{
 		
@@ -1088,8 +1021,7 @@ namespace MyNS
 		public string Stage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApisResponse
 	{
 		
@@ -1103,8 +1035,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Api
 	{
 		
@@ -1169,8 +1100,7 @@ namespace MyNS
 		public string[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAuthorizerResponse
 	{
 		
@@ -1208,8 +1138,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAuthorizersResponse
 	{
 		
@@ -1223,8 +1152,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an authorizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Authorizer
 	{
 		
@@ -1266,8 +1194,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeploymentResponse
 	{
 		
@@ -1290,8 +1217,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeploymentsResponse
 	{
 		
@@ -1305,8 +1231,7 @@ namespace MyNS
 	/// <summary>
 	/// An immutable representation of an API that can be called by users. A Deployment must be associated with a Stage for it to be callable over the internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deployment
 	{
 		
@@ -1329,8 +1254,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainNameResponse
 	{
 		
@@ -1350,8 +1274,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainNamesResponse
 	{
 		
@@ -1365,8 +1288,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a domain name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainName
 	{
 		
@@ -1390,8 +1312,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntegrationResult
 	{
 		
@@ -1456,8 +1377,7 @@ namespace MyNS
 		public TlsConfig TlsConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntegrationResponseResponse
 	{
 		
@@ -1480,8 +1400,7 @@ namespace MyNS
 		public string TemplateSelectionExpression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntegrationResponsesResponse
 	{
 		
@@ -1495,8 +1414,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an integration response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntegrationResponse
 	{
 		
@@ -1523,8 +1441,7 @@ namespace MyNS
 		public string TemplateSelectionExpression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntegrationsResponse
 	{
 		
@@ -1538,8 +1455,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an integration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Integration
 	{
 		
@@ -1604,8 +1520,7 @@ namespace MyNS
 		public TlsConfig TlsConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModelResponse
 	{
 		
@@ -1625,8 +1540,7 @@ namespace MyNS
 		public string Schema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModelTemplateResponse
 	{
 		
@@ -1634,8 +1548,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModelsResponse
 	{
 		
@@ -1649,8 +1562,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a data model for an API. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Create Models and Mapping Templates for Request and Response Mappings</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Model
 	{
 		
@@ -1674,8 +1586,7 @@ namespace MyNS
 		public string Schema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRouteResult
 	{
 		
@@ -1719,8 +1630,7 @@ namespace MyNS
 		public string Target { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRouteResponseResponse
 	{
 		
@@ -1740,8 +1650,7 @@ namespace MyNS
 		public string RouteResponseKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRouteResponsesResponse
 	{
 		
@@ -1755,8 +1664,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a route response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteResponse
 	{
 		
@@ -1780,8 +1688,7 @@ namespace MyNS
 		public string RouteResponseKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRoutesResponse
 	{
 		
@@ -1795,8 +1702,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a route.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Route
 	{
 		
@@ -1844,8 +1750,7 @@ namespace MyNS
 		public string Target { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStageResponse
 	{
 		
@@ -1892,8 +1797,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStagesResponse
 	{
 		
@@ -1907,8 +1811,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an API stage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Stage
 	{
 		
@@ -1959,8 +1862,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTagsResponse
 	{
 		
@@ -1968,8 +1870,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVpcLinkResponse
 	{
 		
@@ -2001,8 +1902,7 @@ namespace MyNS
 		public VpcLinkVersion VpcLinkVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVpcLinksResponse
 	{
 		
@@ -2016,8 +1916,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a VPC link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcLink
 	{
 		
@@ -2065,8 +1964,7 @@ namespace MyNS
 		public VpcLinkVersion VpcLinkVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportApiResponse
 	{
 		
@@ -2119,8 +2017,7 @@ namespace MyNS
 		public string[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReimportApiResponse
 	{
 		
@@ -2173,14 +2070,12 @@ namespace MyNS
 		public string[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApiResponse
 	{
 		
@@ -2233,8 +2128,7 @@ namespace MyNS
 		public string[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApiMappingResponse
 	{
 		
@@ -2251,8 +2145,7 @@ namespace MyNS
 		public string Stage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAuthorizerResponse
 	{
 		
@@ -2290,8 +2183,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDeploymentResponse
 	{
 		
@@ -2314,8 +2206,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDomainNameResponse
 	{
 		
@@ -2335,8 +2226,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateIntegrationResult
 	{
 		
@@ -2401,8 +2291,7 @@ namespace MyNS
 		public TlsConfig TlsConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateIntegrationResponseResponse
 	{
 		
@@ -2425,8 +2314,7 @@ namespace MyNS
 		public string TemplateSelectionExpression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateModelResponse
 	{
 		
@@ -2446,8 +2334,7 @@ namespace MyNS
 		public string Schema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRouteResult
 	{
 		
@@ -2491,8 +2378,7 @@ namespace MyNS
 		public string Target { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRouteResponseResponse
 	{
 		
@@ -2512,8 +2398,7 @@ namespace MyNS
 		public string RouteResponseKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStageResponse
 	{
 		
@@ -2560,8 +2445,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVpcLinkResponse
 	{
 		
@@ -2596,8 +2480,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new ApiMapping resource to represent an API mapping.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApiMappingRequest
 	{
 		
@@ -2622,8 +2505,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new Api resource to represent an API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApiRequest
 	{
 		
@@ -2678,8 +2560,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new Authorizer resource to represent an authorizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAuthorizerRequest
 	{
 		
@@ -2729,8 +2610,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new Deployment resource to represent a deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeploymentRequest
 	{
 		
@@ -2741,8 +2621,7 @@ namespace MyNS
 		public string StageName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MutualTlsAuthenticationInput
 	{
 		
@@ -2756,8 +2635,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new DomainName resource to represent a domain name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDomainNameRequest
 	{
 		
@@ -2781,8 +2659,7 @@ namespace MyNS
 	/// <summary>
 	/// The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TlsConfigInput
 	{
 		
@@ -2793,8 +2670,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new Integration resource to represent an integration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIntegrationRequest
 	{
 		
@@ -2857,8 +2733,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new IntegrationResponse resource to represent an integration response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIntegrationResponseRequest
 	{
 		
@@ -2885,8 +2760,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new Model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateModelRequest
 	{
 		
@@ -2914,8 +2788,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new Route resource to represent a route.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRouteRequest
 	{
 		
@@ -2960,8 +2833,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new RouteResponse resource to represent a route response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRouteResponseRequest
 	{
 		
@@ -2985,8 +2857,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new Stage resource to represent a stage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStageRequest
 	{
 		
@@ -3028,8 +2899,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a VPC link
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcLinkRequest
 	{
 		
@@ -3054,272 +2924,227 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAccessLogSettingsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApiMappingRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApiRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAuthorizerRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCorsConfigurationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDeploymentRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDomainNameRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIntegrationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIntegrationResponseRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteModelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRouteRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRouteRequestParameterRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRouteResponseRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRouteSettingsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStageRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcLinkRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportApiRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetAuthorizersCacheRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApiMappingRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApiMappingsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApiRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApisRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAuthorizerRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAuthorizersRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeploymentRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeploymentsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainNameRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainNamesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntegrationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntegrationResponseRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntegrationResponsesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIntegrationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModelTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetModelsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRouteRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRouteResponseRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRouteResponsesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRoutesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStageRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStagesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTagsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVpcLinkRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVpcLinksRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportApiRequest
 	{
 		
@@ -3331,8 +3156,7 @@ namespace MyNS
 		public string Body { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReimportApiRequest
 	{
 		
@@ -3347,8 +3171,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new Tag resource to represent a tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -3356,8 +3179,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -3365,8 +3187,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates an ApiMapping.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApiMappingRequest
 	{
 		
@@ -3387,8 +3208,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates an Api.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApiRequest
 	{
 		
@@ -3429,8 +3249,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates an Authorizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAuthorizerRequest
 	{
 		
@@ -3468,8 +3287,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a Deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDeploymentRequest
 	{
 		
@@ -3480,8 +3298,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a DomainName.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDomainNameRequest
 	{
 		
@@ -3495,8 +3312,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates an Integration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateIntegrationRequest
 	{
 		
@@ -3555,8 +3371,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates an IntegrationResponses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateIntegrationResponseRequest
 	{
 		
@@ -3579,8 +3394,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a Model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateModelRequest
 	{
 		
@@ -3600,8 +3414,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a Route.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRouteRequest
 	{
 		
@@ -3642,8 +3455,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a RouteResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRouteResponseRequest
 	{
 		
@@ -3663,8 +3475,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a Stage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStageRequest
 	{
 		
@@ -3696,8 +3507,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a VPC link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVpcLinkRequest
 	{
 		

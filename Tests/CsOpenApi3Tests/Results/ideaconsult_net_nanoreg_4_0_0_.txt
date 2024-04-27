@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dataset
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 		public string Query { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Facet
 	{
 		
@@ -44,8 +42,7 @@ namespace MyNS
 		public string Facet1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Investigation
 	{
 		
@@ -137,8 +134,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SolrQuery
 	{
 		
@@ -161,8 +157,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SolrResponse
 	{
 		
@@ -205,8 +200,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ZkConnected { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Substance
 	{
 		
@@ -214,8 +208,7 @@ namespace MyNS
 		public string Substance1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubstanceComposition
 	{
 		
@@ -226,8 +219,7 @@ namespace MyNS
 		public string Feature { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubstanceStudy
 	{
 		
@@ -235,8 +227,7 @@ namespace MyNS
 		public string Study { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubstanceStudySummary
 	{
 		
@@ -244,8 +235,7 @@ namespace MyNS
 		public string Facet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryBody
 	{
 		
@@ -826,128 +816,128 @@ namespace MyNS
 	public enum GetInvestigationResultsDb
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calibrate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calibrate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enanomapper")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enanomapper = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enpra")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enpra = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="marina")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		marina = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nanogenotox")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nanogenotox = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nanoinformatix")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nanoinformatix = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nanoreg1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nanoreg1 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nanoreg2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nanoreg2 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nanotest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nanotest = 8,
 	}
 	
 	public enum GetInvestigationResultsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="byinvestigation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		byinvestigation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="byassay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		byassay = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bysubstance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bysubstance = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="byprovider")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		byprovider = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bycitation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bycitation = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bystudytype")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bystudytype = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bystructure_inchikey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bystructure_inchikey = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bystructure_smiles")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bystructure_smiles = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bystructure_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bystructure_name = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bysubstance_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bysubstance_name = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bysubstance_type")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bysubstance_type = 10,
 	}
 	
 	public enum SearchByIdentifierTerm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="search")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		search = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		url = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inchikey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inchikey = 2,
 	}
 	
 	public enum SearchByIdentifierRepresentation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="smiles")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		smiles = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reach")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reach = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stdinchi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stdinchi = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stdinchikey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stdinchikey = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="names")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		names = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="iupac_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		iupac_name = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="synonym")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		synonym = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cas")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cas = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="einecs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		einecs = 9,
 	}
 	
 	public enum SearchBySimilarityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="smiles")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		smiles = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mol")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mol = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		url = 2,
 	}
 	
@@ -957,83 +947,83 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="P-CHEM")]
 		PMinusCHEM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECOTOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECOTOX = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENV FATE")]
 		ENV_FATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPOSURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPOSURE = 4,
 	}
 	
 	public enum GetSubstancesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="substancetype")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		substancetype = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="like")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		like = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regexp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regexp = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uuif")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uuif = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CompTox")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CompTox = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOI = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reliability")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reliability = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purposeFlag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purposeFlag = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="studyResultType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		studyResultType = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="isRobustStudy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		isRobustStudy = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="citation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		citation = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="citationowner")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		citationowner = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="topcategory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		topcategory = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="endpointcategory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		endpointcategory = 14,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="params")]
 		_params = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="owner_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		owner_name = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="owner_uuid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		owner_uuid = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="related")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		related = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reference")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reference = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="facet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		facet = 20,
 	}
 	
@@ -1043,16 +1033,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="P-CHEM")]
 		PMinusCHEM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECOTOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECOTOX = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENV FATE")]
 		ENV_FATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPOSURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPOSURE = 4,
 	}
 	
@@ -1062,26 +1052,26 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="P-CHEM")]
 		PMinusCHEM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECOTOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECOTOX = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENV FATE")]
 		ENV_FATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPOSURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPOSURE = 4,
 	}
 	
 	public enum Solrquery_getWt
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		xml = 1,
 	}
 }

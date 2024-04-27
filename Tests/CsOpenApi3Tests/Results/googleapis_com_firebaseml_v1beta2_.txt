@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for downloading a model to device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadModelResponse
 	{
 		
@@ -50,24 +49,21 @@ namespace MyNS
 		public string SizeBytes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DownloadModelResponseModelFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODEL_FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODEL_FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TFLITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TFLITE = 1,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -75,8 +71,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for list models
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListModelsResponse
 	{
 		
@@ -96,8 +91,7 @@ namespace MyNS
 	/// <summary>
 	/// An ML model hosted in Firebase ML
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Model
 	{
 		
@@ -165,8 +159,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -204,8 +197,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -231,8 +223,7 @@ namespace MyNS
 	/// <summary>
 	/// State common to all model types. Includes publishing and validation information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModelState
 	{
 		
@@ -252,8 +243,7 @@ namespace MyNS
 	/// <summary>
 	/// Information that is specific to TfLite models.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TfLiteModel
 	{
 		
@@ -279,8 +269,7 @@ namespace MyNS
 	/// <summary>
 	/// This is returned in the longrunning operations for create/update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModelOperationMetadata
 	{
 		
@@ -294,19 +283,17 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ModelOperationMetadataBasicOperationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_OPERATION_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_OPERATION_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_OPERATION_STATUS_UPLOADING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_OPERATION_STATUS_UPLOADING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_OPERATION_STATUS_VERIFYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_OPERATION_STATUS_VERIFYING = 2,
 	}
 	

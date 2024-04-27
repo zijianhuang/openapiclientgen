@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSignalingChannelOutput
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// A key and value pair that is associated with the specified signaling channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -49,44 +47,37 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArgumentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountChannelLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagsPerResourceExceededLimitException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStreamOutput
 	{
 		
@@ -94,68 +85,57 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountStreamLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceStreamLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDeviceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEdgeConfigurationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamEdgeConfigurationNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSignalingChannelOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionMismatchException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStreamOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotAuthorizedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEdgeConfigurationOutput
 	{
 		
@@ -184,39 +164,36 @@ namespace MyNS
 		public EdgeAgentStatus EdgeAgentStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SyncStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYNCING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYNCING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACKNOWLEDGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACKNOWLEDGED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_SYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_SYNC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYNC_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYNC_FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING_ACKNOWLEDGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING_ACKNOWLEDGED = 6,
 	}
 	
 	/// <summary>
 	/// A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EdgeConfig
 	{
 		
@@ -244,8 +221,7 @@ namespace MyNS
 	/// <summary>
 	/// The recorder configuration consists of the local <code>MediaSourceConfig</code> details that are used as credentials to accesss the local media files streamed on the camera. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecorderConfig
 	{
 		
@@ -263,8 +239,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files that are streamed to the camera.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaSourceConfig
 	{
 		
@@ -283,24 +258,21 @@ namespace MyNS
 		public MediaUriType MediaUriType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaUriType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RTSP_URI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RTSP_URI = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_URI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_URI = 1,
 	}
 	
 	/// <summary>
 	/// <p>This API enables you to specify the duration that the camera, or local media file, should record onto the Edge Agent. The <code>ScheduleConfig</code> consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> attributes. </p> <p>If the <code>ScheduleConfig</code> is not provided in the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p> <p>If the <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>, then the Edge Agent will upload at regular intervals (every 1 hour).</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduleConfig
 	{
 		
@@ -322,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>, then the Edge Agent will upload at regular intervals (every 1 hour). 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploaderConfig
 	{
 		
@@ -338,8 +309,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration details required to delete the connection of the stream from the Edge Agent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletionConfig
 	{
 		
@@ -356,8 +326,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration details that include the maximum size of the media (<code>MaxLocalMediaSizeInMB</code>) that you want to store for a stream on the Edge Agent, as well as the strategy that should be used (<code>StrategyOnFullSize</code>) when a stream's maximum size has been reached.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocalSizeConfig
 	{
 		
@@ -368,24 +337,21 @@ namespace MyNS
 		public StrategyOnFullSize StrategyOnFullSize { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StrategyOnFullSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_OLDEST_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_OLDEST_MEDIA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENY_NEW_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENY_NEW_MEDIA = 1,
 	}
 	
 	/// <summary>
 	/// An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this information to determine the current health of an edge agent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EdgeAgentStatus
 	{
 		
@@ -399,8 +365,7 @@ namespace MyNS
 	/// <summary>
 	/// The latest status of a stream's edge recording job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LastRecorderStatus
 	{
 		
@@ -417,27 +382,24 @@ namespace MyNS
 		public RecorderStatus RecorderStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecorderStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_ERROR = 2,
 	}
 	
 	/// <summary>
 	/// The latest status of a stream’s edge to cloud uploader job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LastUploaderStatus
 	{
 		
@@ -454,8 +416,7 @@ namespace MyNS
 		public RecorderStatus UploaderStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeImageGenerationConfigurationOutput
 	{
 		
@@ -466,8 +427,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure that contains the information required for the KVS images delivery. If null, the configuration will be deleted from the stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageGenerationConfiguration
 	{
 		
@@ -516,37 +476,32 @@ namespace MyNS
 		public System.Nullable<System.Int32> HeightPixels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigurationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageSelectorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_TIMESTAMP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCER_TIMESTAMP = 1,
 	}
 	
 	/// <summary>
 	/// The structure that contains the information required to deliver images to a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageGenerationDestinationConfig
 	{
 		
@@ -565,27 +520,23 @@ namespace MyNS
 		public string DestinationRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Format
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JPEG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JPEG = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PNG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PNG = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormatConfig
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMappedResourceConfigurationOutput
 	{
 		
@@ -599,8 +550,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that encapsulates, or contains, the media storage configuration properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MappedResourceConfigurationListItem
 	{
 		
@@ -611,8 +561,7 @@ namespace MyNS
 		public string ARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMediaStorageConfigurationOutput
 	{
 		
@@ -623,8 +572,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that encapsulates, or contains, the media storage configuration properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaStorageConfiguration
 	{
 		
@@ -639,8 +587,7 @@ namespace MyNS
 		public ConfigurationStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeNotificationConfigurationOutput
 	{
 		
@@ -651,8 +598,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure that contains the notification information for the KVS images delivery. If this parameter is null, the configuration will be deleted from the stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationConfiguration
 	{
 		
@@ -674,8 +620,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure that contains the information required to deliver a notification to a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationDestinationConfig
 	{
 		
@@ -687,8 +632,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSignalingChannelOutput
 	{
 		
@@ -699,8 +643,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that encapsulates a signaling channel's metadata and properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChannelInfo
 	{
 		
@@ -726,43 +669,38 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_MASTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_MASTER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_MESH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_MESH = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 	}
 	
 	/// <summary>
 	/// A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SingleMasterConfiguration
 	{
 		
@@ -770,8 +708,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MessageTtlSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamOutput
 	{
 		
@@ -782,8 +719,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing a Kinesis video stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamInfo
 	{
 		
@@ -815,8 +751,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> DataRetentionInHours { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataEndpointOutput
 	{
 		
@@ -824,8 +759,7 @@ namespace MyNS
 		public string DataEndpoint { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSignalingChannelEndpointOutput
 	{
 		
@@ -836,8 +770,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p> <p>The media server endpoint will correspond to the <code>WEBRTC</code> Protocol.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceEndpointListItem
 	{
 		
@@ -848,37 +781,32 @@ namespace MyNS
 		public string ResourceEndpoint { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WSS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WSS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTPS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEBRTC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEBRTC = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MASTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MASTER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEWER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEWER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEdgeAgentConfigurationsOutput
 	{
 		
@@ -892,8 +820,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of a single stream's edge configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEdgeAgentConfigurationsEdgeConfig
 	{
 		
@@ -922,8 +849,7 @@ namespace MyNS
 		public EdgeConfig EdgeConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSignalingChannelsOutput
 	{
 		
@@ -934,18 +860,15 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStreamsOutput
 	{
 		
@@ -956,8 +879,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceOutput
 	{
 		
@@ -968,14 +890,12 @@ namespace MyNS
 		public ResourceTags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceTags
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForStreamOutput
 	{
 		
@@ -986,14 +906,12 @@ namespace MyNS
 		public ResourceTags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidResourceFormatException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartEdgeConfigurationUpdateOutput
 	{
 		
@@ -1019,121 +937,105 @@ namespace MyNS
 		public EdgeConfig EdgeConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoDataRetentionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagStreamOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagStreamOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataRetentionOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateImageGenerationConfigurationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaStorageConfigurationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaStorageConfigurationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNotificationConfigurationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSignalingChannelOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStreamOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum APIName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT_MEDIA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET_MEDIA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIST_FRAGMENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIST_FRAGMENTS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET_MEDIA_FOR_FRAGMENT_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET_MEDIA_FOR_FRAGMENT_LIST = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET_HLS_STREAMING_SESSION_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET_HLS_STREAMING_SESSION_URL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET_DASH_STREAMING_SESSION_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET_DASH_STREAMING_SESSION_URL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET_CLIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET_CLIP = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET_IMAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET_IMAGES = 7,
 	}
 	
 	/// <summary>
 	/// An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChannelNameCondition
 	{
 		
@@ -1144,8 +1046,7 @@ namespace MyNS
 		public string ComparisonValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSignalingChannelInput
 	{
 		
@@ -1166,8 +1067,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStreamInput
 	{
 		
@@ -1194,8 +1094,7 @@ namespace MyNS
 		public ResourceTags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEdgeConfigurationInput
 	{
 		
@@ -1206,8 +1105,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSignalingChannelInput
 	{
 		
@@ -1222,8 +1120,7 @@ namespace MyNS
 		public string CurrentVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStreamInput
 	{
 		
@@ -1238,8 +1135,7 @@ namespace MyNS
 		public string CurrentVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEdgeConfigurationInput
 	{
 		
@@ -1250,8 +1146,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeImageGenerationConfigurationInput
 	{
 		
@@ -1262,8 +1157,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMappedResourceConfigurationInput
 	{
 		
@@ -1280,8 +1174,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMediaStorageConfigurationInput
 	{
 		
@@ -1292,8 +1185,7 @@ namespace MyNS
 		public string ChannelARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeNotificationConfigurationInput
 	{
 		
@@ -1304,8 +1196,7 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSignalingChannelInput
 	{
 		
@@ -1316,8 +1207,7 @@ namespace MyNS
 		public string ChannelARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamInput
 	{
 		
@@ -1328,18 +1218,15 @@ namespace MyNS
 		public string StreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FormatConfigKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JPEGQuality")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JPEGQuality = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataEndpointInput
 	{
 		
@@ -1360,8 +1247,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SingleMasterChannelEndpointConfiguration
 	{
 		
@@ -1372,8 +1258,7 @@ namespace MyNS
 		public ChannelRole Role { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSignalingChannelEndpointInput
 	{
 		
@@ -1388,24 +1273,21 @@ namespace MyNS
 		public SingleMasterChannelEndpointConfiguration SingleMasterChannelEndpointConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UploaderStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEdgeAgentConfigurationsInput
 	{
 		
@@ -1423,8 +1305,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSignalingChannelsInput
 	{
 		
@@ -1441,8 +1322,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamNameCondition
 	{
 		
@@ -1453,8 +1333,7 @@ namespace MyNS
 		public string ComparisonValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStreamsInput
 	{
 		
@@ -1468,8 +1347,7 @@ namespace MyNS
 		public StreamNameCondition StreamNameCondition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceInput
 	{
 		
@@ -1484,8 +1362,7 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForStreamInput
 	{
 		
@@ -1499,8 +1376,7 @@ namespace MyNS
 		public string StreamName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartEdgeConfigurationUpdateInput
 	{
 		
@@ -1518,8 +1394,7 @@ namespace MyNS
 		public EdgeConfig EdgeConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceInput
 	{
 		
@@ -1538,8 +1413,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagStreamInput
 	{
 		
@@ -1557,8 +1431,7 @@ namespace MyNS
 		public ResourceTags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceInput
 	{
 		
@@ -1577,8 +1450,7 @@ namespace MyNS
 		public string[] TagKeyList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagStreamInput
 	{
 		
@@ -1596,21 +1468,18 @@ namespace MyNS
 		public string[] TagKeyList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateDataRetentionOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCREASE_DATA_RETENTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCREASE_DATA_RETENTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECREASE_DATA_RETENTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECREASE_DATA_RETENTION = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataRetentionInput
 	{
 		
@@ -1642,8 +1511,7 @@ namespace MyNS
 		public int DataRetentionChangeInHours { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateImageGenerationConfigurationInput
 	{
 		
@@ -1657,8 +1525,7 @@ namespace MyNS
 		public ImageGenerationConfiguration ImageGenerationConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaStorageConfigurationInput
 	{
 		
@@ -1677,8 +1544,7 @@ namespace MyNS
 		public MediaStorageConfiguration MediaStorageConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNotificationConfigurationInput
 	{
 		
@@ -1692,8 +1558,7 @@ namespace MyNS
 		public NotificationConfiguration NotificationConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSignalingChannelInput
 	{
 		
@@ -1715,8 +1580,7 @@ namespace MyNS
 		public SingleMasterConfiguration SingleMasterConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStreamInput
 	{
 		

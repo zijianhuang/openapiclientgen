@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsBankAccountsAccountDetails
 	{
 		
@@ -37,8 +36,7 @@ namespace MyNS
 		public string Sortcode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsBankAccountsAccountVerificationRequest
 	{
 		
@@ -71,8 +69,7 @@ namespace MyNS
 		public string RegEntryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsDataCheckAddress
 	{
 		
@@ -134,8 +131,7 @@ namespace MyNS
 		public string Postcode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsBankAccountsPerson
 	{
 		
@@ -157,8 +153,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsBankAccountsAccountVerificationResponse
 	{
 		
@@ -256,9 +251,7 @@ namespace MyNS
 		public string SortcodeValidationText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsBankAccountsAccountVerificationResponseAccountNumberValidation
 	{
 		
@@ -281,9 +274,7 @@ namespace MyNS
 		_5 = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsBankAccountsAccountVerificationResponseAccountStatus
 	{
 		
@@ -300,9 +291,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsBankAccountsAccountVerificationResponseAddressValidation
 	{
 		
@@ -322,9 +311,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsBankAccountsAccountVerificationResponseCheckStatus
 	{
 		
@@ -341,9 +328,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsBankAccountsAccountVerificationResponseNameValidation
 	{
 		
@@ -357,9 +342,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsBankAccountsAccountVerificationResponseSortcodeValidation
 	{
 		
@@ -379,8 +362,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsCompaniesCompanyDetail
 	{
 		
@@ -418,8 +400,7 @@ namespace MyNS
 		public CredasApiModelsCompaniesSignificantPerson[] SignificantPeople { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsCompaniesSignificantPerson
 	{
 		
@@ -436,8 +417,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsDataCheckAddDataCheckRequest
 	{
 		
@@ -471,9 +451,7 @@ namespace MyNS
 		public string RegEntryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsDataCheckAddDataCheckRequestCheckType
 	{
 		
@@ -490,8 +468,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsDataCheckPerson
 	{
 		
@@ -528,8 +505,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsDataCheckAddDataCheckResponse
 	{
 		
@@ -548,8 +524,7 @@ namespace MyNS
 		public string RegCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsDataCheckCheckRemark
 	{
 		
@@ -563,9 +538,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsDataCheckCheckRemarkCategory
 	{
 		
@@ -582,8 +555,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsDataCheckPepSanctionsPepSanctionItem
 	{
 		
@@ -609,8 +581,7 @@ namespace MyNS
 		public CredasApiModelsDataCheckPepSanctionsSanctionDate[] SanctionDates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsDataCheckPepSanctionsSanctionAddress
 	{
 		
@@ -618,8 +589,7 @@ namespace MyNS
 		public string[] Lines { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsDataCheckPepSanctionsSanctionPosition
 	{
 		
@@ -630,8 +600,7 @@ namespace MyNS
 		public string Position { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsDataCheckPepSanctionsSanctionDate
 	{
 		
@@ -654,9 +623,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Year { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsDataCheckPepSanctionsSanctionDateType
 	{
 		
@@ -670,8 +637,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsErrorsErrorResponse
 	{
 		
@@ -682,8 +648,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsImagesAddIdDocumentImageRequest
 	{
 		
@@ -713,8 +678,7 @@ namespace MyNS
 		public string RegistrationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsKeyValueItem
 	{
 		
@@ -725,9 +689,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsImagesAddIdDocumentImageRequestDocumentType
 	{
 		
@@ -765,8 +727,7 @@ namespace MyNS
 		_11 = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsImagesAddIdDocumentImageResponse
 	{
 		
@@ -808,9 +769,7 @@ namespace MyNS
 		public string RegCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsImagesAddIdDocumentImageResponseDocumentStatus
 	{
 		
@@ -824,9 +783,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsImagesAddIdDocumentImageResponseDocumentType
 	{
 		
@@ -1032,8 +989,7 @@ namespace MyNS
 		_77 = 77,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsImagesAddLivenessImageRequest
 	{
 		
@@ -1052,8 +1008,7 @@ namespace MyNS
 		public string RegistrationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsImagesAddSelfieImageRequest
 	{
 		
@@ -1072,8 +1027,7 @@ namespace MyNS
 		public string RegistrationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsImagesAddSelfieImageResponse
 	{
 		
@@ -1085,8 +1039,7 @@ namespace MyNS
 		public bool LivenessConfirmed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsImagesGetIdDocumentImageResponse
 	{
 		
@@ -1240,9 +1193,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsImagesGetIdDocumentImageResponseDocumentAnalysisResult
 	{
 		
@@ -1271,9 +1222,7 @@ namespace MyNS
 		_11 = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsImagesGetIdDocumentImageResponseDocumentSide
 	{
 		
@@ -1287,9 +1236,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsImagesGetIdDocumentImageResponseNameCheckMethod
 	{
 		
@@ -1303,9 +1250,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsImagesGetIdDocumentImageResponseNfcReadStatus
 	{
 		
@@ -1343,9 +1288,7 @@ namespace MyNS
 		_10 = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsImagesGetIdDocumentImageResponseStatus
 	{
 		
@@ -1362,8 +1305,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsImagesGetLivenessImageResponse
 	{
 		
@@ -1377,8 +1319,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsImagesGetLivenessPerformedImageResponse
 	{
 		
@@ -1389,8 +1330,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsImagesGetSelfieImageResponse
 	{
 		
@@ -1401,8 +1341,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsPropertyRegisterAddress
 	{
 		
@@ -1444,8 +1383,7 @@ namespace MyNS
 		public string Postcode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsPropertyRegisterPerson
 	{
 		
@@ -1467,8 +1405,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsPropertyRegisterPropertyRegisterCheckRequest
 	{
 		
@@ -1494,8 +1431,7 @@ namespace MyNS
 		public string RegEntryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsPropertyRegisterPropertyRegisterCheckResponse
 	{
 		
@@ -1530,9 +1466,7 @@ namespace MyNS
 		public string TitleNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsPropertyRegisterPropertyRegisterCheckResponseCheckStatus
 	{
 		
@@ -1549,9 +1483,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsPropertyRegisterPropertyRegisterCheckResponseMatchResult
 	{
 		
@@ -1580,9 +1512,7 @@ namespace MyNS
 		_7 = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsPropertyRegisterPropertyRegisterCheckResponsePropertyOwnership
 	{
 		
@@ -1596,8 +1526,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegTypesRegType
 	{
 		
@@ -1608,8 +1537,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsAddInstantRegistrationRequest
 	{
 		
@@ -1688,9 +1616,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsAddInstantRegistrationRequestDocumentType
 	{
 		
@@ -1728,8 +1654,7 @@ namespace MyNS
 		_11 = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsAddInstantRegistrationResponse
 	{
 		
@@ -1771,9 +1696,7 @@ namespace MyNS
 		public string RegCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsAddInstantRegistrationResponseDocumentStatus
 	{
 		
@@ -1787,9 +1710,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsAddInstantRegistrationResponseDocumentType
 	{
 		
@@ -1995,8 +1916,7 @@ namespace MyNS
 		_77 = 77,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsAddRegistrationRequest
 	{
 		
@@ -2103,8 +2023,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsReturnUrls
 	{
 		
@@ -2112,8 +2031,7 @@ namespace MyNS
 		public string ReturnUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsRegistrationSettings
 	{
 		
@@ -2136,9 +2054,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> SkipEmailStep { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationSettingsNameMatchRoutine
 	{
 		
@@ -2149,8 +2065,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsAddRegistrationResponse
 	{
 		
@@ -2172,8 +2087,7 @@ namespace MyNS
 		public CredasApiModelsRegistrationsJourneyUrl WebJourneyUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsJourneyUrl
 	{
 		
@@ -2184,8 +2098,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ValidUntil { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsCheckSubmittedIdDocumentsResponse
 	{
 		
@@ -2199,9 +2112,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsCheckSubmittedIdDocumentsResponseCheckCode
 	{
 		
@@ -2215,8 +2126,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsDataCheckSourceSummary
 	{
 		
@@ -2257,9 +2167,7 @@ namespace MyNS
 		public System.Nullable<CredasApiModelsRegistrationsDataCheckSourceSummaryStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsDataCheckSourceSummarySourceType
 	{
 		
@@ -2297,9 +2205,7 @@ namespace MyNS
 		_10 = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsDataCheckSourceSummaryStatus
 	{
 		
@@ -2316,8 +2222,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsIdDocumentSummary
 	{
 		
@@ -2454,9 +2359,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsIdDocumentSummaryDocumentAnalysisResult
 	{
 		
@@ -2485,9 +2388,7 @@ namespace MyNS
 		_11 = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsIdDocumentSummaryDocumentSide
 	{
 		
@@ -2501,9 +2402,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsIdDocumentSummaryNameCheckMethod
 	{
 		
@@ -2517,9 +2416,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsIdDocumentSummaryNfcReadStatus
 	{
 		
@@ -2557,9 +2454,7 @@ namespace MyNS
 		_10 = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsIdDocumentSummaryStatus
 	{
 		
@@ -2576,8 +2471,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsIdVerification
 	{
 		
@@ -2591,9 +2485,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> HasBeenOverridden { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsIdVerificationCheckStatus
 	{
 		
@@ -2610,8 +2502,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsPagedRegistrationSummary
 	{
 		
@@ -2622,8 +2513,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsRegistrationSummary
 	{
 		
@@ -2821,8 +2711,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsRegistrationComment
 	{
 		
@@ -2851,9 +2740,7 @@ namespace MyNS
 		public System.Nullable<CredasApiModelsRegistrationsRegistrationCommentType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationCommentCheckType
 	{
 		
@@ -2885,9 +2772,7 @@ namespace MyNS
 		_8 = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationCommentType
 	{
 		
@@ -2898,9 +2783,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationSummaryDITFStatus
 	{
 		
@@ -2914,8 +2797,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsStatusChecksStatusCheck
 	{
 		
@@ -2947,8 +2829,7 @@ namespace MyNS
 		public System.Nullable<CredasApiModelsStatusChecksStatusCheckStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsStatusChecksCCJCcjResult
 	{
 		
@@ -3001,9 +2882,7 @@ namespace MyNS
 		public string Postcode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsStatusChecksCCJCcjResultJudgementType
 	{
 		
@@ -3026,8 +2905,7 @@ namespace MyNS
 		_5 = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsStatusChecksCompanyDirectorCompanyDirectorResult
 	{
 		
@@ -3056,8 +2934,7 @@ namespace MyNS
 		public string RegisteredOffice { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsStatusChecksCompanyDirectorCompanyAppointment
 	{
 		
@@ -3086,9 +2963,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsStatusChecksCompanyDirectorCompanyDirectorResultMatchType
 	{
 		
@@ -3105,8 +2980,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsStatusChecksInsolvencyInsolvencyResult
 	{
 		
@@ -3174,8 +3048,7 @@ namespace MyNS
 		public string TypeText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsStatusChecksInsolvencyAddress
 	{
 		
@@ -3204,9 +3077,7 @@ namespace MyNS
 		public string Postcode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsStatusChecksInsolvencyInsolvencyResultType
 	{
 		
@@ -3229,9 +3100,7 @@ namespace MyNS
 		_5 = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsStatusChecksStatusCheckStatus
 	{
 		
@@ -3248,9 +3117,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationSummaryDataCheckResult
 	{
 		
@@ -3267,9 +3134,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationSummaryLivenessMethod
 	{
 		
@@ -3283,9 +3148,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationSummaryLivenessStatus
 	{
 		
@@ -3305,8 +3168,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsPersonalDetails
 	{
 		
@@ -3323,8 +3185,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsSettlementStatus
 	{
 		
@@ -3353,9 +3214,7 @@ namespace MyNS
 		public System.Nullable<CredasApiModelsRegistrationsSettlementStatusShareCodeNameCheckStatus> ShareCodeNameCheckStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsSettlementStatusCheckStatus
 	{
 		
@@ -3372,9 +3231,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsSettlementStatusShareCodeFacialMatchStatus
 	{
 		
@@ -3391,9 +3248,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsSettlementStatusShareCodeNameCheckStatus
 	{
 		
@@ -3410,9 +3265,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationSummaryRightToWorkDocumentsProvided
 	{
 		
@@ -3426,9 +3279,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationSummarySafeHarbourVerifiedStatus
 	{
 		
@@ -3442,9 +3293,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsRegistrationSummaryStatus
 	{
 		
@@ -3467,8 +3316,7 @@ namespace MyNS
 		_6 = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsSupportedIdDocument
 	{
 		
@@ -3482,9 +3330,7 @@ namespace MyNS
 		public System.Nullable<CredasApiModelsRegistrationsSupportedIdDocumentType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsSupportedIdDocumentType
 	{
 		
@@ -3519,8 +3365,7 @@ namespace MyNS
 		_9 = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsUpdateContactDetailsRequest
 	{
 		
@@ -3589,9 +3434,7 @@ namespace MyNS
 		public string Surname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsUpdateContactDetailsRequestDeliveryMethod
 	{
 		
@@ -3605,8 +3448,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsRegistrationsUpdateRegistrationStatusRequest
 	{
 		
@@ -3619,9 +3461,7 @@ namespace MyNS
 		public CredasApiModelsRegistrationsUpdateRegistrationStatusRequestStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsRegistrationsUpdateRegistrationStatusRequestStatus
 	{
 		
@@ -3644,8 +3484,7 @@ namespace MyNS
 		_6 = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsReportViewGetReportViewByReferenceIdRequest
 	{
 		
@@ -3676,8 +3515,7 @@ namespace MyNS
 		public string User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsReportViewGetReportViewByRegistrationIdRequest
 	{
 		
@@ -3704,8 +3542,7 @@ namespace MyNS
 		public string User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsReportViewGetReportViewResponse
 	{
 		
@@ -3713,8 +3550,7 @@ namespace MyNS
 		public CredasApiModelsReportViewReportViewItem[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsReportViewReportViewItem
 	{
 		
@@ -3731,8 +3567,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ValidUntil { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsStatusChecksStatusCheckRequest
 	{
 		
@@ -3758,8 +3593,7 @@ namespace MyNS
 		public string RegEntryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsStatusOverridesOverrideCheckStatusRequest
 	{
 		
@@ -3787,9 +3621,7 @@ namespace MyNS
 		public CredasApiModelsStatusOverridesOverrideCheckStatusRequestStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsStatusOverridesOverrideCheckStatusRequestCheckType
 	{
 		
@@ -3821,9 +3653,7 @@ namespace MyNS
 		_8 = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredasApiModelsStatusOverridesOverrideCheckStatusRequestStatus
 	{
 		
@@ -3840,8 +3670,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsWebVerificationsGetWebVerificationsByReferenceIdRequest
 	{
 		
@@ -3860,8 +3689,7 @@ namespace MyNS
 		public CredasApiModelsRegistrationsReturnUrls ReturnUrls { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsWebVerificationsGetWebVerificationsByRegistrationIdRequest
 	{
 		
@@ -3876,8 +3704,7 @@ namespace MyNS
 		public CredasApiModelsRegistrationsReturnUrls ReturnUrls { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsWebVerificationsGetWebVerificationsResponse
 	{
 		
@@ -3885,8 +3712,7 @@ namespace MyNS
 		public CredasApiModelsWebVerificationsWebVerificationsItem[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredasApiModelsWebVerificationsWebVerificationsItem
 	{
 		

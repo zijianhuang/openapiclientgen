@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The comment analysis request message. Next ID: 11
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeCommentRequest
 	{
 		
@@ -89,8 +88,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a body of text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextEntry
 	{
 		
@@ -107,27 +105,24 @@ namespace MyNS
 		public System.Nullable<TextEntryType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextEntryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAIN_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAIN_TEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML = 2,
 	}
 	
 	/// <summary>
 	/// Context is typically something that a Comment is referencing or replying to (such as an article, or previous comment). Note: Populate only ONE OF the following fields. The oneof syntax cannot be used because that would require nesting entries inside another message and breaking backwards compatibility. The server will return an error if more than one of the following fields is present.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Context
 	{
 		
@@ -147,8 +142,7 @@ namespace MyNS
 	/// <summary>
 	/// A type of context specific to a comment left on a single-threaded comment message board, where comments are either a top level comment or the child of a top level comment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArticleAndParentComment
 	{
 		
@@ -168,8 +162,7 @@ namespace MyNS
 	/// <summary>
 	/// Configurable parameters for attribute scoring.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeParameters
 	{
 		
@@ -186,33 +179,30 @@ namespace MyNS
 		public System.Nullable<AttributeParametersScoreType> ScoreType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AttributeParametersScoreType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCORE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCORE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROBABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROBABILITY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STD_DEV_SCORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STD_DEV_SCORE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENTILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENTILE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAW = 4,
 	}
 	
 	/// <summary>
 	/// The comment analysis response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeCommentResponse
 	{
 		
@@ -244,8 +234,7 @@ namespace MyNS
 	/// <summary>
 	/// This holds score values for a single attribute. It contains both per-span scores as well as an overall summary score..
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeScores
 	{
 		
@@ -265,8 +254,7 @@ namespace MyNS
 	/// <summary>
 	/// This is a single score for a given span of text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpanScore
 	{
 		
@@ -289,8 +277,7 @@ namespace MyNS
 	/// <summary>
 	/// Analysis scores are described by a value and a ScoreType.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Score
 	{
 		
@@ -310,8 +297,7 @@ namespace MyNS
 	/// <summary>
 	/// The comment score suggestion request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestCommentScoreRequest
 	{
 		
@@ -361,8 +347,7 @@ namespace MyNS
 	/// <summary>
 	/// The comment score suggestion response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestCommentScoreResponse
 	{
 		

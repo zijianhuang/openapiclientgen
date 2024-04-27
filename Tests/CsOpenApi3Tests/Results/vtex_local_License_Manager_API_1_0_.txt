@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Successful response for `/api/vlm/account`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountResponse
 	{
 		
@@ -234,8 +233,7 @@ namespace MyNS
 	/// <summary>
 	/// Object representing application keys
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppKeyItems
 	{
 		
@@ -307,8 +305,7 @@ namespace MyNS
 	/// <summary>
 	/// Object representing licenses
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseItems
 	{
 		
@@ -375,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// Object containing complete information from a store
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SiteItems
 	{
 		
@@ -445,8 +441,7 @@ namespace MyNS
 	/// <summary>
 	/// Request body for creating users
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateUserRequest
 	{
 		
@@ -470,8 +465,7 @@ namespace MyNS
 	/// <summary>
 	/// Request body for creating new application key (/api/vlm/appkeys)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatenewappkeyRequest
 	{
 		
@@ -487,8 +481,7 @@ namespace MyNS
 	/// <summary>
 	/// Response body of sucessful call to /api/vlm/appkeys
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatenewappkeyResponse
 	{
 		
@@ -544,8 +537,7 @@ namespace MyNS
 	/// <summary>
 	/// Response body for getting all application keys from the account
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Getappkeysfromaccount
 	{
 		
@@ -593,8 +585,7 @@ namespace MyNS
 	/// <summary>
 	/// Response body for listing all roles
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRolesResponse
 	{
 		
@@ -614,8 +605,7 @@ namespace MyNS
 	/// <summary>
 	/// Object representing roles
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoleItems
 	{
 		
@@ -659,8 +649,7 @@ namespace MyNS
 	/// <summary>
 	/// Object representing products
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductItems
 	{
 		
@@ -701,8 +690,7 @@ namespace MyNS
 	/// <summary>
 	/// Paging object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Paging
 	{
 		
@@ -742,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// Response body for listing all users
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUsersResponse
 	{
 		
@@ -763,8 +750,7 @@ namespace MyNS
 	/// <summary>
 	/// Object representing users
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserItems
 	{
 		
@@ -824,8 +810,7 @@ namespace MyNS
 	/// <summary>
 	/// Object containing summarized information from a store
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StoreItems
 	{
 		
@@ -851,8 +836,7 @@ namespace MyNS
 	/// <summary>
 	/// Request body for activating/deactivating application keys
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateappkeyRequest
 	{
 		
@@ -868,8 +852,7 @@ namespace MyNS
 	/// <summary>
 	/// Object representing VLMError
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VLMError
 	{
 		

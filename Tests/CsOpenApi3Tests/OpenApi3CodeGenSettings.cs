@@ -11,12 +11,13 @@ namespace SwagTests
 			ContainerClassName = "Misc",
 			ContainerNameStrategy = ContainerNameStrategy.None,
 			ActionNameStrategy = ActionNameStrategy.Default,
-			DataContractNamespace = "http://fonlow.com/TestOpenApi/2024/01",
+			DataContractNamespace = "http://fonlow.com/TestOpenApi/2024/04",
 			DecorateDataModelWithDataContract = true, // good for property names invalid in C#
 			GenerateBothAsyncAndSync = false,
 			UseEnsureSuccessStatusCodeEx = true,
 			DataAnnotationsEnabled = true,
 			DataAnnotationsToComments = true,
+			HandleHttpRequestHeaders = true,
 			UseSystemTextJson = false,
 		};
 
@@ -27,7 +28,7 @@ namespace SwagTests
 				ClientNamespace = "MyNS",
 				ContainerClassName = "Misc",
 				ContainerNameStrategy = ContainerNameStrategy.None,
-				DataContractNamespace = "http://fonlow.com/TestOpenApi/2024/01",
+				DataContractNamespace = "http://fonlow.com/TestOpenApi/2024/04",
 				DecorateDataModelWithDataContract = true, // good for property names invalid in C#
 				ActionNameStrategy = ans,
 				GenerateBothAsyncAndSync = false,

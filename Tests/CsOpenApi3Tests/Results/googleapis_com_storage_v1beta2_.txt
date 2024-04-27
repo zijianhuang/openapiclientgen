@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bucket
 	{
 		
@@ -132,8 +131,7 @@ namespace MyNS
 	/// <summary>
 	/// An access-control entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BucketAccessControl
 	{
 		
@@ -240,8 +238,7 @@ namespace MyNS
 	/// <summary>
 	/// An access-control entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectAccessControl
 	{
 		
@@ -454,8 +451,7 @@ namespace MyNS
 	/// <summary>
 	/// An access-control list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BucketAccessControls
 	{
 		
@@ -476,8 +472,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of buckets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Buckets
 	{
 		
@@ -504,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// An notification channel used to watch for resource changes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -574,8 +568,7 @@ namespace MyNS
 	/// <summary>
 	/// A Compose request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComposeRequest
 	{
 		
@@ -602,8 +595,7 @@ namespace MyNS
 	/// <summary>
 	/// An object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Object
 	{
 		
@@ -804,8 +796,7 @@ namespace MyNS
 	/// <summary>
 	/// An access-control list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectAccessControls
 	{
 		
@@ -826,8 +817,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Objects
 	{
 		
@@ -2209,10 +2199,10 @@ namespace MyNS
 	public enum Storage_buckets_listProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="noAcl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		noAcl = 1,
 	}
 }

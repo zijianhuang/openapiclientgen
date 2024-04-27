@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Bulk SMS Request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkSMSRequest
 	{
 		
@@ -34,8 +33,7 @@ namespace MyNS
 		public Message[] Messages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -65,8 +63,7 @@ namespace MyNS
 	/// <summary>
 	/// Send SMS Request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendSMSRequest
 	{
 		

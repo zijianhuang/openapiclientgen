@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A channel grouping defines a set of rules that can be used to categorize events in a path report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChannelGrouping
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// A Rule defines a name, and a boolean expression in [conjunctive normal form] (http://mathworld.wolfram.com/ConjunctiveNormalForm.html){.external} that can be applied to a path event to determine if that name should be applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// DisjunctiveMatchStatement that OR's all contained filters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisjunctiveMatchStatement
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the type of filter to be applied to the path, a DV360 event dimension filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventFilter
 	{
 		
@@ -98,8 +94,7 @@ namespace MyNS
 	/// <summary>
 	/// Dimension filter on path events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathQueryOptionsFilter
 	{
 		
@@ -122,33 +117,30 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PathQueryOptionsFilterMatch
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WILDCARD_EXPRESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WILDCARD_EXPRESSION = 4,
 	}
 	
 	/// <summary>
 	/// Report data range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRange
 	{
 		
@@ -174,8 +166,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -198,75 +189,72 @@ namespace MyNS
 		public System.Nullable<System.Int32> Year { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataRangeRange
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RANGE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RANGE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_DATES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_DATES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENT_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENT_DAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_DAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEK_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEK_TO_DATE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH_TO_DATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARTER_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARTER_TO_DATE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR_TO_DATE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_WEEK = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_MONTH = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_QUARTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_QUARTER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_YEAR = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_7_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_7_DAYS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_30_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_30_DAYS = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_90_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_90_DAYS = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_365_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_365_DAYS = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_TIME = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_14_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_14_DAYS = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_60_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_60_DAYS = 18,
 	}
 	
 	/// <summary>
 	/// Filter used to match traffic data in your report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterPair
 	{
 		
@@ -283,8 +271,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueriesResponse
 	{
 		
@@ -304,8 +291,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Query
 	{
 		
@@ -337,8 +323,7 @@ namespace MyNS
 	/// <summary>
 	/// Query metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryMetadata
 	{
 		
@@ -373,27 +358,24 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryMetadataFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSV = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XLSX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XLSX = 2,
 	}
 	
 	/// <summary>
 	/// Parameters of a query or report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parameters
 	{
 		
@@ -431,8 +413,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional query options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Options
 	{
 		
@@ -452,8 +433,7 @@ namespace MyNS
 	/// <summary>
 	/// Path Query Options for Report Options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathQueryOptions
 	{
 		
@@ -473,8 +453,7 @@ namespace MyNS
 	/// <summary>
 	/// Path filters specify which paths to include in a report. A path is the result of combining DV360 events based on User ID to create a workflow of users' actions. When a path filter is set, the resulting report will only include paths that match the specified event at the specified position. All other paths will be excluded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathFilter
 	{
 		
@@ -491,73 +470,68 @@ namespace MyNS
 		public System.Nullable<PathFilterPathMatchPosition> PathMatchPosition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PathFilterPathMatchPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH_MATCH_POSITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH_MATCH_POSITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParametersType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVENTORY_AVAILABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVENTORY_AVAILABILITY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIENCE_COMPOSITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIENCE_COMPOSITION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLOODLIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLOODLIGHT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YOUTUBE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YOUTUBE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRP = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YOUTUBE_PROGRAMMATIC_GUARANTEED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YOUTUBE_PROGRAMMATIC_GUARANTEED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REACH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REACH = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIQUE_REACH_AUDIENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIQUE_REACH_AUDIENCE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_PATH = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH_ATTRIBUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH_ATTRIBUTION = 11,
 	}
 	
 	/// <summary>
 	/// Information on when and how frequently to run a query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuerySchedule
 	{
 		
@@ -586,39 +560,36 @@ namespace MyNS
 		public Date StartDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryScheduleFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FREQUENCY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FREQUENCY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_TIME = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEKLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEMI_MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEMI_MONTHLY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARTERLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARTERLY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEARLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEARLY = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReportsResponse
 	{
 		
@@ -638,8 +609,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Report
 	{
 		
@@ -665,8 +635,7 @@ namespace MyNS
 	/// <summary>
 	/// Key used to identify a report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportKey
 	{
 		
@@ -686,8 +655,7 @@ namespace MyNS
 	/// <summary>
 	/// Report metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportMetadata
 	{
 		
@@ -719,8 +687,7 @@ namespace MyNS
 	/// <summary>
 	/// Report status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportStatus
 	{
 		
@@ -743,33 +710,30 @@ namespace MyNS
 		public System.Nullable<ReportStatusState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEUED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 	}
 	
 	/// <summary>
 	/// Request to run a stored query to generate a report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunQueryRequest
 	{
 		

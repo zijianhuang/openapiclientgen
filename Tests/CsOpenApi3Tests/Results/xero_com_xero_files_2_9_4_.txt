@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Association
 	{
 		
@@ -47,220 +46,215 @@ namespace MyNS
 		public System.Nullable<AssociationObjectType> ObjectType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssociationObjectGroup
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Account = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BankTransaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BankTransaction = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Contact")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Contact = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreditNote")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreditNote = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Invoice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Invoice = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Item")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Item = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ManualJournal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ManualJournal = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overpayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Overpayment = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Payment = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Prepayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Prepayment = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Receipt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Receipt = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssociationObjectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Accpay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Accpay = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccPayCredit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccPayCredit = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccPayPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccPayPayment = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccRec")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccRec = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccRecCredit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccRecCredit = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccRecPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccRecPayment = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Adjustment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Adjustment = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApCreditPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApCreditPayment = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApOverPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApOverPayment = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApOverPaymentPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApOverPaymentPayment = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApOverPaymentSourcePayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApOverPaymentSourcePayment = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApPrepayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApPrepayment = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApPrepaymentPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApPrepaymentPayment = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApPrepaymentSourcePayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApPrepaymentSourcePayment = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArCreditPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArCreditPayment = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArOverPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArOverPayment = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArOverpaymentPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArOverpaymentPayment = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArOverpaymentSourcePayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArOverpaymentSourcePayment = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArPrepayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArPrepayment = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArPrepaymentPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArPrepaymentPayment = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArPrepaymentSourcePayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArPrepaymentSourcePayment = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CashPaid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CashPaid = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CashRec")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CashRec = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExpPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExpPayment = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ManJournal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ManJournal = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PurchaseOrder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PurchaseOrder = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Receipt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Receipt = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Transfer = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Account = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Contact")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Contact = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Business = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Employee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Employee = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Person")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Person = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="User")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		User = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Org")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Org = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FixedAsset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FixedAsset = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PayRun")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PayRun = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PriceListItem")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PriceListItem = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bank")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bank = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Current")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Current = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Equity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Equity = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Expense")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Expense = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fixed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fixed = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Liability")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Liability = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Prepayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Prepayment = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Revenue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Revenue = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sales")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sales = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overheads")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Overheads = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Depreciatn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Depreciatn = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OtherIncome")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OtherIncome = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DirectCosts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DirectCosts = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Currliab")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Currliab = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Termliab")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Termliab = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NonCurrent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NonCurrent = 54,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileObject
 	{
 		
@@ -310,8 +304,7 @@ namespace MyNS
 		public User User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -348,8 +341,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Files
 	{
 		
@@ -366,8 +358,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Folder
 	{
 		
@@ -402,8 +393,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Folders
 	{
 		
@@ -414,218 +404,214 @@ namespace MyNS
 	/// <summary>
 	/// The Object Group that the object is in. These roughly correlate to the endpoints that can be used to retrieve the object via the core accounting API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ObjectGroup
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Account = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BankTransaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BankTransaction = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Contact")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Contact = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreditNote")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreditNote = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Invoice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Invoice = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Item")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Item = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ManualJournal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ManualJournal = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overpayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Overpayment = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Payment = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Prepayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Prepayment = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Receipt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Receipt = 10,
 	}
 	
 	/// <summary>
 	/// The Object Type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ObjectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Accpay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Accpay = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccPayCredit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccPayCredit = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccPayPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccPayPayment = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccRec")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccRec = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccRecCredit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccRecCredit = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccRecPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccRecPayment = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Adjustment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Adjustment = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApCreditPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApCreditPayment = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApOverPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApOverPayment = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApOverPaymentPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApOverPaymentPayment = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApOverPaymentSourcePayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApOverPaymentSourcePayment = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApPrepayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApPrepayment = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApPrepaymentPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApPrepaymentPayment = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApPrepaymentSourcePayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApPrepaymentSourcePayment = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArCreditPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArCreditPayment = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArOverPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArOverPayment = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArOverpaymentPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArOverpaymentPayment = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArOverpaymentSourcePayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArOverpaymentSourcePayment = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArPrepayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArPrepayment = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArPrepaymentPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArPrepaymentPayment = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArPrepaymentSourcePayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArPrepaymentSourcePayment = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CashPaid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CashPaid = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CashRec")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CashRec = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExpPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExpPayment = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ManJournal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ManJournal = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PurchaseOrder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PurchaseOrder = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Receipt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Receipt = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Transfer = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Account = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Contact")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Contact = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Business = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Employee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Employee = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Person")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Person = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="User")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		User = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Org")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Org = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FixedAsset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FixedAsset = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PayRun")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PayRun = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PriceListItem")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PriceListItem = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bank")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bank = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Current")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Current = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Equity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Equity = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Expense")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Expense = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fixed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fixed = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Liability")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Liability = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Prepayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Prepayment = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Revenue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Revenue = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sales")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sales = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overheads")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Overheads = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Depreciatn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Depreciatn = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OtherIncome")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OtherIncome = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DirectCosts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DirectCosts = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Currliab")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Currliab = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Termliab")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Termliab = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NonCurrent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NonCurrent = 54,
 	}
 	
@@ -1175,13 +1161,13 @@ namespace MyNS
 	public enum GetFilesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Name = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Size")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Size = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatedDateUTC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreatedDateUTC = 2,
 	}
 }

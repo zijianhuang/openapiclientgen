@@ -17,74 +17,62 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateServiceQuotaTemplateResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateServiceQuotaTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DependencyAccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AWSServiceAccessNotEnabledException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationNotInAllFeaturesModeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplatesNotAvailableInRegionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoAvailableOrganizationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteServiceQuotaIncreaseRequestFromTemplateResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteServiceQuotaIncreaseRequestFromTemplateRequest
 	{
 		
@@ -110,38 +98,32 @@ namespace MyNS
 		public string AwsRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchResourceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IllegalArgumentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateServiceQuotaTemplateResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateServiceQuotaTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaTemplateNotInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAWSDefaultServiceQuotaResponse
 	{
 		
@@ -152,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a quota.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuota
 	{
 		
@@ -197,8 +178,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the CloudWatch metric that reflects quota usage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricInfo
 	{
 		
@@ -215,8 +195,7 @@ namespace MyNS
 		public string MetricStatisticRecommendation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDimensionsMapDefinition
 	{
 	}
@@ -224,8 +203,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the quota period.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuotaPeriod
 	{
 		
@@ -236,39 +214,36 @@ namespace MyNS
 		public PeriodUnit PeriodUnit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PeriodUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICROSECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICROSECOND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MILLISECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MILLISECOND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECOND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINUTE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEK = 6,
 	}
 	
 	/// <summary>
 	/// An error that explains why an action did not succeed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorReason
 	{
 		
@@ -279,27 +254,24 @@ namespace MyNS
 		public string ErrorMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPENDENCY_ACCESS_DENIED_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPENDENCY_ACCESS_DENIED_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPENDENCY_THROTTLING_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPENDENCY_THROTTLING_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPENDENCY_SERVICE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPENDENCY_SERVICE_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_QUOTA_NOT_AVAILABLE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_QUOTA_NOT_AVAILABLE_ERROR = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAWSDefaultServiceQuotaRequest
 	{
 		
@@ -318,8 +290,7 @@ namespace MyNS
 		public string QuotaCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAssociationForServiceQuotaTemplateResponse
 	{
 		
@@ -327,27 +298,23 @@ namespace MyNS
 		public ServiceQuotaTemplateAssociationStatus ServiceQuotaTemplateAssociationStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServiceQuotaTemplateAssociationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISASSOCIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISASSOCIATED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAssociationForServiceQuotaTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRequestedServiceQuotaChangeResponse
 	{
 		
@@ -358,8 +325,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a quota increase request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestedServiceQuotaChange
 	{
 		
@@ -406,30 +372,27 @@ namespace MyNS
 		public string Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RequestStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CASE_OPENED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CASE_OPENED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENIED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CASE_CLOSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CASE_CLOSED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRequestedServiceQuotaChangeRequest
 	{
 		
@@ -441,8 +404,7 @@ namespace MyNS
 		public string RequestId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetServiceQuotaResponse
 	{
 		
@@ -450,8 +412,7 @@ namespace MyNS
 		public ServiceQuota Quota { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetServiceQuotaRequest
 	{
 		
@@ -470,8 +431,7 @@ namespace MyNS
 		public string QuotaCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetServiceQuotaIncreaseRequestFromTemplateResponse
 	{
 		
@@ -482,8 +442,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a quota increase request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaIncreaseRequestInTemplate
 	{
 		
@@ -512,8 +471,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> GlobalQuota { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetServiceQuotaIncreaseRequestFromTemplateRequest
 	{
 		
@@ -539,8 +497,7 @@ namespace MyNS
 		public string AwsRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAWSDefaultServiceQuotasResponse
 	{
 		
@@ -551,8 +508,7 @@ namespace MyNS
 		public ServiceQuota[] Quotas { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAWSDefaultServiceQuotasRequest
 	{
 		
@@ -570,14 +526,12 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidPaginationTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRequestedServiceQuotaChangeHistoryResponse
 	{
 		
@@ -588,8 +542,7 @@ namespace MyNS
 		public RequestedServiceQuotaChange[] RequestedQuotas { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRequestedServiceQuotaChangeHistoryRequest
 	{
 		
@@ -606,8 +559,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRequestedServiceQuotaChangeHistoryByQuotaResponse
 	{
 		
@@ -618,8 +570,7 @@ namespace MyNS
 		public RequestedServiceQuotaChange[] RequestedQuotas { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRequestedServiceQuotaChangeHistoryByQuotaRequest
 	{
 		
@@ -647,8 +598,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServiceQuotaIncreaseRequestsInTemplateResponse
 	{
 		
@@ -659,8 +609,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServiceQuotaIncreaseRequestsInTemplateRequest
 	{
 		
@@ -677,8 +626,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServiceQuotasResponse
 	{
 		
@@ -689,8 +637,7 @@ namespace MyNS
 		public ServiceQuota[] Quotas { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServiceQuotasRequest
 	{
 		
@@ -708,8 +655,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServicesResponse
 	{
 		
@@ -723,8 +669,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceInfo
 	{
 		
@@ -735,8 +680,7 @@ namespace MyNS
 		public string ServiceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServicesRequest
 	{
 		
@@ -747,8 +691,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -759,8 +702,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex data type that contains a tag key and tag value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -779,8 +721,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -792,8 +733,7 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutServiceQuotaIncreaseRequestIntoTemplateResponse
 	{
 		
@@ -801,8 +741,7 @@ namespace MyNS
 		public ServiceQuotaIncreaseRequestInTemplate ServiceQuotaIncreaseRequestInTemplate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutServiceQuotaIncreaseRequestIntoTemplateRequest
 	{
 		
@@ -835,14 +774,12 @@ namespace MyNS
 		public double DesiredValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestServiceQuotaIncreaseResponse
 	{
 		
@@ -850,8 +787,7 @@ namespace MyNS
 		public RequestedServiceQuotaChange RequestedQuota { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestServiceQuotaIncreaseRequest
 	{
 		
@@ -877,26 +813,22 @@ namespace MyNS
 		public double DesiredValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceAlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidResourceStateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -915,26 +847,22 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagPolicyViolationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		

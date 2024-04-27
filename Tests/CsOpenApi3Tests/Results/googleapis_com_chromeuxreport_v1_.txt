@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A bin is a discrete portion of data spanning from start to end, or if no end is given, then from start to +inf. A bin's start and end values are given in the value type of the metric it represents. For example, "first contentful paint" is measured in milliseconds and exposed as ints, therefore its metric bins will use int32s for its start and end types. However, "cumulative layout shift" is measured in unitless decimals and is exposed as a decimal encoded as a string, therefore its metric bins will use strings for its value type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bin
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// The collection period is a date range which includes the `first` and `last` day.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionPeriod
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -95,8 +92,7 @@ namespace MyNS
 	/// <summary>
 	/// For enum metrics, provides fraction timeseries which add up to approximately 1.0 per entry (k-th element into the repeated fractions field for any k <= len) across fraction_timeseries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FractionTimeseries
 	{
 		
@@ -110,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// Key defines all the dimensions that identify this record as unique.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoryKey
 	{
 		
@@ -134,30 +129,27 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HistoryKeyFormFactor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_FORM_FACTORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_FORM_FACTORS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESKTOP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLET = 3,
 	}
 	
 	/// <summary>
 	/// HistoryRecord is a timeseries of Chrome UX Report data. It contains user experience statistics for a single url pattern and a set of dimensions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoryRecord
 	{
 		
@@ -183,8 +175,7 @@ namespace MyNS
 	/// <summary>
 	/// A `metric timeseries` is a set of user experience data for a single web performance metric, like "first contentful paint". It contains a summary histogram of real world Chrome usage as a series of `bins`, where each bin has density values for a particular time period.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricTimeseries
 	{
 		
@@ -210,8 +201,7 @@ namespace MyNS
 	/// <summary>
 	/// A bin is a discrete portion of data spanning from start to end, or if no end is given, then from start to +inf. A bin's start and end values are given in the value type of the metric it represents. For example, "first contentful paint" is measured in milliseconds and exposed as ints, therefore its metric bins will use int32s for its start and end types. However, "cumulative layout shift" is measured in unitless decimals and is exposed as a decimal encoded as a string, therefore its metric bins will use strings for its value type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeseriesBin
 	{
 		
@@ -237,8 +227,7 @@ namespace MyNS
 	/// <summary>
 	/// Percentiles contains synthetic values of a metric at a given statistical percentile. These are used for estimating a metric's value as experienced by a percentage of users out of the total number of users.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeseriesPercentiles
 	{
 		
@@ -252,8 +241,7 @@ namespace MyNS
 	/// <summary>
 	/// Key defines all the dimensions that identify this record as unique.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Key
 	{
 		
@@ -285,8 +273,7 @@ namespace MyNS
 	/// <summary>
 	/// A `metric` is a set of user experience data for a single web performance metric, like "first contentful paint". It contains a summary histogram of real world Chrome usage as a series of `bins`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metric
 	{
 		
@@ -312,8 +299,7 @@ namespace MyNS
 	/// <summary>
 	/// Percentiles contains synthetic values of a metric at a given statistical percentile. These are used for estimating a metric's value as experienced by a percentage of users out of the total number of users.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Percentiles
 	{
 		
@@ -327,8 +313,7 @@ namespace MyNS
 	/// <summary>
 	/// Request payload sent by a physical web client. This request includes all necessary context to load a particular user experience history record.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryHistoryRequest
 	{
 		
@@ -360,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	/// Response payload sent back to a physical web client. This response contains the record found based on the identiers present in a `QueryHistoryRequest`. The returned response will have a history record, and sometimes details on normalization actions taken on the request that were necessary to make the request successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryHistoryResponse
 	{
 		
@@ -381,8 +365,7 @@ namespace MyNS
 	/// <summary>
 	/// Object representing the normalization actions taken to normalize a url to achieve a higher chance of successful lookup. These are simple automated changes that are taken when looking up the provided `url_patten` would be known to fail. Complex actions like following redirects are not handled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlNormalization
 	{
 		
@@ -402,8 +385,7 @@ namespace MyNS
 	/// <summary>
 	/// Request payload sent by a physical web client. This request includes all necessary context to load a particular user experience record.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryRequest
 	{
 		
@@ -441,8 +423,7 @@ namespace MyNS
 	/// <summary>
 	/// Response payload sent back to a physical web client. This response contains the record found based on the identiers present in a `QueryRequest`. The returned response will have a record, and sometimes details on normalization actions taken on the request that were necessary to make the request successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryResponse
 	{
 		
@@ -462,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	/// Record is a single Chrome UX report data record. It contains use experience statistics for a single url pattern and set of dimensions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Record
 	{
 		

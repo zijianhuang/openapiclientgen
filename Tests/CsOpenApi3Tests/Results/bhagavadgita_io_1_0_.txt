@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChapterSchema
 	{
 		
@@ -44,8 +43,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Verses_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerseSchema
 	{
 		
@@ -272,7 +270,7 @@ namespace MyNS
 	public enum ChapterGetByAccess_tokenAndLanguageLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hi = 0,
 	}
 	

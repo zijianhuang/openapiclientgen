@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioProperty
 	{
 		
@@ -36,8 +35,7 @@ namespace MyNS
 	/// <summary>
 	/// The error format is standardized to the 4xx/5xx range with a code and a human readable explanation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -79,8 +77,7 @@ namespace MyNS
 	/// <summary>
 	/// Please note that last message does not have failover attribute inside it. All other messages must contain a failover attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailoverProperty
 	{
 		
@@ -100,21 +97,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> Expiry_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailoverPropertyCondition_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="read")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		read = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileProperty
 	{
 		
@@ -139,8 +133,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FromProperty
 	{
 		
@@ -185,27 +178,24 @@ namespace MyNS
 		public FromPropertyType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FromPropertyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="viber_service_msg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		viber_service_msg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="messenger")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		messenger = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="whatsapp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		whatsapp = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageProperty
 	{
 		
@@ -230,8 +220,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageProperty
 	{
 		
@@ -305,8 +294,7 @@ namespace MyNS
 		public VideoProperty Video { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateProperty
 	{
 		
@@ -330,36 +318,33 @@ namespace MyNS
 		public string Default { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessagePropertyContentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="image")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		image = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="audio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		audio = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="video")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		video = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="file")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		file = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="template")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		template = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoProperty
 	{
 		
@@ -395,19 +380,17 @@ namespace MyNS
 		public string Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessagePropertyMessengerCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="response")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		response = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="update")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		update = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="message_tag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		message_tag = 2,
 	}
 	
@@ -430,16 +413,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Ttl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessagePropertyViber_service_msgCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="promotion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		promotion = 1,
 	}
 	
@@ -459,24 +440,21 @@ namespace MyNS
 		public System.Nullable<MessagePropertyWhatsappPolicy> Policy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessagePropertyWhatsappPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fallback")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fallback = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deterministic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deterministic = 1,
 	}
 	
 	/// <summary>
 	/// The callbacks for the message status are the same as defined in the Messaging API. The only difference will be that dispatch_uuid and link will be appended.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageStatus
 	{
 		
@@ -547,30 +525,27 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessageStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		submitted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="read")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		read = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="undeliverable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		undeliverable = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ToProperty
 	{
 		
@@ -627,18 +602,15 @@ namespace MyNS
 		public string Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessageStatusUsageCurrency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EUR = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response
 	{
 		
@@ -651,8 +623,7 @@ namespace MyNS
 		public string Dispatch_uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkflow
 	{
 		
@@ -669,18 +640,15 @@ namespace MyNS
 		public string[] Workflow { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateWorkflowTemplate
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failover")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failover = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FinalReport
 	{
 		
@@ -738,25 +706,23 @@ namespace MyNS
 		public FinalReport_linksMessagesUsage Usage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FinalReport_linksMessagesChannel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="messenger")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		messenger = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="viber_sevice_msg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		viber_sevice_msg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="whatsapp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		whatsapp = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mms = 4,
 	}
 	
@@ -776,16 +742,14 @@ namespace MyNS
 		public string Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FinalReportStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 1,
 	}
 	
@@ -808,8 +772,7 @@ namespace MyNS
 	/// <summary>
 	/// Send Message
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessage
 	{
 		
@@ -838,8 +801,7 @@ namespace MyNS
 	/// <summary>
 	/// Send With Failover Message
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendWithFailoverMessage
 	{
 		

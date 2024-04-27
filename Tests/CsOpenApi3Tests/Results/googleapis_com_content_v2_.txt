@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Account data. After the creation of a new account it may take a few minutes before it is fully operational. The methods delete, insert, and update require the admin role.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -92,8 +91,7 @@ namespace MyNS
 		public AccountYouTubeChannelLink[] YoutubeChannelLinks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountAdwordsLink
 	{
 		
@@ -110,8 +108,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountBusinessInformation
 	{
 		
@@ -134,8 +131,7 @@ namespace MyNS
 		public string PhoneNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountAddress
 	{
 		
@@ -170,8 +166,7 @@ namespace MyNS
 		public string StreetAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountCustomerService
 	{
 		
@@ -194,8 +189,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountGoogleMyBusinessLink
 	{
 		
@@ -212,8 +206,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountUser
 	{
 		
@@ -248,8 +241,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> PaymentsManager { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountYouTubeChannelLink
 	{
 		
@@ -266,8 +258,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountIdentifier
 	{
 		
@@ -287,8 +278,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of an account, i.e., information about its products, which is computed offline and not returned immediately at insertion time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountStatus
 	{
 		
@@ -329,8 +319,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WebsiteClaimed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountStatusAccountLevelIssue
 	{
 		
@@ -377,8 +366,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountStatusDataQualityIssue
 	{
 		
@@ -419,8 +407,7 @@ namespace MyNS
 		public string SubmittedValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountStatusExampleItem
 	{
 		
@@ -440,8 +427,7 @@ namespace MyNS
 		public string ValueOnLandingPage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountStatusProducts
 	{
 		
@@ -473,8 +459,7 @@ namespace MyNS
 		public AccountStatusStatistics Statistics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountStatusItemLevelIssue
 	{
 		
@@ -527,8 +512,7 @@ namespace MyNS
 		public string Servability { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountStatusStatistics
 	{
 		
@@ -560,8 +544,7 @@ namespace MyNS
 	/// <summary>
 	/// The tax settings of a merchant account. All methods require the admin role.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountTax
 	{
 		
@@ -587,8 +570,7 @@ namespace MyNS
 	/// <summary>
 	/// Tax calculation rule to apply in a state or province (USA only).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountTaxTaxRule
 	{
 		
@@ -623,8 +605,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UseGlobalRate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsAuthInfoResponse
 	{
 		
@@ -641,8 +622,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsClaimWebsiteResponse
 	{
 		
@@ -653,8 +633,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsCustomBatchRequest
 	{
 		
@@ -668,8 +647,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch accounts request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsCustomBatchRequestEntry
 	{
 		
@@ -725,8 +703,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Overwrite { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsCustomBatchRequestEntryLinkRequest
 	{
 		
@@ -749,8 +726,7 @@ namespace MyNS
 		public string LinkedAccountId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsCustomBatchResponse
 	{
 		
@@ -770,8 +746,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch accounts response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsCustomBatchResponseEntry
 	{
 		
@@ -809,8 +784,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of errors returned by a failed batch entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Errors
 	{
 		
@@ -836,8 +810,7 @@ namespace MyNS
 	/// <summary>
 	/// An error returned by the API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -860,8 +833,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsLinkRequest
 	{
 		
@@ -884,8 +856,7 @@ namespace MyNS
 		public string LinkedAccountId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsLinkResponse
 	{
 		
@@ -896,8 +867,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsListResponse
 	{
 		
@@ -917,8 +887,7 @@ namespace MyNS
 		public Account[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountstatusesCustomBatchRequest
 	{
 		
@@ -932,8 +901,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch accountstatuses request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountstatusesCustomBatchRequestEntry
 	{
 		
@@ -968,8 +936,7 @@ namespace MyNS
 		public string Method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountstatusesCustomBatchResponse
 	{
 		
@@ -989,8 +956,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch accountstatuses response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountstatusesCustomBatchResponseEntry
 	{
 		
@@ -1013,8 +979,7 @@ namespace MyNS
 		public Errors Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountstatusesListResponse
 	{
 		
@@ -1034,8 +999,7 @@ namespace MyNS
 		public AccountStatus[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccounttaxCustomBatchRequest
 	{
 		
@@ -1049,8 +1013,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch accounttax request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccounttaxCustomBatchRequestEntry
 	{
 		
@@ -1085,8 +1048,7 @@ namespace MyNS
 		public string Method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccounttaxCustomBatchResponse
 	{
 		
@@ -1106,8 +1068,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch accounttax response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccounttaxCustomBatchResponseEntry
 	{
 		
@@ -1136,8 +1097,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccounttaxListResponse
 	{
 		
@@ -1157,8 +1117,7 @@ namespace MyNS
 		public AccountTax[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address
 	{
 		
@@ -1193,8 +1152,7 @@ namespace MyNS
 		public string StreetAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Amount
 	{
 		
@@ -1205,8 +1163,7 @@ namespace MyNS
 		public Price Tax { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Price
 	{
 		
@@ -1223,8 +1180,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BusinessDayConfig
 	{
 		
@@ -1235,8 +1191,7 @@ namespace MyNS
 		public string[] BusinessDays { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CarrierRate
 	{
 		
@@ -1274,8 +1229,7 @@ namespace MyNS
 		public string PercentageAdjustment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CarriersCarrier
 	{
 		
@@ -1304,8 +1258,7 @@ namespace MyNS
 		public string[] Services { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomAttribute
 	{
 		
@@ -1334,8 +1287,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomGroup
 	{
 		
@@ -1352,8 +1304,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerReturnReason
 	{
 		
@@ -1370,8 +1321,7 @@ namespace MyNS
 		public string ReasonCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CutoffTime
 	{
 		
@@ -1397,8 +1347,7 @@ namespace MyNS
 	/// <summary>
 	/// Datafeed configuration data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Datafeed
 	{
 		
@@ -1475,8 +1424,7 @@ namespace MyNS
 	/// <summary>
 	/// The required fields vary based on the frequency of fetching. For a monthly fetch schedule, day_of_month and hour are required. For a weekly fetch schedule, weekday and hour are required. For a daily fetch schedule, only hour is required.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedFetchSchedule
 	{
 		
@@ -1535,8 +1483,7 @@ namespace MyNS
 		public string Weekday { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedFormat
 	{
 		
@@ -1559,8 +1506,7 @@ namespace MyNS
 		public string QuotingMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedTarget
 	{
 		
@@ -1592,8 +1538,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of a datafeed, i.e., the result of the last retrieval of the datafeed computed asynchronously when the feed processing is finished.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedStatus
 	{
 		
@@ -1661,8 +1606,7 @@ namespace MyNS
 	/// <summary>
 	/// An error occurring in the feed, like "invalid price".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedStatusError
 	{
 		
@@ -1694,8 +1638,7 @@ namespace MyNS
 	/// <summary>
 	/// An example occurrence for a particular error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedStatusExample
 	{
 		
@@ -1718,8 +1661,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedsCustomBatchRequest
 	{
 		
@@ -1733,8 +1675,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch datafeeds request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedsCustomBatchRequestEntry
 	{
 		
@@ -1769,8 +1710,7 @@ namespace MyNS
 		public string Method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedsCustomBatchResponse
 	{
 		
@@ -1790,8 +1730,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch datafeeds response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedsCustomBatchResponseEntry
 	{
 		
@@ -1814,8 +1753,7 @@ namespace MyNS
 		public Errors Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedsFetchNowResponse
 	{
 		
@@ -1826,8 +1764,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedsListResponse
 	{
 		
@@ -1847,8 +1784,7 @@ namespace MyNS
 		public Datafeed[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedstatusesCustomBatchRequest
 	{
 		
@@ -1862,8 +1798,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch datafeedstatuses request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedstatusesCustomBatchRequestEntry
 	{
 		
@@ -1904,8 +1839,7 @@ namespace MyNS
 		public string Method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedstatusesCustomBatchResponse
 	{
 		
@@ -1925,8 +1859,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch datafeedstatuses response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedstatusesCustomBatchResponseEntry
 	{
 		
@@ -1949,8 +1882,7 @@ namespace MyNS
 		public Errors Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatafeedstatusesListResponse
 	{
 		
@@ -1970,8 +1902,7 @@ namespace MyNS
 		public DatafeedStatus[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryTime
 	{
 		
@@ -2024,8 +1955,7 @@ namespace MyNS
 		public WarehouseBasedDeliveryTime[] WarehouseBasedDeliveryTimes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HolidayCutoff
 	{
 		
@@ -2060,8 +1990,7 @@ namespace MyNS
 		public string VisibleFromDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitTable
 	{
 		
@@ -2081,8 +2010,7 @@ namespace MyNS
 		public string[] TransitTimeLabels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitTableTransitTimeRow
 	{
 		
@@ -2090,8 +2018,7 @@ namespace MyNS
 		public TransitTableTransitTimeRowTransitTimeValue[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitTableTransitTimeRowTransitTimeValue
 	{
 		
@@ -2108,8 +2035,7 @@ namespace MyNS
 		public System.Nullable<System.UInt32> MinTransitTimeInDays { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WarehouseBasedDeliveryTime
 	{
 		
@@ -2162,8 +2088,7 @@ namespace MyNS
 		public string WarehouseName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GmbAccounts
 	{
 		
@@ -2180,8 +2105,7 @@ namespace MyNS
 		public GmbAccountsGmbAccount[] GmbAccounts1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GmbAccountsGmbAccount
 	{
 		
@@ -2213,8 +2137,7 @@ namespace MyNS
 	/// <summary>
 	/// A non-empty list of row or column headers for a table. Exactly one of `prices`, `weights`, `numItems`, `postalCodeGroupNames`, or `location` must be set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Headers
 	{
 		
@@ -2249,8 +2172,7 @@ namespace MyNS
 		public Weight[] Weights { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationIdSet
 	{
 		
@@ -2261,8 +2183,7 @@ namespace MyNS
 		public string[] LocationIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Weight
 	{
 		
@@ -2279,8 +2200,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HolidaysHoliday
 	{
 		
@@ -2321,8 +2241,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Installment
 	{
 		
@@ -2336,8 +2255,7 @@ namespace MyNS
 		public string Months { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvoiceSummary
 	{
 		
@@ -2366,8 +2284,7 @@ namespace MyNS
 		public Promotion[] PromotionSummaries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvoiceSummaryAdditionalChargeSummary
 	{
 		
@@ -2381,8 +2298,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Promotion
 	{
 		
@@ -2396,8 +2312,7 @@ namespace MyNS
 		public string PromotionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiaAboutPageSettings
 	{
 		
@@ -2414,8 +2329,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiaCountrySettings
 	{
 		
@@ -2450,8 +2364,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> StorePickupActive { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiaInventorySettings
 	{
 		
@@ -2480,8 +2393,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiaOnDisplayToOrderSettings
 	{
 		
@@ -2498,8 +2410,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiaPosDataProvider
 	{
 		
@@ -2519,8 +2430,7 @@ namespace MyNS
 	/// <summary>
 	/// Local Inventory ads (LIA) settings. All methods except listposdataproviders require the admin role.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiaSettings
 	{
 		
@@ -2543,8 +2453,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsCustomBatchRequest
 	{
 		
@@ -2555,8 +2464,7 @@ namespace MyNS
 		public LiasettingsCustomBatchRequestEntry[] Entries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsCustomBatchRequestEntry
 	{
 		
@@ -2627,8 +2535,7 @@ namespace MyNS
 		public string PosExternalAccountId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsCustomBatchResponse
 	{
 		
@@ -2645,8 +2552,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsCustomBatchResponseEntry
 	{
 		
@@ -2684,8 +2590,7 @@ namespace MyNS
 		public PosDataProviders[] PosDataProviders { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosDataProviders
 	{
 		
@@ -2702,8 +2607,7 @@ namespace MyNS
 		public PosDataProvidersPosDataProvider[] PosDataProviders1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosDataProvidersPosDataProvider
 	{
 		
@@ -2726,8 +2630,7 @@ namespace MyNS
 		public string ProviderId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsGetAccessibleGmbAccountsResponse
 	{
 		
@@ -2750,8 +2653,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsListPosDataProvidersResponse
 	{
 		
@@ -2768,8 +2670,7 @@ namespace MyNS
 		public PosDataProviders[] PosDataProviders { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsListResponse
 	{
 		
@@ -2789,8 +2690,7 @@ namespace MyNS
 		public LiaSettings[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsRequestGmbAccessResponse
 	{
 		
@@ -2801,8 +2701,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsRequestInventoryVerificationResponse
 	{
 		
@@ -2813,8 +2712,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsSetInventoryVerificationContactResponse
 	{
 		
@@ -2825,8 +2723,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiasettingsSetPosDataProviderResponse
 	{
 		
@@ -2837,8 +2734,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoyaltyPoints
 	{
 		
@@ -2864,8 +2760,7 @@ namespace MyNS
 	/// <summary>
 	/// Order return. Production access (all methods) requires the order manager role. Sandbox access does not.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MerchantOrderReturn
 	{
 		
@@ -2906,8 +2801,7 @@ namespace MyNS
 		public ReturnShipment[] ReturnShipments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MerchantOrderReturnItem
 	{
 		
@@ -2939,8 +2833,7 @@ namespace MyNS
 		public string State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefundReason
 	{
 		
@@ -2957,8 +2850,7 @@ namespace MyNS
 		public string ReasonCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderLineItemProduct
 	{
 		
@@ -3056,8 +2948,7 @@ namespace MyNS
 		public OrderLineItemProductVariantAttribute[] VariantAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderLineItemProductFee
 	{
 		
@@ -3071,8 +2962,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderLineItemProductVariantAttribute
 	{
 		
@@ -3089,8 +2979,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReturnShipment
 	{
 		
@@ -3137,8 +3026,7 @@ namespace MyNS
 		public string State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShipmentTrackingInfo
 	{
 		
@@ -3155,8 +3043,7 @@ namespace MyNS
 		public string TrackingNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MinimumOrderValueTable
 	{
 		
@@ -3167,8 +3054,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of store code sets sharing the same minimum order value. At least two sets are required and the last one must be empty, which signifies 'MOV for all other stores'. Each store code can only appear once across all the sets. All prices within a service must have the same currency.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MinimumOrderValueTableStoreCodeSetWithMov
 	{
 		
@@ -3185,8 +3071,7 @@ namespace MyNS
 	/// <summary>
 	/// Order. Production access (all methods) requires the order manager role. Sandbox access does not.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Order
 	{
 		
@@ -3299,8 +3184,7 @@ namespace MyNS
 		public string TaxCollector { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderCustomer
 	{
 		
@@ -3332,8 +3216,7 @@ namespace MyNS
 		public OrderCustomerMarketingRightsInfo MarketingRightsInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderCustomerMarketingRightsInfo
 	{
 		
@@ -3356,8 +3239,7 @@ namespace MyNS
 		public string MarketingEmailAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderDeliveryDetails
 	{
 		
@@ -3371,8 +3253,7 @@ namespace MyNS
 		public string PhoneNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderAddress
 	{
 		
@@ -3425,8 +3306,7 @@ namespace MyNS
 		public string[] StreetAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderLineItem
 	{
 		
@@ -3512,8 +3392,7 @@ namespace MyNS
 		public Price Tax { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderMerchantProvidedAnnotation
 	{
 		
@@ -3530,8 +3409,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderCancellation
 	{
 		
@@ -3566,8 +3444,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderLineItemReturnInfo
 	{
 		
@@ -3590,8 +3467,7 @@ namespace MyNS
 		public string PolicyUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderReturn
 	{
 		
@@ -3626,8 +3502,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderLineItemShippingDetails
 	{
 		
@@ -3653,8 +3528,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderLineItemShippingDetailsMethod
 	{
 		
@@ -3683,8 +3557,7 @@ namespace MyNS
 		public System.Nullable<System.UInt32> MinDaysInTransit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderPaymentMethod
 	{
 		
@@ -3722,8 +3595,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderPickupDetails
 	{
 		
@@ -3743,8 +3615,7 @@ namespace MyNS
 		public string LocationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderPickupDetailsCollector
 	{
 		
@@ -3761,8 +3632,7 @@ namespace MyNS
 		public string PhoneNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderLegacyPromotion
 	{
 		
@@ -3806,8 +3676,7 @@ namespace MyNS
 		public string RedemptionChannel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderLegacyPromotionBenefit
 	{
 		
@@ -3836,8 +3705,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderRefund
 	{
 		
@@ -3869,8 +3737,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderShipment
 	{
 		
@@ -3920,8 +3787,7 @@ namespace MyNS
 		public string TrackingId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderShipmentLineItemShipment
 	{
 		
@@ -3944,8 +3810,7 @@ namespace MyNS
 		public System.Nullable<System.UInt32> Quantity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderShipmentScheduledDeliveryDetails
 	{
 		
@@ -3965,8 +3830,7 @@ namespace MyNS
 	/// <summary>
 	/// Order disbursement. All methods require the payment analyst role.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderReportDisbursement
 	{
 		
@@ -3998,8 +3862,7 @@ namespace MyNS
 		public string MerchantId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderReportTransaction
 	{
 		
@@ -4055,8 +3918,7 @@ namespace MyNS
 		public string TransactionDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductAmount
 	{
 		
@@ -4070,8 +3932,7 @@ namespace MyNS
 		public Price TaxAmount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderinvoicesCreateChargeInvoiceRequest
 	{
 		
@@ -4103,8 +3964,7 @@ namespace MyNS
 		public string ShipmentGroupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShipmentInvoiceLineItemInvoice
 	{
 		
@@ -4130,8 +3990,7 @@ namespace MyNS
 		public UnitInvoice UnitInvoice { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnitInvoice
 	{
 		
@@ -4157,8 +4016,7 @@ namespace MyNS
 		public UnitInvoiceTaxLine[] UnitPriceTaxes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnitInvoiceAdditionalCharge
 	{
 		
@@ -4178,8 +4036,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnitInvoiceTaxLine
 	{
 		
@@ -4199,8 +4056,7 @@ namespace MyNS
 		public string TaxType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderinvoicesCreateChargeInvoiceResponse
 	{
 		
@@ -4217,8 +4073,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderinvoicesCreateRefundInvoiceRequest
 	{
 		
@@ -4247,8 +4102,7 @@ namespace MyNS
 		public ShipmentInvoice[] ShipmentInvoices { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption
 	{
 		
@@ -4265,8 +4119,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption
 	{
 		
@@ -4283,8 +4136,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShipmentInvoice
 	{
 		
@@ -4304,8 +4156,7 @@ namespace MyNS
 		public string ShipmentGroupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderinvoicesCreateRefundInvoiceResponse
 	{
 		
@@ -4322,8 +4173,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderreportsListDisbursementsResponse
 	{
 		
@@ -4346,8 +4196,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderreportsListTransactionsResponse
 	{
 		
@@ -4370,8 +4219,7 @@ namespace MyNS
 		public OrderReportTransaction[] Transactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderreturnsListResponse
 	{
 		
@@ -4391,8 +4239,7 @@ namespace MyNS
 		public MerchantOrderReturn[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersAcknowledgeRequest
 	{
 		
@@ -4403,8 +4250,7 @@ namespace MyNS
 		public string OperationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersAcknowledgeResponse
 	{
 		
@@ -4421,8 +4267,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersAdvanceTestOrderResponse
 	{
 		
@@ -4433,8 +4278,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCancelLineItemRequest
 	{
 		
@@ -4484,8 +4328,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCancelLineItemResponse
 	{
 		
@@ -4502,8 +4345,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCancelRequest
 	{
 		
@@ -4526,8 +4368,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCancelResponse
 	{
 		
@@ -4544,8 +4385,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCancelTestOrderByCustomerRequest
 	{
 		
@@ -4556,8 +4396,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCancelTestOrderByCustomerResponse
 	{
 		
@@ -4568,8 +4407,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCreateTestOrderRequest
 	{
 		
@@ -4589,8 +4427,7 @@ namespace MyNS
 		public TestOrder TestOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestOrder
 	{
 		
@@ -4655,8 +4492,7 @@ namespace MyNS
 		public string ShippingOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestOrderCustomer
 	{
 		
@@ -4682,8 +4518,7 @@ namespace MyNS
 		public TestOrderCustomerMarketingRightsInfo MarketingRightsInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestOrderCustomerMarketingRightsInfo
 	{
 		
@@ -4700,8 +4535,7 @@ namespace MyNS
 		public string LastUpdatedTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestOrderLineItem
 	{
 		
@@ -4724,8 +4558,7 @@ namespace MyNS
 		public Price UnitTax { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestOrderLineItemProduct
 	{
 		
@@ -4811,8 +4644,7 @@ namespace MyNS
 		public OrderLineItemProductVariantAttribute[] VariantAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestOrderPaymentMethod
 	{
 		
@@ -4847,8 +4679,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCreateTestOrderResponse
 	{
 		
@@ -4865,8 +4696,7 @@ namespace MyNS
 		public string OrderId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCreateTestReturnRequest
 	{
 		
@@ -4877,8 +4707,7 @@ namespace MyNS
 		public OrdersCustomBatchRequestEntryCreateTestReturnReturnItem[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryCreateTestReturnReturnItem
 	{
 		
@@ -4895,8 +4724,7 @@ namespace MyNS
 		public System.Nullable<System.UInt32> Quantity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCreateTestReturnResponse
 	{
 		
@@ -4913,8 +4741,7 @@ namespace MyNS
 		public string ReturnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequest
 	{
 		
@@ -4925,8 +4752,7 @@ namespace MyNS
 		public OrdersCustomBatchRequestEntry[] Entries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntry
 	{
 		
@@ -5000,8 +4826,7 @@ namespace MyNS
 		public OrdersCustomBatchRequestEntryUpdateShipment UpdateShipment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryCancel
 	{
 		
@@ -5018,8 +4843,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryCancelLineItem
 	{
 		
@@ -5063,8 +4887,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryInStoreRefundLineItem
 	{
 		
@@ -5105,8 +4928,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryRefund
 	{
 		
@@ -5132,8 +4954,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryRejectReturnLineItem
 	{
 		
@@ -5168,8 +4989,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryReturnLineItem
 	{
 		
@@ -5204,8 +5024,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryReturnRefundLineItem
 	{
 		
@@ -5246,8 +5065,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntrySetLineItemMetadata
 	{
 		
@@ -5267,8 +5085,7 @@ namespace MyNS
 		public string ProductId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryShipLineItems
 	{
 		
@@ -5309,8 +5126,7 @@ namespace MyNS
 		public string TrackingId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo
 	{
 		
@@ -5333,8 +5149,7 @@ namespace MyNS
 		public string TrackingId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails
 	{
 		
@@ -5363,8 +5178,7 @@ namespace MyNS
 		public string ShipByDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchRequestEntryUpdateShipment
 	{
 		
@@ -5399,8 +5213,7 @@ namespace MyNS
 		public string TrackingId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchResponse
 	{
 		
@@ -5417,8 +5230,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersCustomBatchResponseEntry
 	{
 		
@@ -5453,8 +5265,7 @@ namespace MyNS
 		public Order Order { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersGetByMerchantOrderIdResponse
 	{
 		
@@ -5471,8 +5282,7 @@ namespace MyNS
 		public Order Order { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersGetTestOrderTemplateResponse
 	{
 		
@@ -5486,8 +5296,7 @@ namespace MyNS
 		public TestOrder Template { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersInStoreRefundLineItemRequest
 	{
 		
@@ -5534,8 +5343,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersInStoreRefundLineItemResponse
 	{
 		
@@ -5552,8 +5360,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersListResponse
 	{
 		
@@ -5573,8 +5380,7 @@ namespace MyNS
 		public Order[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersRefundRequest
 	{
 		
@@ -5606,8 +5412,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersRefundResponse
 	{
 		
@@ -5624,8 +5429,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersRejectReturnLineItemRequest
 	{
 		
@@ -5666,8 +5470,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersRejectReturnLineItemResponse
 	{
 		
@@ -5684,8 +5487,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersReturnLineItemRequest
 	{
 		
@@ -5726,8 +5528,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersReturnLineItemResponse
 	{
 		
@@ -5744,8 +5545,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersReturnRefundLineItemRequest
 	{
 		
@@ -5792,8 +5592,7 @@ namespace MyNS
 		public string ReasonText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersReturnRefundLineItemResponse
 	{
 		
@@ -5810,8 +5609,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersSetLineItemMetadataRequest
 	{
 		
@@ -5837,8 +5635,7 @@ namespace MyNS
 		public string ProductId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersSetLineItemMetadataResponse
 	{
 		
@@ -5855,8 +5652,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersShipLineItemsRequest
 	{
 		
@@ -5903,8 +5699,7 @@ namespace MyNS
 		public string TrackingId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersShipLineItemsResponse
 	{
 		
@@ -5921,8 +5716,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersUpdateLineItemShippingDetailsRequest
 	{
 		
@@ -5957,8 +5751,7 @@ namespace MyNS
 		public string ShipByDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersUpdateLineItemShippingDetailsResponse
 	{
 		
@@ -5975,8 +5768,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersUpdateMerchantOrderIdRequest
 	{
 		
@@ -5993,8 +5785,7 @@ namespace MyNS
 		public string OperationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersUpdateMerchantOrderIdResponse
 	{
 		
@@ -6011,8 +5802,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersUpdateShipmentRequest
 	{
 		
@@ -6053,8 +5843,7 @@ namespace MyNS
 		public string TrackingId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrdersUpdateShipmentResponse
 	{
 		
@@ -6071,8 +5860,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PickupCarrierService
 	{
 		
@@ -6089,8 +5877,7 @@ namespace MyNS
 		public string ServiceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PickupServicesPickupService
 	{
 		
@@ -6113,8 +5900,7 @@ namespace MyNS
 		public string ServiceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosCustomBatchRequest
 	{
 		
@@ -6125,8 +5911,7 @@ namespace MyNS
 		public PosCustomBatchRequestEntry[] Entries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosCustomBatchRequestEntry
 	{
 		
@@ -6182,8 +5967,7 @@ namespace MyNS
 	/// <summary>
 	/// The absolute quantity of an item available at the given store.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosInventory
 	{
 		
@@ -6242,8 +6026,7 @@ namespace MyNS
 	/// <summary>
 	/// The change of the available quantity of an item at the given store.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosSale
 	{
 		
@@ -6308,8 +6091,7 @@ namespace MyNS
 	/// <summary>
 	/// Store resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosStore
 	{
 		
@@ -6362,8 +6144,7 @@ namespace MyNS
 		public string WebsiteUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosCustomBatchResponse
 	{
 		
@@ -6380,8 +6161,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosCustomBatchResponseEntry
 	{
 		
@@ -6422,8 +6202,7 @@ namespace MyNS
 		public PosStore Store { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosInventoryRequest
 	{
 		
@@ -6473,8 +6252,7 @@ namespace MyNS
 		public string Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosInventoryResponse
 	{
 		
@@ -6530,8 +6308,7 @@ namespace MyNS
 		public string Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosListResponse
 	{
 		
@@ -6545,8 +6322,7 @@ namespace MyNS
 		public PosStore[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosSaleRequest
 	{
 		
@@ -6602,8 +6378,7 @@ namespace MyNS
 		public string Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosSaleResponse
 	{
 		
@@ -6665,8 +6440,7 @@ namespace MyNS
 		public string Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostalCodeGroup
 	{
 		
@@ -6689,8 +6463,7 @@ namespace MyNS
 		public PostalCodeRange[] PostalCodeRanges { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostalCodeRange
 	{
 		
@@ -6710,8 +6483,7 @@ namespace MyNS
 	/// <summary>
 	///  Required product attributes are primarily defined by the products data specification. See the Products Data Specification Help Center article for information. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Product
 	{
 		
@@ -7157,8 +6929,7 @@ namespace MyNS
 		public Error[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductAspect
 	{
 		
@@ -7181,8 +6952,7 @@ namespace MyNS
 		public string Intention { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductDestination
 	{
 		
@@ -7199,8 +6969,7 @@ namespace MyNS
 		public string Intention { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductShipping
 	{
 		
@@ -7244,8 +7013,7 @@ namespace MyNS
 		public string Service { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductShippingDimension
 	{
 		
@@ -7262,8 +7030,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductShippingWeight
 	{
 		
@@ -7280,8 +7047,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductTax
 	{
 		
@@ -7322,8 +7088,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> TaxShip { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductUnitPricingBaseMeasure
 	{
 		
@@ -7340,8 +7105,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductUnitPricingMeasure
 	{
 		
@@ -7361,8 +7125,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of a product, i.e., information about a product computed asynchronously.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductStatus
 	{
 		
@@ -7433,8 +7196,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductStatusDataQualityIssue
 	{
 		
@@ -7466,8 +7228,7 @@ namespace MyNS
 		public string ValueProvided { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductStatusDestinationStatus
 	{
 		
@@ -7496,8 +7257,7 @@ namespace MyNS
 		public string Intention { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductStatusItemLevelIssue
 	{
 		
@@ -7550,8 +7310,7 @@ namespace MyNS
 		public string Servability { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductsCustomBatchRequest
 	{
 		
@@ -7565,8 +7324,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch products request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductsCustomBatchRequestEntry
 	{
 		
@@ -7601,8 +7359,7 @@ namespace MyNS
 		public string ProductId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductsCustomBatchResponse
 	{
 		
@@ -7622,8 +7379,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch products response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductsCustomBatchResponseEntry
 	{
 		
@@ -7652,8 +7408,7 @@ namespace MyNS
 		public Product Product { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductsListResponse
 	{
 		
@@ -7673,8 +7428,7 @@ namespace MyNS
 		public Product[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductstatusesCustomBatchRequest
 	{
 		
@@ -7688,8 +7442,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch productstatuses request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductstatusesCustomBatchRequestEntry
 	{
 		
@@ -7727,8 +7480,7 @@ namespace MyNS
 		public string ProductId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductstatusesCustomBatchResponse
 	{
 		
@@ -7748,8 +7500,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch productstatuses response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductstatusesCustomBatchResponseEntry
 	{
 		
@@ -7778,8 +7529,7 @@ namespace MyNS
 		public ProductStatus ProductStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductstatusesListResponse
 	{
 		
@@ -7799,8 +7549,7 @@ namespace MyNS
 		public ProductStatus[] Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateGroup
 	{
 		
@@ -7838,8 +7587,7 @@ namespace MyNS
 		public Table[] Subtables { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Table
 	{
 		
@@ -7868,8 +7616,7 @@ namespace MyNS
 		public Row[] Rows { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Row
 	{
 		
@@ -7883,8 +7630,7 @@ namespace MyNS
 	/// <summary>
 	/// The single value of a rate group or the value of a rate group table's cell. Exactly one of `noShipping`, `flatRate`, `pricePercentage`, `carrierRateName`, `subtableName` must be set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Value
 	{
 		
@@ -7916,8 +7662,7 @@ namespace MyNS
 		public string SubtableName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Service
 	{
 		
@@ -7979,8 +7724,7 @@ namespace MyNS
 	/// <summary>
 	/// The merchant account's shipping settings. All methods except getsupportedcarriers and getsupportedholidays require the admin role.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingSettings
 	{
 		
@@ -8012,8 +7756,7 @@ namespace MyNS
 	/// <summary>
 	/// A fulfillment warehouse, which stores and handles inventory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warehouse
 	{
 		
@@ -8039,8 +7782,7 @@ namespace MyNS
 		public Address ShippingAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WarehouseCutoffTime
 	{
 		
@@ -8057,8 +7799,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Minute { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingsettingsCustomBatchRequest
 	{
 		
@@ -8072,8 +7813,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch shippingsettings request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingsettingsCustomBatchRequestEntry
 	{
 		
@@ -8108,8 +7848,7 @@ namespace MyNS
 		public ShippingSettings ShippingSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingsettingsCustomBatchResponse
 	{
 		
@@ -8129,8 +7868,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch entry encoding a single non-batch shipping settings response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingsettingsCustomBatchResponseEntry
 	{
 		
@@ -8159,8 +7897,7 @@ namespace MyNS
 		public ShippingSettings ShippingSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingsettingsGetSupportedCarriersResponse
 	{
 		
@@ -8177,8 +7914,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingsettingsGetSupportedHolidaysResponse
 	{
 		
@@ -8195,8 +7931,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingsettingsGetSupportedPickupServicesResponse
 	{
 		
@@ -8213,8 +7948,7 @@ namespace MyNS
 		public PickupServicesPickupService[] PickupServices { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingsettingsListResponse
 	{
 		
@@ -11536,29 +11270,29 @@ namespace MyNS
 	public enum Content_orderreturns_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURN_CREATION_TIME_DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETURN_CREATION_TIME_DESC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURN_CREATION_TIME_ASC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETURN_CREATION_TIME_ASC = 1,
 	}
 	
 	public enum Content_orders_gettestordertemplateTemplateName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPLATE1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPLATE2 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE1A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPLATE1A = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE1B")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPLATE1B = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPLATE3 = 4,
 	}
 }

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File
 	{
 	}
@@ -26,8 +25,7 @@ namespace MyNS
 	/// <summary>
 	/// Links relevant to the payload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Links
 	{
 		
@@ -54,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Meta Data relevant to the payload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Meta
 	{
 		
@@ -79,8 +76,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Model
 	{
 		
@@ -91,8 +87,7 @@ namespace MyNS
 	/// <summary>
 	/// Unambiguous identification of the account to which credit and debit entries are made.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBAccount4
 	{
 		
@@ -226,55 +221,50 @@ namespace MyNS
 		public string SecondaryIdentification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBAccount4AccountSubType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChargeCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChargeCard = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreditCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreditCard = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentAccount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentAccount = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMoney")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMoney = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Loan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Loan = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mortgage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mortgage = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PrePaidCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PrePaidCard = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Savings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Savings = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBAccount4AccountType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Business = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Personal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Personal = 1,
 	}
 	
 	/// <summary>
 	/// Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBranchAndFinancialInstitutionIdentification5_0
 	{
 		
@@ -299,33 +289,30 @@ namespace MyNS
 		public string SchemeName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBAccount4Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProForma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProForma = 4,
 	}
 	
 	/// <summary>
 	/// Unambiguous identification of the account to which credit and debit entries are made.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBAccount4Basic
 	{
 		
@@ -407,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// Unambiguous identification of the account to which credit and debit entries are made.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBAccount4Detail
 	{
 		
@@ -555,8 +541,7 @@ namespace MyNS
 	///
 	///For all other accounts, the fields must be populated by the ASPSP.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBAccount6
 	{
 		
@@ -709,8 +694,7 @@ namespace MyNS
 	/// <summary>
 	/// Unambiguous identification of the account to which credit and debit entries are made.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBAccount6Basic
 	{
 		
@@ -814,8 +798,7 @@ namespace MyNS
 	/// <summary>
 	/// Unambiguous identification of the account to which credit and debit entries are made.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBAccount6Detail
 	{
 		
@@ -978,33 +961,30 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status of account resource in code form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBAccountStatus1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProForma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProForma = 4,
 	}
 	
 	/// <summary>
 	/// The amount of the most recent direct debit collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_0
 	{
 		
@@ -1033,8 +1013,7 @@ namespace MyNS
 	/// Amount of money to be moved between the debtor and creditor, before deduction of charges, expressed in the currency as ordered by the initiating party.
 	///Usage: This amount has to be transported unchanged through the transaction chain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_1
 	{
 		
@@ -1062,8 +1041,7 @@ namespace MyNS
 	/// <summary>
 	/// Transaction charges to be paid by the charge bearer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_10
 	{
 		
@@ -1091,8 +1069,7 @@ namespace MyNS
 	/// <summary>
 	/// The amount of the last (most recent) Standing Order instruction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_11
 	{
 		
@@ -1120,8 +1097,7 @@ namespace MyNS
 	/// <summary>
 	/// The amount of the first Standing Order
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_2
 	{
 		
@@ -1149,8 +1125,7 @@ namespace MyNS
 	/// <summary>
 	/// The amount of the next Standing Order.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_3
 	{
 		
@@ -1178,8 +1153,7 @@ namespace MyNS
 	/// <summary>
 	/// The amount of the final Standing Order
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_4
 	{
 		
@@ -1207,8 +1181,7 @@ namespace MyNS
 	/// <summary>
 	/// Amount of money associated with the statement benefit type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_5
 	{
 		
@@ -1236,8 +1209,7 @@ namespace MyNS
 	/// <summary>
 	/// Amount of money associated with the statement fee type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_6
 	{
 		
@@ -1265,8 +1237,7 @@ namespace MyNS
 	/// <summary>
 	/// Amount of money associated with the statement interest amount type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_7
 	{
 		
@@ -1294,8 +1265,7 @@ namespace MyNS
 	/// <summary>
 	/// Amount of money associated with the amount type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_8
 	{
 		
@@ -1323,8 +1293,7 @@ namespace MyNS
 	/// <summary>
 	/// Amount of money in the cash transaction entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount_9
 	{
 		
@@ -1352,39 +1321,36 @@ namespace MyNS
 	/// <summary>
 	/// Identifies the nature of the postal address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBAddressTypeCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Business = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Correspondence")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Correspondence = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeliveryTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeliveryTo = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MailTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MailTo = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POBox")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POBox = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Postal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Postal = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Residential")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Residential = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Statement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Statement = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBCAData1
 	{
 		
@@ -1475,29 +1441,25 @@ namespace MyNS
 		public OBBCAData1CreditInterestTierBandSetTierBandDepositInterestAppliedCoverage TierBandMethod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1CreditInterestTierBandSetCalculationMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Compound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Compound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SimpleInterest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SimpleInterest = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1CreditInterestTierBandSetDestination
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PayAway")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PayAway = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SelfCredit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SelfCredit = 1,
 	}
 	
@@ -1611,76 +1573,68 @@ namespace MyNS
 		public string TierValueMinimum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1CreditInterestTierBandSetTierBandApplicationFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Daily = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HalfYearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HalfYearly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Monthly = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarterly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarterly = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerStatementDate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerStatementDate = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Weekly = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yearly = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1CreditInterestTierBandSetTierBandBankInterestRateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gross")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gross = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1CreditInterestTierBandSetTierBandDepositInterestAppliedCoverage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Banded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Banded = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tiered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tiered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whole = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1CreditInterestTierBandSetTierBandFixedVariableInterestRateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fixed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Variable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Variable = 1,
 	}
 	
@@ -1900,41 +1854,37 @@ namespace MyNS
 		public OBBCAData1OtherFeesChargesFeeChargeCapOtherFeeType[] OBBCAData1OtherFeesChargesFeeChargeCapOtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OtherFeesChargesFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OtherFeesChargesFeeChargeCapMinMaxType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Minimum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Minimum = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maximum = 1,
 	}
 	
@@ -2085,70 +2035,68 @@ namespace MyNS
 		public OBBCAData1OtherFeesChargesFeeChargeDetailOtherFeeType OtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OtherFeesChargesFeeChargeDetailApplicationFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OnClosing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OnClosing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OnOpening")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OnOpening = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChargingPeriod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChargingPeriod = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Daily = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerItem")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerItem = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Monthly = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OnAnniversary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OnAnniversary = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerHundredPounds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerHundredPounds = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerHour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerHour = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerOccurrence")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerOccurrence = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerSheet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerSheet = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerTransaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerTransaction = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerTransactionAmount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerTransactionAmount = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerTransactionPercentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerTransactionPercentage = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarterly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarterly = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SixMonthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SixMonthly = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StatementMonthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StatementMonthly = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Weekly = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yearly = 19,
 	}
 	
@@ -2188,16 +2136,14 @@ namespace MyNS
 		public string MinimumRate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OtherFeesChargesFeeChargeDetailFeeCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Servicing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Servicing = 1,
 	}
 	
@@ -2255,28 +2201,26 @@ namespace MyNS
 		public OBBCAData1OtherFeesChargesFeeChargeDetailFeeChargeCapOtherFeeType[] OBBCAData1OtherFeesChargesFeeChargeDetailFeeChargeCapOtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OtherFeesChargesFeeChargeDetailFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 5,
 	}
 	
@@ -2320,34 +2264,32 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OtherFeesChargesFeeChargeDetailFeeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCAccountFee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCAccountFee = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCAccountFeeMonthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCAccountFeeMonthly = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCAccountFeeQuarterly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCAccountFeeQuarterly = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCFixedTariff")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCFixedTariff = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCBusiDepAccBreakage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCBusiDepAccBreakage = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCMinimumMonthlyFee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCMinimumMonthlyFee = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCOther")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCOther = 7,
 	}
 	
@@ -2599,19 +2541,17 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OtherFeesChargesTariffType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Electronic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Electronic = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mixed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mixed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 2,
 	}
 	
@@ -2776,28 +2716,26 @@ namespace MyNS
 		public OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeCapOtherFeeType[] OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeCapOtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 5,
 	}
 	
@@ -2945,46 +2883,44 @@ namespace MyNS
 		public OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCap[] OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCap { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailFeeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArrangedOverdraft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArrangedOverdraft = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AnnualReview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AnnualReview = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EmergencyBorrowing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EmergencyBorrowing = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BorrowingItem")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BorrowingItem = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OverdraftRenewal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OverdraftRenewal = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OverdraftSetup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OverdraftSetup = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Surcharge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Surcharge = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TempOverdraft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TempOverdraft = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnauthorisedBorrowing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnauthorisedBorrowing = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnauthorisedPaidTrans")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnauthorisedPaidTrans = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnauthorisedUnpaidTrans")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnauthorisedUnpaidTrans = 11,
 	}
 	
@@ -3202,28 +3138,26 @@ namespace MyNS
 		public OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCapOtherFeeType[] OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCapOtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 5,
 	}
 	
@@ -3358,28 +3292,26 @@ namespace MyNS
 		public string TierValueMin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftTierBandAgreementPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 5,
 	}
 	
@@ -3457,28 +3389,26 @@ namespace MyNS
 		public OBBCAData1OverdraftOverdraftTierBandSetOverdraftTierBandOverdraftFeesChargesOverdraftFeeChargeCapOtherFeeType[] OBBCAData1OverdraftOverdraftTierBandSetOverdraftTierBandOverdraftFeesChargesOverdraftFeeChargeCapOtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftTierBandOverdraftFeesChargesOverdraftFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 5,
 	}
 	
@@ -3840,28 +3770,26 @@ namespace MyNS
 		public OBBCAData1OverdraftOverdraftTierBandSetOverdraftTierBandOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCapOtherFeeType[] OBBCAData1OverdraftOverdraftTierBandSetOverdraftTierBandOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCapOtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftTierBandOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 5,
 	}
 	
@@ -3905,16 +3833,14 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Committed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Committed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OnDemand")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OnDemand = 1,
 	}
 	
@@ -3949,85 +3875,80 @@ namespace MyNS
 		public string[] Segment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBCAData1ProductDetailsFeeFreeLengthPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 5,
 	}
 	
 	/// <summary>
 	/// Balance type, in a coded form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBalanceType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClosingAvailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClosingAvailable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClosingBooked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClosingBooked = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClosingCleared")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClosingCleared = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Expected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Expected = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ForwardAvailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ForwardAvailable = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Information")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Information = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InterimAvailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InterimAvailable = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InterimBooked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InterimBooked = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InterimCleared")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InterimCleared = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OpeningAvailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OpeningAvailable = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OpeningBooked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OpeningBooked = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OpeningCleared")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OpeningCleared = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreviouslyClosedBooked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreviouslyClosedBooked = 12,
 	}
 	
 	/// <summary>
 	/// Set of elements used to fully identify the type of underlying transaction resulting in an entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBankTransactionCodeStructure1
 	{
 		
@@ -4048,8 +3969,7 @@ namespace MyNS
 		public string SubCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBeneficiary5
 	{
 		
@@ -4111,24 +4031,21 @@ namespace MyNS
 		public OBSupplementaryData1 SupplementaryData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBeneficiary5BeneficiaryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Trusted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Trusted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ordinary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ordinary = 1,
 	}
 	
 	/// <summary>
 	/// Provides the details to identify the beneficiary account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBCashAccount5_0
 	{
 		
@@ -4179,8 +4096,7 @@ namespace MyNS
 	/// Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account.
 	///This is the servicer of the beneficiary account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBranchAndFinancialInstitutionIdentification6_0
 	{
 		
@@ -4220,8 +4136,7 @@ namespace MyNS
 	/// <summary>
 	/// Information that locates and identifies a specific address, as defined by postal services.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBPostalAddress6
 	{
 		
@@ -4322,14 +4237,12 @@ namespace MyNS
 	/// <summary>
 	/// Additional information that can not be captured in the structured fields and/or any other specific block.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBSupplementaryData1
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBeneficiary5Basic
 	{
 		
@@ -4378,8 +4291,7 @@ namespace MyNS
 		public OBSupplementaryData1 SupplementaryData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBeneficiary5Detail
 	{
 		
@@ -4446,16 +4358,14 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Beneficiary Type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBBeneficiaryType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Trusted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Trusted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ordinary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ordinary = 1,
 	}
 	
@@ -4463,8 +4373,7 @@ namespace MyNS
 	/// Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account.
 	///This is the servicer of the beneficiary account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBranchAndFinancialInstitutionIdentification5_1
 	{
 		
@@ -4492,8 +4401,7 @@ namespace MyNS
 	/// <summary>
 	/// Financial institution servicing an account for the creditor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBranchAndFinancialInstitutionIdentification6_1
 	{
 		
@@ -4533,8 +4441,7 @@ namespace MyNS
 	/// <summary>
 	/// Financial institution servicing an account for the debtor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBBranchAndFinancialInstitutionIdentification6_2
 	{
 		
@@ -4574,8 +4481,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the details to identify the beneficiary account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBCashAccount5_1
 	{
 		
@@ -4625,8 +4531,7 @@ namespace MyNS
 	/// <summary>
 	/// Unambiguous identification of the account of the creditor, in the case of a debit transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBCashAccount6_0
 	{
 		
@@ -4672,8 +4577,7 @@ namespace MyNS
 	/// <summary>
 	/// Unambiguous identification of the account of the debtor, in the case of a crebit transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBCashAccount6_1
 	{
 		
@@ -4720,32 +4624,28 @@ namespace MyNS
 	/// Indicates whether the amount is a credit or a debit. 
 	///Usage: A zero amount is considered to be a credit amount.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBCreditDebitCode_0
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Credit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Credit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Debit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Debit = 1,
 	}
 	
 	/// <summary>
 	/// Indicates whether the transaction is a credit or a debit entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBCreditDebitCode_1
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Credit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Credit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Debit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Debit = 1,
 	}
 	
@@ -4753,24 +4653,21 @@ namespace MyNS
 	/// Indicates whether the balance is a credit or a debit balance. 
 	///Usage: A zero balance is considered to be a credit balance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBCreditDebitCode_2
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Credit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Credit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Debit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Debit = 1,
 	}
 	
 	/// <summary>
 	/// Set of elements used to provide details on the currency exchange.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBCurrencyExchange5
 	{
 		
@@ -4861,21 +4758,18 @@ namespace MyNS
 	/// <summary>
 	/// Status of a transaction entry on the books of the account servicer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBEntryStatus1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Booked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Booked = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBError1
 	{
 		
@@ -4920,8 +4814,7 @@ namespace MyNS
 	/// <summary>
 	/// An array of detail error codes, and messages, and URLs to documentation to help remediation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBErrorResponse1
 	{
 		
@@ -4972,150 +4865,135 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the sub type of account (product family group).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBExternalAccountSubType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChargeCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChargeCard = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreditCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreditCard = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentAccount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentAccount = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMoney")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMoney = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Loan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Loan = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mortgage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mortgage = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PrePaidCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PrePaidCard = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Savings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Savings = 7,
 	}
 	
 	/// <summary>
 	/// Specifies the type of account (personal or business).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBExternalAccountType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Business = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Personal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Personal = 1,
 	}
 	
 	/// <summary>
 	/// Specifies the status of the direct debit in code form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBExternalDirectDebitStatus1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 1,
 	}
 	
 	/// <summary>
 	/// Party type, in a coded form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBExternalPartyType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Delegate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Delegate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Joint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Joint = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sole = 2,
 	}
 	
 	/// <summary>
 	/// Specifies the scheduled payment date type requested
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBExternalScheduleType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Arrival")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Arrival = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Execution")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Execution = 1,
 	}
 	
 	/// <summary>
 	/// Specifies the status of the standing order in code form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBExternalStandingOrderStatus1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 1,
 	}
 	
 	/// <summary>
 	/// Statement type, in a coded form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBExternalStatementType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountClosure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountClosure = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountOpening")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountOpening = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Annual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Annual = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Interim")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Interim = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RegularPeriodic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RegularPeriodic = 4,
 	}
 	
 	/// <summary>
 	/// Details of the merchant involved in the transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBMerchantDetails1
 	{
 		
@@ -5140,8 +5018,7 @@ namespace MyNS
 		public string MerchantName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBPCAData1
 	{
 		
@@ -5340,69 +5217,63 @@ namespace MyNS
 		public string TierValueMinimum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1CreditInterestTierBandSetTierBandApplicationFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerAcademicTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerAcademicTerm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Daily = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HalfYearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HalfYearly = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Monthly = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarterly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarterly = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerStatementDate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerStatementDate = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Weekly = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yearly = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1CreditInterestTierBandSetTierBandBankInterestRateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LinkedBaseRate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LinkedBaseRate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gross")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gross = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Net")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Net = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1CreditInterestTierBandSetTierBandDepositInterestAppliedCoverage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tiered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tiered = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whole = 1,
 	}
 	
@@ -5600,31 +5471,29 @@ namespace MyNS
 		public OBPCAData1OtherFeesChargesFeeChargeCapOtherFeeType[] OBPCAData1OtherFeesChargesFeeChargeCapOtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OtherFeesChargesFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcademicTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcademicTerm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 6,
 	}
 	
@@ -5769,70 +5638,68 @@ namespace MyNS
 		public OBPCAData1OtherFeesChargesFeeChargeDetailOtherFeeType OtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OtherFeesChargesFeeChargeDetailApplicationFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountClosing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountClosing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountOpening")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountOpening = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcademicTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcademicTerm = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChargingPeriod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChargingPeriod = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Daily = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerItem")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerItem = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Monthly = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OnAccountAnniversary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OnAccountAnniversary = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerHour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerHour = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerOccurrence")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerOccurrence = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerSheet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerSheet = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerTransaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerTransaction = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerTransactionAmount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerTransactionAmount = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PerTransactionPercentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PerTransactionPercentage = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarterly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarterly = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SixMonthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SixMonthly = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StatementMonthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StatementMonthly = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Weekly = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yearly = 19,
 	}
 	
@@ -5926,31 +5793,29 @@ namespace MyNS
 		public OBPCAData1OtherFeesChargesFeeChargeDetailFeeChargeCapOtherFeeType[] OBPCAData1OtherFeesChargesFeeChargeDetailFeeChargeCapOtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OtherFeesChargesFeeChargeDetailFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcademicTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcademicTerm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 6,
 	}
 	
@@ -5994,22 +5859,20 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OtherFeesChargesFeeChargeDetailFeeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCAccountFee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCAccountFee = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCAccountFeeMonthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCAccountFeeMonthly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceCOther")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceCOther = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 3,
 	}
 	
@@ -6388,31 +6251,29 @@ namespace MyNS
 		public System.Nullable<System.Boolean> OverdraftControlIndicator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcademicTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcademicTerm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 6,
 	}
 	
@@ -6554,46 +6415,44 @@ namespace MyNS
 		public OBPCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCap OverdraftFeeChargeCap { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailFeeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArrangedOverdraft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArrangedOverdraft = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EmergencyBorrowing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EmergencyBorrowing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BorrowingItem")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BorrowingItem = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OverdraftRenewal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OverdraftRenewal = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AnnualReview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AnnualReview = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OverdraftSetup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OverdraftSetup = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Surcharge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Surcharge = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TempOverdraft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TempOverdraft = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnauthorisedBorrowing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnauthorisedBorrowing = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnauthorisedPaidTrans")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnauthorisedPaidTrans = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnauthorisedUnpaidTrans")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnauthorisedUnpaidTrans = 11,
 	}
 	
@@ -6817,31 +6676,29 @@ namespace MyNS
 		public System.Nullable<System.Boolean> OverdraftControlIndicator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcademicTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcademicTerm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 6,
 	}
 	
@@ -7038,31 +6895,29 @@ namespace MyNS
 		public System.Nullable<System.Boolean> OverdraftControlIndicator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftTierBandOverdraftFeesChargesOverdraftFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcademicTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcademicTerm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 6,
 	}
 	
@@ -7424,31 +7279,29 @@ namespace MyNS
 		public System.Nullable<System.Boolean> OverdraftControlIndicator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftTierBandOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcademicTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcademicTerm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Half Year")]
 		Half_Year = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Month = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarter = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Year = 6,
 	}
 	
@@ -7492,35 +7345,31 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Committed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Committed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OnDemand")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OnDemand = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBPCAData1OverdraftOverdraftTierBandSetTierBandMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tiered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tiered = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whole = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Banded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Banded = 2,
 	}
 	
@@ -7551,8 +7400,7 @@ namespace MyNS
 		public string[] Segment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBParty2
 	{
 		
@@ -7737,8 +7585,7 @@ namespace MyNS
 	/// <summary>
 	/// The Party's relationships with other resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBPartyRelationships1
 	{
 		
@@ -7773,8 +7620,7 @@ namespace MyNS
 		public string Related { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadAccount6
 	{
 		
@@ -7805,8 +7651,7 @@ namespace MyNS
 		public OBAccount6[] Account { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadBalance1
 	{
 		
@@ -7970,30 +7815,27 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadBalance1DataBalanceCreditLineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Available")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Available = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Credit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Credit = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Emergency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Emergency = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pre-Agreed")]
 		PreMinusAgreed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Temporary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Temporary = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadBeneficiary5
 	{
 		
@@ -8024,8 +7866,7 @@ namespace MyNS
 		public OBBeneficiary5[] Beneficiary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadConsent1
 	{
 		
@@ -8088,14 +7929,12 @@ namespace MyNS
 	/// <summary>
 	/// The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Account Info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBRisk2
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadConsentResponse1
 	{
 		
@@ -8207,27 +8046,24 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> TransactionToDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadConsentResponse1DataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Authorised")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Authorised = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AwaitingAuthorisation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AwaitingAuthorisation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Revoked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Revoked = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadDataStatement2
 	{
 		
@@ -8238,8 +8074,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides further details on a statement resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBStatement2
 	{
 		
@@ -8569,8 +8404,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadDataTransaction6
 	{
 		
@@ -8581,8 +8415,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides further details on an entry in the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBTransaction6
 	{
 		
@@ -8769,8 +8602,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of elements used to define the balance as a numerical representation of the net increases and decreases in an account after a transaction entry is applied to the account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBTransactionCashBalance
 	{
 		
@@ -8827,8 +8659,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of elements to describe the card instrument used in the transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBTransactionCardInstrument1
 	{
 		
@@ -8867,52 +8698,47 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBTransactionCardInstrument1AuthorisationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConsumerDevice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConsumerDevice = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Contactless")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Contactless = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIN = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBTransactionCardInstrument1CardSchemeName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmericanExpress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmericanExpress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Diners")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Diners = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Discover")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Discover = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MasterCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MasterCard = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VISA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VISA = 4,
 	}
 	
 	/// <summary>
 	/// Set of elements to fully identify a proprietary bank transaction code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProprietaryBankTransactionCodeStructure1
 	{
 		
@@ -8939,21 +8765,18 @@ namespace MyNS
 		public string Issuer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBTransaction6TransactionMutability
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mutable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mutable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Immutable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Immutable = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadDirectDebit2
 	{
 		
@@ -9060,8 +8883,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> PreviousPaymentDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadOffer1
 	{
 		
@@ -9244,30 +9066,27 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadOffer1DataOfferOfferType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BalanceTransfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BalanceTransfer = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LimitIncrease")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LimitIncrease = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MoneyTransfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MoneyTransfer = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PromotionalRate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PromotionalRate = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadParty2
 	{
 		
@@ -9298,8 +9117,7 @@ namespace MyNS
 		public OBParty2 Party { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadParty3
 	{
 		
@@ -9333,8 +9151,7 @@ namespace MyNS
 	/// <summary>
 	/// Product details of Other Product which is not avaiable in the standard list
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadProduct2
 	{
 		
@@ -9569,40 +9386,35 @@ namespace MyNS
 		public OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandDepositInterestAppliedCoverage TierBandMethod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetCalculationMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ITCO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ITCO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ITOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ITOT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ITSI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ITSI = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetDestination
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INOT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INPA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSC = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherCodeType1_0
 	{
 		
@@ -9745,99 +9557,90 @@ namespace MyNS
 		public string TierValueMinimum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandApplicationFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FQAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FQAT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FQDY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FQDY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FQHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FQHY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FQMY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FQMY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FQOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FQOT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FQQY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FQQY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FQSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FQSD = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FQWY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FQWY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FQYY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FQYY = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandBankInterestRateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INBB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INBB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INGR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INGR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INLR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INLR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INNE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INNE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INOT = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandDepositInterestAppliedCoverage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INBA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INBA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTI = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INWH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INWH = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandFixedVariableInterestRateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFI = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVA = 1,
 	}
 	
 	/// <summary>
 	/// Other application frequencies that are not available in the standard code list
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherCodeType1_1
 	{
 		
@@ -9913,8 +9716,7 @@ namespace MyNS
 	/// <summary>
 	/// Other calculation frequency which is not available in the standard code set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherCodeType1_2
 	{
 		
@@ -10084,86 +9886,82 @@ namespace MyNS
 		public OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeCapOtherFeeType[] OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeCapOtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeCapCappingPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FECP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FECP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEDA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEHO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEHO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEI = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEMO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOA = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPC = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPH = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPO = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPT = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTA = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTP = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEQU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEQU = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FESM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FESM = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEST = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEWE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEWE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEYE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEYE = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeCapMinMaxType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FMMN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FMMN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FMMX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FMMX = 1,
 	}
 	
@@ -10286,45 +10084,42 @@ namespace MyNS
 		public OB_OtherFeeChargeDetailType OtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeDetailFeeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FTOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FTOT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYAF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYAF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYAM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYAQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYAQ = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYCP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYCP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYDB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYDB = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYMI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYMI = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYXX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYXX = 8,
 	}
 	
 	/// <summary>
 	/// Other application frequencies not covered in the standard code list
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherCodeType1_6
 	{
 		
@@ -10364,8 +10159,7 @@ namespace MyNS
 	/// <summary>
 	/// Other calculation frequency which is not available in standard code set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherCodeType1_7
 	{
 		
@@ -10405,8 +10199,7 @@ namespace MyNS
 	/// <summary>
 	/// Other fee rate type which is not in the standard rate type list
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherCodeType1_5
 	{
 		
@@ -10446,8 +10239,7 @@ namespace MyNS
 	/// <summary>
 	/// Other Fee/charge type which is not available in the standard code set
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherFeeChargeDetailType
 	{
 		
@@ -10492,19 +10284,17 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_OtherFeeChargeDetailTypeFeeCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FCOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FCOT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FCRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FCRE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FCSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FCSV = 2,
 	}
 	
@@ -10795,31 +10585,29 @@ namespace MyNS
 		public OB_OtherFeeChargeDetailType OtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestTierBandMaxTermPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PACT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHYR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHYR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PMTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PMTH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PQTR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PQTR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PWEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PWEK = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PYER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PYER = 6,
 	}
 	
@@ -11203,8 +10991,7 @@ namespace MyNS
 	/// <summary>
 	/// Other fee rate type which is not available in the standard code set
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherCodeType1_8
 	{
 		
@@ -11277,19 +11064,17 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeOtherFeesChargesTariffType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TTEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TTEL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TTMX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TTMX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TTOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TTOT = 2,
 	}
 	
@@ -11566,54 +11351,51 @@ namespace MyNS
 		public OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCap[] OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOverdraftFeeChargeCap { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailFeeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBAO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBAO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBEB = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBIT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBOR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBOS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBSC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBSC = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBTO = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBUB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBUB = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBUT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FTOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FTOT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FTUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FTUT = 11,
 	}
 	
 	/// <summary>
 	/// Other fee rate type code which is not available in the standard code set
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherCodeType1_4
 	{
 		
@@ -11653,8 +11435,7 @@ namespace MyNS
 	/// <summary>
 	/// Other Fee type which is not available in the standard code set
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OB_OtherCodeType1_3
 	{
 		
@@ -12131,19 +11912,17 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVCO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVCO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVOD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVOT = 2,
 	}
 	
@@ -12232,31 +12011,29 @@ namespace MyNS
 		public System.Nullable<OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentType> RepaymentType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeRepaymentAmountType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RABD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RABD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RABL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RABL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RACI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RACI = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAFC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAFC = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAIO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RALT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RALT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USOT = 6,
 	}
 	
@@ -12550,37 +12327,35 @@ namespace MyNS
 		public OB_OtherFeeChargeDetailType OtherFeeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMDA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMFL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMFL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMFO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMHY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMMO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMOT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMQU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMQU = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMWE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMWE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMYE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMYE = 8,
 	}
 	
@@ -12603,76 +12378,71 @@ namespace MyNS
 		public string[] Notes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USBA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USBA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USBU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USBU = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USCI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USCI = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USCS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USCS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USFA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USFA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USFB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USFB = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USFI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USFI = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USIO = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USOT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USPF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USPF = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USRW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USRW = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USSL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USSL = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBReadProduct2DataProductProductType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BusinessCurrentAccount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BusinessCurrentAccount = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CommercialCreditCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CommercialCreditCard = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PersonalCurrentAccount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PersonalCurrentAccount = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMELoan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMELoan = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadScheduledPayment3
 	{
 		
@@ -12703,8 +12473,7 @@ namespace MyNS
 		public OBScheduledPayment3[] ScheduledPayment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBScheduledPayment3
 	{
 		
@@ -12793,8 +12562,7 @@ namespace MyNS
 		public OBExternalScheduleType1Code ScheduledType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadStandingOrder6
 	{
 		
@@ -12825,8 +12593,7 @@ namespace MyNS
 		public OBStandingOrder6[] StandingOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBStandingOrder6
 	{
 		
@@ -12997,8 +12764,7 @@ namespace MyNS
 		public OBSupplementaryData1 SupplementaryData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadStatement2
 	{
 		
@@ -13022,8 +12788,7 @@ namespace MyNS
 		public Meta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBReadTransaction6
 	{
 		
@@ -13047,8 +12812,7 @@ namespace MyNS
 		public Meta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBScheduledPayment3Basic
 	{
 		
@@ -13124,8 +12888,7 @@ namespace MyNS
 		public OBExternalScheduleType1Code ScheduledType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBScheduledPayment3Detail
 	{
 		
@@ -13216,8 +12979,7 @@ namespace MyNS
 		public OBExternalScheduleType1Code ScheduledType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBStandingOrder6Basic
 	{
 		
@@ -13375,8 +13137,7 @@ namespace MyNS
 		public OBSupplementaryData1 SupplementaryData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBStandingOrder6Detail
 	{
 		
@@ -13552,8 +13313,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides further details on a statement resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBStatement2Basic
 	{
 		
@@ -13854,8 +13614,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides further details on a statement resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBStatement2Detail
 	{
 		
@@ -14188,8 +13947,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides further details on an entry in the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBTransaction6Basic
 	{
 		
@@ -14329,8 +14087,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides further details on an entry in the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBTransaction6Detail
 	{
 		
@@ -14517,621 +14274,591 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Mutability of the Transaction record.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBTransactionMutability1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mutable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mutable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Immutable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Immutable = 1,
 	}
 	
 	/// <summary>
 	/// Categorisation of fees and charges into standard categories.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_FeeCategory1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FCOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FCOT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FCRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FCRE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FCSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FCSV = 2,
 	}
 	
 	/// <summary>
 	/// Frequency at which the overdraft charge is applied to the account
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_FeeFrequency1Code_0
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FECP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FECP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEDA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEHO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEHO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEI = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEMO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOA = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPC = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPH = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPO = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPT = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTA = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTP = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEQU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEQU = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FESM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FESM = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEST = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEWE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEWE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEYE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEYE = 20,
 	}
 	
 	/// <summary>
 	/// How often is the overdraft fee/charge calculated for the account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_FeeFrequency1Code_1
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FECP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FECP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEDA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEHO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEHO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEI = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEMO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOA = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPC = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPH = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPO = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPT = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTA = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTP = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEQU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEQU = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FESM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FESM = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEST = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEWE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEWE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEYE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEYE = 20,
 	}
 	
 	/// <summary>
 	/// How frequently the fee/charge is applied to the account
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_FeeFrequency1Code_2
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FECP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FECP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEDA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEHO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEHO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEI = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEMO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOA = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPC = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPH = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPO = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPT = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTA = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTP = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEQU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEQU = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FESM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FESM = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEST = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEWE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEWE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEYE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEYE = 20,
 	}
 	
 	/// <summary>
 	/// How frequently the fee/charge is calculated
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_FeeFrequency1Code_3
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FECP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FECP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEDA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEHO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEHO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEI = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEMO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOA = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPC = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPH = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPO = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPT = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTA = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTP = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEQU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEQU = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FESM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FESM = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEST = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEWE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEWE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEYE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEYE = 20,
 	}
 	
 	/// <summary>
 	/// Period e.g. day, week, month etc. for which the fee/charge is capped
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_FeeFrequency1Code_4
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEAO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEAO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FECP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FECP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEDA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEHO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEHO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEI = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEMO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOA = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEOT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPC = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPH = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPO = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPT = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTA = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPTP = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEQU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEQU = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FESM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FESM = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEST = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEWE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEWE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEYE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEYE = 20,
 	}
 	
 	/// <summary>
 	/// Fee/Charge Type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_FeeType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEPF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEPF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FTOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FTOT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYAF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYAF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYAM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYAQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYAQ = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYCP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYCP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYDB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYDB = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYMI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYMI = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FYXX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FYXX = 8,
 	}
 	
 	/// <summary>
 	/// Methods of calculating interest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_InterestCalculationMethod1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ITCO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ITCO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ITOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ITOT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ITSI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ITSI = 2,
 	}
 	
 	/// <summary>
 	/// Type of interest rate, Fixed or Variable
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_InterestFixedVariableType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFI = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVA = 1,
 	}
 	
 	/// <summary>
 	/// Rate type for overdraft fee/charge (where it is charged in terms of a rate rather than an amount)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_InterestRateType1Code_0
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INBB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INBB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INGR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INGR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INLR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INLR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INNE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INNE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INOT = 5,
 	}
 	
 	/// <summary>
 	/// Rate type for Fee/Charge (where it is charged in terms of a rate rather than an amount)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_InterestRateType1Code_1
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INBB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INBB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INGR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INGR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INLR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INLR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INNE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INNE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INOT = 5,
 	}
 	
 	/// <summary>
 	/// Min Max type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_MinMaxType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FMMN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FMMN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FMMX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FMMX = 1,
 	}
 	
 	/// <summary>
 	/// Overdraft fee type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_OverdraftFeeType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBAO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBAO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBEB = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBIT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBOR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBOS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBSC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBSC = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBTO = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBUB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBUB = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FBUT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FTOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FTOT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FTUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FTUT = 11,
 	}
 	
 	/// <summary>
 	/// Period e.g. day, week, month etc. for which the fee/charge is capped
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OB_Period1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PACT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHYR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHYR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PMTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PMTH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PQTR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PQTR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PWEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PWEK = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PYER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PYER = 6,
 	}
 	

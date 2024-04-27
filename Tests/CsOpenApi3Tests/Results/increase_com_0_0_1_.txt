@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Accounts are your bank accounts with Increase. They store money, receive transfers, and send payments. They earn interest and have depository insurance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -106,59 +105,52 @@ namespace MyNS
 		public AccountType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountCurrency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EUR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GBP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GBP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JPY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USD = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account = 0,
 	}
 	
 	/// <summary>
 	/// A list of Account objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_list
 	{
 		
@@ -182,8 +174,7 @@ namespace MyNS
 	/// <summary>
 	/// Each account can have multiple account and routing numbers. We recommend that you use a set per vendor. This is similar to how you use different passwords for different websites. Account numbers can also be used to seamlessly reconcile inbound payments. Generating a unique account number per vendor ensures you always know the originator of an incoming payment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_number
 	{
 		
@@ -252,37 +243,32 @@ namespace MyNS
 		public Account_numberType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Account_numberStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Account_numberType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_number = 0,
 	}
 	
 	/// <summary>
 	/// A list of Account Number objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_number_list
 	{
 		
@@ -306,8 +292,7 @@ namespace MyNS
 	/// <summary>
 	/// Account Statements are generated monthly for every active Account. You can access the statement's data via the API or retrieve a PDF with its details via its associated File.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_statement
 	{
 		
@@ -384,21 +369,18 @@ namespace MyNS
 		public Account_statementType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Account_statementType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_statement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_statement = 0,
 	}
 	
 	/// <summary>
 	/// A list of Account Statement objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_statement_list
 	{
 		
@@ -422,8 +404,7 @@ namespace MyNS
 	/// <summary>
 	/// Account transfers move funds between your own accounts at Increase.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_transfer
 	{
 		
@@ -580,37 +561,32 @@ namespace MyNS
 		public string Canceled_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Account_transferStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_approval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_approval = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complete = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Account_transferType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_transfer = 0,
 	}
 	
 	/// <summary>
 	/// A list of Account Transfer objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_transfer_list
 	{
 		
@@ -634,8 +610,7 @@ namespace MyNS
 	/// <summary>
 	/// ACH Prenotifications are one way you can verify account and routing numbers by Automated Clearing House (ACH).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ach_prenotification
 	{
 		
@@ -752,16 +727,14 @@ namespace MyNS
 		public Ach_prenotificationType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ach_prenotificationCredit_debit_indicator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="debit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		debit = 1,
 	}
 	
@@ -785,40 +758,35 @@ namespace MyNS
 		public string Return_reason_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ach_prenotificationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_submitting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_submitting = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requires_attention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requires_attention = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="returned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		returned = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		submitted = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ach_prenotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_prenotification")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_prenotification = 0,
 	}
 	
 	/// <summary>
 	/// A list of ACH Prenotification objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ach_prenotification_list
 	{
 		
@@ -842,8 +810,7 @@ namespace MyNS
 	/// <summary>
 	/// ACH transfers move funds between your Increase account and any other account accessible by the Automated Clearing House (ACH).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ach_transfer
 	{
 		
@@ -1112,26 +1079,22 @@ namespace MyNS
 		public string Canceled_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ach_transferFunding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="checking")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		checking = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="savings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		savings = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ach_transferNetwork
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach = 0,
 	}
 	
@@ -1199,126 +1162,120 @@ namespace MyNS
 		public string Transfer_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ach_transferReturnReturn_reason_code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="insufficient_fund")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		insufficient_fund = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no_account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no_account = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_closed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_account_number_structure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_account_number_structure = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_frozen_entry_returned_per_ofac_instruction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_frozen_entry_returned_per_ofac_instruction = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credit_entry_refused_by_receiver")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credit_entry_refused_by_receiver = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unauthorized_debit_to_consumer_account_using_corporate_sec_code")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unauthorized_debit_to_consumer_account_using_corporate_sec_code = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="corporate_customer_advised_not_authorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		corporate_customer_advised_not_authorized = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="payment_stopped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		payment_stopped = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="non_transaction_account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		non_transaction_account = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uncollected_funds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uncollected_funds = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="routing_number_check_digit_error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		routing_number_check_digit_error = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer_advised_unauthorized_improper_ineligible_or_incomplete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer_advised_unauthorized_improper_ineligible_or_incomplete = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="amount_field_error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		amount_field_error = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authorization_revoked_by_customer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authorization_revoked_by_customer = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_ach_routing_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_ach_routing_number = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="file_record_edit_criteria")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		file_record_edit_criteria = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enr_invalid_individual_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enr_invalid_individual_name = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="returned_per_odfi_request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		returned_per_odfi_request = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="addenda_error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		addenda_error = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="limited_participation_dfi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		limited_participation_dfi = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="incorrectly_coded_outbound_international_payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		incorrectly_coded_outbound_international_payment = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 22,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ach_transferStandard_entry_class_code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="corporate_credit_or_debit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		corporate_credit_or_debit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="prearranged_payments_and_deposit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		prearranged_payments_and_deposit = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="internet_initiated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		internet_initiated = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ach_transferStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_approval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_approval = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_reviewing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_reviewing = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_submission")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_submission = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		submitted = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="returned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		returned = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requires_attention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requires_attention = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 7,
 	}
 	
@@ -1342,21 +1299,18 @@ namespace MyNS
 		public string Trace_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ach_transferType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_transfer = 0,
 	}
 	
 	/// <summary>
 	/// A list of ACH Transfer objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ach_transfer_list
 	{
 		
@@ -1377,8 +1331,7 @@ namespace MyNS
 		public string Next_cursor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Action_a_real_time_decision_parameters
 	{
 		
@@ -1413,16 +1366,14 @@ namespace MyNS
 		public Action_a_real_time_decision_parametersCard_authorizationDecision Decision { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Action_a_real_time_decision_parametersCard_authorizationDecision
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="approve")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		approve = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="decline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		decline = 1,
 	}
 	
@@ -1438,16 +1389,14 @@ namespace MyNS
 		public Action_a_real_time_decision_parametersDigital_wallet_authenticationResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Action_a_real_time_decision_parametersDigital_wallet_authenticationResult
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failure = 1,
 	}
 	
@@ -1516,8 +1465,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to lookup the balance of an Account at a given point in time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Balance_lookup
 	{
 		
@@ -1554,21 +1502,18 @@ namespace MyNS
 		public Balance_lookupType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Balance_lookupType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="balance_lookup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		balance_lookup = 0,
 	}
 	
 	/// <summary>
 	/// Accounts are T-accounts. They can store accounting entries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bookkeeping_account
 	{
 		
@@ -1621,34 +1566,29 @@ namespace MyNS
 		public Bookkeeping_accountType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Bookkeeping_accountCompliance_category
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="commingled_cash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		commingled_cash = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer_balance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer_balance = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Bookkeeping_accountType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bookkeeping_account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bookkeeping_account = 0,
 	}
 	
 	/// <summary>
 	/// A list of Bookkeeping Account objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bookkeeping_account_list
 	{
 		
@@ -1672,8 +1612,7 @@ namespace MyNS
 	/// <summary>
 	/// Entries are T-account entries recording debits and credits.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bookkeeping_entry
 	{
 		
@@ -1718,21 +1657,18 @@ namespace MyNS
 		public Bookkeeping_entryType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Bookkeeping_entryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bookkeeping_entry")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bookkeeping_entry = 0,
 	}
 	
 	/// <summary>
 	/// A list of Bookkeeping Entry objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bookkeeping_entry_list
 	{
 		
@@ -1756,8 +1692,7 @@ namespace MyNS
 	/// <summary>
 	/// Entry Sets are accounting entries that are transactionally applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bookkeeping_entry_set
 	{
 		
@@ -1830,21 +1765,18 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Bookkeeping_entry_setType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bookkeeping_entry_set")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bookkeeping_entry_set = 0,
 	}
 	
 	/// <summary>
 	/// Cards are commercial credit cards. They'll immediately work for online purchases after you create them. All cards maintain a credit limit of 100% of the Account’s available balance at the time of transaction. Funds are deducted from the Account upon transaction settlement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Card
 	{
 		
@@ -2009,21 +1941,18 @@ namespace MyNS
 		public string Phone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CardType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card = 0,
 	}
 	
 	/// <summary>
 	/// An object containing the sensitive details (card number, cvc, etc) for a Card.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Card_details
 	{
 		
@@ -2076,21 +2005,18 @@ namespace MyNS
 		public string Verification_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Card_detailsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_details")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_details = 0,
 	}
 	
 	/// <summary>
 	/// If unauthorized activity occurs on a card, you can create a Card Dispute and we'll return the funds if appropriate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Card_dispute
 	{
 		
@@ -2215,37 +2141,32 @@ namespace MyNS
 		public System.DateTimeOffset Rejected_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Card_disputeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_reviewing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_reviewing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Card_disputeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_dispute")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_dispute = 0,
 	}
 	
 	/// <summary>
 	/// A list of Card Dispute objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Card_dispute_list
 	{
 		
@@ -2269,8 +2190,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Card objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Card_list
 	{
 		
@@ -2294,8 +2214,7 @@ namespace MyNS
 	/// <summary>
 	/// This contains artwork and metadata relating to a Card's appearance in digital wallet apps like Apple Pay and Google Pay. For more information, see our guide on [digital card artwork](https://increase.com/documentation/card-art)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Card_profile
 	{
 		
@@ -2444,40 +2363,35 @@ namespace MyNS
 		public int Red { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Card_profileStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archived = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Card_profileType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_profile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_profile = 0,
 	}
 	
 	/// <summary>
 	/// A list of Card Profile objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Card_profile_list
 	{
 		
@@ -2501,8 +2415,7 @@ namespace MyNS
 	/// <summary>
 	/// Check Deposits allow you to deposit images of paper checks into your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Check_deposit
 	{
 		
@@ -2707,31 +2620,29 @@ namespace MyNS
 		public System.DateTimeOffset Rejected_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Check_depositDeposit_rejectionReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="incomplete_image")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		incomplete_image = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duplicate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duplicate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="poor_image_quality")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		poor_image_quality = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="incorrect_amount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		incorrect_amount = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="incorrect_recipient")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		incorrect_recipient = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_eligible_for_mobile_deposit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_eligible_for_mobile_deposit = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 6,
 	}
 	
@@ -2786,80 +2697,73 @@ namespace MyNS
 		public string Transaction_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Check_depositDeposit_returnReturn_reason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_conversion_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_conversion_not_supported = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed_account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed_account = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duplicate_submission")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duplicate_submission = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="insufficient_funds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		insufficient_funds = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no_account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no_account = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_authorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_authorized = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stale_dated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stale_dated = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stop_payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stop_payment = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown_reason")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown_reason = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unmatched_details")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unmatched_details = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unreadable_image")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unreadable_image = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Check_depositStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		submitted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="returned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		returned = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Check_depositType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_deposit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_deposit = 0,
 	}
 	
 	/// <summary>
 	/// A list of Check Deposit objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Check_deposit_list
 	{
 		
@@ -2883,8 +2787,7 @@ namespace MyNS
 	/// <summary>
 	/// Check Transfers move funds from your Increase account by mailing a physical check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Check_transfer
 	{
 		
@@ -3165,13 +3068,11 @@ namespace MyNS
 		public Check_transferDepositType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Check_transferDepositType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_transfer_deposit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_transfer_deposit = 0,
 	}
 	
@@ -3271,56 +3172,52 @@ namespace MyNS
 		public string Transfer_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Check_transferReturn_detailsReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mail_delivery_failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mail_delivery_failure = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="refused_by_recipient")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		refused_by_recipient = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Check_transferStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_approval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_approval = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_submission")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_submission = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		submitted = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_mailing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_mailing = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mailed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deposited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deposited = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stopped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stopped = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="returned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		returned = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requires_attention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requires_attention = 10,
 	}
 	
@@ -3360,13 +3257,11 @@ namespace MyNS
 		public Check_transferStop_payment_requestType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Check_transferStop_payment_requestType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_transfer_stop_payment_request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_transfer_stop_payment_request = 0,
 	}
 	
@@ -3390,21 +3285,18 @@ namespace MyNS
 		public System.DateTimeOffset Submitted_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Check_transferType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_transfer = 0,
 	}
 	
 	/// <summary>
 	/// A list of Check Transfer objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Check_transfer_list
 	{
 		
@@ -3425,8 +3317,7 @@ namespace MyNS
 		public string Next_cursor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Complete_a_sandbox_real_time_payments_transfer_parameters
 	{
 		
@@ -3449,78 +3340,75 @@ namespace MyNS
 		public Complete_a_sandbox_real_time_payments_transfer_parametersRejectionReject_reason_code Reject_reason_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Complete_a_sandbox_real_time_payments_transfer_parametersRejectionReject_reason_code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_closed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_blocked = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_creditor_account_type")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_creditor_account_type = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_creditor_account_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_creditor_account_number = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_creditor_financial_institution_identifier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_creditor_financial_institution_identifier = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="end_customer_deceased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		end_customer_deceased = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="narrative")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		narrative = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction_forbidden")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction_forbidden = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction_type_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction_type_not_supported = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unexpected_amount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unexpected_amount = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="amount_exceeds_bank_limits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		amount_exceeds_bank_limits = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_creditor_address")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_creditor_address = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown_end_customer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown_end_customer = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_debtor_address")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_debtor_address = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timeout = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsupported_message_for_recipient")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsupported_message_for_recipient = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recipient_connection_not_available")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recipient_connection_not_available = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="real_time_payments_suspended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		real_time_payments_suspended = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="instructed_agent_signed_off")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		instructed_agent_signed_off = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="processing_error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		processing_error = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_bookkeeping_account_parameters
 	{
 		
@@ -3555,8 +3443,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_bookkeeping_entry_set_parameters
 	{
 		
@@ -3601,8 +3488,7 @@ namespace MyNS
 		public int Amount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_card_dispute_parameters
 	{
 		
@@ -3627,8 +3513,7 @@ namespace MyNS
 		public string Explanation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_card_parameters
 	{
 		
@@ -3755,8 +3640,7 @@ namespace MyNS
 		public string Phone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_card_profile_parameters
 	{
 		
@@ -3894,8 +3778,7 @@ namespace MyNS
 		public int Red { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_check_deposit_parameters
 	{
 		
@@ -3946,8 +3829,7 @@ namespace MyNS
 		public string Front_image_file_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_check_transfer_parameters
 	{
 		
@@ -4148,8 +4030,7 @@ namespace MyNS
 		public string Zip { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_file_parameters
 	{
 		
@@ -4180,45 +4061,42 @@ namespace MyNS
 		public Create_a_file_parametersPurpose Purpose { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_a_file_parametersPurpose
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_image_front")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_image_front = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_image_back")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_image_back = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="form_ss_4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		form_ss_4 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="identity_document")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		identity_document = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trust_formation_document")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trust_formation_document = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="digital_wallet_artwork")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		digital_wallet_artwork = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="digital_wallet_app_icon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		digital_wallet_app_icon = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="document_request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		document_request = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="entity_supplemental_document")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		entity_supplemental_document = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_limit_parameters
 	{
 		
@@ -4259,46 +4137,41 @@ namespace MyNS
 		public int Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_a_limit_parametersInterval
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		day = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		week = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		month = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		year = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all_time = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_a_limit_parametersMetric
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		count = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="volume")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		volume = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_real_time_payments_transfer_parameters
 	{
 		
@@ -4377,8 +4250,7 @@ namespace MyNS
 		public string Source_account_number_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_supplemental_document_for_an_entity_parameters
 	{
 		
@@ -4391,8 +4263,7 @@ namespace MyNS
 		public string File_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_wire_drawdown_request_parameters
 	{
 		
@@ -4493,8 +4364,7 @@ namespace MyNS
 		public string Recipient_routing_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_a_wire_transfer_parameters
 	{
 		
@@ -4603,8 +4473,7 @@ namespace MyNS
 		public string Routing_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_account_number_parameters
 	{
 		
@@ -4629,8 +4498,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_account_parameters
 	{
 		
@@ -4665,8 +4533,7 @@ namespace MyNS
 		public string Program_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_account_transfer_parameters
 	{
 		
@@ -4715,8 +4582,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Require_approval { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_ach_prenotification_parameters
 	{
 		
@@ -4833,8 +4699,7 @@ namespace MyNS
 		public Ach_transferStandard_entry_class_code Standard_entry_class_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_ach_return_parameters
 	{
 		
@@ -4855,39 +4720,36 @@ namespace MyNS
 		public string Transaction_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_ach_return_parametersReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authorization_revoked_by_customer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authorization_revoked_by_customer = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="payment_stopped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		payment_stopped = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer_advised_unauthorized_improper_ineligible_or_incomplete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer_advised_unauthorized_improper_ineligible_or_incomplete = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="representative_payee_deceased_or_unable_to_continue_in_that_capacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		representative_payee_deceased_or_unable_to_continue_in_that_capacity = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="beneficiary_or_account_holder_deceased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		beneficiary_or_account_holder_deceased = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credit_entry_refused_by_receiver")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credit_entry_refused_by_receiver = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duplicate_entry")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duplicate_entry = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="corporate_customer_advised_not_authorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		corporate_customer_advised_not_authorized = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_ach_transfer_parameters
 	{
 		
@@ -5040,8 +4902,7 @@ namespace MyNS
 		public string Statement_descriptor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_entity_parameters
 	{
 		
@@ -5436,25 +5297,23 @@ namespace MyNS
 		public string State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_entity_parametersCorporationBeneficial_ownersIndividualIdentificationMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="social_security_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		social_security_number = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="individual_taxpayer_identification_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		individual_taxpayer_identification_number = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="passport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		passport = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="drivers_license")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		drivers_license = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 4,
 	}
 	
@@ -5532,16 +5391,14 @@ namespace MyNS
 		public string File_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_entity_parametersCorporationBeneficial_ownersProng
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ownership")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ownership = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="control")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		control = 1,
 	}
 	
@@ -6079,38 +5936,34 @@ namespace MyNS
 		public string File_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_entity_parametersRelationship
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="affiliated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		affiliated = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="informational")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		informational = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unaffiliated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unaffiliated = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_entity_parametersStructure
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="corporation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		corporation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="natural_person")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		natural_person = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="joint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		joint = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trust")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trust = 3,
 	}
 	
@@ -6260,16 +6113,14 @@ namespace MyNS
 		public string Zip { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_entity_parametersTrustCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="revocable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		revocable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="irrevocable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		irrevocable = 1,
 	}
 	
@@ -6803,18 +6654,15 @@ namespace MyNS
 		public string File_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_entity_parametersTrustTrusteesStructure
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="individual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		individual = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_event_subscription_parameters
 	{
 		
@@ -6843,9 +6691,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_event_subscription_parametersSelected_event_category
 	{
 		
@@ -7000,8 +6846,7 @@ namespace MyNS
 		wire_transfer_updated = 49,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_export_parameters
 	{
 		
@@ -7070,16 +6915,14 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> On_or_before { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_export_parametersCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction_csv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction_csv = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="balance_csv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		balance_csv = 1,
 	}
 	
@@ -7127,8 +6970,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> On_or_before { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_an_external_account_parameters
 	{
 		
@@ -7175,27 +7017,24 @@ namespace MyNS
 		public string Routing_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_an_external_account_parametersFunding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="checking")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		checking = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="savings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		savings = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 2,
 	}
 	
 	/// <summary>
 	/// Declined Transactions are refused additions and removals of money from your bank account. For example, Declined Transactions are caused when your Account has an insufficient balance or your Limits are triggered.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Declined_transaction
 	{
 		
@@ -7280,16 +7119,14 @@ namespace MyNS
 		public Declined_transactionType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionRoute_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_number = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card = 1,
 	}
 	
@@ -7422,46 +7259,44 @@ namespace MyNS
 		public string Trace_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionSourceAch_declineReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_route_canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_route_canceled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_route_disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_route_disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="breaches_limit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		breaches_limit = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credit_entry_refused_by_receiver")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credit_entry_refused_by_receiver = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duplicate_return")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duplicate_return = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="entity_not_active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		entity_not_active = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group_locked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group_locked = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="insufficient_funds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		insufficient_funds = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="misrouted_return")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		misrouted_return = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no_ach_route")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no_ach_route = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="originator_request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		originator_request = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction_not_allowed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction_not_allowed = 11,
 	}
 	
@@ -7573,13 +7408,11 @@ namespace MyNS
 		public Declined_transactionSourceCard_declineReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionSourceCard_declineNetwork
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="visa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		visa = 0,
 	}
 	
@@ -7615,111 +7448,105 @@ namespace MyNS
 		public System.Nullable<Declined_transactionSourceCard_declineNetwork_detailsVisaPoint_of_service_entry_mode> Point_of_service_entry_mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionSourceCard_declineNetwork_detailsVisaElectronic_commerce_indicator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mail_phone_order")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mail_phone_order = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recurring")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recurring = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="installment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		installment = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown_mail_phone_order")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown_mail_phone_order = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="secure_electronic_commerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		secure_electronic_commerce = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="non_authenticated_security_transaction_at_3ds_capable_merchant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		non_authenticated_security_transaction_at_3ds_capable_merchant = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="non_authenticated_security_transaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		non_authenticated_security_transaction = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="non_secure_transaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		non_secure_transaction = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionSourceCard_declineNetwork_detailsVisaPoint_of_service_entry_mode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="magnetic_stripe_no_cvv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		magnetic_stripe_no_cvv = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="optical_code")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		optical_code = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrated_circuit_card")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		integrated_circuit_card = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contactless")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contactless = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credential_on_file")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credential_on_file = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="magnetic_stripe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		magnetic_stripe = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contactless_magnetic_stripe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contactless_magnetic_stripe = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrated_circuit_card_no_cvv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		integrated_circuit_card_no_cvv = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionSourceCard_declineReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_not_active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_not_active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="entity_not_active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		entity_not_active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group_locked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group_locked = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="insufficient_funds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		insufficient_funds = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cvv2_mismatch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cvv2_mismatch = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction_not_allowed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction_not_allowed = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="breaches_limit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		breaches_limit = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhook_declined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webhook_declined = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhook_timed_out")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webhook_timed_out = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="declined_by_stand_in_processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		declined_by_stand_in_processing = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_physical_card")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_physical_card = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="missing_original_authorization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		missing_original_authorization = 11,
 	}
 	
@@ -7785,31 +7612,29 @@ namespace MyNS
 		public string Merchant_state { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionSourceCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_decline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_decline = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_decline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_decline = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_decline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_decline = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_real_time_payments_transfer_decline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_real_time_payments_transfer_decline = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="international_ach_decline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		international_ach_decline = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_route_decline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_route_decline = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 6,
 	}
 	
@@ -7840,49 +7665,47 @@ namespace MyNS
 		public Declined_transactionSourceCheck_declineReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionSourceCheck_declineReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_route_canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_route_canceled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_route_disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_route_disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="breaches_limit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		breaches_limit = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="entity_not_active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		entity_not_active = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group_locked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group_locked = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="insufficient_funds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		insufficient_funds = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unable_to_locate_account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unable_to_locate_account = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unable_to_process")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unable_to_process = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="refer_to_image")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		refer_to_image = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stop_payment_requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stop_payment_requested = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="returned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		returned = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duplicate_presentment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duplicate_presentment = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_authorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_authorized = 12,
 	}
 	
@@ -7962,25 +7785,23 @@ namespace MyNS
 		public string Transaction_identification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionSourceInbound_real_time_payments_transfer_declineReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_number_canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_number_canceled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_number_disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_number_disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group_locked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group_locked = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="entity_not_active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		entity_not_active = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="real_time_payments_not_enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		real_time_payments_not_enabled = 4,
 	}
 	
@@ -8241,21 +8062,18 @@ namespace MyNS
 		public string Trace_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Declined_transactionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="declined_transaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		declined_transaction = 0,
 	}
 	
 	/// <summary>
 	/// A list of Declined Transaction objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Declined_transaction_list
 	{
 		
@@ -8279,8 +8097,7 @@ namespace MyNS
 	/// <summary>
 	/// A Digital Wallet Token is created when a user adds a Card to their Apple Pay or Google Pay app. The Digital Wallet Token can be used for purchases just like a Card.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Digital_wallet_token
 	{
 		
@@ -8333,53 +8150,46 @@ namespace MyNS
 		public Digital_wallet_tokenType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Digital_wallet_tokenStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="suspended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		suspended = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deactivated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deactivated = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Digital_wallet_tokenToken_requestor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="apple_pay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		apple_pay = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="google_pay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		google_pay = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Digital_wallet_tokenType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="digital_wallet_token")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		digital_wallet_token = 0,
 	}
 	
 	/// <summary>
 	/// A list of Digital Wallet Token objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Digital_wallet_token_list
 	{
 		
@@ -8403,8 +8213,7 @@ namespace MyNS
 	/// <summary>
 	/// Increase generates certain documents / forms automatically for your application; they can be listed here. Currently the only supported document type is IRS Form 1099-INT.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Document
 	{
 		
@@ -8457,169 +8266,164 @@ namespace MyNS
 		public DocumentType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_opening_disclosures")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_opening_disclosures = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="anti_money_laundering_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		anti_money_laundering_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="anti_money_laundering_procedures")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		anti_money_laundering_procedures = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="audit_report")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		audit_report = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="background_checks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		background_checks = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="business_continuity_plan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		business_continuity_plan = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="collections_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		collections_policy = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complaints_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complaints_policy = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complaint_report")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complaint_report = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="compliance_report")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		compliance_report = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="compliance_staffing_plan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		compliance_staffing_plan = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="compliance_management_system_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		compliance_management_system_policy = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="consumer_privacy_notice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		consumer_privacy_notice = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="consumer_protection_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		consumer_protection_policy = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="corporate_formation_document")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		corporate_formation_document = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credit_monitoring_report")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credit_monitoring_report = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer_information_program_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer_information_program_policy = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="electronic_funds_tranfer_act_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		electronic_funds_tranfer_act_policy = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="employee_overview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		employee_overview = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="end_user_terms_of_service")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		end_user_terms_of_service = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="e_sign_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		e_sign_policy = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="financial_statement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		financial_statement = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="form_1099_int")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		form_1099_int = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fraud_prevention_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fraud_prevention_policy = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="funds_availability_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		funds_availability_policy = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="funds_availability_disclosure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		funds_availability_disclosure = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="funds_flow_diagram")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		funds_flow_diagram = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gramm_leach_bliley_act_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gramm_leach_bliley_act_policy = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="information_security_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		information_security_policy = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="insurance_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		insurance_policy = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="investor_presentation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		investor_presentation = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="loan_application_processing_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		loan_application_processing_policy = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="management_biography")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		management_biography = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="marketing_and_advertising_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		marketing_and_advertising_policy = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="network_security_diagram")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		network_security_diagram = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="onboarding_questionnaire")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		onboarding_questionnaire = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="penetration_test_report")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		penetration_test_report = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="program_risk_assessment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		program_risk_assessment = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="security_audit_report")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		security_audit_report = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="servicing_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		servicing_policy = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction_monitoring_report")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction_monitoring_report = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="truth_in_savings_act_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		truth_in_savings_act_policy = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="underwriting_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		underwriting_policy = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vendor_list")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vendor_list = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vendor_management_policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vendor_management_policy = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vendor_risk_management_report")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vendor_risk_management_report = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="volume_forecast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		volume_forecast = 46,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="document")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		document = 0,
 	}
 	
 	/// <summary>
 	/// A list of Document objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Document_list
 	{
 		
@@ -8643,8 +8447,7 @@ namespace MyNS
 	/// <summary>
 	/// Entities are the legal entities that own accounts. They can be people, corporations, partnerships, or trusts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity
 	{
 		
@@ -9517,21 +9320,18 @@ namespace MyNS
 		public string Number_last4 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="entity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		entity = 0,
 	}
 	
 	/// <summary>
 	/// A list of Entity objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity_list
 	{
 		
@@ -9552,8 +9352,7 @@ namespace MyNS
 		public string Next_cursor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 	}
@@ -9561,8 +9360,7 @@ namespace MyNS
 	/// <summary>
 	/// Events are records of things that happened to objects in the API. They also result in webhooks being generated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class event_
 	{
 		
@@ -9615,9 +9413,7 @@ namespace MyNS
 		public event_Type Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum event_Category
 	{
 		
@@ -9772,9 +9568,7 @@ namespace MyNS
 		wire_transfer_updated = 49,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum event_Type
 	{
 		
@@ -9785,8 +9579,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Event objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event_list
 	{
 		
@@ -9810,8 +9603,7 @@ namespace MyNS
 	/// <summary>
 	/// Webhooks are event notifications we send to you by HTTPS POST requests. Event Subscriptions are how you configure your application to listen for them. You can create an Event Subscription through your [developer dashboard](https://dashboard.increase.com/developers/webhooks) or the API. For more information, see our [webhooks guide](https://increase.com/documentation/webhooks).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event_subscription
 	{
 		
@@ -9872,9 +9664,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Event_subscriptionSelected_event_category
 	{
 		
@@ -10029,40 +9819,35 @@ namespace MyNS
 		wire_transfer_updated = 49,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Event_subscriptionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requires_attention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requires_attention = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Event_subscriptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="event_subscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		event_subscription = 0,
 	}
 	
 	/// <summary>
 	/// A list of Event Subscription objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event_subscription_list
 	{
 		
@@ -10086,8 +9871,7 @@ namespace MyNS
 	/// <summary>
 	/// Exports are batch summaries of your Increase data. You can make them from the API or dashboard. Since they can take a while, they are generated asynchronously. We send a webhook when they are ready. For more information, please read our [Exports documentation](https://increase.com/documentation/exports).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Export
 	{
 		
@@ -10148,34 +9932,29 @@ namespace MyNS
 		public ExportType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complete = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		export = 0,
 	}
 	
 	/// <summary>
 	/// A list of Export objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Export_list
 	{
 		
@@ -10199,8 +9978,7 @@ namespace MyNS
 	/// <summary>
 	/// External Accounts represent accounts at financial institutions other than Increase. You can use this API to store their details for reuse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class External_account
 	{
 		
@@ -10277,50 +10055,43 @@ namespace MyNS
 		public External_accountVerification_status Verification_status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum External_accountStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archived = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum External_accountType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external_account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external_account = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum External_accountVerification_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unverified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unverified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verified = 2,
 	}
 	
 	/// <summary>
 	/// A list of External Account objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class External_account_list
 	{
 		
@@ -10344,8 +10115,7 @@ namespace MyNS
 	/// <summary>
 	/// Files are objects that represent a file hosted on Increase's servers. The file may have been uploaded by you (for example, when uploading a check image) or it may have been created by Increase (for example, an autogenerated statement PDF).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File
 	{
 		
@@ -10414,80 +10184,73 @@ namespace MyNS
 		public FileType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="to_increase")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		to_increase = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="from_increase")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		from_increase = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilePurpose
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_image_front")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_image_front = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_image_back")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_image_back = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="form_1099_int")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		form_1099_int = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="form_ss_4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		form_ss_4 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="identity_document")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		identity_document = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="increase_statement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		increase_statement = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trust_formation_document")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trust_formation_document = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="digital_wallet_artwork")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		digital_wallet_artwork = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="digital_wallet_app_icon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		digital_wallet_app_icon = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="document_request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		document_request = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="entity_supplemental_document")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		entity_supplemental_document = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		export = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="file")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		file = 0,
 	}
 	
 	/// <summary>
 	/// A list of File objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File_list
 	{
 		
@@ -10511,8 +10274,7 @@ namespace MyNS
 	/// <summary>
 	/// Groups represent organizations using Increase. You can retrieve information about your own organization via the API, or (more commonly) OAuth platforms can retrieve information about the organizations that have granted them access.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group
 	{
 		
@@ -10557,47 +10319,40 @@ namespace MyNS
 		public GroupType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupAch_debit_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupActivation_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unactivated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unactivated = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="activated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		activated = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group = 0,
 	}
 	
 	/// <summary>
 	/// If unauthorized activity occurs via ACH, you can create an Inbound ACH Transfer Return and we'll reverse the transaction. You can create an Inbound ACH Transfer return the first two days after receiving an Inbound ACH Transfer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_ach_transfer_return
 	{
 		
@@ -10658,16 +10413,14 @@ namespace MyNS
 		public Inbound_ach_transfer_returnType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_ach_transfer_returnStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_submitting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_submitting = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		submitted = 1,
 	}
 	
@@ -10691,21 +10444,18 @@ namespace MyNS
 		public string Trace_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_ach_transfer_returnType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_ach_transfer_return")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_ach_transfer_return = 0,
 	}
 	
 	/// <summary>
 	/// A list of Inbound ACH Transfer Return objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_ach_transfer_return_list
 	{
 		
@@ -10729,8 +10479,7 @@ namespace MyNS
 	/// <summary>
 	/// The results of an inbound ACH Transfer simulation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_ach_transfer_simulation_result
 	{
 		
@@ -12227,13 +11976,11 @@ namespace MyNS
 		public Inbound_ach_transfer_simulation_resultTransactionSourceCard_refundType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_ach_transfer_simulation_resultTransactionSourceCard_refundType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_refund")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_refund = 0,
 	}
 	
@@ -12521,140 +12268,136 @@ namespace MyNS
 		public Inbound_ach_transfer_simulation_resultTransactionSourceCard_settlementType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_ach_transfer_simulation_resultTransactionSourceCard_settlementType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_settlement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_settlement = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_ach_transfer_simulation_resultTransactionSourceCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_transfer_intention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_transfer_intention = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_check_conversion_return")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_check_conversion_return = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_check_conversion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_check_conversion = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_transfer_intention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_transfer_intention = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_transfer_rejection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_transfer_rejection = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_transfer_return")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_transfer_return = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_dispute_acceptance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_dispute_acceptance = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_refund")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_refund = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_settlement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_settlement = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_revenue_payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_revenue_payment = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_deposit_acceptance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_deposit_acceptance = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_deposit_return")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_deposit_return = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_transfer_intention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_transfer_intention = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_transfer_return")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_transfer_return = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_transfer_rejection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_transfer_rejection = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_transfer_stop_payment_request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_transfer_stop_payment_request = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dispute_resolution")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dispute_resolution = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="empyreal_cash_deposit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		empyreal_cash_deposit = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fee_payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fee_payment = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_ach_transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_ach_transfer = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_ach_transfer_return_intention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_ach_transfer_return_intention = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_check")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_check = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_international_ach_transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_international_ach_transfer = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_real_time_payments_transfer_confirmation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_real_time_payments_transfer_confirmation = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_wire_drawdown_payment_reversal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_wire_drawdown_payment_reversal = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_wire_drawdown_payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_wire_drawdown_payment = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_wire_reversal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_wire_reversal = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_wire_transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_wire_transfer = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="interest_payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		interest_payment = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="internal_general_ledger_transaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		internal_general_ledger_transaction = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="internal_source")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		internal_source = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_route_refund")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_route_refund = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_route_settlement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_route_settlement = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="real_time_payments_transfer_acknowledgement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		real_time_payments_transfer_acknowledgement = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sample_funds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sample_funds = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wire_drawdown_payment_intention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wire_drawdown_payment_intention = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wire_drawdown_payment_rejection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wire_drawdown_payment_rejection = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wire_transfer_intention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wire_transfer_intention = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wire_transfer_rejection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wire_transfer_rejection = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 39,
 	}
 	
@@ -13936,37 +13679,35 @@ namespace MyNS
 		public Inbound_ach_transfer_simulation_resultTransactionSourceInternal_sourceReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_ach_transfer_simulation_resultTransactionSourceInternal_sourceReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bank_migration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bank_migration = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cashback")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cashback = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="empyreal_adjustment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		empyreal_adjustment = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error_correction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error_correction = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fees")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fees = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="interest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		interest = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sample_funds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sample_funds = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sample_funds_return")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sample_funds_return = 8,
 	}
 	
@@ -14131,31 +13872,26 @@ namespace MyNS
 		public string Transfer_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_ach_transfer_simulation_resultTransactionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_ach_transfer_simulation_resultType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_ach_transfer_simulation_result")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_ach_transfer_simulation_result = 0,
 	}
 	
 	/// <summary>
 	/// The results of a Card Authorization simulation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_card_authorization_simulation_result
 	{
 		
@@ -15339,13 +15075,11 @@ namespace MyNS
 		public Declined_transactionSourceCard_declineNetwork_detailsVisaPoint_of_service_entry_mode Point_of_service_entry_mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_card_authorization_simulation_resultPending_transactionSourceCard_authorizationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_authorization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_authorization = 0,
 	}
 	
@@ -15411,43 +15145,41 @@ namespace MyNS
 		public string Merchant_state { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_card_authorization_simulation_resultPending_transactionSourceCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_transfer_instruction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_transfer_instruction = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ach_transfer_instruction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ach_transfer_instruction = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_authorization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_authorization = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_deposit_instruction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_deposit_instruction = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check_transfer_instruction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check_transfer_instruction = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_funds_hold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_funds_hold = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_route_authorization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_route_authorization = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="real_time_payments_transfer_instruction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		real_time_payments_transfer_instruction = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wire_drawdown_payment_instruction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wire_drawdown_payment_instruction = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wire_transfer_instruction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wire_transfer_instruction = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 10,
 	}
 	
@@ -15591,16 +15323,14 @@ namespace MyNS
 		public Inbound_card_authorization_simulation_resultPending_transactionSourceInbound_funds_holdStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_card_authorization_simulation_resultPending_transactionSourceInbound_funds_holdStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="held")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		held = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complete = 1,
 	}
 	
@@ -15697,31 +15427,26 @@ namespace MyNS
 		public string Transfer_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_card_authorization_simulation_resultPending_transactionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_transaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_transaction = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_card_authorization_simulation_resultType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_card_authorization_simulation_result")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_card_authorization_simulation_result = 0,
 	}
 	
 	/// <summary>
 	/// The results of a Digital Wallet Token simulation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_digital_wallet_token_request_simulation_result
 	{
 		
@@ -15750,40 +15475,35 @@ namespace MyNS
 		public Inbound_digital_wallet_token_request_simulation_resultType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_digital_wallet_token_request_simulation_resultDecline_reason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_not_active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_not_active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no_verification_method")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no_verification_method = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhook_timed_out")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webhook_timed_out = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhook_declined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webhook_declined = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_digital_wallet_token_request_simulation_resultType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_digital_wallet_token_request_simulation_result")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_digital_wallet_token_request_simulation_result = 0,
 	}
 	
 	/// <summary>
 	/// The results of an inbound Real Time Payments Transfer simulation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_real_time_payments_transfer_simulation_result
 	{
 		
@@ -19003,21 +18723,18 @@ namespace MyNS
 		public string Transfer_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_real_time_payments_transfer_simulation_resultType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_real_time_payments_transfer_simulation_result")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_real_time_payments_transfer_simulation_result = 0,
 	}
 	
 	/// <summary>
 	/// Inbound wire drawdown requests are requests from someone else to send them a wire. This feature is in beta; reach out to [support@increase.com](mailto:support@increase.com) to learn more.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_wire_drawdown_request
 	{
 		
@@ -19198,21 +18915,18 @@ namespace MyNS
 		public Inbound_wire_drawdown_requestType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_wire_drawdown_requestType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_wire_drawdown_request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_wire_drawdown_request = 0,
 	}
 	
 	/// <summary>
 	/// A list of Inbound Wire Drawdown Request objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_wire_drawdown_request_list
 	{
 		
@@ -19236,8 +18950,7 @@ namespace MyNS
 	/// <summary>
 	/// The results of an inbound Wire Transfer simulation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_wire_transfer_simulation_result
 	{
 		
@@ -21674,21 +21387,18 @@ namespace MyNS
 		public string Transfer_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Inbound_wire_transfer_simulation_resultType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_wire_transfer_simulation_result")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_wire_transfer_simulation_result = 0,
 	}
 	
 	/// <summary>
 	/// The results of an Interest Payment simulation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Interest_payment_simulation_result
 	{
 		
@@ -24125,21 +23835,18 @@ namespace MyNS
 		public string Transfer_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interest_payment_simulation_resultType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="interest_payment_simulation_result")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		interest_payment_simulation_result = 0,
 	}
 	
 	/// <summary>
 	/// You can set limits at the Account, Account Number, or Card level. Limits applied to Accounts will apply to all Account Numbers and Cards in the Account. You can specify any number of Limits and they will all be applied to inbound debits and card authorizations. Volume and count Limits are designed to prevent unauthorized debits.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Limit
 	{
 		
@@ -24208,50 +23915,43 @@ namespace MyNS
 		public int Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LimitModel_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_number = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LimitStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LimitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="limit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		limit = 0,
 	}
 	
 	/// <summary>
 	/// A list of Limit objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Limit_list
 	{
 		
@@ -24272,8 +23972,7 @@ namespace MyNS
 		public string Next_cursor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Look_up_the_balance_for_an_account_parameters
 	{
 		
@@ -24289,8 +23988,7 @@ namespace MyNS
 	/// <summary>
 	/// When a user authorizes your OAuth application, an OAuth Connection object is created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Oauth_connection
 	{
 		
@@ -24335,21 +24033,18 @@ namespace MyNS
 		public Oauth_connectionType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Oauth_connectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oauth_connection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oauth_connection = 0,
 	}
 	
 	/// <summary>
 	/// A list of OAuth Connection objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Oauth_connection_list
 	{
 		
@@ -24373,8 +24068,7 @@ namespace MyNS
 	/// <summary>
 	/// Pending Transactions are potential future additions and removals of money from your bank account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pending_transaction
 	{
 		
@@ -25053,8 +24747,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Pending Transaction objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pending_transaction_list
 	{
 		
@@ -25078,8 +24771,7 @@ namespace MyNS
 	/// <summary>
 	/// Programs determine the compliance and commercial terms of Accounts. By default, you have a Commercial Banking program for managing your own funds. If you are lending or managing funds on behalf of your customers, or otherwise engaged in regulated activity, we will work together to create additional Programs for you.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Program
 	{
 		
@@ -25124,21 +24816,18 @@ namespace MyNS
 		public System.DateTimeOffset Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProgramType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="program")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		program = 0,
 	}
 	
 	/// <summary>
 	/// A list of Program objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Program_list
 	{
 		
@@ -25162,8 +24851,7 @@ namespace MyNS
 	/// <summary>
 	/// Real Time Decisions are created when your application needs to take action in real-time to some event such as a card authorization. Real time decisions are currently in beta; please contact support@increase.com if you're interested in trying them out!
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Real_time_decision
 	{
 		
@@ -25388,19 +25076,17 @@ namespace MyNS
 		public Declined_transactionSourceCard_declineNetwork_detailsVisaPoint_of_service_entry_mode Point_of_service_entry_mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Real_time_decisionCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="card_authorization_requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		card_authorization_requested = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="digital_wallet_token_requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		digital_wallet_token_requested = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="digital_wallet_authentication_requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		digital_wallet_authentication_requested = 2,
 	}
 	
@@ -25464,16 +25150,14 @@ namespace MyNS
 		public Action_a_real_time_decision_parametersDigital_wallet_authenticationResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Real_time_decisionDigital_wallet_authenticationChannel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 1,
 	}
 	
@@ -25513,37 +25197,32 @@ namespace MyNS
 		public Digital_wallet_tokenToken_requestor Digital_wallet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Real_time_decisionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="responded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		responded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timed_out")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timed_out = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Real_time_decisionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="real_time_decision")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		real_time_decision = 0,
 	}
 	
 	/// <summary>
 	/// Real Time Payments transfers move funds, within seconds, between your Increase account and any other account on the Real Time Payments network.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Real_time_payments_transfer
 	{
 		
@@ -25760,31 +25439,29 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Rejected_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Real_time_payments_transferStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_approval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_approval = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_submission")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_submission = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		submitted = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complete = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requires_attention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requires_attention = 6,
 	}
 	
@@ -25808,21 +25485,18 @@ namespace MyNS
 		public string Transaction_identification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Real_time_payments_transferType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="real_time_payments_transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		real_time_payments_transfer = 0,
 	}
 	
 	/// <summary>
 	/// A list of Real Time Payments Transfer objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Real_time_payments_transfer_list
 	{
 		
@@ -25843,8 +25517,7 @@ namespace MyNS
 		public string Next_cursor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Return_a_sandbox_ach_transfer_parameters
 	{
 		
@@ -25855,8 +25528,7 @@ namespace MyNS
 		public Ach_transferReturnReturn_reason_code Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Return_a_sandbox_check_transfer_parameters
 	{
 		
@@ -25872,8 +25544,7 @@ namespace MyNS
 	/// <summary>
 	/// Routing numbers are used to identify your bank in a financial transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Routing_number
 	{
 		
@@ -25926,34 +25597,29 @@ namespace MyNS
 		public Routing_numberAch_transfers Wire_transfers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Routing_numberAch_transfers
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		supported = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_supported = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Routing_numberType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="routing_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		routing_number = 0,
 	}
 	
 	/// <summary>
 	/// A list of Routing Number objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Routing_number_list
 	{
 		
@@ -25974,8 +25640,7 @@ namespace MyNS
 		public string Next_cursor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_a_real_time_payments_transfer_to_your_account_parameters
 	{
 		
@@ -26044,8 +25709,7 @@ namespace MyNS
 		public string Request_for_payment_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_a_refund_on_a_card_parameters
 	{
 		
@@ -26058,8 +25722,7 @@ namespace MyNS
 		public string Transaction_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_a_tax_document_being_created_parameters
 	{
 		
@@ -26072,8 +25735,7 @@ namespace MyNS
 		public string Account_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_a_wire_transfer_to_your_account_parameters
 	{
 		
@@ -26226,8 +25888,7 @@ namespace MyNS
 		public string Originator_to_beneficiary_information_line4 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_an_account_statement_being_created_parameters
 	{
 		
@@ -26240,8 +25901,7 @@ namespace MyNS
 		public string Account_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_an_ach_transfer_to_your_account_parameters
 	{
 		
@@ -26312,8 +25972,7 @@ namespace MyNS
 		public string Company_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_an_authorization_on_a_card_parameters
 	{
 		
@@ -26347,8 +26006,7 @@ namespace MyNS
 		public string Event_subscription_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_an_inbound_wire_drawdown_request_being_created_parameters
 	{
 		
@@ -26563,8 +26221,7 @@ namespace MyNS
 		public string Recipient_account_number_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_an_interest_payment_to_your_account_parameters
 	{
 		
@@ -26587,8 +26244,7 @@ namespace MyNS
 		public int Amount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_digital_wallet_provisioning_for_a_card_parameters
 	{
 		
@@ -26601,8 +26257,7 @@ namespace MyNS
 		public string Card_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulate_settling_a_card_authorization_parameters
 	{
 		
@@ -26631,8 +26286,7 @@ namespace MyNS
 		public string Pending_transaction_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Simulates_advancing_the_state_of_a_card_dispute_parameters
 	{
 		
@@ -26655,24 +26309,21 @@ namespace MyNS
 		public Simulates_advancing_the_state_of_a_card_dispute_parametersStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Simulates_advancing_the_state_of_a_card_dispute_parametersStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 1,
 	}
 	
 	/// <summary>
 	/// Transactions are the immutable additions and removals of money from your bank account. They're the equivalent of line items on your bank statement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transaction
 	{
 		
@@ -29092,8 +28743,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Transaction objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transaction_list
 	{
 		
@@ -29114,8 +28764,7 @@ namespace MyNS
 		public string Next_cursor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_a_card_parameters
 	{
 		
@@ -29240,8 +28889,7 @@ namespace MyNS
 		public string Phone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_a_limit_parameters
 	{
 		
@@ -29254,21 +28902,18 @@ namespace MyNS
 		public Update_a_limit_parametersStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Update_a_limit_parametersStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_an_account_number_parameters
 	{
 		
@@ -29289,8 +28934,7 @@ namespace MyNS
 		public Account_numberStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_an_account_parameters
 	{
 		
@@ -29305,8 +28949,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_an_event_subscription_parameters
 	{
 		
@@ -29317,24 +28960,21 @@ namespace MyNS
 		public System.Nullable<Update_an_event_subscription_parametersStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Update_an_event_subscription_parametersStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_an_external_account_parameters
 	{
 		
@@ -29358,8 +28998,7 @@ namespace MyNS
 	/// <summary>
 	/// Wire drawdown requests enable you to request that someone else send you a wire. This feature is in beta; reach out to [support@increase.com](mailto:support@increase.com) to learn more.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Wire_drawdown_request
 	{
 		
@@ -29484,22 +29123,20 @@ namespace MyNS
 		public Wire_drawdown_requestType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Wire_drawdown_requestStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_submission")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_submission = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_response")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_response = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fulfilled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fulfilled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="refused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		refused = 3,
 	}
 	
@@ -29515,21 +29152,18 @@ namespace MyNS
 		public string Input_message_accountability_data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Wire_drawdown_requestType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wire_drawdown_request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wire_drawdown_request = 0,
 	}
 	
 	/// <summary>
 	/// A list of Wire Drawdown Request objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Wire_drawdown_request_list
 	{
 		
@@ -29553,8 +29187,7 @@ namespace MyNS
 	/// <summary>
 	/// Wire transfers move funds between your Increase account and any other account accessible by Fedwire.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Wire_transfer
 	{
 		
@@ -29767,13 +29400,11 @@ namespace MyNS
 		public string Canceled_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Wire_transferNetwork
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wire")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wire = 0,
 	}
 	
@@ -29893,31 +29524,29 @@ namespace MyNS
 		public string Transaction_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Wire_transferStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requires_attention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requires_attention = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_approval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_approval = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reversed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reversed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complete = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending_creating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending_creating = 6,
 	}
 	
@@ -29941,21 +29570,18 @@ namespace MyNS
 		public System.DateTimeOffset Submitted_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Wire_transferType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wire_transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wire_transfer = 0,
 	}
 	
 	/// <summary>
 	/// A list of Wire Transfer objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Wire_transfer_list
 	{
 		

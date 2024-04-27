@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Information to read/write to blobstore2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataBlobstore2Info
 	{
 		
@@ -59,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// A sequence of media data references representing composite data. Introduced to support Bigstore composite objects. For details, visit http://go/bigstore-composites.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataCompositeMedia
 	{
 		
@@ -134,8 +132,7 @@ namespace MyNS
 	/// <summary>
 	/// This is a copy of the tech.blob.ObjectId proto, which could not be used directly here due to transitive closure issues with JavaScript support; see http://b/8801763.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataObjectId
 	{
 		
@@ -158,33 +155,30 @@ namespace MyNS
 		public string ObjectName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GdataCompositeMediaReferenceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOB_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOB_REF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INLINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGSTORE_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGSTORE_REF = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COSMO_BINARY_REFERENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COSMO_BINARY_REFERENCE = 4,
 	}
 	
 	/// <summary>
 	/// Detailed Content-Type information from Scotty. The Content-Type of the media will typically be filled in by the header or Scotty's best_guess, but this extended information provides the backend with more information so that it can make a better decision if needed. This is only used on media upload requests from Scotty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataContentTypeInfo
 	{
 		
@@ -222,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// Backend response for a Diff get checksums response. For details on the Scotty Diff protocol, visit http://go/scotty-diff-protocol.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffChecksumsResponse
 	{
 		
@@ -261,8 +254,7 @@ namespace MyNS
 	/// <summary>
 	/// Backend response for a Diff download response. For details on the Scotty Diff protocol, visit http://go/scotty-diff-protocol.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffDownloadResponse
 	{
 		
@@ -276,8 +268,7 @@ namespace MyNS
 	/// <summary>
 	/// A Diff upload request. For details on the Scotty Diff protocol, visit http://go/scotty-diff-protocol.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffUploadRequest
 	{
 		
@@ -303,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// Backend response for a Diff upload request. For details on the Scotty Diff protocol, visit http://go/scotty-diff-protocol.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffUploadResponse
 	{
 		
@@ -324,8 +314,7 @@ namespace MyNS
 	/// <summary>
 	/// Backend response for a Diff get version response. For details on the Scotty Diff protocol, visit http://go/scotty-diff-protocol.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDiffVersionResponse
 	{
 		
@@ -345,8 +334,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters specific to media downloads.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataDownloadParameters
 	{
 		
@@ -366,8 +354,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to data stored on the filesystem, on GFS or in blobstore.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GdataMedia
 	{
 		
@@ -552,57 +539,54 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GdataMediaReferenceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOB_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOB_REF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INLINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET_MEDIA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPOSITE_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPOSITE_MEDIA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGSTORE_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGSTORE_REF = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_VERSION_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_VERSION_RESPONSE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_CHECKSUMS_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_CHECKSUMS_RESPONSE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_DOWNLOAD_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_DOWNLOAD_RESPONSE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_UPLOAD_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_UPLOAD_REQUEST = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_UPLOAD_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_UPLOAD_RESPONSE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COSMO_BINARY_REFERENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COSMO_BINARY_REFERENCE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARBITRARY_BYTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARBITRARY_BYTES = 12,
 	}
 	
 	/// <summary>
 	/// Android App Bundle (AAB) information for a Firebase app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1AabInfo
 	{
 		
@@ -625,39 +609,36 @@ namespace MyNS
 		public GoogleFirebaseAppdistroV1TestCertificate TestCertificate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppdistroV1AabInfoIntegrationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAB_INTEGRATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAB_INTEGRATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTEGRATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTEGRATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAY_ACCOUNT_NOT_LINKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAY_ACCOUNT_NOT_LINKED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_APP_WITH_GIVEN_BUNDLE_ID_IN_PLAY_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_APP_WITH_GIVEN_BUNDLE_ID_IN_PLAY_ACCOUNT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_NOT_PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_NOT_PUBLISHED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAB_STATE_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAB_STATE_UNAVAILABLE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAY_IAS_TERMS_NOT_ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAY_IAS_TERMS_NOT_ACCEPTED = 6,
 	}
 	
 	/// <summary>
 	/// App bundle test certificate
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1TestCertificate
 	{
 		
@@ -683,8 +664,7 @@ namespace MyNS
 	/// <summary>
 	/// The Request message for batch adding testers
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1BatchAddTestersRequest
 	{
 		
@@ -698,8 +678,7 @@ namespace MyNS
 	/// <summary>
 	/// The Response message for `BatchAddTesters`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1BatchAddTestersResponse
 	{
 		
@@ -713,8 +692,7 @@ namespace MyNS
 	/// <summary>
 	/// A person that can be invited to test apps in a Firebase project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1Tester
 	{
 		
@@ -746,8 +724,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for `BatchDeleteReleases`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1BatchDeleteReleasesRequest
 	{
 		
@@ -761,8 +738,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for `BatchJoinGroup`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1BatchJoinGroupRequest
 	{
 		
@@ -782,8 +758,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `BatchLeaveGroup`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1BatchLeaveGroupRequest
 	{
 		
@@ -797,8 +772,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for `BatchRemoveTesters`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1BatchRemoveTestersRequest
 	{
 		
@@ -812,8 +786,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for `BatchRemoveTesters`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1BatchRemoveTestersResponse
 	{
 		
@@ -827,8 +800,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for `DistributeRelease`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1DistributeReleaseRequest
 	{
 		
@@ -848,8 +820,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for `DistributeRelease`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1DistributeReleaseResponse
 	{
 	}
@@ -857,8 +828,7 @@ namespace MyNS
 	/// <summary>
 	/// A feedback report submitted by a tester for a release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1FeedbackReport
 	{
 		
@@ -902,8 +872,7 @@ namespace MyNS
 	/// <summary>
 	/// A group which can contain testers. A group can be invited to test apps in a Firebase project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1Group
 	{
 		
@@ -941,8 +910,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for `ListFeedbackReports`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1ListFeedbackReportsResponse
 	{
 		
@@ -962,8 +930,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for `ListGroups`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1ListGroupsResponse
 	{
 		
@@ -983,8 +950,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for `ListReleases`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1ListReleasesResponse
 	{
 		
@@ -1004,8 +970,7 @@ namespace MyNS
 	/// <summary>
 	/// A release of a Firebase app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1Release
 	{
 		
@@ -1061,8 +1026,7 @@ namespace MyNS
 	/// <summary>
 	/// Notes that belong to a release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1ReleaseNotes
 	{
 		
@@ -1076,8 +1040,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for `ListTesters`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1ListTestersResponse
 	{
 		
@@ -1097,8 +1060,7 @@ namespace MyNS
 	/// <summary>
 	/// Operation metadata for `UploadRelease`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1UploadReleaseMetadata
 	{
 	}
@@ -1106,8 +1068,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `UploadRelease`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1UploadReleaseRequest
 	{
 		
@@ -1121,8 +1082,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `UploadRelease`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1UploadReleaseResponse
 	{
 		
@@ -1139,30 +1099,27 @@ namespace MyNS
 		public System.Nullable<GoogleFirebaseAppdistroV1UploadReleaseResponseResult> Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppdistroV1UploadReleaseResponseResult
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOAD_RELEASE_RESULT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOAD_RELEASE_RESULT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_UPDATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_UNMODIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_UNMODIFIED = 3,
 	}
 	
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningCancelOperationRequest
 	{
 	}
@@ -1170,8 +1127,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -1191,8 +1147,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -1230,8 +1185,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -1257,8 +1211,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.WaitOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningWaitOperationRequest
 	{
 		
@@ -1272,8 +1225,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptResourceShareInvitationResponse
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an invitation for an Amazon Web Services account to join a resource share.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceShareInvitation
 	{
 		
@@ -65,30 +63,27 @@ namespace MyNS
 		public string ReceiverArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceShareInvitationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 3,
 	}
 	
 	/// <summary>
 	/// Describes an association between a resource share and either a principal or a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceShareAssociation
 	{
 		
@@ -120,103 +115,88 @@ namespace MyNS
 		public System.Nullable<System.Boolean> External { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceShareAssociationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRINCIPAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRINCIPAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceShareAssociationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISASSOCIATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISASSOCIATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISASSOCIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISASSOCIATED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MalformedArnException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationNotPermittedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceShareInvitationArnNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceShareInvitationAlreadyAcceptedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceShareInvitationAlreadyRejectedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceShareInvitationExpiredException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServerInternalException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClientTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdempotentParameterMismatchException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateResourceShareResponse
 	{
 		
@@ -227,38 +207,32 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnknownResourceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidStateTransitionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceShareLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateResourceSharePermissionResponse
 	{
 		
@@ -269,8 +243,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePermissionResponse
 	{
 		
@@ -284,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an RAM permission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceSharePermissionSummary
 	{
 		
@@ -326,40 +298,35 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_MANAGED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_MANAGED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionFeatureSet
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED_FROM_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED_FROM_POLICY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMOTING_TO_STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROMOTING_TO_STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 2,
 	}
 	
 	/// <summary>
 	/// <p>A structure containing a tag. A tag is metadata that you can attach to your resources to help organize and categorize them. You can also use them to help you secure your resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p> <p>For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -370,32 +337,27 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidPolicyException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionAlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MalformedPolicyTemplateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePermissionVersionResponse
 	{
 		
@@ -412,8 +374,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a RAM managed permission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceSharePermissionDetail
 	{
 		
@@ -457,33 +418,29 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACHABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACHABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNATTACHABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNATTACHABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionVersionsLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateResourceShareResponse
 	{
 		
@@ -497,8 +454,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a resource share in RAM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceShare
 	{
 		
@@ -533,42 +489,37 @@ namespace MyNS
 		public PermissionFeatureSet FeatureSet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceShareStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagPolicyViolationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePermissionResponse
 	{
 		
@@ -582,8 +533,7 @@ namespace MyNS
 		public PermissionStatus PermissionStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePermissionVersionResponse
 	{
 		
@@ -597,8 +547,7 @@ namespace MyNS
 		public PermissionStatus PermissionStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteResourceShareResponse
 	{
 		
@@ -609,8 +558,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateResourceShareResponse
 	{
 		
@@ -621,8 +569,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateResourceSharePermissionResponse
 	{
 		
@@ -633,8 +580,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableSharingWithAwsOrganizationResponse
 	{
 		
@@ -642,8 +588,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ReturnValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPermissionResponse
 	{
 		
@@ -651,8 +596,7 @@ namespace MyNS
 		public ResourceSharePermissionDetail Permission { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourcePoliciesResponse
 	{
 		
@@ -663,20 +607,17 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceArnNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceShareAssociationsResponse
 	{
 		
@@ -687,8 +628,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceShareInvitationsResponse
 	{
 		
@@ -699,14 +639,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidMaxResultsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceSharesResponse
 	{
 		
@@ -720,8 +658,7 @@ namespace MyNS
 	/// <summary>
 	/// A tag key and optional list of possible values that you can use to filter results for tagged resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagFilter
 	{
 		
@@ -732,8 +669,7 @@ namespace MyNS
 		public string[] TagValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPendingInvitationResourcesResponse
 	{
 		
@@ -747,8 +683,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a resource associated with a resource share in RAM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Resource
 	{
 		
@@ -780,49 +715,43 @@ namespace MyNS
 		public ResourceRegionScope ResourceRegionScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZONAL_RESOURCE_INACCESSIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZONAL_RESOURCE_INACCESSIBLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIMIT_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIMIT_EXCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAVAILABLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceRegionScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGIONAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GLOBAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GLOBAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingRequiredParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionAssociationsResponse
 	{
 		
@@ -836,8 +765,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that describes a managed permission associated with a resource share.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedPermission
 	{
 		
@@ -866,8 +794,7 @@ namespace MyNS
 		public string ResourceShareArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionVersionsResponse
 	{
 		
@@ -878,8 +805,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionsResponse
 	{
 		
@@ -890,8 +816,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPrincipalsResponse
 	{
 		
@@ -905,8 +830,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a principal for use with Resource Access Manager.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Principal
 	{
 		
@@ -926,8 +850,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> External { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReplacePermissionAssociationsWorkResponse
 	{
 		
@@ -941,8 +864,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that represents the background work that RAM performs when you invoke the <a>ReplacePermissionAssociations</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplacePermissionAssociationsWork
 	{
 		
@@ -974,24 +896,21 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReplacePermissionAssociationsWorkStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceSharePermissionsResponse
 	{
 		
@@ -1002,8 +921,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceTypesResponse
 	{
 		
@@ -1017,8 +935,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a shareable resource type and the Amazon Web Services service to which resources of that type belong.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceNameAndResourceType
 	{
 		
@@ -1032,8 +949,7 @@ namespace MyNS
 		public ResourceRegionScope ResourceRegionScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesResponse
 	{
 		
@@ -1044,14 +960,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidResourceTypeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromotePermissionCreatedFromPolicyResponse
 	{
 		
@@ -1065,8 +979,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromoteResourceShareCreatedFromPolicyResponse
 	{
 		
@@ -1074,14 +987,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ReturnValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnmatchedPolicyPermissionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectResourceShareInvitationResponse
 	{
 		
@@ -1092,8 +1003,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplacePermissionAssociationsResponse
 	{
 		
@@ -1104,8 +1014,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetDefaultPermissionVersionResponse
 	{
 		
@@ -1116,20 +1025,17 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateResourceShareResponse
 	{
 		
@@ -1140,8 +1046,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptResourceShareInvitationRequest
 	{
 		
@@ -1156,8 +1061,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateResourceSharePermissionRequest
 	{
 		
@@ -1185,8 +1089,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> PermissionVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateResourceShareRequest
 	{
 		
@@ -1210,8 +1113,7 @@ namespace MyNS
 		public string[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePermissionRequest
 	{
 		
@@ -1243,8 +1145,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePermissionVersionRequest
 	{
 		
@@ -1266,8 +1167,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateResourceShareRequest
 	{
 		
@@ -1300,26 +1200,22 @@ namespace MyNS
 		public string[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePermissionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePermissionVersionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteResourceShareRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateResourceSharePermissionRequest
 	{
 		
@@ -1341,8 +1237,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateResourceShareRequest
 	{
 		
@@ -1366,14 +1261,12 @@ namespace MyNS
 		public string[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableSharingWithAwsOrganizationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPermissionRequest
 	{
 		
@@ -1388,8 +1281,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> PermissionVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourcePoliciesRequest
 	{
 		
@@ -1410,8 +1302,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceShareAssociationsRequest
 	{
 		
@@ -1441,8 +1332,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceShareInvitationsRequest
 	{
 		
@@ -1459,21 +1349,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceOwner
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELF = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER-ACCOUNTS")]
 		OTHERMinusACCOUNTS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceSharesRequest
 	{
 		
@@ -1509,24 +1396,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> PermissionVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceRegionScopeFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGIONAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GLOBAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GLOBAL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPendingInvitationResourcesRequest
 	{
 		
@@ -1547,8 +1431,7 @@ namespace MyNS
 		public ResourceRegionScopeFilter ResourceRegionScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionAssociationsRequest
 	{
 		
@@ -1577,8 +1460,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionVersionsRequest
 	{
 		
@@ -1596,24 +1478,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionTypeFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_MANAGED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_MANAGED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionsRequest
 	{
 		
@@ -1630,8 +1509,7 @@ namespace MyNS
 		public PermissionTypeFilter PermissionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPrincipalsRequest
 	{
 		
@@ -1661,8 +1539,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReplacePermissionAssociationsWorkRequest
 	{
 		
@@ -1679,8 +1556,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceSharePermissionsRequest
 	{
 		
@@ -1698,8 +1574,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceTypesRequest
 	{
 		
@@ -1713,8 +1588,7 @@ namespace MyNS
 		public ResourceRegionScopeFilter ResourceRegionScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesRequest
 	{
 		
@@ -1747,8 +1621,7 @@ namespace MyNS
 		public ResourceRegionScopeFilter ResourceRegionScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromotePermissionCreatedFromPolicyRequest
 	{
 		
@@ -1770,14 +1643,12 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromoteResourceShareCreatedFromPolicyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectResourceShareInvitationRequest
 	{
 		
@@ -1792,8 +1663,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplacePermissionAssociationsRequest
 	{
 		
@@ -1818,24 +1688,21 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceShareFeatureSet
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED_FROM_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED_FROM_POLICY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMOTING_TO_STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROMOTING_TO_STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetDefaultPermissionVersionRequest
 	{
 		
@@ -1857,8 +1724,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1876,8 +1742,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -1895,8 +1760,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateResourceShareRequest
 	{
 		
@@ -3762,13 +3626,11 @@ namespace MyNS
 		public System.Nullable<System.Int32> PermissionVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetResourceSharesPostBodyResourceOwner
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELF = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER-ACCOUNTS")]
@@ -3972,13 +3834,11 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ListPrincipalsPostBodyResourceOwner
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELF = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER-ACCOUNTS")]
@@ -4125,13 +3985,11 @@ namespace MyNS
 		public ResourceRegionScopeFilter ResourceRegionScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ListResourcesPostBodyResourceOwner
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELF = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER-ACCOUNTS")]

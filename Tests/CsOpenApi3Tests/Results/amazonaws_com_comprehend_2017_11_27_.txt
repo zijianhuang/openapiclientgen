@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectDominantLanguageResponse
 	{
 		
@@ -40,8 +39,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectDominantLanguageItemResult
 	{
 		
@@ -55,8 +53,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DominantLanguage
 	{
 		
@@ -70,8 +67,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItemError
 	{
 		
@@ -85,8 +81,7 @@ namespace MyNS
 		public string ErrorMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectDominantLanguageRequest
 	{
 		
@@ -98,32 +93,27 @@ namespace MyNS
 		public string[] TextList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextSizeLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchSizeLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectEntitiesResponse
 	{
 		
@@ -145,8 +135,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectEntitiesItemResult
 	{
 		
@@ -160,8 +149,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Provides information about an entity. </p> <p> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity
 	{
 		
@@ -184,45 +172,42 @@ namespace MyNS
 		public BlockReference[] BlockReferences { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMERCIAL_ITEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMERCIAL_ITEM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUANTITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUANTITY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TITLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TITLE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 8,
 	}
 	
 	/// <summary>
 	/// A reference to a block. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockReference
 	{
 		
@@ -242,8 +227,7 @@ namespace MyNS
 	/// <summary>
 	/// Nested block contained within a block.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChildBlock
 	{
 		
@@ -257,8 +241,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> EndOffset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectEntitiesRequest
 	{
 		
@@ -277,57 +260,53 @@ namespace MyNS
 		public LanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LanguageCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hi = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ja = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ko = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zh = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh-TW")]
 		zhMinusTW = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedLanguageException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectKeyPhrasesResponse
 	{
 		
@@ -349,8 +328,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectKeyPhrasesItemResult
 	{
 		
@@ -364,8 +342,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a key noun phrase.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyPhrase
 	{
 		
@@ -382,8 +359,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> EndOffset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectKeyPhrasesRequest
 	{
 		
@@ -402,8 +378,7 @@ namespace MyNS
 		public LanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectSentimentResponse
 	{
 		
@@ -425,8 +400,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectSentimentItemResult
 	{
 		
@@ -440,30 +414,27 @@ namespace MyNS
 		public SentimentScore SentimentScore { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SentimentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSITIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEGATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEGATIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEUTRAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEUTRAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIXED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIXED = 3,
 	}
 	
 	/// <summary>
 	/// Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SentimentScore
 	{
 		
@@ -480,8 +451,7 @@ namespace MyNS
 		public float Mixed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectSentimentRequest
 	{
 		
@@ -500,8 +470,7 @@ namespace MyNS
 		public LanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectSyntaxResponse
 	{
 		
@@ -523,8 +492,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of calling the operation. The operation returns one object that is successfully processed by the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectSyntaxItemResult
 	{
 		
@@ -538,8 +506,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SyntaxToken
 	{
 		
@@ -562,8 +529,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartOfSpeechTag
 	{
 		
@@ -574,69 +540,66 @@ namespace MyNS
 		public float Score { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartOfSpeechTagType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADJ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADV = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONJ = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CCONJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CCONJ = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DET = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTJ = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOUN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOUN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUM = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="O")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		O = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PART = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRON = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPN = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUNCT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUNCT = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCONJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCONJ = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYM = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERB = 17,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectSyntaxRequest
 	{
 		
@@ -655,33 +618,30 @@ namespace MyNS
 		public SyntaxLanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SyntaxLanguageCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectTargetedSentimentResponse
 	{
 		
@@ -703,8 +663,7 @@ namespace MyNS
 	/// <summary>
 	/// Analysis results for one of the documents in the batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectTargetedSentimentItemResult
 	{
 		
@@ -718,8 +677,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information about one of the entities found by targeted sentiment analysis.</p> <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetedSentimentEntity
 	{
 		
@@ -733,8 +691,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information about one mention of an entity. The mention information includes the location of the mention in the text and the sentiment of the mention.</p> <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetedSentimentMention
 	{
 		
@@ -760,69 +717,66 @@ namespace MyNS
 		public System.Nullable<System.Int32> EndOffset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TargetedSentimentEntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FACILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FACILITY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BRAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BRAND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMERCIAL_ITEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMERCIAL_ITEM = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOVIE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOVIE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MUSIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MUSIC = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOK = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOFTWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOFTWARE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GAME = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSONAL_TITLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSONAL_TITLE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUANTITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUANTITY = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTRIBUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTRIBUTE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 16,
 	}
 	
 	/// <summary>
 	/// <p>Contains the sentiment and sentiment score for one mention of an entity.</p> <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MentionSentiment
 	{
 		
@@ -836,8 +790,7 @@ namespace MyNS
 		public SentimentScore SentimentScore { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetectTargetedSentimentRequest
 	{
 		
@@ -856,8 +809,7 @@ namespace MyNS
 		public LanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClassifyDocumentResponse
 	{
 		
@@ -883,8 +835,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the class that categorizes the document being analyzed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClass
 	{
 		
@@ -901,8 +852,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies one of the label or labels that categorize the document being analyzed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentLabel
 	{
 		
@@ -919,8 +869,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the document, discovered during text extraction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentMetadata
 	{
 		
@@ -934,8 +883,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of the number of characters extracted from each page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtractedCharactersListItem
 	{
 		
@@ -949,8 +897,7 @@ namespace MyNS
 	/// <summary>
 	/// Document type for each page in the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentTypeListItem
 	{
 		
@@ -961,39 +908,36 @@ namespace MyNS
 		public DocumentType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NATIVE_PDF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NATIVE_PDF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCANNED_PDF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCANNED_PDF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MS_WORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MS_WORD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAIN_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAIN_TEXT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXTRACT_DETECT_DOCUMENT_TEXT_JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXTRACT_DETECT_DOCUMENT_TEXT_JSON = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXTRACT_ANALYZE_DOCUMENT_JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXTRACT_ANALYZE_DOCUMENT_JSON = 6,
 	}
 	
 	/// <summary>
 	/// <p>Text extraction encountered one or more page-level errors in the input document.</p> <p>The <code>ErrorCode</code> contains one of the following values:</p> <ul> <li> <p>TEXTRACT_BAD_PAGE - Amazon Textract cannot read the page. For more information about page limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits-document.html"> Page Quotas in Amazon Textract</a>.</p> </li> <li> <p>TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED - The number of requests exceeded your throughput limit. For more information about throughput quotas in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html"> Default quotas in Amazon Textract</a>.</p> </li> <li> <p>PAGE_CHARACTERS_EXCEEDED - Too many text characters on the page (10,000 characters maximum).</p> </li> <li> <p>PAGE_SIZE_EXCEEDED - The maximum page size is 10 MB.</p> </li> <li> <p>INTERNAL_SERVER_ERROR - The request encountered a service issue. Try the API request again.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorsListItem
 	{
 		
@@ -1007,33 +951,30 @@ namespace MyNS
 		public string ErrorMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PageBasedErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXTRACT_BAD_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXTRACT_BAD_PAGE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_CHARACTERS_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_CHARACTERS_EXCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_SIZE_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_SIZE_EXCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_SERVER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_SERVER_ERROR = 4,
 	}
 	
 	/// <summary>
 	/// <p>The system identified one of the following warnings while processing the input document:</p> <ul> <li> <p>The document to classify is plain text, but the classifier is a native model.</p> </li> <li> <p>The document to classify is semi-structured, but the classifier is a plain-text model.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WarningsListItem
 	{
 		
@@ -1047,21 +988,18 @@ namespace MyNS
 		public string WarnMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PageBasedWarningCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClassifyDocumentRequest
 	{
 		
@@ -1085,8 +1023,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files. </p> <p> By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type: </p> <ul> <li> <p> <b>Word files</b> - Amazon Comprehend parser extracts the text. </p> </li> <li> <p> <b>Digital PDF files</b> - Amazon Comprehend parser extracts the text. </p> </li> <li> <p> <b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text. </p> </li> </ul> <p> <code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p> <p> For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentReaderConfig
 	{
 		
@@ -1104,56 +1041,48 @@ namespace MyNS
 		public DocumentReadFeatureTypes[] FeatureTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentReadAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXTRACT_DETECT_DOCUMENT_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXTRACT_DETECT_DOCUMENT_TEXT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXTRACT_ANALYZE_DOCUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXTRACT_ANALYZE_DOCUMENT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentReadMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORCE_DOCUMENT_READ_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORCE_DOCUMENT_READ_ACTION = 1,
 	}
 	
 	/// <summary>
 	/// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about any forms that are detected in the input document. </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentReadFeatureTypes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORMS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainsPiiEntitiesResponse
 	{
 		
@@ -1164,8 +1093,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies one of the label or labels that categorize the personally identifiable information (PII) entity being analyzed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityLabel
 	{
 		
@@ -1176,126 +1104,123 @@ namespace MyNS
 		public float Score { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PiiEntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANK_ACCOUNT_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANK_ACCOUNT_NUMBER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANK_ROUTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANK_ROUTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREDIT_DEBIT_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREDIT_DEBIT_NUMBER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREDIT_DEBIT_CVV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREDIT_DEBIT_CVV = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREDIT_DEBIT_EXPIRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREDIT_DEBIT_EXPIRY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIN = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAME = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSN = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_TIME = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSPORT_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSPORT_NUMBER = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVER_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVER_ID = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AGE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USERNAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USERNAME = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_ACCESS_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_ACCESS_KEY = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_SECRET_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_SECRET_KEY = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_ADDRESS = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC_ADDRESS = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LICENSE_PLATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LICENSE_PLATE = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VEHICLE_IDENTIFICATION_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VEHICLE_IDENTIFICATION_NUMBER = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UK_NATIONAL_INSURANCE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UK_NATIONAL_INSURANCE_NUMBER = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CA_SOCIAL_INSURANCE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CA_SOCIAL_INSURANCE_NUMBER = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PERMANENT_ACCOUNT_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PERMANENT_ACCOUNT_NUMBER = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_NREGA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_NREGA = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNATIONAL_BANK_ACCOUNT_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNATIONAL_BANK_ACCOUNT_NUMBER = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SWIFT_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SWIFT_CODE = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UK_NATIONAL_HEALTH_SERVICE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UK_NATIONAL_HEALTH_SERVICE_NUMBER = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CA_HEALTH_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CA_HEALTH_NUMBER = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_AADHAAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_AADHAAR = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_VOTER_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_VOTER_NUMBER = 36,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainsPiiEntitiesRequest
 	{
 		
@@ -1314,8 +1239,7 @@ namespace MyNS
 		public LanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDatasetResponse
 	{
 		
@@ -1323,8 +1247,7 @@ namespace MyNS
 		public string DatasetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDatasetRequest
 	{
 		
@@ -1362,24 +1285,21 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatasetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAIN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEST = 1,
 	}
 	
 	/// <summary>
 	/// Specifies the format and location of the input data for the dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetInputDataConfig
 	{
 		
@@ -1399,8 +1319,7 @@ namespace MyNS
 	/// <summary>
 	/// An augmented manifest file that provides training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetAugmentedManifestsListItem
 	{
 		
@@ -1428,37 +1347,32 @@ namespace MyNS
 		public AugmentedManifestsDocumentTypeFormat DocumentType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AugmentedManifestsDocumentTypeFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAIN_TEXT_DOCUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAIN_TEXT_DOCUMENT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEMI_STRUCTURED_DOCUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEMI_STRUCTURED_DOCUMENT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatasetDataFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPREHEND_CSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPREHEND_CSV = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUGMENTED_MANIFEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUGMENTED_MANIFEST = 1,
 	}
 	
 	/// <summary>
 	/// <p>Describes the dataset input data configuration for a document classifier model.</p> <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetDocumentClassifierInputDataConfig
 	{
 		
@@ -1476,8 +1390,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the format and location of the input data. You must provide either the <code>Annotations</code> parameter or the <code>EntityList</code> parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetEntityRecognizerInputDataConfig
 	{
 		
@@ -1498,8 +1411,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the annotations associated with a entity recognizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetEntityRecognizerAnnotations
 	{
 		
@@ -1514,8 +1426,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the documents submitted with a dataset for an entity recognizer model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetEntityRecognizerDocuments
 	{
 		
@@ -1530,24 +1441,21 @@ namespace MyNS
 		public InputFormat InputFormat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_DOC_PER_FILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_DOC_PER_FILE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_DOC_PER_LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_DOC_PER_LINE = 1,
 	}
 	
 	/// <summary>
 	/// <p>Describes the dataset entity list for an entity recognizer model.</p> <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-training-data-cer.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetEntityRecognizerEntityList
 	{
 		
@@ -1562,8 +1470,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1578,38 +1485,32 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDocumentClassifierResponse
 	{
 		
@@ -1617,8 +1518,7 @@ namespace MyNS
 		public string DocumentClassifierArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDocumentClassifierRequest
 	{
 		
@@ -1681,8 +1581,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClassifierInputDataConfig
 	{
 		
@@ -1717,8 +1616,7 @@ namespace MyNS
 	/// <summary>
 	/// An augmented manifest file that provides training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AugmentedManifestsListItem
 	{
 		
@@ -1752,8 +1650,7 @@ namespace MyNS
 	/// <summary>
 	/// The location of the training documents. This parameter is required in a request to create a native classifier model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClassifierDocuments
 	{
 		
@@ -1771,8 +1668,7 @@ namespace MyNS
 	/// <summary>
 	/// Provide the location for output data from a custom classifier job. This field is mandatory if you are training a native classifier model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClassifierOutputDataConfig
 	{
 		
@@ -1789,8 +1685,7 @@ namespace MyNS
 	/// <summary>
 	///  Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfig
 	{
 		
@@ -1809,27 +1704,23 @@ namespace MyNS
 		public string[] Subnets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentClassifierMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTI_CLASS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTI_CLASS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTI_LABEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTI_LABEL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KmsKeyValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEndpointResponse
 	{
 		
@@ -1840,8 +1731,7 @@ namespace MyNS
 		public string ModelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEndpointRequest
 	{
 		
@@ -1875,8 +1765,7 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEntityRecognizerResponse
 	{
 		
@@ -1884,8 +1773,7 @@ namespace MyNS
 		public string EntityRecognizerArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEntityRecognizerRequest
 	{
 		
@@ -1942,8 +1830,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the format and location of the input data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerInputDataConfig
 	{
 		
@@ -1973,8 +1860,7 @@ namespace MyNS
 	/// <summary>
 	/// An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityTypesListItem
 	{
 		
@@ -1989,8 +1875,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the training documents submitted with an entity recognizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerDocuments
 	{
 		
@@ -2011,8 +1896,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the annotations associated with a entity recognizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerAnnotations
 	{
 		
@@ -2030,8 +1914,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the entity list submitted with an entity recognizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerEntityList
 	{
 		
@@ -2043,8 +1926,7 @@ namespace MyNS
 		public string S3Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFlywheelResponse
 	{
 		
@@ -2055,8 +1937,7 @@ namespace MyNS
 		public string ActiveModelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFlywheelRequest
 	{
 		
@@ -2103,8 +1984,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration about the custom classifier associated with the flywheel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskConfig
 	{
 		
@@ -2125,8 +2005,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration required for a custom classification model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClassificationConfig
 	{
 		
@@ -2144,8 +2023,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration required for an entity recognition model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognitionConfig
 	{
 		
@@ -2157,24 +2035,21 @@ namespace MyNS
 		public EntityTypesListItem[] EntityTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ModelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCUMENT_CLASSIFIER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCUMENT_CLASSIFIER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTITY_RECOGNIZER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTITY_RECOGNIZER = 1,
 	}
 	
 	/// <summary>
 	/// Data security configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSecurityConfig
 	{
 		
@@ -2194,14 +2069,12 @@ namespace MyNS
 		public VpcConfig VpcConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDocumentClassifierResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDocumentClassifierRequest
 	{
 		
@@ -2213,14 +2086,12 @@ namespace MyNS
 		public string DocumentClassifierArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEndpointResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEndpointRequest
 	{
 		
@@ -2232,14 +2103,12 @@ namespace MyNS
 		public string EndpointArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEntityRecognizerResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEntityRecognizerRequest
 	{
 		
@@ -2251,14 +2120,12 @@ namespace MyNS
 		public string EntityRecognizerArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFlywheelResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFlywheelRequest
 	{
 		
@@ -2270,14 +2137,12 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteResourcePolicyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteResourcePolicyRequest
 	{
 		
@@ -2292,8 +2157,7 @@ namespace MyNS
 		public string PolicyRevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDatasetResponse
 	{
 		
@@ -2304,8 +2168,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties associated with the dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetProperties
 	{
 		
@@ -2340,24 +2203,21 @@ namespace MyNS
 		public System.DateTimeOffset EndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatasetStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDatasetRequest
 	{
 		
@@ -2369,8 +2229,7 @@ namespace MyNS
 		public string DatasetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDocumentClassificationJobResponse
 	{
 		
@@ -2381,8 +2240,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a document classification job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClassificationJobProperties
 	{
 		
@@ -2429,36 +2287,33 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMITTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_REQUESTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 5,
 	}
 	
 	/// <summary>
 	/// The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputDataConfig
 	{
 		
@@ -2479,8 +2334,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Provides configuration parameters for the output of inference jobs.</p> <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputDataConfig
 	{
 		
@@ -2495,8 +2349,7 @@ namespace MyNS
 		public string KmsKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDocumentClassificationJobRequest
 	{
 		
@@ -2508,14 +2361,12 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDocumentClassifierResponse
 	{
 		
@@ -2526,8 +2377,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a document classifier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClassifierProperties
 	{
 		
@@ -2589,42 +2439,39 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ModelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMITTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_REQUESTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINED_WITH_WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINED_WITH_WARNING = 7,
 	}
 	
 	/// <summary>
 	/// Provides information about a document classifier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClassifierMetadata
 	{
 		
@@ -2644,8 +2491,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the result metrics for the test data associated with an documentation classifier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClassifierEvaluationMetrics
 	{
 		
@@ -2674,8 +2520,7 @@ namespace MyNS
 		public System.Nullable<System.Double> HammingLoss { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDocumentClassifierRequest
 	{
 		
@@ -2687,8 +2532,7 @@ namespace MyNS
 		public string DocumentClassifierArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDominantLanguageDetectionJobResponse
 	{
 		
@@ -2699,8 +2543,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a dominant language detection job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DominantLanguageDetectionJobProperties
 	{
 		
@@ -2741,8 +2584,7 @@ namespace MyNS
 		public VpcConfig VpcConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDominantLanguageDetectionJobRequest
 	{
 		
@@ -2754,8 +2596,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEndpointResponse
 	{
 		
@@ -2766,8 +2607,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies information about the specified endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointProperties
 	{
 		
@@ -2808,30 +2648,27 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EndpointStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_SERVICE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEndpointRequest
 	{
 		
@@ -2843,8 +2680,7 @@ namespace MyNS
 		public string EndpointArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEntitiesDetectionJobResponse
 	{
 		
@@ -2855,8 +2691,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about an entities detection job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntitiesDetectionJobProperties
 	{
 		
@@ -2906,8 +2741,7 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEntitiesDetectionJobRequest
 	{
 		
@@ -2919,8 +2753,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEntityRecognizerResponse
 	{
 		
@@ -2931,8 +2764,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes information about an entity recognizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerProperties
 	{
 		
@@ -2994,8 +2826,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed information about an entity recognizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerMetadata
 	{
 		
@@ -3015,8 +2846,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed information about the accuracy of an entity recognizer. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerEvaluationMetrics
 	{
 		
@@ -3033,8 +2863,7 @@ namespace MyNS
 	/// <summary>
 	/// Individual item from the list of entity types in the metadata of an entity recognizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerMetadataEntityTypesListItem
 	{
 		
@@ -3051,8 +2880,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed information about the accuracy of an entity recognizer for a specific entity type. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityTypesEvaluationMetrics
 	{
 		
@@ -3069,8 +2897,7 @@ namespace MyNS
 	/// <summary>
 	/// Output data configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerOutputDataConfig
 	{
 		
@@ -3078,8 +2905,7 @@ namespace MyNS
 		public string FlywheelStatsS3Prefix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEntityRecognizerRequest
 	{
 		
@@ -3091,8 +2917,7 @@ namespace MyNS
 		public string EntityRecognizerArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventsDetectionJobResponse
 	{
 		
@@ -3103,8 +2928,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about an events detection job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsDetectionJobProperties
 	{
 		
@@ -3145,8 +2969,7 @@ namespace MyNS
 		public string[] TargetEventTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventsDetectionJobRequest
 	{
 		
@@ -3158,8 +2981,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFlywheelResponse
 	{
 		
@@ -3170,8 +2992,7 @@ namespace MyNS
 	/// <summary>
 	/// The flywheel properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlywheelProperties
 	{
 		
@@ -3212,30 +3033,27 @@ namespace MyNS
 		public string LatestFlywheelIteration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FlywheelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFlywheelRequest
 	{
 		
@@ -3247,8 +3065,7 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFlywheelIterationResponse
 	{
 		
@@ -3259,8 +3076,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration properties of a flywheel iteration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlywheelIterationProperties
 	{
 		
@@ -3301,36 +3117,33 @@ namespace MyNS
 		public string EvaluationManifestS3Prefix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FlywheelIterationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVALUATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVALUATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_REQUESTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 5,
 	}
 	
 	/// <summary>
 	/// The evaluation metrics associated with the evaluated model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlywheelModelEvaluationMetrics
 	{
 		
@@ -3347,8 +3160,7 @@ namespace MyNS
 		public System.Nullable<System.Double> AverageAccuracy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFlywheelIterationRequest
 	{
 		
@@ -3367,8 +3179,7 @@ namespace MyNS
 		public string FlywheelIterationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeKeyPhrasesDetectionJobResponse
 	{
 		
@@ -3379,8 +3190,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a key phrases detection job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyPhrasesDetectionJobProperties
 	{
 		
@@ -3424,8 +3234,7 @@ namespace MyNS
 		public VpcConfig VpcConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeKeyPhrasesDetectionJobRequest
 	{
 		
@@ -3437,8 +3246,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePiiEntitiesDetectionJobResponse
 	{
 		
@@ -3452,8 +3260,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a PII entities detection job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PiiEntitiesDetectionJobProperties
 	{
 		
@@ -3500,8 +3307,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides configuration parameters for the output of PII entity detection jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PiiOutputDataConfig
 	{
 		
@@ -3519,8 +3325,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides configuration parameters for PII entity redaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedactionConfig
 	{
 		
@@ -3534,34 +3339,29 @@ namespace MyNS
 		public string MaskCharacter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PiiEntitiesDetectionMaskMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MASK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MASK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLACE_WITH_PII_ENTITY_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLACE_WITH_PII_ENTITY_TYPE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PiiEntitiesDetectionMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLY_REDACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLY_REDACTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLY_OFFSETS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLY_OFFSETS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePiiEntitiesDetectionJobRequest
 	{
 		
@@ -3573,8 +3373,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeResourcePolicyResponse
 	{
 		
@@ -3591,8 +3390,7 @@ namespace MyNS
 		public string PolicyRevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeResourcePolicyRequest
 	{
 		
@@ -3604,8 +3402,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSentimentDetectionJobResponse
 	{
 		
@@ -3616,8 +3413,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a sentiment detection job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SentimentDetectionJobProperties
 	{
 		
@@ -3661,8 +3457,7 @@ namespace MyNS
 		public VpcConfig VpcConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSentimentDetectionJobRequest
 	{
 		
@@ -3674,8 +3469,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTargetedSentimentDetectionJobResponse
 	{
 		
@@ -3686,8 +3480,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a targeted sentiment detection job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetedSentimentDetectionJobProperties
 	{
 		
@@ -3740,8 +3533,7 @@ namespace MyNS
 		public VpcConfig VpcConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTargetedSentimentDetectionJobRequest
 	{
 		
@@ -3753,8 +3545,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTopicsDetectionJobResponse
 	{
 		
@@ -3765,8 +3556,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a topic detection job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TopicsDetectionJobProperties
 	{
 		
@@ -3810,8 +3600,7 @@ namespace MyNS
 		public VpcConfig VpcConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTopicsDetectionJobRequest
 	{
 		
@@ -3823,8 +3612,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectDominantLanguageResponse
 	{
 		
@@ -3832,8 +3620,7 @@ namespace MyNS
 		public DominantLanguage[] Languages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectDominantLanguageRequest
 	{
 		
@@ -3845,8 +3632,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectEntitiesResponse
 	{
 		
@@ -3869,8 +3655,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information about each word or line of text in the input document.</p> <p>For additional information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/API_Block.html">Block</a> in the Amazon Textract API reference.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Block
 	{
 		
@@ -3893,24 +3678,21 @@ namespace MyNS
 		public RelationshipsListItem[] Relationships { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BlockType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORD = 1,
 	}
 	
 	/// <summary>
 	/// <p>Information about the location of items on a document page.</p> <p>For additional information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/API_Geometry.html">Geometry</a> in the Amazon Textract API reference.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Geometry
 	{
 		
@@ -3924,8 +3706,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The bounding box around the detected page or around an element on a document page. The left (x-coordinate) and top (y-coordinate) are coordinates that represent the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>For additional information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/API_BoundingBox.html">BoundingBox</a> in the Amazon Textract API reference.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BoundingBox
 	{
 		
@@ -3945,8 +3726,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The X and Y coordinates of a point on a document page.</p> <p>For additional information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/API_Point.html">Point</a> in the Amazon Textract API reference.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point
 	{
 		
@@ -3960,8 +3740,7 @@ namespace MyNS
 	/// <summary>
 	/// List of child blocks for the current block.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelationshipsListItem
 	{
 		
@@ -3972,18 +3751,15 @@ namespace MyNS
 		public RelationshipType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RelationshipType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHILD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHILD = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectEntitiesRequest
 	{
 		
@@ -4003,8 +3779,7 @@ namespace MyNS
 		public DocumentReaderConfig DocumentReaderConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectKeyPhrasesResponse
 	{
 		
@@ -4012,8 +3787,7 @@ namespace MyNS
 		public KeyPhrase[] KeyPhrases { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectKeyPhrasesRequest
 	{
 		
@@ -4032,8 +3806,7 @@ namespace MyNS
 		public LanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectPiiEntitiesResponse
 	{
 		
@@ -4044,8 +3817,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a PII entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PiiEntity
 	{
 		
@@ -4062,8 +3834,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> EndOffset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectPiiEntitiesRequest
 	{
 		
@@ -4082,8 +3853,7 @@ namespace MyNS
 		public LanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectSentimentResponse
 	{
 		
@@ -4094,8 +3864,7 @@ namespace MyNS
 		public SentimentScore SentimentScore { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectSentimentRequest
 	{
 		
@@ -4114,8 +3883,7 @@ namespace MyNS
 		public LanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectSyntaxResponse
 	{
 		
@@ -4123,8 +3891,7 @@ namespace MyNS
 		public SyntaxToken[] SyntaxTokens { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectSyntaxRequest
 	{
 		
@@ -4143,8 +3910,7 @@ namespace MyNS
 		public SyntaxLanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectTargetedSentimentResponse
 	{
 		
@@ -4152,8 +3918,7 @@ namespace MyNS
 		public TargetedSentimentEntity[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectTargetedSentimentRequest
 	{
 		
@@ -4172,8 +3937,7 @@ namespace MyNS
 		public LanguageCode LanguageCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportModelResponse
 	{
 		
@@ -4181,8 +3945,7 @@ namespace MyNS
 		public string ModelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportModelRequest
 	{
 		
@@ -4209,8 +3972,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatasetsResponse
 	{
 		
@@ -4221,8 +3983,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatasetsRequest
 	{
 		
@@ -4242,8 +4003,7 @@ namespace MyNS
 	/// <summary>
 	/// Filter the datasets based on creation time or dataset status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetFilter
 	{
 		
@@ -4260,14 +4020,12 @@ namespace MyNS
 		public System.DateTimeOffset CreationTimeBefore { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidFilterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDocumentClassificationJobsResponse
 	{
 		
@@ -4278,8 +4036,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDocumentClassificationJobsRequest
 	{
 		
@@ -4296,8 +4053,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClassificationJobFilter
 	{
 		
@@ -4314,8 +4070,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDocumentClassifierSummariesResponse
 	{
 		
@@ -4329,8 +4084,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes information about a document classifier and its versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClassifierSummary
 	{
 		
@@ -4350,8 +4104,7 @@ namespace MyNS
 		public ModelStatus LatestVersionStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDocumentClassifierSummariesRequest
 	{
 		
@@ -4362,8 +4115,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDocumentClassifiersResponse
 	{
 		
@@ -4374,8 +4126,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDocumentClassifiersRequest
 	{
 		
@@ -4392,8 +4143,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the <code>ListDocumentClassifiers</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentClassifierFilter
 	{
 		
@@ -4410,8 +4160,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDominantLanguageDetectionJobsResponse
 	{
 		
@@ -4422,8 +4171,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDominantLanguageDetectionJobsRequest
 	{
 		
@@ -4440,8 +4188,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DominantLanguageDetectionJobFilter
 	{
 		
@@ -4458,8 +4205,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEndpointsResponse
 	{
 		
@@ -4470,8 +4216,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEndpointsRequest
 	{
 		
@@ -4488,8 +4233,7 @@ namespace MyNS
 	/// <summary>
 	/// The filter used to determine which endpoints are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointFilter
 	{
 		
@@ -4506,8 +4250,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEntitiesDetectionJobsResponse
 	{
 		
@@ -4518,8 +4261,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEntitiesDetectionJobsRequest
 	{
 		
@@ -4536,8 +4278,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntitiesDetectionJobFilter
 	{
 		
@@ -4554,8 +4295,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEntityRecognizerSummariesResponse
 	{
 		
@@ -4569,8 +4309,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the information about an entity recognizer and its versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerSummary
 	{
 		
@@ -4590,8 +4329,7 @@ namespace MyNS
 		public ModelStatus LatestVersionStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEntityRecognizerSummariesRequest
 	{
 		
@@ -4602,8 +4340,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEntityRecognizersResponse
 	{
 		
@@ -4614,8 +4351,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEntityRecognizersRequest
 	{
 		
@@ -4632,8 +4368,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the <code>ListEntityRecognizers</code> operation./&gt;
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityRecognizerFilter
 	{
 		
@@ -4650,8 +4385,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEventsDetectionJobsResponse
 	{
 		
@@ -4662,8 +4396,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEventsDetectionJobsRequest
 	{
 		
@@ -4680,8 +4413,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of event detection jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsDetectionJobFilter
 	{
 		
@@ -4698,8 +4430,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFlywheelIterationHistoryResponse
 	{
 		
@@ -4710,8 +4441,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFlywheelIterationHistoryRequest
 	{
 		
@@ -4735,8 +4465,7 @@ namespace MyNS
 	/// <summary>
 	/// Filter the flywheel iterations based on creation time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlywheelIterationFilter
 	{
 		
@@ -4747,8 +4476,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationTimeBefore { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFlywheelsResponse
 	{
 		
@@ -4762,8 +4490,7 @@ namespace MyNS
 	/// <summary>
 	/// Flywheel summary information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlywheelSummary
 	{
 		
@@ -4795,8 +4522,7 @@ namespace MyNS
 		public string LatestFlywheelIteration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFlywheelsRequest
 	{
 		
@@ -4813,8 +4539,7 @@ namespace MyNS
 	/// <summary>
 	/// Filter the flywheels based on creation time or flywheel status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlywheelFilter
 	{
 		
@@ -4828,8 +4553,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationTimeBefore { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKeyPhrasesDetectionJobsResponse
 	{
 		
@@ -4840,8 +4564,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKeyPhrasesDetectionJobsRequest
 	{
 		
@@ -4858,8 +4581,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyPhrasesDetectionJobFilter
 	{
 		
@@ -4876,8 +4598,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPiiEntitiesDetectionJobsResponse
 	{
 		
@@ -4888,8 +4609,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPiiEntitiesDetectionJobsRequest
 	{
 		
@@ -4906,8 +4626,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of PII entity detection jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PiiEntitiesDetectionJobFilter
 	{
 		
@@ -4924,8 +4643,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSentimentDetectionJobsResponse
 	{
 		
@@ -4936,8 +4654,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSentimentDetectionJobsRequest
 	{
 		
@@ -4954,8 +4671,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SentimentDetectionJobFilter
 	{
 		
@@ -4972,8 +4688,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -4984,8 +4699,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -4997,8 +4711,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTargetedSentimentDetectionJobsResponse
 	{
 		
@@ -5009,8 +4722,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTargetedSentimentDetectionJobsRequest
 	{
 		
@@ -5027,8 +4739,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering a list of dominant language detection jobs. For more information, see the <code>ListTargetedSentimentDetectionJobs</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetedSentimentDetectionJobFilter
 	{
 		
@@ -5045,8 +4756,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTopicsDetectionJobsResponse
 	{
 		
@@ -5057,8 +4767,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTopicsDetectionJobsRequest
 	{
 		
@@ -5075,8 +4784,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information for filtering topic detection jobs. For more information, see .
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TopicsDetectionJobFilter
 	{
 		
@@ -5093,8 +4801,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTimeAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutResourcePolicyResponse
 	{
 		
@@ -5102,8 +4809,7 @@ namespace MyNS
 		public string PolicyRevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutResourcePolicyRequest
 	{
 		
@@ -5125,8 +4831,7 @@ namespace MyNS
 		public string PolicyRevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDocumentClassificationJobResponse
 	{
 		
@@ -5143,8 +4848,7 @@ namespace MyNS
 		public string DocumentClassifierArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDocumentClassificationJobRequest
 	{
 		
@@ -5191,8 +4895,7 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDominantLanguageDetectionJobResponse
 	{
 		
@@ -5206,8 +4909,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDominantLanguageDetectionJobRequest
 	{
 		
@@ -5248,8 +4950,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartEntitiesDetectionJobResponse
 	{
 		
@@ -5266,8 +4967,7 @@ namespace MyNS
 		public string EntityRecognizerArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartEntitiesDetectionJobRequest
 	{
 		
@@ -5321,8 +5021,7 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartEventsDetectionJobResponse
 	{
 		
@@ -5336,8 +5035,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartEventsDetectionJobRequest
 	{
 		
@@ -5386,8 +5084,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFlywheelIterationResponse
 	{
 		
@@ -5398,8 +5095,7 @@ namespace MyNS
 		public string FlywheelIterationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFlywheelIterationRequest
 	{
 		
@@ -5414,8 +5110,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartKeyPhrasesDetectionJobResponse
 	{
 		
@@ -5429,8 +5124,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartKeyPhrasesDetectionJobRequest
 	{
 		
@@ -5478,8 +5172,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartPiiEntitiesDetectionJobResponse
 	{
 		
@@ -5493,8 +5186,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartPiiEntitiesDetectionJobRequest
 	{
 		
@@ -5546,8 +5238,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSentimentDetectionJobResponse
 	{
 		
@@ -5561,8 +5252,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSentimentDetectionJobRequest
 	{
 		
@@ -5610,8 +5300,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTargetedSentimentDetectionJobResponse
 	{
 		
@@ -5625,8 +5314,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTargetedSentimentDetectionJobRequest
 	{
 		
@@ -5678,8 +5366,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTopicsDetectionJobResponse
 	{
 		
@@ -5693,8 +5380,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTopicsDetectionJobRequest
 	{
 		
@@ -5738,8 +5424,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopDominantLanguageDetectionJobResponse
 	{
 		
@@ -5750,8 +5435,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopDominantLanguageDetectionJobRequest
 	{
 		
@@ -5763,8 +5447,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopEntitiesDetectionJobResponse
 	{
 		
@@ -5775,8 +5458,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopEntitiesDetectionJobRequest
 	{
 		
@@ -5788,8 +5470,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopEventsDetectionJobResponse
 	{
 		
@@ -5800,8 +5481,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopEventsDetectionJobRequest
 	{
 		
@@ -5813,8 +5493,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopKeyPhrasesDetectionJobResponse
 	{
 		
@@ -5825,8 +5504,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopKeyPhrasesDetectionJobRequest
 	{
 		
@@ -5838,8 +5516,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopPiiEntitiesDetectionJobResponse
 	{
 		
@@ -5850,8 +5527,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopPiiEntitiesDetectionJobRequest
 	{
 		
@@ -5863,8 +5539,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopSentimentDetectionJobResponse
 	{
 		
@@ -5875,8 +5550,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopSentimentDetectionJobRequest
 	{
 		
@@ -5888,8 +5562,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopTargetedSentimentDetectionJobResponse
 	{
 		
@@ -5900,8 +5573,7 @@ namespace MyNS
 		public JobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopTargetedSentimentDetectionJobRequest
 	{
 		
@@ -5913,14 +5585,12 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopTrainingDocumentClassifierResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopTrainingDocumentClassifierRequest
 	{
 		
@@ -5932,14 +5602,12 @@ namespace MyNS
 		public string DocumentClassifierArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopTrainingEntityRecognizerResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopTrainingEntityRecognizerRequest
 	{
 		
@@ -5951,14 +5619,12 @@ namespace MyNS
 		public string EntityRecognizerArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -5977,20 +5643,17 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModificationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -6009,14 +5672,12 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagKeysException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEndpointResponse
 	{
 		
@@ -6024,8 +5685,7 @@ namespace MyNS
 		public string DesiredModelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEndpointRequest
 	{
 		
@@ -6049,8 +5709,7 @@ namespace MyNS
 		public string FlywheelArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlywheelResponse
 	{
 		
@@ -6058,8 +5717,7 @@ namespace MyNS
 		public FlywheelProperties FlywheelProperties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlywheelRequest
 	{
 		
@@ -6083,8 +5741,7 @@ namespace MyNS
 	/// <summary>
 	/// Data security configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataSecurityConfig
 	{
 		
@@ -6101,55 +5758,47 @@ namespace MyNS
 		public VpcConfig VpcConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Split
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAIN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEST = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentClassifierDataFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPREHEND_CSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPREHEND_CSV = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUGMENTED_MANIFEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUGMENTED_MANIFEST = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentClassifierDocumentTypeFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAIN_TEXT_DOCUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAIN_TEXT_DOCUMENT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEMI_STRUCTURED_DOCUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEMI_STRUCTURED_DOCUMENT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityRecognizerDataFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPREHEND_CSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPREHEND_CSV = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUGMENTED_MANIFEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUGMENTED_MANIFEST = 1,
 	}
 	

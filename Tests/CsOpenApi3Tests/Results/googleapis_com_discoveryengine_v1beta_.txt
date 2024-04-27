@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Message that represents an arbitrary HTTP body. It should only be used for payload formats that can't be represented as JSON, such as raw binary or an HTML page. This message can be used both in streaming and non-streaming API methods in the request as well as the response. It can be used as a top-level request field, which is convenient if one wants to extract parameters from either the URL or HTTP template into the request fields and also want access to the raw HTTP body. Example: message GetResourceRequest { // A unique request id. string request_id = 1; // The raw HTTP body is bound to this field. google.api.HttpBody http_body = 2; } service ResourceService { rpc GetResource(GetResourceRequest) returns (google.api.HttpBody); rpc UpdateResource(google.api.HttpBody) returns (google.protobuf.Empty); } Example with streaming methods: service CaldavService { rpc GetCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); rpc UpdateCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); } Use of this type only changes how the request and response bodies are handled, all other features will continue to work unchanged.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleApiHttpBody
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of the context in which an error occurred.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineLoggingErrorContext
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// HTTP request data that is related to a reported error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineLoggingHttpRequestContext
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates a location in the source code of the service for which errors are reported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineLoggingSourceLocation
 	{
 		
@@ -98,8 +94,7 @@ namespace MyNS
 	/// <summary>
 	/// An error log which is reported to the Error Reporting system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineLoggingErrorLog
 	{
 		
@@ -149,8 +144,7 @@ namespace MyNS
 	/// <summary>
 	/// The error payload that is populated on LRO import APIs, including the following: * `google.cloud.discoveryengine.v1alpha.DocumentService.ImportDocuments` * `google.cloud.discoveryengine.v1alpha.UserEventService.ImportUserEvents`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineLoggingImportErrorContext
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a running service that sends errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineLoggingServiceContext
 	{
 		
@@ -203,8 +196,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -230,8 +222,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for Create Schema LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1CreateSchemaMetadata
 	{
 		
@@ -251,8 +242,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for DeleteSchema LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1DeleteSchemaMetadata
 	{
 		
@@ -272,8 +262,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the ImportDocuments operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1ImportDocumentsMetadata
 	{
 		
@@ -305,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportDocumentsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1ImportDocumentsResponse
 	{
 		
@@ -326,8 +314,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of destination for Import related errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1ImportErrorConfig
 	{
 		
@@ -341,8 +328,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the ImportSuggestionDenyListEntries operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1ImportSuggestionDenyListEntriesMetadata
 	{
 		
@@ -362,8 +348,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CompletionService.ImportSuggestionDenyListEntries method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1ImportSuggestionDenyListEntriesResponse
 	{
 		
@@ -389,8 +374,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Import operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1ImportUserEventsMetadata
 	{
 		
@@ -422,8 +406,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportUserEventsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1ImportUserEventsResponse
 	{
 		
@@ -455,8 +438,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeDocuments operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1PurgeDocumentsMetadata
 	{
 		
@@ -488,8 +470,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for DocumentService.PurgeDocuments method. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1PurgeDocumentsResponse
 	{
 		
@@ -509,8 +490,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeSuggestionDenyListEntries operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1PurgeSuggestionDenyListEntriesMetadata
 	{
 		
@@ -530,8 +510,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CompletionService.PurgeSuggestionDenyListEntries method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1PurgeSuggestionDenyListEntriesResponse
 	{
 		
@@ -551,8 +530,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the structure and layout of a type of document data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1Schema
 	{
 		
@@ -578,8 +556,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for UpdateSchema LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1UpdateSchemaMetadata
 	{
 		
@@ -599,8 +576,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SiteSearchEngineService.BatchCreateTargetSites operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaBatchCreateTargetSiteMetadata
 	{
 		
@@ -620,8 +596,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SiteSearchEngineService.BatchCreateTargetSites method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaBatchCreateTargetSitesResponse
 	{
 		
@@ -635,8 +610,7 @@ namespace MyNS
 	/// <summary>
 	/// A target site for the SiteSearchEngine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaTargetSite
 	{
 		
@@ -698,8 +672,7 @@ namespace MyNS
 	/// <summary>
 	/// Site search indexing failure reasons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaTargetSiteFailureReason
 	{
 		
@@ -707,39 +680,35 @@ namespace MyNS
 		public GoogleCloudDiscoveryengineV1alphaTargetSiteFailureReasonQuotaFailure QuotaFailure { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaTargetSiteFailureReasonQuotaFailure
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaTargetSiteIndexingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXING_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXING_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 	}
 	
 	/// <summary>
 	/// Verification information for target sites in advanced site search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaSiteVerificationInfo
 	{
 		
@@ -756,46 +725,41 @@ namespace MyNS
 		public string VerifyTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaSiteVerificationInfoSiteVerificationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_VERIFICATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_VERIFICATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFIED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNVERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNVERIFIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXEMPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXEMPTED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaTargetSiteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUDE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUDE = 2,
 	}
 	
 	/// <summary>
 	/// Metadata related to the progress of the DataStoreService.CreateDataStore operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaCreateDataStoreMetadata
 	{
 		
@@ -815,8 +779,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the EngineService.CreateEngine operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaCreateEngineMetadata
 	{
 		
@@ -836,8 +799,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for Create Schema LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaCreateSchemaMetadata
 	{
 		
@@ -857,8 +819,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SiteSearchEngineService.CreateTargetSite operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaCreateTargetSiteMetadata
 	{
 		
@@ -878,8 +839,7 @@ namespace MyNS
 	/// <summary>
 	/// DataStore captures global settings and configs at the DataStore level.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaDataStore
 	{
 		
@@ -926,46 +886,41 @@ namespace MyNS
 		public string[] SolutionTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaDataStoreContentConfig
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT_CONFIG_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT_CONFIG_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_CONTENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT_REQUIRED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_WEBSITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_WEBSITE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaDataStoreIndustryVertical
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDUSTRY_VERTICAL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDUSTRY_VERTICAL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENERIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIA = 2,
 	}
 	
 	/// <summary>
 	/// Metadata related to the progress of the DataStoreService.DeleteDataStore operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaDeleteDataStoreMetadata
 	{
 		
@@ -985,8 +940,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the EngineService.DeleteEngine operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaDeleteEngineMetadata
 	{
 		
@@ -1006,8 +960,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for DeleteSchema LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaDeleteSchemaMetadata
 	{
 		
@@ -1027,8 +980,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SiteSearchEngineService.DeleteTargetSite operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaDeleteTargetSiteMetadata
 	{
 		
@@ -1048,8 +1000,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SiteSearchEngineService.DisableAdvancedSiteSearch operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaDisableAdvancedSiteSearchMetadata
 	{
 		
@@ -1069,8 +1020,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SiteSearchEngineService.DisableAdvancedSiteSearch method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaDisableAdvancedSiteSearchResponse
 	{
 	}
@@ -1078,8 +1028,7 @@ namespace MyNS
 	/// <summary>
 	/// A singleton resource of DataStore. It's empty when DataStore is created, which defaults to digital parser. The first call to DataStoreService.UpdateDocumentProcessingConfig method will initialize the config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaDocumentProcessingConfig
 	{
 		
@@ -1099,8 +1048,7 @@ namespace MyNS
 	/// <summary>
 	/// The OCR options for parsing documents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaOcrConfig
 	{
 		
@@ -1126,8 +1074,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SiteSearchEngineService.EnableAdvancedSiteSearch operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEnableAdvancedSiteSearchMetadata
 	{
 		
@@ -1147,8 +1094,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SiteSearchEngineService.EnableAdvancedSiteSearch method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEnableAdvancedSiteSearchResponse
 	{
 	}
@@ -1156,8 +1102,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata that describes the training and serving parameters of an Engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngine
 	{
 		
@@ -1249,8 +1194,7 @@ namespace MyNS
 	/// <summary>
 	/// Configurations for a Chat Engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngineChatEngineConfig
 	{
 		
@@ -1270,8 +1214,7 @@ namespace MyNS
 	/// <summary>
 	/// Configurations for generating a Dialogflow agent. Note that these configurations are one-time consumed by and passed to Dialogflow service. It means they cannot be retrieved using EngineService.GetEngine or EngineService.ListEngines API after engine creation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngineChatEngineConfigAgentCreationConfig
 	{
 		
@@ -1303,8 +1246,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information of a Chat Engine. Fields in this message are output only.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngineChatEngineMetadata
 	{
 		
@@ -1318,8 +1260,7 @@ namespace MyNS
 	/// <summary>
 	/// Common configurations for an Engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngineCommonConfig
 	{
 		
@@ -1333,8 +1274,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional config specs for a Media Recommendation engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfig
 	{
 		
@@ -1366,8 +1306,7 @@ namespace MyNS
 	/// <summary>
 	/// Custom threshold for `cvr` optimization_objective.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigOptimizationObjectiveConfig
 	{
 		
@@ -1384,27 +1323,24 @@ namespace MyNS
 		public System.Nullable<System.Single> TargetFieldValueFloat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigTrainingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINING = 2,
 	}
 	
 	/// <summary>
 	/// Additional information of a recommendation engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngineRecommendationMetadata
 	{
 		
@@ -1433,46 +1369,41 @@ namespace MyNS
 		public string TuningOperation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaEngineRecommendationMetadataDataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_OK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaEngineRecommendationMetadataServingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUNED = 3,
 	}
 	
 	/// <summary>
 	/// Configurations for a Search Engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngineSearchEngineConfig
 	{
 		
@@ -1489,55 +1420,49 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDiscoveryengineV1alphaEngineSearchEngineConfigSearchTier> SearchTier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaEngineSearchEngineConfigSearchTier
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_TIER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_TIER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_TIER_STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_TIER_STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_TIER_ENTERPRISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_TIER_ENTERPRISE = 2,
 	}
 	
 	/// <summary>
 	/// Additional config specs for a `similar-items` engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEngineSimilarDocumentsEngineConfig
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaEngineSolutionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLUTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLUTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLUTION_TYPE_RECOMMENDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLUTION_TYPE_RECOMMENDATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLUTION_TYPE_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLUTION_TYPE_SEARCH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLUTION_TYPE_CHAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLUTION_TYPE_CHAT = 3,
 	}
 	
 	/// <summary>
 	/// Metadata related to the progress of the EstimateDataSize operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEstimateDataSizeMetadata
 	{
 		
@@ -1551,8 +1476,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the EstimateDataSize request. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaEstimateDataSizeResponse
 	{
 		
@@ -1572,8 +1496,7 @@ namespace MyNS
 	/// <summary>
 	/// Configurations for fields of a schema. For example, configuring a field is indexable, or searchable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaFieldConfig
 	{
 		
@@ -1632,135 +1555,120 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDiscoveryengineV1alphaFieldConfigSearchableOption> SearchableOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaFieldConfigCompletableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETABLE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaFieldConfigDynamicFacetableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DYNAMIC_FACETABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DYNAMIC_FACETABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DYNAMIC_FACETABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DYNAMIC_FACETABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DYNAMIC_FACETABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DYNAMIC_FACETABLE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaFieldConfigFieldType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIELD_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIELD_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTEGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTEGER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEOLOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEOLOCATION = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaFieldConfigIndexableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXABLE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaFieldConfigRecsFilterableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTERABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTERABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTERABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTERABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTERABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTERABLE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaFieldConfigRetrievableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRIEVABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRIEVABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRIEVABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRIEVABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRIEVABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRIEVABLE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaFieldConfigSearchableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCHABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCHABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCHABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCHABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCHABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCHABLE_DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// Metadata related to the progress of the ImportDocuments operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaImportDocumentsMetadata
 	{
 		
@@ -1792,8 +1700,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportDocumentsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaImportDocumentsResponse
 	{
 		
@@ -1813,8 +1720,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of destination for Import related errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaImportErrorConfig
 	{
 		
@@ -1828,8 +1734,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the ImportSuggestionDenyListEntries operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaImportSuggestionDenyListEntriesMetadata
 	{
 		
@@ -1849,8 +1754,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CompletionService.ImportSuggestionDenyListEntries method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaImportSuggestionDenyListEntriesResponse
 	{
 		
@@ -1876,8 +1780,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Import operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaImportUserEventsMetadata
 	{
 		
@@ -1909,8 +1812,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportUserEventsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaImportUserEventsResponse
 	{
 		
@@ -1942,8 +1844,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeDocuments operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaPurgeDocumentsMetadata
 	{
 		
@@ -1975,8 +1876,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for DocumentService.PurgeDocuments method. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaPurgeDocumentsResponse
 	{
 		
@@ -1996,8 +1896,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeSuggestionDenyListEntries operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaPurgeSuggestionDenyListEntriesMetadata
 	{
 		
@@ -2017,8 +1916,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CompletionService.PurgeSuggestionDenyListEntries method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaPurgeSuggestionDenyListEntriesResponse
 	{
 		
@@ -2038,8 +1936,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeUserEvents operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaPurgeUserEventsMetadata
 	{
 		
@@ -2071,8 +1968,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the PurgeUserEventsRequest. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaPurgeUserEventsResponse
 	{
 		
@@ -2086,8 +1982,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SiteSearchEngineService.RecrawlUris operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaRecrawlUrisMetadata
 	{
 		
@@ -2137,8 +2032,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SiteSearchEngineService.RecrawlUris method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaRecrawlUrisResponse
 	{
 		
@@ -2158,8 +2052,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about why a particular URI failed to be crawled. Each FailureInfo contains one FailureReason per CorpusType.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaRecrawlUrisResponseFailureInfo
 	{
 		
@@ -2179,8 +2072,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about why crawling failed for a particular CorpusType, e.g. DESKTOP and MOBILE crawling may fail for different reasons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaRecrawlUrisResponseFailureInfoFailureReason
 	{
 		
@@ -2197,27 +2089,24 @@ namespace MyNS
 		public string ErrorMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1alphaRecrawlUrisResponseFailureInfoFailureReasonCorpusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CORPUS_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CORPUS_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESKTOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE = 2,
 	}
 	
 	/// <summary>
 	/// Defines the structure and layout of a type of document data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaSchema
 	{
 		
@@ -2249,8 +2138,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the TrainCustomModel operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaTrainCustomModelMetadata
 	{
 		
@@ -2270,8 +2158,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the TrainCustomModelRequest. This message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaTrainCustomModelResponse
 	{
 		
@@ -2297,8 +2184,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaTuneEngineMetadata
 	{
 		
@@ -2312,8 +2198,7 @@ namespace MyNS
 	/// <summary>
 	/// Response associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaTuneEngineResponse
 	{
 	}
@@ -2321,8 +2206,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for UpdateSchema LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaUpdateSchemaMetadata
 	{
 		
@@ -2342,8 +2226,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SiteSearchEngineService.UpdateTargetSite operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1alphaUpdateTargetSiteMetadata
 	{
 		
@@ -2363,8 +2246,7 @@ namespace MyNS
 	/// <summary>
 	/// BigQuery source import data from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaBigQuerySource
 	{
 		
@@ -2408,8 +2290,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDate
 	{
 		
@@ -2435,8 +2316,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CompletionService.CompleteQuery method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaCompleteQueryResponse
 	{
 		
@@ -2456,8 +2336,7 @@ namespace MyNS
 	/// <summary>
 	/// Suggestions as search queries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaCompleteQueryResponseQuerySuggestion
 	{
 		
@@ -2477,8 +2356,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed completion information including completion attribution token and clicked completion info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaCompletionInfo
 	{
 		
@@ -2498,8 +2376,7 @@ namespace MyNS
 	/// <summary>
 	/// External conversation proto definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaConversation
 	{
 		
@@ -2543,8 +2420,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a conversation message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaConversationMessage
 	{
 		
@@ -2570,8 +2446,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a reply message to user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaReply
 	{
 		
@@ -2597,8 +2472,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines reference in reply.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaReplyReference
 	{
 		
@@ -2630,8 +2504,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary of the top N search result specified by the summary spec.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseSummary
 	{
 		
@@ -2663,8 +2536,7 @@ namespace MyNS
 	/// <summary>
 	/// Safety Attribute categories and their associated confidence scores.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseSummarySafetyAttributes
 	{
 		
@@ -2684,8 +2556,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary with metadata information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseSummarySummaryWithMetadata
 	{
 		
@@ -2711,8 +2582,7 @@ namespace MyNS
 	/// <summary>
 	/// Citation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseSummaryCitationMetadata
 	{
 		
@@ -2726,8 +2596,7 @@ namespace MyNS
 	/// <summary>
 	/// Citation info for a segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseSummaryCitation
 	{
 		
@@ -2753,8 +2622,7 @@ namespace MyNS
 	/// <summary>
 	/// Citation source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseSummaryCitationSource
 	{
 		
@@ -2768,8 +2636,7 @@ namespace MyNS
 	/// <summary>
 	/// Document reference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseSummaryReference
 	{
 		
@@ -2795,8 +2662,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines text input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaTextInput
 	{
 		
@@ -2816,8 +2682,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines context of the conversation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaConversationContext
 	{
 		
@@ -2834,27 +2699,24 @@ namespace MyNS
 		public string[] ContextDocuments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1betaConversationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 	}
 	
 	/// <summary>
 	/// Request message for ConversationalSearchService.ConverseConversation method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaConverseConversationRequest
 	{
 		
@@ -2904,8 +2766,7 @@ namespace MyNS
 	/// <summary>
 	/// A specification for configuring a summary returned in a search response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpec
 	{
 		
@@ -2955,8 +2816,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of the prompt to use with the model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelPromptSpec
 	{
 		
@@ -2970,8 +2830,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of the model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelSpec
 	{
 		
@@ -2985,8 +2844,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ConversationalSearchService.ConverseConversation method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaConverseConversationResponse
 	{
 		
@@ -3018,8 +2876,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the search results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseSearchResult
 	{
 		
@@ -3045,8 +2902,7 @@ namespace MyNS
 	/// <summary>
 	/// Document captures all raw metadata information of items to be recommended or searched.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaDocument
 	{
 		
@@ -3102,8 +2958,7 @@ namespace MyNS
 	/// <summary>
 	/// Unstructured data linked to this document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaDocumentContent
 	{
 		
@@ -3129,8 +2984,7 @@ namespace MyNS
 	/// <summary>
 	/// Double list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaDoubleList
 	{
 		
@@ -3144,8 +2998,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for Create Schema LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaCreateSchemaMetadata
 	{
 		
@@ -3165,8 +3018,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom attribute that is not explicitly modeled in a resource, e.g. UserEvent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaCustomAttribute
 	{
 		
@@ -3186,8 +3038,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for DeleteSchema LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaDeleteSchemaMetadata
 	{
 		
@@ -3207,8 +3058,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed document information associated with a user event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaDocumentInfo
 	{
 		
@@ -3246,8 +3096,7 @@ namespace MyNS
 	/// <summary>
 	/// Cloud Storage location for input content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaGcsSource
 	{
 		
@@ -3267,8 +3116,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the ImportDocuments operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportDocumentsMetadata
 	{
 		
@@ -3300,8 +3148,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for Import methods.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportDocumentsRequest
 	{
 		
@@ -3351,8 +3198,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of destination for Import related errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportErrorConfig
 	{
 		
@@ -3366,8 +3212,7 @@ namespace MyNS
 	/// <summary>
 	/// The inline source for the input config for ImportDocuments method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportDocumentsRequestInlineSource
 	{
 		
@@ -3378,27 +3223,24 @@ namespace MyNS
 		public GoogleCloudDiscoveryengineV1betaDocument[] Documents { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1betaImportDocumentsRequestReconciliationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECONCILIATION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECONCILIATION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCREMENTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCREMENTAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 	
 	/// <summary>
 	/// Response of the ImportDocumentsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportDocumentsResponse
 	{
 		
@@ -3418,8 +3260,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the ImportSuggestionDenyListEntries operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportSuggestionDenyListEntriesMetadata
 	{
 		
@@ -3439,8 +3280,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CompletionService.ImportSuggestionDenyListEntries method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportSuggestionDenyListEntriesRequest
 	{
 		
@@ -3460,8 +3300,7 @@ namespace MyNS
 	/// <summary>
 	/// The inline source for SuggestionDenyListEntry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportSuggestionDenyListEntriesRequestInlineSource
 	{
 		
@@ -3475,8 +3314,7 @@ namespace MyNS
 	/// <summary>
 	/// Suggestion deny list entry identifying the phrase to block from suggestions and the applied operation for the phrase.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSuggestionDenyListEntry
 	{
 		
@@ -3493,27 +3331,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDiscoveryengineV1betaSuggestionDenyListEntryMatchOperator> MatchOperator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1betaSuggestionDenyListEntryMatchOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH_OPERATOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH_OPERATOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT_MATCH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 2,
 	}
 	
 	/// <summary>
 	/// Response message for CompletionService.ImportSuggestionDenyListEntries method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportSuggestionDenyListEntriesResponse
 	{
 		
@@ -3539,8 +3374,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Import operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportUserEventsMetadata
 	{
 		
@@ -3572,8 +3406,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ImportUserEvents request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportUserEventsRequest
 	{
 		
@@ -3605,8 +3438,7 @@ namespace MyNS
 	/// <summary>
 	/// The inline source for the input config for ImportUserEvents method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportUserEventsRequestInlineSource
 	{
 		
@@ -3620,8 +3452,7 @@ namespace MyNS
 	/// <summary>
 	/// UserEvent captures all metadata information Discovery Engine API needs to know about how end users interact with customers' website.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaUserEvent
 	{
 		
@@ -3737,8 +3568,7 @@ namespace MyNS
 	/// <summary>
 	/// Media-specific user event information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaMediaInfo
 	{
 		
@@ -3758,8 +3588,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed page information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaPageInfo
 	{
 		
@@ -3791,8 +3620,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed panel information associated with a user event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaPanelInfo
 	{
 		
@@ -3824,8 +3652,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed search information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchInfo
 	{
 		
@@ -3851,8 +3678,7 @@ namespace MyNS
 	/// <summary>
 	/// A transaction represents the entire purchase transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaTransactionInfo
 	{
 		
@@ -3896,8 +3722,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of an end user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaUserInfo
 	{
 		
@@ -3917,8 +3742,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportUserEventsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaImportUserEventsResponse
 	{
 		
@@ -3950,8 +3774,7 @@ namespace MyNS
 	/// <summary>
 	/// A floating point interval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaInterval
 	{
 		
@@ -3983,8 +3806,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListConversations method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaListConversationsResponse
 	{
 		
@@ -4004,8 +3826,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for DocumentService.ListDocuments method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaListDocumentsResponse
 	{
 		
@@ -4025,8 +3846,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SchemaService.ListSchemas method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaListSchemasResponse
 	{
 		
@@ -4046,8 +3866,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the structure and layout of a type of document data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSchema
 	{
 		
@@ -4073,8 +3892,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeDocuments operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaPurgeDocumentsMetadata
 	{
 		
@@ -4106,8 +3924,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for DocumentService.PurgeDocuments method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaPurgeDocumentsRequest
 	{
 		
@@ -4127,8 +3944,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for DocumentService.PurgeDocuments method. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaPurgeDocumentsResponse
 	{
 		
@@ -4148,8 +3964,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeSuggestionDenyListEntries operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaPurgeSuggestionDenyListEntriesMetadata
 	{
 		
@@ -4169,8 +3984,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CompletionService.PurgeSuggestionDenyListEntries method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaPurgeSuggestionDenyListEntriesRequest
 	{
 	}
@@ -4178,8 +3992,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CompletionService.PurgeSuggestionDenyListEntries method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaPurgeSuggestionDenyListEntriesResponse
 	{
 		
@@ -4199,8 +4012,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for Recommend method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaRecommendRequest
 	{
 		
@@ -4244,8 +4056,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for Recommend method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaRecommendResponse
 	{
 		
@@ -4277,8 +4088,7 @@ namespace MyNS
 	/// <summary>
 	/// RecommendationResult represents a generic recommendation result with associated metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaRecommendResponseRecommendationResult
 	{
 		
@@ -4304,8 +4114,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for SearchService.Search method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequest
 	{
 		
@@ -4439,8 +4248,7 @@ namespace MyNS
 	/// <summary>
 	/// Boost specification to boost certain documents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestBoostSpec
 	{
 		
@@ -4454,8 +4262,7 @@ namespace MyNS
 	/// <summary>
 	/// Boost applies to documents which match a condition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestBoostSpecConditionBoostSpec
 	{
 		
@@ -4475,8 +4282,7 @@ namespace MyNS
 	/// <summary>
 	/// A specification for configuring the behavior of content search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpec
 	{
 		
@@ -4502,8 +4308,7 @@ namespace MyNS
 	/// <summary>
 	/// A specification for configuring the extractive content in a search response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpec
 	{
 		
@@ -4535,8 +4340,7 @@ namespace MyNS
 	/// <summary>
 	/// A specification for configuring snippets in a search response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSnippetSpec
 	{
 		
@@ -4562,8 +4366,7 @@ namespace MyNS
 	/// <summary>
 	/// The specification that uses customized query embedding vector to do semantic document retrieval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestEmbeddingSpec
 	{
 		
@@ -4577,8 +4380,7 @@ namespace MyNS
 	/// <summary>
 	/// Embedding vector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestEmbeddingSpecEmbeddingVector
 	{
 		
@@ -4598,8 +4400,7 @@ namespace MyNS
 	/// <summary>
 	/// A facet specification to perform faceted search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestFacetSpec
 	{
 		
@@ -4631,8 +4432,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies how a facet is computed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestFacetSpecFacetKey
 	{
 		
@@ -4682,8 +4482,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the image query input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestImageQuery
 	{
 		
@@ -4697,8 +4496,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification to determine under which conditions query expansion should occur.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestQueryExpansionSpec
 	{
 		
@@ -4715,27 +4513,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> PinUnexpandedResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1betaSearchRequestQueryExpansionSpecCondition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONDITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONDITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 2,
 	}
 	
 	/// <summary>
 	/// The specification for query spell correction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchRequestSpellCorrectionSpec
 	{
 		
@@ -4746,27 +4541,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDiscoveryengineV1betaSearchRequestSpellCorrectionSpecMode> Mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDiscoveryengineV1betaSearchRequestSpellCorrectionSpecMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUGGESTION_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUGGESTION_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 2,
 	}
 	
 	/// <summary>
 	/// Response message for SearchService.Search method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponse
 	{
 		
@@ -4843,8 +4635,7 @@ namespace MyNS
 	/// <summary>
 	/// A facet result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseFacet
 	{
 		
@@ -4870,8 +4661,7 @@ namespace MyNS
 	/// <summary>
 	/// A facet value which contains value names and their count.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseFacetFacetValue
 	{
 		
@@ -4897,8 +4687,7 @@ namespace MyNS
 	/// <summary>
 	/// Debug information specifically related to forward geocoding issues arising from Geolocation Search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseGeoSearchDebugInfo
 	{
 		
@@ -4918,8 +4707,7 @@ namespace MyNS
 	/// <summary>
 	/// Guided search result. The guided search helps user to refine the search results and narrow down to the real needs from a broaded search results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseGuidedSearchResult
 	{
 		
@@ -4939,8 +4727,7 @@ namespace MyNS
 	/// <summary>
 	/// Useful attribute for search result refinements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseGuidedSearchResultRefinementAttribute
 	{
 		
@@ -4960,8 +4747,7 @@ namespace MyNS
 	/// <summary>
 	/// Information describing query expansion including whether expansion has occurred.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaSearchResponseQueryExpansionInfo
 	{
 		
@@ -4981,8 +4767,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for UpdateSchema LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDiscoveryengineV1betaUpdateSchemaMetadata
 	{
 		
@@ -5002,8 +4787,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -5023,8 +4807,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -5062,8 +4845,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The system generated response showing the DNS aliases that Amazon FSx is attempting to associate with the file system. Use the API operation to monitor the status of the aliases Amazon FSx is associating with the file system. It can take up to 2.5 minutes for the alias status to change from <code>CREATING</code> to <code>AVAILABLE</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateFileSystemAliasesResponse
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// A DNS alias that is associated with the file system. You can use a DNS alias to access a file system using user-defined DNS names, in addition to the default DNS name that Amazon FSx assigns to the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">DNS aliases</a> in the <i>FSx for Windows File Server User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alias
 	{
 		
@@ -44,33 +42,30 @@ namespace MyNS
 		public AliasLifecycle Lifecycle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AliasLifecycle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 4,
 	}
 	
 	/// <summary>
 	/// The request object specifying one or more DNS alias names to associate with an Amazon FSx for Windows File Server file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateFileSystemAliasesRequest
 	{
 		
@@ -101,26 +96,22 @@ namespace MyNS
 		public string[] Aliases { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileSystemNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelDataRepositoryTaskResponse
 	{
 		
@@ -131,36 +122,33 @@ namespace MyNS
 		public string TaskId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataRepositoryTaskLifecycle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELING = 5,
 	}
 	
 	/// <summary>
 	/// Cancels a data repository task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelDataRepositoryTaskRequest
 	{
 		
@@ -172,26 +160,22 @@ namespace MyNS
 		public string TaskId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedOperation
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryTaskNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryTaskEnded
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyBackupResponse
 	{
 		
@@ -205,8 +189,7 @@ namespace MyNS
 	/// <summary>
 	/// A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Backup
 	{
 		
@@ -309,39 +292,36 @@ namespace MyNS
 	/// <summary>
 	/// <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new user-initiated backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is backing up the file system.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li> <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BackupLifecycle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFERRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFERRING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPYING = 6,
 	}
 	
 	/// <summary>
 	/// If backup creation fails, this structure contains the details of that failure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackupFailureDetails
 	{
 		
@@ -352,27 +332,24 @@ namespace MyNS
 	/// <summary>
 	/// The type of the backup.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BackupType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMATIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMATIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_INITIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_INITIATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_BACKUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_BACKUP = 2,
 	}
 	
 	/// <summary>
 	/// Specifies a key-value pair for a resource tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -394,8 +371,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of a specific Amazon FSx file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileSystem
 	{
 		
@@ -472,61 +448,56 @@ namespace MyNS
 	/// <summary>
 	/// The type of file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileSystemType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LUSTRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LUSTRE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONTAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONTAP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPENZFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPENZFS = 3,
 	}
 	
 	/// <summary>
 	/// The lifecycle status of the file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileSystemLifecycle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISCONFIGURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISCONFIGURED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISCONFIGURED_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISCONFIGURED_UNAVAILABLE = 6,
 	}
 	
 	/// <summary>
 	/// A structure providing details of any failures that occurred.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileSystemFailureDetails
 	{
 		
@@ -537,24 +508,21 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the file system's storage type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StorageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HDD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HDD = 1,
 	}
 	
 	/// <summary>
 	/// The configuration for this Microsoft Windows file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WindowsFileSystemConfiguration
 	{
 		
@@ -612,8 +580,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelfManagedActiveDirectoryAttributes
 	{
 		
@@ -633,43 +600,38 @@ namespace MyNS
 		public string[] DnsIps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WindowsDeploymentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTI_AZ_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTI_AZ_1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_AZ_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_AZ_1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_AZ_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_AZ_2 = 2,
 	}
 	
 	/// <summary>
 	/// An enumeration specifying the currently ongoing maintenance operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileSystemMaintenanceOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATCHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATCHING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKING_UP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKING_UP = 1,
 	}
 	
 	/// <summary>
 	/// The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/file-access-auditing.html"> File access auditing</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WindowsAuditLogConfiguration
 	{
 		
@@ -691,30 +653,27 @@ namespace MyNS
 		public string AuditLogDestination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WindowsAccessAuditLogLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILURE_ONLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS_AND_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS_AND_FAILURE = 3,
 	}
 	
 	/// <summary>
 	/// The configuration for the Amazon FSx for Lustre file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LustreFileSystemConfiguration
 	{
 		
@@ -776,8 +735,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p> <p>This data type is not supported on file systems with a data repository association. For file systems with a data repository association, see .</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryConfiguration
 	{
 		
@@ -803,55 +761,50 @@ namespace MyNS
 		public DataRepositoryFailureDetails FailureDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataRepositoryLifecycle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISCONFIGURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISCONFIGURED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoImportPolicyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW_CHANGED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW_CHANGED_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW_CHANGED_DELETED = 3,
 	}
 	
 	/// <summary>
 	/// Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryFailureDetails
 	{
 		
@@ -866,56 +819,49 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LustreDeploymentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCRATCH_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCRATCH_1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCRATCH_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCRATCH_2 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSISTENT_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSISTENT_1 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSISTENT_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSISTENT_2 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DriveCacheType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataCompressionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LZ4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LZ4 = 1,
 	}
 	
 	/// <summary>
 	/// The configuration for Lustre logging used to write the enabled logging events for your Amazon FSx for Lustre file system or Amazon File Cache resource to Amazon CloudWatch Logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LustreLogConfiguration
 	{
 		
@@ -930,30 +876,27 @@ namespace MyNS
 		public string Destination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LustreAccessAuditLogLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARN_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARN_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_ONLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARN_ERROR = 3,
 	}
 	
 	/// <summary>
 	/// <p>The configuration for Lustre root squash used to restrict root-level access from clients that try to access your FSx for Lustre file system as root. Use the <code>RootSquash</code> parameter to enable root squash. To learn more about Lustre root squash, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/root-squash.html">Lustre root squash</a>.</p> <p>You can also use the <code>NoSquashNids</code> parameter to provide an array of clients who are not affected by the root squash setting. These clients will access the file system as root, with unrestricted privileges.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LustreRootSquashConfiguration
 	{
 		
@@ -967,8 +910,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a specific Amazon FSx administrative action for the current Windows, Lustre, or OpenZFS file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdministrativeAction
 	{
 		
@@ -1009,64 +951,59 @@ namespace MyNS
 		public Snapshot TargetSnapshotValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdministrativeActionAdministrativeActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_SYSTEM_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_SYSTEM_UPDATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STORAGE_OPTIMIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STORAGE_OPTIMIZATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_SYSTEM_ALIAS_ASSOCIATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_SYSTEM_ALIAS_ASSOCIATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_SYSTEM_ALIAS_DISASSOCIATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_SYSTEM_ALIAS_DISASSOCIATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOLUME_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOLUME_UPDATE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNAPSHOT_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNAPSHOT_UPDATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_NFS_V3_LOCKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_NFS_V3_LOCKS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOLUME_RESTORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOLUME_RESTORE = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED_OPTIMIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED_OPTIMIZING = 4,
 	}
 	
 	/// <summary>
 	/// Provides information about a failed administrative action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdministrativeActionFailureDetails
 	{
 		
@@ -1077,8 +1014,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Volume
 	{
 		
@@ -1150,39 +1086,36 @@ namespace MyNS
 		public OpenZFSVolumeConfiguration OpenZFSConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VolumeLifecycle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISCONFIGURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISCONFIGURED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 6,
 	}
 	
 	/// <summary>
 	/// The configuration of an Amazon FSx for NetApp ONTAP volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OntapVolumeConfiguration
 	{
 		
@@ -1226,43 +1159,38 @@ namespace MyNS
 		public SnaplockConfiguration SnaplockConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FlexCacheEndpointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORIGIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORIGIN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SecurityStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIX = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NTFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NTFS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIXED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIXED = 2,
 	}
 	
 	/// <summary>
 	/// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p> <p>Valid tiering policies are the following:</p> <ul> <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li> </ul> <ul> <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li> </ul> <ul> <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li> </ul> <ul> <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TieringPolicy
 	{
 		
@@ -1273,46 +1201,41 @@ namespace MyNS
 		public TieringPolicyName Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TieringPolicyName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNAPSHOT_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNAPSHOT_ONLY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OntapVolumeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LS = 2,
 	}
 	
 	/// <summary>
 	/// Specifies the SnapLock configuration for an FSx for ONTAP SnapLock volume. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnaplockConfiguration
 	{
 		
@@ -1338,8 +1261,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Sets the autocommit period of files in an FSx for ONTAP SnapLock volume, which determines how long the files must remain unmodified before they're automatically transitioned to the write once, read many (WORM) state. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/worm-state.html#worm-state-autocommit">Autocommit</a>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutocommitPeriod
 	{
 		
@@ -1354,52 +1276,47 @@ namespace MyNS
 		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutocommitPeriodType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINUTES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOURS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAYS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEARS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEARS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PrivilegedDelete
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMANENTLY_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMANENTLY_DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// The configuration to set the retention period of an FSx for ONTAP SnapLock volume. The retention period includes default, maximum, and minimum settings. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-retention.html">Working with the retention period in SnapLock</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnaplockRetentionPeriod
 	{
 		
@@ -1428,8 +1345,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the retention period of an FSx for ONTAP SnapLock volume. After it is set, it can't be changed. Files can't be deleted or modified during the retention period. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-retention.html">Working with the retention period in SnapLock</a>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetentionPeriod
 	{
 		
@@ -1444,68 +1360,61 @@ namespace MyNS
 		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RetentionPeriodType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECONDS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINUTES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOURS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAYS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEARS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEARS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFINITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFINITE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnaplockType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTERPRISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTERPRISE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VolumeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONTAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONTAP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPENZFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPENZFS = 1,
 	}
 	
 	/// <summary>
 	/// Describes why a resource lifecycle state changed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LifecycleTransitionReason
 	{
 		
@@ -1523,8 +1432,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of an Amazon FSx for OpenZFS volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenZFSVolumeConfiguration
 	{
 		
@@ -1571,27 +1479,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DeleteClonedVolumes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OpenZFSDataCompressionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZSTD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZSTD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LZ4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LZ4 = 2,
 	}
 	
 	/// <summary>
 	/// The snapshot configuration to use when creating an OpenZFS volume from a snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenZFSOriginSnapshotConfiguration
 	{
 		
@@ -1611,24 +1516,21 @@ namespace MyNS
 		public OpenZFSCopyStrategy CopyStrategy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OpenZFSCopyStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_COPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_COPY = 1,
 	}
 	
 	/// <summary>
 	/// The Network File System (NFS) configurations for mounting an Amazon FSx for OpenZFS file system. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenZFSNfsExport
 	{
 		
@@ -1643,8 +1545,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies who can mount an OpenZFS file system and the options available while mounting the file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenZFSClientConfiguration
 	{
 		
@@ -1666,8 +1567,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for how much storage a user or group can use on the volume. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenZFSUserOrGroupQuota
 	{
 		
@@ -1693,24 +1593,21 @@ namespace MyNS
 		public int StorageCapacityQuotaGiB { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OpenZFSQuotaType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GROUP = 1,
 	}
 	
 	/// <summary>
 	/// A snapshot of an Amazon FSx for OpenZFS volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Snapshot
 	{
 		
@@ -1764,30 +1661,27 @@ namespace MyNS
 		public AdministrativeAction[] AdministrativeActions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnapshotLifecycle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 3,
 	}
 	
 	/// <summary>
 	/// Configuration for the FSx for NetApp ONTAP file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OntapFileSystemConfiguration
 	{
 		
@@ -1864,24 +1758,21 @@ namespace MyNS
 		public string FsxAdminPassword { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OntapDeploymentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTI_AZ_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTI_AZ_1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_AZ_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_AZ_1 = 1,
 	}
 	
 	/// <summary>
 	/// An Amazon FSx for NetApp ONTAP file system has the following endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileSystemEndpoints
 	{
 		
@@ -1895,8 +1786,7 @@ namespace MyNS
 	/// <summary>
 	/// An Amazon FSx for NetApp ONTAP file system has two endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. They are the <code>Management</code> and <code>Intercluster</code> endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileSystemEndpoint
 	{
 		
@@ -1919,8 +1809,7 @@ namespace MyNS
 	/// <summary>
 	/// The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiskIopsConfiguration
 	{
 		
@@ -1931,24 +1820,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> Iops { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DiskIopsConfigurationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMATIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMATIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_PROVISIONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_PROVISIONED = 1,
 	}
 	
 	/// <summary>
 	/// The configuration for the Amazon FSx for OpenZFS file system. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenZFSFileSystemConfiguration
 	{
 		
@@ -2007,24 +1893,21 @@ namespace MyNS
 		public string RootVolumeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OpenZFSDeploymentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_AZ_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_AZ_1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_AZ_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_AZ_2 = 1,
 	}
 	
 	/// <summary>
 	/// The Microsoft Active Directory attributes of the Amazon FSx for Windows File Server file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActiveDirectoryBackupAttributes
 	{
 		
@@ -2047,21 +1930,18 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_SYSTEM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOLUME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOLUME = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyBackupRequest
 	{
 		
@@ -2113,50 +1993,42 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackupNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceLimitExceeded
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncompatibleParameterError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSourceKmsKey
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDestinationKmsKey
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRegion
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceBackupUnavailable
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncompatibleRegionForMultiAZ
 	{
 	}
@@ -2164,8 +2036,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the <code>CreateBackup</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackupResponse
 	{
 		
@@ -2176,8 +2047,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for the <code>CreateBackup</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackupRequest
 	{
 		
@@ -2194,20 +2064,17 @@ namespace MyNS
 		public string VolumeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackupInProgress
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataRepositoryAssociationResponse
 	{
 		
@@ -2218,8 +2085,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The configuration of a data repository association that links an Amazon FSx for Lustre file system to an Amazon S3 bucket or an Amazon File Cache resource to an Amazon S3 bucket or an NFS file system. The data repository association configuration object is returned in the response of the following operations:</p> <ul> <li> <p> <code>CreateDataRepositoryAssociation</code> </p> </li> <li> <p> <code>UpdateDataRepositoryAssociation</code> </p> </li> <li> <p> <code>DescribeDataRepositoryAssociations</code> </p> </li> </ul> <p>Data repository associations are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code> deployment type.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryAssociation
 	{
 		
@@ -2306,8 +2172,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association. The configuration consists of an <code>AutoImportPolicy</code> that defines which file events on the data repository are automatically imported to the file system and an <code>AutoExportPolicy</code> that defines which file events on the file system are automatically exported to the data repository. File events are when files or directories are added, changed, or deleted on the file system or the data repository.</p> <note> <p>Data repository associations on Amazon File Cache don't use <code>S3DataRepositoryConfiguration</code> because they don't support automatic import or automatic export.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3DataRepositoryConfiguration
 	{
 		
@@ -2321,8 +2186,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes the data repository association's automatic import policy. The AutoImportPolicy defines how Amazon FSx keeps your file metadata and directory listings up to date by importing changes to your Amazon FSx for Lustre file system as you modify objects in a linked S3 bucket.</p> <p>The <code>AutoImportPolicy</code> is only supported on Amazon FSx for Lustre file systems with a data repository association.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoImportPolicy
 	{
 		
@@ -2330,27 +2194,24 @@ namespace MyNS
 		public EventType[] Events { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 2,
 	}
 	
 	/// <summary>
 	/// <p>Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the types of updated objects on the file system that will be automatically exported to the data repository. As you create, modify, or delete files, Amazon FSx for Lustre automatically exports the defined changes asynchronously once your application finishes modifying the file.</p> <p>The <code>AutoExportPolicy</code> is only supported on Amazon FSx for Lustre file systems with a data repository association.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoExportPolicy
 	{
 		
@@ -2361,8 +2222,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NFSDataRepositoryConfiguration
 	{
 		
@@ -2380,18 +2240,15 @@ namespace MyNS
 		public AutoExportPolicy AutoExportPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NfsVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NFS3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NFS3 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataRepositoryAssociationRequest
 	{
 		
@@ -2451,8 +2308,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataRepositoryTaskResponse
 	{
 		
@@ -2463,8 +2319,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of the data repository task. You use data repository tasks to perform bulk transfer operations between an Amazon FSx for Lustre file system and a linked data repository. An Amazon File Cache resource uses a task to automatically release files from the cache.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryTask
 	{
 		
@@ -2550,30 +2405,27 @@ namespace MyNS
 		public string FileCacheId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataRepositoryTaskType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPORT_TO_REPOSITORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPORT_TO_REPOSITORY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_METADATA_FROM_REPOSITORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_METADATA_FROM_REPOSITORY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_DATA_FROM_FILESYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_DATA_FROM_FILESYSTEM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_RELEASE_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_RELEASE_DATA = 3,
 	}
 	
 	/// <summary>
 	/// Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryTaskFailureDetails
 	{
 		
@@ -2591,8 +2443,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryTaskStatus
 	{
 		
@@ -2615,8 +2466,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompletionReport
 	{
 		
@@ -2637,28 +2487,23 @@ namespace MyNS
 		public ReportScope Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORT_CSV_20191124")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORT_CSV_20191124 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_FILES_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_FILES_ONLY = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataRepositoryTaskRequest
 	{
 		
@@ -2719,14 +2564,12 @@ namespace MyNS
 		public System.Nullable<System.Int32> CapacityToRelease { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryTaskExecuting
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileCacheResponse
 	{
 		
@@ -2737,8 +2580,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the Amazon File Cache resource being created in the <code>CreateFileCache</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileCacheCreating
 	{
 		
@@ -2844,43 +2686,38 @@ namespace MyNS
 		public string[] DataRepositoryAssociationIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileCacheType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LUSTRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LUSTRE = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileCacheLifecycle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 	}
 	
 	/// <summary>
 	/// A structure providing details of any failures that occurred.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileCacheFailureDetails
 	{
 		
@@ -2891,8 +2728,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for the Amazon File Cache resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileCacheLustreConfiguration
 	{
 		
@@ -2924,21 +2760,18 @@ namespace MyNS
 		public LustreLogConfiguration LogConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileCacheLustreDeploymentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_1 = 0,
 	}
 	
 	/// <summary>
 	/// The configuration for a Lustre MDT (Metadata Target) storage volume. The metadata on Amazon File Cache is managed by a Lustre Metadata Server (MDS) while the actual metadata is persisted on an MDT.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileCacheLustreMetadataConfiguration
 	{
 		
@@ -2950,8 +2783,7 @@ namespace MyNS
 		public int StorageCapacity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileCacheRequest
 	{
 		
@@ -3018,8 +2850,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon File Cache configuration for the cache that you are creating.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileCacheLustreConfiguration
 	{
 		
@@ -3060,8 +2891,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The configuration for a data repository association (DRA) to be created during the Amazon File Cache resource creation. The DRA links the cache to either an Amazon S3 bucket or prefix, or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p> <p>The DRA does not support automatic import or automatic export.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileCacheDataRepositoryAssociation
 	{
 		
@@ -3089,8 +2919,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for an NFS data repository association (DRA) created during the creation of the Amazon File Cache resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileCacheNFSConfiguration
 	{
 		
@@ -3105,20 +2934,17 @@ namespace MyNS
 		public string[] DnsIps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNetworkSettings
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidPerUnitStorageThroughput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingFileCacheConfiguration
 	{
 	}
@@ -3126,8 +2952,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object returned after the file system is created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileSystemResponse
 	{
 		
@@ -3138,8 +2963,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object used to create a new Amazon FSx file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileSystemRequest
 	{
 		
@@ -3213,8 +3037,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileSystemWindowsConfiguration
 	{
 		
@@ -3262,8 +3085,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an FSx for ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP SVMs</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelfManagedActiveDirectoryConfiguration
 	{
 		
@@ -3305,8 +3127,7 @@ namespace MyNS
 	/// <summary>
 	/// The Windows file access auditing configuration used when creating or updating an Amazon FSx for Windows File Server file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WindowsAuditLogCreateConfiguration
 	{
 		
@@ -3331,8 +3152,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The Lustre configuration for the file system being created.</p> <note> <p>The following parameters are not supported for file systems with a data repository association created with .</p> <ul> <li> <p> <code>AutoImportPolicy</code> </p> </li> <li> <p> <code>ExportPath</code> </p> </li> <li> <p> <code>ImportedChunkSize</code> </p> </li> <li> <p> <code>ImportPath</code> </p> </li> </ul> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileSystemLustreConfiguration
 	{
 		
@@ -3391,8 +3211,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The Lustre logging configuration used when creating or updating an Amazon FSx for Lustre file system. An Amazon File Cache is created with Lustre logging enabled by default, with a setting of <code>WARN_ERROR</code> for the logging events. which can't be changed.</p> <p>Lustre logging writes the enabled logging events for your file system or cache to Amazon CloudWatch Logs.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LustreLogCreateConfiguration
 	{
 		
@@ -3410,8 +3229,7 @@ namespace MyNS
 	/// <summary>
 	/// The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileSystemOntapConfiguration
 	{
 		
@@ -3481,8 +3299,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon FSx for OpenZFS configuration properties for the file system that you are creating.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileSystemOpenZFSConfiguration
 	{
 		
@@ -3552,8 +3369,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of an Amazon FSx for OpenZFS root volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenZFSCreateRootVolumeConfiguration
 	{
 		
@@ -3576,26 +3392,22 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ReadOnly { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActiveDirectoryError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidImportPath
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidExportPath
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingFileSystemConfiguration
 	{
 	}
@@ -3603,8 +3415,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the <code>CreateFileSystemFromBackup</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileSystemFromBackupResponse
 	{
 		
@@ -3615,8 +3426,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for the <code>CreateFileSystemFromBackup</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFileSystemFromBackupRequest
 	{
 		
@@ -3684,8 +3494,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StorageCapacity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotResponse
 	{
 		
@@ -3693,8 +3502,7 @@ namespace MyNS
 		public Snapshot Snapshot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotRequest
 	{
 		
@@ -3735,8 +3543,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStorageVirtualMachineResponse
 	{
 		
@@ -3747,8 +3554,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageVirtualMachine
 	{
 		
@@ -3823,8 +3629,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the Microsoft Active Directory (AD) directory configuration to which the FSx for ONTAP storage virtual machine (SVM) is joined. Note that account credentials are not returned in the response payload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SvmActiveDirectoryConfiguration
 	{
 		
@@ -3841,8 +3646,7 @@ namespace MyNS
 	/// <summary>
 	/// An Amazon FSx for NetApp ONTAP storage virtual machine (SVM) has the following endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SvmEndpoints
 	{
 		
@@ -3862,8 +3666,7 @@ namespace MyNS
 	/// <summary>
 	/// An Amazon FSx for NetApp ONTAP storage virtual machine (SVM) has four endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SvmEndpoint
 	{
 		
@@ -3883,52 +3686,47 @@ namespace MyNS
 		public string[] IpAddresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StorageVirtualMachineLifecycle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISCONFIGURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISCONFIGURED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StorageVirtualMachineSubtype
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DP_DESTINATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DP_DESTINATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYNC_DESTINATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYNC_DESTINATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYNC_SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYNC_SOURCE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStorageVirtualMachineRequest
 	{
 		
@@ -3988,8 +3786,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration that Amazon FSx uses to join the ONTAP storage virtual machine (SVM) to your self-managed (including on-premises) Microsoft Active Directory (AD) directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSvmActiveDirectoryConfiguration
 	{
 		
@@ -4007,8 +3804,7 @@ namespace MyNS
 		public SelfManagedActiveDirectoryConfiguration SelfManagedActiveDirectoryConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVolumeResponse
 	{
 		
@@ -4016,8 +3812,7 @@ namespace MyNS
 		public Volume Volume { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVolumeRequest
 	{
 		
@@ -4067,8 +3862,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration of the ONTAP volume that you are creating.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOntapVolumeConfiguration
 	{
 		
@@ -4114,24 +3908,21 @@ namespace MyNS
 		public CreateSnaplockConfiguration SnaplockConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InputOntapVolumeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DP = 1,
 	}
 	
 	/// <summary>
 	/// Defines the SnapLock configuration when creating an FSx for ONTAP SnapLock volume. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnaplockConfiguration
 	{
 		
@@ -4161,8 +3952,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration of the Amazon FSx for OpenZFS volume that you are creating.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOpenZFSVolumeConfiguration
 	{
 		
@@ -4204,8 +3994,7 @@ namespace MyNS
 	/// <summary>
 	/// The snapshot configuration to use when creating an OpenZFS volume from a snapshot. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOpenZFSOriginSnapshotConfiguration
 	{
 		
@@ -4231,20 +4020,17 @@ namespace MyNS
 		public OpenZFSCopyStrategy CopyStrategy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingVolumeConfiguration
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageVirtualMachineNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVolumeFromBackupResponse
 	{
 		
@@ -4252,8 +4038,7 @@ namespace MyNS
 		public Volume Volume { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVolumeFromBackupRequest
 	{
 		
@@ -4307,8 +4092,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the <code>DeleteBackup</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackupResponse
 	{
 		
@@ -4322,8 +4106,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for the <code>DeleteBackup</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackupRequest
 	{
 		
@@ -4338,20 +4121,17 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackupRestoring
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackupBeingCopied
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDataRepositoryAssociationResponse
 	{
 		
@@ -4365,8 +4145,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DeleteDataInFileSystem { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDataRepositoryAssociationRequest
 	{
 		
@@ -4393,14 +4172,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DeleteDataInFileSystem { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryAssociationNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileCacheResponse
 	{
 		
@@ -4411,8 +4188,7 @@ namespace MyNS
 		public FileCacheLifecycle Lifecycle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileCacheRequest
 	{
 		
@@ -4436,8 +4212,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileCacheNotFound
 	{
 	}
@@ -4445,8 +4220,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the <code>DeleteFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileSystemResponse
 	{
 		
@@ -4475,8 +4249,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileSystemWindowsResponse
 	{
 		
@@ -4490,8 +4263,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileSystemLustreResponse
 	{
 		
@@ -4505,8 +4277,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the Amazon FSx for OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileSystemOpenZFSResponse
 	{
 		
@@ -4536,8 +4307,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for <code>DeleteFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileSystemRequest
 	{
 		
@@ -4570,8 +4340,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileSystemWindowsConfiguration
 	{
 		
@@ -4585,8 +4354,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileSystemLustreConfiguration
 	{
 		
@@ -4600,8 +4368,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration object for the Amazon FSx for OpenZFS file system used in the <code>DeleteFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileSystemOpenZFSConfiguration
 	{
 		
@@ -4615,18 +4382,15 @@ namespace MyNS
 		public DeleteFileSystemOpenZFSOption[] Options { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeleteFileSystemOpenZFSOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_CHILD_VOLUMES_AND_SNAPSHOTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_CHILD_VOLUMES_AND_SNAPSHOTS = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSnapshotResponse
 	{
 		
@@ -4637,8 +4401,7 @@ namespace MyNS
 		public SnapshotLifecycle Lifecycle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSnapshotRequest
 	{
 		
@@ -4662,14 +4425,12 @@ namespace MyNS
 		public string SnapshotId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStorageVirtualMachineResponse
 	{
 		
@@ -4680,8 +4441,7 @@ namespace MyNS
 		public StorageVirtualMachineLifecycle Lifecycle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStorageVirtualMachineRequest
 	{
 		
@@ -4705,8 +4465,7 @@ namespace MyNS
 		public string StorageVirtualMachineId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVolumeResponse
 	{
 		
@@ -4723,8 +4482,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the Amazon FSx for NetApp ONTAP volume being deleted in the <code>DeleteVolume</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVolumeOntapResponse
 	{
 		
@@ -4751,8 +4509,7 @@ namespace MyNS
 		public Tag[] FinalBackupTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVolumeRequest
 	{
 		
@@ -4785,8 +4542,7 @@ namespace MyNS
 	/// <summary>
 	/// Use to specify skipping a final backup, adding tags to a final backup, or bypassing the retention period of an FSx for ONTAP SnapLock Enterprise volume when deleting an FSx for ONTAP volume. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVolumeOntapConfiguration
 	{
 		
@@ -4810,8 +4566,7 @@ namespace MyNS
 	/// <summary>
 	/// A value that specifies whether to delete all child volumes and snapshots. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVolumeOpenZFSConfiguration
 	{
 		
@@ -4819,21 +4574,18 @@ namespace MyNS
 		public DeleteOpenZFSVolumeOption[] Options { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeleteOpenZFSVolumeOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_CHILD_VOLUMES_AND_SNAPSHOTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_CHILD_VOLUMES_AND_SNAPSHOTS = 0,
 	}
 	
 	/// <summary>
 	/// Response object for the <code>DescribeBackups</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBackupsResponse
 	{
 		
@@ -4847,8 +4599,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for the <code>DescribeBackups</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBackupsRequest
 	{
 		
@@ -4868,8 +4619,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter used to restrict the results of describe calls. You can use multiple filters to return results that meet all applied filter requirements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -4883,9 +4633,7 @@ namespace MyNS
 	/// <summary>
 	/// The name for a filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilterName
 	{
 		
@@ -4911,8 +4659,7 @@ namespace MyNS
 		fileMinuscacheMinustype = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataRepositoryAssociationsResponse
 	{
 		
@@ -4932,8 +4679,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataRepositoryAssociationsRequest
 	{
 		
@@ -4964,14 +4710,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDataRepositoryType
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataRepositoryTasksResponse
 	{
 		
@@ -4991,8 +4735,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataRepositoryTasksRequest
 	{
 		
@@ -5027,8 +4770,7 @@ namespace MyNS
 	/// <summary>
 	/// (Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRepositoryTaskFilter
 	{
 		
@@ -5039,9 +4781,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataRepositoryTaskFilterName
 	{
 		
@@ -5058,8 +4798,7 @@ namespace MyNS
 		fileMinuscacheMinusid = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFileCachesResponse
 	{
 		
@@ -5082,8 +4821,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of a specific Amazon File Cache resource, which is a response object from the <code>DescribeFileCaches</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileCache
 	{
 		
@@ -5176,8 +4914,7 @@ namespace MyNS
 		public string[] DataRepositoryAssociationIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFileCachesRequest
 	{
 		
@@ -5209,8 +4946,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for <code>DescribeFileSystemAliases</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFileSystemAliasesResponse
 	{
 		
@@ -5224,8 +4960,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for <code>DescribeFileSystemAliases</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFileSystemAliasesRequest
 	{
 		
@@ -5258,8 +4993,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for <code>DescribeFileSystems</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFileSystemsResponse
 	{
 		
@@ -5273,8 +5007,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for <code>DescribeFileSystems</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFileSystemsRequest
 	{
 		
@@ -5288,8 +5021,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSnapshotsResponse
 	{
 		
@@ -5309,8 +5041,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSnapshotsRequest
 	{
 		
@@ -5345,8 +5076,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter used to restrict the results of <code>DescribeSnapshots</code> calls. You can use multiple filters to return results that meet all applied filter requirements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotFilter
 	{
 		
@@ -5357,9 +5087,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnapshotFilterName
 	{
 		
@@ -5370,8 +5098,7 @@ namespace MyNS
 		volumeMinusid = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStorageVirtualMachinesResponse
 	{
 		
@@ -5391,8 +5118,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStorageVirtualMachinesRequest
 	{
 		
@@ -5427,8 +5153,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter used to restrict the results of describe calls for Amazon FSx for NetApp ONTAP storage virtual machines (SVMs). You can use multiple filters to return results that meet all applied filter requirements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageVirtualMachineFilter
 	{
 		
@@ -5439,9 +5164,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StorageVirtualMachineFilterName
 	{
 		
@@ -5449,8 +5172,7 @@ namespace MyNS
 		fileMinussystemMinusid = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVolumesResponse
 	{
 		
@@ -5470,8 +5192,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVolumesRequest
 	{
 		
@@ -5506,8 +5227,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter used to restrict the results of describe calls for Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volumes. You can use multiple filters to return results that meet all applied filter requirements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeFilter
 	{
 		
@@ -5518,9 +5238,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VolumeFilterName
 	{
 		
@@ -5534,8 +5252,7 @@ namespace MyNS
 	/// <summary>
 	/// The system generated response showing the DNS aliases that Amazon FSx is attempting to disassociate from the file system. Use the API operation to monitor the status of the aliases Amazon FSx is removing from the file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateFileSystemAliasesResponse
 	{
 		
@@ -5546,8 +5263,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object of DNS aliases to disassociate from an Amazon FSx for Windows File Server file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateFileSystemAliasesRequest
 	{
 		
@@ -5581,8 +5297,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for <code>ListTagsForResource</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -5596,8 +5311,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for <code>ListTagsForResource</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -5615,26 +5329,22 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotServiceResourceError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceDoesNotSupportTagging
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReleaseFileSystemNfsV3LocksResponse
 	{
 		
@@ -5645,8 +5355,7 @@ namespace MyNS
 		public FileSystem FileSystem { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReleaseFileSystemNfsV3LocksRequest
 	{
 		
@@ -5677,8 +5386,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreVolumeFromSnapshotResponse
 	{
 		
@@ -5692,8 +5400,7 @@ namespace MyNS
 		public AdministrativeAction[] AdministrativeActions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreVolumeFromSnapshotRequest
 	{
 		
@@ -5727,24 +5434,21 @@ namespace MyNS
 		public RestoreOpenZFSVolumeOption[] Options { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RestoreOpenZFSVolumeOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_INTERMEDIATE_SNAPSHOTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_INTERMEDIATE_SNAPSHOTS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_CLONED_VOLUMES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_CLONED_VOLUMES = 1,
 	}
 	
 	/// <summary>
 	/// The response object for the <code>TagResource</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
@@ -5752,8 +5456,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for the <code>TagResource</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -5775,8 +5478,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for <code>UntagResource</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
@@ -5784,8 +5486,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for <code>UntagResource</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -5804,8 +5505,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataRepositoryAssociationResponse
 	{
 		
@@ -5813,8 +5513,7 @@ namespace MyNS
 		public DataRepositoryAssociation Association { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataRepositoryAssociationRequest
 	{
 		
@@ -5844,8 +5543,7 @@ namespace MyNS
 		public S3DataRepositoryConfiguration S3 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileCacheResponse
 	{
 		
@@ -5853,8 +5551,7 @@ namespace MyNS
 		public FileCache FileCache { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileCacheRequest
 	{
 		
@@ -5884,8 +5581,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration update for an Amazon File Cache resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileCacheLustreConfiguration
 	{
 		
@@ -5905,8 +5601,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for the <code>UpdateFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileSystemResponse
 	{
 		
@@ -5917,8 +5612,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for the <code>UpdateFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileSystemRequest
 	{
 		
@@ -5957,8 +5651,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileSystemWindowsConfiguration
 	{
 		
@@ -5984,8 +5677,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelfManagedActiveDirectoryConfigurationUpdates
 	{
 		
@@ -6011,8 +5703,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileSystemLustreConfiguration
 	{
 		
@@ -6050,8 +5741,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration updates for an Amazon FSx for NetApp ONTAP file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileSystemOntapConfiguration
 	{
 		
@@ -6107,8 +5797,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration updates for an Amazon FSx for OpenZFS file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileSystemOpenZFSConfiguration
 	{
 		
@@ -6161,8 +5850,7 @@ namespace MyNS
 		public DiskIopsConfiguration DiskIopsConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSnapshotResponse
 	{
 		
@@ -6170,8 +5858,7 @@ namespace MyNS
 		public Snapshot Snapshot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSnapshotRequest
 	{
 		
@@ -6202,8 +5889,7 @@ namespace MyNS
 		public string SnapshotId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStorageVirtualMachineResponse
 	{
 		
@@ -6214,8 +5900,7 @@ namespace MyNS
 		public StorageVirtualMachine StorageVirtualMachine { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStorageVirtualMachineRequest
 	{
 		
@@ -6248,8 +5933,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies updates to an FSx for ONTAP storage virtual machine's (SVM) Microsoft Active Directory (AD) configuration. Note that account credentials are not returned in the response payload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSvmActiveDirectoryConfiguration
 	{
 		
@@ -6263,8 +5947,7 @@ namespace MyNS
 		public string NetBiosName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVolumeResponse
 	{
 		
@@ -6272,8 +5955,7 @@ namespace MyNS
 		public Volume Volume { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVolumeRequest
 	{
 		
@@ -6309,8 +5991,7 @@ namespace MyNS
 	/// <summary>
 	/// Used to specify changes to the ONTAP configuration for the volume you are updating.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateOntapVolumeConfiguration
 	{
 		
@@ -6342,8 +6023,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the SnapLock configuration for an existing FSx for ONTAP volume. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSnaplockConfiguration
 	{
 		
@@ -6366,8 +6046,7 @@ namespace MyNS
 	/// <summary>
 	/// Used to specify changes to the OpenZFS configuration for the volume that you are updating.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateOpenZFSVolumeConfiguration
 	{
 		
@@ -6396,50 +6075,46 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes the type of administrative action, as follows:</p> <ul> <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li> <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p> <ul> <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li> <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li> </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li> <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li> <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li> <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li> <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li> <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li> <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdministrativeActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_SYSTEM_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_SYSTEM_UPDATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STORAGE_OPTIMIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STORAGE_OPTIMIZATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_SYSTEM_ALIAS_ASSOCIATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_SYSTEM_ALIAS_ASSOCIATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_SYSTEM_ALIAS_DISASSOCIATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_SYSTEM_ALIAS_DISASSOCIATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOLUME_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOLUME_UPDATE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNAPSHOT_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNAPSHOT_UPDATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_NFS_V3_LOCKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_NFS_V3_LOCKS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOLUME_RESTORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOLUME_RESTORE = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StorageVirtualMachineRootVolumeSecurityStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIX = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NTFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NTFS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIXED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIXED = 2,
 	}
 	

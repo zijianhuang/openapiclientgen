@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// OIDC Address structure
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address
 	{
 		
@@ -44,8 +43,7 @@ namespace MyNS
 	/// <summary>
 	/// Client object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Client
 	{
 		
@@ -101,8 +99,7 @@ namespace MyNS
 	/// Error Response defined as in Section 5.2 of OAuth 2.0 [RFC6749].
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OAuth2Error
 	{
 		
@@ -121,8 +118,7 @@ namespace MyNS
 	/// HTTP Problem Detail
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProblemDetail
 	{
 		
@@ -161,8 +157,7 @@ namespace MyNS
 	/// <summary>
 	/// Session object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Session
 	{
 		
@@ -252,8 +247,7 @@ namespace MyNS
 	/// Successful token response
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Token
 	{
 		
@@ -304,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// OIDC UserInfo structure
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserInfo
 	{
 		

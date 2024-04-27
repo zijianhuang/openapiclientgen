@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a single file annotation request. A file may contain one or more images, which individually have their own responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnnotateFileResponse
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -80,8 +78,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired input location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputConfig
 	{
 		
@@ -107,8 +104,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the input will be read from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsSource
 	{
 		
@@ -122,8 +118,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an image annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnnotateImageResponse
 	{
 		
@@ -215,8 +210,7 @@ namespace MyNS
 	/// <summary>
 	/// If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageAnnotationContext
 	{
 		
@@ -236,8 +230,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of crop hints that are used to generate new crops when serving images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CropHintsAnnotation
 	{
 		
@@ -251,8 +244,7 @@ namespace MyNS
 	/// <summary>
 	/// Single crop hint that is used to generate a new crop when serving an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CropHint
 	{
 		
@@ -278,8 +270,7 @@ namespace MyNS
 	/// <summary>
 	/// A bounding polygon for the detected image annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BoundingPoly
 	{
 		
@@ -299,8 +290,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormalizedVertex
 	{
 		
@@ -320,8 +310,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Vertex
 	{
 		
@@ -341,8 +330,7 @@ namespace MyNS
 	/// <summary>
 	/// A face annotation object contains the results of face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FaceAnnotation
 	{
 		
@@ -437,36 +425,33 @@ namespace MyNS
 		public FaceAnnotationAngerLikelihood UnderExposedLikelihood { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FaceAnnotationAngerLikelihood
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERY_UNLIKELY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERY_UNLIKELY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLIKELY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLIKELY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSSIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSSIBLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIKELY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIKELY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERY_LIKELY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERY_LIKELY = 5,
 	}
 	
 	/// <summary>
 	/// A face-specific landmark (for example, a face feature).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Landmark
 	{
 		
@@ -486,8 +471,7 @@ namespace MyNS
 	/// <summary>
 	/// A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Position
 	{
 		
@@ -510,129 +494,126 @@ namespace MyNS
 		public System.Nullable<System.Single> Z { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LandmarkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_LANDMARK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_LANDMARK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_EYE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_EYE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_EYE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_EYE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_OF_LEFT_EYEBROW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_OF_LEFT_EYEBROW = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_OF_LEFT_EYEBROW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_OF_LEFT_EYEBROW = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_OF_RIGHT_EYEBROW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_OF_RIGHT_EYEBROW = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_OF_RIGHT_EYEBROW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_OF_RIGHT_EYEBROW = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIDPOINT_BETWEEN_EYES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIDPOINT_BETWEEN_EYES = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOSE_TIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOSE_TIP = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPPER_LIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPPER_LIP = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOWER_LIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOWER_LIP = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUTH_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUTH_LEFT = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUTH_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUTH_RIGHT = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUTH_CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUTH_CENTER = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOSE_BOTTOM_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOSE_BOTTOM_RIGHT = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOSE_BOTTOM_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOSE_BOTTOM_LEFT = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOSE_BOTTOM_CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOSE_BOTTOM_CENTER = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_EYE_TOP_BOUNDARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_EYE_TOP_BOUNDARY = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_EYE_RIGHT_CORNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_EYE_RIGHT_CORNER = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_EYE_BOTTOM_BOUNDARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_EYE_BOTTOM_BOUNDARY = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_EYE_LEFT_CORNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_EYE_LEFT_CORNER = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_EYE_TOP_BOUNDARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_EYE_TOP_BOUNDARY = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_EYE_RIGHT_CORNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_EYE_RIGHT_CORNER = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_EYE_BOTTOM_BOUNDARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_EYE_BOTTOM_BOUNDARY = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_EYE_LEFT_CORNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_EYE_LEFT_CORNER = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_EYEBROW_UPPER_MIDPOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_EYEBROW_UPPER_MIDPOINT = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_EYEBROW_UPPER_MIDPOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_EYEBROW_UPPER_MIDPOINT = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_EAR_TRAGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_EAR_TRAGION = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_EAR_TRAGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_EAR_TRAGION = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_EYE_PUPIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_EYE_PUPIL = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_EYE_PUPIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_EYE_PUPIL = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOREHEAD_GLABELLA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOREHEAD_GLABELLA = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHIN_GNATHION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHIN_GNATHION = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHIN_LEFT_GONION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHIN_LEFT_GONION = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHIN_RIGHT_GONION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHIN_RIGHT_GONION = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_CHEEK_CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_CHEEK_CENTER = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_CHEEK_CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_CHEEK_CENTER = 36,
 	}
 	
 	/// <summary>
 	/// TextAnnotation contains a structured representation of OCR extracted text. The hierarchy of an OCR extracted text structure is like this: TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol Each structural component, starting from Page, may further have their own properties. Properties describe detected languages, breaks etc.. Please refer to the TextAnnotation.TextProperty message definition below for more detail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextAnnotation
 	{
 		
@@ -652,8 +633,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected page from OCR.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Page
 	{
 		
@@ -691,8 +671,7 @@ namespace MyNS
 	/// <summary>
 	/// Logical element on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Block
 	{
 		
@@ -727,36 +706,33 @@ namespace MyNS
 		public TextProperty Property { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BlockBlockType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PICTURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PICTURE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RULER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RULER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BARCODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BARCODE = 5,
 	}
 	
 	/// <summary>
 	/// Structural unit of text representing a number of words in certain order.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Paragraph
 	{
 		
@@ -788,8 +764,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information detected on the structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextProperty
 	{
 		
@@ -809,8 +784,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected start or end of a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedBreak
 	{
 		
@@ -827,36 +801,33 @@ namespace MyNS
 		public System.Nullable<DetectedBreakType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DetectedBreakType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPACE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SURE_SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SURE_SPACE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EOL_SURE_SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EOL_SURE_SPACE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HYPHEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HYPHEN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_BREAK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_BREAK = 5,
 	}
 	
 	/// <summary>
 	/// Detected language for a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedLanguage
 	{
 		
@@ -876,8 +847,7 @@ namespace MyNS
 	/// <summary>
 	/// A word representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Word
 	{
 		
@@ -909,8 +879,7 @@ namespace MyNS
 	/// <summary>
 	/// A single symbol representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Symbol
 	{
 		
@@ -942,8 +911,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores image properties, such as dominant colors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageProperties
 	{
 		
@@ -957,8 +925,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of dominant colors and their corresponding scores.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DominantColorsAnnotation
 	{
 		
@@ -972,8 +939,7 @@ namespace MyNS
 	/// <summary>
 	/// Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColorInfo
 	{
 		
@@ -999,8 +965,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ...
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Color
 	{
 		
@@ -1032,8 +997,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected entity features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityAnnotation
 	{
 		
@@ -1095,8 +1059,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity location information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationInfo
 	{
 		
@@ -1110,8 +1073,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatLng
 	{
 		
@@ -1131,8 +1093,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Property` consists of a user-supplied name/value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Property
 	{
 		
@@ -1158,8 +1119,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected objects with bounding boxes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocalizedObjectAnnotation
 	{
 		
@@ -1197,8 +1157,7 @@ namespace MyNS
 	/// <summary>
 	/// Results for a product search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductSearchResults
 	{
 		
@@ -1224,8 +1183,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the products similar to a single product in a query image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupedResult
 	{
 		
@@ -1251,8 +1209,7 @@ namespace MyNS
 	/// <summary>
 	/// Prediction for what the object in the bounding box is.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectAnnotation
 	{
 		
@@ -1284,8 +1241,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Result
 	{
 		
@@ -1311,8 +1267,7 @@ namespace MyNS
 	/// <summary>
 	/// A Product contains ReferenceImages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Product
 	{
 		
@@ -1350,8 +1305,7 @@ namespace MyNS
 	/// <summary>
 	/// A product label represented as a key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyValue
 	{
 		
@@ -1371,8 +1325,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of features pertaining to the image, computed by computer vision methods over safe-search verticals (for example, adult, spoof, medical, violence).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SafeSearchAnnotation
 	{
 		
@@ -1410,8 +1363,7 @@ namespace MyNS
 	/// <summary>
 	/// Relevant information for the image from the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebDetection
 	{
 		
@@ -1455,8 +1407,7 @@ namespace MyNS
 	/// <summary>
 	/// Label to provide extra metadata for the web detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebLabel
 	{
 		
@@ -1476,8 +1427,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for online images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebImage
 	{
 		
@@ -1497,8 +1447,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for web pages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebPage
 	{
 		
@@ -1536,8 +1485,7 @@ namespace MyNS
 	/// <summary>
 	/// Entity deduced from similar images on the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebEntity
 	{
 		
@@ -1563,8 +1511,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for a single offline file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AsyncAnnotateFileResponse
 	{
 		
@@ -1578,8 +1525,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired output location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputConfig
 	{
 		
@@ -1599,8 +1545,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the output will be written to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsDestination
 	{
 		
@@ -1614,8 +1559,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an async batch file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AsyncBatchAnnotateFilesResponse
 	{
 		
@@ -1629,8 +1573,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an async batch image annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AsyncBatchAnnotateImagesResponse
 	{
 		
@@ -1644,8 +1587,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of file annotation responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAnnotateFilesResponse
 	{
 		
@@ -1659,8 +1601,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the batch operations such as the current state. This is included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchOperationMetadata
 	{
 		
@@ -1683,33 +1624,30 @@ namespace MyNS
 		public string SubmitTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchOperationMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESSFUL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 	}
 	
 	/// <summary>
 	/// Response to a single file annotation request. A file may contain one or more images, which individually have their own responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1AnnotateFileResponse
 	{
 		
@@ -1741,8 +1679,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired input location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1InputConfig
 	{
 		
@@ -1768,8 +1705,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the input will be read from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1GcsSource
 	{
 		
@@ -1783,8 +1719,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an image annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1AnnotateImageResponse
 	{
 		
@@ -1876,8 +1811,7 @@ namespace MyNS
 	/// <summary>
 	/// If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1ImageAnnotationContext
 	{
 		
@@ -1897,8 +1831,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of crop hints that are used to generate new crops when serving images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1CropHintsAnnotation
 	{
 		
@@ -1912,8 +1845,7 @@ namespace MyNS
 	/// <summary>
 	/// Single crop hint that is used to generate a new crop when serving an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1CropHint
 	{
 		
@@ -1939,8 +1871,7 @@ namespace MyNS
 	/// <summary>
 	/// A bounding polygon for the detected image annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1BoundingPoly
 	{
 		
@@ -1960,8 +1891,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1NormalizedVertex
 	{
 		
@@ -1981,8 +1911,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1Vertex
 	{
 		
@@ -2002,8 +1931,7 @@ namespace MyNS
 	/// <summary>
 	/// A face annotation object contains the results of face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1FaceAnnotation
 	{
 		
@@ -2101,8 +2029,7 @@ namespace MyNS
 	/// <summary>
 	/// A face-specific landmark (for example, a face feature).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1FaceAnnotationLandmark
 	{
 		
@@ -2122,8 +2049,7 @@ namespace MyNS
 	/// <summary>
 	/// A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1Position
 	{
 		
@@ -2149,8 +2075,7 @@ namespace MyNS
 	/// <summary>
 	/// TextAnnotation contains a structured representation of OCR extracted text. The hierarchy of an OCR extracted text structure is like this: TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol Each structural component, starting from Page, may further have their own properties. Properties describe detected languages, breaks etc.. Please refer to the TextAnnotation.TextProperty message definition below for more detail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1TextAnnotation
 	{
 		
@@ -2170,8 +2095,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected page from OCR.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1Page
 	{
 		
@@ -2209,8 +2133,7 @@ namespace MyNS
 	/// <summary>
 	/// Logical element on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1Block
 	{
 		
@@ -2248,8 +2171,7 @@ namespace MyNS
 	/// <summary>
 	/// Structural unit of text representing a number of words in certain order.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1Paragraph
 	{
 		
@@ -2281,8 +2203,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information detected on the structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1TextAnnotationTextProperty
 	{
 		
@@ -2302,8 +2223,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected start or end of a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak
 	{
 		
@@ -2323,8 +2243,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected language for a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage
 	{
 		
@@ -2344,8 +2263,7 @@ namespace MyNS
 	/// <summary>
 	/// A word representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1Word
 	{
 		
@@ -2377,8 +2295,7 @@ namespace MyNS
 	/// <summary>
 	/// A single symbol representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1Symbol
 	{
 		
@@ -2410,8 +2327,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores image properties, such as dominant colors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1ImageProperties
 	{
 		
@@ -2425,8 +2341,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of dominant colors and their corresponding scores.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1DominantColorsAnnotation
 	{
 		
@@ -2440,8 +2355,7 @@ namespace MyNS
 	/// <summary>
 	/// Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1ColorInfo
 	{
 		
@@ -2467,8 +2381,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected entity features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1EntityAnnotation
 	{
 		
@@ -2530,8 +2443,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity location information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1LocationInfo
 	{
 		
@@ -2545,8 +2457,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Property` consists of a user-supplied name/value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1Property
 	{
 		
@@ -2572,8 +2483,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected objects with bounding boxes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation
 	{
 		
@@ -2611,8 +2521,7 @@ namespace MyNS
 	/// <summary>
 	/// Results for a product search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1ProductSearchResults
 	{
 		
@@ -2638,8 +2547,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the products similar to a single product in a query image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult
 	{
 		
@@ -2665,8 +2573,7 @@ namespace MyNS
 	/// <summary>
 	/// Prediction for what the object in the bounding box is.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotation
 	{
 		
@@ -2698,8 +2605,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1ProductSearchResultsResult
 	{
 		
@@ -2725,8 +2631,7 @@ namespace MyNS
 	/// <summary>
 	/// A Product contains ReferenceImages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1Product
 	{
 		
@@ -2764,8 +2669,7 @@ namespace MyNS
 	/// <summary>
 	/// A product label represented as a key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1ProductKeyValue
 	{
 		
@@ -2785,8 +2689,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of features pertaining to the image, computed by computer vision methods over safe-search verticals (for example, adult, spoof, medical, violence).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1SafeSearchAnnotation
 	{
 		
@@ -2824,8 +2727,7 @@ namespace MyNS
 	/// <summary>
 	/// Relevant information for the image from the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1WebDetection
 	{
 		
@@ -2869,8 +2771,7 @@ namespace MyNS
 	/// <summary>
 	/// Label to provide extra metadata for the web detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1WebDetectionWebLabel
 	{
 		
@@ -2890,8 +2791,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for online images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1WebDetectionWebImage
 	{
 		
@@ -2911,8 +2811,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for web pages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1WebDetectionWebPage
 	{
 		
@@ -2950,8 +2849,7 @@ namespace MyNS
 	/// <summary>
 	/// Entity deduced from similar images on the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1WebDetectionWebEntity
 	{
 		
@@ -2977,8 +2875,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for a single offline file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1AsyncAnnotateFileResponse
 	{
 		
@@ -2992,8 +2889,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired output location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1OutputConfig
 	{
 		
@@ -3013,8 +2909,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the output will be written to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1GcsDestination
 	{
 		
@@ -3028,8 +2923,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an async batch file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1AsyncBatchAnnotateFilesResponse
 	{
 		
@@ -3043,8 +2937,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata for the BatchAnnotateImages operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p1beta1OperationMetadata
 	{
 		
@@ -3067,33 +2960,30 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudVisionV1p1beta1OperationMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 	}
 	
 	/// <summary>
 	/// A request to annotate one single file, e.g. a PDF, TIFF or GIF file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1AnnotateFileRequest
 	{
 		
@@ -3125,8 +3015,7 @@ namespace MyNS
 	/// <summary>
 	/// The type of Google Cloud Vision API detection to perform, and the maximum number of results to return for that type. Multiple `Feature` objects can be specified in the `features` list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Feature
 	{
 		
@@ -3149,57 +3038,54 @@ namespace MyNS
 		public System.Nullable<GoogleCloudVisionV1p2beta1FeatureType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudVisionV1p2beta1FeatureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FACE_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FACE_DETECTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LANDMARK_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LANDMARK_DETECTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGO_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGO_DETECTION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABEL_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABEL_DETECTION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_DETECTION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCUMENT_TEXT_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCUMENT_TEXT_DETECTION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAFE_SEARCH_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAFE_SEARCH_DETECTION = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_PROPERTIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_PROPERTIES = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CROP_HINTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CROP_HINTS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_DETECTION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT_SEARCH = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT_LOCALIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT_LOCALIZATION = 12,
 	}
 	
 	/// <summary>
 	/// Image context and/or feature-specific parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ImageContext
 	{
 		
@@ -3243,8 +3129,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for crop hints annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1CropHintsParams
 	{
 		
@@ -3258,8 +3143,7 @@ namespace MyNS
 	/// <summary>
 	/// Rectangle determined by min and max `LatLng` pairs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1LatLongRect
 	{
 		
@@ -3279,8 +3163,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a product search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ProductSearchParams
 	{
 		
@@ -3312,8 +3195,7 @@ namespace MyNS
 	/// <summary>
 	/// A bounding polygon for the detected image annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1BoundingPoly
 	{
 		
@@ -3333,8 +3215,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1NormalizedVertex
 	{
 		
@@ -3354,8 +3235,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Vertex
 	{
 		
@@ -3375,8 +3255,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for text detections. This is used to control TEXT_DETECTION and DOCUMENT_TEXT_DETECTION features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1TextDetectionParams
 	{
 		
@@ -3396,8 +3275,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for web detection request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1WebDetectionParams
 	{
 		
@@ -3411,8 +3289,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired input location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1InputConfig
 	{
 		
@@ -3438,8 +3315,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the input will be read from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1GcsSource
 	{
 		
@@ -3453,8 +3329,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a single file annotation request. A file may contain one or more images, which individually have their own responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1AnnotateFileResponse
 	{
 		
@@ -3486,8 +3361,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an image annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1AnnotateImageResponse
 	{
 		
@@ -3579,8 +3453,7 @@ namespace MyNS
 	/// <summary>
 	/// If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ImageAnnotationContext
 	{
 		
@@ -3600,8 +3473,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of crop hints that are used to generate new crops when serving images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1CropHintsAnnotation
 	{
 		
@@ -3615,8 +3487,7 @@ namespace MyNS
 	/// <summary>
 	/// Single crop hint that is used to generate a new crop when serving an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1CropHint
 	{
 		
@@ -3642,8 +3513,7 @@ namespace MyNS
 	/// <summary>
 	/// A face annotation object contains the results of face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1FaceAnnotation
 	{
 		
@@ -3741,8 +3611,7 @@ namespace MyNS
 	/// <summary>
 	/// A face-specific landmark (for example, a face feature).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1FaceAnnotationLandmark
 	{
 		
@@ -3762,8 +3631,7 @@ namespace MyNS
 	/// <summary>
 	/// A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Position
 	{
 		
@@ -3789,8 +3657,7 @@ namespace MyNS
 	/// <summary>
 	/// TextAnnotation contains a structured representation of OCR extracted text. The hierarchy of an OCR extracted text structure is like this: TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol Each structural component, starting from Page, may further have their own properties. Properties describe detected languages, breaks etc.. Please refer to the TextAnnotation.TextProperty message definition below for more detail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1TextAnnotation
 	{
 		
@@ -3810,8 +3677,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected page from OCR.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Page
 	{
 		
@@ -3849,8 +3715,7 @@ namespace MyNS
 	/// <summary>
 	/// Logical element on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Block
 	{
 		
@@ -3888,8 +3753,7 @@ namespace MyNS
 	/// <summary>
 	/// Structural unit of text representing a number of words in certain order.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Paragraph
 	{
 		
@@ -3921,8 +3785,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information detected on the structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1TextAnnotationTextProperty
 	{
 		
@@ -3942,8 +3805,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected start or end of a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak
 	{
 		
@@ -3963,8 +3825,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected language for a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage
 	{
 		
@@ -3984,8 +3845,7 @@ namespace MyNS
 	/// <summary>
 	/// A word representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Word
 	{
 		
@@ -4017,8 +3877,7 @@ namespace MyNS
 	/// <summary>
 	/// A single symbol representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Symbol
 	{
 		
@@ -4050,8 +3909,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores image properties, such as dominant colors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ImageProperties
 	{
 		
@@ -4065,8 +3923,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of dominant colors and their corresponding scores.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1DominantColorsAnnotation
 	{
 		
@@ -4080,8 +3937,7 @@ namespace MyNS
 	/// <summary>
 	/// Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ColorInfo
 	{
 		
@@ -4107,8 +3963,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected entity features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1EntityAnnotation
 	{
 		
@@ -4170,8 +4025,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity location information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1LocationInfo
 	{
 		
@@ -4185,8 +4039,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Property` consists of a user-supplied name/value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Property
 	{
 		
@@ -4212,8 +4065,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected objects with bounding boxes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation
 	{
 		
@@ -4251,8 +4103,7 @@ namespace MyNS
 	/// <summary>
 	/// Results for a product search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ProductSearchResults
 	{
 		
@@ -4278,8 +4129,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the products similar to a single product in a query image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult
 	{
 		
@@ -4305,8 +4155,7 @@ namespace MyNS
 	/// <summary>
 	/// Prediction for what the object in the bounding box is.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotation
 	{
 		
@@ -4338,8 +4187,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ProductSearchResultsResult
 	{
 		
@@ -4365,8 +4213,7 @@ namespace MyNS
 	/// <summary>
 	/// A Product contains ReferenceImages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Product
 	{
 		
@@ -4404,8 +4251,7 @@ namespace MyNS
 	/// <summary>
 	/// A product label represented as a key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ProductKeyValue
 	{
 		
@@ -4425,8 +4271,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of features pertaining to the image, computed by computer vision methods over safe-search verticals (for example, adult, spoof, medical, violence).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1SafeSearchAnnotation
 	{
 		
@@ -4464,8 +4309,7 @@ namespace MyNS
 	/// <summary>
 	/// Relevant information for the image from the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1WebDetection
 	{
 		
@@ -4509,8 +4353,7 @@ namespace MyNS
 	/// <summary>
 	/// Label to provide extra metadata for the web detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1WebDetectionWebLabel
 	{
 		
@@ -4530,8 +4373,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for online images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1WebDetectionWebImage
 	{
 		
@@ -4551,8 +4393,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for web pages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1WebDetectionWebPage
 	{
 		
@@ -4590,8 +4431,7 @@ namespace MyNS
 	/// <summary>
 	/// Entity deduced from similar images on the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1WebDetectionWebEntity
 	{
 		
@@ -4617,8 +4457,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for performing Google Cloud Vision API tasks over a user-provided image, with user-requested features, and with context information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1AnnotateImageRequest
 	{
 		
@@ -4644,8 +4483,7 @@ namespace MyNS
 	/// <summary>
 	/// Client image to perform Google Cloud Vision API tasks over.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1Image
 	{
 		
@@ -4665,8 +4503,7 @@ namespace MyNS
 	/// <summary>
 	/// External image source (Google Cloud Storage or web URL image location).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1ImageSource
 	{
 		
@@ -4686,8 +4523,7 @@ namespace MyNS
 	/// <summary>
 	/// An offline file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1AsyncAnnotateFileRequest
 	{
 		
@@ -4719,8 +4555,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired output location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1OutputConfig
 	{
 		
@@ -4740,8 +4575,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the output will be written to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1GcsDestination
 	{
 		
@@ -4755,8 +4589,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for a single offline file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponse
 	{
 		
@@ -4770,8 +4603,7 @@ namespace MyNS
 	/// <summary>
 	/// Multiple async file annotation requests are batched into a single service call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1AsyncBatchAnnotateFilesRequest
 	{
 		
@@ -4797,8 +4629,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an async batch file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1AsyncBatchAnnotateFilesResponse
 	{
 		
@@ -4812,8 +4643,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for async image annotation for a list of images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1AsyncBatchAnnotateImagesRequest
 	{
 		
@@ -4845,8 +4675,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of requests to annotate files using the BatchAnnotateFiles API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1BatchAnnotateFilesRequest
 	{
 		
@@ -4872,8 +4701,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of file annotation responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1BatchAnnotateFilesResponse
 	{
 		
@@ -4887,8 +4715,7 @@ namespace MyNS
 	/// <summary>
 	/// Multiple image annotation requests are batched into a single service call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1BatchAnnotateImagesRequest
 	{
 		
@@ -4914,8 +4741,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a batch image annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1BatchAnnotateImagesResponse
 	{
 		
@@ -4929,8 +4755,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata for the BatchAnnotateImages operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p2beta1OperationMetadata
 	{
 		
@@ -4956,8 +4781,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a single file annotation request. A file may contain one or more images, which individually have their own responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1AnnotateFileResponse
 	{
 		
@@ -4989,8 +4813,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired input location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1InputConfig
 	{
 		
@@ -5016,8 +4839,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the input will be read from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1GcsSource
 	{
 		
@@ -5031,8 +4853,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an image annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1AnnotateImageResponse
 	{
 		
@@ -5124,8 +4945,7 @@ namespace MyNS
 	/// <summary>
 	/// If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ImageAnnotationContext
 	{
 		
@@ -5145,8 +4965,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of crop hints that are used to generate new crops when serving images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1CropHintsAnnotation
 	{
 		
@@ -5160,8 +4979,7 @@ namespace MyNS
 	/// <summary>
 	/// Single crop hint that is used to generate a new crop when serving an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1CropHint
 	{
 		
@@ -5187,8 +5005,7 @@ namespace MyNS
 	/// <summary>
 	/// A bounding polygon for the detected image annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1BoundingPoly
 	{
 		
@@ -5208,8 +5025,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1NormalizedVertex
 	{
 		
@@ -5229,8 +5045,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1Vertex
 	{
 		
@@ -5250,8 +5065,7 @@ namespace MyNS
 	/// <summary>
 	/// A face annotation object contains the results of face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1FaceAnnotation
 	{
 		
@@ -5349,8 +5163,7 @@ namespace MyNS
 	/// <summary>
 	/// A face-specific landmark (for example, a face feature).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1FaceAnnotationLandmark
 	{
 		
@@ -5370,8 +5183,7 @@ namespace MyNS
 	/// <summary>
 	/// A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1Position
 	{
 		
@@ -5397,8 +5209,7 @@ namespace MyNS
 	/// <summary>
 	/// TextAnnotation contains a structured representation of OCR extracted text. The hierarchy of an OCR extracted text structure is like this: TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol Each structural component, starting from Page, may further have their own properties. Properties describe detected languages, breaks etc.. Please refer to the TextAnnotation.TextProperty message definition below for more detail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1TextAnnotation
 	{
 		
@@ -5418,8 +5229,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected page from OCR.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1Page
 	{
 		
@@ -5457,8 +5267,7 @@ namespace MyNS
 	/// <summary>
 	/// Logical element on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1Block
 	{
 		
@@ -5496,8 +5305,7 @@ namespace MyNS
 	/// <summary>
 	/// Structural unit of text representing a number of words in certain order.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1Paragraph
 	{
 		
@@ -5529,8 +5337,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information detected on the structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1TextAnnotationTextProperty
 	{
 		
@@ -5550,8 +5357,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected start or end of a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak
 	{
 		
@@ -5571,8 +5377,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected language for a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage
 	{
 		
@@ -5592,8 +5397,7 @@ namespace MyNS
 	/// <summary>
 	/// A word representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1Word
 	{
 		
@@ -5625,8 +5429,7 @@ namespace MyNS
 	/// <summary>
 	/// A single symbol representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1Symbol
 	{
 		
@@ -5658,8 +5461,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores image properties, such as dominant colors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ImageProperties
 	{
 		
@@ -5673,8 +5475,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of dominant colors and their corresponding scores.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1DominantColorsAnnotation
 	{
 		
@@ -5688,8 +5489,7 @@ namespace MyNS
 	/// <summary>
 	/// Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ColorInfo
 	{
 		
@@ -5715,8 +5515,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected entity features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1EntityAnnotation
 	{
 		
@@ -5778,8 +5577,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity location information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1LocationInfo
 	{
 		
@@ -5793,8 +5591,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Property` consists of a user-supplied name/value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1Property
 	{
 		
@@ -5820,8 +5617,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected objects with bounding boxes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation
 	{
 		
@@ -5859,8 +5655,7 @@ namespace MyNS
 	/// <summary>
 	/// Results for a product search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ProductSearchResults
 	{
 		
@@ -5886,8 +5681,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the products similar to a single product in a query image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult
 	{
 		
@@ -5913,8 +5707,7 @@ namespace MyNS
 	/// <summary>
 	/// Prediction for what the object in the bounding box is.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotation
 	{
 		
@@ -5946,8 +5739,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ProductSearchResultsResult
 	{
 		
@@ -5973,8 +5765,7 @@ namespace MyNS
 	/// <summary>
 	/// A Product contains ReferenceImages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1Product
 	{
 		
@@ -6012,8 +5803,7 @@ namespace MyNS
 	/// <summary>
 	/// A product label represented as a key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ProductKeyValue
 	{
 		
@@ -6033,8 +5823,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of features pertaining to the image, computed by computer vision methods over safe-search verticals (for example, adult, spoof, medical, violence).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1SafeSearchAnnotation
 	{
 		
@@ -6072,8 +5861,7 @@ namespace MyNS
 	/// <summary>
 	/// Relevant information for the image from the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1WebDetection
 	{
 		
@@ -6117,8 +5905,7 @@ namespace MyNS
 	/// <summary>
 	/// Label to provide extra metadata for the web detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1WebDetectionWebLabel
 	{
 		
@@ -6138,8 +5925,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for online images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1WebDetectionWebImage
 	{
 		
@@ -6159,8 +5945,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for web pages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1WebDetectionWebPage
 	{
 		
@@ -6198,8 +5983,7 @@ namespace MyNS
 	/// <summary>
 	/// Entity deduced from similar images on the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1WebDetectionWebEntity
 	{
 		
@@ -6225,8 +6009,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for a single offline file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1AsyncAnnotateFileResponse
 	{
 		
@@ -6240,8 +6023,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired output location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1OutputConfig
 	{
 		
@@ -6261,8 +6043,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the output will be written to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1GcsDestination
 	{
 		
@@ -6276,8 +6057,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an async batch file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1AsyncBatchAnnotateFilesResponse
 	{
 		
@@ -6291,8 +6071,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the batch operations such as the current state. This is included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1BatchOperationMetadata
 	{
 		
@@ -6318,8 +6097,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the `ImportProductSets` method. This message is returned by the google.longrunning.Operations.GetOperation method in the returned google.longrunning.Operation.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ImportProductSetsResponse
 	{
 		
@@ -6339,8 +6117,7 @@ namespace MyNS
 	/// <summary>
 	/// A `ReferenceImage` represents a product image and its associated metadata, such as bounding boxes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1ReferenceImage
 	{
 		
@@ -6366,8 +6143,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata for the BatchAnnotateImages operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p3beta1OperationMetadata
 	{
 		
@@ -6393,8 +6169,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a single file annotation request. A file may contain one or more images, which individually have their own responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1AnnotateFileResponse
 	{
 		
@@ -6426,8 +6201,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired input location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1InputConfig
 	{
 		
@@ -6453,8 +6227,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the input will be read from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1GcsSource
 	{
 		
@@ -6468,8 +6241,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an image annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1AnnotateImageResponse
 	{
 		
@@ -6561,8 +6333,7 @@ namespace MyNS
 	/// <summary>
 	/// If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ImageAnnotationContext
 	{
 		
@@ -6582,8 +6353,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of crop hints that are used to generate new crops when serving images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1CropHintsAnnotation
 	{
 		
@@ -6597,8 +6367,7 @@ namespace MyNS
 	/// <summary>
 	/// Single crop hint that is used to generate a new crop when serving an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1CropHint
 	{
 		
@@ -6624,8 +6393,7 @@ namespace MyNS
 	/// <summary>
 	/// A bounding polygon for the detected image annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1BoundingPoly
 	{
 		
@@ -6645,8 +6413,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1NormalizedVertex
 	{
 		
@@ -6666,8 +6433,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Vertex
 	{
 		
@@ -6687,8 +6453,7 @@ namespace MyNS
 	/// <summary>
 	/// A face annotation object contains the results of face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1FaceAnnotation
 	{
 		
@@ -6792,8 +6557,7 @@ namespace MyNS
 	/// <summary>
 	/// A face-specific landmark (for example, a face feature).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1FaceAnnotationLandmark
 	{
 		
@@ -6813,8 +6577,7 @@ namespace MyNS
 	/// <summary>
 	/// A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Position
 	{
 		
@@ -6840,8 +6603,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a face's identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1FaceRecognitionResult
 	{
 		
@@ -6861,8 +6623,7 @@ namespace MyNS
 	/// <summary>
 	/// A Celebrity is a group of Faces with an identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Celebrity
 	{
 		
@@ -6888,8 +6649,7 @@ namespace MyNS
 	/// <summary>
 	/// TextAnnotation contains a structured representation of OCR extracted text. The hierarchy of an OCR extracted text structure is like this: TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol Each structural component, starting from Page, may further have their own properties. Properties describe detected languages, breaks etc.. Please refer to the TextAnnotation.TextProperty message definition below for more detail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1TextAnnotation
 	{
 		
@@ -6909,8 +6669,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected page from OCR.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Page
 	{
 		
@@ -6948,8 +6707,7 @@ namespace MyNS
 	/// <summary>
 	/// Logical element on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Block
 	{
 		
@@ -6987,8 +6745,7 @@ namespace MyNS
 	/// <summary>
 	/// Structural unit of text representing a number of words in certain order.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Paragraph
 	{
 		
@@ -7020,8 +6777,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information detected on the structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1TextAnnotationTextProperty
 	{
 		
@@ -7041,8 +6797,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected start or end of a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreak
 	{
 		
@@ -7062,8 +6817,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected language for a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguage
 	{
 		
@@ -7083,8 +6837,7 @@ namespace MyNS
 	/// <summary>
 	/// A word representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Word
 	{
 		
@@ -7116,8 +6869,7 @@ namespace MyNS
 	/// <summary>
 	/// A single symbol representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Symbol
 	{
 		
@@ -7149,8 +6901,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores image properties, such as dominant colors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ImageProperties
 	{
 		
@@ -7164,8 +6915,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of dominant colors and their corresponding scores.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1DominantColorsAnnotation
 	{
 		
@@ -7179,8 +6929,7 @@ namespace MyNS
 	/// <summary>
 	/// Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ColorInfo
 	{
 		
@@ -7206,8 +6955,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected entity features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1EntityAnnotation
 	{
 		
@@ -7269,8 +7017,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity location information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1LocationInfo
 	{
 		
@@ -7284,8 +7031,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Property` consists of a user-supplied name/value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Property
 	{
 		
@@ -7311,8 +7057,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of detected objects with bounding boxes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1LocalizedObjectAnnotation
 	{
 		
@@ -7350,8 +7095,7 @@ namespace MyNS
 	/// <summary>
 	/// Results for a product search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ProductSearchResults
 	{
 		
@@ -7377,8 +7121,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the products similar to a single product in a query image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult
 	{
 		
@@ -7404,8 +7147,7 @@ namespace MyNS
 	/// <summary>
 	/// Prediction for what the object in the bounding box is.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotation
 	{
 		
@@ -7437,8 +7179,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ProductSearchResultsResult
 	{
 		
@@ -7464,8 +7205,7 @@ namespace MyNS
 	/// <summary>
 	/// A Product contains ReferenceImages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1Product
 	{
 		
@@ -7503,8 +7243,7 @@ namespace MyNS
 	/// <summary>
 	/// A product label represented as a key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ProductKeyValue
 	{
 		
@@ -7524,8 +7263,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of features pertaining to the image, computed by computer vision methods over safe-search verticals (for example, adult, spoof, medical, violence).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1SafeSearchAnnotation
 	{
 		
@@ -7563,8 +7301,7 @@ namespace MyNS
 	/// <summary>
 	/// Relevant information for the image from the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1WebDetection
 	{
 		
@@ -7608,8 +7345,7 @@ namespace MyNS
 	/// <summary>
 	/// Label to provide extra metadata for the web detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1WebDetectionWebLabel
 	{
 		
@@ -7629,8 +7365,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for online images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1WebDetectionWebImage
 	{
 		
@@ -7650,8 +7385,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for web pages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1WebDetectionWebPage
 	{
 		
@@ -7689,8 +7423,7 @@ namespace MyNS
 	/// <summary>
 	/// Entity deduced from similar images on the Internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1WebDetectionWebEntity
 	{
 		
@@ -7716,8 +7449,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for a single offline file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1AsyncAnnotateFileResponse
 	{
 		
@@ -7731,8 +7463,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired output location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1OutputConfig
 	{
 		
@@ -7752,8 +7483,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the output will be written to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1GcsDestination
 	{
 		
@@ -7767,8 +7497,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an async batch file annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1AsyncBatchAnnotateFilesResponse
 	{
 		
@@ -7782,8 +7511,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an async batch image annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1AsyncBatchAnnotateImagesResponse
 	{
 		
@@ -7797,8 +7525,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of file annotation responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1BatchAnnotateFilesResponse
 	{
 		
@@ -7812,8 +7539,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the batch operations such as the current state. This is included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1BatchOperationMetadata
 	{
 		
@@ -7839,8 +7565,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the `ImportProductSets` method. This message is returned by the google.longrunning.Operations.GetOperation method in the returned google.longrunning.Operation.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ImportProductSetsResponse
 	{
 		
@@ -7860,8 +7585,7 @@ namespace MyNS
 	/// <summary>
 	/// A `ReferenceImage` represents a product image and its associated metadata, such as bounding boxes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1ReferenceImage
 	{
 		
@@ -7887,8 +7611,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata for the BatchAnnotateImages operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVisionV1p4beta1OperationMetadata
 	{
 		
@@ -7914,8 +7637,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the `ImportProductSets` method. This message is returned by the google.longrunning.Operations.GetOperation method in the returned google.longrunning.Operation.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportProductSetsResponse
 	{
 		
@@ -7935,8 +7657,7 @@ namespace MyNS
 	/// <summary>
 	/// A `ReferenceImage` represents a product image and its associated metadata, such as bounding boxes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceImage
 	{
 		
@@ -7962,8 +7683,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -8001,8 +7721,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata for the BatchAnnotateImages operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		

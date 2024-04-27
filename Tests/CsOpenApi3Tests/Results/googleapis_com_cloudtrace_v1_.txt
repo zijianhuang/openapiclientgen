@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for the `ListTraces` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTracesResponse
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// A trace describes how long it takes for an application to perform an operation. It consists of a set of spans, each of which represent a single timed event within the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Trace
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// A span represents a single timed event within a trace. Spans can be nested and form a trace tree. Often, a trace contains a root span that describes the end-to-end latency of an operation and, optionally, one or more subspans for its suboperations. Spans do not need to be contiguous. There may be gaps between spans in a trace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TraceSpan
 	{
 		
@@ -125,27 +121,24 @@ namespace MyNS
 		public string StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TraceSpanKind
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPAN_KIND_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPAN_KIND_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RPC_SERVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RPC_SERVER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RPC_CLIENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RPC_CLIENT = 2,
 	}
 	
 	/// <summary>
 	/// List of new or updated traces.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Traces
 	{
 		
@@ -296,16 +289,16 @@ namespace MyNS
 	public enum Cloudtrace_projects_traces_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINIMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINIMAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROOTSPAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROOTSPAN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 3,
 	}
 }

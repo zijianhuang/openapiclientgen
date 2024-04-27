@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Action
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddRequestResponse
 	{
 		
@@ -46,8 +44,7 @@ namespace MyNS
 		public string RequestId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AgeUsdExchangeInfo
 	{
 		
@@ -108,8 +105,7 @@ namespace MyNS
 		public long TotalAmount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AgeUsdInfo
 	{
 		
@@ -135,8 +131,7 @@ namespace MyNS
 		public long SigUsdPrice { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckResponse
 	{
 		
@@ -152,8 +147,7 @@ namespace MyNS
 		public GenuineToken Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenuineToken
 	{
 		
@@ -182,8 +176,7 @@ namespace MyNS
 		public bool UniqueName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePaymentRequest
 	{
 		
@@ -214,8 +207,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> TokenRawAmount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErgoPayResponse
 	{
 		
@@ -241,27 +233,24 @@ namespace MyNS
 		public string ReplyTo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErgoPayResponseMessageSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFORMATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFORMATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchActionResponse
 	{
 		
@@ -272,8 +261,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> AppVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MosaikApp
 	{
 		
@@ -287,8 +275,7 @@ namespace MyNS
 		public ViewElement View { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MosaikManifest
 	{
 		
@@ -326,24 +313,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> TargetMosaikVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MosaikManifestTargetCanvasDimension
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPACT_WIDTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPACT_WIDTH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM_WIDTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM_WIDTH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_WIDTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_WIDTH = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ViewElement
 	{
 		
@@ -360,8 +344,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Visible { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodePeer
 	{
 		
@@ -422,8 +405,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationCheckResponse
 	{
 		
@@ -437,8 +419,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> NextCheck { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentRequestStateResponse
 	{
 		
@@ -460,27 +441,24 @@ namespace MyNS
 		public string TxId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PaymentRequestStateResponsePaymentRequestState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAITING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAITING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TokenPrice
 	{
 		

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _200_OK
 	{
 		
@@ -33,24 +32,21 @@ namespace MyNS
 		public _200_OKStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum _200_OKStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="emailNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		emailNotFound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="emailNotVerified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		emailNotVerified = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _401_Unauthorized
 	{
 		
@@ -85,9 +81,7 @@ namespace MyNS
 		public _401_UnauthorizedType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum _401_UnauthorizedStatus
 	{
 		
@@ -95,19 +89,15 @@ namespace MyNS
 		_401 = 401,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum _401_UnauthorizedTitle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unauthorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unauthorized = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum _401_UnauthorizedType
 	{
 		

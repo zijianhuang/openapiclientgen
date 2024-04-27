@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIKey
 	{
 		
@@ -72,8 +71,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Usage_today { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIKeyOptions
 	{
 		
@@ -84,8 +82,7 @@ namespace MyNS
 		public string Organization_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AWSCredentialFields
 	{
 		
@@ -113,8 +110,7 @@ namespace MyNS
 		public string Use_cross_account_org { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Agent
 	{
 		
@@ -180,8 +176,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AgentSiteID
 	{
 		
@@ -193,8 +188,7 @@ namespace MyNS
 		public string Site_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Asset
 	{
 		
@@ -335,8 +329,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetComments
 	{
 		
@@ -348,8 +341,7 @@ namespace MyNS
 		public string Comments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetServiceNow
 	{
 		
@@ -463,8 +455,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetTags
 	{
 		
@@ -476,8 +467,7 @@ namespace MyNS
 		public string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetTagsWithSearch
 	{
 		
@@ -496,8 +486,7 @@ namespace MyNS
 		public string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetsWithCheckpoint
 	{
 		
@@ -516,8 +505,7 @@ namespace MyNS
 		public long Since { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AzureClientSecretCredentialFields
 	{
 		
@@ -549,8 +537,7 @@ namespace MyNS
 		public string Tenant_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AzureUsernamePasswordCredentialFields
 	{
 		
@@ -583,8 +570,7 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CensysCredentialFields
 	{
 		
@@ -609,8 +595,7 @@ namespace MyNS
 	/// <summary>
 	/// A component ID and version
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentVersion
 	{
 		
@@ -629,8 +614,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Credential
 	{
 		
@@ -678,48 +662,44 @@ namespace MyNS
 		public System.Nullable<CredentialType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredentialType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="miradore_api_key_v1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		miradore_api_key_v1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aws_access_secret")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aws_access_secret = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="crowdstrike_api_key")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		crowdstrike_api_key = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="azure_client_secret")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		azure_client_secret = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="azure_username_password")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		azure_username_password = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="censys_search_api_key")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		censys_search_api_key = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="snmpv2_community")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		snmpv2_community = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="snmpv3_credential")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		snmpv3_credential = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vmware_username_password")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vmware_username_password = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredentialFields
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CredentialOptions
 	{
 		
@@ -742,21 +722,18 @@ namespace MyNS
 		public System.Nullable<CredentialOptionsType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CredentialOptionsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="miradore_api_key_v1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		miradore_api_key_v1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aws_access_secret")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aws_access_secret = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CrowdstrikeCredentialFields
 	{
 		
@@ -782,8 +759,7 @@ namespace MyNS
 		public string Client_secret { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event
 	{
 		
@@ -839,8 +815,7 @@ namespace MyNS
 		public string Target_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group
 	{
 		
@@ -882,8 +857,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> User_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupMapping
 	{
 		
@@ -931,8 +905,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupPost
 	{
 		
@@ -952,8 +925,7 @@ namespace MyNS
 		public string Org_roles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupPut
 	{
 		
@@ -976,8 +948,7 @@ namespace MyNS
 		public string Org_roles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class License
 	{
 		
@@ -1075,8 +1046,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Via_reseller { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MiradoreCredentialFields
 	{
 		
@@ -1095,8 +1065,7 @@ namespace MyNS
 		public string Hostname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrgOptions
 	{
 		
@@ -1125,8 +1094,7 @@ namespace MyNS
 		public string Project { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Organization
 	{
 		
@@ -1220,8 +1188,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNMPv2CommunitiesCredentialFields
 	{
 		
@@ -1233,8 +1200,7 @@ namespace MyNS
 		public string Community { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNMPv3CredentialFields
 	{
 		
@@ -1261,8 +1227,7 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScanOptions
 	{
 		
@@ -1349,33 +1314,30 @@ namespace MyNS
 		public string Tcp_ports { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScanOptionsScan_frequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="once")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		once = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hourly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hourly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		daily = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		weekly = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		monthly = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="continuous")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		continuous = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScanTemplate
 	{
 		
@@ -1497,8 +1459,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScanTemplateOptions
 	{
 		
@@ -1530,8 +1491,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> Params { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Search
 	{
 		
@@ -1543,8 +1503,7 @@ namespace MyNS
 		public string Search1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Service
 	{
 		
@@ -1728,8 +1687,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Site
 	{
 		
@@ -1769,8 +1727,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SiteOptions
 	{
 		
@@ -1791,14 +1748,12 @@ namespace MyNS
 		public string Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusMessage
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Task_
 	{
 		
@@ -1888,8 +1843,7 @@ namespace MyNS
 	/// <summary>
 	/// A URL to a resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class URL
 	{
 		
@@ -1897,8 +1851,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -1958,8 +1911,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserInviteOptions
 	{
 		
@@ -1988,8 +1940,7 @@ namespace MyNS
 		public string Subject { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserOptions
 	{
 		
@@ -2012,8 +1963,7 @@ namespace MyNS
 		public string Org_roles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VMwareCredentialFields
 	{
 		
@@ -2038,8 +1988,7 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Wireless
 	{
 		

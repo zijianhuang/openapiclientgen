@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorResponse
 	{
 		
@@ -36,8 +35,7 @@ namespace MyNS
 	///
 	///(1) Providers who allow side effects or (2) actions that do not have a side effect should use this class.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteRequest
 	{
 		
@@ -59,8 +57,7 @@ namespace MyNS
 	/// <summary>
 	/// This is a summary of the results given the action that was executed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteResponse
 	{
 		
@@ -135,27 +132,24 @@ namespace MyNS
 		public System.Nullable<ExecuteResponseStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecuteResponseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="empty")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		empty = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preview = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExposedActionResponseSchema
 	{
 		
@@ -175,8 +169,7 @@ namespace MyNS
 		public ExposedActionSchema[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExposedActionSchema
 	{
 		

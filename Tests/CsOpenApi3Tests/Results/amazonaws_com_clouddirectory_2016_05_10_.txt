@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFacetToObjectResponse
 	{
 	}
@@ -26,8 +25,7 @@ namespace MyNS
 	/// <summary>
 	/// The combination of an attribute key and an attribute value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeKeyAndValue
 	{
 		
@@ -49,8 +47,7 @@ namespace MyNS
 	/// <summary>
 	/// A unique identifier for an attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeKey
 	{
 		
@@ -79,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TypedAttributeValue
 	{
 		
@@ -103,8 +99,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceException
 	{
 		
@@ -115,8 +110,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the provided ARN value is not valid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArnException
 	{
 		
@@ -127,8 +121,7 @@ namespace MyNS
 	/// <summary>
 	/// Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetryableConflictException
 	{
 		
@@ -139,8 +132,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that your request is malformed in some manner. See the exception message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 		
@@ -151,8 +143,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 		
@@ -163,8 +154,7 @@ namespace MyNS
 	/// <summary>
 	/// Access denied. Check your permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 		
@@ -175,8 +165,7 @@ namespace MyNS
 	/// <summary>
 	/// Operations are only permitted on enabled directories.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryNotEnabledException
 	{
 		
@@ -187,8 +176,7 @@ namespace MyNS
 	/// <summary>
 	/// The specified resource could not be found.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 		
@@ -199,8 +187,7 @@ namespace MyNS
 	/// <summary>
 	/// The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacetValidationException
 	{
 		
@@ -208,8 +195,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplySchemaResponse
 	{
 		
@@ -223,8 +209,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that an attempt to attach an object with the same link name or to apply a schema with the same name has occurred. Rename the link or the schema and then try again.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidAttachmentException
 	{
 		
@@ -232,8 +217,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachObjectResponse
 	{
 		
@@ -244,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkNameAlreadyInUseException
 	{
 		
@@ -253,8 +236,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachPolicyResponse
 	{
 	}
@@ -262,8 +244,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the requested operation can only operate on policy objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotPolicyException
 	{
 		
@@ -271,8 +252,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachToIndexResponse
 	{
 		
@@ -283,8 +263,7 @@ namespace MyNS
 	/// <summary>
 	/// An object has been attempted to be attached to an object that does not have the appropriate attribute value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexedAttributeMissingException
 	{
 		
@@ -295,8 +274,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the requested operation can only operate on index objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotIndexException
 	{
 		
@@ -304,8 +282,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachTypedLinkResponse
 	{
 		
@@ -316,8 +293,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TypedLinkSpecifier
 	{
 		
@@ -353,8 +329,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TypedLinkSchemaAndFacetName
 	{
 		
@@ -376,8 +351,7 @@ namespace MyNS
 	/// <summary>
 	/// The reference that identifies an object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectReference
 	{
 		
@@ -388,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies the attribute name and value for a typed link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeNameAndValue
 	{
 		
@@ -408,8 +381,7 @@ namespace MyNS
 		public TypedAttributeValue Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchReadResponse
 	{
 		
@@ -420,8 +392,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>BatchRead</code> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchReadOperationResponse
 	{
 		
@@ -435,8 +406,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>BatchRead</code> success response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchReadSuccessfulResponse
 	{
 		
@@ -483,8 +453,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListObjectAttributes</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListObjectAttributesResponse
 	{
 		
@@ -498,8 +467,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListObjectChildren</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListObjectChildrenResponse
 	{
 		
@@ -510,8 +478,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkNameToObjectIdentifierMap
 	{
 	}
@@ -519,8 +486,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>GetObjectInformation</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetObjectInformationResponse
 	{
 		
@@ -534,8 +500,7 @@ namespace MyNS
 	/// <summary>
 	/// A facet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaFacet
 	{
 		
@@ -549,8 +514,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>GetObjectAttributes</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetObjectAttributesResponse
 	{
 		
@@ -561,8 +525,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListAttachedIndices</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListAttachedIndicesResponse
 	{
 		
@@ -576,8 +539,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an index and an attached object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexAttachment
 	{
 		
@@ -591,8 +553,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListObjectParentPaths</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListObjectParentPathsResponse
 	{
 		
@@ -606,8 +567,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathToObjectIdentifiers
 	{
 		
@@ -621,8 +581,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListObjectPolicies</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListObjectPoliciesResponse
 	{
 		
@@ -636,8 +595,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListPolicyAttachments</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListPolicyAttachmentsResponse
 	{
 		
@@ -651,8 +609,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>LookupPolicy</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchLookupPolicyResponse
 	{
 		
@@ -666,8 +623,7 @@ namespace MyNS
 	/// <summary>
 	/// Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies that are associated with that object and the parent to that object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyToPath
 	{
 		
@@ -681,8 +637,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyAttachment
 	{
 		
@@ -699,8 +654,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListIndex</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListIndexResponse
 	{
 		
@@ -714,8 +668,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListOutgoingTypedLinks</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListOutgoingTypedLinksResponse
 	{
 		
@@ -729,8 +682,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListIncomingTypedLinks</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListIncomingTypedLinksResponse
 	{
 		
@@ -744,8 +696,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>GetLinkAttributes</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetLinkAttributesResponse
 	{
 		
@@ -756,8 +707,7 @@ namespace MyNS
 	/// <summary>
 	/// The batch read exception structure, which contains the exception type and message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchReadException
 	{
 		
@@ -768,57 +718,54 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchReadExceptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ValidationException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ValidationException = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidArnException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidArnException = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFoundException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFoundException = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidNextTokenException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidNextTokenException = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccessDeniedException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccessDeniedException = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotNodeException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotNodeException = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FacetValidationException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FacetValidationException = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CannotListParentOfRootException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CannotListParentOfRootException = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotIndexException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotIndexException = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotPolicyException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotPolicyException = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DirectoryNotEnabledException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DirectoryNotEnabledException = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LimitExceededException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LimitExceededException = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServiceException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServiceException = 12,
 	}
 	
 	/// <summary>
 	/// Represents the output of a <code>BatchRead</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchReadOperation
 	{
 		
@@ -865,8 +812,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListObjectAttributes</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListObjectAttributes
 	{
 		
@@ -890,8 +836,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>ListObjectChildren</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListObjectChildren
 	{
 		
@@ -912,8 +857,7 @@ namespace MyNS
 	/// <summary>
 	/// Lists indices attached to an object inside a <a>BatchRead</a> operation. For more information, see <a>ListAttachedIndices</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListAttachedIndices
 	{
 		
@@ -934,8 +878,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectParentPaths</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListObjectParentPaths
 	{
 		
@@ -956,8 +899,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves metadata about an object inside a <a>BatchRead</a> operation. For more information, see <a>GetObjectInformation</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetObjectInformation
 	{
 		
@@ -972,8 +914,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves attributes within a facet that are associated with an object inside an <a>BatchRead</a> operation. For more information, see <a>GetObjectAttributes</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetObjectAttributes
 	{
 		
@@ -1002,8 +943,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns policies attached to an object in pagination fashion inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListObjectPolicies
 	{
 		
@@ -1024,8 +964,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <a>BatchRead</a> operation. For more information, see <a>ListPolicyAttachments</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListPolicyAttachments
 	{
 		
@@ -1046,8 +985,7 @@ namespace MyNS
 	/// <summary>
 	/// Lists all policies from the root of the Directory to the object specified inside a <a>BatchRead</a> operation. For more information, see <a>LookupPolicy</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchLookupPolicy
 	{
 		
@@ -1068,8 +1006,7 @@ namespace MyNS
 	/// <summary>
 	/// Lists objects attached to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>ListIndex</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListIndex
 	{
 		
@@ -1093,8 +1030,7 @@ namespace MyNS
 	/// <summary>
 	/// A range of attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectAttributeRange
 	{
 		
@@ -1108,8 +1044,7 @@ namespace MyNS
 	/// <summary>
 	/// A range of attribute values. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#rangefilters">Range Filters</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TypedAttributeValueRange
 	{
 		
@@ -1134,33 +1069,30 @@ namespace MyNS
 		public TypedAttributeValue EndValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RangeMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_BEFORE_MISSING_VALUES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_BEFORE_MISSING_VALUES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUSIVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUSIVE = 4,
 	}
 	
 	/// <summary>
 	/// Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListOutgoingTypedLinks
 	{
 		
@@ -1187,8 +1119,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies the range of attributes that are used by a specified filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TypedLinkAttributeRange
 	{
 		
@@ -1206,8 +1137,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListIncomingTypedLinks</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchListIncomingTypedLinks
 	{
 		
@@ -1234,8 +1164,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves attributes that are associated with a typed link inside a <a>BatchRead</a> operation. For more information, see <a>GetLinkAttributes</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetLinkAttributes
 	{
 		
@@ -1254,8 +1183,7 @@ namespace MyNS
 		public string[] AttributeNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteResponse
 	{
 		
@@ -1266,8 +1194,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>BatchWrite</code> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteOperationResponse
 	{
 		
@@ -1320,8 +1247,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>CreateObject</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateObjectResponse
 	{
 		
@@ -1332,8 +1258,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output batch <a>AttachObject</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAttachObjectResponse
 	{
 		
@@ -1344,8 +1269,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>DetachObject</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetachObjectResponse
 	{
 		
@@ -1356,8 +1280,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>BatchUpdate</code> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateObjectAttributesResponse
 	{
 		
@@ -1368,8 +1291,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>DeleteObject</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteObjectResponse
 	{
 	}
@@ -1377,8 +1299,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a batch add facet to object operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAddFacetToObjectResponse
 	{
 	}
@@ -1386,8 +1307,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty result that represents success.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRemoveFacetFromObjectResponse
 	{
 	}
@@ -1395,8 +1315,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of an <a>AttachPolicy</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAttachPolicyResponse
 	{
 	}
@@ -1404,8 +1323,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>DetachPolicy</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetachPolicyResponse
 	{
 	}
@@ -1413,8 +1331,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>CreateIndex</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateIndexResponse
 	{
 		
@@ -1425,8 +1342,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>AttachToIndex</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAttachToIndexResponse
 	{
 		
@@ -1437,8 +1353,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>DetachFromIndex</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetachFromIndexResponse
 	{
 		
@@ -1449,8 +1364,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>AttachTypedLink</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAttachTypedLinkResponse
 	{
 		
@@ -1461,8 +1375,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>DetachTypedLink</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetachTypedLinkResponse
 	{
 	}
@@ -1470,8 +1383,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>UpdateLinkAttributes</a> response operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateLinkAttributesResponse
 	{
 	}
@@ -1479,8 +1391,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>BatchWrite</code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteOperation
 	{
 		
@@ -1533,8 +1444,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>CreateObject</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateObject
 	{
 		
@@ -1565,8 +1475,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of an <a>AttachObject</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAttachObject
 	{
 		
@@ -1595,8 +1504,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <a>DetachObject</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetachObject
 	{
 		
@@ -1621,8 +1529,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>BatchUpdate</code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateObjectAttributes
 	{
 		
@@ -1644,8 +1551,7 @@ namespace MyNS
 	/// <summary>
 	/// Structure that contains attribute update information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectAttributeUpdate
 	{
 		
@@ -1659,8 +1565,7 @@ namespace MyNS
 	/// <summary>
 	/// The action to take on the object attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectAttributeAction
 	{
 		
@@ -1671,24 +1576,21 @@ namespace MyNS
 		public TypedAttributeValue ObjectAttributeUpdateValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_OR_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_OR_UPDATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 1,
 	}
 	
 	/// <summary>
 	/// Represents the output of a <a>DeleteObject</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteObject
 	{
 		
@@ -1703,8 +1605,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a batch add facet to object operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAddFacetToObject
 	{
 		
@@ -1733,8 +1634,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch operation to remove a facet from an object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRemoveFacetFromObject
 	{
 		
@@ -1756,8 +1656,7 @@ namespace MyNS
 	/// <summary>
 	/// Attaches a policy object to a regular object inside a <a>BatchRead</a> operation. For more information, see <a>AttachPolicy</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAttachPolicy
 	{
 		
@@ -1779,8 +1678,7 @@ namespace MyNS
 	/// <summary>
 	/// Detaches the specified policy from the specified directory inside a <a>BatchWrite</a> operation. For more information, see <a>DetachPolicy</a> and <a>BatchWriteRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetachPolicy
 	{
 		
@@ -1802,8 +1700,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates an index object inside of a <a>BatchRead</a> operation. For more information, see <a>CreateIndex</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateIndex
 	{
 		
@@ -1834,8 +1731,7 @@ namespace MyNS
 	/// <summary>
 	/// Attaches the specified object to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>AttachToIndex</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAttachToIndex
 	{
 		
@@ -1857,8 +1753,7 @@ namespace MyNS
 	/// <summary>
 	/// Detaches the specified object from the specified index inside a <a>BatchRead</a> operation. For more information, see <a>DetachFromIndex</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetachFromIndex
 	{
 		
@@ -1880,8 +1775,7 @@ namespace MyNS
 	/// <summary>
 	/// Attaches a typed link to a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>AttachTypedLink</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAttachTypedLink
 	{
 		
@@ -1917,8 +1811,7 @@ namespace MyNS
 	/// <summary>
 	/// Detaches a typed link from a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>DetachTypedLink</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDetachTypedLink
 	{
 		
@@ -1933,8 +1826,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a given typed link’s attributes inside a <a>BatchRead</a> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <a>UpdateLinkAttributes</a> and <a>BatchReadRequest$Operations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateLinkAttributes
 	{
 		
@@ -1956,8 +1848,7 @@ namespace MyNS
 	/// <summary>
 	/// Structure that contains attribute update information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkAttributeUpdate
 	{
 		
@@ -1971,8 +1862,7 @@ namespace MyNS
 	/// <summary>
 	/// The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkAttributeAction
 	{
 		
@@ -1986,8 +1876,7 @@ namespace MyNS
 	/// <summary>
 	/// A <code>BatchWrite</code> exception has occurred.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteException
 	{
 		
@@ -2001,69 +1890,66 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchWriteExceptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServiceException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServiceException = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ValidationException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ValidationException = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidArnException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidArnException = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LinkNameAlreadyInUseException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LinkNameAlreadyInUseException = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StillContainsLinksException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StillContainsLinksException = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FacetValidationException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FacetValidationException = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ObjectNotDetachedException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ObjectNotDetachedException = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFoundException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFoundException = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccessDeniedException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccessDeniedException = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidAttachmentException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidAttachmentException = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotIndexException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotIndexException = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotNodeException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotNodeException = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IndexedAttributeMissingException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IndexedAttributeMissingException = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ObjectAlreadyDetachedException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ObjectAlreadyDetachedException = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotPolicyException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotPolicyException = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DirectoryNotEnabledException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DirectoryNotEnabledException = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LimitExceededException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LimitExceededException = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnsupportedIndexTypeException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnsupportedIndexTypeException = 17,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDirectoryResponse
 	{
 		
@@ -2099,8 +1985,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that a <a>Directory</a> could not be created due to a naming conflict. Choose a different name and try again.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryAlreadyExistsException
 	{
 		
@@ -2108,8 +1993,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFacetResponse
 	{
 	}
@@ -2117,8 +2001,7 @@ namespace MyNS
 	/// <summary>
 	/// An attribute that is associated with the <a>Facet</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacetAttribute
 	{
 		
@@ -2142,8 +2025,7 @@ namespace MyNS
 	/// <summary>
 	/// A facet attribute definition. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute References</a> for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacetAttributeDefinition
 	{
 		
@@ -2164,30 +2046,27 @@ namespace MyNS
 		public RuleMap Rules { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FacetAttributeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BINARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BINARY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATETIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATETIME = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleMap
 	{
 	}
@@ -2195,8 +2074,7 @@ namespace MyNS
 	/// <summary>
 	/// The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacetAttributeReference
 	{
 		
@@ -2215,24 +2093,21 @@ namespace MyNS
 		public string TargetAttributeName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RequiredAttributeBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRED_ALWAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRED_ALWAYS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_REQUIRED = 1,
 	}
 	
 	/// <summary>
 	/// A facet with the same name already exists.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacetAlreadyExistsException
 	{
 		
@@ -2243,8 +2118,7 @@ namespace MyNS
 	/// <summary>
 	/// Occurs when any of the rule parameter keys or values are invalid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRuleException
 	{
 		
@@ -2252,8 +2126,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIndexResponse
 	{
 		
@@ -2264,8 +2137,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the requested index type is not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedIndexTypeException
 	{
 		
@@ -2273,8 +2145,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateObjectResponse
 	{
 		
@@ -2282,8 +2153,7 @@ namespace MyNS
 		public string ObjectIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSchemaResponse
 	{
 		
@@ -2294,8 +2164,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that a schema could not be created due to a naming conflict. Please select a different name and then try again.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaAlreadyExistsException
 	{
 		
@@ -2303,8 +2172,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTypedLinkFacetResponse
 	{
 	}
@@ -2312,8 +2180,7 @@ namespace MyNS
 	/// <summary>
 	/// A typed link attribute definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TypedLinkAttributeDefinition
 	{
 		
@@ -2348,8 +2215,7 @@ namespace MyNS
 		public RequiredAttributeBehavior RequiredBehavior { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDirectoryResponse
 	{
 		
@@ -2364,8 +2230,7 @@ namespace MyNS
 	/// <summary>
 	/// An operation can only operate on a disabled directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryNotDisabledException
 	{
 		
@@ -2376,8 +2241,7 @@ namespace MyNS
 	/// <summary>
 	/// A directory that has been deleted and to which access has been attempted. Note: The requested resource will eventually cease to exist.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryDeletedException
 	{
 		
@@ -2385,8 +2249,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFacetResponse
 	{
 	}
@@ -2394,8 +2257,7 @@ namespace MyNS
 	/// <summary>
 	/// The specified <a>Facet</a> could not be found.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacetNotFoundException
 	{
 		
@@ -2406,8 +2268,7 @@ namespace MyNS
 	/// <summary>
 	/// Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a different facet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacetInUseException
 	{
 		
@@ -2415,8 +2276,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteObjectResponse
 	{
 	}
@@ -2424,8 +2284,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the requested operation cannot be completed because the object has not been detached from the tree.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectNotDetachedException
 	{
 		
@@ -2433,8 +2292,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSchemaResponse
 	{
 		
@@ -2445,8 +2303,7 @@ namespace MyNS
 	/// <summary>
 	/// The object could not be deleted because links still exist. Remove the links and then try the operation again.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StillContainsLinksException
 	{
 		
@@ -2454,14 +2311,12 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTypedLinkFacetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachFromIndexResponse
 	{
 		
@@ -2472,8 +2327,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the object is not attached to the index.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectAlreadyDetachedException
 	{
 		
@@ -2481,8 +2335,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachObjectResponse
 	{
 		
@@ -2493,8 +2346,7 @@ namespace MyNS
 	/// <summary>
 	/// Occurs when any invalid operations are performed on an object that is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotNodeException
 	{
 		
@@ -2502,14 +2354,12 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachPolicyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableDirectoryResponse
 	{
 		
@@ -2521,8 +2371,7 @@ namespace MyNS
 		public string DirectoryArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableDirectoryResponse
 	{
 		
@@ -2534,8 +2383,7 @@ namespace MyNS
 		public string DirectoryArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppliedSchemaVersionResponse
 	{
 		
@@ -2543,8 +2391,7 @@ namespace MyNS
 		public string AppliedSchemaArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDirectoryResponse
 	{
 		
@@ -2559,8 +2406,7 @@ namespace MyNS
 	/// <summary>
 	/// Directory structure that includes the directory name and directory ARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Directory
 	{
 		
@@ -2577,24 +2423,21 @@ namespace MyNS
 		public System.DateTimeOffset CreationDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DirectoryState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFacetResponse
 	{
 		
@@ -2605,8 +2448,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/whatarefacets.html">Facets</a> for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Facet
 	{
 		
@@ -2617,27 +2459,24 @@ namespace MyNS
 		public ObjectType ObjectType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ObjectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEAF_NODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEAF_NODE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POLICY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEX = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLinkAttributesResponse
 	{
 		
@@ -2645,8 +2484,7 @@ namespace MyNS
 		public AttributeKeyAndValue[] Attributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetObjectAttributesResponse
 	{
 		
@@ -2654,8 +2492,7 @@ namespace MyNS
 		public AttributeKeyAndValue[] Attributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetObjectInformationResponse
 	{
 		
@@ -2666,8 +2503,7 @@ namespace MyNS
 		public string ObjectIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSchemaAsJsonResponse
 	{
 		
@@ -2678,8 +2514,7 @@ namespace MyNS
 		public string Document { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTypedLinkFacetInformationResponse
 	{
 		
@@ -2690,8 +2525,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the <code>NextToken</code> value is not valid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 		
@@ -2699,8 +2533,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAppliedSchemaArnsResponse
 	{
 		
@@ -2711,8 +2544,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAttachedIndicesResponse
 	{
 		
@@ -2723,8 +2555,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDevelopmentSchemaArnsResponse
 	{
 		
@@ -2735,8 +2566,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDirectoriesResponse
 	{
 		
@@ -2751,8 +2581,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFacetAttributesResponse
 	{
 		
@@ -2763,8 +2592,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFacetNamesResponse
 	{
 		
@@ -2775,8 +2603,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIncomingTypedLinksResponse
 	{
 		
@@ -2787,8 +2614,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIndexResponse
 	{
 		
@@ -2799,8 +2625,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectAttributesResponse
 	{
 		
@@ -2811,8 +2636,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectChildrenResponse
 	{
 		
@@ -2823,8 +2647,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectParentPathsResponse
 	{
 		
@@ -2835,8 +2658,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectParentsResponse
 	{
 		
@@ -2847,8 +2669,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectIdentifierToLinkNameMap
 	{
 	}
@@ -2856,8 +2677,7 @@ namespace MyNS
 	/// <summary>
 	/// Cannot list the parents of a <a>Directory</a> root.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CannotListParentOfRootException
 	{
 		
@@ -2865,8 +2685,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectPoliciesResponse
 	{
 		
@@ -2877,8 +2696,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOutgoingTypedLinksResponse
 	{
 		
@@ -2889,8 +2707,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPolicyAttachmentsResponse
 	{
 		
@@ -2901,8 +2718,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPublishedSchemaArnsResponse
 	{
 		
@@ -2913,8 +2729,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -2928,8 +2743,7 @@ namespace MyNS
 	/// <summary>
 	/// The tag structure that contains a tag key and value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -2943,8 +2757,7 @@ namespace MyNS
 	/// <summary>
 	/// Can occur for multiple reasons such as when you tag a resource that doesn’t exist or if you specify a higher number of tags for a resource than the allowed limit. Allowed limit is 50 tags per resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTaggingRequestException
 	{
 		
@@ -2952,8 +2765,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTypedLinkFacetAttributesResponse
 	{
 		
@@ -2964,8 +2776,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTypedLinkFacetNamesResponse
 	{
 		
@@ -2976,8 +2787,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupPolicyResponse
 	{
 		
@@ -2988,8 +2798,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishSchemaResponse
 	{
 		
@@ -3000,8 +2809,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that a schema is already published.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaAlreadyPublishedException
 	{
 		
@@ -3009,8 +2817,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSchemaFromJsonResponse
 	{
 		
@@ -3021,8 +2828,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the provided <code>SchemaDoc</code> value is not valid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSchemaDocException
 	{
 		
@@ -3030,26 +2836,22 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFacetFromObjectResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFacetResponse
 	{
 	}
@@ -3057,8 +2859,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains information used to update an attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacetAttributeUpdate
 	{
 		
@@ -3072,8 +2873,7 @@ namespace MyNS
 	/// <summary>
 	/// An attempt to modify a <a>Facet</a> resulted in an invalid schema exception.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidFacetUpdateException
 	{
 		
@@ -3081,14 +2881,12 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLinkAttributesResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateObjectAttributesResponse
 	{
 		
@@ -3096,8 +2894,7 @@ namespace MyNS
 		public string ObjectIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSchemaResponse
 	{
 		
@@ -3105,8 +2902,7 @@ namespace MyNS
 		public string SchemaArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTypedLinkFacetResponse
 	{
 	}
@@ -3114,8 +2910,7 @@ namespace MyNS
 	/// <summary>
 	/// A typed link facet attribute update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TypedLinkFacetAttributeUpdate
 	{
 		
@@ -3134,8 +2929,7 @@ namespace MyNS
 		public UpdateActionType Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeAppliedSchemaResponse
 	{
 		
@@ -3149,8 +2943,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates a failure occurred while performing a check for backward compatibility between the specified schema and the schema that is currently applied to the directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncompatibleSchemaException
 	{
 		
@@ -3158,8 +2951,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradePublishedSchemaResponse
 	{
 		
@@ -3167,8 +2959,7 @@ namespace MyNS
 		public string UpgradedSchemaArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFacetToObjectRequest
 	{
 		
@@ -3190,8 +2981,7 @@ namespace MyNS
 		public ObjectReference ObjectReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplySchemaRequest
 	{
 		
@@ -3203,8 +2993,7 @@ namespace MyNS
 		public string PublishedSchemaArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachObjectRequest
 	{
 		
@@ -3230,8 +3019,7 @@ namespace MyNS
 		public string LinkName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachPolicyRequest
 	{
 		
@@ -3250,8 +3038,7 @@ namespace MyNS
 		public ObjectReference ObjectReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachToIndexRequest
 	{
 		
@@ -3270,8 +3057,7 @@ namespace MyNS
 		public ObjectReference TargetReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachTypedLinkRequest
 	{
 		
@@ -3304,21 +3090,18 @@ namespace MyNS
 		public AttributeNameAndValue[] Attributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConsistencyLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERIALIZABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERIALIZABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENTUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENTUAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchReadRequest
 	{
 		
@@ -3330,8 +3113,7 @@ namespace MyNS
 		public BatchReadOperation[] Operations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchWriteRequest
 	{
 		
@@ -3343,8 +3125,7 @@ namespace MyNS
 		public BatchWriteOperation[] Operations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDirectoryRequest
 	{
 		
@@ -3356,8 +3137,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFacetRequest
 	{
 		
@@ -3379,8 +3159,7 @@ namespace MyNS
 		public ObjectType ObjectType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIndexRequest
 	{
 		
@@ -3405,8 +3184,7 @@ namespace MyNS
 		public string LinkName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateObjectRequest
 	{
 		
@@ -3427,8 +3205,7 @@ namespace MyNS
 		public string LinkName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSchemaRequest
 	{
 		
@@ -3443,8 +3220,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TypedLinkFacet
 	{
 		
@@ -3470,8 +3246,7 @@ namespace MyNS
 		public string[] IdentityAttributeOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTypedLinkFacetRequest
 	{
 		
@@ -3483,14 +3258,12 @@ namespace MyNS
 		public TypedLinkFacet Facet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDirectoryRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFacetRequest
 	{
 		
@@ -3502,8 +3275,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteObjectRequest
 	{
 		
@@ -3515,14 +3287,12 @@ namespace MyNS
 		public ObjectReference ObjectReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSchemaRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTypedLinkFacetRequest
 	{
 		
@@ -3534,8 +3304,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachFromIndexRequest
 	{
 		
@@ -3554,8 +3323,7 @@ namespace MyNS
 		public ObjectReference TargetReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachObjectRequest
 	{
 		
@@ -3574,8 +3342,7 @@ namespace MyNS
 		public string LinkName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachPolicyRequest
 	{
 		
@@ -3594,8 +3361,7 @@ namespace MyNS
 		public ObjectReference ObjectReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachTypedLinkRequest
 	{
 		
@@ -3607,20 +3373,17 @@ namespace MyNS
 		public TypedLinkSpecifier TypedLinkSpecifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableDirectoryRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableDirectoryRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppliedSchemaVersionRequest
 	{
 		
@@ -3632,14 +3395,12 @@ namespace MyNS
 		public string SchemaArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDirectoryRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFacetRequest
 	{
 		
@@ -3651,8 +3412,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLinkAttributesRequest
 	{
 		
@@ -3674,8 +3434,7 @@ namespace MyNS
 		public ConsistencyLevel ConsistencyLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetObjectAttributesRequest
 	{
 		
@@ -3701,8 +3460,7 @@ namespace MyNS
 		public string[] AttributeNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetObjectInformationRequest
 	{
 		
@@ -3714,14 +3472,12 @@ namespace MyNS
 		public ObjectReference ObjectReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSchemaAsJsonRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTypedLinkFacetInformationRequest
 	{
 		
@@ -3733,8 +3489,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAppliedSchemaArnsRequest
 	{
 		
@@ -3755,8 +3510,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAttachedIndicesRequest
 	{
 		
@@ -3774,8 +3528,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDevelopmentSchemaArnsRequest
 	{
 		
@@ -3786,8 +3539,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDirectoriesRequest
 	{
 		
@@ -3801,8 +3553,7 @@ namespace MyNS
 		public DirectoryState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFacetAttributesRequest
 	{
 		
@@ -3820,8 +3571,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFacetNamesRequest
 	{
 		
@@ -3832,8 +3582,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIncomingTypedLinksRequest
 	{
 		
@@ -3860,8 +3609,7 @@ namespace MyNS
 		public ConsistencyLevel ConsistencyLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIndexRequest
 	{
 		
@@ -3882,8 +3630,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectAttributesRequest
 	{
 		
@@ -3904,8 +3651,7 @@ namespace MyNS
 		public SchemaFacet FacetFilter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectChildrenRequest
 	{
 		
@@ -3923,8 +3669,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectParentPathsRequest
 	{
 		
@@ -3942,8 +3687,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectParentsRequest
 	{
 		
@@ -3961,8 +3705,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListObjectPoliciesRequest
 	{
 		
@@ -3980,8 +3723,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOutgoingTypedLinksRequest
 	{
 		
@@ -4008,8 +3750,7 @@ namespace MyNS
 		public ConsistencyLevel ConsistencyLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPolicyAttachmentsRequest
 	{
 		
@@ -4027,8 +3768,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPublishedSchemaArnsRequest
 	{
 		
@@ -4042,8 +3782,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -4061,8 +3800,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTypedLinkFacetAttributesRequest
 	{
 		
@@ -4080,8 +3818,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTypedLinkFacetNamesRequest
 	{
 		
@@ -4092,8 +3829,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupPolicyRequest
 	{
 		
@@ -4111,8 +3847,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishSchemaRequest
 	{
 		
@@ -4130,8 +3865,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSchemaFromJsonRequest
 	{
 		
@@ -4143,8 +3877,7 @@ namespace MyNS
 		public string Document { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFacetFromObjectRequest
 	{
 		
@@ -4163,27 +3896,24 @@ namespace MyNS
 		public ObjectReference ObjectReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BINARY_LENGTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BINARY_LENGTH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_COMPARISON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_COMPARISON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING_FROM_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING_FROM_SET = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING_LENGTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING_LENGTH = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleParameterMap
 	{
 	}
@@ -4191,8 +3921,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -4203,8 +3932,7 @@ namespace MyNS
 		public RuleParameterMap Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -4223,8 +3951,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -4243,8 +3970,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFacetRequest
 	{
 		
@@ -4262,8 +3988,7 @@ namespace MyNS
 		public ObjectType ObjectType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLinkAttributesRequest
 	{
 		
@@ -4282,8 +4007,7 @@ namespace MyNS
 		public LinkAttributeUpdate[] AttributeUpdates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateObjectAttributesRequest
 	{
 		
@@ -4302,8 +4026,7 @@ namespace MyNS
 		public ObjectAttributeUpdate[] AttributeUpdates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSchemaRequest
 	{
 		
@@ -4315,8 +4038,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTypedLinkFacetRequest
 	{
 		
@@ -4342,8 +4064,7 @@ namespace MyNS
 		public string[] IdentityAttributeOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeAppliedSchemaRequest
 	{
 		
@@ -4365,8 +4086,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradePublishedSchemaRequest
 	{
 		

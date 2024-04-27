@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and Amazon Web Services Region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.</p> <note> <p>For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivateGatewayOutput
 	{
 		
@@ -39,8 +38,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>ActivateGatewayInput$ActivationKey</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayName</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayRegion</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayTimezone</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$MediumChangerType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$TapeDriveType</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivateGatewayInput
 	{
 		
@@ -88,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -108,20 +105,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidGatewayRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddCacheOutput
 	{
 		
@@ -136,8 +130,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddCacheInput
 	{
 		
@@ -164,8 +157,7 @@ namespace MyNS
 	/// <summary>
 	/// AddTagsToResourceOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsToResourceOutput
 	{
 		
@@ -176,8 +168,7 @@ namespace MyNS
 	/// <summary>
 	/// AddTagsToResourceInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsToResourceInput
 	{
 		
@@ -196,8 +187,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddUploadBufferOutput
 	{
 		
@@ -212,8 +202,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddUploadBufferInput
 	{
 		
@@ -240,8 +229,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway for which working storage was configured.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddWorkingStorageOutput
 	{
 		
@@ -259,8 +247,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>AddWorkingStorageInput$DiskIds</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddWorkingStorageInput
 	{
 		
@@ -284,8 +271,7 @@ namespace MyNS
 		public string[] DiskIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssignTapePoolOutput
 	{
 		
@@ -293,8 +279,7 @@ namespace MyNS
 		public string TapeARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssignTapePoolInput
 	{
 		
@@ -316,8 +301,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> BypassGovernanceRetention { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateFileSystemOutput
 	{
 		
@@ -325,8 +309,7 @@ namespace MyNS
 		public string FileSystemAssociationARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateFileSystemInput
 	{
 		
@@ -389,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// The refresh cache information for the file share or FSx file systems.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CacheAttributes
 	{
 		
@@ -401,8 +383,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies network configuration information for the gateway associated with the Amazon FSx file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointNetworkConfiguration
 	{
 		
@@ -413,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// AttachVolumeOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachVolumeOutput
 	{
 		
@@ -428,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// AttachVolumeInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachVolumeInput
 	{
 		
@@ -464,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	/// CancelArchivalOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelArchivalOutput
 	{
 		
@@ -476,8 +454,7 @@ namespace MyNS
 	/// <summary>
 	/// CancelArchivalInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelArchivalInput
 	{
 		
@@ -504,8 +481,7 @@ namespace MyNS
 	/// <summary>
 	/// CancelRetrievalOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelRetrievalOutput
 	{
 		
@@ -516,8 +492,7 @@ namespace MyNS
 	/// <summary>
 	/// CancelRetrievalInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelRetrievalInput
 	{
 		
@@ -541,8 +516,7 @@ namespace MyNS
 		public string TapeARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCachediSCSIVolumeOutput
 	{
 		
@@ -553,8 +527,7 @@ namespace MyNS
 		public string TargetARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCachediSCSIVolumeInput
 	{
 		
@@ -617,8 +590,7 @@ namespace MyNS
 	/// <summary>
 	/// CreateNFSFileShareOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNFSFileShareOutput
 	{
 		
@@ -629,8 +601,7 @@ namespace MyNS
 	/// <summary>
 	/// CreateNFSFileShareInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNFSFileShareInput
 	{
 		
@@ -717,8 +688,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NFSFileShareDefaults
 	{
 		
@@ -738,9 +708,7 @@ namespace MyNS
 	/// <summary>
 	/// A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ObjectACL
 	{
 		
@@ -769,8 +737,7 @@ namespace MyNS
 	/// <summary>
 	/// CreateSMBFileShareOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSMBFileShareOutput
 	{
 		
@@ -781,8 +748,7 @@ namespace MyNS
 	/// <summary>
 	/// CreateSMBFileShareInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSMBFileShareInput
 	{
 		
@@ -881,24 +847,21 @@ namespace MyNS
 		public System.Nullable<System.Boolean> OplocksEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseSensitivity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClientSpecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClientSpecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CaseSensitive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CaseSensitive = 1,
 	}
 	
 	/// <summary>
 	/// A JSON object containing the following fields:
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotOutput
 	{
 		
@@ -912,8 +875,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>CreateSnapshotInput$SnapshotDescription</a> </p> </li> <li> <p> <a>CreateSnapshotInput$VolumeARN</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotInput
 	{
 		
@@ -935,14 +897,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotFromVolumeRecoveryPointOutput
 	{
 		
@@ -956,8 +916,7 @@ namespace MyNS
 		public string VolumeRecoveryPointTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotFromVolumeRecoveryPointInput
 	{
 		
@@ -982,8 +941,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the following fields:
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStorediSCSIVolumeOutput
 	{
 		
@@ -1000,8 +958,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>CreateStorediSCSIVolumeInput$DiskId</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$SnapshotId</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$TargetName</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStorediSCSIVolumeInput
 	{
 		
@@ -1058,8 +1015,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTapePoolOutput
 	{
 		
@@ -1067,8 +1023,7 @@ namespace MyNS
 		public string PoolARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTapePoolInput
 	{
 		
@@ -1096,40 +1051,35 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TapeStorageClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEEP_ARCHIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEEP_ARCHIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GLACIER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GLACIER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RetentionLockType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOVERNANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOVERNANCE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 2,
 	}
 	
 	/// <summary>
 	/// CreateTapeOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTapeWithBarcodeOutput
 	{
 		
@@ -1140,8 +1090,7 @@ namespace MyNS
 	/// <summary>
 	/// CreateTapeWithBarcodeInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTapeWithBarcodeInput
 	{
 		
@@ -1185,8 +1134,7 @@ namespace MyNS
 	/// <summary>
 	/// CreateTapeOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTapesOutput
 	{
 		
@@ -1197,8 +1145,7 @@ namespace MyNS
 	/// <summary>
 	/// CreateTapesInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTapesInput
 	{
 		
@@ -1253,8 +1200,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAutomaticTapeCreationPolicyOutput
 	{
 		
@@ -1269,8 +1215,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAutomaticTapeCreationPolicyInput
 	{
 		
@@ -1290,8 +1235,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway whose bandwidth rate information was deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBandwidthRateLimitOutput
 	{
 		
@@ -1309,8 +1253,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>DeleteBandwidthRateLimitInput$BandwidthType</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBandwidthRateLimitInput
 	{
 		
@@ -1337,8 +1280,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the following fields:
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteChapCredentialsOutput
 	{
 		
@@ -1352,8 +1294,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>DeleteChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>DeleteChapCredentialsInput$TargetARN</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteChapCredentialsInput
 	{
 		
@@ -1375,8 +1316,7 @@ namespace MyNS
 	/// <summary>
 	/// DeleteFileShareOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileShareOutput
 	{
 		
@@ -1387,8 +1327,7 @@ namespace MyNS
 	/// <summary>
 	/// DeleteFileShareInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFileShareInput
 	{
 		
@@ -1406,8 +1345,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the ID of the deleted gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGatewayOutput
 	{
 		
@@ -1425,8 +1363,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the ID of the gateway to delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGatewayInput
 	{
 		
@@ -1443,8 +1380,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSnapshotScheduleOutput
 	{
 		
@@ -1452,8 +1388,7 @@ namespace MyNS
 		public string VolumeARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSnapshotScheduleInput
 	{
 		
@@ -1468,8 +1403,7 @@ namespace MyNS
 	/// <summary>
 	/// DeleteTapeOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTapeOutput
 	{
 		
@@ -1480,8 +1414,7 @@ namespace MyNS
 	/// <summary>
 	/// DeleteTapeInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTapeInput
 	{
 		
@@ -1506,8 +1439,7 @@ namespace MyNS
 	/// <summary>
 	/// DeleteTapeArchiveOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTapeArchiveOutput
 	{
 		
@@ -1518,8 +1450,7 @@ namespace MyNS
 	/// <summary>
 	/// DeleteTapeArchiveInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTapeArchiveInput
 	{
 		
@@ -1534,8 +1465,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> BypassGovernanceRetention { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTapePoolOutput
 	{
 		
@@ -1543,8 +1473,7 @@ namespace MyNS
 		public string PoolARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTapePoolInput
 	{
 		
@@ -1559,8 +1488,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVolumeOutput
 	{
 		
@@ -1571,8 +1499,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the <a>DeleteVolumeInput$VolumeARN</a> to delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVolumeInput
 	{
 		
@@ -1584,8 +1511,7 @@ namespace MyNS
 		public string VolumeARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAvailabilityMonitorTestOutput
 	{
 		
@@ -1606,24 +1532,21 @@ namespace MyNS
 		public System.DateTimeOffset StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AvailabilityMonitorTestStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAvailabilityMonitorTestInput
 	{
 		
@@ -1643,8 +1566,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the following fields:
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBandwidthRateLimitOutput
 	{
 		
@@ -1668,8 +1590,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBandwidthRateLimitInput
 	{
 		
@@ -1686,8 +1607,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBandwidthRateLimitScheduleOutput
 	{
 		
@@ -1708,8 +1628,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes a bandwidth rate limit interval for a gateway. A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period of time on one or more days of the week, during which bandwidth rate limits are specified for uploading, downloading, or both. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BandwidthRateLimitInterval
 	{
 		
@@ -1755,8 +1674,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> AverageDownloadRateLimitInBitsPerSec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBandwidthRateLimitScheduleInput
 	{
 		
@@ -1773,8 +1691,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCacheOutput
 	{
 		
@@ -1807,8 +1724,7 @@ namespace MyNS
 		public System.Nullable<System.Double> CacheMissPercentage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCacheInput
 	{
 		
@@ -1828,8 +1744,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the following fields:
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCachediSCSIVolumesOutput
 	{
 		
@@ -1840,8 +1755,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an iSCSI cached volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CachediSCSIVolume
 	{
 		
@@ -1897,8 +1811,7 @@ namespace MyNS
 	/// <summary>
 	/// Lists iSCSI information about a volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeiSCSIAttributes
 	{
 		
@@ -1918,8 +1831,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ChapEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCachediSCSIVolumesInput
 	{
 		
@@ -1934,8 +1846,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the following fields:
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeChapCredentialsOutput
 	{
 		
@@ -1946,8 +1857,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChapInfo
 	{
 		
@@ -1967,8 +1877,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeChapCredentialsInput
 	{
 		
@@ -1980,8 +1889,7 @@ namespace MyNS
 		public string TargetARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFileSystemAssociationsOutput
 	{
 		
@@ -1992,8 +1900,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the object returned by <code>DescribeFileSystemAssociations</code> that describes a created file system association.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileSystemAssociationInfo
 	{
 		
@@ -2038,8 +1945,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed information on file system association status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileSystemAssociationStatusDetail
 	{
 		
@@ -2047,8 +1953,7 @@ namespace MyNS
 		public string ErrorCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFileSystemAssociationsInput
 	{
 		
@@ -2063,8 +1968,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the following fields:
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGatewayInformationOutput
 	{
 		
@@ -2142,8 +2046,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a gateway's network interface.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkInterface
 	{
 		
@@ -2157,52 +2060,47 @@ namespace MyNS
 		public string Ipv6Address { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HostEnvironment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VMWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VMWARE = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="HYPER-V")]
 		HYPERMinusV = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KVM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KVM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNOWBALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNOWBALL = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GatewayCapacity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Small")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Small = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Medium = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Large")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Large = 2,
 	}
 	
 	/// <summary>
 	/// A JSON object containing the ID of the gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGatewayInformationInput
 	{
 		
@@ -2222,8 +2120,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>DescribeMaintenanceStartTimeOutput$DayOfMonth</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$Timezone</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMaintenanceStartTimeOutput
 	{
 		
@@ -2256,8 +2153,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMaintenanceStartTimeInput
 	{
 		
@@ -2277,8 +2173,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeNFSFileSharesOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeNFSFileSharesOutput
 	{
 		
@@ -2289,8 +2184,7 @@ namespace MyNS
 	/// <summary>
 	/// The Unix file permissions and ownership information assigned, by default, to native S3 objects when an S3 File Gateway discovers them in S3 buckets. This operation is only supported in S3 File Gateways.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NFSFileShareInfo
 	{
 		
@@ -2443,9 +2337,7 @@ namespace MyNS
 		public string AuditDestinationARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NFSFileShareInfoObjectACL
 	{
 		
@@ -2474,8 +2366,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeNFSFileSharesInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeNFSFileSharesInput
 	{
 		
@@ -2490,8 +2381,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeSMBFileSharesOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSMBFileSharesOutput
 	{
 		
@@ -2502,8 +2392,7 @@ namespace MyNS
 	/// <summary>
 	/// The Windows file permissions and ownership information assigned, by default, to native S3 objects when S3 File Gateway discovers them in S3 buckets. This operation is only supported for S3 File Gateways.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMBFileShareInfo
 	{
 		
@@ -2658,9 +2547,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> OplocksEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SMBFileShareInfoObjectACL
 	{
 		
@@ -2689,8 +2576,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeSMBFileSharesInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSMBFileSharesInput
 	{
 		
@@ -2702,8 +2588,7 @@ namespace MyNS
 		public string[] FileShareARNList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSMBSettingsOutput
 	{
 		
@@ -2736,55 +2621,50 @@ namespace MyNS
 		public SMBLocalGroups SMBLocalGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActiveDirectoryStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESS_DENIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DETACHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DETACHED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOINED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOINING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_ERROR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMEOUT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ERROR = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SMBSecurityStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClientSpecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClientSpecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MandatorySigning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MandatorySigning = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MandatoryEncryption")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MandatoryEncryption = 2,
 	}
 	
 	/// <summary>
 	/// A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMBLocalGroups
 	{
 		
@@ -2792,8 +2672,7 @@ namespace MyNS
 		public string[] GatewayAdmins { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSMBSettingsInput
 	{
 		
@@ -2810,8 +2689,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSnapshotScheduleOutput
 	{
 		
@@ -2837,8 +2715,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the <a>DescribeSnapshotScheduleInput$VolumeARN</a> of the volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSnapshotScheduleInput
 	{
 		
@@ -2850,8 +2727,7 @@ namespace MyNS
 		public string VolumeARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStorediSCSIVolumesOutput
 	{
 		
@@ -2862,8 +2738,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an iSCSI stored volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorediSCSIVolume
 	{
 		
@@ -2925,8 +2800,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing a list of <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStorediSCSIVolumesInput
 	{
 		
@@ -2941,8 +2815,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeTapeArchivesOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTapeArchivesOutput
 	{
 		
@@ -2956,8 +2829,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a virtual tape that is archived in the virtual tape shelf (VTS).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TapeArchive
 	{
 		
@@ -3013,8 +2885,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeTapeArchivesInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTapeArchivesInput
 	{
 		
@@ -3031,8 +2902,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeTapeRecoveryPointsOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTapeRecoveryPointsOutput
 	{
 		
@@ -3056,8 +2926,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a recovery point.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TapeRecoveryPointInfo
 	{
 		
@@ -3077,8 +2946,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeTapeRecoveryPointsInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTapeRecoveryPointsInput
 	{
 		
@@ -3104,8 +2972,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeTapesOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTapesOutput
 	{
 		
@@ -3119,8 +2986,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a virtual tape object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tape
 	{
 		
@@ -3176,8 +3042,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeTapesInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTapesInput
 	{
 		
@@ -3203,8 +3068,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeUploadBufferOutput
 	{
 		
@@ -3228,8 +3092,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> UploadBufferAllocatedInBytes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeUploadBufferInput
 	{
 		
@@ -3249,8 +3112,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeVTLDevicesOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVTLDevicesOutput
 	{
 		
@@ -3274,8 +3136,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a device object associated with a tape gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VTLDevice
 	{
 		
@@ -3298,8 +3159,7 @@ namespace MyNS
 	/// <summary>
 	/// Lists iSCSI information about a VTL device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceiSCSIAttributes
 	{
 		
@@ -3319,8 +3179,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeVTLDevicesInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVTLDevicesInput
 	{
 		
@@ -3349,8 +3208,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the following fields:
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkingStorageOutput
 	{
 		
@@ -3377,8 +3235,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkingStorageInput
 	{
 		
@@ -3398,8 +3255,7 @@ namespace MyNS
 	/// <summary>
 	/// AttachVolumeOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachVolumeOutput
 	{
 		
@@ -3410,8 +3266,7 @@ namespace MyNS
 	/// <summary>
 	/// AttachVolumeInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachVolumeInput
 	{
 		
@@ -3429,8 +3284,7 @@ namespace MyNS
 	/// <summary>
 	/// DisableGatewayOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableGatewayOutput
 	{
 		
@@ -3441,8 +3295,7 @@ namespace MyNS
 	/// <summary>
 	/// DisableGatewayInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableGatewayInput
 	{
 		
@@ -3459,8 +3312,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateFileSystemOutput
 	{
 		
@@ -3468,8 +3320,7 @@ namespace MyNS
 		public string FileSystemAssociationARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateFileSystemInput
 	{
 		
@@ -3487,8 +3338,7 @@ namespace MyNS
 	/// <summary>
 	/// JoinDomainOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JoinDomainOutput
 	{
 		
@@ -3502,8 +3352,7 @@ namespace MyNS
 	/// <summary>
 	/// JoinDomainInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JoinDomainInput
 	{
 		
@@ -3545,8 +3394,7 @@ namespace MyNS
 		public string Password { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAutomaticTapeCreationPoliciesOutput
 	{
 		
@@ -3557,8 +3405,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutomaticTapeCreationPolicyInfo
 	{
 		
@@ -3579,8 +3426,7 @@ namespace MyNS
 	/// <summary>
 	/// An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutomaticTapeCreationRule
 	{
 		
@@ -3616,8 +3462,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Worm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAutomaticTapeCreationPoliciesInput
 	{
 		
@@ -3635,8 +3480,7 @@ namespace MyNS
 	/// <summary>
 	/// ListFileShareOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFileSharesOutput
 	{
 		
@@ -3653,8 +3497,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a file share. Only supported S3 File Gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileShareInfo
 	{
 		
@@ -3705,24 +3548,21 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileShareInfoFileShareType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NFS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMB = 1,
 	}
 	
 	/// <summary>
 	/// ListFileShareInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFileSharesInput
 	{
 		
@@ -3736,8 +3576,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFileSystemAssociationsOutput
 	{
 		
@@ -3754,8 +3593,7 @@ namespace MyNS
 	/// <summary>
 	/// Gets the summary returned by <code>ListFileSystemAssociation</code>, which is a summary of a created file system association.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileSystemAssociationSummary
 	{
 		
@@ -3779,8 +3617,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFileSystemAssociationsInput
 	{
 		
@@ -3801,8 +3638,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGatewaysOutput
 	{
 		
@@ -3816,8 +3652,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a gateway object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GatewayInfo
 	{
 		
@@ -3852,8 +3687,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing zero or more of the following fields:</p> <ul> <li> <p> <a>ListGatewaysInput$Limit</a> </p> </li> <li> <p> <a>ListGatewaysInput$Marker</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGatewaysInput
 	{
 		
@@ -3864,8 +3698,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocalDisksOutput
 	{
 		
@@ -3886,8 +3719,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a gateway's local disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Disk
 	{
 		
@@ -3933,8 +3765,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocalDisksInput
 	{
 		
@@ -3954,8 +3785,7 @@ namespace MyNS
 	/// <summary>
 	/// ListTagsForResourceOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceOutput
 	{
 		
@@ -3972,8 +3802,7 @@ namespace MyNS
 	/// <summary>
 	/// ListTagsForResourceInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceInput
 	{
 		
@@ -3991,8 +3820,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTapePoolsOutput
 	{
 		
@@ -4006,8 +3834,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a custom tape pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolInfo
 	{
 		
@@ -4030,21 +3857,18 @@ namespace MyNS
 		public PoolStatus PoolStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PoolStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTapePoolsInput
 	{
 		
@@ -4061,8 +3885,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>ListTapesOutput$Marker</a> </p> </li> <li> <p> <a>ListTapesOutput$VolumeInfos</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTapesOutput
 	{
 		
@@ -4079,8 +3902,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a virtual tape.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TapeInfo
 	{
 		
@@ -4112,8 +3934,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <p> <a>ListTapesInput$Limit</a> </p> </li> <li> <p> <a>ListTapesInput$Marker</a> </p> </li> <li> <p> <a>ListTapesInput$TapeARNs</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTapesInput
 	{
 		
@@ -4133,8 +3954,7 @@ namespace MyNS
 	/// <summary>
 	/// ListVolumeInitiatorsOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVolumeInitiatorsOutput
 	{
 		
@@ -4145,8 +3965,7 @@ namespace MyNS
 	/// <summary>
 	/// ListVolumeInitiatorsInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVolumeInitiatorsInput
 	{
 		
@@ -4158,8 +3977,7 @@ namespace MyNS
 		public string VolumeARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVolumeRecoveryPointsOutput
 	{
 		
@@ -4180,8 +3998,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a storage volume recovery point object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeRecoveryPointInfo
 	{
 		
@@ -4198,8 +4015,7 @@ namespace MyNS
 		public string VolumeRecoveryPointTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVolumeRecoveryPointsInput
 	{
 		
@@ -4219,8 +4035,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>ListVolumesOutput$Marker</a> </p> </li> <li> <p> <a>ListVolumesOutput$VolumeInfos</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVolumesOutput
 	{
 		
@@ -4244,8 +4059,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a storage volume object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeInfo
 	{
 		
@@ -4281,8 +4095,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <p> <a>ListVolumesInput$Limit</a> </p> </li> <li> <p> <a>ListVolumesInput$Marker</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVolumesInput
 	{
 		
@@ -4303,8 +4116,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifyWhenUploadedOutput
 	{
 		
@@ -4329,8 +4141,7 @@ namespace MyNS
 		public string NotificationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifyWhenUploadedInput
 	{
 		
@@ -4350,8 +4161,7 @@ namespace MyNS
 	/// <summary>
 	/// RefreshCacheOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefreshCacheOutput
 	{
 		
@@ -4379,8 +4189,7 @@ namespace MyNS
 	/// <summary>
 	/// RefreshCacheInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefreshCacheInput
 	{
 		
@@ -4401,8 +4210,7 @@ namespace MyNS
 	/// <summary>
 	/// RemoveTagsFromResourceOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsFromResourceOutput
 	{
 		
@@ -4413,8 +4221,7 @@ namespace MyNS
 	/// <summary>
 	/// RemoveTagsFromResourceInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsFromResourceInput
 	{
 		
@@ -4433,8 +4240,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetCacheOutput
 	{
 		
@@ -4449,8 +4255,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetCacheInput
 	{
 		
@@ -4470,8 +4275,7 @@ namespace MyNS
 	/// <summary>
 	/// RetrieveTapeArchiveOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetrieveTapeArchiveOutput
 	{
 		
@@ -4482,8 +4286,7 @@ namespace MyNS
 	/// <summary>
 	/// RetrieveTapeArchiveInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetrieveTapeArchiveInput
 	{
 		
@@ -4505,8 +4308,7 @@ namespace MyNS
 	/// <summary>
 	/// RetrieveTapeRecoveryPointOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetrieveTapeRecoveryPointOutput
 	{
 		
@@ -4517,8 +4319,7 @@ namespace MyNS
 	/// <summary>
 	/// RetrieveTapeRecoveryPointInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetrieveTapeRecoveryPointInput
 	{
 		
@@ -4542,8 +4343,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetLocalConsolePasswordOutput
 	{
 		
@@ -4561,8 +4361,7 @@ namespace MyNS
 	/// <summary>
 	/// SetLocalConsolePasswordInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetLocalConsolePasswordInput
 	{
 		
@@ -4586,8 +4385,7 @@ namespace MyNS
 		public string LocalConsolePassword { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetSMBGuestPasswordOutput
 	{
 		
@@ -4605,8 +4403,7 @@ namespace MyNS
 	/// <summary>
 	/// SetSMBGuestPasswordInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetSMBGuestPasswordInput
 	{
 		
@@ -4628,8 +4425,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut down.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShutdownGatewayOutput
 	{
 		
@@ -4647,8 +4443,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway to shut down.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShutdownGatewayInput
 	{
 		
@@ -4665,8 +4460,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartAvailabilityMonitorTestOutput
 	{
 		
@@ -4681,8 +4475,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartAvailabilityMonitorTestInput
 	{
 		
@@ -4702,8 +4495,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartGatewayOutput
 	{
 		
@@ -4721,8 +4513,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway to start.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartGatewayInput
 	{
 		
@@ -4739,8 +4530,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAutomaticTapeCreationPolicyOutput
 	{
 		
@@ -4755,8 +4545,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAutomaticTapeCreationPolicyInput
 	{
 		
@@ -4783,8 +4572,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway whose throttle information was updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBandwidthRateLimitOutput
 	{
 		
@@ -4802,8 +4590,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</a> </p> </li> <li> <p> <a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBandwidthRateLimitInput
 	{
 		
@@ -4826,8 +4613,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> AverageDownloadRateLimitInBitsPerSec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBandwidthRateLimitScheduleOutput
 	{
 		
@@ -4842,8 +4628,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBandwidthRateLimitScheduleInput
 	{
 		
@@ -4870,8 +4655,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the following fields:
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateChapCredentialsOutput
 	{
 		
@@ -4885,8 +4669,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$TargetARN</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateChapCredentialsInput
 	{
 		
@@ -4915,8 +4698,7 @@ namespace MyNS
 		public string SecretToAuthenticateTarget { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileSystemAssociationOutput
 	{
 		
@@ -4924,8 +4706,7 @@ namespace MyNS
 		public string FileSystemAssociationARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFileSystemAssociationInput
 	{
 		
@@ -4955,8 +4736,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGatewayInformationOutput
 	{
 		
@@ -4974,8 +4754,7 @@ namespace MyNS
 		public string GatewayName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGatewayInformationInput
 	{
 		
@@ -5016,8 +4795,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGatewaySoftwareNowOutput
 	{
 		
@@ -5035,8 +4813,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway to update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGatewaySoftwareNowInput
 	{
 		
@@ -5056,8 +4833,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the gateway whose maintenance start time is updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMaintenanceStartTimeOutput
 	{
 		
@@ -5075,8 +4851,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>UpdateMaintenanceStartTimeInput$DayOfMonth</a> </p> </li> <li> <p> <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a> </p> </li> <li> <p> <a>UpdateMaintenanceStartTimeInput$HourOfDay</a> </p> </li> <li> <p> <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMaintenanceStartTimeInput
 	{
 		
@@ -5116,8 +4891,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateNFSFileShareOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNFSFileShareOutput
 	{
 		
@@ -5128,8 +4902,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateNFSFileShareInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNFSFileShareInput
 	{
 		
@@ -5186,8 +4959,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateSMBFileShareOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSMBFileShareOutput
 	{
 		
@@ -5198,8 +4970,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateSMBFileShareInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSMBFileShareInput
 	{
 		
@@ -5265,8 +5036,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> OplocksEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSMBFileShareVisibilityOutput
 	{
 		
@@ -5281,8 +5051,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSMBFileShareVisibilityInput
 	{
 		
@@ -5306,8 +5075,7 @@ namespace MyNS
 		public bool FileSharesVisible { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSMBLocalGroupsOutput
 	{
 		
@@ -5322,8 +5090,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSMBLocalGroupsInput
 	{
 		
@@ -5347,8 +5114,7 @@ namespace MyNS
 		public SMBLocalGroups SMBLocalGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSMBSecurityStrategyOutput
 	{
 		
@@ -5363,8 +5129,7 @@ namespace MyNS
 		public string GatewayARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSMBSecurityStrategyInput
 	{
 		
@@ -5391,8 +5156,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSnapshotScheduleOutput
 	{
 		
@@ -5403,8 +5167,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateSnapshotScheduleInput$Description</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$StartAt</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$VolumeARN</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSnapshotScheduleInput
 	{
 		
@@ -5439,8 +5202,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateVTLDeviceTypeOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVTLDeviceTypeOutput
 	{
 		
@@ -5448,8 +5210,7 @@ namespace MyNS
 		public string VTLDeviceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVTLDeviceTypeInput
 	{
 		
@@ -5471,16 +5232,14 @@ namespace MyNS
 	/// <summary>
 	/// The type of the file share.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileShareType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NFS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMB = 1,
 	}
 	

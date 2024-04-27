@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoConvertRequest
 	{
 		
@@ -45,8 +44,7 @@ namespace MyNS
 		public string System { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoConvertResponse
 	{
 		
@@ -57,8 +55,7 @@ namespace MyNS
 		public string Coordinates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoDistanceRequest
 	{
 		
@@ -84,8 +81,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UseEllipse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoDistanceResponse
 	{
 		
@@ -105,8 +101,7 @@ namespace MyNS
 	/// <summary>
 	/// Celestial event information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoEventDto
 	{
 		
@@ -138,8 +133,7 @@ namespace MyNS
 		public string ZodiacSign { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoFenceRequest
 	{
 		
@@ -158,8 +152,7 @@ namespace MyNS
 		public string[] FenceCoordinates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoFenceResponse
 	{
 		
@@ -179,8 +172,7 @@ namespace MyNS
 	/// <summary>
 	/// Lunar information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoMoonDto
 	{
 		
@@ -227,8 +219,7 @@ namespace MyNS
 		public string Sign { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoonIllum
 	{
 		
@@ -248,9 +239,7 @@ namespace MyNS
 		public System.Nullable<MoonIllumPhaseNameEnum> PhaseNameEnum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MoonIllumPhaseNameEnum
 	{
 		
@@ -279,8 +268,7 @@ namespace MyNS
 		_7 = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LunarEclipseDetails
 	{
 		
@@ -315,9 +303,7 @@ namespace MyNS
 		public System.Nullable<LunarEclipseDetailsType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LunarEclipseDetailsType
 	{
 		
@@ -331,8 +317,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoSkyRequest
 	{
 		
@@ -349,8 +334,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Date { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoSkyResponse
 	{
 		
@@ -376,8 +360,7 @@ namespace MyNS
 	/// <summary>
 	/// Solar information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoSunDto
 	{
 		
@@ -418,8 +401,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Set { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SolarEclipseDetails
 	{
 		
@@ -451,9 +433,7 @@ namespace MyNS
 		public System.Nullable<SolarEclipseDetailsType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SolarEclipseDetailsType
 	{
 		
@@ -467,8 +447,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WyjytErrorResponse
 	{
 		

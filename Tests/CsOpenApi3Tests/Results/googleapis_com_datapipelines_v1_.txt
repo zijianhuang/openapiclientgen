@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Pipeline job details specific to the Dataflow API. This is encapsulated here to allow for more executors to store their specific details separately.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1DataflowJobDetails
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// The version of the SDK used to run the job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1SdkVersion
 	{
 		
@@ -71,33 +69,30 @@ namespace MyNS
 		public string VersionDisplayName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatapipelinesV1SdkVersionSdkSupportStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUPPORTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STALE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STALE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPRECATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPRECATED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUPPORTED = 4,
 	}
 	
 	/// <summary>
 	/// The environment values to be set at runtime for a Flex Template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment
 	{
 		
@@ -198,43 +193,38 @@ namespace MyNS
 		public string Zone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironmentFlexrsGoal
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEXRS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEXRS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEXRS_SPEED_OPTIMIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEXRS_SPEED_OPTIMIZED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEXRS_COST_OPTIMIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEXRS_COST_OPTIMIZED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironmentIpConfiguration
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKER_IP_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKER_IP_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKER_IP_PUBLIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKER_IP_PUBLIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKER_IP_PRIVATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKER_IP_PRIVATE = 2,
 	}
 	
 	/// <summary>
 	/// Definition of the job information maintained by the pipeline. Fields in this entity are retrieved from the executor API (e.g. Dataflow API).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1Job
 	{
 		
@@ -281,36 +271,33 @@ namespace MyNS
 		public GoogleRpcStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatapipelinesV1JobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_DONE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_CANCELLED = 5,
 	}
 	
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -336,8 +323,7 @@ namespace MyNS
 	/// <summary>
 	/// Launch Flex Template parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter
 	{
 		
@@ -387,8 +373,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to launch a Dataflow job from a Flex Template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1LaunchFlexTemplateRequest
 	{
 		
@@ -420,8 +405,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters to provide to the template being launched.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1LaunchTemplateParameters
 	{
 		
@@ -459,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	/// The environment values to set at runtime.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1RuntimeEnvironment
 	{
 		
@@ -564,8 +547,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to launch a template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1LaunchTemplateRequest
 	{
 		
@@ -603,8 +585,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListJobs
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1ListJobsResponse
 	{
 		
@@ -624,8 +605,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListPipelines.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1ListPipelinesResponse
 	{
 		
@@ -645,8 +625,7 @@ namespace MyNS
 	/// <summary>
 	/// The main pipeline entity and all the necessary metadata for launching and managing linked jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1Pipeline
 	{
 		
@@ -720,8 +699,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the schedule the pipeline runs on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1ScheduleSpec
 	{
 		
@@ -744,52 +722,47 @@ namespace MyNS
 		public string TimeZone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatapipelinesV1PipelineState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_RESUMING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_RESUMING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_STOPPING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_ARCHIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_ARCHIVED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_PAUSED = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatapipelinesV1PipelineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIPELINE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIPELINE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIPELINE_TYPE_BATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIPELINE_TYPE_BATCH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIPELINE_TYPE_STREAMING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIPELINE_TYPE_STREAMING = 2,
 	}
 	
 	/// <summary>
 	/// Workload details for creating the pipeline jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1Workload
 	{
 		
@@ -809,8 +782,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for RunPipeline
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1RunPipelineRequest
 	{
 	}
@@ -818,8 +790,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for RunPipeline
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1RunPipelineResponse
 	{
 		
@@ -833,8 +804,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for StopPipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatapipelinesV1StopPipelineRequest
 	{
 	}
@@ -842,8 +812,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

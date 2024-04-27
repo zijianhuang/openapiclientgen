@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkCallParameters
 	{
 		
@@ -158,8 +157,7 @@ namespace MyNS
 		public string To { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkCallResponse
 	{
 		
@@ -196,9 +194,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BulkCallResponseMessage
 	{
 		
@@ -230,8 +226,7 @@ namespace MyNS
 		Unknown_Core_UUID = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallNotificationParameters
 	{
 		
@@ -336,65 +331,58 @@ namespace MyNS
 		public string To { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallNotificationParametersAnsweredBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="machine_start")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		machine_start = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="machine_end_beep")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		machine_end_beep = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="machine_end_other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		machine_end_other = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="human")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		human = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallNotificationParametersCallStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="early-media")]
 		earlyMinusmedia = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answer = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallNotificationParametersDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outbound = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallParameters
 	{
 		
@@ -567,34 +555,29 @@ namespace MyNS
 		public string To { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallParametersAsyncAmdStatusCallbackMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallParametersMachineDetection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DetectMessageEnd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DetectMessageEnd = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallResponse
 	{
 		
@@ -631,9 +614,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallResponseMessage
 	{
 		
@@ -656,8 +637,7 @@ namespace MyNS
 		Unknown_Core_UUID = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelScheduledHangupParameters
 	{
 		
@@ -670,8 +650,7 @@ namespace MyNS
 		public string SchedHangupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelScheduledHangupResponse
 	{
 		
@@ -692,9 +671,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CancelScheduledHangupResponseMessage
 	{
 		
@@ -711,8 +688,7 @@ namespace MyNS
 		Scheduled_Hangup_Cancelation_Failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelScheduledPlayParameters
 	{
 		
@@ -725,8 +701,7 @@ namespace MyNS
 		public string SchedPlayId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelScheduledPlayResponse
 	{
 		
@@ -747,9 +722,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CancelScheduledPlayResponseMessage
 	{
 		
@@ -766,8 +739,7 @@ namespace MyNS
 		Scheduled_Play_Cancelation_Failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceDeafParameters
 	{
 		
@@ -788,8 +760,7 @@ namespace MyNS
 		public string MemberID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceDeafResponse
 	{
 		
@@ -816,9 +787,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceDeafResponseMessage
 	{
 		
@@ -835,8 +804,7 @@ namespace MyNS
 		Conference_Deaf_Failed_MinusMinus_Conference_not_found = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceHangupParameters
 	{
 		
@@ -857,8 +825,7 @@ namespace MyNS
 		public string MemberID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceHangupResponse
 	{
 		
@@ -885,9 +852,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceHangupResponseMessage
 	{
 		
@@ -904,8 +869,7 @@ namespace MyNS
 		Conference_Hangup_Failed_MinusMinus_Conference_not_found = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceKickParameters
 	{
 		
@@ -926,8 +890,7 @@ namespace MyNS
 		public string MemberID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceKickResponse
 	{
 		
@@ -954,9 +917,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceKickResponseMessage
 	{
 		
@@ -973,8 +934,7 @@ namespace MyNS
 		Conference_Kick_Failed_MinusMinus_Conference_not_found = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceListMembersParameters
 	{
 		
@@ -1011,8 +971,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> MutedFilter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceListMembersResponse
 	{
 		
@@ -1041,9 +1000,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceListMembersResponseMessage
 	{
 		
@@ -1060,8 +1017,7 @@ namespace MyNS
 		Conference_ListMembers_Failed_MinusMinus_Conference_not_found = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceListParameters
 	{
 		
@@ -1090,8 +1046,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> MutedFilter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceListResponse
 	{
 		
@@ -1120,9 +1075,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceListResponseMessage
 	{
 		
@@ -1133,8 +1086,7 @@ namespace MyNS
 		Conference_List_Failed_to_parse_result = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceMuteParameters
 	{
 		
@@ -1155,8 +1107,7 @@ namespace MyNS
 		public string MemberID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceMuteResponse
 	{
 		
@@ -1183,9 +1134,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceMuteResponseMessage
 	{
 		
@@ -1202,8 +1151,7 @@ namespace MyNS
 		Conference_Mute_Failed_MinusMinus_Conference_not_found = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferencePlayParameters
 	{
 		
@@ -1232,8 +1180,7 @@ namespace MyNS
 		public string MemberID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferencePlayResponse
 	{
 		
@@ -1254,9 +1201,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferencePlayResponseMessage
 	{
 		
@@ -1279,8 +1224,7 @@ namespace MyNS
 		Conference_Play_Failed = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceRecordStartParameters
 	{
 		
@@ -1313,21 +1257,18 @@ namespace MyNS
 		public string FilePath { get; set; } = "";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceRecordStartParametersFileFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wav")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wav = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mp3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mp3 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceRecordStartResponse
 	{
 		
@@ -1356,9 +1297,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceRecordStartResponseMessage
 	{
 		
@@ -1378,8 +1317,7 @@ namespace MyNS
 		Conference_RecordStart_Failed_MinusMinus_Conference_not_found = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceRecordStopParameters
 	{
 		
@@ -1400,8 +1338,7 @@ namespace MyNS
 		public string RecordFile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceRecordStopResponse
 	{
 		
@@ -1422,9 +1359,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceRecordStopResponseMessage
 	{
 		
@@ -1444,8 +1379,7 @@ namespace MyNS
 		Conference_RecordStop_Failed_MinusMinus_Conference_not_found = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceSpeakParameters
 	{
 		
@@ -1474,8 +1408,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceSpeakResponse
 	{
 		
@@ -1496,9 +1429,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceSpeakResponseMessage
 	{
 		
@@ -1521,8 +1452,7 @@ namespace MyNS
 		Conference_Speak_Failed = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceUndeafParameters
 	{
 		
@@ -1543,8 +1473,7 @@ namespace MyNS
 		public string MemberID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceUndeafResponse
 	{
 		
@@ -1571,9 +1500,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceUndeafResponseMessage
 	{
 		
@@ -1590,8 +1517,7 @@ namespace MyNS
 		Conference_Undeaf_Failed_MinusMinus_Conference_not_found = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceUnmuteParameters
 	{
 		
@@ -1612,8 +1538,7 @@ namespace MyNS
 		public string MemberID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConferenceUnmuteResponse
 	{
 		
@@ -1640,9 +1565,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConferenceUnmuteResponseMessage
 	{
 		
@@ -1659,8 +1582,7 @@ namespace MyNS
 		Conference_Unmute_Failed_MinusMinus_Conference_not_found = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupCallParameters
 	{
 		
@@ -1800,8 +1722,7 @@ namespace MyNS
 		public string To { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupCallResponse
 	{
 		
@@ -1838,9 +1759,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupCallResponseMessage
 	{
 		
@@ -1878,14 +1797,12 @@ namespace MyNS
 		GroupCall_Request_Failed = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HangupAllCallsParameters
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HangupAllCallsResponse
 	{
 		
@@ -1906,9 +1823,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HangupAllCallsResponseMessage
 	{
 		
@@ -1919,8 +1834,7 @@ namespace MyNS
 		Hangup_Call_Failed = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HangupCallParameters
 	{
 		
@@ -1937,8 +1851,7 @@ namespace MyNS
 		public string RequestUUID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HangupCallResponse
 	{
 		
@@ -1959,9 +1872,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HangupCallResponseMessage
 	{
 		
@@ -1978,8 +1889,7 @@ namespace MyNS
 		Hangup_Call_Failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayParameters
 	{
 		
@@ -2026,24 +1936,21 @@ namespace MyNS
 		public string Sounds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayParametersLegs
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aleg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aleg = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bleg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bleg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="both")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		both = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayResponse
 	{
 		
@@ -2064,9 +1971,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayResponseMessage
 	{
 		
@@ -2095,8 +2000,7 @@ namespace MyNS
 		Play_Failed = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayStopParameters
 	{
 		
@@ -2109,8 +2013,7 @@ namespace MyNS
 		public string CallUUID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayStopResponse
 	{
 		
@@ -2131,9 +2034,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayStopResponseMessage
 	{
 		
@@ -2150,8 +2051,7 @@ namespace MyNS
 		PlayStop_Failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordStartParameters
 	{
 		
@@ -2191,8 +2091,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TimeLimit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordStartResponse
 	{
 		
@@ -2221,9 +2120,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecordStartResponseMessage
 	{
 		
@@ -2246,8 +2143,7 @@ namespace MyNS
 		RecordStart_Failed = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordStopParameters
 	{
 		
@@ -2268,8 +2164,7 @@ namespace MyNS
 		public string RecordFile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordStopResponse
 	{
 		
@@ -2290,9 +2185,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecordStopResponseMessage
 	{
 		
@@ -2312,8 +2205,7 @@ namespace MyNS
 		RecordStop_Failed = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduleHangupParameters
 	{
 		
@@ -2336,8 +2228,7 @@ namespace MyNS
 		public int Time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduleHangupResponse
 	{
 		
@@ -2366,9 +2257,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduleHangupResponseMessage
 	{
 		
@@ -2391,8 +2280,7 @@ namespace MyNS
 		ScheduleHangup_Failed = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchedulePlayParameters
 	{
 		
@@ -2450,8 +2338,7 @@ namespace MyNS
 		public int Time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchedulePlayResponse
 	{
 		
@@ -2480,9 +2367,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SchedulePlayResponseMessage
 	{
 		
@@ -2517,8 +2402,7 @@ namespace MyNS
 		Play_Failed = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendDigitsParameters
 	{
 		
@@ -2546,8 +2430,7 @@ namespace MyNS
 		public PlayParametersLegs Leg { get; set; } = PlayParametersLegs.aleg;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendDigitsResponse
 	{
 		
@@ -2568,9 +2451,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SendDigitsResponseMessage
 	{
 		
@@ -2593,8 +2474,7 @@ namespace MyNS
 		SendDigits_Failed = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoundTouchParameters
 	{
 		
@@ -2655,9 +2535,7 @@ namespace MyNS
 		public System.Nullable<System.Single> Tempo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SoundTouchParametersAudioDirection
 	{
 		
@@ -2668,8 +2546,7 @@ namespace MyNS
 		_out = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoundTouchResponse
 	{
 		
@@ -2690,9 +2567,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SoundTouchResponseMessage
 	{
 		
@@ -2742,8 +2617,7 @@ namespace MyNS
 		SoundTouch_Failed = 14,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoundTouchStopParameters
 	{
 		
@@ -2756,8 +2630,7 @@ namespace MyNS
 		public string CallUUID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoundTouchStopResponse
 	{
 		
@@ -2778,9 +2651,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SoundTouchStopResponseMessage
 	{
 		
@@ -2797,8 +2668,7 @@ namespace MyNS
 		SoundTouchStop_Failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransferCallParameters
 	{
 		
@@ -2819,8 +2689,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransferCallResponse
 	{
 		
@@ -2841,9 +2710,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransferCallResponseMessage
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Output structure for the CancelJob operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelJobOutput
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// The JOBID was missing, not found, or not associated with the AWS account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidJobIdException
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the specified job has expired out of the system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiredJobIdException
 	{
 		
@@ -65,8 +62,7 @@ namespace MyNS
 	/// <summary>
 	/// The specified job ID has been canceled and is no longer valid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CanceledJobIdException
 	{
 		
@@ -80,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS Import/Export cannot cancel the job
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnableToCancelJobIdException
 	{
 		
@@ -95,8 +90,7 @@ namespace MyNS
 	/// <summary>
 	/// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidAccessKeyIdException
 	{
 		
@@ -110,8 +104,7 @@ namespace MyNS
 	/// <summary>
 	/// The client tool version is invalid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidVersionException
 	{
 		
@@ -125,8 +118,7 @@ namespace MyNS
 	/// <summary>
 	/// Output structure for the CreateJob operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobOutput
 	{
 		
@@ -167,24 +159,21 @@ namespace MyNS
 		public Artifact[] ArtifactList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateJobOutputJobType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Import")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Import = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Export")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Export = 1,
 	}
 	
 	/// <summary>
 	/// A discrete item that contains the description and URL of an artifact (such as a PDF).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Artifact
 	{
 		
@@ -204,8 +193,7 @@ namespace MyNS
 	/// <summary>
 	/// One or more required parameters was missing from the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingParameterException
 	{
 		
@@ -219,8 +207,7 @@ namespace MyNS
 	/// <summary>
 	/// One or more parameters had an invalid value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 		
@@ -234,8 +221,7 @@ namespace MyNS
 	/// <summary>
 	/// The address specified in the manifest is invalid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidAddressException
 	{
 		
@@ -249,8 +235,7 @@ namespace MyNS
 	/// <summary>
 	/// One or more manifest fields was invalid. Please correct and resubmit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidManifestFieldException
 	{
 		
@@ -264,8 +249,7 @@ namespace MyNS
 	/// <summary>
 	/// One or more required fields were missing from the manifest file. Please correct and resubmit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingManifestFieldException
 	{
 		
@@ -279,8 +263,7 @@ namespace MyNS
 	/// <summary>
 	/// The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchBucketException
 	{
 		
@@ -294,8 +277,7 @@ namespace MyNS
 	/// <summary>
 	/// One or more required customs parameters was missing from the manifest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingCustomsException
 	{
 		
@@ -309,8 +291,7 @@ namespace MyNS
 	/// <summary>
 	/// One or more customs parameters was invalid. Please correct and resubmit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidCustomsException
 	{
 		
@@ -324,8 +305,7 @@ namespace MyNS
 	/// <summary>
 	/// File system specified in export manifest is invalid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidFileSystemException
 	{
 		
@@ -339,8 +319,7 @@ namespace MyNS
 	/// <summary>
 	/// Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultipleRegionsException
 	{
 		
@@ -354,8 +333,7 @@ namespace MyNS
 	/// <summary>
 	/// The account specified does not have the appropriate bucket permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BucketPermissionException
 	{
 		
@@ -369,8 +347,7 @@ namespace MyNS
 	/// <summary>
 	/// Your manifest is not well-formed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MalformedManifestException
 	{
 		
@@ -384,8 +361,7 @@ namespace MyNS
 	/// <summary>
 	/// Each account can create only a certain number of jobs per day. If you need to create more than this, please contact awsimportexport@amazon.com to explain your particular use case.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobQuotaExceededException
 	{
 		
@@ -396,8 +372,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetShippingLabelOutput
 	{
 		
@@ -411,8 +386,7 @@ namespace MyNS
 	/// <summary>
 	/// Output structure for the GetStatus operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStatusOutput
 	{
 		
@@ -516,8 +490,7 @@ namespace MyNS
 	/// <summary>
 	/// Output structure for the ListJobs operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsOutput
 	{
 		
@@ -537,8 +510,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a job returned by the ListJobs operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Job
 	{
 		
@@ -570,8 +542,7 @@ namespace MyNS
 	/// <summary>
 	/// Output structure for the UpateJob operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJobOutput
 	{
 		
@@ -597,8 +568,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS Import/Export cannot update the job
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnableToUpdateJobIdException
 	{
 		
@@ -612,8 +582,7 @@ namespace MyNS
 	/// <summary>
 	/// Input structure for the CancelJob operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelJobInput
 	{
 		
@@ -635,24 +604,21 @@ namespace MyNS
 	/// <summary>
 	/// Specifies whether the job to initiate is an import or export job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Import")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Import = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Export")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Export = 1,
 	}
 	
 	/// <summary>
 	/// Input structure for the CreateJob operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobInput
 	{
 		
@@ -693,8 +659,7 @@ namespace MyNS
 		public string APIVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetShippingLabelInput
 	{
 		
@@ -775,8 +740,7 @@ namespace MyNS
 	/// <summary>
 	/// Input structure for the GetStatus operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStatusInput
 	{
 		
@@ -798,8 +762,7 @@ namespace MyNS
 	/// <summary>
 	/// Input structure for the ListJobs operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsInput
 	{
 		
@@ -825,8 +788,7 @@ namespace MyNS
 	/// <summary>
 	/// Input structure for the UpateJob operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJobInput
 	{
 		
@@ -1070,7 +1032,7 @@ namespace MyNS
 	public enum GET_CancelJobOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancelJob")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CancelJob = 0,
 	}
 	
@@ -1091,7 +1053,7 @@ namespace MyNS
 	public enum GET_CreateJobOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateJob")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateJob = 0,
 	}
 	
@@ -1112,7 +1074,7 @@ namespace MyNS
 	public enum GET_GetShippingLabelOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetShippingLabel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetShippingLabel = 0,
 	}
 	
@@ -1133,7 +1095,7 @@ namespace MyNS
 	public enum GET_GetStatusOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetStatus = 0,
 	}
 	
@@ -1154,7 +1116,7 @@ namespace MyNS
 	public enum GET_ListJobsOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListJobs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListJobs = 0,
 	}
 	
@@ -1175,7 +1137,7 @@ namespace MyNS
 	public enum GET_UpdateJobOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateJob")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateJob = 0,
 	}
 	

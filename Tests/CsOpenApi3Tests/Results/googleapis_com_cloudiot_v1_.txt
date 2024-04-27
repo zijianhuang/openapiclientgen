@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for `BindDeviceToGateway`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BindDeviceToGatewayRequest
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for `BindDeviceToGateway`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BindDeviceToGatewayResponse
 	{
 	}
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates `members`, or principals, with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -110,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// The device resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Device
 	{
 		
@@ -221,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// The device configuration. Eventually delivered to devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceConfig
 	{
 		
@@ -254,8 +248,7 @@ namespace MyNS
 	/// <summary>
 	/// A server-stored device credential used for authentication.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceCredential
 	{
 		
@@ -275,8 +268,7 @@ namespace MyNS
 	/// <summary>
 	/// A public key format and data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicKeyCredential
 	{
 		
@@ -293,33 +285,30 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublicKeyCredentialFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_PUBLIC_KEY_FORMAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_PUBLIC_KEY_FORMAT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_PEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_PEM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_X509_PEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_X509_PEM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ES256_PEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ES256_PEM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ES256_X509_PEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ES256_X509_PEM = 4,
 	}
 	
 	/// <summary>
 	/// Gateway-related configuration and state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GatewayConfig
 	{
 		
@@ -348,46 +337,41 @@ namespace MyNS
 		public string LastAccessedGatewayTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GatewayConfigGatewayAuthMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GATEWAY_AUTH_METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GATEWAY_AUTH_METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATION_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATION_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_AUTH_TOKEN_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_AUTH_TOKEN_ONLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATION_AND_DEVICE_AUTH_TOKEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATION_AND_DEVICE_AUTH_TOKEN = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GatewayConfigGatewayType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GATEWAY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GATEWAY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GATEWAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_GATEWAY = 2,
 	}
 	
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -410,33 +394,30 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceLogLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBUG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBUG = 4,
 	}
 	
 	/// <summary>
 	/// The device state, as reported by the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceState
 	{
 		
@@ -456,8 +437,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for a group of devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceRegistry
 	{
 		
@@ -513,8 +493,7 @@ namespace MyNS
 	/// <summary>
 	/// A server-stored registry credential used to validate device credentials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegistryCredential
 	{
 		
@@ -528,8 +507,7 @@ namespace MyNS
 	/// <summary>
 	/// A public key certificate format and data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicKeyCertificate
 	{
 		
@@ -552,24 +530,21 @@ namespace MyNS
 		public X509CertificateDetails X509Details { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublicKeyCertificateFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="X509_CERTIFICATE_PEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		X509_CERTIFICATE_PEM = 1,
 	}
 	
 	/// <summary>
 	/// Details of an X.509 certificate. For informational purposes only.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class X509CertificateDetails
 	{
 		
@@ -613,8 +588,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for forwarding telemetry events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventNotificationConfig
 	{
 		
@@ -634,8 +608,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of the HTTP bridge for a device registry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpConfig
 	{
 		
@@ -646,27 +619,24 @@ namespace MyNS
 		public System.Nullable<HttpConfigHttpEnabledState> HttpEnabledState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HttpConfigHttpEnabledState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP_DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// The configuration of MQTT for a device registry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MqttConfig
 	{
 		
@@ -677,27 +647,24 @@ namespace MyNS
 		public System.Nullable<MqttConfigMqttEnabledState> MqttEnabledState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MqttConfigMqttEnabledState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MQTT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MQTT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MQTT_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MQTT_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MQTT_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MQTT_DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// The configuration for notification of new states received from the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateNotificationConfig
 	{
 		
@@ -711,8 +678,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -720,8 +686,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `GetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIamPolicyRequest
 	{
 		
@@ -735,8 +700,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates settings provided to GetIamPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPolicyOptions
 	{
 		
@@ -750,8 +714,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for `ListDeviceConfigVersions`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeviceConfigVersionsResponse
 	{
 		
@@ -765,8 +728,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for `ListDeviceRegistries`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeviceRegistriesResponse
 	{
 		
@@ -786,8 +748,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for `ListDeviceStates`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeviceStatesResponse
 	{
 		
@@ -801,8 +762,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for `ListDevices`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDevicesResponse
 	{
 		
@@ -822,8 +782,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for `ModifyCloudToDeviceConfig`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyCloudToDeviceConfigRequest
 	{
 		
@@ -843,8 +802,7 @@ namespace MyNS
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -870,8 +828,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for `SendCommandToDevice`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendCommandToDeviceRequest
 	{
 		
@@ -891,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for `SendCommandToDevice`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendCommandToDeviceResponse
 	{
 	}
@@ -900,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `SetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIamPolicyRequest
 	{
 		
@@ -915,8 +870,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsRequest
 	{
 		
@@ -930,8 +884,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		
@@ -945,8 +898,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for `UnbindDeviceFromGateway`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnbindDeviceFromGatewayRequest
 	{
 		
@@ -966,8 +918,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for `UnbindDeviceFromGateway`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnbindDeviceFromGatewayResponse
 	{
 	}

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateActivityOutput
 	{
 		
@@ -37,8 +36,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateActivityInput
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Tags are key-value pairs that can be associated with Step Functions state machines and activities.</p> <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -68,26 +65,22 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityLimitExceeded
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidName
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTags
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStateMachineOutput
 	{
 		
@@ -109,8 +102,7 @@ namespace MyNS
 		public string StateMachineVersionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStateMachineInput
 	{
 		
@@ -154,24 +146,21 @@ namespace MyNS
 		public string VersionDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StateMachineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPRESS = 1,
 	}
 	
 	/// <summary>
 	/// The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingConfiguration
 	{
 		
@@ -185,30 +174,27 @@ namespace MyNS
 		public LogDestination[] Destinations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LogLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FATAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FATAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 3,
 	}
 	
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogDestination
 	{
 		
@@ -219,8 +205,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchLogsLogGroup
 	{
 		
@@ -231,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// Selects whether or not the state machine's X-Ray tracing is enabled. Default is <code>false</code> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TracingConfiguration
 	{
 		
@@ -240,68 +224,57 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArn
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDefinition
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidLoggingConfiguration
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTracingConfiguration
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateMachineAlreadyExists
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateMachineDeleting
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateMachineLimitExceeded
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateMachineTypeNotSupported
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStateMachineAliasOutput
 	{
 		
@@ -320,8 +293,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStateMachineAliasInput
 	{
 		
@@ -346,8 +318,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the routing configuration of a state machine alias. In a routing configuration, you define an array of objects that specify up to two state machine versions. You also specify the percentage of traffic to be routed to each version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoutingConfigurationListItem
 	{
 		
@@ -366,26 +337,22 @@ namespace MyNS
 		public int Weight { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteActivityOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteActivityInput
 	{
 		
@@ -397,14 +364,12 @@ namespace MyNS
 		public string ActivityArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStateMachineOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStateMachineInput
 	{
 		
@@ -416,14 +381,12 @@ namespace MyNS
 		public string StateMachineArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStateMachineAliasOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStateMachineAliasInput
 	{
 		
@@ -435,14 +398,12 @@ namespace MyNS
 		public string StateMachineAliasArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStateMachineVersionOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStateMachineVersionInput
 	{
 		
@@ -454,8 +415,7 @@ namespace MyNS
 		public string StateMachineVersionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeActivityOutput
 	{
 		
@@ -481,8 +441,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeActivityInput
 	{
 		
@@ -494,14 +453,12 @@ namespace MyNS
 		public string ActivityArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityDoesNotExist
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeExecutionOutput
 	{
 		
@@ -576,33 +533,30 @@ namespace MyNS
 		public string StateMachineAliasArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecutionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMED_OUT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABORTED = 4,
 	}
 	
 	/// <summary>
 	/// Provides details about execution input or output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchEventsExecutionDataDetails
 	{
 		
@@ -610,8 +564,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Included { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeExecutionInput
 	{
 		
@@ -623,14 +576,12 @@ namespace MyNS
 		public string ExecutionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionDoesNotExist
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMapRunOutput
 	{
 		
@@ -701,30 +652,27 @@ namespace MyNS
 		public MapRunExecutionCounts ExecutionCounts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MapRunStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABORTED = 3,
 	}
 	
 	/// <summary>
 	/// Contains details about items that were processed in all of the child workflow executions that were started by a Map Run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapRunItemCounts
 	{
 		
@@ -788,8 +736,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about all of the child workflow executions started by a Map Run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapRunExecutionCounts
 	{
 		
@@ -850,8 +797,7 @@ namespace MyNS
 		public int ResultsWritten { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMapRunInput
 	{
 		
@@ -863,8 +809,7 @@ namespace MyNS
 		public string MapRunArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStateMachineOutput
 	{
 		
@@ -932,21 +877,18 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StateMachineStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStateMachineInput
 	{
 		
@@ -958,14 +900,12 @@ namespace MyNS
 		public string StateMachineArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateMachineDoesNotExist
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStateMachineAliasOutput
 	{
 		
@@ -988,8 +928,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStateMachineAliasInput
 	{
 		
@@ -1001,8 +940,7 @@ namespace MyNS
 		public string StateMachineAliasArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStateMachineForExecutionOutput
 	{
 		
@@ -1060,8 +998,7 @@ namespace MyNS
 		public string RevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStateMachineForExecutionInput
 	{
 		
@@ -1073,8 +1010,7 @@ namespace MyNS
 		public string ExecutionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetActivityTaskOutput
 	{
 		
@@ -1085,8 +1021,7 @@ namespace MyNS
 		public string Input { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetActivityTaskInput
 	{
 		
@@ -1101,14 +1036,12 @@ namespace MyNS
 		public string WorkerName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityWorkerLimitExceeded
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExecutionHistoryOutput
 	{
 		
@@ -1126,8 +1059,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the events of an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoryEvent
 	{
 		
@@ -1306,195 +1238,192 @@ namespace MyNS
 		public MapRunFailedEventDetails MapRunFailedEventDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HistoryEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActivityFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActivityFailed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActivityScheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActivityScheduled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActivityScheduleFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActivityScheduleFailed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActivityStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActivityStarted = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActivitySucceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActivitySucceeded = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActivityTimedOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActivityTimedOut = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChoiceStateEntered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChoiceStateEntered = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChoiceStateExited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChoiceStateExited = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExecutionAborted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExecutionAborted = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExecutionFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExecutionFailed = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExecutionStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExecutionStarted = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExecutionSucceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExecutionSucceeded = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExecutionTimedOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExecutionTimedOut = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailStateEntered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailStateEntered = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunctionFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunctionFailed = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunctionScheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunctionScheduled = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunctionScheduleFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunctionScheduleFailed = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunctionStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunctionStarted = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunctionStartFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunctionStartFailed = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunctionSucceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunctionSucceeded = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunctionTimedOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunctionTimedOut = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapIterationAborted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapIterationAborted = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapIterationFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapIterationFailed = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapIterationStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapIterationStarted = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapIterationSucceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapIterationSucceeded = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapStateAborted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapStateAborted = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapStateEntered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapStateEntered = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapStateExited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapStateExited = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapStateFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapStateFailed = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapStateStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapStateStarted = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapStateSucceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapStateSucceeded = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ParallelStateAborted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ParallelStateAborted = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ParallelStateEntered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ParallelStateEntered = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ParallelStateExited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ParallelStateExited = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ParallelStateFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ParallelStateFailed = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ParallelStateStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ParallelStateStarted = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ParallelStateSucceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ParallelStateSucceeded = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PassStateEntered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PassStateEntered = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PassStateExited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PassStateExited = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SucceedStateEntered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SucceedStateEntered = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SucceedStateExited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SucceedStateExited = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskFailed = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskScheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskScheduled = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskStarted = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskStartFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskStartFailed = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskStateAborted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskStateAborted = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskStateEntered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskStateEntered = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskStateExited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskStateExited = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskSubmitFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskSubmitFailed = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskSubmitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskSubmitted = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskSucceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskSucceeded = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TaskTimedOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TaskTimedOut = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WaitStateAborted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WaitStateAborted = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WaitStateEntered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WaitStateEntered = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WaitStateExited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WaitStateExited = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapRunAborted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapRunAborted = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapRunFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapRunFailed = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapRunStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapRunStarted = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MapRunSucceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MapRunSucceeded = 58,
 	}
 	
 	/// <summary>
 	/// Contains details about an activity that failed during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityFailedEventDetails
 	{
 		
@@ -1508,8 +1437,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an activity schedule failure that occurred during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityScheduleFailedEventDetails
 	{
 		
@@ -1523,8 +1451,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an activity scheduled during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityScheduledEventDetails
 	{
 		
@@ -1551,8 +1478,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides details about input or output in an execution history event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoryEventExecutionDataDetails
 	{
 		
@@ -1563,8 +1489,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the start of an activity during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityStartedEventDetails
 	{
 		
@@ -1575,8 +1500,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an activity that successfully terminated during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivitySucceededEventDetails
 	{
 		
@@ -1590,8 +1514,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an activity timeout that occurred during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityTimedOutEventDetails
 	{
 		
@@ -1605,8 +1528,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a task failure event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskFailedEventDetails
 	{
 		
@@ -1634,8 +1556,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a task scheduled during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskScheduledEventDetails
 	{
 		
@@ -1680,8 +1601,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the credentials that Step Functions uses for a task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskCredentials
 	{
 		
@@ -1692,8 +1612,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a task that failed to start during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskStartFailedEventDetails
 	{
 		
@@ -1721,8 +1640,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the start of a task during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskStartedEventDetails
 	{
 		
@@ -1744,8 +1662,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a task that failed to submit during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskSubmitFailedEventDetails
 	{
 		
@@ -1773,8 +1690,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a task submitted to a resource .
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskSubmittedEventDetails
 	{
 		
@@ -1802,8 +1718,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the successful completion of a task state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskSucceededEventDetails
 	{
 		
@@ -1831,8 +1746,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a resource timeout that occurred during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskTimedOutEventDetails
 	{
 		
@@ -1860,8 +1774,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an execution failure event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionFailedEventDetails
 	{
 		
@@ -1875,8 +1788,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the start of the execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionStartedEventDetails
 	{
 		
@@ -1899,8 +1811,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the successful termination of the execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionSucceededEventDetails
 	{
 		
@@ -1914,8 +1825,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an abort of an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionAbortedEventDetails
 	{
 		
@@ -1929,8 +1839,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the execution timeout that occurred during the execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionTimedOutEventDetails
 	{
 		
@@ -1944,8 +1853,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a Map state that was started.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapStateStartedEventDetails
 	{
 		
@@ -1956,8 +1864,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an iteration of a Map state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapIterationEventDetails
 	{
 		
@@ -1971,8 +1878,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a Lambda function that failed during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionFailedEventDetails
 	{
 		
@@ -1986,8 +1892,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a failed Lambda function schedule event that occurred during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionScheduleFailedEventDetails
 	{
 		
@@ -2001,8 +1906,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a Lambda function scheduled during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionScheduledEventDetails
 	{
 		
@@ -2029,8 +1933,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a lambda function that failed to start during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionStartFailedEventDetails
 	{
 		
@@ -2044,8 +1947,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a Lambda function that successfully terminated during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionSucceededEventDetails
 	{
 		
@@ -2059,8 +1961,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a Lambda function timeout that occurred during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionTimedOutEventDetails
 	{
 		
@@ -2074,8 +1975,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a state entered during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateEnteredEventDetails
 	{
 		
@@ -2096,8 +1996,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an exit from a state during an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateExitedEventDetails
 	{
 		
@@ -2118,8 +2017,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a Map Run that was started during a state machine execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapRunStartedEventDetails
 	{
 		
@@ -2130,8 +2028,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a Map Run failure event that occurred during a state machine execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapRunFailedEventDetails
 	{
 		
@@ -2142,8 +2039,7 @@ namespace MyNS
 		public string Cause { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExecutionHistoryInput
 	{
 		
@@ -2167,14 +2063,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IncludeExecutionData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidToken
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListActivitiesOutput
 	{
 		
@@ -2192,8 +2086,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an activity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityListItem
 	{
 		
@@ -2219,8 +2112,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListActivitiesInput
 	{
 		
@@ -2231,8 +2123,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListExecutionsOutput
 	{
 		
@@ -2250,8 +2141,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionListItem
 	{
 		
@@ -2306,8 +2196,7 @@ namespace MyNS
 		public string StateMachineAliasArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListExecutionsInput
 	{
 		
@@ -2327,8 +2216,7 @@ namespace MyNS
 		public string MapRunArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMapRunsOutput
 	{
 		
@@ -2346,8 +2234,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a specific Map Run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapRunListItem
 	{
 		
@@ -2383,8 +2270,7 @@ namespace MyNS
 		public System.DateTimeOffset StopDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMapRunsInput
 	{
 		
@@ -2402,8 +2288,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStateMachineAliasesOutput
 	{
 		
@@ -2421,8 +2306,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a specific state machine alias.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateMachineAliasListItem
 	{
 		
@@ -2441,8 +2325,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStateMachineAliasesInput
 	{
 		
@@ -2460,8 +2343,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStateMachineVersionsOutput
 	{
 		
@@ -2479,8 +2361,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about a specific state machine version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateMachineVersionListItem
 	{
 		
@@ -2499,8 +2380,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStateMachineVersionsInput
 	{
 		
@@ -2518,8 +2398,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStateMachinesOutput
 	{
 		
@@ -2537,8 +2416,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the state machine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateMachineListItem
 	{
 		
@@ -2571,8 +2449,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStateMachinesInput
 	{
 		
@@ -2583,8 +2460,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceOutput
 	{
 		
@@ -2592,8 +2468,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceInput
 	{
 		
@@ -2605,8 +2480,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishStateMachineVersionOutput
 	{
 		
@@ -2625,8 +2499,7 @@ namespace MyNS
 		public string StateMachineVersionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishStateMachineVersionInput
 	{
 		
@@ -2644,14 +2517,12 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTaskFailureOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTaskFailureInput
 	{
 		
@@ -2669,26 +2540,22 @@ namespace MyNS
 		public string Cause { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskDoesNotExist
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskTimedOut
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTaskHeartbeatOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTaskHeartbeatInput
 	{
 		
@@ -2700,14 +2567,12 @@ namespace MyNS
 		public string TaskToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTaskSuccessOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTaskSuccessInput
 	{
 		
@@ -2726,14 +2591,12 @@ namespace MyNS
 		public string Output { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartExecutionOutput
 	{
 		
@@ -2752,8 +2615,7 @@ namespace MyNS
 		public System.DateTimeOffset StartDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartExecutionInput
 	{
 		
@@ -2774,26 +2636,22 @@ namespace MyNS
 		public string TraceHeader { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionLimitExceeded
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionAlreadyExists
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidExecutionInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSyncExecutionOutput
 	{
 		
@@ -2862,27 +2720,24 @@ namespace MyNS
 		public BillingDetails BillingDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SyncExecutionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMED_OUT = 2,
 	}
 	
 	/// <summary>
 	/// An object that describes workflow billing details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BillingDetails
 	{
 		
@@ -2893,8 +2748,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> BilledDurationInMilliseconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSyncExecutionInput
 	{
 		
@@ -2915,8 +2769,7 @@ namespace MyNS
 		public string TraceHeader { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopExecutionOutput
 	{
 		
@@ -2928,8 +2781,7 @@ namespace MyNS
 		public System.DateTimeOffset StopDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopExecutionInput
 	{
 		
@@ -2947,14 +2799,12 @@ namespace MyNS
 		public string Cause { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceInput
 	{
 		
@@ -2973,14 +2823,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceInput
 	{
 		
@@ -2999,14 +2847,12 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMapRunOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMapRunInput
 	{
 		
@@ -3027,8 +2873,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ToleratedFailureCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStateMachineOutput
 	{
 		
@@ -3046,8 +2891,7 @@ namespace MyNS
 		public string StateMachineVersionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStateMachineInput
 	{
 		
@@ -3077,14 +2921,12 @@ namespace MyNS
 		public string VersionDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingRequiredParameter
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStateMachineAliasOutput
 	{
 		
@@ -3096,8 +2938,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStateMachineAliasInput
 	{
 		

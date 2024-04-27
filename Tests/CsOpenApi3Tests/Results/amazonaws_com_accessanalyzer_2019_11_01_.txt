@@ -17,44 +17,37 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelPolicyGenerationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccessPreviewResponse
 	{
 		
@@ -69,8 +62,7 @@ namespace MyNS
 	/// <summary>
 	/// Access control configuration structures for your resource. You specify the configuration as a type-value pair. You can specify only one type of access control configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Configuration
 	{
 		
@@ -111,8 +103,7 @@ namespace MyNS
 	/// <summary>
 	/// The proposed access control configuration for an Amazon EBS volume snapshot. You can propose a configuration for a new Amazon EBS volume snapshot or an Amazon EBS volume snapshot that you own by specifying the user IDs, groups, and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html">ModifySnapshotAttribute</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EbsSnapshotConfiguration
 	{
 		
@@ -129,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The proposed access control configuration for an Amazon ECR repository. You can propose a configuration for a new Amazon ECR repository or an existing Amazon ECR repository that you own by specifying the Amazon ECR policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_Repository.html">Repository</a>.</p> <ul> <li> <p>If the configuration is for an existing Amazon ECR repository and you do not specify the Amazon ECR policy, then the access preview uses the existing Amazon ECR policy for the repository.</p> </li> <li> <p>If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon ECR repository without a policy.</p> </li> <li> <p>To propose deletion of an existing Amazon ECR repository policy, you can specify an empty string for the Amazon ECR policy.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EcrRepositoryConfiguration
 	{
 		
@@ -141,8 +131,7 @@ namespace MyNS
 	/// <summary>
 	/// The proposed access control configuration for an IAM role. You can propose a configuration for a new IAM role or an existing IAM role that you own by specifying the trust policy. If the configuration is for a new IAM role, you must specify the trust policy. If the configuration is for an existing IAM role that you own and you do not propose the trust policy, the access preview uses the existing trust policy for the role. The proposed trust policy cannot be an empty string. For more information about role trust policy limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IamRoleConfiguration
 	{
 		
@@ -153,8 +142,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The proposed access control configuration for an Amazon EFS file system. You can propose a configuration for a new Amazon EFS file system or an existing Amazon EFS file system that you own by specifying the Amazon EFS policy. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/using-fs.html">Using file systems in Amazon EFS</a>.</p> <ul> <li> <p>If the configuration is for an existing Amazon EFS file system and you do not specify the Amazon EFS policy, then the access preview uses the existing Amazon EFS policy for the file system.</p> </li> <li> <p>If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon EFS file system without a policy.</p> </li> <li> <p>To propose deletion of an existing Amazon EFS file system policy, you can specify an empty string for the Amazon EFS policy.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EfsFileSystemConfiguration
 	{
 		
@@ -165,8 +153,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Proposed access control configuration for a KMS key. You can propose a configuration for a new KMS key or an existing KMS key that you own by specifying the key policy and KMS grant configuration. If the configuration is for an existing key and you do not specify the key policy, the access preview uses the existing policy for the key. If the access preview is for a new resource and you do not specify the key policy, then the access preview uses the default key policy. The proposed key policy cannot be an empty string. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>. For more information about key policy limits, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource quotas</a>.</p> <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KmsKeyConfiguration
 	{
 		
@@ -177,8 +164,7 @@ namespace MyNS
 		public KmsGrantConfiguration[] Grants { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KmsKeyPoliciesMap
 	{
 	}
@@ -186,8 +172,7 @@ namespace MyNS
 	/// <summary>
 	/// A proposed grant configuration for a KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KmsGrantConfiguration
 	{
 		
@@ -219,60 +204,57 @@ namespace MyNS
 		public string IssuingAccount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KmsGrantOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateGrant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateGrant = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Decrypt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Decrypt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeKey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeKey = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Encrypt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Encrypt = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenerateDataKey = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKeyPair")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenerateDataKeyPair = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKeyPairWithoutPlaintext")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenerateDataKeyPairWithoutPlaintext = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKeyWithoutPlaintext")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenerateDataKeyWithoutPlaintext = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetPublicKey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetPublicKey = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReEncryptFrom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReEncryptFrom = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReEncryptTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReEncryptTo = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RetireGrant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RetireGrant = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sign")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sign = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Verify")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Verify = 13,
 	}
 	
 	/// <summary>
 	/// Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. You can specify only one type of encryption context. An empty map is treated as not specified. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GrantConstraints.html">GrantConstraints</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KmsGrantConstraints
 	{
 		
@@ -283,8 +265,7 @@ namespace MyNS
 		public KmsConstraintsMap EncryptionContextSubset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KmsConstraintsMap
 	{
 	}
@@ -292,8 +273,7 @@ namespace MyNS
 	/// <summary>
 	/// The proposed access control configuration for an Amazon RDS DB cluster snapshot. You can propose a configuration for a new Amazon RDS DB cluster snapshot or an Amazon RDS DB cluster snapshot that you own by specifying the <code>RdsDbClusterSnapshotAttributeValue</code> and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html">ModifyDBClusterSnapshotAttribute</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RdsDbClusterSnapshotConfiguration
 	{
 		
@@ -304,8 +284,7 @@ namespace MyNS
 		public string KmsKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RdsDbClusterSnapshotAttributesMap
 	{
 	}
@@ -313,8 +292,7 @@ namespace MyNS
 	/// <summary>
 	/// The proposed access control configuration for an Amazon RDS DB snapshot. You can propose a configuration for a new Amazon RDS DB snapshot or an Amazon RDS DB snapshot that you own by specifying the <code>RdsDbSnapshotAttributeValue</code> and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html">ModifyDBSnapshotAttribute</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RdsDbSnapshotConfiguration
 	{
 		
@@ -325,8 +303,7 @@ namespace MyNS
 		public string KmsKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RdsDbSnapshotAttributesMap
 	{
 	}
@@ -334,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The configuration for a Secrets Manager secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html">CreateSecret</a>.</p> <p>You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If you specify an empty string for the KMS key ID, the access preview uses the Amazon Web Services managed key of the Amazon Web Services account. For more information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for Secrets Manager.</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecretsManagerSecretConfiguration
 	{
 		
@@ -349,8 +325,7 @@ namespace MyNS
 	/// <summary>
 	/// Proposed access control configuration for an Amazon S3 bucket. You can propose a configuration for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own by specifying the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, Amazon S3 access points, and multi-region access points attached to the bucket. If the configuration is for an existing Amazon S3 bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the existing policy attached to the bucket. If the access preview is for a new resource and you do not specify the Amazon S3 bucket policy, the access preview assumes a bucket without a policy. To propose deletion of an existing bucket policy, you can specify an empty string. For more information about bucket policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">Bucket Policy Examples</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3BucketConfiguration
 	{
 		
@@ -370,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	/// A proposed access control list grant configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls">How to Specify an ACL</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3BucketAclGrantConfiguration
 	{
 		
@@ -390,33 +364,30 @@ namespace MyNS
 		public AclGrantee Grantee { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AclPermission
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_ACP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_ACP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITE_ACP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITE_ACP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_CONTROL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_CONTROL = 4,
 	}
 	
 	/// <summary>
 	/// You specify each grantee as a type-value pair using one of these types. You can specify only one type of grantee. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html">PutBucketAcl</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AclGrantee
 	{
 		
@@ -430,8 +401,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting. If the proposed configuration is for a new bucket and the configuration is not specified, the access preview uses <code>false</code>. If the proposed configuration is for a new access point or multi-region access point and the access point BPA configuration is not specified, the access preview uses <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3PublicAccessBlockConfiguration
 	{
 		
@@ -450,8 +420,7 @@ namespace MyNS
 		public bool RestrictPublicBuckets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3AccessPointConfigurationsMap
 	{
 	}
@@ -459,8 +428,7 @@ namespace MyNS
 	/// <summary>
 	/// The proposed access control configuration for an Amazon SNS topic. You can propose a configuration for a new Amazon SNS topic or an existing Amazon SNS topic that you own by specifying the policy. If the configuration is for an existing Amazon SNS topic and you do not specify the Amazon SNS policy, then the access preview uses the existing Amazon SNS policy for the topic. If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon SNS topic without a policy. To propose deletion of an existing Amazon SNS topic policy, you can specify an empty string for the Amazon SNS policy. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Topic.html">Topic</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnsTopicConfiguration
 	{
 		
@@ -471,8 +439,7 @@ namespace MyNS
 	/// <summary>
 	/// The proposed access control configuration for an Amazon SQS queue. You can propose a configuration for a new Amazon SQS queue or an existing Amazon SQS queue that you own by specifying the Amazon SQS policy. If the configuration is for an existing Amazon SQS queue and you do not specify the Amazon SQS policy, the access preview uses the existing Amazon SQS policy for the queue. If the access preview is for a new resource and you do not specify the policy, the access preview assumes an Amazon SQS queue without a policy. To propose deletion of an existing Amazon SQS queue policy, you can specify an empty string for the Amazon SQS policy. For more information about Amazon SQS policy limits, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html">Quotas related to policies</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SqsQueueConfiguration
 	{
 		
@@ -480,14 +447,12 @@ namespace MyNS
 		public string QueuePolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
@@ -495,8 +460,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to the request to create an analyzer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAnalyzerResponse
 	{
 		
@@ -507,8 +471,7 @@ namespace MyNS
 	/// <summary>
 	/// An criterion statement in an archive rule. Each archive rule may have multiple criteria.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InlineArchiveRule
 	{
 		
@@ -527,8 +490,7 @@ namespace MyNS
 		public FilterCriteriaMap Filter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterCriteriaMap
 	{
 	}
@@ -536,8 +498,7 @@ namespace MyNS
 	/// <summary>
 	/// The criteria to use in the filter that defines the archive rule. For more information on available filter keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Criterion
 	{
 		
@@ -554,8 +515,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Exists { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccessPreviewResponse
 	{
 		
@@ -570,8 +530,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an access preview.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessPreview
 	{
 		
@@ -614,33 +573,29 @@ namespace MyNS
 		public AccessPreviewStatusReason StatusReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationsMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccessPreviewStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
 	/// <summary>
 	/// Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessPreviewStatusReason
 	{
 		
@@ -652,24 +607,21 @@ namespace MyNS
 		public AccessPreviewStatusReasonCode Code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccessPreviewStatusReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CONFIGURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_CONFIGURATION = 1,
 	}
 	
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAnalyzedResourceResponse
 	{
 		
@@ -680,8 +632,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the analyzed resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzedResource
 	{
 		
@@ -747,9 +698,7 @@ namespace MyNS
 		public string Error { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
@@ -793,27 +742,24 @@ namespace MyNS
 		AWSSNSTopic = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FindingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOLVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOLVED = 2,
 	}
 	
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAnalyzerResponse
 	{
 		
@@ -828,8 +774,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the analyzer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzerSummary
 	{
 		
@@ -881,49 +826,43 @@ namespace MyNS
 		public StatusReason StatusReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagsMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnalyzerStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusReason
 	{
 		
@@ -935,30 +874,27 @@ namespace MyNS
 		public ReasonCode Code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_SERVICE_ACCESS_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_SERVICE_ACCESS_DISABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELEGATED_ADMINISTRATOR_DEREGISTERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELEGATED_ADMINISTRATOR_DEREGISTERED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION_DELETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_LINKED_ROLE_CREATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_LINKED_ROLE_CREATION_FAILED = 3,
 	}
 	
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetArchiveRuleResponse
 	{
 		
@@ -974,8 +910,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an archive rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArchiveRuleSummary
 	{
 		
@@ -1011,8 +946,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFindingResponse
 	{
 		
@@ -1023,8 +957,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a finding.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Finding
 	{
 		
@@ -1103,14 +1036,12 @@ namespace MyNS
 		public FindingSource[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrincipalMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConditionKeyMap
 	{
 	}
@@ -1118,8 +1049,7 @@ namespace MyNS
 	/// <summary>
 	/// The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindingSource
 	{
 		
@@ -1134,30 +1064,27 @@ namespace MyNS
 		public FindingSourceDetail Detail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FindingSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POLICY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUCKET_ACL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUCKET_ACL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3_ACCESS_POINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3_ACCESS_POINT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3_ACCESS_POINT_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3_ACCESS_POINT_ACCOUNT = 3,
 	}
 	
 	/// <summary>
 	/// Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindingSourceDetail
 	{
 		
@@ -1168,8 +1095,7 @@ namespace MyNS
 		public string AccessPointAccount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGeneratedPolicyResponse
 	{
 		
@@ -1191,8 +1117,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the policy generation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobDetails
 	{
 		
@@ -1224,30 +1149,27 @@ namespace MyNS
 		public JobError JobError { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELED = 3,
 	}
 	
 	/// <summary>
 	/// Contains the details about the policy generation error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobError
 	{
 		
@@ -1266,30 +1188,27 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHORIZATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTHORIZATION_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_NOT_FOUND_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_NOT_FOUND_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_QUOTA_EXCEEDED_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_QUOTA_EXCEEDED_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_ERROR = 3,
 	}
 	
 	/// <summary>
 	/// Contains the text for the generated policy and its details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeneratedPolicyResult
 	{
 		
@@ -1308,8 +1227,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the text for the generated policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeneratedPolicy
 	{
 		
@@ -1321,8 +1239,7 @@ namespace MyNS
 		public string Policy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccessPreviewFindingsResponse
 	{
 		
@@ -1340,8 +1257,7 @@ namespace MyNS
 	/// <summary>
 	/// An access preview finding generated by the access preview.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessPreviewFinding
 	{
 		
@@ -1415,24 +1331,21 @@ namespace MyNS
 		public FindingSource[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FindingChangeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNCHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNCHANGED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccessPreviewsResponse
 	{
 		
@@ -1450,8 +1363,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a summary of information about an access preview.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessPreviewSummary
 	{
 		
@@ -1493,8 +1405,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnalyzedResourcesResponse
 	{
 		
@@ -1512,8 +1423,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the ARN of the analyzed resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzedResourceSummary
 	{
 		
@@ -1542,8 +1452,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnalyzersResponse
 	{
 		
@@ -1561,8 +1470,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListArchiveRulesResponse
 	{
 		
@@ -1580,8 +1488,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFindingsResponse
 	{
 		
@@ -1599,8 +1506,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a finding.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindingSummary
 	{
 		
@@ -1679,21 +1585,18 @@ namespace MyNS
 		public FindingSource[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESC = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPolicyGenerationsResponse
 	{
 		
@@ -1711,8 +1614,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the policy generation status and properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyGeneration
 	{
 		
@@ -1751,8 +1653,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -1760,8 +1661,7 @@ namespace MyNS
 		public TagsMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartPolicyGenerationResponse
 	{
 		
@@ -1776,8 +1676,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the CloudTrail trail being analyzed to generate a policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Trail
 	{
 		
@@ -1798,8 +1697,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
@@ -1807,14 +1705,12 @@ namespace MyNS
 	/// <summary>
 	/// The response to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidatePolicyResponse
 	{
 		
@@ -1832,8 +1728,7 @@ namespace MyNS
 	/// <summary>
 	/// A finding in a policy. Each finding is an actionable recommendation that can be used to improve the policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidatePolicyFinding
 	{
 		
@@ -1873,30 +1768,27 @@ namespace MyNS
 		public Location[] Locations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValidatePolicyFindingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_WARNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUGGESTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUGGESTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 3,
 	}
 	
 	/// <summary>
 	/// A location in a policy that is represented as a path through the JSON representation and a corresponding span.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -1918,8 +1810,7 @@ namespace MyNS
 	/// <summary>
 	/// A single element in a path through the JSON representation of a policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathElement
 	{
 		
@@ -1939,8 +1830,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a substring of a literal string in a JSON document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Substring
 	{
 		
@@ -1962,8 +1852,7 @@ namespace MyNS
 	/// <summary>
 	/// A span in a policy. The span consists of a start position (inclusive) and end position (exclusive).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Span
 	{
 		
@@ -1985,8 +1874,7 @@ namespace MyNS
 	/// <summary>
 	/// A position in a policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Position
 	{
 		
@@ -2015,8 +1903,7 @@ namespace MyNS
 	/// <summary>
 	/// Retroactively applies an archive rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplyArchiveRuleRequest
 	{
 		
@@ -2038,8 +1925,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelPolicyGenerationRequest
 	{
 	}
@@ -2047,8 +1933,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about CloudTrail access.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudTrailDetails
 	{
 		
@@ -2080,8 +1965,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the CloudTrail trail being analyzed to generate a policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrailProperties
 	{
 		
@@ -2102,8 +1986,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about CloudTrail access.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudTrailProperties
 	{
 		
@@ -2129,8 +2012,7 @@ namespace MyNS
 		public System.DateTimeOffset EndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccessPreviewRequest
 	{
 		
@@ -2155,8 +2037,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates an analyzer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAnalyzerRequest
 	{
 		
@@ -2187,8 +2068,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates an archive rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateArchiveRuleRequest
 	{
 		
@@ -2213,8 +2093,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes an analyzer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAnalyzerRequest
 	{
 	}
@@ -2222,30 +2101,26 @@ namespace MyNS
 	/// <summary>
 	/// Deletes an archive rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteArchiveRuleRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FindingStatusUpdate
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVED = 1,
 	}
 	
 	/// <summary>
 	/// Contains the generated policy details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeneratedPolicyProperties
 	{
 		
@@ -2263,8 +2138,7 @@ namespace MyNS
 		public CloudTrailProperties CloudTrailProperties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccessPreviewRequest
 	{
 	}
@@ -2272,8 +2146,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves an analyzed resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAnalyzedResourceRequest
 	{
 	}
@@ -2281,8 +2154,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves an analyzer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAnalyzerRequest
 	{
 	}
@@ -2290,8 +2162,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves an archive rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetArchiveRuleRequest
 	{
 	}
@@ -2299,14 +2170,12 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves a finding.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFindingRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGeneratedPolicyRequest
 	{
 	}
@@ -2314,14 +2183,12 @@ namespace MyNS
 	/// <summary>
 	/// This configuration sets the network origin for the Amazon S3 access point or multi-region access point to <code>Internet</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternetConfiguration
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccessPreviewFindingsRequest
 	{
 		
@@ -2342,8 +2209,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccessPreviewsRequest
 	{
 	}
@@ -2351,8 +2217,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves a list of resources that have been analyzed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnalyzedResourcesRequest
 	{
 		
@@ -2376,8 +2241,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves a list of analyzers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnalyzersRequest
 	{
 	}
@@ -2385,8 +2249,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves a list of archive rules created for the specified analyzer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListArchiveRulesRequest
 	{
 	}
@@ -2394,8 +2257,7 @@ namespace MyNS
 	/// <summary>
 	/// The criteria used to sort.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SortCriteria
 	{
 		
@@ -2409,8 +2271,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves a list of findings generated by the specified analyzer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFindingsRequest
 	{
 		
@@ -2434,8 +2295,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPolicyGenerationsRequest
 	{
 	}
@@ -2443,54 +2303,50 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves a list of tags applied to the specified resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Locale
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PT_BR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PT_BR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZH_CN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZH_CN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZH_TW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZH_TW = 9,
 	}
 	
 	/// <summary>
 	/// The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC configuration does not apply to multi-region access points. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfiguration
 	{
 		
@@ -2505,8 +2361,7 @@ namespace MyNS
 	/// <summary>
 	/// The proposed <code>InternetConfiguration</code> or <code>VpcConfiguration</code> to apply to the Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. You can make the access point accessible from the internet, or you can specify that all requests made through that access point must originate from a specific virtual private cloud (VPC). You can specify only one type of network configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkOriginConfiguration
 	{
 		
@@ -2523,8 +2378,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the ARN details about the IAM entity for which the policy is generated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyGenerationDetails
 	{
 		
@@ -2536,27 +2390,24 @@ namespace MyNS
 		public string PrincipalArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDENTITY_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IDENTITY_POLICY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_POLICY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_CONTROL_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_CONTROL_POLICY = 2,
 	}
 	
 	/// <summary>
 	/// The values for a manual Amazon RDS DB cluster snapshot attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RdsDbClusterSnapshotAttributeValue
 	{
 		
@@ -2567,8 +2418,7 @@ namespace MyNS
 	/// <summary>
 	/// The name and values of a manual Amazon RDS DB snapshot attribute. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RdsDbSnapshotAttributeValue
 	{
 		
@@ -2579,8 +2429,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points restrictions and limitations</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3AccessPointConfiguration
 	{
 		
@@ -2594,8 +2443,7 @@ namespace MyNS
 		public NetworkOriginConfiguration NetworkOrigin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartPolicyGenerationRequest
 	{
 		
@@ -2616,8 +2464,7 @@ namespace MyNS
 	/// <summary>
 	/// Starts a scan of the policies applied to the specified resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartResourceScanRequest
 	{
 		
@@ -2642,8 +2489,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds a tag to the specified resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -2658,8 +2504,7 @@ namespace MyNS
 	/// <summary>
 	/// Removes a tag from the specified resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -2667,8 +2512,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the specified archive rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateArchiveRuleRequest
 	{
 		
@@ -2686,8 +2530,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates findings with the new values provided in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFindingsRequest
 	{
 		
@@ -2715,9 +2558,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValidatePolicyResourceType
 	{
 		
@@ -2737,8 +2578,7 @@ namespace MyNS
 		AWSIAMAssumeRolePolicyDocument = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidatePolicyRequest
 	{
 		
@@ -4049,9 +3889,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ListAnalyzedResourcesPostBodyResourceType
 	{
 		
@@ -4306,9 +4144,7 @@ namespace MyNS
 		public System.Nullable<ValidatePolicyPostBodyValidatePolicyResourceType> ValidatePolicyResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValidatePolicyPostBodyValidatePolicyResourceType
 	{
 		

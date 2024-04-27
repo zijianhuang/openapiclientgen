@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of CreateBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBudgetResponse
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of CreateBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBudgetRequest
 	{
 		
@@ -55,8 +53,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p> <p>This is the Amazon Resource Name (ARN) pattern for a budget: </p> <p> <code>arn:aws:budgets::AccountId:budget/budgetName</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Budget
 	{
 		
@@ -109,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The amount of cost or usage that's measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage has the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Spend
 	{
 		
@@ -129,8 +125,7 @@ namespace MyNS
 		public string Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlannedBudgetLimits
 	{
 	}
@@ -138,8 +133,7 @@ namespace MyNS
 	/// <summary>
 	///  A map that represents the cost filters that are applied to the budget.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CostFilters
 	{
 	}
@@ -147,8 +141,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets don't have <code>CostTypes</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CostTypes
 	{
 		
@@ -189,30 +182,27 @@ namespace MyNS
 	/// <summary>
 	///  The time unit of the budget, such as MONTHLY or QUARTERLY.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TimeUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARTERLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARTERLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNUALLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNUALLY = 3,
 	}
 	
 	/// <summary>
 	/// The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimePeriod
 	{
 		
@@ -226,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, RI units, or Savings Plans units and the <code>forecastedSpend</code> tracks how much that you're predicted to spend based on your historical usage profile.</p> <p>For example, if it's the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalculatedSpend
 	{
 		
@@ -245,36 +234,33 @@ namespace MyNS
 	/// <summary>
 	/// <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BudgetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USAGE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RI_UTILIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RI_UTILIZATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RI_COVERAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RI_COVERAGE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAVINGS_PLANS_UTILIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAVINGS_PLANS_UTILIZATION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAVINGS_PLANS_COVERAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAVINGS_PLANS_COVERAGE = 5,
 	}
 	
 	/// <summary>
 	/// The parameters that determine the budget amount for an auto-adjusting budget.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoAdjustData
 	{
 		
@@ -292,24 +278,21 @@ namespace MyNS
 		public System.DateTimeOffset LastAutoAdjustTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoAdjustType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HISTORICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HISTORICAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORECAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORECAST = 1,
 	}
 	
 	/// <summary>
 	/// The parameters that define or describe the historical data that your auto-adjusting budget is based on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoricalOptions
 	{
 		
@@ -327,8 +310,7 @@ namespace MyNS
 	/// <summary>
 	/// A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationWithSubscribers
 	{
 		
@@ -350,8 +332,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A notification that's associated with a budget. A budget can have up to ten notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notification
 	{
 		
@@ -386,72 +367,63 @@ namespace MyNS
 	/// <summary>
 	///  The type of a notification. It must be ACTUAL or FORECASTED.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTUAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORECASTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORECASTED = 1,
 	}
 	
 	/// <summary>
 	/// <p> The comparison operator of a notification. Currently, the service supports the following operators:</p> <p> <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUAL_TO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUAL_TO = 2,
 	}
 	
 	/// <summary>
 	///  The type of threshold for a notification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ThresholdType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENTAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENTAGE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABSOLUTE_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABSOLUTE_VALUE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NotificationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALARM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALARM = 1,
 	}
 	
 	/// <summary>
 	/// <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber has the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscriber
 	{
 		
@@ -473,57 +445,48 @@ namespace MyNS
 	/// <summary>
 	///  The subscription type of the subscriber. It can be SMS or EMAIL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubscriptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreationLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateRecordException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBudgetActionResponse
 	{
 		
@@ -563,8 +526,7 @@ namespace MyNS
 		public string ActionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBudgetActionRequest
 	{
 		
@@ -654,27 +616,24 @@ namespace MyNS
 		public Subscriber[] Subscribers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLY_IAM_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLY_IAM_POLICY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLY_SCP_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLY_SCP_POLICY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUN_SSM_DOCUMENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUN_SSM_DOCUMENTS = 2,
 	}
 	
 	/// <summary>
 	/// The trigger threshold of the action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionThreshold
 	{
 		
@@ -701,8 +660,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies all of the type-specific parameters. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Definition
 	{
 		
@@ -719,8 +677,7 @@ namespace MyNS
 	/// <summary>
 	/// The Identity and Access Management (IAM) action definition details. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IamActionDefinition
 	{
 		
@@ -744,8 +701,7 @@ namespace MyNS
 	/// <summary>
 	/// The service control policies (SCP) action definition details. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScpActionDefinition
 	{
 		
@@ -767,8 +723,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon Web Services Systems Manager (SSM) action definition details. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SsmActionDefinition
 	{
 		
@@ -794,34 +749,29 @@ namespace MyNS
 		public string[] InstanceIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionSubType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_EC2_INSTANCES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_EC2_INSTANCES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_RDS_INSTANCES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_RDS_INSTANCES = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApprovalModel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMATIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMATIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANUAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
@@ -829,8 +779,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of CreateNotification 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNotificationResponse
 	{
 	}
@@ -838,8 +787,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of CreateNotification 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNotificationRequest
 	{
 		
@@ -875,8 +823,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of CreateSubscriber 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSubscriberResponse
 	{
 	}
@@ -884,8 +831,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of CreateSubscriber 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSubscriberRequest
 	{
 		
@@ -921,8 +867,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of DeleteBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBudgetResponse
 	{
 	}
@@ -930,8 +875,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of DeleteBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBudgetRequest
 	{
 		
@@ -950,8 +894,7 @@ namespace MyNS
 		public string BudgetName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBudgetActionResponse
 	{
 		
@@ -995,8 +938,7 @@ namespace MyNS
 	/// <summary>
 	/// A budget action resource. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Action
 	{
 		
@@ -1084,45 +1026,42 @@ namespace MyNS
 		public Subscriber[] Subscribers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDBY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDBY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTION_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTION_IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTION_SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTION_SUCCESS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTION_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTION_FAILURE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVERSE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVERSE_IN_PROGRESS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVERSE_SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVERSE_SUCCESS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVERSE_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVERSE_FAILURE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESET_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESET_IN_PROGRESS = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESET_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESET_FAILURE = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBudgetActionRequest
 	{
 		
@@ -1162,8 +1101,7 @@ namespace MyNS
 		public string ActionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceLockedException
 	{
 	}
@@ -1171,8 +1109,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of DeleteNotification 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteNotificationResponse
 	{
 	}
@@ -1180,8 +1117,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of DeleteNotification 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteNotificationRequest
 	{
 		
@@ -1210,8 +1146,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of DeleteSubscriber 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSubscriberResponse
 	{
 	}
@@ -1219,8 +1154,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of DeleteSubscriber 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSubscriberRequest
 	{
 		
@@ -1256,8 +1190,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of DescribeBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetResponse
 	{
 		
@@ -1268,8 +1201,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of DescribeBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetRequest
 	{
 		
@@ -1288,8 +1220,7 @@ namespace MyNS
 		public string BudgetName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetActionResponse
 	{
 		
@@ -1329,8 +1260,7 @@ namespace MyNS
 		public Action Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetActionRequest
 	{
 		
@@ -1370,8 +1300,7 @@ namespace MyNS
 		public string ActionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetActionHistoriesResponse
 	{
 		
@@ -1398,8 +1327,7 @@ namespace MyNS
 	/// <summary>
 	/// The historical records for a budget action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionHistory
 	{
 		
@@ -1433,33 +1361,30 @@ namespace MyNS
 		public ActionHistoryDetails ActionHistoryDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_ACTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_ACTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_ACTION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTE_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTE_ACTION = 4,
 	}
 	
 	/// <summary>
 	/// The description of the details for the event. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionHistoryDetails
 	{
 		
@@ -1485,8 +1410,7 @@ namespace MyNS
 		public Action Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetActionHistoriesRequest
 	{
 		
@@ -1553,14 +1477,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetActionsForAccountResponse
 	{
 		
@@ -1584,8 +1506,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetActionsForAccountRequest
 	{
 		
@@ -1625,8 +1546,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetActionsForBudgetResponse
 	{
 		
@@ -1650,8 +1570,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetActionsForBudgetRequest
 	{
 		
@@ -1705,8 +1624,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetNotificationsForAccountResponse
 	{
 		
@@ -1729,8 +1647,7 @@ namespace MyNS
 	/// <summary>
 	///  The budget name and associated notifications for an account. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetNotificationsForAccount
 	{
 		
@@ -1753,8 +1670,7 @@ namespace MyNS
 		public string BudgetName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetNotificationsForAccountRequest
 	{
 		
@@ -1788,14 +1704,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiredNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetPerformanceHistoryResponse
 	{
 		
@@ -1818,8 +1732,7 @@ namespace MyNS
 	/// <summary>
 	/// A history of the state of a budget at the end of the budget's specified time period.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetPerformanceHistory
 	{
 		
@@ -1860,8 +1773,7 @@ namespace MyNS
 	/// <summary>
 	/// The amount of cost or usage that you created the budget for, compared to your actual costs or usage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetedAndActualAmounts
 	{
 		
@@ -1875,8 +1787,7 @@ namespace MyNS
 		public TimePeriod TimePeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetPerformanceHistoryRequest
 	{
 		
@@ -1936,8 +1847,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of DescribeBudgets 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetsResponse
 	{
 		
@@ -1951,8 +1861,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of DescribeBudgets 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBudgetsRequest
 	{
 		
@@ -1973,8 +1882,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of GetNotificationsForBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeNotificationsForBudgetResponse
 	{
 		
@@ -1988,8 +1896,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of DescribeNotificationsForBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeNotificationsForBudgetRequest
 	{
 		
@@ -2017,8 +1924,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of DescribeSubscribersForNotification 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSubscribersForNotificationResponse
 	{
 		
@@ -2032,8 +1938,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of DescribeSubscribersForNotification 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSubscribersForNotificationRequest
 	{
 		
@@ -2065,8 +1970,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteBudgetActionResponse
 	{
 		
@@ -2113,27 +2017,24 @@ namespace MyNS
 		public ExecutionType ExecutionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecutionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVE_BUDGET_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVE_BUDGET_ACTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRY_BUDGET_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRY_BUDGET_ACTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVERSE_BUDGET_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVERSE_BUDGET_ACTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESET_BUDGET_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESET_BUDGET_ACTION = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteBudgetActionRequest
 	{
 		
@@ -2183,8 +2084,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of UpdateBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBudgetResponse
 	{
 	}
@@ -2192,8 +2092,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of UpdateBudget 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBudgetRequest
 	{
 		
@@ -2212,8 +2111,7 @@ namespace MyNS
 		public Budget NewBudget { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBudgetActionResponse
 	{
 		
@@ -2260,8 +2158,7 @@ namespace MyNS
 		public Action NewAction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBudgetActionRequest
 	{
 		
@@ -2338,8 +2235,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of UpdateNotification 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNotificationResponse
 	{
 	}
@@ -2347,8 +2243,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of UpdateNotification 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNotificationRequest
 	{
 		
@@ -2384,8 +2279,7 @@ namespace MyNS
 	/// <summary>
 	///  Response of UpdateSubscriber 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSubscriberResponse
 	{
 	}
@@ -2393,8 +2287,7 @@ namespace MyNS
 	/// <summary>
 	///  Request of UpdateSubscriber 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSubscriberRequest
 	{
 		

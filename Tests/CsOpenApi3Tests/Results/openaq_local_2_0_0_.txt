@@ -20,27 +20,24 @@ namespace MyNS
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CitiesOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="city")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		city = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firstUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firstUpdated = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastUpdated = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CitiesRow
 	{
 		
@@ -93,30 +90,27 @@ namespace MyNS
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CountriesOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firstUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firstUpdated = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastUpdated = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="locations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		locations = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		count = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CountriesRow
 	{
 		
@@ -187,24 +181,21 @@ namespace MyNS
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityTypes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="government")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		government = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="community")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		community = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="research")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		research = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HTTPValidationError
 	{
 		
@@ -212,8 +203,7 @@ namespace MyNS
 		public ValidationError[] Detail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationError
 	{
 		
@@ -242,61 +232,56 @@ namespace MyNS
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LocationsOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="city")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		city = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="location")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		location = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sourceName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sourceName = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firstUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firstUpdated = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastUpdated = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		count = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="random")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		random = 7,
 	}
 	
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MeasOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="city")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		city = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="location")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		location = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="datetime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		datetime = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Meta
 	{
 		
@@ -322,8 +307,7 @@ namespace MyNS
 		public string Website { get; set; } = "/";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenAQCitiesResult
 	{
 		
@@ -338,8 +322,7 @@ namespace MyNS
 		public CitiesRow[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenAQCountriesResult
 	{
 		
@@ -354,8 +337,7 @@ namespace MyNS
 		public CountriesRow[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenAQParametersResult
 	{
 		
@@ -370,8 +352,7 @@ namespace MyNS
 		public ParametersRow[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParametersRow
 	{
 		
@@ -417,8 +398,7 @@ namespace MyNS
 		public string PreferredUnit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenAQProjectsResult
 	{
 		
@@ -433,8 +413,7 @@ namespace MyNS
 		public ProjectsRow[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectsRow
 	{
 		
@@ -523,8 +502,7 @@ namespace MyNS
 		public string Subtitle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectParameterDetails
 	{
 		
@@ -595,8 +573,7 @@ namespace MyNS
 		public string Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenAQResult
 	{
 		
@@ -610,34 +587,30 @@ namespace MyNS
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProjectsOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subtitle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subtitle = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firstUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firstUpdated = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastUpdated = 4,
 	}
 	
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SensorTypes
 	{
 		
@@ -651,101 +624,91 @@ namespace MyNS
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Sort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 	
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SourcesOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sourceName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sourceName = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firstUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firstUpdated = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastUpdated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastUpdated = 2,
 	}
 	
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SourcesV1Order
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 0,
 	}
 	
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Spatial
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="location")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		location = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="project")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		project = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total = 3,
 	}
 	
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Temporal
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		day = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		month = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="year")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		year = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="moy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		moy = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dow = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hour = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hod = 6,
 	}
 	
@@ -753,8 +716,7 @@ namespace MyNS
 	/// TileJSON model.
 	///Based on https://github.com/mapbox/tilejson-spec/tree/master/2.2.0
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TileJSON
 	{
 		

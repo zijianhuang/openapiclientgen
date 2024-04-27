@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Metrics aggregated over the input time range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateMetrics
 	{
 		
@@ -65,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -92,8 +90,7 @@ namespace MyNS
 	/// <summary>
 	/// Metrics for an hour.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HourlyMetrics
 	{
 		
@@ -113,8 +110,7 @@ namespace MyNS
 	/// <summary>
 	/// Metrics for a week day.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WeekDayMetrics
 	{
 		
@@ -131,42 +127,39 @@ namespace MyNS
 		public System.Nullable<System.Int32> MissedCallsCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WeekDayMetricsDay
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_WEEK_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_WEEK_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUESDAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEDNESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEDNESDAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THURSDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THURSDAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIDAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SATURDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SATURDAY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUNDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUNDAY = 7,
 	}
 	
 	/// <summary>
 	/// Insights for calls made to a location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BusinessCallsInsights
 	{
 		
@@ -189,24 +182,21 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BusinessCallsInsightsMetricType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AGGREGATE_COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AGGREGATE_COUNT = 1,
 	}
 	
 	/// <summary>
 	/// Business calls settings for a location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BusinessCallsSettings
 	{
 		
@@ -229,27 +219,24 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BusinessCallsSettingsCallsState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CALLS_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CALLS_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// Response message for ListBusinessCallsInsights.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBusinessCallsInsightsResponse
 	{
 		

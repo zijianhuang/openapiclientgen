@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_unauthorized
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 		public string Error_code_label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Available_numbers
 	{
 		
@@ -53,8 +51,7 @@ namespace MyNS
 		public Availablenumber[] Numbers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Availablenumber
 	{
 		
@@ -93,8 +90,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inbound_numbers
 	{
 		
@@ -111,8 +107,7 @@ namespace MyNS
 		public Ownednumber[] Numbers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ownednumber
 	{
 		
@@ -175,8 +170,7 @@ namespace MyNS
 		public string VoiceCallbackValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Number_details
 	{
 		
@@ -207,8 +201,7 @@ namespace MyNS
 		public string Target_api_key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Number_details_update
 	{
 		
@@ -295,34 +288,29 @@ namespace MyNS
 		public string VoiceStatusCallback { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Number_details_updateMessagesCallbackType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="app")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		app = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Number_details_updateVoiceCallbackType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sip = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tel = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="app")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		app = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response
 	{
 		
@@ -339,8 +327,7 @@ namespace MyNS
 		public string Error_code_label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response420
 	{
 		
@@ -357,8 +344,7 @@ namespace MyNS
 		public string Error_code_label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Unauthorized
 	{
 		
@@ -519,7 +505,7 @@ namespace MyNS
 	public enum GetAvailableNumbersType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="landline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		landline = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile-lvn")]
@@ -545,16 +531,16 @@ namespace MyNS
 	public enum GetAvailableNumbersFeatures
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOICE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS,VOICE")]
 		SMSVOICE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MMS = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS,MMS")]

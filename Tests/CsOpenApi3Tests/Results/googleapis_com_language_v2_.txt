@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The entity analysis request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeEntitiesRequest
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input to API methods.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Document
 	{
 		
@@ -71,46 +69,41 @@ namespace MyNS
 		public System.Nullable<DocumentType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAIN_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAIN_TEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnalyzeEntitiesRequestEncodingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTF8")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTF8 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTF16")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTF16 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTF32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTF32 = 3,
 	}
 	
 	/// <summary>
 	/// The entity analysis response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeEntitiesResponse
 	{
 		
@@ -136,8 +129,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a phrase in the text that is a known entity, such as a person, an organization, or location. The API associates information, such as probability and mentions, with entities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity
 	{
 		
@@ -175,8 +167,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a mention for an entity in the text. Currently, proper noun mentions are supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityMention
 	{
 		
@@ -208,8 +199,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the feeling associated with the entire text or entities in the text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sentiment
 	{
 		
@@ -229,8 +219,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a text span in the input document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextSpan
 	{
 		
@@ -247,73 +236,68 @@ namespace MyNS
 		public string Content { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityMentionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_OF_ART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_OF_ART = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSUMER_GOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSUMER_GOOD = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_NUMBER = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE = 12,
 	}
 	
 	/// <summary>
 	/// The sentiment analysis request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeSentimentRequest
 	{
 		
@@ -333,8 +317,7 @@ namespace MyNS
 	/// <summary>
 	/// The sentiment analysis response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeSentimentResponse
 	{
 		
@@ -366,8 +349,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a sentence in the input document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sentence
 	{
 		
@@ -387,8 +369,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for the text annotation API, which can perform multiple analysis types in one call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnnotateTextRequest
 	{
 		
@@ -414,8 +395,7 @@ namespace MyNS
 	/// <summary>
 	/// All available features. Setting each one to true will enable that specific analysis for the input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Features
 	{
 		
@@ -447,8 +427,7 @@ namespace MyNS
 	/// <summary>
 	/// The text annotations response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnnotateTextResponse
 	{
 		
@@ -498,8 +477,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a category returned from the text classifier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClassificationCategory
 	{
 		
@@ -519,8 +497,7 @@ namespace MyNS
 	/// <summary>
 	/// The document classification request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClassifyTextRequest
 	{
 		
@@ -534,8 +511,7 @@ namespace MyNS
 	/// <summary>
 	/// The document classification response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClassifyTextResponse
 	{
 		
@@ -561,8 +537,7 @@ namespace MyNS
 	/// <summary>
 	/// The document moderation request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModerateTextRequest
 	{
 		
@@ -576,8 +551,7 @@ namespace MyNS
 	/// <summary>
 	/// The document moderation response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModerateTextResponse
 	{
 		
@@ -603,8 +577,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		

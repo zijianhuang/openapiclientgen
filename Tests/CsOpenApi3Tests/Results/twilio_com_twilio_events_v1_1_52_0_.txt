@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Eventsv1event_type
 	{
 		
@@ -62,8 +61,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Eventsv1schema
 	{
 		
@@ -98,8 +96,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Eventsv1schemaschema_version
 	{
 		
@@ -131,8 +128,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Eventsv1sink
 	{
 		
@@ -191,43 +187,38 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Eventsv1sinkSink_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kinesis")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kinesis = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webhook = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="segment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		segment = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Eventsv1sinkStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initialized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initialized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="validating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		validating = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Eventsv1sinksink_test
 	{
 		
@@ -238,8 +229,7 @@ namespace MyNS
 		public string Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Eventsv1sinksink_validate
 	{
 		
@@ -250,8 +240,7 @@ namespace MyNS
 		public string Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Eventsv1subscription
 	{
 		
@@ -322,8 +311,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Eventsv1subscriptionsubscribed_event
 	{
 		
@@ -370,38 +358,34 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Sink_enum_sink_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kinesis")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kinesis = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webhook = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="segment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		segment = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Sink_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initialized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initialized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="validating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		validating = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 	}
 	

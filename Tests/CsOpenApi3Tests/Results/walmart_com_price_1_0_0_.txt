@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CapProgramResponse
 	{
 		
@@ -48,8 +47,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> SubsidyPreference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cause
 	{
 		
@@ -69,8 +67,7 @@ namespace MyNS
 	/// <summary>
 	/// This is applicable only for promotions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComparisonPrice
 	{
 		
@@ -81,21 +78,18 @@ namespace MyNS
 		public System.Nullable<ComparisonPriceCurrency> Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonPriceCurrency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAD = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CurrentPrice
 	{
 		
@@ -106,8 +100,7 @@ namespace MyNS
 		public ComparisonPriceCurrency Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedId
 	{
 		
@@ -124,8 +117,7 @@ namespace MyNS
 		public string FeedId1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedItemsHeaderRequestDTO
 	{
 		
@@ -148,8 +140,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedItemsRequestDTO
 	{
 		
@@ -166,8 +157,7 @@ namespace MyNS
 		public string Sku { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedUploadRequestDTO
 	{
 		
@@ -223,8 +213,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedUploadResponseDTO
 	{
 		
@@ -232,8 +221,7 @@ namespace MyNS
 		public string FeedId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GatewayError
 	{
 		
@@ -278,22 +266,20 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GatewayErrorCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA = 3,
 	}
 	
@@ -313,40 +299,35 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GatewayErrorGatewayErrorCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_DATA_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_DATA_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_DATA_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_DATA_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GatewayErrorSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemPriceResponse
 	{
 		
@@ -435,8 +416,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Price
 	{
 		
@@ -541,13 +521,11 @@ namespace MyNS
 		public ComparisonPriceCurrency Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PricePricingComparisonPriceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASE = 0,
 	}
 	
@@ -561,51 +539,43 @@ namespace MyNS
 		public ComparisonPriceCurrency Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PricePricingCurrentPriceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLEARANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLEARANCE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PricePricingPriceDisplayCodes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CART = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECKOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECKOUT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PricePricingProcessMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPSERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPSERT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PriceReplaceAll
 	{
 		
@@ -616,8 +586,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pricing
 	{
 		
@@ -699,8 +668,7 @@ namespace MyNS
 		public ComparisonPriceCurrency Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepricerEntityCollectionResponse
 	{
 		
@@ -746,22 +714,18 @@ namespace MyNS
 		public System.Nullable<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENTAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENTAGE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType
 	{
 		
@@ -775,8 +739,7 @@ namespace MyNS
 		Competitive_Price = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepricerEntityDeleteResponse
 	{
 		
@@ -784,8 +747,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepricerEntityGetResponse
 	{
 		
@@ -821,9 +783,7 @@ namespace MyNS
 		public System.Nullable<RepricerEntityGetResponseStrategiesStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepricerEntityGetResponseStrategiesStrategyType
 	{
 		
@@ -837,8 +797,7 @@ namespace MyNS
 		Competitive_Price = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepricerEntityRequest
 	{
 		
@@ -880,9 +839,7 @@ namespace MyNS
 		public System.Nullable<RepricerEntityRequestStrategiesStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepricerEntityRequestStrategiesStrategyType
 	{
 		
@@ -896,8 +853,7 @@ namespace MyNS
 		Competitive_Price = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepricerEntityResponse
 	{
 		
@@ -930,9 +886,7 @@ namespace MyNS
 		public System.Nullable<RepricerEntityResponseStrategiesStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepricerEntityResponseStrategiesStrategyType
 	{
 		
@@ -946,8 +900,7 @@ namespace MyNS
 		Competitive_Price = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepricerStrategyType
 	{
 		
@@ -961,9 +914,7 @@ namespace MyNS
 		public System.Nullable<RepricerStrategyTypeStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepricerStrategyTypeStrategyType
 	{
 		
@@ -977,8 +928,7 @@ namespace MyNS
 		Competitive_Price = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusInfo
 	{
 		
@@ -995,8 +945,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> SubsidyPreference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StrategyDetailsRequestDTO
 	{
 		
@@ -1371,10 +1320,10 @@ namespace MyNS
 	public enum PriceBulkUploadsFeedType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="price")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		price = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPT_SELLER_ELIGIBILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPT_SELLER_ELIGIBILITY = 1,
 	}
 	
@@ -1492,9 +1441,7 @@ namespace MyNS
 		public ComparisonPriceCurrency Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdatePricePutBodyReplaceAll
 	{
 		
@@ -1638,9 +1585,7 @@ namespace MyNS
 		public System.Nullable<GetStrategiesReturnStrategyCollectionsStrategiesStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetStrategiesReturnStrategyCollectionsStrategiesStrategyType
 	{
 		
@@ -1695,9 +1640,7 @@ namespace MyNS
 		public System.Nullable<CreateStrategyPostBodyStrategiesStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateStrategyPostBodyStrategiesStrategyType
 	{
 		
@@ -1743,9 +1686,7 @@ namespace MyNS
 		public System.Nullable<CreateStrategyReturnStrategiesStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateStrategyReturnStrategiesStrategyType
 	{
 		
@@ -1807,9 +1748,7 @@ namespace MyNS
 		public System.Nullable<UpdateStrategyPutBodyStrategiesStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateStrategyPutBodyStrategiesStrategyType
 	{
 		
@@ -1855,9 +1794,7 @@ namespace MyNS
 		public System.Nullable<UpdateStrategyReturnStrategiesStrategyType> StrategyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateStrategyReturnStrategiesStrategyType
 	{
 		

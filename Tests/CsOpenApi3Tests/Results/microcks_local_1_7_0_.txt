@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Abstract bean representing a Service or API Exchange.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbstractExchange
 	{
 		
@@ -34,16 +33,14 @@ namespace MyNS
 		public AbstractExchangeType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AbstractExchangeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reqRespPair")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reqRespPair = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unidirEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unidirEvent = 1,
 	}
 	
@@ -51,8 +48,7 @@ namespace MyNS
 	/// Artifact to be imported by Microcks.
 	///This structure represents a mime-multipart file upload (as specified here: https://swagger.io/docs/specification/describing-request-body/file-upload/)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactUpload
 	{
 		
@@ -68,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// Protocol binding details for asynchronous operations
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -120,36 +115,33 @@ namespace MyNS
 		public BindingType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BindingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KAFKA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KAFKA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MQTT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MQTT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMQP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMQP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NATS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NATS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLEPUBSUB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLEPUBSUB = 5,
 	}
 	
 	/// <summary>
 	/// A simple Counter type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Counter
 	{
 		
@@ -163,8 +155,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic map of counter
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CounterMap
 	{
 	}
@@ -172,8 +163,7 @@ namespace MyNS
 	/// <summary>
 	/// The daily statistic of a service mock invocations
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailyInvocationStatistic
 	{
 		
@@ -230,8 +220,7 @@ namespace MyNS
 		public string ServiceVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventMessage
 	{
 		
@@ -285,8 +274,7 @@ namespace MyNS
 	/// <summary>
 	/// Transport headers for both Requests and Responses
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Header
 	{
 		
@@ -310,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// Abstract representation of a Service or API exchange type (request/response, event based, ...)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Exchange
 	{
 	}
@@ -319,8 +306,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of optional features configuration used by Microcks server
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeaturesConfig
 	{
 		
@@ -422,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// Data Transfert Object for headers of both Requests and Responses
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeaderDTO
 	{
 		
@@ -447,8 +432,7 @@ namespace MyNS
 	/// <summary>
 	/// An ImportJob allow defining a repository artifact to poll for discovering Services and APIs mocks and tests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportJob
 	{
 		
@@ -544,8 +528,7 @@ namespace MyNS
 	/// <summary>
 	/// Commodity object for holding metadata on any entity. This object is inspired by Kubernetes metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metadata
 	{
 		
@@ -581,8 +564,7 @@ namespace MyNS
 	/// <summary>
 	/// Lightweight reference of an existing Service
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceRef
 	{
 		
@@ -614,8 +596,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of Keycloak / SSO configuration used by Microcks server
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeycloakConfig
 	{
 		
@@ -668,24 +649,21 @@ namespace MyNS
 		public KeycloakConfigSsl_required Ssl_required { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeycloakConfigSsl_required
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external = 1,
 	}
 	
 	/// <summary>
 	/// A map which keys are already used labels keys and values are already used values for this key
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelsMap
 	{
 	}
@@ -693,8 +671,7 @@ namespace MyNS
 	/// <summary>
 	/// An Operation of a Service or API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -766,8 +743,7 @@ namespace MyNS
 	/// <summary>
 	/// Companion object for Operation that may be used to express constraints on request parameters
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParameterConstraint
 	{
 		
@@ -804,27 +780,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Required { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParameterConstraintIn
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="path")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		path = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="query")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		query = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="header")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		header = 2,
 	}
 	
 	/// <summary>
 	/// Specification of additional headers for a Service/API operations. Keys are operation name or "globals" (if header applies to all), values are Header objects DTO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationHeaders
 	{
 	}
@@ -832,8 +805,7 @@ namespace MyNS
 	/// <summary>
 	/// Data Transfer object for grouping the mutable properties of an Operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationOverrideDTO
 	{
 		
@@ -865,8 +837,7 @@ namespace MyNS
 	/// <summary>
 	/// A mock invocation or test request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Request
 	{
 		
@@ -914,8 +885,7 @@ namespace MyNS
 	/// <summary>
 	/// Request associated with corresponding Response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestResponsePair
 	{
 	}
@@ -923,8 +893,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource represents a Service or API artifacts such as specification, contract
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Resource
 	{
 		
@@ -981,51 +950,48 @@ namespace MyNS
 		public ResourceType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WSDL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WSDL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XSD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON_SCHEMA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN_API_SPEC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN_API_SPEC = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN_API_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN_API_SCHEMA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASYNC_API_SPEC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASYNC_API_SPEC = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASYNC_API_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASYNC_API_SCHEMA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVRO_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVRO_SCHEMA = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOBUF_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOBUF_SCHEMA = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOBUF_DESCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOBUF_DESCRIPTION = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRAPHQL_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRAPHQL_SCHEMA = 10,
 	}
 	
 	/// <summary>
 	/// A mock invocation or test response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response
 	{
 		
@@ -1073,8 +1039,7 @@ namespace MyNS
 	/// <summary>
 	/// A Secret allows grouping informations on how to access a restricted resource such as a repsoitory URL. Secrets are typically used by ImpoortJobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Secret
 	{
 		
@@ -1119,8 +1084,7 @@ namespace MyNS
 	/// <summary>
 	/// Lightweight reference for an existing Secret
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecretRef
 	{
 		
@@ -1144,8 +1108,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Service or API definition as registred into Microcks repository
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Service
 	{
 		
@@ -1198,39 +1161,36 @@ namespace MyNS
 		public string XmlNS { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServiceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOAP_HTTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOAP_HTTP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERIC_REST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENERIC_REST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERIC_EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENERIC_EVENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRPC = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRAPHQL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRAPHQL = 6,
 	}
 	
 	/// <summary>
 	/// Aggregate bean for grouping a Service an its messages pairs
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceView
 	{
 		
@@ -1254,8 +1214,7 @@ namespace MyNS
 	/// <summary>
 	/// Upload of a repository snapshot file
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotUpload
 	{
 		
@@ -1271,8 +1230,7 @@ namespace MyNS
 	/// <summary>
 	/// Companion objects for TestResult. Each TestCaseResult correspond to a particuliar service operation / action reference by the operationName field. TestCaseResults owns a collection of TestStepResults (one for every request associated to service operation / action).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestCaseResult
 	{
 		
@@ -1310,8 +1268,7 @@ namespace MyNS
 	/// <summary>
 	/// TestStepResult is an entity embedded within TestCaseResult. They are created for each request associated with an operation / action of a microservice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestStepResult
 	{
 		
@@ -1348,8 +1305,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestCaseReturnDTO
 	{
 		
@@ -1365,8 +1321,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the test conformance metrics (current score, history and evolution trend) of a Service
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestConformanceMetric
 	{
 		
@@ -1427,33 +1382,30 @@ namespace MyNS
 		public string ServiceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TestConformanceMetricLatestTrend
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW_DOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW_DOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW_UP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW_UP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UP = 4,
 	}
 	
 	/// <summary>
 	/// Test request is a minimalist wrapper for requesting the launch of a new test
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestRequest
 	{
 		
@@ -1508,42 +1460,39 @@ namespace MyNS
 		public int Timeout { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TestRequestRunnerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOAP_HTTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOAP_HTTP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOAP_UI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOAP_UI = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTMAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTMAN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN_API_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN_API_SCHEMA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASYNC_API_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASYNC_API_SCHEMA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRPC_PROTOBUF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRPC_PROTOBUF = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRAPHQL_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRAPHQL_SCHEMA = 7,
 	}
 	
 	/// <summary>
 	/// Represents the result of a Service or API test run by Microcks. Tests are related to a service and made of multiple test cases corresponding to each operations / actions composing service. Tests are run against a specific endpoint named testedEndpoint. It holds global markers telling if test still ran, is a success, how many times is has taken and so on ...
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestResult
 	{
 		
@@ -1653,8 +1602,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the summary result of a Service or API test run by Microcks. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestResultSummary
 	{
 		
@@ -1694,8 +1642,7 @@ namespace MyNS
 	/// <summary>
 	/// TestReturn is used for wrapping the return code of a test step execution
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestReturn
 	{
 		
@@ -1740,67 +1687,62 @@ namespace MyNS
 	/// <summary>
 	/// Type of test strategy (different strategies are implemented by different runners)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TestRunnerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOAP_HTTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOAP_HTTP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOAP_UI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOAP_UI = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTMAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTMAN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN_API_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN_API_SCHEMA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASYNC_API_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASYNC_API_SCHEMA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRPC_PROTOBUF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRPC_PROTOBUF = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRAPHQL_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRAPHQL_SCHEMA = 7,
 	}
 	
 	/// <summary>
 	/// Evolution trend qualifier
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Trend
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW_DOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW_DOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW_UP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW_UP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UP = 4,
 	}
 	
 	/// <summary>
 	/// Representation of an unidirectional exchange as an event message
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnidirectionalEvent
 	{
 	}
@@ -1808,8 +1750,7 @@ namespace MyNS
 	/// <summary>
 	/// Value of a metric with an associated weight
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WeightedMetricValue
 	{
 		

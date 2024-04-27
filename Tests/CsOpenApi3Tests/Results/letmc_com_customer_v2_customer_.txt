@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a single branch of a client.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BranchModel
 	{
 		
@@ -113,8 +112,7 @@ namespace MyNS
 	/// <summary>
 	/// Holds results from a paged query returning BranchModel values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BranchModelResults
 	{
 		
@@ -131,8 +129,7 @@ namespace MyNS
 		public BranchModel[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyValuePair_String_String_
 	{
 		
@@ -146,8 +143,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Accounting - Finance Entry
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordAccountingEntryModel
 	{
 		
@@ -179,8 +175,7 @@ namespace MyNS
 	/// <summary>
 	/// Invoices
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordAccountingInvoiceModel
 	{
 		
@@ -206,8 +201,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Accounting
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordAccountingModel
 	{
 		
@@ -239,8 +233,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Arrears Chase Note.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordChaseNoteModel
 	{
 		
@@ -272,8 +265,7 @@ namespace MyNS
 	/// <summary>
 	/// Class for Landlord CRM Entries
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordCrmEntry
 	{
 		
@@ -293,8 +285,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordDetailsModel
 	{
 		
@@ -344,8 +335,7 @@ namespace MyNS
 	/// <summary>
 	/// Lettings Inspection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordLettingsInspectionModel
 	{
 		
@@ -365,8 +355,7 @@ namespace MyNS
 	/// <summary>
 	/// Maintenance Certificate
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordMaintenanceCertificateModel
 	{
 		
@@ -398,8 +387,7 @@ namespace MyNS
 	/// <summary>
 	/// Document details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LettingsLandlordDocument
 	{
 		
@@ -437,8 +425,7 @@ namespace MyNS
 	/// <summary>
 	/// Maintenance Job
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordMaintenanceJobModel
 	{
 		
@@ -485,8 +472,7 @@ namespace MyNS
 	/// <summary>
 	/// Maintenance Job Note Helper Model:-
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordMaintenanceJobNoteModel
 	{
 		
@@ -512,8 +498,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Maintenance
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordMaintenanceModel
 	{
 		
@@ -527,8 +512,7 @@ namespace MyNS
 	/// <summary>
 	/// Maintenance Preference
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordMaintenancePreferenceModel
 	{
 		
@@ -554,8 +538,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores a photo related to a property structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordPhotoModel
 	{
 		
@@ -584,33 +567,30 @@ namespace MyNS
 		public System.Nullable<LandlordPhotoModelPhotoType> PhotoType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LandlordPhotoModelPhotoType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Photo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Photo = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Map")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Map = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FloorPlan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FloorPlan = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SiteMap")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SiteMap = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AerialPhoto")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AerialPhoto = 4,
 	}
 	
 	/// <summary>
 	/// Holds results from a paged query returning LandlordPhotoModel values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordPhotoModelResults
 	{
 		
@@ -630,8 +610,7 @@ namespace MyNS
 	/// <summary>
 	/// Class to represent proffit loss report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordProfitLossModel
 	{
 		
@@ -657,8 +636,7 @@ namespace MyNS
 	/// <summary>
 	/// Class for a group of entries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordProfitLossSectionModel
 	{
 		
@@ -672,8 +650,7 @@ namespace MyNS
 	/// <summary>
 	/// Class for a group of entries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordProfitLossRowModel
 	{
 		
@@ -705,8 +682,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Rent Arrears.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordRentArrearsModel
 	{
 		
@@ -738,8 +714,7 @@ namespace MyNS
 	/// <summary>
 	/// Outstanding Rent
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordRentOustandingItem
 	{
 		
@@ -777,8 +752,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Settings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordSettingsModel
 	{
 		
@@ -792,8 +766,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Summary - Landing Page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordSummaryModel
 	{
 		
@@ -825,8 +798,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Summary - Landing Page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordSummaryTenancyModel
 	{
 		
@@ -912,8 +884,7 @@ namespace MyNS
 	/// <summary>
 	/// Landlord Tenancy Model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandlordTenancyModel
 	{
 		
@@ -1038,8 +1009,7 @@ namespace MyNS
 		public string[] Tenants { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Object
 	{
 	}

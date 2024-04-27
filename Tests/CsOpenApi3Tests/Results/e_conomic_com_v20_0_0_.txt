@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Activity
 	{
 		
@@ -105,8 +104,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityCursorResults
 	{
 		
@@ -123,8 +121,7 @@ namespace MyNS
 		public Activity[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityGroup
 	{
 		
@@ -272,9 +269,7 @@ namespace MyNS
 		public ActivityGroupType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OngoingAccountType
 	{
 		
@@ -285,9 +280,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActivityGroupType
 	{
 		
@@ -304,8 +297,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityGroupCursorResults
 	{
 		
@@ -322,9 +314,7 @@ namespace MyNS
 		public ActivityGroup[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CostGroupType
 	{
 		
@@ -335,8 +325,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CostType
 	{
 		
@@ -399,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CostTypeCursorResults
 	{
 		
@@ -417,8 +405,7 @@ namespace MyNS
 		public CostType[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CostTypeGroup
 	{
 		
@@ -487,8 +474,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CostTypeGroupCursorResults
 	{
 		
@@ -505,8 +491,7 @@ namespace MyNS
 		public CostTypeGroup[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatedResult
 	{
 		
@@ -517,8 +502,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Employee
 	{
 		
@@ -591,8 +575,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmployeeCursorResults
 	{
 		
@@ -609,8 +592,7 @@ namespace MyNS
 		public Employee[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmployeeGroup
 	{
 		
@@ -647,8 +629,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmployeeGroupCursorResults
 	{
 		
@@ -665,9 +646,7 @@ namespace MyNS
 		public EmployeeGroup[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EmployeeType
 	{
 		
@@ -684,8 +663,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -726,8 +704,7 @@ namespace MyNS
 		public string Property { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Mileage
 	{
 		
@@ -804,8 +781,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MileageCursorResults
 	{
 		
@@ -822,8 +798,7 @@ namespace MyNS
 		public Mileage[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MileageNumbersCollection
 	{
 		
@@ -836,8 +811,7 @@ namespace MyNS
 		public int[] Numbers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MileagePrices
 	{
 		
@@ -875,8 +849,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MileagePricesCursorResults
 	{
 		
@@ -893,8 +866,7 @@ namespace MyNS
 		public MileagePrices[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Project
 	{
 		
@@ -1067,8 +1039,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectActivity
 	{
 		
@@ -1128,8 +1099,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectActivityCursorResults
 	{
 		
@@ -1149,8 +1119,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectCursorResults
 	{
 		
@@ -1167,8 +1136,7 @@ namespace MyNS
 		public Project[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectCustomer
 	{
 		
@@ -1205,8 +1173,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectCustomerCursorResults
 	{
 		
@@ -1223,8 +1190,7 @@ namespace MyNS
 		public ProjectCustomer[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectEmployee
 	{
 		
@@ -1375,8 +1341,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectEmployeeCursorResults
 	{
 		
@@ -1393,8 +1358,7 @@ namespace MyNS
 		public ProjectEmployee[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectEmployeeGroup
 	{
 		
@@ -1431,8 +1395,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectEmployeeGroupCursorResults
 	{
 		
@@ -1449,8 +1412,7 @@ namespace MyNS
 		public ProjectEmployeeGroup[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectGroup
 	{
 		
@@ -1598,9 +1560,7 @@ namespace MyNS
 		public ProjectGroupType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProjectGroupType
 	{
 		
@@ -1617,8 +1577,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectGroupCursorResults
 	{
 		
@@ -1635,8 +1594,7 @@ namespace MyNS
 		public ProjectGroup[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectStatus
 	{
 		
@@ -1673,9 +1631,7 @@ namespace MyNS
 		public ProjectStatusType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProjectStatusType
 	{
 		
@@ -1689,8 +1645,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectStatusCursorResults
 	{
 		
@@ -1707,8 +1662,7 @@ namespace MyNS
 		public ProjectStatus[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeEntry
 	{
 		
@@ -1790,8 +1744,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeEntryCursorResults
 	{
 		
@@ -1808,8 +1761,7 @@ namespace MyNS
 		public TimeEntry[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeEntryNumbersCollection
 	{
 		
@@ -1822,8 +1774,7 @@ namespace MyNS
 		public int[] Numbers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeEntryPrices
 	{
 		
@@ -1849,8 +1800,7 @@ namespace MyNS
 	/// <summary>
 	/// Array of objects along with a cursor. Max number in the array returned is 1000
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeEntryPricesCursorResults
 	{
 		

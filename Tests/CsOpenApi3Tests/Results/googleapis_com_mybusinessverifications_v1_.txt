@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Display data for verifications through postcard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddressVerificationData
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostalAddress
 	{
 		
@@ -122,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for Verifications.CompleteVerificationAction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompleteVerificationRequest
 	{
 		
@@ -137,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for Verifications.CompleteVerificationAction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompleteVerificationResponse
 	{
 		
@@ -152,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// A verification represents a verification attempt on a location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Verification
 	{
 		
@@ -188,58 +183,53 @@ namespace MyNS
 		public System.Nullable<VerificationState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VerificationMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFICATION_METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFICATION_METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_CALL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VETTED_PARTNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VETTED_PARTNER = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VerificationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// Indicates that the location fails to comply with our [guidelines](https://support.google.com/business/answer/3038177).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplyWithGuidelines
 	{
 		
@@ -250,27 +240,24 @@ namespace MyNS
 		public System.Nullable<ComplyWithGuidelinesRecommendationReason> RecommendationReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComplyWithGuidelinesRecommendationReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECOMMENDATION_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECOMMENDATION_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_LOCATION_SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_LOCATION_SUSPENDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_LOCATION_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_LOCATION_DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// Display data for verifications through email.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailVerificationData
 	{
 		
@@ -296,8 +283,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for Verifications.FetchVerificationOptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchVerificationOptionsRequest
 	{
 		
@@ -317,8 +303,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional data for service business verification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceBusinessContext
 	{
 		
@@ -332,8 +317,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for Verifications.FetchVerificationOptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchVerificationOptionsResponse
 	{
 		
@@ -347,8 +331,7 @@ namespace MyNS
 	/// <summary>
 	/// The verification option represents how to verify the location (indicated by verification method) and where the verification will be sent to (indicated by display data).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerificationOption
 	{
 		
@@ -386,8 +369,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for Verifications.ListVerifications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVerificationsResponse
 	{
 		
@@ -407,8 +389,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the location duplicates another location that is in good standing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResolveOwnershipConflict
 	{
 	}
@@ -416,8 +397,7 @@ namespace MyNS
 	/// <summary>
 	/// Token generated by a vetted [partner](https://support.google.com/business/answer/7674102).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerificationToken
 	{
 		
@@ -431,8 +411,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the location requires verification. Contains information about the current verification actions performed on the location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Verify
 	{
 		
@@ -446,8 +425,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for Verifications.VerifyLocation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyLocationRequest
 	{
 		
@@ -497,8 +475,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for Verifications.VerifyLocation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyLocationResponse
 	{
 		
@@ -512,8 +489,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for VoiceOfMerchant.GetVoiceOfMerchantState.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceOfMerchantState
 	{
 		
@@ -557,8 +533,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates that the location will gain voice of merchant after passing review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaitForVoiceOfMerchant
 	{
 	}

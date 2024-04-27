@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Promotion result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Promotion
 	{
 		
@@ -115,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom search result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Result
 	{
 		
@@ -282,8 +280,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a custom search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Search
 	{
 		
@@ -1293,157 +1290,157 @@ namespace MyNS
 	public enum Search_cse_listImgColorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="imgColorTypeUndefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		imgColorTypeUndefined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mono")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mono = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gray")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gray = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="color")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		color = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trans")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trans = 4,
 	}
 	
 	public enum Search_cse_listImgDominantColor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="imgDominantColorUndefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		imgDominantColorUndefined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="black")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		black = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blue = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="brown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		brown = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gray")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gray = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="green")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		green = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="orange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		orange = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pink")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pink = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purple")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purple = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="red")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		red = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="teal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		teal = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="white")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		white = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="yellow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		yellow = 12,
 	}
 	
 	public enum Search_cse_listImgSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="imgSizeUndefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		imgSizeUndefined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HUGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HUGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ICON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ICON = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LARGE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMALL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XLARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XLARGE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XXLARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XXLARGE = 7,
 	}
 	
 	public enum Search_cse_listImgType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="imgTypeUndefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		imgTypeUndefined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clipart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clipart = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="face")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		face = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lineart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lineart = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stock")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stock = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="photo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		photo = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="animated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		animated = 6,
 	}
 	
 	public enum Search_cse_listSafe
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="safeUndefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		safeUndefined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="off")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		off = 4,
 	}
 	
 	public enum Search_cse_listSearchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="searchTypeUndefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		searchTypeUndefined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="image")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		image = 1,
 	}
 	
 	public enum Search_cse_listSiteSearchFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="siteSearchFilterUndefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		siteSearchFilterUndefined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="e")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		e = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="i")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		i = 2,
 	}
 }

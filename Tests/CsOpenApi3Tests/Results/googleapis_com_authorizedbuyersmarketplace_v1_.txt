@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to accept a proposal. Accepting a proposal implies acceptance of the publisher terms_and_conditions, if any.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptProposalRequest
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for activating a client.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivateClientRequest
 	{
 	}
@@ -44,8 +42,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for activating a client user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivateClientUserRequest
 	{
 	}
@@ -53,8 +50,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents size of a single ad slot, or a creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdSize
 	{
 		
@@ -77,33 +73,30 @@ namespace MyNS
 		public string Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdSizeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIXEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIXEL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERSTITIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERSTITIAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NATIVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLUID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLUID = 4,
 	}
 	
 	/// <summary>
 	/// Request message for adding creative to be used in the bidding process for the finalized deal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddCreativeRequest
 	{
 		
@@ -117,8 +110,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to add a note.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddNoteRequest
 	{
 		
@@ -132,8 +124,7 @@ namespace MyNS
 	/// <summary>
 	/// A text note attached to the proposal to facilitate the communication between buyers and sellers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Note
 	{
 		
@@ -156,27 +147,24 @@ namespace MyNS
 		public string Note1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NoteCreatorRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUYER_SELLER_ROLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUYER_SELLER_ROLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUYER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUYER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELLER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELLER = 2,
 	}
 	
 	/// <summary>
 	/// Defines a segment of inventory that buyer wants to buy. It's created by buyer and could be shared with multiple buyers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuctionPackage
 	{
 		
@@ -226,8 +214,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for batch updating deals.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDealsRequest
 	{
 		
@@ -241,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for updating the deal at the given revision number.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDealRequest
 	{
 		
@@ -262,8 +248,7 @@ namespace MyNS
 	/// <summary>
 	/// A deal represents a segment of inventory for displaying ads that contains the terms and targeting information that is used for serving as well as the deal stats and status. Note: A proposal may contain multiple deals.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deal
 	{
 		
@@ -397,8 +382,7 @@ namespace MyNS
 	/// <summary>
 	/// Message captures data about the creatives in the deal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativeRequirements
 	{
 		
@@ -439,119 +423,106 @@ namespace MyNS
 		public System.Nullable<CreativeRequirementsSkippableAdType> SkippableAdType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeRequirementsCreativeFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATIVE_FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATIVE_FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISPLAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISPLAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIO = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeRequirementsCreativePreApprovalPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATIVE_PRE_APPROVAL_POLICY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATIVE_PRE_APPROVAL_POLICY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELLER_PRE_APPROVAL_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELLER_PRE_APPROVAL_REQUIRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELLER_PRE_APPROVAL_NOT_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELLER_PRE_APPROVAL_NOT_REQUIRED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeRequirementsCreativeSafeFrameCompatibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATIVE_SAFE_FRAME_COMPATIBILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATIVE_SAFE_FRAME_COMPATIBILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPATIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPATIBLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCOMPATIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCOMPATIBLE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeRequirementsProgrammaticCreativeSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRAMMATIC_CREATIVE_SOURCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRAMMATIC_CREATIVE_SOURCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADVERTISER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADVERTISER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHER = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeRequirementsSkippableAdType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIPPABLE_AD_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIPPABLE_AD_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIPPABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIPPABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTREAM_SELECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTREAM_SELECT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_SKIPPABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_SKIPPABLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DealDealType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEAL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFERRED_DEAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFERRED_DEAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE_AUCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE_AUCTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRAMMATIC_GUARANTEED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRAMMATIC_GUARANTEED = 3,
 	}
 	
 	/// <summary>
 	/// Message contains details about how the deal will be paced.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryControl
 	{
 		
@@ -586,71 +557,64 @@ namespace MyNS
 		public System.Nullable<DeliveryControlRoadblockingType> RoadblockingType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryControlCompanionDeliveryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANION_DELIVERY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANION_DELIVERY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY_OPTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY_OPTIONAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY_AT_LEAST_ONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY_AT_LEAST_ONE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY_ALL = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryControlCreativeRotationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATIVE_ROTATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATIVE_ROTATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROTATION_EVEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROTATION_EVEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROTATION_OPTIMIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROTATION_OPTIMIZED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROTATION_MANUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROTATION_MANUAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROTATION_SEQUENTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROTATION_SEQUENTIAL = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryControlDeliveryRateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY_RATE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY_RATE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRONT_LOADED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRONT_LOADED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS_FAST_AS_POSSIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AS_FAST_AS_POSSIBLE = 3,
 	}
 	
 	/// <summary>
 	/// Message contains details about publisher-set frequency caps of the delivery.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FrequencyCap
 	{
 		
@@ -673,70 +637,65 @@ namespace MyNS
 		public System.Nullable<System.Int32> TimeUnitsCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FrequencyCapTimeUnitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_UNIT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_UNIT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINUTE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEK = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIFETIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIFETIME = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POD = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STREAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STREAM = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryControlRoadblockingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROADBLOCKING_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROADBLOCKING_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLY_ONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLY_ONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_OR_MORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_OR_MORE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS_MANY_AS_POSSIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AS_MANY_AS_POSSIBLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_ROADBLOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_ROADBLOCK = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATIVE_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATIVE_SET = 5,
 	}
 	
 	/// <summary>
 	/// Represents an amount of money with its currency type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Money
 	{
 		
@@ -762,8 +721,7 @@ namespace MyNS
 	/// <summary>
 	/// Pricing terms for Preferred Deals.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PreferredDealTerms
 	{
 		
@@ -777,8 +735,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a price and a pricing type for a deal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Price
 	{
 		
@@ -795,27 +752,24 @@ namespace MyNS
 		public System.Nullable<PriceType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PriceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPD = 2,
 	}
 	
 	/// <summary>
 	/// Pricing terms for Private Auctions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrivateAuctionTerms
 	{
 		
@@ -835,8 +789,7 @@ namespace MyNS
 	/// <summary>
 	/// Pricing terms for Programmatic Guaranteed Deals.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProgrammaticGuaranteedTerms
 	{
 		
@@ -877,27 +830,24 @@ namespace MyNS
 		public System.Nullable<ProgrammaticGuaranteedTermsReservationType> ReservationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProgrammaticGuaranteedTermsReservationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESERVATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESERVATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPONSORSHIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPONSORSHIP = 2,
 	}
 	
 	/// <summary>
 	/// Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeZone
 	{
 		
@@ -917,8 +867,7 @@ namespace MyNS
 	/// <summary>
 	/// Targeting represents different criteria that can be used to target inventory. For example, they can choose to target inventory only if the user is in the US. Multiple types of targeting are always applied as a logical AND, unless noted otherwise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MarketplaceTargeting
 	{
 		
@@ -974,8 +923,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents Daypart targeting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DayPartTargeting
 	{
 		
@@ -995,8 +943,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines targeting for a period of time on a specific week day.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DayPart
 	{
 		
@@ -1019,42 +966,39 @@ namespace MyNS
 		public TimeOfDay StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DayPartDayOfWeek
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_WEEK_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_WEEK_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUESDAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEDNESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEDNESDAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THURSDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THURSDAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIDAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SATURDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SATURDAY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUNDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUNDAY = 7,
 	}
 	
 	/// <summary>
 	/// Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeOfDay
 	{
 		
@@ -1083,27 +1027,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> Seconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DayPartTargetingTimeZoneType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_ZONE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_ZONE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELLER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELLER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 2,
 	}
 	
 	/// <summary>
 	/// Generic targeting used for targeting dimensions that contains a list of included and excluded numeric IDs. This cannot be filtered using list filter syntax.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CriteriaTargeting
 	{
 		
@@ -1123,8 +1064,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the size of an ad unit that can be targeted on a bid request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventorySizeTargeting
 	{
 		
@@ -1144,8 +1084,7 @@ namespace MyNS
 	/// <summary>
 	/// Targeting of the inventory types a bid request can originate from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryTypeTargeting
 	{
 		
@@ -1159,8 +1098,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents targeting about where the ads can appear, for example, certain sites or mobile applications. Different placement targeting types will be logically OR'ed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlacementTargeting
 	{
 		
@@ -1180,8 +1118,7 @@ namespace MyNS
 	/// <summary>
 	/// Mobile application targeting settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileApplicationTargeting
 	{
 		
@@ -1195,8 +1132,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a list of targeted and excluded mobile application IDs that publishers own. Android App ID, for example, com.google.android.apps.maps, can be found in Google Play Store URL. iOS App ID (which is a number) can be found at the end of iTunes store URL. First party mobile applications is either included or excluded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstPartyMobileApplicationTargeting
 	{
 		
@@ -1216,8 +1152,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a list of targeted and excluded URLs (for example, google.com). For Private Auction Deals, URLs are either included or excluded. For Programmatic Guaranteed and Preferred Deals, this doesn't apply.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UriTargeting
 	{
 		
@@ -1237,8 +1172,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents targeting about various types of technology.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TechnologyTargeting
 	{
 		
@@ -1264,8 +1198,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents targeting information for operating systems.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperatingSystemTargeting
 	{
 		
@@ -1285,8 +1218,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents targeting information about video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoTargeting
 	{
 		
@@ -1306,8 +1238,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for batch updating deals.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDealsResponse
 	{
 		
@@ -1321,8 +1252,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to cancel an ongoing negotiation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelNegotiationRequest
 	{
 	}
@@ -1330,8 +1260,7 @@ namespace MyNS
 	/// <summary>
 	/// A client represents an agency, a brand, or an advertiser customer of the buyer. Based on the client's role, its client users will have varying levels of restricted access to the Marketplace and certain other sections of the Authorized Buyers UI.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Client
 	{
 		
@@ -1372,46 +1301,41 @@ namespace MyNS
 		public System.Nullable<ClientState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClientRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_ROLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_ROLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_DEAL_VIEWER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_DEAL_VIEWER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_DEAL_NEGOTIATOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_DEAL_NEGOTIATOR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_DEAL_APPROVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_DEAL_APPROVER = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClientState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 2,
 	}
 	
 	/// <summary>
 	/// A user of a client who has restricted access to the Marketplace and certain other sections of the Authorized Buyers UI based on the role granted to the associated client.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientUser
 	{
 		
@@ -1434,30 +1358,27 @@ namespace MyNS
 		public System.Nullable<ClientUserState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClientUserState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVITED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVITED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 3,
 	}
 	
 	/// <summary>
 	/// Contains information on how a buyer or seller can be reached.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contact
 	{
 		
@@ -1477,8 +1398,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for disabling a client.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeactivateClientRequest
 	{
 	}
@@ -1486,8 +1406,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for deactivating a client user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeactivateClientUserRequest
 	{
 	}
@@ -1495,8 +1414,7 @@ namespace MyNS
 	/// <summary>
 	/// Information related to deal pausing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DealPausingInfo
 	{
 		
@@ -1522,8 +1440,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -1531,8 +1448,7 @@ namespace MyNS
 	/// <summary>
 	/// A finalized deal is a snapshot of the deal when both buyer and seller accept the deal. The buyer or seller can update the deal after it's been finalized and renegotiate on the deal targeting, terms and other fields, while at the same time the finalized snapshot of the deal can still be retrieved using this API. The finalized deal contains a copy of the deal as it existed when most recently finalized, as well as fields related to deal serving such as pause/resume status, RTB metrics, and more.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FinalizedDeal
 	{
 		
@@ -1573,33 +1489,30 @@ namespace MyNS
 		public RtbMetrics RtbMetrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FinalizedDealDealServingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAL_SERVING_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEAL_SERVING_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED_BY_BUYER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED_BY_BUYER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED_BY_SELLER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED_BY_SELLER = 4,
 	}
 	
 	/// <summary>
 	/// Real-time bidding metrics. For what each metric means refer to [Report metrics](https://support.google.com/adxbuyer/answer/6115195#report-metrics)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RtbMetrics
 	{
 		
@@ -1643,8 +1556,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing auction packages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAuctionPackagesResponse
 	{
 		
@@ -1664,8 +1576,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the list method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClientUsersResponse
 	{
 		
@@ -1685,8 +1596,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the list method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClientsResponse
 	{
 		
@@ -1706,8 +1616,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing deals in a proposal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDealsResponse
 	{
 		
@@ -1727,8 +1636,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing finalized deals.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFinalizedDealsResponse
 	{
 		
@@ -1748,8 +1656,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing proposals.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProposalsResponse
 	{
 		
@@ -1769,8 +1676,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a proposal in the Marketplace. A proposal is the unit of negotiation between a seller and a buyer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Proposal
 	{
 		
@@ -1892,8 +1798,7 @@ namespace MyNS
 	/// <summary>
 	/// Buyers are allowed to store certain types of private data in a proposal or deal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrivateData
 	{
 		
@@ -1904,36 +1809,33 @@ namespace MyNS
 		public string ReferenceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProposalState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUYER_REVIEW_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUYER_REVIEW_REQUESTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELLER_REVIEW_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELLER_REVIEW_REQUESTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUYER_ACCEPTANCE_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUYER_ACCEPTANCE_REQUESTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINALIZED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED = 5,
 	}
 	
 	/// <summary>
 	/// Response message for profiles visible to the buyer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPublisherProfilesResponse
 	{
 		
@@ -1953,8 +1855,7 @@ namespace MyNS
 	/// <summary>
 	/// The values in the publisher profile are supplied by the publisher. All fields are not filterable unless stated otherwise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublisherProfile
 	{
 		
@@ -2052,8 +1953,7 @@ namespace MyNS
 	/// <summary>
 	/// A mobile application that contains a external app ID, name, and app store.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublisherProfileMobileApplication
 	{
 		
@@ -2076,60 +1976,57 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublisherProfileMobileApplicationAppStore
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_STORE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_STORE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLE_ITUNES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLE_ITUNES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_PLAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_PLAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROKU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROKU = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMAZON_FIRE_TV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMAZON_FIRE_TV = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAYSTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAYSTATION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XBOX = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAMSUNG_TV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAMSUNG_TV = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMAZON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMAZON = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPPO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPPO = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAMSUNG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAMSUNG = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIVO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIVO = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XIAOMI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XIAOMI = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LG_TV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LG_TV = 13,
 	}
 	
 	/// <summary>
 	/// Request message for pausing a finalized deal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PauseFinalizedDealRequest
 	{
 		
@@ -2143,8 +2040,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for resuming a finalized deal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResumeFinalizedDealRequest
 	{
 	}
@@ -2152,8 +2048,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to send an RFP. All fields in this request are proposed to publisher and subject to changes by publisher during later negotiation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendRfpRequest
 	{
 		
@@ -2233,8 +2128,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for setting ready to serve for a finalized deal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetReadyToServeRequest
 	{
 	}
@@ -2242,8 +2136,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for SubscribeAuctionPackage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscribeAuctionPackageRequest
 	{
 	}
@@ -2251,8 +2144,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for SubscribeAuctionPackageClients.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscribeClientsRequest
 	{
 		
@@ -2266,8 +2158,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for UnsubscribeAuctionPackage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsubscribeAuctionPackageRequest
 	{
 	}
@@ -2275,8 +2166,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for UnsubscribeAuctionPackage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsubscribeClientsRequest
 	{
 		

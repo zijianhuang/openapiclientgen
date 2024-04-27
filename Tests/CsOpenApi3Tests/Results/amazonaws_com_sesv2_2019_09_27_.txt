@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the result of processing your metric data batch request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetMetricDataResponse
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a single metric data query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDataResult
 	{
 		
@@ -53,8 +51,7 @@ namespace MyNS
 	/// <summary>
 	/// An error corresponding to the unsuccessful processing of a single metric data query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDataError
 	{
 		
@@ -68,24 +65,21 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_FAILURE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESS_DENIED = 1,
 	}
 	
 	/// <summary>
 	/// Represents a single metric data query to include in a batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetMetricDataQuery
 	{
 		
@@ -128,79 +122,70 @@ namespace MyNS
 		public System.DateTimeOffset EndDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricNamespace
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VDM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VDM = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Metric
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLAINT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMANENT_BOUNCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMANENT_BOUNCE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIENT_BOUNCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIENT_BOUNCE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLICK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLICK = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY_OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY_OPEN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY_CLICK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY_CLICK = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY_COMPLAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY_COMPLAINT = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimensions
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
@@ -208,8 +193,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetResponse
 	{
 	}
@@ -217,24 +201,21 @@ namespace MyNS
 	/// <summary>
 	/// Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TlsPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIONAL = 1,
 	}
 	
 	/// <summary>
 	/// <p>An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.</p> <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p> <ul> <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li> <li> <p>The <code>aws:</code> prefix is reserved for use by Amazon Web Services; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.</p> </li> <li> <p>You can associate tags with public or shared resources, but the tags are available only for your Amazon Web Services account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified Amazon Web Services Region for your Amazon Web Services account.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -256,24 +237,21 @@ namespace MyNS
 	/// <summary>
 	/// <p>The reason that the address was added to the suppression list for your account. The value can be one of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a hard bounce.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SuppressionListReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOUNCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOUNCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLAINT = 1,
 	}
 	
 	/// <summary>
 	/// An object containing additional settings for your VDM configuration as applicable to the Dashboard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DashboardOptions
 	{
 		
@@ -281,24 +259,21 @@ namespace MyNS
 		public FeatureStatus EngagementMetrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FeatureStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// An object containing additional settings for your VDM configuration as applicable to the Guardian.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GuardianOptions
 	{
 		
@@ -306,20 +281,17 @@ namespace MyNS
 		public FeatureStatus OptimizedSharedDelivery { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModificationException
 	{
 	}
@@ -327,8 +299,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetEventDestinationResponse
 	{
 	}
@@ -336,48 +307,45 @@ namespace MyNS
 	/// <summary>
 	/// An email sending event type. For example, email sends, opens, and bounces are all email events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOUNCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOUNCE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLAINT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLICK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLICK = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RENDERING_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RENDERING_FAILURE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY_DELAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY_DELAY = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBSCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBSCRIPTION = 9,
 	}
 	
 	/// <summary>
 	/// An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisFirehoseDestination
 	{
 		
@@ -399,8 +367,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchDestination
 	{
 		
@@ -415,8 +382,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines the dimension configuration to use when you send email events to Amazon CloudWatch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchDimensionConfiguration
 	{
 		
@@ -445,27 +411,24 @@ namespace MyNS
 	/// <summary>
 	/// The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionValueSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MESSAGE_TAG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MESSAGE_TAG = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL_HEADER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL_HEADER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_TAG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_TAG = 2,
 	}
 	
 	/// <summary>
 	/// An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnsDestination
 	{
 		
@@ -480,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PinpointDestination
 	{
 		
@@ -489,8 +451,7 @@ namespace MyNS
 		public string ApplicationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateContactResponse
 	{
 	}
@@ -498,8 +459,7 @@ namespace MyNS
 	/// <summary>
 	/// The contact's preference for being opted-in to or opted-out of a topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TopicPreference
 	{
 		
@@ -518,21 +478,18 @@ namespace MyNS
 		public SubscriptionStatus SubscriptionStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubscriptionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPT_IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPT_IN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPT_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPT_OUT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateContactListResponse
 	{
 	}
@@ -540,8 +497,7 @@ namespace MyNS
 	/// <summary>
 	/// An interest group, theme, or label within a list. Lists can have multiple topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Topic
 	{
 		
@@ -573,8 +529,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomVerificationEmailTemplateResponse
 	{
 	}
@@ -582,8 +537,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDedicatedIpPoolResponse
 	{
 	}
@@ -591,8 +545,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the predictive inbox placement test that you created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeliverabilityTestReportResponse
 	{
 		
@@ -614,24 +567,21 @@ namespace MyNS
 	/// <summary>
 	/// The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliverabilityTestStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 1,
 	}
 	
 	/// <summary>
 	/// Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -653,8 +603,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the content of the email, and optionally a character set specification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Content
 	{
 		
@@ -672,8 +621,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the body of the email message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body
 	{
 		
@@ -687,8 +635,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the raw content of an email message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RawMessage
 	{
 		
@@ -703,8 +650,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Template
 	{
 		
@@ -718,26 +664,22 @@ namespace MyNS
 		public string TemplateData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountSuspendedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendingPausedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageRejected
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailFromDomainNotVerifiedException
 	{
 	}
@@ -745,8 +687,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>If the email identity is a domain, this object contains information about the DKIM verification status for the domain.</p> <p>If the email identity is an email address, this object is empty. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEmailIdentityResponse
 	{
 		
@@ -760,27 +701,24 @@ namespace MyNS
 		public DkimAttributes DkimAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IdentityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL_ADDRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGED_DOMAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGED_DOMAIN = 2,
 	}
 	
 	/// <summary>
 	/// <p>An object that contains information about the DKIM authentication status for an email identity.</p> <p>Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DkimAttributes
 	{
 		
@@ -809,59 +747,52 @@ namespace MyNS
 	/// <summary>
 	/// <p>The DKIM authentication status of the identity. The status can be one of the following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li> <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li> <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DkimStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPORARY_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPORARY_FAILURE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_STARTED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DkimSigningAttributesOrigin
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_SES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_SES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DkimSigningKeyLength
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_1024_BIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_1024_BIT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048_BIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_2048_BIT = 1,
 	}
 	
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEmailIdentityPolicyResponse
 	{
 	}
@@ -869,8 +800,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEmailTemplateResponse
 	{
 	}
@@ -878,8 +808,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateImportJobResponse
 	{
 		
@@ -890,8 +819,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains details about the action of suppression list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuppressionListDestination
 	{
 		
@@ -906,24 +834,21 @@ namespace MyNS
 	/// <summary>
 	/// <p>The type of action to perform on the address. The following are possible values:</p> <ul> <li> <p>PUT: add the addresses to the suppression list.</p> </li> <li> <p>DELETE: remove the address from the suppression list.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SuppressionListImportAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 1,
 	}
 	
 	/// <summary>
 	/// An object that contains details about the action of a contact list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContactListDestination
 	{
 		
@@ -945,24 +870,21 @@ namespace MyNS
 	/// <summary>
 	/// The data format of the import job's data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSV = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 1,
 	}
 	
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetResponse
 	{
 	}
@@ -970,20 +892,17 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetEventDestinationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteContactResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteContactListResponse
 	{
 	}
@@ -991,8 +910,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCustomVerificationEmailTemplateResponse
 	{
 	}
@@ -1000,8 +918,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDedicatedIpPoolResponse
 	{
 	}
@@ -1009,8 +926,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailIdentityResponse
 	{
 	}
@@ -1018,8 +934,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailIdentityPolicyResponse
 	{
 	}
@@ -1027,8 +942,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailTemplateResponse
 	{
 	}
@@ -1036,8 +950,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSuppressedDestinationResponse
 	{
 	}
@@ -1045,8 +958,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of details about the email-sending capabilities of your Amazon SES account in the current Amazon Web Services Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountResponse
 	{
 		
@@ -1078,8 +990,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendQuota
 	{
 		
@@ -1096,8 +1007,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuppressionAttributes
 	{
 		
@@ -1108,8 +1018,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about your account details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountDetails
 	{
 		
@@ -1132,37 +1041,32 @@ namespace MyNS
 		public ReviewDetails ReviewDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MailType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARKETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARKETING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSACTIONAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContactLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JA = 1,
 	}
 	
 	/// <summary>
 	/// An object that contains information about your account details review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReviewDetails
 	{
 		
@@ -1173,30 +1077,27 @@ namespace MyNS
 		public string CaseId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReviewStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENIED = 3,
 	}
 	
 	/// <summary>
 	/// The VDM attributes that apply to your Amazon SES account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VdmAttributes
 	{
 		
@@ -1217,8 +1118,7 @@ namespace MyNS
 	/// <summary>
 	/// An object containing additional settings for your VDM configuration as applicable to the Dashboard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DashboardAttributes
 	{
 		
@@ -1229,8 +1129,7 @@ namespace MyNS
 	/// <summary>
 	/// An object containing additional settings for your VDM configuration as applicable to the Guardian.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GuardianAttributes
 	{
 		
@@ -1241,8 +1140,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about blacklist events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBlacklistReportsResponse
 	{
 		
@@ -1254,8 +1152,7 @@ namespace MyNS
 		public BlacklistReport BlacklistReport { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlacklistReport
 	{
 	}
@@ -1263,8 +1160,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConfigurationSetResponse
 	{
 		
@@ -1296,8 +1192,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p> <p>These images and links include references to a domain operated by Amazon Web Services. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrackingOptions
 	{
 		
@@ -1312,8 +1207,7 @@ namespace MyNS
 	/// <summary>
 	/// Used to associate a configuration set with a dedicated IP pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryOptions
 	{
 		
@@ -1327,8 +1221,7 @@ namespace MyNS
 	/// <summary>
 	/// Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current Amazon Web Services Region. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReputationOptions
 	{
 		
@@ -1342,8 +1235,7 @@ namespace MyNS
 	/// <summary>
 	/// Used to enable or disable email sending for messages that use this configuration set in the current Amazon Web Services Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendingOptions
 	{
 		
@@ -1354,8 +1246,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about the suppression list preferences for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuppressionOptions
 	{
 		
@@ -1366,8 +1257,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines the VDM settings that apply to emails that you send using the configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VdmOptions
 	{
 		
@@ -1381,8 +1271,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an event destination for a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConfigurationSetEventDestinationsResponse
 	{
 		
@@ -1393,8 +1282,7 @@ namespace MyNS
 	/// <summary>
 	/// In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens, clicks, bounces, complaints and delivery delays. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDestination
 	{
 		
@@ -1428,8 +1316,7 @@ namespace MyNS
 		public PinpointDestination PinpointDestination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetContactResponse
 	{
 		
@@ -1458,8 +1345,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetContactListResponse
 	{
 		
@@ -1485,8 +1371,7 @@ namespace MyNS
 	/// <summary>
 	/// The following elements are returned by the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCustomVerificationEmailTemplateResponse
 	{
 		
@@ -1512,8 +1397,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a dedicated IP address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDedicatedIpResponse
 	{
 		
@@ -1524,8 +1408,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains information about a dedicated IP address that is associated with your Amazon SES account.</p> <p>To learn more about requesting dedicated IP addresses, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dedicated-ip-case.html">Requesting and Relinquishing Dedicated IP Addresses</a> in the <i>Amazon SES Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DedicatedIp
 	{
 		
@@ -1557,24 +1440,21 @@ namespace MyNS
 	/// <summary>
 	/// The warmup status of a dedicated IP.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WarmupStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONE = 1,
 	}
 	
 	/// <summary>
 	/// The following element is returned by the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDedicatedIpPoolResponse
 	{
 		
@@ -1585,8 +1465,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a dedicated IP pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DedicatedIpPool
 	{
 		
@@ -1605,24 +1484,21 @@ namespace MyNS
 		public ScalingMode ScalingMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalingMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGED = 1,
 	}
 	
 	/// <summary>
 	/// Information about the dedicated IP addresses that are associated with your Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDedicatedIpsResponse
 	{
 		
@@ -1636,8 +1512,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that shows the status of the Deliverability dashboard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeliverabilityDashboardOptionsResponse
 	{
 		
@@ -1664,27 +1539,24 @@ namespace MyNS
 	/// <summary>
 	/// The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliverabilityDashboardAccountStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_EXPIRATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_EXPIRATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainDeliverabilityTrackingOption
 	{
 		
@@ -1701,8 +1573,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about the inbox placement data settings for a verified domain that’s associated with your Amazon Web Services account. This data is available only if you enabled the Deliverability dashboard for the domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InboxPlacementTrackingOption
 	{
 		
@@ -1716,8 +1587,7 @@ namespace MyNS
 	/// <summary>
 	/// The results of the predictive inbox placement test.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeliverabilityTestReportResponse
 	{
 		
@@ -1752,8 +1622,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains metadata related to a predictive inbox placement test.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliverabilityTestReport
 	{
 		
@@ -1779,8 +1648,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains inbox placement data for an email provider.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlacementStatistics
 	{
 		
@@ -1803,8 +1671,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that describes how email sent during the predictive inbox placement test was handled by a certain email provider.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IspPlacement
 	{
 		
@@ -1818,8 +1685,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainDeliverabilityCampaignResponse
 	{
 		
@@ -1834,8 +1700,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainDeliverabilityCampaign
 	{
 		
@@ -1885,8 +1750,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that includes statistics that are related to the domain that you specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainStatisticsReportResponse
 	{
 		
@@ -1908,8 +1772,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about email that was sent from the selected domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OverallVolume
 	{
 		
@@ -1926,8 +1789,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about the amount of email that was delivered to recipients.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeStatistics
 	{
 		
@@ -1947,8 +1809,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains inbox placement data for email sent from one of your email domains to a specific email provider.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainIspPlacement
 	{
 		
@@ -1971,8 +1832,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about the volume of email sent on each day of the analysis period.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailyVolume
 	{
 		
@@ -1989,8 +1849,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about an email identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailIdentityResponse
 	{
 		
@@ -2025,8 +1884,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of attributes that are associated with a MAIL FROM domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailFromAttributes
 	{
 		
@@ -2055,46 +1913,41 @@ namespace MyNS
 	/// <summary>
 	/// <p>The status of the MAIL FROM domain. This status can have the following values:</p> <ul> <li> <p> <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p> </li> <li> <p> <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p> </li> <li> <p> <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MailFromDomainStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPORARY_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPORARY_FAILURE = 3,
 	}
 	
 	/// <summary>
 	/// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BehaviorOnMxFailure
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USE_DEFAULT_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USE_DEFAULT_VALUE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECT_MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECT_MESSAGE = 1,
 	}
 	
 	/// <summary>
 	/// An object that contains mapping between <code>PolicyName</code> and <code>Policy</code> text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyMap
 	{
 	}
@@ -2102,8 +1955,7 @@ namespace MyNS
 	/// <summary>
 	/// Identity policies associated with email identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailIdentityPoliciesResponse
 	{
 		
@@ -2114,8 +1966,7 @@ namespace MyNS
 	/// <summary>
 	/// The following element is returned by the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailTemplateResponse
 	{
 		
@@ -2137,8 +1988,7 @@ namespace MyNS
 	/// <summary>
 	/// The content of the email, composed of a subject line, an HTML part, and a text-only part.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailTemplateContent
 	{
 		
@@ -2155,8 +2005,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImportJobResponse
 	{
 		
@@ -2191,8 +2040,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains details about the resource destination the import job is going to target.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportDestination
 	{
 		
@@ -2206,8 +2054,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains details about the data source of the import job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportDataSource
 	{
 		
@@ -2229,8 +2076,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the failure details about an import job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailureInfo
 	{
 		
@@ -2244,30 +2090,27 @@ namespace MyNS
 	/// <summary>
 	/// The status of the import job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// Information about the suppressed email address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSuppressedDestinationResponse
 	{
 		
@@ -2282,8 +2125,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about an email address that is on the suppression list for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuppressedDestination
 	{
 		
@@ -2315,8 +2157,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains additional attributes that are related an email address that is on the suppression list for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuppressedDestinationAttributes
 	{
 		
@@ -2330,8 +2171,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of configuration sets in your Amazon SES account in the current Amazon Web Services Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationSetsResponse
 	{
 		
@@ -2342,8 +2182,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContactListsResponse
 	{
 		
@@ -2357,8 +2196,7 @@ namespace MyNS
 	/// <summary>
 	/// A list that contains contacts that have subscribed to a particular topic or topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContactList
 	{
 		
@@ -2369,8 +2207,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContactsResponse
 	{
 		
@@ -2384,8 +2221,7 @@ namespace MyNS
 	/// <summary>
 	/// A contact is the end-user who is receiving the email.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contact
 	{
 		
@@ -2408,8 +2244,7 @@ namespace MyNS
 	/// <summary>
 	/// Used for filtering by a specific topic preference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TopicFilter
 	{
 		
@@ -2423,8 +2258,7 @@ namespace MyNS
 	/// <summary>
 	/// The following elements are returned by the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomVerificationEmailTemplatesResponse
 	{
 		
@@ -2438,8 +2272,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomVerificationEmailTemplateMetadata
 	{
 		
@@ -2462,8 +2295,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of dedicated IP pools.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDedicatedIpPoolsResponse
 	{
 		
@@ -2477,8 +2309,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeliverabilityTestReportsResponse
 	{
 		
@@ -2496,8 +2327,7 @@ namespace MyNS
 	/// <summary>
 	/// An array of objects that provide deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainDeliverabilityCampaignsResponse
 	{
 		
@@ -2515,8 +2345,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of all of the identities that you've attempted to verify, regardless of whether or not those identities were successfully verified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEmailIdentitiesResponse
 	{
 		
@@ -2530,8 +2359,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an email identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityInfo
 	{
 		
@@ -2551,8 +2379,7 @@ namespace MyNS
 	/// <summary>
 	/// The following elements are returned by the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEmailTemplatesResponse
 	{
 		
@@ -2566,8 +2393,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailTemplateMetadata
 	{
 		
@@ -2581,8 +2407,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListImportJobsResponse
 	{
 		
@@ -2596,8 +2421,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of the import job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportJobSummary
 	{
 		
@@ -2634,8 +2458,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the response to your request to retrieve the list of recommendations for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecommendationsResponse
 	{
 		
@@ -2649,8 +2472,7 @@ namespace MyNS
 	/// <summary>
 	/// A recommendation generated for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Recommendation
 	{
 		
@@ -2676,56 +2498,49 @@ namespace MyNS
 		public RecommendationImpact Impact { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecommendationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DKIM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DKIM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DMARC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DMARC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIMI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIMI = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecommendationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIXED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIXED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecommendationImpact
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 1,
 	}
 	
 	/// <summary>
 	/// A list of suppressed email addresses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSuppressedDestinationsResponse
 	{
 		
@@ -2739,8 +2554,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary that describes the suppressed email address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuppressedDestinationSummary
 	{
 		
@@ -2766,14 +2580,12 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -2788,8 +2600,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountDedicatedIpWarmupAttributesResponse
 	{
 	}
@@ -2797,14 +2608,12 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountDetailsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
@@ -2812,8 +2621,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountSendingAttributesResponse
 	{
 	}
@@ -2821,14 +2629,12 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountSuppressionAttributesResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountVdmAttributesResponse
 	{
 	}
@@ -2836,8 +2642,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetDeliveryOptionsResponse
 	{
 	}
@@ -2845,8 +2650,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetReputationOptionsResponse
 	{
 	}
@@ -2854,8 +2658,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetSendingOptionsResponse
 	{
 	}
@@ -2863,8 +2666,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetSuppressionOptionsResponse
 	{
 	}
@@ -2872,8 +2674,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetTrackingOptionsResponse
 	{
 	}
@@ -2881,8 +2682,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetVdmOptionsResponse
 	{
 	}
@@ -2890,8 +2690,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDedicatedIpInPoolResponse
 	{
 	}
@@ -2899,8 +2698,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDedicatedIpPoolScalingAttributesResponse
 	{
 	}
@@ -2908,8 +2706,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDedicatedIpWarmupAttributesResponse
 	{
 	}
@@ -2917,8 +2714,7 @@ namespace MyNS
 	/// <summary>
 	/// A response that indicates whether the Deliverability dashboard is enabled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDeliverabilityDashboardOptionResponse
 	{
 	}
@@ -2926,8 +2722,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityConfigurationSetAttributesResponse
 	{
 	}
@@ -2935,8 +2730,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityDkimAttributesResponse
 	{
 	}
@@ -2944,8 +2738,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>If the action is successful, the service sends back an HTTP 200 response.</p> <p>The following data is returned in JSON format by the service.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityDkimSigningAttributesResponse
 	{
 		
@@ -2959,8 +2752,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityFeedbackAttributesResponse
 	{
 	}
@@ -2968,8 +2760,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityMailFromAttributesResponse
 	{
 	}
@@ -2977,8 +2768,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSuppressedDestinationResponse
 	{
 	}
@@ -2986,8 +2776,7 @@ namespace MyNS
 	/// <summary>
 	/// The following data is returned in JSON format by the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendBulkEmailResponse
 	{
 		
@@ -3002,8 +2791,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of the <code>SendBulkEmail</code> operation of each specified <code>BulkEmailEntry</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkEmailEntryResult
 	{
 		
@@ -3017,60 +2805,57 @@ namespace MyNS
 		public string MessageId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BulkEmailStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MESSAGE_REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MESSAGE_REJECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAIL_FROM_DOMAIN_NOT_VERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAIL_FROM_DOMAIN_NOT_VERIFIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIGURATION_SET_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIGURATION_SET_NOT_FOUND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPLATE_NOT_FOUND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_SUSPENDED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_THROTTLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_THROTTLED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_DAILY_QUOTA_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_DAILY_QUOTA_EXCEEDED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_SENDING_POOL_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_SENDING_POOL_NAME = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_SENDING_PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_SENDING_PAUSED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIGURATION_SET_SENDING_PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIGURATION_SET_SENDING_PAUSED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_PARAMETER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_PARAMETER = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIENT_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIENT_FAILURE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 13,
 	}
 	
 	/// <summary>
 	/// Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageTag
 	{
 		
@@ -3089,8 +2874,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkEmailEntry
 	{
 		
@@ -3111,8 +2895,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>An object that describes the recipients for an email.</p> <note> <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Destination
 	{
 		
@@ -3129,8 +2912,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ReplaceEmailContent</code> object to be used for a specific <code>BulkEmailEntry</code>. The <code>ReplacementTemplate</code> can be specified within this object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplacementEmailContent
 	{
 		
@@ -3141,8 +2923,7 @@ namespace MyNS
 	/// <summary>
 	/// An object which contains <code>ReplacementTemplateData</code> to be used for a specific <code>BulkEmailEntry</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplacementTemplate
 	{
 		
@@ -3153,8 +2934,7 @@ namespace MyNS
 	/// <summary>
 	/// The following element is returned by the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendCustomVerificationEmailResponse
 	{
 		
@@ -3165,8 +2945,7 @@ namespace MyNS
 	/// <summary>
 	/// A unique message ID that you receive when an email is accepted for sending.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendEmailResponse
 	{
 		
@@ -3174,8 +2953,7 @@ namespace MyNS
 		public string MessageId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
@@ -3183,8 +2961,7 @@ namespace MyNS
 	/// <summary>
 	/// The following element is returned by the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestRenderEmailTemplateResponse
 	{
 		
@@ -3196,8 +2973,7 @@ namespace MyNS
 		public string RenderedTemplate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
@@ -3205,20 +2981,17 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetEventDestinationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateContactResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateContactListResponse
 	{
 	}
@@ -3226,8 +2999,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomVerificationEmailTemplateResponse
 	{
 	}
@@ -3235,8 +3007,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmailIdentityPolicyResponse
 	{
 	}
@@ -3244,8 +3015,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmailTemplateResponse
 	{
 	}
@@ -3253,8 +3023,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to retrieve a batch of metric data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetMetricDataRequest
 	{
 		
@@ -3269,8 +3038,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about a blacklisting event that impacts one of the dedicated IP addresses that is associated with your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlacklistEntry
 	{
 		
@@ -3287,8 +3055,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the body of the message. You can specify a template message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkEmailContent
 	{
 		
@@ -3296,24 +3063,21 @@ namespace MyNS
 		public Template Template { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContactListImportAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 1,
 	}
 	
 	/// <summary>
 	/// An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDestinationDefinition
 	{
 		
@@ -3339,8 +3103,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add an event destination to a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetEventDestinationRequest
 	{
 		
@@ -3362,8 +3125,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to create a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetRequest
 	{
 		
@@ -3399,8 +3161,7 @@ namespace MyNS
 		public VdmOptions VdmOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateContactListRequest
 	{
 		
@@ -3421,8 +3182,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateContactRequest
 	{
 		
@@ -3446,8 +3206,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create a custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomVerificationEmailTemplateRequest
 	{
 		
@@ -3497,8 +3256,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to create a new dedicated IP pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDedicatedIpPoolRequest
 	{
 		
@@ -3519,8 +3277,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailContent
 	{
 		
@@ -3537,8 +3294,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. We send that message to special email addresses spread across several major email providers around the world. The test takes about 24 hours to complete. When the test is complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeliverabilityTestReportRequest
 	{
 		
@@ -3566,8 +3322,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEmailIdentityPolicyRequest
 	{
 		
@@ -3582,8 +3337,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains configuration for Bring Your Own DKIM (BYODKIM), or, for Easy DKIM
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DkimSigningAttributes
 	{
 		
@@ -3600,8 +3354,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to begin the verification process for an email identity (an email address or domain).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEmailIdentityRequest
 	{
 		
@@ -3625,8 +3378,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEmailTemplateRequest
 	{
 		
@@ -3648,8 +3400,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create an import job from a data source for a data destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateImportJobRequest
 	{
 		
@@ -3671,8 +3422,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete an event destination from a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetEventDestinationRequest
 	{
 	}
@@ -3680,20 +3430,17 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteContactListRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteContactRequest
 	{
 	}
@@ -3701,8 +3448,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete an existing custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCustomVerificationEmailTemplateRequest
 	{
 	}
@@ -3710,8 +3456,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete a dedicated IP pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDedicatedIpPoolRequest
 	{
 	}
@@ -3719,8 +3464,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailIdentityPolicyRequest
 	{
 	}
@@ -3728,8 +3472,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete an existing email identity. When you delete an identity, you lose the ability to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailIdentityRequest
 	{
 	}
@@ -3737,8 +3480,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailTemplateRequest
 	{
 	}
@@ -3746,8 +3488,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to remove an email address from the suppression list for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSuppressedDestinationRequest
 	{
 	}
@@ -3755,8 +3496,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to obtain information about the email-sending capabilities of your Amazon SES account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountRequest
 	{
 	}
@@ -3764,8 +3504,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBlacklistReportsRequest
 	{
 	}
@@ -3773,8 +3512,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to obtain information about the event destinations for a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConfigurationSetEventDestinationsRequest
 	{
 	}
@@ -3782,20 +3520,17 @@ namespace MyNS
 	/// <summary>
 	/// A request to obtain information about a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConfigurationSetRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetContactListRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetContactRequest
 	{
 	}
@@ -3803,8 +3538,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to retrieve an existing custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCustomVerificationEmailTemplateRequest
 	{
 	}
@@ -3812,8 +3546,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to obtain more information about a dedicated IP pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDedicatedIpPoolRequest
 	{
 	}
@@ -3821,8 +3554,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to obtain more information about a dedicated IP address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDedicatedIpRequest
 	{
 	}
@@ -3830,8 +3562,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to obtain more information about dedicated IP pools.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDedicatedIpsRequest
 	{
 	}
@@ -3839,8 +3570,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Retrieve information about the status of the Deliverability dashboard for your Amazon Web Services account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also gain the ability to perform predictive inbox placement tests.</p> <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeliverabilityDashboardOptionsRequest
 	{
 	}
@@ -3848,8 +3578,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to retrieve the results of a predictive inbox placement test.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeliverabilityTestReportRequest
 	{
 	}
@@ -3857,8 +3586,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainDeliverabilityCampaignRequest
 	{
 	}
@@ -3866,8 +3594,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to obtain deliverability metrics for a domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainStatisticsReportRequest
 	{
 	}
@@ -3875,8 +3602,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to return the policies of an email identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailIdentityPoliciesRequest
 	{
 	}
@@ -3884,39 +3610,35 @@ namespace MyNS
 	/// <summary>
 	/// A request to return details about an email identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailIdentityRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VerificationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPORARY_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPORARY_FAILURE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_STARTED = 4,
 	}
 	
 	/// <summary>
 	/// Represents a request to display the template object (which includes the subject line, HTML part and text part) for the template you specify.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailTemplateRequest
 	{
 	}
@@ -3924,8 +3646,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request for information about an import job using the import job ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImportJobRequest
 	{
 	}
@@ -3933,8 +3654,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to retrieve information about an email address that's on the suppression list for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSuppressedDestinationRequest
 	{
 	}
@@ -3942,30 +3662,26 @@ namespace MyNS
 	/// <summary>
 	/// The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImportDestinationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUPPRESSION_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUPPRESSION_LIST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTACT_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTACT_LIST = 1,
 	}
 	
 	/// <summary>
 	/// A request to obtain a list of configuration sets for your Amazon SES account in the current Amazon Web Services Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationSetsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContactListsRequest
 	{
 	}
@@ -3973,8 +3689,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter that can be applied to a list of contacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContactsFilter
 	{
 		
@@ -3985,8 +3700,7 @@ namespace MyNS
 		public TopicFilter TopicFilter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContactsRequest
 	{
 		
@@ -3997,8 +3711,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to list the existing custom verification email templates for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomVerificationEmailTemplatesRequest
 	{
 	}
@@ -4006,8 +3719,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to obtain a list of dedicated IP pools.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDedicatedIpPoolsRequest
 	{
 	}
@@ -4015,8 +3727,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to list all of the predictive inbox placement tests that you've performed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeliverabilityTestReportsRequest
 	{
 	}
@@ -4024,8 +3735,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainDeliverabilityCampaignsRequest
 	{
 	}
@@ -4033,8 +3743,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to list all of the email identities associated with your Amazon Web Services account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEmailIdentitiesRequest
 	{
 	}
@@ -4042,8 +3751,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to list the email templates present in your Amazon SES account in the current Amazon Web Services Region. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEmailTemplatesRequest
 	{
 	}
@@ -4051,8 +3759,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to list all of the import jobs for a data destination within the specified maximum number of import jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListImportJobsRequest
 	{
 		
@@ -4063,8 +3770,7 @@ namespace MyNS
 	/// <summary>
 	/// An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListManagementOptions
 	{
 		
@@ -4082,8 +3788,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains mapping between <code>ListRecommendationsFilterKey</code> and <code>ListRecommendationFilterValue</code> to filter by.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecommendationsFilter
 	{
 	}
@@ -4091,30 +3796,27 @@ namespace MyNS
 	/// <summary>
 	/// <p>The <code>ListRecommendations</code> filter type. This can be one of the following:</p> <ul> <li> <p> <code>TYPE</code> – The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p> </li> <li> <p> <code>IMPACT</code> – The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p> </li> <li> <p> <code>STATUS</code> – The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p> </li> <li> <p> <code>RESOURCE_ARN</code> – The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ListRecommendationsFilterKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPACT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_ARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_ARN = 3,
 	}
 	
 	/// <summary>
 	/// Represents a request to list the existing recommendations for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecommendationsRequest
 	{
 		
@@ -4131,14 +3833,12 @@ namespace MyNS
 	/// <summary>
 	/// A request to obtain a list of email destinations that are on the suppression list for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSuppressedDestinationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
@@ -4146,27 +3846,24 @@ namespace MyNS
 	/// <summary>
 	/// <p>The <code>BatchGetMetricDataQuery</code> dimension name. This can be one of the following:</p> <ul> <li> <p> <code>EMAIL_IDENTITY</code> – The email identity used when sending messages.</p> </li> <li> <p> <code>CONFIGURATION_SET</code> – The configuration set used when sending messages (if one was used).</p> </li> <li> <p> <code>ISP</code> – The recipient ISP (e.g. <code>Gmail</code>, <code>Yahoo</code>, etc.).</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricDimensionName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL_IDENTITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL_IDENTITY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIGURATION_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIGURATION_SET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ISP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ISP = 2,
 	}
 	
 	/// <summary>
 	/// A request to enable or disable the automatic IP address warm-up feature.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountDedicatedIpWarmupAttributesRequest
 	{
 		
@@ -4177,8 +3874,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to submit new account details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountDetailsRequest
 	{
 		
@@ -4216,8 +3912,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to change the ability of your account to send email.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountSendingAttributesRequest
 	{
 		
@@ -4228,8 +3923,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to change your account's suppression preferences.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountSuppressionAttributesRequest
 	{
 		
@@ -4240,8 +3934,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to submit new account VDM attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountVdmAttributesRequest
 	{
 		
@@ -4256,8 +3949,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to associate a configuration set with a dedicated IP pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetDeliveryOptionsRequest
 	{
 		
@@ -4271,8 +3963,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to enable or disable tracking of reputation metrics for a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetReputationOptionsRequest
 	{
 		
@@ -4283,8 +3974,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to enable or disable the ability of Amazon SES to send emails that use a specific configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetSendingOptionsRequest
 	{
 		
@@ -4295,8 +3985,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to change the account suppression list preferences for a specific configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetSuppressionOptionsRequest
 	{
 		
@@ -4307,8 +3996,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add a custom domain for tracking open and click events to a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetTrackingOptionsRequest
 	{
 		
@@ -4319,8 +4007,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add specific VDM settings to a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetVdmOptionsRequest
 	{
 		
@@ -4331,8 +4018,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to move a dedicated IP address to a dedicated IP pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDedicatedIpInPoolRequest
 	{
 		
@@ -4347,8 +4033,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to convert a dedicated IP pool to a different scaling mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDedicatedIpPoolScalingAttributesRequest
 	{
 		
@@ -4363,8 +4048,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDedicatedIpWarmupAttributesRequest
 	{
 		
@@ -4379,8 +4063,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.</p> <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDeliverabilityDashboardOptionRequest
 	{
 		
@@ -4398,8 +4081,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to associate a configuration set with an email identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityConfigurationSetAttributesRequest
 	{
 		
@@ -4410,8 +4092,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to enable or disable DKIM signing of email that you send from an email identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityDkimAttributesRequest
 	{
 		
@@ -4422,8 +4103,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to change the DKIM attributes for an email identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityDkimSigningAttributesRequest
 	{
 		
@@ -4441,8 +4121,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to set the attributes that control how bounce and complaint events are processed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityFeedbackAttributesRequest
 	{
 		
@@ -4453,8 +4132,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to configure the custom MAIL FROM domain for a verified identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEmailIdentityMailFromAttributesRequest
 	{
 		
@@ -4468,8 +4146,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add an email destination to the suppression list for your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSuppressedDestinationRequest
 	{
 		
@@ -4491,8 +4168,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to send email messages to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendBulkEmailRequest
 	{
 		
@@ -4535,8 +4211,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to send a custom verification email to a specified recipient.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendCustomVerificationEmailRequest
 	{
 		
@@ -4561,8 +4236,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to send a single formatted email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendEmailRequest
 	{
 		
@@ -4601,8 +4275,7 @@ namespace MyNS
 		public ListManagementOptions ListManagementOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -4624,8 +4297,7 @@ namespace MyNS
 	/// <summary>
 	/// &gt;Represents a request to create a preview of the MIME content of an email when provided with a template and a set of replacement data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestRenderEmailTemplateRequest
 	{
 		
@@ -4637,8 +4309,7 @@ namespace MyNS
 		public string TemplateData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -4646,8 +4317,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to change the settings for an event destination for a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetEventDestinationRequest
 	{
 		
@@ -4659,8 +4329,7 @@ namespace MyNS
 		public EventDestinationDefinition EventDestination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateContactListRequest
 	{
 		
@@ -4671,8 +4340,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateContactRequest
 	{
 		
@@ -4689,8 +4357,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to update an existing custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomVerificationEmailTemplateRequest
 	{
 		
@@ -4733,8 +4400,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmailIdentityPolicyRequest
 	{
 		
@@ -4749,8 +4415,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to update an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmailTemplateRequest
 	{
 		

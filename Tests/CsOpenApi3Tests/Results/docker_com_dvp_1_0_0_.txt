@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetModel
 	{
 		
@@ -32,57 +31,48 @@ namespace MyNS
 		public DataviewType[] Views { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatasetModelName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pulls")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pulls = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TimespanType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="months")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		months = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="weeks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		weeks = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataviewType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="raw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		raw = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="summary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		summary = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="repo-summary")]
 		repoMinussummary = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatasetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pulls")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pulls = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonthData
 	{
 		
@@ -90,8 +80,7 @@ namespace MyNS
 		public MonthModel[] Months { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonthModel
 	{
 		
@@ -99,8 +88,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Month { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamespaceData
 	{
 		
@@ -108,8 +96,7 @@ namespace MyNS
 		public string[] Namespaces { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamespaceMetadata
 	{
 		
@@ -126,8 +113,7 @@ namespace MyNS
 	/// <summary>
 	/// failed second factor login response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostUsers2FALoginErrorResponse
 	{
 		
@@ -141,8 +127,7 @@ namespace MyNS
 	/// <summary>
 	/// failed user login response or second factor required
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostUsersLoginErrorResponse
 	{
 		
@@ -164,8 +149,7 @@ namespace MyNS
 	/// <summary>
 	/// successful user login response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostUsersLoginSuccessResponse
 	{
 		
@@ -179,8 +163,7 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseData
 	{
 		
@@ -188,8 +171,7 @@ namespace MyNS
 		public ResponseDataFile[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseDataFile
 	{
 		
@@ -200,14 +182,12 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimespanData
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimespanModel
 	{
 	}
@@ -215,8 +195,7 @@ namespace MyNS
 	/// <summary>
 	/// Second factor user login details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Users2FALoginRequest
 	{
 		
@@ -240,8 +219,7 @@ namespace MyNS
 	/// <summary>
 	/// User login details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersLoginRequest
 	{
 		
@@ -262,8 +240,7 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WeekData
 	{
 		
@@ -271,8 +248,7 @@ namespace MyNS
 		public WeekModel[] Weeks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WeekModel
 	{
 		
@@ -280,8 +256,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Week { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class YearData
 	{
 		
@@ -289,8 +264,7 @@ namespace MyNS
 		public YearModel[] Years { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class YearModel
 	{
 		

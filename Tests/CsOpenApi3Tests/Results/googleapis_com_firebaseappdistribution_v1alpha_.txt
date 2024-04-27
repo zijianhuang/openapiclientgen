@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A release of a Firebase app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1Release
 	{
 		
@@ -77,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// Notes that belong to a release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1ReleaseNotes
 	{
 		
@@ -92,8 +90,7 @@ namespace MyNS
 	/// <summary>
 	/// Operation metadata for `UploadRelease`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1UploadReleaseMetadata
 	{
 	}
@@ -101,8 +98,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `UploadRelease`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1UploadReleaseResponse
 	{
 		
@@ -119,30 +115,27 @@ namespace MyNS
 		public System.Nullable<GoogleFirebaseAppdistroV1UploadReleaseResponseResult> Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppdistroV1UploadReleaseResponseResult
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOAD_RELEASE_RESULT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOAD_RELEASE_RESULT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_UPDATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_UNMODIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_UNMODIFIED = 3,
 	}
 	
 	/// <summary>
 	/// App bundle test certificate
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaAabCertificate
 	{
 		
@@ -165,8 +158,7 @@ namespace MyNS
 		public string CertificateHashSha256 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaApp
 	{
 		
@@ -213,39 +205,36 @@ namespace MyNS
 		public string ProjectNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppdistroV1alphaAppAabState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAB_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAB_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAY_ACCOUNT_NOT_LINKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAY_ACCOUNT_NOT_LINKED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_APP_WITH_GIVEN_BUNDLE_ID_IN_PLAY_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_APP_WITH_GIVEN_BUNDLE_ID_IN_PLAY_ACCOUNT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_NOT_PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_NOT_PUBLISHED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAB_STATE_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAB_STATE_UNAVAILABLE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAY_IAS_TERMS_NOT_ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAY_IAS_TERMS_NOT_ACCEPTED = 6,
 	}
 	
 	/// <summary>
 	/// An app crash that occurred during an automated test.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaAppCrash
 	{
 		
@@ -262,8 +251,7 @@ namespace MyNS
 		public string StackTrace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaCreateReleaseNotesRequest
 	{
 		
@@ -271,8 +259,7 @@ namespace MyNS
 		public GoogleFirebaseAppdistroV1alphaReleaseNotes ReleaseNotes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaReleaseNotes
 	{
 		
@@ -280,8 +267,7 @@ namespace MyNS
 		public string ReleaseNotes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaCreateReleaseNotesResponse
 	{
 	}
@@ -289,8 +275,7 @@ namespace MyNS
 	/// <summary>
 	/// The results of running an automated test on a particular device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaDeviceExecution
 	{
 		
@@ -358,8 +343,7 @@ namespace MyNS
 	/// <summary>
 	/// A device on which automated tests can be run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaTestDevice
 	{
 		
@@ -388,70 +372,65 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppdistroV1alphaDeviceExecutionFailedReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRASHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRASHED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_INSTALLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNABLE_TO_CRAWL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNABLE_TO_CRAWL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_OUT_OF_MEMORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_OUT_OF_MEMORY = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppdistroV1alphaDeviceExecutionInconclusiveReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCONCLUSIVE_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCONCLUSIVE_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTA_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUOTA_EXCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFRASTRUCTURE_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFRASTRUCTURE_FAILURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_NOT_ACTIVATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_NOT_ACTIVATED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_SIGNATURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_SIGNATURE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LAUNCHER_ACTIVITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LAUNCHER_ACTIVITY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORBIDDEN_PERMISSIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORBIDDEN_PERMISSIONS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_ADMIN_RECEIVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_ADMIN_RECEIVER = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_CODE_APK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_CODE_APK = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_APK_PREVIEW_SDK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_APK_PREVIEW_SDK = 9,
 	}
 	
 	/// <summary>
 	/// Statistics collected during a Robo test.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaRoboStats
 	{
 		
@@ -480,30 +459,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> MainActivityCrawlTimedOut { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppdistroV1alphaDeviceExecutionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEST_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEST_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCONCLUSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCONCLUSIVE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaEnableAccessOnReleaseRequest
 	{
 		
@@ -532,8 +508,7 @@ namespace MyNS
 		public string[] GroupIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaEnableAccessOnReleaseResponse
 	{
 	}
@@ -541,8 +516,7 @@ namespace MyNS
 	/// <summary>
 	/// Response object to get the release given a upload hash
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaGetReleaseByUploadHashResponse
 	{
 		
@@ -556,8 +530,7 @@ namespace MyNS
 	/// <summary>
 	/// Proto defining a release object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaRelease
 	{
 		
@@ -631,8 +604,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing the UDIDs of tester iOS devices in a project
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaGetTesterUdidsResponse
 	{
 		
@@ -646,8 +618,7 @@ namespace MyNS
 	/// <summary>
 	/// The UDIDs of a tester's iOS device
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaTesterUdid
 	{
 		
@@ -670,8 +641,7 @@ namespace MyNS
 		public string Udid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaGetUploadStatusResponse
 	{
 		
@@ -700,103 +670,98 @@ namespace MyNS
 		public System.Nullable<GoogleFirebaseAppdistroV1alphaGetUploadStatusResponseStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppdistroV1alphaGetUploadStatusResponseErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_ZIP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_PLIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_PLIST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_PROFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_PROFILE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERSION_TOO_LONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERSION_TOO_LONG = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_UUIDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_UUIDS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_RESOURCES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_RESOURCES = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_MANIFEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_MANIFEST = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS_METADATA_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS_METADATA_ERROR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID_METADATA_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID_METADATA_ERROR = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED_PLATFORM_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUPPORTED_PLATFORM_TYPE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUNDLE_ID_MISMATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUNDLE_ID_MISMATCH = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APK_NOT_ZIP_ALIGNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APK_NOT_ZIP_ALIGNED = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CERTIFICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_CERTIFICATE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APK_TOO_LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APK_TOO_LARGE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAB_NOT_PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAB_NOT_PUBLISHED = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_PLIST_DEVICE_FAMILIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_PLIST_DEVICE_FAMILIES = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAB_TOS_NOT_ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAB_TOS_NOT_ACCEPTED = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_NAME_TOO_LONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_NAME_TOO_LONG = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAB_DEVELOPER_ACCOUNT_NOT_LINKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAB_DEVELOPER_ACCOUNT_NOT_LINKED = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAB_NO_APP_WITH_GIVEN_PACKAGE_NAME_IN_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAB_NO_APP_WITH_GIVEN_PACKAGE_NAME_IN_ACCOUNT = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAB_UPLOAD_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAB_UPLOAD_ERROR = 21,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppdistroV1alphaGetUploadStatusResponseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALREADY_UPLOADED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALREADY_UPLOADED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaJwt
 	{
 		
@@ -807,8 +772,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for `ListReleaseTests`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaListReleaseTestsResponse
 	{
 		
@@ -828,8 +792,7 @@ namespace MyNS
 	/// <summary>
 	/// The results of running an automated test on a release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaReleaseTest
 	{
 		
@@ -861,8 +824,7 @@ namespace MyNS
 	/// <summary>
 	/// Login credential for automated tests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaLoginCredential
 	{
 		
@@ -894,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// Hints to the crawler for identifying input fields
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaLoginCredentialFieldHints
 	{
 		
@@ -912,8 +873,7 @@ namespace MyNS
 		public string UsernameResourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaProvisionAppResponse
 	{
 	}
@@ -921,8 +881,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for Robo crawler
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaRoboCrawler
 	{
 		
@@ -936,8 +895,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for automated tests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppdistroV1alphaTestConfig
 	{
 		
@@ -1459,13 +1417,13 @@ namespace MyNS
 	public enum Firebaseappdistribution_apps_getAppView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

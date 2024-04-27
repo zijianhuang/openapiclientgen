@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryReceipt
 	{
 		
@@ -110,8 +109,7 @@ namespace MyNS
 	/// <summary>
 	/// Error
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -125,8 +123,7 @@ namespace MyNS
 		public ErrorMessage[] Messages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorMessage
 	{
 		
@@ -146,8 +143,7 @@ namespace MyNS
 	/// <summary>
 	/// Error
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorXml
 	{
 		
@@ -155,8 +151,7 @@ namespace MyNS
 		public ErrorMessage[] Messages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InboundMessage
 	{
 		
@@ -278,8 +273,7 @@ namespace MyNS
 		public string Udh { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -332,8 +326,7 @@ namespace MyNS
 		public string To { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewMessage
 	{
 		
@@ -473,9 +466,7 @@ namespace MyNS
 		public string Udh { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NewMessageMessage_class
 	{
 		
@@ -492,27 +483,24 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NewMessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="binary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		binary = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unicode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unicode = 2,
 	}
 	
 	/// <summary>
 	/// Message sent
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMS
 	{
 		
@@ -529,8 +517,7 @@ namespace MyNS
 	/// <summary>
 	/// Message sent
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSXml
 	{
 		
@@ -561,10 +548,10 @@ namespace MyNS
 	public enum Send_an_smsFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		xml = 1,
 	}
 }

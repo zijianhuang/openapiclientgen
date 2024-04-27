@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A ParagraphElement representing a spot in the text that's dynamically replaced with content that can change over time, like a page number.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoText
 	{
 		
@@ -59,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// A suggested change to a TextStyle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedTextStyle
 	{
 		
@@ -80,8 +78,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the styling that can be applied to text. Inherited text styles are represented as unset fields in this message. A text style's parent depends on where the text style is defined: * The TextStyle of text in a Paragraph inherits from the paragraph's corresponding named style type. * The TextStyle on a named style inherits from the normal text named style. * The TextStyle of the normal text named style inherits from the default text style in the Docs editor. * The TextStyle on a Paragraph element that's contained in a table may inherit its text style from the table style. If the text style does not inherit from a parent, unsetting fields will revert the style to a value matching the defaults in the Docs editor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextStyle
 	{
 		
@@ -155,8 +152,7 @@ namespace MyNS
 	/// <summary>
 	/// A color that can either be fully opaque or fully transparent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OptionalColor
 	{
 		
@@ -170,8 +166,7 @@ namespace MyNS
 	/// <summary>
 	/// A solid color.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Color
 	{
 		
@@ -185,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// An RGB color.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RgbColor
 	{
 		
@@ -209,30 +203,27 @@ namespace MyNS
 		public System.Nullable<System.Single> Red { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextStyleBaselineOffset
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASELINE_OFFSET_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASELINE_OFFSET_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUPERSCRIPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUPERSCRIPT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBSCRIPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBSCRIPT = 3,
 	}
 	
 	/// <summary>
 	/// A magnitude in a single direction in the specified units.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimension
 	{
 		
@@ -249,24 +240,21 @@ namespace MyNS
 		public System.Nullable<DimensionUnit> Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PT = 1,
 	}
 	
 	/// <summary>
 	/// A reference to another portion of a document or an external URL resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Link
 	{
 		
@@ -292,8 +280,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a font family and weight of text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WeightedFontFamily
 	{
 		
@@ -313,8 +300,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base TextStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextStyleSuggestionState
 	{
 		
@@ -385,27 +371,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WeightedFontFamilySuggested { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoTextType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_NUMBER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_COUNT = 2,
 	}
 	
 	/// <summary>
 	/// Represents the background of a document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Background
 	{
 		
@@ -419,8 +402,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base Background have been changed in this suggestion. For any field set to true, the Backgound has a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackgroundSuggestionState
 	{
 		
@@ -434,8 +416,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for BatchUpdateDocument.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDocumentRequest
 	{
 		
@@ -455,8 +436,7 @@ namespace MyNS
 	/// <summary>
 	/// A single update to apply to a document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Request
 	{
 		
@@ -662,8 +642,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a Footer. The new footer is applied to the SectionStyle at the location of the SectionBreak if specified, otherwise it is applied to the DocumentStyle. If a footer of the specified type already exists, a 400 bad request error is returned.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFooterRequest
 	{
 		
@@ -683,8 +662,7 @@ namespace MyNS
 	/// <summary>
 	/// A particular location in the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -701,24 +679,21 @@ namespace MyNS
 		public string SegmentId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateFooterRequestType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEADER_FOOTER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEADER_FOOTER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 1,
 	}
 	
 	/// <summary>
 	/// Creates a Footnote segment and inserts a new FootnoteReference to it at the given location. The new Footnote segment will contain a space followed by a newline character.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFootnoteRequest
 	{
 		
@@ -738,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// Location at the end of a body, header, footer or footnote. The location is immediately before the last newline in the document segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndOfSegmentLocation
 	{
 		
@@ -753,8 +727,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a Header. The new header is applied to the SectionStyle at the location of the SectionBreak if specified, otherwise it is applied to the DocumentStyle. If a header of the specified type already exists, a 400 bad request error is returned.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHeaderRequest
 	{
 		
@@ -774,8 +747,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a NamedRange referencing the given range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNamedRangeRequest
 	{
 		
@@ -795,8 +767,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a contiguous range of text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Range
 	{
 		
@@ -822,8 +793,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates bullets for all of the paragraphs that overlap with the given range. The nesting level of each paragraph will be determined by counting leading tabs in front of each paragraph. To avoid excess space between the bullet and the corresponding paragraph, these leading tabs are removed by this request. This may change the indices of parts of the text. If the paragraph immediately before paragraphs being updated is in a list with a matching preset, the paragraphs being updated are added to that preceding list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateParagraphBulletsRequest
 	{
 		
@@ -840,66 +810,63 @@ namespace MyNS
 		public Range Range { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateParagraphBulletsRequestBulletPreset
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_GLYPH_PRESET_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_GLYPH_PRESET_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_DISC_CIRCLE_SQUARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_DISC_CIRCLE_SQUARE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_DIAMONDX_ARROW3D_SQUARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_DIAMONDX_ARROW3D_SQUARE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_CHECKBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_CHECKBOX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_ARROW_DIAMOND_DISC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_ARROW_DIAMOND_DISC = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_STAR_CIRCLE_SQUARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_STAR_CIRCLE_SQUARE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_ARROW3D_CIRCLE_SQUARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_ARROW3D_CIRCLE_SQUARE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_LEFTTRIANGLE_DIAMOND_DISC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_LEFTTRIANGLE_DIAMOND_DISC = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_DIAMOND_CIRCLE_SQUARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_DIAMOND_CIRCLE_SQUARE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBERED_DECIMAL_ALPHA_ROMAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBERED_DECIMAL_ALPHA_ROMAN = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBERED_DECIMAL_ALPHA_ROMAN_PARENS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBERED_DECIMAL_ALPHA_ROMAN_PARENS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBERED_DECIMAL_NESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBERED_DECIMAL_NESTED = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBERED_UPPERALPHA_ALPHA_ROMAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBERED_UPPERALPHA_ALPHA_ROMAN = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBERED_UPPERROMAN_UPPERALPHA_DECIMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBERED_UPPERROMAN_UPPERALPHA_DECIMAL = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBERED_ZERODECIMAL_ALPHA_ROMAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBERED_ZERODECIMAL_ALPHA_ROMAN = 15,
 	}
 	
 	/// <summary>
 	/// Deletes content from the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteContentRangeRequest
 	{
 		
@@ -913,8 +880,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a Footer from the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFooterRequest
 	{
 		
@@ -928,8 +894,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a Header from the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHeaderRequest
 	{
 		
@@ -943,8 +908,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a NamedRange.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteNamedRangeRequest
 	{
 		
@@ -964,8 +928,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes bullets from all of the paragraphs that overlap with the given range. The nesting level of each paragraph will be visually preserved by adding indent to the start of the corresponding paragraph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteParagraphBulletsRequest
 	{
 		
@@ -979,8 +942,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a PositionedObject from the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePositionedObjectRequest
 	{
 		
@@ -994,8 +956,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a column from a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTableColumnRequest
 	{
 		
@@ -1009,8 +970,7 @@ namespace MyNS
 	/// <summary>
 	/// Location of a single cell within a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableCellLocation
 	{
 		
@@ -1036,8 +996,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a row from a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTableRowRequest
 	{
 		
@@ -1051,8 +1010,7 @@ namespace MyNS
 	/// <summary>
 	/// Inserts an InlineObject containing an image at the given location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertInlineImageRequest
 	{
 		
@@ -1084,8 +1042,7 @@ namespace MyNS
 	/// <summary>
 	/// A width and height.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Size
 	{
 		
@@ -1105,8 +1062,7 @@ namespace MyNS
 	/// <summary>
 	/// Inserts a page break followed by a newline at the specified location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertPageBreakRequest
 	{
 		
@@ -1126,8 +1082,7 @@ namespace MyNS
 	/// <summary>
 	/// Inserts a section break at the given location. A newline character will be inserted before the section break.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertSectionBreakRequest
 	{
 		
@@ -1150,27 +1105,24 @@ namespace MyNS
 		public System.Nullable<InsertSectionBreakRequestSectionType> SectionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InsertSectionBreakRequestSectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTINUOUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTINUOUS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXT_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXT_PAGE = 2,
 	}
 	
 	/// <summary>
 	/// Inserts a table at the specified location. A newline character will be inserted before the inserted table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertTableRequest
 	{
 		
@@ -1202,8 +1154,7 @@ namespace MyNS
 	/// <summary>
 	/// Inserts an empty column into a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertTableColumnRequest
 	{
 		
@@ -1223,8 +1174,7 @@ namespace MyNS
 	/// <summary>
 	/// Inserts an empty row into a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertTableRowRequest
 	{
 		
@@ -1244,8 +1194,7 @@ namespace MyNS
 	/// <summary>
 	/// Inserts text at the specified location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertTextRequest
 	{
 		
@@ -1271,8 +1220,7 @@ namespace MyNS
 	/// <summary>
 	/// Merges cells in a Table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MergeTableCellsRequest
 	{
 		
@@ -1286,8 +1234,7 @@ namespace MyNS
 	/// <summary>
 	/// A table range represents a reference to a subset of a table. It's important to note that the cells specified by a table range do not necessarily form a rectangle. For example, let's say we have a 3 x 3 table where all the cells of the last row are merged together. The table looks like this: [ ] A table range with table cell location = (table_start_location, row = 0, column = 0), row span = 3 and column span = 2 specifies the following cells: x x [ x x x ]
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableRange
 	{
 		
@@ -1313,8 +1260,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the number of pinned table header rows in a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PinTableHeaderRowsRequest
 	{
 		
@@ -1334,8 +1280,7 @@ namespace MyNS
 	/// <summary>
 	/// Replaces all instances of text matching a criteria with replace text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplaceAllTextRequest
 	{
 		
@@ -1355,8 +1300,7 @@ namespace MyNS
 	/// <summary>
 	/// A criteria that matches a specific string of text in the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubstringMatchCriteria
 	{
 		
@@ -1376,8 +1320,7 @@ namespace MyNS
 	/// <summary>
 	/// Replaces an existing image with a new image. Replacing an image removes some image effects from the existing image in order to mirror the behavior of the Docs editor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplaceImageRequest
 	{
 		
@@ -1400,24 +1343,21 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReplaceImageRequestImageReplaceMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_REPLACE_METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_REPLACE_METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER_CROP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER_CROP = 1,
 	}
 	
 	/// <summary>
 	/// Replaces the contents of the specified NamedRange or NamedRanges with the given replacement content. Note that an individual NamedRange may consist of multiple discontinuous ranges. In this case, only the content in the first range will be replaced. The other ranges and their content will be deleted. In cases where replacing or deleting any ranges would result in an invalid document structure, a 400 bad request error is returned.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplaceNamedRangeContentRequest
 	{
 		
@@ -1443,8 +1383,7 @@ namespace MyNS
 	/// <summary>
 	/// Unmerges cells in a Table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnmergeTableCellsRequest
 	{
 		
@@ -1458,8 +1397,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the DocumentStyle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDocumentStyleRequest
 	{
 		
@@ -1479,8 +1417,7 @@ namespace MyNS
 	/// <summary>
 	/// The style of the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentStyle
 	{
 		
@@ -1602,8 +1539,7 @@ namespace MyNS
 	/// <summary>
 	/// Update the styling of all paragraphs that overlap with the given range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateParagraphStyleRequest
 	{
 		
@@ -1629,8 +1565,7 @@ namespace MyNS
 	/// <summary>
 	/// Styles that apply to a whole paragraph. Inherited paragraph styles are represented as unset fields in this message. A paragraph style's parent depends on where the paragraph style is defined: * The ParagraphStyle on a Paragraph inherits from the paragraph's corresponding named style type. * The ParagraphStyle on a named style inherits from the normal text named style. * The ParagraphStyle of the normal text named style inherits from the default paragraph style in the Docs editor. * The ParagraphStyle on a Paragraph element that's contained in a table may inherit its paragraph style from the table style. If the paragraph style does not inherit from a parent, unsetting fields will revert the style to a value matching the defaults in the Docs editor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParagraphStyle
 	{
 		
@@ -1767,33 +1702,30 @@ namespace MyNS
 		public TabStop[] TabStops { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParagraphStyleAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="END")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		END = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JUSTIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JUSTIFIED = 4,
 	}
 	
 	/// <summary>
 	/// A border around a paragraph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParagraphBorder
 	{
 		
@@ -1822,83 +1754,76 @@ namespace MyNS
 		public Dimension Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParagraphBorderDashStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DASH_STYLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DASH_STYLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DASH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DASH = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParagraphStyleDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT_DIRECTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT_DIRECTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_TO_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_TO_RIGHT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_TO_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_TO_LEFT = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParagraphStyleNamedStyleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAMED_STYLE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAMED_STYLE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORMAL_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORMAL_TEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TITLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TITLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBTITLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBTITLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEADING_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEADING_1 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEADING_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEADING_2 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEADING_3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEADING_3 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEADING_4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEADING_4 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEADING_5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEADING_5 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEADING_6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEADING_6 = 9,
 	}
 	
 	/// <summary>
 	/// The shading of a paragraph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shading
 	{
 		
@@ -1909,27 +1834,24 @@ namespace MyNS
 		public OptionalColor BackgroundColor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParagraphStyleSpacingMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPACING_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPACING_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER_COLLAPSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER_COLLAPSE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLLAPSE_LISTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLLAPSE_LISTS = 2,
 	}
 	
 	/// <summary>
 	/// A tab stop within a paragraph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TabStop
 	{
 		
@@ -1946,30 +1868,27 @@ namespace MyNS
 		public Dimension Offset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TabStopAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAB_STOP_ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAB_STOP_ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="END")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		END = 3,
 	}
 	
 	/// <summary>
 	/// Updates the SectionStyle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSectionStyleRequest
 	{
 		
@@ -1995,8 +1914,7 @@ namespace MyNS
 	/// <summary>
 	/// The styling that applies to a section.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SectionStyle
 	{
 		
@@ -2118,8 +2036,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties that apply to a section's column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SectionColumnProperties
 	{
 		
@@ -2136,27 +2053,24 @@ namespace MyNS
 		public Dimension Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SectionStyleColumnSeparatorStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLUMN_SEPARATOR_STYLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLUMN_SEPARATOR_STYLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETWEEN_EACH_COLUMN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BETWEEN_EACH_COLUMN = 2,
 	}
 	
 	/// <summary>
 	/// Updates the style of a range of table cells.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTableCellStyleRequest
 	{
 		
@@ -2188,8 +2102,7 @@ namespace MyNS
 	/// <summary>
 	/// The style of a TableCell. Inherited table cell styles are represented as unset fields in this message. A table cell style can inherit from the table's style.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableCellStyle
 	{
 		
@@ -2269,8 +2182,7 @@ namespace MyNS
 	/// <summary>
 	/// A border around a table cell. Table cell borders cannot be transparent. To hide a table cell border, make its width 0.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableCellBorder
 	{
 		
@@ -2293,33 +2205,30 @@ namespace MyNS
 		public Dimension Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TableCellStyleContentAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT_ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT_ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT_ALIGNMENT_UNSUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT_ALIGNMENT_UNSUPPORTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIDDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIDDLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM = 4,
 	}
 	
 	/// <summary>
 	/// Updates the TableColumnProperties of columns in a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTableColumnPropertiesRequest
 	{
 		
@@ -2351,8 +2260,7 @@ namespace MyNS
 	/// <summary>
 	/// The properties of a column in a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableColumnProperties
 	{
 		
@@ -2369,27 +2277,24 @@ namespace MyNS
 		public System.Nullable<TableColumnPropertiesWidthType> WidthType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TableColumnPropertiesWidthType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIDTH_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIDTH_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENLY_DISTRIBUTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENLY_DISTRIBUTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIXED_WIDTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIXED_WIDTH = 2,
 	}
 	
 	/// <summary>
 	/// Updates the TableRowStyle of rows in a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTableRowStyleRequest
 	{
 		
@@ -2421,8 +2326,7 @@ namespace MyNS
 	/// <summary>
 	/// Styles that apply to a table row.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableRowStyle
 	{
 		
@@ -2448,8 +2352,7 @@ namespace MyNS
 	/// <summary>
 	/// Update the styling of text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTextStyleRequest
 	{
 		
@@ -2475,8 +2378,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides control over how write requests are executed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteControl
 	{
 		
@@ -2496,8 +2398,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message from a BatchUpdateDocument request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDocumentResponse
 	{
 		
@@ -2523,8 +2424,7 @@ namespace MyNS
 	/// <summary>
 	/// A single response from an update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response
 	{
 		
@@ -2574,8 +2474,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of creating a footer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFooterResponse
 	{
 		
@@ -2589,8 +2488,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of creating a footnote.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFootnoteResponse
 	{
 		
@@ -2604,8 +2502,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of creating a header.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHeaderResponse
 	{
 		
@@ -2619,8 +2516,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of creating a named range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNamedRangeResponse
 	{
 		
@@ -2634,8 +2530,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of inserting an inline image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertInlineImageResponse
 	{
 		
@@ -2649,8 +2544,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of inserting an embedded Google Sheets chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertInlineSheetsChartResponse
 	{
 		
@@ -2664,8 +2558,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of replacing text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplaceAllTextResponse
 	{
 		
@@ -2679,8 +2572,7 @@ namespace MyNS
 	/// <summary>
 	/// The document body. The body typically contains the full document contents except for headers, footers, and footnotes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body
 	{
 		
@@ -2694,8 +2586,7 @@ namespace MyNS
 	/// <summary>
 	/// A StructuralElement describes content that provides structure to the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StructuralElement
 	{
 		
@@ -2739,8 +2630,7 @@ namespace MyNS
 	/// <summary>
 	/// A StructuralElement representing a paragraph. A paragraph is a range of content that's terminated with a newline character.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Paragraph
 	{
 		
@@ -2790,8 +2680,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the bullet of a paragraph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bullet
 	{
 		
@@ -2817,8 +2706,7 @@ namespace MyNS
 	/// <summary>
 	/// A ParagraphElement describes content within a Paragraph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParagraphElement
 	{
 		
@@ -2898,8 +2786,7 @@ namespace MyNS
 	/// <summary>
 	/// A ParagraphElement representing a column break. A column break makes the subsequent text start at the top of the next column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnBreak
 	{
 		
@@ -2931,8 +2818,7 @@ namespace MyNS
 	/// <summary>
 	/// A ParagraphElement representing an equation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Equation
 	{
 		
@@ -2952,8 +2838,7 @@ namespace MyNS
 	/// <summary>
 	/// A ParagraphElement representing a footnote reference. A footnote reference is the inline content rendered with a number and is used to identify the footnote.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FootnoteReference
 	{
 		
@@ -2997,8 +2882,7 @@ namespace MyNS
 	/// <summary>
 	/// A ParagraphElement representing a horizontal line.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HorizontalRule
 	{
 		
@@ -3030,8 +2914,7 @@ namespace MyNS
 	/// <summary>
 	/// A ParagraphElement that contains an InlineObject.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InlineObjectElement
 	{
 		
@@ -3069,8 +2952,7 @@ namespace MyNS
 	/// <summary>
 	/// A ParagraphElement representing a page break. A page break makes the subsequent text start at the top of the next page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageBreak
 	{
 		
@@ -3102,8 +2984,7 @@ namespace MyNS
 	/// <summary>
 	/// A person or email address mentioned in a document. These mentions behave as a single, immutable element containing the person's name or email address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Person
 	{
 		
@@ -3147,8 +3028,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties specific to a linked Person.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonProperties
 	{
 		
@@ -3168,8 +3048,7 @@ namespace MyNS
 	/// <summary>
 	/// A link to a Google resource (such as a file in Drive, a YouTube video, or a Calendar event).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RichLink
 	{
 		
@@ -3213,8 +3092,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties specific to a RichLink.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RichLinkProperties
 	{
 		
@@ -3240,8 +3118,7 @@ namespace MyNS
 	/// <summary>
 	/// A ParagraphElement that represents a run of text that all has the same styling.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextRun
 	{
 		
@@ -3279,8 +3156,7 @@ namespace MyNS
 	/// <summary>
 	/// A suggested change to a Bullet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedBullet
 	{
 		
@@ -3300,8 +3176,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base Bullet have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulletSuggestionState
 	{
 		
@@ -3327,8 +3202,7 @@ namespace MyNS
 	/// <summary>
 	/// A suggested change to a ParagraphStyle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedParagraphStyle
 	{
 		
@@ -3348,8 +3222,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base ParagraphStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParagraphStyleSuggestionState
 	{
 		
@@ -3483,8 +3356,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base Shading have been changed in this suggested change. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShadingSuggestionState
 	{
 		
@@ -3498,8 +3370,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of object IDs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectReferences
 	{
 		
@@ -3513,8 +3384,7 @@ namespace MyNS
 	/// <summary>
 	/// A StructuralElement representing a section break. A section is a range of content that has the same SectionStyle. A section break represents the start of a new section, and the section style applies to the section after the section break. The document body always begins with a section break.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SectionBreak
 	{
 		
@@ -3540,8 +3410,7 @@ namespace MyNS
 	/// <summary>
 	/// A StructuralElement representing a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Table
 	{
 		
@@ -3585,8 +3454,7 @@ namespace MyNS
 	/// <summary>
 	/// The contents and style of a row in a Table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableRow
 	{
 		
@@ -3636,8 +3504,7 @@ namespace MyNS
 	/// <summary>
 	/// A suggested change to a TableRowStyle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedTableRowStyle
 	{
 		
@@ -3657,8 +3524,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base TableRowStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableRowStyleSuggestionState
 	{
 		
@@ -3672,8 +3538,7 @@ namespace MyNS
 	/// <summary>
 	/// The contents and style of a cell in a Table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableCell
 	{
 		
@@ -3723,8 +3588,7 @@ namespace MyNS
 	/// <summary>
 	/// A suggested change to a TableCellStyle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedTableCellStyle
 	{
 		
@@ -3744,8 +3608,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base TableCellStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableCellStyleSuggestionState
 	{
 		
@@ -3825,8 +3688,7 @@ namespace MyNS
 	/// <summary>
 	/// Styles that apply to a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableStyle
 	{
 		
@@ -3840,8 +3702,7 @@ namespace MyNS
 	/// <summary>
 	/// A StructuralElement representing a table of contents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableOfContents
 	{
 		
@@ -3867,8 +3728,7 @@ namespace MyNS
 	/// <summary>
 	/// The crop properties of an image. The crop rectangle is represented using fractional offsets from the original content's 4 edges. - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the image's original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the image's original bounding rectangle. - If all offsets and rotation angle are 0, the image is not cropped.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CropProperties
 	{
 		
@@ -3906,8 +3766,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base CropProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CropPropertiesSuggestionState
 	{
 		
@@ -3945,8 +3804,7 @@ namespace MyNS
 	/// <summary>
 	/// A Google Docs document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Document
 	{
 		
@@ -4050,8 +3908,7 @@ namespace MyNS
 	/// <summary>
 	/// A document footer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Footer
 	{
 		
@@ -4071,8 +3928,7 @@ namespace MyNS
 	/// <summary>
 	/// A document footnote.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Footnote
 	{
 		
@@ -4092,8 +3948,7 @@ namespace MyNS
 	/// <summary>
 	/// A document header.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Header
 	{
 		
@@ -4113,8 +3968,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that appears inline with text. An InlineObject contains an EmbeddedObject such as an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InlineObject
 	{
 		
@@ -4152,8 +4006,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of an InlineObject.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InlineObjectProperties
 	{
 		
@@ -4167,8 +4020,7 @@ namespace MyNS
 	/// <summary>
 	/// An embedded object in the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmbeddedObject
 	{
 		
@@ -4242,8 +4094,7 @@ namespace MyNS
 	/// <summary>
 	/// The properties of an embedded drawing and used to differentiate the object type. An embedded drawing is one that's created and edited within a document. Note that extensive details are not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmbeddedDrawingProperties
 	{
 	}
@@ -4251,8 +4102,7 @@ namespace MyNS
 	/// <summary>
 	/// A border around an EmbeddedObject.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmbeddedObjectBorder
 	{
 		
@@ -4281,24 +4131,21 @@ namespace MyNS
 		public Dimension Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EmbeddedObjectBorderPropertyState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RENDERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RENDERED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_RENDERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_RENDERED = 1,
 	}
 	
 	/// <summary>
 	/// The properties of an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageProperties
 	{
 		
@@ -4348,8 +4195,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to the external linked source content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkedContentReference
 	{
 		
@@ -4363,8 +4209,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a linked chart embedded from Google Sheets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SheetsChartReference
 	{
 		
@@ -4384,8 +4229,7 @@ namespace MyNS
 	/// <summary>
 	/// A suggested change to InlineObjectProperties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedInlineObjectProperties
 	{
 		
@@ -4405,8 +4249,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base InlineObjectProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InlineObjectPropertiesSuggestionState
 	{
 		
@@ -4420,8 +4263,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base EmbeddedObject have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmbeddedObjectSuggestionState
 	{
 		
@@ -4495,8 +4337,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base EmbeddedDrawingProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmbeddedDrawingPropertiesSuggestionState
 	{
 	}
@@ -4504,8 +4345,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base EmbeddedObjectBorder have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmbeddedObjectBorderSuggestionState
 	{
 		
@@ -4537,8 +4377,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base ImageProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImagePropertiesSuggestionState
 	{
 		
@@ -4588,8 +4427,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base LinkedContentReference have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkedContentReferenceSuggestionState
 	{
 		
@@ -4603,8 +4441,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base SheetsChartReference have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SheetsChartReferenceSuggestionState
 	{
 		
@@ -4624,8 +4461,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base Size have been changed in this suggestion. For any field set to true, the Size has a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SizeSuggestionState
 	{
 		
@@ -4645,8 +4481,7 @@ namespace MyNS
 	/// <summary>
 	/// A List represents the list attributes for a group of paragraphs that all belong to the same list. A paragraph that's part of a list has a reference to the list's ID in its bullet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List
 	{
 		
@@ -4678,8 +4513,7 @@ namespace MyNS
 	/// <summary>
 	/// The properties of a list that describe the look and feel of bullets belonging to paragraphs associated with a list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProperties
 	{
 		
@@ -4693,8 +4527,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains properties describing the look and feel of a list bullet at a given level of nesting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NestingLevel
 	{
 		
@@ -4747,61 +4580,56 @@ namespace MyNS
 		public TextStyle TextStyle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NestingLevelBulletAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BULLET_ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BULLET_ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="END")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		END = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NestingLevelGlyphType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GLYPH_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GLYPH_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECIMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECIMAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZERO_DECIMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZERO_DECIMAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPPER_ALPHA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPPER_ALPHA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALPHA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALPHA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPPER_ROMAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPPER_ROMAN = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROMAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROMAN = 7,
 	}
 	
 	/// <summary>
 	/// A suggested change to ListProperties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedListProperties
 	{
 		
@@ -4821,8 +4649,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base ListProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPropertiesSuggestionState
 	{
 		
@@ -4836,8 +4663,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base NestingLevel have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NestingLevelSuggestionState
 	{
 		
@@ -4893,8 +4719,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of all the NamedRanges in the document that share a given name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamedRanges
 	{
 		
@@ -4914,8 +4739,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of Ranges with the same named range ID. Named ranges allow developers to associate parts of a document with an arbitrary user-defined label so their contents can be programmatically read or edited later. A document can contain multiple named ranges with the same name, but every named range has a unique ID. A named range is created with a single Range, and content inserted inside a named range generally expands that range. However, certain document changes can cause the range to be split into multiple ranges. Named ranges are not private. All applications and collaborators that have access to the document can see its named ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamedRange
 	{
 		
@@ -4941,8 +4765,7 @@ namespace MyNS
 	/// <summary>
 	/// The named styles. Paragraphs in the document can inherit their TextStyle and ParagraphStyle from these named styles.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamedStyles
 	{
 		
@@ -4956,8 +4779,7 @@ namespace MyNS
 	/// <summary>
 	/// A named style. Paragraphs in the document can inherit their TextStyle and ParagraphStyle from this named style when they have the same named style type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamedStyle
 	{
 		
@@ -4983,8 +4805,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that's tethered to a Paragraph and positioned relative to the beginning of the paragraph. A PositionedObject contains an EmbeddedObject such as an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionedObject
 	{
 		
@@ -5022,8 +4843,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of a PositionedObject.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionedObjectProperties
 	{
 		
@@ -5043,8 +4863,7 @@ namespace MyNS
 	/// <summary>
 	/// The positioning of a PositionedObject. The positioned object is positioned relative to the beginning of the Paragraph it's tethered to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionedObjectPositioning
 	{
 		
@@ -5067,39 +4886,36 @@ namespace MyNS
 		public Dimension TopOffset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PositionedObjectPositioningLayout
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSITIONED_OBJECT_LAYOUT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSITIONED_OBJECT_LAYOUT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRAP_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRAP_TEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREAK_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREAK_LEFT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREAK_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREAK_RIGHT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREAK_LEFT_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREAK_LEFT_RIGHT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_FRONT_OF_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_FRONT_OF_TEXT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEHIND_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEHIND_TEXT = 6,
 	}
 	
 	/// <summary>
 	/// A suggested change to PositionedObjectProperties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedPositionedObjectProperties
 	{
 		
@@ -5119,8 +4935,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base PositionedObjectProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionedObjectPropertiesSuggestionState
 	{
 		
@@ -5140,8 +4955,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base PositionedObjectPositioning have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionedObjectPositioningSuggestionState
 	{
 		
@@ -5167,8 +4981,7 @@ namespace MyNS
 	/// <summary>
 	/// A suggested change to the DocumentStyle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedDocumentStyle
 	{
 		
@@ -5188,8 +5001,7 @@ namespace MyNS
 	/// <summary>
 	/// A mask that indicates which of the fields on the base DocumentStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentStyleSuggestionState
 	{
 		
@@ -5311,8 +5123,7 @@ namespace MyNS
 	/// <summary>
 	/// A suggested change to the NamedStyles.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedNamedStyles
 	{
 		
@@ -5332,8 +5143,7 @@ namespace MyNS
 	/// <summary>
 	/// The suggestion state of a NamedStyles message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamedStylesSuggestionState
 	{
 		
@@ -5347,8 +5157,7 @@ namespace MyNS
 	/// <summary>
 	/// A suggestion state of a NamedStyle message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamedStyleSuggestionState
 	{
 		
@@ -5371,22 +5180,20 @@ namespace MyNS
 		public TextStyleSuggestionState TextStyleSuggestionState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentSuggestionsViewMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT_FOR_CURRENT_ACCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT_FOR_CURRENT_ACCESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUGGESTIONS_INLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUGGESTIONS_INLINE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIEW_SUGGESTIONS_ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIEW_SUGGESTIONS_ACCEPTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIEW_WITHOUT_SUGGESTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIEW_WITHOUT_SUGGESTIONS = 3,
 	}
 	

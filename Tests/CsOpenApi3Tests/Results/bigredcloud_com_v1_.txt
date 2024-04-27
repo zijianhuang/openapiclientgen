@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcEntryDto
 	{
 		
@@ -38,8 +37,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountDto
 	{
 		
@@ -59,8 +57,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountTranDto
 	{
 		
@@ -89,8 +86,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ProcDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcudfValueDto
 	{
 		
@@ -107,8 +103,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisCategoryDto
 	{
 		
@@ -131,8 +126,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> OrderIndex { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BankAccountDto
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 		public string Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BankAccountQueryDto
 	{
 		
@@ -242,8 +235,7 @@ namespace MyNS
 		public string Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_BankAccountDto_
 	{
 		
@@ -259,9 +251,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_BankAccountDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_BankAccountDto_OpCode
 	{
 		
@@ -275,8 +265,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_CashPaymentDto_
 	{
 		
@@ -292,8 +281,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_CashPaymentDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CashPaymentDto
 	{
 		
@@ -352,9 +340,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_CashPaymentDto_OpCode
 	{
 		
@@ -368,8 +354,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_CashReceiptDto_
 	{
 		
@@ -385,8 +370,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_CashReceiptDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CashReceiptDto
 	{
 		
@@ -445,8 +429,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VatEntryDto
 	{
 		
@@ -463,9 +446,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatRateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_CashReceiptDto_OpCode
 	{
 		
@@ -479,8 +460,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_CustomerDto_
 	{
 		
@@ -496,8 +476,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_CustomerDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerDto
 	{
 		
@@ -583,8 +562,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EFTBankDto
 	{
 		
@@ -601,8 +579,7 @@ namespace MyNS
 		public string SortCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerOpeningBalanceInPeriodsDto
 	{
 		
@@ -619,8 +596,7 @@ namespace MyNS
 		public System.Nullable<System.Double> TwoMonthsOld { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerOpeningBalanceDto
 	{
 		
@@ -655,8 +631,7 @@ namespace MyNS
 		public OwnerOpeningBalanceVatEntryDto[] VatEntries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerOpeningBalanceVatEntryDto
 	{
 		
@@ -667,9 +642,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatRateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_CustomerDto_OpCode
 	{
 		
@@ -683,8 +656,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_PaymentDto_
 	{
 		
@@ -700,8 +672,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_PaymentDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentDto
 	{
 		
@@ -766,9 +737,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Unallocated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_PaymentDto_OpCode
 	{
 		
@@ -782,8 +751,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_ProductDto_
 	{
 		
@@ -799,8 +767,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_ProductDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductDto
 	{
 		
@@ -835,9 +802,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatRateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_ProductDto_OpCode
 	{
 		
@@ -851,8 +816,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_PurchaseDto_
 	{
 		
@@ -868,8 +832,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_PurchaseDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseDto
 	{
 		
@@ -943,9 +906,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_PurchaseDto_OpCode
 	{
 		
@@ -959,8 +920,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_QuoteDto_
 	{
 		
@@ -976,8 +936,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_QuoteDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuoteDto
 	{
 		
@@ -1060,8 +1019,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuoteProductTransDto
 	{
 		
@@ -1105,8 +1063,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatRateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuoteAcEntriesDto
 	{
 		
@@ -1129,9 +1086,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_QuoteDto_OpCode
 	{
 		
@@ -1145,8 +1100,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_SaleRepsDto_
 	{
 		
@@ -1162,8 +1116,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_SaleRepsDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SaleRepsDto
 	{
 		
@@ -1189,9 +1142,7 @@ namespace MyNS
 		public string TimeStamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_SaleRepsDto_OpCode
 	{
 		
@@ -1205,8 +1156,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_SalesEntryDto_
 	{
 		
@@ -1222,8 +1172,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_SalesEntryDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesEntryDto
 	{
 		
@@ -1291,9 +1240,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_SalesEntryDto_OpCode
 	{
 		
@@ -1307,8 +1254,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_SalesInvoiceCreditNoteDto_
 	{
 		
@@ -1324,8 +1270,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_SalesInvoiceCreditNoteDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesInvoiceCreditNoteDto
 	{
 		
@@ -1408,8 +1353,7 @@ namespace MyNS
 		public string YourReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductTranDto
 	{
 		
@@ -1457,9 +1401,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatRateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_SalesInvoiceCreditNoteDto_OpCode
 	{
 		
@@ -1473,8 +1415,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItem_SupplierDto_
 	{
 		
@@ -1490,8 +1431,7 @@ namespace MyNS
 		public System.Nullable<BatchItem_SupplierDto_OpCode> OpCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupplierDto
 	{
 		
@@ -1577,9 +1517,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItem_SupplierDto_OpCode
 	{
 		
@@ -1593,8 +1531,7 @@ namespace MyNS
 		_3 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BookTranTypeDto
 	{
 		
@@ -1608,8 +1545,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CashPaymentQueryDto
 	{
 		
@@ -1671,8 +1607,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Unallocated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CashReceiptQueryDto
 	{
 		
@@ -1731,8 +1666,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryTypeDto
 	{
 		
@@ -1743,8 +1677,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanyFinancialYearViewModel
 	{
 		
@@ -1758,8 +1691,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StartYear { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanyGeneralDetaisViewModel
 	{
 		
@@ -1800,8 +1732,7 @@ namespace MyNS
 		public string VatReg { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanyOptionDto
 	{
 		
@@ -1848,8 +1779,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> VocrSettingValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanyOptionViewModel
 	{
 		
@@ -1896,8 +1826,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> VocrSettingValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanyReferenceSettingViewModel
 	{
 		
@@ -1914,8 +1843,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Sales { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanySettingDto
 	{
 		
@@ -1935,8 +1863,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> VocrSettingValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanySetupConfigViewModel
 	{
 		
@@ -1953,8 +1880,7 @@ namespace MyNS
 		public CompanyReferenceSettingViewModel ReferenceSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerQueryDto
 	{
 		
@@ -2031,8 +1957,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailQuoteDto
 	{
 		
@@ -2049,8 +1974,7 @@ namespace MyNS
 		public string ToAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailStatementDto
 	{
 		
@@ -2076,8 +2000,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ToPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterClause
 	{
 		
@@ -2091,8 +2014,7 @@ namespace MyNS
 		public RangeVariable RangeVariable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SingleValueNode
 	{
 		
@@ -2103,9 +2025,7 @@ namespace MyNS
 		public IEdmTypeReference TypeReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SingleValueNodeKind
 	{
 		
@@ -2173,8 +2093,7 @@ namespace MyNS
 		_20 = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IEdmTypeReference
 	{
 		
@@ -2185,8 +2104,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsNullable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IEdmType
 	{
 		
@@ -2194,9 +2112,7 @@ namespace MyNS
 		public System.Nullable<IEdmTypeTypeKind> TypeKind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IEdmTypeTypeKind
 	{
 		
@@ -2225,8 +2141,7 @@ namespace MyNS
 		_7 = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RangeVariable
 	{
 		
@@ -2240,8 +2155,7 @@ namespace MyNS
 		public IEdmTypeReference TypeReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterQueryOption
 	{
 		
@@ -2258,8 +2172,7 @@ namespace MyNS
 		public FilterQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryContext
 	{
 		
@@ -2273,8 +2186,7 @@ namespace MyNS
 		public IEdmModel Model { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IEdmModel
 	{
 		
@@ -2291,14 +2203,12 @@ namespace MyNS
 		public IEdmVocabularyAnnotation[] VocabularyAnnotations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IEdmDirectValueAnnotationsManager
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IEdmSchemaElement
 	{
 		
@@ -2312,9 +2222,7 @@ namespace MyNS
 		public System.Nullable<IEdmSchemaElementSchemaElementKind> SchemaElementKind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IEdmSchemaElementSchemaElementKind
 	{
 		
@@ -2334,8 +2242,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IEdmVocabularyAnnotation
 	{
 		
@@ -2349,14 +2256,12 @@ namespace MyNS
 		public IEdmTerm Term { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IEdmVocabularyAnnotatable
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IEdmTerm
 	{
 		
@@ -2373,9 +2278,7 @@ namespace MyNS
 		public System.Nullable<IEdmTermTermKind> TermKind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IEdmTermSchemaElementKind
 	{
 		
@@ -2395,9 +2298,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IEdmTermTermKind
 	{
 		
@@ -2411,14 +2312,12 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterQueryValidator
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FinancialYearDto
 	{
 		
@@ -2432,8 +2331,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StartYear { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InlineCountQueryOption
 	{
 		
@@ -2447,9 +2345,7 @@ namespace MyNS
 		public System.Nullable<InlineCountQueryOptionValue> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InlineCountQueryOptionValue
 	{
 		
@@ -2460,8 +2356,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_AccountDto_
 	{
 		
@@ -2502,8 +2397,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderByQueryOption
 	{
 		
@@ -2523,8 +2417,7 @@ namespace MyNS
 		public OrderByQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderByClause
 	{
 		
@@ -2544,9 +2437,7 @@ namespace MyNS
 		public OrderByClause ThenBy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderByClauseDirection
 	{
 		
@@ -2557,8 +2448,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderByNode
 	{
 		
@@ -2566,9 +2456,7 @@ namespace MyNS
 		public System.Nullable<OrderByNodeDirection> Direction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderByNodeDirection
 	{
 		
@@ -2579,14 +2467,12 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderByQueryValidator
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataRawQueryOptions
 	{
 		
@@ -2618,8 +2504,7 @@ namespace MyNS
 		public string Top { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectExpandQueryOption
 	{
 		
@@ -2639,8 +2524,7 @@ namespace MyNS
 		public SelectExpandQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectExpandClause
 	{
 		
@@ -2651,20 +2535,17 @@ namespace MyNS
 		public SelectItem[] SelectedItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectItem
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectExpandQueryValidator
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SkipQueryOption
 	{
 		
@@ -2681,14 +2562,12 @@ namespace MyNS
 		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SkipQueryValidator
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TopQueryOption
 	{
 		
@@ -2705,20 +2584,17 @@ namespace MyNS
 		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TopQueryValidator
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryValidator
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_AnalysisCategoryDto_
 	{
 		
@@ -2759,8 +2635,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_BankAccountQueryDto_
 	{
 		
@@ -2801,8 +2676,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_BookTranTypeDto_
 	{
 		
@@ -2843,8 +2717,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_CashPaymentQueryDto_
 	{
 		
@@ -2885,8 +2758,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_CashReceiptQueryDto_
 	{
 		
@@ -2927,8 +2799,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_CategoryTypeDto_
 	{
 		
@@ -2969,8 +2840,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_CompanySettingDto_
 	{
 		
@@ -3011,8 +2881,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_CustomerQueryDto_
 	{
 		
@@ -3053,8 +2922,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_OwnerTypeDto_
 	{
 		
@@ -3095,8 +2963,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_OwnerTypeGroupDto_
 	{
 		
@@ -3137,8 +3004,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_PaymentQueryDto_
 	{
 		
@@ -3179,8 +3045,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_ProductDto_
 	{
 		
@@ -3221,8 +3086,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_PurchaseQueryDto_
 	{
 		
@@ -3263,8 +3127,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_QuoteDto_
 	{
 		
@@ -3305,8 +3168,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_SaleRepsDto_
 	{
 		
@@ -3347,8 +3209,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_SalesCreditNoteQueryDto_
 	{
 		
@@ -3389,8 +3250,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_SalesEntryQueryDto_
 	{
 		
@@ -3431,8 +3291,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_SalesInvoiceQueryDto_
 	{
 		
@@ -3473,8 +3332,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_SalesQueryDto_
 	{
 		
@@ -3515,8 +3373,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_SupplierQueryDto_
 	{
 		
@@ -3557,8 +3414,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_UserDefinedFieldDto_
 	{
 		
@@ -3599,8 +3455,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_VatAnalysisTypeDto_
 	{
 		
@@ -3641,8 +3496,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_VatCategoryDto_
 	{
 		
@@ -3683,8 +3537,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_VatRateDto_
 	{
 		
@@ -3725,8 +3578,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ODataQueryOptions_VatTypeDto_
 	{
 		
@@ -3767,8 +3619,7 @@ namespace MyNS
 		public ODataQueryValidator Validator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerTypeDto
 	{
 		
@@ -3782,8 +3633,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> RecordTypeGroupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerTypeGroupDto
 	{
 		
@@ -3794,8 +3644,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_AccountDto_
 	{
 		
@@ -3809,8 +3658,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_AnalysisCategoryDto_
 	{
 		
@@ -3824,8 +3672,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_BankAccountQueryDto_
 	{
 		
@@ -3839,8 +3686,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_BookTranTypeDto_
 	{
 		
@@ -3854,8 +3700,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_CashPaymentQueryDto_
 	{
 		
@@ -3869,8 +3714,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_CashReceiptQueryDto_
 	{
 		
@@ -3884,8 +3728,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_CategoryTypeDto_
 	{
 		
@@ -3899,8 +3742,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_CompanySettingDto_
 	{
 		
@@ -3914,8 +3756,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_CustomerQueryDto_
 	{
 		
@@ -3929,8 +3770,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_OwnerTypeDto_
 	{
 		
@@ -3944,8 +3784,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_OwnerTypeGroupDto_
 	{
 		
@@ -3959,8 +3798,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_PaymentQueryDto_
 	{
 		
@@ -3974,8 +3812,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentQueryDto
 	{
 		
@@ -4040,8 +3877,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Unallocated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_ProductDto_
 	{
 		
@@ -4055,8 +3891,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_PurchaseQueryDto_
 	{
 		
@@ -4070,8 +3905,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseQueryDto
 	{
 		
@@ -4142,8 +3976,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_QuoteDto_
 	{
 		
@@ -4157,8 +3990,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_SaleRepsDto_
 	{
 		
@@ -4172,8 +4004,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_SalesCreditNoteQueryDto_
 	{
 		
@@ -4187,8 +4018,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesCreditNoteQueryDto
 	{
 		
@@ -4271,8 +4101,7 @@ namespace MyNS
 		public string YourReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductTranQueryDto
 	{
 		
@@ -4316,8 +4145,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatRateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_SalesEntryQueryDto_
 	{
 		
@@ -4331,8 +4159,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesEntryQueryDto
 	{
 		
@@ -4400,8 +4227,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_SalesInvoiceQueryDto_
 	{
 		
@@ -4415,8 +4241,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesInvoiceQueryDto
 	{
 		
@@ -4499,8 +4324,7 @@ namespace MyNS
 		public string YourReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_SalesQueryDto_
 	{
 		
@@ -4514,8 +4338,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesQueryDto
 	{
 		
@@ -4577,8 +4400,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_SupplierQueryDto_
 	{
 		
@@ -4592,8 +4414,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupplierQueryDto
 	{
 		
@@ -4670,8 +4491,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_UserDefinedFieldDto_
 	{
 		
@@ -4685,8 +4505,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDefinedFieldDto
 	{
 		
@@ -4703,8 +4522,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> OrderIndex { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_VatAnalysisTypeDto_
 	{
 		
@@ -4718,8 +4536,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VatAnalysisTypeDto
 	{
 		
@@ -4730,8 +4547,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_VatCategoryDto_
 	{
 		
@@ -4745,8 +4561,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VatCategoryDto
 	{
 		
@@ -4757,8 +4572,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_VatRateDto_
 	{
 		
@@ -4772,8 +4586,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VatRateDto
 	{
 		
@@ -4799,8 +4612,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VatCategoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageResult_VatTypeDto_
 	{
 		
@@ -4814,8 +4626,7 @@ namespace MyNS
 		public string NextPageLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VatTypeDto
 	{
 		
@@ -4835,8 +4646,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsOnlyZero { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuoteGeneratingInvoiceDto
 	{
 		
@@ -4847,8 +4657,7 @@ namespace MyNS
 		public SalesInvoiceCreditNoteDto SaleInvoice { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesInvoiceEmailInfoDto
 	{
 		
@@ -4865,8 +4674,7 @@ namespace MyNS
 		public string ToAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VatRatesByVatCategoryDto
 	{
 		

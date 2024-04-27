@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAssociateScramSecretResponse
 	{
 		
@@ -34,8 +33,7 @@ namespace MyNS
 	///            <p>Error info for scram secret associate/disassociate failure.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnprocessedScramSecret
 	{
 		
@@ -49,50 +47,42 @@ namespace MyNS
 		public string SecretArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnauthorizedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ForbiddenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterResponse
 	{
 		
@@ -111,34 +101,32 @@ namespace MyNS
 	///            <p>The state of the Apache Kafka cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAINTENANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAINTENANCE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBOOTING_BROKER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REBOOTING_BROKER = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 7,
 	}
 	
@@ -148,13 +136,11 @@ namespace MyNS
 	///         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BrokerAZDistribution
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 	}
 	
@@ -163,8 +149,7 @@ namespace MyNS
 	///            <p>Contains information about storage volumes attached to MSK broker nodes.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageInfo
 	{
 		
@@ -177,8 +162,7 @@ namespace MyNS
 	///            <p>Contains information about the EBS storage volumes attached to Apache Kafka broker nodes.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EBSStorageInfo
 	{
 		
@@ -194,8 +178,7 @@ namespace MyNS
 	///            <p>Contains information about provisioned throughput for EBS storage volumes attached to kafka broker nodes.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisionedThroughput
 	{
 		
@@ -211,8 +194,7 @@ namespace MyNS
 	///            <p>Information about the broker access configuration.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectivityInfo
 	{
 		
@@ -226,8 +208,7 @@ namespace MyNS
 	/// <summary>
 	/// Public access control for brokers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicAccess
 	{
 		
@@ -238,8 +219,7 @@ namespace MyNS
 	/// <summary>
 	/// VPC connectivity access control for brokers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConnectivity
 	{
 		
@@ -252,8 +232,7 @@ namespace MyNS
 	///            <p>Includes all client authentication information for VPC connectivity.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConnectivityClientAuthentication
 	{
 		
@@ -269,8 +248,7 @@ namespace MyNS
 	///            <p>Details for SASL client authentication for VPC connectivity.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConnectivitySasl
 	{
 		
@@ -286,8 +264,7 @@ namespace MyNS
 	///            <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConnectivityScram
 	{
 		
@@ -300,8 +277,7 @@ namespace MyNS
 	///            <p>Details for IAM access control for VPC connectivity.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConnectivityIam
 	{
 		
@@ -314,8 +290,7 @@ namespace MyNS
 	///            <p>Details for TLS client authentication for VPC connectivity.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConnectivityTls
 	{
 		
@@ -328,8 +303,7 @@ namespace MyNS
 	///            <p>Details for client authentication using SASL.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sasl
 	{
 		
@@ -345,8 +319,7 @@ namespace MyNS
 	///            <p>Details for SASL/SCRAM client authentication.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Scram
 	{
 		
@@ -359,8 +332,7 @@ namespace MyNS
 	///            <p>Details for IAM access control.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Iam
 	{
 		
@@ -373,8 +345,7 @@ namespace MyNS
 	///            <p>Details for client authentication using TLS.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tls
 	{
 		
@@ -385,8 +356,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Unauthenticated
 	{
 		
@@ -399,8 +369,7 @@ namespace MyNS
 	///            <p>The data-volume encryption details.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionAtRest
 	{
 		
@@ -417,8 +386,7 @@ namespace MyNS
 	///            <p>The settings for encrypting data in transit.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionInTransit
 	{
 		
@@ -434,19 +402,17 @@ namespace MyNS
 	///            <p>Client-broker encryption in transit setting.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClientBroker
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TLS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TLS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TLS_PLAINTEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TLS_PLAINTEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAINTEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAINTEXT = 2,
 	}
 	
@@ -455,8 +421,7 @@ namespace MyNS
 	///            <p>Prometheus settings.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrometheusInfo
 	{
 		
@@ -472,8 +437,7 @@ namespace MyNS
 	///            <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JmxExporterInfo
 	{
 		
@@ -490,8 +454,7 @@ namespace MyNS
 	///            <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeExporterInfo
 	{
 		
@@ -503,8 +466,7 @@ namespace MyNS
 		public bool EnabledInBroker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BrokerLogs
 	{
 		
@@ -518,8 +480,7 @@ namespace MyNS
 		public S3 S3 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchLogs
 	{
 		
@@ -534,8 +495,7 @@ namespace MyNS
 		public string LogGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Firehose
 	{
 		
@@ -550,8 +510,7 @@ namespace MyNS
 		public bool Enabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3
 	{
 		
@@ -569,14 +528,12 @@ namespace MyNS
 		public string Prefix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterV2Response
 	{
 		
@@ -598,16 +555,14 @@ namespace MyNS
 	///            <p>The type of cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVERLESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVERLESS = 1,
 	}
 	
@@ -616,8 +571,7 @@ namespace MyNS
 	///            <p>Describes the setup to be used for Apache Kafka broker nodes in the cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BrokerNodeGroupInfo
 	{
 		
@@ -656,8 +610,7 @@ namespace MyNS
 	///            <p>Includes all client authentication information.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientAuthentication
 	{
 		
@@ -676,8 +629,7 @@ namespace MyNS
 	///            <p>Specifies the configuration to use for the brokers.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationInfo
 	{
 		
@@ -701,8 +653,7 @@ namespace MyNS
 	///            <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionInfo
 	{
 		
@@ -718,22 +669,20 @@ namespace MyNS
 	///            <p>Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnhancedMonitoring
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PER_BROKER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PER_BROKER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PER_TOPIC_PER_BROKER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PER_TOPIC_PER_BROKER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PER_TOPIC_PER_PARTITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PER_TOPIC_PER_PARTITION = 3,
 	}
 	
@@ -742,8 +691,7 @@ namespace MyNS
 	///            <p>JMX and Node monitoring for the MSK cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenMonitoringInfo
 	{
 		
@@ -755,8 +703,7 @@ namespace MyNS
 		public PrometheusInfo Prometheus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingInfo
 	{
 		
@@ -771,16 +718,14 @@ namespace MyNS
 	/// <summary>
 	/// Controls storage mode for various supported storage tiers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StorageMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIERED = 1,
 	}
 	
@@ -789,8 +734,7 @@ namespace MyNS
 	///            <p>The configuration of the Amazon VPCs for the cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfig
 	{
 		
@@ -810,8 +754,7 @@ namespace MyNS
 	///            <p>Includes all client authentication information.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServerlessClientAuthentication
 	{
 		
@@ -824,8 +767,7 @@ namespace MyNS
 	///            <p>Details for client authentication using SASL.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServerlessSasl
 	{
 		
@@ -833,8 +775,7 @@ namespace MyNS
 		public Iam Iam { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationResponse
 	{
 		
@@ -859,8 +800,7 @@ namespace MyNS
 	///            <p>Describes a configuration revision.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationRevision
 	{
 		
@@ -887,24 +827,21 @@ namespace MyNS
 	///            <p>The state of a configuration.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigurationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcConnectionResponse
 	{
 		
@@ -938,45 +875,41 @@ namespace MyNS
 	///            <p>The state of a VPC connection.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VpcConnectionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEACTIVATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTING = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class @__mapOf__string
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterResponse
 	{
 		
@@ -987,14 +920,12 @@ namespace MyNS
 		public ClusterState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterPolicyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationResponse
 	{
 		
@@ -1005,8 +936,7 @@ namespace MyNS
 		public ConfigurationState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcConnectionResponse
 	{
 		
@@ -1017,8 +947,7 @@ namespace MyNS
 		public VpcConnectionState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterResponse
 	{
 		
@@ -1031,8 +960,7 @@ namespace MyNS
 	///            <p>Returns information about a cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterInfo
 	{
 		
@@ -1099,8 +1027,7 @@ namespace MyNS
 	///            <p>Information about the current software installed on the cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BrokerSoftwareInfo
 	{
 		
@@ -1119,8 +1046,7 @@ namespace MyNS
 	///            <p>JMX and Node monitoring for the MSK cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenMonitoring
 	{
 		
@@ -1137,8 +1063,7 @@ namespace MyNS
 	///            <p>Prometheus settings.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Prometheus
 	{
 		
@@ -1154,8 +1079,7 @@ namespace MyNS
 	///            <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JmxExporter
 	{
 		
@@ -1172,8 +1096,7 @@ namespace MyNS
 	///            <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeExporter
 	{
 		
@@ -1185,8 +1108,7 @@ namespace MyNS
 		public bool EnabledInBroker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateInfo
 	{
 		
@@ -1197,8 +1119,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterV2Response
 	{
 		
@@ -1211,8 +1132,7 @@ namespace MyNS
 	///            <p>Returns information about a cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cluster
 	{
 		
@@ -1255,8 +1175,7 @@ namespace MyNS
 	///            <p>Provisioned cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Provisioned
 	{
 		
@@ -1307,8 +1226,7 @@ namespace MyNS
 	///            <p>Serverless cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverless
 	{
 		
@@ -1323,8 +1241,7 @@ namespace MyNS
 		public ServerlessClientAuthentication ClientAuthentication { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterOperationResponse
 	{
 		
@@ -1337,8 +1254,7 @@ namespace MyNS
 	///            <p>Returns information about a cluster operation.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperationInfo
 	{
 		
@@ -1384,8 +1300,7 @@ namespace MyNS
 	///            <p>Returns information about an error state of the cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorInfo
 	{
 		
@@ -1401,8 +1316,7 @@ namespace MyNS
 	///            <p>Step taken during a cluster operation.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperationStep
 	{
 		
@@ -1418,8 +1332,7 @@ namespace MyNS
 	///            <p>State information about the operation step.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperationStepInfo
 	{
 		
@@ -1432,8 +1345,7 @@ namespace MyNS
 	///            <p>Information about cluster attributes that can be updated via update APIs.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MutableClusterInfo
 	{
 		
@@ -1479,8 +1391,7 @@ namespace MyNS
 	///            <p>Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BrokerEBSVolumeInfo
 	{
 		
@@ -1503,8 +1414,7 @@ namespace MyNS
 	///            <p>Description of the VPC connection.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConnectionInfo
 	{
 		
@@ -1526,8 +1436,7 @@ namespace MyNS
 	///            <p>Description of the requester that calls the API operation.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserIdentity
 	{
 		
@@ -1543,21 +1452,18 @@ namespace MyNS
 	///            <p>The identity type of the requester that calls the API operation.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserIdentityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSACCOUNT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSSERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSSERVICE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterOperationV2Response
 	{
 		
@@ -1569,8 +1475,7 @@ namespace MyNS
 	/// 
 	///            <p>Returns information about a cluster operation.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperationV2
 	{
 		
@@ -1609,8 +1514,7 @@ namespace MyNS
 	/// 
 	///            <p>Returns information about a provisioned cluster operation.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperationV2Provisioned
 	{
 		
@@ -1631,8 +1535,7 @@ namespace MyNS
 	/// 
 	///            <p>Returns information about a serverless cluster operation.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperationV2Serverless
 	{
 		
@@ -1643,8 +1546,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of the VPC connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConnectionInfoServerless
 	{
 		
@@ -1661,8 +1563,7 @@ namespace MyNS
 		public string VpcConnectionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationResponse
 	{
 		
@@ -1688,8 +1589,7 @@ namespace MyNS
 		public ConfigurationState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationRevisionResponse
 	{
 		
@@ -1709,8 +1609,7 @@ namespace MyNS
 		public string ServerProperties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVpcConnectionResponse
 	{
 		
@@ -1742,8 +1641,7 @@ namespace MyNS
 		public @__mapOf__string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDisassociateScramSecretResponse
 	{
 		
@@ -1754,8 +1652,7 @@ namespace MyNS
 		public UnprocessedScramSecret[] UnprocessedScramSecrets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBootstrapBrokersResponse
 	{
 		
@@ -1790,8 +1687,7 @@ namespace MyNS
 		public string BootstrapBrokerStringVpcConnectivitySaslIam { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCompatibleKafkaVersionsResponse
 	{
 		
@@ -1804,8 +1700,7 @@ namespace MyNS
 	///            <p>Contains source Apache Kafka versions and compatible target Apache Kafka versions.</p>
 	///        
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompatibleKafkaVersion
 	{
 		
@@ -1816,8 +1711,7 @@ namespace MyNS
 		public string[] TargetVersions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetClusterPolicyResponse
 	{
 		
@@ -1828,8 +1722,7 @@ namespace MyNS
 		public string Policy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClusterOperationsResponse
 	{
 		
@@ -1840,8 +1733,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClusterOperationsV2Response
 	{
 		
@@ -1856,8 +1748,7 @@ namespace MyNS
 	/// 
 	///            <p>Returns information about a cluster operation.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperationV2Summary
 	{
 		
@@ -1883,8 +1774,7 @@ namespace MyNS
 		public string OperationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersResponse
 	{
 		
@@ -1895,8 +1785,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersV2Response
 	{
 		
@@ -1907,8 +1796,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationRevisionsResponse
 	{
 		
@@ -1919,8 +1807,7 @@ namespace MyNS
 		public ConfigurationRevision[] Revisions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationsResponse
 	{
 		
@@ -1936,8 +1823,7 @@ namespace MyNS
 	///            <p>Represents an MSK Configuration.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Configuration
 	{
 		
@@ -1991,8 +1877,7 @@ namespace MyNS
 		public ConfigurationState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKafkaVersionsResponse
 	{
 		
@@ -2003,8 +1888,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KafkaVersion
 	{
 		
@@ -2015,21 +1899,18 @@ namespace MyNS
 		public KafkaVersionStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KafkaVersionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPRECATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPRECATED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNodesResponse
 	{
 		
@@ -2045,8 +1926,7 @@ namespace MyNS
 	///            <p>The node information object.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeInfo
 	{
 		
@@ -2074,8 +1954,7 @@ namespace MyNS
 	///            <p>BrokerNodeInfo</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BrokerNodeInfo
 	{
 		
@@ -2103,13 +1982,11 @@ namespace MyNS
 	///            <p>The broker or Zookeeper node.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BROKER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BROKER = 0,
 	}
 	
@@ -2118,8 +1995,7 @@ namespace MyNS
 	///            <p>Zookeeper node information.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZookeeperNodeInfo
 	{
 		
@@ -2139,8 +2015,7 @@ namespace MyNS
 		public string ZookeeperVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListScramSecretsResponse
 	{
 		
@@ -2151,8 +2026,7 @@ namespace MyNS
 		public string[] SecretArnList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -2160,8 +2034,7 @@ namespace MyNS
 		public @__mapOf__string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClientVpcConnectionsResponse
 	{
 		
@@ -2177,8 +2050,7 @@ namespace MyNS
 	///            <p>The client VPC connection object.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientVpcConnection
 	{
 		
@@ -2202,8 +2074,7 @@ namespace MyNS
 		public string Owner { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVpcConnectionsResponse
 	{
 		
@@ -2219,8 +2090,7 @@ namespace MyNS
 	///            <p>The VPC connection object.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConnection
 	{
 		
@@ -2251,14 +2121,12 @@ namespace MyNS
 		public VpcConnectionState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectClientVpcConnectionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutClusterPolicyResponse
 	{
 		
@@ -2266,8 +2134,7 @@ namespace MyNS
 		public string CurrentVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RebootBrokerResponse
 	{
 		
@@ -2278,8 +2145,7 @@ namespace MyNS
 		public string ClusterOperationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBrokerCountResponse
 	{
 		
@@ -2290,8 +2156,7 @@ namespace MyNS
 		public string ClusterOperationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBrokerTypeResponse
 	{
 		
@@ -2302,8 +2167,7 @@ namespace MyNS
 		public string ClusterOperationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBrokerStorageResponse
 	{
 		
@@ -2314,8 +2178,7 @@ namespace MyNS
 		public string ClusterOperationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationResponse
 	{
 		
@@ -2326,8 +2189,7 @@ namespace MyNS
 		public ConfigurationRevision LatestRevision { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConnectivityResponse
 	{
 		
@@ -2338,8 +2200,7 @@ namespace MyNS
 		public string ClusterOperationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateClusterConfigurationResponse
 	{
 		
@@ -2350,8 +2211,7 @@ namespace MyNS
 		public string ClusterOperationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateClusterKafkaVersionResponse
 	{
 		
@@ -2362,8 +2222,7 @@ namespace MyNS
 		public string ClusterOperationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMonitoringResponse
 	{
 		
@@ -2374,8 +2233,7 @@ namespace MyNS
 		public string ClusterOperationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSecurityResponse
 	{
 		
@@ -2386,8 +2244,7 @@ namespace MyNS
 		public string ClusterOperationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStorageResponse
 	{
 		
@@ -2403,8 +2260,7 @@ namespace MyNS
 	///            <p>Associates sasl scram secrets to cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAssociateScramSecretRequest
 	{
 		
@@ -2421,8 +2277,7 @@ namespace MyNS
 	///            <p>Provisioned cluster request.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisionedRequest
 	{
 		
@@ -2474,8 +2329,7 @@ namespace MyNS
 	///            <p>Serverless cluster request.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServerlessRequest
 	{
 		
@@ -2490,8 +2344,7 @@ namespace MyNS
 		public ServerlessClientAuthentication ClientAuthentication { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterV2Request
 	{
 		
@@ -2512,8 +2365,7 @@ namespace MyNS
 		public ServerlessRequest Serverless { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterRequest
 	{
 		
@@ -2570,8 +2422,7 @@ namespace MyNS
 		public StorageMode StorageMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationRequest
 	{
 		
@@ -2596,8 +2447,7 @@ namespace MyNS
 		public string ServerProperties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcConnectionRequest
 	{
 		
@@ -2640,68 +2490,57 @@ namespace MyNS
 		public @__mapOf__string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterPolicyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcConnectionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterOperationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterOperationV2Request
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterV2Request
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationRevisionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVpcConnectionRequest
 	{
 	}
@@ -2711,8 +2550,7 @@ namespace MyNS
 	///            <p>Disassociates sasl scram secrets to cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDisassociateScramSecretRequest
 	{
 		
@@ -2724,98 +2562,82 @@ namespace MyNS
 		public string[] SecretArnList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBootstrapBrokersRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCompatibleKafkaVersionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetClusterPolicyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClusterOperationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClusterOperationsV2Request
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersV2Request
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationRevisionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKafkaVersionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNodesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListScramSecretsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClientVpcConnectionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVpcConnectionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectClientVpcConnectionRequest
 	{
 		
@@ -2827,8 +2649,7 @@ namespace MyNS
 		public string VpcConnectionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutClusterPolicyRequest
 	{
 		
@@ -2846,8 +2667,7 @@ namespace MyNS
 	/// <summary>
 	/// Reboots a node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RebootBrokerRequest
 	{
 		
@@ -2859,8 +2679,7 @@ namespace MyNS
 		public string[] BrokerIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -2872,14 +2691,12 @@ namespace MyNS
 		public @__mapOf__string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBrokerCountRequest
 	{
 		
@@ -2898,8 +2715,7 @@ namespace MyNS
 		public int TargetNumberOfBrokerNodes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBrokerTypeRequest
 	{
 		
@@ -2918,8 +2734,7 @@ namespace MyNS
 		public string TargetInstanceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBrokerStorageRequest
 	{
 		
@@ -2938,8 +2753,7 @@ namespace MyNS
 		public BrokerEBSVolumeInfo[] TargetBrokerEBSVolumeInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateClusterConfigurationRequest
 	{
 		
@@ -2958,8 +2772,7 @@ namespace MyNS
 		public string CurrentVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateClusterKafkaVersionRequest
 	{
 		
@@ -2984,8 +2797,7 @@ namespace MyNS
 	/// <summary>
 	/// Request body for UpdateMonitoring.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMonitoringRequest
 	{
 		
@@ -3006,8 +2818,7 @@ namespace MyNS
 		public LoggingInfo LoggingInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSecurityRequest
 	{
 		
@@ -3030,8 +2841,7 @@ namespace MyNS
 	///            <p>Request object for UpdateStorage api. Its used to update the storage attributes for the cluster.</p>
 	///         
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStorageRequest
 	{
 		
@@ -3052,8 +2862,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> VolumeSizeGB { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationRequest
 	{
 		
@@ -3071,8 +2880,7 @@ namespace MyNS
 	/// <summary>
 	/// Request body for UpdateConnectivity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConnectivityRequest
 	{
 		

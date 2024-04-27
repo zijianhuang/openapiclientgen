@@ -76,7 +76,7 @@ namespace MyNS
 	public enum Query_shape
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="array")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		array = 0,
 	}
 }

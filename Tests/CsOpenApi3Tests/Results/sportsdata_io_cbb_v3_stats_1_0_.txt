@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BoxScore
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 		public TeamGame[] TeamGames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Period
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerGame
 	{
 		
@@ -281,8 +278,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YahooSalary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeamGame
 	{
 		
@@ -470,8 +466,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Wins { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Conference
 	{
 		
@@ -485,8 +480,7 @@ namespace MyNS
 		public Team[] Teams { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Team
 	{
 		
@@ -539,8 +533,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Wins { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Game
 	{
 		
@@ -695,8 +688,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Player
 	{
 		
@@ -767,8 +759,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Weight { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerGameProjection
 	{
 		
@@ -986,8 +977,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YahooSalary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerSeason
 	{
 		
@@ -1139,8 +1129,7 @@ namespace MyNS
 		public System.Nullable<System.Double> UsageRatePercentage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Season
 	{
 		
@@ -1166,8 +1155,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StartYear { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Stadium
 	{
 		
@@ -1205,8 +1193,7 @@ namespace MyNS
 		public string Zip { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeamSeason
 	{
 		
@@ -1367,8 +1354,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Wins { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tournament
 	{
 		
@@ -2327,10 +2313,10 @@ namespace MyNS
 	public enum AreGamesInProgressFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XML = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 1,
 	}
 }

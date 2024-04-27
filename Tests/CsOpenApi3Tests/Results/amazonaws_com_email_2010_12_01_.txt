@@ -20,26 +20,22 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloneReceiptRuleSetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleSetDoesNotExistException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
@@ -47,20 +43,17 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationSetAlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidConfigurationSetException
 	{
 	}
@@ -68,48 +61,44 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetEventDestinationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="send")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		send = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reject")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reject = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bounce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bounce = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complaint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complaint = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivery = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="click")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		click = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="renderingFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		renderingFailure = 7,
 	}
 	
 	/// <summary>
 	/// <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisFirehoseDestination
 	{
 		
@@ -131,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.</p> <p>Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchDestination
 	{
 		
@@ -147,8 +135,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.</p> <p>For information about publishing email sending events to Amazon CloudWatch, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchDimensionConfiguration
 	{
 		
@@ -174,27 +161,24 @@ namespace MyNS
 		public string DefaultDimensionValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionValueSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="messageTag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		messageTag = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="emailHeader")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		emailHeader = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="linkTag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		linkTag = 2,
 	}
 	
 	/// <summary>
 	/// <p>Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p> <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNSDestination
 	{
 		
@@ -206,32 +190,27 @@ namespace MyNS
 		public string TopicARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationSetDoesNotExistException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDestinationAlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidCloudWatchDestinationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidFirehoseDestinationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSNSDestinationException
 	{
 	}
@@ -239,38 +218,32 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetTrackingOptionsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrackingOptionsAlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTrackingOptionsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomVerificationEmailTemplateAlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FromEmailAddressNotVerifiedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomVerificationEmailInvalidContentException
 	{
 	}
@@ -278,8 +251,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReceiptFilterResponse
 	{
 	}
@@ -287,8 +259,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p> <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReceiptIpFilter
 	{
 		
@@ -307,46 +278,40 @@ namespace MyNS
 		public string Cidr { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReceiptFilterPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Block")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Block = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Allow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Allow = 1,
 	}
 	
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReceiptRuleResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TlsPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Require")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Require = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Optional")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Optional = 1,
 	}
 	
 	/// <summary>
 	/// <p>An action that Amazon SES can take when it receives an email on behalf of one or more email addresses or domains that you own. An instance of this data type can represent only one action.</p> <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReceiptAction
 	{
 		
@@ -375,8 +340,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>When included in a receipt rule, this action saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to write emails to your Amazon S3 bucket, use an AWS KMS key to encrypt your emails, or publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <note> <p>When you save your emails to an Amazon S3 bucket, the maximum email size (including headers) is 30 MB. Emails larger than that will bounce.</p> </note> <p>For information about specifying Amazon S3 actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Action
 	{
 		
@@ -400,8 +364,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about sending a bounce message in response to a received email, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BounceAction
 	{
 		
@@ -436,8 +399,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>When included in a receipt rule, this action calls Amazon WorkMail and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS). You will typically not use this action directly because Amazon WorkMail adds the rule automatically during its setup procedure.</p> <p>For information using a receipt rule to call Amazon WorkMail, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkmailAction
 	{
 		
@@ -455,8 +417,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>When included in a receipt rule, this action calls an AWS Lambda function and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <p>For information about using AWS Lambda actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaAction
 	{
 		
@@ -474,24 +435,21 @@ namespace MyNS
 		public InvocationType InvocationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InvocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Event")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Event = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestResponse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestResponse = 1,
 	}
 	
 	/// <summary>
 	/// <p>When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopAction
 	{
 		
@@ -506,21 +464,18 @@ namespace MyNS
 		public string TopicArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StopScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RuleSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RuleSet = 0,
 	}
 	
 	/// <summary>
 	/// <p>When included in a receipt rule, this action adds a header to the received email.</p> <p>For information about adding a header using a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddHeaderAction
 	{
 		
@@ -542,8 +497,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>When included in a receipt rule, this action publishes a notification to Amazon Simple Notification Service (Amazon SNS). This action includes a complete copy of the email content in the Amazon SNS notifications. Amazon SNS notifications for all other actions simply provide information about the email. They do not include the email content itself.</p> <p>If you own the Amazon SNS topic, you don't need to do anything to give Amazon SES permission to publish emails to it. However, if you don't own the Amazon SNS topic, you need to attach a policy to the topic to give Amazon SES permissions to access it. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <important> <p>You can only publish emails that are 150 KB or less (including the header) to Amazon SNS. Larger emails will bounce. If you anticipate emails larger than 150 KB, use the S3 action instead.</p> </important> <p>For information about using a receipt rule to publish an Amazon SNS notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNSAction
 	{
 		
@@ -558,39 +512,33 @@ namespace MyNS
 		public SNSActionEncoding Encoding { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SNSActionEncoding
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTF-8")]
 		UTFMinus8 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Base64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Base64 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSnsTopicException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidS3ConfigurationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidLambdaFunctionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleDoesNotExistException
 	{
 	}
@@ -598,20 +546,17 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReceiptRuleSetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTemplateResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTemplateException
 	{
 	}
@@ -619,8 +564,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetResponse
 	{
 	}
@@ -628,14 +572,12 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetEventDestinationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDestinationDoesNotExistException
 	{
 	}
@@ -643,14 +585,12 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetTrackingOptionsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrackingOptionsDoesNotExistException
 	{
 	}
@@ -658,8 +598,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIdentityResponse
 	{
 	}
@@ -667,8 +606,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIdentityPolicyResponse
 	{
 	}
@@ -676,8 +614,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReceiptFilterResponse
 	{
 	}
@@ -685,8 +622,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReceiptRuleResponse
 	{
 	}
@@ -694,20 +630,17 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReceiptRuleSetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CannotDeleteException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTemplateResponse
 	{
 	}
@@ -715,8 +648,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the metadata and receipt rules for the receipt rule set that is currently active.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeActiveReceiptRuleSetResponse
 	{
 		
@@ -730,8 +662,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information about a receipt rule set.</p> <p>A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of your account's verified domains.</p> <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReceiptRuleSetMetadata
 	{
 		
@@ -745,8 +676,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.</p> <p>Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p> <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReceiptRule
 	{
 		
@@ -776,8 +706,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationSetResponse
 	{
 		
@@ -803,8 +732,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The name of the configuration set.</p> <p>Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html">Using Amazon SES Configuration Sets</a> in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationSet
 	{
 		
@@ -819,8 +747,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains information about the event destination that the specified email sending events will be published to.</p> <note> <p>When you create or update an event destination, you must provide one, and only one, destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple Notification Service (Amazon SNS).</p> </note> <p>Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDestination
 	{
 		
@@ -854,8 +781,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrackingOptions
 	{
 		
@@ -866,8 +792,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryOptions
 	{
 		
@@ -878,8 +803,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the reputation settings for a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReputationOptions
 	{
 		
@@ -893,30 +817,27 @@ namespace MyNS
 		public System.DateTimeOffset LastFreshStart { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigurationSetAttribute
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eventDestinations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eventDestinations = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trackingOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trackingOptions = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deliveryOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deliveryOptions = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reputationOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reputationOptions = 3,
 	}
 	
 	/// <summary>
 	/// Represents the details of a receipt rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReceiptRuleResponse
 	{
 		
@@ -927,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the details of the specified receipt rule set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReceiptRuleSetResponse
 	{
 		
@@ -942,8 +862,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return the email sending status for your Amazon SES account in the current AWS Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountSendingEnabledResponse
 	{
 		
@@ -954,8 +873,7 @@ namespace MyNS
 	/// <summary>
 	/// The content of the custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCustomVerificationEmailTemplateResponse
 	{
 		
@@ -978,8 +896,7 @@ namespace MyNS
 		public string FailureRedirectionURL { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomVerificationEmailTemplateDoesNotExistException
 	{
 	}
@@ -987,8 +904,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this response also contains the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityDkimAttributesResponse
 	{
 		
@@ -1000,8 +916,7 @@ namespace MyNS
 		public DkimAttributes DkimAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DkimAttributes
 	{
 	}
@@ -1009,8 +924,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the custom MAIL FROM attributes for a list of identities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityMailFromDomainAttributesResponse
 	{
 		
@@ -1022,8 +936,7 @@ namespace MyNS
 		public MailFromDomainAttributes MailFromDomainAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailFromDomainAttributes
 	{
 	}
@@ -1031,8 +944,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the notification attributes for a list of identities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityNotificationAttributesResponse
 	{
 		
@@ -1044,8 +956,7 @@ namespace MyNS
 		public NotificationAttributes NotificationAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationAttributes
 	{
 	}
@@ -1053,8 +964,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the requested sending authorization policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityPoliciesResponse
 	{
 		
@@ -1066,8 +976,7 @@ namespace MyNS
 		public PolicyMap Policies { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyMap
 	{
 	}
@@ -1075,8 +984,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon SES verification status of a list of identities. For domain identities, this response also contains the verification token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityVerificationAttributesResponse
 	{
 		
@@ -1088,8 +996,7 @@ namespace MyNS
 		public VerificationAttributes VerificationAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerificationAttributes
 	{
 	}
@@ -1097,8 +1004,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents your Amazon SES daily sending quota, maximum send rate, and the number of emails you have sent in the last 24 hours.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSendQuotaResponse
 	{
 		
@@ -1115,8 +1021,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a list of data points. This list contains aggregated data from the previous two weeks of your sending activity with Amazon SES.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSendStatisticsResponse
 	{
 		
@@ -1127,8 +1032,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendDataPoint
 	{
 		
@@ -1148,8 +1052,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Rejects { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTemplateResponse
 	{
 		
@@ -1163,8 +1066,7 @@ namespace MyNS
 	/// <summary>
 	/// The content of the email, composed of a subject line, an HTML part, and a text-only part.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Template
 	{
 		
@@ -1185,8 +1087,7 @@ namespace MyNS
 		public string HtmlPart { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateDoesNotExistException
 	{
 	}
@@ -1194,8 +1095,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of configuration sets associated with your AWS account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationSetsResponse
 	{
 		
@@ -1209,8 +1109,7 @@ namespace MyNS
 	/// <summary>
 	/// A paginated list of custom verification email templates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomVerificationEmailTemplatesResponse
 	{
 		
@@ -1224,8 +1123,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomVerificationEmailTemplate
 	{
 		
@@ -1248,8 +1146,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of all identities that you have attempted to verify under your AWS account, regardless of verification status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentitiesResponse
 	{
 		
@@ -1267,8 +1164,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of names of sending authorization policies that apply to an identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentityPoliciesResponse
 	{
 		
@@ -1283,8 +1179,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of IP address filters that exist under your AWS account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReceiptFiltersResponse
 	{
 		
@@ -1295,8 +1190,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p> <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReceiptFilter
 	{
 		
@@ -1318,8 +1212,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of receipt rule sets that exist under your AWS account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReceiptRuleSetsResponse
 	{
 		
@@ -1330,8 +1223,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTemplatesResponse
 	{
 		
@@ -1345,8 +1237,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateMetadata
 	{
 		
@@ -1360,8 +1251,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of email addresses that you have verified with Amazon SES under your AWS account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVerifiedEmailAddressesResponse
 	{
 		
@@ -1372,14 +1262,12 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP 200 response if the request succeeds, or an error message if the request fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetDeliveryOptionsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDeliveryOptionsException
 	{
 	}
@@ -1387,14 +1275,12 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutIdentityPolicyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidPolicyException
 	{
 	}
@@ -1402,8 +1288,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReorderReceiptRuleSetResponse
 	{
 	}
@@ -1411,8 +1296,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a unique message ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendBounceResponse
 	{
 		
@@ -1423,8 +1307,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Additional X-headers to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtensionField
 	{
 		
@@ -1446,8 +1329,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BouncedRecipientInfo
 	{
 		
@@ -1468,36 +1350,33 @@ namespace MyNS
 		public RecipientDsnFields RecipientDsnFields { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BounceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DoesNotExist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DoesNotExist = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageTooLarge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MessageTooLarge = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExceededQuota")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExceededQuota = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ContentRejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ContentRejected = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Undefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Undefined = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemporaryFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TemporaryFailure = 5,
 	}
 	
 	/// <summary>
 	/// <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecipientDsnFields
 	{
 		
@@ -1531,36 +1410,32 @@ namespace MyNS
 		public ExtensionField[] ExtensionFields { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DsnAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delayed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delayed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relayed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relayed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expanded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expanded = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageRejected
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendBulkTemplatedEmailResponse
 	{
 		
@@ -1575,8 +1450,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the response from the <code>SendBulkTemplatedEmail</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkEmailDestinationStatus
 	{
 		
@@ -1590,60 +1464,57 @@ namespace MyNS
 		public string MessageId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BulkEmailStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageRejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MessageRejected = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MailFromDomainNotVerified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MailFromDomainNotVerified = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationSetDoesNotExist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfigurationSetDoesNotExist = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemplateDoesNotExist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TemplateDoesNotExist = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountSuspended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountSuspended = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountThrottled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountThrottled = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountDailyQuotaExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountDailyQuotaExceeded = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidSendingPoolName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidSendingPoolName = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountSendingPaused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountSendingPaused = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationSetSendingPaused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfigurationSetSendingPaused = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidParameterValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidParameterValue = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TransientFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TransientFailure = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 13,
 	}
 	
 	/// <summary>
 	/// <p>Contains the name and value of a tag that you can provide to <code>SendEmail</code> or <code>SendRawEmail</code> to apply to an email.</p> <p>Message tags, which you use with configuration sets, enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageTag
 	{
 		
@@ -1665,8 +1536,7 @@ namespace MyNS
 	/// <summary>
 	/// An array that contains one or more Destinations, as well as the tags and replacement data associated with each of those Destinations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkEmailDestination
 	{
 		
@@ -1688,8 +1558,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note> <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Destination
 	{
 		
@@ -1703,20 +1572,17 @@ namespace MyNS
 		public string[] BccAddresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailFromDomainNotVerifiedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationSetSendingPausedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountSendingPausedException
 	{
 	}
@@ -1724,8 +1590,7 @@ namespace MyNS
 	/// <summary>
 	/// The response received when attempting to send the custom verification email.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendCustomVerificationEmailResponse
 	{
 		
@@ -1733,8 +1598,7 @@ namespace MyNS
 		public string MessageId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductionAccessNotGrantedException
 	{
 	}
@@ -1742,8 +1606,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a unique message ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendEmailResponse
 	{
 		
@@ -1758,8 +1621,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents textual data, plus an optional character set specification.</p> <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Content
 	{
 		
@@ -1777,8 +1639,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the body of the message. You can specify text, HTML, or both. If you use both, then the message should display correctly in the widest variety of email clients.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body
 	{
 		
@@ -1792,8 +1653,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a unique message ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendRawEmailResponse
 	{
 		
@@ -1805,8 +1665,7 @@ namespace MyNS
 		public string MessageId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTemplatedEmailResponse
 	{
 		
@@ -1821,8 +1680,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetActiveReceiptRuleSetResponse
 	{
 	}
@@ -1830,8 +1688,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityDkimEnabledResponse
 	{
 	}
@@ -1839,8 +1696,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityFeedbackForwardingEnabledResponse
 	{
 	}
@@ -1848,8 +1704,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityHeadersInNotificationsEnabledResponse
 	{
 	}
@@ -1857,8 +1712,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityMailFromDomainResponse
 	{
 	}
@@ -1866,8 +1720,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityNotificationTopicResponse
 	{
 	}
@@ -1875,14 +1728,12 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetReceiptRulePositionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestRenderTemplateResponse
 	{
 		
@@ -1890,14 +1741,12 @@ namespace MyNS
 		public string RenderedTemplate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRenderingParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingRenderingAttributeException
 	{
 	}
@@ -1905,8 +1754,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetEventDestinationResponse
 	{
 	}
@@ -1914,8 +1762,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetTrackingOptionsResponse
 	{
 	}
@@ -1923,14 +1770,12 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateReceiptRuleResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTemplateResponse
 	{
 	}
@@ -1938,8 +1783,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns CNAME records that you must publish to the DNS server of your domain to set up Easy DKIM with Amazon SES.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyDomainDkimResponse
 	{
 		
@@ -1954,8 +1798,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns a TXT record that you must publish to the DNS server of your domain to complete domain verification with Amazon SES.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyDomainIdentityResponse
 	{
 		
@@ -1970,30 +1813,26 @@ namespace MyNS
 	/// <summary>
 	/// An empty element returned on a successful request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyEmailIdentityResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BehaviorOnMXFailure
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UseDefaultValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UseDefaultValue = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RejectMessage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RejectMessage = 1,
 	}
 	
 	/// <summary>
 	/// Represents a request to create a receipt rule set by cloning an existing one. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloneReceiptRuleSetRequest
 	{
 		
@@ -2015,8 +1854,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create a configuration set event destination. A configuration set event destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in which Amazon SES publishes the email sending events associated with a configuration set. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetEventDestinationRequest
 	{
 		
@@ -2038,8 +1876,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetRequest
 	{
 		
@@ -2054,8 +1891,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create an open and click tracking option object in a configuration set. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetTrackingOptionsRequest
 	{
 		
@@ -2078,8 +1914,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create a custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomVerificationEmailTemplateRequest
 	{
 		
@@ -2129,8 +1964,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReceiptFilterRequest
 	{
 		
@@ -2145,8 +1979,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReceiptRuleRequest
 	{
 		
@@ -2171,8 +2004,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create an empty receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReceiptRuleSetRequest
 	{
 		
@@ -2187,8 +2019,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTemplateRequest
 	{
 		
@@ -2200,30 +2031,27 @@ namespace MyNS
 		public Template Template { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomMailFromStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Success = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemporaryFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TemporaryFailure = 3,
 	}
 	
 	/// <summary>
 	/// Represents a request to delete a configuration set event destination. Configuration set event destinations are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetEventDestinationRequest
 	{
 		
@@ -2245,8 +2073,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetRequest
 	{
 		
@@ -2261,8 +2088,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete open and click tracking options in a configuration set. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetTrackingOptionsRequest
 	{
 		
@@ -2277,8 +2103,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete an existing custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCustomVerificationEmailTemplateRequest
 	{
 		
@@ -2293,8 +2118,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIdentityPolicyRequest
 	{
 		
@@ -2316,8 +2140,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete one of your Amazon SES identities (an email address or domain).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIdentityRequest
 	{
 		
@@ -2332,8 +2155,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete an IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReceiptFilterRequest
 	{
 		
@@ -2348,8 +2170,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReceiptRuleRequest
 	{
 		
@@ -2371,8 +2192,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete a receipt rule set and all of the receipt rules it contains. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReceiptRuleSetRequest
 	{
 		
@@ -2387,8 +2207,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTemplateRequest
 	{
 		
@@ -2403,8 +2222,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to delete an email address from the list of email addresses you have attempted to verify under your AWS account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVerifiedEmailAddressRequest
 	{
 		
@@ -2419,8 +2237,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return the metadata and receipt rules for the receipt rule set that is currently active. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeActiveReceiptRuleSetRequest
 	{
 	}
@@ -2428,8 +2245,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationSetRequest
 	{
 		
@@ -2447,8 +2263,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return the details of a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReceiptRuleRequest
 	{
 		
@@ -2470,8 +2285,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return the details of a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReceiptRuleSetRequest
 	{
 		
@@ -2486,8 +2300,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the DKIM attributes of a verified email address or a domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityDkimAttributes
 	{
 		
@@ -2509,33 +2322,30 @@ namespace MyNS
 		public string[] DkimTokens { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VerificationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Success = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemporaryFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TemporaryFailure = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotStarted = 4,
 	}
 	
 	/// <summary>
 	/// Represents a request to retrieve an existing custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCustomVerificationEmailTemplateRequest
 	{
 		
@@ -2550,8 +2360,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request for the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this request also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published. For more information about Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityDkimAttributesRequest
 	{
 		
@@ -2566,8 +2375,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return the Amazon SES custom MAIL FROM attributes for a list of identities. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityMailFromDomainAttributesRequest
 	{
 		
@@ -2582,8 +2390,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return the notification attributes for a list of identities you verified with Amazon SES. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityNotificationAttributesRequest
 	{
 		
@@ -2598,8 +2405,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return the requested sending authorization policies for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityPoliciesRequest
 	{
 		
@@ -2621,8 +2427,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return the Amazon SES verification status of a list of identities. For domain identities, this request also returns the verification token. For information about verifying identities with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityVerificationAttributesRequest
 	{
 		
@@ -2634,8 +2439,7 @@ namespace MyNS
 		public string[] Identities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTemplateRequest
 	{
 		
@@ -2650,8 +2454,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the custom MAIL FROM domain attributes of a verified identity (email address or domain).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityMailFromDomainAttributes
 	{
 		
@@ -2680,8 +2483,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the notification attributes of an identity, including whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and whether feedback forwarding is enabled for bounce and complaint notifications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityNotificationAttributes
 	{
 		
@@ -2723,24 +2525,21 @@ namespace MyNS
 		public System.Nullable<System.Boolean> HeadersInDeliveryNotificationsEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IdentityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EmailAddress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EmailAddress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Domain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Domain = 1,
 	}
 	
 	/// <summary>
 	/// Represents the verification attributes of a single identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityVerificationAttributes
 	{
 		
@@ -2758,8 +2557,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to list the configuration sets associated with your AWS account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationSetsRequest
 	{
 		
@@ -2773,8 +2571,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents a request to list the existing custom verification email templates for your account.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomVerificationEmailTemplatesRequest
 	{
 		
@@ -2788,8 +2585,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return a list of all identities (email addresses and domains) that you have attempted to verify under your AWS account, regardless of verification status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentitiesRequest
 	{
 		
@@ -2806,8 +2602,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to return a list of sending authorization policies that are attached to an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentityPoliciesRequest
 	{
 		
@@ -2822,8 +2617,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to list the IP address filters that exist under your AWS account. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReceiptFiltersRequest
 	{
 	}
@@ -2831,8 +2625,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to list the receipt rule sets that exist under your AWS account. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReceiptRuleSetsRequest
 	{
 		
@@ -2840,8 +2633,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTemplatesRequest
 	{
 		
@@ -2855,8 +2647,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the message to be sent, composed of a subject and a body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -2878,8 +2669,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Message-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageDsn
 	{
 		
@@ -2897,27 +2687,24 @@ namespace MyNS
 		public ExtensionField[] ExtensionFields { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bounce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bounce = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Complaint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Complaint = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Delivery")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Delivery = 2,
 	}
 	
 	/// <summary>
 	/// A request to modify the delivery options for a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationSetDeliveryOptionsRequest
 	{
 		
@@ -2935,8 +2722,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to add or update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutIdentityPolicyRequest
 	{
 		
@@ -2965,8 +2751,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the raw data of the message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RawMessage
 	{
 		
@@ -2981,8 +2766,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to reorder the receipt rules within a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReorderReceiptRuleSetRequest
 	{
 		
@@ -3004,8 +2788,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to send a bounce message to the sender of an email you received through Amazon SES.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendBounceRequest
 	{
 		
@@ -3043,8 +2826,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to send a templated email to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendBulkTemplatedEmailRequest
 	{
 		
@@ -3097,8 +2879,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to send a custom verification email to a specified recipient.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendCustomVerificationEmailRequest
 	{
 		
@@ -3123,8 +2904,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to send a single formatted email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendEmailRequest
 	{
 		
@@ -3171,8 +2951,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to send a single raw email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendRawEmailRequest
 	{
 		
@@ -3208,8 +2987,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to send a templated email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTemplatedEmailRequest
 	{
 		
@@ -3266,8 +3044,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to set a receipt rule set as the active receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetActiveReceiptRuleSetRequest
 	{
 		
@@ -3278,8 +3055,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to enable or disable Amazon SES Easy DKIM signing for an identity. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityDkimEnabledRequest
 	{
 		
@@ -3301,8 +3077,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to enable or disable whether Amazon SES forwards you bounce and complaint notifications through email. For information about email feedback forwarding, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityFeedbackForwardingEnabledRequest
 	{
 		
@@ -3324,8 +3099,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to set whether Amazon SES includes the original email headers in the Amazon SNS notifications of a specified type. For information about notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityHeadersInNotificationsEnabledRequest
 	{
 		
@@ -3354,8 +3128,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to enable or disable the Amazon SES custom MAIL FROM domain setup for a verified identity. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityMailFromDomainRequest
 	{
 		
@@ -3376,8 +3149,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to specify the Amazon SNS topic to which Amazon SES will publish bounce, complaint, or delivery notifications for emails sent with that identity as the Source. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityNotificationTopicRequest
 	{
 		
@@ -3402,8 +3174,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to set the position of a receipt rule in a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetReceiptRulePositionRequest
 	{
 		
@@ -3425,8 +3196,7 @@ namespace MyNS
 		public string After { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestRenderTemplateRequest
 	{
 		
@@ -3448,8 +3218,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to enable or disable the email sending capabilities for your entire Amazon SES account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAccountSendingEnabledRequest
 	{
 		
@@ -3460,8 +3229,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to update the event destination of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetEventDestinationRequest
 	{
 		
@@ -3483,8 +3251,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to modify the reputation metric publishing settings for a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetReputationMetricsEnabledRequest
 	{
 		
@@ -3506,8 +3273,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to enable or disable the email sending capabilities for a specific configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetSendingEnabledRequest
 	{
 		
@@ -3529,8 +3295,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to update the tracking options for a configuration set. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetTrackingOptionsRequest
 	{
 		
@@ -3553,8 +3318,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to update an existing custom verification email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomVerificationEmailTemplateRequest
 	{
 		
@@ -3584,8 +3348,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to update a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateReceiptRuleRequest
 	{
 		
@@ -3604,8 +3367,7 @@ namespace MyNS
 		public ReceiptRule Rule { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTemplateRequest
 	{
 		
@@ -3621,8 +3383,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to generate the CNAME records needed to set up Easy DKIM with Amazon SES. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyDomainDkimRequest
 	{
 		
@@ -3637,8 +3398,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to begin Amazon SES domain verification and to generate the TXT records that you must publish to the DNS server of your domain to complete the verification. For information about domain verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyDomainIdentityRequest
 	{
 		
@@ -3653,8 +3413,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyEmailAddressRequest
 	{
 		
@@ -3669,8 +3428,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyEmailIdentityRequest
 	{
 		
@@ -5877,7 +5635,7 @@ namespace MyNS
 	public enum GET_CloneReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CloneReceiptRuleSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CloneReceiptRuleSet = 0,
 	}
 	
@@ -5909,7 +5667,7 @@ namespace MyNS
 	public enum GET_CreateConfigurationSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateConfigurationSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateConfigurationSet = 0,
 	}
 	
@@ -5960,7 +5718,7 @@ namespace MyNS
 	public enum GET_CreateConfigurationSetEventDestinationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateConfigurationSetEventDestination")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateConfigurationSetEventDestination = 0,
 	}
 	
@@ -5988,7 +5746,7 @@ namespace MyNS
 	public enum GET_CreateConfigurationSetTrackingOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateConfigurationSetTrackingOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateConfigurationSetTrackingOptions = 0,
 	}
 	
@@ -6009,7 +5767,7 @@ namespace MyNS
 	public enum GET_CreateCustomVerificationEmailTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateCustomVerificationEmailTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateCustomVerificationEmailTemplate = 0,
 	}
 	
@@ -6048,7 +5806,7 @@ namespace MyNS
 	public enum GET_CreateReceiptFilterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateReceiptFilter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateReceiptFilter = 0,
 	}
 	
@@ -6095,7 +5853,7 @@ namespace MyNS
 	public enum GET_CreateReceiptRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateReceiptRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateReceiptRule = 0,
 	}
 	
@@ -6116,7 +5874,7 @@ namespace MyNS
 	public enum GET_CreateReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateReceiptRuleSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateReceiptRuleSet = 0,
 	}
 	
@@ -6157,7 +5915,7 @@ namespace MyNS
 	public enum GET_CreateTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateTemplate = 0,
 	}
 	
@@ -6178,7 +5936,7 @@ namespace MyNS
 	public enum GET_DeleteConfigurationSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteConfigurationSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteConfigurationSet = 0,
 	}
 	
@@ -6199,7 +5957,7 @@ namespace MyNS
 	public enum GET_DeleteConfigurationSetEventDestinationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteConfigurationSetEventDestination")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteConfigurationSetEventDestination = 0,
 	}
 	
@@ -6220,7 +5978,7 @@ namespace MyNS
 	public enum GET_DeleteConfigurationSetTrackingOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteConfigurationSetTrackingOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteConfigurationSetTrackingOptions = 0,
 	}
 	
@@ -6241,7 +5999,7 @@ namespace MyNS
 	public enum GET_DeleteCustomVerificationEmailTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteCustomVerificationEmailTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteCustomVerificationEmailTemplate = 0,
 	}
 	
@@ -6262,7 +6020,7 @@ namespace MyNS
 	public enum GET_DeleteIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteIdentity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteIdentity = 0,
 	}
 	
@@ -6283,7 +6041,7 @@ namespace MyNS
 	public enum GET_DeleteIdentityPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteIdentityPolicy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteIdentityPolicy = 0,
 	}
 	
@@ -6304,7 +6062,7 @@ namespace MyNS
 	public enum GET_DeleteReceiptFilterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteReceiptFilter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteReceiptFilter = 0,
 	}
 	
@@ -6325,7 +6083,7 @@ namespace MyNS
 	public enum GET_DeleteReceiptRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteReceiptRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteReceiptRule = 0,
 	}
 	
@@ -6346,7 +6104,7 @@ namespace MyNS
 	public enum GET_DeleteReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteReceiptRuleSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteReceiptRuleSet = 0,
 	}
 	
@@ -6367,7 +6125,7 @@ namespace MyNS
 	public enum GET_DeleteTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteTemplate = 0,
 	}
 	
@@ -6388,7 +6146,7 @@ namespace MyNS
 	public enum GET_DeleteVerifiedEmailAddressAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteVerifiedEmailAddress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteVerifiedEmailAddress = 0,
 	}
 	
@@ -6409,7 +6167,7 @@ namespace MyNS
 	public enum GET_DescribeActiveReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeActiveReceiptRuleSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeActiveReceiptRuleSet = 0,
 	}
 	
@@ -6430,7 +6188,7 @@ namespace MyNS
 	public enum GET_DescribeConfigurationSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeConfigurationSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeConfigurationSet = 0,
 	}
 	
@@ -6451,7 +6209,7 @@ namespace MyNS
 	public enum GET_DescribeReceiptRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReceiptRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeReceiptRule = 0,
 	}
 	
@@ -6472,7 +6230,7 @@ namespace MyNS
 	public enum GET_DescribeReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReceiptRuleSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeReceiptRuleSet = 0,
 	}
 	
@@ -6493,7 +6251,7 @@ namespace MyNS
 	public enum GET_GetAccountSendingEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetAccountSendingEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetAccountSendingEnabled = 0,
 	}
 	
@@ -6514,7 +6272,7 @@ namespace MyNS
 	public enum GET_GetCustomVerificationEmailTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetCustomVerificationEmailTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetCustomVerificationEmailTemplate = 0,
 	}
 	
@@ -6535,7 +6293,7 @@ namespace MyNS
 	public enum GET_GetIdentityDkimAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityDkimAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetIdentityDkimAttributes = 0,
 	}
 	
@@ -6556,7 +6314,7 @@ namespace MyNS
 	public enum GET_GetIdentityMailFromDomainAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityMailFromDomainAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetIdentityMailFromDomainAttributes = 0,
 	}
 	
@@ -6577,7 +6335,7 @@ namespace MyNS
 	public enum GET_GetIdentityNotificationAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityNotificationAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetIdentityNotificationAttributes = 0,
 	}
 	
@@ -6598,7 +6356,7 @@ namespace MyNS
 	public enum GET_GetIdentityPoliciesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityPolicies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetIdentityPolicies = 0,
 	}
 	
@@ -6619,7 +6377,7 @@ namespace MyNS
 	public enum GET_GetIdentityVerificationAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityVerificationAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetIdentityVerificationAttributes = 0,
 	}
 	
@@ -6640,7 +6398,7 @@ namespace MyNS
 	public enum GET_GetSendQuotaAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetSendQuota")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetSendQuota = 0,
 	}
 	
@@ -6661,7 +6419,7 @@ namespace MyNS
 	public enum GET_GetSendStatisticsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetSendStatistics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetSendStatistics = 0,
 	}
 	
@@ -6682,7 +6440,7 @@ namespace MyNS
 	public enum GET_GetTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetTemplate = 0,
 	}
 	
@@ -6703,7 +6461,7 @@ namespace MyNS
 	public enum GET_ListConfigurationSetsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListConfigurationSets")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListConfigurationSets = 0,
 	}
 	
@@ -6724,7 +6482,7 @@ namespace MyNS
 	public enum GET_ListCustomVerificationEmailTemplatesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListCustomVerificationEmailTemplates")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListCustomVerificationEmailTemplates = 0,
 	}
 	
@@ -6745,7 +6503,7 @@ namespace MyNS
 	public enum GET_ListIdentitiesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListIdentities")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListIdentities = 0,
 	}
 	
@@ -6766,7 +6524,7 @@ namespace MyNS
 	public enum GET_ListIdentityPoliciesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListIdentityPolicies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListIdentityPolicies = 0,
 	}
 	
@@ -6787,7 +6545,7 @@ namespace MyNS
 	public enum GET_ListReceiptFiltersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListReceiptFilters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListReceiptFilters = 0,
 	}
 	
@@ -6808,7 +6566,7 @@ namespace MyNS
 	public enum GET_ListReceiptRuleSetsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListReceiptRuleSets")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListReceiptRuleSets = 0,
 	}
 	
@@ -6829,7 +6587,7 @@ namespace MyNS
 	public enum GET_ListTemplatesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListTemplates")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListTemplates = 0,
 	}
 	
@@ -6850,7 +6608,7 @@ namespace MyNS
 	public enum GET_ListVerifiedEmailAddressesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListVerifiedEmailAddresses")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListVerifiedEmailAddresses = 0,
 	}
 	
@@ -6878,7 +6636,7 @@ namespace MyNS
 	public enum GET_PutConfigurationSetDeliveryOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutConfigurationSetDeliveryOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutConfigurationSetDeliveryOptions = 0,
 	}
 	
@@ -6899,7 +6657,7 @@ namespace MyNS
 	public enum GET_PutIdentityPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutIdentityPolicy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutIdentityPolicy = 0,
 	}
 	
@@ -6920,7 +6678,7 @@ namespace MyNS
 	public enum GET_ReorderReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReorderReceiptRuleSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReorderReceiptRuleSet = 0,
 	}
 	
@@ -6958,7 +6716,7 @@ namespace MyNS
 	public enum GET_SendBounceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendBounce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SendBounce = 0,
 	}
 	
@@ -6979,7 +6737,7 @@ namespace MyNS
 	public enum GET_SendBulkTemplatedEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendBulkTemplatedEmail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SendBulkTemplatedEmail = 0,
 	}
 	
@@ -7000,7 +6758,7 @@ namespace MyNS
 	public enum GET_SendCustomVerificationEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendCustomVerificationEmail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SendCustomVerificationEmail = 0,
 	}
 	
@@ -7052,7 +6810,7 @@ namespace MyNS
 	public enum GET_SendEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendEmail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SendEmail = 0,
 	}
 	
@@ -7084,7 +6842,7 @@ namespace MyNS
 	public enum GET_SendRawEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendRawEmail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SendRawEmail = 0,
 	}
 	
@@ -7118,7 +6876,7 @@ namespace MyNS
 	public enum GET_SendTemplatedEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendTemplatedEmail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SendTemplatedEmail = 0,
 	}
 	
@@ -7139,7 +6897,7 @@ namespace MyNS
 	public enum GET_SetActiveReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetActiveReceiptRuleSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetActiveReceiptRuleSet = 0,
 	}
 	
@@ -7160,7 +6918,7 @@ namespace MyNS
 	public enum GET_SetIdentityDkimEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityDkimEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetIdentityDkimEnabled = 0,
 	}
 	
@@ -7181,7 +6939,7 @@ namespace MyNS
 	public enum GET_SetIdentityFeedbackForwardingEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityFeedbackForwardingEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetIdentityFeedbackForwardingEnabled = 0,
 	}
 	
@@ -7202,7 +6960,7 @@ namespace MyNS
 	public enum GET_SetIdentityHeadersInNotificationsEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityHeadersInNotificationsEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetIdentityHeadersInNotificationsEnabled = 0,
 	}
 	
@@ -7223,7 +6981,7 @@ namespace MyNS
 	public enum GET_SetIdentityMailFromDomainAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityMailFromDomain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetIdentityMailFromDomain = 0,
 	}
 	
@@ -7244,7 +7002,7 @@ namespace MyNS
 	public enum GET_SetIdentityNotificationTopicAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityNotificationTopic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetIdentityNotificationTopic = 0,
 	}
 	
@@ -7265,7 +7023,7 @@ namespace MyNS
 	public enum GET_SetReceiptRulePositionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetReceiptRulePosition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetReceiptRulePosition = 0,
 	}
 	
@@ -7286,7 +7044,7 @@ namespace MyNS
 	public enum GET_TestRenderTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TestRenderTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TestRenderTemplate = 0,
 	}
 	
@@ -7307,7 +7065,7 @@ namespace MyNS
 	public enum GET_UpdateAccountSendingEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateAccountSendingEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateAccountSendingEnabled = 0,
 	}
 	
@@ -7358,7 +7116,7 @@ namespace MyNS
 	public enum GET_UpdateConfigurationSetEventDestinationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateConfigurationSetEventDestination")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateConfigurationSetEventDestination = 0,
 	}
 	
@@ -7379,7 +7137,7 @@ namespace MyNS
 	public enum GET_UpdateConfigurationSetReputationMetricsEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateConfigurationSetReputationMetricsEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateConfigurationSetReputationMetricsEnabled = 0,
 	}
 	
@@ -7400,7 +7158,7 @@ namespace MyNS
 	public enum GET_UpdateConfigurationSetSendingEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateConfigurationSetSendingEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateConfigurationSetSendingEnabled = 0,
 	}
 	
@@ -7428,7 +7186,7 @@ namespace MyNS
 	public enum GET_UpdateConfigurationSetTrackingOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateConfigurationSetTrackingOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateConfigurationSetTrackingOptions = 0,
 	}
 	
@@ -7449,7 +7207,7 @@ namespace MyNS
 	public enum GET_UpdateCustomVerificationEmailTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateCustomVerificationEmailTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateCustomVerificationEmailTemplate = 0,
 	}
 	
@@ -7496,7 +7254,7 @@ namespace MyNS
 	public enum GET_UpdateReceiptRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateReceiptRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateReceiptRule = 0,
 	}
 	
@@ -7537,7 +7295,7 @@ namespace MyNS
 	public enum GET_UpdateTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateTemplate = 0,
 	}
 	
@@ -7558,7 +7316,7 @@ namespace MyNS
 	public enum GET_VerifyDomainDkimAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyDomainDkim")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VerifyDomainDkim = 0,
 	}
 	
@@ -7579,7 +7337,7 @@ namespace MyNS
 	public enum GET_VerifyDomainIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyDomainIdentity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VerifyDomainIdentity = 0,
 	}
 	
@@ -7600,7 +7358,7 @@ namespace MyNS
 	public enum GET_VerifyEmailAddressAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyEmailAddress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VerifyEmailAddress = 0,
 	}
 	
@@ -7621,7 +7379,7 @@ namespace MyNS
 	public enum GET_VerifyEmailIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyEmailIdentity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VerifyEmailIdentity = 0,
 	}
 	

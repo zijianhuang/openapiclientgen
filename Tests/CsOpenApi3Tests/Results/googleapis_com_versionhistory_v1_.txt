@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Each Channel is owned by a Platform and owns a collection of versions. Possible Channels are listed in the Channel enum below. Not all Channels are available for every Platform (e.g. CANARY does not exist for LINUX).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -38,42 +37,39 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelChannelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BETA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEV = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY_ASAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY_ASAN = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTENDED = 7,
 	}
 	
 	/// <summary>
 	/// Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive). The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Interval
 	{
 		
@@ -93,8 +89,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListChannels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListChannelsResponse
 	{
 		
@@ -114,8 +109,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListPlatforms.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlatformsResponse
 	{
 		
@@ -135,8 +129,7 @@ namespace MyNS
 	/// <summary>
 	/// Each Platform is owned by a Product and owns a collection of channels. Available platforms are listed in Platform enum below. Not all Channels are available for every Platform (e.g. CANARY does not exist for LINUX).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Platform
 	{
 		
@@ -153,63 +146,60 @@ namespace MyNS
 		public System.Nullable<PlatformPlatformType> PlatformType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlatformPlatformType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATFORM_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATFORM_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIN64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIN64 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEBVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEBVIEW = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC_ARM64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC_ARM64 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LACROS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LACROS = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LACROS_ARM32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LACROS_ARM32 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROMEOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROMEOS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LACROS_ARM64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LACROS_ARM64 = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FUCHSIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FUCHSIA = 14,
 	}
 	
 	/// <summary>
 	/// Response message for ListReleases.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReleasesResponse
 	{
 		
@@ -229,8 +219,7 @@ namespace MyNS
 	/// <summary>
 	/// A Release is owned by a Version. A Release contains information about the release(s) of its parent version. This includes when the release began and ended, as well as what percentage it was released at. If the version is released again, or if the serving percentage changes, it will create another release under the version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Release
 	{
 		
@@ -268,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListVersions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVersionsResponse
 	{
 		
@@ -289,8 +277,7 @@ namespace MyNS
 	/// <summary>
 	/// Each Version is owned by a Channel. A Version only displays the Version number (e.g. 84.0.4147.38). A Version owns a collection of releases.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Version
 	{
 		

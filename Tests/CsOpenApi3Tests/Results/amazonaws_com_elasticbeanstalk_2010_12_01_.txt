@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientPrivilegesException
 	{
 	}
@@ -26,8 +25,7 @@ namespace MyNS
 	/// <summary>
 	/// The result message containing information about the managed action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplyEnvironmentManagedActionResult
 	{
 		
@@ -44,30 +42,26 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InstanceRefresh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InstanceRefresh = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PlatformUpdate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PlatformUpdate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticBeanstalkServiceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedActionInvalidStateException
 	{
 	}
@@ -75,8 +69,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates if the specified CNAME is available.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckDNSAvailabilityResultMessage
 	{
 		
@@ -90,8 +83,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message containing a list of environment descriptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentDescriptionsMessage
 	{
 		
@@ -105,8 +97,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentDescription
 	{
 		
@@ -174,95 +165,88 @@ namespace MyNS
 		public string OperationsRole { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Aborting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Aborting = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Launching")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Launching = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Updating = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LinkingFrom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LinkingFrom = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LinkingTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LinkingTo = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ready")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ready = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terminating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terminating = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terminated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terminated = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentHealth
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Green")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Green = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yellow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yellow = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Red")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Red = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Grey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Grey = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentHealthStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoData")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoData = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ok")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ok = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Info")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Info = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Warning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Warning = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Degraded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Degraded = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Severe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Severe = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Suspended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Suspended = 8,
 	}
 	
 	/// <summary>
 	/// Describes the AWS resources in use by this environment. This data is not live data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentResourcesDescription
 	{
 		
@@ -273,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the details of a LoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoadBalancerDescription
 	{
 		
@@ -291,8 +274,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of a Listener for the LoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Listener
 	{
 		
@@ -306,8 +288,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of an environment tier
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentTier
 	{
 		
@@ -324,8 +305,7 @@ namespace MyNS
 	/// <summary>
 	/// A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentLink
 	{
 		
@@ -336,8 +316,7 @@ namespace MyNS
 		public string EnvironmentName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyEnvironmentsException
 	{
 	}
@@ -345,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message containing a single description of an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationDescriptionMessage
 	{
 		
@@ -357,8 +335,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationDescription
 	{
 		
@@ -390,8 +367,7 @@ namespace MyNS
 	/// <summary>
 	/// The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationResourceLifecycleConfig
 	{
 		
@@ -405,8 +381,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationVersionLifecycleConfig
 	{
 		
@@ -420,8 +395,7 @@ namespace MyNS
 	/// <summary>
 	/// A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxCountRule
 	{
 		
@@ -442,8 +416,7 @@ namespace MyNS
 	/// <summary>
 	/// A lifecycle rule that deletes application versions after the specified number of days.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxAgeRule
 	{
 		
@@ -464,8 +437,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a tag applied to a resource in an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -476,8 +448,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyApplicationsException
 	{
 	}
@@ -485,8 +456,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message wrapping a single description of an application version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationVersionDescriptionMessage
 	{
 		
@@ -497,8 +467,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of an application version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationVersionDescription
 	{
 		
@@ -536,8 +505,7 @@ namespace MyNS
 	/// <summary>
 	/// Location of the source code for an application version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceBuildInformation
 	{
 		
@@ -563,37 +531,32 @@ namespace MyNS
 		public string SourceLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Git")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Git = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Zip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Zip = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SourceRepository
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CodeCommit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CodeCommit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3 = 1,
 	}
 	
 	/// <summary>
 	/// The bucket and key of an item stored in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Location
 	{
 		
@@ -604,58 +567,51 @@ namespace MyNS
 		public string S3Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationVersionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Processed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Processed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unprocessed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unprocessed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Processing = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Building")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Building = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUILD_GENERAL1_SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUILD_GENERAL1_SMALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUILD_GENERAL1_MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUILD_GENERAL1_MEDIUM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUILD_GENERAL1_LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUILD_GENERAL1_LARGE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyApplicationVersionsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3LocationNotInServiceRegionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeBuildNotInServiceRegionException
 	{
 	}
@@ -663,8 +619,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the settings for a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationSettingsDescription
 	{
 		
@@ -699,27 +654,24 @@ namespace MyNS
 		public ConfigurationOptionSetting[] OptionSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigurationDeploymentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deployed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deployed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 2,
 	}
 	
 	/// <summary>
 	/// A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationOptionSetting
 	{
 		
@@ -736,14 +688,12 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyBucketsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyConfigurationTemplatesException
 	{
 	}
@@ -751,8 +701,7 @@ namespace MyNS
 	/// <summary>
 	/// A specification identifying an individual configuration option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OptionSpecification
 	{
 		
@@ -766,8 +715,7 @@ namespace MyNS
 		public string OptionName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePlatformVersionResult
 	{
 		
@@ -781,8 +729,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information about a platform version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlatformSummary
 	{
 		
@@ -823,33 +770,30 @@ namespace MyNS
 		public string PlatformBranchLifecycleState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlatformStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Creating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Creating = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ready")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ready = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleting = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleted = 4,
 	}
 	
 	/// <summary>
 	/// The builder used to build the custom platform.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Builder
 	{
 		
@@ -857,8 +801,7 @@ namespace MyNS
 		public string ARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyPlatformsException
 	{
 	}
@@ -866,8 +809,7 @@ namespace MyNS
 	/// <summary>
 	/// Results of a <a>CreateStorageLocationResult</a> call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStorageLocationResultMessage
 	{
 		
@@ -875,26 +817,22 @@ namespace MyNS
 		public string S3Bucket { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3SubscriptionRequiredException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationInProgressException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceBundleDeletionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePlatformVersionResult
 	{
 		
@@ -902,14 +840,12 @@ namespace MyNS
 		public PlatformSummary PlatformSummary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlatformVersionStillReferencedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAccountAttributesResult
 	{
 		
@@ -920,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceQuotas
 	{
 		
@@ -944,8 +879,7 @@ namespace MyNS
 	/// <summary>
 	/// The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceQuota
 	{
 		
@@ -956,8 +890,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message wrapping a list of application version descriptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationVersionDescriptionsMessage
 	{
 		
@@ -971,8 +904,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message containing a list of application descriptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationDescriptionsMessage
 	{
 		
@@ -983,8 +915,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the settings for a specified configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationOptionsDescription
 	{
 		
@@ -1001,8 +932,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the possible values for a configuration option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationOptionDescription
 	{
 		
@@ -1040,24 +970,21 @@ namespace MyNS
 		public OptionRestrictionRegex Regex { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigurationOptionValueType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Scalar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Scalar = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="List")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		List = 1,
 	}
 	
 	/// <summary>
 	/// A regular expression representing a restriction on a string configuration option value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OptionRestrictionRegex
 	{
 		
@@ -1071,8 +998,7 @@ namespace MyNS
 	/// <summary>
 	/// The results from a request to change the configuration settings of an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationSettingsDescriptions
 	{
 		
@@ -1083,8 +1009,7 @@ namespace MyNS
 	/// <summary>
 	/// Health details for an AWS Elastic Beanstalk environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEnvironmentHealthResult
 	{
 		
@@ -1116,8 +1041,7 @@ namespace MyNS
 	/// <summary>
 	/// Application request metrics for an AWS Elastic Beanstalk environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationMetrics
 	{
 		
@@ -1137,8 +1061,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusCodes
 	{
 		
@@ -1158,8 +1081,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the average latency for the slowest X percent of requests over the last 10 seconds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Latency
 	{
 		
@@ -1191,8 +1113,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents summary information about the health of an instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceHealthSummary
 	{
 		
@@ -1221,39 +1142,36 @@ namespace MyNS
 		public System.Nullable<System.Int32> Severe { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentHealthAttribute
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Status = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Color")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Color = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Causes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Causes = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApplicationMetrics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApplicationMetrics = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InstancesHealth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InstancesHealth = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HealthStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HealthStatus = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RefreshedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RefreshedAt = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRequestException
 	{
 	}
@@ -1261,8 +1179,7 @@ namespace MyNS
 	/// <summary>
 	/// A result message containing a list of completed and failed managed actions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEnvironmentManagedActionHistoryResult
 	{
 		
@@ -1276,8 +1193,7 @@ namespace MyNS
 	/// <summary>
 	/// The record of a completed or failed managed action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedActionHistoryItem
 	{
 		
@@ -1306,55 +1222,50 @@ namespace MyNS
 		public System.DateTimeOffset FinishedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateCancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateCancelled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancellationFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CancellationFailed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RollbackFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RollbackFailed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RollbackSuccessful")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RollbackSuccessful = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalFailure = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidEnvironmentState")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidEnvironmentState = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PermissionsError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PermissionsError = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionHistoryStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 2,
 	}
 	
 	/// <summary>
 	/// The result message containing a list of managed actions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEnvironmentManagedActionsResult
 	{
 		
@@ -1365,8 +1276,7 @@ namespace MyNS
 	/// <summary>
 	/// The record of an upcoming or in-progress managed action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedAction
 	{
 		
@@ -1386,30 +1296,27 @@ namespace MyNS
 		public System.DateTimeOffset WindowStartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Scheduled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Running = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 3,
 	}
 	
 	/// <summary>
 	/// Result message containing a list of environment resource descriptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentResourceDescriptionsMessage
 	{
 		
@@ -1420,8 +1327,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the AWS resources in use by this environment. This data is live.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentResourceDescription
 	{
 		
@@ -1453,8 +1359,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Auto Scaling launch configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScalingGroup
 	{
 		
@@ -1465,8 +1370,7 @@ namespace MyNS
 	/// <summary>
 	/// The description of an Amazon EC2 instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Instance
 	{
 		
@@ -1477,8 +1381,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Auto Scaling launch configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LaunchConfiguration
 	{
 		
@@ -1489,8 +1392,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Amazon EC2 launch template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LaunchTemplate
 	{
 		
@@ -1501,8 +1403,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a LoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoadBalancer
 	{
 		
@@ -1513,8 +1414,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a trigger.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Trigger
 	{
 		
@@ -1525,8 +1425,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a queue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Queue
 	{
 		
@@ -1540,8 +1439,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message wrapping a list of event descriptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDescriptionsMessage
 	{
 		
@@ -1555,8 +1453,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDescription
 	{
 		
@@ -1588,36 +1485,33 @@ namespace MyNS
 		public EventSeverity Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRACE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBUG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBUG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FATAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FATAL = 5,
 	}
 	
 	/// <summary>
 	/// Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeInstancesHealthResult
 	{
 		
@@ -1634,8 +1528,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SingleInstanceHealth
 	{
 		
@@ -1673,8 +1566,7 @@ namespace MyNS
 	/// <summary>
 	/// CPU utilization and load average metrics for an Amazon EC2 instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SystemStatus
 	{
 		
@@ -1688,8 +1580,7 @@ namespace MyNS
 	/// <summary>
 	/// CPU utilization metrics for an instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CPUUtilization
 	{
 		
@@ -1721,8 +1612,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an application version deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deployment
 	{
 		
@@ -1739,48 +1629,45 @@ namespace MyNS
 		public System.DateTimeOffset DeploymentTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstancesHealthAttribute
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HealthStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HealthStatus = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Color")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Color = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Causes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Causes = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApplicationMetrics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApplicationMetrics = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RefreshedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RefreshedAt = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LaunchedAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LaunchedAt = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="System")]
 		_System = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deployment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deployment = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AvailabilityZone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AvailabilityZone = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InstanceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InstanceType = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePlatformVersionResult
 	{
 		
@@ -1791,8 +1678,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed information about a platform version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlatformDescription
 	{
 		
@@ -1863,8 +1749,7 @@ namespace MyNS
 	/// <summary>
 	/// A programming language supported by the platform.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlatformProgrammingLanguage
 	{
 		
@@ -1878,8 +1763,7 @@ namespace MyNS
 	/// <summary>
 	/// A framework supported by the platform.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlatformFramework
 	{
 		
@@ -1893,8 +1777,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom AMI available to platforms.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomAmi
 	{
 		
@@ -1908,8 +1791,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of available AWS Elastic Beanstalk solution stacks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAvailableSolutionStacksResultMessage
 	{
 		
@@ -1923,8 +1805,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the solution stack.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SolutionStackDescription
 	{
 		
@@ -1935,8 +1816,7 @@ namespace MyNS
 		public string[] PermittedFileTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlatformBranchesResult
 	{
 		
@@ -1950,8 +1830,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information about a platform branch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlatformBranchSummary
 	{
 		
@@ -1974,8 +1853,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes criteria to restrict a list of results.</p> <p>For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code> </p> <p>Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code> </p> <p>The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchFilter
 	{
 		
@@ -1989,8 +1867,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlatformVersionsResult
 	{
 		
@@ -2004,8 +1881,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes criteria to restrict the results when listing platform versions.</p> <p>The filter is evaluated as follows: <code>Type Operator Values[1]</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlatformFilter
 	{
 		
@@ -2019,8 +1895,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceTagsDescriptionMessage
 	{
 		
@@ -2031,14 +1906,12 @@ namespace MyNS
 		public Tag[] ResourceTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceTypeNotSupportedException
 	{
 	}
@@ -2046,8 +1919,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message containing a description of the requested environment info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetrieveEnvironmentInfoResultMessage
 	{
 		
@@ -2058,8 +1930,7 @@ namespace MyNS
 	/// <summary>
 	/// The information retrieved from the Amazon EC2 instances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentInfoDescription
 	{
 		
@@ -2076,21 +1947,18 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentInfoType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tail = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bundle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bundle = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationResourceLifecycleDescriptionMessage
 	{
 		
@@ -2101,8 +1969,7 @@ namespace MyNS
 		public ApplicationResourceLifecycleConfig ResourceLifecycleConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
@@ -2110,8 +1977,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a list of validation messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationSettingsValidationMessages
 	{
 		
@@ -2122,8 +1988,7 @@ namespace MyNS
 	/// <summary>
 	/// An error or warning for a desired configuration option value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationMessage
 	{
 		
@@ -2140,24 +2005,21 @@ namespace MyNS
 		public string OptionName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValidationSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="warning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		warning = 1,
 	}
 	
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbortEnvironmentUpdateMessage
 	{
 		
@@ -2171,8 +2033,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to execute a scheduled managed action immediately.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplyEnvironmentManagedActionRequest
 	{
 		
@@ -2193,8 +2054,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to add or change the operations role used by an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateEnvironmentOperationsRoleMessage
 	{
 		
@@ -2216,8 +2076,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for an AWS CodeBuild build.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildConfiguration
 	{
 		
@@ -2248,8 +2107,7 @@ namespace MyNS
 	/// <summary>
 	/// Results message indicating whether a CNAME is available.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckDNSAvailabilityMessage
 	{
 		
@@ -2264,8 +2122,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to create or update a group of environments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComposeEnvironmentsMessage
 	{
 		
@@ -2282,8 +2139,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to create an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApplicationMessage
 	{
 		
@@ -2307,8 +2163,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApplicationVersionMessage
 	{
 		
@@ -2351,8 +2206,7 @@ namespace MyNS
 	/// <summary>
 	/// A specification for an environment configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceConfiguration
 	{
 		
@@ -2366,8 +2220,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to create a configuration template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationTemplateMessage
 	{
 		
@@ -2410,8 +2263,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEnvironmentMessage
 	{
 		
@@ -2465,8 +2317,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to create a new platform version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePlatformVersionRequest
 	{
 		
@@ -2504,8 +2355,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to delete an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationMessage
 	{
 		
@@ -2523,8 +2373,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to delete an application version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationVersionMessage
 	{
 		
@@ -2549,8 +2398,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to delete a configuration template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationTemplateMessage
 	{
 		
@@ -2572,8 +2420,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to delete a draft environment configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEnvironmentConfigurationMessage
 	{
 		
@@ -2592,8 +2439,7 @@ namespace MyNS
 		public string EnvironmentName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePlatformVersionRequest
 	{
 		
@@ -2604,8 +2450,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to describe application versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeApplicationVersionsMessage
 	{
 		
@@ -2625,8 +2470,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to describe one or more applications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeApplicationsMessage
 	{
 		
@@ -2637,8 +2481,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message containing a list of application version descriptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationOptionsMessage
 	{
 		
@@ -2664,8 +2507,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message containing all of the configuration settings for a specified solution stack or configuration template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationSettingsMessage
 	{
 		
@@ -2686,8 +2528,7 @@ namespace MyNS
 	/// <summary>
 	/// See the example below to learn how to create a request body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEnvironmentHealthRequest
 	{
 		
@@ -2704,8 +2545,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to list completed and failed managed actions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEnvironmentManagedActionHistoryRequest
 	{
 		
@@ -2725,8 +2565,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to list an environment's upcoming and in-progress managed actions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEnvironmentManagedActionsRequest
 	{
 		
@@ -2743,8 +2582,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to describe the resources in an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEnvironmentResourcesMessage
 	{
 		
@@ -2758,8 +2596,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to describe one or more environments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEnvironmentsMessage
 	{
 		
@@ -2791,8 +2628,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to retrieve a list of events for an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventsMessage
 	{
 		
@@ -2836,8 +2672,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a call to <code>DescribeInstancesHealth</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeInstancesHealthRequest
 	{
 		
@@ -2854,8 +2689,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePlatformVersionRequest
 	{
 		
@@ -2866,8 +2700,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to disassociate the operations role from an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateEnvironmentOperationsRoleMessage
 	{
 		
@@ -2879,8 +2712,7 @@ namespace MyNS
 		public string EnvironmentName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlatformBranchesRequest
 	{
 		
@@ -2894,8 +2726,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlatformVersionsRequest
 	{
 		
@@ -2909,8 +2740,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceMessage
 	{
 		
@@ -2925,8 +2755,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RebuildEnvironmentMessage
 	{
 		
@@ -2940,8 +2769,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestEnvironmentInfoMessage
 	{
 		
@@ -2962,8 +2790,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestartAppServerMessage
 	{
 		
@@ -2977,8 +2804,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetrieveEnvironmentInfoMessage
 	{
 		
@@ -2999,8 +2825,7 @@ namespace MyNS
 	/// <summary>
 	/// Swaps the CNAMEs of two environments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SwapEnvironmentCNAMEsMessage
 	{
 		
@@ -3020,8 +2845,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to terminate an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TerminateEnvironmentMessage
 	{
 		
@@ -3041,8 +2865,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApplicationMessage
 	{
 		
@@ -3057,8 +2880,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApplicationResourceLifecycleMessage
 	{
 		
@@ -3080,8 +2902,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApplicationVersionMessage
 	{
 		
@@ -3106,8 +2927,7 @@ namespace MyNS
 	/// <summary>
 	/// The result message containing the options for the specified solution stack.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationTemplateMessage
 	{
 		
@@ -3138,8 +2958,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEnvironmentMessage
 	{
 		
@@ -3180,8 +2999,7 @@ namespace MyNS
 		public OptionSpecification[] OptionsToRemove { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTagsForResourceMessage
 	{
 		
@@ -3202,8 +3020,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of validation messages for a specified configuration template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateConfigurationSettingsMessage
 	{
 		
@@ -5004,7 +4821,7 @@ namespace MyNS
 	public enum GET_AbortEnvironmentUpdateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AbortEnvironmentUpdate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AbortEnvironmentUpdate = 0,
 	}
 	
@@ -5025,7 +4842,7 @@ namespace MyNS
 	public enum GET_ApplyEnvironmentManagedActionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApplyEnvironmentManagedAction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApplyEnvironmentManagedAction = 0,
 	}
 	
@@ -5046,7 +4863,7 @@ namespace MyNS
 	public enum GET_AssociateEnvironmentOperationsRoleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssociateEnvironmentOperationsRole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssociateEnvironmentOperationsRole = 0,
 	}
 	
@@ -5067,7 +4884,7 @@ namespace MyNS
 	public enum GET_CheckDNSAvailabilityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CheckDNSAvailability")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CheckDNSAvailability = 0,
 	}
 	
@@ -5088,7 +4905,7 @@ namespace MyNS
 	public enum GET_ComposeEnvironmentsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ComposeEnvironments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ComposeEnvironments = 0,
 	}
 	
@@ -5119,7 +4936,7 @@ namespace MyNS
 	public enum GET_CreateApplicationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateApplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateApplication = 0,
 	}
 	
@@ -5202,7 +5019,7 @@ namespace MyNS
 	public enum GET_CreateApplicationVersionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateApplicationVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateApplicationVersion = 0,
 	}
 	
@@ -5233,7 +5050,7 @@ namespace MyNS
 	public enum GET_CreateConfigurationTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateConfigurationTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateConfigurationTemplate = 0,
 	}
 	
@@ -5267,7 +5084,7 @@ namespace MyNS
 	public enum GET_CreateEnvironmentAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateEnvironment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateEnvironment = 0,
 	}
 	
@@ -5298,7 +5115,7 @@ namespace MyNS
 	public enum GET_CreatePlatformVersionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatePlatformVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreatePlatformVersion = 0,
 	}
 	
@@ -5319,7 +5136,7 @@ namespace MyNS
 	public enum GET_CreateStorageLocationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateStorageLocation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateStorageLocation = 0,
 	}
 	
@@ -5340,7 +5157,7 @@ namespace MyNS
 	public enum GET_DeleteApplicationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteApplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteApplication = 0,
 	}
 	
@@ -5361,7 +5178,7 @@ namespace MyNS
 	public enum GET_DeleteApplicationVersionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteApplicationVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteApplicationVersion = 0,
 	}
 	
@@ -5382,7 +5199,7 @@ namespace MyNS
 	public enum GET_DeleteConfigurationTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteConfigurationTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteConfigurationTemplate = 0,
 	}
 	
@@ -5403,7 +5220,7 @@ namespace MyNS
 	public enum GET_DeleteEnvironmentConfigurationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteEnvironmentConfiguration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteEnvironmentConfiguration = 0,
 	}
 	
@@ -5424,7 +5241,7 @@ namespace MyNS
 	public enum GET_DeletePlatformVersionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeletePlatformVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeletePlatformVersion = 0,
 	}
 	
@@ -5445,7 +5262,7 @@ namespace MyNS
 	public enum GET_DescribeAccountAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAccountAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAccountAttributes = 0,
 	}
 	
@@ -5466,7 +5283,7 @@ namespace MyNS
 	public enum GET_DescribeApplicationVersionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeApplicationVersions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeApplicationVersions = 0,
 	}
 	
@@ -5487,7 +5304,7 @@ namespace MyNS
 	public enum GET_DescribeApplicationsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeApplications")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeApplications = 0,
 	}
 	
@@ -5508,7 +5325,7 @@ namespace MyNS
 	public enum GET_DescribeConfigurationOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeConfigurationOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeConfigurationOptions = 0,
 	}
 	
@@ -5529,7 +5346,7 @@ namespace MyNS
 	public enum GET_DescribeConfigurationSettingsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeConfigurationSettings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeConfigurationSettings = 0,
 	}
 	
@@ -5550,7 +5367,7 @@ namespace MyNS
 	public enum GET_DescribeEnvironmentHealthAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEnvironmentHealth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEnvironmentHealth = 0,
 	}
 	
@@ -5571,7 +5388,7 @@ namespace MyNS
 	public enum GET_DescribeEnvironmentManagedActionHistoryAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEnvironmentManagedActionHistory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEnvironmentManagedActionHistory = 0,
 	}
 	
@@ -5592,7 +5409,7 @@ namespace MyNS
 	public enum GET_DescribeEnvironmentManagedActionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEnvironmentManagedActions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEnvironmentManagedActions = 0,
 	}
 	
@@ -5613,7 +5430,7 @@ namespace MyNS
 	public enum GET_DescribeEnvironmentResourcesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEnvironmentResources")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEnvironmentResources = 0,
 	}
 	
@@ -5634,7 +5451,7 @@ namespace MyNS
 	public enum GET_DescribeEnvironmentsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEnvironments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEnvironments = 0,
 	}
 	
@@ -5655,7 +5472,7 @@ namespace MyNS
 	public enum GET_DescribeEventsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEvents")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEvents = 0,
 	}
 	
@@ -5676,7 +5493,7 @@ namespace MyNS
 	public enum GET_DescribeInstancesHealthAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeInstancesHealth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeInstancesHealth = 0,
 	}
 	
@@ -5697,7 +5514,7 @@ namespace MyNS
 	public enum GET_DescribePlatformVersionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribePlatformVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribePlatformVersion = 0,
 	}
 	
@@ -5718,7 +5535,7 @@ namespace MyNS
 	public enum GET_DisassociateEnvironmentOperationsRoleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisassociateEnvironmentOperationsRole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DisassociateEnvironmentOperationsRole = 0,
 	}
 	
@@ -5739,7 +5556,7 @@ namespace MyNS
 	public enum GET_ListAvailableSolutionStacksAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListAvailableSolutionStacks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListAvailableSolutionStacks = 0,
 	}
 	
@@ -5760,7 +5577,7 @@ namespace MyNS
 	public enum GET_ListPlatformBranchesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListPlatformBranches")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListPlatformBranches = 0,
 	}
 	
@@ -5781,7 +5598,7 @@ namespace MyNS
 	public enum GET_ListPlatformVersionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListPlatformVersions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListPlatformVersions = 0,
 	}
 	
@@ -5802,7 +5619,7 @@ namespace MyNS
 	public enum GET_ListTagsForResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListTagsForResource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListTagsForResource = 0,
 	}
 	
@@ -5823,7 +5640,7 @@ namespace MyNS
 	public enum GET_RebuildEnvironmentAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RebuildEnvironment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RebuildEnvironment = 0,
 	}
 	
@@ -5844,7 +5661,7 @@ namespace MyNS
 	public enum GET_RequestEnvironmentInfoAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestEnvironmentInfo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestEnvironmentInfo = 0,
 	}
 	
@@ -5865,7 +5682,7 @@ namespace MyNS
 	public enum GET_RestartAppServerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestartAppServer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RestartAppServer = 0,
 	}
 	
@@ -5886,7 +5703,7 @@ namespace MyNS
 	public enum GET_RetrieveEnvironmentInfoAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RetrieveEnvironmentInfo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RetrieveEnvironmentInfo = 0,
 	}
 	
@@ -5907,7 +5724,7 @@ namespace MyNS
 	public enum GET_SwapEnvironmentCNAMEsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SwapEnvironmentCNAMEs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SwapEnvironmentCNAMEs = 0,
 	}
 	
@@ -5928,7 +5745,7 @@ namespace MyNS
 	public enum GET_TerminateEnvironmentAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TerminateEnvironment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TerminateEnvironment = 0,
 	}
 	
@@ -5949,7 +5766,7 @@ namespace MyNS
 	public enum GET_UpdateApplicationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateApplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateApplication = 0,
 	}
 	
@@ -5980,7 +5797,7 @@ namespace MyNS
 	public enum GET_UpdateApplicationResourceLifecycleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateApplicationResourceLifecycle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateApplicationResourceLifecycle = 0,
 	}
 	
@@ -6001,7 +5818,7 @@ namespace MyNS
 	public enum GET_UpdateApplicationVersionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateApplicationVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateApplicationVersion = 0,
 	}
 	
@@ -6022,7 +5839,7 @@ namespace MyNS
 	public enum GET_UpdateConfigurationTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateConfigurationTemplate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateConfigurationTemplate = 0,
 	}
 	
@@ -6056,7 +5873,7 @@ namespace MyNS
 	public enum GET_UpdateEnvironmentAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateEnvironment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateEnvironment = 0,
 	}
 	
@@ -6077,7 +5894,7 @@ namespace MyNS
 	public enum GET_UpdateTagsForResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateTagsForResource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateTagsForResource = 0,
 	}
 	
@@ -6098,7 +5915,7 @@ namespace MyNS
 	public enum GET_ValidateConfigurationSettingsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ValidateConfigurationSettings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ValidateConfigurationSettings = 0,
 	}
 	

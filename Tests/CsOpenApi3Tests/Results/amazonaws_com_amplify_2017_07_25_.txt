@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAppResult
 	{
 		
@@ -34,8 +33,7 @@ namespace MyNS
 	/// <summary>
 	///  Represents the different branches of a repository for building, deploying, and hosting an Amplify app. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App
 	{
 		
@@ -160,30 +158,26 @@ namespace MyNS
 		public RepositoryCloneMethod RepositoryCloneMethod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Platform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_DYNAMIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_DYNAMIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_COMPUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_COMPUTE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentVariables
 	{
 	}
@@ -191,8 +185,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes a custom rewrite or redirect rule. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomRule
 	{
 		
@@ -220,8 +213,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the information about a production branch for an Amplify app. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductionBranch
 	{
 		
@@ -241,8 +233,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the automated branch creation configuration. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoBranchCreationConfig
 	{
 		
@@ -277,70 +268,61 @@ namespace MyNS
 		public string PullRequestEnvironmentName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Stage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BETA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVELOPMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVELOPMENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPERIMENTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPERIMENTAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PULL_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PULL_REQUEST = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepositoryCloneMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOKEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOKEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIGV4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIGV4 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnauthorizedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalFailureException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DependentServiceFailureException
 	{
 	}
@@ -348,8 +330,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the create backend environment request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendEnvironmentResult
 	{
 		
@@ -364,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the backend environment for an Amplify app. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendEnvironment
 	{
 		
@@ -404,8 +384,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
@@ -413,8 +392,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for create branch request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBranchResult
 	{
 		
@@ -429,8 +407,7 @@ namespace MyNS
 	/// <summary>
 	///  The branch for an Amplify app, which maps to a third-party repository branch. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Branch
 	{
 		
@@ -587,8 +564,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the create a new deployment request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeploymentResult
 	{
 		
@@ -610,8 +586,7 @@ namespace MyNS
 		public string ZipUploadUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileUploadUrls
 	{
 	}
@@ -619,8 +594,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the create domain association request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDomainAssociationResult
 	{
 		
@@ -635,8 +609,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes a domain association that associates a custom domain with an Amplify app. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainAssociation
 	{
 		
@@ -692,42 +665,39 @@ namespace MyNS
 		public SubDomain[] SubDomains { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_VERIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_VERIFICATION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_DEPLOYMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_DEPLOYMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUESTING_CERTIFICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUESTING_CERTIFICATE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 7,
 	}
 	
 	/// <summary>
 	///  The subdomain for the domain association. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubDomain
 	{
 		
@@ -756,8 +726,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the settings for the subdomain. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubDomainSetting
 	{
 		
@@ -779,8 +748,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the create webhook request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWebhookResult
 	{
 		
@@ -795,8 +763,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes a webhook that connects repository events to an Amplify app. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Webhook
 	{
 		
@@ -853,8 +820,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the delete app request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAppResult
 	{
 		
@@ -870,8 +836,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure of the delete backend environment result. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendEnvironmentResult
 	{
 		
@@ -886,8 +851,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the delete branch request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBranchResult
 	{
 		
@@ -899,8 +863,7 @@ namespace MyNS
 		public Branch Branch { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDomainAssociationResult
 	{
 		
@@ -916,8 +879,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the delete job request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteJobResult
 	{
 		
@@ -933,8 +895,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the summary for an execution job for an Amplify app. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobSummary
 	{
 		
@@ -998,58 +959,53 @@ namespace MyNS
 		public JobType JobType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANUAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_HOOK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_HOOK = 3,
 	}
 	
 	/// <summary>
 	///  The result structure for the delete webhook request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWebhookResult
 	{
 		
@@ -1064,8 +1020,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the generate access logs request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateAccessLogsResult
 	{
 		
@@ -1073,8 +1028,7 @@ namespace MyNS
 		public string LogUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppResult
 	{
 		
@@ -1090,8 +1044,7 @@ namespace MyNS
 	/// <summary>
 	///  Returns the result structure for the get artifact request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetArtifactUrlResult
 	{
 		
@@ -1113,8 +1066,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the get backend environment result. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendEnvironmentResult
 	{
 		
@@ -1126,8 +1078,7 @@ namespace MyNS
 		public BackendEnvironment BackendEnvironment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBranchResult
 	{
 		
@@ -1143,8 +1094,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the get domain association request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainAssociationResult
 	{
 		
@@ -1156,8 +1106,7 @@ namespace MyNS
 		public DomainAssociation DomainAssociation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobResult
 	{
 		
@@ -1173,8 +1122,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes an execution job for an Amplify app. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Job
 	{
 		
@@ -1196,8 +1144,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes an execution step, for an execution job, for an Amplify app. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Step
 	{
 		
@@ -1251,8 +1198,7 @@ namespace MyNS
 		public string Context { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Screenshots
 	{
 	}
@@ -1260,8 +1206,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the get webhook request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebhookResult
 	{
 		
@@ -1276,8 +1221,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for an Amplify app list request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAppsResult
 	{
 		
@@ -1295,8 +1239,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the list artifacts request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListArtifactsResult
 	{
 		
@@ -1314,8 +1257,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes an artifact. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Artifact
 	{
 		
@@ -1337,8 +1279,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the list backend environments result. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBackendEnvironmentsResult
 	{
 		
@@ -1356,8 +1297,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the list branches request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBranchesResult
 	{
 		
@@ -1375,8 +1315,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the list domain association request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainAssociationsResult
 	{
 		
@@ -1394,8 +1333,7 @@ namespace MyNS
 	/// <summary>
 	///  The maximum number of records to list in a single response. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsResult
 	{
 		
@@ -1413,8 +1351,7 @@ namespace MyNS
 	/// <summary>
 	///  The response for the list tags for resource request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -1422,8 +1359,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
@@ -1431,8 +1367,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the list webhooks request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebhooksResult
 	{
 		
@@ -1450,8 +1385,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the start a deployment request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDeploymentResult
 	{
 		
@@ -1466,8 +1400,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the run job request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartJobResult
 	{
 		
@@ -1482,8 +1415,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the stop job request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopJobResult
 	{
 		
@@ -1498,8 +1430,7 @@ namespace MyNS
 	/// <summary>
 	///  The response for the tag resource request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
@@ -1507,8 +1438,7 @@ namespace MyNS
 	/// <summary>
 	///  The response for the untag resource request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
@@ -1516,8 +1446,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for an Amplify app update request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAppResult
 	{
 		
@@ -1532,8 +1461,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the update branch request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBranchResult
 	{
 		
@@ -1548,8 +1476,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the update domain association request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDomainAssociationResult
 	{
 		
@@ -1564,8 +1491,7 @@ namespace MyNS
 	/// <summary>
 	///  The result structure for the update webhook request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWebhookResult
 	{
 		
@@ -1580,8 +1506,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure used to create apps in Amplify. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAppRequest
 	{
 		
@@ -1650,8 +1575,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the backend environment create request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendEnvironmentRequest
 	{
 		
@@ -1672,8 +1596,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the create branch request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBranchRequest
 	{
 		
@@ -1733,8 +1656,7 @@ namespace MyNS
 		public string BackendEnvironmentArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileMap
 	{
 	}
@@ -1742,8 +1664,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the create a new deployment request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeploymentRequest
 	{
 		
@@ -1754,8 +1675,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the create domain association request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDomainAssociationRequest
 	{
 		
@@ -1786,8 +1706,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the create webhook request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWebhookRequest
 	{
 		
@@ -1805,8 +1724,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the request structure for the delete app request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAppRequest
 	{
 	}
@@ -1814,8 +1732,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the delete backend environment request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendEnvironmentRequest
 	{
 	}
@@ -1823,8 +1740,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the delete branch request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBranchRequest
 	{
 	}
@@ -1832,8 +1748,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the delete domain association request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDomainAssociationRequest
 	{
 	}
@@ -1841,8 +1756,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the delete job request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteJobRequest
 	{
 	}
@@ -1850,8 +1764,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the delete webhook request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWebhookRequest
 	{
 	}
@@ -1859,8 +1772,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the generate access logs request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateAccessLogsRequest
 	{
 		
@@ -1881,8 +1793,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the get app request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppRequest
 	{
 	}
@@ -1890,8 +1801,7 @@ namespace MyNS
 	/// <summary>
 	///  Returns the request structure for the get artifact request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetArtifactUrlRequest
 	{
 	}
@@ -1899,8 +1809,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the get backend environment request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendEnvironmentRequest
 	{
 	}
@@ -1908,8 +1817,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the get branch request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBranchRequest
 	{
 	}
@@ -1917,8 +1825,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the get domain association request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDomainAssociationRequest
 	{
 	}
@@ -1926,8 +1833,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the get job request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobRequest
 	{
 	}
@@ -1935,8 +1841,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the get webhook request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebhookRequest
 	{
 	}
@@ -1944,8 +1849,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the list apps request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAppsRequest
 	{
 	}
@@ -1953,8 +1857,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the request structure for the list artifacts request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListArtifactsRequest
 	{
 	}
@@ -1962,8 +1865,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the list backend environments request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBackendEnvironmentsRequest
 	{
 	}
@@ -1971,8 +1873,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the list branches request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBranchesRequest
 	{
 	}
@@ -1980,8 +1881,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the list domain associations request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainAssociationsRequest
 	{
 	}
@@ -1989,8 +1889,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the list jobs request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsRequest
 	{
 	}
@@ -1998,8 +1897,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure to use to list tags for a resource. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
@@ -2007,8 +1905,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the list webhooks request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebhooksRequest
 	{
 	}
@@ -2016,8 +1913,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the start a deployment request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDeploymentRequest
 	{
 		
@@ -2031,8 +1927,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the start job request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartJobRequest
 	{
 		
@@ -2062,8 +1957,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the stop job request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopJobRequest
 	{
 	}
@@ -2071,8 +1965,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure to tag a resource with a tag key and value. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -2087,8 +1980,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the untag resource request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -2096,8 +1988,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the update app request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAppRequest
 	{
 		
@@ -2159,8 +2050,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the update branch request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBranchRequest
 	{
 		
@@ -2213,8 +2103,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the update domain association request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDomainAssociationRequest
 	{
 		
@@ -2234,8 +2123,7 @@ namespace MyNS
 	/// <summary>
 	///  The request structure for the update webhook request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWebhookRequest
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Ad break.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdBreak
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for AES-128 encryption.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Aes128Encryption
 	{
 	}
@@ -44,8 +42,7 @@ namespace MyNS
 	/// <summary>
 	/// Animation types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Animation
 	{
 		
@@ -71,8 +68,7 @@ namespace MyNS
 	/// <summary>
 	/// End previous overlay animation from the video. Without `AnimationEnd`, the overlay object will keep the state of previous animation until the end of the video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnimationEnd
 	{
 		
@@ -86,8 +82,7 @@ namespace MyNS
 	/// <summary>
 	/// Display overlay object with fade animation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnimationFade
 	{
 		
@@ -116,27 +111,24 @@ namespace MyNS
 		public NormalizedCoordinate Xy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnimationFadeFadeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FADE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FADE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FADE_IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FADE_IN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FADE_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FADE_OUT = 2,
 	}
 	
 	/// <summary>
 	/// 2D normalized coordinates. Default: `{0.0, 0.0}`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormalizedCoordinate
 	{
 		
@@ -156,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// Display static overlay object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnimationStatic
 	{
 		
@@ -177,8 +168,7 @@ namespace MyNS
 	/// <summary>
 	/// Audio preprocessing configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Audio
 	{
 		
@@ -204,8 +194,7 @@ namespace MyNS
 	/// <summary>
 	/// The mapping for the JobConfig.edit_list atoms with audio EditAtom.inputs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioMapping
 	{
 		
@@ -249,8 +238,7 @@ namespace MyNS
 	/// <summary>
 	/// Audio stream resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioStream
 	{
 		
@@ -306,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// Bob Weaver Deinterlacing Filter Configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BwdifConfig
 	{
 		
@@ -333,8 +320,7 @@ namespace MyNS
 	/// <summary>
 	/// Clearkey configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Clearkey
 	{
 	}
@@ -342,8 +328,7 @@ namespace MyNS
 	/// <summary>
 	/// Color preprocessing configuration. **Note:** This configuration is not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Color
 	{
 		
@@ -369,8 +354,7 @@ namespace MyNS
 	/// <summary>
 	/// Video cropping configuration for the input video. The cropped input video is scaled to match the output resolution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Crop
 	{
 		
@@ -402,8 +386,7 @@ namespace MyNS
 	/// <summary>
 	/// `DASH` manifest configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DashConfig
 	{
 		
@@ -414,27 +397,24 @@ namespace MyNS
 		public System.Nullable<DashConfigSegmentReferenceScheme> SegmentReferenceScheme { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DashConfigSegmentReferenceScheme
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEGMENT_REFERENCE_SCHEME_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEGMENT_REFERENCE_SCHEME_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEGMENT_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEGMENT_LIST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEGMENT_TEMPLATE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEGMENT_TEMPLATE_NUMBER = 2,
 	}
 	
 	/// <summary>
 	/// Deblock preprocessing configuration. **Note:** This configuration is not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deblock
 	{
 		
@@ -454,8 +434,7 @@ namespace MyNS
 	/// <summary>
 	/// Deinterlace configuration for input video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deinterlace
 	{
 		
@@ -475,8 +454,7 @@ namespace MyNS
 	/// <summary>
 	/// Yet Another Deinterlacing Filter Configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class YadifConfig
 	{
 		
@@ -508,8 +486,7 @@ namespace MyNS
 	/// <summary>
 	/// Denoise preprocessing configuration. **Note:** This configuration is not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Denoise
 	{
 		
@@ -529,8 +506,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines configuration for DRM systems in use.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DrmSystems
 	{
 		
@@ -562,8 +538,7 @@ namespace MyNS
 	/// <summary>
 	/// Fairplay configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fairplay
 	{
 	}
@@ -571,8 +546,7 @@ namespace MyNS
 	/// <summary>
 	/// Playready configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Playready
 	{
 	}
@@ -580,8 +554,7 @@ namespace MyNS
 	/// <summary>
 	/// Widevine configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Widevine
 	{
 	}
@@ -589,8 +562,7 @@ namespace MyNS
 	/// <summary>
 	/// Edit atom.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditAtom
 	{
 		
@@ -622,8 +594,7 @@ namespace MyNS
 	/// <summary>
 	/// Encoding of an input file such as an audio, video, or text track. Elementary streams must be packaged before mapping and sharing between different output formats.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElementaryStream
 	{
 		
@@ -655,8 +626,7 @@ namespace MyNS
 	/// <summary>
 	/// Encoding of a text stream. For example, closed captions or subtitles.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextStream
 	{
 		
@@ -688,8 +658,7 @@ namespace MyNS
 	/// <summary>
 	/// The mapping for the JobConfig.edit_list atoms with text EditAtom.inputs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextMapping
 	{
 		
@@ -715,8 +684,7 @@ namespace MyNS
 	/// <summary>
 	/// Video stream resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoStream
 	{
 		
@@ -742,8 +710,7 @@ namespace MyNS
 	/// <summary>
 	/// H264 codec settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class H264CodecSettings
 	{
 		
@@ -871,8 +838,7 @@ namespace MyNS
 	/// <summary>
 	/// H265 codec settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class H265CodecSettings
 	{
 		
@@ -994,8 +960,7 @@ namespace MyNS
 	/// <summary>
 	/// VP9 codec settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Vp9CodecSettings
 	{
 		
@@ -1063,8 +1028,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -1072,8 +1036,7 @@ namespace MyNS
 	/// <summary>
 	/// Encryption settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Encryption
 	{
 		
@@ -1117,8 +1080,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for MPEG Common Encryption (MPEG-CENC).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MpegCommonEncryption
 	{
 		
@@ -1132,8 +1094,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for SAMPLE-AES encryption.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SampleAesEncryption
 	{
 	}
@@ -1141,8 +1102,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for secrets stored in Google Secret Manager.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecretManagerSource
 	{
 		
@@ -1156,8 +1116,7 @@ namespace MyNS
 	/// <summary>
 	/// `fmp4` container configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fmp4Config
 	{
 		
@@ -1171,8 +1130,7 @@ namespace MyNS
 	/// <summary>
 	/// Overlaid image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image
 	{
 		
@@ -1198,8 +1156,7 @@ namespace MyNS
 	/// <summary>
 	/// Input asset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Input
 	{
 		
@@ -1225,8 +1182,7 @@ namespace MyNS
 	/// <summary>
 	/// Preprocessing configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PreprocessingConfig
 	{
 		
@@ -1276,8 +1232,7 @@ namespace MyNS
 	/// <summary>
 	/// Pad filter configuration for the input video. The padded input video is scaled after padding with black to match the output resolution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pad
 	{
 		
@@ -1309,8 +1264,7 @@ namespace MyNS
 	/// <summary>
 	/// Transcoding job resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Job
 	{
 		
@@ -1408,8 +1362,7 @@ namespace MyNS
 	/// <summary>
 	/// Job configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobConfig
 	{
 		
@@ -1483,8 +1436,7 @@ namespace MyNS
 	/// <summary>
 	/// Manifest configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Manifest
 	{
 		
@@ -1513,27 +1465,24 @@ namespace MyNS
 		public System.Nullable<ManifestType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ManifestType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANIFEST_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANIFEST_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HLS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HLS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DASH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DASH = 2,
 	}
 	
 	/// <summary>
 	/// Multiplexing settings for output stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MuxStream
 	{
 		
@@ -1583,8 +1532,7 @@ namespace MyNS
 	/// <summary>
 	/// Segment settings for `ts`, `fmp4` and `vtt`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentSettings
 	{
 		
@@ -1604,8 +1552,7 @@ namespace MyNS
 	/// <summary>
 	/// Location of output file(s) in a Cloud Storage bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Output
 	{
 		
@@ -1619,8 +1566,7 @@ namespace MyNS
 	/// <summary>
 	/// Overlay configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Overlay
 	{
 		
@@ -1640,8 +1586,7 @@ namespace MyNS
 	/// <summary>
 	/// A Pub/Sub destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PubsubDestination
 	{
 		
@@ -1655,8 +1600,7 @@ namespace MyNS
 	/// <summary>
 	/// Sprite sheet configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpriteSheet
 	{
 		
@@ -1730,8 +1674,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1754,65 +1697,58 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_MODE_INTERACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_MODE_INTERACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_MODE_BATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_MODE_BATCH = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobOptimization
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIMIZATION_STRATEGY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIMIZATION_STRATEGY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTODETECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTODETECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 	}
 	
 	/// <summary>
 	/// Transcoding job template resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobTemplate
 	{
 		
@@ -1838,8 +1774,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TranscoderService.ListJobTemplates`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobTemplatesResponse
 	{
 		
@@ -1865,8 +1800,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TranscoderService.ListJobs`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsResponse
 	{
 		

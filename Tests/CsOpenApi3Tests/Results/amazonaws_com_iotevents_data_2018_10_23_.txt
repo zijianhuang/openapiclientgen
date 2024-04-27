@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAcknowledgeAlarmResponse
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains error messages associated with one of the following requests:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchAcknowledgeAlarm.html">BatchAcknowledgeAlarm</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDisableAlarm.html">BatchDisableAlarm</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchEnableAlarm.html">BatchEnableAlarm</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchResetAlarm.html">BatchResetAlarm</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchSnoozeAlarm.html">BatchSnoozeAlarm</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAlarmActionErrorEntry
 	{
 		
@@ -44,33 +42,30 @@ namespace MyNS
 		public string ErrorMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFoundException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFoundException = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidRequestException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidRequestException = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalFailureException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalFailureException = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceUnavailableException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceUnavailableException = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThrottlingException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ThrottlingException = 4,
 	}
 	
 	/// <summary>
 	/// Information needed to acknowledge the alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcknowledgeAlarmActionRequest
 	{
 		
@@ -95,32 +90,27 @@ namespace MyNS
 		public string Note { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalFailureException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteDetectorResponse
 	{
 		
@@ -131,8 +121,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains error messages associated with the deletion request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteDetectorErrorEntry
 	{
 		
@@ -149,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	/// Information used to delete the detector model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDetectorRequest
 	{
 		
@@ -172,8 +160,7 @@ namespace MyNS
 		public string KeyValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDisableAlarmResponse
 	{
 		
@@ -184,8 +171,7 @@ namespace MyNS
 	/// <summary>
 	/// Information used to disable the alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableAlarmActionRequest
 	{
 		
@@ -210,8 +196,7 @@ namespace MyNS
 		public string Note { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchEnableAlarmResponse
 	{
 		
@@ -222,8 +207,7 @@ namespace MyNS
 	/// <summary>
 	/// Information needed to enable the alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableAlarmActionRequest
 	{
 		
@@ -248,8 +232,7 @@ namespace MyNS
 		public string Note { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPutMessageResponse
 	{
 		
@@ -260,8 +243,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the errors encountered.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPutMessageErrorEntry
 	{
 		
@@ -278,8 +260,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -311,8 +292,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a timestamp.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimestampValue
 	{
 		
@@ -320,8 +300,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TimeInMillis { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchResetAlarmResponse
 	{
 		
@@ -332,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// Information needed to reset the alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetAlarmActionRequest
 	{
 		
@@ -358,8 +336,7 @@ namespace MyNS
 		public string Note { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchSnoozeAlarmResponse
 	{
 		
@@ -370,8 +347,7 @@ namespace MyNS
 	/// <summary>
 	/// Information needed to snooze the alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnoozeAlarmActionRequest
 	{
 		
@@ -403,8 +379,7 @@ namespace MyNS
 		public int SnoozeDuration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDetectorResponse
 	{
 		
@@ -415,8 +390,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the error that occurred when attempting to update a detector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDetectorErrorEntry
 	{
 		
@@ -433,8 +407,7 @@ namespace MyNS
 	/// <summary>
 	/// Information used to update the detector (instance).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDetectorRequest
 	{
 		
@@ -466,8 +439,7 @@ namespace MyNS
 	/// <summary>
 	/// The new state, variable values, and timer settings of the detector (instance).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectorStateDefinition
 	{
 		
@@ -496,8 +468,7 @@ namespace MyNS
 	/// <summary>
 	/// The new value of the variable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VariableDefinition
 	{
 		
@@ -519,8 +490,7 @@ namespace MyNS
 	/// <summary>
 	/// The new setting of a timer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimerDefinition
 	{
 		
@@ -539,8 +509,7 @@ namespace MyNS
 		public int Seconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlarmResponse
 	{
 		
@@ -551,8 +520,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alarm
 	{
 		
@@ -581,8 +549,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the current state of the alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlarmState
 	{
 		
@@ -599,36 +566,33 @@ namespace MyNS
 		public SystemEvent SystemEvent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlarmStateName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORMAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACKNOWLEDGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACKNOWLEDGED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNOOZE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNOOZE_DISABLED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATCHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATCHED = 5,
 	}
 	
 	/// <summary>
 	/// Information needed to evaluate data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleEvaluation
 	{
 		
@@ -639,8 +603,7 @@ namespace MyNS
 	/// <summary>
 	/// Information needed to compare two values with a comparison operator.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleRuleEvaluation
 	{
 		
@@ -654,36 +617,33 @@ namespace MyNS
 		public string ThresholdValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_OR_EQUAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_OR_EQUAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUAL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_EQUAL = 5,
 	}
 	
 	/// <summary>
 	/// Contains information about the action that you can take to respond to the alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerAction
 	{
 		
@@ -706,33 +666,30 @@ namespace MyNS
 		public ResetActionConfiguration ResetActionConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomerActionName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNOOZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNOOZE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACKNOWLEDGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACKNOWLEDGE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESET = 4,
 	}
 	
 	/// <summary>
 	/// Contains the configuration information of a snooze action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnoozeActionConfiguration
 	{
 		
@@ -746,8 +703,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the configuration information of an enable action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableActionConfiguration
 	{
 		
@@ -758,8 +714,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the configuration information of a disable action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableActionConfiguration
 	{
 		
@@ -770,8 +725,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the configuration information of an acknowledge action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcknowledgeActionConfiguration
 	{
 		
@@ -782,8 +736,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the configuration information of a reset action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetActionConfiguration
 	{
 		
@@ -794,8 +747,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about alarm state changes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SystemEvent
 	{
 		
@@ -806,21 +758,18 @@ namespace MyNS
 		public StateChangeConfiguration StateChangeConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_CHANGE = 0,
 	}
 	
 	/// <summary>
 	/// Contains the configuration information of alarm state changes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateChangeConfiguration
 	{
 		
@@ -828,24 +777,20 @@ namespace MyNS
 		public TriggerType TriggerType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TriggerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNOOZE_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNOOZE_TIMEOUT = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDetectorResponse
 	{
 		
@@ -856,8 +801,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the detector (instance).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Detector
 	{
 		
@@ -883,8 +827,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the current state of the detector instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectorState
 	{
 		
@@ -913,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// The current state of the variable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Variable
 	{
 		
@@ -936,8 +878,7 @@ namespace MyNS
 	/// <summary>
 	/// The current state of a timer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timer
 	{
 		
@@ -956,8 +897,7 @@ namespace MyNS
 		public System.DateTimeOffset Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAlarmsResponse
 	{
 		
@@ -971,8 +911,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a summary of an alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlarmSummary
 	{
 		
@@ -995,8 +934,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDetectorsResponse
 	{
 		
@@ -1010,8 +948,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the detector (instance).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectorSummary
 	{
 		
@@ -1037,8 +974,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the detector state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectorStateSummary
 	{
 		
@@ -1046,8 +982,7 @@ namespace MyNS
 		public string StateName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAcknowledgeAlarmRequest
 	{
 		
@@ -1059,8 +994,7 @@ namespace MyNS
 		public AcknowledgeAlarmActionRequest[] AcknowledgeActionRequests { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteDetectorRequest
 	{
 		
@@ -1072,8 +1006,7 @@ namespace MyNS
 		public DeleteDetectorRequest[] Detectors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDisableAlarmRequest
 	{
 		
@@ -1085,8 +1018,7 @@ namespace MyNS
 		public DisableAlarmActionRequest[] DisableActionRequests { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchEnableAlarmRequest
 	{
 		
@@ -1098,8 +1030,7 @@ namespace MyNS
 		public EnableAlarmActionRequest[] EnableActionRequests { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPutMessageRequest
 	{
 		
@@ -1111,8 +1042,7 @@ namespace MyNS
 		public Message[] Messages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchResetAlarmRequest
 	{
 		
@@ -1124,8 +1054,7 @@ namespace MyNS
 		public ResetAlarmActionRequest[] ResetActionRequests { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchSnoozeAlarmRequest
 	{
 		
@@ -1137,8 +1066,7 @@ namespace MyNS
 		public SnoozeAlarmActionRequest[] SnoozeActionRequests { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDetectorRequest
 	{
 		
@@ -1150,26 +1078,22 @@ namespace MyNS
 		public UpdateDetectorRequest[] Detectors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlarmRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDetectorRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAlarmsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDetectorsRequest
 	{
 	}

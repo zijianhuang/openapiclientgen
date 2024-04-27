@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the type and number of accelerator cards attached to the instances of an instance. See GPUs on Compute Engine (https://cloud.google.com/compute/docs/gpus/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceleratorConfig
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Autoscaling Policy config associated with the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoscalingConfig
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an autoscaling policy for Dataproc cluster autoscaler.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoscalingPolicy
 	{
 		
@@ -101,8 +98,7 @@ namespace MyNS
 	/// <summary>
 	/// Basic algorithm for autoscaling.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BasicAutoscalingAlgorithm
 	{
 		
@@ -128,8 +124,7 @@ namespace MyNS
 	/// <summary>
 	/// Basic autoscaling configurations for Spark Standalone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparkStandaloneAutoscalingConfig
 	{
 		
@@ -173,8 +168,7 @@ namespace MyNS
 	/// <summary>
 	/// Basic autoscaling configurations for YARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BasicYarnAutoscalingConfig
 	{
 		
@@ -212,8 +206,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for the size bounds of an instance group, including its proportional size to other groups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceGroupAutoscalingPolicyConfig
 	{
 		
@@ -239,8 +232,7 @@ namespace MyNS
 	/// <summary>
 	/// Node group identification and configuration information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuxiliaryNodeGroup
 	{
 		
@@ -260,8 +252,7 @@ namespace MyNS
 	/// <summary>
 	/// Dataproc Node Group. The Dataproc NodeGroup resource is not related to the Dataproc NodeGroupAffinity resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeGroup
 	{
 		
@@ -293,8 +284,7 @@ namespace MyNS
 	/// <summary>
 	/// The config settings for Compute Engine resources in an instance group, such as a master or worker group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceGroupConfig
 	{
 		
@@ -386,8 +376,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the config of disk options for a group of VM instances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiskConfig
 	{
 		
@@ -419,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// Instance flexibility Policy allowing a mixture of VM shapes and provisioning models.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceFlexibilityPolicy
 	{
 		
@@ -440,8 +428,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines machines types and a rank to which the machines types belong.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceSelection
 	{
 		
@@ -461,8 +448,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a mapping from machine types to the number of VMs that are created with each machine type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceSelectionResult
 	{
 		
@@ -482,8 +468,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a Compute Engine instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceReference
 	{
 		
@@ -515,8 +500,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the resources used to actively manage an instance group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedGroupConfig
 	{
 		
@@ -539,30 +523,27 @@ namespace MyNS
 		public string InstanceTemplateName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceGroupConfigPreemptibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREEMPTIBILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREEMPTIBILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_PREEMPTIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_PREEMPTIBLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREEMPTIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREEMPTIBLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT = 3,
 	}
 	
 	/// <summary>
 	/// Configuration to handle the startup of instances during cluster create and update process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartupConfig
 	{
 		
@@ -576,8 +557,7 @@ namespace MyNS
 	/// <summary>
 	/// Auxiliary services configuration for a Cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuxiliaryServicesConfig
 	{
 		
@@ -597,8 +577,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a Metastore configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetastoreConfig
 	{
 		
@@ -612,8 +591,7 @@ namespace MyNS
 	/// <summary>
 	/// Spark History Server configuration for the workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparkHistoryServerConfig
 	{
 		
@@ -627,8 +605,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a batch workload in the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Batch
 	{
 		
@@ -738,8 +715,7 @@ namespace MyNS
 	/// <summary>
 	/// Environment configuration for a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentConfig
 	{
 		
@@ -759,8 +735,7 @@ namespace MyNS
 	/// <summary>
 	/// Execution configuration for a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionConfig
 	{
 		
@@ -816,8 +791,7 @@ namespace MyNS
 	/// <summary>
 	/// Auxiliary services configuration for a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PeripheralsConfig
 	{
 		
@@ -837,8 +811,7 @@ namespace MyNS
 	/// <summary>
 	/// A configuration for running an Apache PySpark (https://spark.apache.org/docs/latest/api/python/getting_started/quickstart.html) batch workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PySparkBatch
 	{
 		
@@ -882,8 +855,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime configuration for a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuntimeConfig
 	{
 		
@@ -915,8 +887,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for dependency repositories
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepositoryConfig
 	{
 		
@@ -930,8 +901,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for PyPi repository
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PyPiRepositoryConfig
 	{
 		
@@ -945,8 +915,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime information about workload execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuntimeInfo
 	{
 		
@@ -984,8 +953,7 @@ namespace MyNS
 	/// <summary>
 	/// Usage metrics represent approximate total resources consumed by a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageMetrics
 	{
 		
@@ -1017,8 +985,7 @@ namespace MyNS
 	/// <summary>
 	/// The usage snapshot represents the resources consumed by a workload at a specified time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageSnapshot
 	{
 		
@@ -1068,8 +1035,7 @@ namespace MyNS
 	/// <summary>
 	/// A configuration for running an Apache Spark (https://spark.apache.org/) batch workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparkBatch
 	{
 		
@@ -1113,8 +1079,7 @@ namespace MyNS
 	/// <summary>
 	/// A configuration for running an Apache SparkR (https://spark.apache.org/docs/latest/sparkr.html) batch workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparkRBatch
 	{
 		
@@ -1146,8 +1111,7 @@ namespace MyNS
 	/// <summary>
 	/// A configuration for running Apache Spark SQL (https://spark.apache.org/sql/) queries as a batch workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparkSqlBatch
 	{
 		
@@ -1170,39 +1134,36 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> QueryVariables { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 6,
 	}
 	
 	/// <summary>
 	/// Historical state information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateHistory
 	{
 		
@@ -1228,8 +1189,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing the Batch operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchOperationMetadata
 	{
 		
@@ -1282,24 +1242,21 @@ namespace MyNS
 		public string[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchOperationMetadataOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATCH_OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATCH = 1,
 	}
 	
 	/// <summary>
 	/// Associates members, or principals, with a role.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -1325,8 +1282,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec.Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -1358,8 +1314,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to cancel a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelJobRequest
 	{
 	}
@@ -1367,8 +1322,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the identifying information, config, and status of a Dataproc cluster
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cluster
 	{
 		
@@ -1430,8 +1384,7 @@ namespace MyNS
 	/// <summary>
 	/// The cluster config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterConfig
 	{
 		
@@ -1541,8 +1494,7 @@ namespace MyNS
 	/// <summary>
 	/// Dataproc metric config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataprocMetricConfig
 	{
 		
@@ -1556,8 +1508,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc custom metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metric
 	{
 		
@@ -1574,45 +1525,42 @@ namespace MyNS
 		public System.Nullable<MetricMetricSource> MetricSource { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricMetricSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_SOURCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_SOURCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONITORING_AGENT_DEFAULTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONITORING_AGENT_DEFAULTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HDFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HDFS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPARK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPARK = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YARN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPARK_HISTORY_SERVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPARK_HISTORY_SERVER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIVESERVER2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIVESERVER2 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIVEMETASTORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIVEMETASTORE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLINK = 8,
 	}
 	
 	/// <summary>
 	/// Encryption settings for the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionConfig
 	{
 		
@@ -1632,8 +1580,7 @@ namespace MyNS
 	/// <summary>
 	/// Endpoint config for this cluster
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointConfig
 	{
 		
@@ -1653,8 +1600,7 @@ namespace MyNS
 	/// <summary>
 	/// Common config settings for resources of Compute Engine cluster instances, applicable to all instances in the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GceClusterConfig
 	{
 		
@@ -1740,8 +1686,7 @@ namespace MyNS
 	/// <summary>
 	/// Confidential Instance Config for clusters using Confidential VMs (https://cloud.google.com/compute/confidential-vm/docs)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfidentialInstanceConfig
 	{
 		
@@ -1755,8 +1700,7 @@ namespace MyNS
 	/// <summary>
 	/// Node Group Affinity for clusters using sole-tenant node groups. The Dataproc NodeGroupAffinity resource is not related to the Dataproc NodeGroup resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeGroupAffinity
 	{
 		
@@ -1767,30 +1711,27 @@ namespace MyNS
 		public string NodeGroupUri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GceClusterConfigPrivateIpv6GoogleAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INHERIT_FROM_SUBNETWORK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INHERIT_FROM_SUBNETWORK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTBOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTBOUND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIDIRECTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIDIRECTIONAL = 3,
 	}
 	
 	/// <summary>
 	/// Reservation Affinity for consuming Zonal reservation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservationAffinity
 	{
 		
@@ -1813,30 +1754,27 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReservationAffinityConsumeReservationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_RESERVATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_RESERVATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY_RESERVATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY_RESERVATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPECIFIC_RESERVATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPECIFIC_RESERVATION = 3,
 	}
 	
 	/// <summary>
 	/// Shielded Instance Config for clusters using Compute Engine Shielded VMs (https://cloud.google.com/security/shielded-cloud/shielded-vm).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShieldedInstanceConfig
 	{
 		
@@ -1862,8 +1800,7 @@ namespace MyNS
 	/// <summary>
 	/// The cluster's GKE config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GkeClusterConfig
 	{
 		
@@ -1889,8 +1826,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. Used only for the deprecated beta. A full, namespace-isolated deployment target for an existing GKE cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamespacedGkeDeploymentTarget
 	{
 		
@@ -1910,8 +1846,7 @@ namespace MyNS
 	/// <summary>
 	/// GKE node pools that Dataproc workloads run on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GkeNodePoolTarget
 	{
 		
@@ -1937,8 +1872,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of a GKE node pool used by a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GkeNodePoolConfig
 	{
 		
@@ -1964,8 +1898,7 @@ namespace MyNS
 	/// <summary>
 	/// GkeNodePoolAutoscaling contains information the cluster autoscaler needs to adjust the size of the node pool to the current cluster usage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GkeNodePoolAutoscalingConfig
 	{
 		
@@ -1985,8 +1918,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters that describe cluster nodes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GkeNodeConfig
 	{
 		
@@ -2036,8 +1968,7 @@ namespace MyNS
 	/// <summary>
 	/// A GkeNodeConfigAcceleratorConfig represents a Hardware Accelerator request for a node pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GkeNodePoolAcceleratorConfig
 	{
 		
@@ -2063,8 +1994,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an executable to run on a fully configured node and a timeout period for executable completion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeInitializationAction
 	{
 		
@@ -2084,8 +2014,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the cluster auto-delete schedule configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LifecycleConfig
 	{
 		
@@ -2117,8 +2046,7 @@ namespace MyNS
 	/// <summary>
 	/// Security related configuration, including encryption, Kerberos, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecurityConfig
 	{
 		
@@ -2138,8 +2066,7 @@ namespace MyNS
 	/// <summary>
 	/// Identity related configuration, including service account based secure multi-tenancy user mappings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityConfig
 	{
 		
@@ -2153,8 +2080,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies Kerberos related configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KerberosConfig
 	{
 		
@@ -2252,8 +2178,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the selection and config of software inside the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareConfig
 	{
 		
@@ -2279,8 +2204,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains cluster daemon metrics, such as HDFS and YARN stats.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterMetrics
 	{
 		
@@ -2300,8 +2224,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of a cluster and its instances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterStatus
 	{
 		
@@ -2330,67 +2253,62 @@ namespace MyNS
 		public System.Nullable<ClusterStatusSubstate> Substate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_DUE_TO_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_DUE_TO_UPDATE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPAIRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPAIRING = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterStatusSubstate
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNHEALTHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNHEALTHY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STALE_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STALE_STATUS = 2,
 	}
 	
 	/// <summary>
 	/// The Dataproc cluster config for a cluster that does not directly control the underlying compute resources, such as a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VirtualClusterConfig
 	{
 		
@@ -2416,8 +2334,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for running the Dataproc cluster on Kubernetes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KubernetesClusterConfig
 	{
 		
@@ -2443,8 +2360,7 @@ namespace MyNS
 	/// <summary>
 	/// The software configuration for this Dataproc cluster running on Kubernetes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KubernetesSoftwareConfig
 	{
 		
@@ -2464,8 +2380,7 @@ namespace MyNS
 	/// <summary>
 	/// The cluster operation triggered by a workflow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperation
 	{
 		
@@ -2491,8 +2406,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperationMetadata
 	{
 		
@@ -2554,8 +2468,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOperationStatus
 	{
 		
@@ -2584,30 +2497,27 @@ namespace MyNS
 		public string StateStartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterOperationStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONE = 3,
 	}
 	
 	/// <summary>
 	/// A selector that chooses target cluster for jobs based on metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSelector
 	{
 		
@@ -2627,8 +2537,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to collect cluster diagnostic information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiagnoseClusterRequest
 	{
 		
@@ -2678,8 +2587,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive).The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Interval
 	{
 		
@@ -2696,27 +2604,24 @@ namespace MyNS
 		public string StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DiagnoseClusterRequestTarballAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARBALL_ACCESS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARBALL_ACCESS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_CLOUD_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_CLOUD_SUPPORT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_DATAPROC_DIAGNOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_DATAPROC_DIAGNOSE = 2,
 	}
 	
 	/// <summary>
 	/// The location of diagnostic output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiagnoseClusterResults
 	{
 		
@@ -2730,8 +2635,7 @@ namespace MyNS
 	/// <summary>
 	/// Driver scheduling configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DriverSchedulingConfig
 	{
 		
@@ -2751,8 +2655,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -2760,8 +2663,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job for running Apache Flink applications on YARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlinkJob
 	{
 		
@@ -2811,8 +2713,7 @@ namespace MyNS
 	/// <summary>
 	/// The runtime logging config of the job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingConfig
 	{
 		
@@ -2826,39 +2727,38 @@ namespace MyNS
 	public enum LoggingConfigDriverLogLevels
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRACE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBUG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBUG = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARN = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FATAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FATAL = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 8,
 	}
 	
 	/// <summary>
 	/// Request message for GetIamPolicy method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIamPolicyRequest
 	{
 		
@@ -2872,8 +2772,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates settings provided to GetIamPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPolicyOptions
 	{
 		
@@ -2887,8 +2786,7 @@ namespace MyNS
 	/// <summary>
 	/// Encryption settings for encrypting workflow template job arguments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDataprocV1WorkflowTemplateEncryptionConfig
 	{
 		
@@ -2902,8 +2800,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job for running Apache Hadoop MapReduce (https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) jobs on Apache Hadoop YARN (https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HadoopJob
 	{
 		
@@ -2959,8 +2856,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job for running Apache Hive (https://hive.apache.org/) queries on YARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HiveJob
 	{
 		
@@ -3004,8 +2900,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of queries to run on a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryList
 	{
 		
@@ -3019,8 +2914,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to inject credentials into a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InjectCredentialsRequest
 	{
 		
@@ -3040,8 +2934,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to instantiate a workflow template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstantiateWorkflowTemplateRequest
 	{
 		
@@ -3067,8 +2960,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Job
 	{
 		
@@ -3208,8 +3100,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job for running Apache Pig (https://pig.apache.org/) queries on YARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PigJob
 	{
 		
@@ -3259,8 +3150,7 @@ namespace MyNS
 	/// <summary>
 	/// Dataproc job config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobPlacement
 	{
 		
@@ -3286,8 +3176,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job for running Presto (https://prestosql.io/) queries. IMPORTANT: The Dataproc Presto Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/presto) must be enabled when the cluster is created to submit a Presto job to the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrestoJob
 	{
 		
@@ -3337,8 +3226,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job for running Apache PySpark (https://spark.apache.org/docs/0.9.0/python-programming-guide.html) applications on YARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PySparkJob
 	{
 		
@@ -3394,8 +3282,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates the full scoping used to reference a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobReference
 	{
 		
@@ -3415,8 +3302,7 @@ namespace MyNS
 	/// <summary>
 	/// Job scheduling options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobScheduling
 	{
 		
@@ -3436,8 +3322,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job for running Apache Spark (https://spark.apache.org/) applications on YARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparkJob
 	{
 		
@@ -3493,8 +3378,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job for running Apache SparkR (https://spark.apache.org/docs/latest/sparkr.html) applications on YARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparkRJob
 	{
 		
@@ -3538,8 +3422,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc job for running Apache Spark SQL (https://spark.apache.org/sql/) queries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparkSqlJob
 	{
 		
@@ -3583,8 +3466,7 @@ namespace MyNS
 	/// <summary>
 	/// Dataproc job status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobStatus
 	{
 		
@@ -3613,67 +3495,62 @@ namespace MyNS
 		public System.Nullable<JobStatusSubstate> Substate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SETUP_DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SETUP_DONE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCEL_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCEL_PENDING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCEL_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCEL_STARTED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTEMPT_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTEMPT_FAILURE = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatusSubstate
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMITTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEUED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STALE_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STALE_STATUS = 3,
 	}
 	
 	/// <summary>
 	/// A Dataproc job for running Trino (https://trino.io/) queries. IMPORTANT: The Dataproc Trino Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/trino) must be enabled when the cluster is created to submit a Trino job to the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrinoJob
 	{
 		
@@ -3723,8 +3600,7 @@ namespace MyNS
 	/// <summary>
 	/// A YARN application created by a job. Application information is a subset of org.apache.hadoop.yarn.proto.YarnProtos.ApplicationReportProto.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class YarnApplication
 	{
 		
@@ -3753,45 +3629,42 @@ namespace MyNS
 		public string TrackingUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum YarnApplicationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW_SAVING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW_SAVING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMITTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINISHED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KILLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KILLED = 8,
 	}
 	
 	/// <summary>
 	/// Job Operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobMetadata
 	{
 		
@@ -3823,8 +3696,7 @@ namespace MyNS
 	/// <summary>
 	/// Jupyter configuration for an interactive session.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JupyterConfig
 	{
 		
@@ -3841,27 +3713,24 @@ namespace MyNS
 		public System.Nullable<JupyterConfigKernel> Kernel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JupyterConfigKernel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KERNEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KERNEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PYTHON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PYTHON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCALA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCALA = 2,
 	}
 	
 	/// <summary>
 	/// A response to a request to list autoscaling policies in a project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAutoscalingPoliciesResponse
 	{
 		
@@ -3881,8 +3750,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of batch workloads.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBatchesResponse
 	{
 		
@@ -3908,8 +3776,7 @@ namespace MyNS
 	/// <summary>
 	/// The list of all clusters in a project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersResponse
 	{
 		
@@ -3929,8 +3796,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of jobs in a project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsResponse
 	{
 		
@@ -3956,8 +3822,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -3977,8 +3842,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -4016,8 +3880,7 @@ namespace MyNS
 	/// <summary>
 	/// The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -4043,8 +3906,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of session templates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSessionTemplatesResponse
 	{
 		
@@ -4064,8 +3926,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a session template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SessionTemplate
 	{
 		
@@ -4133,8 +3994,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of interactive sessions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSessionsResponse
 	{
 		
@@ -4154,8 +4014,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a session.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Session
 	{
 		
@@ -4250,36 +4109,33 @@ namespace MyNS
 		public string Uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SessionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 	}
 	
 	/// <summary>
 	/// Historical state information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SessionStateHistory
 	{
 		
@@ -4305,8 +4161,7 @@ namespace MyNS
 	/// <summary>
 	/// A response to a request to list workflow templates in a project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkflowTemplatesResponse
 	{
 		
@@ -4332,8 +4187,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dataproc workflow template resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowTemplate
 	{
 		
@@ -4404,8 +4258,7 @@ namespace MyNS
 	/// <summary>
 	/// A job executed by the workflow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderedJob
 	{
 		
@@ -4497,8 +4350,7 @@ namespace MyNS
 	/// <summary>
 	/// A configurable parameter that replaces one or more fields in the template. Parameterizable fields: - Labels - File uris - Job properties - Job arguments - Script variables - Main class (in HadoopJob and SparkJob) - Zone (in ClusterSelector)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateParameter
 	{
 		
@@ -4530,8 +4382,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for parameter validation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParameterValidation
 	{
 		
@@ -4551,8 +4402,7 @@ namespace MyNS
 	/// <summary>
 	/// Validation based on regular expressions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegexValidation
 	{
 		
@@ -4566,8 +4416,7 @@ namespace MyNS
 	/// <summary>
 	/// Validation based on a list of allowed values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValueValidation
 	{
 		
@@ -4581,8 +4430,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies workflow execution target.Either managed_cluster or cluster_selector is required.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowTemplatePlacement
 	{
 		
@@ -4602,8 +4450,7 @@ namespace MyNS
 	/// <summary>
 	/// Cluster that is managed by the workflow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedCluster
 	{
 		
@@ -4629,8 +4476,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing the node group operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeGroupOperationMetadata
 	{
 		
@@ -4683,36 +4529,33 @@ namespace MyNS
 		public string[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeGroupOperationMetadataOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODE_GROUP_OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODE_GROUP_OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESIZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESIZE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPAIR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPAIR = 5,
 	}
 	
 	/// <summary>
 	/// indicating a list of workers of same type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodePool
 	{
 		
@@ -4735,24 +4578,21 @@ namespace MyNS
 		public System.Nullable<NodePoolRepairAction> RepairAction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodePoolRepairAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPAIR_ACTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPAIR_ACTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 1,
 	}
 	
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources.A Policy is a collection of bindings. A binding binds one or more members, or principals, to a single role. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role.For some types of Google Cloud resources, a binding can also specify a condition, which is a logical expression that allows access to a resource only if the expression evaluates to true. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies).JSON example: { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } YAML example: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 For a description of IAM and its features, see the IAM documentation (https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -4778,8 +4618,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to repair a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepairClusterRequest
 	{
 		
@@ -4817,8 +4656,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to resize a node group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResizeNodeGroupRequest
 	{
 		
@@ -4850,8 +4688,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing the Session operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SessionOperationMetadata
 	{
 		
@@ -4904,30 +4741,27 @@ namespace MyNS
 		public string[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SessionOperationMetadataOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SESSION_OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SESSION_OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 3,
 	}
 	
 	/// <summary>
 	/// Request message for SetIamPolicy method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIamPolicyRequest
 	{
 		
@@ -4941,8 +4775,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to start a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartClusterRequest
 	{
 		
@@ -4962,8 +4795,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to stop a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopClusterRequest
 	{
 		
@@ -4983,8 +4815,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to submit a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubmitJobRequest
 	{
 		
@@ -5004,8 +4835,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to terminate an interactive session.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TerminateSessionRequest
 	{
 		
@@ -5019,8 +4849,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for TestIamPermissions method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsRequest
 	{
 		
@@ -5034,8 +4863,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for TestIamPermissions method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		
@@ -5049,8 +4877,7 @@ namespace MyNS
 	/// <summary>
 	/// The workflow graph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowGraph
 	{
 		
@@ -5064,8 +4891,7 @@ namespace MyNS
 	/// <summary>
 	/// The workflow node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowNode
 	{
 		
@@ -5100,36 +4926,33 @@ namespace MyNS
 		public string StepId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkflowNodeState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 	}
 	
 	/// <summary>
 	/// A Dataproc workflow template resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowMetadata
 	{
 		
@@ -6850,26 +6673,26 @@ namespace MyNS
 	public enum Dataproc_projects_regions_clusters_createActionOnFailedPrimaryWorkers
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE_ACTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILURE_ACTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_ACTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 2,
 	}
 	
 	public enum Dataproc_projects_regions_jobs_listJobStateMatcher
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_ACTIVE = 2,
 	}
 }

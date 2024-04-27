@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -137,60 +136,56 @@ namespace MyNS
 		public long Uncleared_balance { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoanAccountPeriodicValue
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="checking")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		checking = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="savings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		savings = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cash = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="creditCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		creditCard = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lineOfCredit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lineOfCredit = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="otherAsset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		otherAsset = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="otherLiability")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		otherLiability = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mortgage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mortgage = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="autoLoan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		autoLoan = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="studentLoan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		studentLoan = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="personalLoan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		personalLoan = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medicalDebt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medicalDebt = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="otherDebt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		otherDebt = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountResponse
 	{
 		
@@ -213,8 +208,7 @@ namespace MyNS
 		public Account Account { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsResponse
 	{
 		
@@ -245,8 +239,7 @@ namespace MyNS
 		public long Server_knowledge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetDetail : BudgetSummary
 	{
 		
@@ -281,8 +274,7 @@ namespace MyNS
 		public TransactionSummary[] Transactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Category
 	{
 		
@@ -429,33 +421,30 @@ namespace MyNS
 		public string Original_category_group_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CategoryGoal_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TBD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TBD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBT = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_null = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryGroup
 	{
 		
@@ -490,8 +479,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonthDetail : MonthSummary
 	{
 		
@@ -504,8 +492,7 @@ namespace MyNS
 		public Category[] Categories { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PayeeLocation
 	{
 		
@@ -546,8 +533,7 @@ namespace MyNS
 		public string Payee_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Payee
 	{
 		
@@ -580,8 +566,7 @@ namespace MyNS
 		public string Transfer_account_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledSubTransaction
 	{
 		
@@ -631,8 +616,7 @@ namespace MyNS
 		public string Transfer_account_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledTransactionSummary
 	{
 		
@@ -711,82 +695,77 @@ namespace MyNS
 		public string Transfer_account_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduledTransactionSummaryFlag_color
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="red")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		red = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="orange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		orange = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="yellow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		yellow = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="green")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		green = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blue = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purple")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purple = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_null = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduledTransactionSummaryFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="never")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		never = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		daily = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		weekly = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyOtherWeek")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		everyOtherWeek = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="twiceAMonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		twiceAMonth = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="every4Weeks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		every4Weeks = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		monthly = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyOtherMonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		everyOtherMonth = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="every3Months")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		every3Months = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="every4Months")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		every4Months = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="twiceAYear")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		twiceAYear = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="yearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		yearly = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyOtherYear")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		everyOtherYear = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubTransaction
 	{
 		
@@ -848,8 +827,7 @@ namespace MyNS
 		public string Transfer_transaction_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionSummary
 	{
 		
@@ -965,86 +943,79 @@ namespace MyNS
 		public string Transfer_transaction_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransactionSummaryCleared
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cleared")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cleared = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uncleared")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uncleared = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reconciled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reconciled = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransactionSummaryDebt_transaction_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		payment = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="refund")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		refund = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fee = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="interest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		interest = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="escrow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		escrow = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="balancedAdjustment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		balancedAdjustment = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credit = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="charge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		charge = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_null = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransactionSummaryFlag_color
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="red")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		red = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="orange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		orange = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="yellow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		yellow = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="green")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		green = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blue = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purple")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purple = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_null = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetDetailResponse
 	{
 		
@@ -1075,8 +1046,7 @@ namespace MyNS
 		public long Server_knowledge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetSettings
 	{
 		
@@ -1100,8 +1070,7 @@ namespace MyNS
 	/// <summary>
 	/// The currency format setting for the budget.  In some cases the format will not be available and will be specified as null.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CurrencyFormat
 	{
 		
@@ -1165,8 +1134,7 @@ namespace MyNS
 	/// <summary>
 	/// The date format setting for the budget.  In some cases the format will not be available and will be specified as null.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateFormat
 	{
 		
@@ -1178,8 +1146,7 @@ namespace MyNS
 		public string Format { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetSettingsResponse
 	{
 		
@@ -1202,8 +1169,7 @@ namespace MyNS
 		public BudgetSettings Settings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetSummary
 	{
 		
@@ -1258,8 +1224,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetSummaryResponse
 	{
 		
@@ -1285,8 +1250,7 @@ namespace MyNS
 		public BudgetSummary Default_budget { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkResponse
 	{
 		
@@ -1329,8 +1293,7 @@ namespace MyNS
 		public string[] Transaction_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkTransactions
 	{
 		
@@ -1346,8 +1309,7 @@ namespace MyNS
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoriesResponse
 	{
 		
@@ -1378,8 +1340,7 @@ namespace MyNS
 		public long Server_knowledge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryGroupWithCategories : CategoryGroup
 	{
 		
@@ -1392,8 +1353,7 @@ namespace MyNS
 		public Category[] Categories { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryResponse
 	{
 		
@@ -1416,8 +1376,7 @@ namespace MyNS
 		public Category Category { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		
@@ -1443,8 +1402,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorResponse
 	{
 		
@@ -1456,8 +1414,7 @@ namespace MyNS
 		public ErrorDetail Error { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HybridTransaction : TransactionSummary
 	{
 		
@@ -1492,21 +1449,18 @@ namespace MyNS
 		public HybridTransactionType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HybridTransactionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transaction = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subtransaction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subtransaction = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HybridTransactionsResponse
 	{
 		
@@ -1535,8 +1489,7 @@ namespace MyNS
 		public HybridTransaction[] Transactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonthDetailResponse
 	{
 		
@@ -1559,8 +1512,7 @@ namespace MyNS
 		public MonthDetail Month { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonthSummariesResponse
 	{
 		
@@ -1591,8 +1543,7 @@ namespace MyNS
 		public long Server_knowledge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonthSummary
 	{
 		
@@ -1653,8 +1604,7 @@ namespace MyNS
 		public long To_be_budgeted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchMonthCategoryWrapper
 	{
 		
@@ -1666,8 +1616,7 @@ namespace MyNS
 		public SaveMonthCategory Category { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SaveMonthCategory
 	{
 		
@@ -1680,8 +1629,7 @@ namespace MyNS
 		public long Budgeted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchTransactionsWrapper
 	{
 		
@@ -1697,8 +1645,7 @@ namespace MyNS
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PayeeLocationResponse
 	{
 		
@@ -1721,8 +1668,7 @@ namespace MyNS
 		public PayeeLocation Payee_location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PayeeLocationsResponse
 	{
 		
@@ -1745,8 +1691,7 @@ namespace MyNS
 		public PayeeLocation[] Payee_locations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PayeeResponse
 	{
 		
@@ -1769,8 +1714,7 @@ namespace MyNS
 		public Payee Payee { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PayeesResponse
 	{
 		
@@ -1801,8 +1745,7 @@ namespace MyNS
 		public long Server_knowledge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostAccountWrapper
 	{
 		
@@ -1814,8 +1757,7 @@ namespace MyNS
 		public SaveAccount Account { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SaveAccount
 	{
 		
@@ -1844,8 +1786,7 @@ namespace MyNS
 		public AccountType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostTransactionsWrapper
 	{
 		
@@ -1856,8 +1797,7 @@ namespace MyNS
 		public SaveTransaction[] Transactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutTransactionWrapper
 	{
 		
@@ -1869,8 +1809,7 @@ namespace MyNS
 		public SaveTransaction Transaction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SaveCategoryResponse
 	{
 		
@@ -1901,8 +1840,7 @@ namespace MyNS
 		public long Server_knowledge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SaveSubTransaction
 	{
 		
@@ -1942,8 +1880,7 @@ namespace MyNS
 		public string Payee_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SaveTransactionWithOptionalFields
 	{
 		
@@ -2022,36 +1959,33 @@ namespace MyNS
 		public SaveSubTransaction[] Subtransactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SaveTransactionWithOptionalFieldsFlag_color
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="red")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		red = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="orange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		orange = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="yellow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		yellow = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="green")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		green = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blue = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purple")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purple = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_null = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SaveTransactionsResponse
 	{
 		
@@ -2098,8 +2032,7 @@ namespace MyNS
 		public TransactionDetail[] Transactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionDetail : TransactionSummary
 	{
 		
@@ -2128,8 +2061,7 @@ namespace MyNS
 		public SubTransaction[] Subtransactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledTransactionDetail : ScheduledTransactionSummary
 	{
 		
@@ -2158,8 +2090,7 @@ namespace MyNS
 		public ScheduledSubTransaction[] Subtransactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledTransactionResponse
 	{
 		
@@ -2182,8 +2113,7 @@ namespace MyNS
 		public ScheduledTransactionDetail Scheduled_transaction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledTransactionsResponse
 	{
 		
@@ -2214,8 +2144,7 @@ namespace MyNS
 		public long Server_knowledge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionResponse
 	{
 		
@@ -2238,8 +2167,7 @@ namespace MyNS
 		public TransactionDetail Transaction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionsImportResponse
 	{
 		
@@ -2263,8 +2191,7 @@ namespace MyNS
 		public string[] Transaction_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionsResponse
 	{
 		
@@ -2295,8 +2222,7 @@ namespace MyNS
 		public TransactionDetail[] Transactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -2308,8 +2234,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserResponse
 	{
 		
@@ -3489,10 +3414,10 @@ namespace MyNS
 	public enum GetTransactionsByAccountType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uncategorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uncategorized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unapproved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unapproved = 1,
 	}
 }

@@ -734,31 +734,29 @@ namespace MyNS
 		public string Path { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchPostBodyDefaultsMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEAD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRACE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATCH = 6,
 	}
 	

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptSharedDirectoryResult
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SharedDirectory
 	{
 		
@@ -62,55 +60,50 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShareMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATIONS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HANDSHAKE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HANDSHAKE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShareStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Shared")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Shared = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingAcceptance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PendingAcceptance = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejecting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejecting = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RejectFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RejectFailed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sharing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sharing = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ShareFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ShareFailed = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleted = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleting = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptSharedDirectoryRequest
 	{
 		
@@ -122,44 +115,37 @@ namespace MyNS
 		public string SharedDirectoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityDoesNotExistException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryAlreadySharedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddIpRoutesResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddIpRoutesRequest
 	{
 		
@@ -184,8 +170,7 @@ namespace MyNS
 	/// <summary>
 	/// IP address block. This is often the address block of the DNS server used for your self-managed domain. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IpRoute
 	{
 		
@@ -196,32 +181,27 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityAlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IpRouteLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddRegionResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddRegionRequest
 	{
 		
@@ -251,8 +231,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryVpcSettings
 	{
 		
@@ -271,44 +250,37 @@ namespace MyNS
 		public string[] SubnetIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryAlreadyInRegionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedOperationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryDoesNotExistException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegionLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsToResourceResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsToResourceRequest
 	{
 		
@@ -330,8 +302,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata assigned to a directory consisting of a key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -350,20 +321,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelSchemaExtensionResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelSchemaExtensionRequest
 	{
 		
@@ -385,8 +353,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>ConnectDirectory</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectDirectoryResult
 	{
 		
@@ -397,8 +364,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>ConnectDirectory</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectDirectoryRequest
 	{
 		
@@ -440,24 +406,21 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DirectorySize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Small")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Small = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Large")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Large = 1,
 	}
 	
 	/// <summary>
 	/// Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryConnectSettings
 	{
 		
@@ -490,8 +453,7 @@ namespace MyNS
 		public string CustomerUserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryLimitExceededException
 	{
 	}
@@ -499,8 +461,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>CreateAlias</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAliasResult
 	{
 		
@@ -514,8 +475,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>CreateAlias</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAliasRequest
 	{
 		
@@ -537,8 +497,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results for the <a>CreateComputer</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateComputerResult
 	{
 		
@@ -549,8 +508,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a computer account in a directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Computer
 	{
 		
@@ -567,8 +525,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a named directory attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attribute
 	{
 		
@@ -582,8 +539,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>CreateComputer</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateComputerRequest
 	{
 		
@@ -615,8 +571,7 @@ namespace MyNS
 		public Attribute[] ComputerAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationFailedException
 	{
 	}
@@ -624,8 +579,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a CreateConditinalForwarder request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConditionalForwarderResult
 	{
 	}
@@ -633,8 +587,7 @@ namespace MyNS
 	/// <summary>
 	/// Initiates the creation of a conditional forwarder for your Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConditionalForwarderRequest
 	{
 		
@@ -663,8 +616,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>CreateDirectory</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDirectoryResult
 	{
 		
@@ -675,8 +627,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>CreateDirectory</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDirectoryRequest
 	{
 		
@@ -714,14 +665,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLogSubscriptionResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLogSubscriptionRequest
 	{
 		
@@ -740,8 +689,7 @@ namespace MyNS
 		public string LogGroupName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientPermissionsException
 	{
 	}
@@ -749,8 +697,7 @@ namespace MyNS
 	/// <summary>
 	/// Result of a CreateMicrosoftAD request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMicrosoftADResult
 	{
 		
@@ -761,8 +708,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates an Managed Microsoft AD directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMicrosoftADRequest
 	{
 		
@@ -800,24 +746,21 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DirectoryEdition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enterprise")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enterprise = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Standard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Standard = 1,
 	}
 	
 	/// <summary>
 	/// Contains the results of the <a>CreateSnapshot</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotResult
 	{
 		
@@ -828,8 +771,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>CreateSnapshot</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotRequest
 	{
 		
@@ -844,8 +786,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotLimitExceededException
 	{
 	}
@@ -853,8 +794,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a CreateTrust request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrustResult
 	{
 		
@@ -865,8 +805,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Managed Microsoft AD directory, and your existing self-managed Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p> <p>This action initiates the creation of the Amazon Web Services side of a trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrustRequest
 	{
 		
@@ -908,9 +847,7 @@ namespace MyNS
 		public SelectiveAuth SelectiveAuth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TrustDirection
 	{
 		
@@ -924,37 +861,32 @@ namespace MyNS
 		TwoMinusWay = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TrustType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Forest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Forest = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="External")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		External = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SelectiveAuth
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 1,
 	}
 	
 	/// <summary>
 	/// The result of a DeleteConditionalForwarder request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConditionalForwarderResult
 	{
 	}
@@ -962,8 +894,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a conditional forwarder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConditionalForwarderRequest
 	{
 		
@@ -985,8 +916,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>DeleteDirectory</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDirectoryResult
 	{
 		
@@ -997,8 +927,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>DeleteDirectory</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDirectoryRequest
 	{
 		
@@ -1010,14 +939,12 @@ namespace MyNS
 		public string DirectoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLogSubscriptionResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLogSubscriptionRequest
 	{
 		
@@ -1032,8 +959,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>DeleteSnapshot</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSnapshotResult
 	{
 		
@@ -1044,8 +970,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>DeleteSnapshot</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSnapshotRequest
 	{
 		
@@ -1060,8 +985,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a DeleteTrust request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTrustResult
 	{
 		
@@ -1072,8 +996,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes the local side of an existing trust relationship between the Managed Microsoft AD directory and the external domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTrustRequest
 	{
 		
@@ -1088,14 +1011,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DeleteAssociatedConditionalForwarder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterCertificateResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterCertificateRequest
 	{
 		
@@ -1114,14 +1035,12 @@ namespace MyNS
 		public string CertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateDoesNotExistException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateInUseException
 	{
 	}
@@ -1129,8 +1048,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a DeregisterEventTopic request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterEventTopicResult
 	{
 	}
@@ -1138,8 +1056,7 @@ namespace MyNS
 	/// <summary>
 	/// Removes the specified directory as a publisher to the specified Amazon SNS topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterEventTopicRequest
 	{
 		
@@ -1158,8 +1075,7 @@ namespace MyNS
 		public string TopicName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCertificateResult
 	{
 		
@@ -1170,8 +1086,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the certificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Certificate
 	{
 		
@@ -1200,49 +1115,44 @@ namespace MyNS
 		public ClientCertAuthSettings ClientCertAuthSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Registering")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Registering = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Registered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Registered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RegisterFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RegisterFailed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deregistering")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deregistering = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deregistered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deregistered = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeregisterFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeregisterFailed = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClientCertAuth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClientCertAuth = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClientLDAPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClientLDAPS = 1,
 	}
 	
 	/// <summary>
 	/// Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientCertAuthSettings
 	{
 		
@@ -1250,8 +1160,7 @@ namespace MyNS
 		public string OCSPUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCertificateRequest
 	{
 		
@@ -1270,8 +1179,7 @@ namespace MyNS
 		public string CertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClientAuthenticationSettingsResult
 	{
 		
@@ -1285,8 +1193,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a client authentication method for a directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientAuthenticationSettingInfo
 	{
 		
@@ -1300,21 +1207,18 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClientAuthenticationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SmartCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SmartCard = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SmartCardOrPassword")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SmartCardOrPassword = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClientAuthenticationSettingsRequest
 	{
 		
@@ -1338,8 +1242,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a DescribeConditionalForwarder request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConditionalForwardersResult
 	{
 		
@@ -1350,8 +1253,7 @@ namespace MyNS
 	/// <summary>
 	/// Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConditionalForwarder
 	{
 		
@@ -1365,21 +1267,18 @@ namespace MyNS
 		public ReplicationScope ReplicationScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReplicationScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Domain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Domain = 0,
 	}
 	
 	/// <summary>
 	/// Describes a conditional forwarder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConditionalForwardersRequest
 	{
 		
@@ -1397,8 +1296,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>DescribeDirectories</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDirectoriesResult
 	{
 		
@@ -1412,8 +1310,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an Directory Service directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryDescription
 	{
 		
@@ -1496,70 +1393,65 @@ namespace MyNS
 		public OSVersion OsVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DirectoryStage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Requested = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Creating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Creating = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Created = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inoperable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inoperable = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Impaired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Impaired = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Restoring")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Restoring = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestoreFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RestoreFailed = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleting = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleted = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DirectoryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SimpleAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SimpleAD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADConnector")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADConnector = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MicrosoftAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MicrosoftAD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SharedMicrosoftAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SharedMicrosoftAD = 3,
 	}
 	
 	/// <summary>
 	/// Contains information about the directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryVpcSettingsDescription
 	{
 		
@@ -1579,8 +1471,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an AD Connector directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryConnectSettingsDescription
 	{
 		
@@ -1606,8 +1497,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a Remote Authentication Dial In User Service (RADIUS) server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RadiusSettings
 	{
 		
@@ -1636,16 +1526,14 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UseSameUsername { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RadiusAuthenticationProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHAP = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="MS-CHAPv1")]
@@ -1655,27 +1543,24 @@ namespace MyNS
 		MSMinusCHAPv2 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RadiusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Creating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Creating = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 	}
 	
 	/// <summary>
 	/// Describes the directory owner account details that have been shared to the directory consumer account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerDirectoryDescription
 	{
 		
@@ -1701,8 +1586,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the Regions that are configured for multi-Region replication.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegionsInfo
 	{
 		
@@ -1713,24 +1597,21 @@ namespace MyNS
 		public string[] AdditionalRegions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_2012")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_2012 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_2019")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_2019 = 1,
 	}
 	
 	/// <summary>
 	/// Contains the inputs for the <a>DescribeDirectories</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDirectoriesRequest
 	{
 		
@@ -1744,14 +1625,12 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainControllersResult
 	{
 		
@@ -1765,8 +1644,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the domain controllers for a specified directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainController
 	{
 		
@@ -1801,36 +1679,33 @@ namespace MyNS
 		public System.DateTimeOffset StatusLastUpdatedDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainControllerStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Creating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Creating = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Impaired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Impaired = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Restoring")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Restoring = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleting = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainControllersRequest
 	{
 		
@@ -1854,8 +1729,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a DescribeEventTopic request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventTopicsResult
 	{
 		
@@ -1866,8 +1740,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about Amazon SNS topic and Directory Service directory associations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventTopic
 	{
 		
@@ -1887,30 +1760,27 @@ namespace MyNS
 		public TopicStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TopicStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Registered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Registered = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Topic not found")]
 		Topic_not_found = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleted = 3,
 	}
 	
 	/// <summary>
 	/// Describes event topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventTopicsRequest
 	{
 		
@@ -1921,8 +1791,7 @@ namespace MyNS
 		public string[] TopicNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLDAPSSettingsResult
 	{
 		
@@ -1936,8 +1805,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains general information about the LDAPS settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LDAPSSettingInfo
 	{
 		
@@ -1951,27 +1819,24 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LDAPSStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabling = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnableFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EnableFailed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLDAPSSettingsRequest
 	{
 		
@@ -1992,18 +1857,15 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LDAPSType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Client")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Client = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRegionsResult
 	{
 		
@@ -2017,8 +1879,7 @@ namespace MyNS
 	/// <summary>
 	/// The replicated Region information for a directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegionDescription
 	{
 		
@@ -2053,21 +1914,18 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RegionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Primary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Primary = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Additional")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Additional = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRegionsRequest
 	{
 		
@@ -2085,8 +1943,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSettingsResult
 	{
 		
@@ -2103,8 +1960,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the specified configurable setting for a directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SettingEntry
 	{
 		
@@ -2142,36 +1998,32 @@ namespace MyNS
 		public string DataType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DirectoryConfigurationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Requested = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Updating = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Updated = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Default")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Default = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryConfigurationSettingRequestDetailedStatus
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSettingsRequest
 	{
 		
@@ -2189,8 +2041,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSharedDirectoriesResult
 	{
 		
@@ -2201,8 +2052,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSharedDirectoriesRequest
 	{
 		
@@ -2226,8 +2076,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>DescribeSnapshots</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSnapshotsResult
 	{
 		
@@ -2241,8 +2090,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a directory snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Snapshot
 	{
 		
@@ -2265,24 +2113,21 @@ namespace MyNS
 		public System.DateTimeOffset StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnapshotType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Auto")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Auto = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Manual = 1,
 	}
 	
 	/// <summary>
 	/// Contains the inputs for the <a>DescribeSnapshots</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSnapshotsRequest
 	{
 		
@@ -2302,8 +2147,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a DescribeTrust request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTrustsResult
 	{
 		
@@ -2317,8 +2161,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a trust relationship between an Managed Microsoft AD directory and an external domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Trust
 	{
 		
@@ -2356,51 +2199,48 @@ namespace MyNS
 		public SelectiveAuth SelectiveAuth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TrustState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Creating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Creating = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Created = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Verifying")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Verifying = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VerifyFailed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Verified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Verified = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Updating = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateFailed = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Updated = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleting = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleted = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 10,
 	}
 	
 	/// <summary>
 	/// Describes the trust relationships for a particular Managed Microsoft AD directory. If no input parameters are provided, such as directory ID or trust ID, this request describes all the trust relationships.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTrustsRequest
 	{
 		
@@ -2417,8 +2257,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeUpdateDirectoryResult
 	{
 		
@@ -2432,8 +2271,7 @@ namespace MyNS
 	/// <summary>
 	///  An entry of update information related to a requested update type. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInfoEntry
 	{
 		
@@ -2462,27 +2300,24 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Updated = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Updating = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateFailed = 2,
 	}
 	
 	/// <summary>
 	///  The value for a given type of <code>UpdateSettings</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateValue
 	{
 		
@@ -2493,8 +2328,7 @@ namespace MyNS
 	/// <summary>
 	///  OS version that the directory needs to be updated to. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSUpdateSettings
 	{
 		
@@ -2502,8 +2336,7 @@ namespace MyNS
 		public OSVersion OSVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeUpdateDirectoryRequest
 	{
 		
@@ -2528,24 +2361,20 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableClientAuthenticationResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableClientAuthenticationRequest
 	{
 		
@@ -2564,20 +2393,17 @@ namespace MyNS
 		public ClientAuthenticationType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClientAuthStatusException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableLDAPSResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableLDAPSRequest
 	{
 		
@@ -2596,8 +2422,7 @@ namespace MyNS
 		public LDAPSType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidLDAPSStatusException
 	{
 	}
@@ -2605,8 +2430,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>DisableRadius</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableRadiusResult
 	{
 	}
@@ -2614,8 +2438,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>DisableRadius</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableRadiusRequest
 	{
 		
@@ -2630,8 +2453,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>DisableSso</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableSsoResult
 	{
 	}
@@ -2639,8 +2461,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>DisableSso</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableSsoRequest
 	{
 		
@@ -2658,14 +2479,12 @@ namespace MyNS
 		public string Password { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableClientAuthenticationResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableClientAuthenticationRequest
 	{
 		
@@ -2684,20 +2503,17 @@ namespace MyNS
 		public ClientAuthenticationType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoAvailableCertificateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableLDAPSResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableLDAPSRequest
 	{
 		
@@ -2719,8 +2535,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>EnableRadius</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableRadiusResult
 	{
 	}
@@ -2728,8 +2543,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>EnableRadius</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableRadiusRequest
 	{
 		
@@ -2751,8 +2565,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>EnableSso</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableSsoResult
 	{
 	}
@@ -2760,8 +2573,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>EnableSso</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableSsoRequest
 	{
 		
@@ -2782,8 +2594,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>GetDirectoryLimits</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDirectoryLimitsResult
 	{
 		
@@ -2794,8 +2605,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains directory limit information for a Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryLimits
 	{
 		
@@ -2830,8 +2640,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>GetDirectoryLimits</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDirectoryLimitsRequest
 	{
 	}
@@ -2839,8 +2648,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>GetSnapshotLimits</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSnapshotLimitsResult
 	{
 		
@@ -2851,8 +2659,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains manual snapshot limit information for a directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotLimits
 	{
 		
@@ -2869,8 +2676,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>GetSnapshotLimits</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSnapshotLimitsRequest
 	{
 		
@@ -2882,8 +2688,7 @@ namespace MyNS
 		public string DirectoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCertificatesResult
 	{
 		
@@ -2897,8 +2702,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains general information about a certificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateInfo
 	{
 		
@@ -2918,8 +2722,7 @@ namespace MyNS
 		public CertificateType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCertificatesRequest
 	{
 		
@@ -2937,8 +2740,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIpRoutesResult
 	{
 		
@@ -2952,8 +2754,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about one or more IP address blocks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IpRouteInfo
 	{
 		
@@ -2976,33 +2777,30 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IpRouteStatusMsg
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Adding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Adding = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Added = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Removing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Removing = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Removed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Removed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddFailed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RemoveFailed = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIpRoutesRequest
 	{
 		
@@ -3020,8 +2818,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLogSubscriptionsResult
 	{
 		
@@ -3035,8 +2832,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogSubscription
 	{
 		
@@ -3050,8 +2846,7 @@ namespace MyNS
 		public System.DateTimeOffset SubscriptionCreatedDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLogSubscriptionsRequest
 	{
 		
@@ -3065,8 +2860,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSchemaExtensionsResult
 	{
 		
@@ -3080,8 +2874,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a schema extension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaExtensionInfo
 	{
 		
@@ -3107,42 +2900,39 @@ namespace MyNS
 		public System.DateTimeOffset EndDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SchemaExtensionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Initializing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Initializing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatingSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreatingSnapshot = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdatingSchema")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdatingSchema = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Replicating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Replicating = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancelInProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CancelInProgress = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RollbackInProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RollbackInProgress = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSchemaExtensionsRequest
 	{
 		
@@ -3160,8 +2950,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResult
 	{
 		
@@ -3172,8 +2961,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -3191,8 +2979,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterCertificateResult
 	{
 		
@@ -3200,8 +2987,7 @@ namespace MyNS
 		public string CertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterCertificateRequest
 	{
 		
@@ -3226,20 +3012,17 @@ namespace MyNS
 		public ClientCertAuthSettings ClientCertAuthSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidCertificateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateAlreadyExistsException
 	{
 	}
@@ -3247,8 +3030,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a RegisterEventTopic request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterEventTopicResult
 	{
 	}
@@ -3256,8 +3038,7 @@ namespace MyNS
 	/// <summary>
 	/// Registers a new event topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterEventTopicRequest
 	{
 		
@@ -3276,8 +3057,7 @@ namespace MyNS
 		public string TopicName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectSharedDirectoryResult
 	{
 		
@@ -3285,8 +3065,7 @@ namespace MyNS
 		public string SharedDirectoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectSharedDirectoryRequest
 	{
 		
@@ -3298,14 +3077,12 @@ namespace MyNS
 		public string SharedDirectoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveIpRoutesResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveIpRoutesRequest
 	{
 		
@@ -3324,14 +3101,12 @@ namespace MyNS
 		public string[] CidrIps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveRegionResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveRegionRequest
 	{
 		
@@ -3343,14 +3118,12 @@ namespace MyNS
 		public string DirectoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsFromResourceResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsFromResourceRequest
 	{
 		
@@ -3369,14 +3142,12 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetUserPasswordResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetUserPasswordRequest
 	{
 		
@@ -3402,14 +3173,12 @@ namespace MyNS
 		public string NewPassword { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDoesNotExistException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidPasswordException
 	{
 	}
@@ -3417,8 +3186,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>RestoreFromSnapshot</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreFromSnapshotResult
 	{
 	}
@@ -3426,8 +3194,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing the inputs for the <a>RestoreFromSnapshot</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreFromSnapshotRequest
 	{
 		
@@ -3439,8 +3206,7 @@ namespace MyNS
 		public string SnapshotId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShareDirectoryResult
 	{
 		
@@ -3448,8 +3214,7 @@ namespace MyNS
 		public string SharedDirectoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShareDirectoryRequest
 	{
 		
@@ -3481,8 +3246,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifier that contains details about the directory consumer account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShareTarget
 	{
 		
@@ -3501,36 +3265,30 @@ namespace MyNS
 		public TargetType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TargetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTargetException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShareLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSchemaExtensionResult
 	{
 		
@@ -3538,8 +3296,7 @@ namespace MyNS
 		public string SchemaExtensionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSchemaExtensionRequest
 	{
 		
@@ -3572,8 +3329,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnshareDirectoryResult
 	{
 		
@@ -3581,8 +3337,7 @@ namespace MyNS
 		public string SharedDirectoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnshareDirectoryRequest
 	{
 		
@@ -3604,8 +3359,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifier that contains details about the directory consumer account with whom the directory is being unshared.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnshareTarget
 	{
 		
@@ -3624,8 +3378,7 @@ namespace MyNS
 		public TargetType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryNotSharedException
 	{
 	}
@@ -3633,8 +3386,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of an UpdateConditionalForwarder request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConditionalForwarderResult
 	{
 	}
@@ -3642,8 +3394,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a conditional forwarder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConditionalForwarderRequest
 	{
 		
@@ -3669,14 +3420,12 @@ namespace MyNS
 		public string[] DnsIpAddrs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDirectorySetupResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDirectorySetupRequest
 	{
 		
@@ -3701,20 +3450,17 @@ namespace MyNS
 		public System.Nullable<System.Boolean> CreateSnapshotBeforeUpdate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryInDesiredStateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNumberOfDomainControllersResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNumberOfDomainControllersRequest
 	{
 		
@@ -3733,8 +3479,7 @@ namespace MyNS
 		public int DesiredNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainControllerLimitExceededException
 	{
 	}
@@ -3742,8 +3487,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of the <a>UpdateRadius</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRadiusResult
 	{
 	}
@@ -3751,8 +3495,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the inputs for the <a>UpdateRadius</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRadiusRequest
 	{
 		
@@ -3771,8 +3514,7 @@ namespace MyNS
 		public RadiusSettings RadiusSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSettingsResult
 	{
 		
@@ -3780,8 +3522,7 @@ namespace MyNS
 		public string DirectoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSettingsRequest
 	{
 		
@@ -3803,8 +3544,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the configurable settings for a directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Setting
 	{
 		
@@ -3823,20 +3563,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncompatibleSettingsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedSettingsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTrustResult
 	{
 		
@@ -3852,8 +3589,7 @@ namespace MyNS
 		public string TrustId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTrustRequest
 	{
 		
@@ -3871,8 +3607,7 @@ namespace MyNS
 	/// <summary>
 	/// Result of a VerifyTrust request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyTrustResult
 	{
 		
@@ -3883,8 +3618,7 @@ namespace MyNS
 	/// <summary>
 	/// Initiates the verification of an existing trust relationship between an Managed Microsoft AD directory and an external domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyTrustRequest
 	{
 		
@@ -3896,32 +3630,28 @@ namespace MyNS
 		public string TrustId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClientAuthenticationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnapshotStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Creating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Creating = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 	}
 	

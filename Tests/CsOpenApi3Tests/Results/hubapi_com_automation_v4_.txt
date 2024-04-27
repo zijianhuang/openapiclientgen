@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchInputCallbackCompletionBatchRequest
 	{
 		
@@ -30,8 +29,7 @@ namespace MyNS
 		public CallbackCompletionBatchRequest[] Inputs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallbackCompletionBatchRequest
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> OutputFields { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallbackCompletionRequest
 	{
 		
@@ -63,8 +60,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> OutputFields { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionResponsePublicActionDefinitionForwardPaging
 	{
 		
@@ -79,8 +75,7 @@ namespace MyNS
 		public PublicActionDefinition[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ForwardPaging
 	{
 		
@@ -88,8 +83,7 @@ namespace MyNS
 		public NextPage Next { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NextPage
 	{
 		
@@ -104,8 +98,7 @@ namespace MyNS
 		public string Link { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicActionDefinition
 	{
 		
@@ -181,8 +174,7 @@ namespace MyNS
 		public string RevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicExecutionTranslationRule
 	{
 		
@@ -201,8 +193,7 @@ namespace MyNS
 		public string LabelName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicActionFunctionIdentifier
 	{
 		
@@ -217,27 +208,24 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublicActionFunctionIdentifierFunctionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRE_ACTION_EXECUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRE_ACTION_EXECUTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRE_FETCH_OPTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRE_FETCH_OPTIONS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST_FETCH_OPTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST_FETCH_OPTIONS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST_ACTION_EXECUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST_ACTION_EXECUTION = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputFieldDefinition
 	{
 		
@@ -262,8 +250,7 @@ namespace MyNS
 		public FieldTypeDefinition TypeDefinition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldTypeDefinition
 	{
 		
@@ -317,63 +304,60 @@ namespace MyNS
 		public FieldTypeDefinitionType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FieldTypeDefinitionFieldType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="booleancheckbox")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		booleancheckbox = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="checkbox")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		checkbox = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="file")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		file = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		number = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phonenumber")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phonenumber = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="radio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		radio = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="select")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		select = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="textarea")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		textarea = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calculation_equation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calculation_equation = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calculation_rollup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calculation_rollup = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calculation_score")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calculation_score = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calculation_read_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calculation_read_time = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		html = 15,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Option
 	{
 		
@@ -427,499 +411,494 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FieldTypeDefinitionReferencedObjectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTACT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENGAGEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENGAGEMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TICKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TICKET = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BET_DELIVERABLE_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BET_DELIVERABLE_SERVICE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONVERSATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONVERSATION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BET_ALERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BET_ALERT = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PORTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PORTAL = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUOTE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORM_SUBMISSION_INBOUNDDB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORM_SUBMISSION_INBOUNDDB = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUOTA = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUBSCRIBE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUBSCRIBE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMUNICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMUNICATION = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEEDBACK_SUBMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEEDBACK_SUBMISSION = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTRIBUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTRIBUTION = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SALESFORCE_SYNC_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SALESFORCE_SYNC_ERROR = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTORABLE_CRM_OBJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTORABLE_CRM_OBJECT = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HUB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HUB = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LANDING_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LANDING_PAGE = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT_OR_FOLDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT_OR_FOLDER = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TASK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TASK = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORM = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARKETING_EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARKETING_EMAIL = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_ACCOUNT = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_CAMPAIGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_CAMPAIGN = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_GROUP = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEYWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEYWORD = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMPAIGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMPAIGN = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL_CHANNEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL_CHANNEL = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL_POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL_POST = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_PAGE = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOG_POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOG_POST = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPORT = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CTA = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TASK_TEMPLATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TASK_TEMPLATE = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMATION_PLATFORM_FLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMATION_PLATFORM_FLOW = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT_LIST = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTE = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEETING_EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEETING_EVENT = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CALL = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHING_TASK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHING_TASK = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONVERSATION_SESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONVERSATION_SESSION = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTACT_CREATE_ATTRIBUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTACT_CREATE_ATTRIBUTION = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVOICE = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARKETING_EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARKETING_EVENT = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONVERSATION_INBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONVERSATION_INBOX = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHATFLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHATFLOW = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIA_BRIDGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIA_BRIDGE = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEQUENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEQUENCE = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEQUENCE_STEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEQUENCE_STEP = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORECAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORECAST = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNIPPET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNIPPET = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPLATE = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAL_CREATE_ATTRIBUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEAL_CREATE_ATTRIBUTION = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTE_TEMPLATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUOTE_TEMPLATE = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTE_MODULE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUOTE_MODULE = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTE_MODULE_FIELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUOTE_MODULE_FIELD = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTE_FIELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUOTE_FIELD = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEQUENCE_ENROLLMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEQUENCE_ENROLLMENT = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBSCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBSCRIPTION = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTANCE_TEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPTANCE_TEST = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL_BROADCAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL_BROADCAST = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAL_SPLIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEAL_SPLIT = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAL_REGISTRATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEAL_REGISTRATION = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOAL_TARGET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOAL_TARGET = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOAL_TARGET_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOAL_TARGET_GROUP = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PORTAL_OBJECT_SYNC_MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PORTAL_OBJECT_SYNC_MESSAGE = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_MANAGER_FILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_MANAGER_FILE = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_MANAGER_FOLDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_MANAGER_FOLDER = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEQUENCE_STEP_ENROLLMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEQUENCE_STEP_ENROLLMENT = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVAL = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVAL_STEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVAL_STEP = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CTA_VARIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CTA_VARIANT = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SALES_DOCUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SALES_DOCUMENT = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCOUNT = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEE = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAX = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARKETING_CALENDAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARKETING_CALENDAR = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSIONS_TESTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSIONS_TESTING = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_SCANNER_COOKIE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_SCANNER_COOKIE = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_SYNC_STATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_SYNC_STATE = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_INTERACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_INTERACTIVE = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAYBOOK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAYBOOK = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOLDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOLDER = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAYBOOK_QUESTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAYBOOK_QUESTION = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAYBOOK_SUBMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAYBOOK_SUBMISSION = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAYBOOK_SUBMISSION_ANSWER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAYBOOK_SUBMISSION_ANSWER = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMERCE_PAYMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMERCE_PAYMENT = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GSC_PROPERTY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GSC_PROPERTY = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOX_PROTECTED_DUMMY_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOX_PROTECTED_DUMMY_TYPE = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOG_LISTING_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOG_LISTING_PAGE = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARANTINED_SUBMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARANTINED_SUBMISSION = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENT_SCHEDULE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENT_SCHEDULE = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENT_SCHEDULE_INSTALLMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENT_SCHEDULE_INSTALLMENT = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARKETING_CAMPAIGN_UTM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARKETING_CAMPAIGN_UTM = 102,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCOUNT_TEMPLATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCOUNT_TEMPLATE = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCOUNT_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCOUNT_CODE = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEEDBACK_SURVEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEEDBACK_SURVEY = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CMS_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CMS_URL = 106,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SALES_TASK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SALES_TASK = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SALES_WORKLOAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SALES_WORKLOAD = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 109,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTAL_MAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTAL_MAIL = 110,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEMAS_BACKEND_TEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEMAS_BACKEND_TEST = 111,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENT_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENT_LINK = 112,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMISSION_TAG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMISSION_TAG = 113,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMPAIGN_STEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMPAIGN_STEP = 114,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULING_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEDULING_PAGE = 115,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOX_PROTECTED_TEST_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOX_PROTECTED_TEST_TYPE = 116,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORDER = 117,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARKETING_SMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARKETING_SMS = 118,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTNER_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTNER_ACCOUNT = 119,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMPAIGN_TEMPLATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMPAIGN_TEMPLATE = 120,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMPAIGN_TEMPLATE_STEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMPAIGN_TEMPLATE_STEP = 121,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAYLIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAYLIST = 122,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIP = 123,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMPAIGN_BUDGET_ITEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMPAIGN_BUDGET_ITEM = 124,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMPAIGN_SPEND_ITEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMPAIGN_SPEND_ITEM = 125,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIC = 126,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT_AUDIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT_AUDIT = 127,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT_AUDIT_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT_AUDIT_PAGE = 128,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAYLIST_FOLDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAYLIST_FOLDER = 129,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEAD = 130,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABANDONED_CART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABANDONED_CART = 131,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_WEB_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_WEB_URL = 132,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW = 133,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_BLOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_BLOCK = 134,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROSTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROSTER = 135,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CART = 136,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMATION_PLATFORM_FLOW_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMATION_PLATFORM_FLOW_ACTION = 137,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL_PROFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL_PROFILE = 138,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTNER_CLIENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTNER_CLIENT = 139,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROSTER_MEMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROSTER_MEMBER = 140,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARKETING_EVENT_ATTENDANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARKETING_EVENT_ATTENDANCE = 141,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_PAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_PAGES = 142,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AI_FORECAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AI_FORECAST = 143,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRM_PIPELINES_DUMMY_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRM_PIPELINES_DUMMY_TYPE = 144,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KNOWLEDGE_ARTICLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KNOWLEDGE_ARTICLE = 145,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPERTY_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPERTY_INFO = 146,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_PRIVACY_CONSENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_PRIVACY_CONSENT = 147,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 148,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FieldTypeDefinitionType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="string")]
 		_string = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		number = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="bool")]
 		_bool = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="datetime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		datetime = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enumeration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enumeration = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phone_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phone_number = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="currency_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		currency_number = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="object_coordinates")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		object_coordinates = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicActionLabels
 	{
 		
@@ -955,8 +934,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> OutputFieldLabels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicObjectRequestOptions
 	{
 		
@@ -968,8 +946,7 @@ namespace MyNS
 		public string[] Properties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputFieldDefinition
 	{
 		
@@ -981,8 +958,7 @@ namespace MyNS
 		public FieldTypeDefinition TypeDefinition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionResponsePublicActionFunctionIdentifierNoPaging
 	{
 		
@@ -994,8 +970,7 @@ namespace MyNS
 		public PublicActionFunctionIdentifier[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionResponsePublicActionRevisionForwardPaging
 	{
 		
@@ -1010,8 +985,7 @@ namespace MyNS
 		public PublicActionRevision[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicActionRevision
 	{
 		
@@ -1044,8 +1018,7 @@ namespace MyNS
 		public string RevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -1098,8 +1071,7 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		
@@ -1136,8 +1108,7 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicActionDefinitionEgg
 	{
 		
@@ -1199,8 +1170,7 @@ namespace MyNS
 		public bool Published { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicActionFunction
 	{
 		
@@ -1222,8 +1192,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicActionDefinitionPatch
 	{
 		
@@ -1255,8 +1224,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Published { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicConditionalSingleFieldDependency
 	{
 		
@@ -1290,18 +1258,15 @@ namespace MyNS
 		public string[] DependentFieldNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublicConditionalSingleFieldDependencyDependencyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONDITIONAL_SINGLE_FIELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONDITIONAL_SINGLE_FIELD = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicSingleFieldDependency
 	{
 		
@@ -1328,13 +1293,11 @@ namespace MyNS
 		public string[] DependentFieldNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublicSingleFieldDependencyDependencyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_FIELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_FIELD = 0,
 	}
 	

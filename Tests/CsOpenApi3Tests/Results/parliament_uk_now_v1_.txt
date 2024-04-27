@@ -17,123 +17,114 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnnunciatorMessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CommonsMain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CommonsMain = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LordsMain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LordsMain = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContentStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DividerSolid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DividerSolid = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EmptyLine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EmptyLine = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Member")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Member = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Footer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Footer = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AnsweringBody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AnsweringBody = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WestminsterHallInfo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WestminsterHallInfo = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GrandCommitteeInfo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GrandCommitteeInfo = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DividerDotted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DividerDotted = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DividerDashed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DividerDashed = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Division")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Division = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Text150")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Text150 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Text140")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Text140 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Text130")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Text130 = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Text120")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Text120 = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Text110")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Text110 = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Text100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Text100 = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Text90")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Text90 = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Text80")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Text80 = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Text70")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Text70 = 18,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Generic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Generic = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Member")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Member = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OralQuestionTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OralQuestionTime = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AnsweringBody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AnsweringBody = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bill")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bill = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HorizontalAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Left")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Left = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Right")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Right = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Centre")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Centre = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HouseMembershipViewModel
 	{
 		
@@ -141,8 +132,7 @@ namespace MyNS
 		public string MembershipFrom { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LineViewModel
 	{
 		
@@ -177,8 +167,7 @@ namespace MyNS
 		public System.Nullable<LineViewModelVerticalAlignment> VerticalAlignment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemberViewModel
 	{
 		
@@ -207,8 +196,7 @@ namespace MyNS
 		public string ThumbnailUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartyViewModel
 	{
 		
@@ -222,24 +210,21 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LineViewModelVerticalAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Top")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Top = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Middle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Middle = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bottom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bottom = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageViewModel
 	{
 		
@@ -271,8 +256,7 @@ namespace MyNS
 		public SlideViewModel[] Slides { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScrollingMessageViewModel
 	{
 		
@@ -295,30 +279,27 @@ namespace MyNS
 		public LineViewModelVerticalAlignment VerticalAlignment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScrollingMessageViewModelAlertType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Standard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Standard = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecondaryChamber")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecondaryChamber = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Alert")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Alert = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecurityNormal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecurityNormal = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecurityHigh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecurityHigh = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlideViewModel
 	{
 		
@@ -347,165 +328,153 @@ namespace MyNS
 		public System.Nullable<SlideViewModelType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SlideViewModelSoundToPlay
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewSlide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NewSlide = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DivisionBell")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DivisionBell = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Alert")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Alert = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenericBeep")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenericBeep = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SlideViewModelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Debate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Debate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Division")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Division = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OralQuestionTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OralQuestionTime = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UrgentQuestion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UrgentQuestion = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Statement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Statement = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Prayers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Prayers = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HouseRisen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HouseRisen = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Generic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Generic = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSitting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSitting = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PrimeMinistersQuestions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PrimeMinistersQuestions = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PointsOfOrder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PointsOfOrder = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BlankSlide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BlankSlide = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScrollingMessageAlertType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Standard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Standard = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecondaryChamber")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecondaryChamber = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Alert")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Alert = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecurityNormal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecurityNormal = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecurityHigh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecurityHigh = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SlideType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Debate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Debate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Division")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Division = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OralQuestionTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OralQuestionTime = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UrgentQuestion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UrgentQuestion = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Statement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Statement = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Prayers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Prayers = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HouseRisen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HouseRisen = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Generic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Generic = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSitting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSitting = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PrimeMinistersQuestions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PrimeMinistersQuestions = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PointsOfOrder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PointsOfOrder = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BlankSlide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BlankSlide = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Sounds
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewSlide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NewSlide = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DivisionBell")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DivisionBell = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Alert")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Alert = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenericBeep")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenericBeep = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VerticalAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Top")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Top = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Middle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Middle = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bottom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bottom = 2,
 	}
 	

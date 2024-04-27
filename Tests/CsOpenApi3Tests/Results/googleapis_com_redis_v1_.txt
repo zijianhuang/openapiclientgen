@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertChain
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// Redis cluster certificate authority
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateAuthority
 	{
 		
@@ -47,8 +45,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedCertificateAuthority
 	{
 		
@@ -62,8 +59,7 @@ namespace MyNS
 	/// <summary>
 	/// A cluster instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cluster
 	{
 		
@@ -146,27 +142,24 @@ namespace MyNS
 		public string Uid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterAuthorizationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTH_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTH_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTH_MODE_IAM_AUTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTH_MODE_IAM_AUTH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTH_MODE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTH_MODE_DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// Endpoints on each network, for Redis clients to connect to the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiscoveryEndpoint
 	{
 		
@@ -186,8 +179,7 @@ namespace MyNS
 		public PscConfig PscConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PscConfig
 	{
 		
@@ -201,8 +193,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of consumer resources in a PSC connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PscConnection
 	{
 		
@@ -237,33 +228,30 @@ namespace MyNS
 		public string PscConnectionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 	}
 	
 	/// <summary>
 	/// Represents additional information about the state of the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateInfo
 	{
 		
@@ -277,8 +265,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about an updating cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInfo
 	{
 		
@@ -295,27 +282,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> TargetShardCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterTransitEncryptionMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIT_ENCRYPTION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIT_ENCRYPTION_MODE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIT_ENCRYPTION_MODE_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIT_ENCRYPTION_MODE_SERVER_AUTHENTICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIT_ENCRYPTION_MODE_SERVER_AUTHENTICATION = 2,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -323,8 +307,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for Export.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportInstanceRequest
 	{
 		
@@ -338,8 +321,7 @@ namespace MyNS
 	/// <summary>
 	/// The output content
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputConfig
 	{
 		
@@ -353,8 +335,7 @@ namespace MyNS
 	/// <summary>
 	/// The Cloud Storage location for the output content
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsDestination
 	{
 		
@@ -368,8 +349,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for Failover.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailoverInstanceRequest
 	{
 		
@@ -380,27 +360,24 @@ namespace MyNS
 		public System.Nullable<FailoverInstanceRequestDataProtectionMode> DataProtectionMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailoverInstanceRequestDataProtectionMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_PROTECTION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_PROTECTION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIMITED_DATA_LOSS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIMITED_DATA_LOSS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORCE_DATA_LOSS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORCE_DATA_LOSS = 2,
 	}
 	
 	/// <summary>
 	/// The Cloud Storage location for the input content
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsSource
 	{
 		
@@ -414,8 +391,7 @@ namespace MyNS
 	/// <summary>
 	/// This location metadata represents additional configuration options for a given location where a Redis instance may be created. All fields are output only. It is returned as content of the `google.cloud.location.Location.metadata` field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRedisV1LocationMetadata
 	{
 		
@@ -429,8 +405,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines specific information for a particular zone. Currently empty and reserved for future use only.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRedisV1ZoneMetadata
 	{
 	}
@@ -438,8 +413,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the v1 metadata of the long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRedisV1OperationMetadata
 	{
 		
@@ -489,8 +463,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for Import.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportInstanceRequest
 	{
 		
@@ -504,8 +477,7 @@ namespace MyNS
 	/// <summary>
 	/// The input content
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputConfig
 	{
 		
@@ -519,8 +491,7 @@ namespace MyNS
 	/// <summary>
 	/// A Memorystore for Redis instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Instance
 	{
 		
@@ -747,27 +718,24 @@ namespace MyNS
 		public System.Nullable<InstanceTransitEncryptionMode> TransitEncryptionMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceConnectMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECT_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECT_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECT_PEERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIRECT_PEERING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE_SERVICE_ACCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE_SERVICE_ACCESS = 2,
 	}
 	
 	/// <summary>
 	/// Maintenance policy for an instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaintenancePolicy
 	{
 		
@@ -799,8 +767,7 @@ namespace MyNS
 	/// <summary>
 	/// Time window in which disruptive maintenance updates occur. Non-disruptive updates can occur inside or outside this window.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WeeklyMaintenanceWindow
 	{
 		
@@ -823,42 +790,39 @@ namespace MyNS
 		public TimeOfDay StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WeeklyMaintenanceWindowDay
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_WEEK_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_WEEK_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUESDAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEDNESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEDNESDAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THURSDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THURSDAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIDAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SATURDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SATURDAY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUNDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUNDAY = 7,
 	}
 	
 	/// <summary>
 	/// Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeOfDay
 	{
 		
@@ -890,8 +854,7 @@ namespace MyNS
 	/// <summary>
 	/// Upcoming maintenance schedule. If no maintenance is scheduled, fields are not populated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaintenanceSchedule
 	{
 		
@@ -923,8 +886,7 @@ namespace MyNS
 	/// <summary>
 	/// Node specific properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeInfo
 	{
 		
@@ -944,8 +906,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of the persistence functionality.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersistenceConfig
 	{
 		
@@ -974,65 +935,58 @@ namespace MyNS
 		public string RdbSnapshotStartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PersistenceConfigPersistenceMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSISTENCE_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSISTENCE_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RDB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RDB = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PersistenceConfigRdbSnapshotPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNAPSHOT_PERIOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNAPSHOT_PERIOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_HOUR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIX_HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIX_HOURS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWELVE_HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWELVE_HOURS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWENTY_FOUR_HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWENTY_FOUR_HOURS = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceReadReplicasMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_REPLICAS_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_REPLICAS_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_REPLICAS_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_REPLICAS_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_REPLICAS_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_REPLICAS_ENABLED = 2,
 	}
 	
 	/// <summary>
 	/// TlsCertificate Resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TlsCertificate
 	{
 		
@@ -1067,77 +1021,70 @@ namespace MyNS
 		public string Sha1Fingerprint { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPAIRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPAIRING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAINTENANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAINTENANCE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORTING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILING_OVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILING_OVER = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceTier
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_HA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_HA = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceTransitEncryptionMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIT_ENCRYPTION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_AUTHENTICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_AUTHENTICATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// Instance AUTH string details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceAuthString
 	{
 		
@@ -1151,8 +1098,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListClusters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersResponse
 	{
 		
@@ -1178,8 +1124,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListInstances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInstancesResponse
 	{
 		
@@ -1205,8 +1150,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -1226,8 +1170,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -1265,8 +1208,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -1286,8 +1228,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1325,8 +1266,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1352,8 +1292,7 @@ namespace MyNS
 	/// <summary>
 	/// Pre-defined metadata fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		
@@ -1403,8 +1342,7 @@ namespace MyNS
 	/// <summary>
 	/// Operation metadata returned by the CLH during resource state reconciliation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReconciliationOperationMetadata
 	{
 		
@@ -1421,27 +1359,24 @@ namespace MyNS
 		public System.Nullable<ReconciliationOperationMetadataExclusiveAction> ExclusiveAction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReconciliationOperationMetadataExclusiveAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_REPAIR_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_REPAIR_ACTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRY = 2,
 	}
 	
 	/// <summary>
 	/// Request for RescheduleMaintenance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RescheduleMaintenanceRequest
 	{
 		
@@ -1458,30 +1393,27 @@ namespace MyNS
 		public string ScheduleTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RescheduleMaintenanceRequestRescheduleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESCHEDULE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESCHEDULE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMMEDIATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMMEDIATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXT_AVAILABLE_WINDOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXT_AVAILABLE_WINDOW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPECIFIC_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPECIFIC_TIME = 3,
 	}
 	
 	/// <summary>
 	/// Request for UpgradeInstance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeInstanceRequest
 	{
 		

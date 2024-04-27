@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiTokenStatus
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Valid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioFile
 	{
 		
@@ -93,8 +91,7 @@ namespace MyNS
 		public string Word { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioType
 	{
 		
@@ -105,8 +102,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationToken
 	{
 		
@@ -120,8 +116,7 @@ namespace MyNS
 		public string UserSignature { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bigram
 	{
 		
@@ -141,8 +136,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Wlmi { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Category
 	{
 		
@@ -157,8 +151,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Citation
 	{
 		
@@ -169,8 +162,7 @@ namespace MyNS
 		public string Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentProvider
 	{
 		
@@ -181,8 +173,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Definition
 	{
 		
@@ -235,8 +226,7 @@ namespace MyNS
 		public string Word { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefinitionSearchResults
 	{
 		
@@ -247,8 +237,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Example
 	{
 		
@@ -289,8 +278,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Year { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExampleSearchResults
 	{
 		
@@ -301,8 +289,7 @@ namespace MyNS
 		public string[] Facets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExampleUsage
 	{
 		
@@ -310,8 +297,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Facet
 	{
 		
@@ -322,8 +308,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacetValue
 	{
 		
@@ -334,8 +319,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Frequency
 	{
 		
@@ -346,8 +330,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Year { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FrequencySummary
 	{
 		
@@ -367,8 +350,7 @@ namespace MyNS
 		public string Word { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Label
 	{
 		
@@ -379,8 +361,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Long
 	{
 		
@@ -388,8 +369,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Note
 	{
 		
@@ -406,8 +386,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartOfSpeech
 	{
 		
@@ -421,8 +400,7 @@ namespace MyNS
 		public string[] StorageAbbr { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Related
 	{
 		
@@ -448,8 +426,7 @@ namespace MyNS
 		public string[] Words { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Root
 	{
 		
@@ -467,8 +444,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoredWord
 	{
 		
@@ -506,8 +482,7 @@ namespace MyNS
 		public string WordType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sentence
 	{
 		
@@ -530,8 +505,7 @@ namespace MyNS
 		public string[] ScoredWords { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleDefinition
 	{
 		
@@ -548,8 +522,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleExample
 	{
 		
@@ -566,8 +539,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StringValue
 	{
 		
@@ -575,8 +547,7 @@ namespace MyNS
 		public string Word { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Syllable
 	{
 		
@@ -590,8 +561,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextPron
 	{
 		
@@ -605,8 +575,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Seq { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -635,8 +604,7 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WordList
 	{
 		
@@ -678,8 +646,7 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WordListWord
 	{
 		
@@ -709,8 +676,7 @@ namespace MyNS
 		public string Word { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WordObject
 	{
 		
@@ -737,8 +703,7 @@ namespace MyNS
 		public string Word { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WordOfTheDay
 	{
 		
@@ -783,8 +748,7 @@ namespace MyNS
 		public string Word { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WordSearchResult
 	{
 		
@@ -798,8 +762,7 @@ namespace MyNS
 		public string Word { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WordSearchResults
 	{
 		
@@ -1385,40 +1348,40 @@ namespace MyNS
 	public enum GetDefinitionsPartOfSpeech
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="noun")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		noun = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="adjective")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		adjective = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verb = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="adverb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		adverb = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="interjection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		interjection = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pronoun")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pronoun = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preposition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preposition = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="abbreviation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		abbreviation = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="affix")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		affix = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="article")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		article = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="auxiliary-verb")]
 		auxiliaryMinusverb = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="conjunction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		conjunction = 11,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="definite-article")]
@@ -1430,10 +1393,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="given-name")]
 		givenMinusname = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="idiom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		idiom = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="imperative")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		imperative = 16,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="noun-plural")]
@@ -1457,7 +1420,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="proper-noun-posessive")]
 		properMinusnounMinusposessive = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="suffix")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		suffix = 24,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="verb-intransitive")]
@@ -1543,16 +1506,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="century")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		century = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wiktionary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wiktionary = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webster = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wordnet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wordnet = 4,
 	}
 	
@@ -1582,22 +1545,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="century")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		century = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cmu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cmu = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="macmillan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		macmillan = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wiktionary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wiktionary = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webster = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wordnet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wordnet = 6,
 	}
 	
@@ -1607,13 +1570,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="arpabet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		arpabet = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="gcide-diacritical")]
 		gcideMinusdiacritical = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IPA = 3,
 	}
 	
@@ -1630,16 +1593,16 @@ namespace MyNS
 	public enum GetRelatedWordsRelationshipTypes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="synonym")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		synonym = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="antonym")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		antonym = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="variant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		variant = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="equivalent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		equivalent = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="cross-reference")]
@@ -1648,25 +1611,25 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="related-word")]
 		relatedMinusword = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rhyme")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rhyme = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="form")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		form = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="etymologically-related-term")]
 		etymologicallyMinusrelatedMinusterm = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hypernym")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hypernym = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hyponym")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hyponym = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="inflected-form")]
 		inflectedMinusform = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="primary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		primary = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="same-context")]
@@ -1678,7 +1641,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="verb-stem")]
 		verbMinusstem = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="has_topic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		has_topic = 16,
 	}
 	
@@ -1695,20 +1658,20 @@ namespace MyNS
 	public enum GetRandomWordsSortBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alpha = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		count = 1,
 	}
 	
 	public enum GetRandomWordsSortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 	
@@ -1718,22 +1681,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="century")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		century = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cmu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cmu = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="macmillan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		macmillan = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wiktionary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wiktionary = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webster = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wordnet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wordnet = 6,
 	}
 	
@@ -1743,22 +1706,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="century")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		century = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cmu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cmu = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="macmillan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		macmillan = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wiktionary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wiktionary = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webster = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wordnet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wordnet = 6,
 	}
 	

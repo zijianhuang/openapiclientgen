@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A login credential mapped to a user identity. For password credentials, the username to present for Basic auth is the user's username from the user record
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessCredential
 	{
 		
@@ -48,21 +47,18 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccessCredentialType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="password")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		password = 0,
 	}
 	
 	/// <summary>
 	/// Account information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -105,43 +101,38 @@ namespace MyNS
 		public System.Nullable<AccountType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleting = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="admin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		admin = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="service")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		service = 2,
 	}
 	
 	/// <summary>
 	/// An account to create/add to the system. If already exists will return 400.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountCreationRequest
 	{
 		
@@ -167,8 +158,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of account status
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountStatus
 	{
 		
@@ -179,24 +169,21 @@ namespace MyNS
 		public System.Nullable<AccountStatusState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 	}
 	
 	/// <summary>
 	/// The result of adding a single digest to the archive
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisArchiveAddResult
 	{
 		
@@ -219,27 +206,24 @@ namespace MyNS
 		public System.Nullable<AnalysisArchiveAddResultStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnalysisArchiveAddResultStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archived = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archiving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archiving = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 2,
 	}
 	
 	/// <summary>
 	/// A rule for auto-archiving image analysis by time and/or tag-history
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisArchiveTransitionRule
 	{
 		
@@ -303,8 +287,7 @@ namespace MyNS
 	/// <summary>
 	/// Which Images to exclude from auto-archiving logic
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisArchiveTransitionRuleExclude
 	{
 		
@@ -324,8 +307,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of selection criteria to match an image by a tagged pullstring based on its components, with regex support in each field
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageSelector
 	{
 		
@@ -348,24 +330,21 @@ namespace MyNS
 		public string Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnalysisArchiveTransitionRuleTransition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archive = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delete = 1,
 	}
 	
 	/// <summary>
 	/// Summary of the transition rule set
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisArchiveRulesSummary
 	{
 		
@@ -385,8 +364,7 @@ namespace MyNS
 	/// <summary>
 	/// An image reference in the analysis archive for the purposes of loading analysis from the archive into th working set
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisArchiveSource
 	{
 		
@@ -404,8 +382,7 @@ namespace MyNS
 	/// <summary>
 	/// A summarization of the analysis archive, including size, counts, etc. This archive stores image analysis only, never the actual image content or layers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisArchiveSummary
 	{
 		
@@ -437,8 +414,7 @@ namespace MyNS
 	/// <summary>
 	/// A rule for auto-archiving image analysis by time and/or tag-history
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisArchiveTransitionHistory
 	{
 		
@@ -467,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	/// Evaluation Results for an entity (current or last)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisUpdateEval
 	{
 		
@@ -482,8 +457,7 @@ namespace MyNS
 		public string Image_digest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisUpdateNotification : NotificationBase
 	{
 		
@@ -491,8 +465,7 @@ namespace MyNS
 		public AnalysisUpdateNotificationData Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisUpdateNotificationData : BaseNotificationData
 	{
 		
@@ -500,8 +473,7 @@ namespace MyNS
 		public AnalysisUpdateNotificationPayload Notification_payload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisUpdateNotificationPayload : GenericNotificationPayload
 	{
 		
@@ -527,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of an anchore error code (name, description)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnchoreErrorCode
 	{
 		
@@ -548,8 +519,7 @@ namespace MyNS
 	/// <summary>
 	/// A unique image in the engine. May have multiple tags or references. Unique to an image content across registries or repositories.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnchoreImage
 	{
 		
@@ -599,30 +569,27 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnchoreImageAnalysis_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_analyzed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_analyzed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="analyzing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		analyzing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="analyzed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		analyzed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="analysis_failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		analysis_failed = 3,
 	}
 	
 	/// <summary>
 	/// A metadata content record for a specific image, containing different content type entries
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageContent
 	{
 	}
@@ -630,8 +597,7 @@ namespace MyNS
 	/// <summary>
 	/// A metadata detail record for a specific image. Multiple detail records may map a single catalog image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageDetail
 	{
 		
@@ -675,27 +641,24 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnchoreImageImage_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 2,
 	}
 	
 	/// <summary>
 	/// A unique image in the engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnchoreImageTagSummary
 	{
 		
@@ -730,8 +693,7 @@ namespace MyNS
 	/// <summary>
 	/// Simple key/value pairs where the value may be optional
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Annotations
 	{
 	}
@@ -739,8 +701,7 @@ namespace MyNS
 	/// <summary>
 	/// Generic HTTP API error response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiErrorResponse
 	{
 		
@@ -763,8 +724,7 @@ namespace MyNS
 	/// <summary>
 	/// A summarization of the available archives, a place to for long-term storage of audit, analysis, or other data to remove it from the system's working set but keep it available.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArchiveSummary
 	{
 		
@@ -781,8 +741,7 @@ namespace MyNS
 		public AnalysisArchiveRulesSummary Rules { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArchivedAnalysis
 	{
 		
@@ -835,8 +794,7 @@ namespace MyNS
 	/// <summary>
 	/// A docker-pullable tag value as well as deconstructed components
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagEntry
 	{
 		
@@ -871,30 +829,27 @@ namespace MyNS
 		public string Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArchivedAnalysisStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archiving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archiving = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archived = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleting = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 3,
 	}
 	
 	/// <summary>
 	/// Every notification has a payload, which follows this basic structure
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseNotificationData
 	{
 		
@@ -908,8 +863,7 @@ namespace MyNS
 		public string Notification_user_email { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CVSSV2Scores
 	{
 		
@@ -923,8 +877,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Impact_score { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CVSSV3Scores
 	{
 		
@@ -941,8 +894,7 @@ namespace MyNS
 	/// <summary>
 	/// File content listings from images
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentFilesResponse
 	{
 		
@@ -987,8 +939,7 @@ namespace MyNS
 	/// <summary>
 	/// Java package content listings from images
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentJAVAPackageResponse
 	{
 		
@@ -1036,8 +987,7 @@ namespace MyNS
 	/// <summary>
 	/// Malware listing response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentMalwareResponse
 	{
 		
@@ -1057,8 +1007,7 @@ namespace MyNS
 	/// <summary>
 	/// A single scan from a scanner
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MalwareScan
 	{
 		
@@ -1103,8 +1052,7 @@ namespace MyNS
 	/// <summary>
 	/// Package content listings from images
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentPackageResponse
 	{
 		
@@ -1158,8 +1106,7 @@ namespace MyNS
 	/// <summary>
 	/// Generic wrapper for content listings from images
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentResponse
 	{
 		
@@ -1176,8 +1123,7 @@ namespace MyNS
 	/// <summary>
 	/// Image deletion response containing status and details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteImageResponse
 	{
 		
@@ -1200,27 +1146,24 @@ namespace MyNS
 		public DeleteImageResponseStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeleteImageResponseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_found")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_found = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleting = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete_failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delete_failed = 2,
 	}
 	
 	/// <summary>
 	/// A collection of event subcategories
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventCategory
 	{
 		
@@ -1237,8 +1180,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of events related to each other
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventSubcategory
 	{
 		
@@ -1255,8 +1197,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of an event type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDescription
 	{
 		
@@ -1288,8 +1229,7 @@ namespace MyNS
 	/// <summary>
 	/// A record of occurance of an asynchronous event triggered either by system or by user activity
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventResponse
 	{
 		
@@ -1363,8 +1303,7 @@ namespace MyNS
 	/// <summary>
 	/// Response envelope for paginated listing of events
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsList
 	{
 		
@@ -1393,8 +1332,7 @@ namespace MyNS
 		public EventResponse[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedGroupMetadata
 	{
 		
@@ -1414,8 +1352,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata on a single feed based on what the engine finds from querying the endpoints
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedMetadata
 	{
 		
@@ -1447,8 +1384,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a sync of a single feed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedSyncResult
 	{
 		
@@ -1477,8 +1413,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Total_time_seconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupSyncResult
 	{
 		
@@ -1510,24 +1445,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> Updated_record_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupSyncResultStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failure = 1,
 	}
 	
 	/// <summary>
 	/// The retrieved file entry including content (b64 encoded)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileContentSearchResult
 	{
 		
@@ -1541,8 +1473,7 @@ namespace MyNS
 	/// <summary>
 	/// Match of a named regex on a file
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegexContentMatch
 	{
 		
@@ -1568,8 +1499,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of the set of gates available in this engine and the triggers and parameters supported
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GateSpec
 	{
 		
@@ -1604,27 +1534,24 @@ namespace MyNS
 		public TriggerSpec[] Triggers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GateSpecState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deprecated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deprecated = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eol")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eol = 2,
 	}
 	
 	/// <summary>
 	/// Definition of a trigger and its parameters
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TriggerSpec
 	{
 		
@@ -1659,8 +1586,7 @@ namespace MyNS
 		public string Superceded_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TriggerParamSpec
 	{
 		
@@ -1707,8 +1633,7 @@ namespace MyNS
 	/// <summary>
 	/// Parent class for Notification Payloads
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenericNotificationPayload
 	{
 		
@@ -1728,8 +1653,7 @@ namespace MyNS
 	/// <summary>
 	/// Analysis report json to be imported
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageAnalysisReport
 	{
 	}
@@ -1737,8 +1661,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add an image to be watched and analyzed by the engine. Optionally include the dockerfile content. Either source, digest or tag must be present.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageAnalysisRequest
 	{
 		
@@ -1790,8 +1713,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of analysis source types. Only one may be set in any given request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageSource
 	{
 		
@@ -1820,8 +1742,7 @@ namespace MyNS
 	/// <summary>
 	/// An image reference using a digest in a registry, includes some extra tag and timestamp info in addition to the pull string to allow proper tag history reconstruction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegistryDigestSource
 	{
 		
@@ -1856,8 +1777,7 @@ namespace MyNS
 		public string Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageImportManifest
 	{
 		
@@ -1906,8 +1826,7 @@ namespace MyNS
 	/// <summary>
 	/// Digest of content to use in the final import
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportContentDigests
 	{
 		
@@ -1951,8 +1870,7 @@ namespace MyNS
 	/// <summary>
 	/// An image reference using a tag in a registry, this is the most common source type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegistryTagSource
 	{
 		
@@ -1973,8 +1891,7 @@ namespace MyNS
 		public string Pullstring { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageContentDeleteResponse
 	{
 	}
@@ -1982,8 +1899,7 @@ namespace MyNS
 	/// <summary>
 	/// Filter for an image list by id, tag, or digest, but not both
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageFilter
 	{
 		
@@ -1994,8 +1910,7 @@ namespace MyNS
 		public string Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageImportContentResponse
 	{
 		
@@ -2009,8 +1924,7 @@ namespace MyNS
 	/// <summary>
 	/// An import record, creating a unique identifier for referencing the operation as well as its state
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageImportOperation
 	{
 		
@@ -2027,33 +1941,30 @@ namespace MyNS
 		public string Uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageImportOperationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		processing = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complete = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expired = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImagePackageManifest
 	{
 		
@@ -2088,8 +1999,7 @@ namespace MyNS
 		public ImportSource Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportPackageRelationship
 	{
 		
@@ -2118,8 +2028,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportPackage
 	{
 		
@@ -2192,8 +2101,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportPackageLocation
 	{
 		
@@ -2208,8 +2116,7 @@ namespace MyNS
 		public string Path { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportDescriptor
 	{
 		
@@ -2228,8 +2135,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportDistribution
 	{
 		
@@ -2255,8 +2161,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportSchema
 	{
 		
@@ -2275,8 +2180,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportSource
 	{
 		
@@ -2298,8 +2202,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to an image
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageRef
 	{
 		
@@ -2318,27 +2221,24 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageRefType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tag = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="digest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		digest = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 2,
 	}
 	
 	/// <summary>
 	/// A summary of an image identity, including digest, id (if available), and any tags known to have ever been mapped to the digest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageReference
 	{
 		
@@ -2364,8 +2264,7 @@ namespace MyNS
 		public TagEntry[] Tag_history { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageSelectionRule
 	{
 		
@@ -2405,8 +2304,7 @@ namespace MyNS
 	/// <summary>
 	/// An image record that contains packages
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageWithPackages
 	{
 		
@@ -2423,8 +2321,7 @@ namespace MyNS
 	/// <summary>
 	/// A record of a software item which is vulnerable or carries a fix for a vulnerability
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackageReference
 	{
 		
@@ -2453,8 +2350,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Will_not_fix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocalAnalysisSource
 	{
 		
@@ -2462,8 +2358,7 @@ namespace MyNS
 		public string Digest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MappingRule
 	{
 		
@@ -2518,8 +2413,7 @@ namespace MyNS
 	/// <summary>
 	/// Generic wrapper for metadata listings from images
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetadataResponse
 	{
 		
@@ -2533,8 +2427,7 @@ namespace MyNS
 		public string Metadata_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NativeSbom
 	{
 	}
@@ -2542,8 +2435,7 @@ namespace MyNS
 	/// <summary>
 	/// base object for Notifications (every notification has this basic structure)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationBase
 	{
 		
@@ -2576,8 +2468,7 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NvdDataObject
 	{
 		
@@ -2597,8 +2488,7 @@ namespace MyNS
 	/// <summary>
 	/// Pagination wrapped list of images that match some filter
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaginatedImageList : PaginationProperties
 	{
 		
@@ -2609,8 +2499,7 @@ namespace MyNS
 	/// <summary>
 	/// A paginated listing of vulnerability records sorted by ID in descending order
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaginatedVulnerabilityList : PaginationProperties
 	{
 		
@@ -2624,8 +2513,7 @@ namespace MyNS
 	/// <summary>
 	/// A single vulnerability record in a single namespace, the unique key is the combination of the id and namespace
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StandaloneVulnerability
 	{
 		
@@ -2687,8 +2575,7 @@ namespace MyNS
 	/// <summary>
 	/// An external link/reference
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerabilityReference
 	{
 		
@@ -2708,33 +2595,30 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StandaloneVulnerabilitySeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Negligible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Negligible = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Low = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Medium = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="High")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		High = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Critical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Critical = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VendorDataObject
 	{
 		
@@ -2754,8 +2638,7 @@ namespace MyNS
 	/// <summary>
 	/// Pagination wrapped list of images with vulnerabilties that match some filter
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaginatedVulnerableImageList : PaginationProperties
 	{
 		
@@ -2766,8 +2649,7 @@ namespace MyNS
 	/// <summary>
 	/// A record of an image vulnerable to some known vulnerability. Includes vulnerable package information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerableImage
 	{
 		
@@ -2784,8 +2666,7 @@ namespace MyNS
 	/// <summary>
 	/// A record of a software item which is vulnerable or carries a fix for a vulnerability
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerablePackageReference
 	{
 		
@@ -2823,8 +2704,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties for common pagination handling to be included in any wrapping object that needs pagination elements
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaginationProperties
 	{
 		
@@ -2847,8 +2727,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Returned_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -2879,8 +2758,7 @@ namespace MyNS
 	/// <summary>
 	/// A rule that defines and decision value if the match is found true for a given image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyRule
 	{
 		
@@ -2912,19 +2790,17 @@ namespace MyNS
 		public string Trigger { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARN = 2,
 	}
 	
@@ -2949,8 +2825,7 @@ namespace MyNS
 	/// <summary>
 	/// A bundle containing a set of policies, whitelists, and rules for mapping them to specific images
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyBundle
 	{
 		
@@ -3020,8 +2895,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of whitelist items to match a policy evaluation against.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Whitelist
 	{
 		
@@ -3052,8 +2926,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies a specific gate and trigger match from a policy against an image and indicates it should be ignored in final policy decisions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WhitelistItem
 	{
 		
@@ -3085,8 +2958,7 @@ namespace MyNS
 	/// <summary>
 	/// A policy bundle plus some metadata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyBundleRecord
 	{
 		
@@ -3127,8 +2999,7 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyEvalNotification : NotificationBase
 	{
 		
@@ -3136,8 +3007,7 @@ namespace MyNS
 		public PolicyEvalNotificationData Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyEvalNotificationData : BaseNotificationData
 	{
 		
@@ -3145,8 +3015,7 @@ namespace MyNS
 		public PolicyEvalNotificationPayload Notification_payload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyEvalNotificationPayload : GenericNotificationPayload
 	{
 		
@@ -3172,8 +3041,7 @@ namespace MyNS
 	/// <summary>
 	/// Evaluation response object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyEvaluation
 	{
 	}
@@ -3181,8 +3049,7 @@ namespace MyNS
 	/// <summary>
 	/// A registry entry describing the endpoint and credentials for a registry to pull images from
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegistryConfiguration
 	{
 		
@@ -3232,8 +3099,7 @@ namespace MyNS
 	/// <summary>
 	/// A registry record describing the endpoint and credentials for a registry
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegistryConfigurationRequest
 	{
 		
@@ -3277,8 +3143,7 @@ namespace MyNS
 	/// <summary>
 	/// The retrieved file entry including content (b64 encoded)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetrievedFile
 	{
 		
@@ -3292,8 +3157,7 @@ namespace MyNS
 	/// <summary>
 	/// The retrieved file entry including content (b64 encoded)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecretSearchResult
 	{
 		
@@ -3307,8 +3171,7 @@ namespace MyNS
 	/// <summary>
 	/// A service status record
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Service
 	{
 		
@@ -3355,8 +3218,7 @@ namespace MyNS
 	/// <summary>
 	/// System status response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusResponse
 	{
 		
@@ -3385,8 +3247,7 @@ namespace MyNS
 	/// <summary>
 	/// Version information for a service
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceVersion
 	{
 		
@@ -3436,8 +3297,7 @@ namespace MyNS
 	/// <summary>
 	/// Subscription entry
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscription
 	{
 		
@@ -3481,8 +3341,7 @@ namespace MyNS
 	/// <summary>
 	/// A subscription entry to add to the system
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionRequest
 	{
 		
@@ -3499,8 +3358,7 @@ namespace MyNS
 	/// <summary>
 	/// A modification to a subscription entry to change its status or value
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionUpdate
 	{
 		
@@ -3520,8 +3378,7 @@ namespace MyNS
 	/// <summary>
 	/// System status response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SystemStatusResponse
 	{
 		
@@ -3532,8 +3389,7 @@ namespace MyNS
 		public Service[] Service_states { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagUpdateNotification : NotificationBase
 	{
 		
@@ -3541,8 +3397,7 @@ namespace MyNS
 		public TagUpdateNotificationData Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagUpdateNotificationData : BaseNotificationData
 	{
 		
@@ -3550,8 +3405,7 @@ namespace MyNS
 		public TagUpdateNotificationPayload Notification_payload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagUpdateNotificationPayload : GenericNotificationPayload
 	{
 		
@@ -3574,8 +3428,7 @@ namespace MyNS
 		public string[] Last_eval { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TokenResponse
 	{
 		
@@ -3591,8 +3444,7 @@ namespace MyNS
 	/// <summary>
 	/// A username for authenticating with one or more types of credentials. User type defines the expected credentials allowed for the user. Native users have passwords, External users have no credential internally. Internal users are service/system users for inter-service communication.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -3629,27 +3481,24 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="native")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		native = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="internal")]
 		_internal = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external = 2,
 	}
 	
 	/// <summary>
 	/// A payload for creating a new user, includes the username and password in a single request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserCreationRequest
 	{
 		
@@ -3677,8 +3526,7 @@ namespace MyNS
 	/// <summary>
 	/// The results of the comparing two vulnerability records during an update
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnDiffResult
 	{
 		
@@ -3692,8 +3540,7 @@ namespace MyNS
 		public string[] Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnUpdateNotification : NotificationBase
 	{
 		
@@ -3701,8 +3548,7 @@ namespace MyNS
 		public VulnUpdateNotificationData Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnUpdateNotificationData : BaseNotificationData
 	{
 		
@@ -3710,8 +3556,7 @@ namespace MyNS
 		public VulnUpdateNotificationPayload Notification_payload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnUpdateNotificationPayload : GenericNotificationPayload
 	{
 		
@@ -3731,8 +3576,7 @@ namespace MyNS
 		public string ImageDigest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Vulnerability
 	{
 		
@@ -3830,8 +3674,7 @@ namespace MyNS
 	/// <summary>
 	/// envelope containing list of vulnerabilities
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerabilityResponse
 	{
 		
@@ -7473,45 +7316,45 @@ namespace MyNS
 	public enum List_imagesImage_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleting = 2,
 	}
 	
 	public enum List_imagesAnalysis_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_analyzed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_analyzed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="analyzed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		analyzed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="analyzing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		analyzing = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="analysis_failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		analysis_failed = 3,
 	}
 	
 	public enum Test_webhookNotification_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tag_update")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tag_update = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="analysis_update")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		analysis_update = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vuln_update")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vuln_update = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="policy_eval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		policy_eval = 3,
 	}
 }

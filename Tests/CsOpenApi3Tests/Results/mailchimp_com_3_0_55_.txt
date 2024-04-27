@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about subscribers in an Automation email queue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostAutomationsIdEmailsIdQueueBody
 	{
 		
@@ -37,8 +36,7 @@ namespace MyNS
 	/// <summary>
 	/// A folder used to organize campaigns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostCampaignFoldersBody
 	{
 		
@@ -54,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a specific product variant.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostEcommerceStoresIdProductsIdVariantsBody
 	{
 		
@@ -121,8 +118,7 @@ namespace MyNS
 	/// <summary>
 	/// An individual folder listed in the File Manager.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostFileManagerFoldersBody
 	{
 		
@@ -138,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// Interest categories organize interests, which are used to group subscribers based on their preferences. These correspond to Group Titles the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostListsIdInterestCategoriesBody
 	{
 		
@@ -166,30 +161,27 @@ namespace MyNS
 		public PostListsIdInterestCategoriesBodyType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostListsIdInterestCategoriesBodyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="checkboxes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		checkboxes = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dropdown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dropdown = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="radio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		radio = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hidden")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hidden = 3,
 	}
 	
 	/// <summary>
 	/// Assign subscribers to interests to group them together. Interests are referred to as 'group names' in the Mailchimp application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostListsIdInterestCategoriesIdInterestsBody
 	{
 		
@@ -211,8 +203,7 @@ namespace MyNS
 	/// <summary>
 	/// A specific note for a specific member.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostListsIdMembersIdNotesBody
 	{
 		
@@ -226,8 +217,7 @@ namespace MyNS
 	/// <summary>
 	/// Configure a webhook for the given list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostListsIdWebhooksBody
 	{
 		
@@ -315,8 +305,7 @@ namespace MyNS
 	/// <summary>
 	/// A folder used to organize templates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostTemplateFoldersBody
 	{
 		
@@ -332,8 +321,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a specific template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostTemplatesBody
 	{
 		
@@ -10667,31 +10655,29 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetRootReturn_linksMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATCH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIONS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEAD = 6,
 	}
 	
@@ -10763,19 +10749,17 @@ namespace MyNS
 		public System.Nullable<System.Double> Open_rate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetRootReturnPricing_plan_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		monthly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pay_as_you_go")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pay_as_you_go = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forever_free")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forever_free = 2,
 	}
 	
@@ -11171,9 +11155,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetActivityFeedChimpChatterReturnChimp_chatterType
 	{
 		
@@ -11391,13 +11373,13 @@ namespace MyNS
 	public enum GetAutomationsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="save")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		save = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		paused = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 2,
 	}
 	
@@ -11617,16 +11599,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Saved_segment_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetAutomationsReturnAutomationsRecipientsSegment_optsMatch
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		any = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 1,
 	}
 	
@@ -11864,77 +11844,73 @@ namespace MyNS
 		public GetAutomationsReturnAutomationsTrigger_settingsRuntimeHoursType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetAutomationsReturnAutomationsTrigger_settingsRuntimeHoursType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="send_asap")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		send_asap = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="send_between")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		send_between = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="send_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		send_at = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetAutomationsReturnAutomationsTrigger_settingsWorkflow_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="abandonedBrowse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		abandonedBrowse = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="abandonedCart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		abandonedCart = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="api")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		api = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bestCustomers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bestCustomers = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="categoryFollowup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		categoryFollowup = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dateAdded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dateAdded = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="emailFollowup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		emailFollowup = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="emailSeries")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		emailSeries = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groupAdd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groupAdd = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groupRemove")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groupRemove = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mandrill")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mandrill = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="productFollowup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		productFollowup = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purchaseFollowup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purchaseFollowup = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recurringEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recurringEvent = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="specialEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		specialEvent = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="visitUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		visitUrl = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="welcomeSeries")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		welcomeSeries = 16,
 	}
 	
@@ -13056,141 +13032,135 @@ namespace MyNS
 		public System.Nullable<GetAutomationsIdEmailsReturnEmailsDelayType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetAutomationsIdEmailsReturnEmailsDelayAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="previous_campaign_sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		previous_campaign_sent = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="previous_campaign_opened")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		previous_campaign_opened = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="previous_campaign_not_opened")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		previous_campaign_not_opened = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="previous_campaign_clicked_any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		previous_campaign_clicked_any = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="previous_campaign_not_clicked_any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		previous_campaign_not_clicked_any = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="previous_campaign_specific_clicked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		previous_campaign_specific_clicked = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecomm_bought_any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecomm_bought_any = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecomm_bought_product")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecomm_bought_product = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecomm_bought_category")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecomm_bought_category = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecomm_not_bought_any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecomm_not_bought_any = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecomm_abandoned_cart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecomm_abandoned_cart = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="campaign_sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		campaign_sent = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="opened_email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		opened_email = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_opened_email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_opened_email = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clicked_email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clicked_email = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_clicked_email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_clicked_email = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="campaign_specific_clicked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		campaign_specific_clicked = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="signup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		signup = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="merge_changed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		merge_changed = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group_add")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group_add = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group_remove")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group_remove = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mandrill_sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mandrill_sent = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mandrill_opened")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mandrill_opened = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mandrill_clicked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mandrill_clicked = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mandrill_any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mandrill_any = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="api")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		api = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="goal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		goal = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="annual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		annual = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="birthday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		birthday = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date_added = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tag_add")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tag_add = 32,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetAutomationsIdEmailsReturnEmailsDelayDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="before")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		before = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="after")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		after = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetAutomationsIdEmailsReturnEmailsDelayType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="now")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		now = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		day = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hour = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		week = 3,
 	}
 	
@@ -14152,29 +14122,25 @@ namespace MyNS
 		public GetAutomationsIdEmailsReturnEmailsDelayType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchAutomationEmailWorkflowIdPatchBodyDelayAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="signup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		signup = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecomm_abandoned_browse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecomm_abandoned_browse = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecomm_abandoned_cart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecomm_abandoned_cart = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchAutomationEmailWorkflowIdPatchBodyDelayDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="after")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		after = 0,
 	}
 	
@@ -15844,25 +15810,23 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetBatchesReturnBatchesStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preprocessing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preprocessing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		started = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="finalizing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		finalizing = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		finished = 4,
 	}
 	
@@ -15916,25 +15880,23 @@ namespace MyNS
 		public string Path { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostBatchesPostBodyOperationsMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATCH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 4,
 	}
 	
@@ -16429,58 +16391,58 @@ namespace MyNS
 	public enum GetCampaignsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regular = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plaintext")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plaintext = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="absplit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		absplit = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rss")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rss = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="variate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		variate = 4,
 	}
 	
 	public enum GetCampaignsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="save")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		save = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		paused = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="schedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		schedule = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 4,
 	}
 	
 	public enum GetCampaignsSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="create_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		create_time = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="send_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		send_time = 1,
 	}
 	
 	public enum GetCampaignsSort_dir
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESC = 1,
 	}
 	
@@ -16807,67 +16769,59 @@ namespace MyNS
 		public System.Nullable<GetCampaignsReturnCampaignsAb_split_optsWait_units> Wait_units { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsReturnCampaignsAb_split_optsPick_winner
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="opens")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		opens = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clicks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clicks = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsReturnCampaignsAb_split_optsSplit_test
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subject")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subject = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="from_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		from_name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="schedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		schedule = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsReturnCampaignsAb_split_optsWait_units
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hours")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hours = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="days")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		days = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsReturnCampaignsContent_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="template")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		template = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		html = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		url = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="multichannel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		multichannel = 3,
 	}
 	
@@ -16905,22 +16859,20 @@ namespace MyNS
 		public System.Nullable<GetCampaignsReturnCampaignsDelivery_statusStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsReturnCampaignsDelivery_statusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivering")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivering = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceling = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 3,
 	}
 	
@@ -17094,19 +17046,17 @@ namespace MyNS
 		public GetCampaignsReturnCampaignsRss_optsSchedule Schedule { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsReturnCampaignsRss_optsFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		daily = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		weekly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		monthly = 2,
 	}
 	
@@ -17190,31 +17140,29 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Wednesday { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsReturnCampaignsRss_optsScheduleWeekly_send_day
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sunday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sunday = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="monday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		monday = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tuesday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tuesday = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wednesday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wednesday = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="thursday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		thursday = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="friday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		friday = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="saturday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		saturday = 6,
 	}
 	
@@ -17346,34 +17294,32 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsReturnCampaignsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="save")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		save = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		paused = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="schedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		schedule = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceling = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archived = 7,
 	}
 	
@@ -17577,22 +17523,20 @@ namespace MyNS
 		public System.Nullable<System.Int32> Subject_line { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsReturnCampaignsVariate_settingsWinner_criteria
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="opens")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		opens = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clicks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clicks = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total_revenue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total_revenue = 3,
 	}
 	
@@ -17650,16 +17594,14 @@ namespace MyNS
 		public PostCampaignsPostBodyVariate_settings Variate_settings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostCampaignsPostBodyContent_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="template")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		template = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="multichannel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		multichannel = 1,
 	}
 	
@@ -22984,16 +22926,14 @@ namespace MyNS
 		public string[] Test_emails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostCampaignsIdActionsTestPostBodySend_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		html = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plaintext")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plaintext = 1,
 	}
 	
@@ -23145,13 +23085,11 @@ namespace MyNS
 		public System.Nullable<PutCampaignsIdContentPutBodyArchiveArchive_type> Archive_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PutCampaignsIdContentPutBodyArchiveArchive_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zip = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="tar.gz")]
@@ -23160,13 +23098,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="tar.bz2")]
 		tar_bz2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tar = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tgz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tgz = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tbz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tbz = 5,
 	}
 	
@@ -23248,13 +23186,11 @@ namespace MyNS
 		public System.Nullable<PutCampaignsIdContentPutBodyVariate_contentsArchiveArchive_type> Archive_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PutCampaignsIdContentPutBodyVariate_contentsArchiveArchive_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zip = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="tar.gz")]
@@ -23263,13 +23199,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="tar.bz2")]
 		tar_bz2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tar = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tgz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tgz = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tbz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tbz = 5,
 	}
 	
@@ -23549,28 +23485,26 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsIdFeedbackReturnFeedbackSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="api")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		api = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		web = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ios")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ios = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="android")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		android = 5,
 	}
 	
@@ -24016,19 +23950,17 @@ namespace MyNS
 		public System.Nullable<GetCampaignsIdSendChecklistReturnItemsType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignsIdSendChecklistReturnItemsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="warning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		warning = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 2,
 	}
 	
@@ -25678,16 +25610,14 @@ namespace MyNS
 		public System.Nullable<GetEcommerceOrdersReturnOrdersPromosType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetEcommerceOrdersReturnOrdersPromosType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -25773,13 +25703,11 @@ namespace MyNS
 		public string Province_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetEcommerceOrdersReturnOrdersTracking_code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="prec")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		prec = 0,
 	}
 	
@@ -26093,19 +26021,17 @@ namespace MyNS
 		public System.Nullable<GetEcommerceStoresReturnStoresAutomationsAbandoned_browseStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetEcommerceStoresReturnStoresAutomationsAbandoned_browseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="save")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		save = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		paused = 2,
 	}
 	
@@ -31515,16 +31441,14 @@ namespace MyNS
 		public System.Nullable<GetEcommerceStoresIdOrdersReturnOrdersPromosType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetEcommerceStoresIdOrdersReturnOrdersPromosType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -32040,16 +31964,14 @@ namespace MyNS
 		public PostEcommerceStoresIdOrdersPostBodyPromosType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostEcommerceStoresIdOrdersPostBodyPromosType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -32721,16 +32643,14 @@ namespace MyNS
 		public System.Nullable<PostEcommerceStoresIdOrdersReturnPromosType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostEcommerceStoresIdOrdersReturnPromosType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -33402,16 +33322,14 @@ namespace MyNS
 		public System.Nullable<GetEcommerceStoresIdOrdersIdReturnPromosType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetEcommerceStoresIdOrdersIdReturnPromosType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -33879,16 +33797,14 @@ namespace MyNS
 		public PatchEcommerceStoresIdOrdersIdPatchBodyPromosType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchEcommerceStoresIdOrdersIdPatchBodyPromosType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -34560,16 +34476,14 @@ namespace MyNS
 		public System.Nullable<PatchEcommerceStoresIdOrdersIdReturnPromosType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchEcommerceStoresIdOrdersIdReturnPromosType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -37921,32 +37835,28 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetEcommerceStoresIdPromorulesReturnPromo_rulesTarget
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="per_item")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		per_item = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shipping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shipping = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetEcommerceStoresIdPromorulesReturnPromo_rulesType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -38030,16 +37940,14 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_at_foreign { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostEcommerceStoresIdPromorulesPostBodyType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -38153,16 +38061,14 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostEcommerceStoresIdPromorulesReturnType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -38276,16 +38182,14 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetEcommerceStoresIdPromorulesIdReturnType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -38353,16 +38257,14 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_at_foreign { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchEcommerceStoresIdPromorulesIdPatchBodyType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -38476,16 +38378,14 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchEcommerceStoresIdPromorulesIdReturnType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed")]
 		_fixed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percentage = 1,
 	}
 	
@@ -38990,13 +38890,13 @@ namespace MyNS
 	public enum GetAllFacebookAdsSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created_at = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="updated_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		updated_at = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="end_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		end_time = 2,
 	}
 	
@@ -39277,135 +39177,131 @@ namespace MyNS
 		public System.Nullable<System.Double> Total_revenue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetFacebookAdsIdReturnStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="save")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		save = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		paused = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="schedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		schedule = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceling = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disconnected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disconnected = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="somepaused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		somepaused = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="draft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		draft = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="partialRejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		partialRejected = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="published")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		published = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unpublished")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unpublished = 17,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetFacebookAdsIdReturnType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regular = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="email-touchpoint")]
 		emailMinustouchpoint = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plaintext")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plaintext = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rss")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rss = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reconfirm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reconfirm = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="variate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		variate = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="absplit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		absplit = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="automation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		automation = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="facebook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		facebook = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="google")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		google = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="autoresponder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		autoresponder = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transactional")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transactional = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="page")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		page = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="website")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		website = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="social_post")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		social_post = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="survey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		survey = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer_journey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer_journey = 16,
 	}
 	
 	public enum GetFileManagerFilesSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="added_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		added_date = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="size")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		size = 2,
 	}
 	
@@ -39581,16 +39477,14 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetFileManagerFilesReturnFilesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="image")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		image = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="file")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		file = 1,
 	}
 	
@@ -40493,10 +40387,10 @@ namespace MyNS
 	public enum GetAllLandingPagesSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created_at = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="updated_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		updated_at = 1,
 	}
 	
@@ -40696,19 +40590,17 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetAllLandingPagesReturnLanding_pagesStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="published")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		published = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unpublished")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unpublished = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="draft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		draft = 2,
 	}
 	
@@ -40796,16 +40688,14 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Track_with_mailchimp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostAllLandingPagesPostBodyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="signup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		signup = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="product")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		product = 1,
 	}
 	
@@ -41392,7 +41282,7 @@ namespace MyNS
 	public enum GetListsSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date_created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date_created = 0,
 	}
 	
@@ -41844,16 +41734,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Unsubscribe_count_since_send { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetListsReturnListsVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pub")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pub = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="prv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		prv = 1,
 	}
 	
@@ -43395,25 +43283,23 @@ namespace MyNS
 		public System.Nullable<System.Double> Longitude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostListsIdPostBodyMembersStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscribed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsubscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsubscribed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cleaned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cleaned = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transactional")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transactional = 4,
 	}
 	
@@ -43531,16 +43417,14 @@ namespace MyNS
 		public string Field_message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostListsIdReturnErrorsError_code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CONTACT_EXISTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_CONTACT_EXISTS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_GENERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_GENERIC = 1,
 	}
 	
@@ -44589,7 +44473,7 @@ namespace MyNS
 	public enum GetListsIdGrowthHistorySort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		month = 0,
 	}
 	
@@ -45726,48 +45610,48 @@ namespace MyNS
 	public enum GetListsIdMembersStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscribed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsubscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsubscribed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cleaned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cleaned = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transactional")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transactional = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archived = 5,
 	}
 	
 	public enum GetListsIdMembersInterest_match
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		any = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 2,
 	}
 	
 	public enum GetListsIdMembersSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timestamp_opt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timestamp_opt = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timestamp_signup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timestamp_signup = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_changed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_changed = 2,
 	}
 	
@@ -47193,22 +47077,20 @@ namespace MyNS
 		public string Marketing_permission_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchListsIdMembersIdPatchBodyStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscribed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsubscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsubscribed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cleaned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cleaned = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 3,
 	}
 	
@@ -48473,13 +48355,13 @@ namespace MyNS
 	public enum GetListsIdMembersIdNotesSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created_at = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="updated_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		updated_at = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="note_id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		note_id = 2,
 	}
 	
@@ -49035,16 +48917,14 @@ namespace MyNS
 		public PostListMemberTagsPostBodyTagsStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostListMemberTagsPostBodyTagsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 1,
 	}
 	
@@ -49254,43 +49134,41 @@ namespace MyNS
 		public System.Nullable<System.Int32> Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetListsIdMergeFieldsReturnMerge_fieldsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		number = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="address")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		address = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phone = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		url = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="imageurl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		imageurl = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="radio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		radio = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dropdown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dropdown = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="birthday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		birthday = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zip = 10,
 	}
 	
@@ -50074,19 +49952,17 @@ namespace MyNS
 		public GetAutomationsReturnAutomationsRecipientsSegment_optsMatch Match { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PreviewASegmentReturnSegmentsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="saved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		saved = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="static")]
 		_static = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fuzzy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fuzzy = 2,
 	}
 	
@@ -50238,19 +50114,17 @@ namespace MyNS
 		public GetAutomationsReturnAutomationsRecipientsSegment_optsMatch Match { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostListsIdSegmentsReturnType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="saved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		saved = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="static")]
 		_static = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fuzzy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fuzzy = 2,
 	}
 	
@@ -50362,19 +50236,17 @@ namespace MyNS
 		public GetAutomationsReturnAutomationsRecipientsSegment_optsMatch Match { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetListsIdSegmentsIdReturnType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="saved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		saved = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="static")]
 		_static = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fuzzy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fuzzy = 2,
 	}
 	
@@ -50526,19 +50398,17 @@ namespace MyNS
 		public GetAutomationsReturnAutomationsRecipientsSegment_optsMatch Match { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchListsIdSegmentsIdReturnType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="saved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		saved = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="static")]
 		_static = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fuzzy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fuzzy = 2,
 	}
 	
@@ -51922,19 +51792,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetListsIdSignupFormsReturnSignup_formsContentsSection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="signup_message")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		signup_message = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsub_message")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsub_message = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="signup_thank_you_title")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		signup_thank_you_title = 2,
 	}
 	
@@ -52008,66 +51876,60 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetListsIdSignupFormsReturnSignup_formsHeaderImage_align
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="left")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		left = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="center")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		center = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="right")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		right = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetListsIdSignupFormsReturnSignup_formsHeaderImage_border_style
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="solid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		solid = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dotted = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dashed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dashed = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="double")]
 		_double = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groove")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groove = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outset = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inset = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ridge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ridge = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetListsIdSignupFormsReturnSignup_formsHeaderImage_target
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="_blank")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_blank = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="null")]
@@ -52106,52 +51968,50 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetListsIdSignupFormsReturnSignup_formsStylesSelector
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="page_background")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		page_background = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="page_header")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		page_header = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="page_outer_wrapper")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		page_outer_wrapper = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="body_background")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		body_background = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="body_link_style")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		body_link_style = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forms_buttons")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forms_buttons = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forms_buttons_hovered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forms_buttons_hovered = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forms_field_label")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forms_field_label = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forms_field_text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forms_field_text = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forms_required")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forms_required = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forms_required_legend")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forms_required_legend = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forms_help_text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forms_help_text = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forms_errors")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forms_errors = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="monkey_rewards_badge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		monkey_rewards_badge = 13,
 	}
 	
@@ -52263,47 +52123,43 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostListsIdSignupFormsPostBodyHeaderImage_border_style
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="solid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		solid = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dotted = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dashed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dashed = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="double")]
 		_double = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groove")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groove = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outset = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inset = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ridge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ridge = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostListsIdSignupFormsPostBodyHeaderImage_target
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="_blank")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_blank = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="null")]
@@ -52502,47 +52358,43 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostListsIdSignupFormsReturnHeaderImage_border_style
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="solid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		solid = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dotted = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dashed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dashed = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="double")]
 		_double = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groove")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groove = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outset = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inset = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ridge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ridge = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostListsIdSignupFormsReturnHeaderImage_target
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="_blank")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_blank = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="null")]
@@ -54389,74 +54241,72 @@ namespace MyNS
 		public System.Nullable<System.Double> Total_revenue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetReportingFacebookAdsIdReturnType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regular = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="email-touchpoint")]
 		emailMinustouchpoint = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plaintext")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plaintext = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rss")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rss = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reconfirm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reconfirm = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="variate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		variate = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="absplit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		absplit = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="automation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		automation = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="facebook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		facebook = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="google")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		google = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="autoresponder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		autoresponder = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transactional")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transactional = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="page")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		page = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="website")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		website = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="social_post")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		social_post = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="survey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		survey = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer_journey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer_journey = 16,
 	}
 	
 	public enum GetReportingFacebookAdsIdEcommerceProductActivitySort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="title")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		title = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total_revenue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total_revenue = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total_purchased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total_purchased = 2,
 	}
 	
@@ -55316,16 +55166,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Web_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetReportingSurveysReturnSurveysStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="published")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		published = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unpublished")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unpublished = 1,
 	}
 	
@@ -55627,25 +55475,23 @@ namespace MyNS
 		public string Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetReportingSurveysIdQuestionsReturnQuestionsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pickOne")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pickOne = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pickMany")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pickMany = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="range")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		range = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 4,
 	}
 	
@@ -55827,10 +55673,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="new")]
 		_new = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="known")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		known = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 2,
 	}
 	
@@ -55976,25 +55822,23 @@ namespace MyNS
 		public System.Nullable<GetReportingSurveysIdQuestionsIdAnswersReturnAnswersContactStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetReportingSurveysIdQuestionsIdAnswersReturnAnswersContactStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Subscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Subscribed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unsubscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unsubscribed = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Non-Subscribed")]
 		NonMinusSubscribed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cleaned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cleaned = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Archived = 4,
 	}
 	
@@ -56004,10 +55848,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="new")]
 		_new = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="known")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		known = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 2,
 	}
 	
@@ -56141,25 +55985,23 @@ namespace MyNS
 		public System.Nullable<GetReportingSurveysIdResponsesReturnResponsesContactStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetReportingSurveysIdResponsesReturnResponsesContactStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Subscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Subscribed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unsubscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unsubscribed = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Non-Subscribed")]
 		NonMinusSubscribed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cleaned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cleaned = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Archived = 4,
 	}
 	
@@ -56243,25 +56085,23 @@ namespace MyNS
 		public System.Nullable<GetReportingSurveysIdResponsesIdReturnContactStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetReportingSurveysIdResponsesIdReturnContactStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Subscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Subscribed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unsubscribed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unsubscribed = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Non-Subscribed")]
 		NonMinusSubscribed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cleaned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cleaned = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Archived = 4,
 	}
 	
@@ -58091,29 +57931,27 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetReportsIdAdviceReturnAdviceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="negative")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		negative = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="positive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		positive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neutral")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neutral = 2,
 	}
 	
 	public enum GetReportsIdClickDetailsSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total_clicks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total_clicks = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unique_clicks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unique_clicks = 1,
 	}
 	
@@ -59617,7 +59455,7 @@ namespace MyNS
 	public enum GetReportsIdOpenDetailsSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="opens_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		opens_count = 0,
 	}
 	
@@ -60095,35 +59933,31 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetReportsIdSentToReturnSent_toAbsplit_group
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="b")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		b = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="winner")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		winner = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetReportsIdSentToReturnSent_toStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hard = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="soft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		soft = 2,
 	}
 	
@@ -63337,26 +63171,26 @@ namespace MyNS
 	public enum GetTemplatesSort_field
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date_created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date_created = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date_edited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date_edited = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 2,
 	}
 	
 	public enum GetTemplatesContent_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		html = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="template")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		template = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="multichannel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		multichannel = 2,
 	}
 	
@@ -63550,19 +63384,17 @@ namespace MyNS
 		public string TargetSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetTemplatesReturnTemplatesContent_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="template")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		template = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="multichannel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		multichannel = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		html = 2,
 	}
 	

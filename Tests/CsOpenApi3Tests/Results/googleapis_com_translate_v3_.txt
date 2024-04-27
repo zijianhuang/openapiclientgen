@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An Adaptive MT Dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdaptiveMtDataset
 	{
 		
@@ -71,8 +70,7 @@ namespace MyNS
 	/// <summary>
 	/// An AdaptiveMtFile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdaptiveMtFile
 	{
 		
@@ -110,8 +108,7 @@ namespace MyNS
 	/// <summary>
 	/// An AdaptiveMt sentence entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdaptiveMtSentence
 	{
 		
@@ -149,8 +146,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for sending an AdaptiveMt translation query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdaptiveMtTranslateRequest
 	{
 		
@@ -170,8 +166,7 @@ namespace MyNS
 	/// <summary>
 	/// An AdaptiveMtTranslate response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdaptiveMtTranslateResponse
 	{
 		
@@ -191,8 +186,7 @@ namespace MyNS
 	/// <summary>
 	/// An AdaptiveMt translation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdaptiveMtTranslation
 	{
 		
@@ -206,8 +200,7 @@ namespace MyNS
 	/// <summary>
 	/// Input configuration for BatchTranslateDocument request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDocumentInputConfig
 	{
 		
@@ -221,8 +214,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location for the input content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsSource
 	{
 		
@@ -236,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// Output configuration for BatchTranslateDocument request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDocumentOutputConfig
 	{
 		
@@ -251,8 +242,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location for the output content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsDestination
 	{
 		
@@ -266,8 +256,7 @@ namespace MyNS
 	/// <summary>
 	/// The BatchTranslateDocument request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchTranslateDocumentRequest
 	{
 		
@@ -335,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures which glossary is used for a specific target language and defines options for applying that glossary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranslateTextGlossaryConfig
 	{
 		
@@ -356,8 +344,7 @@ namespace MyNS
 	/// <summary>
 	/// The batch translation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchTranslateTextRequest
 	{
 		
@@ -407,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// Input configuration for BatchTranslateText request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputConfig
 	{
 		
@@ -428,8 +414,7 @@ namespace MyNS
 	/// <summary>
 	/// Output configuration for BatchTranslateText request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputConfig
 	{
 		
@@ -443,8 +428,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelOperationRequest
 	{
 	}
@@ -452,8 +436,7 @@ namespace MyNS
 	/// <summary>
 	/// A dataset that hosts the examples (sentence pairs) used for translation models.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dataset
 	{
 		
@@ -521,8 +504,7 @@ namespace MyNS
 	/// <summary>
 	/// Input configuration for datasets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetInputConfig
 	{
 		
@@ -536,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// An input file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputFile
 	{
 		
@@ -557,8 +538,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location for the input content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsInputSource
 	{
 		
@@ -572,8 +552,7 @@ namespace MyNS
 	/// <summary>
 	/// Output configuration for datasets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetOutputConfig
 	{
 		
@@ -587,8 +566,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location for the output content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsOutputDestination
 	{
 		
@@ -602,8 +580,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for language detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectLanguageRequest
 	{
 		
@@ -635,8 +612,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for language detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectLanguageResponse
 	{
 		
@@ -650,8 +626,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for language detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedLanguage
 	{
 		
@@ -671,8 +646,7 @@ namespace MyNS
 	/// <summary>
 	/// A document translation request input config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentInputConfig
 	{
 		
@@ -698,8 +672,7 @@ namespace MyNS
 	/// <summary>
 	/// A document translation request output config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentOutputConfig
 	{
 		
@@ -719,8 +692,7 @@ namespace MyNS
 	/// <summary>
 	/// A translated document message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentTranslation
 	{
 		
@@ -746,8 +718,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -755,8 +726,7 @@ namespace MyNS
 	/// <summary>
 	/// A sentence pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Example
 	{
 		
@@ -788,8 +758,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ExportData.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportDataRequest
 	{
 		
@@ -803,8 +772,7 @@ namespace MyNS
 	/// <summary>
 	/// An inlined file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileInputSource
 	{
 		
@@ -830,8 +798,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a glossary built from user-provided data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Glossary
 	{
 		
@@ -887,8 +854,7 @@ namespace MyNS
 	/// <summary>
 	/// Input configuration for glossaries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlossaryInputConfig
 	{
 		
@@ -902,8 +868,7 @@ namespace MyNS
 	/// <summary>
 	/// Used with equivalent term set glossaries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguageCodesSet
 	{
 		
@@ -917,8 +882,7 @@ namespace MyNS
 	/// <summary>
 	/// Used with unidirectional glossaries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguageCodePair
 	{
 		
@@ -938,8 +902,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single entry in a glossary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlossaryEntry
 	{
 		
@@ -971,8 +934,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single entry for an unidirectional glossary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlossaryTermsPair
 	{
 		
@@ -992,8 +954,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single glossary term
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlossaryTerm
 	{
 		
@@ -1013,8 +974,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single entry for an equivalent term set glossary. This is used for equivalent term sets where each term can be replaced by the other terms in the set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlossaryTermsSet
 	{
 		
@@ -1028,8 +988,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for importing an AdaptiveMt file along with its sentences.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportAdaptiveMtFileRequest
 	{
 		
@@ -1049,8 +1008,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for importing an AdaptiveMtFile
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportAdaptiveMtFileResponse
 	{
 		
@@ -1064,8 +1022,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ImportData.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportDataRequest
 	{
 		
@@ -1079,8 +1036,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of AdaptiveMtDatasets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdaptiveMtDatasetsResponse
 	{
 		
@@ -1100,8 +1056,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for listing all AdaptiveMt files under a given dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdaptiveMtFilesResponse
 	{
 		
@@ -1121,8 +1076,7 @@ namespace MyNS
 	/// <summary>
 	/// List AdaptiveMt sentences response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdaptiveMtSentencesResponse
 	{
 		
@@ -1142,8 +1096,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListDatasets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatasetsResponse
 	{
 		
@@ -1163,8 +1116,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListExamples.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListExamplesResponse
 	{
 		
@@ -1184,8 +1136,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListGlossaries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGlossariesResponse
 	{
 		
@@ -1205,8 +1156,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListGlossaryEntries
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGlossaryEntriesResponse
 	{
 		
@@ -1226,8 +1176,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -1247,8 +1196,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -1286,8 +1234,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListModels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListModelsResponse
 	{
 		
@@ -1307,8 +1254,7 @@ namespace MyNS
 	/// <summary>
 	/// A trained translation model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Model
 	{
 		
@@ -1376,8 +1322,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -1397,8 +1342,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1436,8 +1380,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1463,8 +1406,7 @@ namespace MyNS
 	/// <summary>
 	/// A single romanization response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Romanization
 	{
 		
@@ -1484,8 +1426,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for synchronous romanization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RomanizeTextRequest
 	{
 		
@@ -1505,8 +1446,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for synchronous romanization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RomanizeTextResponse
 	{
 		
@@ -1520,8 +1460,7 @@ namespace MyNS
 	/// <summary>
 	/// A single supported language response corresponds to information related to one supported language.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupportedLanguage
 	{
 		
@@ -1553,8 +1492,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for discovering supported languages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupportedLanguages
 	{
 		
@@ -1568,8 +1506,7 @@ namespace MyNS
 	/// <summary>
 	/// A document translation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranslateDocumentRequest
 	{
 		
@@ -1643,8 +1580,7 @@ namespace MyNS
 	/// <summary>
 	/// A translated document response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranslateDocumentResponse
 	{
 		
@@ -1676,8 +1612,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for synchronous translation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranslateTextRequest
 	{
 		
@@ -1733,8 +1668,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures transliteration feature on top of translation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransliterationConfig
 	{
 		
@@ -1745,8 +1679,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> EnableTransliteration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranslateTextResponse
 	{
 		
@@ -1766,8 +1699,7 @@ namespace MyNS
 	/// <summary>
 	/// A single translation response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Translation
 	{
 		
@@ -1799,8 +1731,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.WaitOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaitOperationRequest
 	{
 		

@@ -21,8 +21,7 @@ namespace MyNS
 	/// The readonly representation of a catalog computed with a given resource
 	///context.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPrivatecatalogV1beta1Catalog
 	{
 		
@@ -62,8 +61,7 @@ namespace MyNS
 	/// The readonly representation of a product computed with a given resource
 	///context.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPrivatecatalogV1beta1Product
 	{
 		
@@ -220,8 +218,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for PrivateCatalog.SearchCatalogs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPrivatecatalogV1beta1SearchCatalogsResponse
 	{
 		
@@ -243,8 +240,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for PrivateCatalog.SearchProducts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPrivatecatalogV1beta1SearchProductsResponse
 	{
 		
@@ -266,8 +262,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for PrivateCatalog.SearchVersions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPrivatecatalogV1beta1SearchVersionsResponse
 	{
 		
@@ -290,8 +285,7 @@ namespace MyNS
 	/// The consumer representation of a version which is a child resource under a
 	///`Product` with asset data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPrivatecatalogV1beta1Version
 	{
 		

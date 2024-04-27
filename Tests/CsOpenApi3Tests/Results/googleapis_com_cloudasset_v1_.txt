@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies roles and/or permissions to analyze, to determine both the identities possessing them and the resources they control. If multiple values are specified, results will include roles or permissions matching any of them. The total number of roles and permissions should be equal or less than 10.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessSelector
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the metadata of the longrunning operation for the AnalyzeIamPolicyLongrunning RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeIamPolicyLongrunningMetadata
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// A request message for AssetService.AnalyzeIamPolicyLongrunning.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeIamPolicyLongrunningRequest
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// IAM policy analysis query message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IamPolicyAnalysisQuery
 	{
 		
@@ -128,8 +124,7 @@ namespace MyNS
 	/// <summary>
 	/// The IAM conditions context.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConditionContext
 	{
 		
@@ -143,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an identity for which to determine resource access, based on roles assigned either directly to them or to the groups they belong to, directly or indirectly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitySelector
 	{
 		
@@ -158,8 +152,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains query options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Options
 	{
 		
@@ -203,8 +196,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the resource to analyze for access policies, which may be set directly on the resource, or on ancestors such as organizations, folders or projects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceSelector
 	{
 		
@@ -218,8 +210,7 @@ namespace MyNS
 	/// <summary>
 	/// Output configuration for export IAM policy analysis destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IamPolicyAnalysisOutputConfig
 	{
 		
@@ -239,8 +230,7 @@ namespace MyNS
 	/// <summary>
 	/// A BigQuery destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1BigQueryDestination
 	{
 		
@@ -269,24 +259,21 @@ namespace MyNS
 		public string WriteDisposition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssetV1BigQueryDestinationPartitionKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTITION_KEY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTITION_KEY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST_TIME = 1,
 	}
 	
 	/// <summary>
 	/// A Cloud Storage location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1GcsDestination
 	{
 		
@@ -300,8 +287,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for AssetService.AnalyzeIamPolicyLongrunning.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeIamPolicyLongrunningResponse
 	{
 	}
@@ -309,8 +295,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for AssetService.AnalyzeIamPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeIamPolicyResponse
 	{
 		
@@ -336,8 +321,7 @@ namespace MyNS
 	/// <summary>
 	/// An analysis message to group the query and results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IamPolicyAnalysis
 	{
 		
@@ -369,8 +353,7 @@ namespace MyNS
 	/// <summary>
 	/// IAM Policy analysis result, consisting of one IAM policy binding and derived access control lists.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IamPolicyAnalysisResult
 	{
 		
@@ -408,8 +391,7 @@ namespace MyNS
 	/// <summary>
 	/// An access control list, derived from the above IAM policy binding, which contains a set of resources and accesses. May include one item from each set to compose an access control entry. NOTICE that there could be multiple access control lists for one IAM policy binding. The access control lists are created based on resource and access combinations. For example, assume we have the following cases in one IAM policy binding: - Permission P1 and P2 apply to resource R1 and R2; - Permission P3 applies to resource R2 and R3; This will result in the following access control lists: - AccessControlList 1: [R1, R2], [P1, P2] - AccessControlList 2: [R2, R3], [P3]
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1AccessControlList
 	{
 		
@@ -441,8 +423,7 @@ namespace MyNS
 	/// <summary>
 	/// An IAM role or permission under analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1Access
 	{
 		
@@ -468,8 +449,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the detailed state of an entity under analysis, such as a resource, an identity or an access.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IamPolicyAnalysisState
 	{
 		
@@ -486,69 +466,66 @@ namespace MyNS
 		public System.Nullable<IamPolicyAnalysisStateCode> Code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IamPolicyAnalysisStateCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ARGUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_ARGUMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEADLINE_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEADLINE_EXCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALREADY_EXISTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALREADY_EXISTS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_DENIED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAUTHENTICATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAUTHENTICATED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_EXHAUSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_EXHAUSTED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_PRECONDITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_PRECONDITION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABORTED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_RANGE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIMPLEMENTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIMPLEMENTED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAVAILABLE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_LOSS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_LOSS = 16,
 	}
 	
 	/// <summary>
 	/// The Condition evaluation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConditionEvaluation
 	{
 		
@@ -559,30 +536,27 @@ namespace MyNS
 		public System.Nullable<ConditionEvaluationEvaluationValue> EvaluationValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConditionEvaluationEvaluationValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVALUATION_VALUE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVALUATION_VALUE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRUE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FALSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FALSE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONDITIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONDITIONAL = 3,
 	}
 	
 	/// <summary>
 	/// A directional edge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1Edge
 	{
 		
@@ -602,8 +576,7 @@ namespace MyNS
 	/// <summary>
 	/// A Google Cloud resource under analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1Resource
 	{
 		
@@ -623,8 +596,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates `members`, or principals, with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -650,8 +622,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -683,8 +654,7 @@ namespace MyNS
 	/// <summary>
 	/// The identities and group edges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1IdentityList
 	{
 		
@@ -704,8 +674,7 @@ namespace MyNS
 	/// <summary>
 	/// An identity under analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1Identity
 	{
 		
@@ -725,8 +694,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for resource move analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeMoveResponse
 	{
 		
@@ -740,8 +708,7 @@ namespace MyNS
 	/// <summary>
 	/// A message to group the analysis information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveAnalysis
 	{
 		
@@ -767,8 +734,7 @@ namespace MyNS
 	/// <summary>
 	/// An analysis result including blockers and warnings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveAnalysisResult
 	{
 		
@@ -788,8 +754,7 @@ namespace MyNS
 	/// <summary>
 	/// A message to group impacts of moving the target resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveImpact
 	{
 		
@@ -803,8 +768,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -830,8 +794,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for AssetService.AnalyzeOrgPolicies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeOrgPoliciesResponse
 	{
 		
@@ -857,8 +820,7 @@ namespace MyNS
 	/// <summary>
 	/// The organization policy constraint definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzerOrgPolicyConstraint
 	{
 		
@@ -878,8 +840,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of a custom constraint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1CustomConstraint
 	{
 		
@@ -926,27 +887,24 @@ namespace MyNS
 		public string[] ResourceTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssetV1CustomConstraintActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENY = 2,
 	}
 	
 	/// <summary>
 	/// The definition of a constraint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1Constraint
 	{
 		
@@ -990,33 +948,29 @@ namespace MyNS
 	/// <summary>
 	/// A `Constraint` that is either enforced or not. For example a constraint `constraints/compute.disableSerialPortAccess`. If it is enforced on a VM instance, serial port connections will not be opened to that instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1BooleanConstraint
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssetV1ConstraintConstraintDefault
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSTRAINT_DEFAULT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSTRAINT_DEFAULT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENY = 2,
 	}
 	
 	/// <summary>
 	/// A `Constraint` that allows or disallows a list of string values, which are configured by an organization's policy administrator with a `Policy`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1ListConstraint
 	{
 		
@@ -1036,8 +990,7 @@ namespace MyNS
 	/// <summary>
 	/// The organization policy result to the query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrgPolicyResult
 	{
 		
@@ -1057,8 +1010,7 @@ namespace MyNS
 	/// <summary>
 	/// This organization policy message is a modified version of the one defined in the Organization Policy system. This message contains several fields defined in the original organization policy with some new fields for analysis purpose.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzerOrgPolicy
 	{
 		
@@ -1096,8 +1048,7 @@ namespace MyNS
 	/// <summary>
 	/// This rule message is a customized version of the one defined in the Organization Policy system. In addition to the fields defined in the original organization policy, it contains additional field(s) under specific circumstances to support analysis results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1Rule
 	{
 		
@@ -1135,8 +1086,7 @@ namespace MyNS
 	/// <summary>
 	/// The string values for the list constraints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1StringValues
 	{
 		
@@ -1156,8 +1106,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for AssetService.AnalyzeOrgPolicyGovernedAssets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeOrgPolicyGovernedAssetsResponse
 	{
 		
@@ -1183,8 +1132,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Cloud asset(resource or IAM policy) governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedAsset
 	{
 		
@@ -1216,8 +1164,7 @@ namespace MyNS
 	/// <summary>
 	/// The IAM policies governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedIamPolicy
 	{
 		
@@ -1255,8 +1202,7 @@ namespace MyNS
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -1288,8 +1234,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditConfig
 	{
 		
@@ -1309,8 +1254,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the configuration for logging a type of permissions. Example: { "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" } ] } This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting jose@example.com from DATA_READ logging.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditLogConfig
 	{
 		
@@ -1327,30 +1271,27 @@ namespace MyNS
 		public System.Nullable<AuditLogConfigLogType> LogType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuditLogConfigLogType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN_READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN_READ = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_WRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_WRITE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_READ = 3,
 	}
 	
 	/// <summary>
 	/// The Google Cloud resources governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedResource
 	{
 		
@@ -1388,8 +1329,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for AssetService.AnalyzeOrgPolicyGovernedContainers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyzeOrgPolicyGovernedContainersResponse
 	{
 		
@@ -1415,8 +1355,7 @@ namespace MyNS
 	/// <summary>
 	/// The organization/folder/project resource governed by organization policies of AnalyzeOrgPolicyGovernedContainersRequest.constraint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1GovernedContainer
 	{
 		
@@ -1448,8 +1387,7 @@ namespace MyNS
 	/// <summary>
 	/// An asset in Google Cloud. An asset can be any resource in the Google Cloud [resource hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy), a resource outside the Google Cloud resource hierarchy (such as Google Kubernetes Engine clusters and objects), or a policy (e.g. IAM policy), or a relationship (e.g. an INSTANCE_TO_INSTANCEGROUP relationship). See [Supported asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types) for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Asset
 	{
 		
@@ -1535,8 +1473,7 @@ namespace MyNS
 	/// <summary>
 	/// An `AccessLevel` is a label that can be applied to requests to Google Cloud services, along with a list of requirements necessary for the label to be applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1AccessLevel
 	{
 		
@@ -1574,8 +1511,7 @@ namespace MyNS
 	/// <summary>
 	/// `BasicLevel` is an `AccessLevel` using a set of recommended features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1BasicLevel
 	{
 		
@@ -1592,24 +1528,21 @@ namespace MyNS
 		public GoogleIdentityAccesscontextmanagerV1Condition[] Conditions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleIdentityAccesscontextmanagerV1BasicLevelCombiningFunction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OR = 1,
 	}
 	
 	/// <summary>
 	/// A condition necessary for an `AccessLevel` to be granted. The Condition is an AND over its fields. So a Condition is true if: 1) the request IP is from one of the listed subnetworks AND 2) the originating device complies with the listed device policy AND 3) all listed access levels are granted AND 4) the request was sent at a time allowed by the DateTimeRestriction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1Condition
 	{
 		
@@ -1659,8 +1592,7 @@ namespace MyNS
 	/// <summary>
 	/// `DevicePolicy` specifies device specific restrictions necessary to acquire a given access level. A `DevicePolicy` specifies requirements for requests from devices to be granted access levels, it does not do any enforcement on the device. `DevicePolicy` acts as an AND over all specified fields, and each repeated field is an OR over its elements. Any unset fields are ignored. For example, if the proto is { os_type : DESKTOP_WINDOWS, os_type : DESKTOP_LINUX, encryption_status: ENCRYPTED}, then the DevicePolicy will be true for requests originating from encrypted Linux desktops and encrypted Windows desktops.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1DevicePolicy
 	{
 		
@@ -1704,8 +1636,7 @@ namespace MyNS
 	/// <summary>
 	/// A restriction on the OS type and version of devices making requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1OsConstraint
 	{
 		
@@ -1728,39 +1659,36 @@ namespace MyNS
 		public System.Nullable<System.Boolean> RequireVerifiedChromeOs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleIdentityAccesscontextmanagerV1OsConstraintOsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP_MAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESKTOP_MAC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP_WINDOWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESKTOP_WINDOWS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP_LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESKTOP_LINUX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP_CHROME_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESKTOP_CHROME_OS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 6,
 	}
 	
 	/// <summary>
 	/// The originating network source in Google Cloud.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1VpcNetworkSource
 	{
 		
@@ -1774,8 +1702,7 @@ namespace MyNS
 	/// <summary>
 	/// Sub-segment ranges inside of a VPC Network.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1VpcSubNetwork
 	{
 		
@@ -1795,8 +1722,7 @@ namespace MyNS
 	/// <summary>
 	/// `CustomLevel` is an `AccessLevel` using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request. See CEL spec at: https://github.com/google/cel-spec
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1CustomLevel
 	{
 		
@@ -1810,8 +1736,7 @@ namespace MyNS
 	/// <summary>
 	/// `AccessPolicy` is a container for `AccessLevels` (which define the necessary attributes to use Google Cloud services) and `ServicePerimeters` (which define regions of services able to freely pass data within a perimeter). An access policy is globally visible within an organization, and the restrictions it specifies apply to all projects within an organization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1AccessPolicy
 	{
 		
@@ -1849,8 +1774,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a Cloud Organization `Policy` which is used to specify `Constraints` for configurations of Cloud Platform resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudOrgpolicyV1Policy
 	{
 		
@@ -1900,8 +1824,7 @@ namespace MyNS
 	/// <summary>
 	/// Used in `policy_type` to specify how `boolean_policy` will behave at this resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudOrgpolicyV1BooleanPolicy
 	{
 		
@@ -1915,8 +1838,7 @@ namespace MyNS
 	/// <summary>
 	/// Used in `policy_type` to specify how `list_policy` behaves at this resource. `ListPolicy` can define specific values and subtrees of Cloud Resource Manager resource hierarchy (`Organizations`, `Folders`, `Projects`) that are allowed or denied by setting the `allowed_values` and `denied_values` fields. This is achieved by using the `under:` and optional `is:` prefixes. The `under:` prefix is used to denote resource subtree values. The `is:` prefix is used to denote specific values, and is required only if the value contains a ":". Values prefixed with "is:" are treated the same as values with no prefix. Ancestry subtrees must be in one of the following formats: - "projects/", e.g. "projects/tokyo-rain-123" - "folders/", e.g. "folders/1234" - "organizations/", e.g. "organizations/1234" The `supports_under` field of the associated `Constraint` defines whether ancestry prefixes can be used. You can set `allowed_values` and `denied_values` in the same `Policy` if `all_values` is `ALL_VALUES_UNSPECIFIED`. `ALLOW` or `DENY` are used to allow or deny all values. If `all_values` is set to either `ALLOW` or `DENY`, `allowed_values` and `denied_values` must be unset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudOrgpolicyV1ListPolicy
 	{
 		
@@ -1951,27 +1873,24 @@ namespace MyNS
 		public string SuggestedValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudOrgpolicyV1ListPolicyAllValues
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_VALUES_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_VALUES_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENY = 2,
 	}
 	
 	/// <summary>
 	/// Ignores policies set above this resource and restores the `constraint_default` enforcement behavior of the specific `Constraint` at this resource. Suppose that `constraint_default` is set to `ALLOW` for the `Constraint` `constraints/serviceuser.services`. Suppose that organization foo.com sets a `Policy` at their Organization resource node that restricts the allowed service activations to deny all service activations. They could then set a `Policy` with the `policy_type` `restore_default` on several experimental projects, restoring the `constraint_default` enforcement of the `Constraint` for only those projects, allowing those projects to have all services activated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudOrgpolicyV1RestoreDefault
 	{
 	}
@@ -1979,8 +1898,7 @@ namespace MyNS
 	/// <summary>
 	/// This API resource represents the available inventory data for a Compute Engine virtual machine (VM) instance at a given point in time. You can use this API resource to determine the inventory data of your VM. For more information, see [Information provided by OS inventory management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inventory
 	{
 		
@@ -2012,8 +1930,7 @@ namespace MyNS
 	/// <summary>
 	/// A single piece of inventory on a VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Item
 	{
 		
@@ -2063,8 +1980,7 @@ namespace MyNS
 	/// <summary>
 	/// Software package information of the operating system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwarePackage
 	{
 		
@@ -2126,8 +2042,7 @@ namespace MyNS
 	/// <summary>
 	/// Information related to the a standard versioned package. This includes package info for APT, Yum, Zypper, and Googet package managers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionedPackage
 	{
 		
@@ -2153,8 +2068,7 @@ namespace MyNS
 	/// <summary>
 	/// Information related to a Quick Fix Engineering package. Fields are taken from Windows QuickFixEngineering Interface and match the source names: https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WindowsQuickFixEngineeringPackage
 	{
 		
@@ -2186,8 +2100,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a Windows application that is retrieved from the Windows Registry. For more information about these fields, see: https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WindowsApplication
 	{
 		
@@ -2225,8 +2138,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -2252,8 +2164,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to a Windows Update package. Field data and names are taken from Windows Update API IUpdate Interface: https://docs.microsoft.com/en-us/windows/win32/api/_wua/ Descriptive fields like title, and description are localized based on the locale of the VM being updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WindowsUpdatePackage
 	{
 		
@@ -2315,8 +2226,7 @@ namespace MyNS
 	/// <summary>
 	/// Categories specified by the Windows Update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WindowsUpdateCategory
 	{
 		
@@ -2336,8 +2246,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to a Zypper Patch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZypperPatch
 	{
 		
@@ -2366,40 +2275,35 @@ namespace MyNS
 		public string Summary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ItemOriginType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORIGIN_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORIGIN_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVENTORY_REPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVENTORY_REPORT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ItemType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED_PACKAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED_PACKAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE_PACKAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE_PACKAGE = 2,
 	}
 	
 	/// <summary>
 	/// Operating system information for the VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OsInfo
 	{
 		
@@ -2455,8 +2359,7 @@ namespace MyNS
 	/// <summary>
 	/// An asset identifier in Google Cloud which contains its name, type and ancestors. An asset can be any resource in the Google Cloud [resource hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy), a resource outside the Google Cloud resource hierarchy (such as Google Kubernetes Engine clusters and objects), or a policy (e.g. IAM policy). See [Supported asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types) for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelatedAsset
 	{
 		
@@ -2488,8 +2391,7 @@ namespace MyNS
 	/// <summary>
 	/// DEPRECATED. This message only presents for the purpose of backward-compatibility. The server will never populate this message in responses. The detailed related assets with the `relationship_type`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelatedAssets
 	{
 		
@@ -2509,8 +2411,7 @@ namespace MyNS
 	/// <summary>
 	/// DEPRECATED. This message only presents for the purpose of backward-compatibility. The server will never populate this message in responses. The relationship attributes which include `type`, `source_resource_type`, `target_resource_type` and `action`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelationshipAttributes
 	{
 		
@@ -2542,8 +2443,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a Google Cloud resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Resource
 	{
 		
@@ -2593,8 +2493,7 @@ namespace MyNS
 	/// <summary>
 	/// `ServicePerimeter` describes a set of Google Cloud resources which can freely import and export data amongst themselves, but not export outside of the `ServicePerimeter`. If a request with a source within this `ServicePerimeter` has a target outside of the `ServicePerimeter`, the request will be blocked. Otherwise the request is allowed. There are two types of Service Perimeter - Regular and Bridge. Regular Service Perimeters cannot overlap, a single Google Cloud project or VPC network can only belong to a single regular Service Perimeter. Service Perimeter Bridges can contain only Google Cloud projects as members, a single Google Cloud project may belong to multiple Service Perimeter Bridges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1ServicePerimeter
 	{
 		
@@ -2641,24 +2540,21 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UseExplicitDryRunSpec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIMETER_TYPE_REGULAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIMETER_TYPE_REGULAR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIMETER_TYPE_BRIDGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIMETER_TYPE_BRIDGE = 1,
 	}
 	
 	/// <summary>
 	/// `ServicePerimeterConfig` specifies a set of Google Cloud resources that describe specific Service Perimeter configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig
 	{
 		
@@ -2702,8 +2598,7 @@ namespace MyNS
 	/// <summary>
 	/// Policy for egress from perimeter. EgressPolicies match requests based on `egress_from` and `egress_to` stanzas. For an EgressPolicy to match, both `egress_from` and `egress_to` stanzas must be matched. If an EgressPolicy matches a request, the request is allowed to span the ServicePerimeter boundary. For example, an EgressPolicy can be used to allow VMs on networks within the ServicePerimeter to access a defined set of projects outside the perimeter in certain contexts (e.g. to read data from a Cloud Storage bucket or query against a BigQuery dataset). EgressPolicies are concerned with the *resources* that a request relates as well as the API services and API actions being used. They do not related to the direction of data movement. More detailed documentation for this concept can be found in the descriptions of EgressFrom and EgressTo.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1EgressPolicy
 	{
 		
@@ -2723,8 +2618,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the conditions under which an EgressPolicy matches a request. Conditions based on information about the source of the request. Note that if the destination of the request is also protected by a ServicePerimeter, then that ServicePerimeter must have an IngressPolicy which allows access in order for this request to succeed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1EgressFrom
 	{
 		
@@ -2753,46 +2647,41 @@ namespace MyNS
 		public GoogleIdentityAccesscontextmanagerV1EgressSource[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDENTITY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IDENTITY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY_IDENTITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY_IDENTITY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY_USER_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY_USER_ACCOUNT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY_SERVICE_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY_SERVICE_ACCOUNT = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleIdentityAccesscontextmanagerV1EgressFromSourceRestriction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_RESTRICTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_RESTRICTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_RESTRICTION_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_RESTRICTION_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_RESTRICTION_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_RESTRICTION_DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// The source that EgressPolicy authorizes access from inside the ServicePerimeter to somewhere outside the ServicePerimeter boundaries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1EgressSource
 	{
 		
@@ -2806,8 +2695,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the conditions under which an EgressPolicy matches a request. Conditions are based on information about the ApiOperation intended to be performed on the `resources` specified. Note that if the destination of the request is also protected by a ServicePerimeter, then that ServicePerimeter must have an IngressPolicy which allows access in order for this request to succeed. The request must match `operations` AND `resources` fields in order to be allowed egress out of the perimeter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1EgressTo
 	{
 		
@@ -2833,8 +2721,7 @@ namespace MyNS
 	/// <summary>
 	/// Identification for an API Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1ApiOperation
 	{
 		
@@ -2854,8 +2741,7 @@ namespace MyNS
 	/// <summary>
 	/// An allowed method or permission of a service specified in ApiOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1MethodSelector
 	{
 		
@@ -2875,8 +2761,7 @@ namespace MyNS
 	/// <summary>
 	/// Policy for ingress into ServicePerimeter. IngressPolicies match requests based on `ingress_from` and `ingress_to` stanzas. For an ingress policy to match, both the `ingress_from` and `ingress_to` stanzas must be matched. If an IngressPolicy matches a request, the request is allowed through the perimeter boundary from outside the perimeter. For example, access from the internet can be allowed either based on an AccessLevel or, for traffic hosted on Google Cloud, the project of the source network. For access from private networks, using the project of the hosting network is required. Individual ingress policies can be limited by restricting which services and/or actions they match using the `ingress_to` field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1IngressPolicy
 	{
 		
@@ -2896,8 +2781,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the conditions under which an IngressPolicy matches a request. Conditions are based on information about the source of the request. The request must satisfy what is defined in `sources` AND identity related fields in order to match.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1IngressFrom
 	{
 		
@@ -2923,8 +2807,7 @@ namespace MyNS
 	/// <summary>
 	/// The source that IngressPolicy authorizes access from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1IngressSource
 	{
 		
@@ -2944,8 +2827,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the conditions under which an IngressPolicy matches a request. Conditions are based on information about the ApiOperation intended to be performed on the target resource of the request. The request must satisfy what is defined in `operations` AND `resources` in order to match.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1IngressTo
 	{
 		
@@ -2965,8 +2847,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies how APIs are allowed to communicate within the Service Perimeter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIdentityAccesscontextmanagerV1VpcAccessibleServices
 	{
 		
@@ -2986,8 +2867,7 @@ namespace MyNS
 	/// <summary>
 	/// Attached resource representation, which is defined by the corresponding service provider. It represents an attached resource's payload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachedResource
 	{
 		
@@ -3007,8 +2887,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource representation as defined by the corresponding service providing the resource for a given API version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionedResource
 	{
 		
@@ -3028,8 +2907,7 @@ namespace MyNS
 	/// <summary>
 	/// Batch get assets history response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetAssetsHistoryResponse
 	{
 		
@@ -3043,8 +2921,7 @@ namespace MyNS
 	/// <summary>
 	/// An asset in Google Cloud and its temporal metadata, including the time window when it was observed and its status during that window.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemporalAsset
 	{
 		
@@ -3079,33 +2956,30 @@ namespace MyNS
 		public TimeWindow Window { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TemporalAssetPriorAssetState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIOR_ASSET_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIOR_ASSET_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRESENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRESENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOES_NOT_EXIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOES_NOT_EXIST = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 4,
 	}
 	
 	/// <summary>
 	/// A time window specified by its `start_time` and `end_time`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeWindow
 	{
 		
@@ -3125,8 +2999,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for AssetService.BatchGetEffectiveIamPolicies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetEffectiveIamPoliciesResponse
 	{
 		
@@ -3140,8 +3013,7 @@ namespace MyNS
 	/// <summary>
 	/// The effective IAM policies on one resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EffectiveIamPolicy
 	{
 		
@@ -3161,8 +3033,7 @@ namespace MyNS
 	/// <summary>
 	/// The IAM policy and its attached resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyInfo
 	{
 		
@@ -3182,8 +3053,7 @@ namespace MyNS
 	/// <summary>
 	/// A BigQuery destination for exporting assets to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BigQueryDestination
 	{
 		
@@ -3221,8 +3091,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifications of BigQuery partitioned table as export destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartitionSpec
 	{
 		
@@ -3233,27 +3102,24 @@ namespace MyNS
 		public System.Nullable<PartitionSpecPartitionKey> PartitionKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartitionSpecPartitionKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTITION_KEY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTITION_KEY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_TIME = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST_TIME = 2,
 	}
 	
 	/// <summary>
 	/// Create asset feed request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFeedRequest
 	{
 		
@@ -3273,8 +3139,7 @@ namespace MyNS
 	/// <summary>
 	/// An asset feed used to export asset updates to a destinations. An asset feed filter controls what updates are exported. The asset feed must be created within a project, organization, or folder. Supported destinations are: Pub/Sub topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Feed
 	{
 		
@@ -3321,39 +3186,36 @@ namespace MyNS
 		public string[] RelationshipTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FeedContentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IAM_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IAM_POLICY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORG_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORG_POLICY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESS_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESS_POLICY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_INVENTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_INVENTORY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELATIONSHIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELATIONSHIP = 6,
 	}
 	
 	/// <summary>
 	/// Output configuration for asset feed destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedOutputConfig
 	{
 		
@@ -3367,8 +3229,7 @@ namespace MyNS
 	/// <summary>
 	/// A Pub/Sub destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PubsubDestination
 	{
 		
@@ -3382,8 +3243,7 @@ namespace MyNS
 	/// <summary>
 	/// The effective tags and the ancestor resources from which they were inherited.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EffectiveTagDetails
 	{
 		
@@ -3403,8 +3263,7 @@ namespace MyNS
 	/// <summary>
 	/// The key and value for a [tag](https://cloud.google.com/resource-manager/docs/tags/tags-overview),
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -3430,8 +3289,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -3439,8 +3297,7 @@ namespace MyNS
 	/// <summary>
 	/// Explanation about the IAM policy search result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Explanation
 	{
 		
@@ -3454,8 +3311,7 @@ namespace MyNS
 	/// <summary>
 	/// IAM permissions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Permissions
 	{
 		
@@ -3469,8 +3325,7 @@ namespace MyNS
 	/// <summary>
 	/// Export asset request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportAssetsRequest
 	{
 		
@@ -3508,8 +3363,7 @@ namespace MyNS
 	/// <summary>
 	/// Output configuration for export assets destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputConfig
 	{
 		
@@ -3529,8 +3383,7 @@ namespace MyNS
 	/// <summary>
 	/// A Cloud Storage location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsDestination
 	{
 		
@@ -3550,8 +3403,7 @@ namespace MyNS
 	/// <summary>
 	/// BigQuery destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1QueryAssetsOutputConfigBigQueryDestination
 	{
 		
@@ -3577,8 +3429,7 @@ namespace MyNS
 	/// <summary>
 	/// An asset in Google Cloud. An asset can be any resource in the Google Cloud [resource hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy), a resource outside the Google Cloud resource hierarchy (such as Google Kubernetes Engine clusters and objects), or a policy (e.g. IAM policy). See [Supported asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types) for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1p7beta1Asset
 	{
 		
@@ -3652,8 +3503,7 @@ namespace MyNS
 	/// <summary>
 	/// The detailed related assets with the `relationship_type`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1p7beta1RelatedAssets
 	{
 		
@@ -3673,8 +3523,7 @@ namespace MyNS
 	/// <summary>
 	/// An asset identify in Google Cloud which contains its name, type and ancestors. An asset can be any resource in the Google Cloud [resource hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy), a resource outside the Google Cloud resource hierarchy (such as Google Kubernetes Engine clusters and objects), or a policy (e.g. IAM policy). See [Supported asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types) for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1p7beta1RelatedAsset
 	{
 		
@@ -3700,8 +3549,7 @@ namespace MyNS
 	/// <summary>
 	/// The relationship attributes which include `type`, `source_resource_type`, `target_resource_type` and `action`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1p7beta1RelationshipAttributes
 	{
 		
@@ -3733,8 +3581,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a Google Cloud resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssetV1p7beta1Resource
 	{
 		
@@ -3784,8 +3631,7 @@ namespace MyNS
 	/// <summary>
 	/// A result of IAM Policy search, containing information of an IAM policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IamPolicySearchResult
 	{
 		
@@ -3835,8 +3681,7 @@ namespace MyNS
 	/// <summary>
 	/// ListAssets response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAssetsResponse
 	{
 		
@@ -3859,8 +3704,7 @@ namespace MyNS
 		public string ReadTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFeedsResponse
 	{
 		
@@ -3874,8 +3718,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of listing saved queries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSavedQueriesResponse
 	{
 		
@@ -3895,8 +3738,7 @@ namespace MyNS
 	/// <summary>
 	/// A saved query which can be shared with others or used later.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavedQuery
 	{
 		
@@ -3952,8 +3794,7 @@ namespace MyNS
 	/// <summary>
 	/// The query content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryContent
 	{
 		
@@ -3967,8 +3808,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -4006,8 +3846,7 @@ namespace MyNS
 	/// <summary>
 	/// Output configuration query assets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryAssetsOutputConfig
 	{
 		
@@ -4021,8 +3860,7 @@ namespace MyNS
 	/// <summary>
 	/// QueryAssets request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryAssetsRequest
 	{
 		
@@ -4078,8 +3916,7 @@ namespace MyNS
 	/// <summary>
 	/// QueryAssets response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryAssetsResponse
 	{
 		
@@ -4117,8 +3954,7 @@ namespace MyNS
 	/// <summary>
 	/// Execution results of the query. The result is formatted as rows represented by BigQuery compatible [schema]. When pagination is necessary, it will contains the page token to retrieve the results of following pages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryResult
 	{
 		
@@ -4150,8 +3986,7 @@ namespace MyNS
 	/// <summary>
 	/// BigQuery Compatible table schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableSchema
 	{
 		
@@ -4165,8 +4000,7 @@ namespace MyNS
 	/// <summary>
 	/// A field in TableSchema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableFieldSchema
 	{
 		
@@ -4198,8 +4032,7 @@ namespace MyNS
 	/// <summary>
 	/// The detailed related resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelatedResource
 	{
 		
@@ -4219,8 +4052,7 @@ namespace MyNS
 	/// <summary>
 	/// The related resources of the primary resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelatedResources
 	{
 		
@@ -4234,8 +4066,7 @@ namespace MyNS
 	/// <summary>
 	/// A result of Resource Search, containing information of a cloud resource. Next ID: 34
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceSearchResult
 	{
 		
@@ -4405,8 +4236,7 @@ namespace MyNS
 	/// <summary>
 	/// Search all IAM policies response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchAllIamPoliciesResponse
 	{
 		
@@ -4426,8 +4256,7 @@ namespace MyNS
 	/// <summary>
 	/// Search all resources response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchAllResourcesResponse
 	{
 		
@@ -4447,8 +4276,7 @@ namespace MyNS
 	/// <summary>
 	/// Update asset feed request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFeedRequest
 	{
 		
@@ -5265,13 +5093,13 @@ namespace MyNS
 	public enum Cloudasset_analyzeMoveView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANALYSIS_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANALYSIS_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 2,
 	}
 }

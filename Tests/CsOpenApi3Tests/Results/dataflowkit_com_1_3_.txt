@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Specify _Next link_ paginator on pages containing a link pointing to the next page. The next page link is extracted from a document by querying href attribute of a given element's CSS selector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Paginator
 	{
 		
@@ -32,14 +31,12 @@ namespace MyNS
 		public System.Nullable<System.Int32> PageNum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Action
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fetchrequest
 	{
 		
@@ -99,8 +96,7 @@ namespace MyNS
 	/// <summary>
 	/// InitialCookie structure keep cookies that optionally can be passed to the new fetcher crawl a website that requires a login. Generate Cookies array with EditThisCookie chrome extension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InitialCookie
 	{
 		
@@ -141,53 +137,46 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InitialCookieSameSite
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="strict")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		strict = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lax")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lax = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no_restriction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no_restriction = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FetchrequestOutput
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="buffer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		buffer = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="file")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		file = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FetchrequestType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="base")]
 		_base = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chrome")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chrome = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Field
 	{
 		
@@ -236,8 +225,7 @@ namespace MyNS
 		public FieldType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parserequest
 	{
 		
@@ -288,31 +276,27 @@ namespace MyNS
 		public Fetchrequest Request { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParserequestFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="csv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		csv = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jsonl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jsonl = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="excel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		excel = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		xml = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FieldType
 	{
 		
@@ -326,8 +310,7 @@ namespace MyNS
 		_2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serprequest
 	{
 		
@@ -387,8 +370,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Url2pdfrequest
 	{
 		
@@ -498,36 +480,33 @@ namespace MyNS
 		public System.Nullable<System.Double> WaitDelay { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Url2pdfrequestPaperSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A3 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A4 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A5 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A6 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Letter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Letter = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Legal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Legal = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tabloid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tabloid = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Url2screenshotrequest
 	{
 		
@@ -637,16 +616,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Url2screenshotrequestFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="png")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		png = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jpeg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jpeg = 1,
 	}
 	

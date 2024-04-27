@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The response returned by the Serve API [get asset by render id](#get-asset-by-render-id) request. The response  is an array of asset resources, including video, image, audio, thumbnail and poster image. The response follows  the [json:api](https://jsonapi.org/) specification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetRenderResponse
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// The type of resource (an asset) and attributes of the asset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetResponseData
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// The list of asset attributes and their values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetResponseAttributes
 	{
 		
@@ -121,30 +118,27 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssetResponseAttributesStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="importing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		importing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ready")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ready = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 3,
 	}
 	
 	/// <summary>
 	/// The response returned by the Serve API [get asset](#get-asset) request. Includes details of a hosted video, image, audio file, thumbnail or poster image. The response follows the [json:api](https://jsonapi.org/) specification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetResponse
 	{
 		
@@ -158,8 +152,7 @@ namespace MyNS
 	/// <summary>
 	/// The AudioAsset is used to add sound effects and audio at specific intervals on the timeline. The src must be a publicly accessible URL to an audio resource such  as an mp3 file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioAsset
 	{
 		
@@ -203,27 +196,24 @@ namespace MyNS
 		public System.Nullable<System.Double> Volume { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioAssetEffect
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fadeIn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fadeIn = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fadeOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fadeOut = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fadeInFadeOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fadeInFadeOut = 2,
 	}
 	
 	/// <summary>
 	/// A clip is a container for a specific type of asset, i.e. a title, image, video, audio or html. You use a Clip to define when an asset will display on the timeline, how long it will play for and transitions, filters and effects to apply to it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Clip
 	{
 		
@@ -334,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// The VideoAsset is used to create video sequences from video files. The src must be a publicly accessible URL to a video resource such as an mp4 file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoAsset
 	{
 		
@@ -378,8 +367,7 @@ namespace MyNS
 	/// <summary>
 	/// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Crop
 	{
 		
@@ -420,83 +408,76 @@ namespace MyNS
 		public System.Nullable<System.Single> Top { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClipEffect
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zoomIn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zoomIn = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zoomOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zoomOut = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideLeft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideLeft = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideRight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideRight = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideUp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideUp = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideDown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideDown = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClipFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="boost")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		boost = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contrast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contrast = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="darken")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		darken = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="greyscale")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		greyscale = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lighten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lighten = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="muted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		muted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="negative")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		negative = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClipFit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cover")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cover = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contain = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="crop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		crop = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 3,
 	}
 	
 	/// <summary>
 	/// Offsets the position of an asset horizontally or vertically by a relative distance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Offset
 	{
 		
@@ -519,45 +500,42 @@ namespace MyNS
 		public System.Nullable<System.Single> Y { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClipPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="top")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		top = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="topRight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		topRight = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="right")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		right = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bottomRight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bottomRight = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bottom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bottom = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bottomLeft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bottomLeft = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="left")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		left = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="topLeft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		topLeft = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="center")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		center = 8,
 	}
 	
 	/// <summary>
 	/// In and out transitions for a clip - i.e. fade in and fade out
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transition
 	{
 		
@@ -622,201 +600,198 @@ namespace MyNS
 		public TransitionIn Out { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransitionIn
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fade")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fade = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fadeSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fadeSlow = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fadeFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fadeFast = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reveal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reveal = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="revealSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		revealSlow = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="revealFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		revealFast = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wipeLeft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wipeLeft = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wipeLeftSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wipeLeftSlow = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wipeLeftFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wipeLeftFast = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wipeRight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wipeRight = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wipeRightSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wipeRightSlow = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wipeRightFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wipeRightFast = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideLeft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideLeft = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideLeftSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideLeftSlow = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideLeftFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideLeftFast = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideRight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideRight = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideRightSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideRightSlow = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideRightFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideRightFast = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideUp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideUp = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideUpSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideUpSlow = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideUpFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideUpFast = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideDown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideDown = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideDownSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideDownSlow = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slideDownFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slideDownFast = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselLeft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselLeft = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselLeftSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselLeftSlow = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselLeftFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselLeftFast = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselRight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselRight = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselRightSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselRightSlow = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselRightFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselRightFast = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselUp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselUp = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselUpSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselUpSlow = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselUpFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselUpFast = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselDown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselDown = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselDownSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselDownSlow = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carouselDownFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carouselDownFast = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleTopRight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleTopRight = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleTopRightSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleTopRightSlow = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleTopRightFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleTopRightFast = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleRightTop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleRightTop = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleRightTopSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleRightTopSlow = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleRightTopFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleRightTopFast = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleRightBottom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleRightBottom = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleRightBottomSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleRightBottomSlow = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleRightBottomFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleRightBottomFast = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleBottomRight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleBottomRight = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleBottomRightSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleBottomRightSlow = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleBottomRightFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleBottomRightFast = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleBottomLeft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleBottomLeft = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleBottomLeftSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleBottomLeftSlow = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleBottomLeftFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleBottomLeftFast = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleLeftBottom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleLeftBottom = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleLeftBottomSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleLeftBottomSlow = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleLeftBottomFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleLeftBottomFast = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleLeftTop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleLeftTop = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleLeftTopSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleLeftTopSlow = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleLeftTopFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleLeftTopFast = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleTopLeft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleTopLeft = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleTopLeftSlow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleTopLeftSlow = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shuffleTopLeftFast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shuffleTopLeftFast = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zoom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zoom = 60,
 	}
 	
 	/// <summary>
 	/// An edit defines the arrangement of a video on a timeline, an audio edit or an image design and the output format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Edit
 	{
 		
@@ -852,24 +827,21 @@ namespace MyNS
 		public Timeline Timeline { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EditDisk
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="local")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		local = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mount = 1,
 	}
 	
 	/// <summary>
 	/// The output format, render range and type of media to generate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Output
 	{
 		
@@ -977,9 +949,7 @@ namespace MyNS
 		public Thumbnail Thumbnail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputAspectRatio
 	{
 		
@@ -999,34 +969,30 @@ namespace MyNS
 		_43 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mp4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mp4 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gif")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gif = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mp3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mp3 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jpg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jpg = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="png")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		png = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bmp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bmp = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputFps
 	{
 		
@@ -1049,8 +1015,7 @@ namespace MyNS
 	/// <summary>
 	/// Generate a poster image for the video at a specific point from the timeline. The poster image size will match the size of the output video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Poster
 	{
 		
@@ -1063,27 +1028,24 @@ namespace MyNS
 		public double Capture { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputQuality
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		low = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 2,
 	}
 	
 	/// <summary>
 	/// Specify a time range to render, i.e. to render only a portion of a video or audio file. Omit this setting to  export the entire video. Range can also be used to render a frame at a specific time point - setting a range and output format as `jpg` will output a single frame image at the range `start` point.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Range
 	{
 		
@@ -1104,44 +1066,40 @@ namespace MyNS
 		public System.Nullable<System.Single> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputResolution
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preview = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mobile = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sd = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hd = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="1080")]
 		_1080 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputScaleTo
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preview = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mobile = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sd = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hd = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="1080")]
@@ -1151,8 +1109,7 @@ namespace MyNS
 	/// <summary>
 	/// Set a custom size for a video or image. When using a custom size omit the `resolution` and `aspectRatio`. Custom sizes must be divisible by 2 based on the encoder specifications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Size
 	{
 		
@@ -1178,8 +1135,7 @@ namespace MyNS
 	/// <summary>
 	/// Generate a thumbnail image for the video or image at a specific point from the timeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Thumbnail
 	{
 		
@@ -1203,8 +1159,7 @@ namespace MyNS
 	/// <summary>
 	/// A timeline represents the contents of a video edit over time, an audio edit over time, in seconds, or an image layout. A timeline consists of layers called tracks. Tracks are composed of titles, images, audio, html or video segments referred to as clips which are placed along the track at specific starting point and lasting for a specific amount of time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timeline
 	{
 		
@@ -1245,8 +1200,7 @@ namespace MyNS
 	/// <summary>
 	/// Download a custom font to use with the HTML asset type, using the font name in the CSS or font tag. See our [custom fonts](https://shotstack.io/learn/html-custom-fonts/) getting started guide for more details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Font
 	{
 		
@@ -1262,8 +1216,7 @@ namespace MyNS
 	/// <summary>
 	/// A music or audio file in mp3 format that plays for the duration of the rendered video or the length of the audio file, which ever is shortest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Soundtrack
 	{
 		
@@ -1295,8 +1248,7 @@ namespace MyNS
 	/// <summary>
 	/// A track contains an array of clips. Tracks are layered on top of each other in the order in the array. The top most track will render on top of those below it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Track
 	{
 		
@@ -1312,8 +1264,7 @@ namespace MyNS
 	/// <summary>
 	/// The HtmlAsset clip type lets you create text based layout and formatting using HTML and CSS. You can also set the height and width of a bounding box for the HTML content to sit within. Text and elements will wrap within the bounding box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HtmlAsset
 	{
 		
@@ -1380,8 +1331,7 @@ namespace MyNS
 	/// <summary>
 	/// The ImageAsset is used to create video from images to compose an image. The src must be a publicly accessible URL to an image resource such as a jpg or png file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageAsset
 	{
 		
@@ -1412,8 +1362,7 @@ namespace MyNS
 	/// <summary>
 	/// The LumaAsset is used to create luma matte masks, transitions and effects between other assets. A luma matte is a grey scale image or animated video where the black areas are transparent and the white areas solid. The luma matte animation should be provided as an mp4 video file. The src must be a publicly accessible URL to the file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LumaAsset
 	{
 		
@@ -1444,8 +1393,7 @@ namespace MyNS
 	/// <summary>
 	/// The response received after a [render request](#render-asset) is submitted. The render task is queued for rendering and a unique render id is returned.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueuedResponse
 	{
 		
@@ -1477,8 +1425,7 @@ namespace MyNS
 	/// <summary>
 	/// The response data returned with the [QueuedResponse](#tocs_queuedresponse).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueuedResponseData
 	{
 		
@@ -1502,8 +1449,7 @@ namespace MyNS
 	/// <summary>
 	/// The response received after a [render status request](#get-render-status) is submitted. The response includes  details about status of a render and the output URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RenderResponse
 	{
 		
@@ -1535,8 +1481,7 @@ namespace MyNS
 	/// <summary>
 	/// The response data returned with the [RenderResponse](#tocs_renderresponse) including status and URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RenderResponseData
 	{
 		
@@ -1638,36 +1583,33 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RenderResponseDataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fetching")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fetching = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rendering")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rendering = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="saving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		saving = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="done")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		done = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 5,
 	}
 	
 	/// <summary>
 	/// Send rendered assets to the Shotstack hosting and CDN service. This destination is enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShotstackDestination
 	{
 		
@@ -1690,8 +1632,7 @@ namespace MyNS
 	/// <summary>
 	/// The TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TitleAsset
 	{
 		
@@ -1780,9 +1721,7 @@ namespace MyNS
 		public string Type { get; set; } = "title";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TitleAssetSize
 	{
 		
@@ -1792,13 +1731,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="x-small")]
 		xMinussmall = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="small")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		small = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="large")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		large = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="x-large")]
@@ -1808,40 +1747,38 @@ namespace MyNS
 		xxMinuslarge = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TitleAssetStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minimal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minimal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blockbuster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blockbuster = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vogue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vogue = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sketchy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sketchy = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="skinny")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		skinny = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chunk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chunk = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chunkLight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chunkLight = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="marker")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		marker = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="future")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		future = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subtitle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subtitle = 9,
 	}
 	

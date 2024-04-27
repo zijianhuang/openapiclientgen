@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration data for an Ad Exchange buyer account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -124,8 +123,7 @@ namespace MyNS
 	/// <summary>
 	/// An account feed lists Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single buyer account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsList
 	{
 		
@@ -143,8 +141,7 @@ namespace MyNS
 		public string Kind { get; set; } = "adexchangebuyer#accountsList";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddOrderDealsRequest
 	{
 		
@@ -170,8 +167,7 @@ namespace MyNS
 	/// <summary>
 	/// A proposal can contain multiple deals. A deal contains the terms and targeting information that is used for serving.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MarketplaceDeal
 	{
 		
@@ -312,8 +308,7 @@ namespace MyNS
 		public string WebPropertyCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrivateData
 	{
 		
@@ -324,8 +319,7 @@ namespace MyNS
 		public string ReferencePayload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DealServingMetadata
 	{
 		
@@ -345,8 +339,7 @@ namespace MyNS
 	/// <summary>
 	/// Tracks which parties (if any) have paused a deal. The deal is considered paused if has_buyer_paused || has_seller_paused. Each of the has_buyer_paused or the has_seller_paused bits can be set independently.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DealServingMetadataDealPauseStatus
 	{
 		
@@ -369,8 +362,7 @@ namespace MyNS
 		public string SellerPauseReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryControl
 	{
 		
@@ -384,8 +376,7 @@ namespace MyNS
 		public DeliveryControlFrequencyCap[] FrequencyCaps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryControlFrequencyCap
 	{
 		
@@ -399,8 +390,7 @@ namespace MyNS
 		public string TimeUnitType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContactInformation
 	{
 		
@@ -417,8 +407,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SharedTargeting
 	{
 		
@@ -441,8 +430,7 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetingValue
 	{
 		
@@ -480,8 +468,7 @@ namespace MyNS
 	/// <summary>
 	/// Next Id: 7
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetingValueCreativeSize
 	{
 		
@@ -519,8 +506,7 @@ namespace MyNS
 		public string SkippableAdType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetingValueSize
 	{
 		
@@ -537,8 +523,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetingValueDayPartTargeting
 	{
 		
@@ -549,8 +534,7 @@ namespace MyNS
 		public string TimeZoneType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetingValueDayPartTargetingDayPart
 	{
 		
@@ -570,8 +554,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StartMinute { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetingValueDemogAgeCriteria
 	{
 		
@@ -579,8 +562,7 @@ namespace MyNS
 		public string[] DemogAgeCriteriaIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetingValueDemogGenderCriteria
 	{
 		
@@ -588,8 +570,7 @@ namespace MyNS
 		public string[] DemogGenderCriteriaIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetingValueRequestPlatformTargeting
 	{
 		
@@ -597,8 +578,7 @@ namespace MyNS
 		public string[] RequestPlatforms { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DealTerms
 	{
 		
@@ -648,8 +628,7 @@ namespace MyNS
 		public string SellerTimeZone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Price
 	{
 		
@@ -678,8 +657,7 @@ namespace MyNS
 		public string PricingType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DealTermsGuaranteedFixedPriceTerms
 	{
 		
@@ -711,8 +689,7 @@ namespace MyNS
 		public string MinimumDailyLooks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DealTermsGuaranteedFixedPriceTermsBillingInfo
 	{
 		
@@ -741,8 +718,7 @@ namespace MyNS
 	/// <summary>
 	/// Used to specify pricing rules for buyers. Each PricePerBuyer in a product can become [0,1] deals. To check if there is a PricePerBuyer for a particular buyer we look for the most specific matching rule - we first look for a rule matching the buyer and otherwise look for a matching rule where no buyer is set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PricePerBuyer
 	{
 		
@@ -762,8 +738,7 @@ namespace MyNS
 		public Price Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Buyer
 	{
 		
@@ -774,8 +749,7 @@ namespace MyNS
 		public string AccountId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DealTermsNonGuaranteedAuctionTerms
 	{
 		
@@ -792,8 +766,7 @@ namespace MyNS
 		public PricePerBuyer[] ReservePricePerBuyers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DealTermsNonGuaranteedFixedPriceTerms
 	{
 		
@@ -804,8 +777,7 @@ namespace MyNS
 		public PricePerBuyer[] FixedPrices { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DealTermsRubiconNonGuaranteedTerms
 	{
 		
@@ -816,8 +788,7 @@ namespace MyNS
 		public Price StandardPrice { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddOrderDealsResponse
 	{
 		
@@ -834,8 +805,7 @@ namespace MyNS
 		public string ProposalRevisionNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddOrderNotesRequest
 	{
 		
@@ -849,8 +819,7 @@ namespace MyNS
 	/// <summary>
 	/// A proposal is associated with a bunch of notes which may optionally be associated with a deal and/or revision number.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MarketplaceNote
 	{
 		
@@ -904,8 +873,7 @@ namespace MyNS
 		public string TimestampMs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddOrderNotesResponse
 	{
 		
@@ -916,8 +884,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration data for an Ad Exchange billing info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BillingInfo
 	{
 		
@@ -950,8 +917,7 @@ namespace MyNS
 	/// <summary>
 	/// A billing info feed lists Billing Info the Ad Exchange buyer account has access to. Each entry in the feed corresponds to a single billing info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BillingInfoList
 	{
 		
@@ -972,8 +938,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration data for Ad Exchange RTB - Budget API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Budget
 	{
 		
@@ -1015,8 +980,7 @@ namespace MyNS
 		public string Kind { get; set; } = "adexchangebuyer#budget";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOrdersRequest
 	{
 		
@@ -1038,8 +1002,7 @@ namespace MyNS
 	///
 	///(readonly) - It is an error to try and set this field. (buyer-readonly) - Only the seller can set this field. (seller-readonly) - Only the buyer can set this field. (updatable) - The field is updatable at all times by either buyer or the seller.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Proposal
 	{
 		
@@ -1171,8 +1134,7 @@ namespace MyNS
 		public ContactInformation[] SellerContacts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MarketplaceLabel
 	{
 		
@@ -1198,8 +1160,7 @@ namespace MyNS
 		public string Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MarketplaceDealParty
 	{
 		
@@ -1210,8 +1171,7 @@ namespace MyNS
 		public Seller Seller { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Seller
 	{
 		
@@ -1228,8 +1188,7 @@ namespace MyNS
 		public string SubAccountId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOrdersResponse
 	{
 		
@@ -1243,8 +1202,7 @@ namespace MyNS
 	/// <summary>
 	/// A creative and its classification data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Creative
 	{
 		
@@ -1718,8 +1676,7 @@ namespace MyNS
 	/// <summary>
 	/// The external deal ids associated with a creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativeDealIds
 	{
 		
@@ -1762,8 +1719,7 @@ namespace MyNS
 	/// <summary>
 	/// The creatives feed lists the active creatives for the Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativesList
 	{
 		
@@ -1787,8 +1743,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteOrderDealsRequest
 	{
 		
@@ -1811,8 +1766,7 @@ namespace MyNS
 		public string UpdateAction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteOrderDealsResponse
 	{
 		
@@ -1832,8 +1786,7 @@ namespace MyNS
 	/// <summary>
 	/// This message carries publisher provided breakdown. E.g. {dimension_type: 'COUNTRY', [{dimension_value: {id: 1, name: 'US'}}, {dimension_value: {id: 2, name: 'UK'}}]}
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimension
 	{
 		
@@ -1847,8 +1800,7 @@ namespace MyNS
 	/// <summary>
 	/// Value of the dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionDimensionValue
 	{
 		
@@ -1871,8 +1823,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Percentage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditAllOrderDealsRequest
 	{
 		
@@ -1903,8 +1854,7 @@ namespace MyNS
 		public string UpdateAction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditAllOrderDealsResponse
 	{
 		
@@ -1921,8 +1871,7 @@ namespace MyNS
 		public string OrderRevisionNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOffersResponse
 	{
 		
@@ -1938,8 +1887,7 @@ namespace MyNS
 	///
 	///(readonly) - It is an error to try and set this field. (buyer-readonly) - Only the seller can set this field. (seller-readonly) - Only the buyer can set this field. (updatable) - The field is updatable at all times by either buyer or the seller.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Product
 	{
 		
@@ -2095,8 +2043,7 @@ namespace MyNS
 	/// <summary>
 	/// This message carries publisher provided forecasting information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublisherProvidedForecast
 	{
 		
@@ -2119,8 +2066,7 @@ namespace MyNS
 		public string WeeklyUniques { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrderDealsResponse
 	{
 		
@@ -2131,8 +2077,7 @@ namespace MyNS
 		public MarketplaceDeal[] Deals { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrderNotesResponse
 	{
 		
@@ -2143,8 +2088,7 @@ namespace MyNS
 		public MarketplaceNote[] Notes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrdersResponse
 	{
 		
@@ -2155,8 +2099,7 @@ namespace MyNS
 		public Proposal[] Proposals { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPublisherProfilesByAccountIdResponse
 	{
 		
@@ -2167,8 +2110,7 @@ namespace MyNS
 		public PublisherProfileApiProto[] Profiles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublisherProfileApiProto
 	{
 		
@@ -2315,8 +2257,7 @@ namespace MyNS
 		public string[] TopHeadlines { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileApplication
 	{
 		
@@ -2330,8 +2271,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration data for an Ad Exchange performance report list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PerformanceReport
 	{
 		
@@ -2472,8 +2412,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration data for an Ad Exchange performance report list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PerformanceReportList
 	{
 		
@@ -2491,8 +2430,7 @@ namespace MyNS
 		public PerformanceReport[] PerformanceReport { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PretargetingConfig
 	{
 		
@@ -2730,8 +2668,7 @@ namespace MyNS
 		public string MinWidth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PretargetingConfigList
 	{
 		
@@ -2749,8 +2686,7 @@ namespace MyNS
 		public string Kind { get; set; } = "adexchangebuyer#pretargetingConfigList";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePrivateAuctionProposalRequest
 	{
 		
@@ -4193,38 +4129,38 @@ namespace MyNS
 	public enum Adexchangebuyer_creatives_listDealsStatusFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="approved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		approved = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="conditionally_approved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		conditionally_approved = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disapproved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disapproved = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_checked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_checked = 3,
 	}
 	
 	public enum Adexchangebuyer_proposals_patchUpdateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accept")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accept = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cancel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cancel = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="propose")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		propose = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="proposeAndAccept")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		proposeAndAccept = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknownAction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknownAction = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="updateNonTerms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		updateNonTerms = 5,
 	}
 }

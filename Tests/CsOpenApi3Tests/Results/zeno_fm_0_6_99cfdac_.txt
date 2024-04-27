@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Country model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Country
 	{
 		
@@ -38,8 +37,7 @@ namespace MyNS
 	/// <summary>
 	/// Language model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Language
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// Podcast model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Podcast
 	{
 		
@@ -133,8 +130,7 @@ namespace MyNS
 	/// <summary>
 	/// PodcastCategory model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PodcastCategory
 	{
 		
@@ -151,8 +147,7 @@ namespace MyNS
 	/// <summary>
 	/// PodcastEpisode model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PodcastEpisode
 	{
 		
@@ -230,8 +225,7 @@ namespace MyNS
 	/// <summary>
 	/// List of PodcastEpisode
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PodcastEpisodeList
 	{
 		
@@ -245,8 +239,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters for podcast search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PodcastFilters
 	{
 		
@@ -263,24 +256,21 @@ namespace MyNS
 		public System.Nullable<PodcastFiltersPodcastType> PodcastType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PodcastFiltersPodcastType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="podcasts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		podcasts = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shows")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shows = 1,
 	}
 	
 	/// <summary>
 	/// Podcast search params
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PodcastSearchParams
 	{
 		
@@ -312,8 +302,7 @@ namespace MyNS
 	/// <summary>
 	/// Podcast search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PodcastSearchResults
 	{
 		
@@ -327,8 +316,7 @@ namespace MyNS
 	/// <summary>
 	/// Station model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Station
 	{
 		
@@ -366,8 +354,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters for station search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StationFilters
 	{
 		
@@ -384,8 +371,7 @@ namespace MyNS
 	/// <summary>
 	/// StationGenre model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StationGenre
 	{
 		
@@ -396,8 +382,7 @@ namespace MyNS
 	/// <summary>
 	/// List of Station
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StationList
 	{
 		
@@ -411,8 +396,7 @@ namespace MyNS
 	/// <summary>
 	/// Station search params
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StationSearchParams
 	{
 		
@@ -444,8 +428,7 @@ namespace MyNS
 	/// <summary>
 	/// Station search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StationSearchResults
 	{
 		

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptReservedNodeExchangeOutputMessage
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNode
 	{
 		
@@ -74,63 +72,53 @@ namespace MyNS
 		public ReservedNodeOfferingType ReservedNodeOfferingType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReservedNodeOfferingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Regular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Regular = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Upgradable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Upgradable = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidReservedNodeStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeAlreadyMigratedFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeOfferingNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedOperationFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DependentServiceUnavailableFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartnerIntegrationOutputMessage
 	{
 		
@@ -141,26 +129,22 @@ namespace MyNS
 		public string PartnerName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartnerNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnauthorizedPartnerIntegrationFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataShare
 	{
 		
@@ -183,8 +167,7 @@ namespace MyNS
 	/// <summary>
 	/// The association of a datashare from a producer account with a data consumer. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataShareAssociation
 	{
 		
@@ -204,45 +187,40 @@ namespace MyNS
 		public System.DateTimeOffset StatusChangeDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataShareStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_AUTHORIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_AUTHORIZATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHORIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTHORIZED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAUTHORIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEAUTHORIZED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDataShareFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNamespaceFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizeClusterSecurityGroupIngressResult
 	{
 		
@@ -256,8 +234,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a security group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSecurityGroup
 	{
 		
@@ -277,26 +254,22 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSecurityGroupNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClusterSecurityGroupStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizationAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizationQuotaExceededFault
 	{
 	}
@@ -304,8 +277,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointAuthorization
 	{
 		
@@ -337,45 +309,38 @@ namespace MyNS
 		public System.Nullable<System.Int32> EndpointCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthorizationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Authorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Authorized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Revoking")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Revoking = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointAuthorizationsPerClusterLimitExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointAuthorizationAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidAuthorizationStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClusterStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizeSnapshotAccessResult
 	{
 		
@@ -389,8 +354,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Snapshot
 	{
 		
@@ -497,32 +461,27 @@ namespace MyNS
 		public System.DateTimeOffset SnapshotRetentionStartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSnapshotNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DependentServiceRequestThrottlingFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClusterSnapshotStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteClusterSnapshotsResult
 	{
 		
@@ -536,8 +495,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterSnapshotMessage
 	{
 		
@@ -552,14 +510,12 @@ namespace MyNS
 		public string SnapshotClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteRequestSizeExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchModifyClusterSnapshotsOutputMessage
 	{
 		
@@ -570,14 +526,12 @@ namespace MyNS
 		public string[] Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRetentionPeriodFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchModifyClusterSnapshotsLimitExceededFault
 	{
 	}
@@ -585,8 +539,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the result of a cluster resize operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResizeProgressMessage
 	{
 		
@@ -639,14 +592,12 @@ namespace MyNS
 		public System.Nullable<System.Double> DataTransferProgressPercent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResizeNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyClusterSnapshotResult
 	{
 		
@@ -657,20 +608,17 @@ namespace MyNS
 		public Snapshot Snapshot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSnapshotAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSnapshotQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAuthenticationProfileResult
 	{
 		
@@ -681,26 +629,22 @@ namespace MyNS
 		public string AuthenticationProfileContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationProfileAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationProfileQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidAuthenticationProfileRequestFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterResult
 	{
 		
@@ -714,8 +658,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cluster
 	{
 		
@@ -888,8 +831,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a connection endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Endpoint
 	{
 		
@@ -906,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PendingModifiedValues
 	{
 		
@@ -948,8 +889,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreStatus
 	{
 		
@@ -975,8 +915,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the status of a cluster while it is in the process of resizing with an incremental resize.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataTransferProgress
 	{
 		
@@ -1002,8 +941,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the status of changes to HSM settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmStatus
 	{
 		
@@ -1020,8 +958,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns the destination region and retention period that are configured for cross-region snapshot copy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSnapshotCopyStatus
 	{
 		
@@ -1041,8 +978,7 @@ namespace MyNS
 	/// <summary>
 	/// The identifier of a node in a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterNode
 	{
 		
@@ -1059,8 +995,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the status of the elastic IP (EIP) address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticIpStatus
 	{
 		
@@ -1071,27 +1006,24 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduleState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODIFYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODIFYING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
 	/// <summary>
 	/// Describes a resize operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResizeInfo
 	{
 		
@@ -1105,8 +1037,7 @@ namespace MyNS
 	/// <summary>
 	/// The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AquaConfiguration
 	{
 		
@@ -1117,43 +1048,38 @@ namespace MyNS
 		public AquaConfigurationStatus AquaConfigurationStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AquaStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="applying")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		applying = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AquaConfigurationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="auto")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		auto = 2,
 	}
 	
 	/// <summary>
 	/// Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeExchangeStatus
 	{
 		
@@ -1185,36 +1111,33 @@ namespace MyNS
 		public System.Nullable<System.Int32> TargetReservedNodeCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReservedNodeExchangeStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUESTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRYING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 	}
 	
 	/// <summary>
 	/// A tag consisting of a name/value pair for a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1225,116 +1148,97 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientClusterCapacityFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterParameterGroupNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberOfNodesQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberOfNodesPerClusterLimitExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSubnetGroupNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidVPCNetworkStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClusterSubnetGroupStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSubnet
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnauthorizedOperation
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmClientCertificateNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmConfigurationNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidElasticIpFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagLimitExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTagFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClusterTrackFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotScheduleNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterParameterGroupResult
 	{
 		
@@ -1348,8 +1252,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a parameter group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterParameterGroup
 	{
 		
@@ -1366,20 +1269,17 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterParameterGroupQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterParameterGroupAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterSecurityGroupResult
 	{
 		
@@ -1390,20 +1290,17 @@ namespace MyNS
 		public ClusterSecurityGroup ClusterSecurityGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSecurityGroupAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSecurityGroupQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterSnapshotResult
 	{
 		
@@ -1414,8 +1311,7 @@ namespace MyNS
 		public Snapshot Snapshot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterSubnetGroupResult
 	{
 		
@@ -1429,8 +1325,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a subnet group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSubnetGroup
 	{
 		
@@ -1453,26 +1348,22 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSubnetGroupAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSubnetGroupQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSubnetQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomDomainAssociationResult
 	{
 		
@@ -1489,8 +1380,7 @@ namespace MyNS
 		public string CustomDomainCertExpiryTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomCnameAssociationFault
 	{
 	}
@@ -1498,8 +1388,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a Redshift-managed VPC endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointAccess
 	{
 		
@@ -1540,8 +1429,7 @@ namespace MyNS
 	/// <summary>
 	/// The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcEndpoint
 	{
 		
@@ -1555,32 +1443,27 @@ namespace MyNS
 		public string[] NetworkInterfaces { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessToClusterDeniedFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointsPerClusterLimitExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointsPerAuthorizationLimitExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEventSubscriptionResult
 	{
 		
@@ -1594,8 +1477,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes event subscriptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventSubscription
 	{
 		
@@ -1633,62 +1515,52 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventSubscriptionQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionAlreadyExistFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNSInvalidTopicFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNSNoAuthorizationFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNSTopicArnNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionEventIdNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionCategoryNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionSeverityNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHsmClientCertificateResult
 	{
 		
@@ -1702,8 +1574,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmClientCertificate
 	{
 		
@@ -1717,20 +1588,17 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmClientCertificateAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmClientCertificateQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHsmConfigurationResult
 	{
 		
@@ -1744,8 +1612,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmConfiguration
 	{
 		
@@ -1765,14 +1632,12 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmConfigurationAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmConfigurationQuotaExceededFault
 	{
 	}
@@ -1780,8 +1645,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <a>ScheduledActionType</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledAction
 	{
 		
@@ -1816,8 +1680,7 @@ namespace MyNS
 	/// <summary>
 	/// The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledActionType
 	{
 		
@@ -1834,8 +1697,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResizeClusterMessage
 	{
 		
@@ -1868,8 +1730,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PauseClusterMessage
 	{
 		
@@ -1884,8 +1745,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResumeClusterMessage
 	{
 		
@@ -1897,51 +1757,43 @@ namespace MyNS
 		public string ClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduledActionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledActionAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledActionQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledActionTypeUnsupportedFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidScheduleFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidScheduledActionFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotCopyGrantResult
 	{
 		
@@ -1955,8 +1807,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotCopyGrant
 	{
 		
@@ -1970,14 +1821,12 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotCopyGrantAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotCopyGrantQuotaExceededFault
 	{
 	}
@@ -1985,8 +1834,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotSchedule
 	{
 		
@@ -2012,26 +1860,22 @@ namespace MyNS
 		public string[] AssociatedClusters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotScheduleAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotScheduleQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduleDefinitionTypeUnsupportedFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundFault
 	{
 	}
@@ -2039,8 +1883,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a usage limit object for a cluster. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageLimit
 	{
 		
@@ -2069,13 +1912,11 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UsageLimitFeatureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spectrum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spectrum = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="concurrency-scaling")]
@@ -2085,65 +1926,56 @@ namespace MyNS
 		crossMinusregionMinusdatasharing = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UsageLimitLimitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		time = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="data-scanned")]
 		dataMinusscanned = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UsageLimitPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		daily = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		weekly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		monthly = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UsageLimitBreachAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="log")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		log = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="emit-metric")]
 		emitMinusmetric = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disable = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageLimitAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidUsageLimitFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAuthenticationProfileResult
 	{
 		
@@ -2151,14 +1983,12 @@ namespace MyNS
 		public string AuthenticationProfileName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationProfileNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterResult
 	{
 		
@@ -2169,14 +1999,12 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClusterParameterGroupStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterSnapshotResult
 	{
 		
@@ -2187,80 +2015,67 @@ namespace MyNS
 		public Snapshot Snapshot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClusterSubnetStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidEndpointStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSubscriptionStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidHsmClientCertificateStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidHsmConfigurationStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledActionNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSnapshotCopyGrantStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotCopyGrantNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClusterSnapshotScheduleStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageLimitNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountAttributeList
 	{
 		
@@ -2268,8 +2083,7 @@ namespace MyNS
 		public string[] AccountAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAuthenticationProfilesResult
 	{
 		
@@ -2280,8 +2094,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an authentication profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationProfile
 	{
 		
@@ -2292,8 +2105,7 @@ namespace MyNS
 		public string AuthenticationProfileContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterDbRevisionsMessage
 	{
 		
@@ -2307,8 +2119,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output from the <a>DescribeClusterParameterGroups</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterParameterGroupsMessage
 	{
 		
@@ -2322,8 +2133,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output from the <a>DescribeClusterParameters</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterParameterGroupDetails
 	{
 		
@@ -2337,8 +2147,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSecurityGroupMessage
 	{
 		
@@ -2352,8 +2161,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output from the <a>DescribeClusterSnapshots</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotMessage
 	{
 		
@@ -2367,8 +2175,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a sorting entity
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotSortingEntity
 	{
 		
@@ -2383,40 +2190,35 @@ namespace MyNS
 		public SortByOrder SortOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnapshotAttributeToSortBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_TYPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOTAL_SIZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOTAL_SIZE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_TIME = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortByOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESC = 1,
 	}
 	
 	/// <summary>
 	/// Contains the output from the <a>DescribeClusterSubnetGroups</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSubnetGroupMessage
 	{
 		
@@ -2427,8 +2229,7 @@ namespace MyNS
 		public string[] ClusterSubnetGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrackListMessage
 	{
 		
@@ -2442,8 +2243,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output from the <a>DescribeClusterVersions</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterVersionsMessage
 	{
 		
@@ -2457,8 +2257,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output from the <a>DescribeClusters</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClustersMessage
 	{
 		
@@ -2469,8 +2268,7 @@ namespace MyNS
 		public string[] Clusters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDomainAssociationsMessage
 	{
 		
@@ -2481,14 +2279,12 @@ namespace MyNS
 		public string[] Associations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDomainAssociationNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataSharesResult
 	{
 		
@@ -2499,8 +2295,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataSharesForConsumerResult
 	{
 		
@@ -2511,8 +2306,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataSharesForProducerResult
 	{
 		
@@ -2523,8 +2317,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDefaultClusterParametersResult
 	{
 		
@@ -2538,8 +2331,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the default cluster parameters for a parameter group family.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultClusterParameters
 	{
 		
@@ -2553,8 +2345,7 @@ namespace MyNS
 		public string[] Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointAccessList
 	{
 		
@@ -2565,8 +2356,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointAuthorizationList
 	{
 		
@@ -2580,8 +2370,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventCategoriesMessage
 	{
 		
@@ -2592,8 +2381,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventSubscriptionsMessage
 	{
 		
@@ -2607,8 +2395,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsMessage
 	{
 		
@@ -2622,8 +2409,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmClientCertificateMessage
 	{
 		
@@ -2637,8 +2423,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HsmConfigurationMessage
 	{
 		
@@ -2652,8 +2437,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the status of logging for a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingStatus
 	{
 		
@@ -2682,21 +2466,18 @@ namespace MyNS
 		public string[] LogExports { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LogDestinationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="s3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		s3 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cloudwatch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cloudwatch = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeConfigurationOptionsMessage
 	{
 		
@@ -2710,8 +2491,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of elements to filter the returned node configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeConfigurationOptionsFilter
 	{
 		
@@ -2725,55 +2505,50 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeConfigurationOptionsFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NodeType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NodeType = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NumberOfNodes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NumberOfNodes = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimatedDiskUtilizationPercent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EstimatedDiskUtilizationPercent = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mode = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperatorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eq")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eq = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gt = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="le")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		le = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ge = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in")]
 		_in = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="between")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		between = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessToSnapshotDeniedFault
 	{
 	}
@@ -2781,8 +2556,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output from the <a>DescribeOrderableClusterOptions</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderableClusterOptionsMessage
 	{
 		
@@ -2793,8 +2567,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePartnersOutputMessage
 	{
 		
@@ -2802,8 +2575,7 @@ namespace MyNS
 		public string[] PartnerIntegrationInfoList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservedNodeExchangeStatusOutputMessage
 	{
 		
@@ -2814,8 +2586,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeExchangeNotFoundFault
 	{
 	}
@@ -2823,8 +2594,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeOfferingsMessage
 	{
 		
@@ -2838,8 +2608,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodesMessage
 	{
 		
@@ -2850,8 +2619,7 @@ namespace MyNS
 		public string[] ReservedNodes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledActionsMessage
 	{
 		
@@ -2865,8 +2633,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of elements to filter the returned scheduled actions. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledActionFilter
 	{
 		
@@ -2885,9 +2652,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduledActionFilterName
 	{
 		
@@ -2901,8 +2666,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotCopyGrantMessage
 	{
 		
@@ -2913,8 +2677,7 @@ namespace MyNS
 		public string[] SnapshotCopyGrants { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSnapshotSchedulesOutputMessage
 	{
 		
@@ -2925,8 +2688,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerStorageMessage
 	{
 		
@@ -2940,8 +2702,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableRestoreStatusMessage
 	{
 		
@@ -2952,8 +2713,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableRestoreNotFoundFault
 	{
 	}
@@ -2961,8 +2721,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaggedResourceListMessage
 	{
 		
@@ -2973,8 +2732,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageLimitList
 	{
 		
@@ -2985,8 +2743,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableSnapshotCopyResult
 	{
 		
@@ -2997,38 +2754,32 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotCopyAlreadyDisabledFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BucketNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientS3BucketPolicyFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidS3KeyPrefixFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidS3BucketNameFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableSnapshotCopyResult
 	{
 		
@@ -3039,26 +2790,22 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncompatibleOrderableOptions
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyToRegionDisabledFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotCopyAlreadyEnabledFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnknownSnapshotCopyRegionFault
 	{
 	}
@@ -3066,8 +2813,7 @@ namespace MyNS
 	/// <summary>
 	/// Temporary credentials with authorization to log on to an Amazon Redshift database. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterCredentials
 	{
 		
@@ -3081,8 +2827,7 @@ namespace MyNS
 		public System.DateTimeOffset Expiration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterExtendedCredentials
 	{
 		
@@ -3099,8 +2844,7 @@ namespace MyNS
 		public System.DateTimeOffset NextRefreshTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReservedNodeExchangeConfigurationOptionsOutputMessage
 	{
 		
@@ -3111,8 +2855,7 @@ namespace MyNS
 		public string[] ReservedNodeConfigurationOptionList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReservedNodeExchangeOfferingsOutputMessage
 	{
 		
@@ -3123,8 +2866,7 @@ namespace MyNS
 		public string[] ReservedNodeOfferings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyAquaOutputMessage
 	{
 		
@@ -3132,8 +2874,7 @@ namespace MyNS
 		public AquaConfiguration AquaConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyAuthenticationProfileResult
 	{
 		
@@ -3144,8 +2885,7 @@ namespace MyNS
 		public string AuthenticationProfileContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterResult
 	{
 		
@@ -3156,20 +2896,17 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedOptionFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableLimitExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterDbRevisionResult
 	{
 		
@@ -3180,14 +2917,12 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterOnLatestRevisionFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterIamRolesResult
 	{
 		
@@ -3198,8 +2933,7 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterMaintenanceResult
 	{
 		
@@ -3213,8 +2947,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterParameterGroupNameMessage
 	{
 		
@@ -3228,8 +2961,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a parameter in a cluster parameter group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parameter
 	{
 		
@@ -3261,21 +2993,18 @@ namespace MyNS
 		public string MinimumEngineVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParameterApplyType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="static")]
 		_static = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dynamic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dynamic = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterSnapshotResult
 	{
 		
@@ -3286,8 +3015,7 @@ namespace MyNS
 		public Snapshot Snapshot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterSubnetGroupResult
 	{
 		
@@ -3298,14 +3026,12 @@ namespace MyNS
 		public ClusterSubnetGroup ClusterSubnetGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubnetAlreadyInUse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyCustomDomainAssociationResult
 	{
 		
@@ -3322,8 +3048,7 @@ namespace MyNS
 		public string CustomDomainCertExpiryTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyEventSubscriptionResult
 	{
 		
@@ -3334,8 +3059,7 @@ namespace MyNS
 		public EventSubscription EventSubscription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifySnapshotCopyRetentionPeriodResult
 	{
 		
@@ -3346,20 +3070,17 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotCopyDisabledFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotScheduleUpdateInProgressFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PauseClusterResult
 	{
 		
@@ -3370,8 +3091,7 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseReservedNodeOfferingResult
 	{
 		
@@ -3382,14 +3102,12 @@ namespace MyNS
 		public ReservedNode ReservedNode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RebootClusterResult
 	{
 		
@@ -3400,8 +3118,7 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResizeClusterResult
 	{
 		
@@ -3412,8 +3129,7 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreFromClusterSnapshotResult
 	{
 		
@@ -3424,14 +3140,12 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRestoreFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreTableFromClusterSnapshotResult
 	{
 		
@@ -3445,8 +3159,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableRestoreStatus
 	{
 		
@@ -3493,42 +3206,37 @@ namespace MyNS
 		public string NewTableName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TableRestoreStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InProgressTableRestoreQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTableRestoreArgumentFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResumeClusterResult
 	{
 		
@@ -3539,8 +3247,7 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeClusterSecurityGroupIngressResult
 	{
 		
@@ -3551,20 +3258,17 @@ namespace MyNS
 		public ClusterSecurityGroup ClusterSecurityGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizationNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointAuthorizationNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeSnapshotAccessResult
 	{
 		
@@ -3575,8 +3279,7 @@ namespace MyNS
 		public Snapshot Snapshot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RotateEncryptionKeyResult
 	{
 		
@@ -3587,8 +3290,7 @@ namespace MyNS
 		public Cluster Cluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptReservedNodeExchangeInputMessage
 	{
 		
@@ -3610,8 +3312,7 @@ namespace MyNS
 	/// <summary>
 	/// A name value pair that describes an aspect of an account. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountAttribute
 	{
 		
@@ -3625,8 +3326,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Amazon Web Services account authorized to restore a snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountWithRestoreAccess
 	{
 		
@@ -3637,9 +3337,7 @@ namespace MyNS
 		public string AccountAlias { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionType
 	{
 		
@@ -3653,8 +3351,7 @@ namespace MyNS
 		resizeMinuscluster = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateDataShareConsumerMessage
 	{
 		
@@ -3678,8 +3375,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterAssociatedToSchedule
 	{
 		
@@ -3693,8 +3389,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the custom domain name association.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Association
 	{
 		
@@ -3711,8 +3406,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an attribute value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeValueTarget
 	{
 		
@@ -3723,8 +3417,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizeClusterSecurityGroupIngressMessage
 	{
 		
@@ -3745,8 +3438,7 @@ namespace MyNS
 		public string EC2SecurityGroupOwnerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizeDataShareMessage
 	{
 		
@@ -3765,8 +3457,7 @@ namespace MyNS
 		public string ConsumerIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizeEndpointAccessMessage
 	{
 		
@@ -3787,8 +3478,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizeSnapshotAccessMessage
 	{
 		
@@ -3812,8 +3502,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an availability zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AvailabilityZone
 	{
 		
@@ -3824,8 +3513,7 @@ namespace MyNS
 		public string[] SupportedPlatforms { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteClusterSnapshotsRequest
 	{
 		
@@ -3837,8 +3525,7 @@ namespace MyNS
 		public string[] Identifiers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchModifyClusterSnapshotsMessage
 	{
 		
@@ -3859,8 +3546,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the errors returned by a snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotErrorMessage
 	{
 		
@@ -3877,8 +3563,7 @@ namespace MyNS
 		public string FailureReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelResizeMessage
 	{
 		
@@ -3893,8 +3578,7 @@ namespace MyNS
 	/// <summary>
 	/// A cluster ID and custom domain name tied to a specific certificate. These are typically returned in a list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateAssociation
 	{
 		
@@ -3908,8 +3592,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a <code>ClusterDbRevision</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterDbRevision
 	{
 		
@@ -3929,8 +3612,7 @@ namespace MyNS
 	/// <summary>
 	/// An Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other Amazon Web Services services.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterIamRole
 	{
 		
@@ -3944,8 +3626,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the status of a parameter group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterParameterStatus
 	{
 		
@@ -3962,8 +3643,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the status of a parameter group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterParameterGroupStatus
 	{
 		
@@ -3980,8 +3660,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a cluster security group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSecurityGroupMembership
 	{
 		
@@ -3995,8 +3674,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a cluster version, including the parameter group family and description of the version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterVersion
 	{
 		
@@ -4013,8 +3691,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyClusterSnapshotMessage
 	{
 		
@@ -4039,8 +3716,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ManualSnapshotRetentionPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAuthenticationProfileMessage
 	{
 		
@@ -4062,8 +3738,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterMessage
 	{
 		
@@ -4189,8 +3864,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterParameterGroupMessage
 	{
 		
@@ -4222,8 +3896,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterSecurityGroupMessage
 	{
 		
@@ -4248,8 +3921,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterSnapshotMessage
 	{
 		
@@ -4277,8 +3949,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterSubnetGroupMessage
 	{
 		
@@ -4307,8 +3978,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomDomainAssociationMessage
 	{
 		
@@ -4334,8 +4004,7 @@ namespace MyNS
 		public string ClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEndpointAccessMessage
 	{
 		
@@ -4366,8 +4035,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEventSubscriptionMessage
 	{
 		
@@ -4407,8 +4075,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHsmClientCertificateMessage
 	{
 		
@@ -4426,8 +4093,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHsmConfigurationMessage
 	{
 		
@@ -4477,8 +4143,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateScheduledActionMessage
 	{
 		
@@ -4526,8 +4191,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of the <code>CreateSnapshotCopyGrant</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotCopyGrantMessage
 	{
 		
@@ -4545,8 +4209,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotScheduleMessage
 	{
 		
@@ -4572,8 +4235,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output from the <code>CreateTags</code> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTagsMessage
 	{
 		
@@ -4592,8 +4254,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateUsageLimitMessage
 	{
 		
@@ -4635,43 +4296,38 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataShareStatusForConsumer
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataShareStatusForProducer
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHORIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTHORIZED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_AUTHORIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_AUTHORIZATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAUTHORIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEAUTHORIZED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeauthorizeDataShareMessage
 	{
 		
@@ -4693,8 +4349,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a deferred maintenance window
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeferredMaintenanceWindow
 	{
 		
@@ -4708,8 +4363,7 @@ namespace MyNS
 		public System.DateTimeOffset DeferMaintenanceEndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAuthenticationProfileMessage
 	{
 		
@@ -4724,8 +4378,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterMessage
 	{
 		
@@ -4749,8 +4402,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterParameterGroupMessage
 	{
 		
@@ -4765,8 +4417,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterSecurityGroupMessage
 	{
 		
@@ -4781,8 +4432,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteClusterSubnetGroupMessage
 	{
 		
@@ -4794,8 +4444,7 @@ namespace MyNS
 		public string ClusterSubnetGroupName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCustomDomainAssociationMessage
 	{
 		
@@ -4807,8 +4456,7 @@ namespace MyNS
 		public string ClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEndpointAccessMessage
 	{
 		
@@ -4823,8 +4471,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEventSubscriptionMessage
 	{
 		
@@ -4839,8 +4486,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHsmClientCertificateMessage
 	{
 		
@@ -4855,8 +4501,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHsmConfigurationMessage
 	{
 		
@@ -4868,8 +4513,7 @@ namespace MyNS
 		public string HsmConfigurationIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScheduledActionMessage
 	{
 		
@@ -4884,8 +4528,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of the <code>DeleteSnapshotCopyGrant</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSnapshotCopyGrantMessage
 	{
 		
@@ -4897,8 +4540,7 @@ namespace MyNS
 		public string SnapshotCopyGrantName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSnapshotScheduleMessage
 	{
 		
@@ -4913,8 +4555,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output from the <code>DeleteTags</code> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTagsMessage
 	{
 		
@@ -4933,8 +4574,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteUsageLimitMessage
 	{
 		
@@ -4946,8 +4586,7 @@ namespace MyNS
 		public string UsageLimitId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAccountAttributesMessage
 	{
 		
@@ -4955,8 +4594,7 @@ namespace MyNS
 		public string[] AttributeNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAuthenticationProfilesMessage
 	{
 		
@@ -4964,8 +4602,7 @@ namespace MyNS
 		public string AuthenticationProfileName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterDbRevisionsMessage
 	{
 		
@@ -4982,8 +4619,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterParameterGroupsMessage
 	{
 		
@@ -5006,8 +4642,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterParametersMessage
 	{
 		
@@ -5031,8 +4666,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterSecurityGroupsMessage
 	{
 		
@@ -5055,8 +4689,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterSnapshotsMessage
 	{
 		
@@ -5103,8 +4736,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterSubnetGroupsMessage
 	{
 		
@@ -5124,8 +4756,7 @@ namespace MyNS
 		public string[] TagValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterTracksMessage
 	{
 		
@@ -5142,8 +4773,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterVersionsMessage
 	{
 		
@@ -5163,8 +4793,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClustersMessage
 	{
 		
@@ -5184,8 +4813,7 @@ namespace MyNS
 		public string[] TagValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCustomDomainAssociationsMessage
 	{
 		
@@ -5202,8 +4830,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataSharesForConsumerMessage
 	{
 		
@@ -5220,8 +4847,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataSharesForProducerMessage
 	{
 		
@@ -5238,8 +4864,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDataSharesMessage
 	{
 		
@@ -5256,8 +4881,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDefaultClusterParametersMessage
 	{
 		
@@ -5275,8 +4899,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEndpointAccessMessage
 	{
 		
@@ -5299,8 +4922,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEndpointAuthorizationMessage
 	{
 		
@@ -5323,8 +4945,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventCategoriesMessage
 	{
 		
@@ -5335,8 +4956,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventSubscriptionsMessage
 	{
 		
@@ -5356,13 +4976,11 @@ namespace MyNS
 		public string[] TagValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cluster = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="cluster-parameter-group")]
@@ -5381,8 +4999,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventsMessage
 	{
 		
@@ -5411,8 +5028,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeHsmClientCertificatesMessage
 	{
 		
@@ -5435,8 +5051,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeHsmConfigurationsMessage
 	{
 		
@@ -5459,8 +5074,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLoggingStatusMessage
 	{
 		
@@ -5472,8 +5086,7 @@ namespace MyNS
 		public string ClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeNodeConfigurationOptionsMessage
 	{
 		
@@ -5509,8 +5122,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrderableClusterOptionsMessage
 	{
 		
@@ -5527,8 +5139,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePartnersInputMessage
 	{
 		
@@ -5553,8 +5164,7 @@ namespace MyNS
 		public string PartnerName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservedNodeExchangeStatusInputMessage
 	{
 		
@@ -5574,8 +5184,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservedNodeOfferingsMessage
 	{
 		
@@ -5592,8 +5201,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservedNodesMessage
 	{
 		
@@ -5610,8 +5218,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeResizeMessage
 	{
 		
@@ -5623,24 +5230,21 @@ namespace MyNS
 		public string ClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduledActionTypeValues
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResizeCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResizeCluster = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PauseCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PauseCluster = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResumeCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResumeCluster = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScheduledActionsMessage
 	{
 		
@@ -5672,8 +5276,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of the <code>DescribeSnapshotCopyGrants</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSnapshotCopyGrantsMessage
 	{
 		
@@ -5693,8 +5296,7 @@ namespace MyNS
 		public string[] TagValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSnapshotSchedulesMessage
 	{
 		
@@ -5720,8 +5322,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTableRestoreStatusMessage
 	{
 		
@@ -5741,8 +5342,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTagsMessage
 	{
 		
@@ -5765,8 +5365,7 @@ namespace MyNS
 		public string[] TagValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeUsageLimitsMessage
 	{
 		
@@ -5795,8 +5394,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableLoggingMessage
 	{
 		
@@ -5811,8 +5409,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableSnapshotCopyMessage
 	{
 		
@@ -5824,8 +5421,7 @@ namespace MyNS
 		public string ClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateDataShareConsumerMessage
 	{
 		
@@ -5849,8 +5445,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Amazon EC2 security group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2SecurityGroup
 	{
 		
@@ -5870,8 +5465,7 @@ namespace MyNS
 	/// <summary>
 	/// A maintenance track that you can switch the current track to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTarget
 	{
 		
@@ -5888,8 +5482,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableLoggingMessage
 	{
 		
@@ -5916,8 +5509,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableSnapshotCopyMessage
 	{
 		
@@ -5948,8 +5540,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event
 	{
 		
@@ -5978,8 +5569,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes event categories.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventCategoriesMap
 	{
 		
@@ -5993,8 +5583,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes event information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventInfoMap
 	{
 		
@@ -6014,8 +5603,7 @@ namespace MyNS
 	/// <summary>
 	/// The request parameters to get cluster credentials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetClusterCredentialsMessage
 	{
 		
@@ -6045,8 +5633,7 @@ namespace MyNS
 		public string CustomDomainName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetClusterCredentialsWithIAMMessage
 	{
 		
@@ -6063,9 +5650,7 @@ namespace MyNS
 		public string CustomDomainName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReservedNodeExchangeActionType
 	{
 		
@@ -6076,8 +5661,7 @@ namespace MyNS
 		resizeMinuscluster = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReservedNodeExchangeConfigurationOptionsInputMessage
 	{
 		
@@ -6104,8 +5688,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReservedNodeExchangeOfferingsInputMessage
 	{
 		
@@ -6126,8 +5709,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an IP range used in a security group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IPRange
 	{
 		
@@ -6144,8 +5726,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaintenanceTrack
 	{
 		
@@ -6159,21 +5740,18 @@ namespace MyNS
 		public string[] UpdateTargets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Mode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		standard = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="high-performance")]
 		highMinusperformance = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyAquaInputMessage
 	{
 		
@@ -6188,8 +5766,7 @@ namespace MyNS
 		public AquaConfigurationStatus AquaConfigurationStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyAuthenticationProfileMessage
 	{
 		
@@ -6208,8 +5785,7 @@ namespace MyNS
 		public string AuthenticationProfileContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterDbRevisionMessage
 	{
 		
@@ -6231,8 +5807,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterIamRolesMessage
 	{
 		
@@ -6253,8 +5828,7 @@ namespace MyNS
 		public string DefaultIamRoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterMaintenanceMessage
 	{
 		
@@ -6284,8 +5858,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterMessage
 	{
 		
@@ -6372,8 +5945,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a modify cluster parameter group operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterParameterGroupMessage
 	{
 		
@@ -6392,8 +5964,7 @@ namespace MyNS
 		public string[] Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterSnapshotMessage
 	{
 		
@@ -6411,8 +5982,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Force { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterSnapshotScheduleMessage
 	{
 		
@@ -6433,8 +6003,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterSubnetGroupMessage
 	{
 		
@@ -6456,8 +6025,7 @@ namespace MyNS
 		public string[] SubnetIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyCustomDomainAssociationMessage
 	{
 		
@@ -6475,8 +6043,7 @@ namespace MyNS
 		public string ClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyEndpointAccessMessage
 	{
 		
@@ -6494,8 +6061,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyEventSubscriptionMessage
 	{
 		
@@ -6525,8 +6091,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyScheduledActionMessage
 	{
 		
@@ -6562,8 +6127,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifySnapshotCopyRetentionPeriodMessage
 	{
 		
@@ -6585,8 +6149,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Manual { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifySnapshotScheduleMessage
 	{
 		
@@ -6605,8 +6168,7 @@ namespace MyNS
 		public string[] ScheduleDefinitions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyUsageLimitMessage
 	{
 		
@@ -6627,8 +6189,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a network interface. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkInterface
 	{
 		
@@ -6648,8 +6209,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of node configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeConfigurationOption
 	{
 		
@@ -6669,8 +6229,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an orderable cluster option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderableClusterOption
 	{
 		
@@ -6687,30 +6246,27 @@ namespace MyNS
 		public string[] AvailabilityZones { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartnerIntegrationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RuntimeFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RuntimeFailure = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConnectionFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConnectionFailure = 3,
 	}
 	
 	/// <summary>
 	/// Describes a partner integration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartnerIntegrationInfo
 	{
 		
@@ -6733,8 +6289,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdatedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartnerIntegrationInputMessage
 	{
 		
@@ -6770,8 +6325,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseReservedNodeOfferingMessage
 	{
 		
@@ -6789,8 +6343,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RebootClusterMessage
 	{
 		
@@ -6805,8 +6358,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a recurring charge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecurringCharge
 	{
 		
@@ -6817,8 +6369,7 @@ namespace MyNS
 		public string RecurringChargeFrequency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectDataShareMessage
 	{
 		
@@ -6833,8 +6384,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a reserved node offering.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeOffering
 	{
 		
@@ -6869,8 +6419,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for a reserved-node exchange. Examples include the node type for a reserved node, the price for a node, the node's state, and other details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedNodeConfigurationOption
 	{
 		
@@ -6893,8 +6442,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetClusterParameterGroupMessage
 	{
 		
@@ -6915,8 +6463,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreFromClusterSnapshotMessage
 	{
 		
@@ -7027,8 +6574,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreTableFromClusterSnapshotMessage
 	{
 		
@@ -7083,8 +6629,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a <code>RevisionTarget</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevisionTarget
 	{
 		
@@ -7101,8 +6646,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeClusterSecurityGroupIngressMessage
 	{
 		
@@ -7123,8 +6667,7 @@ namespace MyNS
 		public string EC2SecurityGroupOwnerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeEndpointAccessMessage
 	{
 		
@@ -7144,8 +6687,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeSnapshotAccessMessage
 	{
 		
@@ -7169,8 +6711,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RotateEncryptionKeyMessage
 	{
 		
@@ -7185,8 +6726,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a subnet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subnet
 	{
 		
@@ -7203,8 +6743,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the operations that are allowed on a maintenance track.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupportedOperation
 	{
 		
@@ -7215,8 +6754,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of supported platforms for orderable clusters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupportedPlatform
 	{
 		
@@ -7227,8 +6765,7 @@ namespace MyNS
 	/// <summary>
 	/// A tag and its associated resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaggedResource
 	{
 		
@@ -7242,8 +6779,7 @@ namespace MyNS
 		public string ResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePartnerStatusInputMessage
 	{
 		
@@ -7289,8 +6825,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the members of a VPC security group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcSecurityGroupMembership
 	{
 		
@@ -11952,7 +11487,7 @@ namespace MyNS
 	public enum GET_AcceptReservedNodeExchangeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptReservedNodeExchange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptReservedNodeExchange = 0,
 	}
 	
@@ -11973,7 +11508,7 @@ namespace MyNS
 	public enum GET_AddPartnerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddPartner")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddPartner = 0,
 	}
 	
@@ -11994,7 +11529,7 @@ namespace MyNS
 	public enum GET_AssociateDataShareConsumerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssociateDataShareConsumer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssociateDataShareConsumer = 0,
 	}
 	
@@ -12015,7 +11550,7 @@ namespace MyNS
 	public enum GET_AuthorizeClusterSecurityGroupIngressAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthorizeClusterSecurityGroupIngress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AuthorizeClusterSecurityGroupIngress = 0,
 	}
 	
@@ -12036,7 +11571,7 @@ namespace MyNS
 	public enum GET_AuthorizeDataShareAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthorizeDataShare")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AuthorizeDataShare = 0,
 	}
 	
@@ -12057,7 +11592,7 @@ namespace MyNS
 	public enum GET_AuthorizeEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthorizeEndpointAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AuthorizeEndpointAccess = 0,
 	}
 	
@@ -12078,7 +11613,7 @@ namespace MyNS
 	public enum GET_AuthorizeSnapshotAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthorizeSnapshotAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AuthorizeSnapshotAccess = 0,
 	}
 	
@@ -12099,7 +11634,7 @@ namespace MyNS
 	public enum GET_BatchDeleteClusterSnapshotsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchDeleteClusterSnapshots")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BatchDeleteClusterSnapshots = 0,
 	}
 	
@@ -12120,7 +11655,7 @@ namespace MyNS
 	public enum GET_BatchModifyClusterSnapshotsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchModifyClusterSnapshots")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BatchModifyClusterSnapshots = 0,
 	}
 	
@@ -12141,7 +11676,7 @@ namespace MyNS
 	public enum GET_CancelResizeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancelResize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CancelResize = 0,
 	}
 	
@@ -12162,7 +11697,7 @@ namespace MyNS
 	public enum GET_CopyClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CopyClusterSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CopyClusterSnapshot = 0,
 	}
 	
@@ -12183,7 +11718,7 @@ namespace MyNS
 	public enum GET_CreateAuthenticationProfileAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateAuthenticationProfile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateAuthenticationProfile = 0,
 	}
 	
@@ -12204,7 +11739,7 @@ namespace MyNS
 	public enum GET_CreateClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateCluster = 0,
 	}
 	
@@ -12225,7 +11760,7 @@ namespace MyNS
 	public enum GET_CreateClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateClusterParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateClusterParameterGroup = 0,
 	}
 	
@@ -12246,7 +11781,7 @@ namespace MyNS
 	public enum GET_CreateClusterSecurityGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateClusterSecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateClusterSecurityGroup = 0,
 	}
 	
@@ -12267,7 +11802,7 @@ namespace MyNS
 	public enum GET_CreateClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateClusterSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateClusterSnapshot = 0,
 	}
 	
@@ -12288,7 +11823,7 @@ namespace MyNS
 	public enum GET_CreateClusterSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateClusterSubnetGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateClusterSubnetGroup = 0,
 	}
 	
@@ -12309,7 +11844,7 @@ namespace MyNS
 	public enum GET_CreateCustomDomainAssociationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateCustomDomainAssociation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateCustomDomainAssociation = 0,
 	}
 	
@@ -12330,7 +11865,7 @@ namespace MyNS
 	public enum GET_CreateEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateEndpointAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateEndpointAccess = 0,
 	}
 	
@@ -12351,7 +11886,7 @@ namespace MyNS
 	public enum GET_CreateEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateEventSubscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateEventSubscription = 0,
 	}
 	
@@ -12372,7 +11907,7 @@ namespace MyNS
 	public enum GET_CreateHsmClientCertificateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateHsmClientCertificate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateHsmClientCertificate = 0,
 	}
 	
@@ -12393,7 +11928,7 @@ namespace MyNS
 	public enum GET_CreateHsmConfigurationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateHsmConfiguration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateHsmConfiguration = 0,
 	}
 	
@@ -12427,7 +11962,7 @@ namespace MyNS
 	public enum GET_CreateScheduledActionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateScheduledAction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateScheduledAction = 0,
 	}
 	
@@ -12448,7 +11983,7 @@ namespace MyNS
 	public enum GET_CreateSnapshotCopyGrantAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateSnapshotCopyGrant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateSnapshotCopyGrant = 0,
 	}
 	
@@ -12469,7 +12004,7 @@ namespace MyNS
 	public enum GET_CreateSnapshotScheduleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateSnapshotSchedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateSnapshotSchedule = 0,
 	}
 	
@@ -12490,7 +12025,7 @@ namespace MyNS
 	public enum GET_CreateTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateTags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateTags = 0,
 	}
 	
@@ -12511,7 +12046,7 @@ namespace MyNS
 	public enum GET_CreateUsageLimitFeatureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spectrum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spectrum = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="concurrency-scaling")]
@@ -12524,7 +12059,7 @@ namespace MyNS
 	public enum GET_CreateUsageLimitLimitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		time = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="data-scanned")]
@@ -12534,20 +12069,20 @@ namespace MyNS
 	public enum GET_CreateUsageLimitBreachAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="log")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		log = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="emit-metric")]
 		emitMinusmetric = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disable = 2,
 	}
 	
 	public enum GET_CreateUsageLimitAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateUsageLimit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateUsageLimit = 0,
 	}
 	
@@ -12568,7 +12103,7 @@ namespace MyNS
 	public enum GET_DeauthorizeDataShareAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeauthorizeDataShare")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeauthorizeDataShare = 0,
 	}
 	
@@ -12589,7 +12124,7 @@ namespace MyNS
 	public enum GET_DeleteAuthenticationProfileAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteAuthenticationProfile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteAuthenticationProfile = 0,
 	}
 	
@@ -12610,7 +12145,7 @@ namespace MyNS
 	public enum GET_DeleteClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteCluster = 0,
 	}
 	
@@ -12631,7 +12166,7 @@ namespace MyNS
 	public enum GET_DeleteClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteClusterParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteClusterParameterGroup = 0,
 	}
 	
@@ -12652,7 +12187,7 @@ namespace MyNS
 	public enum GET_DeleteClusterSecurityGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteClusterSecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteClusterSecurityGroup = 0,
 	}
 	
@@ -12673,7 +12208,7 @@ namespace MyNS
 	public enum GET_DeleteClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteClusterSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteClusterSnapshot = 0,
 	}
 	
@@ -12694,7 +12229,7 @@ namespace MyNS
 	public enum GET_DeleteClusterSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteClusterSubnetGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteClusterSubnetGroup = 0,
 	}
 	
@@ -12715,7 +12250,7 @@ namespace MyNS
 	public enum GET_DeleteCustomDomainAssociationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteCustomDomainAssociation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteCustomDomainAssociation = 0,
 	}
 	
@@ -12736,7 +12271,7 @@ namespace MyNS
 	public enum GET_DeleteEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteEndpointAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteEndpointAccess = 0,
 	}
 	
@@ -12757,7 +12292,7 @@ namespace MyNS
 	public enum GET_DeleteEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteEventSubscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteEventSubscription = 0,
 	}
 	
@@ -12778,7 +12313,7 @@ namespace MyNS
 	public enum GET_DeleteHsmClientCertificateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteHsmClientCertificate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteHsmClientCertificate = 0,
 	}
 	
@@ -12799,7 +12334,7 @@ namespace MyNS
 	public enum GET_DeleteHsmConfigurationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteHsmConfiguration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteHsmConfiguration = 0,
 	}
 	
@@ -12820,7 +12355,7 @@ namespace MyNS
 	public enum GET_DeletePartnerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeletePartner")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeletePartner = 0,
 	}
 	
@@ -12841,7 +12376,7 @@ namespace MyNS
 	public enum GET_DeleteScheduledActionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteScheduledAction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteScheduledAction = 0,
 	}
 	
@@ -12862,7 +12397,7 @@ namespace MyNS
 	public enum GET_DeleteSnapshotCopyGrantAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteSnapshotCopyGrant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteSnapshotCopyGrant = 0,
 	}
 	
@@ -12883,7 +12418,7 @@ namespace MyNS
 	public enum GET_DeleteSnapshotScheduleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteSnapshotSchedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteSnapshotSchedule = 0,
 	}
 	
@@ -12904,7 +12439,7 @@ namespace MyNS
 	public enum GET_DeleteTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteTags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteTags = 0,
 	}
 	
@@ -12925,7 +12460,7 @@ namespace MyNS
 	public enum GET_DeleteUsageLimitAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteUsageLimit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteUsageLimit = 0,
 	}
 	
@@ -12946,7 +12481,7 @@ namespace MyNS
 	public enum GET_DescribeAccountAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAccountAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAccountAttributes = 0,
 	}
 	
@@ -12967,7 +12502,7 @@ namespace MyNS
 	public enum GET_DescribeAuthenticationProfilesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAuthenticationProfiles")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAuthenticationProfiles = 0,
 	}
 	
@@ -12988,7 +12523,7 @@ namespace MyNS
 	public enum GET_DescribeClusterDbRevisionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterDbRevisions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeClusterDbRevisions = 0,
 	}
 	
@@ -13009,7 +12544,7 @@ namespace MyNS
 	public enum GET_DescribeClusterParameterGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterParameterGroups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeClusterParameterGroups = 0,
 	}
 	
@@ -13030,7 +12565,7 @@ namespace MyNS
 	public enum GET_DescribeClusterParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterParameters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeClusterParameters = 0,
 	}
 	
@@ -13051,7 +12586,7 @@ namespace MyNS
 	public enum GET_DescribeClusterSecurityGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterSecurityGroups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeClusterSecurityGroups = 0,
 	}
 	
@@ -13072,7 +12607,7 @@ namespace MyNS
 	public enum GET_DescribeClusterSnapshotsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterSnapshots")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeClusterSnapshots = 0,
 	}
 	
@@ -13093,7 +12628,7 @@ namespace MyNS
 	public enum GET_DescribeClusterSubnetGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterSubnetGroups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeClusterSubnetGroups = 0,
 	}
 	
@@ -13114,7 +12649,7 @@ namespace MyNS
 	public enum GET_DescribeClusterTracksAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterTracks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeClusterTracks = 0,
 	}
 	
@@ -13135,7 +12670,7 @@ namespace MyNS
 	public enum GET_DescribeClusterVersionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterVersions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeClusterVersions = 0,
 	}
 	
@@ -13156,7 +12691,7 @@ namespace MyNS
 	public enum GET_DescribeClustersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeClusters = 0,
 	}
 	
@@ -13177,7 +12712,7 @@ namespace MyNS
 	public enum GET_DescribeCustomDomainAssociationsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeCustomDomainAssociations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeCustomDomainAssociations = 0,
 	}
 	
@@ -13198,7 +12733,7 @@ namespace MyNS
 	public enum GET_DescribeDataSharesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDataShares")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDataShares = 0,
 	}
 	
@@ -13219,7 +12754,7 @@ namespace MyNS
 	public enum GET_DescribeDataSharesForConsumerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDataSharesForConsumer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDataSharesForConsumer = 0,
 	}
 	
@@ -13240,7 +12775,7 @@ namespace MyNS
 	public enum GET_DescribeDataSharesForProducerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDataSharesForProducer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDataSharesForProducer = 0,
 	}
 	
@@ -13261,7 +12796,7 @@ namespace MyNS
 	public enum GET_DescribeDefaultClusterParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDefaultClusterParameters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDefaultClusterParameters = 0,
 	}
 	
@@ -13282,7 +12817,7 @@ namespace MyNS
 	public enum GET_DescribeEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEndpointAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEndpointAccess = 0,
 	}
 	
@@ -13303,7 +12838,7 @@ namespace MyNS
 	public enum GET_DescribeEndpointAuthorizationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEndpointAuthorization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEndpointAuthorization = 0,
 	}
 	
@@ -13324,7 +12859,7 @@ namespace MyNS
 	public enum GET_DescribeEventCategoriesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEventCategories")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEventCategories = 0,
 	}
 	
@@ -13345,7 +12880,7 @@ namespace MyNS
 	public enum GET_DescribeEventSubscriptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEventSubscriptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEventSubscriptions = 0,
 	}
 	
@@ -13366,7 +12901,7 @@ namespace MyNS
 	public enum GET_DescribeEventsSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cluster = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="cluster-parameter-group")]
@@ -13385,7 +12920,7 @@ namespace MyNS
 	public enum GET_DescribeEventsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEvents")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEvents = 0,
 	}
 	
@@ -13406,7 +12941,7 @@ namespace MyNS
 	public enum GET_DescribeHsmClientCertificatesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeHsmClientCertificates")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeHsmClientCertificates = 0,
 	}
 	
@@ -13427,7 +12962,7 @@ namespace MyNS
 	public enum GET_DescribeHsmConfigurationsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeHsmConfigurations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeHsmConfigurations = 0,
 	}
 	
@@ -13448,7 +12983,7 @@ namespace MyNS
 	public enum GET_DescribeLoggingStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoggingStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeLoggingStatus = 0,
 	}
 	
@@ -13482,7 +13017,7 @@ namespace MyNS
 	public enum GET_DescribeNodeConfigurationOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeNodeConfigurationOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeNodeConfigurationOptions = 0,
 	}
 	
@@ -13503,7 +13038,7 @@ namespace MyNS
 	public enum GET_DescribeOrderableClusterOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeOrderableClusterOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeOrderableClusterOptions = 0,
 	}
 	
@@ -13524,7 +13059,7 @@ namespace MyNS
 	public enum GET_DescribePartnersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribePartners")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribePartners = 0,
 	}
 	
@@ -13545,7 +13080,7 @@ namespace MyNS
 	public enum GET_DescribeReservedNodeExchangeStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReservedNodeExchangeStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeReservedNodeExchangeStatus = 0,
 	}
 	
@@ -13566,7 +13101,7 @@ namespace MyNS
 	public enum GET_DescribeReservedNodeOfferingsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReservedNodeOfferings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeReservedNodeOfferings = 0,
 	}
 	
@@ -13587,7 +13122,7 @@ namespace MyNS
 	public enum GET_DescribeReservedNodesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReservedNodes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeReservedNodes = 0,
 	}
 	
@@ -13608,7 +13143,7 @@ namespace MyNS
 	public enum GET_DescribeResizeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeResize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeResize = 0,
 	}
 	
@@ -13629,7 +13164,7 @@ namespace MyNS
 	public enum GET_DescribeScheduledActionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeScheduledActions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeScheduledActions = 0,
 	}
 	
@@ -13650,7 +13185,7 @@ namespace MyNS
 	public enum GET_DescribeSnapshotCopyGrantsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeSnapshotCopyGrants")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeSnapshotCopyGrants = 0,
 	}
 	
@@ -13671,7 +13206,7 @@ namespace MyNS
 	public enum GET_DescribeSnapshotSchedulesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeSnapshotSchedules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeSnapshotSchedules = 0,
 	}
 	
@@ -13692,7 +13227,7 @@ namespace MyNS
 	public enum GET_DescribeStorageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeStorage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeStorage = 0,
 	}
 	
@@ -13713,7 +13248,7 @@ namespace MyNS
 	public enum GET_DescribeTableRestoreStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeTableRestoreStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeTableRestoreStatus = 0,
 	}
 	
@@ -13734,7 +13269,7 @@ namespace MyNS
 	public enum GET_DescribeTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeTags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeTags = 0,
 	}
 	
@@ -13755,7 +13290,7 @@ namespace MyNS
 	public enum GET_DescribeUsageLimitsFeatureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spectrum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spectrum = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="concurrency-scaling")]
@@ -13768,7 +13303,7 @@ namespace MyNS
 	public enum GET_DescribeUsageLimitsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeUsageLimits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeUsageLimits = 0,
 	}
 	
@@ -13789,7 +13324,7 @@ namespace MyNS
 	public enum GET_DisableLoggingAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisableLogging")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DisableLogging = 0,
 	}
 	
@@ -13810,7 +13345,7 @@ namespace MyNS
 	public enum GET_DisableSnapshotCopyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisableSnapshotCopy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DisableSnapshotCopy = 0,
 	}
 	
@@ -13831,7 +13366,7 @@ namespace MyNS
 	public enum GET_DisassociateDataShareConsumerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisassociateDataShareConsumer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DisassociateDataShareConsumer = 0,
 	}
 	
@@ -13852,7 +13387,7 @@ namespace MyNS
 	public enum GET_EnableLoggingAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnableLogging")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EnableLogging = 0,
 	}
 	
@@ -13873,7 +13408,7 @@ namespace MyNS
 	public enum GET_EnableSnapshotCopyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnableSnapshotCopy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EnableSnapshotCopy = 0,
 	}
 	
@@ -13894,7 +13429,7 @@ namespace MyNS
 	public enum GET_GetClusterCredentialsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetClusterCredentials")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetClusterCredentials = 0,
 	}
 	
@@ -13915,7 +13450,7 @@ namespace MyNS
 	public enum GET_GetClusterCredentialsWithIAMAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetClusterCredentialsWithIAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetClusterCredentialsWithIAM = 0,
 	}
 	
@@ -13946,7 +13481,7 @@ namespace MyNS
 	public enum GET_GetReservedNodeExchangeConfigurationOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetReservedNodeExchangeConfigurationOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetReservedNodeExchangeConfigurationOptions = 0,
 	}
 	
@@ -13967,7 +13502,7 @@ namespace MyNS
 	public enum GET_GetReservedNodeExchangeOfferingsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetReservedNodeExchangeOfferings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetReservedNodeExchangeOfferings = 0,
 	}
 	
@@ -13988,7 +13523,7 @@ namespace MyNS
 	public enum GET_ModifyAquaConfigurationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyAquaConfiguration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyAquaConfiguration = 0,
 	}
 	
@@ -14009,7 +13544,7 @@ namespace MyNS
 	public enum GET_ModifyAuthenticationProfileAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyAuthenticationProfile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyAuthenticationProfile = 0,
 	}
 	
@@ -14030,7 +13565,7 @@ namespace MyNS
 	public enum GET_ModifyClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyCluster = 0,
 	}
 	
@@ -14051,7 +13586,7 @@ namespace MyNS
 	public enum GET_ModifyClusterDbRevisionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterDbRevision")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyClusterDbRevision = 0,
 	}
 	
@@ -14072,7 +13607,7 @@ namespace MyNS
 	public enum GET_ModifyClusterIamRolesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterIamRoles")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyClusterIamRoles = 0,
 	}
 	
@@ -14093,7 +13628,7 @@ namespace MyNS
 	public enum GET_ModifyClusterMaintenanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterMaintenance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyClusterMaintenance = 0,
 	}
 	
@@ -14114,7 +13649,7 @@ namespace MyNS
 	public enum GET_ModifyClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyClusterParameterGroup = 0,
 	}
 	
@@ -14135,7 +13670,7 @@ namespace MyNS
 	public enum GET_ModifyClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyClusterSnapshot = 0,
 	}
 	
@@ -14156,7 +13691,7 @@ namespace MyNS
 	public enum GET_ModifyClusterSnapshotScheduleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterSnapshotSchedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyClusterSnapshotSchedule = 0,
 	}
 	
@@ -14177,7 +13712,7 @@ namespace MyNS
 	public enum GET_ModifyClusterSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterSubnetGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyClusterSubnetGroup = 0,
 	}
 	
@@ -14198,7 +13733,7 @@ namespace MyNS
 	public enum GET_ModifyCustomDomainAssociationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyCustomDomainAssociation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyCustomDomainAssociation = 0,
 	}
 	
@@ -14219,7 +13754,7 @@ namespace MyNS
 	public enum GET_ModifyEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyEndpointAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyEndpointAccess = 0,
 	}
 	
@@ -14240,7 +13775,7 @@ namespace MyNS
 	public enum GET_ModifyEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyEventSubscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyEventSubscription = 0,
 	}
 	
@@ -14274,7 +13809,7 @@ namespace MyNS
 	public enum GET_ModifyScheduledActionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyScheduledAction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyScheduledAction = 0,
 	}
 	
@@ -14295,7 +13830,7 @@ namespace MyNS
 	public enum GET_ModifySnapshotCopyRetentionPeriodAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifySnapshotCopyRetentionPeriod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifySnapshotCopyRetentionPeriod = 0,
 	}
 	
@@ -14316,7 +13851,7 @@ namespace MyNS
 	public enum GET_ModifySnapshotScheduleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifySnapshotSchedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifySnapshotSchedule = 0,
 	}
 	
@@ -14337,20 +13872,20 @@ namespace MyNS
 	public enum GET_ModifyUsageLimitBreachAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="log")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		log = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="emit-metric")]
 		emitMinusmetric = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disable = 2,
 	}
 	
 	public enum GET_ModifyUsageLimitAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyUsageLimit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyUsageLimit = 0,
 	}
 	
@@ -14371,7 +13906,7 @@ namespace MyNS
 	public enum GET_PauseClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PauseCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PauseCluster = 0,
 	}
 	
@@ -14392,7 +13927,7 @@ namespace MyNS
 	public enum GET_PurchaseReservedNodeOfferingAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PurchaseReservedNodeOffering")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PurchaseReservedNodeOffering = 0,
 	}
 	
@@ -14413,7 +13948,7 @@ namespace MyNS
 	public enum GET_RebootClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RebootCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RebootCluster = 0,
 	}
 	
@@ -14434,7 +13969,7 @@ namespace MyNS
 	public enum GET_RejectDataShareAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RejectDataShare")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RejectDataShare = 0,
 	}
 	
@@ -14455,7 +13990,7 @@ namespace MyNS
 	public enum GET_ResetClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResetClusterParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResetClusterParameterGroup = 0,
 	}
 	
@@ -14476,7 +14011,7 @@ namespace MyNS
 	public enum GET_ResizeClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResizeCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResizeCluster = 0,
 	}
 	
@@ -14497,7 +14032,7 @@ namespace MyNS
 	public enum GET_RestoreFromClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestoreFromClusterSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RestoreFromClusterSnapshot = 0,
 	}
 	
@@ -14518,7 +14053,7 @@ namespace MyNS
 	public enum GET_RestoreTableFromClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestoreTableFromClusterSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RestoreTableFromClusterSnapshot = 0,
 	}
 	
@@ -14539,7 +14074,7 @@ namespace MyNS
 	public enum GET_ResumeClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResumeCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResumeCluster = 0,
 	}
 	
@@ -14560,7 +14095,7 @@ namespace MyNS
 	public enum GET_RevokeClusterSecurityGroupIngressAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RevokeClusterSecurityGroupIngress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RevokeClusterSecurityGroupIngress = 0,
 	}
 	
@@ -14581,7 +14116,7 @@ namespace MyNS
 	public enum GET_RevokeEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RevokeEndpointAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RevokeEndpointAccess = 0,
 	}
 	
@@ -14602,7 +14137,7 @@ namespace MyNS
 	public enum GET_RevokeSnapshotAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RevokeSnapshotAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RevokeSnapshotAccess = 0,
 	}
 	
@@ -14623,7 +14158,7 @@ namespace MyNS
 	public enum GET_RotateEncryptionKeyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RotateEncryptionKey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RotateEncryptionKey = 0,
 	}
 	
@@ -14644,7 +14179,7 @@ namespace MyNS
 	public enum GET_UpdatePartnerStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdatePartnerStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdatePartnerStatus = 0,
 	}
 	

@@ -20,38 +20,32 @@ namespace MyNS
 	/// <summary>
 	/// An empty object that indicates that the configuration set was successfully created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlreadyExistsException
 	{
 	}
@@ -59,8 +53,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty object that indicates that the event destination was created successfully.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetEventDestinationResponse
 	{
 	}
@@ -68,8 +61,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchLogsDestination
 	{
 		
@@ -83,8 +75,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisFirehoseDestination
 	{
 		
@@ -98,39 +89,36 @@ namespace MyNS
 	/// <summary>
 	/// The types of events that are sent to the event destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIATED_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIATED_CALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RINGING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RINGING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANSWERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANSWERED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED_CALL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_ANSWER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_ANSWER = 6,
 	}
 	
 	/// <summary>
 	/// An object that contains information about an event destination that sends data to Amazon SNS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnsDestination
 	{
 		
@@ -138,8 +126,7 @@ namespace MyNS
 		public string TopicArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
@@ -147,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty object that indicates that the configuration set was deleted successfully.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetResponse
 	{
 	}
@@ -156,8 +142,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty object that indicates that the event destination was deleted successfully.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetEventDestinationResponse
 	{
 	}
@@ -165,8 +150,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about an event destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConfigurationSetEventDestinationsResponse
 	{
 		
@@ -180,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines an event destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDestination
 	{
 		
@@ -219,8 +202,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains information about the configuration sets for your account in the current region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationSetsResponse
 	{
 		
@@ -234,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that that contains the Message ID of a Voice message that was sent successfully.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendVoiceMessageResponse
 	{
 		
@@ -246,8 +227,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallInstructionsMessageType
 	{
 		
@@ -258,8 +238,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines a message that contains unformatted text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlainTextMessageType
 	{
 		
@@ -276,8 +255,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines a message that contains SSML-formatted text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSMLMessageType
 	{
 		
@@ -294,8 +272,7 @@ namespace MyNS
 	/// <summary>
 	/// An empty object that indicates that the event destination was updated successfully.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetEventDestinationResponse
 	{
 	}
@@ -303,8 +280,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines a single event destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDestinationDefinition
 	{
 		
@@ -339,8 +315,7 @@ namespace MyNS
 	/// <summary>
 	/// Create a new event destination in a configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetEventDestinationRequest
 	{
 		
@@ -357,8 +332,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to create a new configuration set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigurationSetRequest
 	{
 		
@@ -366,26 +340,22 @@ namespace MyNS
 		public string ConfigurationSetName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetEventDestinationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationSetRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConfigurationSetEventDestinationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConfigurationSetsRequest
 	{
 	}
@@ -393,8 +363,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains a voice message and information about the recipient that you want to send it to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceMessageContent
 	{
 		
@@ -420,8 +389,7 @@ namespace MyNS
 	/// <summary>
 	/// SendVoiceMessageRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendVoiceMessageRequest
 	{
 		
@@ -447,8 +415,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateConfigurationSetEventDestinationRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConfigurationSetEventDestinationRequest
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message for VerifiedAccess.GenerateChallenge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Challenge
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of the CrowdStrike agent installed on a device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CrowdStrikeAgent
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// The device signals as reported by Chrome. Unless otherwise specified, signals are available on all platforms.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceSignals
 	{
 		
@@ -248,185 +245,166 @@ namespace MyNS
 		public string WindowsUserDomain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSignalsDiskEncryption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_ENCRYPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_ENCRYPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_ENCRYPTION_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_ENCRYPTION_UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_ENCRYPTION_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_ENCRYPTION_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_ENCRYPTION_ENCRYPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_ENCRYPTION_ENCRYPTED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSignalsOperatingSystem
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATING_SYSTEM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATING_SYSTEM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_OS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROMIUM_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROMIUM_OS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC_OS_X")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC_OS_X = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSignalsOsFirewall
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_FIREWALL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_FIREWALL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_FIREWALL_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_FIREWALL_UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_FIREWALL_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_FIREWALL_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_FIREWALL_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_FIREWALL_ENABLED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSignalsPasswordProtectionWarningTrigger
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_PROTECTION_WARNING_TRIGGER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_PROTECTION_WARNING_TRIGGER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POLICY_UNSET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POLICY_UNSET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_PROTECTION_OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_PROTECTION_OFF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_REUSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_REUSE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHISHING_REUSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHISHING_REUSE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSignalsRealtimeUrlCheckMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REALTIME_URL_CHECK_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REALTIME_URL_CHECK_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REALTIME_URL_CHECK_MODE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REALTIME_URL_CHECK_MODE_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REALTIME_URL_CHECK_MODE_ENABLED_MAIN_FRAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REALTIME_URL_CHECK_MODE_ENABLED_MAIN_FRAME = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSignalsSafeBrowsingProtectionLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAFE_BROWSING_PROTECTION_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAFE_BROWSING_PROTECTION_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENHANCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENHANCED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSignalsScreenLockSecured
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCREEN_LOCK_SECURED_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCREEN_LOCK_SECURED_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCREEN_LOCK_SECURED_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCREEN_LOCK_SECURED_UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCREEN_LOCK_SECURED_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCREEN_LOCK_SECURED_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCREEN_LOCK_SECURED_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCREEN_LOCK_SECURED_ENABLED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSignalsSecureBootMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURE_BOOT_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURE_BOOT_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURE_BOOT_MODE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURE_BOOT_MODE_UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURE_BOOT_MODE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURE_BOOT_MODE_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURE_BOOT_MODE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURE_BOOT_MODE_ENABLED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSignalsTrigger
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIGGER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIGGER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIGGER_BROWSER_NAVIGATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIGGER_BROWSER_NAVIGATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIGGER_LOGIN_SCREEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIGGER_LOGIN_SCREEN = 2,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -434,8 +412,7 @@ namespace MyNS
 	/// <summary>
 	/// Signed ChallengeResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyChallengeResponseRequest
 	{
 		
@@ -455,8 +432,7 @@ namespace MyNS
 	/// <summary>
 	/// Result message for VerifiedAccess.VerifyChallengeResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyChallengeResponseResult
 	{
 		
@@ -533,28 +509,26 @@ namespace MyNS
 		public string VirtualProfileId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VerifyChallengeResponseResultKeyTrustLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_TRUST_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_TRUST_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_OS_VERIFIED_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_OS_VERIFIED_MODE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_OS_DEVELOPER_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_OS_DEVELOPER_MODE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_BROWSER_HW_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_BROWSER_HW_KEY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_BROWSER_OS_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_BROWSER_OS_KEY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_BROWSER_NO_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_BROWSER_NO_KEY = 5,
 	}
 	

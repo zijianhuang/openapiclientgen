@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Creative Click Tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClickTag
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// Click-through URL
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativeClickThroughUrl
 	{
 		
@@ -74,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// Creative Asset ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativeAssetId
 	{
 		
@@ -92,36 +89,33 @@ namespace MyNS
 		public System.Nullable<CreativeAssetIdType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeAssetIdType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLASH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLASH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML_IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML_IMAGE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIO = 5,
 	}
 	
 	/// <summary>
 	/// CreativeAssets contains properties of a creative asset file which will be uploaded or has already been uploaded. Refer to the creative sample code for how to upload assets and insert a creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativeAssetMetadata
 	{
 		
@@ -207,8 +201,7 @@ namespace MyNS
 	/// <summary>
 	/// Creative Custom Event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativeCustomEvent
 	{
 		
@@ -273,46 +266,41 @@ namespace MyNS
 		public string VideoReportingId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeCustomEventAdvertiserCustomEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADVERTISER_EVENT_TIMER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADVERTISER_EVENT_TIMER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADVERTISER_EVENT_EXIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADVERTISER_EVENT_EXIT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADVERTISER_EVENT_COUNTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADVERTISER_EVENT_COUNTER = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeCustomEventArtworkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARTWORK_TYPE_FLASH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARTWORK_TYPE_FLASH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARTWORK_TYPE_HTML5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARTWORK_TYPE_HTML5 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARTWORK_TYPE_MIXED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARTWORK_TYPE_MIXED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARTWORK_TYPE_IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARTWORK_TYPE_IMAGE = 3,
 	}
 	
 	/// <summary>
 	/// Popup Window Properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PopupWindowProperties
 	{
 		
@@ -374,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the dimensions of ads, placements, creatives, or creative assets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Size
 	{
 		
@@ -413,8 +400,7 @@ namespace MyNS
 	/// <summary>
 	/// Offset Position.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OffsetPosition
 	{
 		
@@ -431,46 +417,41 @@ namespace MyNS
 		public System.Nullable<System.Int32> Top { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PopupWindowPropertiesPositionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COORDINATES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COORDINATES = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeCustomEventTargetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGET_BLANK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGET_BLANK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGET_TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGET_TOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGET_SELF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGET_SELF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGET_PARENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGET_PARENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGET_POPUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGET_POPUP = 4,
 	}
 	
 	/// <summary>
 	/// Represents a DimensionValue resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionValue
 	{
 		
@@ -511,30 +492,27 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionValueMatchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WILDCARD_EXPRESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WILDCARD_EXPRESSION = 3,
 	}
 	
 	/// <summary>
 	/// Extra information added to operations that support Scotty media requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaRequestInfo
 	{
 		
@@ -593,33 +571,30 @@ namespace MyNS
 		public System.Nullable<System.Boolean> TotalBytesIsEstimated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaRequestInfoNotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="END")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		END = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESPONSE_SENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESPONSE_SENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 4,
 	}
 	
 	/// <summary>
 	/// This message is for backends to pass their scotty media specific fields to ESF. Backend will include this in their response message to ESF. Example: ExportFile is an rpc defined for upload using scotty from ESF. rpc ExportFile(ExportFileRequest) returns (ExportFileResponse) Message ExportFileResponse will include apiserving.MediaResponseInfo to tell ESF about data like dynamic_dropzone it needs to pass to Scotty. message ExportFileResponse { optional gdata.Media blob = 1; optional apiserving.MediaResponseInfo media_response_info = 2 }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaResponseInfo
 	{
 		
@@ -678,62 +653,58 @@ namespace MyNS
 		public System.Nullable<System.Boolean> VerifyHashFromHeader { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaResponseInfoRequestClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_REQUEST_CLASS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_REQUEST_CLASS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATENCY_SENSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATENCY_SENSITIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCTION_BATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCTION_BATCH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEST_EFFORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEST_EFFORT = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaResponseInfoTrafficClassField
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BE1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BE1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AF1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AF1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AF2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AF2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AF3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AF3 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AF4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AF4 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NC1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NC1 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NC0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NC0 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BE0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BE0 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LLQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LLQ = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LLQ1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LLQ1 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LLQ2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LLQ2 = 10,
 	}
 	

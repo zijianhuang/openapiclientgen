@@ -17,38 +17,32 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHumanLoopResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeHumanLoopResponse
 	{
 		
@@ -97,33 +91,30 @@ namespace MyNS
 		public HumanLoopOutput HumanLoopOutput { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HumanLoopStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Stopped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Stopped = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Stopping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Stopping = 4,
 	}
 	
 	/// <summary>
 	/// Information about where the human output will be stored.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HumanLoopOutput
 	{
 		
@@ -135,8 +126,7 @@ namespace MyNS
 		public string OutputS3Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHumanLoopsResponse
 	{
 		
@@ -154,8 +144,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information about the human loop.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HumanLoopSummary
 	{
 		
@@ -175,8 +164,7 @@ namespace MyNS
 		public string FlowDefinitionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartHumanLoopResponse
 	{
 		
@@ -184,45 +172,38 @@ namespace MyNS
 		public string HumanLoopArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContentClassifier
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FreeOfPersonallyIdentifiableInformation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FreeOfPersonallyIdentifiableInformation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FreeOfAdultContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FreeOfAdultContent = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopHumanLoopResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHumanLoopRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeHumanLoopRequest
 	{
 	}
@@ -230,8 +211,7 @@ namespace MyNS
 	/// <summary>
 	/// Attributes of the data specified by the customer. Use these to describe the data to be labeled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HumanLoopDataAttributes
 	{
 		
@@ -246,8 +226,7 @@ namespace MyNS
 	/// <summary>
 	/// An object containing the human loop input in JSON format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HumanLoopInput
 	{
 		
@@ -259,27 +238,23 @@ namespace MyNS
 		public string InputContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ascending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ascending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Descending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Descending = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHumanLoopsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartHumanLoopRequest
 	{
 		
@@ -308,8 +283,7 @@ namespace MyNS
 		public HumanLoopDataAttributes DataAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopHumanLoopRequest
 	{
 		

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeploymentsResult
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a deployment on an edge device that is registered with SageMaker Edge Manager.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EdgeDeployment
 	{
 		
@@ -47,34 +45,29 @@ namespace MyNS
 		public Definition[] Definitions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeploymentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Model")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Model = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailureHandlingPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLBACK_ON_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLLBACK_ON_FAILURE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DO_NOTHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DO_NOTHING = 1,
 	}
 	
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Definition
 	{
 		
@@ -94,8 +87,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the checksum of a model deployed on a device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Checksum
 	{
 		
@@ -106,37 +98,31 @@ namespace MyNS
 		public string Sum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChecksumType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA1 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ModelState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPLOY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPLOY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNDEPLOY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNDEPLOY = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeviceRegistrationResult
 	{
 		
@@ -150,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// Information required for edge device metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EdgeMetric
 	{
 		
@@ -171,8 +156,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a model deployed on an edge device that is registered with SageMaker Edge Manager.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Model
 	{
 		
@@ -195,8 +179,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeploymentModel
 	{
 		
@@ -225,24 +208,21 @@ namespace MyNS
 		public string RollbackFailureReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeploymentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAIL = 1,
 	}
 	
 	/// <summary>
 	/// Information about the result of a deployment on an edge device that is registered with SageMaker Edge Manager.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeploymentResult
 	{
 		
@@ -265,8 +245,7 @@ namespace MyNS
 		public DeploymentModel[] DeploymentModels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeploymentsRequest
 	{
 		
@@ -285,8 +264,7 @@ namespace MyNS
 		public string DeviceFleetName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeviceRegistrationRequest
 	{
 		
@@ -305,8 +283,7 @@ namespace MyNS
 		public string DeviceFleetName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendHeartbeatRequest
 	{
 		

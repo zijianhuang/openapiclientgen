@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelKeyDeletionResponse
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelKeyDeletionRequest
 	{
 		
@@ -39,44 +37,37 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArnException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DependencyTimeoutException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSInternalException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSInvalidStateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectCustomKeyStoreResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectCustomKeyStoreRequest
 	{
 		
@@ -88,32 +79,27 @@ namespace MyNS
 		public string CustomKeyStoreId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudHsmClusterNotActiveException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomKeyStoreInvalidStateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomKeyStoreNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudHsmClusterInvalidConfigurationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAliasRequest
 	{
 		
@@ -132,26 +118,22 @@ namespace MyNS
 		public string TargetKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidAliasNameException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomKeyStoreResponse
 	{
 		
@@ -159,8 +141,7 @@ namespace MyNS
 		public string CustomKeyStoreId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomKeyStoreRequest
 	{
 		
@@ -199,24 +180,21 @@ namespace MyNS
 		public XksProxyConnectivityType XksProxyConnectivity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomKeyStoreType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_CLOUDHSM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_CLOUDHSM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_KEY_STORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_KEY_STORE = 1,
 	}
 	
 	/// <summary>
 	/// <p>KMS uses the authentication credential to sign requests that it sends to the external key store proxy (XKS proxy) on your behalf. You establish these credentials on your external key store proxy and report them to KMS.</p> <p>The <code>XksProxyAuthenticationCredential</code> includes two required elements.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyAuthenticationCredentialType
 	{
 		
@@ -235,99 +213,83 @@ namespace MyNS
 		public string RawSecretAccessKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum XksProxyConnectivityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_ENDPOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_ENDPOINT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC_ENDPOINT_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC_ENDPOINT_SERVICE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudHsmClusterInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomKeyStoreNameInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudHsmClusterNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncorrectTrustAnchorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyUriInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyUriEndpointInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyUriUnreachableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyIncorrectAuthenticationCredentialException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyVpcEndpointServiceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyVpcEndpointServiceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyVpcEndpointServiceInvalidConfigurationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyInvalidResponseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyInvalidConfigurationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGrantResponse
 	{
 		
@@ -338,8 +300,7 @@ namespace MyNS
 		public string GrantId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGrantRequest
 	{
 		
@@ -380,66 +341,63 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GrantOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Decrypt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Decrypt = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Encrypt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Encrypt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenerateDataKey = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKeyWithoutPlaintext")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenerateDataKeyWithoutPlaintext = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReEncryptFrom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReEncryptFrom = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReEncryptTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReEncryptTo = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sign")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sign = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Verify")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Verify = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetPublicKey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetPublicKey = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateGrant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateGrant = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RetireGrant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RetireGrant = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeKey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeKey = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKeyPair")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenerateDataKeyPair = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKeyPairWithoutPlaintext")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenerateDataKeyPairWithoutPlaintext = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateMac")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GenerateMac = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyMac")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VerifyMac = 15,
 	}
 	
 	/// <summary>
 	/// <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric KMS keys and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </important>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GrantConstraints
 	{
 		
@@ -450,32 +408,27 @@ namespace MyNS
 		public EncryptionContextType EncryptionContextEquals { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionContextType
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisabledException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidGrantTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DryRunOperationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateKeyResponse
 	{
 		
@@ -486,8 +439,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains metadata about a KMS key.</p> <p>This data type is used as a response element for the <a>CreateKey</a>, <a>DescribeKey</a>, and <a>ReplicateKey</a> operations.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyMetadata
 	{
 		
@@ -568,208 +520,191 @@ namespace MyNS
 		public XksKeyConfigurationType XksKeyConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyUsageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIGN_VERIFY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIGN_VERIFY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCRYPT_DECRYPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCRYPT_DECRYPT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERATE_VERIFY_MAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENERATE_VERIFY_MAC = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Creating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Creating = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingDeletion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PendingDeletion = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingImport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PendingImport = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingReplicaDeletion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PendingReplicaDeletion = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unavailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unavailable = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Updating = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OriginType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_KMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_KMS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_CLOUDHSM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_CLOUDHSM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_KEY_STORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_KEY_STORE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExpirationModelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_MATERIAL_EXPIRES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_MATERIAL_EXPIRES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_MATERIAL_DOES_NOT_EXPIRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_MATERIAL_DOES_NOT_EXPIRE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyManagerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER = 1,
 	}
 	
 	/// <summary>
 	/// This enum has been deprecated. Instead, use the KeySpec enum.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomerMasterKeySpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_2048 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_3072")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_3072 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_4096")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_4096 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_NIST_P256 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_NIST_P384 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P521")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_NIST_P521 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_SECG_P256K1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_SECG_P256K1 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYMMETRIC_DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYMMETRIC_DEFAULT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_224")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_224 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_256 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_384 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_512 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SM2 = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionAlgorithmSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYMMETRIC_DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYMMETRIC_DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSAES_OAEP_SHA_1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSAES_OAEP_SHA_256 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2PKE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SM2PKE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SigningAlgorithmSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PSS_SHA_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSASSA_PSS_SHA_256 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PSS_SHA_384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSASSA_PSS_SHA_384 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PSS_SHA_512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSASSA_PSS_SHA_512 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PKCS1_V1_5_SHA_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSASSA_PKCS1_V1_5_SHA_256 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PKCS1_V1_5_SHA_384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSASSA_PKCS1_V1_5_SHA_384 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PKCS1_V1_5_SHA_512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSASSA_PKCS1_V1_5_SHA_512 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECDSA_SHA_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECDSA_SHA_256 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECDSA_SHA_384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECDSA_SHA_384 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECDSA_SHA_512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECDSA_SHA_512 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2DSA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SM2DSA = 9,
 	}
 	
 	/// <summary>
 	/// <p>Describes the configuration of this multi-Region key. This field appears only when the KMS key is a primary or replica of a multi-Region key.</p> <p>For more information about any listed KMS key, use the <a>DescribeKey</a> operation.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiRegionConfiguration
 	{
 		
@@ -783,24 +718,21 @@ namespace MyNS
 		public MultiRegionKey[] ReplicaKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MultiRegionKeyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMARY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLICA = 1,
 	}
 	
 	/// <summary>
 	/// Describes the primary or replica key in a multi-Region key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiRegionKey
 	{
 		
@@ -811,30 +743,27 @@ namespace MyNS
 		public string Region { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MacAlgorithmSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA_224")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA_224 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA_256 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA_384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA_384 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA_512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA_512 = 3,
 	}
 	
 	/// <summary>
 	/// <p>Information about the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">external key </a>that is associated with a KMS key in an external key store. </p> <p>This element appears in a <a>CreateKey</a> or <a>DescribeKey</a> response only for a KMS key in an external key store.</p> <p>The <i>external key</i> is a symmetric encryption key that is hosted by an external key manager outside of Amazon Web Services. When you use the KMS key in an external key store in a cryptographic operation, the cryptographic operation is performed in the external key manager using the specified external key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksKeyConfigurationType
 	{
 		
@@ -842,8 +771,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateKeyRequest
 	{
 		
@@ -884,8 +812,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p> <important> <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p> </important> <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -904,44 +831,37 @@ namespace MyNS
 		public string TagValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MalformedPolicyDocumentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedOperationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksKeyInvalidConfigurationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksKeyAlreadyInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksKeyNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DecryptResponse
 	{
 		
@@ -958,8 +878,7 @@ namespace MyNS
 		public string CiphertextForRecipient { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DecryptRequest
 	{
 		
@@ -992,8 +911,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains information about the party that receives the response from the API operation.</p> <p>This data type is designed to support Amazon Web Services Nitro Enclaves, which lets you create an isolated compute environment in Amazon EC2. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecipientInfo
 	{
 		
@@ -1004,42 +922,35 @@ namespace MyNS
 		public string AttestationDocument { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyEncryptionMechanism
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSAES_OAEP_SHA_256 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidCiphertextException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncorrectKeyException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidKeyUsageException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAliasRequest
 	{
 		
@@ -1051,14 +962,12 @@ namespace MyNS
 		public string AliasName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCustomKeyStoreResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCustomKeyStoreRequest
 	{
 		
@@ -1070,14 +979,12 @@ namespace MyNS
 		public string CustomKeyStoreId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomKeyStoreHasCMKsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteImportedKeyMaterialRequest
 	{
 		
@@ -1089,8 +996,7 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCustomKeyStoresResponse
 	{
 		
@@ -1107,8 +1013,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about each custom key store in the custom key store list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomKeyStoresListEntry
 	{
 		
@@ -1140,94 +1045,89 @@ namespace MyNS
 		public XksProxyConfigurationType XksProxyConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConnectionStateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCONNECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCONNECTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCONNECTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCONNECTING = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConnectionErrorCodeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CREDENTIALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_CREDENTIALS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLUSTER_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLUSTER_NOT_FOUND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_ERRORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_ERRORS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_CLOUDHSM_HSMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_CLOUDHSM_HSMS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_LOCKED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_LOCKED_OUT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_NOT_FOUND = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_LOGGED_IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_LOGGED_IN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBNET_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBNET_NOT_FOUND = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XKS_PROXY_ACCESS_DENIED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_NOT_REACHABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XKS_PROXY_NOT_REACHABLE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_INVALID_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XKS_PROXY_INVALID_RESPONSE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_INVALID_CONFIGURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XKS_PROXY_INVALID_CONFIGURATION = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XKS_PROXY_TIMED_OUT = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_INVALID_TLS_CONFIGURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XKS_PROXY_INVALID_TLS_CONFIGURATION = 17,
 	}
 	
 	/// <summary>
 	/// Detailed information about the external key store proxy (XKS proxy). Your external key store proxy translates KMS requests into a format that your external key manager can understand. These fields appear in a <a>DescribeCustomKeyStores</a> response only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XksProxyConfigurationType
 	{
 		
@@ -1247,8 +1147,7 @@ namespace MyNS
 		public string VpcEndpointServiceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCustomKeyStoresRequest
 	{
 		
@@ -1265,14 +1164,12 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidMarkerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeKeyResponse
 	{
 		
@@ -1280,8 +1177,7 @@ namespace MyNS
 		public KeyMetadata KeyMetadata { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeKeyRequest
 	{
 		
@@ -1296,8 +1192,7 @@ namespace MyNS
 		public string[] GrantTokens { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableKeyRequest
 	{
 		
@@ -1309,8 +1204,7 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableKeyRotationRequest
 	{
 		
@@ -1322,14 +1216,12 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisconnectCustomKeyStoreResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisconnectCustomKeyStoreRequest
 	{
 		
@@ -1341,8 +1233,7 @@ namespace MyNS
 		public string CustomKeyStoreId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableKeyRequest
 	{
 		
@@ -1354,8 +1245,7 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableKeyRotationRequest
 	{
 		
@@ -1367,8 +1257,7 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptResponse
 	{
 		
@@ -1382,8 +1271,7 @@ namespace MyNS
 		public EncryptionAlgorithmSpec EncryptionAlgorithm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptRequest
 	{
 		
@@ -1414,8 +1302,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateDataKeyResponse
 	{
 		
@@ -1432,8 +1319,7 @@ namespace MyNS
 		public string CiphertextForRecipient { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateDataKeyRequest
 	{
 		
@@ -1463,21 +1349,18 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataKeySpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES_256 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_128")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES_128 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateDataKeyPairResponse
 	{
 		
@@ -1500,39 +1383,36 @@ namespace MyNS
 		public string CiphertextForRecipient { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataKeyPairSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_2048 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_3072")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_3072 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_4096")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_4096 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_NIST_P256 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_NIST_P384 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P521")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_NIST_P521 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_SECG_P256K1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_SECG_P256K1 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SM2 = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateDataKeyPairRequest
 	{
 		
@@ -1563,8 +1443,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateDataKeyPairWithoutPlaintextResponse
 	{
 		
@@ -1581,8 +1460,7 @@ namespace MyNS
 		public DataKeyPairSpec KeyPairSpec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateDataKeyPairWithoutPlaintextRequest
 	{
 		
@@ -1610,8 +1488,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateDataKeyWithoutPlaintextResponse
 	{
 		
@@ -1622,8 +1499,7 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateDataKeyWithoutPlaintextRequest
 	{
 		
@@ -1650,8 +1526,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateMacResponse
 	{
 		
@@ -1665,8 +1540,7 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateMacRequest
 	{
 		
@@ -1698,8 +1572,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateRandomResponse
 	{
 		
@@ -1710,8 +1583,7 @@ namespace MyNS
 		public string CiphertextForRecipient { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateRandomRequest
 	{
 		
@@ -1725,8 +1597,7 @@ namespace MyNS
 		public RecipientInfo Recipient { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetKeyPolicyResponse
 	{
 		
@@ -1734,8 +1605,7 @@ namespace MyNS
 		public string Policy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetKeyPolicyRequest
 	{
 		
@@ -1754,8 +1624,7 @@ namespace MyNS
 		public string PolicyName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetKeyRotationStatusResponse
 	{
 		
@@ -1763,8 +1632,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> KeyRotationEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetKeyRotationStatusRequest
 	{
 		
@@ -1776,8 +1644,7 @@ namespace MyNS
 		public string KeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetParametersForImportResponse
 	{
 		
@@ -1794,8 +1661,7 @@ namespace MyNS
 		public System.DateTimeOffset ParametersValidTo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetParametersForImportRequest
 	{
 		
@@ -1821,46 +1687,41 @@ namespace MyNS
 		public WrappingKeySpec WrappingKeySpec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlgorithmSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_PKCS1_V1_5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSAES_PKCS1_V1_5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSAES_OAEP_SHA_1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSAES_OAEP_SHA_256 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_AES_KEY_WRAP_SHA_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_AES_KEY_WRAP_SHA_1 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_AES_KEY_WRAP_SHA_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_AES_KEY_WRAP_SHA_256 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WrappingKeySpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_2048 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_3072")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_3072 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_4096")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_4096 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPublicKeyResponse
 	{
 		
@@ -1886,8 +1747,7 @@ namespace MyNS
 		public SigningAlgorithmSpec[] SigningAlgorithms { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPublicKeyRequest
 	{
 		
@@ -1902,14 +1762,12 @@ namespace MyNS
 		public string[] GrantTokens { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportKeyMaterialResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportKeyMaterialRequest
 	{
 		
@@ -1941,26 +1799,22 @@ namespace MyNS
 		public ExpirationModelType ExpirationModel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncorrectKeyMaterialException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiredImportTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidImportTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAliasesResponse
 	{
 		
@@ -1977,8 +1831,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an alias.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AliasListEntry
 	{
 		
@@ -1998,8 +1851,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAliasesRequest
 	{
 		
@@ -2013,8 +1865,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGrantsResponse
 	{
 		
@@ -2031,8 +1882,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a grant.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GrantListEntry
 	{
 		
@@ -2064,8 +1914,7 @@ namespace MyNS
 		public GrantConstraints Constraints { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGrantsRequest
 	{
 		
@@ -2089,14 +1938,12 @@ namespace MyNS
 		public string GranteePrincipal { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidGrantIdException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKeyPoliciesResponse
 	{
 		
@@ -2110,8 +1957,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Truncated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKeyPoliciesRequest
 	{
 		
@@ -2129,8 +1975,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKeysResponse
 	{
 		
@@ -2147,8 +1992,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about each entry in the key list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyListEntry
 	{
 		
@@ -2159,8 +2003,7 @@ namespace MyNS
 		public string KeyArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKeysRequest
 	{
 		
@@ -2171,8 +2014,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceTagsResponse
 	{
 		
@@ -2186,8 +2028,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Truncated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceTagsRequest
 	{
 		
@@ -2205,8 +2046,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRetirableGrantsRequest
 	{
 		
@@ -2224,8 +2064,7 @@ namespace MyNS
 		public string RetiringPrincipal { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutKeyPolicyRequest
 	{
 		
@@ -2254,8 +2093,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> BypassPolicyLockoutSafetyCheck { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReEncryptResponse
 	{
 		
@@ -2275,8 +2113,7 @@ namespace MyNS
 		public EncryptionAlgorithmSpec DestinationEncryptionAlgorithm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReEncryptRequest
 	{
 		
@@ -2316,8 +2153,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplicateKeyResponse
 	{
 		
@@ -2331,8 +2167,7 @@ namespace MyNS
 		public Tag[] ReplicaTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplicateKeyRequest
 	{
 		
@@ -2363,8 +2198,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetireGrantRequest
 	{
 		
@@ -2381,8 +2215,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeGrantRequest
 	{
 		
@@ -2404,8 +2237,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduleKeyDeletionResponse
 	{
 		
@@ -2422,8 +2254,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> PendingWindowInDays { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduleKeyDeletionRequest
 	{
 		
@@ -2438,8 +2269,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> PendingWindowInDays { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignResponse
 	{
 		
@@ -2453,8 +2283,7 @@ namespace MyNS
 		public SigningAlgorithmSpec SigningAlgorithm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignRequest
 	{
 		
@@ -2489,21 +2318,18 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIGEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIGEST = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -2522,8 +2348,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -2542,8 +2367,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAliasRequest
 	{
 		
@@ -2562,14 +2386,12 @@ namespace MyNS
 		public string TargetKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomKeyStoreResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomKeyStoreRequest
 	{
 		
@@ -2605,14 +2427,12 @@ namespace MyNS
 		public XksProxyConnectivityType XksProxyConnectivity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudHsmClusterNotRelatedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateKeyDescriptionRequest
 	{
 		
@@ -2631,8 +2451,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePrimaryRegionRequest
 	{
 		
@@ -2651,8 +2470,7 @@ namespace MyNS
 		public string PrimaryRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyResponse
 	{
 		
@@ -2666,8 +2484,7 @@ namespace MyNS
 		public SigningAlgorithmSpec SigningAlgorithm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyRequest
 	{
 		
@@ -2709,14 +2526,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSInvalidSignatureException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyMacResponse
 	{
 		
@@ -2730,8 +2545,7 @@ namespace MyNS
 		public MacAlgorithmSpec MacAlgorithm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyMacRequest
 	{
 		
@@ -2770,55 +2584,52 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DryRun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSInvalidMacException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeySpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_2048 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_3072")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_3072 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_4096")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_4096 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_NIST_P256 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_NIST_P384 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P521")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_NIST_P521 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_SECG_P256K1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECC_SECG_P256K1 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYMMETRIC_DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYMMETRIC_DEFAULT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_224")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_224 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_256 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_384 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_512 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SM2 = 12,
 	}
 	

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Empty response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmptyResponse
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Request Error information. The presence of an error field signals that the operation has failed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Errors
 	{
 		
@@ -59,42 +57,39 @@ namespace MyNS
 		public string RequestId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorsCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_REQUEST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORBIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORBIDDEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFLICT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFLICT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GONE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRECONDITION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRECONDITION_FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ERROR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_UNAVAILABLE = 7,
 	}
 	
 	/// <summary>
 	/// Describes one specific error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorProto
 	{
 		
@@ -138,27 +133,24 @@ namespace MyNS
 		public System.Nullable<ErrorProtoLocationType> LocationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorProtoLocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARAMETER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARAMETER = 2,
 	}
 	
 	/// <summary>
 	/// A group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group
 	{
 		
@@ -202,8 +194,7 @@ namespace MyNS
 	/// <summary>
 	/// A group's content details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupContentDetails
 	{
 		
@@ -223,8 +214,7 @@ namespace MyNS
 	/// <summary>
 	/// A group snippet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupSnippet
 	{
 		
@@ -244,8 +234,7 @@ namespace MyNS
 	/// <summary>
 	/// A group item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupItem
 	{
 		
@@ -283,8 +272,7 @@ namespace MyNS
 		public GroupItemResource Resource { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupItemResource
 	{
 		
@@ -304,8 +292,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for GroupsService.ListGroupItems.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGroupItemsResponse
 	{
 		
@@ -337,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for GroupsService.ListGroups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGroupsResponse
 	{
 		
@@ -376,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for TargetedQueriesService.Query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryResponse
 	{
 		
@@ -409,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// The description of a column of the result table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResultTableColumnHeader
 	{
 		

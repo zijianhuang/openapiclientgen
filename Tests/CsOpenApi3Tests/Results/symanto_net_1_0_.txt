@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguageDetection
 	{
 		
@@ -37,8 +36,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguagePredicted
 	{
 		
@@ -57,8 +55,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Post
 	{
 		
@@ -85,8 +82,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostPredicted
 	{
 		
@@ -105,8 +101,7 @@ namespace MyNS
 		public Prediction[] Predictions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Prediction
 	{
 		
@@ -127,8 +122,7 @@ namespace MyNS
 		public double Probability { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sentiment
 	{
 		
@@ -157,8 +151,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Topic
 	{
 		
@@ -181,8 +174,7 @@ namespace MyNS
 		public string Topic1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TopicSentiment
 	{
 		
@@ -196,8 +188,7 @@ namespace MyNS
 		public Topic Topic { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TopicSentimentOutput
 	{
 		
@@ -220,8 +211,7 @@ namespace MyNS
 		public Topic[] Topics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationError
 	{
 		
@@ -247,8 +237,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationErrors
 	{
 		
@@ -610,16 +599,16 @@ namespace MyNS
 	public enum Topic_sentimentDomain
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ecom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ecom = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Employee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Employee = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hotel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hotel = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Restaurant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Restaurant = 3,
 	}
 }

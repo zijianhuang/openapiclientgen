@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Common Vulnerability Scoring System version 3. For details, see https://www.first.org/cvss/specification-document
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CVSSv3
 	{
 		
@@ -92,119 +91,106 @@ namespace MyNS
 		public System.Nullable<CVSSv3UserInteraction> UserInteraction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CVSSv3AttackComplexity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACK_COMPLEXITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACK_COMPLEXITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACK_COMPLEXITY_LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACK_COMPLEXITY_LOW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACK_COMPLEXITY_HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACK_COMPLEXITY_HIGH = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CVSSv3AttackVector
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACK_VECTOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACK_VECTOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACK_VECTOR_NETWORK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACK_VECTOR_NETWORK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACK_VECTOR_ADJACENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACK_VECTOR_ADJACENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACK_VECTOR_LOCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACK_VECTOR_LOCAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACK_VECTOR_PHYSICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACK_VECTOR_PHYSICAL = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CVSSv3AvailabilityImpact
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPACT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPACT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPACT_HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPACT_HIGH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPACT_LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPACT_LOW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPACT_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPACT_NONE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CVSSv3PrivilegesRequired
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVILEGES_REQUIRED_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVILEGES_REQUIRED_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVILEGES_REQUIRED_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVILEGES_REQUIRED_NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVILEGES_REQUIRED_LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVILEGES_REQUIRED_LOW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVILEGES_REQUIRED_HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVILEGES_REQUIRED_HIGH = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CVSSv3Scope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_UNCHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCOPE_UNCHANGED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCOPE_CHANGED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CVSSv3UserInteraction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_INTERACTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_INTERACTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_INTERACTION_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_INTERACTION_NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_INTERACTION_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_INTERACTION_REQUIRED = 2,
 	}
 	
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelOperationRequest
 	{
 	}
@@ -212,8 +198,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -239,8 +224,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -248,8 +232,7 @@ namespace MyNS
 	/// <summary>
 	/// Message encapsulating a value that can be either absolute ("fixed") or relative ("percent") to a value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FixedOrPercent
 	{
 		
@@ -269,8 +252,7 @@ namespace MyNS
 	/// <summary>
 	/// OS policy assignment operation metadata provided by OS policy assignment API methods that return long running operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadata
 	{
 		
@@ -305,52 +287,47 @@ namespace MyNS
 		public string RolloutUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataApiMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataRolloutState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLOUT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLLOUT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 4,
 	}
 	
 	/// <summary>
 	/// This API resource represents the OS policies compliance data for a Compute Engine virtual machine (VM) instance at a given point in time. A Compute Engine VM can have multiple OS policy assignments, and each assignment can have multiple OS policies. As a result, multiple OS policies could be applied to a single VM. You can use this API resource to determine both the compliance state of your VM as well as the compliance state of an individual OS policy. For more information, see [View compliance](https://cloud.google.com/compute/docs/os-configuration-management/view-compliance).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceOSPoliciesCompliance
 	{
 		
@@ -406,8 +383,7 @@ namespace MyNS
 	/// <summary>
 	/// Compliance data for an OS policy
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceOSPoliciesComplianceOSPolicyCompliance
 	{
 		
@@ -439,8 +415,7 @@ namespace MyNS
 	/// <summary>
 	/// Compliance data for an OS policy resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceCompliance
 	{
 		
@@ -472,8 +447,7 @@ namespace MyNS
 	/// <summary>
 	/// Step performed by the OS Config agent for configuring an `OSPolicyResource` to its desired state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceConfigStep
 	{
 		
@@ -496,49 +470,44 @@ namespace MyNS
 		public System.Nullable<OSPolicyResourceConfigStepType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSPolicyResourceConfigStepOutcome
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTCOME_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTCOME_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSPolicyResourceConfigStepType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESIRED_STATE_CHECK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESIRED_STATE_CHECK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESIRED_STATE_ENFORCEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESIRED_STATE_ENFORCEMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESIRED_STATE_CHECK_POST_ENFORCEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESIRED_STATE_CHECK_POST_ENFORCEMENT = 4,
 	}
 	
 	/// <summary>
 	/// ExecResource specific output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceComplianceExecResourceOutput
 	{
 		
@@ -549,33 +518,30 @@ namespace MyNS
 		public string EnforcementOutput { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSPolicyResourceComplianceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_POLICY_COMPLIANCE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_POLICY_COMPLIANCE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_COMPLIANT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_OS_POLICIES_APPLICABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_OS_POLICIES_APPLICABLE = 4,
 	}
 	
 	/// <summary>
 	/// This API resource represents the available inventory data for a Compute Engine virtual machine (VM) instance at a given point in time. You can use this API resource to determine the inventory data of your VM. For more information, see [Information provided by OS inventory management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inventory
 	{
 		
@@ -607,8 +573,7 @@ namespace MyNS
 	/// <summary>
 	/// A single piece of inventory on a VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryItem
 	{
 		
@@ -658,8 +623,7 @@ namespace MyNS
 	/// <summary>
 	/// Software package information of the operating system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventorySoftwarePackage
 	{
 		
@@ -721,8 +685,7 @@ namespace MyNS
 	/// <summary>
 	/// Information related to the a standard versioned package. This includes package info for APT, Yum, Zypper, and Googet package managers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryVersionedPackage
 	{
 		
@@ -748,8 +711,7 @@ namespace MyNS
 	/// <summary>
 	/// Information related to a Quick Fix Engineering package. Fields are taken from Windows QuickFixEngineering Interface and match the source names: https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryWindowsQuickFixEngineeringPackage
 	{
 		
@@ -781,8 +743,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a Windows application that is retrieved from the Windows Registry. For more information about these fields, see: https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryWindowsApplication
 	{
 		
@@ -820,8 +781,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to a Windows Update package. Field data and names are taken from Windows Update API IUpdate Interface: https://docs.microsoft.com/en-us/windows/win32/api/_wua/ Descriptive fields like title, and description are localized based on the locale of the VM being updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryWindowsUpdatePackage
 	{
 		
@@ -883,8 +843,7 @@ namespace MyNS
 	/// <summary>
 	/// Categories specified by the Windows Update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryWindowsUpdatePackageWindowsUpdateCategory
 	{
 		
@@ -904,8 +863,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to a Zypper Patch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryZypperPatch
 	{
 		
@@ -934,40 +892,35 @@ namespace MyNS
 		public string Summary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InventoryItemOriginType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORIGIN_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORIGIN_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVENTORY_REPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVENTORY_REPORT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InventoryItemType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED_PACKAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED_PACKAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE_PACKAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE_PACKAGE = 2,
 	}
 	
 	/// <summary>
 	/// Operating system information for the VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryOsInfo
 	{
 		
@@ -1023,8 +976,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for listing OS policies compliance data for all Compute Engine VMs in the given location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInstanceOSPoliciesCompliancesResponse
 	{
 		
@@ -1044,8 +996,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for listing inventory data for all VMs in a specified location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInventoriesResponse
 	{
 		
@@ -1065,8 +1016,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for listing OS Policy assignment reports including the page of results and page token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOSPolicyAssignmentReportsResponse
 	{
 		
@@ -1086,8 +1036,7 @@ namespace MyNS
 	/// <summary>
 	/// A report of the OS policy assignment status for a given instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentReport
 	{
 		
@@ -1131,8 +1080,7 @@ namespace MyNS
 	/// <summary>
 	/// Compliance data for an OS policy
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentReportOSPolicyCompliance
 	{
 		
@@ -1161,27 +1109,24 @@ namespace MyNS
 		public OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceCompliance[] OsPolicyResourceCompliances { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSPolicyAssignmentReportOSPolicyComplianceComplianceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_COMPLIANT = 2,
 	}
 	
 	/// <summary>
 	/// Compliance data for an OS policy resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceCompliance
 	{
 		
@@ -1219,8 +1164,7 @@ namespace MyNS
 	/// <summary>
 	/// Step performed by the OS Config agent for configuring an `OSPolicy` resource to its desired state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceOSPolicyResourceConfigStep
 	{
 		
@@ -1240,8 +1184,7 @@ namespace MyNS
 	/// <summary>
 	/// ExecResource specific output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceExecResourceOutput
 	{
 		
@@ -1255,8 +1198,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for listing all revisions for a OS policy assignment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOSPolicyAssignmentRevisionsResponse
 	{
 		
@@ -1276,8 +1218,7 @@ namespace MyNS
 	/// <summary>
 	/// OS policy assignment is an API resource that is used to apply a set of OS policies to a dynamically targeted group of Compute Engine VM instances. An OS policy is used to define the desired state configuration for a Compute Engine VM instance through a set of configuration resources that provide capabilities such as installing or removing software packages, or executing a script. For more information, see [OS policy and OS policy assignment](https://cloud.google.com/compute/docs/os-configuration-management/working-with-os-policies).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignment
 	{
 		
@@ -1363,8 +1304,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters to select target VMs for an assignment. If more than one filter criteria is specified below, a VM will be selected if and only if it satisfies all of them.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentInstanceFilter
 	{
 		
@@ -1402,8 +1342,7 @@ namespace MyNS
 	/// <summary>
 	/// Message representing label set. * A label is a key value pair set for a VM. * A LabelSet is a set of labels. * Labels within a LabelSet are ANDed. In other words, a LabelSet is applicable for a VM only if it matches all the labels in the LabelSet. * Example: A LabelSet with 2 labels: `env=prod` and `type=webserver` will only be applicable for those VMs with both labels present.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentLabelSet
 	{
 		
@@ -1417,8 +1356,7 @@ namespace MyNS
 	/// <summary>
 	/// VM inventory details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentInstanceFilterInventory
 	{
 		
@@ -1438,8 +1376,7 @@ namespace MyNS
 	/// <summary>
 	/// An OS policy defines the desired state configuration for a VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicy
 	{
 		
@@ -1474,27 +1411,24 @@ namespace MyNS
 		public OSPolicyResourceGroup[] ResourceGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSPolicyMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENFORCEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENFORCEMENT = 2,
 	}
 	
 	/// <summary>
 	/// Resource groups provide a mechanism to group OS policy resources. Resource groups enable OS policy authors to create a single OS policy to be applied to VMs running different operating Systems. When the OS policy is applied to a target VM, the appropriate resource group within the OS policy is selected based on the `OSFilter` specified within the resource group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceGroup
 	{
 		
@@ -1520,8 +1454,7 @@ namespace MyNS
 	/// <summary>
 	/// Filtering criteria to select VMs based on inventory details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyInventoryFilter
 	{
 		
@@ -1541,8 +1474,7 @@ namespace MyNS
 	/// <summary>
 	/// Filtering criteria to select VMs based on OS details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyOSFilter
 	{
 		
@@ -1562,8 +1494,7 @@ namespace MyNS
 	/// <summary>
 	/// An OS policy resource is used to define the desired state configuration and provides a specific functionality like installing/removing packages, executing a script etc. The system ensures that resources are always in their desired state by taking necessary actions if they have drifted from their desired state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResource
 	{
 		
@@ -1601,8 +1532,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that allows executing scripts on the VM. The `ExecResource` has 2 stages: `validate` and `enforce` and both stages accept a script as an argument to execute. When the `ExecResource` is applied by the agent, it first executes the script in the `validate` stage. The `validate` stage can signal that the `ExecResource` is already in the desired state by returning an exit code of `100`. If the `ExecResource` is not in the desired state, it should return an exit code of `101`. Any other exit code returned by this stage is considered an error. If the `ExecResource` is not in the desired state based on the exit code from the `validate` stage, the agent proceeds to execute the script from the `enforce` stage. If the `ExecResource` is already in the desired state, the `enforce` stage will not be run. Similar to `validate` stage, the `enforce` stage should return an exit code of `100` to indicate that the resource in now in its desired state. Any other exit code is considered an error. NOTE: An exit code of `100` was chosen over `0` (and `101` vs `1`) to have an explicit indicator of `in desired state`, `not in desired state` and errors. Because, for example, Powershell will always return an exit code of `0` unless an `exit` statement is provided in the script. So, for reasons of consistency and being explicit, exit codes `100` and `101` were chosen.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceExecResource
 	{
 		
@@ -1622,8 +1552,7 @@ namespace MyNS
 	/// <summary>
 	/// A file or script to execute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceExecResourceExec
 	{
 		
@@ -1661,8 +1590,7 @@ namespace MyNS
 	/// <summary>
 	/// A remote or local file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceFile
 	{
 		
@@ -1694,8 +1622,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a file available as a Cloud Storage Object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceFileGcs
 	{
 		
@@ -1721,8 +1648,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a file available via some URI.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceFileRemote
 	{
 		
@@ -1739,30 +1665,27 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSPolicyResourceExecResourceExecInterpreter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERPRETER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERPRETER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHELL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHELL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWERSHELL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWERSHELL = 3,
 	}
 	
 	/// <summary>
 	/// A resource that manages the state of a file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceFileResource
 	{
 		
@@ -1797,30 +1720,27 @@ namespace MyNS
 		public System.Nullable<OSPolicyResourceFileResourceState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSPolicyResourceFileResourceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESIRED_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESIRED_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRESENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRESENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABSENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABSENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENTS_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENTS_MATCH = 3,
 	}
 	
 	/// <summary>
 	/// A resource that manages a system package.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourcePackageResource
 	{
 		
@@ -1876,8 +1796,7 @@ namespace MyNS
 	/// <summary>
 	/// A package managed by APT. - install: `apt-get update && apt-get -y install [name]` - remove: `apt-get -y remove [name]`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourcePackageResourceAPT
 	{
 		
@@ -1891,8 +1810,7 @@ namespace MyNS
 	/// <summary>
 	/// A deb package file. dpkg packages only support INSTALLED state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourcePackageResourceDeb
 	{
 		
@@ -1909,27 +1827,24 @@ namespace MyNS
 		public OSPolicyResourceFile Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSPolicyResourcePackageResourceDesiredState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESIRED_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESIRED_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVED = 2,
 	}
 	
 	/// <summary>
 	/// A package managed by GooGet. - install: `googet -noconfirm install package` - remove: `googet -noconfirm remove package`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourcePackageResourceGooGet
 	{
 		
@@ -1943,8 +1858,7 @@ namespace MyNS
 	/// <summary>
 	/// An MSI package. MSI packages only support INSTALLED state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourcePackageResourceMSI
 	{
 		
@@ -1964,8 +1878,7 @@ namespace MyNS
 	/// <summary>
 	/// An RPM package file. RPM packages only support INSTALLED state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourcePackageResourceRPM
 	{
 		
@@ -1985,8 +1898,7 @@ namespace MyNS
 	/// <summary>
 	/// A package managed by YUM. - install: `yum -y install package` - remove: `yum -y remove package`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourcePackageResourceYUM
 	{
 		
@@ -2000,8 +1912,7 @@ namespace MyNS
 	/// <summary>
 	/// A package managed by Zypper. - install: `zypper -y install package` - remove: `zypper -y rm package`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourcePackageResourceZypper
 	{
 		
@@ -2015,8 +1926,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that manages a package repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceRepositoryResource
 	{
 		
@@ -2048,8 +1958,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single apt package repository. These will be added to a repo file that will be managed at `/etc/apt/sources.list.d/google_osconfig.list`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceRepositoryResourceAptRepository
 	{
 		
@@ -2084,27 +1993,24 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OSPolicyResourceRepositoryResourceAptRepositoryArchiveType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEB = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEB_SRC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEB_SRC = 2,
 	}
 	
 	/// <summary>
 	/// Represents a Goo package repository. These are added to a repo file that is managed at `C:/ProgramData/GooGet/repos/google_osconfig.repo`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceRepositoryResourceGooRepository
 	{
 		
@@ -2124,8 +2030,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single yum package repository. These are added to a repo file that is managed at `/etc/yum.repos.d/google_osconfig.repo`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceRepositoryResourceYumRepository
 	{
 		
@@ -2157,8 +2062,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single zypper package repository. These are added to a repo file that is managed at `/etc/zypp/repos.d/google_osconfig.repo`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyResourceRepositoryResourceZypperRepository
 	{
 		
@@ -2190,8 +2094,7 @@ namespace MyNS
 	/// <summary>
 	/// Message to configure the rollout at the zonal level for the OS policy assignment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentRollout
 	{
 		
@@ -2211,8 +2114,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for listing all assignments under given parent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOSPolicyAssignmentsResponse
 	{
 		
@@ -2232,8 +2134,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for listing vulnerability reports for all VM instances in the specified location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVulnerabilityReportsResponse
 	{
 		
@@ -2253,8 +2154,7 @@ namespace MyNS
 	/// <summary>
 	/// This API resource represents the vulnerability report for a specified Compute Engine virtual machine (VM) instance at a given point in time. For more information, see [Vulnerability reports](https://cloud.google.com/compute/docs/instances/os-inventory-management#vulnerability-reports).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerabilityReport
 	{
 		
@@ -2280,8 +2180,7 @@ namespace MyNS
 	/// <summary>
 	/// A vulnerability affecting the VM instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerabilityReportVulnerability
 	{
 		
@@ -2325,8 +2224,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata information for the vulnerability. This information is collected from the upstream feed of the operating system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerabilityReportVulnerabilityDetails
 	{
 		
@@ -2370,8 +2268,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference for this vulnerability.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerabilityReportVulnerabilityDetailsReference
 	{
 		
@@ -2391,8 +2288,7 @@ namespace MyNS
 	/// <summary>
 	/// OS inventory item that is affected by a vulnerability or fixed as a result of a vulnerability.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerabilityReportVulnerabilityItem
 	{
 		
@@ -2424,8 +2320,7 @@ namespace MyNS
 	/// <summary>
 	/// OS policy assignment operation metadata provided by OS policy assignment API methods that return long running operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentOperationMetadata
 	{
 		
@@ -2463,8 +2358,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -2502,8 +2396,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -2964,13 +2857,13 @@ namespace MyNS
 	public enum Osconfig_projects_locations_osPolicyAssignments_operations_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVENTORY_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVENTORY_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

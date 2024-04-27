@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a CreateAlertManagerDefinition operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAlertManagerDefinitionResponse
 	{
 		
@@ -36,8 +35,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the status of a definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertManagerDefinitionStatus
 	{
 		
@@ -55,69 +53,60 @@ namespace MyNS
 	/// <summary>
 	/// State of an alert manager definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlertManagerDefinitionStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATION_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
@@ -125,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a CreateLoggingConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLoggingConfigurationResponse
 	{
 		
@@ -141,8 +129,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the status of a logging configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingConfigurationStatus
 	{
 		
@@ -160,8 +147,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a CreateRuleGroupsNamespace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRuleGroupsNamespaceResponse
 	{
 		
@@ -193,8 +179,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the status of a namespace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleGroupsNamespaceStatus
 	{
 		
@@ -212,8 +197,7 @@ namespace MyNS
 	/// <summary>
 	/// The list of tags assigned to the resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
@@ -221,8 +205,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a CreateWorkspace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkspaceResponse
 	{
 		
@@ -254,8 +237,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the status of a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkspaceStatus
 	{
 		
@@ -270,33 +252,30 @@ namespace MyNS
 	/// <summary>
 	/// State of a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkspaceStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATION_FAILED = 4,
 	}
 	
 	/// <summary>
 	/// Represents the output of a DescribeAlertManagerDefinition operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlertManagerDefinitionResponse
 	{
 		
@@ -311,8 +290,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the properties of an alert manager definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertManagerDefinitionDescription
 	{
 		
@@ -348,8 +326,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a DescribeLoggingConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLoggingConfigurationResponse
 	{
 		
@@ -364,8 +341,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the properties of a logging configuration metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingConfigurationMetadata
 	{
 		
@@ -408,8 +384,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a DescribeRuleGroupsNamespace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRuleGroupsNamespaceResponse
 	{
 		
@@ -424,8 +399,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a description of the rule groups namespace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleGroupsNamespaceDescription
 	{
 		
@@ -478,8 +452,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a DescribeWorkspace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkspaceResponse
 	{
 		
@@ -494,8 +467,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the properties of a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkspaceDescription
 	{
 		
@@ -540,8 +512,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a ListRuleGroupsNamespaces operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRuleGroupsNamespacesResponse
 	{
 		
@@ -559,8 +530,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a summary of the rule groups namespace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleGroupsNamespaceSummary
 	{
 		
@@ -603,8 +573,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -618,8 +587,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a ListWorkspaces operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkspacesResponse
 	{
 		
@@ -637,8 +605,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a summary of the properties of a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkspaceSummary
 	{
 		
@@ -680,8 +647,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a PutAlertManagerDefinition operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAlertManagerDefinitionResponse
 	{
 		
@@ -696,8 +662,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a PutRuleGroupsNamespace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRuleGroupsNamespaceResponse
 	{
 		
@@ -726,14 +691,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
@@ -741,8 +704,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of an UpdateLoggingConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLoggingConfigurationResponse
 	{
 		
@@ -757,8 +719,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a CreateAlertManagerDefinition operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAlertManagerDefinitionRequest
 	{
 		
@@ -776,8 +737,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a CreateLoggingConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLoggingConfigurationRequest
 	{
 		
@@ -795,8 +755,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a CreateRuleGroupsNamespace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRuleGroupsNamespaceRequest
 	{
 		
@@ -824,8 +783,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a CreateWorkspace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkspaceRequest
 	{
 		
@@ -842,8 +800,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a DeleteAlertManagerDefinition operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAlertManagerDefinitionRequest
 	{
 	}
@@ -851,8 +808,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a DeleteLoggingConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLoggingConfigurationRequest
 	{
 	}
@@ -860,8 +816,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a DeleteRuleGroupsNamespace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRuleGroupsNamespaceRequest
 	{
 	}
@@ -869,8 +824,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a DeleteWorkspace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkspaceRequest
 	{
 	}
@@ -878,8 +832,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a DescribeAlertManagerDefinition operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlertManagerDefinitionRequest
 	{
 	}
@@ -887,8 +840,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a DescribeLoggingConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLoggingConfigurationRequest
 	{
 	}
@@ -896,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a DescribeRuleGroupsNamespace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRuleGroupsNamespaceRequest
 	{
 	}
@@ -905,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a DescribeWorkspace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkspaceRequest
 	{
 	}
@@ -914,14 +864,12 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a ListRuleGroupsNamespaces operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRuleGroupsNamespacesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
@@ -929,8 +877,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a ListWorkspaces operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkspacesRequest
 	{
 	}
@@ -938,36 +885,33 @@ namespace MyNS
 	/// <summary>
 	/// State of a logging configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LoggingConfigurationStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATION_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 5,
 	}
 	
 	/// <summary>
 	/// Represents the input of a PutAlertManagerDefinition operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAlertManagerDefinitionRequest
 	{
 		
@@ -985,8 +929,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a PutRuleGroupsNamespace operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRuleGroupsNamespaceRequest
 	{
 		
@@ -1004,33 +947,30 @@ namespace MyNS
 	/// <summary>
 	/// State of a namespace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuleGroupsNamespaceStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATION_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1043,8 +983,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -1052,8 +991,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of an UpdateLoggingConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLoggingConfigurationRequest
 	{
 		
@@ -1071,8 +1009,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of an UpdateWorkspaceAlias operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkspaceAliasRequest
 	{
 		

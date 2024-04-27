@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an assertion upon a SQL query which is required return zero rows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Assertion
 	{
 		
@@ -65,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an action identifier. If the action writes output, the output will be written to the referenced database object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Target
 	{
 		
@@ -92,8 +90,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a relation and its columns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelationDescriptor
 	{
 		
@@ -119,8 +116,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnDescriptor
 	{
 		
@@ -146,8 +142,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a workflow action that will run against BigQuery.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BigQueryAction
 	{
 		
@@ -161,8 +156,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates `members`, or principals, with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -221,8 +214,7 @@ namespace MyNS
 	/// <summary>
 	/// `CancelWorkflowInvocation` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelWorkflowInvocationRequest
 	{
 	}
@@ -230,8 +222,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures various aspects of Dataform code compilation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeCompilationConfig
 	{
 		
@@ -287,8 +278,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the author of a Git commit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitAuthor
 	{
 		
@@ -308,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single commit log.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitLogEntry
 	{
 		
@@ -341,8 +330,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Dataform Git commit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitMetadata
 	{
 		
@@ -362,8 +350,7 @@ namespace MyNS
 	/// <summary>
 	/// `CommitRepositoryChanges` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitRepositoryChangesRequest
 	{
 		
@@ -389,8 +376,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single file operation to the repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileOperation
 	{
 		
@@ -410,8 +396,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the delete file operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFile
 	{
 	}
@@ -419,8 +404,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the write file operation (for files added or modified).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteFile
 	{
 		
@@ -434,8 +418,7 @@ namespace MyNS
 	/// <summary>
 	/// `CommitWorkspaceChanges` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitWorkspaceChangesRequest
 	{
 		
@@ -461,8 +444,7 @@ namespace MyNS
 	/// <summary>
 	/// An error encountered when attempting to compile a Dataform project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompilationError
 	{
 		
@@ -494,8 +476,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the result of compiling a Dataform project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompilationResult
 	{
 		
@@ -551,8 +532,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single Dataform action in a compilation result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompilationResultAction
 	{
 		
@@ -602,8 +582,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a relation which is not managed by Dataform but which may be referenced by Dataform actions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Declaration
 	{
 		
@@ -617,8 +596,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a list of arbitrary database operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operations
 	{
 		
@@ -662,8 +640,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a database relation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Relation
 	{
 		
@@ -755,8 +732,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains settings for relations of type `INCREMENTAL_TABLE`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncrementalTableConfig
 	{
 		
@@ -797,33 +773,30 @@ namespace MyNS
 		public string UpdatePartitionFilter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RelationRelationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCREMENTAL_TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCREMENTAL_TABLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATERIALIZED_VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATERIALIZED_VIEW = 4,
 	}
 	
 	/// <summary>
 	/// `ComputeRepositoryAccessTokenStatus` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeRepositoryAccessTokenStatusResponse
 	{
 		
@@ -834,30 +807,27 @@ namespace MyNS
 		public System.Nullable<ComputeRepositoryAccessTokenStatusResponseTokenStatus> TokenStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeRepositoryAccessTokenStatusResponseTokenStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOKEN_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOKEN_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALID = 3,
 	}
 	
 	/// <summary>
 	/// Represents a single entry in a directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryEntry
 	{
 		
@@ -877,8 +847,7 @@ namespace MyNS
 	/// <summary>
 	/// Client-facing representation of a directory entry in search results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectorySearchResult
 	{
 		
@@ -892,8 +861,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -901,8 +869,7 @@ namespace MyNS
 	/// <summary>
 	/// `FetchFileDiff` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchFileDiffResponse
 	{
 		
@@ -916,8 +883,7 @@ namespace MyNS
 	/// <summary>
 	/// `FetchFileGitStatuses` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchFileGitStatusesResponse
 	{
 		
@@ -931,8 +897,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the Git state of a file with uncommitted changes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UncommittedFileChange
 	{
 		
@@ -949,33 +914,30 @@ namespace MyNS
 		public System.Nullable<UncommittedFileChangeState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UncommittedFileChangeState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODIFIED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HAS_CONFLICTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HAS_CONFLICTS = 4,
 	}
 	
 	/// <summary>
 	/// `FetchGitAheadBehind` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchGitAheadBehindResponse
 	{
 		
@@ -995,8 +957,7 @@ namespace MyNS
 	/// <summary>
 	/// `FetchRemoteBranches` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRemoteBranchesResponse
 	{
 		
@@ -1010,8 +971,7 @@ namespace MyNS
 	/// <summary>
 	/// `FetchRepositoryHistory` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRepositoryHistoryResponse
 	{
 		
@@ -1031,8 +991,7 @@ namespace MyNS
 	/// <summary>
 	/// Client-facing representation of a file entry in search results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileSearchResult
 	{
 		
@@ -1046,8 +1005,7 @@ namespace MyNS
 	/// <summary>
 	/// Controls Git remote configuration for a repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GitRemoteSettings
 	{
 		
@@ -1085,8 +1043,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures fields for performing SSH authentication.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SshAuthenticationConfig
 	{
 		
@@ -1106,8 +1063,7 @@ namespace MyNS
 	/// <summary>
 	/// `InstallNpmPackages` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstallNpmPackagesRequest
 	{
 	}
@@ -1115,8 +1071,7 @@ namespace MyNS
 	/// <summary>
 	/// `InstallNpmPackages` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstallNpmPackagesResponse
 	{
 	}
@@ -1124,8 +1079,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive). The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Interval
 	{
 		
@@ -1145,8 +1099,7 @@ namespace MyNS
 	/// <summary>
 	/// Includes various configuration options for a workflow invocation. If both `included_targets` and `included_tags` are unset, all actions will be included.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvocationConfig
 	{
 		
@@ -1190,8 +1143,7 @@ namespace MyNS
 	/// <summary>
 	/// `ListCompilationResults` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCompilationResultsResponse
 	{
 		
@@ -1217,8 +1169,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -1238,8 +1189,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -1277,8 +1227,7 @@ namespace MyNS
 	/// <summary>
 	/// `ListReleaseConfigs` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReleaseConfigsResponse
 	{
 		
@@ -1304,8 +1253,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Dataform release configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReleaseConfig
 	{
 		
@@ -1361,8 +1309,7 @@ namespace MyNS
 	/// <summary>
 	/// A record of an attempt to create a compilation result for this release config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledReleaseRecord
 	{
 		
@@ -1388,8 +1335,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1415,8 +1361,7 @@ namespace MyNS
 	/// <summary>
 	/// `ListRepositories` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRepositoriesResponse
 	{
 		
@@ -1442,8 +1387,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Dataform Git repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Repository
 	{
 		
@@ -1499,8 +1443,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures workspace compilation overrides for a repository. Primarily used by the UI (`console.cloud.google.com`). `schema_suffix` and `table_prefix` can have a special expression - `${workspaceName}`, which refers to the workspace name from which the compilation results will be created. API callers are expected to resolve the expression in these overrides and provide them explicitly in `code_compilation_config` (https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.compilationResults#codecompilationconfig) when creating workspace-scoped compilation results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkspaceCompilationOverrides
 	{
 		
@@ -1526,8 +1469,7 @@ namespace MyNS
 	/// <summary>
 	/// `ListWorkflowConfigs` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkflowConfigsResponse
 	{
 		
@@ -1553,8 +1495,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Dataform workflow configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowConfig
 	{
 		
@@ -1598,8 +1539,7 @@ namespace MyNS
 	/// <summary>
 	/// A record of an attempt to create a workflow invocation for this workflow config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledExecutionRecord
 	{
 		
@@ -1625,8 +1565,7 @@ namespace MyNS
 	/// <summary>
 	/// `ListWorkflowInvocations` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkflowInvocationsResponse
 	{
 		
@@ -1652,8 +1591,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single invocation of a compilation result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowInvocation
 	{
 		
@@ -1700,36 +1638,33 @@ namespace MyNS
 		public string WorkflowConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkflowInvocationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELING = 5,
 	}
 	
 	/// <summary>
 	/// `ListWorkspaces` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkspacesResponse
 	{
 		
@@ -1755,8 +1690,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Dataform Git workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Workspace
 	{
 		
@@ -1770,8 +1704,7 @@ namespace MyNS
 	/// <summary>
 	/// `MakeDirectory` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MakeDirectoryRequest
 	{
 		
@@ -1785,8 +1718,7 @@ namespace MyNS
 	/// <summary>
 	/// `MakeDirectory` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MakeDirectoryResponse
 	{
 	}
@@ -1794,8 +1726,7 @@ namespace MyNS
 	/// <summary>
 	/// `MoveDirectory` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveDirectoryRequest
 	{
 		
@@ -1815,8 +1746,7 @@ namespace MyNS
 	/// <summary>
 	/// `MoveDirectory` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveDirectoryResponse
 	{
 	}
@@ -1824,8 +1754,7 @@ namespace MyNS
 	/// <summary>
 	/// `MoveFile` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveFileRequest
 	{
 		
@@ -1845,8 +1774,7 @@ namespace MyNS
 	/// <summary>
 	/// `MoveFile` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveFileResponse
 	{
 	}
@@ -1854,8 +1782,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the metadata of the long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		
@@ -1905,8 +1832,7 @@ namespace MyNS
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -1932,8 +1858,7 @@ namespace MyNS
 	/// <summary>
 	/// `PullGitCommits` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PullGitCommitsRequest
 	{
 		
@@ -1953,8 +1878,7 @@ namespace MyNS
 	/// <summary>
 	/// `PushGitCommits` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PushGitCommitsRequest
 	{
 		
@@ -1968,8 +1892,7 @@ namespace MyNS
 	/// <summary>
 	/// `QueryCompilationResultActions` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryCompilationResultActionsResponse
 	{
 		
@@ -1989,8 +1912,7 @@ namespace MyNS
 	/// <summary>
 	/// `QueryDirectoryContents` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryDirectoryContentsResponse
 	{
 		
@@ -2010,8 +1932,7 @@ namespace MyNS
 	/// <summary>
 	/// `QueryRepositoryDirectoryContents` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryRepositoryDirectoryContentsResponse
 	{
 		
@@ -2031,8 +1952,7 @@ namespace MyNS
 	/// <summary>
 	/// `QueryWorkflowInvocationActions` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryWorkflowInvocationActionsResponse
 	{
 		
@@ -2052,8 +1972,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single action in a workflow invocation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowInvocationAction
 	{
 		
@@ -2094,39 +2013,36 @@ namespace MyNS
 		public Target Target { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkflowInvocationActionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIPPED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 6,
 	}
 	
 	/// <summary>
 	/// `ReadFile` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadFileResponse
 	{
 		
@@ -2140,8 +2056,7 @@ namespace MyNS
 	/// <summary>
 	/// `ReadRepositoryFile` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadRepositoryFileResponse
 	{
 		
@@ -2155,8 +2070,7 @@ namespace MyNS
 	/// <summary>
 	/// `RemoveDirectory` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveDirectoryRequest
 	{
 		
@@ -2170,8 +2084,7 @@ namespace MyNS
 	/// <summary>
 	/// `RemoveFile` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFileRequest
 	{
 		
@@ -2185,8 +2098,7 @@ namespace MyNS
 	/// <summary>
 	/// `ResetWorkspaceChanges` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetWorkspaceChangesRequest
 	{
 		
@@ -2206,8 +2118,7 @@ namespace MyNS
 	/// <summary>
 	/// Client-facing representation of a file search response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchFilesResponse
 	{
 		
@@ -2227,8 +2138,7 @@ namespace MyNS
 	/// <summary>
 	/// Client-facing representation of a search result entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchResult
 	{
 		
@@ -2248,8 +2158,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `SetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIamPolicyRequest
 	{
 		
@@ -2263,8 +2172,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsRequest
 	{
 		
@@ -2278,8 +2186,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		
@@ -2293,8 +2200,7 @@ namespace MyNS
 	/// <summary>
 	/// `WriteFile` request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteFileRequest
 	{
 		
@@ -2314,8 +2220,7 @@ namespace MyNS
 	/// <summary>
 	/// `WriteFile` response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteFileResponse
 	{
 	}

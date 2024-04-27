@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flux
 	{
 		
@@ -57,8 +56,7 @@ namespace MyNS
 		public string Units { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FluxAtEnergy
 	{
 		
@@ -251,45 +249,45 @@ namespace MyNS
 	public enum App_api_endpoints_TrappedRadiation_calculate_flux_meanModel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AE9")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AE9 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AP9")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AP9 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPME = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPMH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPMH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPMHE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPMHE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPMO = 5,
 	}
 	
 	public enum App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_sys
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GDZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GDZ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEI = 2,
 	}
 	
 	public enum App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_units
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RE = 1,
 	}
 }

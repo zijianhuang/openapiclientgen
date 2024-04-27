@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Faxv1fax
 	{
 		
@@ -149,74 +148,67 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Faxv1faxDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outbound = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Faxv1faxQuality
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		standard = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fine = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="superfine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		superfine = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Faxv1faxStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		processing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="receiving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		receiving = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="received")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		received = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="no-answer")]
 		noMinusanswer = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="busy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		busy = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Faxv1faxfax_media
 	{
 		

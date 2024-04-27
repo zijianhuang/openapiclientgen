@@ -907,9 +907,7 @@ namespace MyNS
 		public Post_ordersPostBodyWarehouse Warehouse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Post_ordersPostBodyIntegrator
 	{
 		
@@ -919,175 +917,175 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="3dCart")]
 		_3dCart = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AdobeBC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AdobeBC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonAU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmazonAU = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonEU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmazonEU = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonNA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmazonNA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BigCommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BigCommerce = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BrandBoom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BrandBoom = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BrightPearl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BrightPearl = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BuyGoods")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BuyGoods = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Celery")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Celery = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChannelAdvisor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChannelAdvisor = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Clickbank")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Clickbank = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CommerceHub")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CommerceHub = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Custom = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Demandware")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Demandware = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ebay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ebay = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ecwid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ecwid = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Etsy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Etsy = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FoxyCart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FoxyCart = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Goodsie")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Goodsie = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Infusionsoft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Infusionsoft = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Konnektive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Konnektive = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LimeLight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LimeLight = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Linio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Linio = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Linnworks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Linnworks = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Magento")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Magento = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Netsuite")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Netsuite = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewEgg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NewEgg = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nexternal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nexternal = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NuOrder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NuOrder = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Opencart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Opencart = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OrderWave")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OrderWave = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="osCommerce1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		osCommerce1 = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overstock")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Overstock = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PayPal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PayPal = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PrestaShop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PrestaShop = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pricefalls")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pricefalls = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quickbooks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quickbooks = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rakuten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rakuten = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sears")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sears = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sellbrite")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sellbrite = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SellerCloud")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SellerCloud = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Shipstation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Shipstation = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Shopify")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Shopify = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Skubana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Skubana = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SolidCommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SolidCommerce = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SparkPay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SparkPay = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SpreeCommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SpreeCommerce = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spsCommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spsCommerce = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StitchLabs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StitchLabs = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StoneEdge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StoneEdge = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TradeGecko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TradeGecko = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UltraCart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UltraCart = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Volusion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Volusion = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VTEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VTEX = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Walmart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Walmart = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WooCommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WooCommerce = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yahoo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yahoo = 58,
 	}
 	

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An app's App Attest configuration object. This configuration controls certain properties of the `AppCheckToken` returned by ExchangeAppAttestAttestation and ExchangeAppAttestAssertion, such as its ttl. Note that the Team ID registered with your app is used as part of the validation process. Please register it via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v11/projects.iosApps/patch).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1AppAttestConfig
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates an *App Check token*, which are used to access Firebase services protected by App Check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1AppCheckToken
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the BatchGetAppAttestConfigs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1BatchGetAppAttestConfigsResponse
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the BatchGetDeviceCheckConfigs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1BatchGetDeviceCheckConfigsResponse
 	{
 		
@@ -92,8 +88,7 @@ namespace MyNS
 	/// <summary>
 	/// An app's DeviceCheck configuration object. This configuration is used by ExchangeDeviceCheckToken to validate device tokens issued to apps by DeviceCheck. It also controls certain properties of the returned `AppCheckToken`, such as its ttl. Note that the Team ID registered with your app is used as part of the validation process. Please register it via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v11/projects.iosApps/patch).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1DeviceCheckConfig
 	{
 		
@@ -131,8 +126,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the BatchGetPlayIntegrityConfigs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1BatchGetPlayIntegrityConfigsResponse
 	{
 		
@@ -146,8 +140,7 @@ namespace MyNS
 	/// <summary>
 	/// An app's Play Integrity configuration object. This configuration controls certain properties of the `AppCheckToken` returned by ExchangePlayIntegrityToken, such as its ttl. Note that your registered SHA-256 certificate fingerprints are used to validate tokens issued by the Play Integrity API; please register them via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v1beta1/projects.androidApps.sha/create).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1PlayIntegrityConfig
 	{
 		
@@ -167,8 +160,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the BatchGetRecaptchaEnterpriseConfigs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1BatchGetRecaptchaEnterpriseConfigsResponse
 	{
 		
@@ -182,8 +174,7 @@ namespace MyNS
 	/// <summary>
 	/// An app's reCAPTCHA Enterprise configuration object. This configuration is used by ExchangeRecaptchaEnterpriseToken to validate reCAPTCHA tokens issued to apps by reCAPTCHA Enterprise. It also controls certain properties of the returned `AppCheckToken`, such as its ttl.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1RecaptchaEnterpriseConfig
 	{
 		
@@ -209,8 +200,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the BatchGetRecaptchaV3Configs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1BatchGetRecaptchaV3ConfigsResponse
 	{
 		
@@ -224,8 +214,7 @@ namespace MyNS
 	/// <summary>
 	/// An app's reCAPTCHA v3 configuration object. This configuration is used by ExchangeRecaptchaV3Token to validate reCAPTCHA tokens issued to apps by reCAPTCHA v3. It also controls certain properties of the returned `AppCheckToken`, such as its ttl.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1RecaptchaV3Config
 	{
 		
@@ -257,8 +246,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the BatchGetSafetyNetConfigs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1BatchGetSafetyNetConfigsResponse
 	{
 		
@@ -272,8 +260,7 @@ namespace MyNS
 	/// <summary>
 	/// An app's SafetyNet configuration object. This configuration controls certain properties of the `AppCheckToken` returned by ExchangeSafetyNetToken, such as its ttl. Note that your registered SHA-256 certificate fingerprints are used to validate tokens issued by SafetyNet; please register them via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v11/projects.androidApps.sha/create).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1SafetyNetConfig
 	{
 		
@@ -293,8 +280,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the BatchUpdateServices method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1BatchUpdateServicesRequest
 	{
 		
@@ -314,8 +300,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the UpdateService method as well as an individual update message for the BatchUpdateServices method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1UpdateServiceRequest
 	{
 		
@@ -335,8 +320,7 @@ namespace MyNS
 	/// <summary>
 	/// The enforcement configuration for a Firebase service supported by App Check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1Service
 	{
 		
@@ -353,27 +337,24 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseAppcheckV1ServiceEnforcementMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNENFORCED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENFORCED = 2,
 	}
 	
 	/// <summary>
 	/// Response message for the BatchUpdateServices method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1BatchUpdateServicesResponse
 	{
 		
@@ -387,8 +368,7 @@ namespace MyNS
 	/// <summary>
 	/// A *debug token* is a secret used during the development or integration testing of an app. It essentially allows the development or integration testing to bypass app attestation while still allowing App Check to enforce protection on supported production Firebase services.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1DebugToken
 	{
 		
@@ -414,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ExchangeAppAttestAssertion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangeAppAttestAssertionRequest
 	{
 		
@@ -447,8 +426,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ExchangeAppAttestAttestation method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangeAppAttestAttestationRequest
 	{
 		
@@ -480,8 +458,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the ExchangeAppAttestAttestation method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangeAppAttestAttestationResponse
 	{
 		
@@ -501,8 +478,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ExchangeCustomToken method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangeCustomTokenRequest
 	{
 		
@@ -522,8 +498,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ExchangeDebugToken method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangeDebugTokenRequest
 	{
 		
@@ -543,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ExchangeDeviceCheckToken method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangeDeviceCheckTokenRequest
 	{
 		
@@ -564,8 +538,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ExchangePlayIntegrityToken method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangePlayIntegrityTokenRequest
 	{
 		
@@ -585,8 +558,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ExchangeRecaptchaEnterpriseToken method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangeRecaptchaEnterpriseTokenRequest
 	{
 		
@@ -606,8 +578,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ExchangeRecaptchaV3Token method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangeRecaptchaV3TokenRequest
 	{
 		
@@ -627,8 +598,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ExchangeSafetyNetToken method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ExchangeSafetyNetTokenRequest
 	{
 		
@@ -642,8 +612,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the GenerateAppAttestChallenge method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1GenerateAppAttestChallengeRequest
 	{
 	}
@@ -651,8 +620,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the GenerateAppAttestChallenge method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1GenerateAppAttestChallengeResponse
 	{
 		
@@ -672,8 +640,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the GeneratePlayIntegrityChallenge method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1GeneratePlayIntegrityChallengeRequest
 	{
 	}
@@ -681,8 +648,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the GeneratePlayIntegrityChallenge method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1GeneratePlayIntegrityChallengeResponse
 	{
 		
@@ -702,8 +668,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the ListDebugTokens method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ListDebugTokensResponse
 	{
 		
@@ -723,8 +688,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the ListServices method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1ListServicesResponse
 	{
 		
@@ -744,8 +708,7 @@ namespace MyNS
 	/// <summary>
 	/// A JWK as specified by [section 4 of RFC 7517](https://tools.ietf.org/html/rfc7517#section-4) and [section 6.3.1 of RFC 7518](https://tools.ietf.org/html/rfc7518#section-6.3.1).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1PublicJwk
 	{
 		
@@ -789,8 +752,7 @@ namespace MyNS
 	/// <summary>
 	/// The currently active set of public keys that can be used to verify App Check tokens. This object is a JWK set as specified by [section 5 of RFC 7517](https://tools.ietf.org/html/rfc7517#section-5). For security, the response **must not** be cached for longer than six hours.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseAppcheckV1PublicJwkSet
 	{
 		
@@ -804,8 +766,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

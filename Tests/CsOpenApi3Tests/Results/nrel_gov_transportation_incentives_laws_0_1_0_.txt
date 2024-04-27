@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A category that the law applies to
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Category
 	{
 		
@@ -50,8 +49,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryResults
 	{
 		
@@ -80,8 +78,7 @@ namespace MyNS
 		public FullCategory[] Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FullCategory
 	{
 		
@@ -127,8 +124,7 @@ namespace MyNS
 	/// <summary>
 	/// The parameters that were passed to the API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inputs
 	{
 	}
@@ -136,8 +132,7 @@ namespace MyNS
 	/// <summary>
 	/// This is a Law
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Law
 	{
 		
@@ -288,8 +283,7 @@ namespace MyNS
 		public LawType[] Types { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Poc
 	{
 		
@@ -349,8 +343,7 @@ namespace MyNS
 	/// <summary>
 	/// The URL associated with any bill or legislative reference included in the description.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LawReference
 	{
 		
@@ -374,8 +367,7 @@ namespace MyNS
 	/// <summary>
 	/// For local incentive/regulation descriptions, the category that the incentive/regulation falls under, described below: Infrastructure Requirements, Vehicle Purchase and Infrastructure Development Incentives, Fuel Use Incentives, Parking Incentives, Technical Assistance, Vehicle Acquisition Requirements, Promotion Initiatives, Idle Reduction Requirements, Renewable Fuels Mandates and Standards
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LawTopics
 	{
 		
@@ -407,8 +399,7 @@ namespace MyNS
 	/// <summary>
 	/// The category that the incentive/law/regulation falls under, described below: -State Incentives, -Laws and Regulations, -Utility/Private Incentives
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LawType
 	{
 		
@@ -437,8 +428,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LawResult
 	{
 		
@@ -467,8 +457,7 @@ namespace MyNS
 		public Law Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LawsResponse
 	{
 		
@@ -500,8 +489,7 @@ namespace MyNS
 	/// <summary>
 	/// The identifying metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metadata
 	{
 		
@@ -520,8 +508,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PocResults
 	{
 		
@@ -706,39 +693,39 @@ namespace MyNS
 	public enum Transportation_incentives_laws_allOutput_format
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		xml = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="csv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		csv = 2,
 	}
 	
 	public enum Transportation_incentives_laws_categoriesOutput_format
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		xml = 1,
 	}
 	
 	public enum Transportation_incentives_laws_categoriesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tech")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tech = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regulation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regulation = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="incentive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		incentive = 3,
 	}
 }

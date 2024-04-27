@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an account passed into the Account Manager on Glass.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -38,8 +37,7 @@ namespace MyNS
 		public UserData[] UserData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthToken
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserData
 	{
 		
@@ -65,8 +62,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents media content, such as a photo, that can be attached to a timeline item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attachment
 	{
 		
@@ -98,8 +94,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Attachments. This is the response from the server to GET requests on the attachments collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachmentsListResponse
 	{
 		
@@ -120,8 +115,7 @@ namespace MyNS
 	/// <summary>
 	/// A single menu command that is part of a Contact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Command
 	{
 		
@@ -137,8 +131,7 @@ namespace MyNS
 	/// <summary>
 	/// A person or group that can be used as a creator or a contact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contact
 	{
 		
@@ -222,8 +215,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Contacts representing contacts. This is the response from the server to GET requests on the contacts collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContactsListResponse
 	{
 		
@@ -244,8 +236,7 @@ namespace MyNS
 	/// <summary>
 	/// A geographic location that can be associated with a timeline item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -302,8 +293,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Locations. This is the response from the server to GET requests on the locations collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationsListResponse
 	{
 		
@@ -324,8 +314,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom menu item that can be presented to the user by a timeline item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MenuItem
 	{
 		
@@ -388,8 +377,7 @@ namespace MyNS
 	/// <summary>
 	/// A single value that is part of a MenuItem.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MenuValue
 	{
 		
@@ -418,8 +406,7 @@ namespace MyNS
 	/// <summary>
 	/// A notification delivered by the API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notification
 	{
 		
@@ -463,8 +450,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an action taken by the user that triggered a notification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserAction
 	{
 		
@@ -494,8 +480,7 @@ namespace MyNS
 	/// <summary>
 	/// Controls how notifications for a timeline item are presented to the user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationConfig
 	{
 		
@@ -516,8 +501,7 @@ namespace MyNS
 	/// <summary>
 	/// A setting for Glass.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Setting
 	{
 		
@@ -546,8 +530,7 @@ namespace MyNS
 	/// <summary>
 	/// A subscription to events on a collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscription
 	{
 		
@@ -617,8 +600,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Subscriptions. This is the response from the server to GET requests on the subscription collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionsListResponse
 	{
 		
@@ -639,8 +621,7 @@ namespace MyNS
 	/// <summary>
 	/// Each item in the user's timeline is represented as a TimelineItem JSON structure, described below.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimelineItem
 	{
 		
@@ -836,8 +817,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of timeline items. This is the response from the server to GET requests on the timeline collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimelineListResponse
 	{
 		
@@ -1585,10 +1565,10 @@ namespace MyNS
 	public enum Mirror_timeline_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="displayTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		displayTime = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="writeTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		writeTime = 1,
 	}
 }

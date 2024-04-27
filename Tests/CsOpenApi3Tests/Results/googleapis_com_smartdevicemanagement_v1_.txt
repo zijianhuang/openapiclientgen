@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Device resource represents an instance of enterprise managed device in the property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleHomeEnterpriseSdmV1Device
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents device relationships, for instance, structure/room to which the device is assigned to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleHomeEnterpriseSdmV1ParentRelation
 	{
 		
@@ -74,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for SmartDeviceManagementService.ExecuteDeviceCommand
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandRequest
 	{
 		
@@ -95,8 +92,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SmartDeviceManagementService.ExecuteDeviceCommand
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandResponse
 	{
 		
@@ -110,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SmartDeviceManagementService.ListDevices
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleHomeEnterpriseSdmV1ListDevicesResponse
 	{
 		
@@ -125,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SmartDeviceManagementService.ListRooms
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleHomeEnterpriseSdmV1ListRoomsResponse
 	{
 		
@@ -140,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// Room resource represents an instance of sub-space within a structure such as rooms in a hotel suite or rental apartment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleHomeEnterpriseSdmV1Room
 	{
 		
@@ -161,8 +154,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SmartDeviceManagementService.ListStructures
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleHomeEnterpriseSdmV1ListStructuresResponse
 	{
 		
@@ -176,8 +168,7 @@ namespace MyNS
 	/// <summary>
 	/// Structure resource represents an instance of enterprise managed home or hotel room.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleHomeEnterpriseSdmV1Structure
 	{
 		

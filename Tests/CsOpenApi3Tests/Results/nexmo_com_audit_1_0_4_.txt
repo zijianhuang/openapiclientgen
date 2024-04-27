@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditEvent
 	{
 		
@@ -106,8 +105,7 @@ namespace MyNS
 	/// <summary>
 	/// A link to this audit event object if you were to retrieve it individually.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventLink
 	{
 		
@@ -115,110 +113,104 @@ namespace MyNS
 		public object Self { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuditEventEvent_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_STATUS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_UPDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_BILLING_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_BILLING_UPDATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_CREATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_LOGIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_LOGIN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_LOGOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_LOGOUT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_PRODUCT_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_PRODUCT_SEARCH = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_API_KEYS_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_API_KEYS_UPDATE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_SECRET_DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_SECRET_DELETE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_SECRET_CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_SECRET_CREATE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_UPDATE_SPAMMER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_UPDATE_SPAMMER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_UPDATE_SETTINGS_API")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_UPDATE_SETTINGS_API = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_ASSIGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_ASSIGN = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_UPDATED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_RELEASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_RELEASE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_LINKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_LINKED = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_UNLINKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_UNLINKED = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_CREATE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_UPDATE = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_DELETE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_DISABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_DISABLE = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_ENABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_ENABLE = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_WHITELIST_CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_WHITELIST_CREATE = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_WHITELIST_DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_WHITELIST_DELETE = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTORELOAD_ENABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTORELOAD_ENABLE = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTORELOAD_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTORELOAD_UPDATE = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTORELOAD_DISABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTORELOAD_DISABLE = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuditEventSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVAPI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVAPI = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuditEventSource_description
 	{
 		
@@ -229,8 +221,7 @@ namespace MyNS
 		Developer_API = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditEventType
 	{
 		
@@ -247,8 +238,7 @@ namespace MyNS
 		public AuditEventEvent_type Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditEventTypesResp
 	{
 		
@@ -259,8 +249,7 @@ namespace MyNS
 		public AuditEventType[] EventTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditResp
 	{
 		
@@ -293,8 +282,7 @@ namespace MyNS
 	/// <summary>
 	/// Container containing self, next and last page links.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaginationLinks
 	{
 		
@@ -341,8 +329,7 @@ namespace MyNS
 	/// <summary>
 	/// Page containing results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaginationData
 	{
 		
@@ -374,8 +361,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallbackUrl
 	{
 		
@@ -392,21 +378,18 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallbackUrlMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContextAppCreate
 	{
 		
@@ -454,8 +437,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContextNumberLinking
 	{
 		
@@ -484,8 +466,7 @@ namespace MyNS
 		public string Msisdn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContextNumberUpdate
 	{
 		
@@ -520,27 +501,24 @@ namespace MyNS
 		public string Voice_value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContextNumberUpdateVoice_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tel = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sip = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vxml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vxml = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="app")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		app = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorBadRequest
 	{
 		
@@ -563,8 +541,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorForbidden
 	{
 		
@@ -587,8 +564,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorNotFound
 	{
 		
@@ -611,8 +587,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorUnauthorized
 	{
 		
@@ -638,96 +613,93 @@ namespace MyNS
 	/// <summary>
 	/// The type of the audit event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventTypes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_STATUS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_UPDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_BILLING_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_BILLING_UPDATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_CREATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_LOGIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_LOGIN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_LOGOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_LOGOUT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_PRODUCT_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_PRODUCT_SEARCH = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_API_KEYS_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_API_KEYS_UPDATE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_SECRET_DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_SECRET_DELETE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_SECRET_CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_SECRET_CREATE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_UPDATE_SPAMMER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_UPDATE_SPAMMER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_UPDATE_SETTINGS_API")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_UPDATE_SETTINGS_API = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_ASSIGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_ASSIGN = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_UPDATED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_RELEASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_RELEASE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_LINKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_LINKED = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_UNLINKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_UNLINKED = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_CREATE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_UPDATE = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_DELETE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_DISABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_DISABLE = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_ENABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_ENABLE = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_WHITELIST_CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_WHITELIST_CREATE = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_WHITELIST_DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_WHITELIST_DELETE = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTORELOAD_ENABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTORELOAD_ENABLE = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTORELOAD_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTORELOAD_UPDATE = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTORELOAD_DISABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTORELOAD_DISABLE = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoContent
 	{
 		

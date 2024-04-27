@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an AccountOperation.ListNodeAgentSkus request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountListNodeAgentSkusResult
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// A node agent SKU supported by the Batch service. The Batch node agent is a program that runs on each node in the pool, and provides the command-and-control interface between the node and the Batch service. There are different implementations of the node agent, known as SKUs, for different operating systems.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeAgentSku
 	{
 		
@@ -65,27 +63,24 @@ namespace MyNS
 		public ImageReference[] VerifiedImageReferences { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeAgentSkuOsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="linux")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		linux = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="windows")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		windows = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unmapped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unmapped = 2,
 	}
 	
 	/// <summary>
 	/// A reference to an Azure Virtual Machines Marketplace image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageReference
 	{
 		
@@ -123,8 +118,7 @@ namespace MyNS
 	/// <summary>
 	/// A locality hint that can be used by the Batch service to select a compute node on which to start a task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AffinityInformation
 	{
 		
@@ -138,8 +132,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a ApplicationOperations.List request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationListResult
 	{
 		
@@ -159,8 +152,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an application in an Azure Batch account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationSummary
 	{
 		
@@ -191,8 +183,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to an application package to be installed on compute nodes in a pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationPackageReference
 	{
 		
@@ -214,8 +205,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies characteristics for a temporary 'auto pool'. The Batch service will create this auto pool, run all the tasks for the job on it, and will delete the pool once the job has completed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoPoolSpecification
 	{
 		
@@ -246,27 +236,24 @@ namespace MyNS
 		public AutoPoolSpecificationPoolLifetimeOption PoolLifetimeOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoPoolSpecificationPoolLifetimeOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jobschedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jobschedule = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="job")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		job = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unmapped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unmapped = 2,
 	}
 	
 	/// <summary>
 	/// The results and errors from an execution of a pool autoscale formula.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScaleRun
 	{
 		
@@ -294,8 +281,7 @@ namespace MyNS
 	/// <summary>
 	/// An error that occurred when executing or evaluating a pool autoscale formula.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScaleRunError
 	{
 		
@@ -321,8 +307,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a name-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NameValuePair
 	{
 		
@@ -342,8 +327,7 @@ namespace MyNS
 	/// <summary>
 	/// An error response received from the Azure Batch service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchError
 	{
 		
@@ -369,8 +353,7 @@ namespace MyNS
 	/// <summary>
 	/// An item of additional information included in an Azure Batch error response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchErrorDetail
 	{
 		
@@ -390,8 +373,7 @@ namespace MyNS
 	/// <summary>
 	/// A certificate that can be installed on compute nodes and can be used to authenticate operations on the machine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Certificate
 	{
 		
@@ -450,27 +432,24 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificatePreviousState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleting = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deletefailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deletefailed = 2,
 	}
 	
 	/// <summary>
 	/// A certificate that can be installed on compute nodes and can be used to authenticate operations on the machine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateAddParameter
 	{
 		
@@ -511,27 +490,24 @@ namespace MyNS
 		public string ThumbprintAlgorithm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateAddParameterCertificateFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pfx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pfx = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unmapped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unmapped = 2,
 	}
 	
 	/// <summary>
 	/// Response to a CertificateOperation.List request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateListResult
 	{
 		
@@ -551,8 +527,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a certificate to be installed on compute nodes in a pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateReference
 	{
 		
@@ -591,27 +566,24 @@ namespace MyNS
 		public string[] Visibility { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateReferenceStoreLocation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="currentuser")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		currentuser = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="localmachine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		localmachine = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unmapped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unmapped = 2,
 	}
 	
 	/// <summary>
 	/// An Azure Batch job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudJob
 	{
 		
@@ -745,8 +717,7 @@ namespace MyNS
 	/// <summary>
 	/// An environment variable to be set on a task process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentSetting
 	{
 		
@@ -766,8 +737,7 @@ namespace MyNS
 	/// <summary>
 	/// A name-value pair associated with a Batch service resource. The Batch service does not assign any meaning to this metadata; it is solely for the use of user code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetadataItem
 	{
 		
@@ -784,39 +754,36 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudJobPreviousState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabling = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabling = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="terminating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		terminating = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleting = 6,
 	}
 	
 	/// <summary>
 	/// Response to a CloudJobOperations.ListPreparationAndReleaseTaskStatus request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudJobListPreparationAndReleaseTaskStatusResult
 	{
 		
@@ -836,8 +803,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of the Job Preparation and Job Release tasks on a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobPreparationAndReleaseTaskExecutionInformation
 	{
 		
@@ -875,8 +841,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a CloudJobOperation.List or ListFromJobSchedule request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudJobListResult
 	{
 		
@@ -896,8 +861,7 @@ namespace MyNS
 	/// <summary>
 	/// A job schedule that allows recurring jobs by specifying when to run jobs and a specification used to create each job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudJobSchedule
 	{
 		
@@ -992,33 +956,30 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudJobSchedulePreviousState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="terminating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		terminating = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleting = 4,
 	}
 	
 	/// <summary>
 	/// Response to a CloudJobScheduleOperation.List request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudJobScheduleListResult
 	{
 		
@@ -1038,8 +999,7 @@ namespace MyNS
 	/// <summary>
 	/// A pool in the Azure Batch service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudPool
 	{
 		
@@ -1218,43 +1178,38 @@ namespace MyNS
 		public string VmSize { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudPoolAllocationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="steady")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		steady = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="resizing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		resizing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stopping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stopping = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudPoolState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleting = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="upgrading")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		upgrading = 2,
 	}
 	
 	/// <summary>
 	/// Response to a CloudPoolOperations.List request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudPoolListResult
 	{
 		
@@ -1274,8 +1229,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for nodes in a pool based on the Azure Cloud Services platform.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudServiceConfiguration
 	{
 		
@@ -1303,8 +1257,7 @@ namespace MyNS
 	/// <summary>
 	/// An Azure Batch task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudTask
 	{
 		
@@ -1435,30 +1388,27 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudTaskPreviousState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preparing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preparing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		running = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 3,
 	}
 	
 	/// <summary>
 	/// A file to be downloaded from Azure blob storage to a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceFile
 	{
 		
@@ -1484,8 +1434,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a CloudTaskOperations.List request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudTaskListResult
 	{
 		
@@ -1505,8 +1454,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a CloudTaskOperations.ListSubtasks request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudTaskListSubtasksResult
 	{
 		
@@ -1520,8 +1468,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an Azure Batch subtask.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubtaskInformation
 	{
 		
@@ -1589,8 +1536,7 @@ namespace MyNS
 	/// <summary>
 	/// A compute node in the Batch service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeNode
 	{
 		
@@ -1706,8 +1652,7 @@ namespace MyNS
 	/// <summary>
 	/// An error encountered by a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeNodeError
 	{
 		
@@ -1733,8 +1678,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a task running on a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskInformation
 	{
 		
@@ -1777,67 +1721,62 @@ namespace MyNS
 		public string TaskUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeNodeSchedulingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeNodeState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="idle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		idle = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rebooting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rebooting = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reimaging")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reimaging = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		running = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unusable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unusable = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="creating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		creating = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="starting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		starting = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="waitingforstarttask")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		waitingforstarttask = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="starttaskfailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		starttaskfailed = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="leavingpool")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		leavingpool = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="offline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		offline = 11,
 	}
 	
 	/// <summary>
 	/// Response to a ComputeNodeOperation.GetRemoteLoginSettings request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeNodeGetRemoteLoginSettingsResult
 	{
 		
@@ -1861,8 +1800,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the compute node on which a task ran.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeNodeInformation
 	{
 		
@@ -1906,8 +1844,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a ComputeNodeOperation.List request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeNodeListResult
 	{
 		
@@ -1927,8 +1864,7 @@ namespace MyNS
 	/// <summary>
 	/// An user account on a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeNodeUser
 	{
 		
@@ -1968,8 +1904,7 @@ namespace MyNS
 	/// <summary>
 	/// An error encountered by the Batch service when deleting a certificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCertificateError
 	{
 		
@@ -1995,8 +1930,7 @@ namespace MyNS
 	/// <summary>
 	/// An error message received in an Azure Batch error response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorMessage
 	{
 		
@@ -2016,8 +1950,7 @@ namespace MyNS
 	/// <summary>
 	/// The properties of a file on a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileProperties
 	{
 		
@@ -2059,8 +1992,7 @@ namespace MyNS
 	/// <summary>
 	/// An Azure Batch job to add.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobAddParameter
 	{
 		
@@ -2138,8 +2070,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the execution constraints for jobs created on a schedule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobConstraints
 	{
 		
@@ -2159,8 +2090,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudJobOperations.Disable request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobDisableParameter
 	{
 		
@@ -2173,27 +2103,24 @@ namespace MyNS
 		public JobDisableParameterDisableTasks DisableTasks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobDisableParameterDisableTasks
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requeue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requeue = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="terminate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		terminate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wait")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wait = 2,
 	}
 	
 	/// <summary>
 	/// Contains information about the execution of a job in the Azure Batch service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobExecutionInformation
 	{
 		
@@ -2233,8 +2160,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies details of a Job Manager task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobManagerTask
 	{
 		
@@ -2296,8 +2222,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudJobOperations.Patch request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobPatchParameter
 	{
 		
@@ -2329,8 +2254,7 @@ namespace MyNS
 	/// <summary>
 	/// A Job Preparation task to run before any tasks of the job on any given compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobPreparationTask
 	{
 		
@@ -2386,8 +2310,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the execution of a Job Preparation task on a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobPreparationTaskExecutionInformation
 	{
 		
@@ -2452,24 +2375,21 @@ namespace MyNS
 		public string TaskRootDirectoryUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobPreparationTaskExecutionInformationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		running = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 	}
 	
 	/// <summary>
 	/// A Job Release task to run on job completion on any compute node where the job has run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobReleaseTask
 	{
 		
@@ -2519,8 +2439,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the execution of a Job Release task on a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobReleaseTaskExecutionInformation
 	{
 		
@@ -2574,8 +2493,7 @@ namespace MyNS
 	/// <summary>
 	/// A job schedule that allows recurring jobs by specifying when to run jobs and a specification used to create each job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobScheduleAddParameter
 	{
 		
@@ -2619,8 +2537,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies how tasks should be run in a job associated with a job schedule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobScheduleExecutionInformation
 	{
 		
@@ -2646,8 +2563,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudJobScheduleOperations.Patch request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobSchedulePatchParameter
 	{
 		
@@ -2673,8 +2589,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource usage statistics for a job schedule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobScheduleStatistics
 	{
 		
@@ -2794,8 +2709,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudJobScheduleOperations.Update request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobScheduleUpdateParameter
 	{
 		
@@ -2825,8 +2739,7 @@ namespace MyNS
 	/// <summary>
 	/// An error encountered by the Batch service when scheduling a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobSchedulingError
 	{
 		
@@ -2857,27 +2770,24 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobSchedulingErrorCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="usererror")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		usererror = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="servererror")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		servererror = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unmapped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unmapped = 2,
 	}
 	
 	/// <summary>
 	/// Specifies details of the jobs to be created on a schedule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobSpecification
 	{
 		
@@ -2945,8 +2855,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource usage statistics for a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobStatistics
 	{
 		
@@ -3066,8 +2975,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudJobOperations.Terminate request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobTerminateParameter
 	{
 		
@@ -3081,8 +2989,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudJobOperations.Update request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobUpdateParameter
 	{
 		
@@ -3116,8 +3023,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings which specify how to run a multi-instance task. Multi-instance tasks are commonly used to support MPI tasks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiInstanceSettings
 	{
 		
@@ -3145,8 +3051,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a ComputeNodeOperations.DisableScheduling request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeDisableSchedulingParameter
 	{
 		
@@ -3157,27 +3062,24 @@ namespace MyNS
 		public System.Nullable<NodeDisableSchedulingParameterNodeDisableSchedulingOption> NodeDisableSchedulingOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeDisableSchedulingParameterNodeDisableSchedulingOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requeue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requeue = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="terminate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		terminate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="taskcompletion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		taskcompletion = 2,
 	}
 	
 	/// <summary>
 	/// Information about a file or directory on a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeFile
 	{
 		
@@ -3209,8 +3111,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a FileOperation.ListFromComputeNode or FileOperation.ListFromTask request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeFileListResult
 	{
 		
@@ -3230,8 +3131,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a ComputeNodeOperations.Reboot request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeRebootParameter
 	{
 		
@@ -3242,30 +3142,27 @@ namespace MyNS
 		public System.Nullable<NodeRebootParameterNodeRebootOption> NodeRebootOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeRebootParameterNodeRebootOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requeue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requeue = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="terminate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		terminate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="taskcompletion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		taskcompletion = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="retaineddata")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		retaineddata = 3,
 	}
 	
 	/// <summary>
 	/// Parameters for a ComputeNodeOperations.Reimage request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeReimageParameter
 	{
 		
@@ -3279,8 +3176,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a ComputeNodeOperations.Remove request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeRemoveParameter
 	{
 		
@@ -3308,8 +3204,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a ComputeNodeOperations.UpdateUser request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeUpdateUserParameter
 	{
 		
@@ -3335,8 +3230,7 @@ namespace MyNS
 	/// <summary>
 	/// A pool in the Azure Batch service to add.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolAddParameter
 	{
 		
@@ -3450,8 +3344,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudPoolOperations.EnableAutoScale request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolEnableAutoScaleParameter
 	{
 		
@@ -3471,8 +3364,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudJobOperations.EvaluateAutoScale request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolEvaluateAutoScaleParameter
 	{
 		
@@ -3488,8 +3380,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies how a job should be assigned to a pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolInformation
 	{
 		
@@ -3509,8 +3400,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an AccountOperation.ListPoolUsageMetrics request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolListPoolUsageMetricsResult
 	{
 		
@@ -3530,8 +3420,7 @@ namespace MyNS
 	/// <summary>
 	/// Usage metrics for a pool across an aggregation interval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolUsageMetrics
 	{
 		
@@ -3595,8 +3484,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudPoolOperations.Patch request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolPatchParameter
 	{
 		
@@ -3628,8 +3516,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudPoolOperations.Resize request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolResizeParameter
 	{
 		
@@ -3657,8 +3544,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification for creating a new pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolSpecification
 	{
 		
@@ -3762,8 +3648,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains utilization and resource usage statistics for the lifetime of a pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolStatistics
 	{
 		
@@ -3807,8 +3692,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudPoolOperations.UpdateProperties request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolUpdatePropertiesParameter
 	{
 		
@@ -3846,8 +3730,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudPoolOperations.UpgradeOS request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolUpgradeOSParameter
 	{
 		
@@ -3863,8 +3746,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the most recent job to run under the job schedule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecentJob
 	{
 		
@@ -3884,8 +3766,7 @@ namespace MyNS
 	/// <summary>
 	/// An error that occurred when resizing a pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResizeError
 	{
 		
@@ -3911,8 +3792,7 @@ namespace MyNS
 	/// <summary>
 	/// Statistics related to resource consumption by compute nodes in a pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceStatistics
 	{
 		
@@ -4024,8 +3904,7 @@ namespace MyNS
 	/// <summary>
 	/// The schedule according to which jobs will be created
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schedule
 	{
 		
@@ -4057,8 +3936,7 @@ namespace MyNS
 	/// <summary>
 	/// A task which is run when a compute node joins a pool in the Azure Batch service, or when the compute node is rebooted or reimaged.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTask
 	{
 		
@@ -4102,8 +3980,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a start task running on a compute node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTaskInformation
 	{
 		
@@ -4159,8 +4036,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of Azure Batch tasks to add.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskAddCollectionParameter
 	{
 		
@@ -4176,8 +4052,7 @@ namespace MyNS
 	/// <summary>
 	/// An Azure Batch task to add.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskAddParameter
 	{
 		
@@ -4249,8 +4124,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a TaskOperations.AddCollection request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskAddCollectionResult
 	{
 		
@@ -4264,8 +4138,7 @@ namespace MyNS
 	/// <summary>
 	/// Result for a single task added as part of an add task collection operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskAddResult
 	{
 		
@@ -4310,30 +4183,27 @@ namespace MyNS
 		public string TaskId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TaskAddResultStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clienterror")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clienterror = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="servererror")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		servererror = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unmapped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unmapped = 3,
 	}
 	
 	/// <summary>
 	/// Constraints to apply to the Job Manager task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskConstraints
 	{
 		
@@ -4359,8 +4229,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies any dependencies of a task. Any task that is explicitly specified or within a dependency range must complete before the dependant task will be scheduled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskDependencies
 	{
 		
@@ -4380,8 +4249,7 @@ namespace MyNS
 	/// <summary>
 	/// A range of task ids that a task can depend on. All tasks with ids in the range must complete successfully before the dependent task can be scheduled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskIdRange
 	{
 		
@@ -4405,8 +4273,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the execution of a task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskExecutionInformation
 	{
 		
@@ -4466,8 +4333,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an error when scheduling a task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskSchedulingError
 	{
 		
@@ -4501,8 +4367,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies how tasks should be distributed across compute nodes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskSchedulingPolicy
 	{
 		
@@ -4515,27 +4380,24 @@ namespace MyNS
 		public TaskSchedulingPolicyNodeFillType NodeFillType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TaskSchedulingPolicyNodeFillType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spread")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spread = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pack")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pack = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unmapped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unmapped = 2,
 	}
 	
 	/// <summary>
 	/// Resource usage statistics for a task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskStatistics
 	{
 		
@@ -4631,8 +4493,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for a CloudTaskOperations.Update request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskUpdateParameter
 	{
 		
@@ -4646,8 +4507,7 @@ namespace MyNS
 	/// <summary>
 	/// Statistics related to pool usage information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageStatistics
 	{
 		
@@ -4679,8 +4539,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for compute nodes in a pool based on the Azure Virtual Machines infrastructure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VirtualMachineConfiguration
 	{
 		
@@ -4710,8 +4569,7 @@ namespace MyNS
 	/// <summary>
 	/// Windows operating system settings to apply to the virtual machine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WindowsConfiguration
 	{
 		

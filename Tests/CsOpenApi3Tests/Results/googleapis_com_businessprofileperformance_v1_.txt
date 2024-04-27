@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single datapoint, where each datapoint is a DailyMetric-DailySubEntityType-TimeSeries tuple.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailyMetricTimeSeries
 	{
 		
@@ -44,54 +43,51 @@ namespace MyNS
 		public TimeSeries TimeSeries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DailyMetricTimeSeriesDailyMetric
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY_METRIC_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY_METRIC_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_IMPRESSIONS_DESKTOP_MAPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_IMPRESSIONS_DESKTOP_MAPS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_IMPRESSIONS_DESKTOP_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_IMPRESSIONS_DESKTOP_SEARCH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_IMPRESSIONS_MOBILE_MAPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_IMPRESSIONS_MOBILE_MAPS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_IMPRESSIONS_MOBILE_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_IMPRESSIONS_MOBILE_SEARCH = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_CONVERSATIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_CONVERSATIONS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_DIRECTION_REQUESTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_DIRECTION_REQUESTS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CALL_CLICKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CALL_CLICKS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEBSITE_CLICKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEBSITE_CLICKS = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_BOOKINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_BOOKINGS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_FOOD_ORDERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_FOOD_ORDERS = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_FOOD_MENU_CLICKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_FOOD_MENU_CLICKS = 11,
 	}
 	
 	/// <summary>
 	/// Represents all possible subentity types that are associated with DailyMetrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailySubEntityType
 	{
 		
@@ -108,42 +104,39 @@ namespace MyNS
 		public TimeOfDay TimeOfDay { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DailySubEntityTypeDayOfWeek
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_WEEK_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_WEEK_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUESDAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEDNESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEDNESDAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THURSDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THURSDAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIDAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SATURDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SATURDAY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUNDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUNDAY = 7,
 	}
 	
 	/// <summary>
 	/// Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeOfDay
 	{
 		
@@ -175,8 +168,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a timeseries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSeries
 	{
 		
@@ -190,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single datapoint in the timeseries, where each datapoint is a date-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatedValue
 	{
 		
@@ -211,8 +202,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -238,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the response for FetchMultiDailyMetricsTimeSeries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchMultiDailyMetricsTimeSeriesResponse
 	{
 		
@@ -253,8 +242,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a list of tuples of DailyMetric-DailySubEntityType-TimeSeries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiDailyMetricTimeSeries
 	{
 		
@@ -268,8 +256,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the response for GetDailyMetricsTimeSeries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDailyMetricsTimeSeriesResponse
 	{
 		
@@ -283,8 +270,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an insights value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsightsValue
 	{
 		
@@ -304,8 +290,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the response for ListSearchKeywordImpressionsMonthly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSearchKeywordImpressionsMonthlyResponse
 	{
 		
@@ -325,8 +310,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single search keyword and its value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchKeywordCount
 	{
 		

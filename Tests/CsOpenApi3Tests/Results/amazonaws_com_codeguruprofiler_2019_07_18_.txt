@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the AddNotificationChannelsResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddNotificationChannelsResponse
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationConfiguration
 	{
 		
@@ -44,8 +42,7 @@ namespace MyNS
 	/// <summary>
 	/// Notification medium for users to get alerted for events that occur in application profile. We support SNS topic as a notification channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -67,48 +64,40 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventPublisher
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AnomalyDetection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AnomalyDetection = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
@@ -116,8 +105,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the BatchGetFrameMetricDataResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetFrameMetricDataResponse
 	{
 		
@@ -167,8 +155,7 @@ namespace MyNS
 	/// <summary>
 	///  A data type that contains a <code>Timestamp</code> object. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimestampStructure
 	{
 		
@@ -183,8 +170,7 @@ namespace MyNS
 	/// <summary>
 	///  Information about a frame metric and its values. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FrameMetricDatum
 	{
 		
@@ -207,8 +193,7 @@ namespace MyNS
 	/// <summary>
 	///  The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FrameMetric
 	{
 		
@@ -234,34 +219,29 @@ namespace MyNS
 		public MetricType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AggregatedRelativeTotalTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AggregatedRelativeTotalTime = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AggregationPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PT5M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PT5M = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PT1H")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PT1H = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P1D")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P1D = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnprocessedEndTimeMap
 	{
 	}
@@ -269,8 +249,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the configureAgentResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigureAgentResponse
 	{
 		
@@ -285,8 +264,7 @@ namespace MyNS
 	/// <summary>
 	///  The response of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> that specifies if an agent profiles or not and for how long to return profiling data. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AgentConfiguration
 	{
 		
@@ -308,8 +286,7 @@ namespace MyNS
 		public bool ShouldProfile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AgentParameters
 	{
 	}
@@ -317,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the createProfilingGroupResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProfilingGroupResponse
 	{
 		
@@ -333,8 +309,7 @@ namespace MyNS
 	/// <summary>
 	///  Contains information about a profiling group. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfilingGroupDescription
 	{
 		
@@ -366,8 +341,7 @@ namespace MyNS
 	/// <summary>
 	///  Specifies whether profiling is enabled or disabled for a profiling group. It is used by <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> to enable or disable profiling for a profiling group. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AgentOrchestrationConfig
 	{
 		
@@ -379,24 +353,21 @@ namespace MyNS
 		public bool ProfilingEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputePlatform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Default")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Default = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSLambda")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSLambda = 1,
 	}
 	
 	/// <summary>
 	///  Profiling status includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfilingStatus
 	{
 		
@@ -413,8 +384,7 @@ namespace MyNS
 	/// <summary>
 	///  Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes). 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregatedProfileTime
 	{
 		
@@ -425,8 +395,7 @@ namespace MyNS
 		public System.DateTimeOffset Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagsMap
 	{
 	}
@@ -434,8 +403,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the deleteProfilingGroupResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteProfilingGroupResponse
 	{
 	}
@@ -443,8 +411,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the describeProfilingGroupResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeProfilingGroupResponse
 	{
 		
@@ -459,8 +426,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the GetFindingsReportAccountSummaryResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFindingsReportAccountSummaryResponse
 	{
 		
@@ -478,8 +444,7 @@ namespace MyNS
 	/// <summary>
 	///  Information about potential recommendations that might be created from the analysis of profiling data. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindingsReportSummary
 	{
 		
@@ -502,8 +467,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the GetNotificationConfigurationResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetNotificationConfigurationResponse
 	{
 		
@@ -518,8 +482,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the <code>getPolicyResponse</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPolicyResponse
 	{
 		
@@ -541,8 +504,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the getProfileResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProfileResponse
 	{
 		
@@ -557,8 +519,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the GetRecommendationsResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommendationsResponse
 	{
 		
@@ -601,8 +562,7 @@ namespace MyNS
 	/// <summary>
 	///  Details about an anomaly in a specific metric of application profile. The anomaly is detected using analysis of the metric data over a period of time. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Anomaly
 	{
 		
@@ -631,8 +591,7 @@ namespace MyNS
 	/// <summary>
 	/// The specific duration in which the metric is flagged as anomalous.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyInstance
 	{
 		
@@ -660,8 +619,7 @@ namespace MyNS
 	/// <summary>
 	/// Feedback that can be submitted for each instance of an anomaly by the user. Feedback is be used for improvements in generating recommendations for the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserFeedback
 	{
 		
@@ -673,24 +631,21 @@ namespace MyNS
 		public FeedbackType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FeedbackType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Positive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Positive = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Negative")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Negative = 1,
 	}
 	
 	/// <summary>
 	///  Details about the metric that the analysis used when it detected the anomaly. The metric what is analyzed to create recommendations. It includes the name of the frame that was analyzed and the type and thread states used to derive the metric value for that frame. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metric
 	{
 		
@@ -719,8 +674,7 @@ namespace MyNS
 	/// <summary>
 	/// A potential improvement that was found from analyzing the profiling data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Recommendation
 	{
 		
@@ -770,8 +724,7 @@ namespace MyNS
 	/// <summary>
 	///  A set of rules used to make a recommendation during an analysis. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pattern
 	{
 		
@@ -800,8 +753,7 @@ namespace MyNS
 	/// <summary>
 	/// The part of a profile that contains a recommendation found during analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Match
 	{
 		
@@ -818,8 +770,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the ListFindingsReportsResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFindingsReportsResponse
 	{
 		
@@ -837,8 +788,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the listProfileTimesResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfileTimesResponse
 	{
 		
@@ -856,8 +806,7 @@ namespace MyNS
 	/// <summary>
 	///  Contains the start time of a profile. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileTime
 	{
 		
@@ -868,8 +817,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the listProfilingGroupsResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfilingGroupsResponse
 	{
 		
@@ -887,8 +835,7 @@ namespace MyNS
 		public ProfilingGroupDescription[] ProfilingGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -899,8 +846,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the postAgentProfileResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostAgentProfileResponse
 	{
 	}
@@ -908,8 +854,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the <code>putPermissionResponse</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutPermissionResponse
 	{
 		
@@ -931,8 +876,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the RemoveNotificationChannelResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveNotificationChannelResponse
 	{
 		
@@ -943,8 +887,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the <code>removePermissionResponse</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemovePermissionResponse
 	{
 		
@@ -966,20 +909,17 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the SubmitFeedbackResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubmitFeedbackResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
@@ -987,8 +927,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the updateProfilingGroupResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateProfilingGroupResponse
 	{
 		
@@ -1000,21 +939,18 @@ namespace MyNS
 		public ProfilingGroupDescription ProfilingGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionGroup
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="agentPermissions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		agentPermissions = 0,
 	}
 	
 	/// <summary>
 	/// The structure representing the AddNotificationChannelsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddNotificationChannelsRequest
 	{
 		
@@ -1026,33 +962,30 @@ namespace MyNS
 		public Channel[] Channels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AgentParameterField
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SamplingIntervalInMilliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SamplingIntervalInMilliseconds = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReportingIntervalInMilliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReportingIntervalInMilliseconds = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MinimumTimeForReportingInMilliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MinimumTimeForReportingInMilliseconds = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryUsageLimitPercent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryUsageLimitPercent = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MaxStackDepth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MaxStackDepth = 4,
 	}
 	
 	/// <summary>
 	/// The structure representing the BatchGetFrameMetricDataRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetFrameMetricDataRequest
 	{
 		
@@ -1060,8 +993,7 @@ namespace MyNS
 		public FrameMetric[] FrameMetrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metadata
 	{
 	}
@@ -1069,8 +1001,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the configureAgentRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigureAgentRequest
 	{
 		
@@ -1084,8 +1015,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the createProfiliingGroupRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProfilingGroupRequest
 	{
 		
@@ -1109,8 +1039,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the deleteProfilingGroupRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteProfilingGroupRequest
 	{
 	}
@@ -1118,8 +1047,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the describeProfilingGroupRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeProfilingGroupRequest
 	{
 	}
@@ -1127,8 +1055,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the GetFindingsReportAccountSummaryRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFindingsReportAccountSummaryRequest
 	{
 	}
@@ -1136,8 +1063,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the GetNotificationConfigurationRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetNotificationConfigurationRequest
 	{
 	}
@@ -1145,8 +1071,7 @@ namespace MyNS
 	/// <summary>
 	///  The structure representing the <code>getPolicyRequest</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPolicyRequest
 	{
 	}
@@ -1154,8 +1079,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the getProfileRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProfileRequest
 	{
 	}
@@ -1163,8 +1087,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the GetRecommendationsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommendationsRequest
 	{
 	}
@@ -1172,30 +1095,26 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the ListFindingsReportsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFindingsReportsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TimestampDescending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TimestampDescending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TimestampAscending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TimestampAscending = 1,
 	}
 	
 	/// <summary>
 	/// The structure representing the listProfileTimesRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfileTimesRequest
 	{
 	}
@@ -1203,57 +1122,52 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the listProfilingGroupsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfilingGroupsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetadataField
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ComputePlatform")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ComputePlatform = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AgentId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AgentId = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AwsRequestId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AwsRequestId = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExecutionEnvironment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExecutionEnvironment = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunctionArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunctionArn = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaMemoryLimitInMB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaMemoryLimitInMB = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaRemainingTimeInMilliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaRemainingTimeInMilliseconds = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaTimeGapBetweenInvokesInMilliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaTimeGapBetweenInvokesInMilliseconds = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaPreviousExecutionTimeInMilliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaPreviousExecutionTimeInMilliseconds = 8,
 	}
 	
 	/// <summary>
 	/// The structure representing the postAgentProfileRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostAgentProfileRequest
 	{
 		
@@ -1268,8 +1182,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the <code>putPermissionRequest</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutPermissionRequest
 	{
 		
@@ -1287,8 +1200,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the RemoveNotificationChannelRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveNotificationChannelRequest
 	{
 	}
@@ -1296,8 +1208,7 @@ namespace MyNS
 	/// <summary>
 	///  <pre><code> The structure representing the &lt;code&gt;removePermissionRequest&lt;/code&gt;.&lt;/p&gt; </code></pre>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemovePermissionRequest
 	{
 	}
@@ -1305,8 +1216,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the SubmitFeedbackRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubmitFeedbackRequest
 	{
 		
@@ -1321,8 +1231,7 @@ namespace MyNS
 		public FeedbackType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1334,8 +1243,7 @@ namespace MyNS
 		public TagsMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -1343,8 +1251,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure representing the updateProfilingGroupRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateProfilingGroupRequest
 	{
 		

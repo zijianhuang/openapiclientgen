@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for deleting error events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEventsResponse
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of the context in which an error occurred. This data should be provided by the application when reporting an error, unless the error report has been generated automatically from Google App Engine logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorContext
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// HTTP request data that is related to a reported error. This data should be provided by the application when reporting an error, unless the error report has been generated automatically from Google App Engine logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpRequestContext
 	{
 		
@@ -107,8 +104,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates a location in the source code of the service for which errors are reported. `functionName` must be provided by the application when reporting an error, unless the error report contains a `message` with a supported exception stack trace. All fields are optional for the later case.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceLocation
 	{
 		
@@ -134,8 +130,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a particular snapshot of the source tree used to build and deploy an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceReference
 	{
 		
@@ -155,8 +150,7 @@ namespace MyNS
 	/// <summary>
 	/// An error event which is returned by the Error Reporting system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorEvent
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a running service that sends errors. Its version changes over time and multiple versions can run in parallel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceContext
 	{
 		
@@ -215,8 +208,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of a group of similar error events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorGroup
 	{
 		
@@ -245,33 +237,30 @@ namespace MyNS
 		public TrackingIssue[] TrackingIssues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorGroupResolutionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOLUTION_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOLUTION_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACKNOWLEDGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACKNOWLEDGED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOLVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOLVED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MUTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MUTED = 4,
 	}
 	
 	/// <summary>
 	/// Information related to tracking the progress on resolving the error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrackingIssue
 	{
 		
@@ -285,8 +274,7 @@ namespace MyNS
 	/// <summary>
 	/// Data extracted for a specific group based on certain filter criteria, such as a given time period and/or service filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorGroupStats
 	{
 		
@@ -348,8 +336,7 @@ namespace MyNS
 	/// <summary>
 	/// The number of errors in a given time period. All numbers are approximate since the error events are sampled before counting them.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimedCount
 	{
 		
@@ -375,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a set of requested error events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEventsResponse
 	{
 		
@@ -402,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a set of requested error group stats.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGroupStatsResponse
 	{
 		
@@ -429,8 +414,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for reporting an individual error event. Data may be added to this message in the future.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportErrorEventResponse
 	{
 	}
@@ -438,8 +422,7 @@ namespace MyNS
 	/// <summary>
 	/// An error event which is reported to the Error Reporting system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportedErrorEvent
 	{
 		
@@ -727,54 +710,54 @@ namespace MyNS
 	public enum Clouderrorreporting_projects_events_listTimeRange_period
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIOD_1_HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIOD_1_HOUR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIOD_6_HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIOD_6_HOURS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIOD_1_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIOD_1_DAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIOD_1_WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIOD_1_WEEK = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIOD_30_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIOD_30_DAYS = 5,
 	}
 	
 	public enum Clouderrorreporting_projects_groupStats_listAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_COUNT_ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_COUNT_ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGNMENT_EQUAL_ROUNDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGNMENT_EQUAL_ROUNDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGNMENT_EQUAL_AT_END")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGNMENT_EQUAL_AT_END = 2,
 	}
 	
 	public enum Clouderrorreporting_projects_groupStats_listOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GROUP_ORDER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GROUP_ORDER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNT_DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNT_DESC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_SEEN_DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_SEEN_DESC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED_DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED_DESC = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFFECTED_USERS_DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AFFECTED_USERS_DESC = 4,
 	}
 }

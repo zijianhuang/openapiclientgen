@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Message that represents an arbitrary HTTP body. It should only be used for payload formats that can't be represented as JSON, such as raw binary or an HTML page. This message can be used both in streaming and non-streaming API methods in the request as well as the response. It can be used as a top-level request field, which is convenient if one wants to extract parameters from either the URL or HTTP template into the request fields and also want access to the raw HTTP body. Example: message GetResourceRequest { // A unique request id. string request_id = 1; // The raw HTTP body is bound to this field. google.api.HttpBody http_body = 2; } service ResourceService { rpc GetResource(GetResourceRequest) returns (google.api.HttpBody); rpc UpdateResource(google.api.HttpBody) returns (google.protobuf.Empty); } Example with streaming methods: service CaldavService { rpc GetCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); rpc UpdateCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); } Use of this type only changes how the request and response bodies are handled, all other features will continue to work unchanged.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleApiHttpBody
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for TriggerCatalogRejoin method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1alphaRejoinCatalogMetadata
 	{
 	}
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for TriggerCatalogRejoin method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1alphaRejoinCatalogResponse
 	{
 		
@@ -71,8 +68,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1alphaTuningMetadata
 	{
 		
@@ -86,8 +82,7 @@ namespace MyNS
 	/// <summary>
 	/// Response associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1alphaTuningResponse
 	{
 	}
@@ -95,8 +90,7 @@ namespace MyNS
 	/// <summary>
 	/// BigQuery source import data from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1BigQuerySource
 	{
 		
@@ -134,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// The catalog configuration. Next ID: 5.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1Catalog
 	{
 		
@@ -167,8 +160,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures the catalog level that users send events to, and the level at which predictions are made.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfig
 	{
 		
@@ -185,27 +177,24 @@ namespace MyNS
 		public GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfigEventItemLevel PredictItemLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfigEventItemLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATALOG_ITEM_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATALOG_ITEM_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VARIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VARIANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MASTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MASTER = 2,
 	}
 	
 	/// <summary>
 	/// The inline source for the input config for ImportCatalogItems method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1CatalogInlineSource
 	{
 		
@@ -219,8 +208,7 @@ namespace MyNS
 	/// <summary>
 	/// CatalogItem captures all metadata information of items to be recommended.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1CatalogItem
 	{
 		
@@ -282,8 +270,7 @@ namespace MyNS
 	/// <summary>
 	/// Category represents catalog item category hierarchy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1CatalogItemCategoryHierarchy
 	{
 		
@@ -297,8 +284,7 @@ namespace MyNS
 	/// <summary>
 	/// FeatureMap represents extra features that customers want to include in the recommendation model for catalogs/user events as categorical/numerical features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1FeatureMap
 	{
 		
@@ -318,8 +304,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of string features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1FeatureMapStringList
 	{
 		
@@ -333,8 +318,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of float features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1FeatureMapFloatList
 	{
 		
@@ -348,8 +332,7 @@ namespace MyNS
 	/// <summary>
 	/// ProductCatalogItem captures item metadata specific to retail products.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ProductCatalogItem
 	{
 		
@@ -405,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// Exact product price.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ProductCatalogItemExactPrice
 	{
 		
@@ -426,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// Catalog item thumbnail/detail image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1Image
 	{
 		
@@ -453,8 +434,7 @@ namespace MyNS
 	/// <summary>
 	/// Product price range when there are a range of prices for different variations of the same product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRange
 	{
 		
@@ -471,33 +451,30 @@ namespace MyNS
 		public System.Nullable<System.Single> Min { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecommendationengineV1beta1ProductCatalogItemStockState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOCK_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOCK_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_STOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_STOCK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_STOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_STOCK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREORDER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKORDER = 4,
 	}
 	
 	/// <summary>
 	/// Request message for the `CreatePredictionApiKeyRegistration` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1CreatePredictionApiKeyRegistrationRequest
 	{
 		
@@ -511,8 +488,7 @@ namespace MyNS
 	/// <summary>
 	/// Registered Api Key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1PredictionApiKeyRegistration
 	{
 		
@@ -526,8 +502,7 @@ namespace MyNS
 	/// <summary>
 	/// User event details shared by all recommendation types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1EventDetail
 	{
 		
@@ -571,8 +546,7 @@ namespace MyNS
 	/// <summary>
 	/// Google Cloud Storage location for input content. format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1GcsSource
 	{
 		
@@ -592,8 +566,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for Import methods.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ImportCatalogItemsRequest
 	{
 		
@@ -625,8 +598,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of destination for Import related errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ImportErrorsConfig
 	{
 		
@@ -640,8 +612,7 @@ namespace MyNS
 	/// <summary>
 	/// The input config source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1InputConfig
 	{
 		
@@ -673,8 +644,7 @@ namespace MyNS
 	/// <summary>
 	/// The inline source for the input config for ImportUserEvents method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1UserEventInlineSource
 	{
 		
@@ -688,8 +658,7 @@ namespace MyNS
 	/// <summary>
 	/// UserEvent captures all metadata information recommendation engine needs to know about how end users interact with customers' website.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1UserEvent
 	{
 		
@@ -730,30 +699,27 @@ namespace MyNS
 		public GoogleCloudRecommendationengineV1beta1UserInfo UserInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecommendationengineV1beta1UserEventEventSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_SOURCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_SOURCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOML = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECOMMERCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECOMMERCE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_UPLOAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATCH_UPLOAD = 3,
 	}
 	
 	/// <summary>
 	/// ProductEventDetail captures user event information specific to retail products.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ProductEventDetail
 	{
 		
@@ -797,8 +763,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed product information associated with a user event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ProductDetail
 	{
 		
@@ -854,8 +819,7 @@ namespace MyNS
 	/// <summary>
 	/// A transaction represents the entire purchase transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1PurchaseTransaction
 	{
 		
@@ -893,8 +857,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of end users.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1UserInfo
 	{
 		
@@ -932,8 +895,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportCatalogItemsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ImportCatalogItemsResponse
 	{
 		
@@ -953,8 +915,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -980,8 +941,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Import operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ImportMetadata
 	{
 		
@@ -1025,8 +985,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ImportUserEvents request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ImportUserEventsRequest
 	{
 		
@@ -1052,8 +1011,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportUserEventsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ImportUserEventsResponse
 	{
 		
@@ -1079,8 +1037,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of import result. The UserEventImportSummary summarizes the import status for user events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1UserEventImportSummary
 	{
 		
@@ -1100,8 +1057,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListCatalogItems method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ListCatalogItemsResponse
 	{
 		
@@ -1121,8 +1077,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListCatalogs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ListCatalogsResponse
 	{
 		
@@ -1142,8 +1097,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the `ListPredictionApiKeyRegistrations`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ListPredictionApiKeyRegistrationsResponse
 	{
 		
@@ -1163,8 +1117,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListUserEvents method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1ListUserEventsResponse
 	{
 		
@@ -1184,8 +1137,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for Predict method. Full resource name of the format: `{name=projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/*}` The id of the recommendation engine placement. This id is used to identify the set of models that will be used to make the prediction. We currently support three placements with the following IDs by default: // * `shopping_cart`: Predicts items frequently bought together with one or more catalog items in the same shopping session. Commonly displayed after `add-to-cart` event, on product detail pages, or on the shopping cart page. * `home_page`: Predicts the next product that a user will most likely engage with or purchase based on the shopping or viewing history of the specified `userId` or `visitorId`. For example - Recommendations for you. * `product_detail`: Predicts the next product that a user will most likely engage with or purchase. The prediction is based on the shopping or viewing history of the specified `userId` or `visitorId` and its relevance to a specified `CatalogItem`. Typically used on product detail pages. For example - More items like this. * `recently_viewed_default`: Returns up to 75 items recently viewed by the specified `userId` or `visitorId`, most recent ones first. Returns nothing if neither of them has viewed any items yet. For example - Recently viewed. The full list of available placements can be seen at https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1PredictRequest
 	{
 		
@@ -1235,8 +1187,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for predict method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1PredictResponse
 	{
 		
@@ -1280,8 +1231,7 @@ namespace MyNS
 	/// <summary>
 	/// PredictionResult represents the recommendation prediction results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1PredictResponsePredictionResult
 	{
 		
@@ -1301,8 +1251,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeUserEvents operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1PurgeUserEventsMetadata
 	{
 		
@@ -1322,8 +1271,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for PurgeUserEvents method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1PurgeUserEventsRequest
 	{
 		
@@ -1343,8 +1291,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the PurgeUserEventsRequest. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1PurgeUserEventsResponse
 	{
 		
@@ -1364,8 +1311,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for RejoinUserEvents method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1RejoinUserEventsMetadata
 	{
 	}
@@ -1373,8 +1319,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CatalogRejoin method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1RejoinUserEventsRequest
 	{
 		
@@ -1385,27 +1330,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRecommendationengineV1beta1RejoinUserEventsRequestUserEventRejoinScope> UserEventRejoinScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecommendationengineV1beta1RejoinUserEventsRequestUserEventRejoinScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_EVENT_REJOIN_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_EVENT_REJOIN_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOINED_EVENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOINED_EVENTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNJOINED_EVENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNJOINED_EVENTS = 2,
 	}
 	
 	/// <summary>
 	/// Response message for RejoinUserEvents method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommendationengineV1beta1RejoinUserEventsResponse
 	{
 		
@@ -1419,8 +1361,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -1440,8 +1381,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -1479,8 +1419,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

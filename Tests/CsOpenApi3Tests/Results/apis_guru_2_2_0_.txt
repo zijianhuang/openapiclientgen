@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Meta information about API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class API
 	{
 		
@@ -50,8 +49,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, ApiVersion> Versions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiVersion
 	{
 		
@@ -121,8 +119,7 @@ namespace MyNS
 	///It is a JSON object with API IDs(`<provider>[:<service>]`) as keys.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIs
 	{
 	}
@@ -130,8 +127,7 @@ namespace MyNS
 	/// <summary>
 	/// List of basic metrics
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metrics
 	{
 		

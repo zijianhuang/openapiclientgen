@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An item with user information and settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class About
 	{
 		
@@ -354,8 +353,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Drive user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -410,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// The apps resource provides a list of the apps that a user has installed, with information about each app's supported MIME types, file extensions, and other details. Some resource methods (such as `apps.get`) require an `appId`. Use the `apps.list` method to retrieve the ID for an installed application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App
 	{
 		
@@ -586,8 +583,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of third-party applications which the user has installed or given access to Google Drive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppList
 	{
 		
@@ -626,8 +622,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a change to a file or shared drive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Change
 	{
 		
@@ -714,8 +709,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a shared drive. Some resource methods (such as `drives.update`) require a `driveId`. Use the `drives.list` method to retrieve the ID for a shared drive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Drive
 	{
 		
@@ -982,8 +976,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for a file. Some resource methods (such as `files.update`) require a `fileId`. Use the `files.list` method to retrieve the ID for a file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File
 	{
 		
@@ -1692,8 +1685,7 @@ namespace MyNS
 	/// <summary>
 	/// A restriction for accessing the content of the file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentRestriction
 	{
 		
@@ -1915,8 +1907,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a label and label fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Label
 	{
 		
@@ -1949,8 +1940,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of field, which is a typed key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelField
 	{
 		
@@ -2063,8 +2053,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a file's parent. Some resource methods (such as `parents.get`) require a `parentId`. Use the `parents.list` method to retrieve the ID for a parent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParentReference
 	{
 		
@@ -2103,8 +2092,7 @@ namespace MyNS
 	/// <summary>
 	/// A permission for a file. A permission grants a user, group, domain, or the world access to a file or a folder hierarchy. Some resource methods (such as `permissions.update`) require a `permissionId`. Use the `permissions.list` method to retrieve the ID for a file, folder, or shared drive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Permission
 	{
 		
@@ -2301,8 +2289,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair attached to a file that is either public or private to an application. The following limits apply to file properties: * Maximum of 100 properties total per file * Maximum of 30 private properties per app * Maximum of 30 public properties * Maximum of 124 bytes size limit on (key + value) string in UTF-8 encoding for a single property Some resource methods (such as `properties.update`) require a `propertyKey`. Use the `properties.list` method to retrieve the key for a property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Property
 	{
 		
@@ -2407,8 +2394,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated: Use the `drive` collection instead.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeamDrive
 	{
 		
@@ -2675,8 +2661,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of changes for a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeList
 	{
 		
@@ -2733,8 +2718,7 @@ namespace MyNS
 	/// <summary>
 	/// A notification channel used to watch for resource changes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -2803,8 +2787,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of children of a file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChildList
 	{
 		
@@ -2849,8 +2832,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a folder's child. Some resource methods (such as `children.get`) require a `childId`. Use the `children.list` method to retrieve the ID of the child.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChildReference
 	{
 		
@@ -2883,8 +2865,7 @@ namespace MyNS
 	/// <summary>
 	/// A comment on a file in Google Drive. Some resource methods (such as `comments.update`) require a `commentId`. Use the `comments.list` method to retrieve the ID for a comment in a file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Comment
 	{
 		
@@ -2999,8 +2980,7 @@ namespace MyNS
 	/// <summary>
 	/// A comment on a file in Google Drive. Some resource methods (such as `replies.update`) require a `replyId`. Use the `replies.list` method to retrieve the ID for a reply.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommentReply
 	{
 		
@@ -3063,8 +3043,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of comments on a file in Google Drive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommentList
 	{
 		
@@ -3103,8 +3082,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of replies to a comment on a file in Google Drive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommentReplyList
 	{
 		
@@ -3143,8 +3121,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of shared drives.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DriveList
 	{
 		
@@ -3171,8 +3148,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileList
 	{
 		
@@ -3223,8 +3199,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of generated IDs which can be provided in insert requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeneratedIds
 	{
 		
@@ -3251,8 +3226,7 @@ namespace MyNS
 	/// <summary>
 	/// A modification to a label's field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelFieldModification
 	{
 		
@@ -3309,8 +3283,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of labels applied to a file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelList
 	{
 		
@@ -3337,8 +3310,7 @@ namespace MyNS
 	/// <summary>
 	/// A modification to a label on a file. A LabelModification can be used to apply a label to a file, update an existing label on a file, or remove a label from a file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelModification
 	{
 		
@@ -3371,8 +3343,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to modify the set of labels on a file. This request may contain many modifications that will either all succeed or all fail atomically.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyLabelsRequest
 	{
 		
@@ -3393,8 +3364,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a ModifyLabels request. This contains only those labels which were added or updated by the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyLabelsResponse
 	{
 		
@@ -3415,8 +3385,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of a file's parents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParentList
 	{
 		
@@ -3449,8 +3418,7 @@ namespace MyNS
 	/// <summary>
 	/// An ID for a user or group as seen in Permission items.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionId
 	{
 		
@@ -3471,8 +3439,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of permissions associated with a file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionList
 	{
 		
@@ -3511,8 +3478,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of properties, key-value pairs that are either public or private to an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PropertyList
 	{
 		
@@ -3545,8 +3511,7 @@ namespace MyNS
 	/// <summary>
 	/// A revision of a file. Some resource methods (such as `revisions.update`) require a `revisionId`. Use the `revisions.list` method to retrieve the ID for a revision.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Revision
 	{
 		
@@ -3663,8 +3628,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of revisions of a file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevisionList
 	{
 		
@@ -3700,8 +3664,7 @@ namespace MyNS
 		public string SelfLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartPageToken
 	{
 		
@@ -3722,8 +3685,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Team Drives.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeamDriveList
 	{
 		
@@ -6618,52 +6580,52 @@ namespace MyNS
 	public enum Drive_files_listCorpus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN = 1,
 	}
 	
 	public enum Drive_files_listProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 1,
 	}
 	
 	public enum Drive_files_insertVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE = 1,
 	}
 	
 	public enum Drive_files_patchModifiedDateBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fromBody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fromBody = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fromBodyIfNeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fromBodyIfNeeded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fromBodyOrNow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fromBodyOrNow = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="noChange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		noChange = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="now")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		now = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nowIfNeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nowIfNeeded = 5,
 	}
 }

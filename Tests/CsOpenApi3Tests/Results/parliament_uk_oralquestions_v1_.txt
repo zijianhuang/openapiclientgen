@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiResponse_List_PublishedEarlyDayMotion_
 	{
 		
@@ -38,8 +37,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PagingInfo
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusCount
 	{
 		
@@ -74,8 +71,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StatusId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedEarlyDayMotion
 	{
 		
@@ -131,8 +127,7 @@ namespace MyNS
 		public string UINWithAmendmentSuffix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemberForDate
 	{
 		
@@ -167,169 +162,164 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublishedEarlyDayMotionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Published")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Published = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Withdrawn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Withdrawn = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiResponse_List_PublishedEarlyDayMotion_StatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Continue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Continue = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SwitchingProtocols")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SwitchingProtocols = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Created = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Accepted = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NonAuthoritativeInformation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NonAuthoritativeInformation = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoContent = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResetContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResetContent = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PartialContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PartialContent = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MultipleChoices")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MultipleChoices = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ambiguous")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ambiguous = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MovedPermanently")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MovedPermanently = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Moved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Moved = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Found")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Found = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Redirect")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Redirect = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SeeOther")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SeeOther = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RedirectMethod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RedirectMethod = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotModified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotModified = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UseProxy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UseProxy = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unused = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemporaryRedirect")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TemporaryRedirect = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RedirectKeepVerb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RedirectKeepVerb = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadRequest = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unauthorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unauthorized = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PaymentRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PaymentRequired = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Forbidden")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Forbidden = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotFound = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MethodNotAllowed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MethodNotAllowed = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotAcceptable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotAcceptable = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProxyAuthenticationRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProxyAuthenticationRequired = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestTimeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestTimeout = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Conflict")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Conflict = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gone = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LengthRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LengthRequired = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreconditionFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreconditionFailed = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestEntityTooLarge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestEntityTooLarge = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestUriTooLong")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestUriTooLong = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnsupportedMediaType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnsupportedMediaType = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestedRangeNotSatisfiable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestedRangeNotSatisfiable = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExpectationFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExpectationFailed = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpgradeRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpgradeRequired = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServerError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServerError = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotImplemented")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotImplemented = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadGateway")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadGateway = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceUnavailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceUnavailable = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GatewayTimeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GatewayTimeout = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HttpVersionNotSupported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HttpVersionNotSupported = 46,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiResponse_List_PublishedOralQuestionTime_
 	{
 		
@@ -349,8 +339,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedOralQuestionTime
 	{
 		
@@ -376,8 +365,7 @@ namespace MyNS
 		public string TopicalTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiResponse_List_PublishedOralQuestion_
 	{
 		
@@ -397,8 +385,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedOralQuestion
 	{
 		
@@ -457,64 +444,59 @@ namespace MyNS
 		public System.Nullable<System.Int32> UIN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublishedOralQuestionQuestionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Substantive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Substantive = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Topical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Topical = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublishedOralQuestionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Submitted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Carded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Carded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unsaved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unsaved = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReadyForShuffle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReadyForShuffle = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ToBeAsked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ToBeAsked = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ShuffleUnsuccessful")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ShuffleUnsuccessful = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Withdrawn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Withdrawn = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unstarred")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unstarred = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Draft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Draft = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ForReview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ForReview = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unasked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unasked = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Transferred")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Transferred = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiResponse_List_PublishedWrittenQuestion_
 	{
 		
@@ -534,8 +516,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedWrittenQuestion
 	{
 		
@@ -585,21 +566,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> UIN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublishedWrittenQuestionQuestionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NamedDay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NamedDay = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ordinary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ordinary = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiResponse_Object_
 	{
 		
@@ -619,8 +597,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiResponse_PublishedEarlyDayMotionDetails_
 	{
 		
@@ -640,8 +617,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedEarlyDayMotionDetails
 	{
 		
@@ -703,8 +679,7 @@ namespace MyNS
 		public string UINWithAmendmentSuffix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedEarlyDayMotionSponsor
 	{
 		
@@ -730,8 +705,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> WithdrawnDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedEarlyDayMotionQueryParameters
 	{
 		
@@ -820,33 +794,30 @@ namespace MyNS
 		public string UINWithAmendmentSuffix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublishedEarlyDayMotionQueryParametersOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DateTabledAsc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DateTabledAsc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DateTabledDesc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DateTabledDesc = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TitleAsc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TitleAsc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TitleDesc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TitleDesc = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SignatureCountAsc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SignatureCountAsc = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SignatureCountDesc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SignatureCountDesc = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedOralQuestionQueryParameters
 	{
 		
@@ -905,8 +876,7 @@ namespace MyNS
 		public int[] UINs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedOralQuestionTimeQueryParameters
 	{
 		

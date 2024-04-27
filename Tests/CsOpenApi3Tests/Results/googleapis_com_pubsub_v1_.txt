@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the Acknowledge method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcknowledgeRequest
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for writing message data in Avro format. Message payloads and metadata will be written to files as an Avro binary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AvroConfig
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a BigQuery subscription.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BigQueryConfig
 	{
 		
@@ -92,36 +89,33 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WriteMetadata { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BigQueryConfigState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_DENIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEMA_MISMATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEMA_MISMATCH = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_TRANSIT_LOCATION_RESTRICTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_TRANSIT_LOCATION_RESTRICTION = 5,
 	}
 	
 	/// <summary>
 	/// Associates `members`, or principals, with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -147,8 +141,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -180,8 +173,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a Cloud Storage subscription.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudStorageConfig
 	{
 		
@@ -234,33 +226,30 @@ namespace MyNS
 		public TextConfig TextConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudStorageConfigState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_DENIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_TRANSIT_LOCATION_RESTRICTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_TRANSIT_LOCATION_RESTRICTION = 4,
 	}
 	
 	/// <summary>
 	/// Configuration for writing message data in text format. Message payloads will be written to files as raw text, separated by a newline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextConfig
 	{
 	}
@@ -268,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for CommitSchema method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitSchemaRequest
 	{
 		
@@ -283,8 +271,7 @@ namespace MyNS
 	/// <summary>
 	/// A schema resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schema
 	{
 		
@@ -319,27 +306,24 @@ namespace MyNS
 		public System.Nullable<SchemaType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SchemaType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOCOL_BUFFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOCOL_BUFFER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVRO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVRO = 2,
 	}
 	
 	/// <summary>
 	/// Request for the `CreateSnapshot` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSnapshotRequest
 	{
 		
@@ -359,8 +343,7 @@ namespace MyNS
 	/// <summary>
 	/// Dead lettering is done on a best effort basis. The same message might be dead lettered multiple times. If validation on any of the fields fails at subscription creation/updation, the create/update subscription request will fail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeadLetterPolicy
 	{
 		
@@ -380,8 +363,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the DetachSubscription method. Reserved for future use.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachSubscriptionResponse
 	{
 	}
@@ -389,8 +371,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -398,8 +379,7 @@ namespace MyNS
 	/// <summary>
 	/// A policy that specifies the conditions for resource expiration (i.e., automatic resource deletion).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpirationPolicy
 	{
 		
@@ -413,8 +393,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListSchemaRevisions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSchemaRevisionsResponse
 	{
 		
@@ -434,8 +413,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListSchemas` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSchemasResponse
 	{
 		
@@ -455,8 +433,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListSnapshots` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSnapshotsResponse
 	{
 		
@@ -476,8 +453,7 @@ namespace MyNS
 	/// <summary>
 	/// A snapshot resource. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Snapshot
 	{
 		
@@ -509,8 +485,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListSubscriptions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSubscriptionsResponse
 	{
 		
@@ -530,8 +505,7 @@ namespace MyNS
 	/// <summary>
 	/// A subscription resource. If none of `push_config`, `bigquery_config`, or `cloud_storage_config` is set, then the subscriber will pull and ack messages using API methods. At most one of these fields may be set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscription
 	{
 		
@@ -647,8 +621,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a push delivery endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PushConfig
 	{
 		
@@ -686,8 +659,7 @@ namespace MyNS
 	/// <summary>
 	/// Sets the `data` field as the HTTP body for delivery.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoWrapper
 	{
 		
@@ -701,8 +673,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information needed for generating an [OpenID Connect token](https://developers.google.com/identity/protocols/OpenIDConnect).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OidcToken
 	{
 		
@@ -722,8 +693,7 @@ namespace MyNS
 	/// <summary>
 	/// The payload to the push endpoint is in the form of the JSON representation of a PubsubMessage (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PubsubWrapper
 	{
 	}
@@ -731,8 +701,7 @@ namespace MyNS
 	/// <summary>
 	/// A policy that specifies how Pub/Sub retries message delivery. Retry delay will be exponential based on provided minimum and maximum backoffs. https://en.wikipedia.org/wiki/Exponential_backoff. RetryPolicy will be triggered on NACKs or acknowledgement deadline exceeded events for a given message. Retry Policy is implemented on a best effort basis. At times, the delay between consecutive deliveries may not match the configuration. That is, delay can be more or less than configured backoff.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetryPolicy
 	{
 		
@@ -749,27 +718,24 @@ namespace MyNS
 		public string MinimumBackoff { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubscriptionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_ERROR = 2,
 	}
 	
 	/// <summary>
 	/// Response for the `ListTopicSnapshots` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTopicSnapshotsResponse
 	{
 		
@@ -789,8 +755,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListTopicSubscriptions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTopicSubscriptionsResponse
 	{
 		
@@ -810,8 +775,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListTopics` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTopicsResponse
 	{
 		
@@ -831,8 +795,7 @@ namespace MyNS
 	/// <summary>
 	/// A topic resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Topic
 	{
 		
@@ -882,8 +845,7 @@ namespace MyNS
 	/// <summary>
 	/// A policy constraining the storage of messages published to the topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageStoragePolicy
 	{
 		
@@ -903,8 +865,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for validating messages published against a schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaSettings
 	{
 		
@@ -933,27 +894,24 @@ namespace MyNS
 		public string Schema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SchemaSettingsEncoding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCODING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCODING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BINARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BINARY = 2,
 	}
 	
 	/// <summary>
 	/// Request for the ModifyAckDeadline method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyAckDeadlineRequest
 	{
 		
@@ -973,8 +931,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the ModifyPushConfig method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyPushConfigRequest
 	{
 		
@@ -988,8 +945,7 @@ namespace MyNS
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -1015,8 +971,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the Publish method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishRequest
 	{
 		
@@ -1030,8 +985,7 @@ namespace MyNS
 	/// <summary>
 	/// A message that is published by publishers and consumed by subscribers. The message must contain either a non-empty data field or at least one attribute. Note that client libraries represent this object differently depending on the language. See the corresponding [client library documentation](https://cloud.google.com/pubsub/docs/reference/libraries) for more information. See [quotas and limits] (https://cloud.google.com/pubsub/quotas) for more information about message limits.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PubsubMessage
 	{
 		
@@ -1069,8 +1023,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `Publish` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishResponse
 	{
 		
@@ -1084,8 +1037,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `Pull` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PullRequest
 	{
 		
@@ -1105,8 +1057,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `Pull` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PullResponse
 	{
 		
@@ -1120,8 +1071,7 @@ namespace MyNS
 	/// <summary>
 	/// A message and its corresponding acknowledgment ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReceivedMessage
 	{
 		
@@ -1147,8 +1097,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `RollbackSchema` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RollbackSchemaRequest
 	{
 		
@@ -1162,8 +1111,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `Seek` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SeekRequest
 	{
 		
@@ -1183,8 +1131,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `Seek` method (this response is empty).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SeekResponse
 	{
 	}
@@ -1192,8 +1139,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `SetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIamPolicyRequest
 	{
 		
@@ -1207,8 +1153,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsRequest
 	{
 		
@@ -1222,8 +1167,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		
@@ -1237,8 +1181,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the UpdateSnapshot method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSnapshotRequest
 	{
 		
@@ -1258,8 +1201,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the UpdateSubscription method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSubscriptionRequest
 	{
 		
@@ -1279,8 +1221,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the UpdateTopic method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTopicRequest
 	{
 		
@@ -1300,8 +1241,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `ValidateMessage` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateMessageRequest
 	{
 		
@@ -1333,8 +1273,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ValidateMessage` method. Empty for now.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateMessageResponse
 	{
 	}
@@ -1342,8 +1281,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `ValidateSchema` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateSchemaRequest
 	{
 		
@@ -1357,8 +1295,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ValidateSchema` method. Empty for now.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateSchemaResponse
 	{
 	}
@@ -2628,13 +2565,13 @@ namespace MyNS
 	public enum Pubsub_projects_schemas_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEMA_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEMA_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

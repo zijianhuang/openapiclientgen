@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1ComputeThreatListDiffResponse
 	{
 		
@@ -62,8 +61,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the set of entries to add to a local database. May contain a combination of compressed and raw data in a single response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1ThreatEntryAdditions
 	{
 		
@@ -83,8 +81,7 @@ namespace MyNS
 	/// <summary>
 	/// The uncompressed threat entries in hash format. Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4 bytes, but some hashes are lengthened if they collide with the hash of a popular URI. Used for sending ThreatEntryAdditons to clients that do not support compression, or when sending non-4-byte hashes to clients that do support compression.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1RawHashes
 	{
 		
@@ -104,8 +101,7 @@ namespace MyNS
 	/// <summary>
 	/// The Rice-Golomb encoded data. Used for sending compressed 4-byte hashes or compressed removal indices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1RiceDeltaEncoding
 	{
 		
@@ -137,8 +133,7 @@ namespace MyNS
 	/// <summary>
 	/// The expected state of a client's local database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1ComputeThreatListDiffResponseChecksum
 	{
 		
@@ -152,8 +147,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the set of entries to remove from a local database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1ThreatEntryRemovals
 	{
 		
@@ -173,8 +167,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of raw indices to remove from a local list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1RawIndices
 	{
 		
@@ -185,24 +178,21 @@ namespace MyNS
 		public int[] Indices { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESPONSE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESPONSE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESET = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1SearchHashesResponse
 	{
 		
@@ -222,8 +212,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains threat information on a matching hash.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1SearchHashesResponseThreatHash
 	{
 		
@@ -246,8 +235,7 @@ namespace MyNS
 		public string[] ThreatTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1SearchUrisResponse
 	{
 		
@@ -261,8 +249,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains threat information on a matching uri.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1SearchUrisResponseThreatUri
 	{
 		
@@ -282,8 +269,7 @@ namespace MyNS
 	/// <summary>
 	/// Wraps a URI that might be displaying malicious content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudWebriskV1Submission
 	{
 		
@@ -297,8 +283,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningCancelOperationRequest
 	{
 	}
@@ -306,8 +291,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -327,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -366,8 +349,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -393,8 +375,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}
@@ -717,19 +698,19 @@ namespace MyNS
 	public enum Webrisk_threatLists_computeDiffThreatType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THREAT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THREAT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MALWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MALWARE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL_ENGINEERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL_ENGINEERING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNWANTED_SOFTWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNWANTED_SOFTWARE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL_ENGINEERING_EXTENDED_COVERAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL_ENGINEERING_EXTENDED_COVERAGE = 4,
 	}
 }

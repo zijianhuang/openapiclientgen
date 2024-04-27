@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the binding.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__Binding
 	{
 		
@@ -73,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `CreateBinding()` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__CreateBindingResponse
 	{
 		
@@ -123,8 +121,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `CreateServiceInstance()` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__CreateServiceInstanceResponse
 	{
 		
@@ -148,8 +145,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing information required to activate Dashboard SSO feature.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__DashboardClient
 	{
 		
@@ -176,8 +172,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `DeleteBinding()` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__DeleteBindingResponse
 	{
 		
@@ -200,8 +195,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `DeleteServiceInstance()` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__DeleteServiceInstanceResponse
 	{
 		
@@ -224,8 +218,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `GetBinding()` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__GetBindingResponse
 	{
 		
@@ -266,8 +259,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for the `ListBindings()` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__ListBindingsResponse
 	{
 		
@@ -299,8 +291,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the `ListCatalog()` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__ListCatalogResponse
 	{
 		
@@ -335,8 +326,7 @@ namespace MyNS
 	///https://github.com/openservicebrokerapi/servicebroker/blob/master/_spec.md
 	///Though due to Google Specifics it has additional optional fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__Service
 	{
 		
@@ -420,8 +410,7 @@ namespace MyNS
 	/// <summary>
 	/// Plan message describes a Service Plan.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__Plan
 	{
 		
@@ -477,8 +466,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for the `ListServiceInstances()` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__ListServiceInstancesResponse
 	{
 		
@@ -510,8 +498,7 @@ namespace MyNS
 	/// <summary>
 	/// Message describing inputs to Provision and Update Service instance requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__ServiceInstance
 	{
 		
@@ -602,8 +589,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a long running operation, which conforms to OpenService API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__Operation
 	{
 		
@@ -624,8 +610,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `UpdateServiceInstance()` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudServicebrokerV1alpha1__UpdateServiceInstanceResponse
 	{
 		
@@ -648,8 +633,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates `members` with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIamV1__Binding
 	{
 		
@@ -726,8 +710,7 @@ namespace MyNS
 	///    description: "Determines whether the request has a user account"
 	///    expression: "size(request.user) > 0"
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleType__Expr
 	{
 		
@@ -829,8 +812,7 @@ namespace MyNS
 	///For a description of IAM and its features, see the
 	///[IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIamV1__Policy
 	{
 		
@@ -889,8 +871,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `SetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIamV1__SetIamPolicyRequest
 	{
 		
@@ -966,8 +947,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIamV1__TestIamPermissionsRequest
 	{
 		
@@ -984,8 +964,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleIamV1__TestIamPermissionsResponse
 	{
 		

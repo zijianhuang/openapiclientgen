@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// LRO response metadata for InboundSamlSsoProfilesService.AddIdpCredential.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddIdpCredentialOperationMetadata
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for creating an IdpCredential with its associated payload. An InboundSamlSsoProfile can own up to 2 credentials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddIdpCredentialRequest
 	{
 		
@@ -44,8 +42,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to cancel sent invitation for target email in UserInvitation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelUserInvitationRequest
 	{
 	}
@@ -53,8 +50,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for MembershipsService.CheckTransitiveMembership.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckTransitiveMembershipResponse
 	{
 		
@@ -68,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for CreateGroup LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGroupMetadata
 	{
 	}
@@ -77,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// LRO response metadata for InboundSamlSsoProfilesService.CreateInboundSamlSsoProfile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateInboundSamlSsoProfileOperationMetadata
 	{
 	}
@@ -86,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// LRO response metadata for InboundSsoAssignmentsService.CreateInboundSsoAssignment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateInboundSsoAssignmentOperationMetadata
 	{
 	}
@@ -95,8 +88,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for CreateMembership LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMembershipMetadata
 	{
 	}
@@ -104,8 +96,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for DeleteGroup LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGroupMetadata
 	{
 	}
@@ -113,8 +104,7 @@ namespace MyNS
 	/// <summary>
 	/// LRO response metadata for InboundSamlSsoProfilesService.DeleteIdpCredential.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIdpCredentialOperationMetadata
 	{
 	}
@@ -122,8 +112,7 @@ namespace MyNS
 	/// <summary>
 	/// LRO response metadata for InboundSamlSsoProfilesService.DeleteInboundSamlSsoProfile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteInboundSamlSsoProfileOperationMetadata
 	{
 	}
@@ -131,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// LRO response metadata for InboundSsoAssignmentsService.DeleteInboundSsoAssignment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteInboundSsoAssignmentOperationMetadata
 	{
 	}
@@ -140,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for DeleteMembership LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMembershipMetadata
 	{
 	}
@@ -149,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of a DSA public key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DsaPublicKeyInfo
 	{
 		
@@ -164,8 +150,7 @@ namespace MyNS
 	/// <summary>
 	/// Dynamic group metadata like queries and status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicGroupMetadata
 	{
 		
@@ -185,8 +170,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a query on a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicGroupQuery
 	{
 		
@@ -203,24 +187,21 @@ namespace MyNS
 		public System.Nullable<DynamicGroupQueryResourceType> ResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DynamicGroupQueryResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 1,
 	}
 	
 	/// <summary>
 	/// The current status of a dynamic group along with timestamp.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicGroupStatus
 	{
 		
@@ -237,30 +218,27 @@ namespace MyNS
 		public string StatusTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DynamicGroupStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UP_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UP_TO_DATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING_MEMBERSHIPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING_MEMBERSHIPS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_QUERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_QUERY = 3,
 	}
 	
 	/// <summary>
 	/// A unique identifier for an entity in the Cloud Identity Groups API. An entity can represent either a group with an optional `namespace` or a user without a `namespace`. The combination of `id` and `namespace` must be unique; however, the same `id` can be used with different `namespace`s.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityKey
 	{
 		
@@ -280,8 +258,7 @@ namespace MyNS
 	/// <summary>
 	/// The `MembershipRole` expiry details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiryDetail
 	{
 		
@@ -295,8 +272,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of GetMembershipGraphResponse LRO. This is currently empty to permit future extensibility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMembershipGraphMetadata
 	{
 	}
@@ -304,8 +280,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for MembershipsService.GetMembershipGraph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMembershipGraphResponse
 	{
 		
@@ -325,8 +300,7 @@ namespace MyNS
 	/// <summary>
 	/// Membership graph's path information as an adjacency list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MembershipAdjacencyList
 	{
 		
@@ -346,8 +320,7 @@ namespace MyNS
 	/// <summary>
 	/// A membership within the Cloud Identity Groups API. A `Membership` defines a relationship between a `Group` and an entity belonging to that `Group`, referred to as a "member".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Membership
 	{
 		
@@ -394,36 +367,33 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MembershipDeliverySetting
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY_SETTING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY_SETTING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_MAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_MAIL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIGEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIGEST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 5,
 	}
 	
 	/// <summary>
 	/// A membership role within the Cloud Identity Groups API. A `MembershipRole` defines the privileges granted to a `Membership`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MembershipRole
 	{
 		
@@ -449,8 +419,7 @@ namespace MyNS
 	/// <summary>
 	/// Evaluations of restrictions applied to parent group on this membership.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestrictionEvaluations
 	{
 		
@@ -464,8 +433,7 @@ namespace MyNS
 	/// <summary>
 	/// The evaluated state of this restriction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MembershipRoleRestrictionEvaluation
 	{
 		
@@ -476,58 +444,53 @@ namespace MyNS
 		public System.Nullable<MembershipRoleRestrictionEvaluationState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MembershipRoleRestrictionEvaluationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORWARD_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORWARD_COMPLIANT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_COMPLIANT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVALUATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVALUATING = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MembershipType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_ACCOUNT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GROUP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHARED_DRIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHARED_DRIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 5,
 	}
 	
 	/// <summary>
 	/// A group within the Cloud Identity Groups API. A `Group` is a collection of entities, where each entity is either a user, another group, or a service account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group
 	{
 		
@@ -595,8 +558,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource representing the Android specific attributes of a Device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1AndroidAttributes
 	{
 		
@@ -649,30 +611,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> VerifyAppsEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNERSHIP_PRIVILEGE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNERSHIP_PRIVILEGE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_ADMINISTRATOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_ADMINISTRATOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE_OWNER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_OWNER = 3,
 	}
 	
 	/// <summary>
 	/// Metadata for ApproveDeviceUser LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1ApproveDeviceUserMetadata
 	{
 	}
@@ -680,8 +639,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for approving the device to access user data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1ApproveDeviceUserRequest
 	{
 		
@@ -695,8 +653,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for approving the device to access user data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1ApproveDeviceUserResponse
 	{
 		
@@ -710,8 +667,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a user's use of a Device in the Cloud Identity Devices API. A DeviceUser is a resource representing a user's use of a Device
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1DeviceUser
 	{
 		
@@ -776,71 +732,64 @@ namespace MyNS
 		public string UserEmail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPROMISED_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPROMISED_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPROMISED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPROMISED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_COMPROMISED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_COMPROMISED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1DeviceUserManagementState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGEMENT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGEMENT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIPING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIPED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_APPROVAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_APPROVAL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNENROLLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNENROLLED = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_SET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_NOT_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_NOT_SET = 2,
 	}
 	
 	/// <summary>
 	/// Metadata for BlockDeviceUser LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1BlockDeviceUserMetadata
 	{
 	}
@@ -848,8 +797,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for blocking account on device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1BlockDeviceUserRequest
 	{
 		
@@ -863,8 +811,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for blocking the device from accessing user data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1BlockDeviceUserResponse
 	{
 		
@@ -878,8 +825,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for CancelWipeDevice LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1CancelWipeDeviceMetadata
 	{
 	}
@@ -887,8 +833,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for cancelling an unfinished device wipe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1CancelWipeDeviceRequest
 	{
 		
@@ -902,8 +847,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for cancelling an unfinished device wipe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1CancelWipeDeviceResponse
 	{
 		
@@ -917,8 +861,7 @@ namespace MyNS
 	/// <summary>
 	///  A Device within the Cloud Identity Devices API. Represents a Device known to Google Cloud, independent of the device ownership, type, and whether it is assigned or in use by a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1Device
 	{
 		
@@ -1103,121 +1046,110 @@ namespace MyNS
 		public string[] WifiMacAddresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1DeviceCompromisedState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPROMISED_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPROMISED_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPROMISED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPROMISED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNCOMPROMISED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNCOMPROMISED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1DeviceDeviceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_SYNC = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC_OS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_OS = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1DeviceEncryptionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCRYPTION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCRYPTION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED_BY_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUPPORTED_BY_DEVICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCRYPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCRYPTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_ENCRYPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_ENCRYPTED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1DeviceManagementState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGEMENT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGEMENT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNPROVISIONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNPROVISIONED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIPING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIPED = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1DeviceOwnerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_OWNERSHIP_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_OWNERSHIP_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BYOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BYOD = 2,
 	}
 	
 	/// <summary>
 	/// Metadata for CancelWipeDeviceUser LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1CancelWipeDeviceUserMetadata
 	{
 	}
@@ -1225,8 +1157,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for cancelling an unfinished user account wipe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1CancelWipeDeviceUserRequest
 	{
 		
@@ -1240,8 +1171,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for cancelling an unfinished user account wipe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1CancelWipeDeviceUserResponse
 	{
 		
@@ -1255,8 +1185,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the state associated with an API client calling the Devices API. Resource representing ClientState and supports updates from API users
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1ClientState
 	{
 		
@@ -1333,52 +1262,47 @@ namespace MyNS
 		public string ScoreReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1ClientStateComplianceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANCE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANCE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_COMPLIANT = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1ClientStateHealthScore
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALTH_SCORE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALTH_SCORE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERY_POOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERY_POOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POOR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEUTRAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEUTRAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOD = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERY_GOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERY_GOOD = 5,
 	}
 	
 	/// <summary>
 	/// Additional custom attribute values may be one of these types
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1CustomAttributeValue
 	{
 		
@@ -1401,43 +1325,38 @@ namespace MyNS
 		public string StringValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1ClientStateManaged
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGED_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGED_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNMANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNMANAGED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCloudidentityDevicesV1ClientStateOwnerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER_TYPE_CUSTOMER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER_TYPE_CUSTOMER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER_TYPE_PARTNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER_TYPE_PARTNER = 2,
 	}
 	
 	/// <summary>
 	/// Metadata for CreateDevice LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1CreateDeviceMetadata
 	{
 	}
@@ -1445,8 +1364,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for DeleteDevice LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1DeleteDeviceMetadata
 	{
 	}
@@ -1454,8 +1372,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for DeleteDeviceUser LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1DeleteDeviceUserMetadata
 	{
 	}
@@ -1463,8 +1380,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message that is returned in ListClientStates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1ListClientStatesResponse
 	{
 		
@@ -1484,8 +1400,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message that is returned from the ListDeviceUsers method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1ListDeviceUsersResponse
 	{
 		
@@ -1505,8 +1420,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message that is returned from the ListDevices method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1ListDevicesResponse
 	{
 		
@@ -1526,8 +1440,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for ListEndpointApps LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1ListEndpointAppsMetadata
 	{
 	}
@@ -1535,8 +1448,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing resource names of the DeviceUsers associated with the caller's credentials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1LookupSelfDeviceUsersResponse
 	{
 		
@@ -1562,8 +1474,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for SignoutDeviceUser LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1SignoutDeviceUserMetadata
 	{
 	}
@@ -1571,8 +1482,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for UpdateClientState LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1UpdateClientStateMetadata
 	{
 	}
@@ -1580,8 +1490,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for UpdateDevice LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1UpdateDeviceMetadata
 	{
 	}
@@ -1589,8 +1498,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for WipeDevice LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1WipeDeviceMetadata
 	{
 	}
@@ -1598,8 +1506,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for wiping all data on the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1WipeDeviceRequest
 	{
 		
@@ -1619,8 +1526,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for wiping all data on the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1WipeDeviceResponse
 	{
 		
@@ -1634,8 +1540,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for WipeDeviceUser LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1WipeDeviceUserMetadata
 	{
 	}
@@ -1643,8 +1548,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for starting an account wipe on device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1WipeDeviceUserRequest
 	{
 		
@@ -1658,8 +1562,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for wiping the user's account from the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCloudidentityDevicesV1WipeDeviceUserResponse
 	{
 		
@@ -1673,8 +1576,7 @@ namespace MyNS
 	/// <summary>
 	/// Message representing a transitive group of a user or a group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupRelation
 	{
 		
@@ -1715,30 +1617,27 @@ namespace MyNS
 		public TransitiveMembershipRole[] Roles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupRelationRelationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIRECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDIRECT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECT_AND_INDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIRECT_AND_INDIRECT = 3,
 	}
 	
 	/// <summary>
 	/// Message representing the role of a TransitiveMembership.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitiveMembershipRole
 	{
 		
@@ -1752,8 +1651,7 @@ namespace MyNS
 	/// <summary>
 	/// Credential for verifying signatures produced by the Identity Provider.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdpCredential
 	{
 		
@@ -1785,8 +1683,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of a RSA public key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RsaPublicKeyInfo
 	{
 		
@@ -1800,8 +1697,7 @@ namespace MyNS
 	/// <summary>
 	/// A [SAML 2.0](https://www.oasis-open.org/standards#samlv2.0) federation between a Google enterprise customer and a SAML identity provider.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InboundSamlSsoProfile
 	{
 		
@@ -1839,8 +1735,7 @@ namespace MyNS
 	/// <summary>
 	/// SAML IDP (identity provider) configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SamlIdpConfig
 	{
 		
@@ -1872,8 +1767,7 @@ namespace MyNS
 	/// <summary>
 	/// SAML SP (service provider) configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SamlSpConfig
 	{
 		
@@ -1893,8 +1787,7 @@ namespace MyNS
 	/// <summary>
 	/// Targets with "set" SSO assignments and their respective assignments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InboundSsoAssignment
 	{
 		
@@ -1950,8 +1843,7 @@ namespace MyNS
 	/// <summary>
 	/// Details that are applicable when `sso_mode` == `SAML_SSO`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SamlSsoInfo
 	{
 		
@@ -1965,8 +1857,7 @@ namespace MyNS
 	/// <summary>
 	/// Controls sign-in behavior.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignInBehavior
 	{
 		
@@ -1977,43 +1868,38 @@ namespace MyNS
 		public System.Nullable<SignInBehaviorRedirectCondition> RedirectCondition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SignInBehaviorRedirectCondition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT_CONDITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT_CONDITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InboundSsoAssignmentSsoMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSO_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSO_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSO_OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSO_OFF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAML_SSO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAML_SSO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN_WIDE_SAML_IF_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN_WIDE_SAML_IF_ENABLED = 3,
 	}
 	
 	/// <summary>
 	/// Response for IsInvitableUser RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IsInvitableUserResponse
 	{
 		
@@ -2027,8 +1913,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListGroups operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGroupsResponse
 	{
 		
@@ -2048,8 +1933,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the InboundSamlSsoProfilesService.ListIdpCredentials method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdpCredentialsResponse
 	{
 		
@@ -2069,8 +1953,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the InboundSamlSsoProfilesService.ListInboundSamlSsoProfiles method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInboundSamlSsoProfilesResponse
 	{
 		
@@ -2090,8 +1973,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the InboundSsoAssignmentsService.ListInboundSsoAssignments method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInboundSsoAssignmentsResponse
 	{
 		
@@ -2111,8 +1993,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for MembershipsService.ListMemberships.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMembershipsResponse
 	{
 		
@@ -2132,8 +2013,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for UserInvitation listing request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUserInvitationsResponse
 	{
 		
@@ -2153,8 +2033,7 @@ namespace MyNS
 	/// <summary>
 	/// The `UserInvitation` resource represents an email that can be sent to an unmanaged user account inviting them to join the customer's Google Workspace or Cloud Identity account. An unmanaged account shares an email address domain with the Google Workspace or Cloud Identity account but is not managed by it yet. If the user accepts the `UserInvitation`, the user account will become managed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserInvitation
 	{
 		
@@ -2183,33 +2062,30 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserInvitationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_YET_SENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_YET_SENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVITED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVITED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECLINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECLINED = 4,
 	}
 	
 	/// <summary>
 	/// The response message for GroupsService.LookupGroupName.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupGroupNameResponse
 	{
 		
@@ -2223,8 +2099,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for MembershipsService.LookupMembershipName.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupMembershipNameResponse
 	{
 		
@@ -2238,8 +2113,7 @@ namespace MyNS
 	/// <summary>
 	/// Message representing a transitive membership of a group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemberRelation
 	{
 		
@@ -2271,8 +2145,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of MemberRestriction
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemberRestriction
 	{
 		
@@ -2292,8 +2165,7 @@ namespace MyNS
 	/// <summary>
 	/// The evaluated state of this restriction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestrictionEvaluation
 	{
 		
@@ -2304,33 +2176,30 @@ namespace MyNS
 		public System.Nullable<RestrictionEvaluationState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RestrictionEvaluationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVALUATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVALUATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORWARD_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORWARD_COMPLIANT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_COMPLIANT = 4,
 	}
 	
 	/// <summary>
 	/// Message containing membership relation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MembershipRelation
 	{
 		
@@ -2380,8 +2249,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for MembershipsService.ModifyMembershipRoles.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyMembershipRolesRequest
 	{
 		
@@ -2407,8 +2275,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of an update to a `MembershipRole`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMembershipRolesParams
 	{
 		
@@ -2428,8 +2295,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for MembershipsService.ModifyMembershipRoles.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyMembershipRolesResponse
 	{
 		
@@ -2443,8 +2309,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -2482,8 +2347,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -2509,8 +2373,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for MembershipsService.SearchDirectGroups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchDirectGroupsResponse
 	{
 		
@@ -2530,8 +2393,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for GroupsService.SearchGroups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchGroupsResponse
 	{
 		
@@ -2551,8 +2413,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for MembershipsService.SearchTransitiveGroups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchTransitiveGroupsResponse
 	{
 		
@@ -2572,8 +2433,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for MembershipsService.SearchTransitiveMemberships.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchTransitiveMembershipsResponse
 	{
 		
@@ -2593,8 +2453,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of security settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecuritySettings
 	{
 		
@@ -2614,8 +2473,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to send email for inviting target user corresponding to the UserInvitation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendUserInvitationRequest
 	{
 	}
@@ -2623,8 +2481,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for UpdateGroup LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGroupMetadata
 	{
 	}
@@ -2632,8 +2489,7 @@ namespace MyNS
 	/// <summary>
 	/// LRO response metadata for InboundSamlSsoProfilesService.UpdateInboundSamlSsoProfile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInboundSamlSsoProfileOperationMetadata
 	{
 	}
@@ -2641,8 +2497,7 @@ namespace MyNS
 	/// <summary>
 	/// LRO response metadata for InboundSsoAssignmentsService.UpdateInboundSsoAssignment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInboundSsoAssignmentOperationMetadata
 	{
 	}
@@ -2650,8 +2505,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for UpdateMembership LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMembershipMetadata
 	{
 	}
@@ -4020,39 +3874,39 @@ namespace MyNS
 	public enum Cloudidentity_devices_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY_INVENTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY_INVENTORY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ASSIGNED_DEVICES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ASSIGNED_DEVICES = 2,
 	}
 	
 	public enum Cloudidentity_groups_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 	
 	public enum Cloudidentity_groups_createInitialGroupConfig
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIAL_GROUP_CONFIG_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIAL_GROUP_CONFIG_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WITH_INITIAL_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WITH_INITIAL_OWNER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMPTY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMPTY = 2,
 	}
 }

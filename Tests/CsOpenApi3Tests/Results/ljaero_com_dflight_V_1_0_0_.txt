@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AerodromeDistanceResponse
 	{
 		
@@ -30,8 +29,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AerodromePolyResponse
 	{
 		
@@ -43,8 +41,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AerodromeRouteResponse
 	{
 		
@@ -59,8 +56,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for point/distance requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AerodromesByDistance
 	{
 		
@@ -89,8 +85,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for polygon requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AerodromesByPolygon
 	{
 		
@@ -105,8 +100,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for along-route requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AerodromesByRoute
 	{
 		
@@ -121,8 +115,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for point/distance requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AirspaceByDistance
 	{
 		
@@ -158,8 +151,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for polygon requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AirspaceByPolygon
 	{
 		
@@ -181,8 +173,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for along-route requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AirspaceByRoute
 	{
 		
@@ -201,8 +192,7 @@ namespace MyNS
 		public string Route { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AirspaceDistanceResponse
 	{
 		
@@ -214,8 +204,7 @@ namespace MyNS
 		public string[] Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AirspacePolyResponse
 	{
 		
@@ -227,8 +216,7 @@ namespace MyNS
 		public string[] Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AirspaceRouteResponse
 	{
 		
@@ -240,8 +228,7 @@ namespace MyNS
 		public string[] Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HTTPValidationError
 	{
 		
@@ -249,8 +236,7 @@ namespace MyNS
 		public ValidationError[] Detail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationError
 	{
 		
@@ -279,8 +265,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for point/distance requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NOTAMsByDistance
 	{
 		
@@ -309,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for polygon requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NOTAMsByPolygon
 	{
 		
@@ -325,8 +309,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for along-route requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NOTAMsByRoute
 	{
 		
@@ -338,8 +321,7 @@ namespace MyNS
 		public string Route { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NOTAMsDistanceResponse
 	{
 		
@@ -351,8 +333,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NOTAMsPolyResponse
 	{
 		
@@ -364,8 +345,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NOTAMsRouteResponse
 	{
 		
@@ -377,8 +357,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObstacleDistanceResponse
 	{
 		
@@ -390,8 +369,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObstaclePolyResponse
 	{
 		
@@ -403,8 +381,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObstacleRouteResponse
 	{
 		
@@ -419,8 +396,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for point/distance requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObstaclesByDistance
 	{
 		
@@ -449,8 +425,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for polygon requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObstaclesByPolygon
 	{
 		
@@ -465,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for along-route requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObstaclesByRoute
 	{
 		
@@ -481,8 +455,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for point/distance requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSAByDistance
 	{
 		
@@ -511,8 +484,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for polygon requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSAByPolygon
 	{
 		
@@ -527,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for along-route requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSAByRoute
 	{
 		
@@ -540,8 +511,7 @@ namespace MyNS
 		public string Route { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSADistanceResponse
 	{
 		
@@ -553,8 +523,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSAPolyResponse
 	{
 		
@@ -566,8 +535,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSARouteResponse
 	{
 		
@@ -582,8 +550,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for point/distance requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UOAsByDistance
 	{
 		
@@ -612,8 +579,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for polygon requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UOAsByPolygon
 	{
 		
@@ -628,8 +594,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for along-route requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UOAsByRoute
 	{
 		
@@ -641,8 +606,7 @@ namespace MyNS
 		public string Route { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UOAsDistanceResponse
 	{
 		
@@ -654,8 +618,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UOAsPolyResponse
 	{
 		
@@ -667,8 +630,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UOAsRouteResponse
 	{
 		
@@ -680,8 +642,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VenueDistanceResponse
 	{
 		
@@ -693,8 +654,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VenuePolyResponse
 	{
 		
@@ -706,8 +666,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VenueRouteResponse
 	{
 		
@@ -722,8 +681,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for point/distance requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VenuesByDistance
 	{
 		
@@ -752,8 +710,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for polygon requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VenuesByPolygon
 	{
 		
@@ -768,8 +725,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for along-route requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VenuesByRoute
 	{
 		
@@ -784,8 +740,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for point/distance requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WxByDistance
 	{
 		
@@ -828,8 +783,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for polygon requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WxByPolygon
 	{
 		
@@ -858,8 +812,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometry-defining arguments for along-route requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WxByRoute
 	{
 		
@@ -885,8 +838,7 @@ namespace MyNS
 		public string[] Wxtypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WxDistanceResponse
 	{
 		
@@ -898,8 +850,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WxPolyResponse
 	{
 		
@@ -911,8 +862,7 @@ namespace MyNS
 		public string Found { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WxRouteResponse
 	{
 		

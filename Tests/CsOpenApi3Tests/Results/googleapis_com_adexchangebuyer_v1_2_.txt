@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration data for an Ad Exchange buyer account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -104,8 +103,7 @@ namespace MyNS
 	/// <summary>
 	/// An account feed lists Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single buyer account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountsList
 	{
 		
@@ -126,8 +124,7 @@ namespace MyNS
 	/// <summary>
 	/// A creative and its classification data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Creative
 	{
 		
@@ -338,8 +335,7 @@ namespace MyNS
 	/// <summary>
 	/// The creatives feed lists the active creatives for the Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativesList
 	{
 		
@@ -649,13 +645,13 @@ namespace MyNS
 	public enum Adexchangebuyer_creatives_listStatusFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="approved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		approved = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disapproved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disapproved = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_checked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_checked = 2,
 	}
 }

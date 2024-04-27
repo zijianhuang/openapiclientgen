@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// CreateProfileRequest describes a profile resource online creation request. The deployment field must be populated. The profile_type specifies the list of profile types supported by the agent. The creation call will hang until a profile of one of these types needs to be collected. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProfileRequest
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Deployment contains the deployment identification information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deployment
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// ListProfileResponse contains the list of collected profiles for deployments in projects which the user has permissions to view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfilesResponse
 	{
 		
@@ -95,8 +92,7 @@ namespace MyNS
 	/// <summary>
 	/// Profile resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Profile
 	{
 		
@@ -137,34 +133,32 @@ namespace MyNS
 		public System.Nullable<ProfileProfileType> ProfileType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProfileProfileType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPU = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WALL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEAP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THREADS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THREADS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENTION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PEAK_HEAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PEAK_HEAP = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEAP_ALLOC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEAP_ALLOC = 7,
 	}
 	

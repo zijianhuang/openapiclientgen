@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Application resources represent applications installed on the domain that support transferring ownership of user data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Application
 	{
 		
@@ -60,8 +59,7 @@ namespace MyNS
 	/// <summary>
 	/// Template for application transfer parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationTransferParam
 	{
 		
@@ -81,8 +79,7 @@ namespace MyNS
 	/// <summary>
 	/// Template to map fields of ApplicationDataTransfer resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationDataTransfer
 	{
 		
@@ -108,8 +105,7 @@ namespace MyNS
 	/// <summary>
 	/// Template for a collection of Applications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationsListResponse
 	{
 		
@@ -142,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	/// A Transfer resource represents the transfer of the ownership of user data between users.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataTransfer
 	{
 		
@@ -200,8 +195,7 @@ namespace MyNS
 	/// <summary>
 	/// Template for a collection of DataTransfer resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataTransfersListResponse
 	{
 		

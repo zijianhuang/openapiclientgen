@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionMetric
 	{
 		
@@ -65,8 +64,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionResource
 	{
 		
@@ -189,8 +187,7 @@ namespace MyNS
 		public int[] Days { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Identifier
 	{
 		
@@ -212,18 +209,15 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionResourceAttributesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other_lifestyle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other_lifestyle = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionWindow
 	{
 		
@@ -268,8 +262,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address
 	{
 		
@@ -301,8 +294,7 @@ namespace MyNS
 		public string Use { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArchiveHistory
 	{
 		
@@ -319,8 +311,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BundleResource
 	{
 		
@@ -426,8 +417,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalendarEventResource
 	{
 		
@@ -524,35 +514,31 @@ namespace MyNS
 		public string User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CalendarEventResourceAttributesAttendeesResponse_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="needsAction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		needsAction = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="declined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		declined = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tentative")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tentative = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CalendarEventResourceAttributesType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="plan-check-in")]
 		planMinuscheckMinusin = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reminder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reminder = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="telephone-call")]
@@ -621,18 +607,15 @@ namespace MyNS
 		public string Related { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CalendarEventResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calendar_event")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calendar_event = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalendarEventResponseResource
 	{
 		
@@ -668,19 +651,17 @@ namespace MyNS
 		public System.Nullable<CalendarEventResponseResourceAttributesResponse_status> Response_status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CalendarEventResponseResourceAttributesResponse_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="declined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		declined = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tentative")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tentative = 2,
 	}
 	
@@ -781,18 +762,15 @@ namespace MyNS
 		public string Related { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CalendarEventResponseResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calendar_event_response")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calendar_event_response = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CoachResource
 	{
 		
@@ -844,18 +822,15 @@ namespace MyNS
 		public string Self { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CoachResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="coach")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		coach = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionResponseLinks
 	{
 		
@@ -872,8 +847,7 @@ namespace MyNS
 		public string Self { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateActionRequest
 	{
 		
@@ -885,8 +859,7 @@ namespace MyNS
 		public ActionResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateActionResponse
 	{
 		
@@ -901,8 +874,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOrUpdateMetaResponse
 	{
 		
@@ -913,8 +885,7 @@ namespace MyNS
 		public string Req_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBundleRequest
 	{
 		
@@ -926,8 +897,7 @@ namespace MyNS
 		public BundleResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBundleResponse
 	{
 		
@@ -942,8 +912,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCalendarEventRequest
 	{
 		
@@ -998,8 +967,7 @@ namespace MyNS
 		public CalendarEventResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCalendarEventResponse
 	{
 		
@@ -1010,8 +978,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCalendarEventResponseRequest
 	{
 		
@@ -1080,8 +1047,7 @@ namespace MyNS
 		public CalendarEventResponseResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGroupRequest
 	{
 		
@@ -1093,8 +1059,7 @@ namespace MyNS
 		public GroupResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupResource
 	{
 		
@@ -1154,18 +1119,15 @@ namespace MyNS
 		public string Self { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGroupResponse
 	{
 		
@@ -1180,8 +1142,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOrUpdateErrorResponse
 	{
 		
@@ -1192,8 +1153,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -1213,31 +1173,29 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Forbidden")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Forbidden = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidParameter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidParameter = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidBodyParameter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidBodyParameter = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFound = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unauthorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unauthorized = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidCredentials")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidCredentials = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidGrantType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidGrantType = 6,
 	}
 	
@@ -1251,8 +1209,7 @@ namespace MyNS
 		public string Pointer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePatientHealthMetricRequest
 	{
 		
@@ -1267,8 +1224,7 @@ namespace MyNS
 		public CreatePatientHealthMetricRequestMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatientHealthMetricCreateResource
 	{
 	}
@@ -1285,8 +1241,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Ignore_duplicates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePatientHealthMetricResponse
 	{
 		
@@ -1301,8 +1256,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatientHealthMetricResource
 	{
 		
@@ -1373,136 +1327,134 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatientHealthMetricResourceAttributesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blood_pressure_systolic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blood_pressure_systolic = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blood_pressure_diastolic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blood_pressure_diastolic = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hemoglobin_a1c")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hemoglobin_a1c = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hdl_cholesterol")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hdl_cholesterol = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ldl_cholesterol")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ldl_cholesterol = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total_cholesterol")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total_cholesterol = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="triglycerides")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		triglycerides = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blood_urea_nitrogen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blood_urea_nitrogen = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="creatinine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		creatinine = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hemoglobin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hemoglobin = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hematocrit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hematocrit = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total_serum_iron")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total_serum_iron = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="thyroid_stimulating_hormone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		thyroid_stimulating_hormone = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="free_thyroxine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		free_thyroxine = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="free_triiodothyronine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		free_triiodothyronine = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total_triiodothyronine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total_triiodothyronine = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cd4_cell_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cd4_cell_count = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hiv_viral_load")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hiv_viral_load = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inr = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="free_testosterone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		free_testosterone = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total_testosterone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total_testosterone = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="c_reactive_protein")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		c_reactive_protein = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="prostate_specific_antigen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		prostate_specific_antigen = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cotinine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cotinine = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="c_peptide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		c_peptide = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blood_pressure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blood_pressure = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="blood_glucose")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		blood_glucose = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="weight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		weight = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="heart_rate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		heart_rate = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="body_fat_percentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		body_fat_percentage = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="body_mass_index")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		body_mass_index = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="body_temperature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		body_temperature = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forced_expiratory_volume1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forced_expiratory_volume1 = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forced_vital_capacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forced_vital_capacity = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lean_body_mass")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lean_body_mass = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nausea_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nausea_level = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oxygen_saturation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oxygen_saturation = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pain_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pain_level = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="peak_expiratory_flow_rate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		peak_expiratory_flow_rate = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="peripheral_perfusion_index")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		peripheral_perfusion_index = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="respiratory_rate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		respiratory_rate = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inhaler_usage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inhaler_usage = 41,
 	}
 	
@@ -1589,8 +1541,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePatientRequest
 	{
 		
@@ -1605,8 +1556,7 @@ namespace MyNS
 		public CreatePatientRequestMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatientCreateResource
 	{
 	}
@@ -1623,8 +1573,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Ignore_duplicates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePatientResponse
 	{
 		
@@ -1639,8 +1588,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatientResource
 	{
 		
@@ -1729,24 +1677,21 @@ namespace MyNS
 		public string Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatientResourceAttributesGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="male")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		male = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="female")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		female = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatientIdentifier
 	{
 		
@@ -1774,8 +1719,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhoneNumber
 	{
 		
@@ -1801,19 +1745,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PhoneNumberType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="home")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		home = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="work")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		work = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mobile = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="home-fax")]
@@ -1822,7 +1764,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="work-fax")]
 		workMinusfax = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 5,
 	}
 	
@@ -1870,18 +1812,15 @@ namespace MyNS
 		public object Groups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatientResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="patient")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		patient = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardEarningFulfillmentRequest
 	{
 		
@@ -1893,8 +1832,7 @@ namespace MyNS
 		public RewardEarningFulfillmentResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RewardEarningFulfillmentResource
 	{
 		
@@ -1989,8 +1927,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardEarningFulfillmentResponse
 	{
 		
@@ -2005,8 +1942,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardEarningRequest
 	{
 		
@@ -2018,8 +1954,7 @@ namespace MyNS
 		public RewardEarningResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RewardEarningResource
 	{
 		
@@ -2172,8 +2107,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardEarningResponse
 	{
 		
@@ -2188,8 +2122,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardProgramActivationRequest
 	{
 		
@@ -2201,8 +2134,7 @@ namespace MyNS
 		public RewardProgramActivationResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RewardProgramActivationResource
 	{
 		
@@ -2341,8 +2273,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardProgramActivationResponse
 	{
 		
@@ -2357,8 +2288,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardProgramRequest
 	{
 		
@@ -2370,8 +2300,7 @@ namespace MyNS
 		public RewardProgramResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RewardProgramResource
 	{
 		
@@ -2464,19 +2393,17 @@ namespace MyNS
 		public string Tagline { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RewardProgramResourceAttributesBudget_unit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dollar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dollar = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="point")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		point = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credit = 2,
 	}
 	
@@ -2520,8 +2447,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardProgramResponse
 	{
 		
@@ -2536,8 +2462,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardRequest
 	{
 		
@@ -2549,8 +2474,7 @@ namespace MyNS
 		public RewardResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RewardResource
 	{
 		
@@ -2689,8 +2613,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRewardResponse
 	{
 		
@@ -2705,8 +2628,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTokenRequest
 	{
 		
@@ -2763,31 +2685,26 @@ namespace MyNS
 		public string Refresh_token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateTokenRequestDataAttributesGrant_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="refresh_token")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		refresh_token = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="client_credentials")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		client_credentials = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateTokenRequestDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="token")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		token = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTokenResponse
 	{
 		
@@ -2805,8 +2722,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TokenResource
 	{
 		
@@ -2841,8 +2757,7 @@ namespace MyNS
 		public object Organization { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailHistoryResource
 	{
 		
@@ -2999,8 +2914,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchActionResponse
 	{
 		
@@ -3015,8 +2929,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchMetaResponse
 	{
 		
@@ -3027,8 +2940,7 @@ namespace MyNS
 		public string Req_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchBundleResponse
 	{
 		
@@ -3043,8 +2955,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchCalendarEventResponse
 	{
 		
@@ -3064,8 +2975,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Resource
 	{
 		
@@ -3079,8 +2989,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchCalendarEventsResponse
 	{
 		
@@ -3103,8 +3012,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchCoachResponse
 	{
 		
@@ -3119,8 +3027,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchCoachesResponse
 	{
 		
@@ -3135,8 +3042,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchEmailHistoriesResponse
 	{
 		
@@ -3151,8 +3057,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchEmailHistoryResponse
 	{
 		
@@ -3167,8 +3072,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchErrorResponse
 	{
 		
@@ -3179,8 +3083,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchGroupResponse
 	{
 		
@@ -3195,8 +3098,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchGroupsResponse
 	{
 		
@@ -3211,8 +3113,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchHealthProfileAnswerResponse
 	{
 		
@@ -3236,8 +3137,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthProfileAnswerResource
 	{
 		
@@ -3379,8 +3279,7 @@ namespace MyNS
 		public string Related { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchHealthProfileAnswersResponse
 	{
 		
@@ -3407,8 +3306,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchHealthProfileQuestionResponse
 	{
 		
@@ -3432,8 +3330,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthProfileQuestionResource
 	{
 		
@@ -3560,8 +3457,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchHealthProfileQuestionsResponse
 	{
 		
@@ -3588,8 +3484,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchHealthProfileResponse
 	{
 		
@@ -3613,8 +3508,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthProfileResource
 	{
 		
@@ -3661,22 +3555,20 @@ namespace MyNS
 		public System.Nullable<System.Double> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HealthProfileResourceAttributesStatsCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lifestyle_behaviors")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lifestyle_behaviors = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mental_wellbeing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mental_wellbeing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preventative_care")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preventative_care = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="overall")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		overall = 3,
 	}
 	
@@ -3765,8 +3657,7 @@ namespace MyNS
 		public string Related { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchHealthProfilesResponse
 	{
 		
@@ -3793,8 +3684,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchHealthQuestionDefinitionResponse
 	{
 		
@@ -3809,8 +3699,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthQuestionDefinitionResource
 	{
 		
@@ -3866,19 +3755,17 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HealthQuestionDefinitionResourceAttributesCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lifestyle_behaviors")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lifestyle_behaviors = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mental_wellbeing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mental_wellbeing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preventative_care")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preventative_care = 2,
 	}
 	
@@ -3949,8 +3836,7 @@ namespace MyNS
 		public string Self { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchHealthQuestionDefinitionsResponse
 	{
 		
@@ -3968,8 +3854,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchOrganizationResponse
 	{
 		
@@ -3984,8 +3869,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationResource
 	{
 		
@@ -4014,18 +3898,15 @@ namespace MyNS
 		public OrganizationResourceType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrganizationResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="organization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		organization = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchPatientHealthMetricResponse
 	{
 		
@@ -4043,8 +3924,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchPatientHealthResultResponse
 	{
 		
@@ -4062,8 +3942,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatientHealthResultResource
 	{
 		
@@ -4302,8 +4181,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchPatientPlanSummariesResponse
 	{
 		
@@ -4327,8 +4205,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatientPlanSummaryResource
 	{
 		
@@ -4577,18 +4454,15 @@ namespace MyNS
 		public string Related { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatientPlanSummaryResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="patient_plan_summary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		patient_plan_summary = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchPatientPlanSummaryResponse
 	{
 		
@@ -4612,8 +4486,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchPatientResponse
 	{
 		
@@ -4628,8 +4501,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchPatientsResponse
 	{
 		
@@ -4647,8 +4519,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardEarningFulfillmentResponse
 	{
 		
@@ -4663,8 +4534,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardEarningFulfillmentsResponse
 	{
 		
@@ -4679,8 +4549,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardEarningResponse
 	{
 		
@@ -4695,8 +4564,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardEarningsResponse
 	{
 		
@@ -4711,8 +4579,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardProgramActivationResponse
 	{
 		
@@ -4727,8 +4594,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardProgramActivationsResponse
 	{
 		
@@ -4743,8 +4609,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardProgramResponse
 	{
 		
@@ -4759,8 +4624,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardProgramsResponse
 	{
 		
@@ -4775,8 +4639,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardResponse
 	{
 		
@@ -4791,8 +4654,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRewardsResponse
 	{
 		
@@ -4807,8 +4669,7 @@ namespace MyNS
 		public FetchMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateActionRequest
 	{
 		
@@ -4820,8 +4681,7 @@ namespace MyNS
 		public ActionResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateActionResponse
 	{
 		
@@ -4836,8 +4696,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBundleRequest
 	{
 		
@@ -4849,8 +4708,7 @@ namespace MyNS
 		public BundleResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBundleResponse
 	{
 		
@@ -4865,8 +4723,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCalendarEventRequest
 	{
 		
@@ -4912,8 +4769,7 @@ namespace MyNS
 		public CalendarEventResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCalendarEventResponse
 	{
 		
@@ -4924,8 +4780,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePatientPlanSummaryRequest
 	{
 		
@@ -4937,8 +4792,7 @@ namespace MyNS
 		public PatientPlanSummaryResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePatientPlanSummaryResponse
 	{
 		
@@ -4953,8 +4807,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePatientRequest
 	{
 		
@@ -4966,8 +4819,7 @@ namespace MyNS
 		public PatientResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePatientResponse
 	{
 		
@@ -4982,8 +4834,7 @@ namespace MyNS
 		public CreateOrUpdateMetaResponse Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpsertPatientRequest
 	{
 		
@@ -6536,7 +6387,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="plan-check-in")]
 		planMinuscheckMinusin = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reminder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reminder = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="telephone-call")]
@@ -6552,14 +6403,14 @@ namespace MyNS
 	public enum FetchCalendarEventsInclude
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="owner")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		owner = 0,
 	}
 	
 	public enum FetchEmailHistoriesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="send_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		send_time = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-send_time")]
@@ -6569,46 +6420,46 @@ namespace MyNS
 	public enum FetchHealthProfilesInclude
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="patient")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		patient = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="questions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		questions = 1,
 	}
 	
 	public enum FetchHealthProfileQuestionsInclude
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="question_definition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		question_definition = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answer = 1,
 	}
 	
 	public enum CreateTokenInclude
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groups = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="organization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		organization = 1,
 	}
 	
 	public enum FetchPatientPlanSummariesInclude
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="actions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		actions = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bundles")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bundles = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="patient")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		patient = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="current_results")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		current_results = 3,
 	}
 }

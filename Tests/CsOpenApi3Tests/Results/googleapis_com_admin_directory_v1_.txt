@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Alias object in Directory API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alias
 	{
 		
@@ -45,8 +44,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON response template to list aliases in Directory API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Aliases
 	{
 		
@@ -64,8 +62,7 @@ namespace MyNS
 	/// <summary>
 	/// An application-specific password (ASP) is used with applications that do not accept a verification code when logging into the application on certain devices. The ASP access code is used instead of the login and password you commonly use when accessing an application through a browser. For more information about ASPs and how to create one, see the [help center](https://support.google.com/a/answer/2537800#asp).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Asp
 	{
 		
@@ -113,8 +110,7 @@ namespace MyNS
 		public string UserKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Asps
 	{
 		
@@ -141,8 +137,7 @@ namespace MyNS
 	/// <summary>
 	/// Auxiliary message about issues with printers or settings. Example: {message_type:AUXILIARY_MESSAGE_WARNING, field_mask:make_and_model, message:"Given printer is invalid or no longer supported."}
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuxiliaryMessage
 	{
 		
@@ -165,30 +160,27 @@ namespace MyNS
 		public System.Nullable<AuxiliaryMessageSeverity> Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuxiliaryMessageSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_INFO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_WARNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_ERROR = 3,
 	}
 	
 	/// <summary>
 	/// A request for changing the status of a batch of ChromeOS devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchChangeChromeOsDeviceStatusRequest
 	{
 		
@@ -211,70 +203,65 @@ namespace MyNS
 		public string[] DeviceIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchChangeChromeOsDeviceStatusRequestChangeChromeOsDeviceStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DEPROVISION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DEPROVISION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DISABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DISABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_REENABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_REENABLE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchChangeChromeOsDeviceStatusRequestDeprovisionReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_SAME_MODEL_REPLACEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_SAME_MODEL_REPLACEMENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_UPGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_UPGRADE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_DOMAIN_MOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_DOMAIN_MOVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_SERVICE_EXPIRATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_SERVICE_EXPIRATION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_OTHER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_DIFFERENT_MODEL_REPLACEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_DIFFERENT_MODEL_REPLACEMENT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_RETIRING_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_RETIRING_DEVICE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_UPGRADE_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_UPGRADE_TRANSFER = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_NOT_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_NOT_REQUIRED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPROVISION_REASON_REPAIR_CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPROVISION_REASON_REPAIR_CENTER = 10,
 	}
 	
 	/// <summary>
 	/// The response of changing the status of a batch of ChromeOS devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchChangeChromeOsDeviceStatusResponse
 	{
 		
@@ -288,8 +275,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a single ChromeOS device for a Change state operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeChromeOsDeviceStatusResult
 	{
 		
@@ -315,8 +301,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -342,8 +327,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for a successful ChromeOS device status change.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeChromeOsDeviceStatusSucceeded
 	{
 	}
@@ -351,8 +335,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to add multiple new print servers in a batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreatePrintServersRequest
 	{
 		
@@ -366,8 +349,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for adding a new print server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePrintServerRequest
 	{
 		
@@ -387,8 +369,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a print server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrintServer
 	{
 		
@@ -435,8 +416,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreatePrintServersResponse
 	{
 		
@@ -456,8 +436,7 @@ namespace MyNS
 	/// <summary>
 	/// Info about failures
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrintServerFailureInfo
 	{
 		
@@ -486,69 +465,66 @@ namespace MyNS
 		public string PrintServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PrintServerFailureInfoErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ARGUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_ARGUMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEADLINE_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEADLINE_EXCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALREADY_EXISTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALREADY_EXISTS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_DENIED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAUTHENTICATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAUTHENTICATED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_EXHAUSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_EXHAUSTED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_PRECONDITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_PRECONDITION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABORTED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_RANGE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIMPLEMENTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIMPLEMENTED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAVAILABLE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_LOSS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_LOSS = 16,
 	}
 	
 	/// <summary>
 	/// Request for adding new printers in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreatePrintersRequest
 	{
 		
@@ -562,8 +538,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for adding a new printer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePrinterRequest
 	{
 		
@@ -583,8 +558,7 @@ namespace MyNS
 	/// <summary>
 	/// Printer configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Printer
 	{
 		
@@ -652,8 +626,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for adding new printers in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreatePrintersResponse
 	{
 		
@@ -673,8 +646,7 @@ namespace MyNS
 	/// <summary>
 	/// Info about failures
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailureInfo
 	{
 		
@@ -706,8 +678,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to delete multiple existing print servers in a batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeletePrintServersRequest
 	{
 		
@@ -718,8 +689,7 @@ namespace MyNS
 		public string[] PrintServerIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeletePrintServersResponse
 	{
 		
@@ -739,8 +709,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for deleting existing printers in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeletePrintersRequest
 	{
 		
@@ -754,8 +723,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for deleting existing printers in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeletePrintersResponse
 	{
 		
@@ -775,8 +743,7 @@ namespace MyNS
 	/// <summary>
 	/// Public API: Resources.buildings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Building
 	{
 		
@@ -833,8 +800,7 @@ namespace MyNS
 	/// <summary>
 	/// Public API: Resources.buildings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildingAddress
 	{
 		
@@ -884,8 +850,7 @@ namespace MyNS
 	/// <summary>
 	/// Public API: Resources.buildings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildingCoordinates
 	{
 		
@@ -905,8 +870,7 @@ namespace MyNS
 	/// <summary>
 	/// Public API: Resources.buildings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Buildings
 	{
 		
@@ -939,8 +903,7 @@ namespace MyNS
 	/// <summary>
 	/// Public API: Resources.calendars
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalendarResource
 	{
 		
@@ -1039,8 +1002,7 @@ namespace MyNS
 	/// <summary>
 	/// Public API: Resources.calendars
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalendarResources
 	{
 		
@@ -1073,8 +1035,7 @@ namespace MyNS
 	/// <summary>
 	/// An notification channel used to watch for resource changes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -1143,8 +1104,7 @@ namespace MyNS
 	/// <summary>
 	/// Google Chrome devices run on the [Chrome OS](https://support.google.com/chromeos). For more information about common API tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-chrome-devices).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChromeOsDevice
 	{
 		
@@ -1565,28 +1525,26 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChromeOsDeviceDeviceLicenseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deviceLicenseTypeUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deviceLicenseTypeUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enterprise")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enterprise = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enterpriseUpgrade")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enterpriseUpgrade = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="educationUpgrade")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		educationUpgrade = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="education")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		education = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kioskUpgrade")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kioskUpgrade = 5,
 	}
 	
@@ -1641,8 +1599,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information regarding the current OS update status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OsUpdateStatus
 	{
 		
@@ -1683,22 +1640,20 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OsUpdateStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="updateStateUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		updateStateUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="updateStateNotStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		updateStateNotStarted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="updateStateDownloadInProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		updateStateDownloadInProgress = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="updateStateNeedReboot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		updateStateNeedReboot = 3,
 	}
 	
@@ -1802,8 +1757,7 @@ namespace MyNS
 	/// <summary>
 	/// Data about an update to the status of a Chrome OS device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChromeOsDeviceAction
 	{
 		
@@ -1820,8 +1774,7 @@ namespace MyNS
 		public string DeprovisionReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChromeOsDevices
 	{
 		
@@ -1851,8 +1804,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChromeOsMoveDevicesToOu
 	{
 		
@@ -1863,8 +1815,7 @@ namespace MyNS
 		public string[] DeviceIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Customer
 	{
 		
@@ -1921,8 +1872,7 @@ namespace MyNS
 		public CustomerPostalAddress PostalAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerPostalAddress
 	{
 		
@@ -1984,8 +1934,7 @@ namespace MyNS
 	/// <summary>
 	/// Information regarding a command that was issued to a device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryChromeosdevicesCommand
 	{
 		
@@ -2035,8 +1984,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of executing a command.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryChromeosdevicesCommandResult
 	{
 		
@@ -2065,89 +2013,82 @@ namespace MyNS
 		public System.Nullable<DirectoryChromeosdevicesCommandResultResult> Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DirectoryChromeosdevicesCommandResultResult
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMAND_RESULT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMAND_RESULT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IGNORED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IGNORED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DirectoryChromeosdevicesCommandState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SENT_TO_CLIENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SENT_TO_CLIENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACKED_BY_CLIENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACKED_BY_CLIENT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTED_BY_CLIENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTED_BY_CLIENT = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DirectoryChromeosdevicesCommandType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMAND_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMAND_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBOOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REBOOT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAKE_A_SCREENSHOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAKE_A_SCREENSHOT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SET_VOLUME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SET_VOLUME = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIPE_USERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIPE_USERS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOTE_POWERWASH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOTE_POWERWASH = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_START_CRD_SESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_START_CRD_SESSION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAPTURE_LOGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAPTURE_LOGS = 7,
 	}
 	
 	/// <summary>
 	/// A request for issuing a command.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryChromeosdevicesIssueCommandRequest
 	{
 		
@@ -2167,8 +2108,7 @@ namespace MyNS
 	/// <summary>
 	/// A response for issuing a command.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectoryChromeosdevicesIssueCommandResponse
 	{
 		
@@ -2179,8 +2119,7 @@ namespace MyNS
 		public string CommandId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainAlias
 	{
 		
@@ -2222,8 +2161,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Verified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainAliases
 	{
 		
@@ -2247,8 +2185,7 @@ namespace MyNS
 		public string Kind { get; set; } = "admin#directory#domainAliases";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Domains
 	{
 		
@@ -2296,8 +2233,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Verified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Domains2
 	{
 		
@@ -2324,8 +2260,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -2333,8 +2268,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Feature object in Directory API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Feature
 	{
 		
@@ -2361,8 +2295,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a feature instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeatureInstance
 	{
 		
@@ -2373,8 +2306,7 @@ namespace MyNS
 		public Feature Feature { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeatureRename
 	{
 		
@@ -2388,8 +2320,7 @@ namespace MyNS
 	/// <summary>
 	/// Public API: Resources.features
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Features
 	{
 		
@@ -2422,8 +2353,7 @@ namespace MyNS
 	/// <summary>
 	/// Google Groups provide your users the ability to send messages to groups of people using the group's email address. For more information about common tasks, see the [Developer's Guide](https://developers.google.com/admin-sdk/directory/v1/guides/manage-groups). For information about other types of groups, see the [Cloud Identity Groups API documentation](https://cloud.google.com/identity/docs/groups). Note: The user calling the API (or being impersonated by a service account) must have an assigned [role](https://developers.google.com/admin-sdk/directory/v1/guides/manage-roles) that includes Admin API Groups permissions, such as Super Admin or Groups Admin.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group
 	{
 		
@@ -2492,8 +2422,7 @@ namespace MyNS
 	/// <summary>
 	/// The Directory API manages aliases, which are alternative email addresses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupAlias
 	{
 		
@@ -2528,8 +2457,7 @@ namespace MyNS
 		public string PrimaryEmail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Groups
 	{
 		
@@ -2559,8 +2487,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPrintServersResponse
 	{
 		
@@ -2580,8 +2507,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for listing allowed printer models.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPrinterModelsResponse
 	{
 		
@@ -2601,8 +2527,7 @@ namespace MyNS
 	/// <summary>
 	/// Printer manufacturer and model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrinterModel
 	{
 		
@@ -2628,8 +2553,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for listing printers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPrintersResponse
 	{
 		
@@ -2649,8 +2573,7 @@ namespace MyNS
 	/// <summary>
 	/// A Google Groups member can be a user or another group. This member can be inside or outside of your account's domains. For more information about common group member tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-group-members).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Member
 	{
 		
@@ -2704,8 +2627,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Members
 	{
 		
@@ -2738,8 +2660,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Has Member response in Directory API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MembersHasMember
 	{
 		
@@ -2753,8 +2674,7 @@ namespace MyNS
 	/// <summary>
 	/// Google Workspace Mobile Management includes Android, [Google Sync](https://support.google.com/a/answer/135937), and iOS devices. For more information about common group mobile device API tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-mobile-devices.html).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileDevice
 	{
 		
@@ -3034,8 +2954,7 @@ namespace MyNS
 		public string VersionName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileDeviceAction
 	{
 		
@@ -3046,8 +2965,7 @@ namespace MyNS
 		public string Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileDevices
 	{
 		
@@ -3080,8 +2998,7 @@ namespace MyNS
 	/// <summary>
 	/// Managing your account's organizational units allows you to configure your users' access to services and custom settings. For more information about common organizational unit tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-org-units.html). The customer's organizational unit hierarchy is limited to 35 levels of depth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrgUnit
 	{
 		
@@ -3141,8 +3058,7 @@ namespace MyNS
 		public string ParentOrgUnitPath { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrgUnits
 	{
 		
@@ -3166,8 +3082,7 @@ namespace MyNS
 		public OrgUnit[] OrganizationUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Privilege
 	{
 		
@@ -3215,8 +3130,7 @@ namespace MyNS
 		public string ServiceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Privileges
 	{
 		
@@ -3240,8 +3154,7 @@ namespace MyNS
 		public string Kind { get; set; } = "admin#directory#privileges";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Role
 	{
 		
@@ -3314,8 +3227,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines an assignment of a role.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoleAssignment
 	{
 		
@@ -3369,21 +3281,18 @@ namespace MyNS
 		public string ScopeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RoleAssignmentAssigneeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoleAssignments
 	{
 		
@@ -3410,8 +3319,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Roles
 	{
 		
@@ -3441,8 +3349,7 @@ namespace MyNS
 	/// <summary>
 	/// The type of API resource. For Schema resources, this is always `admin#directory#schema`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schema
 	{
 		
@@ -3487,8 +3394,7 @@ namespace MyNS
 	/// <summary>
 	/// You can use schemas to add custom fields to user profiles. You can use these fields to store information such as the projects your users work on, their physical locations, their hire dates, or whatever else fits your business needs. For more information, see [Custom User Fields](/admin-sdk/directory/v1/guides/manage-schemas).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaFieldSpec
 	{
 		
@@ -3574,8 +3480,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON response template for List Schema operation in Directory API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schemas
 	{
 		
@@ -3602,8 +3507,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for token resource in Directory API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Token
 	{
 		
@@ -3660,8 +3564,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON response template for List tokens operation in Directory API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tokens
 	{
 		
@@ -3688,8 +3591,7 @@ namespace MyNS
 	/// <summary>
 	/// The Directory API allows you to create and manage your account's users, user aliases, and user Google profile photos. For more information about common tasks, see the [User Accounts Developer's Guide](/admin-sdk/directory/v1/guides/manage-users.html) and the [User Aliases Developer's Guide](/admin-sdk/directory/v1/guides/manage-user-aliases.html).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -3968,14 +3870,12 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a set of custom properties (i.e. all fields in a particular schema)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserCustomProperties
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserName
 	{
 		
@@ -4007,8 +3907,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for About (notes) of a user in Directory API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserAbout
 	{
 		
@@ -4028,8 +3927,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserAddress
 	{
 		
@@ -4115,8 +4013,7 @@ namespace MyNS
 	/// <summary>
 	/// The Directory API manages aliases, which are alternative email addresses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserAlias
 	{
 		
@@ -4154,8 +4051,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an email.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserEmail
 	{
 		
@@ -4215,8 +4111,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an externalId entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserExternalId
 	{
 		
@@ -4239,8 +4134,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserGender
 	{
 		
@@ -4266,8 +4160,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for instant messenger of an user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserIm
 	{
 		
@@ -4311,8 +4204,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a keyword entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserKeyword
 	{
 		
@@ -4338,8 +4230,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a language entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserLanguage
 	{
 		
@@ -4365,8 +4256,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a location entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserLocation
 	{
 		
@@ -4413,8 +4303,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserMakeAdmin
 	{
 		
@@ -4428,8 +4317,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an organization entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserOrganization
 	{
 		
@@ -4509,8 +4397,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a phone entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserPhone
 	{
 		
@@ -4539,8 +4426,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserPhoto
 	{
 		
@@ -4597,8 +4483,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a POSIX account entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserPosixAccount
 	{
 		
@@ -4666,8 +4551,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a relation entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserRelation
 	{
 		
@@ -4693,8 +4577,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a POSIX account entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserSshPublicKey
 	{
 		
@@ -4717,8 +4600,7 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserUndelete
 	{
 		
@@ -4732,8 +4614,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a website entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserWebsite
 	{
 		
@@ -4762,8 +4643,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Users
 	{
 		
@@ -4802,8 +4682,7 @@ namespace MyNS
 	/// <summary>
 	/// The Directory API allows you to view, generate, and invalidate backup verification codes for a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerificationCode
 	{
 		
@@ -4836,8 +4715,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON response template for list verification codes operation in Directory API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerificationCodes
 	{
 		
@@ -9436,168 +9314,168 @@ namespace MyNS
 	public enum Directory_chromeosdevices_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="annotatedLocation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		annotatedLocation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="annotatedUser")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		annotatedUser = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastSync")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastSync = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notes = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="serialNumber")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		serialNumber = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		status = 5,
 	}
 	
 	public enum Directory_chromeosdevices_listProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 1,
 	}
 	
 	public enum Directory_chromeosdevices_listSortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 1,
 	}
 	
 	public enum Directory_mobiledevices_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deviceId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deviceId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastSync")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastSync = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="model")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		model = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="os")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		os = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		status = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="type")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		type = 7,
 	}
 	
 	public enum Directory_orgunits_listType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="children")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		children = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="allIncludingParent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		allIncludingParent = 2,
 	}
 	
 	public enum Directory_resources_buildings_insertCoordinatesSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_SPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_SPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOLVED_FROM_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOLVED_FROM_ADDRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_UNSPECIFIED = 2,
 	}
 	
 	public enum Directory_groups_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 0,
 	}
 	
 	public enum Directory_users_listEvent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		add = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delete = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="makeAdmin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		makeAdmin = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="undelete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		undelete = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="update")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		update = 4,
 	}
 	
 	public enum Directory_users_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="familyName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		familyName = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="givenName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		givenName = 2,
 	}
 	
 	public enum Directory_users_listProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="basic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		basic = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 2,
 	}
 	
 	public enum Directory_users_listViewType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="admin_view")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		admin_view = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="domain_public")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		domain_public = 1,
 	}
 	
 	public enum Directory_users_aliases_listEvent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		add = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delete = 1,
 	}
 }

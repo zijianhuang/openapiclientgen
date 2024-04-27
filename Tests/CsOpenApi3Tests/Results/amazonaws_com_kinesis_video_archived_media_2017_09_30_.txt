@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetClipOutput
 	{
 		
@@ -26,24 +25,21 @@ namespace MyNS
 		public string Payload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClipFragmentSelectorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCER_TIMESTAMP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_TIMESTAMP = 1,
 	}
 	
 	/// <summary>
 	/// The range of timestamps for which to return fragments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClipTimestampRange
 	{
 		
@@ -62,62 +58,52 @@ namespace MyNS
 		public System.DateTimeOffset EndTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArgumentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotAuthorizedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedStreamMediaTypeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingCodecPrivateDataException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidCodecPrivateDataException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidMediaFrameException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoDataRetentionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDASHStreamingSessionURLOutput
 	{
 		
@@ -125,24 +111,21 @@ namespace MyNS
 		public string DASHStreamingSessionURL { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DASHFragmentSelectorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCER_TIMESTAMP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_TIMESTAMP = 1,
 	}
 	
 	/// <summary>
 	/// <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> <p>The values in <code>DASHimestampRange</code> are inclusive. Fragments that start exactly at or after the start time are included in the session. Fragments that start before the start time and continue past it are not included in the session.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DASHTimestampRange
 	{
 		
@@ -153,8 +136,7 @@ namespace MyNS
 		public System.DateTimeOffset EndTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHLSStreamingSessionURLOutput
 	{
 		
@@ -162,24 +144,21 @@ namespace MyNS
 		public string HLSStreamingSessionURL { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HLSFragmentSelectorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCER_TIMESTAMP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_TIMESTAMP = 1,
 	}
 	
 	/// <summary>
 	/// <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HLSTimestampRange
 	{
 		
@@ -190,8 +169,7 @@ namespace MyNS
 		public System.DateTimeOffset EndTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImagesOutput
 	{
 		
@@ -205,8 +183,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains the <code>Timestamp</code>, <code>Error</code>, and <code>ImageContent</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image
 	{
 		
@@ -220,21 +197,18 @@ namespace MyNS
 		public string ImageContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageError
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_MEDIA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIA_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIA_ERROR = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMediaForFragmentListOutput
 	{
 		
@@ -242,8 +216,7 @@ namespace MyNS
 		public string Payload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFragmentsOutput
 	{
 		
@@ -257,8 +230,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a segment of video or other time-delimited data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fragment
 	{
 		
@@ -278,24 +250,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> FragmentLengthInMilliseconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FragmentSelectorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCER_TIMESTAMP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_TIMESTAMP = 1,
 	}
 	
 	/// <summary>
 	/// The range of timestamps for which to return fragments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimestampRange
 	{
 		
@@ -317,8 +286,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClipFragmentSelector
 	{
 		
@@ -337,50 +305,43 @@ namespace MyNS
 		public ClipTimestampRange TimestampRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContainerFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRAGMENTED_MP4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRAGMENTED_MP4 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MPEG_TS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MPEG_TS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DASHDisplayFragmentNumber
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALWAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALWAYS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DASHDisplayFragmentTimestamp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALWAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALWAYS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER = 1,
 	}
 	
 	/// <summary>
 	/// Contains the range of timestamps for the requested media, and the source of the timestamps. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DASHFragmentSelector
 	{
 		
@@ -391,56 +352,48 @@ namespace MyNS
 		public DASHTimestampRange TimestampRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DASHPlaybackMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIVE_REPLAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIVE_REPLAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON_DEMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON_DEMAND = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Format
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JPEG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JPEG = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PNG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PNG = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormatConfig
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FormatConfigKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JPEGQuality")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JPEGQuality = 0,
 	}
 	
 	/// <summary>
 	/// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FragmentSelector
 	{
 		
@@ -459,8 +412,7 @@ namespace MyNS
 		public TimestampRange TimestampRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetClipInput
 	{
 		
@@ -478,8 +430,7 @@ namespace MyNS
 		public ClipFragmentSelector ClipFragmentSelector { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDASHStreamingSessionURLInput
 	{
 		
@@ -508,27 +459,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxManifestFragmentResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HLSPlaybackMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIVE_REPLAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIVE_REPLAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON_DEMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON_DEMAND = 2,
 	}
 	
 	/// <summary>
 	/// Contains the range of timestamps for the requested media, and the source of the timestamps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HLSFragmentSelector
 	{
 		
@@ -539,37 +487,32 @@ namespace MyNS
 		public HLSTimestampRange TimestampRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HLSDiscontinuityMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALWAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALWAYS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON_DISCONTINUITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON_DISCONTINUITY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HLSDisplayFragmentTimestamp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALWAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALWAYS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHLSStreamingSessionURLInput
 	{
 		
@@ -601,21 +544,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxMediaPlaylistFragmentResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageSelectorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCER_TIMESTAMP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_TIMESTAMP = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImagesInput
 	{
 		
@@ -672,8 +612,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMediaForFragmentListInput
 	{
 		
@@ -691,8 +630,7 @@ namespace MyNS
 		public string[] Fragments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFragmentsInput
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Collection
 	{
 		
@@ -77,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// Rule
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -158,8 +156,7 @@ namespace MyNS
 	/// <summary>
 	/// Collections List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionList
 	{
 		
@@ -183,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// Continent
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Continent
 	{
 		
@@ -208,8 +204,7 @@ namespace MyNS
 	/// <summary>
 	/// Continents List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContinentList
 	{
 		
@@ -233,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// Country
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Country
 	{
 		
@@ -258,8 +252,7 @@ namespace MyNS
 	/// <summary>
 	/// Countries List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CountryList
 	{
 		
@@ -283,8 +276,7 @@ namespace MyNS
 	/// <summary>
 	/// Currency
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Currency
 	{
 		
@@ -348,8 +340,7 @@ namespace MyNS
 	/// <summary>
 	/// Currencies List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CurrencyList
 	{
 		
@@ -373,8 +364,7 @@ namespace MyNS
 	/// <summary>
 	/// Document
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Document
 	{
 		
@@ -406,8 +396,7 @@ namespace MyNS
 	/// <summary>
 	/// Documents List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentList
 	{
 		
@@ -431,8 +420,7 @@ namespace MyNS
 	/// <summary>
 	/// Error
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -464,8 +452,7 @@ namespace MyNS
 	/// <summary>
 	/// Execution
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Execution
 	{
 		
@@ -545,8 +532,7 @@ namespace MyNS
 	/// <summary>
 	/// Executions List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionList
 	{
 		
@@ -570,8 +556,7 @@ namespace MyNS
 	/// <summary>
 	/// File
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File
 	{
 		
@@ -635,8 +620,7 @@ namespace MyNS
 	/// <summary>
 	/// Files List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileList
 	{
 		
@@ -660,8 +644,7 @@ namespace MyNS
 	/// <summary>
 	/// Function
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Function
 	{
 		
@@ -781,8 +764,7 @@ namespace MyNS
 	/// <summary>
 	/// Functions List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FunctionList
 	{
 		
@@ -806,8 +788,7 @@ namespace MyNS
 	/// <summary>
 	/// Language
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Language
 	{
 		
@@ -839,8 +820,7 @@ namespace MyNS
 	/// <summary>
 	/// Languages List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguageList
 	{
 		
@@ -864,8 +844,7 @@ namespace MyNS
 	/// <summary>
 	/// Locale
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Locale
 	{
 		
@@ -929,8 +908,7 @@ namespace MyNS
 	/// <summary>
 	/// Log
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Log
 	{
 		
@@ -1074,8 +1052,7 @@ namespace MyNS
 	/// <summary>
 	/// Logs List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogList
 	{
 		
@@ -1091,8 +1068,7 @@ namespace MyNS
 	/// <summary>
 	/// Membership
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Membership
 	{
 		
@@ -1172,8 +1148,7 @@ namespace MyNS
 	/// <summary>
 	/// Memberships List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MembershipList
 	{
 		
@@ -1197,8 +1172,7 @@ namespace MyNS
 	/// <summary>
 	/// Permissions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Permissions
 	{
 		
@@ -1222,8 +1196,7 @@ namespace MyNS
 	/// <summary>
 	/// Phone
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Phone
 	{
 		
@@ -1255,8 +1228,7 @@ namespace MyNS
 	/// <summary>
 	/// Phones List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhoneList
 	{
 		
@@ -1280,8 +1252,7 @@ namespace MyNS
 	/// <summary>
 	/// Preferences
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Preferences
 	{
 	}
@@ -1289,8 +1260,7 @@ namespace MyNS
 	/// <summary>
 	/// Session
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Session
 	{
 		
@@ -1474,8 +1444,7 @@ namespace MyNS
 	/// <summary>
 	/// Sessions List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SessionList
 	{
 		
@@ -1499,8 +1468,7 @@ namespace MyNS
 	/// <summary>
 	/// Tag
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1548,8 +1516,7 @@ namespace MyNS
 	/// <summary>
 	/// Tags List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagList
 	{
 		
@@ -1573,8 +1540,7 @@ namespace MyNS
 	/// <summary>
 	/// Team
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Team
 	{
 		
@@ -1614,8 +1580,7 @@ namespace MyNS
 	/// <summary>
 	/// Teams List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeamList
 	{
 		
@@ -1639,8 +1604,7 @@ namespace MyNS
 	/// <summary>
 	/// Token
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Token
 	{
 		
@@ -1680,8 +1644,7 @@ namespace MyNS
 	/// <summary>
 	/// User
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -1753,8 +1716,7 @@ namespace MyNS
 	/// <summary>
 	/// Users List
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserList
 	{
 		

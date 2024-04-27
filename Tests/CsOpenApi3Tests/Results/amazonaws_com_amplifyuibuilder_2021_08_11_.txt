@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateComponentResponse
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the configuration settings for a user interface (UI) element for an Amplify app. A component is configured as a primary, stand-alone UI element. Use <code>ComponentChild</code> to configure an instance of a <code>Component</code>. A <code>ComponentChild</code> instance inherits the configuration of the main <code>Component</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Component
 	{
 		
@@ -130,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// A nested UI configuration within a parent <code>Component</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentChild
 	{
 		
@@ -167,8 +164,7 @@ namespace MyNS
 		public string SourceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentEvents
 	{
 	}
@@ -176,8 +172,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the style configuration of a unique variation of a main component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentVariant
 	{
 		
@@ -188,62 +183,52 @@ namespace MyNS
 		public ComponentOverrides Overrides { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentVariantValues
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentOverrides
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentBindingProperties
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentCollectionProperties
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tags
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFormResponse
 	{
 		
@@ -254,8 +239,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the configuration settings for a <code>Form</code> user interface (UI) element for an Amplify app. A form is a component you can add to your project by specifying a data source as the default configuration for the form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Form
 	{
 		
@@ -339,24 +323,21 @@ namespace MyNS
 		public LabelDecorator LabelDecorator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FormActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="create")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		create = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="update")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		update = 1,
 	}
 	
 	/// <summary>
 	/// Describes the configuration for the form's style.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormStyle
 	{
 		
@@ -373,8 +354,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration settings for the form's style properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormStyleConfig
 	{
 		
@@ -388,8 +368,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the data type configuration for the data source associated with a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormDataTypeConfig
 	{
 		
@@ -408,27 +387,23 @@ namespace MyNS
 		public string DataTypeName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FormDataSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DataStore")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DataStore = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Custom = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldsMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SectionalElementMap
 	{
 	}
@@ -436,8 +411,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the call to action button configuration for the form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormCTA
 	{
 		
@@ -454,27 +428,24 @@ namespace MyNS
 		public FormButton Submit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FormButtonsPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="top")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		top = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bottom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bottom = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="top_and_bottom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		top_and_bottom = 2,
 	}
 	
 	/// <summary>
 	/// Describes the configuration for a button UI element that is a part of a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormButton
 	{
 		
@@ -491,8 +462,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the field position.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldPosition
 	{
 		
@@ -506,34 +476,29 @@ namespace MyNS
 		public string Below { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FixedPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="first")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		first = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LabelDecorator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="required")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		required = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="optional")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		optional = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateThemeResponse
 	{
 		
@@ -544,8 +509,7 @@ namespace MyNS
 	/// <summary>
 	/// A theme is a collection of style settings that apply globally to the components associated with an Amplify application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Theme
 	{
 		
@@ -604,8 +568,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair that defines a property of a theme.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThemeValues
 	{
 		
@@ -619,8 +582,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration of a theme's properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThemeValue
 	{
 		
@@ -631,14 +593,12 @@ namespace MyNS
 		public ThemeValues[] Children { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExchangeCodeForTokenResponse
 	{
 		
@@ -664,8 +624,7 @@ namespace MyNS
 		public string RefreshToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportComponentsResponse
 	{
 		
@@ -680,8 +639,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportFormsResponse
 	{
 		
@@ -696,8 +654,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportThemesResponse
 	{
 		
@@ -712,8 +669,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCodegenJobResponse
 	{
 		
@@ -724,8 +680,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration for a code generation job that is associated with an Amplify app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenJob
 	{
 		
@@ -793,8 +748,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration information for rendering the UI component associated with the code generation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenJobRenderConfig
 	{
 		
@@ -805,8 +759,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the code generation job configuration for a React project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReactStartCodegenJobData
 	{
 		
@@ -829,53 +782,46 @@ namespace MyNS
 		public ApiConfiguration ApiConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JSModule
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es2020")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es2020 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="esnext")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		esnext = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JSTarget
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es2015")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es2015 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es2020")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es2020 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JSScript
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jsx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jsx = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tsx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tsx = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="js")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		js = 2,
 	}
 	
 	/// <summary>
 	/// Describes the API configuration for a code generation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiConfiguration
 	{
 		
@@ -892,8 +838,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the GraphQL configuration for an API for a code generation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GraphQLRenderConfig
 	{
 		
@@ -936,8 +881,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the DataStore configuration for an API for a code generation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataStoreRenderConfig
 	{
 	}
@@ -945,8 +889,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration for an application with no API being used.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoApiRenderConfig
 	{
 	}
@@ -954,8 +897,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the data schema for a code generation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenJobGenericDataSchema
 	{
 		
@@ -988,30 +930,25 @@ namespace MyNS
 		public CodegenGenericDataNonModels NonModels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CodegenJobGenericDataSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DataStore")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DataStore = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataModels
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataEnums
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataNonModels
 	{
 	}
@@ -1019,8 +956,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the feature flags that you can specify for a code generation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenFeatureFlags
 	{
 		
@@ -1031,27 +967,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsNonModelSupported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CodegenJobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="in_progress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		in_progress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		succeeded = 2,
 	}
 	
 	/// <summary>
 	/// Describes an asset for a code generation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenJobAsset
 	{
 		
@@ -1059,14 +992,12 @@ namespace MyNS
 		public string DownloadUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComponentResponse
 	{
 		
@@ -1074,8 +1005,7 @@ namespace MyNS
 		public Component Component { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFormResponse
 	{
 		
@@ -1083,8 +1013,7 @@ namespace MyNS
 		public Form Form { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetadataResponse
 	{
 		
@@ -1096,20 +1025,17 @@ namespace MyNS
 		public FeaturesMap Features { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeaturesMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnauthorizedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetThemeResponse
 	{
 		
@@ -1117,8 +1043,7 @@ namespace MyNS
 		public Theme Theme { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCodegenJobsResponse
 	{
 		
@@ -1136,8 +1061,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of the basic information about the code generation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenJobSummary
 	{
 		
@@ -1169,8 +1093,7 @@ namespace MyNS
 		public System.DateTimeOffset ModifiedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListComponentsResponse
 	{
 		
@@ -1188,8 +1111,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a summary of a component. This is a read-only data type that is returned by <code>ListComponents</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentSummary
 	{
 		
@@ -1229,8 +1151,7 @@ namespace MyNS
 		public string ComponentType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFormsResponse
 	{
 		
@@ -1248,8 +1169,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the basic information about a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormSummary
 	{
 		
@@ -1296,8 +1216,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListThemesResponse
 	{
 		
@@ -1315,8 +1234,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the basic information about a theme.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThemeSummary
 	{
 		
@@ -1349,8 +1267,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefreshTokenResponse
 	{
 		
@@ -1369,8 +1286,7 @@ namespace MyNS
 		public int ExpiresIn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartCodegenJobResponse
 	{
 		
@@ -1378,8 +1294,7 @@ namespace MyNS
 		public CodegenJob Entity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateComponentResponse
 	{
 		
@@ -1387,8 +1302,7 @@ namespace MyNS
 		public Component Entity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFormResponse
 	{
 		
@@ -1396,8 +1310,7 @@ namespace MyNS
 		public Form Entity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateThemeResponse
 	{
 		
@@ -1408,8 +1321,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration for all of a component's properties. Use <code>ComponentProperty</code> to specify the values to render or bind by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentProperty
 	{
 		
@@ -1462,8 +1374,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates a component property to a binding property. This enables exposed properties on the top level component to propagate data to the component's property values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentPropertyBindingProperties
 	{
 		
@@ -1478,8 +1389,7 @@ namespace MyNS
 		public string Field { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormBindings
 	{
 	}
@@ -1487,8 +1397,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a conditional expression to set a component property. Use <code>ComponentConditionProperty</code> to set a property to different values conditionally, based on the value of another property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentConditionProperty
 	{
 		
@@ -1514,8 +1423,7 @@ namespace MyNS
 		public string OperandType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentProperties
 	{
 	}
@@ -1523,8 +1431,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the state configuration when an action modifies a property of another element within the same component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MutationActionSetStateParameter
 	{
 		
@@ -1553,8 +1460,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the event action configuration for an element of a <code>Component</code> or <code>ComponentChild</code>. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components. <code>ActionParameters</code> defines the action that is performed when an event occurs on the component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionParameters
 	{
 		
@@ -1589,8 +1495,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the enums in a generic data schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataEnum
 	{
 		
@@ -1602,69 +1507,66 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CodegenGenericDataFieldDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ID = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="String")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		String = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Int")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Int = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Float")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Float = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSDate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSDate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSTime = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSDateTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSDateTime = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSTimestamp = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSEmail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSEmail = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSURL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSURL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSIPAddress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSIPAddress = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Boolean")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Boolean = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSJSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSJSON = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSPhone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSPhone = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enum = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Model")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Model = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NonModel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NonModel = 16,
 	}
 	
 	/// <summary>
 	/// Describes the relationship between generic data models.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataRelationshipType
 	{
 		
@@ -1704,27 +1606,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsHasManyIndex { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GenericDataRelationshipType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HAS_MANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HAS_MANY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HAS_ONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HAS_ONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BELONGS_TO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BELONGS_TO = 2,
 	}
 	
 	/// <summary>
 	/// Describes a field in a generic data schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataField
 	{
 		
@@ -1767,8 +1666,7 @@ namespace MyNS
 		public CodegenGenericDataRelationshipType Relationship { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataFields
 	{
 	}
@@ -1776,8 +1674,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a model in a generic data schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataModel
 	{
 		
@@ -1799,8 +1696,7 @@ namespace MyNS
 		public string[] PrimaryKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataNonModelFields
 	{
 	}
@@ -1808,8 +1704,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a non-model in a generic data schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodegenGenericDataNonModel
 	{
 		
@@ -1824,8 +1719,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the data binding configuration for a component at runtime. You can use <code>ComponentBindingPropertiesValue</code> to add exposed properties to a component to allow different values to be entered when a component is reused in different places in an app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentBindingPropertiesValue
 	{
 		
@@ -1842,8 +1736,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the data binding configuration for a specific property using data stored in Amazon Web Services. For Amazon Web Services connected properties, you can bind a property to data stored in an Amazon S3 bucket, an Amplify DataStore model or an authenticated user attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentBindingPropertiesValueProperties
 	{
 		
@@ -1875,8 +1768,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores information for generating Amplify DataStore queries. Use a <code>Predicate</code> to retrieve a subset of the data in a collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Predicate
 	{
 		
@@ -1902,8 +1794,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration for binding a component's properties to data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentDataConfiguration
 	{
 		
@@ -1927,8 +1818,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes how to sort the data that you bind to a component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SortProperty
 	{
 		
@@ -1947,24 +1837,21 @@ namespace MyNS
 		public SortDirection Direction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESC = 1,
 	}
 	
 	/// <summary>
 	/// Describes the configuration of an event. You can bind an event and a corresponding action to a <code>Component</code> or a <code>ComponentChild</code>. A button click is an example of an event. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentEvent
 	{
 		
@@ -1978,8 +1865,7 @@ namespace MyNS
 		public string BindingEvent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComponentOverridesValue
 	{
 	}
@@ -1987,8 +1873,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents all of the information that is required to create a component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateComponentData
 	{
 		
@@ -2054,8 +1939,7 @@ namespace MyNS
 		public string SchemaVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateComponentRequest
 	{
 		
@@ -2070,8 +1954,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents all of the information that is required to create a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFormData
 	{
 		
@@ -2134,8 +2017,7 @@ namespace MyNS
 		public LabelDecorator LabelDecorator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFormRequest
 	{
 		
@@ -2150,8 +2032,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents all of the information that is required to create a theme.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateThemeData
 	{
 		
@@ -2176,8 +2057,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateThemeRequest
 	{
 		
@@ -2189,39 +2069,33 @@ namespace MyNS
 		public CreateThemeData ThemeToCreate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteComponentRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFormRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteThemeRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TokenProviders
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="figma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		figma = 0,
 	}
 	
 	/// <summary>
 	/// Describes the configuration of a request to exchange an access code for a token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExchangeCodeForTokenRequestBody
 	{
 		
@@ -2243,8 +2117,7 @@ namespace MyNS
 		public string ClientId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExchangeCodeForTokenRequest
 	{
 		
@@ -2256,20 +2129,17 @@ namespace MyNS
 		public ExchangeCodeForTokenRequestBody Request { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportComponentsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportFormsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportThemesRequest
 	{
 	}
@@ -2277,8 +2147,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration for the default input values to display for a field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldInputConfig
 	{
 		
@@ -2338,8 +2207,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the data binding configuration for a value map.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValueMappings
 	{
 		
@@ -2357,8 +2225,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates a complex object with a display value. Use <code>ValueMapping</code> to store how to represent complex objects when they are displayed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValueMapping
 	{
 		
@@ -2376,8 +2243,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration for an input field on a form. Use <code>FormInputValueProperty</code> to specify the values to render or bind by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormInputValueProperty
 	{
 		
@@ -2394,8 +2260,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates a form property to a binding property. This enables exposed properties on the top level form to propagate data to the form's property values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormInputValuePropertyBindingProperties
 	{
 		
@@ -2410,8 +2275,7 @@ namespace MyNS
 		public string Field { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormInputBindingProperties
 	{
 	}
@@ -2419,8 +2283,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration for the file uploader field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileUploaderFieldConfig
 	{
 		
@@ -2451,9 +2314,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxSize { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StorageAccessLevel
 	{
 		
@@ -2470,8 +2331,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the validation configuration for a field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldValidationConfiguration
 	{
 		
@@ -2495,8 +2355,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration information for a field in a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldConfig
 	{
 		
@@ -2519,8 +2378,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes how to bind a component property to form data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormBindingElement
 	{
 		
@@ -2542,8 +2400,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the data binding configuration for a form's input fields at runtime.You can use <code>FormInputBindingPropertiesValue</code> to add exposed properties to a form to allow different values to be entered when a form is reused in different places in an app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormInputBindingPropertiesValue
 	{
 		
@@ -2557,8 +2414,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the data binding configuration for a specific property using data stored in Amazon Web Services. For Amazon Web Services connected properties, you can bind a property to data stored in an Amplify DataStore model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormInputBindingPropertiesValueProperties
 	{
 		
@@ -2566,56 +2422,47 @@ namespace MyNS
 		public string Model { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCodegenJobRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComponentRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFormRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetadataRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetThemeRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCodegenJobsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListComponentsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFormsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListThemesRequest
 	{
 	}
@@ -2623,8 +2470,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores the metadata information about a feature on a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutMetadataFlagBody
 	{
 		
@@ -2636,8 +2482,7 @@ namespace MyNS
 		public string NewValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutMetadataFlagRequest
 	{
 		
@@ -2652,8 +2497,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a refresh token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefreshTokenRequestBody
 	{
 		
@@ -2668,8 +2512,7 @@ namespace MyNS
 		public string ClientId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefreshTokenRequest
 	{
 		
@@ -2684,8 +2527,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores the configuration information for a visual helper element for a form. A sectional element can be a header, a text block, or a divider. These elements are static and not associated with any data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SectionalElement
 	{
 		
@@ -2715,8 +2557,7 @@ namespace MyNS
 	/// <summary>
 	/// The code generation job resource configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartCodegenJobData
 	{
 		
@@ -2740,8 +2581,7 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartCodegenJobRequest
 	{
 		
@@ -2756,8 +2596,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates and saves all of the information about a component, based on component ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateComponentData
 	{
 		
@@ -2801,8 +2640,7 @@ namespace MyNS
 		public string SchemaVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateComponentRequest
 	{
 		
@@ -2817,8 +2655,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates and saves all of the information about a form, based on form ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFormData
 	{
 		
@@ -2850,8 +2687,7 @@ namespace MyNS
 		public LabelDecorator LabelDecorator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFormRequest
 	{
 		
@@ -2866,8 +2702,7 @@ namespace MyNS
 	/// <summary>
 	/// Saves the data binding information for a theme.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateThemeData
 	{
 		
@@ -2888,8 +2723,7 @@ namespace MyNS
 		public ThemeValues[] Overrides { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateThemeRequest
 	{
 		

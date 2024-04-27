@@ -681,25 +681,23 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturnRequested_resourceRequestRequest_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOKING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOKING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIGITIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIGITIZATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOLD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_ORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_ORDER = 4,
 	}
 	

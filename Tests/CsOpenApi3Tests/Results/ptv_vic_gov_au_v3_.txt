@@ -17,20 +17,17 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V2Object
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V2Void
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3BulkDeparturesRequest
 	{
 		
@@ -73,8 +70,7 @@ namespace MyNS
 		public V3StopDepartureRequest[] Requests { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopDepartureRequest
 	{
 		
@@ -117,8 +113,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Stop_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopDepartureRequestRouteDirection
 	{
 		
@@ -146,9 +141,7 @@ namespace MyNS
 		public string Route_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3StopDepartureRequestRoute_type
 	{
 		
@@ -168,8 +161,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3BulkDeparturesResponse
 	{
 		
@@ -213,8 +205,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, V3BulkDeparturesStopResponse> Stops { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3Direction
 	{
 		
@@ -243,8 +234,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Route_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3Disruption
 	{
 		
@@ -330,8 +320,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DisruptionRoute
 	{
 		
@@ -369,8 +358,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Route_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DisruptionDirection
 	{
 		
@@ -399,8 +387,7 @@ namespace MyNS
 		public string Service_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DisruptionStop
 	{
 		
@@ -411,8 +398,7 @@ namespace MyNS
 		public string Stop_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3BulkDeparturesUpdateResponse
 	{
 		
@@ -448,8 +434,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Stop_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3Departure
 	{
 		
@@ -526,8 +511,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Stop_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3BulkDeparturesRouteDirectionResponse
 	{
 		
@@ -550,9 +534,7 @@ namespace MyNS
 		public string Route_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3BulkDeparturesUpdateResponseRoute_direction_status
 	{
 		
@@ -563,8 +545,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3Run
 	{
 		
@@ -641,8 +622,7 @@ namespace MyNS
 		public V3VehiclePosition Vehicle_position { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3VehicleDescriptor
 	{
 		
@@ -691,8 +671,7 @@ namespace MyNS
 		public string Supplier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3VehiclePosition
 	{
 		
@@ -754,8 +733,7 @@ namespace MyNS
 		public string Supplier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3Status
 	{
 		
@@ -772,9 +750,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3StatusHealth
 	{
 		
@@ -785,8 +761,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3BulkDeparturesStopResponse
 	{
 		
@@ -827,8 +802,7 @@ namespace MyNS
 		public string Stop_suburb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DeparturesBroadParameters
 	{
 		
@@ -888,8 +862,7 @@ namespace MyNS
 		public int[] Platform_numbers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DeparturesResponse
 	{
 		
@@ -933,8 +906,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, V3StopModel> Stops { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopModel
 	{
 		
@@ -993,8 +965,7 @@ namespace MyNS
 		public string Stop_suburb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DeparturesSpecificParameters
 	{
 		
@@ -1048,8 +1019,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Max_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DirectionWithDescription
 	{
 		
@@ -1081,8 +1051,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Route_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DirectionsResponse
 	{
 		
@@ -1096,8 +1065,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DisruptionMode
 	{
 		
@@ -1114,8 +1082,7 @@ namespace MyNS
 		public string Disruption_mode_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DisruptionModesResponse
 	{
 		
@@ -1129,8 +1096,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DisruptionResponse
 	{
 		
@@ -1141,8 +1107,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3Disruptions
 	{
 		
@@ -1231,8 +1196,7 @@ namespace MyNS
 		public V3Disruption[] Telebus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DisruptionsResponse
 	{
 		
@@ -1243,8 +1207,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DynamoDbTimetable
 	{
 		
@@ -1298,9 +1261,7 @@ namespace MyNS
 		public System.Nullable<V3DynamoDbTimetableTransport_type> Transport_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3DynamoDbTimetableTransport_type
 	{
 		
@@ -1320,8 +1281,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3DynamoDbTimetablesReponse
 	{
 		
@@ -1335,8 +1295,7 @@ namespace MyNS
 	/// <summary>
 	/// An error response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3ErrorResponse
 	{
 		
@@ -1350,14 +1309,12 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3FareEstimateResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3GenerateDivaMappingResponse
 	{
 		
@@ -1368,8 +1325,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3Outlet
 	{
 		
@@ -1464,8 +1420,7 @@ namespace MyNS
 		public string Outlet_suburb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3OutletGeolocation
 	{
 		
@@ -1566,8 +1521,7 @@ namespace MyNS
 		public string Outlet_suburb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3OutletGeolocationParameters
 	{
 		
@@ -1584,8 +1538,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Max_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3OutletGeolocationResponse
 	{
 		
@@ -1599,8 +1552,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3OutletParameters
 	{
 		
@@ -1611,8 +1563,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Max_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3OutletResponse
 	{
 		
@@ -1626,8 +1577,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3PatternDeparture
 	{
 		
@@ -1710,8 +1660,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Stop_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3ResultOutlet
 	{
 		
@@ -1812,8 +1761,7 @@ namespace MyNS
 		public string Outlet_suburb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3ResultRoute
 	{
 		
@@ -1851,8 +1799,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Route_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3RouteServiceStatus
 	{
 		
@@ -1863,8 +1810,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3ResultStop
 	{
 		
@@ -1929,8 +1875,7 @@ namespace MyNS
 		public string Stop_suburb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3RouteDeparturesSpecificParameters
 	{
 		
@@ -1985,8 +1930,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Train_scheduled_timetables { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3RouteResponse
 	{
 		
@@ -1997,8 +1941,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3RouteType
 	{
 		
@@ -2015,8 +1958,7 @@ namespace MyNS
 		public string Route_type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3RouteTypesResponse
 	{
 		
@@ -2030,8 +1972,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3RunResponse
 	{
 		
@@ -2042,8 +1983,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3RunsResponse
 	{
 		
@@ -2057,8 +1997,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SearchParameters
 	{
 		
@@ -2117,8 +2056,7 @@ namespace MyNS
 		public V3StopDepartureRequestRoute_type[] Route_types { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SearchResult
 	{
 		
@@ -2144,8 +2082,7 @@ namespace MyNS
 		public V3ResultStop[] Stops { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriDirectionRefsDictionary
 	{
 		
@@ -2153,8 +2090,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, V3SiriStopsRefsDictionary> Direction_refs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriStopsRefsDictionary
 	{
 		
@@ -2165,8 +2101,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> Unmatched_stop_point_refs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriReferenceDataDetail
 	{
 		
@@ -2192,8 +2127,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Tracking_supplier_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriDownstreamSubscription
 	{
 		
@@ -2235,9 +2169,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Validity_period_start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriDownstreamSubscriptionMessage_type
 	{
 		
@@ -2248,9 +2180,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriDownstreamSubscriptionSiri_format
 	{
 		
@@ -2261,8 +2191,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriDownstreamSubscriptionTopic
 	{
 		
@@ -2276,9 +2205,7 @@ namespace MyNS
 		public System.Nullable<V3SiriDownstreamSubscriptionTopicRoute_type> Route_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriDownstreamSubscriptionTopicDirection_ref
 	{
 		
@@ -2307,9 +2234,7 @@ namespace MyNS
 		_130 = 130,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriDownstreamSubscriptionTopicRoute_type
 	{
 		
@@ -2329,8 +2254,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriDownstreamSubscriptionDeleteRequest
 	{
 		
@@ -2350,8 +2274,7 @@ namespace MyNS
 		public string[] Subscription_ref { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriDownstreamSubscriptionResponse
 	{
 		
@@ -2362,8 +2285,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Valid_until { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriEstimatedTimetableSubscriptionRequest
 	{
 		
@@ -2433,9 +2355,7 @@ namespace MyNS
 		public V3SiriSubscriptionTopic[] Topics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriEstimatedTimetableSubscriptionRequestSiri_format
 	{
 		
@@ -2446,8 +2366,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriSubscriptionTopic
 	{
 		
@@ -2474,9 +2393,7 @@ namespace MyNS
 		public V3SiriSubscriptionTopicRoute_type Route_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriSubscriptionTopicDirection_ref
 	{
 		
@@ -2505,9 +2422,7 @@ namespace MyNS
 		_130 = 130,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriSubscriptionTopicRoute_type
 	{
 		
@@ -2527,8 +2442,7 @@ namespace MyNS
 		_4 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriLineRef
 	{
 		
@@ -2547,9 +2461,7 @@ namespace MyNS
 		public string Line_ref { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriLineRefDirection_ref
 	{
 		
@@ -2578,8 +2490,7 @@ namespace MyNS
 		_130 = 130,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriLineRefDirectionRefStopPointRef
 	{
 		
@@ -2608,9 +2519,7 @@ namespace MyNS
 		public int Stop_point_ref { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriLineRefDirectionRefStopPointRefDirection_ref
 	{
 		
@@ -2639,8 +2548,7 @@ namespace MyNS
 		_130 = 130,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriLineRefDirectionRefsDictionary
 	{
 		
@@ -2651,8 +2559,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> Unmatched_direction_refs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriLineRefMappingsResponse
 	{
 		
@@ -2666,8 +2573,7 @@ namespace MyNS
 		public V3Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriLineRefsRequest
 	{
 		
@@ -2683,8 +2589,7 @@ namespace MyNS
 		public string Mapping_version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriProductionTimetableSubscriptionRequest
 	{
 		
@@ -2762,9 +2667,7 @@ namespace MyNS
 		public V3SiriSubscriptionTopic[] Topics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V3SiriProductionTimetableSubscriptionRequestSiri_format
 	{
 		
@@ -2775,8 +2678,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriReferenceDataMappingsResponse
 	{
 		
@@ -2796,8 +2698,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, V3StopPoint> Stop_point_refs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopPoint
 	{
 		
@@ -2805,8 +2706,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Stop_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3SiriReferenceDataRequest
 	{
 		
@@ -2838,8 +2738,7 @@ namespace MyNS
 		public int[] Stop_point_refs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopAccessibility
 	{
 		
@@ -2907,8 +2806,7 @@ namespace MyNS
 		public V3StopAccessibilityWheelchair Wheelchair { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopAccessibilityWheelchair
 	{
 		
@@ -2976,8 +2874,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Toilet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopAmenityDetails
 	{
 		
@@ -3006,8 +2903,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Toilet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopBasic
 	{
 		
@@ -3018,8 +2914,7 @@ namespace MyNS
 		public string Stop_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopDetails
 	{
 		
@@ -3084,8 +2979,7 @@ namespace MyNS
 		public V3StopStaffing Stop_staffing { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopLocation
 	{
 		
@@ -3093,8 +2987,7 @@ namespace MyNS
 		public V3StopGps Gps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopGps
 	{
 		
@@ -3111,8 +3004,7 @@ namespace MyNS
 		public System.Nullable<System.Single> Longitude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopStaffing
 	{
 		
@@ -3303,8 +3195,7 @@ namespace MyNS
 		public string Wed_pm_from { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopGeosearch
 	{
 		
@@ -3375,8 +3266,7 @@ namespace MyNS
 		public string Stop_suburb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopOnRoute
 	{
 		
@@ -3438,8 +3328,7 @@ namespace MyNS
 		public V3StopTicket Stop_ticket { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopTicket
 	{
 		
@@ -3474,8 +3363,7 @@ namespace MyNS
 		public string Zone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopResponse
 	{
 		
@@ -3492,8 +3380,7 @@ namespace MyNS
 		public V3StopDetails Stop { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StoppingPattern
 	{
 		
@@ -3537,8 +3424,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, V3StoppingPatternStop> Stops { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StoppingPatternStop
 	{
 		
@@ -3600,8 +3486,7 @@ namespace MyNS
 		public V3StopTicket Stop_ticket { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopsByDistanceResponse
 	{
 		
@@ -3621,8 +3506,7 @@ namespace MyNS
 		public V3StopGeosearch[] Stops { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V3StopsOnRouteResponse
 	{
 		
@@ -4772,10 +4656,10 @@ namespace MyNS
 	public enum Disruptions_GetAllDisruptionsDisruption_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="current")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		current = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="planned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		planned = 1,
 	}
 	

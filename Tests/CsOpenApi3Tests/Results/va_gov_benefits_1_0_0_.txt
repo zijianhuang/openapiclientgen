@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentUploadAttributes
 	{
 		
@@ -82,39 +81,36 @@ namespace MyNS
 		public object Uploaded_pdf { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentUploadAttributesStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uploaded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uploaded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="received")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		received = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		processing = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vbms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vbms = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 6,
 	}
 	
 	/// <summary>
 	/// Document upload failed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentUploadFailure
 	{
 		
@@ -134,8 +130,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifying properties about the document payload being submitted
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentUploadMetadata
 	{
 		
@@ -208,45 +203,42 @@ namespace MyNS
 		public string ZipCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocumentUploadMetadataBusinessLine
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CMP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PMC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PMC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDU = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VRE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BVA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BVA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FID = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NCA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NCA = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTH = 8,
 	}
 	
 	/// <summary>
 	/// Status record for a previously initiated document submission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentUploadPath
 	{
 		
@@ -277,8 +269,7 @@ namespace MyNS
 	/// <summary>
 	/// Status record for a previously initiated document submission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentUploadStatus
 	{
 		
@@ -306,8 +297,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentUploadStatusAttributes
 	{
 		
@@ -368,8 +358,7 @@ namespace MyNS
 		public PdfUploadAttributes Uploaded_pdf { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentUploadStatusGuidList
 	{
 		
@@ -389,8 +378,7 @@ namespace MyNS
 	/// <summary>
 	/// Record of requested document submission. Includes the location to which the document payload is to be uploaded
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentUploadSubmission
 	{
 		
@@ -425,8 +413,7 @@ namespace MyNS
 	/// <summary>
 	/// Error returned from the document validation endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentValidationErrorModel
 	{
 		
@@ -467,8 +454,7 @@ namespace MyNS
 	/// <summary>
 	/// Errors with some details for the given request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorModel
 	{
 		
@@ -489,8 +475,7 @@ namespace MyNS
 		public int Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PdfDimensionAttributes
 	{
 		
@@ -519,8 +504,7 @@ namespace MyNS
 		public int Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PdfUploadAttributes
 	{
 		

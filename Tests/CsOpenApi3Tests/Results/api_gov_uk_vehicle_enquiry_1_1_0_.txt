@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Error Response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorResponse
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 		public Errors[] Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Errors
 	{
 		
@@ -58,8 +56,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Vehicle
 	{
 		
@@ -192,9 +189,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YearOfManufacture { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VehicleMotStatus
 	{
 		
@@ -207,31 +202,28 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Not valid")]
 		Not_valid = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Valid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Valid = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VehicleTaxStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Not Taxed for on Road Use")]
 		Not_Taxed_for_on_Road_Use = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SORN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Taxed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Taxed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Untaxed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Untaxed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VehicleRequest
 	{
 		

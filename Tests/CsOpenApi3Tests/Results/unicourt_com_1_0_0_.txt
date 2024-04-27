@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessTokenIdListResponse
 	{
 		
@@ -48,8 +47,7 @@ namespace MyNS
 		public string Object { get; set; } = "AccessTokenIdListResponse";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessTokenIdResponse
 	{
 		
@@ -103,8 +101,7 @@ namespace MyNS
 		public string TokenId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessTokenRequest
 	{
 		
@@ -133,8 +130,7 @@ namespace MyNS
 		public string ClientSecret { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessTokenResponse
 	{
 		
@@ -188,8 +184,7 @@ namespace MyNS
 		public string TokenType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdditionalLevels
 	{
 		
@@ -253,8 +248,7 @@ namespace MyNS
 	/// <summary>
 	/// Address object Data Schema
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address
 	{
 		
@@ -447,8 +441,7 @@ namespace MyNS
 		public string Zip4 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AreaOfLaw
 	{
 		
@@ -521,8 +514,7 @@ namespace MyNS
 		public string Object { get; set; } = "AreaOfLaw";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AreaOfLawResponse
 	{
 		
@@ -608,8 +600,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedNormAttorney
 	{
 		
@@ -712,8 +703,7 @@ namespace MyNS
 		public BarRecordPreview[] StateBarDataArray { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseTimeline
 	{
 		
@@ -748,8 +738,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseTimeline";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BarRecordPreview
 	{
 		
@@ -791,8 +780,7 @@ namespace MyNS
 		public string StateCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedNormAttorneyResponse
 	{
 		
@@ -843,8 +831,7 @@ namespace MyNS
 	/// <summary>
 	/// Associated Judge
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedNormJudge
 	{
 		
@@ -949,8 +936,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedNormJudgeResponse
 	{
 		
@@ -998,8 +984,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedNormLawFirm
 	{
 		
@@ -1075,8 +1060,7 @@ namespace MyNS
 		public SOSDataPreview[] SosDataArray { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SOSDataPreview
 	{
 		
@@ -1109,8 +1093,7 @@ namespace MyNS
 		public string StateCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedNormLawFirmResponse
 	{
 		
@@ -1158,8 +1141,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedNormParty
 	{
 		
@@ -1235,8 +1217,7 @@ namespace MyNS
 		public SOSDataPreview[] SosDataArray { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedNormPartyResponse
 	{
 		
@@ -1284,8 +1265,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatedSoSPerson
 	{
 		
@@ -1329,8 +1309,7 @@ namespace MyNS
 	/// <summary>
 	/// Contact object data schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contact
 	{
 		
@@ -1374,8 +1353,7 @@ namespace MyNS
 	/// <summary>
 	/// Email object data schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Email
 	{
 		
@@ -1443,8 +1421,7 @@ namespace MyNS
 	/// <summary>
 	/// Phone object data schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Phone
 	{
 		
@@ -1521,38 +1498,34 @@ namespace MyNS
 		public PhonePhoneType PhoneType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PhonePhoneType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAX = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssociatedSoSPersonEntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Partner")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Partner = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Agent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Agent = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CEO = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Partner/General Member")]
@@ -1562,8 +1535,7 @@ namespace MyNS
 		Partner_GeneralMember = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attorney
 	{
 		
@@ -1770,8 +1742,7 @@ namespace MyNS
 	/// <summary>
 	/// Name of the attorney's law firm as provided by Court. This can be null as some Courts do not provide this as a separate field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttorneyLawFirm
 	{
 		
@@ -1845,8 +1816,7 @@ namespace MyNS
 		public string Object { get; set; } = "AttorneyLawFirm";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttorneyType
 	{
 		
@@ -1897,8 +1867,7 @@ namespace MyNS
 		public string Object { get; set; } = "AttorneyType";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartyAttorneyAssociations
 	{
 		
@@ -1959,8 +1928,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartyAttorneyAssociation
 	{
 		
@@ -2022,8 +1990,7 @@ namespace MyNS
 		public string PartyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PossibleNormAttorney
 	{
 		
@@ -2200,24 +2167,21 @@ namespace MyNS
 		public PossibleNormAttorneyScoreConstituentsAddress Phone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PossibleNormAttorneyScoreConstituentsAddress
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Matched")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Matched = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mismatched")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mismatched = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Not_Provided_By_Data_Source")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Not_Provided_By_Data_Source = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PossibleNormLawFirm
 	{
 		
@@ -2412,21 +2376,18 @@ namespace MyNS
 		public System.Nullable<PossibleNormLawFirmSourceDetailsSource> Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PossibleNormLawFirmSourceDetailsSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Case_Attorney_Linked_In_Other_Cases")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Case_Attorney_Linked_In_Other_Cases = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Case_Attorney_Field_Contains_Law_Firm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Case_Attorney_Field_Contains_Law_Firm = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttorneyAnalyticsAPI
 	{
 		
@@ -2505,8 +2466,7 @@ namespace MyNS
 		public string Object { get; set; } = "AttorneyAnalyticsAPI";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttorneyRepresentationType
 	{
 		
@@ -2557,8 +2517,7 @@ namespace MyNS
 		public string Object { get; set; } = "AttorneyRepresentationType";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttorneyRepresentationTypeResponse
 	{
 		
@@ -2644,8 +2603,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttorneyTypeResponse
 	{
 		
@@ -2731,8 +2689,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attorneys
 	{
 		
@@ -2796,8 +2753,7 @@ namespace MyNS
 	/// <summary>
 	/// This contains the Attorney details that is obtained from the State Bar where the attorney is registered.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BarRecord
 	{
 		
@@ -2910,8 +2866,7 @@ namespace MyNS
 		public BarRecordStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BarSourceData
 	{
 		
@@ -4353,27 +4308,24 @@ namespace MyNS
 		public string Reference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BarRecordStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Not Classified")]
 		Not_Classified = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BillingCycleUsageResponse
 	{
 		
@@ -4547,8 +4499,7 @@ namespace MyNS
 		public System.DateTimeOffset StartDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BillingCyclesResponse
 	{
 		
@@ -4578,8 +4529,7 @@ namespace MyNS
 		public string Object { get; set; } = "BillingCyclesResponse";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallbackListResponse
 	{
 		
@@ -4655,8 +4605,7 @@ namespace MyNS
 		public string Link { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Case
 	{
 		
@@ -4943,8 +4892,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseDocuments
 	{
 		
@@ -5005,8 +4953,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseDocument
 	{
 		
@@ -5190,30 +5137,27 @@ namespace MyNS
 		public System.Nullable<CaseDocumentSourceDataStatus> SourceDataStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseDocumentEstimatedOrderDuration
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="estimateUnavailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		estimateUnavailable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="withinMinutes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		withinMinutes = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="withinHours")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		withinHours = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="withinDays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		withinDays = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="withinWeeks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		withinWeeks = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PreviewDocument
 	{
 		
@@ -5261,19 +5205,17 @@ namespace MyNS
 		public string Object { get; set; } = "PreviewDocument";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseDocumentSourceDataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LONGER_AVAILABLE_IN_COURT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LONGER_AVAILABLE_IN_COURT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_DEPRECATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_DEPRECATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEALED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEALED = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -5283,8 +5225,7 @@ namespace MyNS
 	/// <summary>
 	/// Count of each entitiy of a case is mentioned here so that you can calculate the number of requests needs to be done to obtain each entity results completely.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseStats
 	{
 		
@@ -5382,8 +5323,7 @@ namespace MyNS
 		public int RelatedCaseCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseStatus
 	{
 		
@@ -5463,8 +5403,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseStatus";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseType
 	{
 		
@@ -5603,8 +5542,7 @@ namespace MyNS
 		public string SaliCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCauseOfAction
 	{
 		
@@ -5636,8 +5574,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseCauseOfAction";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CauseOfAction
 	{
 		
@@ -5710,8 +5647,7 @@ namespace MyNS
 		public string Object { get; set; } = "CauseOfAction";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CauseOfActionAdditionalData
 	{
 		
@@ -5773,8 +5709,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCharge
 	{
 		
@@ -5820,8 +5755,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseCharge";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Charge
 	{
 		
@@ -5894,8 +5828,7 @@ namespace MyNS
 		public string Object { get; set; } = "Charge";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChargeAdditionalData
 	{
 		
@@ -5957,8 +5890,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChargeDegree
 	{
 		
@@ -6009,8 +5941,7 @@ namespace MyNS
 		public string Object { get; set; } = "ChargeDegree";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChargeSeverity
 	{
 		
@@ -6061,8 +5992,7 @@ namespace MyNS
 		public string Object { get; set; } = "ChargeSeverity";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Court
 	{
 		
@@ -6241,8 +6171,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtLocation
 	{
 		
@@ -6360,8 +6289,7 @@ namespace MyNS
 		public string StreetAddress2 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocketEntries
 	{
 		
@@ -6422,8 +6350,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocketEntry
 	{
 		
@@ -6538,82 +6465,77 @@ namespace MyNS
 		public SourceStructuredData TextStructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocketEntryBoundary
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="first")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		first = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="single_docket_entry")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		single_docket_entry = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_null = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DocketEntryDocketBadge
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHARGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEARING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEARING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JUDGEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JUDGEMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINANCIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINANCIAL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISPOSITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISPOSITION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SENTENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SENTENCE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOND = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAIL = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAUSE_OF_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAUSE_OF_ACTION = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARREST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARREST = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARRANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARRANT = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUMMON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUMMON = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TICKLER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TICKLER = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPINION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPINION = 14,
 	}
 	
 	/// <summary>
 	/// Primary Documents refers to documents that are directly related to a docket entry. Primary Documents could be specific to a courts or case type in courts. For isntance the below example is in PACER. PACER District Courts - Here the primary document is one which is attached to the docket number. Because in district for a primary document it can have many attachments associatated to it. PACER Appeal Courts - Here the attachments for a docket entry are the primary documents. Because in appeal for those attachments there is no primary documents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocketEntryPrimaryDocuments
 	{
 		
@@ -6677,8 +6599,7 @@ namespace MyNS
 	/// <summary>
 	/// Secondary Documents refers to documents that are attached to a docket entry. Secondary Documents could be specific to a courts or case type in courts. For isntance the below example is in PACER. PACER District Courts - Here the secondary document is one which is attached in the docket entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocketEntrySecondaryDocuments
 	{
 		
@@ -6742,8 +6663,7 @@ namespace MyNS
 	/// <summary>
 	/// Object consisiting of each docket entry number and its corresponding API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferencedDocketNumber
 	{
 		
@@ -6779,8 +6699,7 @@ namespace MyNS
 		public string Object { get; set; } = "ReferencedDocketNumber";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceStructuredData
 	{
 		
@@ -6799,8 +6718,7 @@ namespace MyNS
 		public RawOrderedData[] RawOrderedDataArray { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtractedFields
 	{
 		
@@ -6811,8 +6729,7 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RawOrderedData
 	{
 		
@@ -6853,8 +6770,7 @@ namespace MyNS
 		public string Val { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RawOrderedDataChild
 	{
 		
@@ -6934,8 +6850,7 @@ namespace MyNS
 		public string Val { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hearings
 	{
 		
@@ -6994,8 +6909,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hearing
 	{
 		
@@ -7076,8 +6990,7 @@ namespace MyNS
 		public string Object { get; set; } = "Hearing";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Judges
 	{
 		
@@ -7138,8 +7051,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Judge
 	{
 		
@@ -7292,8 +7204,7 @@ namespace MyNS
 		public string SourceJudgeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JudgeType
 	{
 		
@@ -7344,8 +7255,7 @@ namespace MyNS
 		public string Object { get; set; } = "JudgeType";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PossibleNormJudge
 	{
 		
@@ -7496,8 +7406,7 @@ namespace MyNS
 		public PossibleNormAttorneyScoreConstituentsAddress Phone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parties
 	{
 		
@@ -7558,8 +7467,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Party
 	{
 		
@@ -7737,24 +7645,21 @@ namespace MyNS
 		public string SourcePartyRole { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartyPartyClassificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDIVIDUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDIVIDUAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartyRole
 	{
 		
@@ -7838,8 +7743,7 @@ namespace MyNS
 		public string PartyRoleId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PossibleNormParty
 	{
 		
@@ -8008,8 +7912,7 @@ namespace MyNS
 		public PossibleNormAttorneyScoreConstituentsAddress SecretaryOfStateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelatedCases
 	{
 		
@@ -8070,8 +7973,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelatedCase
 	{
 		
@@ -8167,8 +8069,7 @@ namespace MyNS
 		public string SourceCaseRelationshipType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseRelationshipType
 	{
 		
@@ -8222,8 +8123,7 @@ namespace MyNS
 	/// <summary>
 	/// Source data in the court website.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceCaseData
 	{
 		
@@ -8305,8 +8205,7 @@ namespace MyNS
 	/// <summary>
 	/// Nature Of Suit for a case.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NatureOfSuit
 	{
 		
@@ -8365,8 +8264,7 @@ namespace MyNS
 	/// <summary>
 	/// Source Cause of Action data from the source site.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceCauseOfAction
 	{
 		
@@ -8449,8 +8347,7 @@ namespace MyNS
 	/// <summary>
 	/// Source charge data from the source site.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceCharge
 	{
 		
@@ -8561,8 +8458,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional data that enchances the information of a given charge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceChargeAdditionalData
 	{
 		
@@ -8603,8 +8499,7 @@ namespace MyNS
 	/// <summary>
 	/// Source data from different pages in the court website.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourcePageData
 	{
 		
@@ -8663,16 +8558,14 @@ namespace MyNS
 		public string PageName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseSourceDataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LONGER_AVAILABLE_IN_COURT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LONGER_AVAILABLE_IN_COURT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_DEPRECATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_DEPRECATED = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -8682,8 +8575,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides Court Data per State Jurisdiction for an entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseAnalyticsAPI
 	{
 		
@@ -8804,8 +8696,7 @@ namespace MyNS
 		public int TotalCases { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseClass
 	{
 		
@@ -8856,8 +8747,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseClass";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseClassCoverage
 	{
 		
@@ -8958,8 +8848,7 @@ namespace MyNS
 		public int PaidCaseDocumentsInLastThirtyDaysCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseClassResponse
 	{
 		
@@ -9045,8 +8934,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByAreaOfLaw
 	{
 		
@@ -9088,8 +8976,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Counts by Area Of Law Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByAreaOfLawResponse
 	{
 		
@@ -9155,8 +9042,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCaseClass
 	{
 		
@@ -9198,8 +9084,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Counts by Case Class Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCaseClassResponse
 	{
 		
@@ -9265,8 +9150,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCaseFiledDate
 	{
 		
@@ -9354,87 +9238,81 @@ namespace MyNS
 		public int Year { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseCountAnalyticsByCaseFiledDateGroupedBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yearly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yearly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quarterly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quarterly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Monthly = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Weekly = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseCountAnalyticsByCaseFiledDateMonthString
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="January")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		January = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="February")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		February = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="March")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		March = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="April")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		April = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="May")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		May = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="June")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		June = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="July")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		July = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="August")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		August = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="September")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		September = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="October")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		October = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="November")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		November = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="December")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		December = 11,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		_null = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseCountAnalyticsByCaseFiledDateQuarter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Q1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Q1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Q2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Q2 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Q3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Q3 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Q4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Q4 = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -9444,8 +9322,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for Case Count by filing date.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCaseFiledDateResponse
 	{
 		
@@ -9511,8 +9388,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCaseType
 	{
 		
@@ -9551,8 +9427,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseCountAnalyticsByCaseType";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCaseTypeGroup
 	{
 		
@@ -9591,8 +9466,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseCountAnalyticsByCaseTypeGroup";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseTypeGroup
 	{
 		
@@ -9690,8 +9564,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Counts by Case Type Group Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCaseTypeGroupResponse
 	{
 		
@@ -9760,8 +9633,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Counts by Case Types Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCaseTypeResponse
 	{
 		
@@ -9827,8 +9699,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCourt
 	{
 		
@@ -9896,8 +9767,7 @@ namespace MyNS
 		public string Longitude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCourtLocation
 	{
 		
@@ -9975,8 +9845,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Counts by Court Location Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCourtLocationResponse
 	{
 		
@@ -10045,8 +9914,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Counts by Court.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCourtResponse
 	{
 		
@@ -10112,8 +9980,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCourtSystem
 	{
 		
@@ -10181,8 +10048,7 @@ namespace MyNS
 		public string Longitude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtSystem
 	{
 		
@@ -10258,8 +10124,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Counts by Court System.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCourtSystemResponse
 	{
 		
@@ -10325,8 +10190,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCourtType
 	{
 		
@@ -10394,8 +10258,7 @@ namespace MyNS
 		public string Longitude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtType
 	{
 		
@@ -10449,8 +10312,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Counts by Court Type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByCourtTypeResponse
 	{
 		
@@ -10516,8 +10378,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByJurisdictionGeo
 	{
 		
@@ -10585,8 +10446,7 @@ namespace MyNS
 		public string Longitude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JurisdictionGeo
 	{
 		
@@ -10702,8 +10562,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Counts by Juridiction Geo Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByJurisdictionGeoResponse
 	{
 		
@@ -10769,8 +10628,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByNormAttorney
 	{
 		
@@ -10822,8 +10680,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseCountAnalyticsByNormAttorney";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByNormAttorneyResponse
 	{
 		
@@ -10889,8 +10746,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByNormJudge
 	{
 		
@@ -10942,8 +10798,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseCountAnalyticsByNormJudge";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByNormJudgeResponse
 	{
 		
@@ -11009,8 +10864,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByNormLawFirm
 	{
 		
@@ -11062,8 +10916,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseCountAnalyticsByNormLawFirm";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByNormLawFirmResponse
 	{
 		
@@ -11129,8 +10982,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByNormParty
 	{
 		
@@ -11182,8 +11034,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseCountAnalyticsByNormParty";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByNormPartyResponse
 	{
 		
@@ -11249,8 +11100,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByPartyRole
 	{
 		
@@ -11289,8 +11139,7 @@ namespace MyNS
 		public PartyRole PartyRole { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByPartyRoleGroup
 	{
 		
@@ -11329,8 +11178,7 @@ namespace MyNS
 		public PartyRoleGroup PartyRoleGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartyRoleGroup
 	{
 		
@@ -11395,8 +11243,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Count by Party Type Group Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByPartyRoleGroupResponse
 	{
 		
@@ -11465,8 +11312,7 @@ namespace MyNS
 	/// <summary>
 	/// Case Count by Party Type Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseCountAnalyticsByPartyRoleResponse
 	{
 		
@@ -11532,8 +11378,7 @@ namespace MyNS
 		public int TotalPartyRoleCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseDocumentOrderCallback
 	{
 		
@@ -11635,8 +11480,7 @@ namespace MyNS
 	/// <summary>
 	/// Exception object contains specific error code and its message related to the API request validation error or error occurred during API request processing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Exception
 	{
 		
@@ -11689,8 +11533,7 @@ namespace MyNS
 		public string Object { get; set; } = "Exception";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportFile
 	{
 		
@@ -11743,24 +11586,21 @@ namespace MyNS
 		public string Object { get; set; } = "ExportFile";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseDocumentOrderCallbackStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILURE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseDocumentOrderCallbackListResponse
 	{
 		
@@ -11841,8 +11681,7 @@ namespace MyNS
 	/// <summary>
 	/// **Applicable for PACER cases.**
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseDocumentOrderPacerOptions
 	{
 		
@@ -11869,8 +11708,7 @@ namespace MyNS
 		public string PacerUserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseDocumentOrderRequest
 	{
 		
@@ -11901,8 +11739,7 @@ namespace MyNS
 		public CaseDocumentOrderPacerOptions PacerOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseExportCallback
 	{
 		
@@ -11994,8 +11831,7 @@ namespace MyNS
 		public CaseDocumentOrderCallbackStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseExportCallbackListResponse
 	{
 		
@@ -12073,8 +11909,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseRelationshipTypeResponse
 	{
 		
@@ -12160,8 +11995,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseSearchResponse
 	{
 		
@@ -12270,8 +12104,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseSearchResult
 	{
 		
@@ -12420,8 +12253,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ParticipantsLastFetchDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchedObject
 	{
 		
@@ -12493,8 +12325,7 @@ namespace MyNS
 		public string Object { get; set; } = "MatchedObject";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseStatusGroup
 	{
 		
@@ -12545,8 +12376,7 @@ namespace MyNS
 		public string Object { get; set; } = "CaseStatusGroup";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseStatusGroupResponse
 	{
 		
@@ -12632,8 +12462,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseStatusResponse
 	{
 		
@@ -12719,8 +12548,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseTrack
 	{
 		
@@ -12814,8 +12642,7 @@ namespace MyNS
 		public Schedule Schedule { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LastTrackedDetails
 	{
 		
@@ -12864,8 +12691,7 @@ namespace MyNS
 	/// <summary>
 	/// Applicable for PACER cases.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseUpdatePacerOptionsResponse
 	{
 		
@@ -12996,37 +12822,32 @@ namespace MyNS
 		public System.Nullable<CaseUpdatePacerOptionsResponseAdditionalPageArrayPage> Page { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseUpdatePacerOptionsResponseAdditionalPageArrayPage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="associatedCases")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		associatedCases = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="caseSummary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		caseSummary = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="listOfCreditors")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		listOfCreditors = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseUpdatePacerOptionsResponseRefreshType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fetchNewDocketEntries")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fetchNewDocketEntries = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fetchAllDocketEntries")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fetchAllDocketEntries = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schedule
 	{
 		
@@ -13066,24 +12887,21 @@ namespace MyNS
 		public ScheduleType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		daily = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="weekly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		weekly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		monthly = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseTrackListResponse
 	{
 		
@@ -13161,8 +12979,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseTrackPreview
 	{
 		
@@ -13249,8 +13066,7 @@ namespace MyNS
 		public Schedule Schedule { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseTrackRequest
 	{
 		
@@ -13269,8 +13085,7 @@ namespace MyNS
 		public CaseTrackSchedule Schedule { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseUpdateRequest
 	{
 		
@@ -13296,8 +13111,7 @@ namespace MyNS
 	/// <summary>
 	/// Applicable for PACER cases.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseUpdatePacerOptions
 	{
 		
@@ -13407,8 +13221,7 @@ namespace MyNS
 		public CaseUpdatePacerOptionsResponseAdditionalPageArrayPage Page { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseTrackSchedule
 	{
 		
@@ -13435,8 +13248,7 @@ namespace MyNS
 		public ScheduleType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseTypeGroupResponse
 	{
 		
@@ -13522,8 +13334,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseTypeResponse
 	{
 		
@@ -13609,8 +13420,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseUpdate
 	{
 		
@@ -13698,8 +13508,7 @@ namespace MyNS
 		public CaseDocumentOrderCallbackStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseUpdateListResponse
 	{
 		
@@ -13777,8 +13586,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseUpdatePreview
 	{
 		
@@ -13859,8 +13667,7 @@ namespace MyNS
 		public CaseDocumentOrderCallbackStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CauseOfActionAdditionalDataResponse
 	{
 		
@@ -13946,8 +13753,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CauseOfActionGroup
 	{
 		
@@ -13998,8 +13804,7 @@ namespace MyNS
 		public string Object { get; set; } = "CauseOfActionGroup";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CauseOfActionGroupResponse
 	{
 		
@@ -14085,8 +13890,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CauseOfActionResponse
 	{
 		
@@ -14172,8 +13976,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChargeAdditionalDataResponse
 	{
 		
@@ -14259,8 +14062,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChargeDegreeResponse
 	{
 		
@@ -14346,8 +14148,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChargeGroup
 	{
 		
@@ -14398,8 +14199,7 @@ namespace MyNS
 		public string Object { get; set; } = "ChargeGroup";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChargeGroupResponse
 	{
 		
@@ -14485,8 +14285,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChargeResponse
 	{
 		
@@ -14572,8 +14371,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChargeSeverityResponse
 	{
 		
@@ -14659,8 +14457,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtCoverage
 	{
 		
@@ -14768,8 +14565,7 @@ namespace MyNS
 		public int TotalPaidCaseDocumentsInLastThirtyDaysCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtLocationResponse
 	{
 		
@@ -14855,8 +14651,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtResponse
 	{
 		
@@ -14941,8 +14736,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtServiceStatus
 	{
 		
@@ -15029,8 +14823,7 @@ namespace MyNS
 		public string ServiceStatusAsOn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceStatus
 	{
 		
@@ -15071,42 +14864,39 @@ namespace MyNS
 		public bool ServiceUp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServiceStatusServiceDetails
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="acceptingCaseUpdates")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		acceptingCaseUpdates = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notAcceptingCaseUpdates")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notAcceptingCaseUpdates = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="acceptingCaseTrack")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		acceptingCaseTrack = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notAcceptingCaseTrack")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notAcceptingCaseTrack = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="acceptingAutoDocOrders")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		acceptingAutoDocOrders = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="acceptingManualDocOrders")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		acceptingManualDocOrders = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notAcceptingAutoDocOrdersLimitExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notAcceptingAutoDocOrdersLimitExceeded = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notAcceptingManualDocOrdersLimitExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notAcceptingManualDocOrdersLimitExceeded = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notAcceptingDocOrders")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notAcceptingDocOrders = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceStatusDownDetails
 	{
 		
@@ -15162,27 +14952,24 @@ namespace MyNS
 		public ServiceStatusDownDetailsReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServiceStatusDownDetailsReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="underMaintenance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		underMaintenance = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notIntegrated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notIntegrated = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="brokenIntegration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		brokenIntegration = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sourceMigrated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sourceMigrated = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtServiceStatusResponse
 	{
 		
@@ -15268,8 +15055,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtSystemResponse
 	{
 		
@@ -15355,8 +15141,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourtTypeResponse
 	{
 		
@@ -15442,8 +15227,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailyUsageResponse
 	{
 		
@@ -15589,8 +15373,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> LastUpdated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentDownload
 	{
 		
@@ -15656,8 +15439,7 @@ namespace MyNS
 		public string Object { get; set; } = "DocumentDownload";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidateAccessTokenRequest
 	{
 		
@@ -15698,8 +15480,7 @@ namespace MyNS
 		public string TokenId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JudgeAnalyticsAPI
 	{
 		
@@ -15751,8 +15532,7 @@ namespace MyNS
 		public string Object { get; set; } = "JudgeAnalyticsAPI";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JudgeTypeResponse
 	{
 		
@@ -15838,8 +15618,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JurisdictionGeoResponse
 	{
 		
@@ -15925,8 +15704,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LawFirmAnalyticsAPI
 	{
 		
@@ -16008,8 +15786,7 @@ namespace MyNS
 	/// <summary>
 	/// Norm Attorney
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormAttorney
 	{
 		
@@ -16116,8 +15893,7 @@ namespace MyNS
 		public SimilarNormAttorney[] SimilarNormAttorneyArray { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimilarNormAttorney
 	{
 		
@@ -16179,8 +15955,7 @@ namespace MyNS
 		public string Object { get; set; } = "SimilarNormAttorney";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormAttorneySearchResponse
 	{
 		
@@ -16289,8 +16064,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormAttorneySearchResult
 	{
 		
@@ -16380,8 +16154,7 @@ namespace MyNS
 		public string Object { get; set; } = "NormAttorneySearchResult";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormCorporateGroup
 	{
 		
@@ -16419,8 +16192,7 @@ namespace MyNS
 	/// <summary>
 	/// Norm Judge
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormJudge
 	{
 		
@@ -16523,8 +16295,7 @@ namespace MyNS
 	/// <summary>
 	/// This contains the Judge Public details that is obtained from various sources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormJudgePublicData
 	{
 		
@@ -16822,16 +16593,14 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NormJudgePublicDataJudicialSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Website")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Website = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 1,
 	}
 	
@@ -16894,8 +16663,7 @@ namespace MyNS
 	/// <summary>
 	/// A timeline of courts where the judge has been employed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceHistory
 	{
 		
@@ -16994,8 +16762,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ToYear { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormJudgeSearchResponse
 	{
 		
@@ -17104,8 +16871,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormJudgeSearchResult
 	{
 		
@@ -17187,8 +16953,7 @@ namespace MyNS
 	/// <summary>
 	/// Schema for Norm Law Firm containing Organization sub-field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormLawFirm
 	{
 		
@@ -17254,8 +17019,7 @@ namespace MyNS
 		public string Object { get; set; } = "NormLawFirm";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormOrganization
 	{
 		
@@ -17392,21 +17156,18 @@ namespace MyNS
 		public NormOrganizationTickerArray[] NormOrganizationTickerArray { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NormOrganizationOrganizationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Business = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GovernmentAgency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GovernmentAgency = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SOSData
 	{
 		
@@ -17548,8 +17309,7 @@ namespace MyNS
 		public System.Nullable<SOSDataStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SOSNameChange
 	{
 		
@@ -17591,8 +17351,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ToDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SOSAssociatedNormOrganization
 	{
 		
@@ -17663,26 +17422,22 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ToDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SOSAssociatedNormOrganizationRelationshipType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Parent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Parent = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Child")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Child = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SOSDataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 	}
 	
@@ -17706,8 +17461,7 @@ namespace MyNS
 		public string[] Symbols { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormLawFirmSearchResponse
 	{
 		
@@ -17816,8 +17570,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormLawFirmSearchResult
 	{
 		
@@ -17899,8 +17652,7 @@ namespace MyNS
 	/// <summary>
 	/// Norm Party
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormParty
 	{
 		
@@ -18031,8 +17783,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartyAnalyticsAPI
 	{
 		
@@ -18111,21 +17862,18 @@ namespace MyNS
 		public string Object { get; set; } = "PartyAnalyticsAPI";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NormPartyPartyClassificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Individual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Individual = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Organization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Organization = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelatedNormParty
 	{
 		
@@ -18160,24 +17908,21 @@ namespace MyNS
 		public RelatedNormPartyRelationshipType RelationshipType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RelatedNormPartyRelationshipType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Parent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Parent = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Child")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Child = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Same_Corporate_Group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Same_Corporate_Group = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormPartySearchResponse
 	{
 		
@@ -18286,8 +18031,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NormPartySearchResult
 	{
 		
@@ -18377,8 +18121,7 @@ namespace MyNS
 		public string PartyClassificationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PACERCaseSearchContent
 	{
 		
@@ -18796,30 +18539,27 @@ namespace MyNS
 		public string PclNatureOfSuit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PACERCaseSearchContentPclJurisdictionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Appellate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Appellate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bankruptcy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bankruptcy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Criminal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Criminal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Civil")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Civil = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Multi-district Litigation")]
 		MultiMinusdistrict_Litigation = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PACERCaseSearchResults
 	{
 		
@@ -18859,8 +18599,7 @@ namespace MyNS
 		public CaseSearchResult UniCourtContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PACERImportCase
 	{
 		
@@ -18893,8 +18632,7 @@ namespace MyNS
 		public PACERImportCaseResults[] PacerImportCaseResultsArray { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PACERImportCaseResults
 	{
 		
@@ -18927,8 +18665,7 @@ namespace MyNS
 		public CaseSearchResult UniCourtContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PACERPartySearchContent
 	{
 		
@@ -19105,30 +18842,27 @@ namespace MyNS
 		public string PclPartyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PACERPartySearchContentPclJurisdictionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Appellate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Appellate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bankruptcy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bankruptcy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Criminal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Criminal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Civil")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Civil = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Multi-district Litigation")]
 		MultiMinusdistrict_Litigation = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PACERPartySearchResults
 	{
 		
@@ -19168,8 +18902,7 @@ namespace MyNS
 		public CaseSearchResult UniCourtContent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PACERSearchPageInfo
 	{
 		
@@ -19243,8 +18976,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PACERSearchReceipt
 	{
 		
@@ -19364,8 +19096,7 @@ namespace MyNS
 		public System.DateTimeOffset TransactionDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PCLCase
 	{
 		
@@ -19438,8 +19169,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PCLParty
 	{
 		
@@ -19512,8 +19242,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PacerCredential
 	{
 		
@@ -19555,8 +19284,7 @@ namespace MyNS
 		public string PacerUserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PacerCredentialListResponse
 	{
 		
@@ -19634,8 +19362,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PacerCredentialRequest
 	{
 		
@@ -19674,8 +19401,7 @@ namespace MyNS
 		public string Password { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartyRoleGroupResponse
 	{
 		
@@ -19761,8 +19487,7 @@ namespace MyNS
 		public int TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartyRoleResponse
 	{
 		
@@ -19851,8 +19576,7 @@ namespace MyNS
 	/// <summary>
 	/// Success object contains its message related to the API request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Success
 	{
 		
@@ -29515,13 +29239,13 @@ namespace MyNS
 	public enum GetCallbacksStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILURE = 2,
 	}
 	
@@ -29558,44 +29282,44 @@ namespace MyNS
 	public enum SearchCasesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="filedDate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		filedDate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevancy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevancy = 1,
 	}
 	
 	public enum SearchCasesOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 	
 	public enum GetAreasOfLawSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 0,
 	}
 	
 	public enum GetJurisdictionGeoForCourtSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="state")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		state = 0,
 	}
 	
 	public enum AllCourtsPacerCaseLocatorCaseSearchCaseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 1,
 	}
 }

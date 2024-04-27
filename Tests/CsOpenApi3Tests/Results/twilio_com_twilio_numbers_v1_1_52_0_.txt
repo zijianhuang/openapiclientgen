@@ -17,22 +17,18 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Bulk_eligibility_enum_eligibility_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ineligible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ineligible = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eligible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eligible = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Bulk_eligibility_enum_eligibility_sub_status
 	{
 		
@@ -60,29 +56,25 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid-hosting-account-sid")]
 		invalidMinushostingMinusaccountMinussid = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eligible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eligible = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="eligible-by-manual-process")]
 		eligibleMinusbyMinusmanualMinusprocess = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Eligibility_enum_eligibility_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ineligible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ineligible = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eligible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eligible = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Eligibility_enum_eligibility_sub_status
 	{
 		
@@ -110,12 +102,11 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid-hosting-account-sid")]
 		invalidMinushostingMinusaccountMinussid = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eligible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eligible = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Numbersv1bulk_eligibility
 	{
 		
@@ -162,8 +153,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Numbersv1eligibility
 	{
 		
@@ -174,8 +164,7 @@ namespace MyNS
 		public string[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Numbersv1porting_bulk_portability
 	{
 		
@@ -213,24 +202,21 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Numbersv1porting_bulk_portabilityStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expired = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Numbersv1porting_port_in
 	{
 		
@@ -250,8 +236,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Numbersv1porting_port_in_fetch
 	{
 		
@@ -328,8 +313,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Numbersv1porting_portability
 	{
 		
@@ -403,54 +387,48 @@ namespace MyNS
 		public string Voice_carrier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Numbersv1porting_portabilityNumber_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOLL-FREE")]
 		TOLLMinusFREE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Porting_bulk_portability_enum_status
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expired = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Porting_portability_enum_number_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOLL-FREE")]

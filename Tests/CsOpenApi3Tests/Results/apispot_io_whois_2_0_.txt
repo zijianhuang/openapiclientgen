@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArrayOfBatch
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public Batch[] Batches { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Batch
 	{
 		
@@ -358,16 +356,14 @@ namespace MyNS
 		public CreateBatchPostBodyOptions Options { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateBatchPostBodyOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="whois")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		whois = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check = 1,
 	}
 	
@@ -378,19 +374,17 @@ namespace MyNS
 		public System.Nullable<CreateBatchPostBodyOptionsFormat> Format { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateBatchPostBodyOptionsFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="raw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		raw = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formatted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formatted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 2,
 	}
 	

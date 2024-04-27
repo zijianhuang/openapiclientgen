@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The organization the resource belongs to
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SharedOrganization
 	{
 		
@@ -50,8 +49,7 @@ namespace MyNS
 	/// <summary>
 	/// The author
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SharedUser
 	{
 		
@@ -86,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of an article returned in a list
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetArticlesResponse
 	{
 		

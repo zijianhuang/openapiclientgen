@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The results count for each account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountCount
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// User's information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserInfo
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// An error that occurred when querying a specific account
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountCountError
 	{
 		
@@ -80,36 +77,33 @@ namespace MyNS
 		public System.Nullable<AccountCountErrorErrorType> ErrorType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountCountErrorErrorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WILDCARD_TOO_BROAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WILDCARD_TOO_BROAD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_TERMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_MANY_TERMS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_UNAVAILABLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEADLINE_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEADLINE_EXCEEDED = 5,
 	}
 	
 	/// <summary>
 	/// The accounts to search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountInfo
 	{
 		
@@ -123,8 +117,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of each account creation, and the **HeldAccount**, if successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddHeldAccountResult
 	{
 		
@@ -144,8 +137,7 @@ namespace MyNS
 	/// <summary>
 	/// An account covered by a hold. This structure is immutable. It can be an individual account or a Google Group, depending on the service. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeldAccount
 	{
 		
@@ -183,8 +175,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -210,8 +201,7 @@ namespace MyNS
 	/// <summary>
 	/// Add a list of accounts to a hold.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddHeldAccountsRequest
 	{
 		
@@ -231,8 +221,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for batch create held accounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddHeldAccountsResponse
 	{
 		
@@ -246,8 +235,7 @@ namespace MyNS
 	/// <summary>
 	/// Add an account with the permission specified. The role cannot be owner. If an account already has a role in the matter, the existing role is overwritten.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMatterPermissionsRequest
 	{
 		
@@ -273,8 +261,7 @@ namespace MyNS
 	/// <summary>
 	/// Users can be matter owners or collaborators. Each matter has only one owner. All others users who can access the matter are collaborators. When an account is purged, its corresponding MatterPermission resources cease to exist.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatterPermission
 	{
 		
@@ -291,27 +278,24 @@ namespace MyNS
 		public System.Nullable<MatterPermissionRole> Role { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MatterPermissionRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLLABORATOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLLABORATOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER = 2,
 	}
 	
 	/// <summary>
 	/// The options for Calendar exports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalendarExportOptions
 	{
 		
@@ -322,30 +306,27 @@ namespace MyNS
 		public System.Nullable<CalendarExportOptionsExportFormat> ExportFormat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CalendarExportOptionsExportFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPORT_FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPORT_FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MBOX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ICS = 3,
 	}
 	
 	/// <summary>
 	/// Additional options for Calendar search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalendarOptions
 	{
 		
@@ -383,8 +364,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelOperationRequest
 	{
 	}
@@ -392,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// Close a matter by ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloseMatterRequest
 	{
 	}
@@ -401,8 +380,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a CloseMatterRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloseMatterResponse
 	{
 		
@@ -416,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a matter. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Matter
 	{
 		
@@ -452,30 +429,27 @@ namespace MyNS
 		public System.Nullable<MatterState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MatterState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
 	/// <summary>
 	/// The export file in Cloud Storage
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudStorageFile
 	{
 		
@@ -507,8 +481,7 @@ namespace MyNS
 	/// <summary>
 	/// Export sink for Cloud Storage files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudStorageSink
 	{
 		
@@ -522,8 +495,7 @@ namespace MyNS
 	/// <summary>
 	/// Service-specific options for holds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CorpusQuery
 	{
 		
@@ -561,8 +533,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for Drive holds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeldDriveQuery
 	{
 		
@@ -582,8 +553,7 @@ namespace MyNS
 	/// <summary>
 	/// Query options for group holds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeldGroupsQuery
 	{
 		
@@ -609,8 +579,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for Chat holds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeldHangoutsChatQuery
 	{
 		
@@ -624,8 +593,7 @@ namespace MyNS
 	/// <summary>
 	/// Query options for Gmail holds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeldMailQuery
 	{
 		
@@ -651,8 +619,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for Voice holds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeldVoiceQuery
 	{
 		
@@ -666,8 +633,7 @@ namespace MyNS
 	/// <summary>
 	/// Long running operation metadata for CountArtifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CountArtifactsMetadata
 	{
 		
@@ -699,8 +665,7 @@ namespace MyNS
 	/// <summary>
 	/// The query definition used for search and export.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Query
 	{
 		
@@ -819,58 +784,53 @@ namespace MyNS
 		public VoiceOptions VoiceOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryCorpus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CORPUS_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CORPUS_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAIL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GROUPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GROUPS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HANGOUTS_CHAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HANGOUTS_CHAT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOICE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CALENDAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CALENDAR = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryDataScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_DATA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HELD_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HELD_DATA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNPROCESSED_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNPROCESSED_DATA = 3,
 	}
 	
 	/// <summary>
 	/// Additional options for Drive search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DriveOptions
 	{
 		
@@ -899,30 +859,27 @@ namespace MyNS
 		public string VersionDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DriveOptionsClientSideEncryptedOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_SIDE_ENCRYPTED_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_SIDE_ENCRYPTED_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_SIDE_ENCRYPTED_OPTION_ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_SIDE_ENCRYPTED_OPTION_ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_SIDE_ENCRYPTED_OPTION_ENCRYPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_SIDE_ENCRYPTED_OPTION_ENCRYPTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_SIDE_ENCRYPTED_OPTION_UNENCRYPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_SIDE_ENCRYPTED_OPTION_UNENCRYPTED = 3,
 	}
 	
 	/// <summary>
 	/// The Chat spaces to search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HangoutsChatInfo
 	{
 		
@@ -936,8 +893,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional options for Google Chat search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HangoutsChatOptions
 	{
 		
@@ -951,8 +907,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional options for Gmail search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailOptions
 	{
 		
@@ -969,42 +924,39 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ExcludeDrafts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORG_UNIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORG_UNIT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEAM_DRIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEAM_DRIVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTIRE_ORG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTIRE_ORG = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROOM = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITES_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITES_URL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHARED_DRIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHARED_DRIVE = 7,
 	}
 	
 	/// <summary>
 	/// The organizational unit to search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrgUnitInfo
 	{
 		
@@ -1018,8 +970,7 @@ namespace MyNS
 	/// <summary>
 	/// The shared drives to search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SharedDriveInfo
 	{
 		
@@ -1033,8 +984,7 @@ namespace MyNS
 	/// <summary>
 	/// The published site URLs of new Google Sites to search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SitesUrlInfo
 	{
 		
@@ -1048,8 +998,7 @@ namespace MyNS
 	/// <summary>
 	/// Team Drives to search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeamDriveInfo
 	{
 		
@@ -1063,8 +1012,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional options for Voice search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceOptions
 	{
 		
@@ -1078,8 +1026,7 @@ namespace MyNS
 	/// <summary>
 	/// Count artifacts request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CountArtifactsRequest
 	{
 		
@@ -1096,27 +1043,24 @@ namespace MyNS
 		public System.Nullable<CountArtifactsRequestView> View { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CountArtifactsRequestView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNT_RESULT_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNT_RESULT_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOTAL_COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOTAL_COUNT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 2,
 	}
 	
 	/// <summary>
 	/// Definition of the response for method CountArtifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CountArtifactsResponse
 	{
 		
@@ -1142,8 +1086,7 @@ namespace MyNS
 	/// <summary>
 	/// Groups specific count metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupsCountResult
 	{
 		
@@ -1181,8 +1124,7 @@ namespace MyNS
 	/// <summary>
 	/// Gmail and classic Hangouts-specific count metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailCountResult
 	{
 		
@@ -1220,8 +1162,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for Drive exports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DriveExportOptions
 	{
 		
@@ -1235,8 +1176,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -1244,8 +1184,7 @@ namespace MyNS
 	/// <summary>
 	/// An export. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Export
 	{
 		
@@ -1319,8 +1258,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional options for exports
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportOptions
 	{
 		
@@ -1370,8 +1308,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for Groups exports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupsExportOptions
 	{
 		
@@ -1385,8 +1322,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for Chat exports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HangoutsChatExportOptions
 	{
 		
@@ -1400,8 +1336,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for Gmail exports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailExportOptions
 	{
 		
@@ -1430,30 +1365,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UseNewExport { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportOptionsRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPORT_REGION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPORT_REGION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EUROPE = 3,
 	}
 	
 	/// <summary>
 	/// The options for Voice exports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceExportOptions
 	{
 		
@@ -1467,8 +1399,7 @@ namespace MyNS
 	/// <summary>
 	/// Progress information for an export.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportStats
 	{
 		
@@ -1491,30 +1422,27 @@ namespace MyNS
 		public string TotalArtifactCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPORT_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPORT_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 3,
 	}
 	
 	/// <summary>
 	/// The organizational unit covered by a hold. This structure is immutable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeldOrgUnit
 	{
 		
@@ -1534,8 +1462,7 @@ namespace MyNS
 	/// <summary>
 	/// A hold. A hold prevents the specified Google Workspace service from purging data for specific accounts or all members of an organizational unit. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hold
 	{
 		
@@ -1585,8 +1512,7 @@ namespace MyNS
 	/// <summary>
 	/// The exports for a matter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListExportsResponse
 	{
 		
@@ -1606,8 +1532,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns a list of the accounts covered by a hold.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHeldAccountsResponse
 	{
 		
@@ -1621,8 +1546,7 @@ namespace MyNS
 	/// <summary>
 	/// The holds for a matter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHoldsResponse
 	{
 		
@@ -1642,8 +1566,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the list of matters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMattersResponse
 	{
 		
@@ -1663,8 +1586,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -1684,8 +1606,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1723,8 +1644,7 @@ namespace MyNS
 	/// <summary>
 	/// Definition of the response for method ListSaveQuery.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSavedQueriesResponse
 	{
 		
@@ -1744,8 +1664,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of a saved query. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavedQuery
 	{
 		
@@ -1783,8 +1702,7 @@ namespace MyNS
 	/// <summary>
 	/// Remove a list of accounts from a hold.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveHeldAccountsRequest
 	{
 		
@@ -1798,8 +1716,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for batch delete held accounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveHeldAccountsResponse
 	{
 		
@@ -1813,8 +1730,7 @@ namespace MyNS
 	/// <summary>
 	/// Remove an account as a matter collaborator.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveMatterPermissionsRequest
 	{
 		
@@ -1828,8 +1744,7 @@ namespace MyNS
 	/// <summary>
 	/// Reopen a matter by ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReopenMatterRequest
 	{
 	}
@@ -1837,8 +1752,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a ReopenMatterRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReopenMatterResponse
 	{
 		
@@ -1852,8 +1766,7 @@ namespace MyNS
 	/// <summary>
 	/// Undelete a matter by ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UndeleteMatterRequest
 	{
 	}
@@ -3108,26 +3021,26 @@ namespace MyNS
 	public enum Vault_matters_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 	
 	public enum Vault_matters_holds_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOLD_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOLD_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_HOLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_HOLD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_HOLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_HOLD = 2,
 	}
 }

@@ -17,14 +17,12 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWebACLResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWebACLRequest
 	{
 		
@@ -43,38 +41,32 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFInternalErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFInvalidParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFNonexistentItemException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFUnavailableEntityException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFInvalidOperationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckCapacityResponse
 	{
 		
@@ -82,8 +74,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Capacity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckCapacityRequest
 	{
 		
@@ -102,24 +93,21 @@ namespace MyNS
 		public Rule[] Rules { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Scope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUDFRONT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUDFRONT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGIONAL = 1,
 	}
 	
 	/// <summary>
 	/// A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <a>Statement</a> that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -170,8 +158,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web request matches the rule. </p> <p>For example specifications, see the examples section of <a>CreateWebACL</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Statement
 	{
 		
@@ -224,8 +211,7 @@ namespace MyNS
 	/// <summary>
 	/// A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ByteMatchStatement
 	{
 		
@@ -261,8 +247,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The part of the web request that you want WAF to inspect. Include the single <code>FieldToMatch</code> type that you want to inspect, with additional specifications as needed, according to the type. You specify a single request component in <code>FieldToMatch</code> for each rule statement that requires it. To inspect more than one component of the web request, create a separate rule statement for each component.</p> <p>Example JSON for a <code>QueryString</code> field to match: </p> <p> <code> "FieldToMatch": { "QueryString": {} }</code> </p> <p>Example JSON for a <code>Method</code> field to match specification:</p> <p> <code> "FieldToMatch": { "Method": { "Name": "DELETE" } }</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldToMatch
 	{
 		
@@ -303,8 +288,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Inspect one of the headers in the web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. The name isn't case sensitive.</p> <p>You can filter and inspect all headers with the <code>FieldToMatch</code> setting <code>Headers</code>.</p> <p>This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification. </p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SingleHeader
 	{
 		
@@ -319,8 +303,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Inspect one query argument in the web request, identified by name, for example <i>UserName</i> or <i>SalesRegion</i>. The name isn't case sensitive. </p> <p>This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SingleQueryArgument
 	{
 		
@@ -335,8 +318,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Inspect all query arguments of the web request. </p> <p>This is used in the <a>FieldToMatch</a> specification for some web request component types. </p> <p>JSON specification: <code>"AllQueryArguments": {}</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AllQueryArguments
 	{
 	}
@@ -344,8 +326,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Inspect the path component of the URI of the web request. This is the part of the web request that identifies a resource. For example, <code>/images/daily-ad.jpg</code>.</p> <p>This is used in the <a>FieldToMatch</a> specification for some web request component types. </p> <p>JSON specification: <code>"UriPath": {}</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UriPath
 	{
 	}
@@ -353,8 +334,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Inspect the query string of the web request. This is the part of a URL that appears after a <code>?</code> character, if any.</p> <p>This is used in the <a>FieldToMatch</a> specification for some web request component types. </p> <p>JSON specification: <code>"QueryString": {}</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryString
 	{
 	}
@@ -362,8 +342,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Inspect the body of the web request. The body immediately follows the request headers.</p> <p>This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Body
 	{
 		
@@ -371,27 +350,24 @@ namespace MyNS
 		public OversizeHandling OversizeHandling { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OversizeHandling
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTINUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTINUE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_MATCH = 2,
 	}
 	
 	/// <summary>
 	/// <p>Inspect the HTTP method of the web request. The method indicates the type of operation that the request is asking the origin to perform. </p> <p>This is used in the <a>FieldToMatch</a> specification for some web request component types. </p> <p>JSON specification: <code>"Method": {}</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Method
 	{
 	}
@@ -399,8 +375,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Inspect the body of the web request as JSON. The body immediately follows the request headers. </p> <p>This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification. </p> <p>Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON that result from the matches that you indicate. </p> <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JsonBody
 	{
 		
@@ -428,8 +403,7 @@ namespace MyNS
 	/// <summary>
 	/// The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JsonMatchPattern
 	{
 		
@@ -443,49 +417,43 @@ namespace MyNS
 	/// <summary>
 	/// <p>Inspect all of the elements that WAF has parsed and extracted from the web request component that you've identified in your <a>FieldToMatch</a> specifications. </p> <p>This is used in the <a>FieldToMatch</a> specification for some web request component types. </p> <p>JSON specification: <code>"All": {}</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class All
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JsonMatchScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALUE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BodyParsingFallbackBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_MATCH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVALUATE_AS_STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVALUATE_AS_STRING = 2,
 	}
 	
 	/// <summary>
 	/// <p>Inspect all headers in the web request. You can specify the parts of the headers to inspect and you can narrow the set of headers to inspect by including or excluding specific keys.</p> <p>This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification. </p> <p>If you want to inspect just the value of a single header, use the <code>SingleHeader</code> <code>FieldToMatch</code> setting instead.</p> <p>Example JSON: <code>"Headers": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Headers
 	{
 		
@@ -514,8 +482,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The filter to use to identify the subset of headers to inspect in a web request. </p> <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p> <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeaderMatchPattern
 	{
 		
@@ -532,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Inspect the cookies in the web request. You can specify the parts of the cookies to inspect and you can narrow the set of cookies to inspect by including or excluding specific keys.</p> <p>This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification. </p> <p>Example JSON: <code>"Cookies": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cookies
 	{
 		
@@ -562,8 +528,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p> <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p> <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CookieMatchPattern
 	{
 		
@@ -580,8 +545,7 @@ namespace MyNS
 	/// <summary>
 	/// Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HeaderOrder
 	{
 		
@@ -596,8 +560,7 @@ namespace MyNS
 	/// <summary>
 	/// Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextTransformation
 	{
 		
@@ -616,103 +579,98 @@ namespace MyNS
 		public TextTransformationType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextTransformationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPRESS_WHITE_SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPRESS_WHITE_SPACE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML_ENTITY_DECODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML_ENTITY_DECODE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOWERCASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOWERCASE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CMD_LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CMD_LINE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_DECODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_DECODE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASE64_DECODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASE64_DECODE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEX_DECODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEX_DECODE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MD5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MD5 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLACE_COMMENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLACE_COMMENTS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ESCAPE_SEQ_DECODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ESCAPE_SEQ_DECODE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SQL_HEX_DECODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SQL_HEX_DECODE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSS_DECODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSS_DECODE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JS_DECODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JS_DECODE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORMALIZE_PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORMALIZE_PATH = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORMALIZE_PATH_WIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORMALIZE_PATH_WIN = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVE_NULLS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVE_NULLS = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLACE_NULLS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLACE_NULLS = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASE64_DECODE_EXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASE64_DECODE_EXT = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_DECODE_UNI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_DECODE_UNI = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTF8_TO_UNICODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTF8_TO_UNICODE = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PositionalConstraint
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACTLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACTLY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTS_WITH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDS_WITH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS_WORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS_WORD = 4,
 	}
 	
 	/// <summary>
 	/// A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SqliMatchStatement
 	{
 		
@@ -734,24 +692,21 @@ namespace MyNS
 		public SensitivityLevel SensitivityLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SensitivityLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 1,
 	}
 	
 	/// <summary>
 	/// A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XssMatchStatement
 	{
 		
@@ -773,8 +728,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p> <p>If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to the limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional fees. If you know that the request body for your web requests should never exceed the inspection limit, you could use a size constraint statement to block requests that have a larger request body size.</p> <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SizeConstraintStatement
 	{
 		
@@ -807,36 +761,33 @@ namespace MyNS
 		public TextTransformation[] TextTransformations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GT = 5,
 	}
 	
 	/// <summary>
 	/// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p> <ul> <li> <p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array. </p> </li> <li> <p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed. </p> </li> </ul> <p>WAF labels requests using the alpha-2 country and region codes from the International Organization for Standardization (ISO) 3166 standard. WAF determines the codes using either the IP address in the web request origin or, if you specify it, the address in the geo match <code>ForwardedIPConfig</code>. </p> <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:&lt;ISO country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO country code&gt;</code>.</p> <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:&lt;ISO country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO country code&gt;</code>.</p> <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoMatchStatement
 	{
 		
@@ -847,768 +798,765 @@ namespace MyNS
 		public ForwardedIPConfig ForwardedIPConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CountryCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DZ = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AI = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AQ = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AG = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AR = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AM = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AW = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AT = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AZ = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BS = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BH = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BD = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BB = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BY = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BE = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BZ = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BJ = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BM = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BT = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BO = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BQ = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BA = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BW = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BV = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BR = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IO = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BN = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BG = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BF = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BI = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KH = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CM = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CA = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CV = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KY = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CF = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TD = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CL = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CX = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CC = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CO = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KM = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CG = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CD = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CK = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CR = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CI = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HR = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CU = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CW = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CY = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CZ = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DK = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DJ = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DM = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DO = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EG = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SV = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GQ = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ER = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EE = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ET = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FK = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FO = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FJ = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FI = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FR = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GF = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PF = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TF = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GA = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GM = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GE = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DE = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GH = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GI = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GR = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GL = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GD = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GP = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GU = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GT = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GG = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GN = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GW = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GY = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HT = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HM = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VA = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HN = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HK = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HU = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IS = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN = 102,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ID = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IR = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IQ = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IE = 106,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IM = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IL = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IT = 109,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JM = 110,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JP = 111,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JE = 112,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JO = 113,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KZ = 114,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KE = 115,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KI = 116,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KP = 117,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KR = 118,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KW = 119,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KG = 120,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LA = 121,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LV = 122,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LB = 123,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LS = 124,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LR = 125,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LY = 126,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LI = 127,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LT = 128,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LU = 129,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MO = 130,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MK = 131,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MG = 132,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MW = 133,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MY = 134,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MV = 135,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ML = 136,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MT = 137,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MH = 138,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MQ = 139,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MR = 140,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MU = 141,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YT = 142,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MX = 143,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FM = 144,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MD = 145,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MC = 146,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MN = 147,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ME = 148,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MS = 149,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MA = 150,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MZ = 151,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MM = 152,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NA = 153,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NR = 154,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NP = 155,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NL = 156,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NC = 157,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NZ = 158,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NI = 159,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NE = 160,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NG = 161,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NU = 162,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NF = 163,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MP = 164,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO = 165,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OM = 166,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PK = 167,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PW = 168,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PS = 169,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PA = 170,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PG = 171,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PY = 172,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PE = 173,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PH = 174,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PN = 175,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL = 176,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PT = 177,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PR = 178,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QA = 179,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RE = 180,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RO = 181,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RU = 182,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RW = 183,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BL = 184,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SH = 185,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KN = 186,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LC = 187,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MF = 188,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PM = 189,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VC = 190,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WS = 191,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SM = 192,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ST = 193,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SA = 194,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SN = 195,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RS = 196,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SC = 197,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SL = 198,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SG = 199,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SX = 200,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SK = 201,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SI = 202,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SB = 203,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SO = 204,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZA = 205,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GS = 206,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SS = 207,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ES = 208,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LK = 209,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SD = 210,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SR = 211,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SJ = 212,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SZ = 213,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SE = 214,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CH = 215,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SY = 216,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TW = 217,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TJ = 218,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TZ = 219,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TH = 220,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TL = 221,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TG = 222,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TK = 223,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TO = 224,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TT = 225,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TN = 226,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TR = 227,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TM = 228,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TC = 229,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TV = 230,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UG = 231,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UA = 232,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AE = 233,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GB = 234,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US = 235,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UM = 236,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UY = 237,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UZ = 238,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VU = 239,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VE = 240,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VN = 241,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VG = 242,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VI = 243,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WF = 244,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EH = 245,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YE = 246,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZM = 247,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZW = 248,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XK = 249,
 	}
 	
 	/// <summary>
 	/// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note> <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p> </note> <p>This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. </p> <p>WAF only evaluates the first IP address found in the specified HTTP header. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ForwardedIPConfig
 	{
 		
@@ -1627,24 +1575,21 @@ namespace MyNS
 		public FallbackBehavior FallbackBehavior { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FallbackBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_MATCH = 1,
 	}
 	
 	/// <summary>
 	/// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p> <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleGroupReferenceStatement
 	{
 		
@@ -1665,8 +1610,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies a single rule in a rule group whose action you want to override to <code>Count</code>. </p> <note> <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExcludedRule
 	{
 		
@@ -1681,8 +1625,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Action setting to use in the place of a rule action that is configured inside the rule group. You specify one override for each rule whose action you want to change. </p> <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleActionOverride
 	{
 		
@@ -1704,8 +1647,7 @@ namespace MyNS
 	/// <summary>
 	/// The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleAction
 	{
 		
@@ -1728,8 +1670,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies that WAF should block the request and optionally defines additional custom handling for the response to the web request.</p> <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockAction
 	{
 		
@@ -1740,8 +1681,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A custom response to send to the client. You can define a custom response for rule actions and default web ACL actions that are set to <a>BlockAction</a>. </p> <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomResponse
 	{
 		
@@ -1762,8 +1702,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom header for custom request and response handling. This is used in <a>CustomResponse</a> and <a>CustomRequestHandling</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomHTTPHeader
 	{
 		
@@ -1785,8 +1724,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies that WAF should allow the request and optionally defines additional custom handling for the request.</p> <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AllowAction
 	{
 		
@@ -1797,8 +1735,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling for WAF to use when the rule action doesn't block the request. For example, <code>CaptchaAction</code> for requests with valid t okens, and <code>AllowAction</code>. </p> <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomRequestHandling
 	{
 		
@@ -1813,8 +1750,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies that WAF should count the request. Optionally defines additional custom handling for the request.</p> <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CountAction
 	{
 		
@@ -1825,8 +1761,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies that WAF should run a <code>CAPTCHA</code> check against the request: </p> <ul> <li> <p>If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF applies any custom request handling and labels that you've configured and then allows the web request inspection to proceed to the next rule, similar to a <code>CountAction</code>. </p> </li> <li> <p>If the request doesn't include a valid, unexpired token, WAF discontinues the web ACL evaluation of the request and blocks it from going to its intended destination.</p> <p>WAF generates a response that it sends back to the client, which includes the following: </p> <ul> <li> <p>The header <code>x-amzn-waf-action</code> with a value of <code>captcha</code>. </p> </li> <li> <p>The HTTP status code <code>405 Method Not Allowed</code>. </p> </li> <li> <p>If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a <code>CAPTCHA</code> JavaScript page interstitial. </p> </li> </ul> </li> </ul> <p>You can configure the expiration time in the <code>CaptchaConfig</code> <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule setting overrides the web ACL setting. </p> <p>This action option is available for rules. It isn't available for web ACL default actions. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaptchaAction
 	{
 		
@@ -1837,8 +1772,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies that WAF should run a <code>Challenge</code> check against the request to verify that the request is coming from a legitimate client session: </p> <ul> <li> <p>If the request includes a valid, unexpired challenge token, WAF applies any custom request handling and labels that you've configured and then allows the web request inspection to proceed to the next rule, similar to a <code>CountAction</code>. </p> </li> <li> <p>If the request doesn't include a valid, unexpired challenge token, WAF discontinues the web ACL evaluation of the request and blocks it from going to its intended destination.</p> <p>WAF then generates a challenge response that it sends back to the client, which includes the following: </p> <ul> <li> <p>The header <code>x-amzn-waf-action</code> with a value of <code>challenge</code>. </p> </li> <li> <p>The HTTP status code <code>202 Request Accepted</code>. </p> </li> <li> <p>If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a JavaScript page interstitial with a challenge script. </p> </li> </ul> <p>Challenges run silent browser interrogations in the background, and don't generally affect the end user experience. </p> <p>A challenge enforces token acquisition using an interstitial JavaScript challenge that inspects the client session for legitimate behavior. The challenge blocks bots or at least increases the cost of operating sophisticated bots. </p> <p>After the client session successfully responds to the challenge, it receives a new token from WAF, which the challenge script uses to resubmit the original request. </p> </li> </ul> <p>You can configure the expiration time in the <code>ChallengeConfig</code> <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule setting overrides the web ACL setting. </p> <p>This action option is available for rules. It isn't available for web ACL default actions. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChallengeAction
 	{
 		
@@ -1849,8 +1783,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IPSetReferenceStatement
 	{
 		
@@ -1868,8 +1801,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note> <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p> </note> <p>This configuration is used only for <a>IPSetReferenceStatement</a>. For <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>, use <a>ForwardedIPConfig</a> instead. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IPSetForwardedIPConfig
 	{
 		
@@ -1895,27 +1827,24 @@ namespace MyNS
 		public ForwardedIPPosition Position { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ForwardedIPPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 2,
 	}
 	
 	/// <summary>
 	/// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegexPatternSetReferenceStatement
 	{
 		
@@ -1944,8 +1873,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A rate-based rule counts incoming requests and rate limits requests when they are coming at too fast a rate. The rule categorizes requests according to your aggregation criteria, collects them into aggregation instances, and counts and rate limits the requests for each instance. </p> <p>You can specify individual aggregation keys, like IP address or HTTP method. You can also specify aggregation key combinations, like IP address and HTTP method, or HTTP method, query argument, and cookie. </p> <p>Each unique set of values for the aggregation keys that you specify is a separate aggregation instance, with the value from each key contributing to the aggregation instance definition. </p> <p>For example, assume the rule evaluates web requests with the following IP address and HTTP method values: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP method POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li> <li> <p>IP address 127.0.0.0, HTTP method POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li> </ul> <p>The rule would create different aggregation instances according to your aggregation criteria, for example: </p> <ul> <li> <p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1: count 3</p> </li> <li> <p>IP address 127.0.0.0: count 1</p> </li> </ul> </li> <li> <p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following: </p> <ul> <li> <p>HTTP method POST: count 2</p> </li> <li> <p>HTTP method GET: count 2</p> </li> </ul> </li> <li> <p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP method POST: count 1</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET: count 2</p> </li> <li> <p>IP address 127.0.0.0, HTTP method POST: count 1</p> </li> </ul> </li> </ul> <p>For any n-tuple of aggregation keys, each unique combination of values for the keys defines a separate aggregation instance, which WAF counts and rate-limits individually. </p> <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts and rate limits requests that match the nested statement. You can use this nested scope-down statement in conjunction with your aggregation key specifications or you can just count and rate limit all requests that match the scope-down statement, without additional aggregation. When you choose to just manage all requests that match a scope-down statement, the aggregation instance is singular for the rule. </p> <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p> <p>For additional information about the options, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate limiting web requests using rate-based rules</a> in the <i>WAF Developer Guide</i>. </p> <p>If you only aggregate on the individual IP address or forwarded IP address, you can retrieve the list of IP addresses that WAF is currently rate limiting for a rule through the API call <code>GetRateBasedStatementManagedKeys</code>. This option is not available for other aggregation configurations.</p> <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateBasedStatement
 	{
 		
@@ -1973,30 +1901,27 @@ namespace MyNS
 		public RateBasedStatementCustomKey[] CustomKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RateBasedStatementAggregateKeyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORWARDED_IP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORWARDED_IP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_KEYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_KEYS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSTANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSTANT = 3,
 	}
 	
 	/// <summary>
 	/// <p>Specifies a single custom aggregate key for a rate-base rule. </p> <note> <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling. </p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateBasedStatementCustomKey
 	{
 		
@@ -2031,8 +1956,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a header as an aggregate key for a rate-based rule. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimitHeader
 	{
 		
@@ -2054,8 +1978,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a cookie as an aggregate key for a rate-based rule. Each distinct value in the cookie contributes to the aggregation instance. If you use a single cookie as your custom key, then each value fully defines an aggregation instance. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimitCookie
 	{
 		
@@ -2077,8 +2000,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a query argument in the request as an aggregate key for a rate-based rule. Each distinct value for the named query argument contributes to the aggregation instance. If you use a single query argument as your custom key, then each value fully defines an aggregation instance. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimitQueryArgument
 	{
 		
@@ -2100,8 +2022,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the request's query string as an aggregate key for a rate-based rule. Each distinct string contributes to the aggregation instance. If you use just the query string as your custom key, then each string fully defines an aggregation instance. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimitQueryString
 	{
 		
@@ -2116,8 +2037,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the request's HTTP method as an aggregate key for a rate-based rule. Each distinct HTTP method contributes to the aggregation instance. If you use just the HTTP method as your custom key, then each method fully defines an aggregation instance. </p> <p>JSON specification: <code>"RateLimitHTTPMethod": {}</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimitHTTPMethod
 	{
 	}
@@ -2125,8 +2045,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the first IP address in an HTTP header as an aggregate key for a rate-based rule. Each distinct forwarded IP address contributes to the aggregation instance.</p> <p>This setting is used only in the <code>RateBasedStatementCustomKey</code> specification of a rate-based rule statement. When you specify an IP or forwarded IP in the custom key settings, you must also specify at least one other key to use. You can aggregate on only the forwarded IP address by specifying <code>FORWARDED_IP</code> in your rate-based statement's <code>AggregateKeyType</code>. </p> <p>This data type supports using the forwarded IP address in the web request aggregation for a rate-based rule, in <code>RateBasedStatementCustomKey</code>. The JSON specification for using the forwarded IP address doesn't explicitly use this data type. </p> <p>JSON specification: <code>"ForwardedIP": {}</code> </p> <p>When you use this specification, you must also configure the forwarded IP address in the rate-based statement's <code>ForwardedIPConfig</code>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimitForwardedIP
 	{
 	}
@@ -2134,8 +2053,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the IP address in the web request as an aggregate key for a rate-based rule. Each distinct IP address contributes to the aggregation instance. </p> <p>This setting is used only in the <code>RateBasedStatementCustomKey</code> specification of a rate-based rule statement. To use this in the custom key settings, you must specify at least one other key to use, along with the IP address. To aggregate on only the IP address, in your rate-based statement's <code>AggregateKeyType</code>, specify <code>IP</code>.</p> <p>JSON specification: <code>"RateLimitIP": {}</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimitIP
 	{
 	}
@@ -2143,8 +2061,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies a label namespace to use as an aggregate key for a rate-based rule. Each distinct fully qualified label name that has the specified label namespace contributes to the aggregation instance. If you use just one label namespace as your custom key, then each label name fully defines an aggregation instance. </p> <p>This uses only labels that have been added to the request by rules that are evaluated before this rate-based rule in the web ACL. </p> <p>For information about label namespaces and names, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-label-requirements.html">Label syntax and naming requirements</a> in the <i>WAF Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimitLabelNamespace
 	{
 		
@@ -2159,8 +2076,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the request's URI path as an aggregate key for a rate-based rule. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimitUriPath
 	{
 		
@@ -2175,8 +2091,7 @@ namespace MyNS
 	/// <summary>
 	/// A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AndStatement
 	{
 		
@@ -2191,8 +2106,7 @@ namespace MyNS
 	/// <summary>
 	/// A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrStatement
 	{
 		
@@ -2207,8 +2121,7 @@ namespace MyNS
 	/// <summary>
 	/// A logical rule statement used to negate the results of another rule statement. You provide one <a>Statement</a> within the <code>NotStatement</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotStatement
 	{
 		
@@ -2223,8 +2136,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note> <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRuleGroupStatement
 	{
 		
@@ -2261,8 +2173,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p> <p>The rule groups used for intelligent threat mitigation require additional configuration: </p> <ul> <li> <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields. </p> </li> <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li> <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li> </ul> <p>For example specifications, see the examples section of <a>CreateWebACL</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRuleGroupConfig
 	{
 		
@@ -2288,24 +2199,21 @@ namespace MyNS
 		public AWSManagedRulesACFPRuleSet AWSManagedRulesACFPRuleSet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PayloadType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORM_ENCODED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORM_ENCODED = 1,
 	}
 	
 	/// <summary>
 	/// <p>The name of the field in the request payload that contains your customer's username. </p> <p>This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code> data types. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsernameField
 	{
 		
@@ -2320,8 +2228,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The name of the field in the request payload that contains your customer's password. </p> <p>This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code> data types. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PasswordField
 	{
 		
@@ -2336,8 +2243,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for your use of the Bot Control managed rule group, <code>AWSManagedRulesBotControlRuleSet</code>. This configuration is used in <code>ManagedRuleGroupConfig</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AWSManagedRulesBotControlRuleSet
 	{
 		
@@ -2349,24 +2255,21 @@ namespace MyNS
 		public InspectionLevel InspectionLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InspectionLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGETED = 1,
 	}
 	
 	/// <summary>
 	/// Details for your use of the account takeover prevention managed rule group, <code>AWSManagedRulesATPRuleSet</code>. This configuration is used in <code>ManagedRuleGroupConfig</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AWSManagedRulesATPRuleSet
 	{
 		
@@ -2390,8 +2293,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. </p> <p>This is part of the <code>AWSManagedRulesATPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.</p> <p>In these settings, you specify how your application accepts login attempts by providing the request payload type and the names of the fields within the request body where the username and password are provided. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestInspection
 	{
 		
@@ -2420,8 +2322,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The criteria for inspecting responses to login requests and account creation requests, used by the ATP and ACFP rule groups to track login and account creation success and failure rates. </p> <note> <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p> </note> <p>The rule groups evaluates the responses that your protected resources send back to client login and account creation attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses with too much suspicious activity in a short amount of time. </p> <p>This is part of the <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code> configurations in <code>ManagedRuleGroupConfig</code>.</p> <p>Enable response inspection by configuring exactly one component of the response to inspect, for example, <code>Header</code> or <code>StatusCode</code>. You can't configure more than one component for inspection. If you don't configure any of the response inspection options, response inspection is disabled. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseInspection
 	{
 		
@@ -2441,8 +2342,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Configures inspection of the response status code. This is part of the <code>ResponseInspection</code> configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>. </p> <note> <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseInspectionStatusCode
 	{
 		
@@ -2464,8 +2364,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Configures inspection of the response header. This is part of the <code>ResponseInspection</code> configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>. </p> <note> <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseInspectionHeader
 	{
 		
@@ -2494,8 +2393,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body. This is part of the <code>ResponseInspection</code> configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>. </p> <note> <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseInspectionBodyContains
 	{
 		
@@ -2517,8 +2415,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON. This is part of the <code>ResponseInspection</code> configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>. </p> <note> <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseInspectionJson
 	{
 		
@@ -2547,8 +2444,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for your use of the account creation fraud prevention managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. This configuration is used in <code>ManagedRuleGroupConfig</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AWSManagedRulesACFPRuleSet
 	{
 		
@@ -2583,8 +2479,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p> <p>This is part of the <code>AWSManagedRulesACFPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.</p> <p>In these settings, you specify how your application accepts account creation attempts by providing the request payload type and the names of the fields within the request body where the username, password, email, and primary address and phone number fields are provided. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestInspectionACFP
 	{
 		
@@ -2614,8 +2509,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The name of the field in the request payload that contains your customer's email. </p> <p>This data type is used in the <code>RequestInspectionACFP</code> data type. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailField
 	{
 		
@@ -2630,8 +2524,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The name of a field in the request payload that contains part or all of your customer's primary phone number. </p> <p>This data type is used in the <code>RequestInspectionACFP</code> data type. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhoneNumberField
 	{
 		
@@ -2646,8 +2539,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The name of a field in the request payload that contains part or all of your customer's primary physical address. </p> <p>This data type is used in the <code>RequestInspectionACFP</code> data type. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddressField
 	{
 		
@@ -2662,8 +2554,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A rule statement to match against labels that have been added to the web request by rules that have already run in the web ACL. </p> <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelMatchStatement
 	{
 		
@@ -2682,24 +2573,21 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LabelMatchScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABEL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAMESPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAMESPACE = 1,
 	}
 	
 	/// <summary>
 	/// A rule statement used to search web request components for a match against a single regular expression. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegexMatchStatement
 	{
 		
@@ -2728,8 +2616,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p> <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note> <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OverrideAction
 	{
 		
@@ -2743,8 +2630,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies that WAF should do nothing. This is used for the <code>OverrideAction</code> setting on a <a>Rule</a> when the rule uses a rule group reference statement. </p> <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p> <p>JSON specification: <code>"None": {}</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoneAction
 	{
 	}
@@ -2752,8 +2638,7 @@ namespace MyNS
 	/// <summary>
 	/// A single label container. This is used as an element of a label array in multiple contexts, for example, in <code>RuleLabels</code> inside a <a>Rule</a> and in <code>Labels</code> inside a <a>SampledHTTPRequest</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Label
 	{
 		
@@ -2768,8 +2653,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines and enables Amazon CloudWatch metrics and web request sample collection. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VisibilityConfig
 	{
 		
@@ -2798,8 +2682,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available at the web ACL level and in each rule. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaptchaConfig
 	{
 		
@@ -2810,8 +2693,7 @@ namespace MyNS
 	/// <summary>
 	/// Used for CAPTCHA and challenge token settings. Determines how long a <code>CAPTCHA</code> or challenge timestamp remains valid after WAF updates it for a successful <code>CAPTCHA</code> or challenge response. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImmunityTimeProperty
 	{
 		
@@ -2826,8 +2708,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies how WAF should handle <code>Challenge</code> evaluations. This is available at the web ACL level and in each rule. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChallengeConfig
 	{
 		
@@ -2835,32 +2716,27 @@ namespace MyNS
 		public ImmunityTimeProperty ImmunityTimeProperty { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFLimitsExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFInvalidResourceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFSubscriptionNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFExpiredManagedRuleGroupVersionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAPIKeyResponse
 	{
 		
@@ -2868,8 +2744,7 @@ namespace MyNS
 		public string APIKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAPIKeyRequest
 	{
 		
@@ -2888,8 +2763,7 @@ namespace MyNS
 		public string[] TokenDomains { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIPSetResponse
 	{
 		
@@ -2900,8 +2774,7 @@ namespace MyNS
 	/// <summary>
 	/// High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IPSetSummary
 	{
 		
@@ -2921,8 +2794,7 @@ namespace MyNS
 		public string ARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIPSetRequest
 	{
 		
@@ -2961,24 +2833,21 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IPAddressVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPV4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IPV4 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPV6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IPV6 = 1,
 	}
 	
 	/// <summary>
 	/// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p> <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -2997,32 +2866,27 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFDuplicateItemException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFOptimisticLockException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFTagOperationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFTagOperationInternalErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRegexPatternSetResponse
 	{
 		
@@ -3033,8 +2897,7 @@ namespace MyNS
 	/// <summary>
 	/// High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegexPatternSetSummary
 	{
 		
@@ -3054,8 +2917,7 @@ namespace MyNS
 		public string ARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRegexPatternSetRequest
 	{
 		
@@ -3090,8 +2952,7 @@ namespace MyNS
 	/// <summary>
 	/// A single regular expression. This is used in a <a>RegexPatternSet</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Regex
 	{
 		
@@ -3099,8 +2960,7 @@ namespace MyNS
 		public string RegexString { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRuleGroupResponse
 	{
 		
@@ -3111,8 +2971,7 @@ namespace MyNS
 	/// <summary>
 	/// High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleGroupSummary
 	{
 		
@@ -3132,8 +2991,7 @@ namespace MyNS
 		public string ARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRuleGroupRequest
 	{
 		
@@ -3178,14 +3036,12 @@ namespace MyNS
 		public CustomResponseBodies CustomResponseBodies { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomResponseBodies
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWebACLResponse
 	{
 		
@@ -3196,8 +3052,7 @@ namespace MyNS
 	/// <summary>
 	/// High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebACLSummary
 	{
 		
@@ -3217,8 +3072,7 @@ namespace MyNS
 		public string ARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWebACLRequest
 	{
 		
@@ -3278,8 +3132,7 @@ namespace MyNS
 	/// <summary>
 	/// In a <a>WebACL</a>, this is the action that you want WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultAction
 	{
 		
@@ -3293,8 +3146,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p> <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note> <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociationConfig
 	{
 		
@@ -3302,20 +3154,17 @@ namespace MyNS
 		public RequestBody RequestBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestBody
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFConfigurationWarningException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFirewallManagerRuleGroupsResponse
 	{
 		
@@ -3323,8 +3172,7 @@ namespace MyNS
 		public string NextWebACLLockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFirewallManagerRuleGroupsRequest
 	{
 		
@@ -3343,14 +3191,12 @@ namespace MyNS
 		public string WebACLLockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIPSetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIPSetRequest
 	{
 		
@@ -3383,20 +3229,17 @@ namespace MyNS
 		public string LockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFAssociatedItemException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLoggingConfigurationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLoggingConfigurationRequest
 	{
 		
@@ -3408,14 +3251,12 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePermissionPolicyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePermissionPolicyRequest
 	{
 		
@@ -3427,14 +3268,12 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRegexPatternSetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRegexPatternSetRequest
 	{
 		
@@ -3467,14 +3306,12 @@ namespace MyNS
 		public string LockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRuleGroupResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRuleGroupRequest
 	{
 		
@@ -3507,14 +3344,12 @@ namespace MyNS
 		public string LockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWebACLResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWebACLRequest
 	{
 		
@@ -3547,8 +3382,7 @@ namespace MyNS
 		public string LockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAllManagedProductsResponse
 	{
 		
@@ -3559,8 +3393,7 @@ namespace MyNS
 	/// <summary>
 	/// The properties of a managed product, such as an Amazon Web Services Managed Rules rule group or an Amazon Web Services Marketplace managed rule group. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedProductDescriptor
 	{
 		
@@ -3592,8 +3425,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsAdvancedManagedRuleSet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAllManagedProductsRequest
 	{
 		
@@ -3605,8 +3437,7 @@ namespace MyNS
 		public Scope Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeManagedProductsByVendorResponse
 	{
 		
@@ -3614,8 +3445,7 @@ namespace MyNS
 		public ManagedProductDescriptor[] ManagedProducts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeManagedProductsByVendorRequest
 	{
 		
@@ -3634,8 +3464,7 @@ namespace MyNS
 		public Scope Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeManagedRuleGroupResponse
 	{
 		
@@ -3664,8 +3493,7 @@ namespace MyNS
 	/// <summary>
 	/// High-level information about a <a>Rule</a>, returned by operations like <a>DescribeManagedRuleGroup</a>. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleSummary
 	{
 		
@@ -3679,8 +3507,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>List of labels used by one or more of the rules of a <a>RuleGroup</a>. This summary object is used for the following rule group lists: </p> <ul> <li> <p> <code>AvailableLabels</code> - Labels that rules add to matching requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>. </p> </li> <li> <p> <code>ConsumedLabels</code> - Labels that rules match against. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule. </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelSummary
 	{
 		
@@ -3688,8 +3515,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeManagedRuleGroupRequest
 	{
 		
@@ -3718,14 +3544,12 @@ namespace MyNS
 		public string VersionName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWebACLResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWebACLRequest
 	{
 		
@@ -3737,8 +3561,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateMobileSdkReleaseUrlResponse
 	{
 		
@@ -3746,8 +3569,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateMobileSdkReleaseUrlRequest
 	{
 		
@@ -3766,21 +3588,18 @@ namespace MyNS
 		public string ReleaseVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Platform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDecryptedAPIKeyResponse
 	{
 		
@@ -3791,8 +3610,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDecryptedAPIKeyRequest
 	{
 		
@@ -3811,8 +3629,7 @@ namespace MyNS
 		public string APIKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIPSetResponse
 	{
 		
@@ -3826,8 +3643,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains zero or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p> <p>WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IPSet
 	{
 		
@@ -3870,8 +3686,7 @@ namespace MyNS
 		public string[] Addresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIPSetRequest
 	{
 		
@@ -3897,8 +3712,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLoggingConfigurationResponse
 	{
 		
@@ -3909,8 +3723,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Defines an association between logging destinations and a web ACL resource, for logging from WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs and you can specify filters so that you log only a subset of the logging records. </p> <note> <p>You can define one logging destination per web ACL.</p> </note> <p>You can access information about the traffic that WAF inspects using the following steps:</p> <ol> <li> <p>Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose. </p> <p>The name that you give the destination must start with <code>aws-waf-logs-</code>. Depending on the type of destination, you might need to configure additional settings or permissions. </p> <p>For configuration requirements and pricing information for each destination type, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p> </li> <li> <p>Associate your logging destination to your web ACL using a <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p> <p>For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingConfiguration
 	{
 		
@@ -3941,8 +3754,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Filtering that specifies which web requests are kept in the logs and which are dropped, defined for a web ACL's <a>LoggingConfiguration</a>. </p> <p>You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingFilter
 	{
 		
@@ -3964,8 +3776,7 @@ namespace MyNS
 	/// <summary>
 	/// A single logging filter, used in <a>LoggingFilter</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -3991,37 +3802,32 @@ namespace MyNS
 		public Condition[] Conditions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilterBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEEP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DROP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DROP = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilterRequirement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEETS_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEETS_ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEETS_ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEETS_ANY = 1,
 	}
 	
 	/// <summary>
 	/// A single match condition for a <a>Filter</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Condition
 	{
 		
@@ -4035,8 +3841,7 @@ namespace MyNS
 	/// <summary>
 	/// A single action condition for a <a>Condition</a> in a logging filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionCondition
 	{
 		
@@ -4048,36 +3853,33 @@ namespace MyNS
 		public ActionValue Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAPTCHA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAPTCHA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHALLENGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHALLENGE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUDED_AS_COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUDED_AS_COUNT = 5,
 	}
 	
 	/// <summary>
 	/// A single label name condition for a <a>Condition</a> in a logging filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelNameCondition
 	{
 		
@@ -4089,8 +3891,7 @@ namespace MyNS
 		public string LabelName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLoggingConfigurationRequest
 	{
 		
@@ -4102,8 +3903,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetManagedRuleSetResponse
 	{
 		
@@ -4117,8 +3917,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A set of rules that is managed by Amazon Web Services and Amazon Web Services Marketplace sellers to provide versioned managed rule groups for customers of WAF.</p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRuleSet
 	{
 		
@@ -4156,14 +3955,12 @@ namespace MyNS
 		public string LabelNamespace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishedVersions
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetManagedRuleSetRequest
 	{
 		
@@ -4189,8 +3986,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMobileSdkReleaseResponse
 	{
 		
@@ -4201,8 +3997,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information for a release of the mobile SDK, including release notes and tags.</p> <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileSdkRelease
 	{
 		
@@ -4219,8 +4014,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMobileSdkReleaseRequest
 	{
 		
@@ -4239,8 +4033,7 @@ namespace MyNS
 		public string ReleaseVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPermissionPolicyResponse
 	{
 		
@@ -4248,8 +4041,7 @@ namespace MyNS
 		public string Policy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPermissionPolicyRequest
 	{
 		
@@ -4261,8 +4053,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRateBasedStatementManagedKeysResponse
 	{
 		
@@ -4276,8 +4067,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The set of IP addresses that are currently blocked for a <a>RateBasedStatement</a>. This is only available for rate-based rules that aggregate on just the IP address, with the <code>AggregateKeyType</code> set to <code>IP</code> or <code>FORWARDED_IP</code>.</p> <p>A rate-based rule applies its rule action to requests from IP addresses that are in the rule's managed keys list and that match the rule's scope-down statement. When a rule has no scope-down statement, it applies the action to all requests from the IP addresses that are in the list. The rule applies its rule action to rate limit the matching requests. The action is usually Block but it can be any valid rule action except for Allow. </p> <p>The maximum number of IP addresses that can be rate limited by a single rate-based rule instance is 10,000. If more than 10,000 addresses exceed the rate limit, WAF limits those with the highest rates. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateBasedStatementManagedKeysIPSet
 	{
 		
@@ -4288,8 +4078,7 @@ namespace MyNS
 		public string[] Addresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRateBasedStatementManagedKeysRequest
 	{
 		
@@ -4325,14 +4114,12 @@ namespace MyNS
 		public string RuleName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFUnsupportedAggregateKeyTypeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRegexPatternSetResponse
 	{
 		
@@ -4346,8 +4133,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains one or more regular expressions. </p> <p>WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegexPatternSet
 	{
 		
@@ -4367,8 +4153,7 @@ namespace MyNS
 		public Regex[] RegularExpressionList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRegexPatternSetRequest
 	{
 		
@@ -4394,8 +4179,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRuleGroupResponse
 	{
 		
@@ -4409,8 +4193,7 @@ namespace MyNS
 	/// <summary>
 	///  A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleGroup
 	{
 		
@@ -4468,8 +4251,7 @@ namespace MyNS
 		public LabelSummary[] ConsumedLabels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRuleGroupRequest
 	{
 		
@@ -4486,8 +4268,7 @@ namespace MyNS
 		public string ARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSampledRequestsResponse
 	{
 		
@@ -4504,8 +4285,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single sampled web request. The response from <a>GetSampledRequests</a> includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains an array of <code>SampledHTTPRequest</code> objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SampledHTTPRequest
 	{
 		
@@ -4554,8 +4334,7 @@ namespace MyNS
 	/// <summary>
 	/// Part of the response from <a>GetSampledRequests</a>. This is a complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HTTPRequest
 	{
 		
@@ -4581,8 +4360,7 @@ namespace MyNS
 	/// <summary>
 	/// Part of the response from <a>GetSampledRequests</a>. This is a complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HTTPHeader
 	{
 		
@@ -4596,8 +4374,7 @@ namespace MyNS
 	/// <summary>
 	/// The result from the inspection of the web request for a valid <code>CAPTCHA</code> token. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaptchaResponse
 	{
 		
@@ -4611,30 +4388,27 @@ namespace MyNS
 		public FailureReason FailureReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailureReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOKEN_MISSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOKEN_MISSING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOKEN_EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOKEN_EXPIRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOKEN_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOKEN_INVALID = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOKEN_DOMAIN_MISMATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOKEN_DOMAIN_MISMATCH = 3,
 	}
 	
 	/// <summary>
 	/// The result from the inspection of the web request for a valid challenge token. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChallengeResponse
 	{
 		
@@ -4651,8 +4425,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want WAF to return a sample of web requests.</p> <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p> <p>In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which WAF actually returned a sample of web requests. WAF gets the specified number of requests from among the first 5,000 requests that your Amazon Web Services resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that WAF received the 5,000th request.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeWindow
 	{
 		
@@ -4671,8 +4444,7 @@ namespace MyNS
 		public System.DateTimeOffset EndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSampledRequestsRequest
 	{
 		
@@ -4712,8 +4484,7 @@ namespace MyNS
 		public int MaxItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebACLResponse
 	{
 		
@@ -4730,8 +4501,7 @@ namespace MyNS
 	/// <summary>
 	///  A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebACL
 	{
 		
@@ -4810,8 +4580,7 @@ namespace MyNS
 	/// <summary>
 	/// A rule group that's defined for an Firewall Manager WAF policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirewallManagerRuleGroup
 	{
 		
@@ -4854,8 +4623,7 @@ namespace MyNS
 	/// <summary>
 	/// The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a single rule group reference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirewallManagerStatement
 	{
 		
@@ -4866,8 +4634,7 @@ namespace MyNS
 		public RuleGroupReferenceStatement RuleGroupReferenceStatement { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebACLRequest
 	{
 		
@@ -4893,8 +4660,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebACLForResourceResponse
 	{
 		
@@ -4902,8 +4668,7 @@ namespace MyNS
 		public WebACL WebACL { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebACLForResourceRequest
 	{
 		
@@ -4915,8 +4680,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAPIKeysResponse
 	{
 		
@@ -4933,8 +4697,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information for a single API key. </p> <p>API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIKeySummary
 	{
 		
@@ -4951,8 +4714,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAPIKeysRequest
 	{
 		
@@ -4970,8 +4732,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAvailableManagedRuleGroupVersionsResponse
 	{
 		
@@ -4988,8 +4749,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a single version of a managed rule group. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRuleGroupVersion
 	{
 		
@@ -5000,8 +4760,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAvailableManagedRuleGroupVersionsRequest
 	{
 		
@@ -5033,8 +4792,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAvailableManagedRuleGroupsResponse
 	{
 		
@@ -5048,8 +4806,7 @@ namespace MyNS
 	/// <summary>
 	/// High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. To use any Amazon Web Services Marketplace managed rule group, first subscribe to the rule group through Amazon Web Services Marketplace. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRuleGroupSummary
 	{
 		
@@ -5066,8 +4823,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAvailableManagedRuleGroupsRequest
 	{
 		
@@ -5085,8 +4841,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIPSetsResponse
 	{
 		
@@ -5097,8 +4852,7 @@ namespace MyNS
 		public IPSetSummary[] IPSets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIPSetsRequest
 	{
 		
@@ -5116,8 +4870,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLoggingConfigurationsResponse
 	{
 		
@@ -5128,8 +4881,7 @@ namespace MyNS
 		public string NextMarker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLoggingConfigurationsRequest
 	{
 		
@@ -5147,8 +4899,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListManagedRuleSetsResponse
 	{
 		
@@ -5162,8 +4913,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>High-level information for a managed rule set. </p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRuleSetSummary
 	{
 		
@@ -5186,8 +4936,7 @@ namespace MyNS
 		public string LabelNamespace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListManagedRuleSetsRequest
 	{
 		
@@ -5205,8 +4954,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMobileSdkReleasesResponse
 	{
 		
@@ -5220,8 +4968,7 @@ namespace MyNS
 	/// <summary>
 	/// High level information for an SDK release. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReleaseSummary
 	{
 		
@@ -5232,8 +4979,7 @@ namespace MyNS
 		public System.DateTimeOffset Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMobileSdkReleasesRequest
 	{
 		
@@ -5251,8 +4997,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRegexPatternSetsResponse
 	{
 		
@@ -5263,8 +5008,7 @@ namespace MyNS
 		public RegexPatternSetSummary[] RegexPatternSets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRegexPatternSetsRequest
 	{
 		
@@ -5282,8 +5026,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesForWebACLResponse
 	{
 		
@@ -5291,8 +5034,7 @@ namespace MyNS
 		public string[] ResourceArns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesForWebACLRequest
 	{
 		
@@ -5307,33 +5049,30 @@ namespace MyNS
 		public ResourceType ResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_LOAD_BALANCER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_LOAD_BALANCER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_GATEWAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPSYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPSYNC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COGNITO_USER_POOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COGNITO_USER_POOL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_RUNNER_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_RUNNER_SERVICE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFIED_ACCESS_INSTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFIED_ACCESS_INSTANCE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRuleGroupsResponse
 	{
 		
@@ -5344,8 +5083,7 @@ namespace MyNS
 		public RuleGroupSummary[] RuleGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRuleGroupsRequest
 	{
 		
@@ -5363,8 +5101,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -5378,8 +5115,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The collection of tagging definitions for an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p> <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagInfoForResource
 	{
 		
@@ -5390,8 +5126,7 @@ namespace MyNS
 		public Tag[] TagList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -5409,8 +5144,7 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebACLsResponse
 	{
 		
@@ -5421,8 +5155,7 @@ namespace MyNS
 		public WebACLSummary[] WebACLs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebACLsRequest
 	{
 		
@@ -5440,8 +5173,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutLoggingConfigurationResponse
 	{
 		
@@ -5449,8 +5181,7 @@ namespace MyNS
 		public LoggingConfiguration LoggingConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutLoggingConfigurationRequest
 	{
 		
@@ -5462,20 +5193,17 @@ namespace MyNS
 		public LoggingConfiguration LoggingConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFServiceLinkedRoleErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFLogDestinationPermissionIssueException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutManagedRuleSetVersionsResponse
 	{
 		
@@ -5483,8 +5211,7 @@ namespace MyNS
 		public string NextLockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutManagedRuleSetVersionsRequest
 	{
 		
@@ -5523,20 +5250,17 @@ namespace MyNS
 		public VersionsToPublish VersionsToPublish { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionsToPublish
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutPermissionPolicyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutPermissionPolicyRequest
 	{
 		
@@ -5555,20 +5279,17 @@ namespace MyNS
 		public string Policy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WAFInvalidPermissionPolicyException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -5587,14 +5308,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -5613,8 +5332,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateIPSetResponse
 	{
 		
@@ -5622,8 +5340,7 @@ namespace MyNS
 		public string NextLockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateIPSetRequest
 	{
 		
@@ -5666,8 +5383,7 @@ namespace MyNS
 		public string LockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateManagedRuleSetVersionExpiryDateResponse
 	{
 		
@@ -5681,8 +5397,7 @@ namespace MyNS
 		public string NextLockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateManagedRuleSetVersionExpiryDateRequest
 	{
 		
@@ -5729,8 +5444,7 @@ namespace MyNS
 		public System.DateTimeOffset ExpiryTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRegexPatternSetResponse
 	{
 		
@@ -5738,8 +5452,7 @@ namespace MyNS
 		public string NextLockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRegexPatternSetRequest
 	{
 		
@@ -5782,8 +5495,7 @@ namespace MyNS
 		public string LockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRuleGroupResponse
 	{
 		
@@ -5791,8 +5503,7 @@ namespace MyNS
 		public string NextLockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRuleGroupRequest
 	{
 		
@@ -5841,8 +5552,7 @@ namespace MyNS
 		public CustomResponseBodies CustomResponseBodies { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWebACLResponse
 	{
 		
@@ -5850,8 +5560,7 @@ namespace MyNS
 		public string NextLockToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWebACLRequest
 	{
 		
@@ -5919,37 +5628,32 @@ namespace MyNS
 		public AssociationConfig AssociationConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssociatedResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUDFRONT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUDFRONT = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MapMatchScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALUE = 2,
 	}
 	
 	/// <summary>
 	/// The response body to use in a custom response to a web request. This is referenced by key from <a>CustomResponse</a> <code>CustomResponseBodyKey</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomResponseBody
 	{
 		
@@ -5968,27 +5672,24 @@ namespace MyNS
 		public string Content { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResponseContentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_PLAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_PLAIN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_HTML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_HTML = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_JSON = 2,
 	}
 	
 	/// <summary>
 	/// <p>Information for a single version of a managed rule set. </p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRuleSetVersion
 	{
 		
@@ -6014,8 +5715,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Customizes the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default size is 16 KB (16,384 kilobytes). </p> <note> <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> </note> <p>This is used in the <code>AssociationConfig</code> of the web ACL. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestBodyAssociatedResourceTypeConfig
 	{
 		
@@ -6027,30 +5727,27 @@ namespace MyNS
 		public SizeInspectionLimit DefaultSizeInspectionLimit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SizeInspectionLimit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KB_16")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KB_16 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KB_32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KB_32 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KB_48")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KB_48 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KB_64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KB_64 = 3,
 	}
 	
 	/// <summary>
 	/// <p>A version of the named managed rule group, that the rule group's vendor publishes for use by customers. </p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionToPublish
 	{
 		

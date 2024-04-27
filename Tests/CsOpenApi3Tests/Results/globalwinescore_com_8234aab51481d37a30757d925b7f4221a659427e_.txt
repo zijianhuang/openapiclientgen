@@ -128,26 +128,26 @@ namespace MyNS
 	public enum ListHistoricalGWSColor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="red")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		red = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="white")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		white = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pink")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pink = 2,
 	}
 	
 	public enum ListHistoricalGWSOrdering
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-date")]
 		Minusdate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="score")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		score = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-score")]
@@ -157,13 +157,13 @@ namespace MyNS
 	public enum GlobalWineScoreGetByWine_idAndVintageAndColorAndIs_primeursAndLwinAndLwin_11AndLimitAndOffsetAndOrderingOrdering
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-date")]
 		Minusdate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="score")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		score = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-score")]

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The submitted answer for a question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Answer
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// All submitted files for a FileUpload question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileUploadAnswers
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// Info for a single file submitted to a file upload question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileUploadAnswer
 	{
 		
@@ -95,8 +92,7 @@ namespace MyNS
 	/// <summary>
 	/// Grade information associated with a respondent's answer to a question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Grade
 	{
 		
@@ -122,8 +118,7 @@ namespace MyNS
 	/// <summary>
 	/// Feedback for a respondent about their response to a question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Feedback
 	{
 		
@@ -143,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	/// Supplementary material to the feedback.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtraMaterial
 	{
 		
@@ -164,8 +158,7 @@ namespace MyNS
 	/// <summary>
 	/// Link for text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextLink
 	{
 		
@@ -185,8 +178,7 @@ namespace MyNS
 	/// <summary>
 	/// Link to a video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoLink
 	{
 		
@@ -206,8 +198,7 @@ namespace MyNS
 	/// <summary>
 	/// A question's answers as text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextAnswers
 	{
 		
@@ -221,8 +212,7 @@ namespace MyNS
 	/// <summary>
 	/// An answer to a question represented as text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextAnswer
 	{
 		
@@ -236,8 +226,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch of updates to perform on a form. All the specified updates are made or none of them are.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateFormRequest
 	{
 		
@@ -263,8 +252,7 @@ namespace MyNS
 	/// <summary>
 	/// The kinds of update requests that can be made.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Request
 	{
 		
@@ -308,8 +296,7 @@ namespace MyNS
 	/// <summary>
 	/// Create an item in a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateItemRequest
 	{
 		
@@ -329,8 +316,7 @@ namespace MyNS
 	/// <summary>
 	/// A single item of the form. `kind` defines which kind of item it is.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Item
 	{
 		
@@ -392,8 +378,7 @@ namespace MyNS
 	/// <summary>
 	/// An item containing an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageItem
 	{
 		
@@ -407,8 +392,7 @@ namespace MyNS
 	/// <summary>
 	/// Data representing an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image
 	{
 		
@@ -440,8 +424,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of the media.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaProperties
 	{
 		
@@ -458,30 +441,27 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaPropertiesAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 3,
 	}
 	
 	/// <summary>
 	/// A page break. The title and description of this item are shown at the top of the new page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageBreakItem
 	{
 	}
@@ -489,8 +469,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a question that comprises multiple questions grouped together.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuestionGroupItem
 	{
 		
@@ -516,8 +495,7 @@ namespace MyNS
 	/// <summary>
 	/// A grid of choices (radio or check boxes) with each row constituting a separate question. Each row has the same choices, which are shown as the columns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Grid
 	{
 		
@@ -537,8 +515,7 @@ namespace MyNS
 	/// <summary>
 	/// A radio/checkbox/dropdown question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChoiceQuestion
 	{
 		
@@ -564,8 +541,7 @@ namespace MyNS
 	/// <summary>
 	/// An option for a Choice question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Option
 	{
 		
@@ -600,49 +576,44 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OptionGoToAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GO_TO_ACTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GO_TO_ACTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXT_SECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXT_SECTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTART_FORM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTART_FORM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMIT_FORM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMIT_FORM = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChoiceQuestionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHOICE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHOICE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RADIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RADIO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECKBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECKBOX = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DROP_DOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DROP_DOWN = 3,
 	}
 	
 	/// <summary>
 	/// Any question. The specific type of question is known by its `kind`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Question
 	{
 		
@@ -710,8 +681,7 @@ namespace MyNS
 	/// <summary>
 	/// A date question. Date questions default to just month + day.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateQuestion
 	{
 		
@@ -731,8 +701,7 @@ namespace MyNS
 	/// <summary>
 	/// A file upload question. The API currently does not support creating file upload questions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileUploadQuestion
 	{
 		
@@ -764,8 +733,7 @@ namespace MyNS
 	/// <summary>
 	/// Grading for a single question
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Grading
 	{
 		
@@ -803,8 +771,7 @@ namespace MyNS
 	/// <summary>
 	/// The answer key for a question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CorrectAnswers
 	{
 		
@@ -818,8 +785,7 @@ namespace MyNS
 	/// <summary>
 	/// A single correct answer for a question. For multiple-valued (`CHECKBOX`) questions, several `CorrectAnswer`s may be needed to represent a single correct response option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CorrectAnswer
 	{
 		
@@ -833,8 +799,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a question that is part of a question group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RowQuestion
 	{
 		
@@ -848,8 +813,7 @@ namespace MyNS
 	/// <summary>
 	/// A scale question. The user has a range of numeric values to choose from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScaleQuestion
 	{
 		
@@ -881,8 +845,7 @@ namespace MyNS
 	/// <summary>
 	/// A text-based question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextQuestion
 	{
 		
@@ -896,8 +859,7 @@ namespace MyNS
 	/// <summary>
 	/// A time question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeQuestion
 	{
 		
@@ -911,8 +873,7 @@ namespace MyNS
 	/// <summary>
 	/// A form item containing a single question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuestionItem
 	{
 		
@@ -932,8 +893,7 @@ namespace MyNS
 	/// <summary>
 	/// A text item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextItem
 	{
 	}
@@ -941,8 +901,7 @@ namespace MyNS
 	/// <summary>
 	/// An item containing a video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoItem
 	{
 		
@@ -962,8 +921,7 @@ namespace MyNS
 	/// <summary>
 	/// Data representing a video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Video
 	{
 		
@@ -983,8 +941,7 @@ namespace MyNS
 	/// <summary>
 	/// A specific location in a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -998,8 +955,7 @@ namespace MyNS
 	/// <summary>
 	/// Delete an item in a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteItemRequest
 	{
 		
@@ -1013,8 +969,7 @@ namespace MyNS
 	/// <summary>
 	/// Move an item in a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveItemRequest
 	{
 		
@@ -1034,8 +989,7 @@ namespace MyNS
 	/// <summary>
 	/// Update Form's Info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFormInfoRequest
 	{
 		
@@ -1055,8 +1009,7 @@ namespace MyNS
 	/// <summary>
 	/// The general information for a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Info
 	{
 		
@@ -1082,8 +1035,7 @@ namespace MyNS
 	/// <summary>
 	/// Update an item in a form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateItemRequest
 	{
 		
@@ -1109,8 +1061,7 @@ namespace MyNS
 	/// <summary>
 	/// Update Form's FormSettings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSettingsRequest
 	{
 		
@@ -1130,8 +1081,7 @@ namespace MyNS
 	/// <summary>
 	/// A form's settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormSettings
 	{
 		
@@ -1145,8 +1095,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings related to quiz forms and grading. These must be updated with the UpdateSettingsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuizSettings
 	{
 		
@@ -1160,8 +1109,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides control over how write requests are executed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteControl
 	{
 		
@@ -1181,8 +1129,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a BatchUpdateFormRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateFormResponse
 	{
 		
@@ -1208,8 +1155,7 @@ namespace MyNS
 	/// <summary>
 	/// A Google Forms document. A form is created in Drive, and deleting a form or changing its access protections is done via the [Drive API](https://developers.google.com/drive/api/v3/about-sdk).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Form
 	{
 		
@@ -1259,8 +1205,7 @@ namespace MyNS
 	/// <summary>
 	/// A single response from an update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response
 	{
 		
@@ -1274,8 +1219,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of creating an item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateItemResponse
 	{
 		
@@ -1295,8 +1239,7 @@ namespace MyNS
 	/// <summary>
 	/// A Pub/Sub topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudPubsubTopic
 	{
 		
@@ -1310,8 +1253,7 @@ namespace MyNS
 	/// <summary>
 	/// Create a new watch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWatchRequest
 	{
 		
@@ -1331,8 +1273,7 @@ namespace MyNS
 	/// <summary>
 	/// A watch for events for a form. When the designated event happens, a notification will be published to the specified target. The notification's attributes will include a `formId` key that has the ID of the watched form and an `eventType` key that has the string of the type. Messages are sent with at-least-once delivery and are only dropped in extraordinary circumstances. Typically all notifications should be reliably delivered within a few seconds; however, in some situations notifications may be delayed. A watch expires seven days after it is created unless it is renewed with watches.renew
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Watch
 	{
 		
@@ -1379,62 +1320,55 @@ namespace MyNS
 		public WatchTarget Target { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WatchErrorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECT_NOT_AUTHORIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECT_NOT_AUTHORIZED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_USER_ACCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_USER_ACCESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_ERRORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_ERRORS = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WatchEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEMA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESPONSES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESPONSES = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WatchState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 2,
 	}
 	
 	/// <summary>
 	/// The target for notification delivery.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WatchTarget
 	{
 		
@@ -1448,8 +1382,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -1457,8 +1390,7 @@ namespace MyNS
 	/// <summary>
 	/// A form response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormResponse
 	{
 		
@@ -1508,8 +1440,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a ListFormResponsesRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFormResponsesResponse
 	{
 		
@@ -1529,8 +1460,7 @@ namespace MyNS
 	/// <summary>
 	/// The response of a ListWatchesRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWatchesResponse
 	{
 		
@@ -1544,8 +1474,7 @@ namespace MyNS
 	/// <summary>
 	/// Renew an existing Watch for seven days.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RenewWatchRequest
 	{
 	}

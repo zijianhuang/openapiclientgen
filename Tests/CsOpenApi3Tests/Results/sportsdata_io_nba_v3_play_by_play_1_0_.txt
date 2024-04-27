@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Game
 	{
 		
@@ -152,8 +151,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Quarter
 	{
 		
@@ -176,8 +174,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> QuarterID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Play
 	{
 		
@@ -290,8 +287,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayByPlay
 	{
 		
@@ -305,8 +301,7 @@ namespace MyNS
 		public Quarter[] Quarters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Series
 	{
 		
@@ -417,10 +412,10 @@ namespace MyNS
 	public enum PlayByPlayFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XML = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 1,
 	}
 }

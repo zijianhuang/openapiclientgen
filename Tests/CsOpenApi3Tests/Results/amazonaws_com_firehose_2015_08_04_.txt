@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeliveryStreamOutput
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public string DeliveryStreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeliveryStreamInput
 	{
 		
@@ -75,24 +73,21 @@ namespace MyNS
 		public AmazonOpenSearchServerlessDestinationConfiguration AmazonOpenSearchServerlessDestinationConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryStreamType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DirectPut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DirectPut = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KinesisStreamAsSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KinesisStreamAsSource = 1,
 	}
 	
 	/// <summary>
 	/// The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisStreamSourceConfiguration
 	{
 		
@@ -114,8 +109,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE). 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryStreamEncryptionConfigurationInput
 	{
 		
@@ -130,24 +124,21 @@ namespace MyNS
 		public KeyType KeyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_OWNED_CMK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_OWNED_CMK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_MANAGED_CMK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_MANAGED_CMK = 1,
 	}
 	
 	/// <summary>
 	/// Describes the configuration of a destination in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3DestinationConfiguration
 	{
 		
@@ -187,8 +178,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BufferingHints
 	{
 		
@@ -199,33 +189,30 @@ namespace MyNS
 		public System.Nullable<System.Int32> IntervalInSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompressionFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNCOMPRESSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNCOMPRESSED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GZIP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZIP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Snappy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Snappy = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HADOOP_SNAPPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HADOOP_SNAPPY = 4,
 	}
 	
 	/// <summary>
 	/// Describes the encryption for a destination in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionConfiguration
 	{
 		
@@ -236,21 +223,18 @@ namespace MyNS
 		public KMSEncryptionConfig KMSEncryptionConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NoEncryptionConfig
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoEncryption")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoEncryption = 0,
 	}
 	
 	/// <summary>
 	/// Describes an encryption key for a destination in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSEncryptionConfig
 	{
 		
@@ -265,8 +249,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the Amazon CloudWatch logging options for your delivery stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchLoggingOptions
 	{
 		
@@ -283,8 +266,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration of a destination in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedS3DestinationConfiguration
 	{
 		
@@ -339,8 +321,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a data processing configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProcessingConfiguration
 	{
 		
@@ -354,8 +335,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a data processor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Processor
 	{
 		
@@ -370,30 +350,27 @@ namespace MyNS
 		public ProcessorParameter[] Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProcessorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecordDeAggregation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecordDeAggregation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lambda")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lambda = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MetadataExtraction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MetadataExtraction = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppendDelimiterToRecord")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppendDelimiterToRecord = 3,
 	}
 	
 	/// <summary>
 	/// Describes the processor parameter. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProcessorParameter
 	{
 		
@@ -412,58 +389,53 @@ namespace MyNS
 		public string ParameterValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProcessorParameterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaArn = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NumberOfRetries")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NumberOfRetries = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MetadataExtractionQuery")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MetadataExtractionQuery = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JsonParsingEngine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JsonParsingEngine = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RoleArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RoleArn = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BufferSizeInMBs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BufferSizeInMBs = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BufferIntervalInSeconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BufferIntervalInSeconds = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SubRecordType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SubRecordType = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Delimiter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Delimiter = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum S3BackupMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 1,
 	}
 	
 	/// <summary>
 	/// Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the Amazon Web Services Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataFormatConversionConfiguration
 	{
 		
@@ -483,8 +455,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaConfiguration
 	{
 		
@@ -510,8 +481,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the deserializer you want to use to convert the format of the input data. This parameter is required if <code>Enabled</code> is set to true.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputFormatConfiguration
 	{
 		
@@ -522,8 +492,7 @@ namespace MyNS
 	/// <summary>
 	/// The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <a>Serializer</a>. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deserializer
 	{
 		
@@ -537,8 +506,7 @@ namespace MyNS
 	/// <summary>
 	/// The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenXJsonSerDe
 	{
 		
@@ -552,8 +520,7 @@ namespace MyNS
 		public ColumnToJsonKeyMappings ColumnToJsonKeyMappings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnToJsonKeyMappings
 	{
 	}
@@ -561,8 +528,7 @@ namespace MyNS
 	/// <summary>
 	/// The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HiveJsonSerDe
 	{
 		
@@ -573,8 +539,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputFormatConfiguration
 	{
 		
@@ -585,8 +550,7 @@ namespace MyNS
 	/// <summary>
 	/// The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serializer
 	{
 		
@@ -600,8 +564,7 @@ namespace MyNS
 	/// <summary>
 	/// A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParquetSerDe
 	{
 		
@@ -624,40 +587,35 @@ namespace MyNS
 		public ParquetWriterVersion WriterVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParquetCompression
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNCOMPRESSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNCOMPRESSED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GZIP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNAPPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNAPPY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParquetWriterVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V2 = 1,
 	}
 	
 	/// <summary>
 	/// A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrcSerDe
 	{
 		
@@ -692,40 +650,35 @@ namespace MyNS
 		public OrcFormatVersion FormatVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrcCompression
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZLIB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZLIB = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNAPPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNAPPY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrcFormatVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V0_11")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V0_11 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V0_12")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V0_12 = 1,
 	}
 	
 	/// <summary>
 	/// The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicPartitioningConfiguration
 	{
 		
@@ -739,8 +692,7 @@ namespace MyNS
 	/// <summary>
 	///  The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetryOptions
 	{
 		
@@ -751,8 +703,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration of a destination in Amazon Redshift.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedshiftDestinationConfiguration
 	{
 		
@@ -817,8 +768,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a <code>COPY</code> command for Amazon Redshift.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyCommand
 	{
 		
@@ -839,8 +789,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedshiftRetryOptions
 	{
 		
@@ -851,8 +800,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration of a destination in Amazon ES.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchDestinationConfiguration
 	{
 		
@@ -908,33 +856,30 @@ namespace MyNS
 		public VpcConfiguration VpcConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ElasticsearchIndexRotationPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoRotation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoRotation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneHour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneHour = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneDay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneDay = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneWeek")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneWeek = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneMonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneMonth = 4,
 	}
 	
 	/// <summary>
 	/// Describes the buffering to perform before delivering data to the Amazon ES destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchBufferingHints
 	{
 		
@@ -948,8 +893,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchRetryOptions
 	{
 		
@@ -957,24 +901,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> DurationInSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ElasticsearchS3BackupMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailedDocumentsOnly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailedDocumentsOnly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AllDocuments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AllDocuments = 1,
 	}
 	
 	/// <summary>
 	/// The details of the VPC of the Amazon ES destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfiguration
 	{
 		
@@ -1003,8 +944,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration of a destination in Amazon OpenSearch Service
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonopensearchserviceDestinationConfiguration
 	{
 		
@@ -1073,8 +1013,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the buffering to perform before delivering data to the Amazon OpenSearch Service destination. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonopensearchserviceBufferingHints
 	{
 		
@@ -1088,8 +1027,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonopensearchserviceRetryOptions
 	{
 		
@@ -1100,8 +1038,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration of a destination in Splunk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SplunkDestinationConfiguration
 	{
 		
@@ -1149,24 +1086,21 @@ namespace MyNS
 		public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HECEndpointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Raw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Raw = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Event")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Event = 1,
 	}
 	
 	/// <summary>
 	/// Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SplunkRetryOptions
 	{
 		
@@ -1174,24 +1108,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> DurationInSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SplunkS3BackupMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailedEventsOnly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailedEventsOnly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AllEvents")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AllEvents = 1,
 	}
 	
 	/// <summary>
 	/// Describes the configuration of the HTTP endpoint destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpEndpointDestinationConfiguration
 	{
 		
@@ -1241,8 +1172,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration of the HTTP endpoint to which Kinesis Firehose delivers data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpEndpointConfiguration
 	{
 		
@@ -1263,8 +1193,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the buffering options that can be applied before data is delivered to the HTTP endpoint destination. Kinesis Data Firehose treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpEndpointBufferingHints
 	{
 		
@@ -1278,8 +1207,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of the HTTP endpoint request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpEndpointRequestConfiguration
 	{
 		
@@ -1290,24 +1218,21 @@ namespace MyNS
 		public HttpEndpointCommonAttribute[] CommonAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContentEncoding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GZIP = 1,
 	}
 	
 	/// <summary>
 	/// Describes the metadata that's delivered to the specified HTTP endpoint destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpEndpointCommonAttribute
 	{
 		
@@ -1329,8 +1254,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpEndpointRetryOptions
 	{
 		
@@ -1338,24 +1262,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> DurationInSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HttpEndpointS3BackupMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailedDataOnly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailedDataOnly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AllData")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AllData = 1,
 	}
 	
 	/// <summary>
 	/// Metadata that you can assign to a delivery stream, consisting of a key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1373,8 +1294,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration of a destination in the Serverless offering for Amazon OpenSearch Service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonOpenSearchServerlessDestinationConfiguration
 	{
 		
@@ -1434,8 +1354,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the buffering to perform before delivering data to the Serverless offering for Amazon OpenSearch Service destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonOpenSearchServerlessBufferingHints
 	{
 		
@@ -1449,8 +1368,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonOpenSearchServerlessRetryOptions
 	{
 		
@@ -1458,38 +1376,32 @@ namespace MyNS
 		public System.Nullable<System.Int32> DurationInSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArgumentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidKMSResourceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDeliveryStreamOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDeliveryStreamInput
 	{
 		
@@ -1504,14 +1416,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> AllowForceDelete { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDeliveryStreamOutput
 	{
 		
@@ -1526,8 +1436,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a delivery stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryStreamDescription
 	{
 		
@@ -1596,33 +1505,30 @@ namespace MyNS
 		public bool HasMoreDestinations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryStreamStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING_FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING_FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 4,
 	}
 	
 	/// <summary>
 	/// Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailureDescription
 	{
 		
@@ -1641,63 +1547,60 @@ namespace MyNS
 		public string Details { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryStreamFailureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETIRE_KMS_GRANT_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETIRE_KMS_GRANT_FAILED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_KMS_GRANT_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_KMS_GRANT_FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS_ACCESS_DENIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_KMS_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED_KMS_KEY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_KMS_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_KMS_KEY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS_KEY_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS_KEY_NOT_FOUND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS_OPT_IN_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS_OPT_IN_REQUIRED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_ENI_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_ENI_FAILED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_ENI_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_ENI_FAILED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBNET_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBNET_NOT_FOUND = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_GROUP_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_GROUP_NOT_FOUND = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENI_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENI_ACCESS_DENIED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBNET_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBNET_ACCESS_DENIED = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_GROUP_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_GROUP_ACCESS_DENIED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ERROR = 14,
 	}
 	
 	/// <summary>
 	/// Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryStreamEncryptionConfiguration
 	{
 		
@@ -1714,36 +1617,33 @@ namespace MyNS
 		public FailureDescription FailureDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryStreamEncryptionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLING_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLING_FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLING_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLING_FAILED = 5,
 	}
 	
 	/// <summary>
 	/// Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceDescription
 	{
 		
@@ -1754,8 +1654,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisStreamSourceDescription
 	{
 		
@@ -1772,8 +1671,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the destination for a delivery stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DestinationDescription
 	{
 		
@@ -1812,8 +1710,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a destination in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3DestinationDescription
 	{
 		
@@ -1865,8 +1762,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a destination in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedS3DestinationDescription
 	{
 		
@@ -1933,8 +1829,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a destination in Amazon Redshift.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedshiftDestinationDescription
 	{
 		
@@ -1992,8 +1887,7 @@ namespace MyNS
 	/// <summary>
 	/// The destination description in Amazon ES.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchDestinationDescription
 	{
 		
@@ -2040,8 +1934,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of the VPC of the Amazon ES destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfigurationDescription
 	{
 		
@@ -2077,8 +1970,7 @@ namespace MyNS
 	/// <summary>
 	/// The destination description in Amazon OpenSearch Service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonopensearchserviceDestinationDescription
 	{
 		
@@ -2137,8 +2029,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a destination in Splunk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SplunkDestinationDescription
 	{
 		
@@ -2173,8 +2064,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the HTTP endpoint destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpEndpointDestinationDescription
 	{
 		
@@ -2218,8 +2108,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the HTTP endpoint selected as the destination. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpEndpointDescription
 	{
 		
@@ -2233,8 +2122,7 @@ namespace MyNS
 	/// <summary>
 	/// The destination description in the Serverless offering for Amazon OpenSearch Service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonOpenSearchServerlessDestinationDescription
 	{
 		
@@ -2281,8 +2169,7 @@ namespace MyNS
 		public VpcConfigurationDescription VpcConfigurationDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDeliveryStreamInput
 	{
 		
@@ -2300,8 +2187,7 @@ namespace MyNS
 		public string ExclusiveStartDestinationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeliveryStreamsOutput
 	{
 		
@@ -2320,8 +2206,7 @@ namespace MyNS
 		public bool HasMoreDeliveryStreams { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeliveryStreamsInput
 	{
 		
@@ -2335,8 +2220,7 @@ namespace MyNS
 		public string ExclusiveStartDeliveryStreamName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForDeliveryStreamOutput
 	{
 		
@@ -2355,8 +2239,7 @@ namespace MyNS
 		public bool HasMoreTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForDeliveryStreamInput
 	{
 		
@@ -2374,8 +2257,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordOutput
 	{
 		
@@ -2390,8 +2272,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Encrypted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordInput
 	{
 		
@@ -2413,8 +2294,7 @@ namespace MyNS
 	/// <summary>
 	/// The unit of data in a delivery stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Record
 	{
 		
@@ -2426,14 +2306,12 @@ namespace MyNS
 		public string Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordBatchOutput
 	{
 		
@@ -2458,8 +2336,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the result for an individual record from a <a>PutRecordBatch</a> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordBatchResponseEntry
 	{
 		
@@ -2473,8 +2350,7 @@ namespace MyNS
 		public string ErrorMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecordBatchInput
 	{
 		
@@ -2493,14 +2369,12 @@ namespace MyNS
 		public Record[] Records { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDeliveryStreamEncryptionOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDeliveryStreamEncryptionInput
 	{
 		
@@ -2515,14 +2389,12 @@ namespace MyNS
 		public DeliveryStreamEncryptionConfigurationInput DeliveryStreamEncryptionConfigurationInput { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopDeliveryStreamEncryptionOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopDeliveryStreamEncryptionInput
 	{
 		
@@ -2534,14 +2406,12 @@ namespace MyNS
 		public string DeliveryStreamName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagDeliveryStreamOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagDeliveryStreamInput
 	{
 		
@@ -2560,14 +2430,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagDeliveryStreamOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagDeliveryStreamInput
 	{
 		
@@ -2586,14 +2454,12 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDestinationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDestinationInput
 	{
 		
@@ -2646,8 +2512,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an update for a destination in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3DestinationUpdate
 	{
 		
@@ -2679,8 +2544,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an update for a destination in Amazon S3.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedS3DestinationUpdate
 	{
 		
@@ -2727,8 +2591,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an update for a destination in Amazon Redshift.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedshiftDestinationUpdate
 	{
 		
@@ -2769,8 +2632,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an update for a destination in Amazon ES.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchDestinationUpdate
 	{
 		
@@ -2811,8 +2673,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an update for a destination in Amazon OpenSearch Service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonopensearchserviceDestinationUpdate
 	{
 		
@@ -2862,8 +2723,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an update for a destination in Splunk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SplunkDestinationUpdate
 	{
 		
@@ -2898,8 +2758,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the specified HTTP endpoint destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpEndpointDestinationUpdate
 	{
 		
@@ -2943,8 +2802,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmazonOpenSearchServerlessDestinationUpdate
 	{
 		
@@ -2982,70 +2840,61 @@ namespace MyNS
 		public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModificationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmazonOpenSearchServerlessS3BackupMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailedDocumentsOnly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailedDocumentsOnly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AllDocuments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AllDocuments = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmazonopensearchserviceIndexRotationPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoRotation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoRotation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneHour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneHour = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneDay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneDay = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneWeek")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneWeek = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneMonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneMonth = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmazonopensearchserviceS3BackupMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailedDocumentsOnly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailedDocumentsOnly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AllDocuments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AllDocuments = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RedshiftS3BackupMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 1,
 	}
 	

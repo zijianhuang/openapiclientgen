@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The analysis resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1Analysis
 	{
 		
@@ -59,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of an analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1AnalysisResult
 	{
 		
@@ -80,8 +78,7 @@ namespace MyNS
 	/// <summary>
 	/// Call-specific metadata created during analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1AnalysisResultCallAnalysisMetadata
 	{
 		
@@ -125,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// A piece of metadata that applies to a window of a call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1CallAnnotation
 	{
 		
@@ -200,8 +196,7 @@ namespace MyNS
 	/// <summary>
 	/// A point in a conversation that marks the start or the end of an annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1AnnotationBoundary
 	{
 		
@@ -221,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an entity mention annotation. This represents a mention of an `Entity` in the conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1EntityMentionData
 	{
 		
@@ -248,8 +242,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a sentiment annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1SentimentData
 	{
 		
@@ -266,27 +259,24 @@ namespace MyNS
 		public System.Nullable<System.Single> Score { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1EntityMentionDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MENTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MENTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON = 2,
 	}
 	
 	/// <summary>
 	/// The data for a hold annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1HoldData
 	{
 	}
@@ -294,8 +284,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an intent match. Represents an intent match for a text segment in the conversation. A text segment can be part of a sentence, a complete sentence, or an utterance with multiple sentences.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IntentMatchData
 	{
 		
@@ -309,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an interruption annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1InterruptionData
 	{
 	}
@@ -318,8 +306,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an issue match annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IssueMatchData
 	{
 		
@@ -333,8 +320,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IssueAssignment
 	{
 		
@@ -360,8 +346,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a matched phrase matcher. Represents information identifying a phrase matcher for a given match.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1PhraseMatchData
 	{
 		
@@ -381,8 +366,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a silence annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1SilenceData
 	{
 	}
@@ -390,8 +374,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an entity annotation. Represents a phrase in the conversation that is a known entity, such as a person, an organization, or location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1Entity
 	{
 		
@@ -426,57 +409,54 @@ namespace MyNS
 		public System.Nullable<GoogleCloudContactcenterinsightsV1EntityType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1EntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_OF_ART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_OF_ART = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSUMER_GOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSUMER_GOOD = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_NUMBER = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE = 12,
 	}
 	
 	/// <summary>
 	/// The data for an intent. Represents a detected intent in the conversation, for example MAKES_PROMISE.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1Intent
 	{
 		
@@ -496,8 +476,7 @@ namespace MyNS
 	/// <summary>
 	/// Issue Modeling result on a conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IssueModelResult
 	{
 		
@@ -517,8 +496,7 @@ namespace MyNS
 	/// <summary>
 	/// One channel of conversation-level sentiment data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationLevelSentiment
 	{
 		
@@ -538,8 +516,7 @@ namespace MyNS
 	/// <summary>
 	/// Selector of all available annotators and phrase matchers to run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1AnnotatorSelector
 	{
 		
@@ -613,8 +590,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for summarization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1AnnotatorSelectorSummarizationConfig
 	{
 		
@@ -631,24 +607,21 @@ namespace MyNS
 		public System.Nullable<GoogleCloudContactcenterinsightsV1AnnotatorSelectorSummarizationConfigSummarizationModel> SummarizationModel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1AnnotatorSelectorSummarizationConfigSummarizationModel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUMMARIZATION_MODEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUMMARIZATION_MODEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASELINE_MODEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASELINE_MODEL = 1,
 	}
 	
 	/// <summary>
 	/// The feedback that the customer has about a certain answer in the conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1AnswerFeedback
 	{
 		
@@ -671,30 +644,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Displayed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1AnswerFeedbackCorrectnessLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CORRECTNESS_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CORRECTNESS_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_CORRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_CORRECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIALLY_CORRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIALLY_CORRECT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULLY_CORRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULLY_CORRECT = 3,
 	}
 	
 	/// <summary>
 	/// Agent Assist Article Suggestion data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ArticleSuggestionData
 	{
 		
@@ -738,8 +708,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for a bulk analyze conversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsMetadata
 	{
 		
@@ -789,8 +758,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -816,8 +784,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to analyze conversations in bulk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest
 	{
 		
@@ -849,8 +816,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for a bulk analyze conversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsResponse
 	{
 		
@@ -870,8 +836,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for a bulk delete conversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1BulkDeleteConversationsMetadata
 	{
 		
@@ -903,8 +868,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to delete conversations in bulk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1BulkDeleteConversationsRequest
 	{
 		
@@ -936,8 +900,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for a bulk delete conversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1BulkDeleteConversationsResponse
 	{
 	}
@@ -945,8 +908,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of querying an issue model's statistics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1CalculateIssueModelStatsResponse
 	{
 		
@@ -960,8 +922,7 @@ namespace MyNS
 	/// <summary>
 	/// Aggregated statistics about an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IssueModelLabelStats
 	{
 		
@@ -987,8 +948,7 @@ namespace MyNS
 	/// <summary>
 	/// Aggregated statistics about an issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IssueModelLabelStatsIssueStats
 	{
 		
@@ -1014,8 +974,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for calculating conversation statistics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1CalculateStatsResponse
 	{
 		
@@ -1071,8 +1030,7 @@ namespace MyNS
 	/// <summary>
 	/// A time series representing conversations over time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeries
 	{
 		
@@ -1092,8 +1050,7 @@ namespace MyNS
 	/// <summary>
 	/// A single interval in a time series.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeriesInterval
 	{
 		
@@ -1113,8 +1070,7 @@ namespace MyNS
 	/// <summary>
 	/// The conversation resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1Conversation
 	{
 		
@@ -1248,8 +1204,7 @@ namespace MyNS
 	/// <summary>
 	/// Call-specific metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationCallMetadata
 	{
 		
@@ -1269,8 +1224,7 @@ namespace MyNS
 	/// <summary>
 	/// The conversation source, which is a combination of transcript and audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationDataSource
 	{
 		
@@ -1290,8 +1244,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dialogflow source of conversation data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1DialogflowSource
 	{
 		
@@ -1311,8 +1264,7 @@ namespace MyNS
 	/// <summary>
 	/// A Cloud Storage source of conversation data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1GcsSource
 	{
 		
@@ -1332,8 +1284,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a Dialogflow intent. Represents a detected intent in the conversation, e.g. MAKES_PROMISE.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1DialogflowIntent
 	{
 		
@@ -1347,8 +1298,7 @@ namespace MyNS
 	/// <summary>
 	/// Conversation summarization suggestion data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData
 	{
 		
@@ -1389,27 +1339,24 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> TextSections { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1ConversationMedium
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_CALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHAT = 2,
 	}
 	
 	/// <summary>
 	/// Conversation metadata related to quality management.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationQualityMetadata
 	{
 		
@@ -1441,8 +1388,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an agent involved in the conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationQualityMetadataAgentInfo
 	{
 		
@@ -1474,8 +1420,7 @@ namespace MyNS
 	/// <summary>
 	/// An annotation that was generated during the customer and agent interaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1RuntimeAnnotation
 	{
 		
@@ -1549,8 +1494,7 @@ namespace MyNS
 	/// <summary>
 	/// Dialogflow interaction data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1DialogflowInteractionData
 	{
 		
@@ -1570,8 +1514,7 @@ namespace MyNS
 	/// <summary>
 	/// Agent Assist frequently-asked-question answer data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1FaqAnswerData
 	{
 		
@@ -1615,8 +1558,7 @@ namespace MyNS
 	/// <summary>
 	/// Agent Assist Smart Compose suggestion data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1SmartComposeSuggestionData
 	{
 		
@@ -1648,8 +1590,7 @@ namespace MyNS
 	/// <summary>
 	/// Agent Assist Smart Reply data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1SmartReplyData
 	{
 		
@@ -1681,8 +1622,7 @@ namespace MyNS
 	/// <summary>
 	/// A message representing the transcript of a conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationTranscript
 	{
 		
@@ -1696,8 +1636,7 @@ namespace MyNS
 	/// <summary>
 	/// A segment of a full transcript.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment
 	{
 		
@@ -1759,8 +1698,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata from Dialogflow relating to the current transcript segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentDialogflowSegmentMetadata
 	{
 		
@@ -1774,8 +1712,7 @@ namespace MyNS
 	/// <summary>
 	/// The call participant speaking for a given utterance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationParticipant
 	{
 		
@@ -1810,33 +1747,30 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1ConversationParticipantRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HUMAN_AGENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HUMAN_AGENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMATED_AGENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMATED_AGENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="END_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		END_USER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY_AGENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY_AGENT = 4,
 	}
 	
 	/// <summary>
 	/// Word-level info for words in a transcript.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentWordInfo
 	{
 		
@@ -1868,8 +1802,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for a create analysis operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1CreateAnalysisOperationMetadata
 	{
 		
@@ -1901,8 +1834,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for creating an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1CreateIssueModelMetadata
 	{
 		
@@ -1928,8 +1860,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to create an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1CreateIssueModelRequest
 	{
 		
@@ -1949,8 +1880,7 @@ namespace MyNS
 	/// <summary>
 	/// The issue model resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IssueModel
 	{
 		
@@ -2018,8 +1948,7 @@ namespace MyNS
 	/// <summary>
 	/// Configs for the input data used to create the issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IssueModelInputDataConfig
 	{
 		
@@ -2042,52 +1971,47 @@ namespace MyNS
 		public string TrainingConversationsCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1IssueModelModelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODEL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODEL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_V1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_V1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_V2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_V2 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1IssueModelState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNDEPLOYED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNDEPLOYED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPLOYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPLOYING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPLOYED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPLOYED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNDEPLOYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNDEPLOYING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 5,
 	}
 	
 	/// <summary>
 	/// Metadata for deleting an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1DeleteIssueModelMetadata
 	{
 		
@@ -2113,8 +2037,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to delete an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1DeleteIssueModelRequest
 	{
 		
@@ -2128,8 +2051,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for deploying an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1DeployIssueModelMetadata
 	{
 		
@@ -2155,8 +2077,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to deploy an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1DeployIssueModelRequest
 	{
 		
@@ -2170,8 +2091,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to deploy an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1DeployIssueModelResponse
 	{
 	}
@@ -2179,8 +2099,7 @@ namespace MyNS
 	/// <summary>
 	/// Exact match configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ExactMatchConfig
 	{
 		
@@ -2194,8 +2113,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for an export insights operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ExportInsightsDataMetadata
 	{
 		
@@ -2227,8 +2145,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to export insights.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ExportInsightsDataRequest
 	{
 		
@@ -2266,8 +2183,7 @@ namespace MyNS
 	/// <summary>
 	/// A BigQuery Table Reference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ExportInsightsDataRequestBigQueryDestination
 	{
 		
@@ -2290,27 +2206,24 @@ namespace MyNS
 		public string Table { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1ExportInsightsDataRequestWriteDisposition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITE_DISPOSITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITE_DISPOSITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITE_TRUNCATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITE_TRUNCATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITE_APPEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITE_APPEND = 2,
 	}
 	
 	/// <summary>
 	/// Response for an export insights operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ExportInsightsDataResponse
 	{
 	}
@@ -2318,8 +2231,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for an IngestConversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IngestConversationsMetadata
 	{
 		
@@ -2357,8 +2269,7 @@ namespace MyNS
 	/// <summary>
 	/// Statistics for IngestConversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IngestConversationsMetadataIngestConversationsStats
 	{
 		
@@ -2390,8 +2301,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to ingest conversations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IngestConversationsRequest
 	{
 		
@@ -2435,8 +2345,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration that applies to all conversations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IngestConversationsRequestConversationConfig
 	{
 		
@@ -2462,8 +2371,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for Cloud Storage bucket sources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSource
 	{
 		
@@ -2480,27 +2388,24 @@ namespace MyNS
 		public string BucketUri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSourceBucketObjectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUCKET_OBJECT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUCKET_OBJECT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSCRIPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSCRIPT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIO = 2,
 	}
 	
 	/// <summary>
 	/// DLP resources used for redaction while ingesting conversations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1RedactionConfig
 	{
 		
@@ -2520,8 +2425,7 @@ namespace MyNS
 	/// <summary>
 	/// Speech-to-Text configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1SpeechConfig
 	{
 		
@@ -2535,8 +2439,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for processing transcript objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IngestConversationsRequestTranscriptObjectConfig
 	{
 		
@@ -2550,8 +2453,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to an IngestConversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1IngestConversationsResponse
 	{
 	}
@@ -2559,8 +2461,7 @@ namespace MyNS
 	/// <summary>
 	/// The issue resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1Issue
 	{
 		
@@ -2598,8 +2499,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to list analyses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ListAnalysesResponse
 	{
 		
@@ -2619,8 +2519,7 @@ namespace MyNS
 	/// <summary>
 	/// The response of listing conversations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ListConversationsResponse
 	{
 		
@@ -2640,8 +2539,7 @@ namespace MyNS
 	/// <summary>
 	/// The response of listing issue models.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ListIssueModelsResponse
 	{
 		
@@ -2655,8 +2553,7 @@ namespace MyNS
 	/// <summary>
 	/// The response of listing issues.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ListIssuesResponse
 	{
 		
@@ -2670,8 +2567,7 @@ namespace MyNS
 	/// <summary>
 	/// The response of listing phrase matchers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ListPhraseMatchersResponse
 	{
 		
@@ -2691,8 +2587,7 @@ namespace MyNS
 	/// <summary>
 	/// The phrase matcher resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1PhraseMatcher
 	{
 		
@@ -2766,8 +2661,7 @@ namespace MyNS
 	/// <summary>
 	/// A message representing a rule in the phrase matcher.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1PhraseMatchRuleGroup
 	{
 		
@@ -2787,8 +2681,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a phrase match rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1PhraseMatchRule
 	{
 		
@@ -2814,8 +2707,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration information of a phrase match rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1PhraseMatchRuleConfig
 	{
 		
@@ -2826,43 +2718,38 @@ namespace MyNS
 		public GoogleCloudContactcenterinsightsV1ExactMatchConfig ExactMatchConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1PhraseMatchRuleGroupType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_OF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_OF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY_OF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY_OF = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudContactcenterinsightsV1PhraseMatcherType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHRASE_MATCHER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHRASE_MATCHER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_OF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_OF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY_OF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY_OF = 2,
 	}
 	
 	/// <summary>
 	/// The response of listing views.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1ListViewsResponse
 	{
 		
@@ -2882,8 +2769,7 @@ namespace MyNS
 	/// <summary>
 	/// The View resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1View
 	{
 		
@@ -2921,8 +2807,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1Settings
 	{
 		
@@ -2984,8 +2869,7 @@ namespace MyNS
 	/// <summary>
 	/// Default configuration when creating Analyses in Insights.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1SettingsAnalysisConfig
 	{
 		
@@ -3011,8 +2895,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for undeploying an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1UndeployIssueModelMetadata
 	{
 		
@@ -3038,8 +2921,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to undeploy an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1UndeployIssueModelRequest
 	{
 		
@@ -3053,8 +2935,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to undeploy an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1UndeployIssueModelResponse
 	{
 	}
@@ -3062,8 +2943,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for an UploadConversation operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1UploadConversationMetadata
 	{
 		
@@ -3101,8 +2981,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to upload a conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1UploadConversationRequest
 	{
 		
@@ -3140,8 +3019,7 @@ namespace MyNS
 	/// <summary>
 	/// The analysis resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1Analysis
 	{
 		
@@ -3179,8 +3057,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of an analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1AnalysisResult
 	{
 		
@@ -3200,8 +3077,7 @@ namespace MyNS
 	/// <summary>
 	/// Call-specific metadata created during analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1AnalysisResultCallAnalysisMetadata
 	{
 		
@@ -3245,8 +3121,7 @@ namespace MyNS
 	/// <summary>
 	/// A piece of metadata that applies to a window of a call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation
 	{
 		
@@ -3320,8 +3195,7 @@ namespace MyNS
 	/// <summary>
 	/// A point in a conversation that marks the start or the end of an annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary
 	{
 		
@@ -3341,8 +3215,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an entity mention annotation. This represents a mention of an `Entity` in the conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1EntityMentionData
 	{
 		
@@ -3368,8 +3241,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a sentiment annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1SentimentData
 	{
 		
@@ -3389,8 +3261,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a hold annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1HoldData
 	{
 	}
@@ -3398,8 +3269,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an intent match. Represents an intent match for a text segment in the conversation. A text segment can be part of a sentence, a complete sentence, or an utterance with multiple sentences.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IntentMatchData
 	{
 		
@@ -3413,8 +3283,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an interruption annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1InterruptionData
 	{
 	}
@@ -3422,8 +3291,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an issue match annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IssueMatchData
 	{
 		
@@ -3437,8 +3305,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IssueAssignment
 	{
 		
@@ -3464,8 +3331,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a matched phrase matcher. Represents information identifying a phrase matcher for a given match.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1PhraseMatchData
 	{
 		
@@ -3485,8 +3351,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a silence annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1SilenceData
 	{
 	}
@@ -3494,8 +3359,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an entity annotation. Represents a phrase in the conversation that is a known entity, such as a person, an organization, or location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1Entity
 	{
 		
@@ -3533,8 +3397,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for an intent. Represents a detected intent in the conversation, for example MAKES_PROMISE.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1Intent
 	{
 		
@@ -3554,8 +3417,7 @@ namespace MyNS
 	/// <summary>
 	/// Issue Modeling result on a conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IssueModelResult
 	{
 		
@@ -3575,8 +3437,7 @@ namespace MyNS
 	/// <summary>
 	/// One channel of conversation-level sentiment data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationLevelSentiment
 	{
 		
@@ -3596,8 +3457,7 @@ namespace MyNS
 	/// <summary>
 	/// Selector of all available annotators and phrase matchers to run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector
 	{
 		
@@ -3671,8 +3531,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for summarization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelectorSummarizationConfig
 	{
 		
@@ -3692,8 +3551,7 @@ namespace MyNS
 	/// <summary>
 	/// The feedback that the customer has about a certain answer in the conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1AnswerFeedback
 	{
 		
@@ -3719,8 +3577,7 @@ namespace MyNS
 	/// <summary>
 	/// Agent Assist Article Suggestion data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ArticleSuggestionData
 	{
 		
@@ -3764,8 +3621,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for a bulk analyze conversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsMetadata
 	{
 		
@@ -3815,8 +3671,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to analyze conversations in bulk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsRequest
 	{
 		
@@ -3848,8 +3703,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for a bulk analyze conversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsResponse
 	{
 		
@@ -3869,8 +3723,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for a bulk delete conversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsMetadata
 	{
 		
@@ -3902,8 +3755,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to delete conversations in bulk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsRequest
 	{
 		
@@ -3935,8 +3787,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for a bulk delete conversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsResponse
 	{
 	}
@@ -3944,8 +3795,7 @@ namespace MyNS
 	/// <summary>
 	/// The conversation resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1Conversation
 	{
 		
@@ -4079,8 +3929,7 @@ namespace MyNS
 	/// <summary>
 	/// Call-specific metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationCallMetadata
 	{
 		
@@ -4100,8 +3949,7 @@ namespace MyNS
 	/// <summary>
 	/// The conversation source, which is a combination of transcript and audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationDataSource
 	{
 		
@@ -4121,8 +3969,7 @@ namespace MyNS
 	/// <summary>
 	/// A Dialogflow source of conversation data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1DialogflowSource
 	{
 		
@@ -4142,8 +3989,7 @@ namespace MyNS
 	/// <summary>
 	/// A Cloud Storage source of conversation data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1GcsSource
 	{
 		
@@ -4163,8 +4009,7 @@ namespace MyNS
 	/// <summary>
 	/// The data for a Dialogflow intent. Represents a detected intent in the conversation, e.g. MAKES_PROMISE.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1DialogflowIntent
 	{
 		
@@ -4178,8 +4023,7 @@ namespace MyNS
 	/// <summary>
 	/// Conversation summarization suggestion data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationSummarizationSuggestionData
 	{
 		
@@ -4223,8 +4067,7 @@ namespace MyNS
 	/// <summary>
 	/// Conversation metadata related to quality management.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationQualityMetadata
 	{
 		
@@ -4256,8 +4099,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an agent involved in the conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationQualityMetadataAgentInfo
 	{
 		
@@ -4289,8 +4131,7 @@ namespace MyNS
 	/// <summary>
 	/// An annotation that was generated during the customer and agent interaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1RuntimeAnnotation
 	{
 		
@@ -4364,8 +4205,7 @@ namespace MyNS
 	/// <summary>
 	/// Dialogflow interaction data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1DialogflowInteractionData
 	{
 		
@@ -4385,8 +4225,7 @@ namespace MyNS
 	/// <summary>
 	/// Agent Assist frequently-asked-question answer data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1FaqAnswerData
 	{
 		
@@ -4430,8 +4269,7 @@ namespace MyNS
 	/// <summary>
 	/// Agent Assist Smart Compose suggestion data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1SmartComposeSuggestionData
 	{
 		
@@ -4463,8 +4301,7 @@ namespace MyNS
 	/// <summary>
 	/// Agent Assist Smart Reply data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1SmartReplyData
 	{
 		
@@ -4496,8 +4333,7 @@ namespace MyNS
 	/// <summary>
 	/// A message representing the transcript of a conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationTranscript
 	{
 		
@@ -4511,8 +4347,7 @@ namespace MyNS
 	/// <summary>
 	/// A segment of a full transcript.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationTranscriptTranscriptSegment
 	{
 		
@@ -4574,8 +4409,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata from Dialogflow relating to the current transcript segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationTranscriptTranscriptSegmentDialogflowSegmentMetadata
 	{
 		
@@ -4589,8 +4423,7 @@ namespace MyNS
 	/// <summary>
 	/// The call participant speaking for a given utterance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationParticipant
 	{
 		
@@ -4628,8 +4461,7 @@ namespace MyNS
 	/// <summary>
 	/// Word-level info for words in a transcript.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ConversationTranscriptTranscriptSegmentWordInfo
 	{
 		
@@ -4661,8 +4493,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for a create analysis operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1CreateAnalysisOperationMetadata
 	{
 		
@@ -4694,8 +4525,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for creating an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1CreateIssueModelMetadata
 	{
 		
@@ -4721,8 +4551,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to create an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1CreateIssueModelRequest
 	{
 		
@@ -4742,8 +4571,7 @@ namespace MyNS
 	/// <summary>
 	/// The issue model resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IssueModel
 	{
 		
@@ -4811,8 +4639,7 @@ namespace MyNS
 	/// <summary>
 	/// Configs for the input data used to create the issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IssueModelInputDataConfig
 	{
 		
@@ -4838,8 +4665,7 @@ namespace MyNS
 	/// <summary>
 	/// Aggregated statistics about an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IssueModelLabelStats
 	{
 		
@@ -4865,8 +4691,7 @@ namespace MyNS
 	/// <summary>
 	/// Aggregated statistics about an issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IssueModelLabelStatsIssueStats
 	{
 		
@@ -4892,8 +4717,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for deleting an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1DeleteIssueModelMetadata
 	{
 		
@@ -4919,8 +4743,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to delete an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1DeleteIssueModelRequest
 	{
 		
@@ -4934,8 +4757,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for deploying an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1DeployIssueModelMetadata
 	{
 		
@@ -4961,8 +4783,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to deploy an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1DeployIssueModelRequest
 	{
 		
@@ -4976,8 +4797,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to deploy an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1DeployIssueModelResponse
 	{
 	}
@@ -4985,8 +4805,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for an export insights operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ExportInsightsDataMetadata
 	{
 		
@@ -5018,8 +4837,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to export insights.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ExportInsightsDataRequest
 	{
 		
@@ -5057,8 +4875,7 @@ namespace MyNS
 	/// <summary>
 	/// A BigQuery Table Reference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ExportInsightsDataRequestBigQueryDestination
 	{
 		
@@ -5084,8 +4901,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for an export insights operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1ExportInsightsDataResponse
 	{
 	}
@@ -5093,8 +4909,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for an IngestConversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadata
 	{
 		
@@ -5132,8 +4947,7 @@ namespace MyNS
 	/// <summary>
 	/// Statistics for IngestConversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadataIngestConversationsStats
 	{
 		
@@ -5165,8 +4979,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to ingest conversations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequest
 	{
 		
@@ -5210,8 +5023,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration that applies to all conversations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestConversationConfig
 	{
 		
@@ -5237,8 +5049,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for Cloud Storage bucket sources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestGcsSource
 	{
 		
@@ -5258,8 +5069,7 @@ namespace MyNS
 	/// <summary>
 	/// DLP resources used for redaction while ingesting conversations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1RedactionConfig
 	{
 		
@@ -5279,8 +5089,7 @@ namespace MyNS
 	/// <summary>
 	/// Speech-to-Text configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1SpeechConfig
 	{
 		
@@ -5294,8 +5103,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for processing transcript objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestTranscriptObjectConfig
 	{
 		
@@ -5309,8 +5117,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to an IngestConversations operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1IngestConversationsResponse
 	{
 	}
@@ -5318,8 +5125,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for undeploying an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1UndeployIssueModelMetadata
 	{
 		
@@ -5345,8 +5151,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to undeploy an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1UndeployIssueModelRequest
 	{
 		
@@ -5360,8 +5165,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to undeploy an issue model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1UndeployIssueModelResponse
 	{
 	}
@@ -5369,8 +5173,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for an UploadConversation operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1UploadConversationMetadata
 	{
 		
@@ -5408,8 +5211,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to upload a conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudContactcenterinsightsV1alpha1UploadConversationRequest
 	{
 		
@@ -5447,8 +5249,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -5468,8 +5269,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -5507,8 +5307,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}
@@ -6492,13 +6291,13 @@ namespace MyNS
 	public enum Contactcenterinsights_projects_locations_views_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONVERSATION_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONVERSATION_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 2,
 	}
 }

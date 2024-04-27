@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateRepositoryResponse
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">DescribeRepositoryAssociation</a> operation returns a <code>RepositoryAssociation</code> object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepositoryAssociation
 	{
 		
@@ -77,55 +75,50 @@ namespace MyNS
 		public S3RepositoryDetails S3RepositoryDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProviderType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CodeCommit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CodeCommit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GitHub")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GitHub = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bitbucket")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bitbucket = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GitHubEnterpriseServer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GitHubEnterpriseServer = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3Bucket")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3Bucket = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepositoryAssociationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Associated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Associated = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Associating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Associating = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disassociating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disassociating = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disassociated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disassociated = 4,
 	}
 	
 	/// <summary>
 	/// <p>An object that contains:</p> <ul> <li> <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSKeyDetails
 	{
 		
@@ -136,24 +129,21 @@ namespace MyNS
 		public EncryptionOption EncryptionOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_OWNED_CMK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_OWNED_CMK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_MANAGED_CMK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_MANAGED_CMK = 1,
 	}
 	
 	/// <summary>
 	/// Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3RepositoryDetails
 	{
 		
@@ -167,8 +157,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.</p> <ul> <li> <p>Source code artifacts are source code files in a Git repository that are compressed into a .zip file.</p> </li> <li> <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeArtifacts
 	{
 		
@@ -183,8 +172,7 @@ namespace MyNS
 		public string BuildArtifactsObjectKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
@@ -192,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeCommitRepository
 	{
 		
@@ -208,8 +195,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a third-party source repository connected to CodeGuru Reviewer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartySourceRepository
 	{
 		
@@ -238,8 +224,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a repository in an S3 bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Repository
 	{
 		
@@ -258,38 +243,32 @@ namespace MyNS
 		public string BucketName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCodeReviewResponse
 	{
 		
@@ -303,8 +282,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeReview
 	{
 		
@@ -357,43 +335,38 @@ namespace MyNS
 		public ConfigFileState ConfigFileState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleting = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PullRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PullRequest = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RepositoryAnalysis")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RepositoryAnalysis = 1,
 	}
 	
 	/// <summary>
 	/// Specifies the source code that is analyzed in a code review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceCodeType
 	{
 		
@@ -419,8 +392,7 @@ namespace MyNS
 	/// <summary>
 	/// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitDiffSourceCodeType
 	{
 		
@@ -437,8 +409,7 @@ namespace MyNS
 	/// <summary>
 	/// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepositoryHeadSourceCodeType
 	{
 		
@@ -453,8 +424,7 @@ namespace MyNS
 	/// <summary>
 	/// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a code diff between a source and destination branch in an associated repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BranchDiffSourceCodeType
 	{
 		
@@ -476,8 +446,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an associated repository in an S3 bucket. The associated repository contains a source code .zip file and a build artifacts .zip file that contains .jar or .class files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3BucketRepository
 	{
 		
@@ -495,8 +464,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestMetadata
 	{
 		
@@ -516,8 +484,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an event. The event might be a push, pull request, scheduled request, or another type of event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventInfo
 	{
 		
@@ -528,27 +495,24 @@ namespace MyNS
 		public string State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VendorName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GitHub")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GitHub = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GitLab")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GitLab = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NativeS3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NativeS3 = 2,
 	}
 	
 	/// <summary>
 	/// Information about the statistics from the code review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metrics
 	{
 		
@@ -562,40 +526,35 @@ namespace MyNS
 		public System.Nullable<System.Int32> FindingsCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnalysisType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Security")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Security = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CodeQuality")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CodeQuality = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigFileState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Present")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Present = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Absent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Absent = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PresentWithErrors")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PresentWithErrors = 2,
 	}
 	
 	/// <summary>
 	/// A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepositoryAnalysis
 	{
 		
@@ -609,14 +568,12 @@ namespace MyNS
 		public SourceCodeType SourceCodeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCodeReviewResponse
 	{
 		
@@ -624,8 +581,7 @@ namespace MyNS
 		public CodeReview CodeReview { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRecommendationFeedbackResponse
 	{
 		
@@ -636,8 +592,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the recommendation feedback.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendationFeedback
 	{
 		
@@ -660,21 +615,18 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedTimeStamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Reaction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThumbsUp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ThumbsUp = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThumbsDown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ThumbsDown = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRepositoryAssociationResponse
 	{
 		
@@ -685,14 +637,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateRepositoryResponse
 	{
 		
@@ -703,8 +653,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCodeReviewsResponse
 	{
 		
@@ -718,8 +667,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the summary of the code review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeReviewSummary
 	{
 		
@@ -766,8 +714,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about metrics summaries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricsSummary
 	{
 		
@@ -781,8 +728,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> FindingsCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecommendationFeedbackResponse
 	{
 		
@@ -796,8 +742,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about recommendation feedback summaries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendationFeedbackSummary
 	{
 		
@@ -811,8 +756,7 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecommendationsResponse
 	{
 		
@@ -826,8 +770,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about recommendations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendationSummary
 	{
 		
@@ -856,51 +799,48 @@ namespace MyNS
 		public Severity Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecommendationCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSBestPractices")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSBestPractices = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSCloudFormationIssues")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSCloudFormationIssues = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DuplicateCode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DuplicateCode = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CodeMaintenanceIssues")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CodeMaintenanceIssues = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConcurrencyIssues")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConcurrencyIssues = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InputValidations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InputValidations = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PythonBestPractices")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PythonBestPractices = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JavaBestPractices")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JavaBestPractices = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceLeaks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceLeaks = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecurityIssues")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecurityIssues = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CodeInconsistencies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CodeInconsistencies = 10,
 	}
 	
 	/// <summary>
 	/// Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleMetadata
 	{
 		
@@ -920,30 +860,27 @@ namespace MyNS
 		public string[] RuleTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Severity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Info")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Info = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Low = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Medium = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="High")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		High = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Critical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Critical = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRepositoryAssociationsResponse
 	{
 		
@@ -957,8 +894,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepositoryAssociationSummary
 	{
 		
@@ -987,8 +923,7 @@ namespace MyNS
 		public RepositoryAssociationState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -996,20 +931,17 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecommendationFeedbackResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
@@ -1017,8 +949,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Repository
 	{
 		
@@ -1038,8 +969,7 @@ namespace MyNS
 		public S3Repository S3Bucket { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateRepositoryRequest
 	{
 		
@@ -1063,8 +993,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The type of a code review. There are two code review types:</p> <ul> <li> <p> <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated repository.</p> </li> <li> <p> <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeReviewType
 	{
 		
@@ -1079,8 +1008,7 @@ namespace MyNS
 		public AnalysisType[] AnalysisTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCodeReviewRequest
 	{
 		
@@ -1109,62 +1037,52 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCodeReviewRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRecommendationFeedbackRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRepositoryAssociationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateRepositoryRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCodeReviewsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecommendationFeedbackRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecommendationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRepositoryAssociationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecommendationFeedbackRequest
 	{
 		
@@ -1190,8 +1108,7 @@ namespace MyNS
 		public Reaction[] Reactions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1203,8 +1120,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}

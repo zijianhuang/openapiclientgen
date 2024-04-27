@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccessResponse
 	{
 		
@@ -37,8 +36,7 @@ namespace MyNS
 		public string ExternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccessRequest
 	{
 		
@@ -82,24 +80,21 @@ namespace MyNS
 		public string ExternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HomeDirectoryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGICAL = 1,
 	}
 	
 	/// <summary>
 	/// <p>Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.</p> <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HomeDirectoryMapEntry
 	{
 		
@@ -121,8 +116,7 @@ namespace MyNS
 	/// <summary>
 	/// The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PosixProfile
 	{
 		
@@ -144,38 +138,32 @@ namespace MyNS
 		public System.Nullable<System.Int32> SecondaryGids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAgreementResponse
 	{
 		
@@ -187,8 +175,7 @@ namespace MyNS
 		public string AgreementId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAgreementRequest
 	{
 		
@@ -237,24 +224,21 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AgreementStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 1,
 	}
 	
 	/// <summary>
 	/// Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -273,14 +257,12 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConnectorResponse
 	{
 		
@@ -292,8 +274,7 @@ namespace MyNS
 		public string ConnectorId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConnectorRequest
 	{
 		
@@ -327,8 +308,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the details for an AS2 connector object. The connector object is used for AS2 outbound processes, to connect the Transfer Family customer with the trading partner.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class As2ConnectorConfig
 	{
 		
@@ -360,103 +340,92 @@ namespace MyNS
 		public string BasicAuthSecretId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompressionEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZLIB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZLIB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionAlg
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES128_CBC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES128_CBC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES192_CBC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES192_CBC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES256_CBC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES256_CBC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SigningAlg
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA256 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA384 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA512 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA1 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MdnSigningAlg
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA256 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA384 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA512 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA1 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MdnResponse
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYNC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 	}
 	
 	/// <summary>
 	/// Contains the details for an SFTP connector object. The connector object is used for transferring files to and from a partner's SFTP server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SftpConnectorConfig
 	{
 		
@@ -467,8 +436,7 @@ namespace MyNS
 		public string[] TrustedHostKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProfileResponse
 	{
 		
@@ -480,8 +448,7 @@ namespace MyNS
 		public string ProfileId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProfileRequest
 	{
 		
@@ -506,21 +473,18 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProfileType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTNER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateServerResponse
 	{
 		
@@ -532,8 +496,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateServerRequest
 	{
 		
@@ -586,24 +549,21 @@ namespace MyNS
 		public string[] StructuredLogDestinations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Domain
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EFS = 1,
 	}
 	
 	/// <summary>
 	/// <p>The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP address to your server's endpoint.</p> <note> <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointDetails
 	{
 		
@@ -623,27 +583,24 @@ namespace MyNS
 		public string[] SecurityGroupIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EndpointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC_ENDPOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC_ENDPOINT = 2,
 	}
 	
 	/// <summary>
 	/// Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityProviderDetails
 	{
 		
@@ -663,71 +620,64 @@ namespace MyNS
 		public SftpAuthenticationMethods SftpAuthenticationMethods { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SftpAuthenticationMethods
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_KEY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_KEY_OR_PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_KEY_OR_PASSWORD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_KEY_AND_PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_KEY_AND_PASSWORD = 3,
 	}
 	
 	/// <summary>
 	/// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p> <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p> <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p> <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IdentityProviderType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_MANAGED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_GATEWAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_DIRECTORY_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_DIRECTORY_SERVICE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_LAMBDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_LAMBDA = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Protocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SFTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SFTP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FTP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FTPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FTPS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AS2 = 3,
 	}
 	
 	/// <summary>
 	///  The protocol settings that are configured for your server. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProtocolDetails
 	{
 		
@@ -744,50 +694,43 @@ namespace MyNS
 		public As2Transport[] As2Transports { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TlsSessionResumptionMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENFORCED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SetStatOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLE_NO_OP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLE_NO_OP = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum As2Transport
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP = 0,
 	}
 	
 	/// <summary>
 	/// Container for the <code>WorkflowDetail</code> data type. It is used by actions that trigger a workflow to begin execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowDetails
 	{
 		
@@ -801,8 +744,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p> <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowDetail
 	{
 		
@@ -821,14 +763,12 @@ namespace MyNS
 		public string ExecutionRole { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateUserResponse
 	{
 		
@@ -847,8 +787,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateUserRequest
 	{
 		
@@ -895,8 +834,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkflowResponse
 	{
 		
@@ -908,8 +846,7 @@ namespace MyNS
 		public string WorkflowId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkflowRequest
 	{
 		
@@ -933,8 +870,7 @@ namespace MyNS
 	/// <summary>
 	/// The basic building block of a workflow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowStep
 	{
 		
@@ -957,33 +893,30 @@ namespace MyNS
 		public DecryptStepDetails DecryptStepDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkflowStepType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECRYPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECRYPT = 4,
 	}
 	
 	/// <summary>
 	/// Each step type has its own <code>StepDetails</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyStepDetails
 	{
 		
@@ -1003,8 +936,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the location for the file that's being processed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputFileLocation
 	{
 		
@@ -1018,8 +950,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the customer input Amazon S3 file location. If it is used inside <code>copyStepDetails.DestinationFileLocation</code>, it should be the S3 copy destination.</p> <p> You need to provide the bucket and key. The key can represent either a path or a file. This is determined by whether or not you end the key value with the forward slash (/) character. If the final character is "/", then your file is copied to the folder, and its name does not change. If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten. </p> <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder. If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>: each upload overwrites the previous version of the <i>bob</i> file.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3InputFileLocation
 	{
 		
@@ -1033,8 +964,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the details for the file location for the file that's being used in the workflow. Only applicable if you are using Amazon Elastic File Systems (Amazon EFS) for storage.</p> <p> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EfsFileLocation
 	{
 		
@@ -1045,24 +975,21 @@ namespace MyNS
 		public string Path { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OverwriteExisting
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRUE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FALSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FALSE = 1,
 	}
 	
 	/// <summary>
 	/// Each step type has its own <code>StepDetails</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomStepDetails
 	{
 		
@@ -1082,8 +1009,7 @@ namespace MyNS
 	/// <summary>
 	/// The name of the step, used to identify the delete step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStepDetails
 	{
 		
@@ -1097,8 +1023,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Each step type has its own <code>StepDetails</code> structure.</p> <p>The key/value pairs used to tag a file during the execution of a workflow step.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagStepDetails
 	{
 		
@@ -1115,8 +1040,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the key-value pair that are assigned to a file during the execution of a Tagging step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Tag
 	{
 		
@@ -1138,8 +1062,7 @@ namespace MyNS
 	/// <summary>
 	/// Each step type has its own <code>StepDetails</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DecryptStepDetails
 	{
 		
@@ -1167,18 +1090,15 @@ namespace MyNS
 		public InputFileLocation DestinationFileLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PGP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PGP = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAccessRequest
 	{
 		
@@ -1197,8 +1117,7 @@ namespace MyNS
 		public string ExternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAgreementRequest
 	{
 		
@@ -1217,8 +1136,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCertificateRequest
 	{
 		
@@ -1230,8 +1148,7 @@ namespace MyNS
 		public string CertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConnectorRequest
 	{
 		
@@ -1243,8 +1160,7 @@ namespace MyNS
 		public string ConnectorId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHostKeyRequest
 	{
 		
@@ -1263,8 +1179,7 @@ namespace MyNS
 		public string HostKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteProfileRequest
 	{
 		
@@ -1276,8 +1191,7 @@ namespace MyNS
 		public string ProfileId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteServerRequest
 	{
 		
@@ -1289,8 +1203,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSshPublicKeyRequest
 	{
 		
@@ -1316,8 +1229,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteUserRequest
 	{
 		
@@ -1336,8 +1248,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkflowRequest
 	{
 		
@@ -1349,8 +1260,7 @@ namespace MyNS
 		public string WorkflowId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAccessResponse
 	{
 		
@@ -1372,8 +1282,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of the access that was specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedAccess
 	{
 		
@@ -1402,8 +1311,7 @@ namespace MyNS
 		public string ExternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAccessRequest
 	{
 		
@@ -1422,8 +1330,7 @@ namespace MyNS
 		public string ExternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAgreementResponse
 	{
 		
@@ -1438,8 +1345,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of an agreement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedAgreement
 	{
 		
@@ -1478,8 +1384,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAgreementRequest
 	{
 		
@@ -1498,8 +1403,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCertificateResponse
 	{
 		
@@ -1514,8 +1418,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of a certificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedCertificate
 	{
 		
@@ -1566,50 +1469,43 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateUsageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIGNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIGNING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCRYPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCRYPTION = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_ROTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_ROTATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERTIFICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERTIFICATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERTIFICATE_WITH_PRIVATE_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERTIFICATE_WITH_PRIVATE_KEY = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCertificateRequest
 	{
 		
@@ -1621,8 +1517,7 @@ namespace MyNS
 		public string CertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConnectorResponse
 	{
 		
@@ -1637,8 +1532,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the parameters for the connector, as identified by the <code>ConnectorId</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedConnector
 	{
 		
@@ -1671,8 +1565,7 @@ namespace MyNS
 		public SftpConnectorConfig SftpConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConnectorRequest
 	{
 		
@@ -1684,8 +1577,7 @@ namespace MyNS
 		public string ConnectorId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeExecutionResponse
 	{
 		
@@ -1707,8 +1599,7 @@ namespace MyNS
 	/// <summary>
 	/// The details for an execution object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedExecution
 	{
 		
@@ -1743,8 +1634,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Amazon S3 or EFS file details to be used in the step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileLocation
 	{
 		
@@ -1758,8 +1648,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the details for the file location for the file that's being used in the workflow. Only applicable if you are using S3 storage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3FileLocation
 	{
 		
@@ -1779,8 +1668,7 @@ namespace MyNS
 	/// <summary>
 	/// A container object for the session details that are associated with a workflow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceMetadata
 	{
 		
@@ -1795,8 +1683,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the user name, server ID, and session ID for a workflow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDetails
 	{
 		
@@ -1821,8 +1708,7 @@ namespace MyNS
 	/// <summary>
 	/// Consists of the logging role and the log group name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingConfiguration
 	{
 		
@@ -1833,30 +1719,27 @@ namespace MyNS
 		public string LogGroupName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecutionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCEPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCEPTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HANDLING_EXCEPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HANDLING_EXCEPTION = 3,
 	}
 	
 	/// <summary>
 	/// Specifies the steps in the workflow, as well as the steps to execute in case of any errors during workflow execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionResults
 	{
 		
@@ -1870,8 +1753,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the following details for the step: error (if any), outputs (if any), and the step type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionStepResult
 	{
 		
@@ -1888,8 +1770,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the error message and type, for an error that occurs during the execution of the workflow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionError
 	{
 		
@@ -1908,39 +1789,36 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecutionErrorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_DENIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_STEP_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_STEP_FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THROTTLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THROTTLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALREADY_EXISTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALREADY_EXISTS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_REQUEST = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMEOUT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_SERVER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_SERVER_ERROR = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeExecutionRequest
 	{
 		
@@ -1959,8 +1837,7 @@ namespace MyNS
 		public string WorkflowId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeHostKeyResponse
 	{
 		
@@ -1975,8 +1852,7 @@ namespace MyNS
 	/// <summary>
 	/// The details for a server host key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedHostKey
 	{
 		
@@ -2006,8 +1882,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeHostKeyRequest
 	{
 		
@@ -2026,8 +1901,7 @@ namespace MyNS
 		public string HostKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeProfileResponse
 	{
 		
@@ -2042,8 +1916,7 @@ namespace MyNS
 	/// <summary>
 	/// The details for a local or partner AS2 profile. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedProfile
 	{
 		
@@ -2070,8 +1943,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeProfileRequest
 	{
 		
@@ -2083,8 +1955,7 @@ namespace MyNS
 		public string ProfileId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSecurityPolicyResponse
 	{
 		
@@ -2099,8 +1970,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of a security policy that was specified. For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security policies</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedSecurityPolicy
 	{
 		
@@ -2127,8 +1997,7 @@ namespace MyNS
 		public string[] TlsCiphers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSecurityPolicyRequest
 	{
 		
@@ -2140,8 +2009,7 @@ namespace MyNS
 		public string SecurityPolicyName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeServerResponse
 	{
 		
@@ -2156,8 +2024,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of a file transfer protocol-enabled server that was specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedServer
 	{
 		
@@ -2229,33 +2096,30 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p> <p> <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum State
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFLINE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLINE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_FAILED = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeServerRequest
 	{
 		
@@ -2267,8 +2131,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeUserResponse
 	{
 		
@@ -2290,8 +2153,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of a user that was specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedUser
 	{
 		
@@ -2333,8 +2195,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the public Secure Shell (SSH) key that is associated with a Transfer Family user for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SshPublicKey
 	{
 		
@@ -2360,8 +2221,7 @@ namespace MyNS
 		public string SshPublicKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeUserRequest
 	{
 		
@@ -2380,8 +2240,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkflowResponse
 	{
 		
@@ -2396,8 +2255,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of the specified workflow
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribedWorkflow
 	{
 		
@@ -2424,8 +2282,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkflowRequest
 	{
 		
@@ -2437,8 +2294,7 @@ namespace MyNS
 		public string WorkflowId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportCertificateResponse
 	{
 		
@@ -2450,8 +2306,7 @@ namespace MyNS
 		public string CertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportCertificateRequest
 	{
 		
@@ -2488,8 +2343,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportHostKeyResponse
 	{
 		
@@ -2508,8 +2362,7 @@ namespace MyNS
 		public string HostKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportHostKeyRequest
 	{
 		
@@ -2537,8 +2390,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies the user, the server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportSshPublicKeyResponse
 	{
 		
@@ -2564,8 +2416,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportSshPublicKeyRequest
 	{
 		
@@ -2591,8 +2442,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccessesResponse
 	{
 		
@@ -2617,8 +2467,7 @@ namespace MyNS
 	/// <summary>
 	/// Lists the properties for one or more specified associated accesses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedAccess
 	{
 		
@@ -2635,8 +2484,7 @@ namespace MyNS
 		public string ExternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccessesRequest
 	{
 		
@@ -2654,14 +2502,12 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAgreementsResponse
 	{
 		
@@ -2679,8 +2525,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of an agreement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedAgreement
 	{
 		
@@ -2706,8 +2551,7 @@ namespace MyNS
 		public string PartnerProfileId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAgreementsRequest
 	{
 		
@@ -2725,8 +2569,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCertificatesResponse
 	{
 		
@@ -2744,8 +2587,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the properties of a certificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedCertificate
 	{
 		
@@ -2774,8 +2616,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCertificatesRequest
 	{
 		
@@ -2786,8 +2627,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConnectorsResponse
 	{
 		
@@ -2805,8 +2645,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns details of the connector that is specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedConnector
 	{
 		
@@ -2820,8 +2659,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConnectorsRequest
 	{
 		
@@ -2832,8 +2670,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListExecutionsResponse
 	{
 		
@@ -2858,8 +2695,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns properties of the execution that is specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedExecution
 	{
 		
@@ -2876,8 +2712,7 @@ namespace MyNS
 		public ExecutionStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListExecutionsRequest
 	{
 		
@@ -2895,8 +2730,7 @@ namespace MyNS
 		public string WorkflowId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHostKeysResponse
 	{
 		
@@ -2921,8 +2755,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns properties of the host key that's specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedHostKey
 	{
 		
@@ -2949,8 +2782,7 @@ namespace MyNS
 		public System.DateTimeOffset DateImported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHostKeysRequest
 	{
 		
@@ -2968,8 +2800,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfilesResponse
 	{
 		
@@ -2987,8 +2818,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns the properties of the profile that was specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedProfile
 	{
 		
@@ -3005,8 +2835,7 @@ namespace MyNS
 		public ProfileType ProfileType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProfilesRequest
 	{
 		
@@ -3020,8 +2849,7 @@ namespace MyNS
 		public ProfileType ProfileType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSecurityPoliciesResponse
 	{
 		
@@ -3036,8 +2864,7 @@ namespace MyNS
 		public string[] SecurityPolicyNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSecurityPoliciesRequest
 	{
 		
@@ -3048,8 +2875,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServersResponse
 	{
 		
@@ -3067,8 +2893,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns properties of a file transfer protocol-enabled server that was specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedServer
 	{
 		
@@ -3101,8 +2926,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> UserCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServersRequest
 	{
 		
@@ -3113,8 +2937,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -3128,8 +2951,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -3147,8 +2969,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUsersResponse
 	{
 		
@@ -3173,8 +2994,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns properties of the user that you specify.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedUser
 	{
 		
@@ -3201,8 +3021,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUsersRequest
 	{
 		
@@ -3220,8 +3039,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkflowsResponse
 	{
 		
@@ -3239,8 +3057,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the identifier, text description, and Amazon Resource Name (ARN) for the workflow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedWorkflow
 	{
 		
@@ -3254,8 +3071,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkflowsRequest
 	{
 		
@@ -3266,14 +3082,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendWorkflowStepStateResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendWorkflowStepStateRequest
 	{
 		
@@ -3306,21 +3120,18 @@ namespace MyNS
 		public CustomStepStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomStepStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILURE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFileTransferResponse
 	{
 		
@@ -3332,8 +3143,7 @@ namespace MyNS
 		public string TransferId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFileTransferRequest
 	{
 		
@@ -3357,8 +3167,7 @@ namespace MyNS
 		public string RemoteDirectoryPath { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartServerRequest
 	{
 		
@@ -3370,8 +3179,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopServerRequest
 	{
 		
@@ -3383,8 +3191,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -3403,8 +3210,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestConnectionResponse
 	{
 		
@@ -3418,8 +3224,7 @@ namespace MyNS
 		public string StatusMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestConnectionRequest
 	{
 		
@@ -3431,8 +3236,7 @@ namespace MyNS
 		public string ConnectorId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIdentityProviderResponse
 	{
 		
@@ -3457,8 +3261,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIdentityProviderRequest
 	{
 		
@@ -3486,8 +3289,7 @@ namespace MyNS
 		public string UserPassword { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -3506,8 +3308,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAccessResponse
 	{
 		
@@ -3526,8 +3327,7 @@ namespace MyNS
 		public string ExternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAccessRequest
 	{
 		
@@ -3567,8 +3367,7 @@ namespace MyNS
 		public string ExternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAgreementResponse
 	{
 		
@@ -3580,8 +3379,7 @@ namespace MyNS
 		public string AgreementId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAgreementRequest
 	{
 		
@@ -3618,8 +3416,7 @@ namespace MyNS
 		public string AccessRole { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCertificateResponse
 	{
 		
@@ -3631,8 +3428,7 @@ namespace MyNS
 		public string CertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCertificateRequest
 	{
 		
@@ -3653,8 +3449,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConnectorResponse
 	{
 		
@@ -3666,8 +3461,7 @@ namespace MyNS
 		public string ConnectorId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConnectorRequest
 	{
 		
@@ -3694,8 +3488,7 @@ namespace MyNS
 		public SftpConnectorConfig SftpConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHostKeyResponse
 	{
 		
@@ -3714,8 +3507,7 @@ namespace MyNS
 		public string HostKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHostKeyRequest
 	{
 		
@@ -3741,8 +3533,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateProfileResponse
 	{
 		
@@ -3754,8 +3545,7 @@ namespace MyNS
 		public string ProfileId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateProfileRequest
 	{
 		
@@ -3770,8 +3560,7 @@ namespace MyNS
 		public string[] CertificateIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateServerResponse
 	{
 		
@@ -3783,8 +3572,7 @@ namespace MyNS
 		public string ServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateServerRequest
 	{
 		
@@ -3835,8 +3623,7 @@ namespace MyNS
 		public string[] StructuredLogDestinations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
@@ -3844,8 +3631,7 @@ namespace MyNS
 	/// <summary>
 	///  <code>UpdateUserResponse</code> returns the user name and identifier for the request to update a user's properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateUserResponse
 	{
 		
@@ -3864,8 +3650,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateUserRequest
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The Content resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Content
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// An individual file within a script project. A file is a third-party source code created by one or more developers. It can be a server-side JS code, HTML, or a configuration file. Each script project can contain multiple files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File
 	{
 		
@@ -92,8 +90,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of functions. No duplicates are permitted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsScriptTypeFunctionSet
 	{
 		
@@ -107,8 +104,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a function in a script project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsScriptTypeFunction
 	{
 		
@@ -128,8 +124,7 @@ namespace MyNS
 	/// <summary>
 	/// A simple user profile resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsScriptTypeUser
 	{
 		
@@ -158,30 +153,27 @@ namespace MyNS
 		public string PhotoUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENUM_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENUM_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_JS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_JS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 3,
 	}
 	
 	/// <summary>
 	/// Request to create a script project. Request to create a script project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProjectRequest
 	{
 		
@@ -201,8 +193,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a single script deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deployment
 	{
 		
@@ -234,8 +225,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata the defines how a deployment is configured.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeploymentConfig
 	{
 		
@@ -267,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// A configuration that defines how a deployment is accessed externally.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntryPoint
 	{
 		
@@ -300,8 +289,7 @@ namespace MyNS
 	/// <summary>
 	/// An add-on entry point.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsScriptTypeAddOnEntryPoint
 	{
 		
@@ -342,46 +330,41 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsScriptTypeAddOnEntryPointAddOnType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ADDON_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ADDON_TYPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GMAIL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_STUDIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_STUDIO = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntryPointEntryPointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTRY_POINT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTRY_POINT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_APP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTION_API")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTION_API = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD_ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD_ON = 3,
 	}
 	
 	/// <summary>
 	/// An API executable entry point.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsScriptTypeExecutionApiEntryPoint
 	{
 		
@@ -395,8 +378,7 @@ namespace MyNS
 	/// <summary>
 	/// API executable entry point configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsScriptTypeExecutionApiConfig
 	{
 		
@@ -407,33 +389,30 @@ namespace MyNS
 		public System.Nullable<GoogleAppsScriptTypeExecutionApiConfigAccess> Access { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsScriptTypeExecutionApiConfigAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ACCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ACCESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MYSELF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MYSELF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANYONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANYONE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANYONE_ANONYMOUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANYONE_ANONYMOUS = 4,
 	}
 	
 	/// <summary>
 	/// A web application entry point.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsScriptTypeWebAppEntryPoint
 	{
 		
@@ -453,8 +432,7 @@ namespace MyNS
 	/// <summary>
 	/// Web app entry point configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsScriptTypeWebAppConfig
 	{
 		
@@ -471,27 +449,24 @@ namespace MyNS
 		public System.Nullable<GoogleAppsScriptTypeWebAppConfigExecuteAs> ExecuteAs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsScriptTypeWebAppConfigExecuteAs
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_EXECUTE_AS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_EXECUTE_AS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ACCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ACCESSING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_DEPLOYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_DEPLOYING = 2,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -499,8 +474,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for executing or debugging a function in an Apps Script project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteStreamResponse
 	{
 		
@@ -514,8 +488,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of an execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScriptExecutionResult
 	{
 		
@@ -529,8 +502,7 @@ namespace MyNS
 	/// <summary>
 	/// `Value` represents a dynamically typed value which is the outcome of an executed script.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Value
 	{
 		
@@ -592,8 +564,7 @@ namespace MyNS
 	/// <summary>
 	/// `ListValue` is a wrapper around a repeated field of values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListValue
 	{
 		
@@ -604,21 +575,18 @@ namespace MyNS
 		public Value[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValueNullValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NULL_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NULL_VALUE = 0,
 	}
 	
 	/// <summary>
 	/// `Struct` represents a structured data value, consisting of fields which map to dynamically typed values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Struct
 	{
 		
@@ -632,8 +600,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that provides information about the nature of an error resulting from an attempted execution of a script function using the Apps Script API. If a run call succeeds but the script function (or Apps Script itself) throws an exception, the response body's error field contains a Status object. The `Status` object's `details` field contains an array with a single one of these `ExecutionError` objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionError
 	{
 		
@@ -659,8 +626,7 @@ namespace MyNS
 	/// <summary>
 	/// A stack trace through the script that shows where the execution failed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScriptStackTraceElement
 	{
 		
@@ -680,8 +646,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to run the function in a script. The script is identified by the specified `script_id`. Executing a function on a script returns results based on the implementation of the script.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionRequest
 	{
 		
@@ -713,8 +678,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that provides the return value of a function executed using the Apps Script API. If the script function returns successfully, the response body's response field contains this `ExecutionResponse` object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionResponse
 	{
 		
@@ -728,8 +692,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a single script process execution that was started from the script editor, a trigger, an application, or using the Apps Script API. This is distinct from the `Operation` resource, which only represents executions started via the Apps Script API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsScriptTypeProcess
 	{
 		
@@ -782,123 +745,114 @@ namespace MyNS
 		public System.Nullable<GoogleAppsScriptTypeProcessUserAccessLevel> UserAccessLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsScriptTypeProcessProcessStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESS_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESS_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMED_OUT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELAYED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELAYED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTION_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTION_DISABLED = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsScriptTypeProcessProcessType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESS_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESS_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD_ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD_ON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTION_API")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTION_API = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_DRIVEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_DRIVEN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIGGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIGGER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEBAPP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEBAPP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDITOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDITOR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIMPLE_TRIGGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIMPLE_TRIGGER = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MENU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MENU = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_TASK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATCH_TASK = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsScriptTypeProcessRuntimeVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNTIME_VERSION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNTIME_VERSION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPRECATED_ES5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPRECATED_ES5 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V8")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V8 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsScriptTypeProcessUserAccessLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ACCESS_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ACCESS_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER = 4,
 	}
 	
 	/// <summary>
 	/// Response with the list of deployments for the specified Apps Script project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeploymentsResponse
 	{
 		
@@ -918,8 +872,7 @@ namespace MyNS
 	/// <summary>
 	/// Response with the list of Process resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListScriptProcessesResponse
 	{
 		
@@ -939,8 +892,7 @@ namespace MyNS
 	/// <summary>
 	/// Response with the list of Process resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUserProcessesResponse
 	{
 		
@@ -960,8 +912,7 @@ namespace MyNS
 	/// <summary>
 	/// Response with the list of the versions for the specified script project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVersionsResponse
 	{
 		
@@ -981,8 +932,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource representing a script project version. A version is a "snapshot" of a script project and is similar to a read-only branched release. When creating deployments, the version to use must be specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Version
 	{
 		
@@ -1014,8 +964,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource containing usage stats for a given script, based on the supplied filter and mask present in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metrics
 	{
 		
@@ -1041,8 +990,7 @@ namespace MyNS
 	/// <summary>
 	/// Metrics value that holds number of executions counted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricsValue
 	{
 		
@@ -1068,8 +1016,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of an execution of an Apps Script function started with run. The execution response does not arrive until the function finishes executing. The maximum execution runtime is listed in the [Apps Script quotas guide](/apps-script/guides/services/quotas#current_limitations). After execution has started, it can have one of four outcomes: - If the script function returns successfully, the response field contains an ExecutionResponse object with the function's return value in the object's `result` field. - If the script function (or Apps Script itself) throws an exception, the error field contains a Status object. The `Status` object's `details` field contains an array with a single ExecutionError object that provides information about the nature of the error. - If the execution has not yet completed, the done field is `false` and the neither the `response` nor `error` fields are present. - If the `run` call itself fails (for example, because of a malformed request or an authorization error), the method returns an HTTP response code in the 4XX range with a different format for the response body. Client libraries automatically convert a 4XX response into an exception class. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1095,8 +1042,7 @@ namespace MyNS
 	/// <summary>
 	/// If a `run` call succeeds but the script function (or Apps Script itself) throws an exception, the response body's error field contains this `Status` object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1122,8 +1068,7 @@ namespace MyNS
 	/// <summary>
 	/// The script project resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Project
 	{
 		
@@ -1173,8 +1118,7 @@ namespace MyNS
 	/// <summary>
 	/// Request with deployment information to update an existing deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDeploymentRequest
 	{
 		
@@ -1823,13 +1767,13 @@ namespace MyNS
 	public enum Script_projects_getMetricsMetricsGranularity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_GRANULARITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_GRANULARITY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEKLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 2,
 	}
 }

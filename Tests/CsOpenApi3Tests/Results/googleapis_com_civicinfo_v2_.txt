@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes information about a regional election administrative area.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdministrationRegion
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an election administrative body (e.g. County Board of Elections).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdministrativeBody
 	{
 		
@@ -152,8 +150,7 @@ namespace MyNS
 	/// <summary>
 	/// A simple representation of an address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleAddressType
 	{
 		
@@ -203,8 +200,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about individual election officials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElectionOfficial
 	{
 		
@@ -242,8 +238,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the data source for the element containing it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Source
 	{
 		
@@ -263,8 +258,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a candidate running for elected office.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Candidate
 	{
 		
@@ -320,8 +314,7 @@ namespace MyNS
 	/// <summary>
 	/// A social media or web channel for a candidate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -341,8 +334,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a contest that appears on a voter's ballot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contest
 	{
 		
@@ -494,8 +486,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the geographic scope of a contest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElectoralDistrict
 	{
 		
@@ -518,60 +509,57 @@ namespace MyNS
 		public System.Nullable<ElectoralDistrictScope> Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ElectoralDistrictScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="statewide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		statewide = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="congressional")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		congressional = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stateUpper")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stateUpper = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stateLower")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stateLower = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="countywide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		countywide = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="judicial")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		judicial = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="schoolBoard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		schoolBoard = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="citywide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		citywide = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="special")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		special = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="countyCouncil")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		countyCouncil = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="township")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		township = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ward")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ward = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cityCouncil")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cityCouncil = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="national")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		national = 13,
 	}
 	
 	/// <summary>
 	/// The result of a division search query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DivisionSearchResponse
 	{
 		
@@ -589,8 +577,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a political geographic division that matches the requested query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DivisionSearchResult
 	{
 		
@@ -616,8 +603,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the election that was queried.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Election
 	{
 		
@@ -649,27 +635,24 @@ namespace MyNS
 		public System.Nullable<ElectionShapeLookupBehavior> ShapeLookupBehavior { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ElectionShapeLookupBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shapeLookupDefault")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shapeLookupDefault = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shapeLookupDisabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shapeLookupDisabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shapeLookupEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shapeLookupEnabled = 2,
 	}
 	
 	/// <summary>
 	/// The list of elections available for this version of the API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElectionsQueryResponse
 	{
 		
@@ -690,8 +673,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a political geography.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeographicDivision
 	{
 		
@@ -717,8 +699,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an Office held by one or more Officials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Office
 	{
 		
@@ -762,8 +743,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a person holding an elected office.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Official
 	{
 		
@@ -819,8 +799,7 @@ namespace MyNS
 	/// <summary>
 	/// A location where a voter can vote. This may be an early vote site, an election day voting location, or a drop off location for a completed ballot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PollingLocation
 	{
 		
@@ -885,8 +864,7 @@ namespace MyNS
 		public string VoterServices { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Precinct
 	{
 		
@@ -975,8 +953,7 @@ namespace MyNS
 		public string Ward { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepresentativeInfoData
 	{
 		
@@ -1002,8 +979,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a representative info lookup query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepresentativeInfoResponse
 	{
 		
@@ -1042,8 +1018,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a voter info lookup query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoterInfoResponse
 	{
 		

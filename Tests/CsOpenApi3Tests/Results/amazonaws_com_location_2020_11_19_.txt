@@ -17,56 +17,47 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateTrackerConsumerResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteDevicePositionHistoryResponse
 	{
 		
@@ -81,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the tracker resource details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteDevicePositionHistoryError
 	{
 		
@@ -105,8 +95,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the batch request error details associated with the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchItemError
 	{
 		
@@ -117,33 +106,30 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchItemErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccessDeniedError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccessDeniedError = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConflictError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConflictError = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServerError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServerError = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFoundError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFoundError = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThrottlingError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ThrottlingError = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ValidationError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ValidationError = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteGeofenceResponse
 	{
 		
@@ -158,8 +144,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains error details for each geofence that failed to delete from the geofence collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteGeofenceError
 	{
 		
@@ -178,8 +163,7 @@ namespace MyNS
 		public string GeofenceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchEvaluateGeofencesResponse
 	{
 		
@@ -194,8 +178,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains error details for each device that failed to evaluate its position against the geofences in a given geofence collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchEvaluateGeofencesError
 	{
 		
@@ -224,8 +207,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the position update details for a device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DevicePositionUpdate
 	{
 		
@@ -260,8 +242,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the level of certainty of the position.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionalAccuracy
 	{
 		
@@ -273,14 +254,12 @@ namespace MyNS
 		public double Horizontal { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PropertyMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetDevicePositionResponse
 	{
 		
@@ -302,8 +281,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the device position details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DevicePosition
 	{
 		
@@ -341,8 +319,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains error details for each device that didn't return a position.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetDevicePositionError
 	{
 		
@@ -361,8 +338,7 @@ namespace MyNS
 		public BatchItemError Error { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPutGeofenceResponse
 	{
 		
@@ -384,8 +360,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains error details for each geofence that failed to be stored in a given geofence collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPutGeofenceError
 	{
 		
@@ -407,8 +382,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a summary of each geofence that was successfully stored in a given geofence collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPutGeofenceSuccess
 	{
 		
@@ -437,8 +411,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains geofence geometry details. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPutGeofenceRequestEntry
 	{
 		
@@ -463,8 +436,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the geofence geometry details.</p> <p>A geofence geometry is made up of either a polygon or a circle. Can be either a polygon or a circle. Including both will return a validation error.</p> <note> <p>Amazon Location doesn't currently support polygons with holes, multipolygons, polygons that are wound clockwise, or that cross the antimeridian. </p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeofenceGeometry
 	{
 		
@@ -478,8 +450,7 @@ namespace MyNS
 	/// <summary>
 	/// A circle on the earth, as defined by a center point and a radius.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Circle
 	{
 		
@@ -498,8 +469,7 @@ namespace MyNS
 		public double Radius { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDevicePositionResponse
 	{
 		
@@ -514,8 +484,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains error details for each device that failed to update its position.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDevicePositionError
 	{
 		
@@ -544,8 +513,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns the result of the route calculation. Metadata includes legs and route summary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalculateRouteResponse
 	{
 		
@@ -567,8 +535,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the calculated route's details for each path between a pair of positions. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p> <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the destination position.</p> </li> </ul> <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li> <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Leg
 	{
 		
@@ -614,8 +581,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LegGeometry
 	{
 		
@@ -626,8 +592,7 @@ namespace MyNS
 	/// <summary>
 	///  Represents an element of a leg within a route. A step contains instructions for how to move to the next step in the leg. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Step
 	{
 		
@@ -666,8 +631,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of the calculated route.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalculateRouteSummary
 	{
 		
@@ -707,24 +671,21 @@ namespace MyNS
 		public double[] RouteBBox { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DistanceUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilometers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilometers = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Miles")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Miles = 1,
 	}
 	
 	/// <summary>
 	/// Contains details about the truck dimensions in the unit of measurement that you specify. Used to filter out roads that can't support or allow the specified dimensions for requests that specify <code>TravelMode</code> as <code>Truck</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TruckDimensions
 	{
 		
@@ -741,24 +702,21 @@ namespace MyNS
 		public System.Nullable<System.Double> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Meters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Meters = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Feet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Feet = 1,
 	}
 	
 	/// <summary>
 	/// Contains details about the truck's weight specifications. Used to avoid roads that can't support or allow the total weight for requests that specify <code>TravelMode</code> as <code>Truck</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TruckWeight
 	{
 		
@@ -769,24 +727,21 @@ namespace MyNS
 		public VehicleWeightUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VehicleWeightUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilograms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilograms = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pounds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pounds = 1,
 	}
 	
 	/// <summary>
 	/// Returns the result of the route matrix calculation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalculateRouteMatrixResponse
 	{
 		
@@ -814,8 +769,7 @@ namespace MyNS
 	/// <summary>
 	/// The result for the calculated route of one <code>DeparturePosition</code> <code>DestinationPosition</code> pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteMatrixEntry
 	{
 		
@@ -832,8 +786,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p> <p>The error code can be one of the following:</p> <ul> <li> <p> <code>RouteNotFound</code> - Unable to find a valid route with the given parameters.</p> </li> </ul> <ul> <li> <p> <code>RouteTooLong</code> - Route calculation went beyond the maximum size of a route and was terminated before completion.</p> </li> </ul> <ul> <li> <p> <code>PositionsNotFound</code> - One or more of the input positions were not found on the route network.</p> </li> </ul> <ul> <li> <p> <code>DestinationPositionNotFound</code> - The destination position was not found on the route network.</p> </li> </ul> <ul> <li> <p> <code>DeparturePositionNotFound</code> - The departure position was not found on the route network.</p> </li> </ul> <ul> <li> <p> <code>OtherValidationError</code> - The given inputs were not valid or a route was not found. More information is given in the error <code>Message</code> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteMatrixEntryError
 	{
 		
@@ -848,36 +801,33 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RouteMatrixErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RouteNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RouteNotFound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RouteTooLong")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RouteTooLong = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PositionsNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PositionsNotFound = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DestinationPositionNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DestinationPositionNotFound = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeparturePositionNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeparturePositionNotFound = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OtherValidationError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OtherValidationError = 5,
 	}
 	
 	/// <summary>
 	/// A summary of the calculated route matrix.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalculateRouteMatrixSummary
 	{
 		
@@ -910,8 +860,7 @@ namespace MyNS
 		public int RouteCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGeofenceCollectionResponse
 	{
 		
@@ -937,8 +886,7 @@ namespace MyNS
 		public System.DateTimeOffset CreateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateKeyResponse
 	{
 		
@@ -971,8 +919,7 @@ namespace MyNS
 		public string KeyName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMapResponse
 	{
 		
@@ -998,8 +945,7 @@ namespace MyNS
 		public string MapName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePlaceIndexResponse
 	{
 		
@@ -1025,21 +971,18 @@ namespace MyNS
 		public string IndexName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IntendedUse
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SingleUse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SingleUse = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Storage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Storage = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRouteCalculatorResponse
 	{
 		
@@ -1065,8 +1008,7 @@ namespace MyNS
 		public System.DateTimeOffset CreateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrackerResponse
 	{
 		
@@ -1092,44 +1034,37 @@ namespace MyNS
 		public string TrackerName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGeofenceCollectionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteKeyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMapResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePlaceIndexResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRouteCalculatorResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTrackerResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGeofenceCollectionResponse
 	{
 		
@@ -1181,30 +1116,26 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PricingPlan
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestBasedUsage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestBasedUsage = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MobileAssetTracking")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MobileAssetTracking = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MobileAssetManagement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MobileAssetManagement = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeKeyResponse
 	{
 		
@@ -1268,8 +1199,7 @@ namespace MyNS
 	/// <summary>
 	/// API Restrictions on the allowed actions, resources, and referers for an API key resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiKeyRestrictions
 	{
 		
@@ -1291,8 +1221,7 @@ namespace MyNS
 		public string[] AllowResources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMapResponse
 	{
 		
@@ -1355,8 +1284,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the map tile style selected from an available provider.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapConfiguration
 	{
 		
@@ -1371,8 +1299,7 @@ namespace MyNS
 		public string Style { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePlaceIndexResponse
 	{
 		
@@ -1435,8 +1362,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the data storage option chosen for requesting Places.</p> <important> <p>When using Amazon Location Places:</p> <ul> <li> <p>If using HERE Technologies as a data provider, you can't store results for locations in Japan by setting <code>IntendedUse</code> to <code>Storage</code>. parameter.</p> </li> <li> <p>Under the <code>MobileAssetTracking</code> or <code>MobilAssetManagement</code> pricing plan, you can't store results from your place index resources by setting <code>IntendedUse</code> to <code>Storage</code>. This returns a validation exception error.</p> </li> </ul> <p>For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p> </important>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceConfiguration
 	{
 		
@@ -1444,8 +1370,7 @@ namespace MyNS
 		public IntendedUse IntendedUse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRouteCalculatorResponse
 	{
 		
@@ -1498,8 +1423,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTrackerResponse
 	{
 		
@@ -1557,30 +1481,26 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PositionFiltering
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TimeBased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TimeBased = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DistanceBased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DistanceBased = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccuracyBased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccuracyBased = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateTrackerConsumerResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDevicePositionResponse
 	{
 		
@@ -1615,8 +1535,7 @@ namespace MyNS
 		public System.DateTimeOffset SampleTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDevicePositionHistoryResponse
 	{
 		
@@ -1631,8 +1550,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGeofenceResponse
 	{
 		
@@ -1675,8 +1593,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMapGlyphsResponse
 	{
 		
@@ -1684,8 +1601,7 @@ namespace MyNS
 		public string Blob { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMapSpritesResponse
 	{
 		
@@ -1693,8 +1609,7 @@ namespace MyNS
 		public string Blob { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMapStyleDescriptorResponse
 	{
 		
@@ -1702,8 +1617,7 @@ namespace MyNS
 		public string Blob { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMapTileResponse
 	{
 		
@@ -1711,8 +1625,7 @@ namespace MyNS
 		public string Blob { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPlaceResponse
 	{
 		
@@ -1727,8 +1640,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains details about addresses or points of interest that match the search criteria.</p> <p>Not all details are included with all responses. Some details may only be returned by specific data partners.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Place
 	{
 		
@@ -1789,8 +1701,7 @@ namespace MyNS
 	/// <summary>
 	/// Places uses a point geometry to specify a location or a Place.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlaceGeometry
 	{
 		
@@ -1801,8 +1712,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a time zone. Includes the name of the time zone and the offset from UTC in seconds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeZone
 	{
 		
@@ -1817,8 +1727,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Offset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDevicePositionsResponse
 	{
 		
@@ -1836,8 +1745,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the tracker resource details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDevicePositionsResponseEntry
 	{
 		
@@ -1869,8 +1777,7 @@ namespace MyNS
 		public System.DateTimeOffset SampleTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGeofenceCollectionsResponse
 	{
 		
@@ -1888,8 +1795,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the geofence collection details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGeofenceCollectionsResponseEntry
 	{
 		
@@ -1928,8 +1834,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGeofencesResponse
 	{
 		
@@ -1947,8 +1852,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a list of geofences stored in a given geofence collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGeofenceResponseEntry
 	{
 		
@@ -1991,8 +1895,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKeysResponse
 	{
 		
@@ -2010,8 +1913,7 @@ namespace MyNS
 	/// <summary>
 	/// An API key resource listed in your Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKeysResponseEntry
 	{
 		
@@ -2055,21 +1957,18 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Expired = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMapsResponse
 	{
 		
@@ -2087,8 +1986,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details of an existing map resource in your Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMapsResponseEntry
 	{
 		
@@ -2131,8 +2029,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlaceIndexesResponse
 	{
 		
@@ -2150,8 +2047,7 @@ namespace MyNS
 	/// <summary>
 	/// A place index resource listed in your Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlaceIndexesResponseEntry
 	{
 		
@@ -2194,8 +2090,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRouteCalculatorsResponse
 	{
 		
@@ -2213,8 +2108,7 @@ namespace MyNS
 	/// <summary>
 	/// A route calculator resource listed in your Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRouteCalculatorsResponseEntry
 	{
 		
@@ -2257,8 +2151,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -2266,8 +2159,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrackerConsumersResponse
 	{
 		
@@ -2282,8 +2174,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrackersResponse
 	{
 		
@@ -2301,8 +2192,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the tracker resource details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrackersResponseEntry
 	{
 		
@@ -2341,8 +2231,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutGeofenceResponse
 	{
 		
@@ -2368,8 +2257,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchPlaceIndexForPositionResponse
 	{
 		
@@ -2391,8 +2279,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a search result from a position search query that is run on a place index resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchForPositionResult
 	{
 		
@@ -2417,8 +2304,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of the request sent by using <code>SearchPlaceIndexForPosition</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchPlaceIndexForPositionSummary
 	{
 		
@@ -2443,8 +2329,7 @@ namespace MyNS
 		public double[] Position { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchPlaceIndexForSuggestionsResponse
 	{
 		
@@ -2466,8 +2351,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a place suggestion resulting from a place suggestion query that is run on a place index resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchForSuggestionsResult
 	{
 		
@@ -2491,8 +2375,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of the request sent by using <code>SearchPlaceIndexForSuggestions</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchPlaceIndexForSuggestionsSummary
 	{
 		
@@ -2529,8 +2412,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchPlaceIndexForTextResponse
 	{
 		
@@ -2552,8 +2434,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a search result from a text search query that is run on a place index resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchForTextResult
 	{
 		
@@ -2577,8 +2458,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of the request sent by using <code>SearchPlaceIndexForText</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchPlaceIndexForTextSummary
 	{
 		
@@ -2618,20 +2498,17 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGeofenceCollectionResponse
 	{
 		
@@ -2657,8 +2534,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateKeyResponse
 	{
 		
@@ -2684,8 +2560,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMapResponse
 	{
 		
@@ -2711,8 +2586,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePlaceIndexResponse
 	{
 		
@@ -2738,8 +2612,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRouteCalculatorResponse
 	{
 		
@@ -2765,8 +2638,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTrackerResponse
 	{
 		
@@ -2795,8 +2667,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for filtering API keys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiKeyFilter
 	{
 		
@@ -2804,8 +2675,7 @@ namespace MyNS
 		public Status KeyStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateTrackerConsumerRequest
 	{
 		
@@ -2817,8 +2687,7 @@ namespace MyNS
 		public string ConsumerArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteDevicePositionHistoryRequest
 	{
 		
@@ -2830,8 +2699,7 @@ namespace MyNS
 		public string[] DeviceIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteGeofenceRequest
 	{
 		
@@ -2843,8 +2711,7 @@ namespace MyNS
 		public string[] GeofenceIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchEvaluateGeofencesRequest
 	{
 		
@@ -2856,8 +2723,7 @@ namespace MyNS
 		public DevicePositionUpdate[] DevicePositionUpdates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetDevicePositionRequest
 	{
 		
@@ -2869,8 +2735,7 @@ namespace MyNS
 		public string[] DeviceIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPutGeofenceRequest
 	{
 		
@@ -2882,8 +2747,7 @@ namespace MyNS
 		public BatchPutGeofenceRequestEntry[] Entries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateDevicePositionRequest
 	{
 		
@@ -2898,8 +2762,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Car</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalculateRouteCarModeOptions
 	{
 		
@@ -2910,33 +2773,30 @@ namespace MyNS
 		public System.Nullable<System.Boolean> AvoidTolls { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TravelMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Car")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Car = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Truck")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Truck = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Walking")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Walking = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bicycle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bicycle = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Motorcycle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Motorcycle = 4,
 	}
 	
 	/// <summary>
 	/// Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Truck</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalculateRouteTruckModeOptions
 	{
 		
@@ -2953,8 +2813,7 @@ namespace MyNS
 		public TruckWeight Weight { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalculateRouteMatrixRequest
 	{
 		
@@ -2991,8 +2850,7 @@ namespace MyNS
 		public CalculateRouteTruckModeOptions TruckModeOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CalculateRouteRequest
 	{
 		
@@ -3035,8 +2893,7 @@ namespace MyNS
 		public System.Nullable<System.Double> WaypointPositions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGeofenceCollectionRequest
 	{
 		
@@ -3063,8 +2920,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateKeyRequest
 	{
 		
@@ -3095,8 +2951,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMapRequest
 	{
 		
@@ -3124,8 +2979,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePlaceIndexRequest
 	{
 		
@@ -3156,8 +3010,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRouteCalculatorRequest
 	{
 		
@@ -3185,8 +3038,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTrackerRequest
 	{
 		
@@ -3219,86 +3071,72 @@ namespace MyNS
 		public string TrackerName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGeofenceCollectionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteKeyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMapRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePlaceIndexRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRouteCalculatorRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTrackerRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGeofenceCollectionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeKeyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMapRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePlaceIndexRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRouteCalculatorRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTrackerRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateTrackerConsumerRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDevicePositionHistoryRequest
 	{
 		
@@ -3315,50 +3153,42 @@ namespace MyNS
 		public System.DateTimeOffset StartTimeInclusive { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDevicePositionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGeofenceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMapGlyphsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMapSpritesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMapStyleDescriptorRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMapTileRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPlaceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDevicePositionsRequest
 	{
 		
@@ -3369,8 +3199,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGeofenceCollectionsRequest
 	{
 		
@@ -3381,8 +3210,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGeofencesRequest
 	{
 		
@@ -3393,8 +3221,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListKeysRequest
 	{
 		
@@ -3408,8 +3235,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMapsRequest
 	{
 		
@@ -3420,8 +3246,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlaceIndexesRequest
 	{
 		
@@ -3432,8 +3257,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRouteCalculatorsRequest
 	{
 		
@@ -3444,14 +3268,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrackerConsumersRequest
 	{
 		
@@ -3462,8 +3284,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTrackersRequest
 	{
 		
@@ -3477,8 +3298,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the political view for the style.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapConfigurationUpdate
 	{
 		
@@ -3486,8 +3306,7 @@ namespace MyNS
 		public string PoliticalView { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutGeofenceRequest
 	{
 		
@@ -3502,8 +3321,7 @@ namespace MyNS
 		public GeofenceGeometry Geometry { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchPlaceIndexForPositionRequest
 	{
 		
@@ -3521,8 +3339,7 @@ namespace MyNS
 		public double[] Position { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchPlaceIndexForSuggestionsRequest
 	{
 		
@@ -3552,8 +3369,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchPlaceIndexForTextRequest
 	{
 		
@@ -3583,8 +3399,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -3596,14 +3411,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGeofenceCollectionRequest
 	{
 		
@@ -3617,8 +3430,7 @@ namespace MyNS
 		public string PricingPlanDataSource { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateKeyRequest
 	{
 		
@@ -3638,8 +3450,7 @@ namespace MyNS
 		public ApiKeyRestrictions Restrictions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMapRequest
 	{
 		
@@ -3653,8 +3464,7 @@ namespace MyNS
 		public PricingPlan PricingPlan { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePlaceIndexRequest
 	{
 		
@@ -3668,8 +3478,7 @@ namespace MyNS
 		public PricingPlan PricingPlan { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRouteCalculatorRequest
 	{
 		
@@ -3680,8 +3489,7 @@ namespace MyNS
 		public PricingPlan PricingPlan { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTrackerRequest
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the API request error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputerVisionError
 	{
 		
@@ -48,72 +47,69 @@ namespace MyNS
 		public string RequestId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputerVisionErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidImageFormat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidImageFormat = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnsupportedMediaType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnsupportedMediaType = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidImageUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidImageUrl = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSupportedFeature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSupportedFeature = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSupportedImage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSupportedImage = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Timeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Timeout = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServerError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServerError = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidImageSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidImageSize = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadArgument")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadArgument = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DetectFaceError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DetectFaceError = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSupportedLanguage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSupportedLanguage = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidThumbnailSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidThumbnailSize = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidDetails")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidDetails = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidModel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidModel = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancelledRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CancelledRequest = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSupportedVisualFeature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSupportedVisualFeature = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailedToProcess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailedToProcess = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unspecified = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StorageException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StorageException = 18,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageUrl
 	{
 		
@@ -129,8 +125,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing a recognized text line.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Line
 	{
 		
@@ -156,8 +151,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing a recognized word.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Word
 	{
 		
@@ -184,46 +178,41 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WordConfidence
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="High")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		High = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Low = 1,
 	}
 	
 	/// <summary>
 	/// Status code of the text operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotStarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotStarted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Running = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 3,
 	}
 	
 	/// <summary>
 	/// OCR result of the read operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadOperationResult
 	{
 		
@@ -243,8 +232,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing a recognized text region
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextRecognitionResult
 	{
 		
@@ -287,24 +275,21 @@ namespace MyNS
 		public System.Nullable<System.Double> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextRecognitionResultUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pixel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pixel = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inch = 1,
 	}
 	
 	/// <summary>
 	/// Result of recognition text operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextOperationResult
 	{
 		
@@ -481,10 +466,10 @@ namespace MyNS
 	public enum RecognizeTextMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Handwritten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Handwritten = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Printed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Printed = 1,
 	}
 }

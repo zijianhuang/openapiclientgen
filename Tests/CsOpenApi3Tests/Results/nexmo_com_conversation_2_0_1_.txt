@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _links_conversation
 	{
 		
@@ -39,8 +38,7 @@ namespace MyNS
 	/// <summary>
 	/// A series of links between resources in this API in the http://stateless.co/hal_specification.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class _links_conversations_list
 	{
 		
@@ -67,24 +65,21 @@ namespace MyNS
 	/// <summary>
 	/// Recording Action
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Action
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="start")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		start = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stop = 1,
 	}
 	
 	/// <summary>
 	/// A user who joins a conversation as a member can have one channel per membership type. Channels can be `app`, `phone`, `sip`, `websocket`, or `vbc`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -143,58 +138,53 @@ namespace MyNS
 		public string Leg_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="app")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		app = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phone = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sip = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="websocket")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		websocket = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vbc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vbc = 4,
 	}
 	
 	/// <summary>
 	/// Channel type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Channel_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="app")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		app = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phone = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sip = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="websocket")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		websocket = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vbc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vbc = 4,
 	}
 	
 	/// <summary>
 	/// Conversation properties
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Conversation_properties
 	{
 		
@@ -208,8 +198,7 @@ namespace MyNS
 	/// <summary>
 	/// Event Body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event_body
 	{
 	}
@@ -217,8 +206,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieve Events Response Payload Object Item
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event_retrieved
 	{
 		
@@ -281,43 +269,38 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Event_retrievedState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invited = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="joined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		joined = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="left")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		left = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 3,
 	}
 	
 	/// <summary>
 	/// Record the Conversation in a specific format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Format
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mp3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mp3 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wav")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wav = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Initiator
 	{
 		
@@ -350,21 +333,18 @@ namespace MyNS
 	/// <summary>
 	/// Leg Status
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Leg_state
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="terminated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		terminated = 0,
 	}
 	
 	/// <summary>
 	/// Media Object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Media
 	{
 	}
@@ -372,43 +352,38 @@ namespace MyNS
 	/// <summary>
 	/// Invite or join a member to a conversation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Member_action
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invite")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invite = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="join")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		join = 1,
 	}
 	
 	/// <summary>
 	/// The state that the member is in. Possible values are `invited`, `joined`, `left`, or `unknown`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Member_state
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invited = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="joined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		joined = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="left")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		left = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timestamp_obj_leg
 	{
 		
@@ -431,8 +406,7 @@ namespace MyNS
 		public string Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timestamp_res_conversation
 	{
 		
@@ -455,8 +429,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timestamp_res_member
 	{
 		
@@ -479,8 +452,7 @@ namespace MyNS
 		public string Left { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Conversation
 	{
 		
@@ -509,8 +481,7 @@ namespace MyNS
 		public Conversation_properties Properties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordConversation
 	{
 		
@@ -1382,16 +1353,16 @@ namespace MyNS
 	public enum ListConversationsOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESC = 3,
 	}
 	

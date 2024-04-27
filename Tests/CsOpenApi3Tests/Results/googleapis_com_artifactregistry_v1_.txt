@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A detailed representation of an Apt artifact. Information in the record is derived from the archive's control file. See https://www.debian.org/doc/debian-policy/ch-controlfields.html
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AptArtifact
 	{
 		
@@ -62,27 +61,24 @@ namespace MyNS
 		public System.Nullable<AptArtifactPackageType> PackageType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AptArtifactPackageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PACKAGE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PACKAGE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BINARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BINARY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE = 2,
 	}
 	
 	/// <summary>
 	/// Configuration for an Apt remote repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AptRepository
 	{
 		
@@ -96,8 +92,7 @@ namespace MyNS
 	/// <summary>
 	/// Publicly available Apt repositories constructed from a common repository base and a custom repository path.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryPublicRepository
 	{
 		
@@ -114,30 +109,27 @@ namespace MyNS
 		public string RepositoryPath { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryPublicRepositoryRepositoryBase
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPOSITORY_BASE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPOSITORY_BASE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBIAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBIAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UBUNTU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UBUNTU = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBIAN_SNAPSHOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBIAN_SNAPSHOT = 3,
 	}
 	
 	/// <summary>
 	/// The metadata of an LRO from deleting multiple versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteVersionsMetadata
 	{
 		
@@ -151,8 +143,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to delete multiple versions across a repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteVersionsRequest
 	{
 		
@@ -172,8 +163,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates `members`, or principals, with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -199,8 +189,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -232,8 +221,7 @@ namespace MyNS
 	/// <summary>
 	/// Artifact policy configuration for repository cleanup policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CleanupPolicy
 	{
 		
@@ -262,27 +250,24 @@ namespace MyNS
 		public CleanupPolicyMostRecentVersions MostRecentVersions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CleanupPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEEP = 2,
 	}
 	
 	/// <summary>
 	/// CleanupPolicyCondition is a set of conditions attached to a CleanupPolicy. If multiple entries are set, all must be satisfied for the condition to be satisfied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CleanupPolicyCondition
 	{
 		
@@ -323,30 +308,27 @@ namespace MyNS
 		public string[] VersionNamePrefixes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CleanupPolicyConditionTagState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAGGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAGGED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNTAGGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNTAGGED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 3,
 	}
 	
 	/// <summary>
 	/// CleanupPolicyMostRecentVersions is an alternate condition of a CleanupPolicy for retaining a minimum number of versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CleanupPolicyMostRecentVersions
 	{
 		
@@ -366,8 +348,7 @@ namespace MyNS
 	/// <summary>
 	/// DockerImage represents a docker artifact. The following fields are returned as untyped metadata in the Version resource, using camelcase keys (i.e. metadata.imageSizeBytes): * imageSizeBytes * mediaType * buildTime
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DockerImage
 	{
 		
@@ -423,8 +404,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a Docker remote repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DockerRepository
 	{
 		
@@ -435,24 +415,21 @@ namespace MyNS
 		public System.Nullable<DockerRepositoryPublicRepository> PublicRepository { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DockerRepositoryPublicRepository
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_REPOSITORY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_REPOSITORY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_HUB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_HUB = 1,
 	}
 	
 	/// <summary>
 	/// DockerRepositoryConfig is docker related repository details. Provides additional configuration details for repositories of the docker format type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DockerRepositoryConfig
 	{
 		
@@ -466,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -475,8 +451,7 @@ namespace MyNS
 	/// <summary>
 	/// GoModule represents a Go module.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoModule
 	{
 		
@@ -508,8 +483,7 @@ namespace MyNS
 	/// <summary>
 	/// A detailed representation of a GooGet artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogetArtifact
 	{
 		
@@ -535,8 +509,7 @@ namespace MyNS
 	/// <summary>
 	/// Files store content that is potentially associated with Packages or Versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsArtifactregistryV1File
 	{
 		
@@ -586,8 +559,7 @@ namespace MyNS
 	/// <summary>
 	/// A hash of file content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hash
 	{
 		
@@ -604,27 +576,24 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HashType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HASH_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HASH_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA256 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MD5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MD5 = 2,
 	}
 	
 	/// <summary>
 	/// Publicly available Yum repositories constructed from a common repository base and a custom repository path.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryPublicRepository
 	{
 		
@@ -641,39 +610,36 @@ namespace MyNS
 		public string RepositoryPath { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryPublicRepositoryRepositoryBase
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPOSITORY_BASE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPOSITORY_BASE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTOS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTOS_DEBUG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTOS_DEBUG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTOS_VAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTOS_VAULT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTOS_STREAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTOS_STREAM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROCKY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROCKY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EPEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EPEL = 6,
 	}
 	
 	/// <summary>
 	/// Error information explaining why a package was not imported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportAptArtifactsErrorInfo
 	{
 		
@@ -693,8 +659,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -720,8 +685,7 @@ namespace MyNS
 	/// <summary>
 	/// Google Cloud Storage location where the artifacts currently reside.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportAptArtifactsGcsSource
 	{
 		
@@ -741,8 +705,7 @@ namespace MyNS
 	/// <summary>
 	/// The operation metadata for importing artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportAptArtifactsMetadata
 	{
 	}
@@ -750,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to import new apt artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportAptArtifactsRequest
 	{
 		
@@ -765,8 +727,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message from importing APT artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportAptArtifactsResponse
 	{
 		
@@ -786,8 +747,7 @@ namespace MyNS
 	/// <summary>
 	/// Error information explaining why a package was not imported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportGoogetArtifactsErrorInfo
 	{
 		
@@ -807,8 +767,7 @@ namespace MyNS
 	/// <summary>
 	/// Google Cloud Storage location where the artifacts currently reside.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportGoogetArtifactsGcsSource
 	{
 		
@@ -828,8 +787,7 @@ namespace MyNS
 	/// <summary>
 	/// The operation metadata for importing artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportGoogetArtifactsMetadata
 	{
 	}
@@ -837,8 +795,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to import new googet artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportGoogetArtifactsRequest
 	{
 		
@@ -852,8 +809,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message from importing artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportGoogetArtifactsResponse
 	{
 		
@@ -873,8 +829,7 @@ namespace MyNS
 	/// <summary>
 	/// Error information explaining why a package was not imported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportYumArtifactsErrorInfo
 	{
 		
@@ -894,8 +849,7 @@ namespace MyNS
 	/// <summary>
 	/// Google Cloud Storage location where the artifacts currently reside.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportYumArtifactsGcsSource
 	{
 		
@@ -915,8 +869,7 @@ namespace MyNS
 	/// <summary>
 	/// The operation metadata for importing artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportYumArtifactsMetadata
 	{
 	}
@@ -924,8 +877,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to import new yum artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportYumArtifactsRequest
 	{
 		
@@ -939,8 +891,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message from importing YUM artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportYumArtifactsResponse
 	{
 		
@@ -960,8 +911,7 @@ namespace MyNS
 	/// <summary>
 	/// A detailed representation of a Yum artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class YumArtifact
 	{
 		
@@ -993,8 +943,7 @@ namespace MyNS
 	/// <summary>
 	/// A detailed representation of a KFP artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KfpArtifact
 	{
 		
@@ -1014,8 +963,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from listing docker images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDockerImagesResponse
 	{
 		
@@ -1035,8 +983,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from listing files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFilesResponse
 	{
 		
@@ -1056,8 +1003,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -1077,8 +1023,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -1116,8 +1061,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from listing maven artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMavenArtifactsResponse
 	{
 		
@@ -1137,8 +1081,7 @@ namespace MyNS
 	/// <summary>
 	/// MavenArtifact represents a maven artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MavenArtifact
 	{
 		
@@ -1188,8 +1131,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from listing npm packages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNpmPackagesResponse
 	{
 		
@@ -1209,8 +1151,7 @@ namespace MyNS
 	/// <summary>
 	/// NpmPackage represents an npm artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NpmPackage
 	{
 		
@@ -1254,8 +1195,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from listing packages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPackagesResponse
 	{
 		
@@ -1275,8 +1215,7 @@ namespace MyNS
 	/// <summary>
 	/// Packages are named collections of versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Package
 	{
 		
@@ -1308,8 +1247,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from listing python packages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPythonPackagesResponse
 	{
 		
@@ -1329,8 +1267,7 @@ namespace MyNS
 	/// <summary>
 	/// PythonPackage represents a python artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PythonPackage
 	{
 		
@@ -1374,8 +1311,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from listing repositories.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRepositoriesResponse
 	{
 		
@@ -1395,8 +1331,7 @@ namespace MyNS
 	/// <summary>
 	/// A Repository for storing artifacts with a specific format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Repository
 	{
 		
@@ -1497,48 +1432,45 @@ namespace MyNS
 		public VirtualRepositoryConfig VirtualRepositoryConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepositoryFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAVEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAVEN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NPM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NPM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YUM = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGET = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PYTHON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PYTHON = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KFP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KFP = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GO = 9,
 	}
 	
 	/// <summary>
 	/// MavenRepositoryConfig is maven related repository details. Provides additional configuration details for repositories of the maven format type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MavenRepositoryConfig
 	{
 		
@@ -1555,46 +1487,41 @@ namespace MyNS
 		public System.Nullable<MavenRepositoryConfigVersionPolicy> VersionPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MavenRepositoryConfigVersionPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERSION_POLICY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERSION_POLICY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNAPSHOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNAPSHOT = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepositoryMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_REPOSITORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_REPOSITORY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIRTUAL_REPOSITORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIRTUAL_REPOSITORY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOTE_REPOSITORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOTE_REPOSITORY = 3,
 	}
 	
 	/// <summary>
 	/// Remote repository configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoteRepositoryConfig
 	{
 		
@@ -1650,8 +1577,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a Maven remote repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MavenRepository
 	{
 		
@@ -1662,24 +1588,21 @@ namespace MyNS
 		public System.Nullable<MavenRepositoryPublicRepository> PublicRepository { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MavenRepositoryPublicRepository
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_REPOSITORY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_REPOSITORY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAVEN_CENTRAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAVEN_CENTRAL = 1,
 	}
 	
 	/// <summary>
 	/// Configuration for a Npm remote repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NpmRepository
 	{
 		
@@ -1690,24 +1613,21 @@ namespace MyNS
 		public System.Nullable<NpmRepositoryPublicRepository> PublicRepository { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NpmRepositoryPublicRepository
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_REPOSITORY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_REPOSITORY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NPMJS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NPMJS = 1,
 	}
 	
 	/// <summary>
 	/// Configuration for a Python remote repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PythonRepository
 	{
 		
@@ -1718,24 +1638,21 @@ namespace MyNS
 		public System.Nullable<PythonRepositoryPublicRepository> PublicRepository { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PythonRepositoryPublicRepository
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_REPOSITORY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_REPOSITORY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PYPI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PYPI = 1,
 	}
 	
 	/// <summary>
 	/// The credentials to access the remote repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpstreamCredentials
 	{
 		
@@ -1749,8 +1666,7 @@ namespace MyNS
 	/// <summary>
 	/// Username and password credentials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsernamePasswordCredentials
 	{
 		
@@ -1770,8 +1686,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a Yum remote repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class YumRepository
 	{
 		
@@ -1785,8 +1700,7 @@ namespace MyNS
 	/// <summary>
 	/// Virtual repository configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VirtualRepositoryConfig
 	{
 		
@@ -1800,8 +1714,7 @@ namespace MyNS
 	/// <summary>
 	/// Artifact policy configuration for the repository contents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpstreamPolicy
 	{
 		
@@ -1827,8 +1740,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from listing tags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsResponse
 	{
 		
@@ -1848,8 +1760,7 @@ namespace MyNS
 	/// <summary>
 	/// Tags point to a version and represent an alternative name that can be used to access the version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1869,8 +1780,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from listing versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVersionsResponse
 	{
 		
@@ -1890,8 +1800,7 @@ namespace MyNS
 	/// <summary>
 	/// The body of a version resource. A version resource represents a collection of components, such as files and other data. This may correspond to a version in many package management schemes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Version
 	{
 		
@@ -1935,8 +1844,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1974,8 +1882,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata type for longrunning-operations, currently empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 	}
@@ -1983,8 +1890,7 @@ namespace MyNS
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -2010,8 +1916,7 @@ namespace MyNS
 	/// <summary>
 	/// The Artifact Registry settings that apply to a Project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectSettings
 	{
 		
@@ -2028,30 +1933,27 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProjectSettingsLegacyRedirectionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECTION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECTION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECTION_FROM_GCR_IO_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECTION_FROM_GCR_IO_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECTION_FROM_GCR_IO_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECTION_FROM_GCR_IO_ENABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECTION_FROM_GCR_IO_FINALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECTION_FROM_GCR_IO_FINALIZED = 3,
 	}
 	
 	/// <summary>
 	/// Request message for `SetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIamPolicyRequest
 	{
 		
@@ -2065,8 +1967,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsRequest
 	{
 		
@@ -2080,8 +1981,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		
@@ -2095,8 +1995,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to upload an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadAptArtifactMediaResponse
 	{
 		
@@ -2110,8 +2009,7 @@ namespace MyNS
 	/// <summary>
 	/// The operation metadata for uploading artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadAptArtifactMetadata
 	{
 	}
@@ -2119,8 +2017,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to upload an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadAptArtifactRequest
 	{
 	}
@@ -2128,8 +2025,7 @@ namespace MyNS
 	/// <summary>
 	/// The response of the completed artifact upload operation. This response is contained in the Operation and available to users.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadAptArtifactResponse
 	{
 		
@@ -2143,8 +2039,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to upload a Go module.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadGoModuleMediaResponse
 	{
 		
@@ -2158,8 +2053,7 @@ namespace MyNS
 	/// <summary>
 	/// The operation metadata for uploading go modules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadGoModuleMetadata
 	{
 	}
@@ -2167,8 +2061,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to upload a Go module.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadGoModuleRequest
 	{
 	}
@@ -2176,8 +2069,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to upload an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadGoogetArtifactMediaResponse
 	{
 		
@@ -2191,8 +2083,7 @@ namespace MyNS
 	/// <summary>
 	/// The operation metadata for uploading artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadGoogetArtifactMetadata
 	{
 	}
@@ -2200,8 +2091,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to upload an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadGoogetArtifactRequest
 	{
 	}
@@ -2209,8 +2099,7 @@ namespace MyNS
 	/// <summary>
 	/// The response of the completed artifact upload operation. This response is contained in the Operation and available to users.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadGoogetArtifactResponse
 	{
 		
@@ -2224,8 +2113,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to upload an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadKfpArtifactMediaResponse
 	{
 		
@@ -2239,8 +2127,7 @@ namespace MyNS
 	/// <summary>
 	/// The operation metadata for uploading KFP artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadKfpArtifactMetadata
 	{
 	}
@@ -2248,8 +2135,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to upload an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadKfpArtifactRequest
 	{
 		
@@ -2269,8 +2155,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to upload an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadYumArtifactMediaResponse
 	{
 		
@@ -2284,8 +2169,7 @@ namespace MyNS
 	/// <summary>
 	/// The operation metadata for uploading artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadYumArtifactMetadata
 	{
 	}
@@ -2293,8 +2177,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to upload an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadYumArtifactRequest
 	{
 	}
@@ -2302,8 +2185,7 @@ namespace MyNS
 	/// <summary>
 	/// The response of the completed artifact upload operation. This response is contained in the Operation and available to users.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadYumArtifactResponse
 	{
 		
@@ -2317,8 +2199,7 @@ namespace MyNS
 	/// <summary>
 	/// The Artifact Registry VPC SC config that apply to a Project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPCSCConfig
 	{
 		
@@ -2335,19 +2216,17 @@ namespace MyNS
 		public System.Nullable<VPCSCConfigVpcscPolicy> VpcscPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VPCSCConfigVpcscPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPCSC_POLICY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPCSC_POLICY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW = 2,
 	}
 	
@@ -3218,13 +3097,13 @@ namespace MyNS
 	public enum Artifactregistry_projects_locations_repositories_pythonPackages_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERSION_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERSION_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

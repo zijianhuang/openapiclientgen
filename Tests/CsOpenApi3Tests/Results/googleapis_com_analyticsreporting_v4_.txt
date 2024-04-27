@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An Activity represents data for an activity of a user. Note that an Activity is different from a hit. A hit might result in multiple Activity's. For example, if a hit includes a transaction and a goal completion, there will be two Activity protos for this hit, one for ECOMMERCE and one for GOAL. Conversely, multiple hits can also construct one Activity. In classic e-commerce, data for one transaction might be sent through multiple hits. These hits will be merged into one ECOMMERCE Activity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Activity
 	{
 		
@@ -113,33 +112,30 @@ namespace MyNS
 		public string Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActivityActivityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVITY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVITY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGEVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGEVIEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCREENVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCREENVIEW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECOMMERCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECOMMERCE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScreenviewData
 	{
 		
@@ -171,8 +167,7 @@ namespace MyNS
 	/// <summary>
 	/// Custom dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDimension
 	{
 		
@@ -192,8 +187,7 @@ namespace MyNS
 	/// <summary>
 	/// E-commerce details associated with the user activity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EcommerceData
 	{
 		
@@ -222,61 +216,56 @@ namespace MyNS
 		public TransactionData Transaction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EcommerceDataActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLICK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLICK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DETAILS_VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DETAILS_VIEW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD_TO_CART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD_TO_CART = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVE_FROM_CART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVE_FROM_CART = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECKOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECKOUT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REFUND = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECKOUT_OPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECKOUT_OPTION = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EcommerceDataEcommerceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECOMMERCE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECOMMERCE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLASSIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLASSIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENHANCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENHANCED = 2,
 	}
 	
 	/// <summary>
 	/// Details of the products in an e-commerce transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductData
 	{
 		
@@ -308,8 +297,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents details collected when the visitor performs a transaction on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionData
 	{
 		
@@ -341,8 +329,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents all the details pertaining to an event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventData
 	{
 		
@@ -380,8 +367,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a set of goals that were reached in an activity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoalSetData
 	{
 		
@@ -395,8 +381,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents all the details pertaining to a goal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoalData
 	{
 		
@@ -452,8 +437,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents details collected when the visitor views a page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageviewData
 	{
 		
@@ -473,8 +457,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a cohort. A cohort is a group of users who share a common characteristic. For example, all users with the same acquisition date belong to the same cohort.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cohort
 	{
 		
@@ -500,8 +483,7 @@ namespace MyNS
 	/// <summary>
 	/// A contiguous set of days: startDate, startDate + 1 day, ..., endDate. The start and end dates are specified in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date format `YYYY-MM-DD`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateRange
 	{
 		
@@ -518,24 +500,21 @@ namespace MyNS
 		public string StartDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CohortType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_COHORT_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_COHORT_TYPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRST_VISIT_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRST_VISIT_DATE = 1,
 	}
 	
 	/// <summary>
 	/// Defines a cohort group. For example: "cohortGroup": { "cohorts": [{ "name": "cohort 1", "type": "FIRST_VISIT_DATE", "dateRange": { "startDate": "2015-08-01", "endDate": "2015-08-01" } },{ "name": "cohort 2" "type": "FIRST_VISIT_DATE" "dateRange": { "startDate": "2015-07-01", "endDate": "2015-07-01" } }] }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CohortGroup
 	{
 		
@@ -555,8 +534,7 @@ namespace MyNS
 	/// <summary>
 	/// Column headers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnHeader
 	{
 		
@@ -576,8 +554,7 @@ namespace MyNS
 	/// <summary>
 	/// The headers for the metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricHeader
 	{
 		
@@ -597,8 +574,7 @@ namespace MyNS
 	/// <summary>
 	/// Header for the metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricHeaderEntry
 	{
 		
@@ -615,36 +591,33 @@ namespace MyNS
 		public System.Nullable<MetricHeaderEntryType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricHeaderEntryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTEGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTEGER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLOAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLOAT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENCY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME = 5,
 	}
 	
 	/// <summary>
 	/// The headers for each of the pivot sections defined in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotHeader
 	{
 		
@@ -664,8 +637,7 @@ namespace MyNS
 	/// <summary>
 	/// The headers for the each of the metric column corresponding to the metrics requested in the pivots section of the response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotHeaderEntry
 	{
 		
@@ -691,8 +663,7 @@ namespace MyNS
 	/// <summary>
 	/// Used to return a list of metrics for a single DateRange / dimension combination
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateRangeValues
 	{
 		
@@ -712,8 +683,7 @@ namespace MyNS
 	/// <summary>
 	/// The metric values in the pivot region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotValueRegion
 	{
 		
@@ -727,8 +697,7 @@ namespace MyNS
 	/// <summary>
 	/// [Dimensions](https://support.google.com/analytics/answer/1033861) are attributes of your data. For example, the dimension `ga:city` indicates the city, for example, "Paris" or "New York", from which a session originates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimension
 	{
 		
@@ -748,8 +717,7 @@ namespace MyNS
 	/// <summary>
 	/// Dimension filter specifies the filtering options on a dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionFilter
 	{
 		
@@ -784,48 +752,45 @@ namespace MyNS
 		public System.Nullable<DimensionFilterOperator> Operator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionFilterOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGEXP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGEXP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDS_WITH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC_EQUAL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC_GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC_GREATER_THAN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC_LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC_LESS_THAN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_LIST = 9,
 	}
 	
 	/// <summary>
 	/// A group of dimension filters. Set the operator value to specify how the filters are logically combined.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionFilterClause
 	{
 		
@@ -842,27 +807,24 @@ namespace MyNS
 		public System.Nullable<DimensionFilterClauseOperator> Operator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionFilterClauseOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AND = 2,
 	}
 	
 	/// <summary>
 	/// Dynamic segment definition for defining the segment within the request. A segment can select users, sessions or both.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicSegment
 	{
 		
@@ -888,8 +850,7 @@ namespace MyNS
 	/// <summary>
 	/// SegmentDefinition defines the segment to be a set of SegmentFilters which are combined together with a logical `AND` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentDefinition
 	{
 		
@@ -903,8 +864,7 @@ namespace MyNS
 	/// <summary>
 	/// SegmentFilter defines the segment to be either a simple or a sequence segment. A simple segment condition contains dimension and metric conditions to select the sessions or users. A sequence segment condition can be used to select users or sessions based on sequential conditions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentFilter
 	{
 		
@@ -930,8 +890,7 @@ namespace MyNS
 	/// <summary>
 	/// Sequence conditions consist of one or more steps, where each step is defined by one or more dimension/metric conditions. Multiple steps can be combined with special sequence operators.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SequenceSegment
 	{
 		
@@ -951,8 +910,7 @@ namespace MyNS
 	/// <summary>
 	/// A segment sequence definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentSequenceStep
 	{
 		
@@ -969,27 +927,24 @@ namespace MyNS
 		public OrFiltersForSegment[] OrFiltersForSegment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SegmentSequenceStepMatchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_MATCH_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_MATCH_TYPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRECEDES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRECEDES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMMEDIATELY_PRECEDES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMMEDIATELY_PRECEDES = 2,
 	}
 	
 	/// <summary>
 	/// A list of segment filters in the `OR` group are combined with the logical OR operator.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrFiltersForSegment
 	{
 		
@@ -1003,8 +958,7 @@ namespace MyNS
 	/// <summary>
 	/// Filter Clause to be used in a segment definition, can be wither a metric or a dimension filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentFilterClause
 	{
 		
@@ -1030,8 +984,7 @@ namespace MyNS
 	/// <summary>
 	/// Dimension filter specifies the filtering options on a dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentDimensionFilter
 	{
 		
@@ -1072,48 +1025,45 @@ namespace MyNS
 		public System.Nullable<SegmentDimensionFilterOperator> Operator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SegmentDimensionFilterOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGEXP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGEXP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDS_WITH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_LIST = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC_LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC_LESS_THAN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC_GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC_GREATER_THAN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC_BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC_BETWEEN = 9,
 	}
 	
 	/// <summary>
 	/// Metric filter to be used in a segment filter clause.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentMetricFilter
 	{
 		
@@ -1148,55 +1098,50 @@ namespace MyNS
 		public System.Nullable<SegmentMetricFilterScope> Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SegmentMetricFilterOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_OPERATOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_OPERATOR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BETWEEN = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SegmentMetricFilterScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_SCOPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_SCOPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SESSION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 4,
 	}
 	
 	/// <summary>
 	/// A Simple segment conditions consist of one or more dimension/metric conditions that can be combined.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleSegment
 	{
 		
@@ -1210,8 +1155,7 @@ namespace MyNS
 	/// <summary>
 	/// The batch request containing multiple report request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReportsRequest
 	{
 		
@@ -1231,8 +1175,7 @@ namespace MyNS
 	/// <summary>
 	/// The main request class which specifies the Reporting API request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportRequest
 	{
 		
@@ -1342,8 +1285,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a group of metric filters. Set the operator value to specify how the filters are logically combined.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricFilterClause
 	{
 		
@@ -1363,8 +1305,7 @@ namespace MyNS
 	/// <summary>
 	/// MetricFilter specifies the filter on a metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricFilter
 	{
 		
@@ -1393,33 +1334,30 @@ namespace MyNS
 		public System.Nullable<MetricFilterOperator> Operator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricFilterOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IS_MISSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IS_MISSING = 4,
 	}
 	
 	/// <summary>
 	/// [Metrics](https://support.google.com/analytics/answer/1033861) are the quantitative measurements. For example, the metric `ga:users` indicates the total number of users for the requested time period.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metric
 	{
 		
@@ -1445,8 +1383,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the sorting options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderBy
 	{
 		
@@ -1469,52 +1406,47 @@ namespace MyNS
 		public System.Nullable<OrderBySortOrder> SortOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderByOrderType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORDER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORDER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALUE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELTA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMART = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HISTOGRAM_BUCKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HISTOGRAM_BUCKET = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION_AS_INTEGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION_AS_INTEGER = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrderBySortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORT_ORDER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SORT_ORDER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 2,
 	}
 	
 	/// <summary>
 	/// The Pivot describes the pivot section in the request. The Pivot helps rearrange the information in the table for certain reports by pivoting your data on a second dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pivot
 	{
 		
@@ -1549,30 +1481,27 @@ namespace MyNS
 		public System.Nullable<System.Int32> StartGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportRequestSamplingLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAMPLING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAMPLING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMALL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LARGE = 3,
 	}
 	
 	/// <summary>
 	/// The segment definition, if the report needs to be segmented. A Segment is a subset of the Analytics data. For example, of the entire set of users, one Segment might be users from a particular country or city.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Segment
 	{
 		
@@ -1592,8 +1521,7 @@ namespace MyNS
 	/// <summary>
 	/// The main response class which holds the reports from the Reporting API `batchGet` call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetReportsResponse
 	{
 		
@@ -1619,8 +1547,7 @@ namespace MyNS
 	/// <summary>
 	/// The data response corresponding to the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Report
 	{
 		
@@ -1646,8 +1573,7 @@ namespace MyNS
 	/// <summary>
 	/// The data part of the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportData
 	{
 		
@@ -1715,8 +1641,7 @@ namespace MyNS
 	/// <summary>
 	/// A row in the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportRow
 	{
 		
@@ -1736,8 +1661,7 @@ namespace MyNS
 	/// <summary>
 	/// The resource quota tokens remaining for the property after the request is completed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceQuotasRemaining
 	{
 		
@@ -1757,8 +1681,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to fetch User Report from Reporting API `userActivity:get` call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchUserActivityRequest
 	{
 		
@@ -1802,8 +1725,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information to identify a particular user uniquely.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -1820,27 +1742,24 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ID_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ID_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_ID = 2,
 	}
 	
 	/// <summary>
 	/// The response from `userActivity:get` call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchUserActivityResponse
 	{
 		
@@ -1872,8 +1791,7 @@ namespace MyNS
 	/// <summary>
 	/// This represents a user session performed on a specific device at a certain time over a period of time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserActivitySession
 	{
 		

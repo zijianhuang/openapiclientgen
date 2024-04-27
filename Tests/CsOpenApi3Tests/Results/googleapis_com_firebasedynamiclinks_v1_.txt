@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Tracking parameters supported by Dynamic Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyticsInfo
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for Google Play Campaign Measurements. [Learn more](https://developers.google.com/analytics/devguides/collection/android/v4/campaigns#campaign-params)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GooglePlayAnalytics
 	{
 		
@@ -86,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for iTunes Connect App Analytics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ITunesConnectAnalytics
 	{
 		
@@ -119,8 +116,7 @@ namespace MyNS
 	/// <summary>
 	/// Android related attributes to the Dynamic Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AndroidInfo
 	{
 		
@@ -152,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to create a managed Short Dynamic Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateManagedShortLinkRequest
 	{
 		
@@ -191,8 +186,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Dynamic Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicLinkInfo
 	{
 		
@@ -254,8 +248,7 @@ namespace MyNS
 	/// <summary>
 	/// Desktop related attributes to the Dynamic Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DesktopInfo
 	{
 		
@@ -269,8 +262,7 @@ namespace MyNS
 	/// <summary>
 	/// iOS related attributes to the Dynamic Link..
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IosInfo
 	{
 		
@@ -320,8 +312,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of navigation behavior.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NavigationInfo
 	{
 		
@@ -335,8 +326,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters for social meta tag params. Used to set meta tag data for link previews on social sites.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SocialMetaTagInfo
 	{
 		
@@ -362,8 +352,7 @@ namespace MyNS
 	/// <summary>
 	/// Short Dynamic Link suffix.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Suffix
 	{
 		
@@ -380,30 +369,27 @@ namespace MyNS
 		public System.Nullable<SuffixOption> Option { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SuffixOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNGUESSABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNGUESSABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHORT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 3,
 	}
 	
 	/// <summary>
 	/// Response to create a short Dynamic Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateManagedShortLinkResponse
 	{
 		
@@ -429,8 +415,7 @@ namespace MyNS
 	/// <summary>
 	/// Managed Short Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedShortLink
 	{
 		
@@ -471,30 +456,27 @@ namespace MyNS
 		public System.Nullable<ManagedShortLinkVisibility> Visibility { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ManagedShortLinkVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_VISIBILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_VISIBILITY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNARCHIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNARCHIVED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER_SHOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER_SHOWN = 3,
 	}
 	
 	/// <summary>
 	/// Dynamic Links warning messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicLinkWarning
 	{
 		
@@ -517,105 +499,102 @@ namespace MyNS
 		public string WarningMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DynamicLinkWarningWarningCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN_PROJECT_ANDROID_PACKAGE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN_PROJECT_ANDROID_PACKAGE_NAME = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_INTEGER_ANDROID_PACKAGE_MIN_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_INTEGER_ANDROID_PACKAGE_MIN_VERSION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNNECESSARY_ANDROID_PACKAGE_MIN_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNNECESSARY_ANDROID_PACKAGE_MIN_VERSION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_URI_ANDROID_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_URI_ANDROID_LINK = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNNECESSARY_ANDROID_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNNECESSARY_ANDROID_LINK = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_URI_ANDROID_FALLBACK_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_URI_ANDROID_FALLBACK_LINK = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_URI_SCHEME_ANDROID_FALLBACK_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_URI_SCHEME_ANDROID_FALLBACK_LINK = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN_PROJECT_IOS_BUNDLE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN_PROJECT_IOS_BUNDLE_ID = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN_PROJECT_IPAD_BUNDLE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN_PROJECT_IPAD_BUNDLE_ID = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNNECESSARY_IOS_URL_SCHEME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNNECESSARY_IOS_URL_SCHEME = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_NUMERIC_IOS_APP_STORE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_NUMERIC_IOS_APP_STORE_ID = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNNECESSARY_IOS_APP_STORE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNNECESSARY_IOS_APP_STORE_ID = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_URI_IOS_FALLBACK_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_URI_IOS_FALLBACK_LINK = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_URI_SCHEME_IOS_FALLBACK_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_URI_SCHEME_IOS_FALLBACK_LINK = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_URI_IPAD_FALLBACK_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_URI_IPAD_FALLBACK_LINK = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_URI_SCHEME_IPAD_FALLBACK_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_URI_SCHEME_IPAD_FALLBACK_LINK = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_DEBUG_PARAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_DEBUG_PARAM = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_AD_PARAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_AD_PARAM = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPRECATED_PARAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPRECATED_PARAM = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNRECOGNIZED_PARAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNRECOGNIZED_PARAM = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_LONG_PARAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_LONG_PARAM = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_URI_SOCIAL_IMAGE_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_URI_SOCIAL_IMAGE_LINK = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_URI_SCHEME_SOCIAL_IMAGE_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_URI_SCHEME_SOCIAL_IMAGE_LINK = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_URI_SOCIAL_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_URI_SOCIAL_URL = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_URI_SCHEME_SOCIAL_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_URI_SCHEME_SOCIAL_URL = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_LENGTH_TOO_LONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_LENGTH_TOO_LONG = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_WITH_FRAGMENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_WITH_FRAGMENTS = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_MATCHING_IOS_BUNDLE_ID_AND_STORE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_MATCHING_IOS_BUNDLE_ID_AND_STORE_ID = 28,
 	}
 	
 	/// <summary>
 	/// Request to create a short Dynamic Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateShortDynamicLinkRequest
 	{
 		
@@ -647,8 +626,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to create a short Dynamic Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateShortDynamicLinkResponse
 	{
 		
@@ -674,8 +652,7 @@ namespace MyNS
 	/// <summary>
 	/// Signals associated with the device making the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceInfo
 	{
 		
@@ -725,8 +702,7 @@ namespace MyNS
 	/// <summary>
 	/// Dynamic Link event stat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicLinkEventStat
 	{
 		
@@ -749,58 +725,53 @@ namespace MyNS
 		public System.Nullable<DynamicLinkEventStatPlatform> Platform { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DynamicLinkEventStatEvent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DYNAMIC_LINK_EVENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DYNAMIC_LINK_EVENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLICK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLICK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_INSTALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_INSTALL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_FIRST_OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_FIRST_OPEN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_RE_OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_RE_OPEN = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DynamicLinkEventStatPlatform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DYNAMIC_LINK_PLATFORM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DYNAMIC_LINK_PLATFORM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESKTOP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 4,
 	}
 	
 	/// <summary>
 	/// Analytics stats of a Dynamic Link for a given timeframe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicLinkStats
 	{
 		
@@ -814,8 +785,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for iSDK to execute strong match flow for post-install attribution. This is meant for iOS requests only. Requests from other platforms will not be honored.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIosPostInstallAttributionRequest
 	{
 		
@@ -868,46 +838,41 @@ namespace MyNS
 		public System.Nullable<GetIosPostInstallAttributionRequestVisualStyle> VisualStyle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetIosPostInstallAttributionRequestRetrievalMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_PAYLOAD_RETRIEVAL_METHOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_PAYLOAD_RETRIEVAL_METHOD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPLICIT_WEAK_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPLICIT_WEAK_MATCH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPLICIT_WEAK_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPLICIT_WEAK_MATCH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPLICIT_STRONG_AFTER_WEAK_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPLICIT_STRONG_AFTER_WEAK_MATCH = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetIosPostInstallAttributionRequestVisualStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_VISUAL_STYLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_VISUAL_STYLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT_STYLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT_STYLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_STYLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_STYLE = 2,
 	}
 	
 	/// <summary>
 	/// Response for iSDK to execute strong match flow for post-install attribution. Information of the resolved FDL link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIosPostInstallAttributionResponse
 	{
 		
@@ -1008,46 +973,41 @@ namespace MyNS
 		public string UtmTerm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetIosPostInstallAttributionResponseAttributionConfidence
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ATTRIBUTION_CONFIDENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ATTRIBUTION_CONFIDENCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEAK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEAK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIQUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIQUE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetIosPostInstallAttributionResponseRequestIpVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_IP_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_IP_VERSION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_V4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_V4 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_V6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_V6 = 2,
 	}
 	
 	/// <summary>
 	/// Request for iSDK to get reopen attribution for app universal link open deeplinking. This endpoint is meant for only iOS requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIosReopenAttributionRequest
 	{
 		
@@ -1073,8 +1033,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for iSDK to get reopen attribution for app universal link open deeplinking. This endpoint is meant for only iOS requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIosReopenAttributionResponse
 	{
 		

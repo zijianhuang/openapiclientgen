@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An Activity resource is a combined view of multiple events. An activity has a list of individual events and a combined view of the common fields among all events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Activity
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the changes associated with an action taken by a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event
 	{
 		
@@ -104,8 +102,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about changes in an object's parents as a result of a move type event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Move
 	{
 		
@@ -125,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a parent object. For example, a folder in Drive is a parent for all files within it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parent
 	{
 		
@@ -152,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a Drive object's permissions that changed as a result of a permissionChange type event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionChange
 	{
 		
@@ -173,8 +168,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the permissions and type of access allowed with regards to a Google Drive object. This is a subset of the fields contained in a corresponding Drive Permissions object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Permission
 	{
 		
@@ -215,55 +209,50 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WithLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="commenter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		commenter = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fileOrganizer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fileOrganizer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="owner")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		owner = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publishedReader")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publishedReader = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reader")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reader = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="writer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		writer = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="anyone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		anyone = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="domain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		domain = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 3,
 	}
 	
 	/// <summary>
 	/// A representation of a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -301,8 +290,7 @@ namespace MyNS
 	/// <summary>
 	/// Photo information for a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Photo
 	{
 		
@@ -313,51 +301,48 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventPrimaryEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comment = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="create")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		create = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="edit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		edit = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="emptyTrash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		emptyTrash = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="move")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		move = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="permissionChange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		permissionChange = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rename")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rename = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trash = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="untrash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		untrash = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="upload")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		upload = 10,
 	}
 	
 	/// <summary>
 	/// Contains information about a renametype event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rename
 	{
 		
@@ -377,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the object modified by the event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Target
 	{
 		
@@ -404,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from the list request. Contains a list of activities and a token to retrieve the next page of results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListActivitiesResponse
 	{
 		
@@ -486,10 +469,10 @@ namespace MyNS
 	public enum Appsactivity_activities_listGroupingStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="driveUi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		driveUi = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 1,
 	}
 }

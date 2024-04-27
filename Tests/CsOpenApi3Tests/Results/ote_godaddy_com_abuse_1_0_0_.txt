@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The associated fields returned, given a unique abuse ticket id
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbuseTicket
 	{
 		
@@ -99,42 +98,39 @@ namespace MyNS
 		public AbuseTicketType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AbuseTicketType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A_RECORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A_RECORD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHILD_ABUSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHILD_ABUSE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRAUD_WIRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRAUD_WIRE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_BLOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_BLOCK = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MALWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MALWARE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_ABUSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_ABUSE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHISHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHISHING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPAM = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbuseTicketCreate
 	{
 		
@@ -184,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// The primary key of a newly created abuse ticket
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbuseTicketId
 	{
 		
@@ -196,8 +191,7 @@ namespace MyNS
 		public string U_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbuseTicketList
 	{
 		
@@ -213,8 +207,7 @@ namespace MyNS
 		public string[] TicketIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -247,8 +240,7 @@ namespace MyNS
 		public string[] Stack { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorField
 	{
 		
@@ -281,8 +273,7 @@ namespace MyNS
 		public string PathRelated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pagination
 	{
 		

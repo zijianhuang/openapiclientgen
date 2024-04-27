@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of an AcknowledgeJob action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcknowledgeJobOutput
 	{
 		
@@ -29,39 +28,36 @@ namespace MyNS
 		public JobStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Created = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Queued = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Dispatched")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Dispatched = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TimedOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TimedOut = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 6,
 	}
 	
 	/// <summary>
 	/// Represents the input of an AcknowledgeJob action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcknowledgeJobInput
 	{
 		
@@ -80,20 +76,17 @@ namespace MyNS
 		public string Nonce { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNonceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobNotFoundException
 	{
 	}
@@ -101,8 +94,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of an AcknowledgeThirdPartyJob action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcknowledgeThirdPartyJobOutput
 	{
 		
@@ -113,8 +105,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of an AcknowledgeThirdPartyJob action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcknowledgeThirdPartyJobInput
 	{
 		
@@ -140,8 +131,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidClientTokenException
 	{
 	}
@@ -149,8 +139,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>CreateCustomActionType</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomActionTypeOutput
 	{
 		
@@ -168,8 +157,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns information about the details of an action type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionType
 	{
 		
@@ -204,8 +192,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about an action type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypeId
 	{
 		
@@ -238,52 +225,47 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Source")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Source = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Build")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Build = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deploy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deploy = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Test")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Test = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Invoke")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Invoke = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Approval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Approval = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionOwner
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThirdParty")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ThirdParty = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Custom = 2,
 	}
 	
 	/// <summary>
 	/// Returns information about the settings for an action type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypeSettings
 	{
 		
@@ -303,8 +285,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about an action configuration property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionConfigurationProperty
 	{
 		
@@ -346,27 +327,24 @@ namespace MyNS
 		public ActionConfigurationPropertyType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionConfigurationPropertyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="String")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		String = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Number = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Boolean")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Boolean = 2,
 	}
 	
 	/// <summary>
 	/// Returns information about the details of an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactDetails
 	{
 		
@@ -388,8 +366,7 @@ namespace MyNS
 	/// <summary>
 	/// A tag is a key-value pair that is used to manage the resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -411,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a CreateCustomActionType operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomActionTypeInput
 	{
 		
@@ -461,26 +437,22 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModificationException
 	{
 	}
@@ -488,8 +460,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>CreatePipeline</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePipelineOutput
 	{
 		
@@ -503,8 +474,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the structure of actions and stages to be performed in the pipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineDeclaration
 	{
 		
@@ -542,8 +512,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The S3 bucket where artifacts for the pipeline are stored.</p> <note> <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactStore
 	{
 		
@@ -565,21 +534,18 @@ namespace MyNS
 		public EncryptionKey EncryptionKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArtifactStoreType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3 = 0,
 	}
 	
 	/// <summary>
 	/// Represents information about the key used to encrypt data in the artifact store, such as an Amazon Web Services Key Management Service (Key Management Service) key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionKey
 	{
 		
@@ -598,18 +564,15 @@ namespace MyNS
 		public EncryptionKeyType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionKeyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactStoreMap
 	{
 	}
@@ -617,8 +580,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about a stage and its definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StageDeclaration
 	{
 		
@@ -643,8 +605,7 @@ namespace MyNS
 	/// <summary>
 	/// Reserved for future use.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockerDeclaration
 	{
 		
@@ -663,21 +624,18 @@ namespace MyNS
 		public BlockerType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BlockerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Schedule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Schedule = 0,
 	}
 	
 	/// <summary>
 	/// Represents information about an action declaration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionDeclaration
 	{
 		
@@ -717,8 +675,7 @@ namespace MyNS
 		public string Namespace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionConfigurationMap
 	{
 	}
@@ -726,8 +683,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the output of an action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputArtifact
 	{
 		
@@ -742,8 +698,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about an artifact to be worked on, such as a test or build artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputArtifact
 	{
 		
@@ -758,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>CreatePipeline</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePipelineInput
 	{
 		
@@ -774,32 +728,27 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineNameInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidStageDeclarationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidActionDeclarationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidBlockerDeclarationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidStructureException
 	{
 	}
@@ -807,8 +756,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked as deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCustomActionTypeInput
 	{
 		
@@ -837,8 +785,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>DeletePipeline</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePipelineInput
 	{
 		
@@ -850,14 +797,12 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWebhookOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWebhookInput
 	{
 		
@@ -869,14 +814,12 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterWebhookWithThirdPartyOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterWebhookWithThirdPartyInput
 	{
 		
@@ -884,8 +827,7 @@ namespace MyNS
 		public string WebhookName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookNotFoundException
 	{
 	}
@@ -893,8 +835,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>DisableStageTransition</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableStageTransitionInput
 	{
 		
@@ -927,27 +868,23 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StageTransitionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Outbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Outbound = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StageNotFoundException
 	{
 	}
@@ -955,8 +892,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of an <code>EnableStageTransition</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableStageTransitionInput
 	{
 		
@@ -982,8 +918,7 @@ namespace MyNS
 		public StageTransitionType TransitionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetActionTypeOutput
 	{
 		
@@ -994,8 +929,7 @@ namespace MyNS
 	/// <summary>
 	/// The parameters for the action type definition that are provided when the action type is created or updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypeDeclaration
 	{
 		
@@ -1046,8 +980,7 @@ namespace MyNS
 	/// <summary>
 	/// The action engine, or executor, for an action type created for a provider, where the action is to be used by customers of the provider. The action engine is associated with the model used to create and update the action, such as the Lambda integration model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypeExecutor
 	{
 		
@@ -1075,8 +1008,7 @@ namespace MyNS
 	/// <summary>
 	/// The action engine, or executor, related to the supported integration model used to create and update the action type. The available executor types are <code>Lambda</code> and <code>JobWorker</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutorConfiguration
 	{
 		
@@ -1090,8 +1022,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the configuration for the <code>Lambda</code> action engine, or executor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaExecutorConfiguration
 	{
 		
@@ -1106,8 +1037,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the polling configuration for the <code>JobWorker</code> action engine, or executor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobWorkerExecutorConfiguration
 	{
 		
@@ -1118,24 +1048,21 @@ namespace MyNS
 		public string[] PollingServicePrincipals { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecutorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JobWorker")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JobWorker = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lambda")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lambda = 1,
 	}
 	
 	/// <summary>
 	/// Specifies the category, owner, provider, and version of the action type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypeIdentifier
 	{
 		
@@ -1171,8 +1098,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about parameters for artifacts associated with the action type, such as the minimum and maximum artifacts allowed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypeArtifactDetails
 	{
 		
@@ -1194,8 +1120,7 @@ namespace MyNS
 	/// <summary>
 	/// Details identifying the users with permissions to use the action type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypePermissions
 	{
 		
@@ -1210,8 +1135,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns information about URLs for web pages that display to customers as links on the pipeline view, such as an external configuration page for the action type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypeUrls
 	{
 		
@@ -1228,8 +1152,7 @@ namespace MyNS
 		public string RevisionUrlTemplate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetActionTypeInput
 	{
 		
@@ -1262,8 +1185,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypeNotFoundException
 	{
 	}
@@ -1271,8 +1193,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetJobDetails</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobDetailsOutput
 	{
 		
@@ -1283,8 +1204,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the details of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobDetails
 	{
 		
@@ -1301,8 +1221,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents other information about a job required for a job worker to complete the job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobData
 	{
 		
@@ -1334,8 +1253,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about an action configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionConfiguration
 	{
 		
@@ -1346,8 +1264,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents information about a pipeline to a job worker.</p> <note> <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineContext
 	{
 		
@@ -1370,8 +1287,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about a stage to a job worker.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StageContext
 	{
 		
@@ -1382,8 +1298,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the context of an action in the stage of a pipeline to a job worker.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionContext
 	{
 		
@@ -1397,8 +1312,7 @@ namespace MyNS
 	/// <summary>
 	/// Artifacts are the files that are worked on by actions in the pipeline. See the action configuration for each action for details about artifact parameters. For example, the S3 source action artifact is a file name (or file path), and the files are generally provided as a ZIP file. Example artifact name: SampleApp_Windows.zip
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Artifact
 	{
 		
@@ -1415,8 +1329,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the location of an artifact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactLocation
 	{
 		
@@ -1430,8 +1343,7 @@ namespace MyNS
 	/// <summary>
 	/// The location of the S3 bucket that contains a revision.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ArtifactLocation
 	{
 		
@@ -1453,8 +1365,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AWSSessionCredentials
 	{
 		
@@ -1483,8 +1394,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>GetJobDetails</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobDetailsInput
 	{
 		
@@ -1499,8 +1409,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetPipeline</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPipelineOutput
 	{
 		
@@ -1514,8 +1423,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a pipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineMetadata
 	{
 		
@@ -1535,8 +1443,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>GetPipeline</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPipelineInput
 	{
 		
@@ -1551,8 +1458,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineVersionNotFoundException
 	{
 	}
@@ -1560,8 +1466,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetPipelineExecution</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPipelineExecutionOutput
 	{
 		
@@ -1572,8 +1477,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about an execution of a pipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineExecution
 	{
 		
@@ -1596,39 +1500,36 @@ namespace MyNS
 		public ArtifactRevision[] ArtifactRevisions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PipelineExecutionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Stopped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Stopped = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Stopping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Stopping = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Superseded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Superseded = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 6,
 	}
 	
 	/// <summary>
 	/// Represents revision details of an artifact. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactRevision
 	{
 		
@@ -1654,8 +1555,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>GetPipelineExecution</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPipelineExecutionInput
 	{
 		
@@ -1674,8 +1574,7 @@ namespace MyNS
 		public string PipelineExecutionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineExecutionNotFoundException
 	{
 	}
@@ -1683,8 +1582,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetPipelineState</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPipelineStateOutput
 	{
 		
@@ -1707,8 +1605,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the state of the stage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StageState
 	{
 		
@@ -1734,8 +1631,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the run of a stage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StageExecution
 	{
 		
@@ -1754,36 +1650,33 @@ namespace MyNS
 		public StageExecutionStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StageExecutionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Stopped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Stopped = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Stopping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Stopping = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 5,
 	}
 	
 	/// <summary>
 	/// Represents information about the state of transitions between one stage and another stage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitionState
 	{
 		
@@ -1803,8 +1696,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the state of an action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionState
 	{
 		
@@ -1827,8 +1719,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the version (or revision) of an action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionRevision
 	{
 		
@@ -1857,8 +1748,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the run of an action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionExecution
 	{
 		
@@ -1893,30 +1783,27 @@ namespace MyNS
 		public ErrorDetails ErrorDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionExecutionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Abandoned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Abandoned = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 3,
 	}
 	
 	/// <summary>
 	/// Represents information about an error in CodePipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetails
 	{
 		
@@ -1930,8 +1817,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>GetPipelineState</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPipelineStateInput
 	{
 		
@@ -1946,8 +1832,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetThirdPartyJobDetails</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetThirdPartyJobDetailsOutput
 	{
 		
@@ -1958,8 +1843,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyJobDetails
 	{
 		
@@ -1976,8 +1860,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the job data for a partner action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyJobData
 	{
 		
@@ -2009,8 +1892,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>GetThirdPartyJobDetails</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetThirdPartyJobDetailsInput
 	{
 		
@@ -2029,14 +1911,12 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidJobException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListActionExecutionsOutput
 	{
 		
@@ -2050,8 +1930,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionExecutionDetail
 	{
 		
@@ -2089,8 +1968,7 @@ namespace MyNS
 	/// <summary>
 	/// Input information used for an action execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionExecutionInput
 	{
 		
@@ -2119,8 +1997,7 @@ namespace MyNS
 		public string Namespace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResolvedActionConfigurationMap
 	{
 	}
@@ -2128,8 +2005,7 @@ namespace MyNS
 	/// <summary>
 	/// Artifact details for the action execution, such as the artifact location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactDetail
 	{
 		
@@ -2143,8 +2019,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon S3 artifact location for an action's artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Location
 	{
 		
@@ -2158,8 +2033,7 @@ namespace MyNS
 	/// <summary>
 	/// Output details listed for an action execution, such as the action execution result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionExecutionOutput
 	{
 		
@@ -2176,8 +2050,7 @@ namespace MyNS
 	/// <summary>
 	/// Execution result information, such as the external execution ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionExecutionResult
 	{
 		
@@ -2191,14 +2064,12 @@ namespace MyNS
 		public string ExternalExecutionUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputVariablesMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListActionExecutionsInput
 	{
 		
@@ -2222,8 +2093,7 @@ namespace MyNS
 	/// <summary>
 	/// Filter values for the action execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionExecutionFilter
 	{
 		
@@ -2231,8 +2101,7 @@ namespace MyNS
 		public string PipelineExecutionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
@@ -2240,8 +2109,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>ListActionTypes</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListActionTypesOutput
 	{
 		
@@ -2259,8 +2127,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>ListActionTypes</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListActionTypesInput
 	{
 		
@@ -2277,8 +2144,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>ListPipelineExecutions</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPipelineExecutionsOutput
 	{
 		
@@ -2292,8 +2158,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information about a pipeline execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineExecutionSummary
 	{
 		
@@ -2322,8 +2187,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the version (or revision) of a source artifact that initiated a pipeline execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceRevision
 	{
 		
@@ -2347,8 +2211,7 @@ namespace MyNS
 	/// <summary>
 	/// The interaction or event that started a pipeline execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionTrigger
 	{
 		
@@ -2359,36 +2222,33 @@ namespace MyNS
 		public string TriggerDetail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TriggerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatePipeline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreatePipeline = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StartPipelineExecution")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StartPipelineExecution = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PollForSourceChanges")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PollForSourceChanges = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Webhook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Webhook = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CloudWatchEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CloudWatchEvent = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutActionRevision")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutActionRevision = 5,
 	}
 	
 	/// <summary>
 	/// The interaction that stopped a pipeline execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopExecutionTrigger
 	{
 		
@@ -2399,8 +2259,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>ListPipelineExecutions</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPipelineExecutionsInput
 	{
 		
@@ -2421,8 +2280,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>ListPipelines</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPipelinesOutput
 	{
 		
@@ -2436,8 +2294,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns a summary of a pipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineSummary
 	{
 		
@@ -2457,8 +2314,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>ListPipelines</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPipelinesInput
 	{
 		
@@ -2469,8 +2325,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceOutput
 	{
 		
@@ -2481,8 +2336,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceInput
 	{
 		
@@ -2500,20 +2354,17 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArnException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebhooksOutput
 	{
 		
@@ -2527,8 +2378,7 @@ namespace MyNS
 	/// <summary>
 	/// The detail returned for each webhook after listing webhooks, such as the webhook URL, the webhook name, and the webhook ARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebhookItem
 	{
 		
@@ -2565,8 +2415,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about a webhook and its definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookDefinition
 	{
 		
@@ -2616,8 +2465,7 @@ namespace MyNS
 	/// <summary>
 	/// The event criteria that specify when a webhook notification is sent to your URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookFilterRule
 	{
 		
@@ -2632,27 +2480,24 @@ namespace MyNS
 		public string MatchEquals { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookAuthenticationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GITHUB_HMAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GITHUB_HMAC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAUTHENTICATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAUTHENTICATED = 2,
 	}
 	
 	/// <summary>
 	/// The authentication applied to incoming webhook trigger requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookAuthConfiguration
 	{
 		
@@ -2663,8 +2508,7 @@ namespace MyNS
 		public string SecretToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebhooksInput
 	{
 		
@@ -2678,8 +2522,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>PollForJobs</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PollForJobsOutput
 	{
 		
@@ -2690,8 +2533,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Job
 	{
 		
@@ -2711,8 +2553,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>PollForJobs</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PollForJobsInput
 	{
 		
@@ -2730,8 +2571,7 @@ namespace MyNS
 		public QueryParamMap QueryParam { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryParamMap
 	{
 	}
@@ -2739,8 +2579,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>PollForThirdPartyJobs</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PollForThirdPartyJobsOutput
 	{
 		
@@ -2751,8 +2590,7 @@ namespace MyNS
 	/// <summary>
 	/// A response to a <code>PollForThirdPartyJobs</code> request returned by CodePipeline when there is a job to be worked on by a partner action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyJob
 	{
 		
@@ -2766,8 +2604,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>PollForThirdPartyJobs</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PollForThirdPartyJobsInput
 	{
 		
@@ -2785,8 +2622,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>PutActionRevision</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutActionRevisionOutput
 	{
 		
@@ -2800,8 +2636,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>PutActionRevision</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutActionRevisionInput
 	{
 		
@@ -2834,8 +2669,7 @@ namespace MyNS
 		public ActionRevision ActionRevision { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionNotFoundException
 	{
 	}
@@ -2843,8 +2677,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>PutApprovalResult</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutApprovalResultOutput
 	{
 		
@@ -2855,8 +2688,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>PutApprovalResult</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutApprovalResultInput
 	{
 		
@@ -2899,8 +2731,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the result of an approval request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApprovalResult
 	{
 		
@@ -2919,27 +2750,23 @@ namespace MyNS
 		public ApprovalStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApprovalStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Approved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Approved = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidApprovalTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApprovalAlreadyCompletedException
 	{
 	}
@@ -2947,8 +2774,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>PutJobFailureResult</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutJobFailureResultInput
 	{
 		
@@ -2970,8 +2796,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about failure details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailureDetails
 	{
 		
@@ -2993,33 +2818,30 @@ namespace MyNS
 		public string ExternalExecutionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JobFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JobFailed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfigurationError = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PermissionError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PermissionError = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RevisionOutOfSync")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RevisionOutOfSync = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RevisionUnavailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RevisionUnavailable = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SystemUnavailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SystemUnavailable = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidJobStateException
 	{
 	}
@@ -3027,8 +2849,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>PutJobSuccessResult</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutJobSuccessResultInput
 	{
 		
@@ -3055,8 +2876,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about a current revision.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CurrentRevision
 	{
 		
@@ -3084,8 +2904,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionDetails
 	{
 		
@@ -3099,8 +2918,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> PercentComplete { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputVariablesSizeExceededException
 	{
 	}
@@ -3108,8 +2926,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutThirdPartyJobFailureResultInput
 	{
 		
@@ -3138,8 +2955,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutThirdPartyJobSuccessResultInput
 	{
 		
@@ -3167,8 +2983,7 @@ namespace MyNS
 		public ExecutionDetails ExecutionDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutWebhookOutput
 	{
 		
@@ -3176,8 +2991,7 @@ namespace MyNS
 		public ListWebhookItem Webhook { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutWebhookInput
 	{
 		
@@ -3192,26 +3006,22 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidWebhookFilterPatternException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidWebhookAuthenticationParametersException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterWebhookWithThirdPartyOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterWebhookWithThirdPartyInput
 	{
 		
@@ -3222,8 +3032,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>RetryStageExecution</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetryStageExecutionOutput
 	{
 		
@@ -3234,8 +3043,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>RetryStageExecution</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetryStageExecutionInput
 	{
 		
@@ -3268,30 +3076,25 @@ namespace MyNS
 		public StageRetryMode RetryMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StageRetryMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_ACTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_ACTIONS = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StageNotRetryableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotLatestPipelineExecutionException
 	{
 	}
@@ -3299,8 +3102,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>StartPipelineExecution</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartPipelineExecutionOutput
 	{
 		
@@ -3311,8 +3113,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>StartPipelineExecution</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartPipelineExecutionInput
 	{
 		
@@ -3327,8 +3128,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopPipelineExecutionOutput
 	{
 		
@@ -3336,8 +3136,7 @@ namespace MyNS
 		public string PipelineExecutionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopPipelineExecutionInput
 	{
 		
@@ -3362,26 +3161,22 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineExecutionNotStoppableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicatedStopRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceInput
 	{
 		
@@ -3400,14 +3195,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceInput
 	{
 		
@@ -3426,8 +3219,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateActionTypeInput
 	{
 		
@@ -3439,8 +3231,7 @@ namespace MyNS
 		public ActionTypeDeclaration ActionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestFailedException
 	{
 	}
@@ -3448,8 +3239,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of an <code>UpdatePipeline</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePipelineOutput
 	{
 		
@@ -3460,8 +3250,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of an <code>UpdatePipeline</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePipelineInput
 	{
 		
@@ -3476,8 +3265,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about each property specified in the action configuration, such as the description and key name that display for the customer using the action type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTypeProperty
 	{
 		
@@ -3516,13 +3304,11 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArtifactLocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3 = 0,
 	}
 	

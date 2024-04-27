@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an area. Used to represent regions such as water, parks, etc. Next ID: 10
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Area
 	{
 		
@@ -77,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata necessary to determine the ordering of a particular basemap element relative to others. To render the basemap correctly, sort by z-plane, then z-grade, then z-within-grade.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BasemapZOrder
 	{
 		
@@ -101,27 +99,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> ZWithinGrade { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AreaType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIANGLE_FAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIANGLE_FAN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXED_TRIANGLES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXED_TRIANGLES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIANGLE_STRIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIANGLE_STRIP = 2,
 	}
 	
 	/// <summary>
 	/// 2D vertex list used for lines and areas. Each entry represents an offset from the previous one in local tile coordinates. The first entry is offset from (0, 0). For example, the list of vertices [(1,1), (2, 2), (1, 2)] would be encoded in vertex offsets as [(1, 1), (1, 1), (-1, 0)].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Vertex2DList
 	{
 		
@@ -141,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a height-extruded area: a 3D prism with a constant X-Y plane cross section. Used to represent extruded buildings. A single building may consist of several extruded areas. The min_z and max_z fields are scaled to the size of the tile. An extruded area with a max_z value of 4096 has the same height as the width of the tile that it is on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtrudedArea
 	{
 		
@@ -168,8 +162,7 @@ namespace MyNS
 	/// <summary>
 	/// A feature representing a single geographic entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Feature
 	{
 		
@@ -213,8 +206,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the geometry of a feature, that is, the shape that it has on the map. The local tile coordinate system has the origin at the north-west (upper-left) corner of the tile, and is scaled to 4096 units across each edge. The height (Z) axis has the same scale factor: an extruded area with a max_z value of 4096 has the same height as the width of the tile that it is on. There is no clipping boundary, so it is possible that some coordinates will lie outside the tile boundaries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Geometry
 	{
 		
@@ -246,8 +238,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a 2D polyline. Used to represent segments such as roads, train tracks, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Line
 	{
 		
@@ -273,8 +264,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a modeled volume in 3D space. Used to represent 3D buildings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModeledVolume
 	{
 		
@@ -294,8 +284,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a strip of triangles. Each triangle uses the last edge of the previous one. The following diagram shows an example of a triangle strip, with each vertex labeled with its index in the vertex_index array. (1)-----(3) / \ / \ / \ / \ / \ / \ (0)-----(2)-----(4) Vertices may be in either clockwise or counter-clockwise order.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TriangleStrip
 	{
 		
@@ -309,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// 3D vertex list used for modeled volumes. Each entry represents an offset from the previous one in local tile coordinates. The first coordinate is offset from (0, 0, 0).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Vertex3DList
 	{
 		
@@ -336,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a relation to another feature in the tile. For example, a building might be occupied by a given POI. The related feature can be retrieved using the related feature index.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Relation
 	{
 		
@@ -354,27 +341,24 @@ namespace MyNS
 		public System.Nullable<RelationRelationType> RelationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RelationRelationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OCCUPIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OCCUPIES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARILY_OCCUPIED_BY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMARILY_OCCUPIED_BY = 2,
 	}
 	
 	/// <summary>
 	/// Extra metadata relating to segments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentInfo
 	{
 		
@@ -388,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// Extra metadata relating to roads.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoadInfo
 	{
 		
@@ -400,105 +383,102 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsPrivate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FeatureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEATURE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEATURE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRUCTURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRUCTURE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANK = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LODGING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LODGING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAFE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAFE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTAURANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTAURANT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_VENUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_VENUE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOURIST_DESTINATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOURIST_DESTINATION = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOPPING = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHOOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHOOL = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEGMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEGMENT = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROAD = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL_ROAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL_ROAD = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARTERIAL_ROAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARTERIAL_ROAD = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGHWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGHWAY = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTROLLED_ACCESS_HIGHWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTROLLED_ACCESS_HIGHWAY = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOOTPATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOOTPATH = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAIL = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FERRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FERRY = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGION = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARK = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEACH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEACH = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOREST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOREST = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POLITICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POLITICAL = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMINISTRATIVE_AREA1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMINISTRATIVE_AREA1 = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCALITY = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBLOCALITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBLOCALITY = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WATER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WATER = 28,
 	}
 	
 	/// <summary>
 	/// A tile containing information about the map features located in the region it covers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeatureTile
 	{
 		
@@ -542,8 +522,7 @@ namespace MyNS
 	/// <summary>
 	/// Global tile coordinates. Global tile coordinates reference a specific tile on the map at a specific zoom level. The origin of this coordinate system is always at the northwest corner of the map, with x values increasing from west to east and y values increasing from north to south. Tiles are indexed using x, y coordinates from that origin. The zoom level containing the entire world in a tile is 0, and it increases as you zoom in. Zoom level n + 1 will contain 4 times as many tiles as zoom level n. The zoom level controls the level of detail of the data that is returned. In particular, this affects the set of feature types returned, their density, and geometry simplification. The exact tile contents may change over time, but care will be taken to keep supporting the most important use cases. For example, zoom level 15 shows roads for orientation and planning in the local neighborhood and zoom level 17 shows buildings to give users on foot a sense of situational awareness.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TileCoordinates
 	{
 		
@@ -569,8 +548,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the data providers that should be included in the attribution string shown by the client.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProviderInfo
 	{
 		
@@ -581,24 +559,21 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FeatureTileStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_OK_DATA_UNCHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_OK_DATA_UNCHANGED = 1,
 	}
 	
 	/// <summary>
 	/// A packed representation of a 2D grid of uniformly spaced points containing elevation data. Each point within the grid represents the altitude in meters above average sea level at that location within the tile. Elevations provided are (generally) relative to the EGM96 geoid, however some areas will be relative to NAVD88. EGM96 and NAVD88 are off by no more than 2 meters. The grid is oriented north-west to south-east, as illustrated: rows[0].a[0] rows[0].a[m] +-----------------+ | | | N | | ^ | | | | | W <-----> E | | | | | v | | S | | | +-----------------+ rows[n].a[0] rows[n].a[m] Rather than storing the altitudes directly, we store the diffs between them as integers at some requested level of precision to take advantage of integer packing. The actual altitude values a[] can be reconstructed using the scale and each row's first_altitude and altitude_diff fields. More details in go/elevation-encoding-options-for-enduro under "Recommended implementation".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstDerivativeElevationGrid
 	{
 		
@@ -618,8 +593,7 @@ namespace MyNS
 	/// <summary>
 	/// A row of altitude points in the elevation grid, ordered from west to east.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Row
 	{
 		
@@ -633,8 +607,7 @@ namespace MyNS
 	/// <summary>
 	/// A packed representation of a 2D grid of uniformly spaced points containing elevation data. Each point within the grid represents the altitude in meters above average sea level at that location within the tile. Elevations provided are (generally) relative to the EGM96 geoid, however some areas will be relative to NAVD88. EGM96 and NAVD88 are off by no more than 2 meters. The grid is oriented north-west to south-east, as illustrated: rows[0].a[0] rows[0].a[m] +-----------------+ | | | N | | ^ | | | | | W <-----> E | | | | | v | | S | | | +-----------------+ rows[n].a[0] rows[n].a[m] Rather than storing the altitudes directly, we store the diffs of the diffs between them as integers at some requested level of precision to take advantage of integer packing. Note that the data is packed in such a way that is fast to decode in Unity and that further optimizes wire size.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecondDerivativeElevationGrid
 	{
 		
@@ -666,8 +639,7 @@ namespace MyNS
 	/// <summary>
 	/// A tile containing information about the terrain located in the region it covers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TerrainTile
 	{
 		
@@ -789,28 +761,28 @@ namespace MyNS
 	public enum Vectortile_terraintiles_getClientInfo_platform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATFORM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATFORM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDITOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDITOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC_OS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_GL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_GL = 7,
 	}
 }

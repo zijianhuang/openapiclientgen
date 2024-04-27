@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the regions for Cache Fill.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CacheFillRegions
 	{
 		
@@ -38,67 +37,62 @@ namespace MyNS
 		public System.Nullable<CacheFillRegionsSourceRegion> SourceRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CacheFillRegionsDestinationRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_DESTINATION_REGION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_ASIA_PACIFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_DESTINATION_REGION_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_DESTINATION_REGION_EUROPE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_NORTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_DESTINATION_REGION_NORTH_AMERICA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_OCEANIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_DESTINATION_REGION_OCEANIA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_SOUTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_DESTINATION_REGION_SOUTH_AMERICA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_CHINA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_DESTINATION_REGION_CHINA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_OTHERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_DESTINATION_REGION_OTHERS = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CacheFillRegionsSourceRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_SOURCE_REGION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_REGION_ASIA_PACIFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_REGION_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_SOURCE_REGION_EUROPE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_NORTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_SOURCE_REGION_NORTH_AMERICA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_OCEANIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_SOURCE_REGION_OCEANIA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_SOUTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_SOURCE_REGION_SOUTH_AMERICA = 5,
 	}
 	
 	/// <summary>
 	/// Specifies usage for Cloud CDN Data Transfer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudCdnEgressWorkload
 	{
 		
@@ -115,42 +109,39 @@ namespace MyNS
 		public Usage CacheEgressRate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudCdnEgressWorkloadCacheEgressDestination
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_EGRESS_DESTINATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_ASIA_PACIFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_EGRESS_DESTINATION_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_CHINA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_EGRESS_DESTINATION_CHINA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_EGRESS_DESTINATION_EUROPE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_NORTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_EGRESS_DESTINATION_NORTH_AMERICA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_OCEANIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_EGRESS_DESTINATION_OCEANIA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_LATIN_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_EGRESS_DESTINATION_LATIN_AMERICA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_OTHER_DESTINATIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_EGRESS_DESTINATION_OTHER_DESTINATIONS = 7,
 	}
 	
 	/// <summary>
 	/// An amount of usage over a time frame.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Usage
 	{
 		
@@ -164,8 +155,7 @@ namespace MyNS
 	/// <summary>
 	/// A timeline of usage rates. Consists of a series of entries, each of which specifies a constant rate of usage during a time interval. Each entry contains an effective time. The usage rate is in effect from that time until the effective time of the subsequent entry, or, for the last entry, for the remaining portion of estimation time frame. Effective times are specified as an offset into the estimation time frame. Usage is considered to be zero until the `effective_time` of the first entry. All subsequent entries must have an effective time greater than the previous entry and less than the estimate time frame. The effective time on all entries must be an integer number of hours.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageRateTimeline
 	{
 		
@@ -185,8 +175,7 @@ namespace MyNS
 	/// <summary>
 	/// A usage rate timeline entry. Each entry specifies a constant usage rate during a time interval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageRateTimelineEntry
 	{
 		
@@ -206,8 +195,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a point in time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EstimationTimePoint
 	{
 		
@@ -221,8 +209,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies usage for Cloud CDN resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudCdnWorkload
 	{
 		
@@ -251,27 +238,24 @@ namespace MyNS
 		public Usage CacheLookUpRate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudCdnWorkloadCacheFillOriginService
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_ORIGIN_SERVICE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_ORIGIN_SERVICE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_ORIGIN_SERVICE_GOOGLE_CLOUD_STORAGE_BUCKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_ORIGIN_SERVICE_GOOGLE_CLOUD_STORAGE_BUCKET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_ORIGIN_SERVICE_BACKEND_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_FILL_ORIGIN_SERVICE_BACKEND_SERVICE = 2,
 	}
 	
 	/// <summary>
 	/// Includes the estimate for Interconnect Data Transfer only. To specify usage for data transfer between VMs and internet end-points, use the Standard Tier Internet Data Transfer interface.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudInterconnectEgressWorkload
 	{
 		
@@ -288,36 +272,33 @@ namespace MyNS
 		public System.Nullable<CloudInterconnectEgressWorkloadInterconnectConnectionLocation> InterconnectConnectionLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudInterconnectEgressWorkloadInterconnectConnectionLocation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERCONNECT_CONNECTION_LOCATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_ASIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERCONNECT_CONNECTION_LOCATION_ASIA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERCONNECT_CONNECTION_LOCATION_EUROPE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_NORTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERCONNECT_CONNECTION_LOCATION_NORTH_AMERICA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_SOUTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERCONNECT_CONNECTION_LOCATION_SOUTH_AMERICA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_AUSTRALIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERCONNECT_CONNECTION_LOCATION_AUSTRALIA = 5,
 	}
 	
 	/// <summary>
 	/// Specifies usage for Cloud Interconnect resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudInterconnectWorkload
 	{
 		
@@ -349,8 +330,7 @@ namespace MyNS
 	/// <summary>
 	/// VLAN attachment for Cloud Interconnect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VlanAttachment
 	{
 		
@@ -367,89 +347,82 @@ namespace MyNS
 		public Usage VlanCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VlanAttachmentBandwidth
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_50M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_50M = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_100M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_100M = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_200M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_200M = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_300M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_300M = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_400M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_400M = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_500M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_500M = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_1G")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_1G = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_2G")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_2G = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_5G")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_5G = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_10G")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_10G = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_20G")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_20G = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_50G")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_BPS_50G = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudInterconnectWorkloadInterconnectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERCONNECT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_TYPE_DEDICATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERCONNECT_TYPE_DEDICATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_TYPE_PARTNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERCONNECT_TYPE_PARTNER = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudInterconnectWorkloadLinkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_TYPE_ETHERNET_10G_LR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_TYPE_ETHERNET_10G_LR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_TYPE_ETHERNET_100G_LR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_TYPE_ETHERNET_100G_LR = 2,
 	}
 	
 	/// <summary>
 	/// Specification of a network type. Network data transfer within Google Cloud applies when you move or copy data from one Cloud Storage bucket to another or when another Google Cloud service accesses data in your Cloud Storage bucket.This includes the network data transfer within Google Cloud and the general network usage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudStorageEgressWorkload
 	{
 		
@@ -472,61 +445,56 @@ namespace MyNS
 		public System.Nullable<CloudStorageEgressWorkloadSourceContinent> SourceContinent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudStorageEgressWorkloadDestinationContinent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_ASIA_PACIFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_AUTRALIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_AUTRALIA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_EUROPE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_NORTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_NORTH_AMERICA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_SOUTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_SOUTH_AMERICA = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudStorageEgressWorkloadSourceContinent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_CONTINENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_ASIA_PACIFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_CONTINENT_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_AUSTRALIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_CONTINENT_AUSTRALIA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_CONTINENT_EUROPE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_NORTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_CONTINENT_NORTH_AMERICA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_SOUTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_CONTINENT_SOUTH_AMERICA = 5,
 	}
 	
 	/// <summary>
 	/// Specifies usage of Cloud Storage resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudStorageWorkload
 	{
 		
@@ -582,8 +550,7 @@ namespace MyNS
 	/// <summary>
 	/// Area contains dual locations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DualRegional
 	{
 		
@@ -597,8 +564,7 @@ namespace MyNS
 	/// <summary>
 	/// Area contains multiple locations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiRegional
 	{
 		
@@ -612,8 +578,7 @@ namespace MyNS
 	/// <summary>
 	/// Area contains only one location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Regional
 	{
 		
@@ -627,8 +592,7 @@ namespace MyNS
 	/// <summary>
 	/// Commitments give you the ability to pay a recurring fee in exchange for a benefit, such as a discount for your use. For example, this object might contain details of a [spend-based committed use discount (CUD)](https://cloud.google.com/docs/cuds#spend_based_commitments). Within a CostScenario, adding a commitment includes the cost of the commitment and any discounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Commitment
 	{
 		
@@ -648,8 +612,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a resource-based committed use discount (CUD).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmResourceBasedCud
 	{
 		
@@ -693,8 +656,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of a set of guest accelerators attached to a machine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GuestAccelerator
 	{
 		
@@ -711,27 +673,24 @@ namespace MyNS
 		public string AcceleratorType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VmResourceBasedCudPlan
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMITMENT_PLAN_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMITMENT_PLAN_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWELVE_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWELVE_MONTH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THIRTY_SIX_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THIRTY_SIX_MONTH = 2,
 	}
 	
 	/// <summary>
 	/// Estimated cost for a commitment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitmentCostEstimate
 	{
 		
@@ -757,8 +716,7 @@ namespace MyNS
 	/// <summary>
 	/// An estimated cost.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CostEstimate
 	{
 		
@@ -784,8 +742,7 @@ namespace MyNS
 	/// <summary>
 	/// An estimated credit applied to the costs on a SKU.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreditEstimate
 	{
 		
@@ -811,8 +768,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an amount of money with its currency type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Money
 	{
 		
@@ -838,8 +794,7 @@ namespace MyNS
 	/// <summary>
 	/// Estimated cost for usage on a SKU.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SkuCostEstimate
 	{
 		
@@ -871,8 +826,7 @@ namespace MyNS
 	/// <summary>
 	/// Specificies usage of a set of identical compute VM instances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeVmWorkload
 	{
 		
@@ -928,8 +882,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of machine series, memory, and number of vCPUs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MachineType
 	{
 		
@@ -949,8 +902,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of a custom machine type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomMachineType
 	{
 		
@@ -976,8 +928,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of a predefined machine type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PredefinedMachineType
 	{
 		
@@ -991,8 +942,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of a persistent disk attached to a VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersistentDisk
 	{
 		
@@ -1021,27 +971,24 @@ namespace MyNS
 		public System.Nullable<PersistentDiskScope> Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PersistentDiskScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_ZONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCOPE_ZONAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_REGIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCOPE_REGIONAL = 2,
 	}
 	
 	/// <summary>
 	/// The result of a estimating the costs of a `CostScenario`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CostEstimationResult
 	{
 		
@@ -1067,8 +1014,7 @@ namespace MyNS
 	/// <summary>
 	/// Workload cost estimates for a single time segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentCostEstimate
 	{
 		
@@ -1100,8 +1046,7 @@ namespace MyNS
 	/// <summary>
 	/// Estimated cost for a workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkloadCostEstimate
 	{
 		
@@ -1127,8 +1072,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about SKUs appearing in the cost estimate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sku
 	{
 		
@@ -1154,8 +1098,7 @@ namespace MyNS
 	/// <summary>
 	/// The price of a SKU at a point int time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Price
 	{
 		
@@ -1181,8 +1124,7 @@ namespace MyNS
 	/// <summary>
 	/// A SKU price consisting of tiered rates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate
 	{
 		
@@ -1208,8 +1150,7 @@ namespace MyNS
 	/// <summary>
 	/// Pricing details for a service tier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateTier
 	{
 		
@@ -1229,8 +1170,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates all the information needed to perform a cost estimate. It includes a specification of the Google Cloud usage whose costs are estimated, and configuration options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CostScenario
 	{
 		
@@ -1256,8 +1196,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a CostScenario. Specifies how costs are calculated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScenarioConfig
 	{
 		
@@ -1271,8 +1210,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies usage on a single Google Cloud product over a time frame. Each Google Cloud product has its own message, containing specific product configuration parameters of the product usage amounts along each dimension in which the product is billed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Workload
 	{
 		
@@ -1346,8 +1284,7 @@ namespace MyNS
 	/// <summary>
 	/// Specify a Premium Tier Internet Data Transfer networking workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PremiumTierEgressWorkload
 	{
 		
@@ -1370,57 +1307,54 @@ namespace MyNS
 		public string SourceRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PremiumTierEgressWorkloadDestinationContinent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_ASIA_PACIFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_AFRICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_AFRICA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_NORTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_NORTH_AMERICA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_AUTRALIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_AUTRALIA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_CENTRAL_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_CENTRAL_AMERICA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_CHINA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_CHINA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_EASTERN_EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_EASTERN_EUROPE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_WESTERN_EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_WESTERN_EUROPE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_EMEA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_EMEA = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_INDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_INDIA = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_MIDDLE_EAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_MIDDLE_EAST = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_SOUTH_AMERICA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION_CONTINENT_SOUTH_AMERICA = 12,
 	}
 	
 	/// <summary>
 	/// Specify Standard Tier Internet Data Transfer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StandardTierEgressWorkload
 	{
 		
@@ -1440,8 +1374,7 @@ namespace MyNS
 	/// <summary>
 	/// Specify VM to VM data transfer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmToVmEgressWorkload
 	{
 		
@@ -1461,8 +1394,7 @@ namespace MyNS
 	/// <summary>
 	/// Data transfer between two regions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InterRegionEgress
 	{
 		
@@ -1488,8 +1420,7 @@ namespace MyNS
 	/// <summary>
 	/// Data transfer within the same region. When the source region and destination region are in the same zone, using internal IP addresses, there isn't any charge for data transfer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntraRegionEgress
 	{
 		
@@ -1503,8 +1434,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a decimal value, such as 2.5. Clients may convert values into language-native decimal formats, such as Java's BigDecimal or Python's decimal.Decimal. [BigDecimal]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html [decimal.Decimal]: https://docs.python.org/3/library/decimal.html
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Decimal
 	{
 		
@@ -1518,8 +1448,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for EstimateCostScenarioForBillingAccount.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EstimateCostScenarioForBillingAccountRequest
 	{
 		
@@ -1533,8 +1462,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for EstimateCostScenarioForBillingAccount
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EstimateCostScenarioForBillingAccountResponse
 	{
 		
@@ -1548,8 +1476,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for EstimateCostScenarioWithListPrice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EstimateCostScenarioWithListPriceRequest
 	{
 		
@@ -1563,8 +1490,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for EstimateCostScenarioWithListPrice
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EstimateCostScenarioWithListPriceResponse
 	{
 		
@@ -1578,8 +1504,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates the aggregation information such as aggregation level and interval for a billing account price.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaAggregationInfo
 	{
 		
@@ -1596,43 +1521,38 @@ namespace MyNS
 		public System.Nullable<GoogleCloudBillingBillingaccountpricesV1betaAggregationInfoLevel> Level { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudBillingBillingaccountpricesV1betaAggregationInfoInterval
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERVAL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERVAL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERVAL_MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERVAL_MONTHLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERVAL_DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERVAL_DAILY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudBillingBillingaccountpricesV1betaAggregationInfoLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEVEL_ACCOUNT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_PROJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEVEL_PROJECT = 2,
 	}
 	
 	/// <summary>
 	/// Encapsulates the latest price for a billing account SKU.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaBillingAccountPrice
 	{
 		
@@ -1670,8 +1590,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a price reason which contains background information about the origin of the price.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaPriceReason
 	{
 		
@@ -1727,8 +1646,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a default price which is the current list price.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaDefaultPrice
 	{
 	}
@@ -1736,8 +1654,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a discount off the list price, anchored to the list price as of a fixed time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaFixedDiscount
 	{
 		
@@ -1769,8 +1686,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a set fixed price applicable during the terms of a contract agreement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaFixedPrice
 	{
 	}
@@ -1778,8 +1694,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a discount off the current list price, not anchored to any list price as of a fixed time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaFloatingDiscount
 	{
 		
@@ -1805,8 +1720,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a contract feature that the list price (DefaultPrice) will be used for the price if the current list price drops lower than the custom fixed price. Available to new contracts after March 21, 2022. Applies to all fixed price SKUs in the contract, including FixedPrice, FixedDiscount, MigratedPrice, and MergedPrice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaListPriceAsCeiling
 	{
 	}
@@ -1814,8 +1728,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a price after merging from multiple sources. With merged tiers, each individual tier can be from a different source with different discount types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaMergedPrice
 	{
 	}
@@ -1823,8 +1736,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a price migrated from other SKUs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaMigratedPrice
 	{
 		
@@ -1838,8 +1750,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a `Rate` price. Billing account SKUs with `Rate` price are offered by pricing tiers. The price have 1 or more rate pricing tiers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaRate
 	{
 		
@@ -1865,8 +1776,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a rate price tier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaRateTier
 	{
 		
@@ -1898,8 +1808,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates the unit information for a Rate
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaUnitInfo
 	{
 		
@@ -1925,8 +1834,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListBillingAccountPrices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountpricesV1betaListBillingAccountPricesResponse
 	{
 		
@@ -1946,8 +1854,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a Google Cloud service visible to a billing account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountservicesV1betaBillingAccountService
 	{
 		
@@ -1973,8 +1880,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListBillingAccountServices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountservicesV1betaListBillingAccountServicesResponse
 	{
 		
@@ -1994,8 +1900,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a stock keeping (SKU) group visible to a billing account. A SKU group represents a collection of SKUs that are related to each other. For example, the `AI Platform APIs` SKU group includes SKUs from the Cloud Dialogflow API, the Cloud Text-to-Speech API, and additional related APIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupsV1betaBillingAccountSkuGroup
 	{
 		
@@ -2015,8 +1920,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListBillingAccountSkuGroups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupsV1betaListBillingAccountSkuGroupsResponse
 	{
 		
@@ -2036,8 +1940,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a SKU that is part of a billing account SKU group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupskusV1betaBillingAccountSkuGroupSku
 	{
 		
@@ -2081,8 +1984,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates geographic metadata, such as regions and multi-regions like `us-east4` or `European Union`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupskusV1betaGeoTaxonomy
 	{
 		
@@ -2114,8 +2016,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a global geographic taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupskusV1betaGeoTaxonomyGlobal
 	{
 	}
@@ -2123,8 +2024,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a multi-regional geographic taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupskusV1betaGeoTaxonomyMultiRegional
 	{
 		
@@ -2138,8 +2038,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a Google Cloud region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupskusV1betaGeoTaxonomyRegion
 	{
 		
@@ -2153,8 +2052,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a regional geographic taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupskusV1betaGeoTaxonomyRegional
 	{
 		
@@ -2165,30 +2063,27 @@ namespace MyNS
 		public GoogleCloudBillingBillingaccountskugroupskusV1betaGeoTaxonomyRegion Region { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudBillingBillingaccountskugroupskusV1betaGeoTaxonomyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_GLOBAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_GLOBAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_REGIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_REGIONAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_MULTI_REGIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_MULTI_REGIONAL = 3,
 	}
 	
 	/// <summary>
 	/// Encapsulates product categories, such as `Serverless`, `Cloud Run`, `TaskQueue`, and others.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupskusV1betaProductTaxonomy
 	{
 		
@@ -2202,8 +2097,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a product category.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupskusV1betaTaxonomyCategory
 	{
 		
@@ -2217,8 +2111,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListBillingAccountSkuGroupSkus.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskugroupskusV1betaListBillingAccountSkuGroupSkusResponse
 	{
 		
@@ -2238,8 +2131,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a stock keeping unit (SKU) visible to a billing account. A SKU distinctly identifies a resource that you can purchase, such as `Nvidia Tesla K80 GPU attached to Spot Preemptible VMs running in Warsaw`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskusV1betaBillingAccountSku
 	{
 		
@@ -2283,8 +2175,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates geographic metadata, such as regions and multi-regions like `us-east4` or `European Union`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskusV1betaGeoTaxonomy
 	{
 		
@@ -2316,8 +2207,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a global geographic taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskusV1betaGeoTaxonomyGlobal
 	{
 	}
@@ -2325,8 +2215,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a multi-regional geographic taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskusV1betaGeoTaxonomyMultiRegional
 	{
 		
@@ -2340,8 +2229,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a Google Cloud region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskusV1betaGeoTaxonomyRegion
 	{
 		
@@ -2355,8 +2243,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a regional geographic taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskusV1betaGeoTaxonomyRegional
 	{
 		
@@ -2370,8 +2257,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates product categories, such as `Serverless`, `Cloud Run`, `TaskQueue`, and others.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskusV1betaProductTaxonomy
 	{
 		
@@ -2385,8 +2271,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a product category.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskusV1betaTaxonomyCategory
 	{
 		
@@ -2400,8 +2285,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListBillingAccountSkus.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingBillingaccountskusV1betaListBillingAccountSkusResponse
 	{
 		
@@ -2421,8 +2305,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates the aggregation information such as aggregation level and interval for a price.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingPricesV1betaAggregationInfo
 	{
 		
@@ -2442,8 +2325,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListPrices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingPricesV1betaListPricesResponse
 	{
 		
@@ -2463,8 +2345,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates the latest price for a SKU.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingPricesV1betaPrice
 	{
 		
@@ -2496,8 +2377,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a `Rate` price. SKUs with `Rate` price are offered by pricing tiers. The price have 1 or more rate pricing tiers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingPricesV1betaRate
 	{
 		
@@ -2523,8 +2403,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a rate price tier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingPricesV1betaRateTier
 	{
 		
@@ -2544,8 +2423,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates the unit information for a Rate
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingPricesV1betaUnitInfo
 	{
 		
@@ -2571,8 +2449,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListSkuGroups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupsV1betaListSkuGroupsResponse
 	{
 		
@@ -2592,8 +2469,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a publicly listed stock keeping unit (SKU) group. A SKU group represents a collection of SKUs that are related to each other. For example, the `AI Platform APIs` SKU group includes SKUs from the Cloud Dialogflow API, the Cloud Text-to-Speech API, and additional related APIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupsV1betaSkuGroup
 	{
 		
@@ -2613,8 +2489,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates geographic metadata, such as regions and multi-regions like `us-east4` or `European Union`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupskusV1betaGeoTaxonomy
 	{
 		
@@ -2646,8 +2521,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a global geographic taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupskusV1betaGeoTaxonomyGlobal
 	{
 	}
@@ -2655,8 +2529,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a multi-regional geographic taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupskusV1betaGeoTaxonomyMultiRegional
 	{
 		
@@ -2670,8 +2543,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a Google Cloud region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupskusV1betaGeoTaxonomyRegion
 	{
 		
@@ -2685,8 +2557,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a regional geographic taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupskusV1betaGeoTaxonomyRegional
 	{
 		
@@ -2700,8 +2571,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListSkuGroupSkus.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupskusV1betaListSkuGroupSkusResponse
 	{
 		
@@ -2721,8 +2591,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a publicly listed stock keeping unit (SKU) that is part of a publicly listed SKU group. A SKU group represents a collection of SKUs that are related to each other. For example, the `AI Platform APIs` SKU group includes SKUs from the Cloud Dialogflow API, the Cloud Text-to-Speech API, and additional related APIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupskusV1betaSkuGroupSku
 	{
 		
@@ -2766,8 +2635,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates product categories, such as `Serverless`, `Cloud Run`, `TaskQueue`, and others.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupskusV1betaProductTaxonomy
 	{
 		
@@ -2781,8 +2649,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a product category.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudBillingSkugroupskusV1betaTaxonomyCategory
 	{
 		

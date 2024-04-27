@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the data contained in an API key
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIKey
 	{
 		
@@ -77,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an API key version
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIKeyVersion
 	{
 		
@@ -110,8 +108,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents changes made to a API key version
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIKeyVersionChangelog
 	{
 		
@@ -161,8 +158,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the parameters required to perform a batch upload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUploadInput
 	{
 		
@@ -178,8 +174,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents behaviour reports
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Behavior
 	{
 		
@@ -268,68 +263,64 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BehaviorCountry
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="co")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		co = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ve")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ve = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cl = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mx = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pe = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="do")]
 		_do = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gt = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bo = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cr = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ec")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ec = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pa = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="br")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		br = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BehaviorDocument_type
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="national-id")]
 		nationalMinusid = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="passport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		passport = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="foreign-id")]
 		foreignMinusid = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nit = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="diplomatic-id")]
@@ -350,37 +341,37 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="military-card")]
 		militaryMinuscard = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pep")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pep = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nis")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nis = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dni")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dni = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rui")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rui = 13,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="license-plate")]
 		licenseMinusplate = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="query")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		query = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rut = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nuip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nuip = 18,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="foreign-societies")]
 		foreignMinussocieties = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="escrow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		escrow = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="individual-registration")]
@@ -389,24 +380,23 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="general-registration")]
 		generalMinusregistration = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="curp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		curp = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dui")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dui = 24,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="driver-license")]
 		driverMinuslicense = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ruc = 26,
 	}
 	
 	/// <summary>
 	/// Represents behaviour search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BehaviourOutput
 	{
 		
@@ -430,8 +420,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents changes in check scores between continuous checks
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Change
 	{
 		
@@ -451,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a background check
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Check
 	{
 		
@@ -725,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the summary of a company background check
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanySummary
 	{
 		
@@ -740,8 +727,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents names found during the process
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NameFound
 	{
 		
@@ -770,45 +756,42 @@ namespace MyNS
 		public string Last_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckCountry
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CO = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MX = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AR = 8,
 	}
 	
 	/// <summary>
 	/// Represents dataset scores. A score is a number between 0 and 1 that indicates how trustworthy the person, vehicle, or company is accordig to the result of the background check. Severity represents the risk associated with each dataset according to the background check. Keep in mind that you should use either the score or the severity but not both
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Score
 	{
 		
@@ -865,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents score detail of a background check
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoreDetail
 	{
 		
@@ -895,993 +877,978 @@ namespace MyNS
 		public ScoreDetailSeverity Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScoreDetailResult
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="found")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		found = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_found")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_found = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delayed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delayed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ignored")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ignored = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScoreDetailSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="very_low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		very_low = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		low = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="very_high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		very_high = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScoreData_set
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="affiliations_and_insurances")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		affiliations_and_insurances = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alert_in_media")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alert_in_media = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="behavior")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		behavior = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="business_background")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		business_background = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="criminal_record")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		criminal_record = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="driving_licenses")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		driving_licenses = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="international_background")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		international_background = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="legal_background")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		legal_background = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="personal_identity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		personal_identity = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="professional_background")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		professional_background = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="traffic_fines")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		traffic_fines = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vehicle_information")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vehicle_information = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vehicle_permits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vehicle_permits = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="taxes_and_finances")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		taxes_and_finances = 13,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScoreSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="very_low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		very_low = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		low = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="very_high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		very_high = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckNative_country
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ad")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ad = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ae")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ae = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="af")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		af = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ag = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ai")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ai = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="al")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		al = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="am")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		am = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="an")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		an = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ao")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ao = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aq")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aq = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="as")]
 		_as = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		at = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="au")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		au = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aw = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ax")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ax = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="az")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		az = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ba")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ba = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bb = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bd = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="be")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		be = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bf = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bg = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bh = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bi = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bj")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bj = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bm = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bn = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bo = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="br")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		br = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bs = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bt = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bv = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bw = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="by")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		by = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bz = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ca = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cc = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cd = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cf = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cg = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ch = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ci")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ci = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ck")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ck = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cl = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cm = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cn = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="co")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		co = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cr = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cu = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cv = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cx = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cy = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cz = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dj")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dj = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dk = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dm = 57,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="do")]
 		_do = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dz = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ea")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ea = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ec")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ec = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ee")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ee = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eg = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eh = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="er")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		er = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="et")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		et = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fi = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fj")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fj = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fk = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fm = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fo = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ga")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ga = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gb = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gd = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ge = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gf = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gg = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gh = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gi = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gl = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gm = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gn = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gp = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gq")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gq = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gr = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gs = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gt = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gu = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gw = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gy = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hk = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hm = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hn = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hr = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ht")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ht = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hu = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ie")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ie = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="il")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		il = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="im")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		im = 102,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in")]
 		_in = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="io")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		io = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="iq")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		iq = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ir")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ir = 106,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="is")]
 		_is = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="je")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		je = 109,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jm = 110,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jo = 111,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jp = 112,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ke")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ke = 113,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kg = 114,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kh = 115,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ki")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ki = 116,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="km")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		km = 117,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kn = 118,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kp = 119,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kr = 120,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kw = 121,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ky")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ky = 122,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kz = 123,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="la")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		la = 124,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lb = 125,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lc = 126,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="li")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		li = 127,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lk = 128,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lr = 129,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ls")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ls = 130,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lt = 131,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lu = 132,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lv = 133,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ly = 134,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ma = 135,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mc = 136,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="md")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		md = 137,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="me")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		me = 138,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mg = 139,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mh = 140,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mk = 141,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ml = 142,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mm = 143,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mn = 144,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mo = 145,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mp = 146,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mq")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mq = 147,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mr = 148,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ms = 149,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mt = 150,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mu = 151,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mv = 152,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mw = 153,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mx = 154,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="my")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		my = 155,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mz = 156,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="na")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		na = 157,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nc = 158,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ne")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ne = 159,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nf = 160,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ng")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ng = 161,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ni")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ni = 162,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nl = 163,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no = 164,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="np")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		np = 165,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nr = 166,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nu = 167,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nz = 168,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="om")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		om = 169,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pa = 170,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pe = 171,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pf = 172,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pg = 173,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ph")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ph = 174,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pk = 175,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pl = 176,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pm = 177,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pn = 178,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pr = 179,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ps")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ps = 180,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 181,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pw = 182,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="py")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		py = 183,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="qa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		qa = 184,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="re")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		re = 185,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ro = 186,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rs = 187,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ru")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ru = 188,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rw = 189,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sa = 190,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sb = 191,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sc = 192,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sd = 193,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="se")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		se = 194,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sg = 195,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sh = 196,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="si")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		si = 197,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sj")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sj = 198,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sk = 199,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sl = 200,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sm = 201,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sn = 202,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="so")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		so = 203,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sr = 204,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="st")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		st = 205,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 206,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sy = 207,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sz = 208,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tc = 209,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="td")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		td = 210,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tf = 211,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tg = 212,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="th")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		th = 213,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tj")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tj = 214,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tk = 215,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tl = 216,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tm = 217,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tn = 218,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="to")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		to = 219,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tr = 220,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tt = 221,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tv = 222,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tw = 223,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tz = 224,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ua")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ua = 225,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ug")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ug = 226,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="um")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		um = 227,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="us")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		us = 228,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uy = 229,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uz = 230,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="va")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		va = 231,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vc = 232,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ve")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ve = 233,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vg = 234,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vi = 235,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vn = 236,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vu = 237,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wf = 238,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ws")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ws = 239,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ye")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ye = 240,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="yt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		yt = 241,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="za")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		za = 242,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zm = 243,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zw = 244,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ES = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GO = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MA = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MG = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PA = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PB = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PR = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PI = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RJ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RJ = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RN = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RS = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RO = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RR = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SC = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SP = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SE = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TO = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_started")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_started = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="in_progress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		in_progress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delayed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delayed = 4,
 	}
 	
 	/// <summary>
 	/// Represents the status of databases used to generate background checks
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1916,36 +1883,33 @@ namespace MyNS
 		public System.Nullable<StatusStatus1> Status1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StatusStatus1
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_started")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_started = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expired = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delayed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delayed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="skipped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		skipped = 5,
 	}
 	
 	/// <summary>
 	/// Represents a background check summary
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Summary
 	{
 		
@@ -2000,56 +1964,49 @@ namespace MyNS
 		public string Rfc { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SummaryGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="male")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		male = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="female")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		female = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SummaryIdentity_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="found")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		found = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_found")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_found = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dead = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="company")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		company = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="person")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		person = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vehicle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vehicle = 2,
 	}
 	
 	/// <summary>
 	/// Represents the summary of a vehicle background check
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VehicleSummary
 	{
 		
@@ -2135,8 +2092,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a parameter entered during the background check creation that does not match the information obtained
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WrongInput
 	{
 		
@@ -2147,21 +2103,18 @@ namespace MyNS
 		public System.Nullable<WrongInputInput> Input { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WrongInputInput
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="document_expedition_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		document_expedition_date = 0,
 	}
 	
 	/// <summary>
 	/// Represents background check details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckDetails
 	{
 		
@@ -2230,58 +2183,53 @@ namespace MyNS
 		public Table[] Tables { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckDetailsGroup
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="profile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		profile = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="legal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		legal = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="affiliations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		affiliations = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vehicle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vehicle = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="global")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		global = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="media")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		media = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckDetailsResult
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="found")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		found = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_found")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_found = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 3,
 	}
 	
 	/// <summary>
 	/// Represents a table to lay out search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Table
 	{
 		
@@ -2305,8 +2253,7 @@ namespace MyNS
 	/// <summary>
 	/// A table row, containing one or more cells
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableRow
 	{
 		
@@ -2322,8 +2269,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a table cell
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableCell
 	{
 		
@@ -2347,8 +2293,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a list of background check details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckDetailsOutput
 	{
 		
@@ -2378,8 +2323,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the result of a background check search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckOutput
 	{
 		
@@ -2411,8 +2355,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the results of a background check search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChecksOutput
 	{
 		
@@ -2439,8 +2382,7 @@ namespace MyNS
 		public string Self { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Comment
 	{
 		
@@ -2502,8 +2444,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a comment search result
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommentOutput
 	{
 		
@@ -2526,8 +2467,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents comment search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommentsOutput
 	{
 		
@@ -2556,8 +2496,7 @@ namespace MyNS
 		public string Previous { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Config
 	{
 		
@@ -2589,8 +2528,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a set of configurations to determine the background check score
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoreConfig
 	{
 		
@@ -2614,8 +2552,7 @@ namespace MyNS
 	/// <summary>
 	/// Continuous check allows for background checks to be performed on the same people or vehicles periodically and notifies if new information is found. Allowing companies to keep an eye on their workforce or vehicle fleet for any recent wrongdoing they might be involved in.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContinuousCheck
 	{
 		
@@ -2686,30 +2623,27 @@ namespace MyNS
 		public System.Nullable<System.DateOnly> UpdateDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContinuousCheckContinuousCheckStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="new")]
 		_new = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="up")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		up = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="down")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		down = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="same")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		same = 3,
 	}
 	
 	/// <summary>
 	/// Represents to changelog entry of a continuous check
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContinuousCheckEntry
 	{
 		
@@ -2748,8 +2682,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information required to create an API key
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAPIKeyInput
 	{
 		
@@ -2789,8 +2722,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents paramaters required to give behavior feedback
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBehaviorInput
 	{
 		
@@ -2873,68 +2805,64 @@ namespace MyNS
 		public CreateBehaviorInputReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateBehaviorInputCountry
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="co")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		co = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ve")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ve = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cl = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mx = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pe = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="do")]
 		_do = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gt = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bo = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cr = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ec")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ec = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pa = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="br")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		br = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateBehaviorInputDocument_type
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="national-id")]
 		nationalMinusid = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="passport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		passport = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="foreign-id")]
 		foreignMinusid = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nit = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="diplomatic-id")]
@@ -2955,37 +2883,37 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="military-card")]
 		militaryMinuscard = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pep")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pep = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nis")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nis = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dni")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dni = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rui")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rui = 13,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="license-plate")]
 		licenseMinusplate = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="query")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		query = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rut = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nuip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nuip = 18,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="foreign-societies")]
 		foreignMinussocieties = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="escrow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		escrow = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="individual-registration")]
@@ -2994,26 +2922,24 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="general-registration")]
 		generalMinusregistration = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="curp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		curp = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dui")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dui = 24,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="driver-license")]
 		driverMinuslicense = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ruc = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateBehaviorInputReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rape")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rape = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="drug-dealer")]
@@ -3022,10 +2948,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="sexual-harassment")]
 		sexualMinusharassment = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="theft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		theft = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fights")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fights = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="aggressive-behaviour")]
@@ -3034,16 +2960,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="identity-fraud")]
 		identityMinusfraud = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="drunk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		drunk = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="drug-possession")]
 		drugMinuspossession = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="absences")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		absences = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tardiness")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tardiness = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="confidentiality-breach")]
@@ -3056,8 +2982,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents paramaters required to create a background check
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCheckInput
 	{
 		
@@ -3258,30 +3183,27 @@ namespace MyNS
 		public string Watch { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateCheckInputType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="person")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		person = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vehicle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vehicle = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="company")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		company = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom_type_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom_type_name = 3,
 	}
 	
 	/// <summary>
 	/// Represents paramaters required to create a comment
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCommentInput
 	{
 		
@@ -3295,8 +3217,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents paramaters required to create a score configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateConfigInput
 	{
 		
@@ -3398,8 +3319,7 @@ namespace MyNS
 	/// <summary>
 	///  Represents to CreateContinuousCheckInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateContinuousCheckInput
 	{
 		
@@ -3425,8 +3345,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a hook related to previous created check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHookInput
 	{
 		
@@ -3483,138 +3402,132 @@ namespace MyNS
 		public string Subscriber_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateHookInputEvent_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="continuous_check")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		continuous_check = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateHookInputStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateHookInputSubscriber_language
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="af")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		af = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ca = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cs = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="da")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		da = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="el")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		el = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fi = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="he")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		he = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hi = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hr = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hu = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ja = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ko = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ms = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nb = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nl = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pl = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 23,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pr-BR")]
 		prMinusBR = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ro = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ru")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ru = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="th")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		th = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tl = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tr = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vi = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zh = 32,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh-CN")]
@@ -3624,24 +3537,21 @@ namespace MyNS
 		zhMinusHK = 34,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateHookInputSubscriber_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		web = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 1,
 	}
 	
 	/// <summary>
 	/// Represents paramaters required to create a report
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReportInput
 	{
 		
@@ -3657,8 +3567,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents paramaters required to create a rule
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRuleInput
 	{
 		
@@ -3695,28 +3604,24 @@ namespace MyNS
 		public double Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateRuleInputLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="danger")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		danger = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="warning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		warning = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="info")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		info = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateRuleInputOperation
 	{
 		
@@ -3739,8 +3644,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the inputs required to create a user for an API-key version
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateUserInput
 	{
 		
@@ -3780,8 +3684,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a database as well as an hourly status
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Database
 	{
 		
@@ -3813,8 +3716,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input required to delete an API Key
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAPIKeyInput
 	{
 		
@@ -3830,8 +3732,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the inputs required to delete a Custom Type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigInput
 	{
 	}
@@ -3839,8 +3740,7 @@ namespace MyNS
 	/// <summary>
 	/// Repersents the input required to delete an API key user
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteUserInput
 	{
 		
@@ -3860,8 +3760,7 @@ namespace MyNS
 	///
 	///- 10404: resource was not found
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -3885,8 +3784,7 @@ namespace MyNS
 	/// <summary>
 	/// GetContiuousCheckHistoryOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetContiuousCheckHistoryOutput
 	{
 		
@@ -3914,8 +3812,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input required for health dashboard searches
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHealthDashboardInput
 	{
 		
@@ -3947,8 +3844,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a hook configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hook
 	{
 		
@@ -3989,24 +3885,21 @@ namespace MyNS
 		public string Subscriber_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HookEvent_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check = 1,
 	}
 	
 	/// <summary>
 	/// Represents the output of lists hooks request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HookOutput
 	{
 		
@@ -4038,8 +3931,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents to ListContinuousChecksOutput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContinuousChecksOutput
 	{
 		
@@ -4067,8 +3959,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents reports
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Report
 	{
 		
@@ -4138,8 +4029,7 @@ namespace MyNS
 	/// <summary>
 	/// Reprents the report creation result
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportOutput
 	{
 		
@@ -4169,8 +4059,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the result of report searches
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportsOutput
 	{
 		
@@ -4200,8 +4089,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a rule
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -4236,28 +4124,24 @@ namespace MyNS
 		public double Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuleLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="danger")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		danger = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="warning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		warning = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="info")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		info = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuleOperation
 	{
 		
@@ -4280,8 +4164,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the result of a rule search
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleOutput
 	{
 		
@@ -4305,8 +4188,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a list of score configurations that apply in the country
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoreConfigOutput
 	{
 		
@@ -4320,8 +4202,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of an operation that returns multiple score configs
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoreConfigsOutput
 	{
 		
@@ -4337,8 +4218,7 @@ namespace MyNS
 	/// <summary>
 	/// Subscriber attribute that depends on the subscriber_type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscriber
 	{
 		
@@ -4354,8 +4234,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input required to update an API key
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAPIKeyInput
 	{
 		
@@ -4379,8 +4258,7 @@ namespace MyNS
 	/// <summary>
 	///  Represents to UpdateContinuousCheckInput
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateContinuousCheckInput
 	{
 		
@@ -4404,8 +4282,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a user of API-key access control
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -4440,16 +4317,14 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserUser_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORCE_CHANGE_PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORCE_CHANGE_PASSWORD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIRMED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIRMED = 1,
 	}
 	
@@ -4987,41 +4862,41 @@ namespace MyNS
 	public enum CreateCheckTruora_Priority
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		low = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 2,
 	}
 	
 	public enum DeleteCustomTypeCountry
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MX = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 7,
 	}
 }

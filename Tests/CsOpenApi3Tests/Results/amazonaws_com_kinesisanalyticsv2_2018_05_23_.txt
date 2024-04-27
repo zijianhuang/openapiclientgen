@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationCloudWatchLoggingOptionResponse
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the Amazon CloudWatch logging option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchLoggingOptionDescription
 	{
 		
@@ -54,8 +52,7 @@ namespace MyNS
 		public string RoleARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationCloudWatchLoggingOptionRequest
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name (ARN). 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchLoggingOption
 	{
 		
@@ -96,44 +92,37 @@ namespace MyNS
 		public string LogStreamARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArgumentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModificationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidApplicationConfigurationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationInputResponse
 	{
 		
@@ -150,8 +139,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the application input configuration for a SQL-based Kinesis Data Analytics application. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputDescription
 	{
 		
@@ -186,8 +174,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, provides the configuration information about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputProcessingConfigurationDescription
 	{
 		
@@ -198,8 +185,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, an object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in the stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputLambdaProcessorDescription
 	{
 		
@@ -217,8 +203,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes the Kinesis data stream that is configured as the streaming source in the application input configuration. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisStreamsInputDescription
 	{
 		
@@ -236,8 +221,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the Amazon Kinesis Data Firehose delivery stream that is configured as the streaming source in the application input configuration. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisFirehoseInputDescription
 	{
 		
@@ -255,8 +239,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceSchema
 	{
 		
@@ -281,8 +264,7 @@ namespace MyNS
 	/// <summary>
 	///  For a SQL-based Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordFormat
 	{
 		
@@ -297,24 +279,21 @@ namespace MyNS
 		public MappingParameters MappingParameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecordFormatType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSV = 1,
 	}
 	
 	/// <summary>
 	/// When you configure a SQL-based Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MappingParameters
 	{
 		
@@ -328,8 +307,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, provides additional mapping information when JSON is the record format on the streaming source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JSONMappingParameters
 	{
 		
@@ -344,8 +322,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>For a SQL-based Kinesis Data Analytics application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p> <p> <code>"name1", "address1"</code> </p> <p> <code>"name2", "address2"</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CSVMappingParameters
 	{
 		
@@ -367,8 +344,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>For a SQL-based Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p> <p>Also used to describe the format of the reference data source.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordColumn
 	{
 		
@@ -393,8 +369,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputParallelism
 	{
 		
@@ -405,8 +380,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the point at which the application reads from the streaming source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputStartingPositionConfiguration
 	{
 		
@@ -414,24 +388,21 @@ namespace MyNS
 		public InputStartingPosition InputStartingPosition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InputStartingPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIM_HORIZON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIM_HORIZON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_STOPPED_POINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_STOPPED_POINT = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationInputRequest
 	{
 		
@@ -460,8 +431,7 @@ namespace MyNS
 	/// <summary>
 	/// When you configure the application input for a SQL-based Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Input
 	{
 		
@@ -495,8 +465,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputProcessingConfiguration
 	{
 		
@@ -511,8 +480,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in the stream in a SQL-based Kinesis Data Analytics application. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputLambdaProcessor
 	{
 		
@@ -527,8 +495,7 @@ namespace MyNS
 	/// <summary>
 	///  Identifies a Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisStreamsInput
 	{
 		
@@ -543,8 +510,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisFirehoseInput
 	{
 		
@@ -556,14 +522,12 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationInputProcessingConfigurationResponse
 	{
 		
@@ -580,8 +544,7 @@ namespace MyNS
 		public InputProcessingConfigurationDescription InputProcessingConfigurationDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationInputProcessingConfigurationRequest
 	{
 		
@@ -614,8 +577,7 @@ namespace MyNS
 		public InputProcessingConfiguration InputProcessingConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationOutputResponse
 	{
 		
@@ -632,8 +594,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputDescription
 	{
 		
@@ -659,8 +620,7 @@ namespace MyNS
 	/// <summary>
 	/// For an SQL-based Kinesis Data Analytics application's output, describes the Kinesis data stream that is configured as its destination. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisStreamsOutputDescription
 	{
 		
@@ -678,8 +638,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application's output, describes the Kinesis Data Firehose delivery stream that is configured as its destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisFirehoseOutputDescription
 	{
 		
@@ -697,8 +656,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application's output, describes the Amazon Lambda function that is configured as its destination. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaOutputDescription
 	{
 		
@@ -716,8 +674,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the data format when records are written to the destination in a SQL-based Kinesis Data Analytics application. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DestinationSchema
 	{
 		
@@ -729,8 +686,7 @@ namespace MyNS
 		public RecordFormatType RecordFormatType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationOutputRequest
 	{
 		
@@ -759,8 +715,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Describes a SQL-based Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream. </p> <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Output
 	{
 		
@@ -791,8 +746,7 @@ namespace MyNS
 	/// <summary>
 	/// When you configure a SQL-based Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination. You provide the stream Amazon Resource Name (ARN). 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisStreamsOutput
 	{
 		
@@ -807,8 +761,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, when configuring application output, identifies a Kinesis Data Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) of the delivery stream. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisFirehoseOutput
 	{
 		
@@ -823,8 +776,7 @@ namespace MyNS
 	/// <summary>
 	/// When you configure a SQL-based Kinesis Data Analytics application's output, identifies an Amazon Lambda function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaOutput
 	{
 		
@@ -836,8 +788,7 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationReferenceDataSourceResponse
 	{
 		
@@ -854,8 +805,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes the reference data source configured for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceDataSourceDescription
 	{
 		
@@ -887,8 +837,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, provides the bucket name and object key name that stores the reference data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ReferenceDataSourceDescription
 	{
 		
@@ -910,8 +859,7 @@ namespace MyNS
 		public string ReferenceRoleARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationReferenceDataSourceRequest
 	{
 		
@@ -940,8 +888,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes the reference data source by providing the source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceDataSource
 	{
 		
@@ -966,8 +913,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.</p> <p>A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ReferenceDataSource
 	{
 		
@@ -978,8 +924,7 @@ namespace MyNS
 		public string FileKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationVpcConfigurationResponse
 	{
 		
@@ -996,8 +941,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the parameters of a VPC used by the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfigurationDescription
 	{
 		
@@ -1030,8 +974,7 @@ namespace MyNS
 		public string[] SecurityGroupIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddApplicationVpcConfigurationRequest
 	{
 		
@@ -1059,8 +1002,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the parameters of a VPC used by the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfiguration
 	{
 		
@@ -1079,8 +1021,7 @@ namespace MyNS
 		public string[] SecurityGroupIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApplicationResponse
 	{
 		
@@ -1095,8 +1036,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationDetail
 	{
 		
@@ -1172,9 +1112,7 @@ namespace MyNS
 		public ApplicationMode ApplicationMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuntimeEnvironment
 	{
 		
@@ -1206,51 +1144,48 @@ namespace MyNS
 		ZEPPELINMinusFLINKMinus3_0 = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOSCALING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOSCALING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORCE_STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORCE_STOPPING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLING_BACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLLING_BACK = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAINTENANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAINTENANCE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLED_BACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLLED_BACK = 10,
 	}
 	
 	/// <summary>
 	/// Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationConfigurationDescription
 	{
 		
@@ -1282,8 +1217,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SqlApplicationConfigurationDescription
 	{
 		
@@ -1300,8 +1234,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes code configuration for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationCodeConfigurationDescription
 	{
 		
@@ -1316,24 +1249,21 @@ namespace MyNS
 		public CodeContentDescription CodeContentDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CodeContentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAINTEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAINTEXT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZIPFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZIPFILE = 1,
 	}
 	
 	/// <summary>
 	/// Describes details about the code of a Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeContentDescription
 	{
 		
@@ -1353,8 +1283,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the location of an application's code stored in an S3 bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ApplicationCodeLocationDescription
 	{
 		
@@ -1379,8 +1308,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the starting properties for a Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunConfigurationDescription
 	{
 		
@@ -1397,8 +1325,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the method and snapshot to use when restarting an application using previously saved application state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationRestoreConfiguration
 	{
 		
@@ -1413,27 +1340,24 @@ namespace MyNS
 		public string SnapshotName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationRestoreType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIP_RESTORE_FROM_SNAPSHOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIP_RESTORE_FROM_SNAPSHOT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTORE_FROM_LATEST_SNAPSHOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTORE_FROM_LATEST_SNAPSHOT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTORE_FROM_CUSTOM_SNAPSHOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTORE_FROM_CUSTOM_SNAPSHOT = 2,
 	}
 	
 	/// <summary>
 	/// Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlinkRunConfiguration
 	{
 		
@@ -1444,8 +1368,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes configuration parameters for a Flink-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlinkApplicationConfigurationDescription
 	{
 		
@@ -1465,8 +1388,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes checkpointing parameters for a Flink-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckpointConfigurationDescription
 	{
 		
@@ -1483,24 +1405,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> MinPauseBetweenCheckpoints { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigurationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 1,
 	}
 	
 	/// <summary>
 	/// Describes configuration parameters for CloudWatch logging for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonitoringConfigurationDescription
 	{
 		
@@ -1514,49 +1433,44 @@ namespace MyNS
 		public LogLevel LogLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricsLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TASK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TASK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARALLELISM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARALLELISM = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LogLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBUG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBUG = 3,
 	}
 	
 	/// <summary>
 	/// Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParallelismConfigurationDescription
 	{
 		
@@ -1579,8 +1493,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the execution properties for an Apache Flink runtime.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentPropertyDescriptions
 	{
 		
@@ -1591,8 +1504,7 @@ namespace MyNS
 	/// <summary>
 	/// Property key-value pairs passed into an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PropertyGroup
 	{
 		
@@ -1611,8 +1523,7 @@ namespace MyNS
 		public PropertyMap PropertyMap { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PropertyMap
 	{
 	}
@@ -1620,8 +1531,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationSnapshotConfigurationDescription
 	{
 		
@@ -1636,8 +1546,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of a Kinesis Data Analytics Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZeppelinApplicationConfigurationDescription
 	{
 		
@@ -1661,8 +1570,7 @@ namespace MyNS
 	/// <summary>
 	/// The monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZeppelinMonitoringConfigurationDescription
 	{
 		
@@ -1673,8 +1581,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogConfigurationDescription
 	{
 		
@@ -1689,8 +1596,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlueDataCatalogConfigurationDescription
 	{
 		
@@ -1705,8 +1611,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeployAsApplicationConfigurationDescription
 	{
 		
@@ -1721,8 +1626,7 @@ namespace MyNS
 	/// <summary>
 	/// The description of the S3 base location that holds the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ContentBaseLocationDescription
 	{
 		
@@ -1740,8 +1644,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a dependency JAR or a JAR of user-defined functions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomArtifactConfigurationDescription
 	{
 		
@@ -1758,24 +1661,21 @@ namespace MyNS
 		public MavenReference MavenReferenceDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArtifactType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UDF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UDF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPENDENCY_JAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPENDENCY_JAR = 1,
 	}
 	
 	/// <summary>
 	/// For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ContentLocation
 	{
 		
@@ -1800,8 +1700,7 @@ namespace MyNS
 	/// <summary>
 	/// The information required to specify a Maven reference. You can use Maven references to specify dependency JAR files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MavenReference
 	{
 		
@@ -1830,8 +1729,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of the maintenance configuration for the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationMaintenanceConfigurationDescription
 	{
 		
@@ -1850,21 +1748,18 @@ namespace MyNS
 		public string ApplicationMaintenanceWindowEndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STREAMING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STREAMING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERACTIVE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApplicationRequest
 	{
 		
@@ -1908,8 +1803,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the creation parameters for a Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationConfiguration
 	{
 		
@@ -1938,8 +1832,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SqlApplicationConfiguration
 	{
 		
@@ -1956,8 +1849,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes configuration parameters for a Flink-based Kinesis Data Analytics application or a Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlinkApplicationConfiguration
 	{
 		
@@ -1974,8 +1866,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckpointConfiguration
 	{
 		
@@ -1999,8 +1890,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes configuration parameters for Amazon CloudWatch logging for an application. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonitoringConfiguration
 	{
 		
@@ -2021,8 +1911,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html">Parallel Execution</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParallelismConfiguration
 	{
 		
@@ -2046,8 +1935,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes execution properties for a Flink-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentProperties
 	{
 		
@@ -2062,8 +1950,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes code configuration for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationCodeConfiguration
 	{
 		
@@ -2081,8 +1968,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies either the application code, or the location of the application code, for a Flink-based Kinesis Data Analytics application. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeContent
 	{
 		
@@ -2099,8 +1985,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationSnapshotConfiguration
 	{
 		
@@ -2115,8 +2000,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of a Kinesis Data Analytics Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZeppelinApplicationConfiguration
 	{
 		
@@ -2136,8 +2020,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes configuration parameters for Amazon CloudWatch logging for a Kinesis Data Analytics Studio notebook. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZeppelinMonitoringConfiguration
 	{
 		
@@ -2152,8 +2035,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogConfiguration
 	{
 		
@@ -2168,8 +2050,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlueDataCatalogConfiguration
 	{
 		
@@ -2184,8 +2065,7 @@ namespace MyNS
 	/// <summary>
 	/// The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeployAsApplicationConfiguration
 	{
 		
@@ -2200,8 +2080,7 @@ namespace MyNS
 	/// <summary>
 	/// The S3 bucket that holds the application information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ContentBaseLocation
 	{
 		
@@ -2219,8 +2098,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies dependency JARs, as well as JAR files that contain user-defined functions (UDF).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomArtifactConfiguration
 	{
 		
@@ -2244,8 +2122,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair (the value is optional) that you can define and assign to Amazon resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -2260,26 +2137,22 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedOperationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApplicationPresignedUrlResponse
 	{
 		
@@ -2287,8 +2160,7 @@ namespace MyNS
 		public string AuthorizedUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApplicationPresignedUrlRequest
 	{
 		
@@ -2310,27 +2182,23 @@ namespace MyNS
 		public System.Nullable<System.Int32> SessionExpirationDurationInSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UrlType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLINK_DASHBOARD_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLINK_DASHBOARD_URL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZEPPELIN_UI_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZEPPELIN_UI_URL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApplicationSnapshotResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApplicationSnapshotRequest
 	{
 		
@@ -2349,14 +2217,12 @@ namespace MyNS
 		public string SnapshotName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationRequest
 	{
 		
@@ -2375,8 +2241,7 @@ namespace MyNS
 		public System.DateTimeOffset CreateTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationCloudWatchLoggingOptionResponse
 	{
 		
@@ -2390,8 +2255,7 @@ namespace MyNS
 		public CloudWatchLoggingOptionDescription[] CloudWatchLoggingOptionDescriptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationCloudWatchLoggingOptionRequest
 	{
 		
@@ -2416,8 +2280,7 @@ namespace MyNS
 		public string ConditionalToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationInputProcessingConfigurationResponse
 	{
 		
@@ -2428,8 +2291,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ApplicationVersionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationInputProcessingConfigurationRequest
 	{
 		
@@ -2455,8 +2317,7 @@ namespace MyNS
 		public string InputId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationOutputResponse
 	{
 		
@@ -2467,8 +2328,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ApplicationVersionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationOutputRequest
 	{
 		
@@ -2494,8 +2354,7 @@ namespace MyNS
 		public string OutputId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationReferenceDataSourceResponse
 	{
 		
@@ -2506,8 +2365,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ApplicationVersionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationReferenceDataSourceRequest
 	{
 		
@@ -2533,14 +2391,12 @@ namespace MyNS
 		public string ReferenceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationSnapshotResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationSnapshotRequest
 	{
 		
@@ -2566,8 +2422,7 @@ namespace MyNS
 		public System.DateTimeOffset SnapshotCreationTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationVpcConfigurationResponse
 	{
 		
@@ -2578,8 +2433,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ApplicationVersionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApplicationVpcConfigurationRequest
 	{
 		
@@ -2604,8 +2458,7 @@ namespace MyNS
 		public string ConditionalToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeApplicationResponse
 	{
 		
@@ -2617,8 +2470,7 @@ namespace MyNS
 		public ApplicationDetail ApplicationDetail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeApplicationRequest
 	{
 		
@@ -2633,8 +2485,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IncludeAdditionalDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeApplicationSnapshotResponse
 	{
 		
@@ -2649,8 +2500,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides details about a snapshot of application state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotDetails
 	{
 		
@@ -2679,27 +2529,24 @@ namespace MyNS
 		public System.DateTimeOffset SnapshotCreationTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnapshotStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeApplicationSnapshotRequest
 	{
 		
@@ -2718,8 +2565,7 @@ namespace MyNS
 		public string SnapshotName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeApplicationVersionResponse
 	{
 		
@@ -2730,8 +2576,7 @@ namespace MyNS
 		public ApplicationDetail ApplicationVersionDetail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeApplicationVersionRequest
 	{
 		
@@ -2750,8 +2595,7 @@ namespace MyNS
 		public int ApplicationVersionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiscoverInputSchemaResponse
 	{
 		
@@ -2768,8 +2612,7 @@ namespace MyNS
 		public string[] RawInputRecords { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiscoverInputSchemaRequest
 	{
 		
@@ -2796,8 +2639,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Configuration
 	{
 		
@@ -2816,26 +2658,22 @@ namespace MyNS
 		public string FileKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnableToDetectSchemaException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceProvisionedThroughputExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListApplicationSnapshotsResponse
 	{
 		
@@ -2846,8 +2684,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListApplicationSnapshotsRequest
 	{
 		
@@ -2865,8 +2702,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListApplicationVersionsResponse
 	{
 		
@@ -2880,8 +2716,7 @@ namespace MyNS
 	/// <summary>
 	/// The summary of the application version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationVersionSummary
 	{
 		
@@ -2900,8 +2735,7 @@ namespace MyNS
 		public ApplicationStatus ApplicationStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListApplicationVersionsRequest
 	{
 		
@@ -2919,8 +2753,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListApplicationsResponse
 	{
 		
@@ -2938,8 +2771,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationSummary
 	{
 		
@@ -2982,8 +2814,7 @@ namespace MyNS
 		public ApplicationMode ApplicationMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListApplicationsRequest
 	{
 		
@@ -2994,8 +2825,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -3003,8 +2833,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -3016,8 +2845,7 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RollbackApplicationResponse
 	{
 		
@@ -3030,8 +2858,7 @@ namespace MyNS
 		public ApplicationDetail ApplicationDetail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RollbackApplicationRequest
 	{
 		
@@ -3050,14 +2877,12 @@ namespace MyNS
 		public int CurrentApplicationVersionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartApplicationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartApplicationRequest
 	{
 		
@@ -3075,8 +2900,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the starting parameters for an Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunConfiguration
 	{
 		
@@ -3093,8 +2917,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the starting parameters for a SQL-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SqlRunConfiguration
 	{
 		
@@ -3113,14 +2936,12 @@ namespace MyNS
 		public InputStartingPositionConfiguration InputStartingPositionConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopApplicationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopApplicationRequest
 	{
 		
@@ -3135,14 +2956,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Force { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -3161,14 +2980,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -3187,8 +3004,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApplicationResponse
 	{
 		
@@ -3200,8 +3016,7 @@ namespace MyNS
 		public ApplicationDetail ApplicationDetail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApplicationRequest
 	{
 		
@@ -3234,8 +3049,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates to an application's configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationConfigurationUpdate
 	{
 		
@@ -3264,8 +3078,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates to the input streams, destination streams, and reference data sources for a SQL-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SqlApplicationConfigurationUpdate
 	{
 		
@@ -3282,8 +3095,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes updates to a specific input configuration (identified by the <code>InputId</code> of an application). 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputUpdate
 	{
 		
@@ -3316,8 +3128,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes updates to an <a>InputProcessingConfiguration</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputProcessingConfigurationUpdate
 	{
 		
@@ -3332,8 +3143,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, represents an update to the <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputLambdaProcessorUpdate
 	{
 		
@@ -3348,8 +3158,7 @@ namespace MyNS
 	/// <summary>
 	/// When you update the input configuration for a SQL-based Kinesis Data Analytics application, provides information about a Kinesis stream as the streaming source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisStreamsInputUpdate
 	{
 		
@@ -3364,8 +3173,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, when updating application input configuration, provides information about a Kinesis Data Firehose delivery stream as the streaming source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisFirehoseInputUpdate
 	{
 		
@@ -3380,8 +3188,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates for an SQL-based Kinesis Data Analytics application's input schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputSchemaUpdate
 	{
 		
@@ -3398,8 +3205,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, provides updates to the parallelism count.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputParallelismUpdate
 	{
 		
@@ -3414,8 +3220,7 @@ namespace MyNS
 	/// <summary>
 	///  For a SQL-based Kinesis Data Analytics application, describes updates to the output configuration identified by the <code>OutputId</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputUpdate
 	{
 		
@@ -3445,8 +3250,7 @@ namespace MyNS
 	/// <summary>
 	/// When you update a SQL-based Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis data stream that is configured as the destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisStreamsOutputUpdate
 	{
 		
@@ -3461,8 +3265,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, when updating an output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis Data Firehose delivery stream that is configured as the destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KinesisFirehoseOutputUpdate
 	{
 		
@@ -3477,8 +3280,7 @@ namespace MyNS
 	/// <summary>
 	/// When you update an SQL-based Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about an Amazon Lambda function that is configured as the destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaOutputUpdate
 	{
 		
@@ -3493,8 +3295,7 @@ namespace MyNS
 	/// <summary>
 	/// When you update a reference data source configuration for a SQL-based Kinesis Data Analytics application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceDataSourceUpdate
 	{
 		
@@ -3518,8 +3319,7 @@ namespace MyNS
 	/// <summary>
 	/// For a SQL-based Kinesis Data Analytics application, describes the Amazon S3 bucket name and object key name for an in-application reference table. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ReferenceDataSourceUpdate
 	{
 		
@@ -3533,8 +3333,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes code configuration updates for an application. This is supported for a Flink-based Kinesis Data Analytics application or a SQL-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationCodeConfigurationUpdate
 	{
 		
@@ -3548,8 +3347,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an update to the code of an application. Not supported for Apache Zeppelin.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodeContentUpdate
 	{
 		
@@ -3566,8 +3364,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an update for the Amazon S3 code content location for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ContentLocationUpdate
 	{
 		
@@ -3584,8 +3381,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates to the configuration parameters for a Flink-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FlinkApplicationConfigurationUpdate
 	{
 		
@@ -3602,8 +3398,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates to the checkpointing parameters for a Flink-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckpointConfigurationUpdate
 	{
 		
@@ -3623,8 +3418,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates to configuration parameters for Amazon CloudWatch logging for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonitoringConfigurationUpdate
 	{
 		
@@ -3641,8 +3435,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates to parameters for how an application executes multiple tasks simultaneously.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParallelismConfigurationUpdate
 	{
 		
@@ -3662,8 +3455,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates to the execution property groups for a Flink-based Kinesis Data Analytics application or a Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentPropertyUpdates
 	{
 		
@@ -3678,8 +3470,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationSnapshotConfigurationUpdate
 	{
 		
@@ -3694,8 +3485,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes updates to the VPC configuration used by the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfigurationUpdate
 	{
 		
@@ -3716,8 +3506,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates to the configuration of Kinesis Data Analytics Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZeppelinApplicationConfigurationUpdate
 	{
 		
@@ -3740,8 +3529,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates to the monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZeppelinMonitoringConfigurationUpdate
 	{
 		
@@ -3756,8 +3544,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogConfigurationUpdate
 	{
 		
@@ -3772,8 +3559,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates to the configuration of the Glue Data Catalog that you use for SQL queries that you write in a Kinesis Data Analytics Studio notebook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlueDataCatalogConfigurationUpdate
 	{
 		
@@ -3788,8 +3574,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeployAsApplicationConfigurationUpdate
 	{
 		
@@ -3800,8 +3585,7 @@ namespace MyNS
 	/// <summary>
 	/// The information required to update the S3 base location that holds the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ContentBaseLocationUpdate
 	{
 		
@@ -3815,8 +3599,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the updates to the starting parameters for a Kinesis Data Analytics application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunConfigurationUpdate
 	{
 		
@@ -3830,8 +3613,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the Amazon CloudWatch logging option updates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchLoggingOptionUpdate
 	{
 		
@@ -3846,8 +3628,7 @@ namespace MyNS
 		public string LogStreamARNUpdate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApplicationMaintenanceConfigurationResponse
 	{
 		
@@ -3858,8 +3639,7 @@ namespace MyNS
 		public ApplicationMaintenanceConfigurationDescription ApplicationMaintenanceConfigurationDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApplicationMaintenanceConfigurationRequest
 	{
 		
@@ -3881,8 +3661,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the updated maintenance configuration for the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationMaintenanceConfigurationUpdate
 	{
 		

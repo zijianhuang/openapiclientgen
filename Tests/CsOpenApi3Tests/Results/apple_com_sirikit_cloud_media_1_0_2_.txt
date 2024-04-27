@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaIntent
 	{
 		
@@ -39,18 +38,15 @@ namespace MyNS
 		public MediaSearch MediaSearch { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaIntentClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddMediaIntent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddMediaIntent = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaDestination
 	{
 		
@@ -62,21 +58,18 @@ namespace MyNS
 		public MediaDestinationMediaDestinationType MediaDestinationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaDestinationMediaDestinationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="library")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		library = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="playlist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		playlist = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaItem
 	{
 		
@@ -111,78 +104,75 @@ namespace MyNS
 		public MediaItemType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaItemType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="song")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		song = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="album")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		album = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="artist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		artist = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="genre")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		genre = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="playlist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		playlist = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="podcastShow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		podcastShow = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="podcastEpisode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		podcastEpisode = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="podcastPlaylist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		podcastPlaylist = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="musicStation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		musicStation = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="audioBook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		audioBook = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="movie")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		movie = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tvShow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tvShow = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tvShowEpisode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tvShowEpisode = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="musicVideo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		musicVideo = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="podcastStation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		podcastStation = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="radioStation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		radioStation = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="station")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		station = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="music")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		music = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="algorithmicRadioStation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		algorithmicRadioStation = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="news")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		news = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaSearch
 	{
 		
@@ -217,24 +207,21 @@ namespace MyNS
 		public System.Nullable<MediaSearchSortOrder> SortOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaSearchReference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="currentlyPlaying")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		currentlyPlaying = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="my")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		my = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateComponentsRange
 	{
 		
@@ -245,42 +232,39 @@ namespace MyNS
 		public DateComponents StartDateComponents { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaSearchSortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldest = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="best")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		best = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="worst")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		worst = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="popular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		popular = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unpopular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unpopular = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trending = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recommended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recommended = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaIntentHandlingConfirmInvocationResponse
 	{
 		
@@ -299,9 +283,7 @@ namespace MyNS
 		public AddMediaIntentHandlingConfirmInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaIntentHandlingConfirmInvocationResponseMethod
 	{
 		
@@ -320,8 +302,7 @@ namespace MyNS
 		public AddMediaIntentResponse Response { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaIntentResponse
 	{
 		
@@ -340,43 +321,38 @@ namespace MyNS
 		public AddMediaIntentResponseCode Code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaIntentResponseClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddMediaIntentResponse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddMediaIntentResponse = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaIntentResponseCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ready")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ready = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inProgress = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failure = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failureRequiringAppLaunch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failureRequiringAppLaunch = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaIntentHandlingHandleInvocationResponse
 	{
 		
@@ -395,9 +371,7 @@ namespace MyNS
 		public AddMediaIntentHandlingHandleInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaIntentHandlingHandleInvocationResponseMethod
 	{
 		
@@ -416,8 +390,7 @@ namespace MyNS
 		public AddMediaIntentResponse Response { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaIntentHandlingInvocation
 	{
 		
@@ -436,9 +409,7 @@ namespace MyNS
 		public AddMediaIntentHandlingInvocationParams Params { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaIntentHandlingInvocationMethod
 	{
 		
@@ -466,14 +437,12 @@ namespace MyNS
 		public AddMediaIntent Intent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaIntentHandlingInvocationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaIntentHandlingResolveMediaDestinationInvocationResponse
 	{
 		
@@ -492,9 +461,7 @@ namespace MyNS
 		public AddMediaIntentHandlingResolveMediaDestinationInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaIntentHandlingResolveMediaDestinationInvocationResponseMethod
 	{
 		
@@ -509,8 +476,7 @@ namespace MyNS
 		public AddMediaMediaDestinationResolutionResult ResolutionResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaMediaDestinationResolutionResult
 	{
 		
@@ -530,13 +496,11 @@ namespace MyNS
 		public AddMediaMediaDestinationResolutionResultUnsupported Unsupported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaMediaDestinationResolutionResultClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddMediaMediaDestinationResolutionResult")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddMediaMediaDestinationResolutionResult = 0,
 	}
 	
@@ -582,21 +546,18 @@ namespace MyNS
 		public System.Nullable<AddMediaMediaDestinationResolutionResultUnsupportedReason> Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaMediaDestinationResolutionResultUnsupportedReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="playlistNameNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		playlistNameNotFound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="playlistNotEditable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		playlistNotEditable = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaIntentHandlingResolveMediaItemsInvocationResponse
 	{
 		
@@ -615,9 +576,7 @@ namespace MyNS
 		public AddMediaIntentHandlingResolveMediaItemsInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaIntentHandlingResolveMediaItemsInvocationResponseMethod
 	{
 		
@@ -632,8 +591,7 @@ namespace MyNS
 		public AddMediaMediaItemResolutionResult[] ResolutionResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaMediaItemResolutionResult
 	{
 		
@@ -653,13 +611,11 @@ namespace MyNS
 		public AddMediaMediaItemResolutionResultUnsupported Unsupported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaMediaItemResolutionResultClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddMediaMediaItemResolutionResult")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddMediaMediaItemResolutionResult = 0,
 	}
 	
@@ -705,71 +661,64 @@ namespace MyNS
 		public System.Nullable<AddMediaMediaItemResolutionResultUnsupportedReason> Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaMediaItemResolutionResultUnsupportedReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="loginRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		loginRequired = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscriptionRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscriptionRequired = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsupportedMediaType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsupportedMediaType = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="explicitContentSettings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		explicitContentSettings = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="restrictedContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		restrictedContent = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regionRestriction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regionRestriction = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaMediaDestinationUnsupportedReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="playlistNameNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		playlistNameNotFound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="playlistNotEditable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		playlistNotEditable = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddMediaMediaItemUnsupportedReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="loginRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		loginRequired = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscriptionRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscriptionRequired = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsupportedMediaType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsupportedMediaType = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="explicitContentSettings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		explicitContentSettings = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="restrictedContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		restrictedContent = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regionRestriction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regionRestriction = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BooleanResolutionResult
 	{
 		
@@ -783,13 +732,11 @@ namespace MyNS
 		public BooleanResolutionResultSuccess Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BooleanResolutionResultClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BooleanResolutionResult")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BooleanResolutionResult = 0,
 	}
 	
@@ -815,8 +762,7 @@ namespace MyNS
 		public bool ResolvedValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Constraints
 	{
 		
@@ -835,8 +781,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UpdateUserTasteProfile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Content
 	{
 		
@@ -872,8 +817,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentAttributes
 	{
 		
@@ -933,14 +877,12 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateComponents
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionMetrics
 	{
 		
@@ -954,8 +896,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Received { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExplicitDateComponents
 	{
 		
@@ -990,8 +931,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Year { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtensionConfig
 	{
 		
@@ -1126,8 +1066,7 @@ namespace MyNS
 		public string Url { get; set; } = "/queues/updateActivity";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtensionEndpointConfig
 	{
 		
@@ -1144,8 +1083,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Intent
 	{
 		
@@ -1164,8 +1102,7 @@ namespace MyNS
 		public string Identifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntentResolutionResult
 	{
 		
@@ -1186,8 +1123,7 @@ namespace MyNS
 		public string Unsupported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntentResponse
 	{
 		
@@ -1206,8 +1142,7 @@ namespace MyNS
 		public UserActivity UserActivity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserActivity
 	{
 		
@@ -1249,8 +1184,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Invocation
 	{
 		
@@ -1272,8 +1206,7 @@ namespace MyNS
 		public Session Session { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Session
 	{
 		
@@ -1322,8 +1255,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerContext
 	{
 		
@@ -1359,8 +1291,7 @@ namespace MyNS
 		public string QueueIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvocationResponse
 	{
 		
@@ -1389,24 +1320,21 @@ namespace MyNS
 		public string Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaAffinityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="like")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		like = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dislike")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dislike = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaAffinityTypeResolutionResult
 	{
 		
@@ -1420,13 +1348,11 @@ namespace MyNS
 		public MediaAffinityTypeResolutionResultSuccess Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaAffinityTypeResolutionResultClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MediaAffinityTypeResolutionResult")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MediaAffinityTypeResolutionResult = 0,
 	}
 	
@@ -1452,8 +1378,7 @@ namespace MyNS
 		public MediaAffinityType ResolvedMediaAffinityType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaDestinationLibrary
 	{
 		
@@ -1465,18 +1390,15 @@ namespace MyNS
 		public MediaDestinationLibraryMediaDestinationType MediaDestinationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaDestinationLibraryMediaDestinationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="library")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		library = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaDestinationPlaylist
 	{
 		
@@ -1499,68 +1421,61 @@ namespace MyNS
 		public string PlaylistName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaDestinationPlaylistMediaDestinationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="playlist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		playlist = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaReference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="currentlyPlaying")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		currentlyPlaying = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="my")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		my = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaSortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldest = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="best")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		best = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="worst")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		worst = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="popular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		popular = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unpopular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unpopular = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trending = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recommended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recommended = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaControl
 	{
 		
@@ -1578,8 +1493,7 @@ namespace MyNS
 		public PlayMediaControlScheme Scheme { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaControlActivity
 	{
 		
@@ -1606,8 +1520,7 @@ namespace MyNS
 		public System.Nullable<System.UInt32> PlayPaused { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaControlCommandSet
 	{
 		
@@ -1642,36 +1555,33 @@ namespace MyNS
 		public System.Nullable<System.Boolean> SkipForward { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaControlScheme
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="onDemand")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		onDemand = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="internetRadio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		internetRadio = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="liveStreaming")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		liveStreaming = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="audioBook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		audioBook = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="podcast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		podcast = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="advertisement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		advertisement = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntent
 	{
 		
@@ -1700,56 +1610,49 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ResumePlayback { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PlayMediaIntent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PlayMediaIntent = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentPlaybackQueueLocation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="now")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		now = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="next")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		next = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="later")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		later = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentPlaybackRepeatMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="one")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		one = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntentHandlingHandleInvocationResponse
 	{
 		
@@ -1768,9 +1671,7 @@ namespace MyNS
 		public PlayMediaIntentHandlingHandleInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentHandlingHandleInvocationResponseMethod
 	{
 		
@@ -1789,8 +1690,7 @@ namespace MyNS
 		public PlayMediaIntentResponse Response { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntentResponse
 	{
 		
@@ -1809,46 +1709,41 @@ namespace MyNS
 		public PlayMediaIntentResponseCode Code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentResponseClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PlayMediaIntentResponse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PlayMediaIntentResponse = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentResponseCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failure = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failureRequiringAppLaunch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failureRequiringAppLaunch = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failureUnknownMediaType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failureUnknownMediaType = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failureNoUnplayedContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failureNoUnplayedContent = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failureRestrictedContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failureRestrictedContent = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntentHandlingInvocation
 	{
 		
@@ -1867,9 +1762,7 @@ namespace MyNS
 		public PlayMediaIntentHandlingInvocationParams Params { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentHandlingInvocationMethod
 	{
 		
@@ -1903,14 +1796,12 @@ namespace MyNS
 		public PlayMediaIntent Intent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntentHandlingInvocationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntentHandlingResolveMediaItemsInvocationResponse
 	{
 		
@@ -1929,9 +1820,7 @@ namespace MyNS
 		public PlayMediaIntentHandlingResolveMediaItemsInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentHandlingResolveMediaItemsInvocationResponseMethod
 	{
 		
@@ -1950,8 +1839,7 @@ namespace MyNS
 		public PlayMediaMediaItemResolutionResult[] ResolutionResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaMediaItemResolutionResult
 	{
 		
@@ -1971,13 +1859,11 @@ namespace MyNS
 		public PlayMediaMediaItemResolutionResultUnsupported Unsupported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaMediaItemResolutionResultClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PlayMediaMediaItemResolutionResult")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PlayMediaMediaItemResolutionResult = 0,
 	}
 	
@@ -2023,8 +1909,7 @@ namespace MyNS
 		public AddMediaMediaItemResolutionResultUnsupportedReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntentHandlingResolvePlayShuffledInvocationResponse
 	{
 		
@@ -2043,9 +1928,7 @@ namespace MyNS
 		public PlayMediaIntentHandlingResolvePlayShuffledInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentHandlingResolvePlayShuffledInvocationResponseMethod
 	{
 		
@@ -2064,8 +1947,7 @@ namespace MyNS
 		public BooleanResolutionResult ResolutionResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponse
 	{
 		
@@ -2084,9 +1966,7 @@ namespace MyNS
 		public PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponseMethod
 	{
 		
@@ -2105,8 +1985,7 @@ namespace MyNS
 		public PlaybackQueueLocationResolutionResult ResolutionResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlaybackQueueLocationResolutionResult
 	{
 		
@@ -2120,13 +1999,11 @@ namespace MyNS
 		public PlaybackQueueLocationResolutionResultSuccess Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlaybackQueueLocationResolutionResultClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PlaybackQueueLocationResolutionResult")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PlaybackQueueLocationResolutionResult = 0,
 	}
 	
@@ -2152,8 +2029,7 @@ namespace MyNS
 		public PlayMediaIntentPlaybackQueueLocation ResolvedPlaybackQueueLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponse
 	{
 		
@@ -2172,9 +2048,7 @@ namespace MyNS
 		public PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponseMethod
 	{
 		
@@ -2193,8 +2067,7 @@ namespace MyNS
 		public PlaybackRepeatModeResolutionResult ResolutionResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlaybackRepeatModeResolutionResult
 	{
 		
@@ -2208,13 +2081,11 @@ namespace MyNS
 		public PlaybackRepeatModeResolutionResultSuccess Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlaybackRepeatModeResolutionResultClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PlaybackRepeatModeResolutionResult")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PlaybackRepeatModeResolutionResult = 0,
 	}
 	
@@ -2240,8 +2111,7 @@ namespace MyNS
 		public PlayMediaIntentPlaybackRepeatMode ResolvedPlaybackRepeatMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaIntentHandlingResolveResumePlaybackInvocationResponse
 	{
 		
@@ -2260,9 +2130,7 @@ namespace MyNS
 		public PlayMediaIntentHandlingResolveResumePlaybackInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaIntentHandlingResolveResumePlaybackInvocationResponseMethod
 	{
 		
@@ -2281,33 +2149,30 @@ namespace MyNS
 		public BooleanResolutionResult ResolutionResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayMediaMediaItemUnsupportedReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="loginRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		loginRequired = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscriptionRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscriptionRequired = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsupportedMediaType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsupportedMediaType = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="explicitContentSettings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		explicitContentSettings = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="restrictedContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		restrictedContent = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regionRestriction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regionRestriction = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayMediaRequest
 	{
 		
@@ -2335,46 +2200,41 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlaybackQueueLocation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="now")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		now = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="next")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		next = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="later")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		later = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlaybackRepeatMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="one")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		one = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProtocolException
 	{
 		
@@ -2405,42 +2265,39 @@ namespace MyNS
 		public string[] Trace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProtocolExceptionReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsupported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsupported = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unauthorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unauthorized = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unexpected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unexpected = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unparseable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unparseable = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deprecated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deprecated = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="internal")]
 		_internal = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complex = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="busy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		busy = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProtocolExceptionInvocationResponse
 	{
 		
@@ -2459,18 +2316,15 @@ namespace MyNS
 		public ProtocolExceptionInvocationResponseMethod Method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProtocolExceptionInvocationResponseMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProtocolException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProtocolException = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Queue
 	{
 		
@@ -2542,8 +2396,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueueControlMapping
 	{
 		
@@ -2555,8 +2408,7 @@ namespace MyNS
 		public PlayMediaControl Default { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueuePlayPointer
 	{
 		
@@ -2573,9 +2425,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> OffsetInMillis { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueueActivityReportEvent
 	{
 		
@@ -2625,8 +2475,7 @@ namespace MyNS
 		local_command_bookmark = 14,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueueInsertPointer
 	{
 		
@@ -2643,8 +2492,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Replace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateActivityRequest
 	{
 		
@@ -2688,9 +2536,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateActivityRequestReport
 	{
 		
@@ -2740,8 +2586,7 @@ namespace MyNS
 		local_command_bookmark = 14,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateActivityResponse
 	{
 		
@@ -2752,8 +2597,7 @@ namespace MyNS
 		public UserActivity UserActivity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaAffinityIntent
 	{
 		
@@ -2774,18 +2618,15 @@ namespace MyNS
 		public MediaSearch MediaSearch { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityIntentClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateMediaAffinityIntent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateMediaAffinityIntent = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaAffinityIntentHandlingHandleInvocationResponse
 	{
 		
@@ -2804,9 +2645,7 @@ namespace MyNS
 		public UpdateMediaAffinityIntentHandlingHandleInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityIntentHandlingHandleInvocationResponseMethod
 	{
 		
@@ -2825,8 +2664,7 @@ namespace MyNS
 		public UpdateMediaAffinityIntentResponse Response { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaAffinityIntentResponse
 	{
 		
@@ -2845,40 +2683,35 @@ namespace MyNS
 		public UpdateMediaAffinityIntentResponseCode Code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityIntentResponseClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateMediaAffinityIntentResponse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateMediaAffinityIntentResponse = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityIntentResponseCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inProgress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failure = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failureRequiringAppLaunch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failureRequiringAppLaunch = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaAffinityIntentHandlingInvocation
 	{
 		
@@ -2897,9 +2730,7 @@ namespace MyNS
 		public UpdateMediaAffinityIntentHandlingInvocationParams Params { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityIntentHandlingInvocationMethod
 	{
 		
@@ -2924,14 +2755,12 @@ namespace MyNS
 		public UpdateMediaAffinityIntent Intent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaAffinityIntentHandlingInvocationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponse
 	{
 		
@@ -2950,9 +2779,7 @@ namespace MyNS
 		public UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponseMethod
 	{
 		
@@ -2971,8 +2798,7 @@ namespace MyNS
 		public MediaAffinityTypeResolutionResult ResolutionResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponse
 	{
 		
@@ -2991,9 +2817,7 @@ namespace MyNS
 		public UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponseResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponseMethod
 	{
 		
@@ -3012,8 +2836,7 @@ namespace MyNS
 		public UpdateMediaAffinityMediaItemResolutionResult[] ResolutionResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMediaAffinityMediaItemResolutionResult
 	{
 		
@@ -3033,13 +2856,11 @@ namespace MyNS
 		public UpdateMediaAffinityMediaItemResolutionResultUnsupported Unsupported { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityMediaItemResolutionResultClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateMediaAffinityMediaItemResolutionResult")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateMediaAffinityMediaItemResolutionResult = 0,
 	}
 	
@@ -3085,41 +2906,37 @@ namespace MyNS
 		public System.Nullable<UpdateMediaAffinityMediaItemResolutionResultUnsupportedReason> Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityMediaItemResolutionResultUnsupportedReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="loginRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		loginRequired = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscriptionRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscriptionRequired = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsupportedMediaType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsupportedMediaType = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="explicitContentSettings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		explicitContentSettings = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMediaAffinityMediaItemUnsupportedReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="loginRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		loginRequired = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscriptionRequired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscriptionRequired = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsupportedMediaType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsupportedMediaType = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="explicitContentSettings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		explicitContentSettings = 3,
 	}
 	

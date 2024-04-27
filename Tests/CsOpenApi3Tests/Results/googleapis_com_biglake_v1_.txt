@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Catalog is the container of databases.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Catalog
 	{
 		
@@ -59,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// Database is the container of tables.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Database
 	{
 		
@@ -110,8 +108,7 @@ namespace MyNS
 	/// <summary>
 	/// Options of a Hive database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HiveDatabaseOptions
 	{
 		
@@ -128,24 +125,21 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatabaseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIVE = 1,
 	}
 	
 	/// <summary>
 	/// Options of a Hive table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HiveTableOptions
 	{
 		
@@ -171,8 +165,7 @@ namespace MyNS
 	/// <summary>
 	/// Stores physical storage information of the data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageDescriptor
 	{
 		
@@ -204,8 +197,7 @@ namespace MyNS
 	/// <summary>
 	/// Serializer and deserializer information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SerDeInfo
 	{
 		
@@ -219,8 +211,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the ListCatalogs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCatalogsResponse
 	{
 		
@@ -240,8 +231,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the ListDatabases method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatabasesResponse
 	{
 		
@@ -261,8 +251,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the ListTables method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTablesResponse
 	{
 		
@@ -282,8 +271,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Table
 	{
 		
@@ -339,8 +327,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the RenameTable method in MetastoreService
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RenameTableRequest
 	{
 		
@@ -760,13 +747,13 @@ namespace MyNS
 	public enum Biglake_projects_locations_catalogs_databases_tables_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An assignment allows a project to submit jobs of a certain type using slots from the specified reservation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Assignment
 	{
 		
@@ -50,49 +49,44 @@ namespace MyNS
 		public System.Nullable<AssignmentState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssignmentJobType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIPELINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIPELINE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUERY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ML_EXTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ML_EXTERNAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKGROUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKGROUND = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssignmentState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 	}
 	
 	/// <summary>
 	/// Auto scaling settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Autoscale
 	{
 		
@@ -112,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a BI Reservation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BiReservation
 	{
 		
@@ -145,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	/// Fully qualified reference to BigQuery table. Internally stored as google.cloud.bi.v1.BqTableReference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableReference
 	{
 		
@@ -172,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// Capacity commitment is a way to purchase compute capacity for BigQuery jobs (in the form of slots) with some committed period of usage. Annual commitments renew by default. Commitments can be removed after their commitment end time passes. In order to remove annual commitment, its plan needs to be changed to monthly or flex first. A capacity commitment resource exists as a child resource of the admin project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CapacityCommitment
 	{
 		
@@ -244,30 +235,27 @@ namespace MyNS
 		public System.Nullable<CapacityCommitmentState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CapacityCommitmentEdition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTERPRISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTERPRISE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTERPRISE_PLUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTERPRISE_PLUS = 3,
 	}
 	
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -290,67 +278,62 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CapacityCommitmentPlan
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMITMENT_PLAN_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMITMENT_PLAN_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEX_FLAT_RATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEX_FLAT_RATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY_FLAT_RATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY_FLAT_RATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNUAL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNUAL_FLAT_RATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNUAL_FLAT_RATE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THREE_YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THREE_YEAR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CapacityCommitmentState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -358,8 +341,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for ReservationService.ListAssignments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAssignmentsResponse
 	{
 		
@@ -379,8 +361,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for ReservationService.ListCapacityCommitments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCapacityCommitmentsResponse
 	{
 		
@@ -400,8 +381,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for ReservationService.ListReservations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReservationsResponse
 	{
 		
@@ -421,8 +401,7 @@ namespace MyNS
 	/// <summary>
 	/// A reservation is a mechanism used to guarantee slots to users.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Reservation
 	{
 		
@@ -484,8 +463,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for ReservationService.MergeCapacityCommitments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MergeCapacityCommitmentsRequest
 	{
 		
@@ -499,8 +477,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for ReservationService.MoveAssignment. **Note**: "bigquery.reservationAssignments.create" permission is required on the destination_id. **Note**: "bigquery.reservationAssignments.create" and "bigquery.reservationAssignments.delete" permission are required on the related assignee.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveAssignmentRequest
 	{
 		
@@ -520,8 +497,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for ReservationService.SearchAllAssignments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchAllAssignmentsResponse
 	{
 		
@@ -541,8 +517,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for ReservationService.SearchAssignments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchAssignmentsResponse
 	{
 		
@@ -562,8 +537,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for ReservationService.SplitCapacityCommitment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SplitCapacityCommitmentRequest
 	{
 		
@@ -577,8 +551,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for ReservationService.SplitCapacityCommitment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SplitCapacityCommitmentResponse
 	{
 		

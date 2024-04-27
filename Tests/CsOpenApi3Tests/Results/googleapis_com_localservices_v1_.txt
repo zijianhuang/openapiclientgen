@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An Account Report of a GLS account identified by their account id containing aggregate data gathered from a particular date range. Next ID: 18
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAdsHomeservicesLocalservicesV1AccountReport
 	{
 		
@@ -131,8 +130,7 @@ namespace MyNS
 	/// <summary>
 	/// Conatiner for aggregator specific information if lead is for an aggregator GLS account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAdsHomeservicesLocalservicesV1AggregatorInfo
 	{
 		
@@ -146,8 +144,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for booking lead specific information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAdsHomeservicesLocalservicesV1BookingLead
 	{
 		
@@ -185,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// A Detailed Lead Report of a lead identified by their lead id and contains consumer, account, monetization, and lead data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAdsHomeservicesLocalservicesV1DetailedLeadReport
 	{
 		
@@ -287,46 +283,41 @@ namespace MyNS
 		public GoogleTypeTimeZone Timezone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHARGE_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHARGE_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHARGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHARGED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_CHARGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_CHARGED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEAD_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEAD_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MESSAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_CALL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOKING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOKING = 3,
 	}
 	
 	/// <summary>
 	/// Container for message lead specific information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAdsHomeservicesLocalservicesV1MessageLead
 	{
 		
@@ -358,8 +349,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for phone lead specific information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAdsHomeservicesLocalservicesV1PhoneLead
 	{
 		
@@ -385,8 +375,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeTimeZone
 	{
 		
@@ -406,8 +395,7 @@ namespace MyNS
 	/// <summary>
 	/// A page of the response received from the SearchAccountReports method. A paginated response where more pages are available has `next_page_token` set. This token can be used in a subsequent request to retrieve the next request page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAdsHomeservicesLocalservicesV1SearchAccountReportsResponse
 	{
 		
@@ -427,8 +415,7 @@ namespace MyNS
 	/// <summary>
 	/// A page of the response received from the SearchDetailedLeadReports method. A paginated response where more pages are available has `next_page_token` set. This token can be used in a subsequent request to retrieve the next request page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse
 	{
 		

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Country
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 		public State[] States { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class State
 	{
 		
@@ -65,8 +63,7 @@ namespace MyNS
 		public string StateKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CountrySummary
 	{
 		
@@ -89,8 +86,7 @@ namespace MyNS
 		public string Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -123,8 +119,7 @@ namespace MyNS
 		public string[] Stack { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorField
 	{
 		
@@ -151,8 +146,7 @@ namespace MyNS
 		public string Path { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorLimit
 	{
 		
@@ -293,20 +287,20 @@ namespace MyNS
 	public enum GetCountriesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="key")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		key = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="label")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		label = 1,
 	}
 	
 	public enum GetCountriesOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ascending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ascending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="descending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		descending = 1,
 	}
 }

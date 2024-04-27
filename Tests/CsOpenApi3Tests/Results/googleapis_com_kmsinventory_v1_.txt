@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for KeyDashboardService.ListCryptoKeys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsInventoryV1ListCryptoKeysResponse
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// A CryptoKey represents a logical key that can be used for cryptographic operations. A CryptoKey is made up of zero or more versions, which represent the actual key material used in cryptographic operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsV1CryptoKey
 	{
 		
@@ -116,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// A CryptoKeyVersion represents an individual cryptographic key, and the associated key material. An ENABLED version can be used for cryptographic operations. For security reasons, the raw cryptographic key material represented by a CryptoKeyVersion can never be viewed or exported. It can only be used to encrypt, decrypt, or sign data when an authorized user or application invokes Cloud KMS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsV1CryptoKeyVersion
 	{
 		
@@ -218,123 +215,120 @@ namespace MyNS
 		public System.Nullable<GoogleCloudKmsV1CryptoKeyVersionState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudKmsV1CryptoKeyVersionAlgorithm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SYMMETRIC_ENCRYPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_SYMMETRIC_ENCRYPTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_128_GCM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES_128_GCM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_256_GCM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES_256_GCM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_128_CBC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES_128_CBC = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_256_CBC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES_256_CBC = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_128_CTR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES_128_CTR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_256_CTR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES_256_CTR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PSS_2048_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_PSS_2048_SHA256 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PSS_3072_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_PSS_3072_SHA256 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PSS_4096_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_PSS_4096_SHA256 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PSS_4096_SHA512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_PSS_4096_SHA512 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PKCS1_2048_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_PKCS1_2048_SHA256 = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PKCS1_3072_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_PKCS1_3072_SHA256 = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PKCS1_4096_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_PKCS1_4096_SHA256 = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PKCS1_4096_SHA512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_PKCS1_4096_SHA512 = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_RAW_PKCS1_2048")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_RAW_PKCS1_2048 = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_RAW_PKCS1_3072")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_RAW_PKCS1_3072 = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_RAW_PKCS1_4096")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_SIGN_RAW_PKCS1_4096 = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_2048_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_DECRYPT_OAEP_2048_SHA256 = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_3072_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_DECRYPT_OAEP_3072_SHA256 = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_4096_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_DECRYPT_OAEP_4096_SHA256 = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_4096_SHA512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_DECRYPT_OAEP_4096_SHA512 = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_2048_SHA1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_DECRYPT_OAEP_2048_SHA1 = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_3072_SHA1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_DECRYPT_OAEP_3072_SHA1 = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_4096_SHA1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_DECRYPT_OAEP_4096_SHA1 = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC_SIGN_P256_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC_SIGN_P256_SHA256 = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC_SIGN_P384_SHA384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC_SIGN_P384_SHA384 = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC_SIGN_SECP256K1_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC_SIGN_SECP256K1_SHA256 = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA256 = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA1 = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA384")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA384 = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA512")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA512 = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA224")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA224 = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_SYMMETRIC_ENCRYPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_SYMMETRIC_ENCRYPTION = 34,
 	}
 	
 	/// <summary>
 	/// Contains an HSM-generated attestation about a key operation. For more information, see [Verifying attestations] (https://cloud.google.com/kms/docs/attest-key).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsV1KeyOperationAttestation
 	{
 		
@@ -360,8 +354,7 @@ namespace MyNS
 	/// <summary>
 	/// Certificate chains needed to verify the attestation. Certificates in chains are PEM-encoded and are ordered based on https://tools.ietf.org/html/rfc5246#section-7.4.2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsV1KeyOperationAttestationCertificateChains
 	{
 		
@@ -384,27 +377,24 @@ namespace MyNS
 		public string[] GooglePartitionCerts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudKmsV1KeyOperationAttestationFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTESTATION_FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTESTATION_FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAVIUM_V1_COMPRESSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAVIUM_V1_COMPRESSED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAVIUM_V2_COMPRESSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAVIUM_V2_COMPRESSED = 2,
 	}
 	
 	/// <summary>
 	/// ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsV1ExternalProtectionLevelOptions
 	{
 		
@@ -421,98 +411,91 @@ namespace MyNS
 		public string ExternalKeyUri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudKmsV1CryptoKeyVersionProtectionLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTECTION_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTECTION_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOFTWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOFTWARE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HSM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HSM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_VPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_VPC = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudKmsV1CryptoKeyVersionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRYPTO_KEY_VERSION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRYPTO_KEY_VERSION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_GENERATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_GENERATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTROYED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTROYED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTROY_SCHEDULED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTROY_SCHEDULED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_IMPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_IMPORT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_FAILED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENERATION_FAILED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_EXTERNAL_DESTRUCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_EXTERNAL_DESTRUCTION = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_DESTRUCTION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_DESTRUCTION_FAILED = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudKmsV1CryptoKeyPurpose
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRYPTO_KEY_PURPOSE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRYPTO_KEY_PURPOSE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCRYPT_DECRYPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCRYPT_DECRYPT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASYMMETRIC_SIGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASYMMETRIC_SIGN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASYMMETRIC_DECRYPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASYMMETRIC_DECRYPT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAW_ENCRYPT_DECRYPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAW_ENCRYPT_DECRYPT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC = 5,
 	}
 	
 	/// <summary>
 	/// A CryptoKeyVersionTemplate specifies the properties to use when creating a new CryptoKeyVersion, either manually with CreateCryptoKeyVersion or automatically as a result of auto-rotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsV1CryptoKeyVersionTemplate
 	{
 		
@@ -532,8 +515,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about a resource protected by a Cloud KMS key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsInventoryV1ProtectedResource
 	{
 		
@@ -601,8 +583,7 @@ namespace MyNS
 	/// <summary>
 	/// Aggregate information about the resources protected by a Cloud KMS key in the same Cloud organization as the key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsInventoryV1ProtectedResourcesSummary
 	{
 		
@@ -646,8 +627,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for KeyTrackingService.SearchProtectedResources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudKmsInventoryV1SearchProtectedResourcesResponse
 	{
 		

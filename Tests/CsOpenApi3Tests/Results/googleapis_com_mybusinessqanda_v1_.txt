@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an answer to a question
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Answer
 	{
 		
@@ -65,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the author of a question or answer
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Author
 	{
 		
@@ -89,30 +87,27 @@ namespace MyNS
 		public System.Nullable<AuthorType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHOR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTHOR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGULAR_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGULAR_USER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL_GUIDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL_GUIDE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERCHANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERCHANT = 3,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -120,8 +115,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for QuestionsAndAnswers.ListAnswers
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnswersResponse
 	{
 		
@@ -147,8 +141,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for QuestionsAndAnswers.ListQuestions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQuestionsResponse
 	{
 		
@@ -174,8 +167,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single question and some of its answers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Question
 	{
 		
@@ -231,8 +223,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for QuestionsAndAnswers.UpsertAnswer
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpsertAnswerRequest
 	{
 		

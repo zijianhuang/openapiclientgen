@@ -20,33 +20,30 @@ namespace MyNS
 	/// <summary>
 	/// 'Identifies the action of the MEC host data plane, when a packet matches the trafficFilter.'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Action
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DROP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DROP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORWARD_DECAPSULATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORWARD_DECAPSULATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORWARD_AS_IS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORWARD_AS_IS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSTHROUGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSTHROUGH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUPLICATED_DECAPSULATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DUPLICATED_DECAPSULATED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUPLICATE_AS_IS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DUPLICATE_AS_IS = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppD
 	{
 		
@@ -226,8 +223,7 @@ namespace MyNS
 		public string[] VirtualStorageDescriptor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DNSRuleDescriptor
 	{
 		
@@ -270,21 +266,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> Ttl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DNSRuleDescriptorIpAddressType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_V6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_V6 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_V4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_V4 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppExternalCpd
 	{
 		
@@ -305,8 +298,7 @@ namespace MyNS
 		public string[] VirtualNetworkInterfaceRequirements { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeatureDependency
 	{
 		
@@ -327,8 +319,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatencyDescriptor
 	{
 		
@@ -341,8 +332,7 @@ namespace MyNS
 		public string MaxLatency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceDependency
 	{
 		
@@ -386,8 +376,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransportDependency
 	{
 		
@@ -419,8 +408,7 @@ namespace MyNS
 		public TransportDescriptor Transport { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransportDescriptor
 	{
 		
@@ -459,8 +447,7 @@ namespace MyNS
 	/// <summary>
 	/// 'The ServiceDescriptor data type describes a MEC service produced by a service-providing MEC application.'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceDescriptor
 	{
 		
@@ -496,8 +483,7 @@ namespace MyNS
 	/// <summary>
 	/// 'Indicates transports and serialization formats supported made available to the service-consuming application. Defaults to REST + JSON if absent.'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransportsSupported
 	{
 		
@@ -513,8 +499,7 @@ namespace MyNS
 		public TransportDescriptor Transport { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrafficRuleDescriptor
 	{
 		
@@ -570,8 +555,7 @@ namespace MyNS
 		public string TrafficRuleId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InterfaceDescriptor
 	{
 		
@@ -605,24 +589,21 @@ namespace MyNS
 		public TunnelInfo TunnelInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InterfaceDescriptorInterfaceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUNNEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUNNEL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TunnelInfo
 	{
 		
@@ -654,34 +635,29 @@ namespace MyNS
 		public TunnelInfoTunnelType TunnelType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TunnelInfoTunnelType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="GTP-U")]
 		GTPMinusU = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TrafficRuleDescriptorFilterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PACKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PACKET = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrafficFilter
 	{
 		
@@ -787,65 +763,58 @@ namespace MyNS
 	/// <summary>
 	/// Discriminator for the different notification types
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppPkgNotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPackageOnBoarded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPackageOnBoarded = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPacakgeEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPacakgeEnabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPacakgeDisabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPacakgeDisabled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPackageDeleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPackageDeleted = 3,
 	}
 	
 	/// <summary>
 	/// Operational state of the onboarded application package: Ã¢â‚¬Â¢ENABLED: the application package can be used for instantiation of new application instances. Ã¢â‚¬Â¢DISABLED: the application package cannot be used for further application instantiation requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppPkgOperationalState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// Subscribed notification type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppPkgSubscriptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPackageOnBoarding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPackageOnBoarding = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPacakgeOperationChange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPacakgeOperationChange = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPackageDeletion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPackageDeletion = 2,
 	}
 	
 	/// <summary>
 	/// Additional information of application package artifacts that are not application software images. Type is TBD
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgArtifactInfo
 	{
 	}
@@ -853,8 +822,7 @@ namespace MyNS
 	/// <summary>
 	/// 'The data type AppPkgInfo represents the parameters for an application package resource'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgInfo
 	{
 		
@@ -967,8 +935,7 @@ namespace MyNS
 	/// <summary>
 	/// Links to resources related to this resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgInfolinks
 	{
 		
@@ -994,8 +961,7 @@ namespace MyNS
 		public LinkType Self { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkType
 	{
 		
@@ -1008,8 +974,7 @@ namespace MyNS
 		public string Href { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Checksum
 	{
 		
@@ -1030,43 +995,38 @@ namespace MyNS
 		public string Hash { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppPkgInfoOnboardingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOADING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOADING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppPkgInfoUsageState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_USE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN_USE = 1,
 	}
 	
 	/// <summary>
 	/// 'This data type represents a list of key-value pairs. The order of the pairs in the list is not significant. In JSON, a set of key-value pairs is represented as an object. It shall comply with the provisions defined in clause 4 of IETF RFC 8259'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyValuePairs
 	{
 	}
@@ -1074,8 +1034,7 @@ namespace MyNS
 	/// <summary>
 	/// 'The data type represents the operational state for an application package resource'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgInfoModifications
 	{
 		
@@ -1087,24 +1046,21 @@ namespace MyNS
 		public AppPkgInfoModificationsOperationState OperationState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppPkgInfoModificationsOperationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 1,
 	}
 	
 	/// <summary>
 	/// 'This data type represents an application package management notification for informing the subscribers about onboarding application package resources. The notification is triggered when a new application package is onboarded'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgNotification
 	{
 		
@@ -1174,8 +1130,7 @@ namespace MyNS
 	/// <summary>
 	/// Links to resources related to this resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgNotificationlinks
 	{
 		
@@ -1187,8 +1142,7 @@ namespace MyNS
 		public LinkType Subscription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeStamp
 	{
 		
@@ -1212,8 +1166,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of application software image in application package. Type is TBD
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgSWImageInfo
 	{
 	}
@@ -1221,8 +1174,7 @@ namespace MyNS
 	/// <summary>
 	/// 'The data type represents the input parameters of "subscription operation" to notification of application package management for the onboarding, or operational state change of application package.'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgSubscription
 	{
 		
@@ -1249,8 +1201,7 @@ namespace MyNS
 	/// <summary>
 	/// 'The data type represents a subscription to notification of application package management for the onboarding, or operational state change of application package'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgSubscriptionInfo
 	{
 		
@@ -1290,8 +1241,7 @@ namespace MyNS
 	/// <summary>
 	/// Links to resources related to this resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgSubscriptionInfolinks
 	{
 		
@@ -1306,8 +1256,7 @@ namespace MyNS
 	/// <summary>
 	/// 'The data type represents a subscription link list of notification on application package management'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgSubscriptionLinkList
 	{
 		
@@ -1323,8 +1272,7 @@ namespace MyNS
 	/// <summary>
 	/// Links to resources related to this resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppPkgSubscriptionLinkListlinks
 	{
 		
@@ -1342,8 +1290,7 @@ namespace MyNS
 	/// <summary>
 	/// 'The data type represents the input parameters of "subscription operation" to notification of application package management for the onboarding, or operational state change of application package.'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionsAppPkgSubscription
 	{
 		
@@ -1367,14 +1314,12 @@ namespace MyNS
 	/// <summary>
 	/// See MEC011
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryRef
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAppPkg
 	{
 		
@@ -1425,78 +1370,69 @@ namespace MyNS
 	/// <summary>
 	/// Definition of filter type: per FLOW or PACKET
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PACKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PACKET = 1,
 	}
 	
 	/// <summary>
 	/// Type of interface.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InterfaceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUNNEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUNNEL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP = 2,
 	}
 	
 	/// <summary>
 	/// Specifies the IP address type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IpAddressType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_V6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_V6 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_V4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_V4 = 1,
 	}
 	
 	/// <summary>
 	/// Onboarding state of application package
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OnboardingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOADING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOADING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProblemDetails
 	{
 		
@@ -1534,8 +1470,7 @@ namespace MyNS
 	/// <summary>
 	/// See MEC011
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecurityInfo
 	{
 	}
@@ -1543,51 +1478,45 @@ namespace MyNS
 	/// <summary>
 	/// 'Subscribed notification type'
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubsctiptionTypeAppPkg
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPackageOnBoarding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPackageOnBoarding = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPacakgeOperationChange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPacakgeOperationChange = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppPackageDeletion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppPackageDeletion = 2,
 	}
 	
 	/// <summary>
 	/// Type of tunnel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TunnelType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="GTP-U")]
 		GTPMinusU = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRE = 1,
 	}
 	
 	/// <summary>
 	/// Usage state of the onboarded instance of the application package
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UsageState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_USE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN_USE = 1,
 	}
 	

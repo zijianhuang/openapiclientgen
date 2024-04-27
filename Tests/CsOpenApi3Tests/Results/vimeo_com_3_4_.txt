@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Activity_3_1
 	{
 		
@@ -85,8 +84,7 @@ namespace MyNS
 		public User User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Category
 	{
 		
@@ -175,8 +173,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Picture
 	{
 		
@@ -267,16 +264,14 @@ namespace MyNS
 		public double Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PictureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="caution")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		caution = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
@@ -547,8 +542,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -914,16 +908,14 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelMetadataInteractionsFollowType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="moderator")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		moderator = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscriber")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscriber = 1,
 	}
 	
@@ -965,24 +957,21 @@ namespace MyNS
 		public ChannelPrivacyView View { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelPrivacyView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="anybody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		anybody = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="moderators")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		moderators = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="users")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		users = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1079,8 +1068,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -1217,37 +1205,35 @@ namespace MyNS
 		public UserWebsites[] UserWebsites { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserAccount
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="basic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		basic = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		business = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="live_business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		live_business = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="live_premium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		live_premium = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="live_pro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		live_pro = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plus = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pro = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pro_unlimited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pro_unlimited = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="producer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		producer = 8,
 	}
 	
@@ -2195,25 +2181,21 @@ namespace MyNS
 		public System.Nullable<UserPreferencesVideosPrivacyView> View { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserPreferencesVideosPrivacyComments
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="anybody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		anybody = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contacts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contacts = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nobody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nobody = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserPreferencesVideosPrivacyEmbed
 	{
 		
@@ -2223,35 +2205,33 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="public")]
 		_public = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="whitelist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		whitelist = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserPreferencesVideosPrivacyView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="anybody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		anybody = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contacts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contacts = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disable = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nobody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nobody = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="password")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		password = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unlisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unlisted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="users")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		users = 6,
 	}
 	
@@ -2383,16 +2363,14 @@ namespace MyNS
 		public double Used { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserUpload_quotaSpaceShowing
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lifetime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lifetime = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="periodic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		periodic = 1,
 	}
 	
@@ -2424,8 +2402,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Video
 	{
 		
@@ -2721,9 +2698,7 @@ namespace MyNS
 		public string Resource_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoContextAction
 	{
 		
@@ -2740,8 +2715,7 @@ namespace MyNS
 		Uploaded_by = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Embed_settings
 	{
 		
@@ -2959,29 +2933,25 @@ namespace MyNS
 		public Embed_settingsTitleName Portrait { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Embed_settingsTitleName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hide = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="show")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		show = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoLicense
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="by")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		by = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="by-nc")]
@@ -2999,7 +2969,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="by-sa")]
 		byMinussa = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cc0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cc0 = 6,
 	}
 	
@@ -3619,22 +3589,20 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoMetadataInteractionsBuyDownload
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="available")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		available = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purchased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purchased = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="restricted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		restricted = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unavailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unavailable = 3,
 	}
 	
@@ -3905,8 +3873,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Project
 	{
 		
@@ -4084,9 +4051,7 @@ namespace MyNS
 		public UserPreferencesVideosPrivacyView View { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoPrivacyEmbed
 	{
 		
@@ -4175,38 +4140,34 @@ namespace MyNS
 		public System.Nullable<System.Double> Yaw { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoSpatialProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cubical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cubical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cylindrical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cylindrical = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dome")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dome = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="equirectangular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		equirectangular = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pyramid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pyramid = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoSpatialStereo_format
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="left-right")]
 		leftMinusright = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mono")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mono = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="top-bottom")]
@@ -4225,37 +4186,35 @@ namespace MyNS
 		public System.Nullable<System.Double> Plays { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="available")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		available = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="quota_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		quota_exceeded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total_cap_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total_cap_exceeded = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transcode_starting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transcode_starting = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transcoding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transcoding = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transcoding_error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transcoding_error = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unavailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unavailable = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uploading")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uploading = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uploading_error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uploading_error = 8,
 	}
 	
@@ -4269,19 +4228,17 @@ namespace MyNS
 		public System.Nullable<VideoTranscodeStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoTranscodeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complete = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="in_progress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		in_progress = 2,
 	}
 	
@@ -4345,27 +4302,24 @@ namespace MyNS
 		public string Upload_link { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoUploadApproach
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="post")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		post = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pull")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pull = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="streaming")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		streaming = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tus = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group
 	{
 		
@@ -4613,16 +4567,14 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupMetadataInteractionsJoinType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="member")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		member = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="moderator")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		moderator = 1,
 	}
 	
@@ -4695,29 +4647,25 @@ namespace MyNS
 		public GroupPrivacyJoin View { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupPrivacyComment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="members")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		members = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupPrivacyJoin
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="anybody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		anybody = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="members")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		members = 1,
 	}
 	
@@ -4765,48 +4713,45 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Activity_3_1Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appearance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appearance = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="category")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		category = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="channel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		channel = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="facebook_feed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		facebook_feed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="like")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		like = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ondemand")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ondemand = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="share")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		share = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tag = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="twitter_timeline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		twitter_timeline = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="upload")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		upload = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Album
 	{
 		
@@ -5071,16 +5016,14 @@ namespace MyNS
 		public string Html { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlbumLayout
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="grid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		grid = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="player")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		player = 1,
 	}
 	
@@ -5256,71 +5199,64 @@ namespace MyNS
 		public AlbumPrivacyView View { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlbumPrivacyView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="anybody")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		anybody = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="embed_only")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		embed_only = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="password")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		password = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlbumSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="added_first")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		added_first = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="added_last")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		added_last = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="arranged")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		arranged = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldest = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlbumTheme
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dark")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dark = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		standard = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Api_app
 	{
 		
@@ -5341,8 +5277,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Auth
 	{
 		
@@ -5401,18 +5336,15 @@ namespace MyNS
 		public User User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthToken_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bearer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bearer = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Auth_error
 	{
 		
@@ -5433,8 +5365,7 @@ namespace MyNS
 		public string Error_description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Comment
 	{
 		
@@ -5549,18 +5480,15 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="video")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		video = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Content_rating
 	{
 		
@@ -5598,33 +5526,30 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Content_ratingCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="drugs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		drugs = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="language")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		language = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nudity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nudity = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="safe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		safe = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unrated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unrated = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="violence")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		violence = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Creative_commons
 	{
 		
@@ -5663,13 +5588,11 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Creative_commonsCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="by")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		by = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="by-nc")]
@@ -5687,12 +5610,11 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="by-sa")]
 		byMinussa = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cc0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cc0 = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Credit
 	{
 		
@@ -5733,8 +5655,7 @@ namespace MyNS
 		public Video Video { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Domain
 	{
 		
@@ -5763,8 +5684,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Endpoint
 	{
 		
@@ -5785,8 +5705,7 @@ namespace MyNS
 		public string Path { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -5823,8 +5742,7 @@ namespace MyNS
 		public string Link { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Language
 	{
 		
@@ -5845,8 +5763,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Legacy_error
 	{
 		
@@ -5859,8 +5776,7 @@ namespace MyNS
 		public string Error { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class On_demand_genre
 	{
 		
@@ -5995,8 +5911,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class On_demand_page
 	{
 		
@@ -6307,9 +6222,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum On_demand_pageEpisodesRentPeriod
 	{
 		
@@ -6642,8 +6555,7 @@ namespace MyNS
 		public double Viewable_total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Purchase_interaction
 	{
 		
@@ -6813,21 +6725,18 @@ namespace MyNS
 		public string Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum On_demand_pageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="film")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		film = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="series")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		series = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class On_demand_promotion
 	{
 		
@@ -6957,32 +6866,28 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum On_demand_promotionAccess_type
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vip = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum On_demand_promotionDiscount_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dollars")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dollars = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="free")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		free = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="percent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		percent = 2,
 	}
 	
@@ -7038,34 +6943,30 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum On_demand_promotionProduct_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		any = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="buy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		buy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="buy_episode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		buy_episode = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rent = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rent_episode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rent_episode = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscribe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscribe = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum On_demand_promotionStream_period
 	{
 		
@@ -7094,24 +6995,21 @@ namespace MyNS
 		_72_hour = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum On_demand_promotionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="batch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		batch = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="batch_prefix")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		batch_prefix = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="single")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		single = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class On_demand_promotion_code
 	{
 		
@@ -7148,8 +7046,7 @@ namespace MyNS
 		public double Uses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class On_demand_region
 	{
 		
@@ -7178,8 +7075,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class On_demand_season
 	{
 		
@@ -7298,8 +7194,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class On_demand_video
 	{
 		
@@ -7662,24 +7557,21 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Purchased { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum On_demand_videoType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="extra")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		extra = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="main")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		main = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trailer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trailer = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Play
 	{
 		
@@ -7794,13 +7686,11 @@ namespace MyNS
 		public System.Nullable<System.Double> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayProgressiveType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="source")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		source = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="video/mp4")]
@@ -7813,27 +7703,24 @@ namespace MyNS
 		vp6_xMinusvideo = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="playable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		playable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purchase_required")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purchase_required = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="restricted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		restricted = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unavailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unavailable = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Portfolio
 	{
 		
@@ -7961,27 +7848,24 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PortfolioSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clips")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clips = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recent = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Presets
 	{
 		
@@ -8235,30 +8119,27 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PresetsSettingsOutroType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="link")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		link = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="no idea")]
 		no_idea = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uploaded_clips")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uploaded_clips = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uploaded_videos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uploaded_videos = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Text_track
 	{
 		
@@ -8341,21 +8222,18 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Text_trackType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="captions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		captions = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subtitles")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subtitles = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Upload_attempt
 	{
 		
@@ -8410,8 +8288,7 @@ namespace MyNS
 		public User User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Video_versions
 	{
 		
@@ -16955,116 +16832,116 @@ namespace MyNS
 	public enum Get_categoriesDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 	
 	public enum Get_categoriesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_video_featured_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_video_featured_time = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 1,
 	}
 	
 	public enum Get_category_channelsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="followers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		followers = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videos = 3,
 	}
 	
 	public enum Get_category_groupsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="members")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		members = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videos = 3,
 	}
 	
 	public enum Get_category_videosFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="conditional_featured")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		conditional_featured = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="embeddable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		embeddable = 1,
 	}
 	
 	public enum Get_category_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="featured")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		featured = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevant = 7,
 	}
 	
 	public enum Get_channelsFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="featured")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		featured = 0,
 	}
 	
 	public enum Get_channelsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="followers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		followers = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevant = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videos = 4,
 	}
 	
@@ -17083,10 +16960,10 @@ namespace MyNS
 	public enum Get_channel_moderatorsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 1,
 	}
 	
@@ -17117,48 +16994,48 @@ namespace MyNS
 	public enum Get_channel_subscribersFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="moderators")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		moderators = 0,
 	}
 	
 	public enum Get_channel_videosFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="embeddable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		embeddable = 0,
 	}
 	
 	public enum Get_channel_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		added = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_time = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 9,
 	}
 	
@@ -17177,76 +17054,76 @@ namespace MyNS
 	public enum Get_group_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 5,
 	}
 	
 	public enum Get_languagesFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="texttracks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		texttracks = 0,
 	}
 	
 	public enum Get_albums_alt1Sort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videos = 3,
 	}
 	
 	public enum Get_album_videos_alt1Sort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_time = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 8,
 	}
 	
@@ -17275,67 +17152,67 @@ namespace MyNS
 	public enum Get_category_subscriptions_alt1Sort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 2,
 	}
 	
 	public enum Get_channel_subscriptions_alt1Filter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="moderated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		moderated = 0,
 	}
 	
 	public enum Get_feed_alt1Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appears")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appears = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="category_featured")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		category_featured = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="channel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		channel = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="facebook_feed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		facebook_feed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="following")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		following = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ondemand_publish")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ondemand_publish = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="share")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		share = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagged_with")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tagged_with = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="twitter_timeline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		twitter_timeline = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uploads")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uploads = 11,
 	}
 	
 	public enum Get_user_following_alt1Filter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="online")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		online = 0,
 	}
 	
@@ -17354,25 +17231,25 @@ namespace MyNS
 	public enum Get_user_vods_alt1Sort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		added = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_time = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="publish.time")]
 		publish_time = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rating = 6,
 	}
 	
@@ -17457,46 +17334,44 @@ namespace MyNS
 		public On_demand_pageType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_vod_alt1PostBodyAccepted_currencies
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DKK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DKK = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EUR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GBP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GBP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JPY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KRW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KRW = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOK = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLN = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEK = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USD = 11,
 	}
 	
@@ -17653,9 +17528,7 @@ namespace MyNS
 		public Create_vod_alt1PostBodyEpisodesRentPrice Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_vod_alt1PostBodyEpisodesRentPeriod
 	{
 		
@@ -17713,9 +17586,7 @@ namespace MyNS
 		public Create_vod_alt1PostBodyRentPrice Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_vod_alt1PostBodyRentPeriod
 	{
 		
@@ -17853,100 +17724,100 @@ namespace MyNS
 	public enum Get_vod_purchasesFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expiring_soon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expiring_soon = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="film")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		film = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="important")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		important = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purchased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purchased = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rented")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rented = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="series")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		series = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscription = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unwatched")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unwatched = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="watched")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		watched = 9,
 	}
 	
 	public enum Get_vod_purchasesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		added = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purchase_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purchase_time = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rating = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="release_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		release_date = 6,
 	}
 	
 	public enum Get_portfolio_videos_alt1Sort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 6,
 	}
 	
 	public enum Get_projects_alt1Sort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_time = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 3,
 	}
 	
@@ -17977,256 +17848,256 @@ namespace MyNS
 	public enum Get_project_videos_alt1Sort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_user_action_event_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_user_action_event_date = 4,
 	}
 	
 	public enum Get_videos_alt1Filter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="app_only")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		app_only = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="embeddable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		embeddable = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="featured")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		featured = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="playable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		playable = 3,
 	}
 	
 	public enum Get_videos_alt1Sort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_user_action_event_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_user_action_event_date = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_time = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 8,
 	}
 	
 	public enum Get_genre_vodsFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="my_region")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		my_region = 1,
 	}
 	
 	public enum Get_genre_vodsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="publish.time")]
 		publish_time = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videos = 4,
 	}
 	
 	public enum Get_vod_promotionsFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="batch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		batch = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="single")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		single = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vip = 3,
 	}
 	
 	public enum Get_vod_seasonsFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="viewable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		viewable = 0,
 	}
 	
 	public enum Get_vod_seasonsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 1,
 	}
 	
 	public enum Get_vod_season_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purchase_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purchase_time = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="release_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		release_date = 5,
 	}
 	
 	public enum Get_vod_videosFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="buy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		buy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expiring_soon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expiring_soon = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="extra")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		extra = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="main")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		main = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="main.viewable")]
 		main_viewable = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rent = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trailer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trailer = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unwatched")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unwatched = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="viewable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		viewable = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="watched")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		watched = 10,
 	}
 	
 	public enum Get_vod_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="episode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		episode = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purchase_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purchase_time = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="release_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		release_date = 6,
 	}
 	
 	public enum Get_videos_with_tagSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created_time = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 2,
 	}
 	
 	public enum Get_album_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_time = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 8,
 	}
 	
@@ -18267,25 +18138,25 @@ namespace MyNS
 	public enum Get_user_vodsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		added = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_time = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="publish.time")]
 		publish_time = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rating = 6,
 	}
 	
@@ -18523,9 +18394,7 @@ namespace MyNS
 		public Create_vodPostBodyEpisodesRentPrice Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_vodPostBodyEpisodesRentPeriod
 	{
 		
@@ -18583,9 +18452,7 @@ namespace MyNS
 		public Create_vodPostBodyRentPrice Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Create_vodPostBodyRentPeriod
 	{
 		
@@ -18723,41 +18590,41 @@ namespace MyNS
 	public enum Get_portfolio_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="manual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		manual = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 6,
 	}
 	
 	public enum Get_projectsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_time = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 3,
 	}
 	
@@ -18788,57 +18655,57 @@ namespace MyNS
 	public enum Get_project_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_user_action_event_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_user_action_event_date = 4,
 	}
 	
 	public enum Get_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="default")]
 		_default = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_user_action_event_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_user_action_event_date = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_time")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_time = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 8,
 	}
 	
 	public enum Search_videosFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CC = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="CC-BY")]
@@ -18859,57 +18726,57 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="CC-BY-SA")]
 		CCMinusBYMinusSA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CC0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CC0 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="categories")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		categories = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minimum_likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minimum_likes = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trending = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="upload_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		upload_date = 13,
 	}
 	
 	public enum Search_videosSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comments = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="likes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		likes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plays = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevant = 6,
 	}
 	
 	public enum Get_related_videosFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="related")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		related = 0,
 	}
 }

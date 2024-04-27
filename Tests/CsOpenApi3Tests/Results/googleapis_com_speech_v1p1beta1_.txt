@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ABNFGrammar
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// An item of the class.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClassItem
 	{
 		
@@ -47,8 +45,7 @@ namespace MyNS
 	/// <summary>
 	/// Message sent by the client for the `CreateCustomClass` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomClassRequest
 	{
 		
@@ -68,8 +65,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of words or phrases that represents a common concept likely to appear in your audio, for example a list of passenger ship names. CustomClass items can be substituted into placeholders that you set in PhraseSet phrases.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomClass
 	{
 		
@@ -152,27 +148,24 @@ namespace MyNS
 		public string Uid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomClassState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 2,
 	}
 	
 	/// <summary>
 	/// Message sent by the client for the `CreatePhraseSet` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePhraseSetRequest
 	{
 		
@@ -192,8 +185,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides "hints" to the speech recognizer to favor specific words and phrases in the results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhraseSet
 	{
 		
@@ -279,8 +271,7 @@ namespace MyNS
 	/// <summary>
 	/// A phrases containing words and phrase "hints" so that the speech recognition is more likely to recognize them. This can be used to improve the accuracy for specific words and phrases, for example, if specific commands are typically spoken by the user. This can also be used to add additional words to the vocabulary of the recognizer. See [usage limits](https://cloud.google.com/speech-to-text/quotas#content). List items can also include pre-built or custom classes containing groups of words that represent common concepts that occur in natural language. For example, rather than providing a phrase hint for every month of the year (e.g. "i was born in january", "i was born in febuary", ...), use the pre-built `$MONTH` class improves the likelihood of correctly transcribing audio that includes months (e.g. "i was born in $month"). To refer to pre-built classes, use the class' symbol prepended with `$` e.g. `$MONTH`. To refer to custom classes that were defined inline in the request, set the class's `custom_class_id` to a string unique to all class resources and inline classes. Then use the class' id wrapped in $`{...}` e.g. "${my-months}". To refer to custom classes resources, use the class' id wrapped in `${}` (e.g. `${my-months}`). Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu` (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global` location. To specify a region, use a [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or `eu` location value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Phrase
 	{
 		
@@ -300,8 +291,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -309,8 +299,7 @@ namespace MyNS
 	/// <summary>
 	/// A single replacement configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entry
 	{
 		
@@ -336,8 +325,7 @@ namespace MyNS
 	/// <summary>
 	/// Message returned to the client by the `ListCustomClasses` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomClassesResponse
 	{
 		
@@ -357,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -378,8 +365,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -417,8 +403,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -444,8 +429,7 @@ namespace MyNS
 	/// <summary>
 	/// Message returned to the client by the `ListPhraseSet` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPhraseSetResponse
 	{
 		
@@ -465,8 +449,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the progress of a long-running `LongRunningRecognize` call. It is included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LongRunningRecognizeMetadata
 	{
 		
@@ -504,8 +487,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an optional destination for the recognition results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranscriptOutputConfig
 	{
 		
@@ -519,8 +501,7 @@ namespace MyNS
 	/// <summary>
 	/// The top-level message sent by the client for the `LongRunningRecognize` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LongRunningRecognizeRequest
 	{
 		
@@ -546,8 +527,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains audio data in the encoding specified in the `RecognitionConfig`. Either `content` or `uri` must be supplied. Supplying both or neither returns google.rpc.Code.INVALID_ARGUMENT. See [content limits](https://cloud.google.com/speech-to-text/quotas#content).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognitionAudio
 	{
 		
@@ -567,8 +547,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information to the recognizer that specifies how to process the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognitionConfig
 	{
 		
@@ -708,8 +687,7 @@ namespace MyNS
 	/// <summary>
 	/// Speech adaptation configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpeechAdaptation
 	{
 		
@@ -738,8 +716,7 @@ namespace MyNS
 	/// <summary>
 	/// Config to enable speaker diarization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpeakerDiarizationConfig
 	{
 		
@@ -768,48 +745,45 @@ namespace MyNS
 		public System.Nullable<System.Int32> SpeakerTag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecognitionConfigEncoding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCODING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCODING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINEAR16")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINEAR16 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLAC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULAW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULAW = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMR_WB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMR_WB = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OGG_OPUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OGG_OPUS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPEEX_WITH_HEADER_BYTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPEEX_WITH_HEADER_BYTE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MP3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MP3 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEBM_OPUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEBM_OPUS = 9,
 	}
 	
 	/// <summary>
 	/// Description of audio data to be recognized.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognitionMetadata
 	{
 		
@@ -868,108 +842,99 @@ namespace MyNS
 		public System.Nullable<RecognitionMetadataRecordingDeviceType> RecordingDeviceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecognitionMetadataInteractionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERACTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERACTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCUSSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCUSSION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRESENTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRESENTATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_CALL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICEMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOICEMAIL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFESSIONALLY_PRODUCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFESSIONALLY_PRODUCED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOICE_SEARCH = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE_COMMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOICE_COMMAND = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DICTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DICTATION = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecognitionMetadataMicrophoneDistance
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICROPHONE_DISTANCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICROPHONE_DISTANCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEARFIELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEARFIELD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIDFIELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIDFIELD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FARFIELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FARFIELD = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecognitionMetadataOriginalMediaType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORIGINAL_MEDIA_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORIGINAL_MEDIA_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecognitionMetadataRecordingDeviceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECORDING_DEVICE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECORDING_DEVICE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMARTPHONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMARTPHONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_LINE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VEHICLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VEHICLE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_OUTDOOR_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_OUTDOOR_DEVICE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_INDOOR_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_INDOOR_DEVICE = 6,
 	}
 	
 	/// <summary>
 	/// Provides "hints" to the speech recognizer to favor specific words and phrases in the results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpeechContext
 	{
 		
@@ -989,8 +954,7 @@ namespace MyNS
 	/// <summary>
 	/// Transcription normalization configuration. Use transcription normalization to automatically replace parts of the transcript with phrases of your choosing. For StreamingRecognize, this normalization only applies to stable partial transcripts (stability > 0.8) and final transcripts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranscriptNormalization
 	{
 		
@@ -1004,8 +968,7 @@ namespace MyNS
 	/// <summary>
 	/// The only message returned to the client by the `LongRunningRecognize` method. It contains the result as zero or more sequential `SpeechRecognitionResult` messages. It is included in the `result.response` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LongRunningRecognizeResponse
 	{
 		
@@ -1049,8 +1012,7 @@ namespace MyNS
 	/// <summary>
 	/// A speech recognition result corresponding to a portion of the audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpeechRecognitionResult
 	{
 		
@@ -1082,8 +1044,7 @@ namespace MyNS
 	/// <summary>
 	/// Alternative hypotheses (a.k.a. n-best list).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpeechRecognitionAlternative
 	{
 		
@@ -1109,8 +1070,7 @@ namespace MyNS
 	/// <summary>
 	/// Word-specific information for recognized words.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WordInfo
 	{
 		
@@ -1154,8 +1114,7 @@ namespace MyNS
 	/// <summary>
 	/// Information on speech adaptation use in results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpeechAdaptationInfo
 	{
 		
@@ -1175,8 +1134,7 @@ namespace MyNS
 	/// <summary>
 	/// The top-level message sent by the client for the `Recognize` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognizeRequest
 	{
 		
@@ -1196,8 +1154,7 @@ namespace MyNS
 	/// <summary>
 	/// The only message returned to the client by the `Recognize` method. It contains the result as zero or more sequential `SpeechRecognitionResult` messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognizeResponse
 	{
 		

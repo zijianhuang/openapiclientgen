@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of the auto-labeling documents operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadata
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// The common metadata for long running operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
 	{
 		
@@ -83,36 +81,33 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiUiv1beta3CommonOperationMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 5,
 	}
 	
 	/// <summary>
 	/// The status of individual documents in the auto-labeling process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadataIndividualAutoLabelStatus
 	{
 		
@@ -132,8 +127,7 @@ namespace MyNS
 	/// <summary>
 	/// Document Identifier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DocumentId
 	{
 		
@@ -159,8 +153,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies a document uniquely within the scope of a dataset in the user-managed Cloud Storage option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DocumentIdGCSManagedDocumentId
 	{
 		
@@ -180,8 +173,7 @@ namespace MyNS
 	/// <summary>
 	/// The revision reference specifies which revision on the document to read.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3RevisionRef
 	{
 		
@@ -204,30 +196,27 @@ namespace MyNS
 		public string RevisionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiUiv1beta3RevisionRefRevisionCase
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVISION_CASE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVISION_CASE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATEST_HUMAN_REVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATEST_HUMAN_REVIEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATEST_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATEST_TIMESTAMP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASE_OCR_REVISION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASE_OCR_REVISION = 3,
 	}
 	
 	/// <summary>
 	/// Identifies a document uniquely within the scope of a dataset in unmanaged option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DocumentIdUnmanagedDocumentId
 	{
 		
@@ -241,8 +230,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -268,14 +256,12 @@ namespace MyNS
 	/// <summary>
 	/// The response proto of AutoLabelDocuments method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadata
 	{
 		
@@ -307,8 +293,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of each individual document in the batch delete process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus
 	{
 		
@@ -328,14 +313,12 @@ namespace MyNS
 	/// <summary>
 	/// Response of the delete documents operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadata
 	{
 		
@@ -364,30 +347,27 @@ namespace MyNS
 		public GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataIndividualBatchMoveStatus[] IndividualBatchMoveStatuses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataDestDatasetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATASET_SPLIT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATASET_SPLIT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATASET_SPLIT_TRAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATASET_SPLIT_TRAIN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATASET_SPLIT_TEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATASET_SPLIT_TEST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATASET_SPLIT_UNASSIGNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATASET_SPLIT_UNASSIGNED = 3,
 	}
 	
 	/// <summary>
 	/// The status of each individual document in the batch move process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataIndividualBatchMoveStatus
 	{
 		
@@ -407,14 +387,12 @@ namespace MyNS
 	/// <summary>
 	/// Response of the batch move documents operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3BatchUpdateDocumentsMetadata
 	{
 		
@@ -434,8 +412,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of each individual document in the batch update process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3BatchUpdateDocumentsMetadataIndividualBatchUpdateStatus
 	{
 		
@@ -455,8 +432,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the batch update documents operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3BatchUpdateDocumentsResponse
 	{
 	}
@@ -464,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the CreateLabelerPool method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3CreateLabelerPoolOperationMetadata
 	{
 		
@@ -479,8 +454,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for DeleteLabelerPool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DeleteLabelerPoolOperationMetadata
 	{
 		
@@ -494,8 +468,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DeleteProcessor method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DeleteProcessorMetadata
 	{
 		
@@ -509,8 +482,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DeleteProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DeleteProcessorVersionMetadata
 	{
 		
@@ -524,8 +496,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DeployProcessorVersionMetadata
 	{
 		
@@ -539,8 +510,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the DeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DeployProcessorVersionResponse
 	{
 	}
@@ -548,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DisableProcessor method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DisableProcessorMetadata
 	{
 		
@@ -563,8 +532,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the DisableProcessor method. Intentionally empty proto for adding fields in future.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3DisableProcessorResponse
 	{
 	}
@@ -572,8 +540,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the EnableProcessor method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3EnableProcessorMetadata
 	{
 		
@@ -587,8 +554,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the EnableProcessor method. Intentionally empty proto for adding fields in future.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3EnableProcessorResponse
 	{
 	}
@@ -596,8 +562,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of the EvaluateProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3EvaluateProcessorVersionMetadata
 	{
 		
@@ -611,8 +576,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the EvaluateProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3EvaluateProcessorVersionResponse
 	{
 		
@@ -626,8 +590,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of the batch export documents operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadata
 	{
 		
@@ -653,8 +616,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of each individual document in the export process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatus
 	{
 		
@@ -680,8 +642,7 @@ namespace MyNS
 	/// <summary>
 	/// The statistic representing a dataset split type for this export.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataSplitExportStat
 	{
 		
@@ -701,8 +662,7 @@ namespace MyNS
 	/// <summary>
 	/// The response proto of ExportDocuments method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ExportDocumentsResponse
 	{
 	}
@@ -710,8 +670,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata message associated with the ExportProcessorVersion operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ExportProcessorVersionMetadata
 	{
 		
@@ -725,8 +684,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message associated with the ExportProcessorVersion operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ExportProcessorVersionResponse
 	{
 		
@@ -740,8 +698,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of the import document operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadata
 	{
 		
@@ -773,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// The validation status of each import config. Status is set to an error if there are no documents to import in the `import_config`, or `OK` if the operation will try to proceed with at least one document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataImportConfigValidationResult
 	{
 		
@@ -794,8 +750,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of each individual document in the import process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus
 	{
 		
@@ -827,8 +782,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the import document operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ImportDocumentsResponse
 	{
 	}
@@ -836,8 +790,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the ImportProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ImportProcessorVersionMetadata
 	{
 		
@@ -851,8 +804,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for the ImportProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ImportProcessorVersionResponse
 	{
 		
@@ -866,8 +818,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata proto of `ResyncDataset` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadata
 	{
 		
@@ -893,8 +844,7 @@ namespace MyNS
 	/// <summary>
 	/// Resync status against inconsistency types on the dataset level.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus
 	{
 		
@@ -911,24 +861,21 @@ namespace MyNS
 		public GoogleRpcStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATASET_INCONSISTENCY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATASET_INCONSISTENCY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATASET_INCONSISTENCY_TYPE_NO_STORAGE_MARKER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATASET_INCONSISTENCY_TYPE_NO_STORAGE_MARKER = 1,
 	}
 	
 	/// <summary>
 	/// Resync status for each document per inconsistency type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus
 	{
 		
@@ -951,30 +898,27 @@ namespace MyNS
 		public GoogleRpcStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE = 3,
 	}
 	
 	/// <summary>
 	/// The response proto of ResyncDataset method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3ResyncDatasetResponse
 	{
 	}
@@ -982,8 +926,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of the sample documents operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3SampleDocumentsMetadata
 	{
 		
@@ -997,8 +940,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the sample documents operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3SampleDocumentsResponse
 	{
 		
@@ -1021,8 +963,7 @@ namespace MyNS
 		public GoogleCloudDocumentaiUiv1beta3SampleDocumentsResponseSelectedDocument[] SelectedDocuments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3SampleDocumentsResponseSelectedDocument
 	{
 		
@@ -1036,8 +977,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the SetDefaultProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3SetDefaultProcessorVersionMetadata
 	{
 		
@@ -1051,8 +991,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the SetDefaultProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3SetDefaultProcessorVersionResponse
 	{
 	}
@@ -1060,8 +999,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata that represents a processor version being created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadata
 	{
 		
@@ -1087,8 +1025,7 @@ namespace MyNS
 	/// <summary>
 	/// The dataset validation information. This includes any and all errors with documents and the dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation
 	{
 		
@@ -1120,8 +1057,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for TrainProcessorVersion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionResponse
 	{
 		
@@ -1135,8 +1071,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the UndeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3UndeployProcessorVersionMetadata
 	{
 		
@@ -1150,14 +1085,12 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the UndeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3UndeployProcessorVersionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3UpdateDatasetOperationMetadata
 	{
 		
@@ -1171,8 +1104,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for updating the human review configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3UpdateHumanReviewConfigMetadata
 	{
 		
@@ -1186,8 +1118,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for UpdateLabelerPool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiUiv1beta3UpdateLabelerPoolOperationMetadata
 	{
 		
@@ -1201,8 +1132,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for BatchProcessDocuments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1BatchProcessMetadata
 	{
 		
@@ -1240,8 +1170,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of a each individual document in the batch process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1BatchProcessMetadataIndividualProcessStatus
 	{
 		
@@ -1273,8 +1202,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of human review on a processed document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1HumanReviewStatus
 	{
 		
@@ -1297,61 +1225,56 @@ namespace MyNS
 		public string StateMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiV1HumanReviewStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIPPED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_PASSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_PASSED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiV1BatchProcessMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAITING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAITING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 6,
 	}
 	
 	/// <summary>
 	/// Response message for BatchProcessDocuments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1BatchProcessResponse
 	{
 	}
@@ -1359,8 +1282,7 @@ namespace MyNS
 	/// <summary>
 	/// The common metadata for long running operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1CommonOperationMetadata
 	{
 		
@@ -1398,8 +1320,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DeleteProcessor method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1DeleteProcessorMetadata
 	{
 		
@@ -1413,8 +1334,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DeleteProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1DeleteProcessorVersionMetadata
 	{
 		
@@ -1428,8 +1348,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1DeployProcessorVersionMetadata
 	{
 		
@@ -1443,8 +1362,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the DeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1DeployProcessorVersionResponse
 	{
 	}
@@ -1452,8 +1370,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DisableProcessor method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1DisableProcessorMetadata
 	{
 		
@@ -1467,8 +1384,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the DisableProcessor method. Intentionally empty proto for adding fields in future.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1DisableProcessorResponse
 	{
 	}
@@ -1476,8 +1392,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the EnableProcessor method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1EnableProcessorMetadata
 	{
 		
@@ -1491,8 +1406,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the EnableProcessor method. Intentionally empty proto for adding fields in future.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1EnableProcessorResponse
 	{
 	}
@@ -1500,8 +1414,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of the EvaluateProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1EvaluateProcessorVersionMetadata
 	{
 		
@@ -1515,8 +1428,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the EvaluateProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1EvaluateProcessorVersionResponse
 	{
 		
@@ -1530,8 +1442,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the ReviewDocument method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1ReviewDocumentOperationMetadata
 	{
 		
@@ -1551,8 +1462,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the ReviewDocument method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1ReviewDocumentResponse
 	{
 		
@@ -1575,27 +1485,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDocumentaiV1ReviewDocumentResponseState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiV1ReviewDocumentResponseState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 2,
 	}
 	
 	/// <summary>
 	/// The long-running operation metadata for the SetDefaultProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1SetDefaultProcessorVersionMetadata
 	{
 		
@@ -1609,8 +1516,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the SetDefaultProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1SetDefaultProcessorVersionResponse
 	{
 	}
@@ -1618,8 +1524,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata that represents a processor version being created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1TrainProcessorVersionMetadata
 	{
 		
@@ -1645,8 +1550,7 @@ namespace MyNS
 	/// <summary>
 	/// The dataset validation information. This includes any and all errors with documents and the dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1TrainProcessorVersionMetadataDatasetValidation
 	{
 		
@@ -1678,8 +1582,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for TrainProcessorVersion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1TrainProcessorVersionResponse
 	{
 		
@@ -1693,8 +1596,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the UndeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1UndeployProcessorVersionMetadata
 	{
 		
@@ -1708,8 +1610,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the UndeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1UndeployProcessorVersionResponse
 	{
 	}
@@ -1717,8 +1618,7 @@ namespace MyNS
 	/// <summary>
 	/// Encodes the detailed information of a barcode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1Barcode
 	{
 		
@@ -1744,8 +1644,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an batch document processing request. This is returned in the LRO Operation after the operation is complete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1BatchProcessDocumentsResponse
 	{
 		
@@ -1759,8 +1658,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a single document processing request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1ProcessDocumentResponse
 	{
 		
@@ -1780,8 +1678,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired input location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1InputConfig
 	{
 		
@@ -1801,8 +1698,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the input file will be read from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1GcsSource
 	{
 		
@@ -1813,8 +1709,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired output location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1OutputConfig
 	{
 		
@@ -1834,8 +1729,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the output file will be written to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1GcsDestination
 	{
 		
@@ -1846,8 +1740,7 @@ namespace MyNS
 	/// <summary>
 	/// A bounding polygon for the detected image annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1BoundingPoly
 	{
 		
@@ -1867,8 +1760,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1NormalizedVertex
 	{
 		
@@ -1888,8 +1780,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1Vertex
 	{
 		
@@ -1909,8 +1800,7 @@ namespace MyNS
 	/// <summary>
 	/// Document represents the canonical document resource in Document AI. It is an interchange format that provides insights into documents and allows for collaboration between users and Document AI to iterate and optimize for quality.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1Document
 	{
 		
@@ -1990,8 +1880,7 @@ namespace MyNS
 	/// <summary>
 	/// An entity that could be a phrase in the text or a property that belongs to the document. It is a known entity type, such as a person, an organization, or location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentEntity
 	{
 		
@@ -2065,8 +1954,7 @@ namespace MyNS
 	/// <summary>
 	/// Parsed and normalized entity value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentEntityNormalizedValue
 	{
 		
@@ -2122,8 +2010,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypePostalAddress
 	{
 		
@@ -2197,8 +2084,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDate
 	{
 		
@@ -2224,8 +2110,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDateTime
 	{
 		
@@ -2287,8 +2172,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeTimeZone
 	{
 		
@@ -2308,8 +2192,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an amount of money with its currency type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeMoney
 	{
 		
@@ -2335,8 +2218,7 @@ namespace MyNS
 	/// <summary>
 	/// Referencing the visual context of the entity in the Document.pages. Page anchors can be cross-page, consist of multiple bounding polygons and optionally reference specific layout element types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageAnchor
 	{
 		
@@ -2350,8 +2232,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a weak reference to a page element within a document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageAnchorPageRef
 	{
 		
@@ -2386,42 +2267,39 @@ namespace MyNS
 		public string Page { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiV1beta1DocumentPageAnchorPageRefLayoutType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAYOUT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAYOUT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARAGRAPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARAGRAPH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOKEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOKEN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VISUAL_ELEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VISUAL_ELEMENT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORM_FIELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORM_FIELD = 7,
 	}
 	
 	/// <summary>
 	/// Structure to identify provenance relationships between annotations in different revisions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentProvenance
 	{
 		
@@ -2453,8 +2331,7 @@ namespace MyNS
 	/// <summary>
 	/// The parent element the current element is based on. Used for referencing/aligning, removal and replacement operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentProvenanceParent
 	{
 		
@@ -2477,42 +2354,39 @@ namespace MyNS
 		public System.Nullable<System.Int32> Revision { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiV1beta1DocumentProvenanceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLACE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVAL_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVAL_REQUESTED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVAL_APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVAL_APPROVED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVAL_SKIPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVAL_SKIPPED = 7,
 	}
 	
 	/// <summary>
 	/// Text reference indexing into the Document.text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentTextAnchor
 	{
 		
@@ -2532,8 +2406,7 @@ namespace MyNS
 	/// <summary>
 	/// A text segment in the Document.text. The indices may be out of bounds which indicate that the text extends into another document shard for large sharded documents. See ShardInfo.text_offset
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentTextAnchorTextSegment
 	{
 		
@@ -2553,8 +2426,7 @@ namespace MyNS
 	/// <summary>
 	/// Relationship between Entities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentEntityRelation
 	{
 		
@@ -2580,8 +2452,7 @@ namespace MyNS
 	/// <summary>
 	/// A page in a Document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPage
 	{
 		
@@ -2691,8 +2562,7 @@ namespace MyNS
 	/// <summary>
 	/// A block has a set of lines (collected into paragraphs) that have a common line-spacing and orientation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageBlock
 	{
 		
@@ -2718,8 +2588,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected language for a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageDetectedLanguage
 	{
 		
@@ -2739,8 +2608,7 @@ namespace MyNS
 	/// <summary>
 	/// Visual element describing a layout unit on a page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageLayout
 	{
 		
@@ -2769,33 +2637,30 @@ namespace MyNS
 		public GoogleCloudDocumentaiV1beta1DocumentTextAnchor TextAnchor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiV1beta1DocumentPageLayoutOrientation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORIENTATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORIENTATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_UP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_UP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_RIGHT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_DOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_DOWN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_LEFT = 4,
 	}
 	
 	/// <summary>
 	/// A detected barcode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageDetectedBarcode
 	{
 		
@@ -2815,8 +2680,7 @@ namespace MyNS
 	/// <summary>
 	/// Dimension for the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageDimension
 	{
 		
@@ -2842,8 +2706,7 @@ namespace MyNS
 	/// <summary>
 	/// A form field detected on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageFormField
 	{
 		
@@ -2899,8 +2762,7 @@ namespace MyNS
 	/// <summary>
 	/// Rendered image contents for this page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageImage
 	{
 		
@@ -2932,8 +2794,7 @@ namespace MyNS
 	/// <summary>
 	/// Image quality scores for the page image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScores
 	{
 		
@@ -2953,8 +2814,7 @@ namespace MyNS
 	/// <summary>
 	/// Image Quality Defects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresDetectedDefect
 	{
 		
@@ -2974,8 +2834,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of tokens that a human would perceive as a line. Does not cross column boundaries, can be horizontal, vertical, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageLine
 	{
 		
@@ -3001,8 +2860,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of lines that a human would perceive as a paragraph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageParagraph
 	{
 		
@@ -3028,8 +2886,7 @@ namespace MyNS
 	/// <summary>
 	/// A detected symbol.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageSymbol
 	{
 		
@@ -3049,8 +2906,7 @@ namespace MyNS
 	/// <summary>
 	/// A table representation similar to HTML table structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageTable
 	{
 		
@@ -3088,8 +2944,7 @@ namespace MyNS
 	/// <summary>
 	/// A row of table cells.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageTableTableRow
 	{
 		
@@ -3103,8 +2958,7 @@ namespace MyNS
 	/// <summary>
 	/// A cell representation inside the table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageTableTableCell
 	{
 		
@@ -3136,8 +2990,7 @@ namespace MyNS
 	/// <summary>
 	/// A detected token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageToken
 	{
 		
@@ -3175,8 +3028,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected break at the end of a Token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageTokenDetectedBreak
 	{
 		
@@ -3187,30 +3039,27 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDocumentaiV1beta1DocumentPageTokenDetectedBreakType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiV1beta1DocumentPageTokenDetectedBreakType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPACE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIDE_SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIDE_SPACE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HYPHEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HYPHEN = 3,
 	}
 	
 	/// <summary>
 	/// Font and other text style attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageTokenStyleInfo
 	{
 		
@@ -3308,8 +3157,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ...
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeColor
 	{
 		
@@ -3341,8 +3189,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation for transformation matrix, intended to be compatible and used with OpenCV format for image manipulation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageMatrix
 	{
 		
@@ -3374,8 +3221,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected non-text visual elements e.g. checkbox, signature etc. on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentPageVisualElement
 	{
 		
@@ -3401,8 +3247,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains past or forward revisions of this document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentRevision
 	{
 		
@@ -3452,8 +3297,7 @@ namespace MyNS
 	/// <summary>
 	/// Human Review information of the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentRevisionHumanReview
 	{
 		
@@ -3473,8 +3317,7 @@ namespace MyNS
 	/// <summary>
 	/// For a large document, sharding may be performed to produce several document shards. Each document shard contains this field to detail which shard it is.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentShardInfo
 	{
 		
@@ -3500,8 +3343,7 @@ namespace MyNS
 	/// <summary>
 	/// This message is used for text changes aka. OCR corrections.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentTextChange
 	{
 		
@@ -3527,8 +3369,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation for common text style attributes. This adheres to CSS conventions as much as possible.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentStyle
 	{
 		
@@ -3584,8 +3425,7 @@ namespace MyNS
 	/// <summary>
 	/// Font size with unit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1DocumentStyleFontSize
 	{
 		
@@ -3605,8 +3445,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata for the BatchProcessDocuments operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta1OperationMetadata
 	{
 		
@@ -3635,39 +3474,36 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiV1beta1OperationMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAITING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAITING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 6,
 	}
 	
 	/// <summary>
 	/// Parameters to control AutoML model prediction behavior.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2AutoMlParams
 	{
 		
@@ -3681,8 +3517,7 @@ namespace MyNS
 	/// <summary>
 	/// Encodes the detailed information of a barcode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2Barcode
 	{
 		
@@ -3708,8 +3543,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to batch process documents as an asynchronous operation. The output is written to Cloud Storage as JSON in the [Document] format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2BatchProcessDocumentsRequest
 	{
 		
@@ -3723,8 +3557,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to process one document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2ProcessDocumentRequest
 	{
 		
@@ -3786,8 +3619,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters to control entity extraction behavior.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2EntityExtractionParams
 	{
 		
@@ -3807,8 +3639,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters to control form extraction behavior.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2FormExtractionParams
 	{
 		
@@ -3834,8 +3665,7 @@ namespace MyNS
 	/// <summary>
 	/// Reserved for future use.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2KeyValuePairHint
 	{
 		
@@ -3855,8 +3685,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired input location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2InputConfig
 	{
 		
@@ -3882,8 +3711,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the input file will be read from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2GcsSource
 	{
 		
@@ -3894,8 +3722,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters to control Optical Character Recognition (OCR) behavior.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2OcrParams
 	{
 		
@@ -3909,8 +3736,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired output location and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2OutputConfig
 	{
 		
@@ -3930,8 +3756,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage location where the output file will be written to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2GcsDestination
 	{
 		
@@ -3942,8 +3767,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters to control table extraction behavior.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2TableExtractionParams
 	{
 		
@@ -3975,8 +3799,7 @@ namespace MyNS
 	/// <summary>
 	/// A hint for a table bounding box on the page for table parsing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2TableBoundHint
 	{
 		
@@ -3996,8 +3819,7 @@ namespace MyNS
 	/// <summary>
 	/// A bounding polygon for the detected image annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2BoundingPoly
 	{
 		
@@ -4017,8 +3839,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2NormalizedVertex
 	{
 		
@@ -4038,8 +3859,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2Vertex
 	{
 		
@@ -4059,8 +3879,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an batch document processing request. This is returned in the LRO Operation after the operation is complete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2BatchProcessDocumentsResponse
 	{
 		
@@ -4074,8 +3893,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a single document processing request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2ProcessDocumentResponse
 	{
 		
@@ -4095,8 +3913,7 @@ namespace MyNS
 	/// <summary>
 	/// Document represents the canonical document resource in Document AI. It is an interchange format that provides insights into documents and allows for collaboration between users and Document AI to iterate and optimize for quality.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2Document
 	{
 		
@@ -4182,8 +3999,7 @@ namespace MyNS
 	/// <summary>
 	/// An entity that could be a phrase in the text or a property that belongs to the document. It is a known entity type, such as a person, an organization, or location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentEntity
 	{
 		
@@ -4257,8 +4073,7 @@ namespace MyNS
 	/// <summary>
 	/// Parsed and normalized entity value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentEntityNormalizedValue
 	{
 		
@@ -4314,8 +4129,7 @@ namespace MyNS
 	/// <summary>
 	/// Referencing the visual context of the entity in the Document.pages. Page anchors can be cross-page, consist of multiple bounding polygons and optionally reference specific layout element types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageAnchor
 	{
 		
@@ -4329,8 +4143,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a weak reference to a page element within a document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageAnchorPageRef
 	{
 		
@@ -4368,8 +4181,7 @@ namespace MyNS
 	/// <summary>
 	/// Structure to identify provenance relationships between annotations in different revisions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentProvenance
 	{
 		
@@ -4401,8 +4213,7 @@ namespace MyNS
 	/// <summary>
 	/// The parent element the current element is based on. Used for referencing/aligning, removal and replacement operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentProvenanceParent
 	{
 		
@@ -4428,8 +4239,7 @@ namespace MyNS
 	/// <summary>
 	/// Text reference indexing into the Document.text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentTextAnchor
 	{
 		
@@ -4449,8 +4259,7 @@ namespace MyNS
 	/// <summary>
 	/// A text segment in the Document.text. The indices may be out of bounds which indicate that the text extends into another document shard for large sharded documents. See ShardInfo.text_offset
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentTextAnchorTextSegment
 	{
 		
@@ -4470,8 +4279,7 @@ namespace MyNS
 	/// <summary>
 	/// Relationship between Entities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentEntityRelation
 	{
 		
@@ -4497,8 +4305,7 @@ namespace MyNS
 	/// <summary>
 	/// Label attaches schema information and/or other metadata to segments within a Document. Multiple Labels on a single field can denote either different labels, different instances of the same label created at different times, or some combination of both.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentLabel
 	{
 		
@@ -4524,8 +4331,7 @@ namespace MyNS
 	/// <summary>
 	/// A page in a Document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPage
 	{
 		
@@ -4635,8 +4441,7 @@ namespace MyNS
 	/// <summary>
 	/// A block has a set of lines (collected into paragraphs) that have a common line-spacing and orientation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageBlock
 	{
 		
@@ -4662,8 +4467,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected language for a structural component.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage
 	{
 		
@@ -4683,8 +4487,7 @@ namespace MyNS
 	/// <summary>
 	/// Visual element describing a layout unit on a page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageLayout
 	{
 		
@@ -4716,8 +4519,7 @@ namespace MyNS
 	/// <summary>
 	/// A detected barcode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageDetectedBarcode
 	{
 		
@@ -4737,8 +4539,7 @@ namespace MyNS
 	/// <summary>
 	/// Dimension for the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageDimension
 	{
 		
@@ -4764,8 +4565,7 @@ namespace MyNS
 	/// <summary>
 	/// A form field detected on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageFormField
 	{
 		
@@ -4821,8 +4621,7 @@ namespace MyNS
 	/// <summary>
 	/// Rendered image contents for this page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageImage
 	{
 		
@@ -4854,8 +4653,7 @@ namespace MyNS
 	/// <summary>
 	/// Image quality scores for the page image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScores
 	{
 		
@@ -4875,8 +4673,7 @@ namespace MyNS
 	/// <summary>
 	/// Image Quality Defects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScoresDetectedDefect
 	{
 		
@@ -4896,8 +4693,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of tokens that a human would perceive as a line. Does not cross column boundaries, can be horizontal, vertical, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageLine
 	{
 		
@@ -4923,8 +4719,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of lines that a human would perceive as a paragraph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageParagraph
 	{
 		
@@ -4950,8 +4745,7 @@ namespace MyNS
 	/// <summary>
 	/// A detected symbol.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageSymbol
 	{
 		
@@ -4971,8 +4765,7 @@ namespace MyNS
 	/// <summary>
 	/// A table representation similar to HTML table structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageTable
 	{
 		
@@ -5010,8 +4803,7 @@ namespace MyNS
 	/// <summary>
 	/// A row of table cells.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageTableTableRow
 	{
 		
@@ -5025,8 +4817,7 @@ namespace MyNS
 	/// <summary>
 	/// A cell representation inside the table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageTableTableCell
 	{
 		
@@ -5058,8 +4849,7 @@ namespace MyNS
 	/// <summary>
 	/// A detected token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageToken
 	{
 		
@@ -5097,8 +4887,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected break at the end of a Token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageTokenDetectedBreak
 	{
 		
@@ -5112,8 +4901,7 @@ namespace MyNS
 	/// <summary>
 	/// Font and other text style attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageTokenStyleInfo
 	{
 		
@@ -5211,8 +4999,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation for transformation matrix, intended to be compatible and used with OpenCV format for image manipulation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageMatrix
 	{
 		
@@ -5244,8 +5031,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected non-text visual elements e.g. checkbox, signature etc. on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentPageVisualElement
 	{
 		
@@ -5271,8 +5057,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains past or forward revisions of this document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentRevision
 	{
 		
@@ -5322,8 +5107,7 @@ namespace MyNS
 	/// <summary>
 	/// Human Review information of the document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentRevisionHumanReview
 	{
 		
@@ -5343,8 +5127,7 @@ namespace MyNS
 	/// <summary>
 	/// For a large document, sharding may be performed to produce several document shards. Each document shard contains this field to detail which shard it is.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentShardInfo
 	{
 		
@@ -5370,8 +5153,7 @@ namespace MyNS
 	/// <summary>
 	/// This message is used for text changes aka. OCR corrections.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentTextChange
 	{
 		
@@ -5397,8 +5179,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation for common text style attributes. This adheres to CSS conventions as much as possible.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentStyle
 	{
 		
@@ -5454,8 +5235,7 @@ namespace MyNS
 	/// <summary>
 	/// Font size with unit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2DocumentStyleFontSize
 	{
 		
@@ -5475,8 +5255,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata for the BatchProcessDocuments operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta2OperationMetadata
 	{
 		
@@ -5505,8 +5284,7 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3BatchDeleteDocumentsMetadata
 	{
 		
@@ -5538,8 +5316,7 @@ namespace MyNS
 	/// <summary>
 	/// The common metadata for long running operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3CommonOperationMetadata
 	{
 		
@@ -5577,8 +5354,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of each individual document in the batch delete process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus
 	{
 		
@@ -5598,8 +5374,7 @@ namespace MyNS
 	/// <summary>
 	/// Document Identifier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DocumentId
 	{
 		
@@ -5625,8 +5400,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies a document uniquely within the scope of a dataset in the user-managed Cloud Storage option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DocumentIdGCSManagedDocumentId
 	{
 		
@@ -5646,8 +5420,7 @@ namespace MyNS
 	/// <summary>
 	/// The revision reference specifies which revision on the document to read.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3RevisionRef
 	{
 		
@@ -5673,8 +5446,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies a document uniquely within the scope of a dataset in unmanaged option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DocumentIdUnmanagedDocumentId
 	{
 		
@@ -5688,8 +5460,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the delete documents operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3BatchDeleteDocumentsResponse
 	{
 	}
@@ -5697,8 +5468,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for BatchProcessDocuments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3BatchProcessMetadata
 	{
 		
@@ -5736,8 +5506,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of a each individual document in the batch process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3BatchProcessMetadataIndividualProcessStatus
 	{
 		
@@ -5775,8 +5544,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of human review on a processed document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3HumanReviewStatus
 	{
 		
@@ -5802,8 +5570,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for BatchProcessDocuments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3BatchProcessResponse
 	{
 	}
@@ -5811,8 +5578,7 @@ namespace MyNS
 	/// <summary>
 	/// A singleton resource under a Processor which configures a collection of documents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3Dataset
 	{
 		
@@ -5856,8 +5622,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration specific to the Document AI Warehouse-based implementation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DatasetDocumentWarehouseConfig
 	{
 		
@@ -5877,8 +5642,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration specific to the Cloud Storage-based implementation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DatasetGCSManagedConfig
 	{
 		
@@ -5892,8 +5656,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies all documents on Cloud Storage with a common prefix.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3GcsPrefix
 	{
 		
@@ -5907,36 +5670,32 @@ namespace MyNS
 	/// <summary>
 	/// Configuration specific to spanner-based indexing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDocumentaiV1beta3DatasetState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNINITIALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNINITIALIZED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZED = 3,
 	}
 	
 	/// <summary>
 	/// Configuration specific to an unmanaged dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DatasetUnmanagedDatasetConfig
 	{
 	}
@@ -5944,8 +5703,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DeleteProcessor method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DeleteProcessorMetadata
 	{
 		
@@ -5959,8 +5717,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DeleteProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DeleteProcessorVersionMetadata
 	{
 		
@@ -5974,8 +5731,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DeployProcessorVersionMetadata
 	{
 		
@@ -5989,8 +5745,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the DeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DeployProcessorVersionResponse
 	{
 	}
@@ -5998,8 +5753,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the DisableProcessor method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DisableProcessorMetadata
 	{
 		
@@ -6013,8 +5767,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the DisableProcessor method. Intentionally empty proto for adding fields in future.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3DisableProcessorResponse
 	{
 	}
@@ -6022,8 +5775,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the EnableProcessor method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3EnableProcessorMetadata
 	{
 		
@@ -6037,8 +5789,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the EnableProcessor method. Intentionally empty proto for adding fields in future.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3EnableProcessorResponse
 	{
 	}
@@ -6046,8 +5797,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of the EvaluateProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3EvaluateProcessorVersionMetadata
 	{
 		
@@ -6061,8 +5811,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the EvaluateProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3EvaluateProcessorVersionResponse
 	{
 		
@@ -6076,8 +5825,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of the import document operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3ImportDocumentsMetadata
 	{
 		
@@ -6109,8 +5857,7 @@ namespace MyNS
 	/// <summary>
 	/// The validation status of each import config. Status is set to an error if there are no documents to import in the `import_config`, or `OK` if the operation will try to proceed with at least one document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3ImportDocumentsMetadataImportConfigValidationResult
 	{
 		
@@ -6130,8 +5877,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of each individual document in the import process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3ImportDocumentsMetadataIndividualImportStatus
 	{
 		
@@ -6157,8 +5903,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the import document operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3ImportDocumentsResponse
 	{
 	}
@@ -6166,8 +5911,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the ImportProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3ImportProcessorVersionMetadata
 	{
 		
@@ -6181,8 +5925,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for the ImportProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3ImportProcessorVersionResponse
 	{
 		
@@ -6196,8 +5939,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the ReviewDocument method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3ReviewDocumentOperationMetadata
 	{
 		
@@ -6241,8 +5983,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the ReviewDocument method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3ReviewDocumentResponse
 	{
 		
@@ -6268,8 +6009,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the SetDefaultProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3SetDefaultProcessorVersionMetadata
 	{
 		
@@ -6283,8 +6023,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the SetDefaultProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3SetDefaultProcessorVersionResponse
 	{
 	}
@@ -6292,8 +6031,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata that represents a processor version being created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadata
 	{
 		
@@ -6319,8 +6057,7 @@ namespace MyNS
 	/// <summary>
 	/// The dataset validation information. This includes any and all errors with documents and the dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation
 	{
 		
@@ -6352,8 +6089,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for TrainProcessorVersion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3TrainProcessorVersionResponse
 	{
 		
@@ -6367,8 +6103,7 @@ namespace MyNS
 	/// <summary>
 	/// The long-running operation metadata for the UndeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3UndeployProcessorVersionMetadata
 	{
 		
@@ -6382,14 +6117,12 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the UndeployProcessorVersion method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3UndeployProcessorVersionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDocumentaiV1beta3UpdateDatasetOperationMetadata
 	{
 		
@@ -6403,8 +6136,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -6442,8 +6174,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

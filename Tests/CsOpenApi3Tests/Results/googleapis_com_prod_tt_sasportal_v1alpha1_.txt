@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates `members` with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalAssignment
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// The channel with score.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalChannelWithScore
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// Frequency range from `low_frequency` to `high_frequency`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalFrequencyRange
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for [CheckHasProvisionedDeployment]. [spectrum.sas.portal.v1alpha1.Provisioning.CheckHasProvisionedDeployment].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalCheckHasProvisionedDeploymentResponse
 	{
 		
@@ -98,8 +94,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for CreateSignedDevice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalCreateSignedDeviceRequest
 	{
 		
@@ -119,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// Entity representing a SAS customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalCustomer
 	{
 		
@@ -146,8 +140,7 @@ namespace MyNS
 	/// <summary>
 	/// The Deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalDeployment
 	{
 		
@@ -179,8 +172,7 @@ namespace MyNS
 	/// <summary>
 	/// Association between a gcp project and a SAS user id.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalDeploymentAssociation
 	{
 		
@@ -197,8 +189,7 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalDevice
 	{
 		
@@ -272,8 +263,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the device configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalDeviceConfig
 	{
 		
@@ -341,8 +331,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the device's air interface.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalDeviceAirInterface
 	{
 		
@@ -359,61 +348,56 @@ namespace MyNS
 		public string SupportedSpec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SasPortalDeviceAirInterfaceRadioTechnology
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RADIO_TECHNOLOGY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RADIO_TECHNOLOGY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="E_UTRA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		E_UTRA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMBIUM_NETWORKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMBIUM_NETWORKS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOUR_G_BBW_SAA_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOUR_G_BBW_SAA_1 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOODLE_CBRS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOODLE_CBRS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CW = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDLINE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARANA_WIRELESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARANA_WIRELESS = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SasPortalDeviceConfigCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_CATEGORY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_CATEGORY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_CATEGORY_A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_CATEGORY_A = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_CATEGORY_B")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_CATEGORY_B = 2,
 	}
 	
 	/// <summary>
 	/// Information about the device installation parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalInstallationParams
 	{
 		
@@ -502,27 +486,24 @@ namespace MyNS
 		public System.Nullable<System.Double> VerticalAccuracy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SasPortalInstallationParamsHeightType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEIGHT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEIGHT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEIGHT_TYPE_AGL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEIGHT_TYPE_AGL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEIGHT_TYPE_AMSL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEIGHT_TYPE_AMSL = 2,
 	}
 	
 	/// <summary>
 	/// Information about the model of the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalDeviceModel
 	{
 		
@@ -557,27 +538,24 @@ namespace MyNS
 		public string Vendor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SasPortalDeviceConfigState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_CONFIG_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_CONFIG_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINAL = 2,
 	}
 	
 	/// <summary>
 	/// Device data overridable by both SAS Portal and registration requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalDeviceMetadata
 	{
 		
@@ -615,8 +593,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about National Radio Quiet Zone validation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalNrqzValidation
 	{
 		
@@ -651,27 +628,24 @@ namespace MyNS
 		public System.Nullable<SasPortalNrqzValidationState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SasPortalNrqzValidationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINAL = 2,
 	}
 	
 	/// <summary>
 	/// Device grant. It is an authorization provided by the Spectrum Access System to a device to transmit using specified operating parameters after a successful heartbeat by the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalDeviceGrant
 	{
 		
@@ -730,27 +704,24 @@ namespace MyNS
 		public string[] SuspensionReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SasPortalDeviceGrantChannelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_TYPE_GAA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_TYPE_GAA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_TYPE_PAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_TYPE_PAL = 2,
 	}
 	
 	/// <summary>
 	/// An entry in a DPA's move list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalDpaMoveList
 	{
 		
@@ -767,55 +738,50 @@ namespace MyNS
 		public SasPortalFrequencyRange FrequencyRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SasPortalDeviceGrantState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANT_STATE_GRANTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANT_STATE_GRANTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANT_STATE_TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANT_STATE_TERMINATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANT_STATE_SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANT_STATE_SUSPENDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANT_STATE_AUTHORIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANT_STATE_AUTHORIZED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANT_STATE_EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANT_STATE_EXPIRED = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SasPortalDeviceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESERVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESERVED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGISTERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGISTERED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEREGISTERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEREGISTERED = 3,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalEmpty
 	{
 	}
@@ -823,8 +789,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for GenerateSecret.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalGenerateSecretRequest
 	{
 	}
@@ -832,8 +797,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for GenerateSecret.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalGenerateSecretResponse
 	{
 		
@@ -847,8 +811,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `GetPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalGetPolicyRequest
 	{
 		
@@ -862,8 +825,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for `ListCustomers`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalListCustomersResponse
 	{
 		
@@ -883,8 +845,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListDeployments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalListDeploymentsResponse
 	{
 		
@@ -904,8 +865,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListDevices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalListDevicesResponse
 	{
 		
@@ -925,8 +885,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for [ListLegacyOrganizations]. [spectrum.sas.portal.v1alpha1.Provisioning.ListLegacyOrganizations].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalListLegacyOrganizationsResponse
 	{
 		
@@ -940,8 +899,7 @@ namespace MyNS
 	/// <summary>
 	/// Organization details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalOrganization
 	{
 		
@@ -961,8 +919,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListNodes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalListNodesResponse
 	{
 		
@@ -982,8 +939,7 @@ namespace MyNS
 	/// <summary>
 	/// The Node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalNode
 	{
 		
@@ -1009,8 +965,7 @@ namespace MyNS
 	/// <summary>
 	/// Long-running operation metadata message returned by the MigrateOrganization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalMigrateOrganizationMetadata
 	{
 		
@@ -1021,33 +976,30 @@ namespace MyNS
 		public System.Nullable<SasPortalMigrateOrganizationMetadataOperationState> OperationState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SasPortalMigrateOrganizationMetadataOperationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_STATE_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_STATE_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_STATE_RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_STATE_RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_STATE_SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_STATE_SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_STATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_STATE_FAILED = 4,
 	}
 	
 	/// <summary>
 	/// Request for [MigrateOrganization]. [spectrum.sas.portal.v1alpha1.Provisioning.MigrateOrganization]. GCP Project, Organization Info, and caller's GAIA ID should be retrieved from the RPC handler, and used to check authorization on SAS Portal organization and to create GCP Projects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalMigrateOrganizationRequest
 	{
 		
@@ -1061,8 +1013,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for [MigrateOrganization]. [spectrum.sas.portal.v1alpha1.Provisioning.MigrateOrganization].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalMigrateOrganizationResponse
 	{
 		
@@ -1076,8 +1027,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for MoveDeployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalMoveDeploymentRequest
 	{
 		
@@ -1091,8 +1041,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for MoveDevice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalMoveDeviceRequest
 	{
 		
@@ -1106,8 +1055,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for MoveNode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalMoveNodeRequest
 	{
 		
@@ -1121,8 +1069,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalOperation
 	{
 		
@@ -1160,8 +1107,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalStatus
 	{
 		
@@ -1187,8 +1133,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines an access control policy to the resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalPolicy
 	{
 		
@@ -1208,8 +1153,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for [ProvisionDeployment]. [spectrum.sas.portal.v1alpha1.Provisioning.ProvisionDeployment]. GCP Project, Organization Info, and caller’s GAIA ID should be retrieved from the RPC handler, and used as inputs to create a new SAS organization (if not exists) and a new SAS deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalProvisionDeploymentRequest
 	{
 		
@@ -1235,8 +1179,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for [ProvisionDeployment]. [spectrum.sas.portal.v1alpha1.Provisioning.ProvisionDeployment].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalProvisionDeploymentResponse
 	{
 		
@@ -1250,8 +1193,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `SetPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalSetPolicyRequest
 	{
 		
@@ -1277,8 +1219,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata returned by the long running operation for the SetupSasAnalytics rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalSetupSasAnalyticsMetadata
 	{
 	}
@@ -1286,8 +1227,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the SetupSasAnalytics rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalSetupSasAnalyticsRequest
 	{
 		
@@ -1301,8 +1241,7 @@ namespace MyNS
 	/// <summary>
 	/// Response returned by the long running operation for the SetupSasAnalytics rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalSetupSasAnalyticsResponse
 	{
 	}
@@ -1310,8 +1249,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for SignDevice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalSignDeviceRequest
 	{
 		
@@ -1322,8 +1260,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalTestPermissionsRequest
 	{
 		
@@ -1343,8 +1280,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalTestPermissionsResponse
 	{
 		
@@ -1358,8 +1294,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for UpdateSignedDevice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalUpdateSignedDeviceRequest
 	{
 		
@@ -1379,8 +1314,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for ValidateInstaller.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalValidateInstallerRequest
 	{
 		
@@ -1406,8 +1340,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ValidateInstaller.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SasPortalValidateInstallerResponse
 	{
 	}

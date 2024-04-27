@@ -193,10 +193,10 @@ namespace MyNS
 	public enum FacetsSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSIDC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSIDC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADE = 1,
 	}
 	

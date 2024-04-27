@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates impression event details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3Impression
 	{
 		
@@ -44,27 +43,24 @@ namespace MyNS
 		public string LocationName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsPlayablelocationsV3ImpressionImpressionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPRESSION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPRESSION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRESENTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRESENTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERACTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERACTED = 2,
 	}
 	
 	/// <summary>
 	/// A request for logging impressions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3LogImpressionsRequest
 	{
 		
@@ -90,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// Client information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsUnityClientInfo
 	{
 		
@@ -144,42 +139,39 @@ namespace MyNS
 		public System.Nullable<GoogleMapsUnityClientInfoPlatform> Platform { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsUnityClientInfoPlatform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATFORM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATFORM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDITOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDITOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC_OS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_GL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_GL = 7,
 	}
 	
 	/// <summary>
 	/// A response for the LogImpressions method. This method returns no data upon success.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3LogImpressionsResponse
 	{
 	}
@@ -187,8 +179,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for logging your player's bad location reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3LogPlayerReportsRequest
 	{
 		
@@ -214,8 +205,7 @@ namespace MyNS
 	/// <summary>
 	/// A report submitted by a player about a playable location that is considered inappropriate for use in the game.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3PlayerReport
 	{
 		
@@ -247,8 +237,7 @@ namespace MyNS
 	/// <summary>
 	/// A response for the LogPlayerReports method. This method returns no data upon success.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3LogPlayerReportsResponse
 	{
 	}
@@ -256,8 +245,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the area to search for playable locations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3SampleAreaFilter
 	{
 		
@@ -271,8 +259,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates a filter criterion for searching for a set of playable locations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3SampleCriterion
 	{
 		
@@ -298,8 +285,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the filters to use when searching for playable locations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3SampleFilter
 	{
 		
@@ -325,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of options that specifies the separation between playable locations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3SampleSpacingOptions
 	{
 		
@@ -343,27 +328,24 @@ namespace MyNS
 		public System.Nullable<GoogleMapsPlayablelocationsV3SampleSpacingOptionsPointType> PointType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsPlayablelocationsV3SampleSpacingOptionsPointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POINT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POINT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER_POINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER_POINT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNAPPED_POINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNAPPED_POINT = 2,
 	}
 	
 	/// <summary>
 	/// A geographical point suitable for placing game objects in location-based games.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3SamplePlayableLocation
 	{
 		
@@ -407,8 +389,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeLatLng
 	{
 		
@@ -428,8 +409,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of PlayableLocation objects that satisfies a single Criterion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3SamplePlayableLocationList
 	{
 		
@@ -443,8 +423,7 @@ namespace MyNS
 	/// <summary>
 	///  Life of a query: - When a game starts in a new location, your game server issues a SamplePlayableLocations request. The request specifies the S2 cell, and contains one or more "criteria" for filtering: - Criterion 0: i locations for long-lived bases, or level 0 monsters, or... - Criterion 1: j locations for short-lived bases, or level 1 monsters, ... - Criterion 2: k locations for random objects. - etc (up to 5 criterion may be specified). `PlayableLocationList` will then contain mutually exclusive lists of `PlayableLocation` objects that satisfy each of the criteria. Think of it as a collection of real-world locations that you can then associate with your game state. Note: These points are impermanent in nature. E.g, parks can close, and places can be removed. The response specifies how long you can expect the playable locations to last. Once they expire, you should query the `samplePlayableLocations` API again to get a fresh view of the real world.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3SamplePlayableLocationsRequest
 	{
 		
@@ -464,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	///  Response for the SamplePlayableLocations method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlayablelocationsV3SamplePlayableLocationsResponse
 	{
 		

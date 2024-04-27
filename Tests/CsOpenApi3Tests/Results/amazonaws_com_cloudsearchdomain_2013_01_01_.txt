@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchResponse
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchStatus
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// The collection of documents that match the search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hits
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a document that matches the search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hit
 	{
 		
@@ -95,26 +91,22 @@ namespace MyNS
 		public Highlights Highlights { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fields
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Exprs
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Highlights
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Facets
 	{
 	}
@@ -122,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// The statistics calculated in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Stats
 	{
 	}
@@ -131,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about any problems encountered while processing a search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchException
 	{
 		
@@ -143,8 +133,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the response to a <code>Suggest</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestResponse
 	{
 		
@@ -158,8 +147,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestStatus
 	{
 		
@@ -173,8 +161,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the suggestion information returned in a <code>SuggestResponse</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestModel
 	{
 		
@@ -191,8 +178,7 @@ namespace MyNS
 	/// <summary>
 	/// An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestionMatch
 	{
 		
@@ -209,8 +195,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the response to an <code>UploadDocuments</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadDocumentsResponse
 	{
 		
@@ -230,8 +215,7 @@ namespace MyNS
 	/// <summary>
 	/// A warning returned by the document service when an issue is discovered while processing an upload request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentServiceWarning
 	{
 		
@@ -242,8 +226,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about any problems encountered while processing an upload request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentServiceException
 	{
 		
@@ -257,8 +240,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for facet information. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bucket
 	{
 		
@@ -272,8 +254,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for the calculated facet values and counts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BucketInfo
 	{
 		
@@ -281,9 +262,7 @@ namespace MyNS
 		public Bucket[] Buckets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContentType
 	{
 		
@@ -297,8 +276,7 @@ namespace MyNS
 	/// <summary>
 	/// The statistics for a field calculated in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldStats
 	{
 		
@@ -327,30 +305,27 @@ namespace MyNS
 		public System.Nullable<System.Double> Stddev { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryParser
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="simple")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		simple = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="structured")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		structured = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lucene")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lucene = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dismax")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dismax = 3,
 	}
 	
 	/// <summary>
 	/// Container for the parameters to the <code>Search</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchRequest
 	{
 	}
@@ -358,8 +333,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code>Suggest</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestRequest
 	{
 	}
@@ -367,8 +341,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code>UploadDocuments</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadDocumentsRequest
 	{
 		
@@ -543,7 +516,7 @@ namespace MyNS
 	public enum SearchFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sdk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sdk = 0,
 	}
 	

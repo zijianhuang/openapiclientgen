@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -50,22 +49,20 @@ namespace MyNS
 		public AccountUcis[] AccountUcis { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVED = 3,
 	}
 	
@@ -99,8 +96,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Call
 	{
 		
@@ -209,68 +205,61 @@ namespace MyNS
 		public long UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INBOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INBOUND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTBOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTBOUND = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RINGING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RINGING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HELD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOTE_HELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOTE_HELD = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DETACHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DETACHED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANSWERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANSWERED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSED = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CallType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CALL = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallCreate
 	{
 		
@@ -283,8 +272,7 @@ namespace MyNS
 		public string PhoneNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallTransfer
 	{
 		
@@ -297,8 +285,7 @@ namespace MyNS
 		public string PhoneNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -309,8 +296,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorResponse
 	{
 		
@@ -324,8 +310,7 @@ namespace MyNS
 		public Error[] Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event
 	{
 		
@@ -435,8 +420,7 @@ namespace MyNS
 		public long UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsCount
 	{
 		
@@ -447,8 +431,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -550,8 +533,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Webhook
 	{
 		
@@ -637,32 +619,28 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookMetadataPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEADER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEADER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BODY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BODY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookSigningAlgo
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA256 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 	}
 	
@@ -694,21 +672,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalSuccesses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookCreate
 	{
 		
@@ -743,13 +718,11 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookCreateSigningAlgo
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HMAC_SHA256 = 0,
 	}
 	
@@ -1456,29 +1429,29 @@ namespace MyNS
 	public enum ListCallsStates
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RINGING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RINGING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HELD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOTE_HELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOTE_HELD = 4,
 	}
 	
 	public enum ListCallsOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASC = 1,
 	}
 }

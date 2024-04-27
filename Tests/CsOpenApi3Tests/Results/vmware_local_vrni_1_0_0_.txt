@@ -17,156 +17,153 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AllEntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Group = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseSecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseSecurityGroup = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseEvent = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseVirtualMachine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseVirtualMachine = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseFirewallRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseFirewallRule = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseIPSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseIPSet = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseL2Network")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseL2Network = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseFirewall")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseFirewall = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseService")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseService = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseServiceGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseServiceGroup = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseVnic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseVnic = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VirtualMachine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VirtualMachine = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Instance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Instance = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Host")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Host = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vnic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vnic = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vmknic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vmknic = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VxlanLayer2Network")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VxlanLayer2Network = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VlanL2Network")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VlanL2Network = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cluster = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecurityTag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecurityTag = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourcePool")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourcePool = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXIPSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXIPSet = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2IPSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2IPSet = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXSecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXSecurityGroup = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SecurityGroup = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Flow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Flow = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProblemEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProblemEvent = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Application")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Application = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tier = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXFirewallRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXFirewallRule = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SGFirewallRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SGFirewallRule = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXRedirectRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXRedirectRule = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCenterManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCenterManager = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXVManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXVManager = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseManager = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseNSXManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseNSXManager = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXService")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXService = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Service")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Service = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXDistributedFirewall")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXDistributedFirewall = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Firewall")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Firewall = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXServiceGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXServiceGroup = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DistributedVirtualSwitch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DistributedVirtualSwitch = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DistributedVirtualPortgroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DistributedVirtualPortgroup = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCDatacenter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCDatacenter = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Datastore")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Datastore = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Folder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Folder = 46,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiError
 	{
 		
@@ -180,8 +177,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		
@@ -195,8 +191,7 @@ namespace MyNS
 		public string[] Target { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Application : BaseEntity
 	{
 		
@@ -213,8 +208,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Last_modified_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationRequest
 	{
 		
@@ -222,20 +216,17 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AristaSwitchDataSource
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AristaSwitchDataSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseDataSource
 	{
 		
@@ -267,51 +258,48 @@ namespace MyNS
 		public string Proxy_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BaseDataSourceEntity_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CiscoSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CiscoSwitchDataSource = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DellSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DellSwitchDataSource = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AristaSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AristaSwitchDataSource = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BrocadeSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BrocadeSwitchDataSource = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JuniperSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JuniperSwitchDataSource = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCenterDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCenterDataSource = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXVManagerDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXVManagerDataSource = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UCSManagerDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UCSManagerDataSource = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HPVCManagerDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HPVCManagerDataSource = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HPOneViewDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HPOneViewDataSource = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PanFirewallDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PanFirewallDataSource = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CheckpointFirewallDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CheckpointFirewallDataSource = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseDataSourceRequest
 	{
 		
@@ -343,8 +331,7 @@ namespace MyNS
 		public string Proxy_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseEntity
 	{
 		
@@ -358,117 +345,114 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BaseEntityEntity_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VirtualMachine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VirtualMachine = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Instance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Instance = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Host")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Host = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vnic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vnic = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vmknic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vmknic = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VxlanLayer2Network")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VxlanLayer2Network = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VlanL2Network")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VlanL2Network = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cluster = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecurityTag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecurityTag = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourcePool")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourcePool = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXIPSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXIPSet = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2IPSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2IPSet = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXSecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXSecurityGroup = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SecurityGroup = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Flow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Flow = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProblemEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProblemEvent = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Application")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Application = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tier = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXFirewallRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXFirewallRule = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SGFirewallRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SGFirewallRule = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXRedirectRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXRedirectRule = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCenterManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCenterManager = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXVManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXVManager = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXService")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXService = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Service")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Service = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXDistributedFirewall")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXDistributedFirewall = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Firewall")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Firewall = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXServiceGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXServiceGroup = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DistributedVirtualSwitch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DistributedVirtualSwitch = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DistributedVirtualPortgroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DistributedVirtualPortgroup = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCDatacenter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCDatacenter = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Datastore")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Datastore = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Folder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Folder = 33,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseEvent : BaseEntity
 	{
 		
@@ -494,21 +478,18 @@ namespace MyNS
 		public Reference[] Related_entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BaseEventAdmin_state
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Reference
 	{
 		
@@ -519,8 +500,7 @@ namespace MyNS
 		public BaseEntityEntity_type Entity_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseFirewall : BaseEntity
 	{
 		
@@ -531,8 +511,7 @@ namespace MyNS
 		public RuleSet[] Firewall_rules { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleSet
 	{
 		
@@ -546,24 +525,21 @@ namespace MyNS
 		public Reference[] Rules { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuleSetRule_set_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSX_STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSX_STANDARD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSX_REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSX_REDIRECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_STANDARD = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseFirewallRule : BaseEntity
 	{
 		
@@ -613,36 +589,33 @@ namespace MyNS
 		public Reference[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BaseFirewallRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DROP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DROP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DO_NOT_REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DO_NOT_REDIRECT = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PortRange
 	{
 		
@@ -662,8 +635,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseIPSet : BaseEntity
 	{
 		
@@ -701,8 +673,7 @@ namespace MyNS
 		public string Vendor_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IpV4Address
 	{
 		
@@ -716,8 +687,7 @@ namespace MyNS
 		public string Network_address { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IpNumericRange
 	{
 		
@@ -728,8 +698,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IpAddressRange
 	{
 		
@@ -740,8 +709,7 @@ namespace MyNS
 		public string Start_ip { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseL2Network : BaseEntity
 	{
 		
@@ -752,20 +720,17 @@ namespace MyNS
 		public string[] Network_addresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseManager
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseNSXManager
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseSecurityGroup : Group
 	{
 		
@@ -800,8 +765,7 @@ namespace MyNS
 		public string Vendor_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseService : BaseEntity
 	{
 		
@@ -812,20 +776,17 @@ namespace MyNS
 		public string Protocol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseServiceGroup
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseVirtualMachine
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseVnic : BaseEntity
 	{
 		
@@ -842,8 +803,7 @@ namespace MyNS
 		public Reference Vm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Vlan
 	{
 		
@@ -854,32 +814,27 @@ namespace MyNS
 		public System.Nullable<System.Int32> End { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BrocadeSwitchDataSource
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BrocadeSwitchDataSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckpointFirewallDataSource
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckpointFirewallDataSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CiscoSwitchDataSource : SwitchDataSource
 	{
 		
@@ -887,33 +842,30 @@ namespace MyNS
 		public System.Nullable<CiscoSwitchDataSourceSwitch_type> Switch_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CiscoSwitchDataSourceSwitch_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATALYST_3000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATALYST_3000 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATALYST_4500")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATALYST_4500 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATALYST_6500")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATALYST_6500 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXUS_5K")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXUS_5K = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXUS_7K")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXUS_7K = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXUS_9K")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXUS_9K = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CiscoSwitchDataSourceRequest : SwitchDataSourceRequest
 	{
 		
@@ -921,39 +873,35 @@ namespace MyNS
 		public CiscoSwitchDataSourceSwitch_type Switch_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CiscoSwitchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATALYST_3000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATALYST_3000 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATALYST_4500")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATALYST_4500 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATALYST_6500")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATALYST_6500 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXUS_5K")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXUS_5K = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXUS_7K")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXUS_7K = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXUS_9K")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXUS_9K = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cluster
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceEntityId
 	{
 		
@@ -967,8 +915,7 @@ namespace MyNS
 		public BaseDataSourceEntity_type Entity_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceListResponse
 	{
 		
@@ -979,54 +926,51 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CiscoSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CiscoSwitchDataSource = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DellSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DellSwitchDataSource = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AristaSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AristaSwitchDataSource = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BrocadeSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BrocadeSwitchDataSource = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JuniperSwitchDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JuniperSwitchDataSource = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCenterDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCenterDataSource = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXVManagerDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXVManagerDataSource = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UCSManagerDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UCSManagerDataSource = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HPVCManagerDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HPVCManagerDataSource = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HPOneViewDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HPOneViewDataSource = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PanFirewallDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PanFirewallDataSource = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CheckpointFirewallDataSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CheckpointFirewallDataSource = 11,
 	}
 	
 	/// <summary>
 	/// Datasource Health state
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasourceHealth
 	{
 		
@@ -1040,30 +984,26 @@ namespace MyNS
 		public System.Nullable<DatasourceHealthHealth_status> Health_status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatasourceHealthHealth_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALTHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALTHY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALTHY_WITH_WARNINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALTHY_WITH_WARNINGS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNHEALTHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNHEALTHY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Datastore
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DellSwitchDataSource : SwitchDataSource
 	{
 		
@@ -1071,30 +1011,27 @@ namespace MyNS
 		public System.Nullable<DellSwitchDataSourceSwitch_type> Switch_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DellSwitchDataSourceSwitch_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORCE_10_MXL_10")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORCE_10_MXL_10 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWERCONNECT_8024")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWERCONNECT_8024 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S4048")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S4048 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Z9100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Z9100 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S6000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S6000 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DellSwitchDataSourceRequest : SwitchDataSourceRequest
 	{
 		
@@ -1102,42 +1039,37 @@ namespace MyNS
 		public DellSwitchDataSourceSwitch_type Switch_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DellSwitchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORCE_10_MXL_10")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORCE_10_MXL_10 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWERCONNECT_8024")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWERCONNECT_8024 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S4048")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S4048 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Z9100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Z9100 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S6000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S6000 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistributedVirtualPortgroup
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistributedVirtualSwitch
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Domain
 	{
 		
@@ -1151,46 +1083,39 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainDomain_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LDAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LDAP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2Firewall
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EC2FirewallDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INBOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INBOUND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTBOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTBOUND = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2IPSet
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2Instance : BaseVirtualMachine
 	{
 		
@@ -1201,14 +1126,12 @@ namespace MyNS
 		public Reference Vpc { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2NetworkInterface
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2SGFirewallRule : BaseFirewallRule
 	{
 		
@@ -1222,8 +1145,7 @@ namespace MyNS
 		public Reference Vpc { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2SecurityGroup : BaseSecurityGroup
 	{
 		
@@ -1234,14 +1156,12 @@ namespace MyNS
 		public Reference Vpc { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2Service
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityId
 	{
 		
@@ -1255,8 +1175,7 @@ namespace MyNS
 		public BaseEntityEntity_type Entity_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityIdWithTime
 	{
 		
@@ -1273,8 +1192,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityName : EntityIdWithTime
 	{
 		
@@ -1282,161 +1200,154 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VirtualMachine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VirtualMachine = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Instance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Instance = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Host")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Host = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vnic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vnic = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vmknic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vmknic = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VxlanLayer2Network")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VxlanLayer2Network = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VlanL2Network")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VlanL2Network = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cluster = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SecurityTag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecurityTag = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourcePool")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourcePool = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXIPSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXIPSet = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2IPSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2IPSet = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXSecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXSecurityGroup = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SecurityGroup = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Flow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Flow = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProblemEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProblemEvent = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Application")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Application = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tier = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXFirewallRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXFirewallRule = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SGFirewallRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SGFirewallRule = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXRedirectRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXRedirectRule = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCenterManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCenterManager = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXVManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXVManager = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXService")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXService = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Service")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Service = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXDistributedFirewall")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXDistributedFirewall = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Firewall")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Firewall = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NSXServiceGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NSXServiceGroup = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DistributedVirtualSwitch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DistributedVirtualSwitch = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DistributedVirtualPortgroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DistributedVirtualPortgroup = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCDatacenter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCDatacenter = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Datastore")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Datastore = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Folder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Folder = 33,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FirewallAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DROP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DROP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DO_NOT_REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DO_NOT_REDIRECT = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FirewallDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INOUT = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flow : BaseEntity
 	{
 		
@@ -1543,198 +1454,188 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Within_host { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FlowTag
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_TRAFFIC_TYPE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_TRAFFIC_TYPE_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_INTERNET_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_INTERNET_TRAFFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_EAST_WEST_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_EAST_WEST_TRAFFIC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_VM_VM_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_VM_VM_TRAFFIC = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_VM_PHY_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_VM_PHY_TRAFFIC = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_PHY_PHY_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_PHY_PHY_TRAFFIC = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_IP_VMKNIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_IP_VMKNIC = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_IP_VMKNIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_IP_VMKNIC = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_IP_VM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_IP_VM = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_IP_VM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_IP_VM = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_IP_INTERNET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_IP_INTERNET = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_IP_INTERNET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_IP_INTERNET = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_IP_PHYSICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_IP_PHYSICAL = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_IP_PHYSICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_IP_PHYSICAL = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SAME_HOST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SAME_HOST = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DIFF_HOST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DIFF_HOST = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SHARED_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SHARED_SERVICE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_NOT_SHARED_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_NOT_SHARED_SERVICE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_NETWORK_SWITCHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_NETWORK_SWITCHED = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_NETWORK_ROUTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_NETWORK_ROUTED = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_NETWORK_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_NETWORK_UNKNOWN = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_IP_VTEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_IP_VTEP = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_IP_VTEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_IP_VTEP = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_UNICAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_UNICAST = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_BROADCAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_BROADCAST = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_MULTICAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_MULTICAST = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_IP_LINK_LOCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_IP_LINK_LOCAL = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_IP_LINK_LOCAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_IP_LINK_LOCAL = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_IP_CLASS_E")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_IP_CLASS_E = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_IP_CLASS_E")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_IP_CLASS_E = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_IP_CLASS_A_RESERVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_IP_CLASS_A_RESERVED = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_IP_CLASS_A_RESERVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_IP_CLASS_A_RESERVED = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_INVALID_IP_PACKETS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_INVALID_IP_PACKETS = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_NOT_ANALYZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_NOT_ANALYZED = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_GENERIC_INTERNET_SRC_IP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_GENERIC_INTERNET_SRC_IP = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SNAT_DNAT_FLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SNAT_DNAT_FLOW = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_MULTINICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_MULTINICS = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_VC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_VC = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_VC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_VC = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_SRC_AWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_SRC_AWS = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DST_AWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DST_AWS = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_WITHIN_DC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_WITHIN_DC = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DIFF_DC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DIFF_DC = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_WITHIN_VPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_WITHIN_VPC = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_DIFF_VPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_DIFF_VPC = 44,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FlowProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TCP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TCP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UDP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UDP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FlowTraffic_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNET_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNET_TRAFFIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EAST_WEST_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EAST_WEST_TRAFFIC = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FlowTrafficType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNET_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNET_TRAFFIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EAST_WEST_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EAST_WEST_TRAFFIC = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Folder
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group : BaseEntity
 	{
 		
@@ -1745,8 +1646,7 @@ namespace MyNS
 	/// <summary>
 	/// EntityType currently restricted to VirtualMachine
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupMembershipCriteria
 	{
 		
@@ -1766,8 +1666,7 @@ namespace MyNS
 	/// <summary>
 	/// Ip Address membership definition
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IpAddressMembershipCriteria
 	{
 		
@@ -1775,21 +1674,18 @@ namespace MyNS
 		public string[] Ip_addresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupMembershipCriteriaMembership_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SearchMembershipCriteria")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SearchMembershipCriteria = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPAddressMembershipCriteria")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IPAddressMembershipCriteria = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchMembershipCriteria
 	{
 		
@@ -1803,32 +1699,27 @@ namespace MyNS
 		public string Filter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HPOneViewManagerDataSource
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HPOneViewManagerDataSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HPVCManagerDataSource
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HPVCManagerDataSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Host : BaseEntity
 	{
 		
@@ -1863,66 +1754,61 @@ namespace MyNS
 		public Reference[] Vmknics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JuniperSwitchDataSource
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JuniperSwitchDataSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetaEntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Group = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseSecurityGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseSecurityGroup = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseEvent = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseVirtualMachine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseVirtualMachine = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseFirewallRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseFirewallRule = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseIPSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseIPSet = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseL2Network")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseL2Network = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseManager = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseNSXManager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseNSXManager = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseFirewall")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseFirewall = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseService")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseService = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseServiceGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseServiceGroup = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BaseVnic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BaseVnic = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MicroSecGroup
 	{
 		
@@ -1930,8 +1816,7 @@ namespace MyNS
 		public Reference Entity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXControllerDataCollection
 	{
 		
@@ -1942,8 +1827,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXDistributedFirewall : BaseFirewall
 	{
 		
@@ -1951,8 +1835,7 @@ namespace MyNS
 		public string Vendor_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXFirewallRule : BaseFirewallRule
 	{
 		
@@ -1969,21 +1852,18 @@ namespace MyNS
 		public System.Nullable<NSXFirewallRuleScope> Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NSXFirewallRuleScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIVERSAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIVERSAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GLOBAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GLOBAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXIPSet : BaseIPSet
 	{
 		
@@ -1994,8 +1874,7 @@ namespace MyNS
 		public NSXFirewallRuleScope Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXRedirectRule : BaseFirewallRule
 	{
 		
@@ -2009,8 +1888,7 @@ namespace MyNS
 		public string Service_profile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXSecurityGroup : BaseSecurityGroup
 	{
 		
@@ -2027,8 +1905,7 @@ namespace MyNS
 		public Reference[] Security_tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXService : BaseService
 	{
 		
@@ -2042,8 +1919,7 @@ namespace MyNS
 		public string Vendor_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXServiceGroup : BaseServiceGroup
 	{
 		
@@ -2057,8 +1933,7 @@ namespace MyNS
 		public string Vendor_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXVManager : BaseNSXManager
 	{
 		
@@ -2081,8 +1956,7 @@ namespace MyNS
 		public Reference Vm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXVManagerDataSource : BaseDataSource
 	{
 		
@@ -2102,8 +1976,7 @@ namespace MyNS
 		public string Vcenter_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PasswordCredentials
 	{
 		
@@ -2122,8 +1995,7 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NSXVManagerDataSourceRequest : BaseDataSourceRequest
 	{
 		
@@ -2149,8 +2021,7 @@ namespace MyNS
 		public string Vcenter_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NameRequestParam
 	{
 		
@@ -2161,8 +2032,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamesRequest
 	{
 		
@@ -2170,8 +2040,7 @@ namespace MyNS
 		public NameRequestParam[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamesResponse
 	{
 		
@@ -2179,8 +2048,7 @@ namespace MyNS
 		public EntityName[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Node
 	{
 		
@@ -2203,31 +2071,26 @@ namespace MyNS
 		public System.Nullable<NodeNode_type> Node_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeEntity_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Node")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Node = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeNode_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROXY_VM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROXY_VM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATFORM_VM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATFORM_VM = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeId
 	{
 		
@@ -2241,8 +2104,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeListResult
 	{
 		
@@ -2253,18 +2115,15 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Node")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Node = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PagedListResponse
 	{
 		
@@ -2284,8 +2143,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PagedListResponseWithTime
 	{
 		
@@ -2305,20 +2163,17 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PanFirewallDataSource
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PanFirewallDataSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProblemEvent : BaseEvent
 	{
 		
@@ -2329,43 +2184,38 @@ namespace MyNS
 		public System.Nullable<ProblemEventSeverity> Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProblemEventSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRITICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRITICAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODERATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODERATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Protocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TCP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TCP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UDP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UDP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendedRule
 	{
 		
@@ -2385,21 +2235,18 @@ namespace MyNS
 		public Reference[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecommendedRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DROP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DROP = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimplePortRange
 	{
 		
@@ -2410,8 +2257,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendedRules
 	{
 		
@@ -2422,8 +2268,7 @@ namespace MyNS
 		public TimeRange Time_range { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeRange
 	{
 		
@@ -2434,8 +2279,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Start_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendedRulesRequest
 	{
 		
@@ -2449,8 +2293,7 @@ namespace MyNS
 		public TimeRange Time_range { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourcePool : BaseEntity
 	{
 		
@@ -2461,8 +2304,7 @@ namespace MyNS
 		public string Vendor_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNMP2cConfig
 	{
 		
@@ -2470,8 +2312,7 @@ namespace MyNS
 		public string Community_string { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNMP3Config
 	{
 		
@@ -2494,52 +2335,47 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SNMP3ConfigAuthentication_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_AUTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_AUTH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MD5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MD5 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SNMP3ConfigPrivacy_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES128")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES128 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES192")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES192 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES256 = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="3DES")]
 		_3DES = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_PRIV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_PRIV = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNMPConfig
 	{
 		
@@ -2556,34 +2392,29 @@ namespace MyNS
 		public System.Nullable<SNMPConfigSnmp_version> Snmp_version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SNMPConfigSnmp_version
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="v2c")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		v2c = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="v3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		v3 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScopeEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIVERSAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIVERSAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GLOBAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GLOBAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchRequest
 	{
 		
@@ -2609,8 +2440,7 @@ namespace MyNS
 		public TimeRange Time_range { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SortByClause
 	{
 		
@@ -2621,21 +2451,18 @@ namespace MyNS
 		public System.Nullable<SortByClauseOrder> Order { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortByClauseOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESC = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecurityTag : BaseEntity
 	{
 		
@@ -2655,8 +2482,7 @@ namespace MyNS
 		public string Vendor_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleListResponse
 	{
 		
@@ -2667,8 +2493,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SwitchDataSource : BaseDataSource
 	{
 		
@@ -2676,8 +2501,7 @@ namespace MyNS
 		public PasswordCredentials Credentials { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SwitchDataSourceRequest : BaseDataSourceRequest
 	{
 		
@@ -2685,8 +2509,7 @@ namespace MyNS
 		public PasswordCredentials Credentials { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tier : BaseEntity
 	{
 		
@@ -2697,8 +2520,7 @@ namespace MyNS
 		public GroupMembershipCriteria[] Group_membership_criteria { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TierListResponse
 	{
 		
@@ -2706,8 +2528,7 @@ namespace MyNS
 		public Tier[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TierRequest
 	{
 		
@@ -2718,8 +2539,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Token
 	{
 		
@@ -2733,20 +2553,17 @@ namespace MyNS
 		public string Token1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UCSManagerDataSource
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UCSManagerDataSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserCredential
 	{
 		
@@ -2760,14 +2577,12 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VCDatacenter
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VCenterDataSource : BaseDataSource
 	{
 		
@@ -2775,8 +2590,7 @@ namespace MyNS
 		public PasswordCredentials Credentials { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VCenterDataSourceRequest : BaseDataSourceRequest
 	{
 		
@@ -2784,8 +2598,7 @@ namespace MyNS
 		public PasswordCredentials Credentials { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VCenterManager : BaseManager
 	{
 		
@@ -2802,8 +2615,7 @@ namespace MyNS
 		public Reference Vm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPC : BaseEntity
 	{
 		
@@ -2826,8 +2638,7 @@ namespace MyNS
 		public string Vendor_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionResponse
 	{
 		
@@ -2835,8 +2646,7 @@ namespace MyNS
 		public string Api_version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VirtualMachine : BaseVirtualMachine
 	{
 		
@@ -2889,8 +2699,7 @@ namespace MyNS
 		public Vlan[] Vlans { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VlanL2Network : BaseL2Network
 	{
 		
@@ -2904,8 +2713,7 @@ namespace MyNS
 		public string Vlan_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Vmknic : BaseEntity
 	{
 		
@@ -2922,14 +2730,12 @@ namespace MyNS
 		public Vlan Vlan { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Vnic
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VxlanLayer2Network : BaseL2Network
 	{
 		

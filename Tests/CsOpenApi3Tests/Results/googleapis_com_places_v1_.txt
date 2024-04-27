@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A latitude-longitude viewport, represented as two diagonally opposite `low` and `high` points. A viewport is considered a closed region, i.e. it includes its boundary. The latitude bounds must range between -90 to 90 degrees inclusive, and the longitude bounds must range between -180 to 180 degrees inclusive. Various cases include: - If `low` = `high`, the viewport consists of that single point. - If `low.longitude` > `high.longitude`, the longitude range is inverted (the viewport crosses the 180 degree longitude line). - If `low.longitude` = -180 degrees and `high.longitude` = 180 degrees, the viewport includes all longitudes. - If `low.longitude` = 180 degrees and `high.longitude` = -180 degrees, the longitude range is empty. - If `low.latitude` > `high.latitude`, the latitude range is empty. Both `low` and `high` must be populated, and the represented box cannot be empty (as specified by the definitions above). An empty viewport will result in an error. For example, this viewport fully encloses New York City: { "low": { "latitude": 40.477398, "longitude": -74.259087 }, "high": { "latitude": 40.91618, "longitude": -73.70018 } }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleGeoTypeViewport
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeLatLng
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the author of the UGC data. Used in Photo, and Review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1AuthorAttribution
 	{
 		
@@ -89,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// Circle with a LatLng as center and radius.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1Circle
 	{
 		
@@ -110,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the EV Charge Station hosted in Place. Terminology follows https://afdc.energy.gov/fuels/electricity_infrastructure.html One port could charge one car at a time. One port has one or more connectors. One station has one or more ports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1EVChargeOptions
 	{
 		
@@ -131,8 +126,7 @@ namespace MyNS
 	/// <summary>
 	/// EV charging information grouped by [type, max_charge_rate_kw]. Shows EV charge aggregation of connectors that have the same type and max charge rate in kw.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1EVChargeOptionsConnectorAggregation
 	{
 		
@@ -173,48 +167,45 @@ namespace MyNS
 		public System.Nullable<GoogleMapsPlacesV1EVChargeOptionsConnectorAggregationType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsPlacesV1EVChargeOptionsConnectorAggregationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_OTHER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_J1772")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_J1772 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_TYPE_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_TYPE_2 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_CHADEMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_CHADEMO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_CCS_COMBO_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_CCS_COMBO_1 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_CCS_COMBO_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_CCS_COMBO_2 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_TESLA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_TESLA = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_UNSPECIFIED_GB_T")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_UNSPECIFIED_GB_T = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EV_CONNECTOR_TYPE_UNSPECIFIED_WALL_OUTLET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EV_CONNECTOR_TYPE_UNSPECIFIED_WALL_OUTLET = 9,
 	}
 	
 	/// <summary>
 	/// The most recent information about fuel options in a gas station. This information is updated regularly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1FuelOptions
 	{
 		
@@ -228,8 +219,7 @@ namespace MyNS
 	/// <summary>
 	/// Fuel price information for a given type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1FuelOptionsFuelPrice
 	{
 		
@@ -255,8 +245,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an amount of money with its currency type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeMoney
 	{
 		
@@ -279,75 +268,72 @@ namespace MyNS
 		public string Units { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsPlacesV1FuelOptionsFuelPriceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FUEL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FUEL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIESEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIESEL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGULAR_UNLEADED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGULAR_UNLEADED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIDGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIDGRADE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREMIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREMIUM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SP91")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SP91 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SP91_E10")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SP91_E10 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SP92")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SP92 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SP95")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SP95 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SP95_E10")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SP95_E10 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SP98")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SP98 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SP99")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SP99 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SP100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SP100 = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LPG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LPG = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="E80")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		E80 = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="E85")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		E85 = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHANE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METHANE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIO_DIESEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIO_DIESEL = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRUCK_DIESEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRUCK_DIESEL = 18,
 	}
 	
 	/// <summary>
 	/// Information about a photo of a place.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1Photo
 	{
 		
@@ -379,8 +365,7 @@ namespace MyNS
 	/// <summary>
 	/// A photo media from Places API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PhotoMedia
 	{
 		
@@ -400,8 +385,7 @@ namespace MyNS
 	/// <summary>
 	/// All the information representing a Place.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1Place
 	{
 		
@@ -775,8 +759,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the accessibility options a place offers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlaceAccessibilityOptions
 	{
 		
@@ -808,8 +791,7 @@ namespace MyNS
 	/// <summary>
 	/// The structured components that form the formatted address, if this information is available.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlaceAddressComponent
 	{
 		
@@ -841,8 +823,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about data providers of this place.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlaceAttribution
 	{
 		
@@ -859,30 +840,27 @@ namespace MyNS
 		public string ProviderUri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsPlacesV1PlaceBusinessStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATIONAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSED_TEMPORARILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSED_TEMPORARILY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSED_PERMANENTLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSED_PERMANENTLY = 3,
 	}
 	
 	/// <summary>
 	/// Information about business hour of the place.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlaceOpeningHours
 	{
 		
@@ -920,8 +898,7 @@ namespace MyNS
 	/// <summary>
 	/// A period the place remains in open_now status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlaceOpeningHoursPeriod
 	{
 		
@@ -941,8 +918,7 @@ namespace MyNS
 	/// <summary>
 	/// Status changing points.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlaceOpeningHoursPeriodPoint
 	{
 		
@@ -980,8 +956,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDate
 	{
 		
@@ -1004,60 +979,57 @@ namespace MyNS
 		public System.Nullable<System.Int32> Year { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsPlacesV1PlaceOpeningHoursSecondaryHoursType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECONDARY_HOURS_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECONDARY_HOURS_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVE_THROUGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVE_THROUGH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HAPPY_HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HAPPY_HOUR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAKEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAKEOUT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KITCHEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KITCHEN = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREAKFAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREAKFAST = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LUNCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LUNCH = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DINNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DINNER = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BRUNCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BRUNCH = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PICKUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PICKUP = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SENIOR_HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SENIOR_HOURS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLINE_SERVICE_HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLINE_SERVICE_HOURS = 13,
 	}
 	
 	/// <summary>
 	/// Structured information for special days that fall within the period that the returned opening hours cover. Special days are days that could impact the business hours of a place, e.g. Christmas day.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlaceOpeningHoursSpecialDay
 	{
 		
@@ -1071,8 +1043,7 @@ namespace MyNS
 	/// <summary>
 	/// Localized variant of a text in a particular language.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeLocalizedText
 	{
 		
@@ -1092,8 +1063,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about parking options for the place. A parking lot could support more than one option at the same time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlaceParkingOptions
 	{
 		
@@ -1143,8 +1113,7 @@ namespace MyNS
 	/// <summary>
 	/// Payment options the place accepts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlacePaymentOptions
 	{
 		
@@ -1176,8 +1145,7 @@ namespace MyNS
 	/// <summary>
 	/// Plus code (http://plus.codes) is a location reference with two formats: global code defining a 14mx14m (1/8000th of a degree) or smaller rectangle, and compound code, replacing the prefix with a reference location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlacePlusCode
 	{
 		
@@ -1194,36 +1162,33 @@ namespace MyNS
 		public string GlobalCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsPlacesV1PlacePriceLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE_LEVEL_FREE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE_LEVEL_FREE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE_LEVEL_INEXPENSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE_LEVEL_INEXPENSIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE_LEVEL_MODERATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE_LEVEL_MODERATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE_LEVEL_EXPENSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE_LEVEL_EXPENSIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE_LEVEL_VERY_EXPENSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE_LEVEL_VERY_EXPENSIVE = 5,
 	}
 	
 	/// <summary>
 	/// Information about a review of a place.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1Review
 	{
 		
@@ -1273,8 +1238,7 @@ namespace MyNS
 	/// <summary>
 	/// Place resource name and id of sub destinations that relate to the place. For example, different terminals are different destinations of an airport.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1PlaceSubDestination
 	{
 		
@@ -1294,8 +1258,7 @@ namespace MyNS
 	/// <summary>
 	/// Request proto for Search Nearby. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1SearchNearbyRequest
 	{
 		
@@ -1357,8 +1320,7 @@ namespace MyNS
 	/// <summary>
 	/// The region to search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1SearchNearbyRequestLocationRestriction
 	{
 		
@@ -1369,27 +1331,24 @@ namespace MyNS
 		public GoogleMapsPlacesV1Circle Circle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsPlacesV1SearchNearbyRequestRankPreference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RANK_PREFERENCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RANK_PREFERENCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISTANCE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POPULARITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POPULARITY = 2,
 	}
 	
 	/// <summary>
 	/// Response proto for Search Nearby. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1SearchNearbyResponse
 	{
 		
@@ -1403,8 +1362,7 @@ namespace MyNS
 	/// <summary>
 	/// Request proto for SearchText. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1SearchTextRequest
 	{
 		
@@ -1484,8 +1442,7 @@ namespace MyNS
 	/// <summary>
 	/// The region to search. This location serves as a bias which means results around given location might be returned.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1SearchTextRequestLocationBias
 	{
 		
@@ -1505,8 +1462,7 @@ namespace MyNS
 	/// <summary>
 	/// The region to search. This location serves as a restriction which means results outside given location will not be returned.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1SearchTextRequestLocationRestriction
 	{
 		
@@ -1517,27 +1473,24 @@ namespace MyNS
 		public GoogleGeoTypeViewport Rectangle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleMapsPlacesV1SearchTextRequestRankPreference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RANK_PREFERENCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RANK_PREFERENCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISTANCE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEVANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEVANCE = 2,
 	}
 	
 	/// <summary>
 	/// Response proto for SearchText. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleMapsPlacesV1SearchTextResponse
 	{
 		

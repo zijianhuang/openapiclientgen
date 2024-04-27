@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Application
 	{
 		
@@ -64,8 +63,7 @@ namespace MyNS
 	/// <summary>
 	/// A series of links between resources in this API in the following [HAL specification](http://stateless.co/hal_specification.html).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Links
 	{
 		
@@ -76,8 +74,7 @@ namespace MyNS
 		public string Href { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationBase
 	{
 		
@@ -97,8 +94,7 @@ namespace MyNS
 	/// <summary>
 	/// The Nexmo product that you access with this application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Keys
 	{
 		
@@ -112,8 +108,7 @@ namespace MyNS
 	/// <summary>
 	/// The Nexmo product that you access with this application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Messages
 	{
 		
@@ -148,37 +143,32 @@ namespace MyNS
 		public MessagesWebhooksHttp_method Http_method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessagesWebhooksEndpoint_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound_url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound_url = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="status_url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		status_url = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessagesWebhooksHttp_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 1,
 	}
 	
 	/// <summary>
 	/// The Nexmo product that you access with this application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Voice
 	{
 		
@@ -213,21 +203,18 @@ namespace MyNS
 		public MessagesWebhooksHttp_method Http_method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VoiceWebhooksEndpoint_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answer_url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answer_url = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="event_url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		event_url = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationCreated : Application
 	{
 		
@@ -235,8 +222,7 @@ namespace MyNS
 		public KeysWithPrivateKey Keys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Applications
 	{
 		
@@ -277,8 +263,7 @@ namespace MyNS
 		public ApplicationsBase Page_size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationsBase
 	{
 		
@@ -314,8 +299,7 @@ namespace MyNS
 		public Application[] Applications { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeysWithPrivateKey : Keys
 	{
 		
@@ -609,16 +593,14 @@ namespace MyNS
 		public CreateApplicationPostBodyType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateApplicationPostBodyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voice = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="messages")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		messages = 1,
 	}
 	

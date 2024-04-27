@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata about the user who performed an action, such as creating a release or finalizing a version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActingUser
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a DNS certificate challenge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertDnsChallenge
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an HTTP certificate challenge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertHttpChallenge
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of ACME challenges you can use to allow Hosting to create an SSL certificate for your domain name before directing traffic to Hosting servers. Use either the DNS or HTTP challenge; it's not necessary to provide both.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertVerification
 	{
 		
@@ -104,8 +100,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of DNS record updates that you should make to allow Hosting to serve secure content in response to requests against your domain name. These updates present the current state of your domain name's DNS records when Hosting last queried them, and the desired set of records that Hosting needs to see before your custom domain can be fully active.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DnsUpdates
 	{
 		
@@ -131,8 +126,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of DNS records relevant to the setup and maintenance of a custom domain in Firebase Hosting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DnsRecordSet
 	{
 		
@@ -158,8 +152,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -185,8 +178,7 @@ namespace MyNS
 	/// <summary>
 	/// DNS records are resource records that define how systems and services should behave when handling requests for a domain name. For example, when you add `A` records to your domain name's DNS records, you're informing other systems (such as your users' web browsers) to contact those IPv4 addresses to retrieve resources relevant to your domain name (such as your Hosting site files).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DnsRecord
 	{
 		
@@ -215,52 +207,47 @@ namespace MyNS
 		public System.Nullable<DnsRecordType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DnsRecordRequiredAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DnsRecordType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CNAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CNAME = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TXT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAAA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAAA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAA = 5,
 	}
 	
 	/// <summary>
 	/// A file you can add to your existing, non-Hosting hosting service that confirms your intent to allow Hosting's Certificate Authorities to create an SSL certificate for your domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpUpdate
 	{
 		
@@ -298,8 +285,7 @@ namespace MyNS
 	/// <summary>
 	/// An SSL certificate used to provide end-to-end encryption for requests against your domain name. A `Certificate` can be an actual SSL certificate or, for newly-created custom domains, Hosting's intent to create one.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Certificate
 	{
 		
@@ -340,61 +326,56 @@ namespace MyNS
 		public CertVerification Verification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_PREPARING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_PREPARING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_VALIDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_VALIDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_PROPAGATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_PROPAGATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_ACTIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_EXPIRING_SOON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_EXPIRING_SOON = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_EXPIRED = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPORARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPORARY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GROUPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GROUPED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECT_GROUPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECT_GROUPED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEDICATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEDICATED = 4,
 	}
 	
 	/// <summary>
 	/// A `Channel` represents a stream of releases for a site. All sites have a default `live` channel that serves content to the Firebase-provided subdomains and any connected custom domains.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -456,8 +437,7 @@ namespace MyNS
 	/// <summary>
 	///  A `Release` is a particular [collection of configurations and files](sites.versions) that is set to be public at a particular time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Release
 	{
 		
@@ -498,30 +478,27 @@ namespace MyNS
 		public Version Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReleaseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPLOY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPLOY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLBACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLLBACK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_DISABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_DISABLE = 3,
 	}
 	
 	/// <summary>
 	/// A `Version` is a configuration and a collection of static files which determine how a site is displayed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Version
 	{
 		
@@ -601,8 +578,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for how incoming requests to a site should be routed and processed before serving content. The URL request paths are matched against the specified URL patterns in the configuration, then Hosting applies the applicable configuration according to a specific [priority order](https://firebase.google.com/docs/hosting/full-config#hosting_priority_order).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServingConfig
 	{
 		
@@ -649,24 +625,21 @@ namespace MyNS
 		public System.Nullable<ServingConfigTrailingSlashBehavior> TrailingSlashBehavior { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServingConfigAppAssociation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 	}
 	
 	/// <summary>
 	/// A [`Header`](https://firebase.google.com/docs/hosting/full-config#headers) specifies a URL pattern that, if matched to the request URL path, triggers Hosting to apply the specified custom response headers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Header
 	{
 		
@@ -692,8 +665,7 @@ namespace MyNS
 	/// <summary>
 	/// If provided, i18n rewrites are enabled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class I18nConfig
 	{
 		
@@ -707,8 +679,7 @@ namespace MyNS
 	/// <summary>
 	/// A [`Redirect`](https://firebase.google.com/docs/hosting/full-config#redirects) specifies a URL pattern that, if matched to the request URL path, triggers Hosting to respond with a redirect to the specified destination path.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Redirect
 	{
 		
@@ -740,8 +711,7 @@ namespace MyNS
 	/// <summary>
 	/// A [`Rewrite`](https://firebase.google.com/docs/hosting/full-config#rewrites) specifies a URL pattern that, if matched to the request URL path, triggers Hosting to respond as if the service were given the specified destination URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rewrite
 	{
 		
@@ -791,8 +761,7 @@ namespace MyNS
 	/// <summary>
 	/// A configured rewrite that directs requests to a Cloud Run service. If the Cloud Run service does not exist when setting or updating your Firebase Hosting configuration, then the request fails. Any errors from the Cloud Run service are passed to the end user (for example, if you delete a service, any requests directed to that service receive a `404` error).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudRunRewrite
 	{
 		
@@ -815,52 +784,47 @@ namespace MyNS
 		public string Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServingConfigTrailingSlashBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAILING_SLASH_BEHAVIOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAILING_SLASH_BEHAVIOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VersionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERSION_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERSION_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINALIZED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABANDONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABANDONED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLONING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLONING = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloneVersionRequest
 	{
 		
@@ -892,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of filter path.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathFilter
 	{
 		
@@ -907,8 +870,7 @@ namespace MyNS
 	/// <summary>
 	/// A `CustomDomain` is an entity that links a domain name to a Firebase Hosting site. Add a `CustomDomain` to your site to allow Hosting to serve the site's content in response to requests against your domain name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDomain
 	{
 		
@@ -1009,64 +971,59 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomDomainHostState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOST_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOST_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOST_UNHOSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOST_UNHOSTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOST_UNREACHABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOST_UNREACHABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOST_MISMATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOST_MISMATCH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOST_CONFLICT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOST_CONFLICT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOST_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOST_ACTIVE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomDomainOwnershipState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNERSHIP_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNERSHIP_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNERSHIP_MISSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNERSHIP_MISSING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNERSHIP_UNREACHABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNERSHIP_UNREACHABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNERSHIP_MISMATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNERSHIP_MISMATCH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNERSHIP_CONFLICT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNERSHIP_CONFLICT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNERSHIP_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNERSHIP_PENDING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNERSHIP_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNERSHIP_ACTIVE = 6,
 	}
 	
 	/// <summary>
 	/// Metadata associated with a`CustomDomain` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDomainMetadata
 	{
 		
@@ -1110,8 +1067,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of updates including ACME challenges and DNS records that allow Hosting to create an SSL certificate and establish project ownership for your domain name before you direct traffic to Hosting servers. Use these updates to facilitate zero downtime migrations to Hosting from other services. After you've made the recommended updates, check your custom domain's `ownershipState` and `certState`. To avoid downtime, they should be `OWNERSHIP_ACTIVE` and `CERT_ACTIVE`, respectively, before you update your `A` and `AAAA` records.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiveMigrationStep
 	{
 		
@@ -1140,36 +1096,33 @@ namespace MyNS
 		public System.Nullable<LiveMigrationStepState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LiveMigrationStepState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREPARING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREPARING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCOMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCOMPLETE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 5,
 	}
 	
 	/// <summary>
 	/// The intended behavior and status information of a domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Domain
 	{
 		
@@ -1213,8 +1166,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the behavior of a domain-level redirect. Domain redirects preserve the path of the redirect but replace the requested domain with the one specified in the redirect configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainRedirect
 	{
 		
@@ -1231,24 +1183,21 @@ namespace MyNS
 		public System.Nullable<DomainRedirectType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainRedirectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOVED_PERMANENTLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOVED_PERMANENTLY = 1,
 	}
 	
 	/// <summary>
 	/// The current certificate provisioning status information for a domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainProvisioning
 	{
 		
@@ -1301,92 +1250,84 @@ namespace MyNS
 		public string[] ExpectedIps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainProvisioningCertStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_MISSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_MISSING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_PROCESSING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_PROPAGATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_PROPAGATING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_ACTIVE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_ERROR = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainProvisioningDnsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS_MISSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS_MISSING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS_PARTIAL_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS_PARTIAL_MATCH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS_MATCH = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS_EXTRANEOUS_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS_EXTRANEOUS_MATCH = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN_CHANGE_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN_CHANGE_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN_ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN_VERIFICATION_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN_VERIFICATION_REQUIRED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN_VERIFICATION_LOST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN_VERIFICATION_LOST = 4,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListChannelsResponse
 	{
 		
@@ -1406,8 +1347,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from `ListCustomDomains`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomDomainsResponse
 	{
 		
@@ -1427,8 +1367,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to listing Domains.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainsResponse
 	{
 		
@@ -1448,8 +1387,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -1469,8 +1407,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1505,8 +1442,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, object> Response { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReleasesResponse
 	{
 		
@@ -1523,8 +1459,7 @@ namespace MyNS
 		public Release[] Releases { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSitesResponse
 	{
 		
@@ -1544,8 +1479,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Site` represents a Firebase Hosting site.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Site
 	{
 		
@@ -1580,24 +1514,21 @@ namespace MyNS
 		public System.Nullable<SiteType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SiteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT_SITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT_SITE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_SITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_SITE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVersionFilesResponse
 	{
 		
@@ -1617,8 +1548,7 @@ namespace MyNS
 	/// <summary>
 	/// A static content file that is part of a version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionFile
 	{
 		
@@ -1641,24 +1571,21 @@ namespace MyNS
 		public System.Nullable<VersionFileStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VersionFileStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVersionsResponse
 	{
 		
@@ -1675,8 +1602,7 @@ namespace MyNS
 		public Version[] Versions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PopulateVersionFilesRequest
 	{
 		
@@ -1687,8 +1613,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> Files { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PopulateVersionFilesResponse
 	{
 		
@@ -1708,8 +1633,7 @@ namespace MyNS
 	/// <summary>
 	/// A `SiteConfig` contains metadata associated with a specific site that controls Firebase Hosting serving behavior
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SiteConfig
 	{
 		
@@ -1729,8 +1653,7 @@ namespace MyNS
 	/// <summary>
 	/// The request sent to `UndeleteCustomDomain`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UndeleteCustomDomainRequest
 	{
 		

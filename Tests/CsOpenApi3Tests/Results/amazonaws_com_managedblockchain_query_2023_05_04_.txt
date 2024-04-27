@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetTokenBalanceOutput
 	{
 		
@@ -40,8 +39,7 @@ namespace MyNS
 	/// <summary>
 	/// The container for the properties of a token balance output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetTokenBalanceOutputItem
 	{
 		
@@ -82,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// The container for the identifier of the owner.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerIdentifier
 	{
 		
@@ -98,8 +95,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p> <note> <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TokenIdentifier
 	{
 		
@@ -117,24 +113,21 @@ namespace MyNS
 		public string TokenId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryNetwork
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ETHEREUM_MAINNET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ETHEREUM_MAINNET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BITCOIN_MAINNET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BITCOIN_MAINNET = 1,
 	}
 	
 	/// <summary>
 	/// The container for time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockchainInstant
 	{
 		
@@ -145,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	/// Error generated from a failed <code>BatchGetTokenBalance</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetTokenBalanceErrorItem
 	{
 		
@@ -190,24 +182,21 @@ namespace MyNS
 		public ErrorType ErrorType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_EXCEPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_EXCEPTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_NOT_FOUND_EXCEPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_NOT_FOUND_EXCEPTION = 1,
 	}
 	
 	/// <summary>
 	/// The container for the input for getting a token balance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetTokenBalanceInputItem
 	{
 		
@@ -234,44 +223,37 @@ namespace MyNS
 		public BlockchainInstant AtBlockchainInstant { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTokenBalanceOutput
 	{
 		
@@ -309,8 +291,7 @@ namespace MyNS
 		public BlockchainInstant LastUpdatedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTransactionOutput
 	{
 		
@@ -325,8 +306,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>There are two possible types of transactions used for this data type:</p> <ul> <li> <p>A Bitcoin transaction is a movement of BTC from one address to another.</p> </li> <li> <p>An Ethereum transaction refers to an action initiated by an externally owned account, which is an account managed by a human, not a contract. For example, if Bob sends Alice 1 ETH, Bob's account must be debited and Alice's must be credited. This state-changing action occurs within a transaction.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transaction
 	{
 		
@@ -416,21 +396,18 @@ namespace MyNS
 		public string TransactionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryTransactionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTokenBalancesOutput
 	{
 		
@@ -448,8 +425,7 @@ namespace MyNS
 	/// <summary>
 	/// The balance of the token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TokenBalance
 	{
 		
@@ -477,8 +453,7 @@ namespace MyNS
 		public BlockchainInstant LastUpdatedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTransactionEventsOutput
 	{
 		
@@ -496,8 +471,7 @@ namespace MyNS
 	/// <summary>
 	/// The container for the properties of a transaction event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionEvent
 	{
 		
@@ -544,48 +518,45 @@ namespace MyNS
 		public System.Nullable<System.Int32> VoutIndex { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryTransactionEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERC20_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERC20_TRANSFER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERC20_MINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERC20_MINT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERC20_BURN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERC20_BURN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERC20_DEPOSIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERC20_DEPOSIT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERC20_WITHDRAWAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERC20_WITHDRAWAL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERC721_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERC721_TRANSFER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERC1155_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERC1155_TRANSFER = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BITCOIN_VIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BITCOIN_VIN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BITCOIN_VOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BITCOIN_VOUT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ETH_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ETH_TRANSFER = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ETH_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ETH_TRANSFER = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTransactionsOutput
 	{
 		
@@ -603,8 +574,7 @@ namespace MyNS
 	/// <summary>
 	/// The container of the transaction output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionOutputItem
 	{
 		
@@ -630,31 +600,26 @@ namespace MyNS
 		public System.DateTimeOffset TransactionTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ListTransactionsSortBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTION_TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSACTION_TIMESTAMP = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetTokenBalanceInput
 	{
 		
@@ -662,8 +627,7 @@ namespace MyNS
 		public BatchGetTokenBalanceInputItem[] GetTokenBalanceInputs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTokenBalanceInput
 	{
 		
@@ -685,8 +649,7 @@ namespace MyNS
 		public BlockchainInstant AtBlockchainInstant { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTransactionInput
 	{
 		
@@ -708,8 +671,7 @@ namespace MyNS
 	/// <summary>
 	/// The container for the owner information to filter by.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OwnerFilter
 	{
 		
@@ -724,8 +686,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The container of the token filter like the contract address on a given blockchain network or a unique token identifier on a given blockchain network.</p> <note> <p>You must always specify the network property of this container when using this operation.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TokenFilter
 	{
 		
@@ -743,8 +704,7 @@ namespace MyNS
 		public string TokenId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTokenBalancesInput
 	{
 		
@@ -765,8 +725,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTransactionEventsInput
 	{
 		
@@ -794,8 +753,7 @@ namespace MyNS
 	/// <summary>
 	/// The container for determining how the list transaction result will be sorted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTransactionsSort
 	{
 		
@@ -806,8 +764,7 @@ namespace MyNS
 		public SortOrder SortOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTransactionsInput
 	{
 		

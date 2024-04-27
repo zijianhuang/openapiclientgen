@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// required subset of collaborator data to get a permission
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Add_new_collaborator_request
 	{
 		
@@ -38,8 +37,7 @@ namespace MyNS
 	/// <summary>
 	/// Base model for all types
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Base_model
 	{
 		
@@ -59,8 +57,7 @@ namespace MyNS
 		public string Updated_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cache_post_request
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// allows for bulk updating of user_ids and active status based on a lead id or user_id
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Collaborator_bulk_update_request
 	{
 		
@@ -95,8 +91,7 @@ namespace MyNS
 	/// <summary>
 	/// Request body for creating a session
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_session_request
 	{
 		
@@ -110,8 +105,7 @@ namespace MyNS
 	/// <summary>
 	/// An Story Event object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class event_ : Base_model
 	{
 		
@@ -140,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// A Base64 encoded file object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File_upload
 	{
 		
@@ -158,8 +151,7 @@ namespace MyNS
 		public string Mimetype { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Manage_event
 	{
 		
@@ -173,30 +165,27 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Manage_eventAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="create")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		create = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fire")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fire = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="change")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		change = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delete = 3,
 	}
 	
 	/// <summary>
 	/// A conversation message
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -222,8 +211,7 @@ namespace MyNS
 	/// <summary>
 	/// Action can be either "delete" or "activate".  Either lead_id or user_id is required.  user_id takes precedence.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Modify_inactive_collaborator
 	{
 		
@@ -240,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to an Ooxml Automation Document from the Presalytics Ooxml Automation API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ooxml_document : Base_model
 	{
 		
@@ -258,8 +245,7 @@ namespace MyNS
 	/// <summary>
 	/// story_outline (json object)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Outline
 	{
 		
@@ -270,8 +256,7 @@ namespace MyNS
 	/// <summary>
 	/// A permission type that can be applied to story collaborator
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Permission_type : Base_model
 	{
 		
@@ -294,8 +279,7 @@ namespace MyNS
 	/// <summary>
 	/// Error reponse model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Problem_detail
 	{
 		
@@ -315,8 +299,7 @@ namespace MyNS
 	/// <summary>
 	/// A user session with an open story
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Session : Base_model
 	{
 		
@@ -342,8 +325,7 @@ namespace MyNS
 	/// <summary>
 	/// A Page view within a session-create
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class View : Base_model
 	{
 		
@@ -372,8 +354,7 @@ namespace MyNS
 	/// <summary>
 	/// Status response when returning 202s
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -384,8 +365,7 @@ namespace MyNS
 	/// <summary>
 	/// Model for story objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Story : Base_model
 	{
 		
@@ -414,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of a user that can collaborate on a story
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Story_collaborator : Base_model
 	{
 		
@@ -450,8 +429,7 @@ namespace MyNS
 	/// <summary>
 	/// A revision repository for story outlines
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Story_outline_history : Base_model
 	{
 		

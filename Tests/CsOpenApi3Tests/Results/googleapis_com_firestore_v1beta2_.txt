@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the create database operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1CreateDatabaseMetadata
 	{
 	}
@@ -38,8 +36,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the delete database operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1DeleteDatabaseMetadata
 	{
 	}
@@ -47,8 +44,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the progress of the operation. Unit of work is generic and must be interpreted based on where Progress is used.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1Progress
 	{
 		
@@ -68,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the long-running operation from the RestoreDatabase request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1RestoreDatabaseMetadata
 	{
 		
@@ -110,42 +105,39 @@ namespace MyNS
 		public string StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirestoreAdminV1RestoreDatabaseMetadataOperationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINALIZING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESSFUL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 7,
 	}
 	
 	/// <summary>
 	/// Metadata related to the update database operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1UpdateDatabaseMetadata
 	{
 	}
@@ -153,8 +145,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for google.longrunning.Operation results from FirestoreAdmin.ExportDocuments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2ExportDocumentsMetadata
 	{
 		
@@ -204,8 +195,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the progress of the operation. Unit of work is generic and must be interpreted based on where Progress is used.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2Progress
 	{
 		
@@ -225,8 +215,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for FirestoreAdmin.ExportDocuments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2ExportDocumentsRequest
 	{
 		
@@ -246,8 +235,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned in the google.longrunning.Operation response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2ExportDocumentsResponse
 	{
 		
@@ -261,8 +249,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single field in the database. Fields are grouped by their "Collection Group", which represent all collections in the database with the same id.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2Field
 	{
 		
@@ -282,8 +269,7 @@ namespace MyNS
 	/// <summary>
 	/// The index configuration for this field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2IndexConfig
 	{
 		
@@ -315,8 +301,7 @@ namespace MyNS
 	/// <summary>
 	/// Cloud Firestore indexes enable simple and complex queries against documents in a database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2Index
 	{
 		
@@ -348,8 +333,7 @@ namespace MyNS
 	/// <summary>
 	/// A field in an index. The field_path describes which field is indexed, the value_mode describes how the field value is indexed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2IndexField
 	{
 		
@@ -372,75 +356,66 @@ namespace MyNS
 		public System.Nullable<GoogleFirestoreAdminV1beta2IndexFieldOrder> Order { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirestoreAdminV1beta2IndexFieldArrayConfig
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARRAY_CONFIG_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARRAY_CONFIG_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirestoreAdminV1beta2IndexFieldOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORDER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORDER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirestoreAdminV1beta2IndexQueryScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUERY_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUERY_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLLECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLLECTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLLECTION_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLLECTION_GROUP = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirestoreAdminV1beta2IndexState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEEDS_REPAIR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEEDS_REPAIR = 3,
 	}
 	
 	/// <summary>
 	/// Metadata for google.longrunning.Operation results from FirestoreAdmin.UpdateField.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2FieldOperationMetadata
 	{
 		
@@ -490,8 +465,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an index configuration change.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2IndexConfigDelta
 	{
 		
@@ -508,27 +482,24 @@ namespace MyNS
 		public GoogleFirestoreAdminV1beta2Index Index { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirestoreAdminV1beta2IndexConfigDeltaChangeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVE = 2,
 	}
 	
 	/// <summary>
 	/// Metadata for google.longrunning.Operation results from FirestoreAdmin.ImportDocuments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2ImportDocumentsMetadata
 	{
 		
@@ -578,8 +549,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for FirestoreAdmin.ImportDocuments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2ImportDocumentsRequest
 	{
 		
@@ -599,8 +569,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for google.longrunning.Operation results from FirestoreAdmin.CreateIndex.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2IndexOperationMetadata
 	{
 		
@@ -644,8 +613,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for FirestoreAdmin.ListFields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2ListFieldsResponse
 	{
 		
@@ -665,8 +633,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for FirestoreAdmin.ListIndexes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirestoreAdminV1beta2ListIndexesResponse
 	{
 		
@@ -686,8 +653,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -725,8 +691,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		

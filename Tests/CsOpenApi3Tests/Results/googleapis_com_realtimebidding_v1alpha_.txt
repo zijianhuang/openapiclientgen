@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to activate a bidding function.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivateBiddingFunctionRequest
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to archive a bidding function.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArchiveBiddingFunctionRequest
 	{
 	}
@@ -38,8 +36,7 @@ namespace MyNS
 	/// <summary>
 	/// The bidding function to be executed as part of the TURTLEDOVE simulation experiment bidding flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BiddingFunction
 	{
 		
@@ -68,43 +65,38 @@ namespace MyNS
 		public System.Nullable<BiddingFunctionType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BiddingFunctionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BiddingFunctionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FUNCTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FUNCTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TURTLEDOVE_SIMULATION_BIDDING_FUNCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TURTLEDOVE_SIMULATION_BIDDING_FUNCTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEDGE_BIDDING_FUNCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEDGE_BIDDING_FUNCTION = 2,
 	}
 	
 	/// <summary>
 	/// A response containing a list of a bidder's bidding functions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBiddingFunctionsResponse
 	{
 		

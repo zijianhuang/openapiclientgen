@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Attachment with specific information about the issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1Attachment
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a CSV file attachment, as a list of column headers and a list of data rows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1Csv
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a single data row in a CSV file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1CsvCsvRow
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of ListNotifications endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1ListNotificationsResponse
 	{
 		
@@ -104,8 +100,7 @@ namespace MyNS
 	/// <summary>
 	/// A notification object for notifying customers about security and privacy issues.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1Notification
 	{
 		
@@ -143,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	/// A message which contains notification details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1Message
 	{
 		
@@ -176,8 +170,7 @@ namespace MyNS
 	/// <summary>
 	/// A message body containing text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1MessageBody
 	{
 		
@@ -191,8 +184,7 @@ namespace MyNS
 	/// <summary>
 	/// A text object containing the English text and its localized copies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1Text
 	{
 		
@@ -215,52 +207,47 @@ namespace MyNS
 		public string LocalizedText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAdvisorynotificationsV1TextLocalizationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALIZATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCALIZATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALIZATION_STATE_NOT_APPLICABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCALIZATION_STATE_NOT_APPLICABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALIZATION_STATE_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCALIZATION_STATE_PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALIZATION_STATE_COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCALIZATION_STATE_COMPLETED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAdvisorynotificationsV1NotificationNotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_SECURITY_PRIVACY_ADVISORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATION_TYPE_SECURITY_PRIVACY_ADVISORY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_SENSITIVE_ACTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATION_TYPE_SENSITIVE_ACTIONS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_SECURITY_MSA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATION_TYPE_SECURITY_MSA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_THREAT_HORIZONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATION_TYPE_THREAT_HORIZONS = 4,
 	}
 	
 	/// <summary>
 	/// A subject line of a notification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1Subject
 	{
 		
@@ -274,8 +261,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for each NotificationType.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1NotificationSettings
 	{
 		
@@ -289,8 +275,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for Advisory Notifications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAdvisorynotificationsV1Settings
 	{
 		
@@ -450,13 +435,13 @@ namespace MyNS
 	public enum Advisorynotifications_projects_locations_notifications_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATION_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

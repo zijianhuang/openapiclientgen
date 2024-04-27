@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateTableRowsResult
 	{
 		
@@ -40,8 +39,7 @@ namespace MyNS
 		public FailedBatchItem[] FailedBatchItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatedRowsMap
 	{
 	}
@@ -49,8 +47,7 @@ namespace MyNS
 	/// <summary>
 	///  A single item in a batch that failed to perform the intended action because of an error preventing it from succeeding. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailedBatchItem
 	{
 		
@@ -72,8 +69,7 @@ namespace MyNS
 	/// <summary>
 	///  Data needed to create a single row in a table as part of the BatchCreateTableRows request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRowData
 	{
 		
@@ -92,62 +88,52 @@ namespace MyNS
 		public RowDataInput CellsToCreate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RowDataInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestTimeoutException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteTableRowsResult
 	{
 		
@@ -162,8 +148,7 @@ namespace MyNS
 		public FailedBatchItem[] FailedBatchItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateTableRowsResult
 	{
 		
@@ -181,8 +166,7 @@ namespace MyNS
 	/// <summary>
 	///  Data needed to create a single row in a table as part of the BatchCreateTableRows request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRowData
 	{
 		
@@ -201,8 +185,7 @@ namespace MyNS
 		public RowDataInput CellsToUpdate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpsertTableRowsResult
 	{
 		
@@ -224,8 +207,7 @@ namespace MyNS
 		public FailedBatchItem[] FailedBatchItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpsertRowsResultMap
 	{
 	}
@@ -233,8 +215,7 @@ namespace MyNS
 	/// <summary>
 	///  Data needed to upsert rows in a table as part of a single item in the BatchUpsertTableRows request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpsertRowData
 	{
 		
@@ -263,8 +244,7 @@ namespace MyNS
 	/// <summary>
 	///  An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -279,8 +259,7 @@ namespace MyNS
 		public string ContextRowId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTableDataImportJobResult
 	{
 		
@@ -309,30 +288,27 @@ namespace MyNS
 		public ErrorCode ErrorCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TableDataImportJobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMITTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// The metadata associated with the table data import job that was submitted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableDataImportJobMetadata
 	{
 		
@@ -368,8 +344,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the attributes of the submitter of the import job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportJobSubmitter
 	{
 		
@@ -383,8 +358,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the options specified by the sumitter of the import request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportOptions
 	{
 		
@@ -398,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the options relating to the destination of the import request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DestinationOptions
 	{
 		
@@ -407,8 +380,7 @@ namespace MyNS
 		public ImportColumnMap ColumnMap { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportColumnMap
 	{
 	}
@@ -416,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	///  An object that contains the options relating to parsing delimited text as part of an import request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DelimitedTextImportOptions
 	{
 		
@@ -438,9 +409,7 @@ namespace MyNS
 		public ImportDataCharacterEncoding DataCharacterEncoding { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImportDataCharacterEncoding
 	{
 		
@@ -466,8 +435,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that has details about the source of the data that was submitted for import.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportDataSource
 	{
 		
@@ -482,8 +450,7 @@ namespace MyNS
 	/// <summary>
 	///  An object that contains the configuration parameters for the data source of an import request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportDataSourceConfig
 	{
 		
@@ -491,57 +458,54 @@ namespace MyNS
 		public string DataSourceUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESS_DENIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_URL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_URL_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_IMPORT_OPTIONS_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_IMPORT_OPTIONS_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_TABLE_ID_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_TABLE_ID_ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_TABLE_COLUMN_ID_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_TABLE_COLUMN_ID_ERROR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE_NOT_FOUND_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE_NOT_FOUND_ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_EMPTY_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_EMPTY_ERROR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_FILE_TYPE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_FILE_TYPE_ERROR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_PARSING_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_PARSING_ERROR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_SIZE_LIMIT_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_SIZE_LIMIT_ERROR = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_NOT_FOUND_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_NOT_FOUND_ERROR = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ERROR = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_NOT_FOUND_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_NOT_FOUND_ERROR = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_LIMIT_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_LIMIT_ERROR = 13,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetScreenDataResult
 	{
 		
@@ -563,8 +527,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResultSetMap
 	{
 	}
@@ -572,8 +535,7 @@ namespace MyNS
 	/// <summary>
 	/// The input variables to the app to be used by the InvokeScreenAutomation action request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VariableValue
 	{
 		
@@ -585,8 +547,7 @@ namespace MyNS
 		public string RawValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvokeScreenAutomationResult
 	{
 		
@@ -598,20 +559,17 @@ namespace MyNS
 		public int WorkbookCursor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutomationExecutionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutomationExecutionTimeoutException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTableColumnsResult
 	{
 		
@@ -632,8 +590,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains attributes about a single column in a table
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableColumn
 	{
 		
@@ -647,51 +604,48 @@ namespace MyNS
 		public Format Format { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Format
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENCY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_TIME = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENTAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENTAGE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNTING = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTACT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROWLINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROWLINK = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROWSET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROWSET = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTableRowsResult
 	{
 		
@@ -726,8 +680,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains attributes about a single row in a table
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableRow
 	{
 		
@@ -749,8 +702,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents a single cell in a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cell
 	{
 		
@@ -770,8 +722,7 @@ namespace MyNS
 		public string[] FormattedValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTablesResult
 	{
 		
@@ -792,8 +743,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing the properties of a table in a workbook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Table
 	{
 		
@@ -804,8 +754,7 @@ namespace MyNS
 		public string TableName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResult
 	{
 		
@@ -816,14 +765,12 @@ namespace MyNS
 	/// <summary>
 	/// A string to string map representing tags
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagsMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryTableRowsResult
 	{
 		
@@ -852,8 +799,7 @@ namespace MyNS
 		public int WorkbookCursor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTableDataImportJobResult
 	{
 		
@@ -872,20 +818,17 @@ namespace MyNS
 		public TableDataImportJobStatus JobStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateTableRowsRequest
 	{
 		
@@ -900,8 +843,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteTableRowsRequest
 	{
 		
@@ -916,8 +858,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateTableRowsRequest
 	{
 		
@@ -932,8 +873,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpsertTableRowsRequest
 	{
 		
@@ -951,8 +891,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> CellInput object contains the data needed to create or update cells in a table. </p> <note> <p> CellInput object has only a facts field or a fact field, but not both. A 400 bad request will be thrown if both fact and facts field are present. </p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CellInput
 	{
 		
@@ -966,8 +905,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for column in the table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnMetadata
 	{
 		
@@ -989,8 +927,7 @@ namespace MyNS
 	/// <summary>
 	/// The data in a particular data cell defined on the screen.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataItem
 	{
 		
@@ -1004,20 +941,17 @@ namespace MyNS
 		public string FormattedValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTableDataImportJobRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VariableValueMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetScreenDataRequest
 	{
 		
@@ -1055,8 +989,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the properties for importing data to a specific column in a table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceDataColumnProperties
 	{
 		
@@ -1064,18 +997,15 @@ namespace MyNS
 		public System.Nullable<System.Int32> ColumnIndex { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImportSourceDataFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIMITED_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIMITED_TEXT = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvokeScreenAutomationRequest
 	{
 		
@@ -1089,14 +1019,12 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTableColumnsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTableRowsRequest
 	{
 		
@@ -1110,20 +1038,17 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTablesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryTableRowsRequest
 	{
 		
@@ -1144,8 +1069,7 @@ namespace MyNS
 	/// <summary>
 	/// A single row in the ResultSet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResultRow
 	{
 		
@@ -1163,8 +1087,7 @@ namespace MyNS
 	/// <summary>
 	///  ResultSet contains the results of the request for a single block or list defined on the screen. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResultSet
 	{
 		
@@ -1183,8 +1106,7 @@ namespace MyNS
 		public ResultRow[] Rows { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTableDataImportJobRequest
 	{
 		
@@ -1217,8 +1139,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1230,30 +1151,26 @@ namespace MyNS
 		public TagsMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpsertAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPENDED = 1,
 	}
 	
 	/// <summary>
 	///  An object that represents the result of a single upsert row request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpsertRowsResult
 	{
 		

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiHealthStatus
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiVersion
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// Error object reported in case of authentication or authorization errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthError
 	{
 		
@@ -71,8 +68,7 @@ namespace MyNS
 	/// <summary>
 	/// CDMA measurement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cdma
 	{
 		
@@ -166,8 +162,7 @@ namespace MyNS
 	/// <summary>
 	/// Local identification parameters of CDMA serving cell
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CdmaLocalId
 	{
 		
@@ -198,8 +193,7 @@ namespace MyNS
 	/// <summary>
 	/// CDMA Network measurement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CdmaNmr
 	{
 		
@@ -249,8 +243,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the client
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientInfo
 	{
 		
@@ -326,8 +319,7 @@ namespace MyNS
 	/// <summary>
 	/// Object wrapper for the error response to a request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -386,8 +378,7 @@ namespace MyNS
 	/// <summary>
 	/// Detail about an error
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		
@@ -419,8 +410,7 @@ namespace MyNS
 	/// <summary>
 	/// GSM measurement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Gsm
 	{
 		
@@ -508,8 +498,7 @@ namespace MyNS
 	/// <summary>
 	/// Local identification parameters of GSM serving cell
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GsmLocalId
 	{
 		
@@ -540,8 +529,7 @@ namespace MyNS
 	/// GSM Network measurements.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GsmNmr
 	{
 		
@@ -589,8 +577,7 @@ namespace MyNS
 	/// The `lac` and `cid` parameters of global ID for GSM neighbor measurement. They should be from the same PLMN (MCC+MNC) as the serving cell.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GsmNmrGlobalId
 	{
 		
@@ -621,8 +608,7 @@ namespace MyNS
 	/// Object wrapping the location data submitted in a request for a position. At least one of `gsm`, `wcdma`, `tdscdma`, `lte`, `cdma`, or `wlan` elements is required. Array elements should be unique within the request.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Locate
 	{
 		
@@ -697,8 +683,7 @@ namespace MyNS
 	/// <summary>
 	/// LTE measurement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Lte
 	{
 		
@@ -796,8 +781,7 @@ namespace MyNS
 	/// <summary>
 	/// Local identification parameters of LTE serving cell
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LteLocalId
 	{
 		
@@ -827,8 +811,7 @@ namespace MyNS
 	/// <summary>
 	/// LTE Network measurement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LteNmr
 	{
 		
@@ -888,8 +871,7 @@ namespace MyNS
 	/// <summary>
 	/// TD-SCDMA measurement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tdscdma
 	{
 		
@@ -986,8 +968,7 @@ namespace MyNS
 	/// <summary>
 	/// Local identification parameters of TD-SCDMA serving cell
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TdscdmaLocalId
 	{
 		
@@ -1017,8 +998,7 @@ namespace MyNS
 	/// <summary>
 	/// TD-SCDMA Network measurement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TdscdmaNmr
 	{
 		
@@ -1077,8 +1057,7 @@ namespace MyNS
 	/// <summary>
 	/// WCDMA measurement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Wcdma
 	{
 		
@@ -1165,8 +1144,7 @@ namespace MyNS
 	/// <summary>
 	/// Local identification parameters of WCDMA serving cell
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WcdmaLocalId
 	{
 		
@@ -1196,8 +1174,7 @@ namespace MyNS
 	/// <summary>
 	/// WCDMA Network measurement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WcdmaNmr
 	{
 		
@@ -1256,8 +1233,7 @@ namespace MyNS
 	/// <summary>
 	/// WLAN measurement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WlanLocate
 	{
 		
@@ -1285,8 +1261,7 @@ namespace MyNS
 	/// <summary>
 	/// Object containing information on a location where a measurement was taken.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionLocate
 	{
 		
@@ -1487,7 +1462,7 @@ namespace MyNS
 	public enum PostLocateContent_Encoding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gzip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gzip = 0,
 	}
 	

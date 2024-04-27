@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines attributes associated with API operations, such as a network API request. The terminology is based on the conventions used by Google APIs, Istio, and OpenAPI.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Api
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines the standard attribute vocabulary for Google APIs. An attribute is a piece of metadata that describes an activity on a network service. For example, the size of an HTTP request, or the status code of an HTTP response. Each attribute has a type and a name, which is logically defined as a proto message field in `AttributeContext`. The field type becomes the attribute type, and the field path becomes the attribute name. For example, the attribute `source.ip` maps to field `AttributeContext.source.ip`. This message definition is guaranteed not to have any wire breaking change. So you can use it directly for passing attributes across different systems. NOTE: Different system may generate different subset of attributes. Please verify the system specification before relying on an attribute generated a system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeContext
 	{
 		
@@ -110,8 +108,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines attributes for a node that handles a network request. The node can be either a service or an application that sends, forwards, or receives the request. Service peers should fill in `principal` and `labels` as appropriate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Peer
 	{
 		
@@ -149,8 +146,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines attributes for an HTTP request. If the actual request is not an HTTP request, the runtime system should try to map the actual request to an equivalent HTTP request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Request
 	{
 		
@@ -230,8 +226,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines request authentication attributes. Terminology is based on the JSON Web Token (JWT) standard, but the terms also correlate to concepts in other standards.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Auth
 	{
 		
@@ -269,8 +264,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines core attributes for a resource. A resource is an addressable (named) entity provided by the destination service. For example, a file stored on a network storage service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Resource
 	{
 		
@@ -350,8 +344,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines attributes for a typical network response. It generally models semantics of an HTTP response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response
 	{
 		
@@ -389,8 +382,7 @@ namespace MyNS
 	/// <summary>
 	/// Common audit log format for Google Cloud Platform API operations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditLog
 	{
 		
@@ -488,8 +480,7 @@ namespace MyNS
 	/// <summary>
 	/// Authentication information for the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationInfo
 	{
 		
@@ -539,8 +530,7 @@ namespace MyNS
 	/// <summary>
 	/// Identity delegation history of an authenticated service account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceAccountDelegationInfo
 	{
 		
@@ -566,8 +556,7 @@ namespace MyNS
 	/// <summary>
 	/// First party identity principal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstPartyPrincipal
 	{
 		
@@ -587,8 +576,7 @@ namespace MyNS
 	/// <summary>
 	/// Third party identity principal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyPrincipal
 	{
 		
@@ -602,8 +590,7 @@ namespace MyNS
 	/// <summary>
 	/// The history of delegation across multiple services as the result of the original user's action. Such as "service A uses its own account to do something for user B". This differs from ServiceAccountDelegationInfo, which only tracks the history of direct token exchanges (impersonation).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceDelegationHistory
 	{
 		
@@ -623,8 +610,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing the service and additional service specific information used to identify the job or unit of work at hand.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceMetadata
 	{
 		
@@ -650,8 +636,7 @@ namespace MyNS
 	/// <summary>
 	/// Authorization information for the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizationInfo
 	{
 		
@@ -683,8 +668,7 @@ namespace MyNS
 	/// <summary>
 	/// Information related to policy violations for this request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyViolationInfo
 	{
 		
@@ -698,8 +682,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents OrgPolicy Violation information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrgPolicyViolationInfo
 	{
 		
@@ -731,8 +714,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the Policy violation info for this request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ViolationInfo
 	{
 		
@@ -761,30 +743,27 @@ namespace MyNS
 		public System.Nullable<ViolationInfoPolicyType> PolicyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ViolationInfoPolicyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POLICY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POLICY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN_CONSTRAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN_CONSTRAINT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIST_CONSTRAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIST_CONSTRAINT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_CONSTRAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_CONSTRAINT = 3,
 	}
 	
 	/// <summary>
 	/// Metadata about the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestMetadata
 	{
 		
@@ -822,8 +801,7 @@ namespace MyNS
 	/// <summary>
 	/// Location information about a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceLocation
 	{
 		
@@ -843,8 +821,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -870,8 +847,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the Check method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckRequest
 	{
 		
@@ -903,8 +879,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a resource referenced in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInfo
 	{
 		
@@ -942,8 +917,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the Check method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckResponse
 	{
 		
@@ -963,8 +937,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the Report method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportRequest
 	{
 		
@@ -984,8 +957,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the Report method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportResponse
 	{
 	}
@@ -993,8 +965,7 @@ namespace MyNS
 	/// <summary>
 	/// The context of a span. This is attached to an Exemplar in Distribution values during aggregation. It contains the name of a span with format: projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpanContext
 	{
 		
@@ -1008,8 +979,7 @@ namespace MyNS
 	/// <summary>
 	/// A common proto for logging HTTP requests. Only contains semantics defined by the HTTP specification. Product-specific logging information MUST be defined in a separate message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V2HttpRequest
 	{
 		
@@ -1107,8 +1077,7 @@ namespace MyNS
 	/// <summary>
 	/// An individual log entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V2LogEntry
 	{
 		
@@ -1194,8 +1163,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information about a potentially long-running operation with which a log entry is associated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V2LogEntryOperation
 	{
 		
@@ -1224,45 +1192,42 @@ namespace MyNS
 		public string Producer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum V2LogEntrySeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBUG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBUG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTICE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRITICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRITICAL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALERT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMERGENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMERGENCY = 8,
 	}
 	
 	/// <summary>
 	/// Additional information about the source code location that produced the log entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V2LogEntrySourceLocation
 	{
 		

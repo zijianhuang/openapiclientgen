@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateLicenseResponse
 	{
 		
@@ -33,8 +32,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing information about an Amazon Managed Grafana workspace in your account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkspaceDescription
 	{
 		
@@ -143,24 +141,21 @@ namespace MyNS
 		public string WorkspaceRoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountAccessType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENT_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENT_ACCOUNT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 1,
 	}
 	
 	/// <summary>
 	/// A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication, and whether that authentication is fully configured.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationSummary
 	{
 		
@@ -175,84 +170,75 @@ namespace MyNS
 		public SamlConfigurationStatus SamlConfigurationStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthenticationProviderTypes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_SSO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_SSO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAML = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SamlConfigurationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIGURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIGURED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_CONFIGURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_CONFIGURED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMAZON_OPENSEARCH_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMAZON_OPENSEARCH_SERVICE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUDWATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUDWATCH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMETHEUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROMETHEUS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XRAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XRAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMESTREAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMESTREAM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITEWISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITEWISE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATHENA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATHENA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDSHIFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDSHIFT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWINMAKER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWINMAKER = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTERPRISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTERPRISE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTERPRISE_FREE_TRIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTERPRISE_FREE_TRIAL = 1,
 	}
 	
 	/// <summary>
 	/// <p>The configuration settings for in-bound network access to your workspace.</p> <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization are still required.</p> <p>Access is granted to a caller that is in either the IP address list or the VPC endpoint list - they do not need to be in both.</p> <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints are allowed. Standard Grafana authentication and authorization are still required.</p> <note> <p>While both <code>prefixListIds</code> and <code>vpceIds</code> are required, you can pass in an empty array of strings for either parameter if you do not want to allow any of that type.</p> <p>If both are passed as empty arrays, no traffic is allowed to the workspace, because only <i>explicitly</i> allowed connections are accepted.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkAccessConfiguration
 	{
 		
@@ -271,77 +257,70 @@ namespace MyNS
 		public string[] VpceIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NotificationDestinationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNS = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_MANAGED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_MANAGED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkspaceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPGRADING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPGRADING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETION_FAILED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATION_FAILED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPGRADE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPGRADE_FAILED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LICENSE_REMOVAL_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LICENSE_REMOVAL_FAILED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERSION_UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERSION_UPDATING = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERSION_UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERSION_UPDATE_FAILED = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
@@ -349,8 +328,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note> <p>Provided <code>securityGroupIds</code> and <code>subnetIds</code> must be part of the same VPC.</p> <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcConfiguration
 	{
 		
@@ -369,38 +347,32 @@ namespace MyNS
 		public string[] SubnetIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkspaceResponse
 	{
 		
@@ -412,20 +384,17 @@ namespace MyNS
 		public WorkspaceDescription Workspace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkspaceApiKeyResponse
 	{
 		
@@ -451,8 +420,7 @@ namespace MyNS
 		public string WorkspaceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkspaceResponse
 	{
 		
@@ -464,8 +432,7 @@ namespace MyNS
 		public WorkspaceDescription Workspace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkspaceApiKeyResponse
 	{
 		
@@ -484,8 +451,7 @@ namespace MyNS
 		public string WorkspaceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkspaceResponse
 	{
 		
@@ -497,8 +463,7 @@ namespace MyNS
 		public WorkspaceDescription Workspace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkspaceAuthenticationResponse
 	{
 		
@@ -513,8 +478,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing information about the user authentication methods used by the workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationDescription
 	{
 		
@@ -535,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing information about how this workspace works with IAM Identity Center. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsSsoAuthentication
 	{
 		
@@ -547,8 +510,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing information about how this workspace works with SAML. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SamlAuthentication
 	{
 		
@@ -566,8 +528,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing information about how this workspace works with SAML. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SamlConfiguration
 	{
 		
@@ -594,8 +555,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that defines which attributes in the IdP assertion are to be used to define information about the users authenticated by the IdP to use the workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssertionAttributes
 	{
 		
@@ -621,8 +581,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace. You can specify the metadata either by providing a URL to its location in the <code>url</code> parameter, or by specifying the full metadata in XML format in the <code>xml</code> parameter. Specifying both will cause an error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdpMetadata
 	{
 		
@@ -636,8 +595,7 @@ namespace MyNS
 	/// <summary>
 	/// This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace. SAML authenticated users not part of <code>Admin</code> or <code>Editor</code> role groups have <code>Viewer</code> permission over the workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoleValues
 	{
 		
@@ -648,8 +606,7 @@ namespace MyNS
 		public string[] Editor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkspaceConfigurationResponse
 	{
 		
@@ -664,8 +621,7 @@ namespace MyNS
 		public string GrafanaVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateLicenseResponse
 	{
 		
@@ -677,8 +633,7 @@ namespace MyNS
 		public WorkspaceDescription Workspace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionsResponse
 	{
 		
@@ -696,8 +651,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing the identity of one user or group and the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role that they have.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionEntry
 	{
 		
@@ -716,27 +670,24 @@ namespace MyNS
 		public User User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Role
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDITOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDITOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEWER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEWER = 2,
 	}
 	
 	/// <summary>
 	/// A structure that specifies one user or group in the workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -755,21 +706,18 @@ namespace MyNS
 		public UserType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSO_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSO_USER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSO_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSO_GROUP = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -777,8 +725,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVersionsResponse
 	{
 		
@@ -789,8 +736,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkspacesResponse
 	{
 		
@@ -808,8 +754,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains some information about one workspace in the account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkspaceSummary
 	{
 		
@@ -875,20 +820,17 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePermissionsResponse
 	{
 		
@@ -903,8 +845,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing information about one error encountered while performing an <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateError
 	{
 		
@@ -933,8 +874,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the instructions for one Grafana role permission update in a <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInstruction
 	{
 		
@@ -960,21 +900,18 @@ namespace MyNS
 		public User[] Users { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVOKE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVOKE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkspaceResponse
 	{
 		
@@ -986,8 +923,7 @@ namespace MyNS
 		public WorkspaceDescription Workspace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkspaceAuthenticationResponse
 	{
 		
@@ -999,20 +935,17 @@ namespace MyNS
 		public AuthenticationDescription Authentication { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkspaceConfigurationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateLicenseRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkspaceApiKeyRequest
 	{
 		
@@ -1038,8 +971,7 @@ namespace MyNS
 		public int SecondsToLive { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkspaceRequest
 	{
 		
@@ -1107,68 +1039,57 @@ namespace MyNS
 		public string WorkspaceRoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkspaceApiKeyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkspaceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkspaceAuthenticationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkspaceConfigurationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorkspaceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateLicenseRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVersionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkspacesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1180,14 +1101,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePermissionsRequest
 	{
 		
@@ -1199,8 +1118,7 @@ namespace MyNS
 		public UpdateInstruction[] UpdateInstructionBatch { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkspaceAuthenticationRequest
 	{
 		
@@ -1215,8 +1133,7 @@ namespace MyNS
 		public SamlConfiguration SamlConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkspaceConfigurationRequest
 	{
 		
@@ -1231,8 +1148,7 @@ namespace MyNS
 		public string GrafanaVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkspaceRequest
 	{
 		

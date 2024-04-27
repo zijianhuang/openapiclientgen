@@ -17,32 +17,27 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterValueException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingParameterValueException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
@@ -50,8 +45,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the Amazon S3 Glacier response to your request.</p> <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArchiveCreationOutput
 	{
 	}
@@ -59,8 +53,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVaultOutput
 	{
 	}
@@ -68,8 +61,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the description of an Amazon S3 Glacier job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlacierJobDescription
 	{
 		
@@ -137,43 +129,38 @@ namespace MyNS
 		public OutputLocation OutputLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ArchiveRetrieval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ArchiveRetrieval = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InventoryRetrieval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InventoryRetrieval = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Select")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Select = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 	}
 	
 	/// <summary>
 	/// Describes the options for a range inventory retrieval job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryRetrievalJobDescription
 	{
 		
@@ -196,8 +183,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the parameters used for a select.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectParameters
 	{
 		
@@ -217,8 +203,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes how the archive is serialized.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputSerialization
 	{
 		
@@ -229,8 +214,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the comma-separated value (CSV) file to select from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CSVInput
 	{
 		
@@ -253,37 +237,32 @@ namespace MyNS
 		public string QuoteCharacter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileHeaderInfo
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IGNORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IGNORE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExpressionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SQL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SQL = 0,
 	}
 	
 	/// <summary>
 	/// Describes how the select output is serialized.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputSerialization
 	{
 		
@@ -294,8 +273,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the comma-separated value (CSV) file that the job results are stored in.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CSVOutput
 	{
 		
@@ -315,24 +293,21 @@ namespace MyNS
 		public string QuoteCharacter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QuoteFields
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALWAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALWAYS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASNEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASNEEDED = 1,
 	}
 	
 	/// <summary>
 	/// Contains information about the location where the select job results are stored.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputLocation
 	{
 		
@@ -343,8 +318,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the location in Amazon S3 where the select job results are stored.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Location
 	{
 		
@@ -376,8 +350,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the encryption used to store the job results in Amazon S3. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Encryption
 	{
 		
@@ -391,22 +364,18 @@ namespace MyNS
 		public string KMSContext { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="aws:kms")]
 		awskms = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AES256 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CannedACL
 	{
 		
@@ -435,8 +404,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a grant.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Grant
 	{
 		
@@ -450,8 +418,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the grantee.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Grantee
 	{
 		
@@ -475,71 +442,63 @@ namespace MyNS
 		public string EmailAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonCustomerByEmail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmazonCustomerByEmail = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CanonicalUser")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CanonicalUser = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Group = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Permission
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_CONTROL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_CONTROL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITE_ACP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITE_ACP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_ACP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_ACP = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hashmap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StorageClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCED_REDUNDANCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCED_REDUNDANCY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_IA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_IA = 2,
 	}
 	
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVaultOutput
 	{
 		
@@ -565,8 +524,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataRetrievalPolicyOutput
 	{
 		
@@ -577,8 +535,7 @@ namespace MyNS
 	/// <summary>
 	/// Data retrieval policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRetrievalPolicy
 	{
 		
@@ -589,8 +546,7 @@ namespace MyNS
 	/// <summary>
 	/// Data retrieval policy rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRetrievalRule
 	{
 		
@@ -604,8 +560,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobOutputOutput
 	{
 		
@@ -619,8 +574,7 @@ namespace MyNS
 	/// <summary>
 	/// Output for GetVaultAccessPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVaultAccessPolicyOutput
 	{
 		
@@ -631,8 +585,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the vault access policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VaultAccessPolicy
 	{
 		
@@ -643,8 +596,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVaultLockOutput
 	{
 		
@@ -664,8 +616,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVaultNotificationsOutput
 	{
 		
@@ -676,8 +627,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a vault's notification configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VaultNotificationConfig
 	{
 		
@@ -691,8 +641,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InitiateJobOutput
 	{
 	}
@@ -700,8 +649,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for specifying a range inventory retrieval job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryRetrievalJobInput
 	{
 		
@@ -718,14 +666,12 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyEnforcedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientCapacityException
 	{
 	}
@@ -733,8 +679,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InitiateMultipartUploadOutput
 	{
 	}
@@ -742,8 +687,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InitiateVaultLockOutput
 	{
 	}
@@ -751,8 +695,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsOutput
 	{
 		
@@ -766,8 +709,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMultipartUploadsOutput
 	{
 		
@@ -781,8 +723,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of in-progress multipart uploads for a vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadListElement
 	{
 		
@@ -805,8 +746,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPartsOutput
 	{
 		
@@ -835,8 +775,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of the part sizes of the multipart upload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartListElement
 	{
 		
@@ -847,8 +786,7 @@ namespace MyNS
 		public string SHA256TreeHash { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProvisionedCapacityOutput
 	{
 		
@@ -859,8 +797,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition for a provisioned capacity unit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisionedCapacityDescription
 	{
 		
@@ -877,8 +814,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForVaultOutput
 	{
 		
@@ -886,8 +822,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
@@ -895,8 +830,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVaultsOutput
 	{
 		
@@ -907,14 +841,12 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseProvisionedCapacityOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestTimeoutException
 	{
 	}
@@ -922,8 +854,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Amazon S3 Glacier response to your request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadMultipartPartOutput
 	{
 	}
@@ -931,8 +862,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Provides options to abort a multipart upload identified by the upload ID.</p> <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbortMultipartUploadInput
 	{
 	}
@@ -940,8 +870,7 @@ namespace MyNS
 	/// <summary>
 	/// The input values for <code>AbortVaultLock</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbortVaultLockInput
 	{
 	}
@@ -949,8 +878,7 @@ namespace MyNS
 	/// <summary>
 	/// The input values for <code>AddTagsToVault</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsToVaultInput
 	{
 		
@@ -961,8 +889,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompleteMultipartUploadInput
 	{
 	}
@@ -970,8 +897,7 @@ namespace MyNS
 	/// <summary>
 	/// The input values for <code>CompleteVaultLock</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompleteVaultLockInput
 	{
 	}
@@ -979,8 +905,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options to create a vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVaultInput
 	{
 	}
@@ -988,8 +913,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for deleting an archive from an Amazon S3 Glacier vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteArchiveInput
 	{
 	}
@@ -997,8 +921,7 @@ namespace MyNS
 	/// <summary>
 	/// DeleteVaultAccessPolicy input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVaultAccessPolicyInput
 	{
 	}
@@ -1006,8 +929,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for deleting a vault from Amazon S3 Glacier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVaultInput
 	{
 	}
@@ -1015,8 +937,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for deleting a vault notification configuration from an Amazon Glacier vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVaultNotificationsInput
 	{
 	}
@@ -1024,8 +945,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for retrieving a job description.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobInput
 	{
 	}
@@ -1033,8 +953,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for retrieving metadata for a specific vault in Amazon Glacier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVaultInput
 	{
 	}
@@ -1042,8 +961,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for GetDataRetrievalPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataRetrievalPolicyInput
 	{
 	}
@@ -1051,8 +969,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for downloading output of an Amazon S3 Glacier job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobOutputInput
 	{
 	}
@@ -1060,8 +977,7 @@ namespace MyNS
 	/// <summary>
 	/// Input for GetVaultAccessPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVaultAccessPolicyInput
 	{
 	}
@@ -1069,8 +985,7 @@ namespace MyNS
 	/// <summary>
 	/// The input values for <code>GetVaultLock</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVaultLockInput
 	{
 	}
@@ -1078,8 +993,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for retrieving the notification configuration set on an Amazon Glacier vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVaultNotificationsInput
 	{
 	}
@@ -1087,8 +1001,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for defining a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobParameters
 	{
 		
@@ -1126,8 +1039,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for initiating an Amazon S3 Glacier job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InitiateJobInput
 	{
 		
@@ -1138,8 +1050,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for initiating a multipart upload to an Amazon S3 Glacier vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InitiateMultipartUploadInput
 	{
 	}
@@ -1147,8 +1058,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the vault lock policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VaultLockPolicy
 	{
 		
@@ -1159,8 +1069,7 @@ namespace MyNS
 	/// <summary>
 	/// The input values for <code>InitiateVaultLock</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InitiateVaultLockInput
 	{
 		
@@ -1171,8 +1080,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for retrieving a job list for an Amazon S3 Glacier vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsInput
 	{
 	}
@@ -1180,8 +1088,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for retrieving list of in-progress multipart uploads for an Amazon Glacier vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMultipartUploadsInput
 	{
 	}
@@ -1189,14 +1096,12 @@ namespace MyNS
 	/// <summary>
 	/// Provides options for retrieving a list of parts of an archive that have been uploaded in a specific multipart upload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPartsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProvisionedCapacityInput
 	{
 	}
@@ -1204,8 +1109,7 @@ namespace MyNS
 	/// <summary>
 	/// The input value for <code>ListTagsForVaultInput</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForVaultInput
 	{
 	}
@@ -1213,14 +1117,12 @@ namespace MyNS
 	/// <summary>
 	/// Provides options to retrieve the vault list owned by the calling user's account. The list provides metadata information for each vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVaultsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseProvisionedCapacityInput
 	{
 	}
@@ -1228,8 +1130,7 @@ namespace MyNS
 	/// <summary>
 	/// The input value for <code>RemoveTagsFromVaultInput</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsFromVaultInput
 	{
 		
@@ -1240,8 +1141,7 @@ namespace MyNS
 	/// <summary>
 	/// SetDataRetrievalPolicy input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetDataRetrievalPolicyInput
 	{
 		
@@ -1252,8 +1152,7 @@ namespace MyNS
 	/// <summary>
 	/// SetVaultAccessPolicy input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetVaultAccessPolicyInput
 	{
 		
@@ -1264,8 +1163,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options to configure notifications that will be sent when specific events happen to a vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetVaultNotificationsInput
 	{
 		
@@ -1276,8 +1174,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options to add an archive to a vault.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadArchiveInput
 	{
 		
@@ -1288,8 +1185,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides options to upload a part of an archive in a multipart upload operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadMultipartPartInput
 	{
 		
@@ -2413,7 +2309,7 @@ namespace MyNS
 	public enum AddTagsToVaultOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		add = 0,
 	}
 	
@@ -2528,7 +2424,7 @@ namespace MyNS
 	public enum RemoveTagsFromVaultOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="remove")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		remove = 0,
 	}
 	

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A metric actively restricted in creating the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActiveMetricRestriction
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// An audience export is a list of users in an audience at the time of the list's creation. One audience may have multiple audience exports created for different days.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudienceExport
 	{
 		
@@ -110,8 +108,7 @@ namespace MyNS
 	/// <summary>
 	/// An audience dimension is a user attribute. Specific user attributed are requested and then later returned in the `QueryAudienceExportResponse`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V1betaAudienceDimension
 	{
 		
@@ -122,30 +119,27 @@ namespace MyNS
 		public string DimensionName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudienceExportState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// This metadata is currently blank.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudienceListMetadata
 	{
 	}
@@ -153,8 +147,7 @@ namespace MyNS
 	/// <summary>
 	/// The batch request containing multiple pivot report requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRunPivotReportsRequest
 	{
 		
@@ -168,8 +161,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to generate a pivot report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunPivotReportRequest
 	{
 		
@@ -243,8 +235,7 @@ namespace MyNS
 	/// <summary>
 	/// The specification of cohorts for a cohort report. Cohort reports create a time series of user retention for the cohort. For example, you could select the cohort of users that were acquired in the first week of September and follow that cohort for the next six weeks. Selecting the users acquired in the first week of September cohort is specified in the `cohort` object. Following that cohort for the next six weeks is specified in the `cohortsRange` object. For examples, see [Cohort Report Examples](https://developers.google.com/analytics/devguides/reporting/data/v1/advanced#cohort_report_examples). The report response could show a weekly time series where say your app has retained 60% of this cohort after three weeks and 25% of this cohort after six weeks. These two percentages can be calculated by the metric `cohortActiveUsers/cohortTotalUsers` and will be separate rows in the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CohortSpec
 	{
 		
@@ -270,8 +261,7 @@ namespace MyNS
 	/// <summary>
 	/// Optional settings of a cohort report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CohortReportSettings
 	{
 		
@@ -285,8 +275,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a cohort selection criteria. A cohort is a group of users who share a common characteristic. For example, users with the same `firstSessionDate` belong to the same cohort.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cohort
 	{
 		
@@ -312,8 +301,7 @@ namespace MyNS
 	/// <summary>
 	/// A contiguous set of days: `startDate`, `startDate + 1`, ..., `endDate`. Requests are allowed up to 4 date ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateRange
 	{
 		
@@ -339,8 +327,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures the extended reporting date range for a cohort report. Specifies an offset duration to follow the cohorts over.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CohortsRange
 	{
 		
@@ -363,30 +350,27 @@ namespace MyNS
 		public System.Nullable<System.Int32> StartOffset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CohortsRangeGranularity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANULARITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANULARITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEKLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 3,
 	}
 	
 	/// <summary>
 	/// To express dimension or metric filters. The fields in the same FilterExpression need to be either all dimensions or all metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterExpression
 	{
 		
@@ -418,8 +402,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of filter expressions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterExpressionList
 	{
 		
@@ -433,8 +416,7 @@ namespace MyNS
 	/// <summary>
 	/// An expression to filter dimension or metric values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -472,8 +454,7 @@ namespace MyNS
 	/// <summary>
 	/// To express that the result needs to be between two numbers (inclusive).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BetweenFilter
 	{
 		
@@ -493,8 +474,7 @@ namespace MyNS
 	/// <summary>
 	/// To represent a number.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumericValue
 	{
 		
@@ -514,8 +494,7 @@ namespace MyNS
 	/// <summary>
 	/// The result needs to be in a list of string values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InListFilter
 	{
 		
@@ -535,8 +514,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters for numeric or date values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumericFilter
 	{
 		
@@ -553,36 +531,33 @@ namespace MyNS
 		public NumericValue Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NumericFilterOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN_OR_EQUAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN_OR_EQUAL = 5,
 	}
 	
 	/// <summary>
 	/// The filter for string
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StringFilter
 	{
 		
@@ -605,39 +580,36 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StringFilterMatchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDS_WITH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_REGEXP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_REGEXP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL_REGEXP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL_REGEXP = 6,
 	}
 	
 	/// <summary>
 	/// Dimensions are attributes of your data. For example, the dimension city indicates the city from which an event originates. Dimension values in report responses are strings; for example, the city could be "Paris" or "New York". Requests are allowed up to 9 dimensions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimension
 	{
 		
@@ -657,8 +629,7 @@ namespace MyNS
 	/// <summary>
 	/// Used to express a dimension which is the result of a formula of multiple dimensions. Example usages: 1) lower_case(dimension) 2) concatenate(dimension1, symbol, dimension2).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionExpression
 	{
 		
@@ -684,8 +655,7 @@ namespace MyNS
 	/// <summary>
 	/// Used to combine dimension values to a single dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcatenateExpression
 	{
 		
@@ -705,8 +675,7 @@ namespace MyNS
 	/// <summary>
 	/// Used to convert a dimension value to a single case.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseExpression
 	{
 		
@@ -720,8 +689,7 @@ namespace MyNS
 	/// <summary>
 	/// The quantitative measurements of a report. For example, the metric `eventCount` is the total number of events. Requests are allowed up to 10 metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metric
 	{
 		
@@ -747,8 +715,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the visible dimension columns and rows in the report response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pivot
 	{
 		
@@ -786,8 +753,7 @@ namespace MyNS
 	/// <summary>
 	/// Order bys define how rows will be sorted in the response. For example, ordering rows by descending event count is one ordering, and ordering rows by the event name string is a different ordering.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderBy
 	{
 		
@@ -819,8 +785,7 @@ namespace MyNS
 	/// <summary>
 	/// Sorts by dimension values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionOrderBy
 	{
 		
@@ -837,30 +802,27 @@ namespace MyNS
 		public System.Nullable<DimensionOrderByOrderType> OrderType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionOrderByOrderType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORDER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORDER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALPHANUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALPHANUMERIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CASE_INSENSITIVE_ALPHANUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CASE_INSENSITIVE_ALPHANUMERIC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC = 3,
 	}
 	
 	/// <summary>
 	/// Sorts by metric values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricOrderBy
 	{
 		
@@ -874,8 +836,7 @@ namespace MyNS
 	/// <summary>
 	/// Sorts by a pivot column group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotOrderBy
 	{
 		
@@ -895,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// A pair of dimension names and values. Rows with this dimension pivot pair are ordered by the metric's value. For example if pivots = {{"browser", "Chrome"}} and metric_name = "Sessions", then the rows will be sorted based on Sessions in Chrome. ---------|----------|----------------|----------|---------------- | Chrome | Chrome | Safari | Safari ---------|----------|----------------|----------|---------------- Country | Sessions | Pages/Sessions | Sessions | Pages/Sessions ---------|----------|----------------|----------|---------------- US | 2 | 2 | 3 | 1 ---------|----------|----------------|----------|---------------- Canada | 3 | 1 | 4 | 1 ---------|----------|----------------|----------|----------------
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotSelection
 	{
 		
@@ -916,8 +876,7 @@ namespace MyNS
 	/// <summary>
 	/// The batch response containing multiple pivot reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRunPivotReportsResponse
 	{
 		
@@ -937,8 +896,7 @@ namespace MyNS
 	/// <summary>
 	/// The response pivot report table corresponding to a pivot request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunPivotReportResponse
 	{
 		
@@ -994,8 +952,7 @@ namespace MyNS
 	/// <summary>
 	/// Report data for each row. For example if RunReportRequest contains: ```none "dimensions": [ { "name": "eventName" }, { "name": "countryId" } ], "metrics": [ { "name": "eventCount" } ] ``` One row with 'in_app_purchase' as the eventName, 'JP' as the countryId, and 15 as the eventCount, would be: ```none "dimensionValues": [ { "value": "in_app_purchase" }, { "value": "JP" } ], "metricValues": [ { "value": "15" } ] ```
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Row
 	{
 		
@@ -1015,8 +972,7 @@ namespace MyNS
 	/// <summary>
 	/// The value of a dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionValue
 	{
 		
@@ -1030,8 +986,7 @@ namespace MyNS
 	/// <summary>
 	/// The value of a metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricValue
 	{
 		
@@ -1045,8 +1000,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a dimension column in the report. Dimensions requested in a report produce column entries within rows and DimensionHeaders. However, dimensions used exclusively within filters or expressions do not produce columns in a report; correspondingly, those dimensions do not produce headers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionHeader
 	{
 		
@@ -1060,8 +1014,7 @@ namespace MyNS
 	/// <summary>
 	/// Response's metadata carrying additional information about the report content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseMetaData
 	{
 		
@@ -1111,8 +1064,7 @@ namespace MyNS
 	/// <summary>
 	/// If this report results is [sampled](https://support.google.com/analytics/answer/13331292), this describes the percentage of events used in this report. Sampling is the practice of analyzing a subset of all data in order to uncover the meaningful information in the larger data set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SamplingMetadata
 	{
 		
@@ -1132,8 +1084,7 @@ namespace MyNS
 	/// <summary>
 	/// The schema restrictions actively enforced in creating this report. To learn more, see [Access and data-restriction management](https://support.google.com/analytics/answer/10851388).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaRestrictionResponse
 	{
 		
@@ -1147,8 +1098,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a metric column in the report. Visible metrics requested in a report produce column entries within rows and MetricHeaders. However, metrics used exclusively within filters or expressions do not produce columns in a report; correspondingly, those metrics do not produce headers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricHeader
 	{
 		
@@ -1165,57 +1115,54 @@ namespace MyNS
 		public System.Nullable<MetricHeaderType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricHeaderType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_INTEGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_INTEGER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_FLOAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_FLOAT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_SECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_SECONDS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_MILLISECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_MILLISECONDS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_MINUTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_MINUTES = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_HOURS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_STANDARD = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_CURRENCY = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_FEET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_FEET = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_MILES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_MILES = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_METERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_METERS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_KILOMETERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_KILOMETERS = 12,
 	}
 	
 	/// <summary>
 	/// Dimensions' values in a single pivot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotHeader
 	{
 		
@@ -1235,8 +1182,7 @@ namespace MyNS
 	/// <summary>
 	/// Summarizes dimension values from a row for this pivot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotDimensionHeader
 	{
 		
@@ -1250,8 +1196,7 @@ namespace MyNS
 	/// <summary>
 	/// Current state of all quotas for this Analytics Property. If any quota for a property is exhausted, all requests to that property will return Resource Exhausted errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PropertyQuota
 	{
 		
@@ -1295,8 +1240,7 @@ namespace MyNS
 	/// <summary>
 	/// Current state for a particular quota group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuotaStatus
 	{
 		
@@ -1316,8 +1260,7 @@ namespace MyNS
 	/// <summary>
 	/// The batch request containing multiple report requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRunReportsRequest
 	{
 		
@@ -1331,8 +1274,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to generate a report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunReportRequest
 	{
 		
@@ -1424,8 +1366,7 @@ namespace MyNS
 	/// <summary>
 	/// The batch response containing multiple reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRunReportsResponse
 	{
 		
@@ -1445,8 +1386,7 @@ namespace MyNS
 	/// <summary>
 	/// The response report table corresponding to a request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunReportResponse
 	{
 		
@@ -1514,8 +1454,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for compatibility information for a report's dimensions and metrics. Check compatibility provides a preview of the compatibility of a report; fields shared with the `runReport` request should be the same values as in your `runReport` request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckCompatibilityRequest
 	{
 		
@@ -1550,27 +1489,24 @@ namespace MyNS
 		public Metric[] Metrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckCompatibilityRequestCompatibilityFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPATIBILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPATIBILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPATIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPATIBLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCOMPATIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCOMPATIBLE = 2,
 	}
 	
 	/// <summary>
 	/// The compatibility response with the compatibility of each dimension & metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckCompatibilityResponse
 	{
 		
@@ -1590,8 +1526,7 @@ namespace MyNS
 	/// <summary>
 	/// The compatibility for a single dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionCompatibility
 	{
 		
@@ -1611,8 +1546,7 @@ namespace MyNS
 	/// <summary>
 	/// Explains a dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionMetadata
 	{
 		
@@ -1656,8 +1590,7 @@ namespace MyNS
 	/// <summary>
 	/// The compatibility for a single metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricCompatibility
 	{
 		
@@ -1677,8 +1610,7 @@ namespace MyNS
 	/// <summary>
 	/// Explains a metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricMetadata
 	{
 		
@@ -1740,8 +1672,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of all audience exports for a property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAudienceExportsResponse
 	{
 		
@@ -1761,8 +1692,7 @@ namespace MyNS
 	/// <summary>
 	/// The dimensions, metrics and comparisons currently accepted in reporting methods.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metadata
 	{
 		
@@ -1788,8 +1718,7 @@ namespace MyNS
 	/// <summary>
 	/// A contiguous set of minutes: `startMinutesAgo`, `startMinutesAgo + 1`, ..., `endMinutesAgo`. Requests are allowed up to 2 minute ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MinuteRange
 	{
 		
@@ -1815,8 +1744,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1854,8 +1782,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1881,8 +1808,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to list users in an audience export.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryAudienceExportRequest
 	{
 		
@@ -1902,8 +1828,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of users in an audience export.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryAudienceExportResponse
 	{
 		
@@ -1929,8 +1854,7 @@ namespace MyNS
 	/// <summary>
 	/// Dimension value attributes for the audience user row.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V1betaAudienceRow
 	{
 		
@@ -1944,8 +1868,7 @@ namespace MyNS
 	/// <summary>
 	/// The value of a dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V1betaAudienceDimensionValue
 	{
 		
@@ -1959,8 +1882,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to generate a realtime report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunRealtimeReportRequest
 	{
 		
@@ -2022,8 +1944,7 @@ namespace MyNS
 	/// <summary>
 	/// The response realtime report table corresponding to a request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunRealtimeReportResponse
 	{
 		

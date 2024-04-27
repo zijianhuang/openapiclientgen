@@ -17,140 +17,127 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Task_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reserved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reserved = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="assigned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		assigned = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wrapping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wrapping = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Task_queue_enum_task_order
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIFO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIFO = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Task_reservation_enum_call_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initiated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initiated = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answered = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Task_reservation_enum_conference_event
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="start")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		start = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="end")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		end = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="join")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		join = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="leave")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		leave = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mute")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mute = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hold = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="speaker")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		speaker = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Task_reservation_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timeout = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rescinded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rescinded = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wrapping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wrapping = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Task_reservation_enum_supervisor_mode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="monitor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		monitor = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="whisper")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		whisper = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="barge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		barge = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspace
 	{
 		
@@ -266,8 +253,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceactivity
 	{
 		
@@ -341,8 +327,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceevent
 	{
 		
@@ -479,8 +464,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspacetask
 	{
 		
@@ -650,8 +634,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspacetasktask_reservation
 	{
 		
@@ -749,8 +732,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspacetask_channel
 	{
 		
@@ -833,8 +815,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspacetask_queue
 	{
 		
@@ -956,8 +937,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspacetask_queuetask_queue_bulk_real_time_statistics
 	{
 		
@@ -1023,8 +1003,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspacetask_queuetask_queue_cumulative_statistics
 	{
 		
@@ -1179,8 +1158,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspacetask_queuetask_queue_real_time_statistics
 	{
 		
@@ -1299,8 +1277,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspacetask_queuetask_queue_statistics
 	{
 		
@@ -1359,8 +1336,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspacetask_queuetask_queues_statistics
 	{
 		
@@ -1413,8 +1389,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworker
 	{
 		
@@ -1521,8 +1496,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkerworker_channel
 	{
 		
@@ -1635,8 +1609,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkerworker_instance_statistics
 	{
 		
@@ -1689,8 +1662,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkerworker_reservation
 	{
 		
@@ -1788,8 +1760,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkerworker_statistics
 	{
 		
@@ -1836,8 +1807,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkerworkers_cumulative_statistics
 	{
 		
@@ -1926,8 +1896,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkerworkers_real_time_statistics
 	{
 		
@@ -1974,8 +1943,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkflow
 	{
 		
@@ -2076,8 +2044,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkflowworkflow_cumulative_statistics
 	{
 		
@@ -2232,8 +2199,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkflowworkflow_real_time_statistics
 	{
 		
@@ -2316,8 +2282,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkflowworkflow_statistics
 	{
 		
@@ -2376,8 +2341,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkspace_cumulative_statistics
 	{
 		
@@ -2520,8 +2484,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkspace_real_time_statistics
 	{
 		
@@ -2604,8 +2567,7 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taskrouterv1workspaceworkspace_statistics
 	{
 		
@@ -2652,94 +2614,86 @@ namespace MyNS
 		public string Workspace_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Worker_reservation_enum_call_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initiated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initiated = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answered = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Worker_reservation_enum_conference_event
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="start")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		start = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="end")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		end = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="join")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		join = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="leave")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		leave = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mute")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mute = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hold = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="speaker")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		speaker = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Worker_reservation_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timeout = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rescinded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rescinded = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wrapping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wrapping = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Workspace_enum_queue_order
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIFO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIFO = 1,
 	}
 	

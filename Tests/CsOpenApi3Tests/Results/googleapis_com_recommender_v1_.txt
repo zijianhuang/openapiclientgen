@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata about how much money a recommendation can save or incur.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1CostProjection
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an amount of money with its currency type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeMoney
 	{
 		
@@ -74,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the impact a recommendation can have for a given category.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1Impact
 	{
 		
@@ -110,39 +107,36 @@ namespace MyNS
 		public GoogleCloudRecommenderV1SustainabilityProjection SustainabilityProjection { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecommenderV1ImpactCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATEGORY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATEGORY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERFORMANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERFORMANCE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGEABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGEABILITY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSTAINABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSTAINABILITY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELIABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELIABILITY = 6,
 	}
 	
 	/// <summary>
 	/// Contains information on the impact of a reliability recommendation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1ReliabilityProjection
 	{
 		
@@ -162,8 +156,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains various ways of describing the impact on Security.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1SecurityProjection
 	{
 		
@@ -177,8 +170,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata about how much sustainability a recommendation can save or incur.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1SustainabilityProjection
 	{
 		
@@ -198,8 +190,7 @@ namespace MyNS
 	/// <summary>
 	/// An insight along with the information used to derive the insight. The insight may have associated recommendations as well.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1Insight
 	{
 		
@@ -279,8 +270,7 @@ namespace MyNS
 	/// <summary>
 	/// Reference to an associated recommendation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1InsightRecommendationReference
 	{
 		
@@ -291,33 +281,30 @@ namespace MyNS
 		public string Recommendation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecommenderV1InsightSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRITICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRITICAL = 4,
 	}
 	
 	/// <summary>
 	/// Information related to insight state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1InsightStateInfo
 	{
 		
@@ -334,30 +321,27 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> StateMetadata { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecommenderV1InsightStateInfoState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISMISSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISMISSED = 3,
 	}
 	
 	/// <summary>
 	/// Configuration for an InsightType.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1InsightTypeConfig
 	{
 		
@@ -407,8 +391,7 @@ namespace MyNS
 	/// <summary>
 	/// A configuration to customize the generation of insights. Eg, customizing the lookback period considered when generating a insight.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1InsightTypeGenerationConfig
 	{
 		
@@ -422,8 +405,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to the `ListInsights` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1ListInsightsResponse
 	{
 		
@@ -443,8 +425,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to the `ListRecommendations` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1ListRecommendationsResponse
 	{
 		
@@ -464,8 +445,7 @@ namespace MyNS
 	/// <summary>
 	/// A recommendation along with a suggested action. E.g., a rightsizing recommendation for an underutilized VM, IAM role recommendations, etc
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1Recommendation
 	{
 		
@@ -545,8 +525,7 @@ namespace MyNS
 	/// <summary>
 	/// Reference to an associated insight.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1RecommendationInsightReference
 	{
 		
@@ -560,8 +539,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains what resources are changing and how they are changing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1RecommendationContent
 	{
 		
@@ -581,8 +559,7 @@ namespace MyNS
 	/// <summary>
 	/// Group of operations that need to be performed atomically.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1OperationGroup
 	{
 		
@@ -596,8 +573,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains an operation for a resource loosely based on the JSON-PATCH format with support for: * Custom filters for describing partial array patch. * Extended path values for describing nested arrays. * Custom fields for describing the resource for which the operation is being described. * Allows extension to custom operations not natively supported by RFC6902. See https://tools.ietf.org/html/rfc6902 for details on the original RFC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1Operation
 	{
 		
@@ -665,8 +641,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains various matching options for values for a GCP resource field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1ValueMatcher
 	{
 		
@@ -677,33 +652,30 @@ namespace MyNS
 		public string MatchesPattern { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecommenderV1RecommendationPriority
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIORITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIORITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P4 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P3 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P2 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P1 = 4,
 	}
 	
 	/// <summary>
 	/// Information for state. Contains state and metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1RecommendationStateInfo
 	{
 		
@@ -720,36 +692,33 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> StateMetadata { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecommenderV1RecommendationStateInfoState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLAIMED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLAIMED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISMISSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISMISSED = 5,
 	}
 	
 	/// <summary>
 	/// Request for the `MarkInsightAccepted` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1MarkInsightAcceptedRequest
 	{
 		
@@ -769,8 +738,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `MarkRecommendationClaimed` Method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1MarkRecommendationClaimedRequest
 	{
 		
@@ -790,8 +758,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `MarkRecommendationDismissed` Method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1MarkRecommendationDismissedRequest
 	{
 		
@@ -805,8 +772,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `MarkRecommendationFailed` Method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1MarkRecommendationFailedRequest
 	{
 		
@@ -826,8 +792,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `MarkRecommendationSucceeded` Method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1MarkRecommendationSucceededRequest
 	{
 		
@@ -847,8 +812,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a Recommender.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1RecommenderConfig
 	{
 		
@@ -898,8 +862,7 @@ namespace MyNS
 	/// <summary>
 	/// A Configuration to customize the generation of recommendations. Eg, customizing the lookback period considered when generating a recommendation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecommenderV1RecommenderGenerationConfig
 	{
 		

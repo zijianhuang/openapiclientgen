@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Data for a particular VA form, including form version history.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormShow
 	{
 		
@@ -44,8 +43,7 @@ namespace MyNS
 	/// <summary>
 	/// A listing of available VA forms and their location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormsIndex
 	{
 		

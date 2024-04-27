@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMatchingWorkflowOutput
 	{
 		
@@ -74,8 +73,7 @@ namespace MyNS
 	/// <summary>
 	/// An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncrementalRunConfig
 	{
 		
@@ -83,21 +81,18 @@ namespace MyNS
 		public IncrementalRunType IncrementalRunType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IncrementalRunType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMMEDIATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMMEDIATE = 0,
 	}
 	
 	/// <summary>
 	/// An object containing <code>InputSourceARN</code>, <code>SchemaName</code>, and <code>ApplyNormalization</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputSource
 	{
 		
@@ -122,8 +117,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputSource
 	{
 		
@@ -151,8 +145,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputAttribute
 	{
 		
@@ -170,8 +163,7 @@ namespace MyNS
 	/// <summary>
 	/// An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResolutionTechniques
 	{
 		
@@ -182,24 +174,21 @@ namespace MyNS
 		public RuleBasedProperties RuleBasedProperties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResolutionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RULE_MATCHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RULE_MATCHING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ML_MATCHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ML_MATCHING = 1,
 	}
 	
 	/// <summary>
 	/// An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleBasedProperties
 	{
 		
@@ -218,24 +207,21 @@ namespace MyNS
 		public Rule[] Rules { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AttributeMatchingModel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_TO_ONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_TO_ONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANY_TO_MANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANY_TO_MANY = 1,
 	}
 	
 	/// <summary>
 	/// An object containing <code>RuleName</code>, and <code>MatchingKeys</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -254,44 +240,37 @@ namespace MyNS
 		public string RuleName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExceedsLimitException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSchemaMappingOutput
 	{
 		
@@ -327,8 +306,7 @@ namespace MyNS
 	/// <summary>
 	/// An object containing <code>FieldField</code>, <code>Type</code>, <code>GroupName</code>, and <code>MatchKey</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaInputAttribute
 	{
 		
@@ -353,72 +331,69 @@ namespace MyNS
 		public SchemaAttributeType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SchemaAttributeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAME = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAME_FIRST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAME_FIRST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAME_MIDDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAME_MIDDLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAME_LAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAME_LAST = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS_STREET1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS_STREET1 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS_STREET2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS_STREET2 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS_STREET3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS_STREET3 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS_CITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS_CITY = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS_STATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS_STATE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS_COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS_COUNTRY = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS_POSTALCODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS_POSTALCODE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_NUMBER = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_COUNTRYCODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_COUNTRYCODE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL_ADDRESS = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIQUE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIQUE_ID = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 18,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMatchingWorkflowOutput
 	{
 		
@@ -430,8 +405,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSchemaMappingOutput
 	{
 		
@@ -443,8 +417,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMatchIdOutput
 	{
 		
@@ -452,14 +425,12 @@ namespace MyNS
 		public string MatchId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMatchingJobOutput
 	{
 		
@@ -497,8 +468,7 @@ namespace MyNS
 	/// <summary>
 	/// An object containing an error message, if there was an error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetails
 	{
 		
@@ -509,8 +479,7 @@ namespace MyNS
 	/// <summary>
 	/// An object containing <code>InputRecords</code>, <code>TotalRecordsProcessed</code>, <code>MatchIDs</code>, and <code>RecordsNotProcessed</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobMetrics
 	{
 		
@@ -527,27 +496,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalRecordsProcessed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEUED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMatchingWorkflowOutput
 	{
 		
@@ -617,14 +583,12 @@ namespace MyNS
 		public string WorkflowName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSchemaMappingOutput
 	{
 		
@@ -670,8 +634,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdatedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMatchingJobsOutput
 	{
 		
@@ -685,8 +648,7 @@ namespace MyNS
 	/// <summary>
 	/// An object containing the <code>JobId</code>, <code>Status</code>, <code>StartTime</code>, and <code>EndTime</code> of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobSummary
 	{
 		
@@ -715,8 +677,7 @@ namespace MyNS
 		public JobStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMatchingWorkflowsOutput
 	{
 		
@@ -730,8 +691,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchingWorkflowSummary
 	{
 		
@@ -764,8 +724,7 @@ namespace MyNS
 		public string WorkflowName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSchemaMappingsOutput
 	{
 		
@@ -779,8 +738,7 @@ namespace MyNS
 	/// <summary>
 	/// An object containing <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, and<code>UpdatedAt</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaMappingSummary
 	{
 		
@@ -813,8 +771,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdatedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceOutput
 	{
 		
@@ -826,8 +783,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMatchingJobOutput
 	{
 		
@@ -839,20 +795,17 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMatchingWorkflowOutput
 	{
 		
@@ -898,8 +851,7 @@ namespace MyNS
 		public string WorkflowName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMatchingWorkflowInput
 	{
 		
@@ -948,8 +900,7 @@ namespace MyNS
 		public string WorkflowName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSchemaMappingInput
 	{
 		
@@ -970,26 +921,22 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMatchingWorkflowInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSchemaMappingInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordAttributeMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMatchIdInput
 	{
 		
@@ -1001,56 +948,47 @@ namespace MyNS
 		public RecordAttributeMap Record { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMatchingJobInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMatchingWorkflowInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSchemaMappingInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMatchingJobsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMatchingWorkflowsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSchemaMappingsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMatchingJobInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceInput
 	{
 		
@@ -1062,14 +1000,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMatchingWorkflowInput
 	{
 		

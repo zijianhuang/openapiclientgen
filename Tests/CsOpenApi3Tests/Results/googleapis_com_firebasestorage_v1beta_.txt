@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used to link a Google Cloud Storage bucket to a Firebase project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFirebaseRequest
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// A storage bucket and its relation to a parent Firebase project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bucket
 	{
 		
@@ -44,8 +42,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -53,8 +50,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for MigrateLocationDestructively LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseStorageControlplaneV1alphaMigrateLocationDestructivelyMetadata
 	{
 		
@@ -77,54 +73,51 @@ namespace MyNS
 		public System.Nullable<GoogleFirebaseStorageControlplaneV1alphaMigrateLocationDestructivelyMetadataState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleFirebaseStorageControlplaneV1alphaMigrateLocationDestructivelyMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING_TEMP_BUCKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING_TEMP_BUCKET = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFERRING_TO_TEMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFERRING_TO_TEMP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING_SOURCE_BUCKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING_SOURCE_BUCKET = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING_DESTINATION_BUCKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING_DESTINATION_BUCKET = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFERRING_TO_DESTINATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFERRING_TO_DESTINATION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING_TEMP_BUCKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING_TEMP_BUCKET = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLING_BACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLLING_BACK = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLED_BACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLLED_BACK = 11,
 	}
 	
 	/// <summary>
 	/// Metadata for MigrateLocationDestructively LRO.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFirebaseStorageControlplaneV1betaMigrateLocationDestructivelyMetadata
 	{
 		
@@ -150,8 +143,7 @@ namespace MyNS
 	/// <summary>
 	/// The response returned by `ListBuckets`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBucketsResponse
 	{
 		
@@ -171,8 +163,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used to unlink a Google Cloud Storage bucket from a Firebase project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFirebaseRequest
 	{
 	}

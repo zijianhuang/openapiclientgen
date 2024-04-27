@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a Realtime Database instance. Details on interacting with contents of a DatabaseInstance can be found at: https://firebase.google.com/docs/database/rest/start.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatabaseInstance
 	{
 		
@@ -56,46 +55,41 @@ namespace MyNS
 		public System.Nullable<DatabaseInstanceType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatabaseInstanceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIFECYCLE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIFECYCLE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatabaseInstanceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATABASE_INSTANCE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATABASE_INSTANCE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT_DATABASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT_DATABASE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_DATABASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_DATABASE = 2,
 	}
 	
 	/// <summary>
 	/// The request sent to the DisableDatabaseInstance method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableDatabaseInstanceRequest
 	{
 	}
@@ -103,8 +97,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from the ListDatabaseInstances method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatabaseInstancesResponse
 	{
 		
@@ -124,8 +117,7 @@ namespace MyNS
 	/// <summary>
 	/// The request sent to the ReenableDatabaseInstance method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReenableDatabaseInstanceRequest
 	{
 	}
@@ -133,8 +125,7 @@ namespace MyNS
 	/// <summary>
 	/// The request sent to UndeleteDatabaseInstance method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UndeleteDatabaseInstanceRequest
 	{
 	}

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to activate a pretargeting configuration. Sets the configuration's state to ACTIVE.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivatePretargetingConfigRequest
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// The list of detected Ad Technology Providers for this creative. Bids placed for inventory that will serve to EEA or UK users are expected to comply with GDPR requirements. You must ensure that the creatives used in such bids should contain only user consented ad technology providers as indicated in the bid request. Google reserves the right to filter non-compliant bids. User consented ad technology providers can be found in the [Google Protocol](https://developers.google.com/authorized-buyers/rtb/downloads/realtime-bidding-proto) with the `BidRequest.adslot.consented_providers_settings` field, and can be found as an [OpenRTB extension](https://developers.google.com/authorized-buyers/rtb/downloads/openrtb-adx-proto) with the `BidRequest.user.ext.consented_providers_settings` and `BidRequest.user.ext.consent` fields. See https://support.google.com/authorizedbuyers/answer/9789378 for additional information about the Google TCF v2 integration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdTechnologyProviders
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to start targeting the provided app IDs in a specific pretargeting configuration. The pretargeting configuration itself specifies how these apps are targeted. in PretargetingConfig.appTargeting.mobileAppTargeting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTargetedAppsRequest
 	{
 		
@@ -74,27 +71,24 @@ namespace MyNS
 		public System.Nullable<AddTargetedAppsRequestTargetingMode> TargetingMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddTargetedAppsRequestTargetingMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGETING_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGETING_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUSIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUSIVE = 2,
 	}
 	
 	/// <summary>
 	/// A request to start targeting the provided publishers in a specific pretargeting configuration. The pretargeting configuration itself specifies how these publishers are targeted in PretargetingConfig.publisherTargeting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTargetedPublishersRequest
 	{
 		
@@ -114,8 +108,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to start targeting the provided sites in a specific pretargeting configuration. The pretargeting configuration itself specifies how these sites are targeted in PretargetingConfig.webTargeting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTargetedSitesRequest
 	{
 		
@@ -135,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected advertiser and brand information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvertiserAndBrand
 	{
 		
@@ -168,8 +160,7 @@ namespace MyNS
 	/// <summary>
 	/// A subset of app inventory to target. Bid requests that match criteria in at least one of the specified dimensions will be sent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppTargeting
 	{
 		
@@ -189,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// Generic targeting used for targeting dimensions that contain a list of included and excluded numeric IDs used in app, user list, geo, and vertical id targeting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumericTargetingDimension
 	{
 		
@@ -210,8 +200,7 @@ namespace MyNS
 	/// <summary>
 	/// Generic targeting with string values used in app, website and publisher targeting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StringTargetingDimension
 	{
 		
@@ -231,8 +220,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to approve a batch of publisher connections.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchApprovePublisherConnectionsRequest
 	{
 		
@@ -246,8 +234,7 @@ namespace MyNS
 	/// <summary>
 	/// A response for the request to approve a batch of publisher connections.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchApprovePublisherConnectionsResponse
 	{
 		
@@ -261,8 +248,7 @@ namespace MyNS
 	/// <summary>
 	/// An Open Bidding exchange's connection to a publisher. This is initiated by the publisher for the bidder to review. If approved by the bidder, this means that the bidder agrees to receive bid requests from the publisher.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublisherConnection
 	{
 		
@@ -297,46 +283,41 @@ namespace MyNS
 		public System.Nullable<PublisherConnectionPublisherPlatform> PublisherPlatform { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublisherConnectionBiddingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublisherConnectionPublisherPlatform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHER_PLATFORM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHER_PLATFORM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_AD_MANAGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_AD_MANAGER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMOB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMOB = 2,
 	}
 	
 	/// <summary>
 	/// A request to reject a batch of publisher connections.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRejectPublisherConnectionsRequest
 	{
 		
@@ -350,8 +331,7 @@ namespace MyNS
 	/// <summary>
 	/// A response for the request to reject a batch of publisher connections.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRejectPublisherConnectionsResponse
 	{
 		
@@ -365,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	/// Bidder settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bidder
 	{
 		
@@ -404,8 +383,7 @@ namespace MyNS
 	/// <summary>
 	/// RTB Buyer account information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Buyer
 	{
 		
@@ -449,8 +427,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to close a specified user list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloseUserListRequest
 	{
 	}
@@ -458,8 +435,7 @@ namespace MyNS
 	/// <summary>
 	/// A creative and its classification data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Creative
 	{
 		
@@ -590,30 +566,27 @@ namespace MyNS
 		public VideoContent Video { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreativeCreativeFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATIVE_FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATIVE_FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NATIVE = 3,
 	}
 	
 	/// <summary>
 	/// Top level status and detected attributes of a creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativeServingDecision
 	{
 		
@@ -711,8 +684,7 @@ namespace MyNS
 	/// <summary>
 	/// Policy compliance of the creative for a transaction type or a region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyCompliance
 	{
 		
@@ -729,33 +701,30 @@ namespace MyNS
 		public PolicyTopicEntry[] Topics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyComplianceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_REVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_REVIEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISAPPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISAPPROVED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERTIFICATE_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERTIFICATE_REQUIRED = 4,
 	}
 	
 	/// <summary>
 	/// Each policy topic entry will represent a violation of a policy topic for a creative, with the policy topic information and optional evidence for the policy violation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyTopicEntry
 	{
 		
@@ -787,8 +756,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence associated with a policy topic entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyTopicEvidence
 	{
 		
@@ -838,8 +806,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence that the creative's destination URL was not crawlable by Google.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DestinationNotCrawlableEvidence
 	{
 		
@@ -862,33 +829,30 @@ namespace MyNS
 		public System.Nullable<DestinationNotCrawlableEvidenceReason> Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DestinationNotCrawlableEvidenceReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNREACHABLE_ROBOTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNREACHABLE_ROBOTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMEOUT_ROBOTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMEOUT_ROBOTS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROBOTED_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROBOTED_DENIED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 4,
 	}
 	
 	/// <summary>
 	/// Evidence of the creative's destination URL not functioning properly or having been incorrectly set up.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DestinationNotWorkingEvidence
 	{
 		
@@ -941,100 +905,89 @@ namespace MyNS
 		public System.Nullable<DestinationNotWorkingEvidenceUrlRejected> UrlRejected { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DestinationNotWorkingEvidenceDnsError
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS_ERROR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS_ERROR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_DNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_DNS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_CRAWLER_DNS_ISSUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_CRAWLER_DNS_ISSUE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DestinationNotWorkingEvidenceInvalidPage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_PAGE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_PAGE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMPTY_OR_ERROR_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMPTY_OR_ERROR_PAGE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DestinationNotWorkingEvidencePlatform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATFORM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATFORM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSONAL_COMPUTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSONAL_COMPUTER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DestinationNotWorkingEvidenceRedirectionError
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECTION_ERROR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECTION_ERROR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_REDIRECTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_MANY_REDIRECTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_REDIRECT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMPTY_REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMPTY_REDIRECT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT_ERROR_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT_ERROR_UNKNOWN = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DestinationNotWorkingEvidenceUrlRejected
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_REJECTED_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_REJECTED_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_REQUEST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MALFORMED_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MALFORMED_URL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_REJECTED_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_REJECTED_UNKNOWN = 3,
 	}
 	
 	/// <summary>
 	/// The full landing page URL of the destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DestinationUrlEvidence
 	{
 		
@@ -1048,8 +1001,7 @@ namespace MyNS
 	/// <summary>
 	/// Number of HTTP calls made by a creative, broken down by domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainCallEvidence
 	{
 		
@@ -1069,8 +1021,7 @@ namespace MyNS
 	/// <summary>
 	/// The number of HTTP calls made to the given domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainCalls
 	{
 		
@@ -1090,8 +1041,7 @@ namespace MyNS
 	/// <summary>
 	/// Total download size and URL-level download size breakdown for resources in a creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadSizeEvidence
 	{
 		
@@ -1111,8 +1061,7 @@ namespace MyNS
 	/// <summary>
 	/// The URL-level breakdown for the download size.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlDownloadSize
 	{
 		
@@ -1132,8 +1081,7 @@ namespace MyNS
 	/// <summary>
 	/// HTTP calls made by a creative that resulted in policy violations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpCallEvidence
 	{
 		
@@ -1147,8 +1095,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence for HTTP cookie-related policy violations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpCookieEvidence
 	{
 		
@@ -1168,8 +1115,7 @@ namespace MyNS
 	/// <summary>
 	/// HTML content for a creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HtmlContent
 	{
 		
@@ -1195,8 +1141,7 @@ namespace MyNS
 	/// <summary>
 	/// Native content for a creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NativeContent
 	{
 		
@@ -1282,8 +1227,7 @@ namespace MyNS
 	/// <summary>
 	/// An image resource. You may provide a larger image than was requested, so long as the aspect ratio is preserved.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image
 	{
 		
@@ -1309,8 +1253,7 @@ namespace MyNS
 	/// <summary>
 	/// Video content for a creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoContent
 	{
 		
@@ -1336,8 +1279,7 @@ namespace MyNS
 	/// <summary>
 	/// Video metadata for a creative.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoMetadata
 	{
 		
@@ -1381,8 +1323,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about each media file in the VAST.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaFile
 	{
 		
@@ -1399,94 +1340,89 @@ namespace MyNS
 		public System.Nullable<MediaFileMimeType> MimeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaFileMimeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO_MIME_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO_MIME_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_VIDEO_XFLV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_VIDEO_XFLV = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_VIDEO_WEBM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_VIDEO_WEBM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_VIDEO_MP4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_VIDEO_MP4 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_VIDEO_OGG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_VIDEO_OGG = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_VIDEO_YT_HOSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_VIDEO_YT_HOSTED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_VIDEO_X_MS_WMV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_VIDEO_X_MS_WMV = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_VIDEO_3GPP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_VIDEO_3GPP = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_VIDEO_MOV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_VIDEO_MOV = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_APPLICATION_SWF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_APPLICATION_SWF = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_APPLICATION_SURVEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_APPLICATION_SURVEY = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_APPLICATION_JAVASCRIPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_APPLICATION_JAVASCRIPT = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_APPLICATION_SILVERLIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_APPLICATION_SILVERLIGHT = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_APPLICATION_MPEGURL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_APPLICATION_MPEGURL = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_APPLICATION_MPEGDASH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_APPLICATION_MPEGDASH = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_AUDIO_MP4A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_AUDIO_MP4A = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_AUDIO_MP3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_AUDIO_MP3 = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIME_AUDIO_OGG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIME_AUDIO_OGG = 17,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VideoMetadataVastVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VAST_VERSION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VAST_VERSION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VAST_VERSION_1_0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VAST_VERSION_1_0 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VAST_VERSION_2_0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VAST_VERSION_2_0 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VAST_VERSION_3_0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VAST_VERSION_3_0 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VAST_VERSION_4_0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VAST_VERSION_4_0 = 4,
 	}
 	
 	/// <summary>
 	/// The dimensions of a creative. This applies to only HTML and Native creatives.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreativeDimensions
 	{
 		
@@ -1506,8 +1442,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -1533,8 +1468,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -1542,8 +1476,7 @@ namespace MyNS
 	/// <summary>
 	/// Bidder endpoint that receives bid requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Endpoint
 	{
 		
@@ -1578,52 +1511,47 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EndpointBidProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BID_PROTOCOL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BID_PROTOCOL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_RTB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_RTB = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPENRTB_JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPENRTB_JSON = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPENRTB_PROTOBUF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPENRTB_PROTOBUF = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EndpointTradingLocation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRADING_LOCATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRADING_LOCATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US_WEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US_WEST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US_EAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US_EAST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EUROPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EUROPE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASIA = 4,
 	}
 	
 	/// <summary>
 	/// This has been sunset as of October 2023, and will return an error response if called. For more information, see the release notes: https://developers.google.com/authorized-buyers/apis/relnotes#real-time-bidding-api Response for a request to get remarketing tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRemarketingTagResponse
 	{
 		
@@ -1637,8 +1565,7 @@ namespace MyNS
 	/// <summary>
 	/// A response containing bidders.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBiddersResponse
 	{
 		
@@ -1658,8 +1585,7 @@ namespace MyNS
 	/// <summary>
 	/// A response containing buyer account information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBuyersResponse
 	{
 		
@@ -1679,8 +1605,7 @@ namespace MyNS
 	/// <summary>
 	/// A response for listing creatives.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCreativesResponse
 	{
 		
@@ -1700,8 +1625,7 @@ namespace MyNS
 	/// <summary>
 	/// A response containing bidder endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEndpointsResponse
 	{
 		
@@ -1721,8 +1645,7 @@ namespace MyNS
 	/// <summary>
 	/// A response containing pretargeting configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPretargetingConfigsResponse
 	{
 		
@@ -1742,8 +1665,7 @@ namespace MyNS
 	/// <summary>
 	/// Pretargeting configuration: a set of targeting dimensions applied at the pretargeting stage of the RTB funnel. These control which inventory a bidder will receive bid requests for.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PretargetingConfig
 	{
 		
@@ -1886,43 +1808,38 @@ namespace MyNS
 		public StringTargetingDimension WebTargeting { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PretargetingConfigInterstitialTargeting
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERSTITIAL_TARGETING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERSTITIAL_TARGETING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLY_INTERSTITIAL_REQUESTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLY_INTERSTITIAL_REQUESTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLY_NON_INTERSTITIAL_REQUESTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLY_NON_INTERSTITIAL_REQUESTS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PretargetingConfigState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 2,
 	}
 	
 	/// <summary>
 	/// A response to a request for listing publisher connections.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPublisherConnectionsResponse
 	{
 		
@@ -1942,8 +1859,7 @@ namespace MyNS
 	/// <summary>
 	/// The list user list response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUserListsResponse
 	{
 		
@@ -1963,8 +1879,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an Authorized Buyers user list. Authorized Buyers can create/update/list user lists. Once a user list is created in the system, Authorized Buyers can add users to the user list using the bulk uploader API. Alternatively, users can be added by hosting a tag on the advertiser's page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserList
 	{
 		
@@ -2005,27 +1920,24 @@ namespace MyNS
 		public UrlRestriction UrlRestriction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserListStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSED = 2,
 	}
 	
 	/// <summary>
 	/// Deprecated. This will be removed in October 2023. For more information, see the release notes: https://developers.google.com/authorized-buyers/apis/relnotes#real-time-bidding-api Represents the URL restriction (for the URL captured by the pixel callback) for a user list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlRestriction
 	{
 		
@@ -2054,45 +1966,42 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UrlRestrictionRestrictionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTRICTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTRICTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUALS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTS_WITH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDS_WITH = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOES_NOT_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOES_NOT_EQUAL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOES_NOT_CONTAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOES_NOT_CONTAIN = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOES_NOT_START_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOES_NOT_START_WITH = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOES_NOT_END_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOES_NOT_END_WITH = 8,
 	}
 	
 	/// <summary>
 	/// A request to open a specified user list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenUserListRequest
 	{
 	}
@@ -2100,8 +2009,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to stop targeting the provided apps in a specific pretargeting configuration. The pretargeting configuration itself specifies how these apps are targeted. in PretargetingConfig.appTargeting.mobileAppTargeting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTargetedAppsRequest
 	{
 		
@@ -2115,8 +2023,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to stop targeting publishers in a specific configuration. The pretargeting configuration itself specifies how these publishers are targeted in PretargetingConfig.publisherTargeting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTargetedPublishersRequest
 	{
 		
@@ -2130,8 +2037,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to stop targeting sites in a specific pretargeting configuration. The pretargeting configuration itself specifies how these sites are targeted in PretargetingConfig.webTargeting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTargetedSitesRequest
 	{
 		
@@ -2145,8 +2051,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to suspend a pretargeting configuration. Sets the configuration's state to SUSPENDED.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuspendPretargetingConfigRequest
 	{
 	}
@@ -2154,8 +2059,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to receive push notifications when any of the creatives belonging to the bidder changes status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WatchCreativesRequest
 	{
 	}
@@ -2163,8 +2067,7 @@ namespace MyNS
 	/// <summary>
 	/// A response for the request to receive push notification when a bidder's creatives change status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WatchCreativesResponse
 	{
 		
@@ -3300,13 +3203,13 @@ namespace MyNS
 	public enum Realtimebidding_buyers_userLists_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATIVE_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATIVE_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVING_DECISION_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVING_DECISION_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

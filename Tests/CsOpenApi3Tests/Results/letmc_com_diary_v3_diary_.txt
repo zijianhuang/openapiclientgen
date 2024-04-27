@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a single branch of a client.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvertisingBranchModel
 	{
 		
@@ -113,8 +112,7 @@ namespace MyNS
 	/// <summary>
 	/// Holds results from a paged query returning BranchModel values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvertisingBranchModelResults
 	{
 		
@@ -134,8 +132,7 @@ namespace MyNS
 	/// <summary>
 	/// Hypermedia Link Class
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseHypermediaLink
 	{
 		
@@ -161,8 +158,7 @@ namespace MyNS
 	/// <summary>
 	/// Submission Model - Structure to submit the appointment details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiaryAppointmentDetails
 	{
 		
@@ -200,8 +196,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a viewing booking slot
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiaryBookingModel
 	{
 		
@@ -233,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// Submission Model - Structure to submit appointment guest details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiaryGuestDetails
 	{
 		
@@ -278,8 +272,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single diary appointment for a staff member.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiaryAppointmentModel
 	{
 		
@@ -395,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// Holds information on guests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkedGuestModel
 	{
 		
@@ -440,8 +432,7 @@ namespace MyNS
 	/// <summary>
 	/// Holds information on linked properties
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkedPropertiesModel
 	{
 		
@@ -515,8 +506,7 @@ namespace MyNS
 	/// <summary>
 	/// Holds information on the most recent tenancy linked to the property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatestTenancyModel
 	{
 		
@@ -626,8 +616,7 @@ namespace MyNS
 	/// <summary>
 	/// Holds information on tenants
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkedTenantModel
 	{
 		
@@ -677,8 +666,7 @@ namespace MyNS
 	/// <summary>
 	/// Holds information on landlords
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkedLandlordModel
 	{
 		
@@ -725,69 +713,66 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DiaryAppointmentModelRemindBefore
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Min")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Min = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Min2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Min2 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Min5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Min5 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Min10")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Min10 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Min15")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Min15 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Min30")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Min30 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Min45")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Min45 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hour = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hour2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hour2 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hour3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hour3 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hour6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hour6 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hour12")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hour12 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day2 = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Day3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Day3 = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Week = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoReminder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoReminder = 16,
 	}
 	
 	/// <summary>
 	/// Holds results from a paged query returning DiaryAppointmentModel values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiaryAppointmentModelResults
 	{
 		
@@ -807,8 +792,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a diary appointment type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiaryAppointmentTypeModel
 	{
 		
@@ -837,39 +821,36 @@ namespace MyNS
 		public System.Nullable<DiaryAppointmentTypeModelSystemType> SystemType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DiaryAppointmentTypeModelSystemType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Viewing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Viewing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ViewAndValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ViewAndValue = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OpeningInspection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OpeningInspection = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InterimInspection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InterimInspection = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClosingInspection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClosingInspection = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SalesAppraisal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SalesAppraisal = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Custom = 6,
 	}
 	
 	/// <summary>
 	/// Holds results from a paged query returning DiaryAppointmentTypeModel values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiaryAppointmentTypeModelResults
 	{
 		
@@ -889,8 +870,7 @@ namespace MyNS
 	/// <summary>
 	/// Feedback Submission Model:-
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedbackSubmissionModel
 	{
 		
@@ -916,8 +896,7 @@ namespace MyNS
 	/// <summary>
 	/// Guest Diary Parameters Model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GuestDiaryParametersModel
 	{
 		
@@ -955,8 +934,7 @@ namespace MyNS
 	/// <summary>
 	/// Contacts Person Model Results:-
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GuestDiaryParametersResultsModel
 	{
 		

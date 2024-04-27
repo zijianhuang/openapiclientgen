@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Scan authentication configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Authentication
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes authentication configuration that uses a custom account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomAccount
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes authentication configuration that uses a Google account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAccount
 	{
 		
@@ -89,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// A CrawledUrl resource represents a URL that was crawled during a ScanRun. Web Security Scanner Service crawls the web applications, following all links within the scope of sites, to find the URLs to test against.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CrawledUrl
 	{
 		
@@ -116,8 +112,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -125,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// A Finding resource represents a vulnerability instance identified during a ScanRun.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Finding
 	{
 		
@@ -221,63 +215,60 @@ namespace MyNS
 		public Xss Xss { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FindingFindingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINDING_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINDING_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIXED_CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIXED_CONTENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTDATED_LIBRARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTDATED_LIBRARY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROSETTA_FLASH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROSETTA_FLASH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XSS_CALLBACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XSS_CALLBACK = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XSS_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XSS_ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLEAR_TEXT_PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLEAR_TEXT_PASSWORD = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CONTENT_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_CONTENT_TYPE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XSS_ANGULAR_CALLBACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XSS_ANGULAR_CALLBACK = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_HEADER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_HEADER = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSPELLED_SECURITY_HEADER_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSPELLED_SECURITY_HEADER_NAME = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISMATCHING_SECURITY_HEADER_VALUES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISMATCHING_SECURITY_HEADER_VALUES = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESSIBLE_GIT_REPOSITORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESSIBLE_GIT_REPOSITORY = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESSIBLE_SVN_REPOSITORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESSIBLE_SVN_REPOSITORY = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESSIBLE_ENV_FILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESSIBLE_ENV_FILE = 14,
 	}
 	
 	/// <summary>
 	/// Information reported for an outdated library.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutdatedLibrary
 	{
 		
@@ -303,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// Information regarding any resource causing the vulnerability such as JavaScript sources, image, audio files, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ViolatingResource
 	{
 		
@@ -324,8 +314,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about vulnerable or missing HTTP Headers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerableHeaders
 	{
 		
@@ -345,8 +334,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a HTTP Header.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Header
 	{
 		
@@ -366,8 +354,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about vulnerable request parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VulnerableParameters
 	{
 		
@@ -381,8 +368,7 @@ namespace MyNS
 	/// <summary>
 	/// Information reported for an XSS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Xss
 	{
 		
@@ -402,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// A FindingTypeStats resource represents stats regarding a specific FindingType of Findings under a given ScanRun.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindingTypeStats
 	{
 		
@@ -423,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListCrawledUrls` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCrawledUrlsResponse
 	{
 		
@@ -444,8 +428,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListFindingTypeStats` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFindingTypeStatsResponse
 	{
 		
@@ -459,8 +442,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListFindings` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFindingsResponse
 	{
 		
@@ -480,8 +462,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the `ListScanConfigs` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListScanConfigsResponse
 	{
 		
@@ -501,8 +482,7 @@ namespace MyNS
 	/// <summary>
 	/// A ScanConfig resource contains the configurations to launch a scan. next id: 12
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScanConfig
 	{
 		
@@ -570,8 +550,7 @@ namespace MyNS
 	/// <summary>
 	/// A ScanRun is a output-only resource representing an actual run of the scan.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScanRun
 	{
 		
@@ -630,49 +609,44 @@ namespace MyNS
 		public string UrlsTestedCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScanRunExecutionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEUED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCANNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCANNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINISHED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScanRunResultState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESULT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESULT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KILLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KILLED = 3,
 	}
 	
 	/// <summary>
 	/// Scan schedule configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schedule
 	{
 		
@@ -689,30 +663,27 @@ namespace MyNS
 		public string ScheduleTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScanConfigUserAgent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_AGENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_AGENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_LINUX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_ANDROID = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAFARI_IPHONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAFARI_IPHONE = 3,
 	}
 	
 	/// <summary>
 	/// Response for the `ListScanRuns` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListScanRunsResponse
 	{
 		
@@ -732,8 +703,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `StartScanRun` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartScanRunRequest
 	{
 	}
@@ -741,8 +711,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for the `StopScanRun` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopScanRunRequest
 	{
 	}

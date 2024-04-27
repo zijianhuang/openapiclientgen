@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Lookupsv1phone_number
 	{
 		
@@ -65,19 +64,17 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Phone_number_enum_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="landline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		landline = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mobile = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voip = 2,
 	}
 	

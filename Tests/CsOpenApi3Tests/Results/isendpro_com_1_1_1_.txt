@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComptageReponse
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public ComptageReponse_etat Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComptageReponse_etat
 	{
 		
@@ -35,8 +33,7 @@ namespace MyNS
 		public ComptageReponse_etat_etat[] Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComptageReponse_etat_etat
 	{
 		
@@ -59,8 +56,7 @@ namespace MyNS
 		public string Tel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComptageRequest
 	{
 		
@@ -162,9 +158,7 @@ namespace MyNS
 		public string Ucs2 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComptageRequestComptage
 	{
 		
@@ -172,9 +166,7 @@ namespace MyNS
 		_1 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComptageRequestGmt_zone
 	{
 		
@@ -449,9 +441,7 @@ namespace MyNS
 		Pacific_Kiritimati = 89,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComptageRequestNumAzur
 	{
 		
@@ -459,9 +449,7 @@ namespace MyNS
 		_1 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComptageRequestSmslong
 	{
 		
@@ -469,8 +457,7 @@ namespace MyNS
 		_999 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreditResponse
 	{
 		
@@ -478,8 +465,7 @@ namespace MyNS
 		public CreditResponse_etat Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreditResponse_etat
 	{
 		
@@ -496,8 +482,7 @@ namespace MyNS
 		public string Quantite { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Erreur
 	{
 		
@@ -505,8 +490,7 @@ namespace MyNS
 		public Erreur_etat Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Erreur_etat
 	{
 		
@@ -514,8 +498,7 @@ namespace MyNS
 		public Erreur_etat_etat[] Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Erreur_etat_etat
 	{
 		
@@ -532,8 +515,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HLRReponse
 	{
 		
@@ -541,8 +523,7 @@ namespace MyNS
 		public HLRReponse_etat Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HLRReponse_etat
 	{
 		
@@ -555,8 +536,7 @@ namespace MyNS
 		public HLRReponse_etat_etat[] Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HLRReponse_etat_etat
 	{
 		
@@ -577,8 +557,7 @@ namespace MyNS
 		public string Tel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HLRrequest
 	{
 		
@@ -608,9 +587,7 @@ namespace MyNS
 		public string[] Num { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HLRrequestGetHLR
 	{
 		
@@ -618,8 +595,7 @@ namespace MyNS
 		_1 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LISTENOIREReponse
 	{
 		
@@ -627,8 +603,7 @@ namespace MyNS
 		public LISTENOIREReponse_etat Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LISTENOIREReponse_etat
 	{
 		
@@ -640,8 +615,7 @@ namespace MyNS
 		public LISTENOIREReponse_etat_etat[] Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LISTENOIREReponse_etat_etat
 	{
 		
@@ -662,8 +636,7 @@ namespace MyNS
 		public string Tel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class REPERTOIREcreatereponse
 	{
 		
@@ -671,8 +644,7 @@ namespace MyNS
 		public REPERTOIREcreatereponse_etat Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class REPERTOIREcreatereponse_etat
 	{
 		
@@ -680,8 +652,7 @@ namespace MyNS
 		public REPERTOIREcreatereponse_etat_etat[] Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class REPERTOIREcreatereponse_etat_etat
 	{
 		
@@ -706,8 +677,7 @@ namespace MyNS
 		public string RepertoireId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class REPERTOIREcreaterequest
 	{
 		
@@ -737,18 +707,15 @@ namespace MyNS
 		public string RepertoireNom { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum REPERTOIREcreaterequestRepertoireEdit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="create")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		create = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class REPERTOIREmodifreponse
 	{
 		
@@ -756,8 +723,7 @@ namespace MyNS
 		public REPERTOIREmodifreponse_etat Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class REPERTOIREmodifreponse_etat
 	{
 		
@@ -768,8 +734,7 @@ namespace MyNS
 	/// <summary>
 	/// Tableau de code retour. Si succès, un code retour distinct par numéro soumis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class REPERTOIREmodifreponse_etat_etat
 	{
 		
@@ -800,8 +765,7 @@ namespace MyNS
 		public string Tel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class REPERTOIREmodifrequest
 	{
 		
@@ -1000,21 +964,18 @@ namespace MyNS
 		public string RepertoireId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum REPERTOIREmodifrequestRepertoireEdit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		add = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="del")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		del = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSReponse
 	{
 		
@@ -1022,8 +983,7 @@ namespace MyNS
 		public SMSReponse_etat Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSReponse_etat
 	{
 		
@@ -1031,8 +991,7 @@ namespace MyNS
 		public SMSReponse_etat_etat[] Etat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSReponse_etat_etat
 	{
 		
@@ -1061,8 +1020,7 @@ namespace MyNS
 		public string Tel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSRequest
 	{
 		
@@ -1137,9 +1095,7 @@ namespace MyNS
 		public string Ucs2 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SMSRequestGmt_zone
 	{
 		
@@ -1414,9 +1370,7 @@ namespace MyNS
 		Pacific_Kiritimati = 89,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SMSRequestNumAzur
 	{
 		
@@ -1424,8 +1378,7 @@ namespace MyNS
 		_1 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShortlinkRequest
 	{
 		
@@ -1444,8 +1397,7 @@ namespace MyNS
 		public string Shortlink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShortlinkResponse
 	{
 		
@@ -1473,8 +1425,7 @@ namespace MyNS
 		public string Shortlink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SmsUniqueRequest
 	{
 		
@@ -1568,9 +1519,7 @@ namespace MyNS
 		public string Ucs2 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SmsUniqueRequestGmt_zone
 	{
 		
@@ -1845,9 +1794,7 @@ namespace MyNS
 		Pacific_Kiritimati = 89,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SmsUniqueRequestNumAzur
 	{
 		
@@ -1855,8 +1802,7 @@ namespace MyNS
 		_1 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubaccountAddRequest
 	{
 		
@@ -1889,18 +1835,15 @@ namespace MyNS
 		public string SubAccountPassword { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubaccountAddRequestSubAccountEdit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="addAccount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		addAccount = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubaccountAddResponse
 	{
 		
@@ -1934,8 +1877,7 @@ namespace MyNS
 		public string SubAccountLogin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubaccountRequest
 	{
 		
@@ -1980,25 +1922,21 @@ namespace MyNS
 		public System.Nullable<SubaccountRequestSubAccountRestrictionTime> SubAccountRestrictionTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubaccountRequestSubAccountEdit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="setPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		setPrice = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="addCredit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		addCredit = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="setRestriction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		setRestriction = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubaccountRequestSubAccountRestrictionStop
 	{
 		
@@ -2009,9 +1947,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubaccountRequestSubAccountRestrictionTime
 	{
 		
@@ -2022,8 +1958,7 @@ namespace MyNS
 		_1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubaccountResponse
 	{
 		

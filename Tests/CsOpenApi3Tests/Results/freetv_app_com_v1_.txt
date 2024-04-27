@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatestNewsResponse
 	{
 		
@@ -31,8 +30,7 @@ namespace MyNS
 		public NewsItem[] GetLatestNews { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewsItem
 	{
 		
@@ -111,65 +109,65 @@ namespace MyNS
 	public enum GetLatestNewsLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JP = 2,
 	}
 	
 	public enum GetLatestNewsCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		business = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="finance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		finance = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="economics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		economics = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="politics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		politics = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="society")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		society = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="entertainment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		entertainment = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fun")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fun = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gossip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gossip = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sports")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sports = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lifestyle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lifestyle = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="technology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		technology = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="local")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		local = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="world")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		world = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="international")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		international = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="global")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		global = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="military")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		military = 15,
 	}
 }

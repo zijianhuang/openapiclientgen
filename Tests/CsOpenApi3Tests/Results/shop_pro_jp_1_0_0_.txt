@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationCharge
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Update_date { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CartScriptTag
 	{
 		
@@ -95,8 +93,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Update_date { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InlineScriptTag
 	{
 		
@@ -157,34 +154,29 @@ namespace MyNS
 		public System.Nullable<System.Int32> Update_date { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InlineScriptTagDisplay_scope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="thanks_page")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		thanks_page = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cart = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InlineScriptTagTrigger_event
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="object_builded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		object_builded = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScriptTag
 	{
 		
@@ -225,27 +217,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> Update_date { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScriptTagDisplay_scope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shop = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="thanks_page")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		thanks_page = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cart = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShopScriptTag
 	{
 		
@@ -301,21 +290,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> Update_date { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShopScriptTagDisplay_scope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shop = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="thanks_page")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		thanks_page = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageCharge
 	{
 		
@@ -350,8 +336,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Update_date { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateScriptTagScriptTag
 	{
 		
@@ -381,8 +366,7 @@ namespace MyNS
 		public string Src { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateShopScriptTagScriptTag
 	{
 		

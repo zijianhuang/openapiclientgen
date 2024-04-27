@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds a new banded range to the spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBandingRequest
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// A banded (alternating colors) range in a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BandedRange
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties referring a single dimension (either row or column). If both BandedRange.row_properties and BandedRange.column_properties are set, the fill colors are applied to cells according to the following rules: * header_color and footer_color take priority over band colors. * first_band_color takes priority over second_band_color. * row_properties takes priority over column_properties. For example, the first row color takes priority over the first column color, but the first column color takes priority over the second row color. Similarly, the row header takes priority over the column header in the top left cell, but the column header takes priority over the first row color if the row header is not set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BandingProperties
 	{
 		
@@ -125,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ...
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Color
 	{
 		
@@ -158,8 +154,7 @@ namespace MyNS
 	/// <summary>
 	/// A color value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColorStyle
 	{
 		
@@ -176,48 +171,45 @@ namespace MyNS
 		public System.Nullable<ColorStyleThemeColor> ThemeColor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ColorStyleThemeColor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THEME_COLOR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THEME_COLOR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKGROUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKGROUND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCENT1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCENT1 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCENT2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCENT2 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCENT3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCENT3 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCENT4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCENT4 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCENT5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCENT5 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCENT6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCENT6 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK = 9,
 	}
 	
 	/// <summary>
 	/// A range on a sheet. All indexes are zero-based. Indexes are half open, i.e. the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side. For example, if `"Sheet1"` is sheet ID 123456, then: `Sheet1!A1:A1 == sheet_id: 123456, start_row_index: 0, end_row_index: 1, start_column_index: 0, end_column_index: 1` `Sheet1!A3:B4 == sheet_id: 123456, start_row_index: 2, end_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1!A:B == sheet_id: 123456, start_column_index: 0, end_column_index: 2` `Sheet1!A5:B == sheet_id: 123456, start_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1 == sheet_id: 123456` The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as `#REF!`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GridRange
 	{
 		
@@ -255,8 +247,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of adding a banded range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBandingResponse
 	{
 		
@@ -270,8 +261,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds a chart to a sheet in the spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddChartRequest
 	{
 		
@@ -285,8 +275,7 @@ namespace MyNS
 	/// <summary>
 	/// A chart embedded in a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmbeddedChart
 	{
 		
@@ -318,8 +307,7 @@ namespace MyNS
 	/// <summary>
 	/// A border along an embedded object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmbeddedObjectBorder
 	{
 		
@@ -339,8 +327,7 @@ namespace MyNS
 	/// <summary>
 	/// The position of an embedded object such as a chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmbeddedObjectPosition
 	{
 		
@@ -366,8 +353,7 @@ namespace MyNS
 	/// <summary>
 	/// The location an object is overlaid on top of a grid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OverlayPosition
 	{
 		
@@ -405,8 +391,7 @@ namespace MyNS
 	/// <summary>
 	/// A coordinate in a sheet. All indexes are zero-based.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GridCoordinate
 	{
 		
@@ -432,8 +417,7 @@ namespace MyNS
 	/// <summary>
 	/// The specifications of a chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChartSpec
 	{
 		
@@ -585,8 +569,7 @@ namespace MyNS
 	/// <summary>
 	/// The specification for a basic chart. See BasicChartType for the list of charts this supports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BasicChartSpec
 	{
 		
@@ -666,8 +649,7 @@ namespace MyNS
 	/// <summary>
 	/// An axis of the chart. A chart may not have more than one axis per axis position.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BasicChartAxis
 	{
 		
@@ -705,8 +687,7 @@ namespace MyNS
 	/// <summary>
 	/// The format of a run of text in a cell. Absent values indicate that the field isn't specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextFormat
 	{
 		
@@ -768,8 +749,7 @@ namespace MyNS
 	/// <summary>
 	/// An external or local reference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Link
 	{
 		
@@ -780,30 +760,27 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BasicChartAxisPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_CHART_AXIS_POSITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_CHART_AXIS_POSITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM_AXIS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM_AXIS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_AXIS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_AXIS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_AXIS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_AXIS = 3,
 	}
 	
 	/// <summary>
 	/// Position settings for text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextPosition
 	{
 		
@@ -814,30 +791,27 @@ namespace MyNS
 		public System.Nullable<TextPositionHorizontalAlignment> HorizontalAlignment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextPositionHorizontalAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HORIZONTAL_ALIGN_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HORIZONTAL_ALIGN_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT = 3,
 	}
 	
 	/// <summary>
 	/// The options that define a "view window" for a chart (such as the visible values in an axis).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChartAxisViewWindowOptions
 	{
 		
@@ -860,77 +834,70 @@ namespace MyNS
 		public System.Nullable<ChartAxisViewWindowOptionsViewWindowMode> ViewWindowMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChartAxisViewWindowOptionsViewWindowMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT_VIEW_WINDOW_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT_VIEW_WINDOW_MODE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_WINDOW_MODE_UNSUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_WINDOW_MODE_UNSUPPORTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPLICIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPLICIT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRETTY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRETTY = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BasicChartSpecChartType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_CHART_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_CHART_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AREA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AREA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLUMN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLUMN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCATTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCATTER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMBO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMBO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEPPED_AREA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEPPED_AREA = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BasicChartSpecCompareMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_CHART_COMPARE_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_CHART_COMPARE_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATUM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATEGORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATEGORY = 2,
 	}
 	
 	/// <summary>
 	/// The domain of a chart. For example, if charting stock prices over time, this would be the date.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BasicChartDomain
 	{
 		
@@ -950,8 +917,7 @@ namespace MyNS
 	/// <summary>
 	/// The data included in a domain or series.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChartData
 	{
 		
@@ -980,39 +946,36 @@ namespace MyNS
 		public ChartSourceRange SourceRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChartDataAggregateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHART_AGGREGATE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHART_AGGREGATE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVERAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVERAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIAN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIN = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUM = 6,
 	}
 	
 	/// <summary>
 	/// An unique identifier that references a data source column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceColumnReference
 	{
 		
@@ -1026,8 +989,7 @@ namespace MyNS
 	/// <summary>
 	/// An optional setting on the ChartData of the domain of a data source chart that defines buckets for the values in the domain rather than breaking out each individual value. For example, when plotting a data source chart, you can specify a histogram rule on the domain (it should only contain numeric values), grouping its values into buckets. Any values of a chart series that fall into the same bucket are aggregated based on the aggregate_type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChartGroupRule
 	{
 		
@@ -1047,8 +1009,7 @@ namespace MyNS
 	/// <summary>
 	/// Allows you to organize the date-time values in a source data column into buckets based on selected parts of their date or time values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChartDateTimeRule
 	{
 		
@@ -1059,66 +1020,63 @@ namespace MyNS
 		public System.Nullable<ChartDateTimeRuleType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChartDateTimeRuleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHART_DATE_TIME_RULE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHART_DATE_TIME_RULE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECOND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINUTE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR_MINUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR_MINUTE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR_MINUTE_AMPM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR_MINUTE_AMPM = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_WEEK = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_YEAR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_MONTH = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_MONTH = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARTER = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR_MONTH = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR_QUARTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR_QUARTER = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR_MONTH_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR_MONTH_DAY = 15,
 	}
 	
 	/// <summary>
 	/// Allows you to organize numeric values in a source data column into buckets of constant size.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChartHistogramRule
 	{
 		
@@ -1144,8 +1102,7 @@ namespace MyNS
 	/// <summary>
 	/// Source ranges for a chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChartSourceRange
 	{
 		
@@ -1156,36 +1113,33 @@ namespace MyNS
 		public GridRange[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BasicChartSpecLegendPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_CHART_LEGEND_POSITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_CHART_LEGEND_POSITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM_LEGEND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_LEGEND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_LEGEND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP_LEGEND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LEGEND = 5,
 	}
 	
 	/// <summary>
 	/// A single series of data in a chart. For example, if charting stock prices over time, multiple series may exist, one for the "Open Price", "High Price", "Low Price" and "Close Price".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BasicChartSeries
 	{
 		
@@ -1247,8 +1201,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for one set of data labels. Data labels are annotations that appear next to a set of data, such as the points on a line chart, and provide additional information about what the data represents, such as a text representation of the value behind that point on the graph.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataLabel
 	{
 		
@@ -1277,64 +1230,59 @@ namespace MyNS
 		public System.Nullable<DataLabelType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataLabelPlacement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_LABEL_PLACEMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_LABEL_PLACEMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABOVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BELOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BELOW = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSIDE_END")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSIDE_END = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSIDE_BASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSIDE_BASE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTSIDE_END")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTSIDE_END = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataLabelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_LABEL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_LABEL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 3,
 	}
 	
 	/// <summary>
 	/// Properties that describe the style of a line.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LineStyle
 	{
 		
@@ -1351,45 +1299,42 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LineStyleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_DASH_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_DASH_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVISIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVISIBLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLID = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOTTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOTTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM_DASHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM_DASHED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM_DASHED_DOTTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM_DASHED_DOTTED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LONG_DASHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LONG_DASHED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LONG_DASHED_DOTTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LONG_DASHED_DOTTED = 8,
 	}
 	
 	/// <summary>
 	/// The style of a point on the chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PointStyle
 	{
 		
@@ -1406,45 +1351,42 @@ namespace MyNS
 		public System.Nullable<System.Double> Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PointStyleShape
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POINT_SHAPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POINT_SHAPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CIRCLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CIRCLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIAMOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIAMOND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEXAGON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEXAGON = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENTAGON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENTAGON = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SQUARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SQUARE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STAR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIANGLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIANGLE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="X_MARK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		X_MARK = 8,
 	}
 	
 	/// <summary>
 	/// Style override settings for a single series data point.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BasicSeriesDataPointStyleOverride
 	{
 		
@@ -1473,30 +1415,27 @@ namespace MyNS
 		public PointStyle PointStyle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BasicChartSpecStackedType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_CHART_STACKED_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_CHART_STACKED_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_STACKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_STACKED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STACKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STACKED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENT_STACKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENT_STACKED = 3,
 	}
 	
 	/// <summary>
 	/// A bubble chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BubbleChartSpec
 	{
 		
@@ -1573,39 +1512,36 @@ namespace MyNS
 		public ChartData Series { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BubbleChartSpecLegendPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUBBLE_CHART_LEGEND_POSITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUBBLE_CHART_LEGEND_POSITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM_LEGEND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_LEGEND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_LEGEND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP_LEGEND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LEGEND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSIDE_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSIDE_LEGEND = 6,
 	}
 	
 	/// <summary>
 	/// A candlestick chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CandlestickChartSpec
 	{
 		
@@ -1625,8 +1561,7 @@ namespace MyNS
 	/// <summary>
 	/// The Candlestick chart data, each containing the low, open, close, and high values for a series.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CandlestickData
 	{
 		
@@ -1658,8 +1593,7 @@ namespace MyNS
 	/// <summary>
 	/// The series of a CandlestickData.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CandlestickSeries
 	{
 		
@@ -1673,8 +1607,7 @@ namespace MyNS
 	/// <summary>
 	/// The domain of a CandlestickChart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CandlestickDomain
 	{
 		
@@ -1694,8 +1627,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of a data source chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceChartProperties
 	{
 		
@@ -1715,8 +1647,7 @@ namespace MyNS
 	/// <summary>
 	/// The data execution status. A data execution is created to sync a data source object with the latest data from a DataSource. It is usually scheduled to run at background, you can check its state to tell if an execution completes There are several scenarios where a data execution is triggered to run: * Adding a data source creates an associated data source sheet as well as a data execution to sync the data from the data source to the sheet. * Updating a data source creates a data execution to refresh the associated data source sheet similarly. * You can send refresh request to explicitly refresh one or multiple data source objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataExecutionStatus
 	{
 		
@@ -1745,97 +1676,92 @@ namespace MyNS
 		public System.Nullable<DataExecutionStatusState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataExecutionStatusErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_EXECUTION_ERROR_CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_EXECUTION_ERROR_CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMED_OUT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_ROWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_MANY_ROWS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_COLUMNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_MANY_COLUMNS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_CELLS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_MANY_CELLS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENGINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENGINE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARAMETER_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARAMETER_INVALID = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED_DATA_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUPPORTED_DATA_TYPE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUPLICATE_COLUMN_NAMES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DUPLICATE_COLUMN_NAMES = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERRUPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERRUPTED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONCURRENT_QUERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONCURRENT_QUERY = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_CHARS_PER_CELL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_MANY_CHARS_PER_CELL = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_NOT_FOUND = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_DENIED = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_COLUMN_ALIAS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_COLUMN_ALIAS = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT_NOT_FOUND = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT_IN_ERROR_STATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT_IN_ERROR_STATE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT_SPEC_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT_SPEC_INVALID = 18,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataExecutionStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_EXECUTION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_EXECUTION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_STARTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 	}
 	
 	/// <summary>
 	/// The filter criteria associated with a specific column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterSpec
 	{
 		
@@ -1861,8 +1787,7 @@ namespace MyNS
 	/// <summary>
 	/// Criteria for showing/hiding rows in a filter or filter view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterCriteria
 	{
 		
@@ -1906,8 +1831,7 @@ namespace MyNS
 	/// <summary>
 	/// A condition that can evaluate to true or false. BooleanConditions are used by conditional formatting, data validation, and the criteria in filters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BooleanCondition
 	{
 		
@@ -1924,117 +1848,114 @@ namespace MyNS
 		public ConditionValue[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BooleanConditionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONDITION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONDITION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_GREATER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_GREATER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_GREATER_THAN_EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_GREATER_THAN_EQ = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_LESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_LESS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_LESS_THAN_EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_LESS_THAN_EQ = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_EQ = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_NOT_EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_NOT_EQ = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_BETWEEN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_NOT_BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_NOT_BETWEEN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_CONTAINS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_NOT_CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_NOT_CONTAINS = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_STARTS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_STARTS_WITH = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_ENDS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_ENDS_WITH = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_EQ = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_IS_EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_IS_EMAIL = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_IS_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_IS_URL = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_EQ = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_BEFORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_BEFORE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_AFTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_AFTER = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_ON_OR_BEFORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_ON_OR_BEFORE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_ON_OR_AFTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_ON_OR_AFTER = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_BETWEEN = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_NOT_BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_NOT_BETWEEN = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_IS_VALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_IS_VALID = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_OF_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_OF_RANGE = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_OF_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_OF_LIST = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLANK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLANK = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_BLANK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_BLANK = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_FORMULA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_FORMULA = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_NOT_EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_NOT_EQ = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_NOT_EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_NOT_EQ = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_EXPRESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_EXPRESSION = 32,
 	}
 	
 	/// <summary>
 	/// The value of the condition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConditionValue
 	{
 		
@@ -2051,61 +1972,56 @@ namespace MyNS
 		public string UserEnteredValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConditionValueRelativeDate
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELATIVE_DATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELATIVE_DATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAST_YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAST_YEAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAST_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAST_MONTH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAST_WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAST_WEEK = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YESTERDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YESTERDAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TODAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TODAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOMORROW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOMORROW = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChartSpecHiddenDimensionStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHART_HIDDEN_DIMENSION_STRATEGY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHART_HIDDEN_DIMENSION_STRATEGY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIP_HIDDEN_ROWS_AND_COLUMNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIP_HIDDEN_ROWS_AND_COLUMNS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIP_HIDDEN_ROWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIP_HIDDEN_ROWS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIP_HIDDEN_COLUMNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIP_HIDDEN_COLUMNS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOW_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOW_ALL = 4,
 	}
 	
 	/// <summary>
 	/// A histogram chart. A histogram chart groups data items into bins, displaying each bin as a column of stacked items. Histograms are used to display the distribution of a dataset. Each column of items represents a range into which those items fall. The number of bins can be chosen automatically or specified explicitly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistogramChartSpec
 	{
 		
@@ -2140,39 +2056,36 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ShowItemDividers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HistogramChartSpecLegendPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HISTOGRAM_CHART_LEGEND_POSITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HISTOGRAM_CHART_LEGEND_POSITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM_LEGEND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_LEGEND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_LEGEND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP_LEGEND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LEGEND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSIDE_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSIDE_LEGEND = 6,
 	}
 	
 	/// <summary>
 	/// A histogram series containing the series color and data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistogramSeries
 	{
 		
@@ -2198,8 +2111,7 @@ namespace MyNS
 	/// <summary>
 	/// An org chart. Org charts require a unique set of labels in labels and may optionally include parent_labels and tooltips. parent_labels contain, for each node, the label identifying the parent node. tooltips contain, for each node, an optional tooltip. For example, to describe an OrgChart with Alice as the CEO, Bob as the President (reporting to Alice) and Cathy as VP of Sales (also reporting to Alice), have labels contain "Alice", "Bob", "Cathy", parent_labels contain "", "Alice", "Alice" and tooltips contain "CEO", "President", "VP Sales".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrgChartSpec
 	{
 		
@@ -2252,30 +2164,27 @@ namespace MyNS
 		public ChartData Tooltips { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrgChartSpecNodeSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORG_CHART_LABEL_SIZE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORG_CHART_LABEL_SIZE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LARGE = 3,
 	}
 	
 	/// <summary>
 	/// A pie chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PieChartSpec
 	{
 		
@@ -2310,39 +2219,36 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ThreeDimensional { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PieChartSpecLegendPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIE_CHART_LEGEND_POSITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIE_CHART_LEGEND_POSITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM_LEGEND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_LEGEND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_LEGEND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP_LEGEND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LEGEND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABELED_LEGEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABELED_LEGEND = 6,
 	}
 	
 	/// <summary>
 	/// A scorecard chart. Scorecard charts are used to highlight key performance indicators, known as KPIs, on the spreadsheet. A scorecard chart can represent things like total sales, average cost, or a top selling item. You can specify a single data value, or aggregate over a range of data. Percentage or absolute difference from a baseline value can be highlighted, like changes over time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScorecardChartSpec
 	{
 		
@@ -2398,8 +2304,7 @@ namespace MyNS
 	/// <summary>
 	/// Formatting options for baseline value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaselineValueFormat
 	{
 		
@@ -2452,27 +2357,24 @@ namespace MyNS
 		public TextFormat TextFormat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BaselineValueFormatComparisonType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPARISON_TYPE_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPARISON_TYPE_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABSOLUTE_DIFFERENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABSOLUTE_DIFFERENCE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENTAGE_DIFFERENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENTAGE_DIFFERENCE = 2,
 	}
 	
 	/// <summary>
 	/// Custom number formatting options for chart attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChartCustomNumberFormatOptions
 	{
 		
@@ -2492,8 +2394,7 @@ namespace MyNS
 	/// <summary>
 	/// Formatting options for key value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyValueFormat
 	{
 		
@@ -2510,27 +2411,24 @@ namespace MyNS
 		public TextFormat TextFormat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScorecardChartSpecNumberFormatSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHART_NUMBER_FORMAT_SOURCE_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHART_NUMBER_FORMAT_SOURCE_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FROM_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FROM_DATA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 2,
 	}
 	
 	/// <summary>
 	/// A sort order associated with a specific column or row.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SortSpec
 	{
 		
@@ -2577,27 +2475,24 @@ namespace MyNS
 		public System.Nullable<SortSpecSortOrder> SortOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortSpecSortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORT_ORDER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SORT_ORDER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 2,
 	}
 	
 	/// <summary>
 	/// A Treemap chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TreemapChartSpec
 	{
 		
@@ -2683,8 +2578,7 @@ namespace MyNS
 	/// <summary>
 	/// A color scale for a treemap chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TreemapChartColorScale
 	{
 		
@@ -2740,8 +2634,7 @@ namespace MyNS
 	/// <summary>
 	/// A waterfall chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaterfallChartSpec
 	{
 		
@@ -2791,8 +2684,7 @@ namespace MyNS
 	/// <summary>
 	/// The domain of a waterfall chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaterfallChartDomain
 	{
 		
@@ -2812,8 +2704,7 @@ namespace MyNS
 	/// <summary>
 	/// A single series of data for a waterfall chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaterfallChartSeries
 	{
 		
@@ -2863,8 +2754,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom subtotal column for a waterfall chart series.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaterfallChartCustomSubtotal
 	{
 		
@@ -2890,8 +2780,7 @@ namespace MyNS
 	/// <summary>
 	/// Styles for a waterfall chart column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaterfallChartColumnStyle
 	{
 		
@@ -2914,27 +2803,24 @@ namespace MyNS
 		public string Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WaterfallChartSpecStackedType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WATERFALL_STACKED_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WATERFALL_STACKED_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STACKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STACKED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEQUENTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEQUENTIAL = 2,
 	}
 	
 	/// <summary>
 	/// The result of adding a chart to a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddChartResponse
 	{
 		
@@ -2948,8 +2834,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds a new conditional format rule at the given index. All subsequent rules' indexes are incremented.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddConditionalFormatRuleRequest
 	{
 		
@@ -2969,8 +2854,7 @@ namespace MyNS
 	/// <summary>
 	/// A rule describing a conditional format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConditionalFormatRule
 	{
 		
@@ -2996,8 +2880,7 @@ namespace MyNS
 	/// <summary>
 	/// A rule that may or may not match, depending on the condition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BooleanRule
 	{
 		
@@ -3017,8 +2900,7 @@ namespace MyNS
 	/// <summary>
 	/// The format of a cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CellFormat
 	{
 		
@@ -3098,8 +2980,7 @@ namespace MyNS
 	/// <summary>
 	/// The borders of the cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Borders
 	{
 		
@@ -3131,8 +3012,7 @@ namespace MyNS
 	/// <summary>
 	/// A border along a cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Border
 	{
 		
@@ -3161,58 +3041,53 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BorderStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STYLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STYLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOTTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOTTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DASHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DASHED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLID = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLID_MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLID_MEDIUM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLID_THICK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLID_THICK = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOUBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOUBLE = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CellFormatHyperlinkDisplayType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HYPERLINK_DISPLAY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HYPERLINK_DISPLAY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINKED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAIN_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAIN_TEXT = 2,
 	}
 	
 	/// <summary>
 	/// The number format of a cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberFormat
 	{
 		
@@ -3229,45 +3104,42 @@ namespace MyNS
 		public System.Nullable<NumberFormatType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NumberFormatType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_FORMAT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_FORMAT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENCY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_TIME = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCIENTIFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCIENTIFIC = 8,
 	}
 	
 	/// <summary>
 	/// The amount of padding around the cell, in pixels. When updating padding, every field must be specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Padding
 	{
 		
@@ -3296,27 +3168,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> Top { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CellFormatTextDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_DIRECTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_DIRECTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT_TO_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT_TO_RIGHT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT_TO_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT_TO_LEFT = 2,
 	}
 	
 	/// <summary>
 	/// The rotation applied to text in a cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextRotation
 	{
 		
@@ -3333,52 +3202,47 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Vertical { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CellFormatVerticalAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERTICAL_ALIGN_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERTICAL_ALIGN_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIDDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIDDLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CellFormatWrapStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRAP_STRATEGY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRAP_STRATEGY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVERFLOW_CELL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVERFLOW_CELL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEGACY_WRAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEGACY_WRAP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRAP = 4,
 	}
 	
 	/// <summary>
 	/// A rule that applies a gradient color scale format, based on the interpolation points listed. The format of a cell will vary based on its contents as compared to the values of the interpolation points.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GradientRule
 	{
 		
@@ -3404,8 +3268,7 @@ namespace MyNS
 	/// <summary>
 	/// A single interpolation point on a gradient conditional format. These pin the gradient color scale according to the color, type and value chosen.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InterpolationPoint
 	{
 		
@@ -3434,36 +3297,33 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InterpolationPointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERPOLATION_POINT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERPOLATION_POINT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENTILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENTILE = 5,
 	}
 	
 	/// <summary>
 	/// Adds a data source. After the data source is added successfully, an associated DATA_SOURCE sheet is created and an execution is triggered to refresh the sheet to read data from the data source. The request requires an additional `bigquery.readonly` OAuth scope.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddDataSourceRequest
 	{
 		
@@ -3477,8 +3337,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an external data source in the spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSource
 	{
 		
@@ -3510,8 +3369,7 @@ namespace MyNS
 	/// <summary>
 	/// A column in a data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceColumn
 	{
 		
@@ -3531,8 +3389,7 @@ namespace MyNS
 	/// <summary>
 	/// This specifies the details of the data source. For example, for BigQuery, this specifies information about the BigQuery source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceSpec
 	{
 		
@@ -3552,8 +3409,7 @@ namespace MyNS
 	/// <summary>
 	/// The specification of a BigQuery data source that's connected to a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BigQueryDataSourceSpec
 	{
 		
@@ -3579,8 +3435,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a custom BigQuery query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BigQueryQuerySpec
 	{
 		
@@ -3594,8 +3449,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a BigQuery table definition. Only [native tables](https://cloud.google.com/bigquery/docs/tables-intro) are allowed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BigQueryTableSpec
 	{
 		
@@ -3621,8 +3475,7 @@ namespace MyNS
 	/// <summary>
 	/// A parameter in a data source's query. The parameter allows the user to pass in values from the spreadsheet into a query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceParameter
 	{
 		
@@ -3648,8 +3501,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of adding a data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddDataSourceResponse
 	{
 		
@@ -3669,8 +3521,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a group over the specified range. If the requested range is a superset of the range of an existing group G, then the depth of G is incremented and this new group G' has the depth of that group. For example, a group [C:D, depth 1] + [B:E] results in groups [B:E, depth 1] and [C:D, depth 2]. If the requested range is a subset of the range of an existing group G, then the depth of the new group G' becomes one greater than the depth of G. For example, a group [B:E, depth 1] + [C:D] results in groups [B:E, depth 1] and [C:D, depth 2]. If the requested range starts before and ends within, or starts within and ends after, the range of an existing group G, then the range of the existing group G becomes the union of the ranges, and the new group G' has depth one greater than the depth of G and range as the intersection of the ranges. For example, a group [B:D, depth 1] + [C:E] results in groups [B:E, depth 1] and [C:D, depth 2].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddDimensionGroupRequest
 	{
 		
@@ -3684,8 +3535,7 @@ namespace MyNS
 	/// <summary>
 	/// A range along a single dimension on a sheet. All indexes are zero-based. Indexes are half open: the start index is inclusive and the end index is exclusive. Missing indexes indicate the range is unbounded on that side.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionRange
 	{
 		
@@ -3714,27 +3564,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> StartIndex { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionRangeDimension
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROWS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLUMNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLUMNS = 2,
 	}
 	
 	/// <summary>
 	/// The result of adding a group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddDimensionGroupResponse
 	{
 		
@@ -3748,8 +3595,7 @@ namespace MyNS
 	/// <summary>
 	/// A group over an interval of rows or columns on a sheet, which can contain or be contained within other groups. A group can be collapsed or expanded as a unit on the sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionGroup
 	{
 		
@@ -3775,8 +3621,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds a filter view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFilterViewRequest
 	{
 		
@@ -3790,8 +3635,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterView
 	{
 		
@@ -3841,8 +3685,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of adding a filter view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFilterViewResponse
 	{
 		
@@ -3856,8 +3699,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds a named range to the spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddNamedRangeRequest
 	{
 		
@@ -3871,8 +3713,7 @@ namespace MyNS
 	/// <summary>
 	/// A named range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamedRange
 	{
 		
@@ -3898,8 +3739,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of adding a named range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddNamedRangeResponse
 	{
 		
@@ -3913,8 +3753,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds a new protected range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddProtectedRangeRequest
 	{
 		
@@ -3928,8 +3767,7 @@ namespace MyNS
 	/// <summary>
 	/// A protected range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProtectedRange
 	{
 		
@@ -3985,8 +3823,7 @@ namespace MyNS
 	/// <summary>
 	/// The editors of a protected range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Editors
 	{
 		
@@ -4012,8 +3849,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of adding a new protected range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddProtectedRangeResponse
 	{
 		
@@ -4027,8 +3863,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds a new sheet. When a sheet is added at a given index, all subsequent sheets' indexes are incremented. To add an object sheet, use AddChartRequest instead and specify EmbeddedObjectPosition.sheetId or EmbeddedObjectPosition.newSheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddSheetRequest
 	{
 		
@@ -4042,8 +3877,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SheetProperties
 	{
 		
@@ -4111,8 +3945,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional properties of a DATA_SOURCE sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceSheetProperties
 	{
 		
@@ -4138,8 +3971,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of a grid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GridProperties
 	{
 		
@@ -4186,30 +4018,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> RowGroupControlAfter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SheetPropertiesSheetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHEET_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHEET_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_SOURCE = 3,
 	}
 	
 	/// <summary>
 	/// The result of adding a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddSheetResponse
 	{
 		
@@ -4223,8 +4052,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds a slicer to a sheet in the spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddSlicerRequest
 	{
 		
@@ -4238,8 +4066,7 @@ namespace MyNS
 	/// <summary>
 	/// A slicer in a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Slicer
 	{
 		
@@ -4265,8 +4092,7 @@ namespace MyNS
 	/// <summary>
 	/// The specifications of a slicer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlicerSpec
 	{
 		
@@ -4328,8 +4154,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of adding a slicer to a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddSlicerResponse
 	{
 		
@@ -4343,8 +4168,7 @@ namespace MyNS
 	/// <summary>
 	/// Adds new cells after the last row with data in a sheet, inserting new rows into the sheet if necessary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppendCellsRequest
 	{
 		
@@ -4370,8 +4194,7 @@ namespace MyNS
 	/// <summary>
 	/// Data about each cell in a row.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RowData
 	{
 		
@@ -4385,8 +4208,7 @@ namespace MyNS
 	/// <summary>
 	/// Data about a specific cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CellData
 	{
 		
@@ -4466,8 +4288,7 @@ namespace MyNS
 	/// <summary>
 	/// A data source formula.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceFormula
 	{
 		
@@ -4487,8 +4308,7 @@ namespace MyNS
 	/// <summary>
 	/// A data source table, which allows the user to import a static table of data from the DataSource into Sheets. This is also known as "Extract" in the Sheets editor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceTable
 	{
 		
@@ -4535,27 +4355,24 @@ namespace MyNS
 		public SortSpec[] SortSpecs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataSourceTableColumnSelectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_SOURCE_TABLE_COLUMN_SELECTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_SOURCE_TABLE_COLUMN_SELECTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYNC_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYNC_ALL = 2,
 	}
 	
 	/// <summary>
 	/// A data validation rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataValidationRule
 	{
 		
@@ -4587,8 +4404,7 @@ namespace MyNS
 	/// <summary>
 	/// The kinds of value that a cell in a spreadsheet can have.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedValue
 	{
 		
@@ -4626,8 +4442,7 @@ namespace MyNS
 	/// <summary>
 	/// An error in a cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorValue
 	{
 		
@@ -4644,48 +4459,45 @@ namespace MyNS
 		public System.Nullable<ErrorValueType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorValueType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NULL_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NULL_VALUE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIVIDE_BY_ZERO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIVIDE_BY_ZERO = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REF = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAME = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUM = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="N_A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		N_A = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOADING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOADING = 9,
 	}
 	
 	/// <summary>
 	/// A pivot table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotTable
 	{
 		
@@ -4747,8 +4559,7 @@ namespace MyNS
 	/// <summary>
 	/// A single grouping (either row or column) in a pivot table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotGroup
 	{
 		
@@ -4816,8 +4627,7 @@ namespace MyNS
 	/// <summary>
 	/// The count limit on rows or columns in the pivot group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotGroupLimit
 	{
 		
@@ -4837,8 +4647,7 @@ namespace MyNS
 	/// <summary>
 	/// An optional setting on a PivotGroup that defines buckets for the values in the source data column rather than breaking out each individual value. Only one PivotGroup with a group rule may be added for each column in the source data, though on any given column you may add both a PivotGroup that has a rule and a PivotGroup that does not.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotGroupRule
 	{
 		
@@ -4864,8 +4673,7 @@ namespace MyNS
 	/// <summary>
 	/// Allows you to organize the date-time values in a source data column into buckets based on selected parts of their date or time values. For example, consider a pivot table showing sales transactions by date: +----------+--------------+ | Date | SUM of Sales | +----------+--------------+ | 1/1/2017 | $621.14 | | 2/3/2017 | $708.84 | | 5/8/2017 | $326.84 | ... +----------+--------------+ Applying a date-time group rule with a DateTimeRuleType of YEAR_MONTH results in the following pivot table. +--------------+--------------+ | Grouped Date | SUM of Sales | +--------------+--------------+ | 2017-Jan | $53,731.78 | | 2017-Feb | $83,475.32 | | 2017-Mar | $94,385.05 | ... +--------------+--------------+
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateTimeRule
 	{
 		
@@ -4876,66 +4684,63 @@ namespace MyNS
 		public System.Nullable<DateTimeRuleType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DateTimeRuleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_TIME_RULE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_TIME_RULE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECOND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINUTE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR_MINUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR_MINUTE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR_MINUTE_AMPM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR_MINUTE_AMPM = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_WEEK = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_YEAR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_MONTH = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_MONTH = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARTER = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR_MONTH = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR_QUARTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR_QUARTER = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR_MONTH_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR_MONTH_DAY = 15,
 	}
 	
 	/// <summary>
 	/// Allows you to organize the numeric values in a source data column into buckets of a constant size. All values from HistogramRule.start to HistogramRule.end are placed into groups of size HistogramRule.interval. In addition, all values below HistogramRule.start are placed in one group, and all values above HistogramRule.end are placed in another. Only HistogramRule.interval is required, though if HistogramRule.start and HistogramRule.end are both provided, HistogramRule.start must be less than HistogramRule.end. For example, a pivot table showing average purchase amount by age that has 50+ rows: +-----+-------------------+ | Age | AVERAGE of Amount | +-----+-------------------+ | 16 | $27.13 | | 17 | $5.24 | | 18 | $20.15 | ... +-----+-------------------+ could be turned into a pivot table that looks like the one below by applying a histogram group rule with a HistogramRule.start of 25, an HistogramRule.interval of 20, and an HistogramRule.end of 65. +-------------+-------------------+ | Grouped Age | AVERAGE of Amount | +-------------+-------------------+ | < 25 | $19.34 | | 25-45 | $31.43 | | 45-65 | $35.87 | | > 65 | $27.55 | +-------------+-------------------+ | Grand Total | $29.12 | +-------------+-------------------+
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistogramRule
 	{
 		
@@ -4961,8 +4766,7 @@ namespace MyNS
 	/// <summary>
 	/// Allows you to manually organize the values in a source data column into buckets with names of your choosing. For example, a pivot table that aggregates population by state: +-------+-------------------+ | State | SUM of Population | +-------+-------------------+ | AK | 0.7 | | AL | 4.8 | | AR | 2.9 | ... +-------+-------------------+ could be turned into a pivot table that aggregates population by time zone by providing a list of groups (for example, groupName = 'Central', items = ['AL', 'AR', 'IA', ...]) to a manual group rule. Note that a similar effect could be achieved by adding a time zone column to the source data and adjusting the pivot table. +-----------+-------------------+ | Time Zone | SUM of Population | +-----------+-------------------+ | Central | 106.3 | | Eastern | 151.9 | | Mountain | 17.4 | ... +-----------+-------------------+
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManualRule
 	{
 		
@@ -4976,8 +4780,7 @@ namespace MyNS
 	/// <summary>
 	/// A group name and a list of items from the source data that should be placed in the group with this name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManualRuleGroup
 	{
 		
@@ -4997,8 +4800,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about which values in a pivot group should be used for sorting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotGroupSortValueBucket
 	{
 		
@@ -5018,8 +4820,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about a value in a pivot grouping.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotGroupValueMetadata
 	{
 		
@@ -5039,8 +4840,7 @@ namespace MyNS
 	/// <summary>
 	/// Criteria for showing/hiding rows in a pivot table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotFilterCriteria
 	{
 		
@@ -5066,8 +4866,7 @@ namespace MyNS
 	/// <summary>
 	/// The pivot table filter criteria associated with a specific source column offset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotFilterSpec
 	{
 		
@@ -5090,24 +4889,21 @@ namespace MyNS
 		public PivotFilterCriteria FilterCriteria { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PivotTableValueLayout
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HORIZONTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HORIZONTAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERTICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERTICAL = 1,
 	}
 	
 	/// <summary>
 	/// The definition of how a value in a pivot table should be calculated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PivotValue
 	{
 		
@@ -5148,82 +4944,77 @@ namespace MyNS
 		public System.Nullable<PivotValueSummarizeFunction> SummarizeFunction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PivotValueCalculatedDisplayType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIVOT_VALUE_CALCULATED_DISPLAY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIVOT_VALUE_CALCULATED_DISPLAY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENT_OF_ROW_TOTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENT_OF_ROW_TOTAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENT_OF_COLUMN_TOTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENT_OF_COLUMN_TOTAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENT_OF_GRAND_TOTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENT_OF_GRAND_TOTAL = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PivotValueSummarizeFunction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIVOT_STANDARD_VALUE_FUNCTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIVOT_STANDARD_VALUE_FUNCTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNTA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNTUNIQUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNTUNIQUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVERAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVERAGE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIAN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STDEV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STDEV = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STDEVP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STDEVP = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VAR = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VARP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VARP = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 14,
 	}
 	
 	/// <summary>
 	/// A run of a text format. The format of this run continues until the start index of the next run. When updating, all fields must be set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextFormatRun
 	{
 		
@@ -5243,8 +5034,7 @@ namespace MyNS
 	/// <summary>
 	/// Appends rows or columns to the end of a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppendDimensionRequest
 	{
 		
@@ -5270,8 +5060,7 @@ namespace MyNS
 	/// <summary>
 	/// The response when updating a range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppendValuesResponse
 	{
 		
@@ -5297,8 +5086,7 @@ namespace MyNS
 	/// <summary>
 	/// The response when updating a range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateValuesResponse
 	{
 		
@@ -5342,8 +5130,7 @@ namespace MyNS
 	/// <summary>
 	/// Data within a range of the spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValueRange
 	{
 		
@@ -5369,8 +5156,7 @@ namespace MyNS
 	/// <summary>
 	/// Fills in more data based on existing data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoFillRequest
 	{
 		
@@ -5396,8 +5182,7 @@ namespace MyNS
 	/// <summary>
 	/// A combination of a source range and how to extend that source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceAndDestination
 	{
 		
@@ -5423,8 +5208,7 @@ namespace MyNS
 	/// <summary>
 	/// Automatically resizes one or more dimensions based on the contents of the cells in that dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoResizeDimensionsRequest
 	{
 		
@@ -5444,8 +5228,7 @@ namespace MyNS
 	/// <summary>
 	/// A range along a single dimension on a DATA_SOURCE sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceSheetDimensionRange
 	{
 		
@@ -5465,8 +5248,7 @@ namespace MyNS
 	/// <summary>
 	/// The default filter associated with a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BasicFilter
 	{
 		
@@ -5498,8 +5280,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for clearing more than one range selected by a DataFilter in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchClearValuesByDataFilterRequest
 	{
 		
@@ -5513,8 +5294,7 @@ namespace MyNS
 	/// <summary>
 	/// Filter that describes what data should be selected or returned from a request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataFilter
 	{
 		
@@ -5540,8 +5320,7 @@ namespace MyNS
 	/// <summary>
 	/// Selects DeveloperMetadata that matches all of the specified fields. For example, if only a metadata ID is specified this considers the DeveloperMetadata with that particular unique ID. If a metadata key is specified, this considers all developer metadata with that key. If a key, visibility, and location type are all specified, this considers all developer metadata with that key and visibility that are associated with a location of that type. In general, this selects all DeveloperMetadata that matches the intersection of all the specified fields; any field or combination of fields may be specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeveloperMetadataLookup
 	{
 		
@@ -5588,49 +5367,44 @@ namespace MyNS
 		public System.Nullable<DeveloperMetadataLookupVisibility> Visibility { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeveloperMetadataLookupLocationMatchingStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT_LOCATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERSECTING_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERSECTING_LOCATION = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeveloperMetadataLookupLocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVELOPER_METADATA_LOCATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVELOPER_METADATA_LOCATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLUMN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLUMN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHEET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHEET = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPREADSHEET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPREADSHEET = 4,
 	}
 	
 	/// <summary>
 	/// A location where metadata may be associated in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeveloperMetadataLocation
 	{
 		
@@ -5659,27 +5433,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Spreadsheet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeveloperMetadataLookupVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVELOPER_METADATA_VISIBILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVELOPER_METADATA_VISIBILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCUMENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECT = 2,
 	}
 	
 	/// <summary>
 	/// The response when clearing a range of values selected with DataFilters in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchClearValuesByDataFilterResponse
 	{
 		
@@ -5699,8 +5470,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for clearing more than one range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchClearValuesRequest
 	{
 		
@@ -5714,8 +5484,7 @@ namespace MyNS
 	/// <summary>
 	/// The response when clearing a range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchClearValuesResponse
 	{
 		
@@ -5735,8 +5504,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for retrieving a range of values in a spreadsheet selected by a set of DataFilters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetValuesByDataFilterRequest
 	{
 		
@@ -5765,40 +5533,35 @@ namespace MyNS
 		public System.Nullable<BatchGetValuesByDataFilterRequestValueRenderOption> ValueRenderOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchGetValuesByDataFilterRequestDateTimeRenderOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERIAL_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERIAL_NUMBER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORMATTED_STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORMATTED_STRING = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchGetValuesByDataFilterRequestValueRenderOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORMATTED_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORMATTED_VALUE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNFORMATTED_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNFORMATTED_VALUE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORMULA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORMULA = 2,
 	}
 	
 	/// <summary>
 	/// The response when retrieving more than one range of values in a spreadsheet selected by DataFilters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetValuesByDataFilterResponse
 	{
 		
@@ -5818,8 +5581,7 @@ namespace MyNS
 	/// <summary>
 	/// A value range that was matched by one or more data filers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchedValueRange
 	{
 		
@@ -5839,8 +5601,7 @@ namespace MyNS
 	/// <summary>
 	/// The response when retrieving more than one range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetValuesResponse
 	{
 		
@@ -5860,8 +5621,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for updating any aspect of a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateSpreadsheetRequest
 	{
 		
@@ -5893,8 +5653,7 @@ namespace MyNS
 	/// <summary>
 	/// A single kind of update to apply to a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Request
 	{
 		
@@ -6292,8 +6051,7 @@ namespace MyNS
 	/// <summary>
 	/// Clears the basic filter, if any exists on the sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClearBasicFilterRequest
 	{
 		
@@ -6307,8 +6065,7 @@ namespace MyNS
 	/// <summary>
 	/// Copies data from the source to the destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyPasteRequest
 	{
 		
@@ -6337,52 +6094,47 @@ namespace MyNS
 		public GridRange Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CopyPasteRequestPasteOrientation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORMAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSPOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSPOSE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CopyPasteRequestPasteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASTE_NORMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASTE_NORMAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASTE_VALUES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASTE_VALUES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASTE_FORMAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASTE_FORMAT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASTE_NO_BORDERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASTE_NO_BORDERS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASTE_FORMULA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASTE_FORMULA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASTE_DATA_VALIDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASTE_DATA_VALIDATION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASTE_CONDITIONAL_FORMATTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASTE_CONDITIONAL_FORMATTING = 6,
 	}
 	
 	/// <summary>
 	/// A request to create developer metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeveloperMetadataRequest
 	{
 		
@@ -6396,8 +6148,7 @@ namespace MyNS
 	/// <summary>
 	/// Developer metadata associated with a location or object in a spreadsheet. Developer metadata may be used to associate arbitrary data with various parts of a spreadsheet and will remain associated at those locations as they move around and the spreadsheet is edited. For example, if developer metadata is associated with row 5 and another row is then subsequently inserted above row 5, that original metadata will still be associated with the row it was first associated with (what is now row 6). If the associated object is deleted its metadata is deleted too.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeveloperMetadata
 	{
 		
@@ -6435,8 +6186,7 @@ namespace MyNS
 	/// <summary>
 	/// Moves data from the source to the destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CutPasteRequest
 	{
 		
@@ -6462,8 +6212,7 @@ namespace MyNS
 	/// <summary>
 	/// Removes the banded range with the given ID from the spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBandingRequest
 	{
 		
@@ -6477,8 +6226,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a conditional format rule at the given index. All subsequent rules' indexes are decremented.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConditionalFormatRuleRequest
 	{
 		
@@ -6498,8 +6246,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a data source. The request also deletes the associated data source sheet, and unlinks all associated data source objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDataSourceRequest
 	{
 		
@@ -6513,8 +6260,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete developer metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDeveloperMetadataRequest
 	{
 		
@@ -6528,8 +6274,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes the dimensions from the sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDimensionRequest
 	{
 		
@@ -6543,8 +6288,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a group over the specified range by decrementing the depth of the dimensions in the range. For example, assume the sheet has a depth-1 group over B:E and a depth-2 group over C:D. Deleting a group over D:E leaves the sheet with a depth-1 group over B:D and a depth-2 group over C:C.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDimensionGroupRequest
 	{
 		
@@ -6558,8 +6302,7 @@ namespace MyNS
 	/// <summary>
 	/// Removes rows within this range that contain values in the specified columns that are duplicates of values in any previous row. Rows with identical values but different letter cases, formatting, or formulas are considered to be duplicates. This request also removes duplicate rows hidden from view (for example, due to a filter). When removing duplicates, the first instance of each duplicate row scanning from the top downwards is kept in the resulting range. Content outside of the specified range isn't removed, and rows considered duplicates do not have to be adjacent to each other in the range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDuplicatesRequest
 	{
 		
@@ -6579,8 +6322,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes the embedded object with the given ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmbeddedObjectRequest
 	{
 		
@@ -6594,8 +6336,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a particular filter view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFilterViewRequest
 	{
 		
@@ -6609,8 +6350,7 @@ namespace MyNS
 	/// <summary>
 	/// Removes the named range with the given ID from the spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteNamedRangeRequest
 	{
 		
@@ -6624,8 +6364,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes the protected range with the given ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteProtectedRangeRequest
 	{
 		
@@ -6639,8 +6378,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a range of cells, shifting other cells into the deleted area.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRangeRequest
 	{
 		
@@ -6660,8 +6398,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes the requested sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSheetRequest
 	{
 		
@@ -6675,8 +6412,7 @@ namespace MyNS
 	/// <summary>
 	/// Duplicates a particular filter view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateFilterViewRequest
 	{
 		
@@ -6690,8 +6426,7 @@ namespace MyNS
 	/// <summary>
 	/// Duplicates the contents of a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateSheetRequest
 	{
 		
@@ -6723,8 +6458,7 @@ namespace MyNS
 	/// <summary>
 	/// Finds and replaces data in cells over a range, sheet, or all sheets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindReplaceRequest
 	{
 		
@@ -6786,8 +6520,7 @@ namespace MyNS
 	/// <summary>
 	/// Inserts rows or columns in a sheet at a particular index.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertDimensionRequest
 	{
 		
@@ -6807,8 +6540,7 @@ namespace MyNS
 	/// <summary>
 	/// Inserts cells into a range, shifting the existing cells over or down.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsertRangeRequest
 	{
 		
@@ -6828,8 +6560,7 @@ namespace MyNS
 	/// <summary>
 	/// Merges all cells in the range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MergeCellsRequest
 	{
 		
@@ -6846,27 +6577,24 @@ namespace MyNS
 		public GridRange Range { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MergeCellsRequestMergeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERGE_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERGE_ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERGE_COLUMNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERGE_COLUMNS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERGE_ROWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERGE_ROWS = 2,
 	}
 	
 	/// <summary>
 	/// Moves one or more rows or columns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveDimensionRequest
 	{
 		
@@ -6886,8 +6614,7 @@ namespace MyNS
 	/// <summary>
 	/// Inserts data into the spreadsheet starting at the specified coordinate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PasteDataRequest
 	{
 		
@@ -6925,8 +6652,7 @@ namespace MyNS
 	/// <summary>
 	/// Randomizes the order of the rows in a range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RandomizeRangeRequest
 	{
 		
@@ -6940,8 +6666,7 @@ namespace MyNS
 	/// <summary>
 	/// Refreshes one or multiple data source objects in the spreadsheet by the specified references. The request requires an additional `bigquery.readonly` OAuth scope. If there are multiple refresh requests referencing the same data source objects in one batch, only the last refresh request is processed, and all those requests will have the same response accordingly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefreshDataSourceRequest
 	{
 		
@@ -6973,8 +6698,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of references to data source objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceObjectReferences
 	{
 		
@@ -6988,8 +6712,7 @@ namespace MyNS
 	/// <summary>
 	/// Reference to a data source object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceObjectReference
 	{
 		
@@ -7027,8 +6750,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates all cells in the range to the values in the given Cell object. Only the fields listed in the fields field are updated; others are unchanged. If writing a cell with a formula, the formula's ranges will automatically increment for each field in the range. For example, if writing a cell with formula `=A1` into range B2:C4, B2 would be `=A1`, B3 would be `=A2`, B4 would be `=A3`, C2 would be `=B1`, C3 would be `=B2`, C4 would be `=B3`. To keep the formula's ranges static, use the `$` indicator. For example, use the formula `=$A$1` to prevent both the row and the column from incrementing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepeatCellRequest
 	{
 		
@@ -7054,8 +6776,7 @@ namespace MyNS
 	/// <summary>
 	/// Sets the basic filter associated with a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetBasicFilterRequest
 	{
 		
@@ -7069,8 +6790,7 @@ namespace MyNS
 	/// <summary>
 	/// Sets a data validation rule to every cell in the range. To clear validation in a range, call this with no rule specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetDataValidationRequest
 	{
 		
@@ -7090,8 +6810,7 @@ namespace MyNS
 	/// <summary>
 	/// Sorts data in rows based on a sort order per column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SortRangeRequest
 	{
 		
@@ -7111,8 +6830,7 @@ namespace MyNS
 	/// <summary>
 	/// Splits a column of text into multiple columns, based on a delimiter in each cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextToColumnsRequest
 	{
 		
@@ -7135,39 +6853,36 @@ namespace MyNS
 		public GridRange Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextToColumnsRequestDelimiterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIMITER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIMITER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEMICOLON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEMICOLON = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIOD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPACE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTODETECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTODETECT = 6,
 	}
 	
 	/// <summary>
 	/// Trims the whitespace (such as spaces, tabs, or new lines) in every cell in the specified range. This request removes all whitespace from the start and end of each cell's text, and reduces any subsequence of remaining whitespace characters to a single space. If the resulting trimmed text starts with a '+' or '=' character, the text remains as a string value and isn't interpreted as a formula.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrimWhitespaceRequest
 	{
 		
@@ -7181,8 +6896,7 @@ namespace MyNS
 	/// <summary>
 	/// Unmerges cells in the given range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnmergeCellsRequest
 	{
 		
@@ -7196,8 +6910,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates properties of the supplied banded range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBandingRequest
 	{
 		
@@ -7217,8 +6930,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the borders of a range. If a field is not set in the request, that means the border remains as-is. For example, with two subsequent UpdateBordersRequest: 1. range: A1:A5 `{ top: RED, bottom: WHITE }` 2. range: A1:A5 `{ left: BLUE }` That would result in A1:A5 having a borders of `{ top: RED, bottom: WHITE, left: BLUE }`. If you want to clear a border, explicitly set the style to NONE.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBordersRequest
 	{
 		
@@ -7268,8 +6980,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates all cells in a range with new data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCellsRequest
 	{
 		
@@ -7301,8 +7012,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a chart's specifications. (This does not move or resize a chart. To move or resize a chart, use UpdateEmbeddedObjectPositionRequest.)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateChartSpecRequest
 	{
 		
@@ -7322,8 +7032,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a conditional format rule at the given index, or moves a conditional format rule to another index.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConditionalFormatRuleRequest
 	{
 		
@@ -7355,8 +7064,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a data source. After the data source is updated successfully, an execution is triggered to refresh the associated DATA_SOURCE sheet to read data from the updated data source. The request requires an additional `bigquery.readonly` OAuth scope.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataSourceRequest
 	{
 		
@@ -7376,8 +7084,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to update properties of developer metadata. Updates the properties of the developer metadata selected by the filters to the values provided in the DeveloperMetadata resource. Callers must specify the properties they wish to update in the fields parameter, as well as specify at least one DataFilter matching the metadata they wish to update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDeveloperMetadataRequest
 	{
 		
@@ -7403,8 +7110,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the state of the specified group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDimensionGroupRequest
 	{
 		
@@ -7424,8 +7130,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates properties of dimensions within the specified range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDimensionPropertiesRequest
 	{
 		
@@ -7457,8 +7162,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties about a dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionProperties
 	{
 		
@@ -7496,8 +7200,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates an embedded object's border property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmbeddedObjectBorderRequest
 	{
 		
@@ -7523,8 +7226,7 @@ namespace MyNS
 	/// <summary>
 	/// Update an embedded object's position (such as a moving or resizing a chart or image).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmbeddedObjectPositionRequest
 	{
 		
@@ -7550,8 +7252,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates properties of the filter view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFilterViewRequest
 	{
 		
@@ -7571,8 +7272,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates properties of the named range with the specified namedRangeId.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNamedRangeRequest
 	{
 		
@@ -7592,8 +7292,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates an existing protected range with the specified protectedRangeId.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateProtectedRangeRequest
 	{
 		
@@ -7613,8 +7312,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates properties of the sheet with the specified sheetId.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSheetPropertiesRequest
 	{
 		
@@ -7634,8 +7332,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a slicer's specifications. (This does not move or resize a slicer. To move or resize a slicer use UpdateEmbeddedObjectPositionRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSlicerSpecRequest
 	{
 		
@@ -7661,8 +7358,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates properties of a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSpreadsheetPropertiesRequest
 	{
 		
@@ -7682,8 +7378,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpreadsheetProperties
 	{
 		
@@ -7730,30 +7425,27 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SpreadsheetPropertiesAutoRecalc
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECALCULATION_INTERVAL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECALCULATION_INTERVAL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON_CHANGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINUTE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR = 3,
 	}
 	
 	/// <summary>
 	/// Settings to control how circular dependencies are resolved with iterative calculation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IterativeCalculationSettings
 	{
 		
@@ -7773,8 +7465,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents spreadsheet theme
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpreadsheetTheme
 	{
 		
@@ -7794,8 +7485,7 @@ namespace MyNS
 	/// <summary>
 	/// A pair mapping a spreadsheet theme color type to the concrete color it represents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThemeColorPair
 	{
 		
@@ -7815,8 +7505,7 @@ namespace MyNS
 	/// <summary>
 	/// The reply for batch updating a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateSpreadsheetResponse
 	{
 		
@@ -7842,8 +7531,7 @@ namespace MyNS
 	/// <summary>
 	/// A single response from an update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response
 	{
 		
@@ -7989,8 +7677,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from creating developer metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeveloperMetadataResponse
 	{
 		
@@ -8004,8 +7691,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of deleting a conditional format rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConditionalFormatRuleResponse
 	{
 		
@@ -8019,8 +7705,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from deleting developer metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDeveloperMetadataResponse
 	{
 		
@@ -8034,8 +7719,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of deleting a group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDimensionGroupResponse
 	{
 		
@@ -8049,8 +7733,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of removing duplicates in a range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDuplicatesResponse
 	{
 		
@@ -8064,8 +7747,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a filter view being duplicated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateFilterViewResponse
 	{
 		
@@ -8079,8 +7761,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of duplicating a sheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateSheetResponse
 	{
 		
@@ -8094,8 +7775,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of the find/replace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindReplaceResponse
 	{
 		
@@ -8133,8 +7813,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from refreshing one or multiple data source objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefreshDataSourceResponse
 	{
 		
@@ -8148,8 +7827,7 @@ namespace MyNS
 	/// <summary>
 	/// The execution status of refreshing one data source object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefreshDataSourceObjectExecutionStatus
 	{
 		
@@ -8169,8 +7847,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of trimming whitespace in cells.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrimWhitespaceResponse
 	{
 		
@@ -8184,8 +7861,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of updating a conditional format rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateConditionalFormatRuleResponse
 	{
 		
@@ -8217,8 +7893,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from updating data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataSourceResponse
 	{
 		
@@ -8238,8 +7913,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from updating developer metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDeveloperMetadataResponse
 	{
 		
@@ -8253,8 +7927,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of updating an embedded object's position.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmbeddedObjectPositionResponse
 	{
 		
@@ -8268,8 +7941,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource that represents a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Spreadsheet
 	{
 		
@@ -8325,8 +7997,7 @@ namespace MyNS
 	/// <summary>
 	/// Schedule for refreshing the data source. Data sources in the spreadsheet are refreshed within a time interval. You can specify the start time by clicking the Scheduled Refresh button in the Sheets editor, but the interval is fixed at 4 hours. For example, if you specify a start time of 8 AM , the refresh will take place between 8 AM and 12 PM every day.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceRefreshSchedule
 	{
 		
@@ -8370,8 +8041,7 @@ namespace MyNS
 	/// <summary>
 	/// A schedule for data to refresh every day in a given time interval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceRefreshDailySchedule
 	{
 		
@@ -8385,8 +8055,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeOfDay
 	{
 		
@@ -8418,8 +8087,7 @@ namespace MyNS
 	/// <summary>
 	/// A monthly schedule for data to refresh on specific days in the month in a given time interval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceRefreshMonthlySchedule
 	{
 		
@@ -8439,8 +8107,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive). The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Interval
 	{
 		
@@ -8457,24 +8124,21 @@ namespace MyNS
 		public string StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataSourceRefreshScheduleRefreshScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_SOURCE_REFRESH_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_SOURCE_REFRESH_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_DATA_SOURCES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_DATA_SOURCES = 1,
 	}
 	
 	/// <summary>
 	/// A weekly schedule for data to refresh on specific days in a given time interval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceRefreshWeeklySchedule
 	{
 		
@@ -8494,8 +8158,7 @@ namespace MyNS
 	/// <summary>
 	/// A sheet in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sheet
 	{
 		
@@ -8581,8 +8244,7 @@ namespace MyNS
 	/// <summary>
 	/// Data in the grid, as well as metadata about the dimensions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GridData
 	{
 		
@@ -8620,8 +8282,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for updating more than one range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateValuesByDataFilterRequest
 	{
 		
@@ -8659,8 +8320,7 @@ namespace MyNS
 	/// <summary>
 	/// A range of values whose location is specified by a DataFilter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataFilterValueRange
 	{
 		
@@ -8683,27 +8343,24 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchUpdateValuesByDataFilterRequestValueInputOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INPUT_VALUE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INPUT_VALUE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ENTERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ENTERED = 2,
 	}
 	
 	/// <summary>
 	/// The response when updating a range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateValuesByDataFilterResponse
 	{
 		
@@ -8747,8 +8404,7 @@ namespace MyNS
 	/// <summary>
 	/// The response when updating a range of values by a data filter in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateValuesByDataFilterResponse
 	{
 		
@@ -8792,8 +8448,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for updating more than one range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateValuesRequest
 	{
 		
@@ -8831,8 +8486,7 @@ namespace MyNS
 	/// <summary>
 	/// The response when updating a range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdateValuesResponse
 	{
 		
@@ -8876,8 +8530,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for clearing a range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClearValuesRequest
 	{
 	}
@@ -8885,8 +8538,7 @@ namespace MyNS
 	/// <summary>
 	/// The response when clearing a range of values in a spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClearValuesResponse
 	{
 		
@@ -8906,8 +8558,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to copy a sheet across spreadsheets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopySheetToAnotherSpreadsheetRequest
 	{
 		
@@ -8921,8 +8572,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for retrieving a Spreadsheet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSpreadsheetByDataFilterRequest
 	{
 		
@@ -8942,8 +8592,7 @@ namespace MyNS
 	/// <summary>
 	/// A developer metadata entry and the data filters specified in the original request that matched it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchedDeveloperMetadata
 	{
 		
@@ -8963,8 +8612,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to retrieve all developer metadata matching the set of specified criteria.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchDeveloperMetadataRequest
 	{
 		
@@ -8978,8 +8626,7 @@ namespace MyNS
 	/// <summary>
 	/// A reply to a developer metadata search request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchDeveloperMetadataResponse
 	{
 		
@@ -9705,10 +9352,10 @@ namespace MyNS
 	public enum Sheets_spreadsheets_values_appendInsertDataOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVERWRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVERWRITE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSERT_ROWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSERT_ROWS = 1,
 	}
 }

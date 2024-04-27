@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletableItem
 	{
 		
@@ -33,8 +32,7 @@ namespace MyNS
 		public string[] Attributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplaceableItem
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// The item name was specified more than once. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateItemName
 	{
 		
@@ -68,8 +65,7 @@ namespace MyNS
 	/// <summary>
 	/// The value for a parameter is invalid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterValue
 	{
 		
@@ -80,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// The request must contain the specified missing parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingParameter
 	{
 		
@@ -92,8 +87,7 @@ namespace MyNS
 	/// <summary>
 	/// The specified domain does not exist.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchDomain
 	{
 		
@@ -104,8 +98,7 @@ namespace MyNS
 	/// <summary>
 	/// Too many attributes in this item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberItemAttributesExceeded
 	{
 		
@@ -116,8 +109,7 @@ namespace MyNS
 	/// <summary>
 	/// Too many attributes in this domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberDomainAttributesExceeded
 	{
 		
@@ -128,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// Too many bytes in this domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberDomainBytesExceeded
 	{
 		
@@ -140,8 +131,7 @@ namespace MyNS
 	/// <summary>
 	/// Too many items exist in a single call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberSubmittedItemsExceeded
 	{
 		
@@ -152,8 +142,7 @@ namespace MyNS
 	/// <summary>
 	/// Too many attributes exist in a single call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberSubmittedAttributesExceeded
 	{
 		
@@ -164,8 +153,7 @@ namespace MyNS
 	/// <summary>
 	/// Too many domains exist per this account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberDomainsExceeded
 	{
 		
@@ -173,8 +161,7 @@ namespace MyNS
 		public System.Nullable<System.Single> BoxUsage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletableAttribute
 	{
 		
@@ -192,8 +179,7 @@ namespace MyNS
 	/// <summary>
 	/// The specified attribute does not exist.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeDoesNotExist
 	{
 		
@@ -201,8 +187,7 @@ namespace MyNS
 		public System.Nullable<System.Single> BoxUsage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainMetadataResult
 	{
 		
@@ -228,8 +213,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAttributesResult
 	{
 		
@@ -237,8 +221,7 @@ namespace MyNS
 		public string[] Attributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainsResult
 	{
 		
@@ -252,8 +235,7 @@ namespace MyNS
 	/// <summary>
 	/// The specified NextToken is not valid. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextToken
 	{
 		
@@ -261,8 +243,7 @@ namespace MyNS
 		public System.Nullable<System.Single> BoxUsage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplaceableAttribute
 	{
 		
@@ -284,8 +265,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Replace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectResult
 	{
 		
@@ -299,8 +279,7 @@ namespace MyNS
 	/// <summary>
 	/// Too many predicates exist in the query expression.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNumberPredicates
 	{
 		
@@ -311,8 +290,7 @@ namespace MyNS
 	/// <summary>
 	/// Too many predicates exist in the query expression.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNumberValueTests
 	{
 		
@@ -323,8 +301,7 @@ namespace MyNS
 	/// <summary>
 	/// The specified query expression syntax is not valid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidQueryExpression
 	{
 		
@@ -335,8 +312,7 @@ namespace MyNS
 	/// <summary>
 	/// A timeout occurred when attempting to query the specified domain with specified query expression.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestTimeout
 	{
 		
@@ -347,8 +323,7 @@ namespace MyNS
 	/// <summary>
 	/// Too many attributes requested.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestedAttributes
 	{
 		
@@ -356,8 +331,7 @@ namespace MyNS
 		public System.Nullable<System.Single> BoxUsage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attribute
 	{
 		
@@ -382,8 +356,7 @@ namespace MyNS
 		public string AlternateValueEncoding { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteAttributesRequest
 	{
 		
@@ -402,8 +375,7 @@ namespace MyNS
 		public string[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPutAttributesRequest
 	{
 		
@@ -422,8 +394,7 @@ namespace MyNS
 		public string[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDomainRequest
 	{
 		
@@ -438,8 +409,7 @@ namespace MyNS
 	/// <summary>
 	///  Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCondition
 	{
 		
@@ -453,8 +423,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Exists { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAttributesRequest
 	{
 		
@@ -479,8 +448,7 @@ namespace MyNS
 		public UpdateCondition Expected { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDomainRequest
 	{
 		
@@ -492,8 +460,7 @@ namespace MyNS
 		public string DomainName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainMetadataRequest
 	{
 		
@@ -505,8 +472,7 @@ namespace MyNS
 		public string DomainName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAttributesRequest
 	{
 		
@@ -531,8 +497,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ConsistentRead { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Item
 	{
 		
@@ -554,8 +519,7 @@ namespace MyNS
 		public string[] Attributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainsRequest
 	{
 		
@@ -566,8 +530,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAttributesRequest
 	{
 		
@@ -596,8 +559,7 @@ namespace MyNS
 		public UpdateCondition Expected { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectRequest
 	{
 		
@@ -932,7 +894,7 @@ namespace MyNS
 	public enum GET_BatchDeleteAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchDeleteAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BatchDeleteAttributes = 0,
 	}
 	
@@ -953,7 +915,7 @@ namespace MyNS
 	public enum GET_BatchPutAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchPutAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BatchPutAttributes = 0,
 	}
 	
@@ -974,7 +936,7 @@ namespace MyNS
 	public enum GET_CreateDomainAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDomain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDomain = 0,
 	}
 	
@@ -1008,7 +970,7 @@ namespace MyNS
 	public enum GET_DeleteAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteAttributes = 0,
 	}
 	
@@ -1029,7 +991,7 @@ namespace MyNS
 	public enum GET_DeleteDomainAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDomain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDomain = 0,
 	}
 	
@@ -1050,7 +1012,7 @@ namespace MyNS
 	public enum GET_DomainMetadataAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DomainMetadata")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DomainMetadata = 0,
 	}
 	
@@ -1071,7 +1033,7 @@ namespace MyNS
 	public enum GET_GetAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetAttributes = 0,
 	}
 	
@@ -1092,7 +1054,7 @@ namespace MyNS
 	public enum GET_ListDomainsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListDomains")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListDomains = 0,
 	}
 	
@@ -1126,7 +1088,7 @@ namespace MyNS
 	public enum GET_PutAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutAttributes = 0,
 	}
 	
@@ -1147,7 +1109,7 @@ namespace MyNS
 	public enum GET_SelectAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Select")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Select = 0,
 	}
 	

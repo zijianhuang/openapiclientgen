@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that describes the value of a monetary amount as represented by a global currency. When passing in an amount in a request payload, both <b>currency</b> and <b>value</b> fields are required, and both fields are also always returned for an amount in a response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Amount
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// The category type discerns whether the policy applies to motor vehicle listings, or to any other items except motor vehicle listings. <br/><br/>Each business policy can be associated with either or both categories ('MOTORS_VEHICLES' and 'ALL_EXCLUDING_MOTORS_VEHICLES'); however, return business policies are not applicable for motor vehicle listings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryType
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// The response payload for requests that return a list of custom policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompactCustomPolicyResponse
 	{
 		
@@ -95,8 +92,7 @@ namespace MyNS
 	/// <summary>
 	/// This container defines a seller's custom policy identified by policy ID for the selected eBay marketplace. A successful call returns the requested policy information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomPolicy
 	{
 		
@@ -134,8 +130,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the request payload of the createCustomPolicy method to define a new custom policy for a specific marketplace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomPolicyCreateRequest
 	{
 		
@@ -164,8 +159,7 @@ namespace MyNS
 		public string PolicyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomPolicyRequest
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomPolicyResponse
 	{
 		
@@ -239,8 +232,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used to specify/indicate that an initial deposit is required for a motor vehicle listing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deposit
 	{
 		
@@ -266,8 +258,7 @@ namespace MyNS
 	/// <summary>
 	/// A type used to specify a period of time using a specified time-measurement unit. Payment, return, and fulfillment business policies all use this type to specify time windows.<br/><br/>Whenever a container that uses this type is used in a request, both of these fields are required. Similarly, whenever a container that uses this type is returned in a response, both of these fields are always returned.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeDuration
 	{
 		
@@ -287,8 +278,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the <b>paymentMethods</b> container, which is used by the seller to specify one or more offline payment methods. <br /><br /> <span class="tablenote"><b>Note</b>: eBay now controls all electronic payment methods available for a marketplace, so a seller will no longer use this type to specify any electronic payment methods.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentMethod
 	{
 		
@@ -314,8 +304,7 @@ namespace MyNS
 	/// <summary>
 	/// <span class="tablenote"><b>Note</b>: This type is no longer applicable. eBay now controls all electronic payment methods available for a marketplace, and a seller never has to specify any electronic payment methods.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecipientAccountReference
 	{
 		
@@ -335,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// A container that defines the elements of error and warning messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -398,8 +386,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that indicates a parameter that caused an error and the value of the parameter which caused the error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorParameter
 	{
 		
@@ -419,8 +406,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the <b>fulfillmentPolicy</b> response container, a container which defines a seller's fulfillment policy for a specific marketplace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FulfillmentPolicy
 	{
 		
@@ -500,8 +486,7 @@ namespace MyNS
 	/// <summary>
 	/// This type consists of the <b>regionIncluded</b> and <b>regionExcluded</b> arrays, which indicate the areas to where the seller does and doesn't ship.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegionSet
 	{
 		
@@ -521,8 +506,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used to define specific shipping regions. There are four 'levels' of shipping regions, including large geographical regions (like 'Asia', 'Europe', or 'Middle East'), individual countries, US states or Canadian provinces, and special locations/domestic regions within a country (like 'Alaska/Hawaii' or 'PO Box').
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Region
 	{
 		
@@ -542,8 +526,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the <b>shippingOptions</b> array, which is used to provide detailed information on the domestic and international shipping options available for the policy. A separate <b>ShippingOption</b> object covers domestic shipping service options and international shipping service options (if the seller ships to international locations).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingOption
 	{
 		
@@ -605,8 +588,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the <b>shippingServices</b> array, an array that provides details about every domestic and international shipping service option that is defined for the policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingService
 	{
 		
@@ -680,8 +662,7 @@ namespace MyNS
 	/// <summary>
 	/// This root container defines a seller's fulfillment policy for a specific marketplace and category group. This type is used when creating or updating a fulfillment business policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FulfillmentPolicyRequest
 	{
 		
@@ -755,8 +736,7 @@ namespace MyNS
 	/// <summary>
 	/// The response payload for the <b>getFulfillmentPolicies</b> method.<br /><br /><span class="tablenote"><b>Note</b>: Pagination has not yet been enabled for <b>getFulfillmentPolicies</b>, so all of the pagination-related fields are for future use.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FulfillmentPolicyResponse
 	{
 		
@@ -806,8 +786,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for a seller's international return policy. Sellers have the ability to set separate domestic and international return policies, but if an international return policy is not set, the same return policy settings specified for the domestic return policy are also used for returns for international buyers. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternationalReturnOverrideType
 	{
 		
@@ -839,8 +818,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used to provide details about any KYC check that is applicable to the managed payments seller.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KycCheck
 	{
 		
@@ -878,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// This is the base response type of the <b>getKYC</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KycResponse
 	{
 		
@@ -893,8 +870,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the <b>paymentPolicy</b> response container, a container which defines a seller's payment business policy for a specific marketplace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentPolicy
 	{
 		
@@ -962,8 +938,7 @@ namespace MyNS
 	/// <summary>
 	/// This root container defines a seller's payment business policy for a specific marketplace and category group. This type is used when creating or updating a payment business policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentPolicyRequest
 	{
 		
@@ -1025,8 +1000,7 @@ namespace MyNS
 	/// <summary>
 	/// The response payload for the <b>getPaymentPolicies</b> method. <br /><br /><span class="tablenote"><b>Note</b>: Pagination has not yet been enabled for <b>getPaymentPolicies</b>, so all of the pagination-related fields are for future use.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentPolicyResponse
 	{
 		
@@ -1076,8 +1050,7 @@ namespace MyNS
 	/// <summary>
 	/// Type used by the payments program onboarding response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentsProgramOnboardingResponse
 	{
 		
@@ -1097,8 +1070,7 @@ namespace MyNS
 	/// <summary>
 	/// The payments program onboarding steps, status, and link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentsProgramOnboardingSteps
 	{
 		
@@ -1124,8 +1096,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object containing the sellers status with regards to the specified payment program.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentsProgramResponse
 	{
 		
@@ -1157,8 +1128,7 @@ namespace MyNS
 	/// <summary>
 	/// A seller program in to which a seller can opt-in.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Program
 	{
 		
@@ -1172,8 +1142,7 @@ namespace MyNS
 	/// <summary>
 	/// The base response type of the <b>getOptedInPrograms</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Programs
 	{
 		
@@ -1187,8 +1156,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used to provide details about each shipping rate table that is returned in the <b>getRateTables</b> response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateTable
 	{
 		
@@ -1220,8 +1188,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is the base response of the <b>getRateTables</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateTableResponse
 	{
 		
@@ -1235,8 +1202,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the <b>returnPolicy</b> response container, a container which defines a seller's return business policy for a specific marketplace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReturnPolicy
 	{
 		
@@ -1328,8 +1294,7 @@ namespace MyNS
 	/// <summary>
 	/// This root container defines a seller's return business policy for a specific marketplace and category group. This type is used when creating or updating a return business policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReturnPolicyRequest
 	{
 		
@@ -1415,8 +1380,7 @@ namespace MyNS
 	/// <summary>
 	/// The response payload for the <b>getReturnPolicies</b> method. <br /><br /><span class="tablenote"><b>Note</b>: Pagination has not yet been enabled for <b>getReturnPolicies</b>, so all of the pagination-related fields are for future use.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReturnPolicyResponse
 	{
 		
@@ -1466,8 +1430,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used to provide sales tax settings for a specific tax jurisdiction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesTax
 	{
 		
@@ -1499,8 +1462,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the base request of the <b>createOrReplaceSalesTax</b>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesTaxBase
 	{
 		
@@ -1520,8 +1482,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the root response of the <b>getSalesTaxes</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesTaxes
 	{
 		
@@ -1535,8 +1496,7 @@ namespace MyNS
 	/// <summary>
 	/// The base response of the <b>getAdvertisingEligibility</b> method that contains the seller eligibility information for one or more advertising programs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SellerEligibilityMultiProgramResponse
 	{
 		
@@ -1550,8 +1510,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that is used to provide the seller's eligibility status for an eBay advertising program.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SellerEligibilityResponse
 	{
 		
@@ -1577,8 +1536,7 @@ namespace MyNS
 	/// <summary>
 	/// Type used by the <b>sellingLimit</b> container, a container that lists the monthly cap for the quantity of items sold and total sales amount allowed for the seller's account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SellingLimit
 	{
 		
@@ -1598,8 +1556,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the base response of the <b>getPrivileges</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SellingPrivileges
 	{
 		
@@ -1619,8 +1576,7 @@ namespace MyNS
 	/// <summary>
 	/// Complex type that that gets populated with a response containing a fulfillment policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetFulfillmentPolicyResponse
 	{
 		
@@ -1706,8 +1662,7 @@ namespace MyNS
 	/// <summary>
 	/// Complex type that that gets populated with a response containing a payment policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetPaymentPolicyResponse
 	{
 		
@@ -1781,8 +1736,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that is populated with a response containing a return policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetReturnPolicyResponse
 	{
 		
@@ -1880,8 +1834,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the <strong>getSubscription</strong> response container, which defines the subscription types and levels for the seller account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscription
 	{
 		
@@ -1919,8 +1872,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used by the response payload for the <b>getSubscription</b> method.<br /><br /><span class="tablenote"><b>Note</b>: Pagination has not yet been enabled for <b>getSubscription</b>, so all of the pagination-related fields are for future use.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionResponse
 	{
 		

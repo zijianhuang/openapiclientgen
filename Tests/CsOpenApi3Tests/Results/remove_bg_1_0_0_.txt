@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthFailed
 	{
 		
@@ -36,8 +35,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImprovementProgramJson
 	{
 		
@@ -66,8 +64,7 @@ namespace MyNS
 		public string Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImprovementProgramJsonResponse
 	{
 		
@@ -78,8 +75,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImprovementProgramMultipart
 	{
 		
@@ -114,8 +110,7 @@ namespace MyNS
 		public string Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateLimit
 	{
 		
@@ -133,8 +128,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveBgJson
 	{
 		
@@ -269,80 +263,70 @@ namespace MyNS
 		public System.Nullable<RemoveBgJsonType_level> Type_level { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemoveBgJsonChannels
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rgba")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rgba = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alpha = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemoveBgJsonFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="auto")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		auto = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="png")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		png = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jpg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jpg = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zip = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemoveBgJsonSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preview = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="auto")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		auto = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemoveBgJsonType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="auto")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		auto = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="person")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		person = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="product")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		product = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="car")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		car = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemoveBgJsonType_level
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="1")]
@@ -351,12 +335,11 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="2")]
 		_2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="latest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		latest = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveBgJsonResponse
 	{
 		
@@ -398,8 +381,7 @@ namespace MyNS
 		public string Result_b64 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveBgMultipart
 	{
 		
@@ -550,13 +532,11 @@ namespace MyNS
 		public System.Nullable<RemoveBgMultipartType_level> Type_level { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemoveBgMultipartType_level
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="1")]
@@ -565,7 +545,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="2")]
 		_2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="latest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		latest = 3,
 	}
 	

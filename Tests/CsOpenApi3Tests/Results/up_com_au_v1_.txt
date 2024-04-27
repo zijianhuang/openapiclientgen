@@ -21,8 +21,7 @@ namespace MyNS
 	/// Provides information about an Up bank account.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountResource
 	{
 		
@@ -115,8 +114,7 @@ namespace MyNS
 	/// Provides information about a value of money.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoneyObject
 	{
 		
@@ -201,16 +199,14 @@ namespace MyNS
 	///and `TRANSACTIONAL`.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountTypeEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAVER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSACTIONAL = 1,
 	}
 	
@@ -219,8 +215,7 @@ namespace MyNS
 	///cashback.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CashbackObject
 	{
 		
@@ -247,8 +242,7 @@ namespace MyNS
 	/// Uniquely identifies a category in the API.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryInputResourceIdentifier
 	{
 		
@@ -275,8 +269,7 @@ namespace MyNS
 	/// Provides information about a category and its ancestry.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryResource
 	{
 		
@@ -461,8 +454,7 @@ namespace MyNS
 	///attribute.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWebhookRequest
 	{
 		
@@ -480,8 +472,7 @@ namespace MyNS
 	/// Represents a webhook specified as request input.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookInputResource
 	{
 		
@@ -519,8 +510,7 @@ namespace MyNS
 	/// Successful response after creating a webhook.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWebhookResponse
 	{
 		
@@ -538,8 +528,7 @@ namespace MyNS
 	/// Provides information about a webhook.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookResource
 	{
 		
@@ -676,8 +665,7 @@ namespace MyNS
 	/// Provides information about an error processing a request.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorObject
 	{
 		
@@ -748,8 +736,7 @@ namespace MyNS
 	/// Generic error response that returns one or more errors.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorResponse
 	{
 		
@@ -767,8 +754,7 @@ namespace MyNS
 	/// Successful response to get a single account.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountResponse
 	{
 		
@@ -786,8 +772,7 @@ namespace MyNS
 	/// Successful response to get a single category and its ancestry.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCategoryResponse
 	{
 		
@@ -805,8 +790,7 @@ namespace MyNS
 	/// Successful response to get a single transaction.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTransactionResponse
 	{
 		
@@ -820,8 +804,7 @@ namespace MyNS
 		public TransactionResource Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionResource
 	{
 		
@@ -995,8 +978,7 @@ namespace MyNS
 	///`HELD` status.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HoldInfoObject
 	{
 		
@@ -1027,8 +1009,7 @@ namespace MyNS
 	///not a boost was included in the Round Up.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoundUpObject
 	{
 		
@@ -1363,8 +1344,7 @@ namespace MyNS
 	/// Successful response to get a single webhook.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebhookResponse
 	{
 		
@@ -1384,8 +1364,7 @@ namespace MyNS
 	///if present.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountsResponse
 	{
 		
@@ -1435,8 +1414,7 @@ namespace MyNS
 	///returned list is not paginated.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCategoriesResponse
 	{
 		
@@ -1456,8 +1434,7 @@ namespace MyNS
 	///present.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsResponse
 	{
 		
@@ -1482,8 +1459,7 @@ namespace MyNS
 	/// Provides information about a tag.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResource
 	{
 		
@@ -1573,8 +1549,7 @@ namespace MyNS
 	///`next` links if present.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTransactionsResponse
 	{
 		
@@ -1625,8 +1600,7 @@ namespace MyNS
 	///`next` and `prev` links if present.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebhookDeliveryLogsResponse
 	{
 		
@@ -1652,8 +1626,7 @@ namespace MyNS
 	///debugging purposes.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookDeliveryLogResource
 	{
 		
@@ -1837,8 +1810,7 @@ namespace MyNS
 	///if present.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebhooksResponse
 	{
 		
@@ -1888,16 +1860,14 @@ namespace MyNS
 	///returned values are `INDIVIDUAL` and `JOINT`.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OwnershipTypeEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDIVIDUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDIVIDUAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOINT = 1,
 	}
 	
@@ -1905,8 +1875,7 @@ namespace MyNS
 	/// Basic ping response to verify authentication.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PingResponse
 	{
 		
@@ -1944,8 +1913,7 @@ namespace MyNS
 	/// Uniquely identifies a single tag in the API.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagInputResourceIdentifier
 	{
 		
@@ -1974,16 +1942,14 @@ namespace MyNS
 	///settled, its account’s `currentBalance` is affected.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransactionStatusEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HELD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HELD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SETTLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SETTLED = 1,
 	}
 	
@@ -1991,8 +1957,7 @@ namespace MyNS
 	/// Request to update the category associated with a transaction.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTransactionCategoryRequest
 	{
 		
@@ -2011,8 +1976,7 @@ namespace MyNS
 	/// Request to add or remove tags associated with a transaction.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTransactionTagsRequest
 	{
 		
@@ -2038,19 +2002,17 @@ namespace MyNS
 	///  but a non-`200` response was received.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookDeliveryStatusEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNDELIVERABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNDELIVERABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_RESPONSE_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAD_RESPONSE_CODE = 2,
 	}
 	
@@ -2058,8 +2020,7 @@ namespace MyNS
 	/// Asynchronous callback request used for webhook event delivery.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookEventCallback
 	{
 		
@@ -2079,8 +2040,7 @@ namespace MyNS
 	///optionally relate to other resources within the Up API.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookEventResource
 	{
 		
@@ -2256,22 +2216,20 @@ namespace MyNS
 	///expect.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookEventTypeEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTION_CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSACTION_CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTION_SETTLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSACTION_SETTLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTION_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSACTION_DELETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PING = 3,
 	}
 	

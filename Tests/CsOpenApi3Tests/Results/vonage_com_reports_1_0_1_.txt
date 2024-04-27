@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallLog
 	{
 		
@@ -161,8 +160,7 @@ namespace MyNS
 		public string To { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallLogsEmbeddedObject
 	{
 		
@@ -170,8 +168,7 @@ namespace MyNS
 		public CallLog[] Call_logs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CallLogsHalResponse
 	{
 		
@@ -206,8 +203,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Total_page { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Links
 	{
 		
@@ -239,8 +235,7 @@ namespace MyNS
 	/// <summary>
 	/// URL to the first page of records
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstHref
 	{
 		
@@ -251,8 +246,7 @@ namespace MyNS
 	/// <summary>
 	/// URL to the next page of records
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NextHref
 	{
 		
@@ -263,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// URL to the previous page of records
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrevHref
 	{
 		
@@ -275,8 +268,7 @@ namespace MyNS
 	/// <summary>
 	/// URL to the current page of records
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelfHref
 	{
 		
@@ -284,8 +276,7 @@ namespace MyNS
 		public string Href { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetailedInvalidParam
 	{
 		
@@ -302,8 +293,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorResponse
 	{
 		
@@ -323,8 +313,7 @@ namespace MyNS
 	/// <summary>
 	/// URL to the last page of records
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LastHref
 	{
 		
@@ -332,8 +321,7 @@ namespace MyNS
 		public string Href { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationErrorsResponse
 	{
 		
@@ -431,10 +419,10 @@ namespace MyNS
 	public enum GetCallLogsDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Outbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Outbound = 1,
 	}
 }

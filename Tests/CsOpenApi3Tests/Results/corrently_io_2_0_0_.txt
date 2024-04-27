@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Balance
 	{
 		
@@ -50,8 +49,7 @@ namespace MyNS
 		public System.Nullable<BalanceVariation> Variation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transactions
 	{
 		
@@ -86,30 +84,27 @@ namespace MyNS
 		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BalanceVariation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gsb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gsb = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="erzeugung")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		erzeugung = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eigenstrom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eigenstrom = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="co2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		co2 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="baeume")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		baeume = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DispatchLocation
 	{
 		
@@ -126,8 +121,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ForecastItem
 	{
 		
@@ -174,8 +168,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TimeStamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MarketData
 	{
 		
@@ -198,8 +191,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Start_timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tariffh0
 	{
 		
@@ -216,8 +208,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Gp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Componentsh0
 	{
 		
@@ -252,8 +243,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Sum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Easee_charger
 	{
 		
@@ -276,8 +266,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ommeters
 	{
 		
@@ -1661,16 +1650,14 @@ namespace MyNS
 		public System.Nullable<StromkontoLoginReturnStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StromkontoLoginReturnStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="registered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		registered = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unregistered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unregistered = 1,
 	}
 	

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertSearchMethodResponse
 	{
 		
@@ -62,8 +61,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitEntryWithReferencesTransitSearch
 	{
 		
@@ -95,8 +93,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitSearch
 	{
 		
@@ -128,87 +125,83 @@ namespace MyNS
 	/// <summary>
 	/// A válaszhoz tartozó referenciák.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitReferences
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlertSearchMethodResponseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_MODIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_MODIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_VALUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_OPERATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_OPERATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTSIDE_BOUNDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTSIDE_BOUNDS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH_NOT_FOUND = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_TRANSIT_TIMES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_TRANSIT_TIMES = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST_TIMEOUT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOGUS_PARAMETER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOGUS_PARAMETER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_CLOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_CLOSE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_NOT_ACCESSIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_NOT_ACCESSIBLE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_MODE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_NO_GRAPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_NO_GRAPH = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLANNER_SERVICE_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLANNER_SERVICE_UNAVAILABLE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_VEHICLE_LOCATION_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_VEHICLE_LOCATION_SERVICE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_BIKE_RENTAL_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_BIKE_RENTAL_SERVICE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_TICKETING_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_TICKETING_SERVICE = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_TRANSIT_INDEX_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_TRANSIT_INDEX_SERVICE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOVED_TEMPORARILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOVED_TEMPORARILY = 20,
 	}
 	
 	/// <summary>
 	/// A tervezés metaadatai. Tartalmazza a következő és az előző tervezési időablakot a lapozás megvalósításához ezred másodpercben.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiTripSearchMetadata
 	{
 		
@@ -222,9 +215,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> SearchWindowUsed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiVersion
 	{
 		
@@ -238,8 +229,7 @@ namespace MyNS
 		_4 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArrivalsAndDeparturesForLocationOTPMethodResponse
 	{
 		
@@ -283,8 +273,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitListEntryWithReferencesTransitDepartureGroup
 	{
 		
@@ -322,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adatok listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitDepartureGroup
 	{
 		
@@ -349,8 +337,7 @@ namespace MyNS
 	/// <summary>
 	/// Az irányhoz tartozó menetrendi bejegyzések.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitScheduleStopTime
 	{
 		
@@ -433,8 +420,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WheelchairAccessible { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArrivalsAndDeparturesForStopOTPMethodResponse
 	{
 		
@@ -478,8 +464,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitEntryWithReferencesTransitArrivalsAndDepartures
 	{
 		
@@ -511,8 +496,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitArrivalsAndDepartures
 	{
 		
@@ -547,8 +531,7 @@ namespace MyNS
 		public TransitScheduleStopTime[] StopTimes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BicycleRentalMethodResponse
 	{
 		
@@ -592,8 +575,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitListEntryWithReferencesTransitBikeRentalStation
 	{
 		
@@ -631,8 +613,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adatok listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitBikeRentalStation
 	{
 		
@@ -688,46 +669,41 @@ namespace MyNS
 	/// <summary>
 	/// Kerékpáros útszakaszok kategórizálásai.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BikeStreetCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CYCLEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CYCLEWAY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CYCLELANE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CYCLELANE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW_TRAFFIC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PEDESTRIAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PEDESTRIAN = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Dialect
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="otp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		otp = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mobile = 1,
 	}
 	
 	/// <summary>
 	/// Az útiterv kivonatos megjelenítéséhez használható  lábak és adatok.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisplayedLeg
 	{
 		
@@ -765,24 +741,21 @@ namespace MyNS
 	/// <summary>
 	/// A zavar hatásának típusa.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EffectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_SERVICE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 1,
 	}
 	
 	/// <summary>
 	/// A lábhoz tartozó magassági adatok.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElevationPoint
 	{
 		
@@ -802,8 +775,7 @@ namespace MyNS
 	/// <summary>
 	/// A láb geometriája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncodedPolylineBean
 	{
 		
@@ -823,8 +795,7 @@ namespace MyNS
 	/// <summary>
 	/// A talált útvonalak listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Itinerary
 	{
 		
@@ -976,8 +947,7 @@ namespace MyNS
 	/// <summary>
 	/// Az útiterv lábai (részei).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Leg
 	{
 		
@@ -1234,8 +1204,7 @@ namespace MyNS
 	/// <summary>
 	/// Tranzit láb esetén a köztes megállók a láb kezdete és végződése között.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Place
 	{
 		
@@ -1315,8 +1284,7 @@ namespace MyNS
 	/// <summary>
 	/// A jegyértékesítési pontok listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TicketingLocation
 	{
 		
@@ -1426,8 +1394,7 @@ namespace MyNS
 	/// <summary>
 	/// A jegyértékesítési hely nyitvatartása.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TicketingPeriod
 	{
 		
@@ -1462,80 +1429,73 @@ namespace MyNS
 		public System.Nullable<System.Int32> OpensSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TicketingPeriodDayOfWeek
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THU = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRI = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUN = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOL = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="O247")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		O247 = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TicketingLocationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLANNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLANNED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATIONAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INOPERATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INOPERATIVE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TicketingLocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_CENTER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CASHIER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CASHIER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VENDING_MACHINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VENDING_MACHINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESELLER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESELLER = 3,
 	}
 	
 	/// <summary>
 	/// Az útvonal lépései gyalogos, kerékpáros vagy autós láb lesetén.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WalkStep
 	{
 		
@@ -1618,96 +1578,90 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WalkingBike { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WalkStepAbsoluteDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORTH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORTHEAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORTHEAST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EAST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOUTHEAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOUTHEAST = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOUTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOUTH = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOUTHWEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOUTHWEST = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEST = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORTHWEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORTHWEST = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WalkStepBicycleStreetDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIDIRECTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIDIRECTIONAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONEWAY_WITH_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONEWAY_WITH_TRAFFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONEWAY_AGAINST_TRAFFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONEWAY_AGAINST_TRAFFIC = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WalkStepRelativeDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPART = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HARD_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HARD_LEFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SLIGHTLY_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SLIGHTLY_LEFT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTINUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTINUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SLIGHTLY_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SLIGHTLY_RIGHT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HARD_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HARD_RIGHT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CIRCLE_CLOCKWISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CIRCLE_CLOCKWISE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CIRCLE_COUNTERCLOCKWISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CIRCLE_COUNTERCLOCKWISE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ELEVATOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ELEVATOR = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTURN_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTURN_LEFT = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTURN_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTURN_RIGHT = 12,
 	}
 	
@@ -1727,24 +1681,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> RawOffset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LegWait
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHORT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LONG = 1,
 	}
 	
 	/// <summary>
 	/// Útitervminták engedélyezése esetén a minták időtartam-adatai.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatternStatistics
 	{
 		
@@ -1773,8 +1724,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetadataResponse
 	{
 		
@@ -1818,8 +1768,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitEntryWithReferencesTransitMetadata
 	{
 		
@@ -1851,8 +1800,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitMetadata
 	{
 		
@@ -1947,8 +1895,7 @@ namespace MyNS
 		public string ValidityStart { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileTransitReferences
 	{
 		
@@ -1986,8 +1933,7 @@ namespace MyNS
 	/// <summary>
 	/// Szolgáltatók referenciáinak listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitAgency
 	{
 		
@@ -2031,8 +1977,7 @@ namespace MyNS
 	/// <summary>
 	/// Zavarok referenciáinak listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitAlert
 	{
 		
@@ -2124,8 +2069,7 @@ namespace MyNS
 	/// <summary>
 	/// A zavar végének időpontjához tartozó szöveg.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranslatedString
 	{
 		
@@ -2145,8 +2089,7 @@ namespace MyNS
 	/// <summary>
 	/// A zavar által érintett járatok listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitAlertRoute
 	{
 		
@@ -2178,8 +2121,7 @@ namespace MyNS
 	/// <summary>
 	/// Járatok referenciáinak listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitRoute
 	{
 		
@@ -2271,8 +2213,7 @@ namespace MyNS
 	/// <summary>
 	/// A járat megjelenítési stílusa.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitRouteStyle
 	{
 		
@@ -2304,8 +2245,7 @@ namespace MyNS
 	/// <summary>
 	/// A járathoz tartozó ikon stílusa.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitRouteStyleIcon
 	{
 		
@@ -2328,24 +2268,21 @@ namespace MyNS
 		public System.Nullable<TransitRouteStyleIconType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransitRouteStyleIconType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOX = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CIRCLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CIRCLE = 1,
 	}
 	
 	/// <summary>
 	/// A megálló stílusa.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitStopStyle
 	{
 		
@@ -2368,21 +2305,18 @@ namespace MyNS
 		public System.Nullable<TransitStopStyleType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransitStopStyleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIORITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIORITY = 0,
 	}
 	
 	/// <summary>
 	/// A járathoz tartozó jármű ikon stílus.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitVehicleStyleIcon
 	{
 		
@@ -2393,75 +2327,72 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransitRouteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WALK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WALK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BICYCLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BICYCLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBWAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBURBAN_RAILWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBURBAN_RAILWAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAIL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COACH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COACH = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUS = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TROLLEYBUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TROLLEYBUS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FERRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FERRY = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CABLE_CAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CABLE_CAR = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GONDOLA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GONDOLA = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FUNICULAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FUNICULAR = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIT = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINISH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINISH = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSISH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSISH = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEG_SWITCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEG_SWITCH = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_MOTOR_VEHICLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_MOTOR_VEHICLE = 18,
 	}
 	
 	/// <summary>
 	/// Megállók referenciáinak listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitStop
 	{
 		
@@ -2577,8 +2508,7 @@ namespace MyNS
 	/// <summary>
 	/// Menetek referenciáinak listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitTrip
 	{
 		
@@ -2643,8 +2573,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WheelchairAccessible { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiRouteDetailsMethodResponse
 	{
 		
@@ -2688,8 +2617,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitListEntryWithReferencesTransitRouteDetails
 	{
 		
@@ -2727,8 +2655,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitRouteDetails
 	{
 		
@@ -2832,8 +2759,7 @@ namespace MyNS
 	/// <summary>
 	/// A járathoz tartozó járat variánsok listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitRouteVariant
 	{
 		
@@ -2895,8 +2821,7 @@ namespace MyNS
 	/// <summary>
 	/// A menethez tartozó kódolt minta (polyline).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitPolyline
 	{
 		
@@ -2919,8 +2844,7 @@ namespace MyNS
 		public string Points { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OTPTransitReferences
 	{
 		
@@ -2955,8 +2879,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, TransitTrip> Trips { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OnboardDepartPosition
 	{
 		
@@ -2997,8 +2920,7 @@ namespace MyNS
 		public long Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OnboardDepartSearchMethodResponse
 	{
 		
@@ -3042,8 +2964,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitListEntryWithReferencesTransitVehicle
 	{
 		
@@ -3081,8 +3002,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adatok listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitVehicle
 	{
 		
@@ -3228,8 +3148,7 @@ namespace MyNS
 	/// <summary>
 	/// A jármű kapacitása.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitVehicleOccupancy
 	{
 		
@@ -3264,24 +3183,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> Wheelchairs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransitVehicleCongestionLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONGESTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONGESTION = 1,
 	}
 	
 	/// <summary>
 	/// A jármű pozíciója.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitCoordinatePoint
 	{
 		
@@ -3298,27 +3214,24 @@ namespace MyNS
 		public System.Nullable<System.Single> Lon { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransitVehicleStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCOMING_AT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCOMING_AT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED_AT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED_AT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_TRANSIT_TO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_TRANSIT_TO = 2,
 	}
 	
 	/// <summary>
 	/// A járműhöz tartozó stílus.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitVehicleStyle
 	{
 		
@@ -3329,8 +3242,7 @@ namespace MyNS
 		public TransitVehicleStyleIcon Icon { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlanTripResponse
 	{
 		
@@ -3374,8 +3286,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitEntryWithReferencesResponse
 	{
 		
@@ -3407,8 +3318,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response
 	{
 		
@@ -3440,8 +3350,7 @@ namespace MyNS
 	/// <summary>
 	/// A hibát tartalmazza, ha nem sikerült a tervezés.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlannerError
 	{
 		
@@ -3473,84 +3382,81 @@ namespace MyNS
 		public System.Nullable<System.Boolean> NoPath { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlannerErrorMessage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAN_OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAN_OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRAPH_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRAPH_UNAVAILABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLANNER_SERVICE_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLANNER_SERVICE_UNAVAILABLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTSIDE_BOUNDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTSIDE_BOUNDS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH_NOT_FOUND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_TRANSIT_TIMES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_TRANSIT_TIMES = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST_TIMEOUT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOGUS_PARAMETER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOGUS_PARAMETER = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEOCODE_FROM_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEOCODE_FROM_NOT_FOUND = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEOCODE_TO_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEOCODE_TO_NOT_FOUND = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEOCODE_FROM_TO_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEOCODE_FROM_TO_NOT_FOUND = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_CLOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_CLOSE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_NOT_ACCESSIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_NOT_ACCESSIBLE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_MODE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEOCODE_FROM_AMBIGUOUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEOCODE_FROM_AMBIGUOUS = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEOCODE_TO_AMBIGUOUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEOCODE_TO_AMBIGUOUS = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GEOCODE_FROM_TO_AMBIGUOUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GEOCODE_FROM_TO_AMBIGUOUS = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNDERSPECIFIED_TRIANGLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNDERSPECIFIED_TRIANGLE = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIANGLE_NOT_AFFINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIANGLE_NOT_AFFINE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIANGLE_OPTIMIZE_TYPE_NOT_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIANGLE_OPTIMIZE_TYPE_NOT_SET = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIANGLE_VALUES_NOT_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIANGLE_VALUES_NOT_SET = 21,
 	}
 	
 	/// <summary>
 	/// A tervezett útvonalak.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TripPlan
 	{
 		
@@ -3579,8 +3485,7 @@ namespace MyNS
 		public Place To { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferencesMethodErrors
 	{
 		
@@ -3609,8 +3514,7 @@ namespace MyNS
 		public string[] StopIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferencesMethodResponse
 	{
 		
@@ -3642,8 +3546,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferencesMethodResult
 	{
 		
@@ -3651,9 +3554,7 @@ namespace MyNS
 		public ReferencesMethodErrors Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReferencesSchema
 	{
 		
@@ -3663,30 +3564,29 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="false")]
 		_false = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="compact")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		compact = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="agencies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		agencies = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="routes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		routes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trips")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trips = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stops")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stops = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alerts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alerts = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stations = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteDetailsForStopMethodResponse
 	{
 		
@@ -3730,8 +3630,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitListEntryWithReferencesTransitRoute
 	{
 		
@@ -3766,8 +3665,7 @@ namespace MyNS
 		public TransitReferences References { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteDetailsMethodResponse
 	{
 		
@@ -3811,8 +3709,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitEntryWithReferencesTransitRouteDetails
 	{
 		
@@ -3841,8 +3738,7 @@ namespace MyNS
 		public TransitReferences References { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduleForStopOTPMethodResponse
 	{
 		
@@ -3886,8 +3782,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitEntryWithReferencesTransitSchedule
 	{
 		
@@ -3919,8 +3814,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitSchedule
 	{
 		
@@ -3970,8 +3864,7 @@ namespace MyNS
 	/// <summary>
 	/// A megállóhoz tartozó menetrend.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitRouteSchedule
 	{
 		
@@ -3997,8 +3890,7 @@ namespace MyNS
 	/// <summary>
 	/// A menetrendi adatok irány szerint csoportosítva.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitRouteScheduleForDirection
 	{
 		
@@ -4024,8 +3916,7 @@ namespace MyNS
 	/// <summary>
 	/// Célmegálló és a hozzá tartozó menetrendi adatok összerendelése.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitScheduleGroup
 	{
 		
@@ -4048,8 +3939,7 @@ namespace MyNS
 		public string Headsign { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchMethodResponse
 	{
 		
@@ -4090,8 +3980,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatisticsResponse
 	{
 		
@@ -4105,78 +3994,75 @@ namespace MyNS
 	/// <summary>
 	/// A válasz státusza.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_MODIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_MODIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_VALUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_OPERATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_OPERATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTSIDE_BOUNDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTSIDE_BOUNDS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH_NOT_FOUND = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_TRANSIT_TIMES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_TRANSIT_TIMES = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST_TIMEOUT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOGUS_PARAMETER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOGUS_PARAMETER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_CLOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_CLOSE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_NOT_ACCESSIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_NOT_ACCESSIBLE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_MODE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_NO_GRAPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_NO_GRAPH = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLANNER_SERVICE_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLANNER_SERVICE_UNAVAILABLE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_VEHICLE_LOCATION_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_VEHICLE_LOCATION_SERVICE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_BIKE_RENTAL_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_BIKE_RENTAL_SERVICE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_TICKETING_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_TICKETING_SERVICE = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_TRANSIT_INDEX_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_TRANSIT_INDEX_SERVICE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOVED_TEMPORARILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOVED_TEMPORARILY = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopsForLocationResponse
 	{
 		
@@ -4220,8 +4106,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitListEntryWithReferencesTransitStop
 	{
 		
@@ -4256,8 +4141,7 @@ namespace MyNS
 		public TransitReferences References { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TicketingMethodResponse
 	{
 		
@@ -4301,8 +4185,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitEntryWithReferencesTransitTicketing
 	{
 		
@@ -4334,8 +4217,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitTicketing
 	{
 		
@@ -4367,8 +4249,7 @@ namespace MyNS
 	/// <summary>
 	/// A termékek listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TicketingProduct
 	{
 		
@@ -4424,8 +4305,7 @@ namespace MyNS
 	/// <summary>
 	/// A válasz adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitEntryWithReferencesTransitTripDetailsOTP
 	{
 		
@@ -4457,8 +4337,7 @@ namespace MyNS
 	/// <summary>
 	/// A lekért adat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitTripDetailsOTP
 	{
 		
@@ -4520,8 +4399,7 @@ namespace MyNS
 	/// <summary>
 	/// Menet megállóinak listája.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransitTripStopTime
 	{
 		
@@ -4586,66 +4464,63 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Uncertain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TraverseMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WALK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WALK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BICYCLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BICYCLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBWAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAIL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FERRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FERRY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CABLE_CAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CABLE_CAR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GONDOLA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GONDOLA = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FUNICULAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FUNICULAR = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIT = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AIRPLANE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AIRPLANE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TROLLEYBUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TROLLEYBUS = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONORAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONORAIL = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBURBAN_RAILWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBURBAN_RAILWAY = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COACH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COACH = 16,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TripDetailsOTPMethodResponse
 	{
 		
@@ -4686,8 +4561,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VehicleForTripMethodResponse
 	{
 		
@@ -4728,8 +4602,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VehiclesForLocationMethodResponse
 	{
 		
@@ -4770,8 +4643,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VehiclesForRouteMethodResponse
 	{
 		
@@ -4812,8 +4684,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VehiclesForStopMethodResponse
 	{
 		
@@ -4854,19 +4725,17 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WalkProfile
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SLOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAST = 2,
 	}
 	
@@ -5916,13 +5785,13 @@ namespace MyNS
 	public enum PlanAccessOptimize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WALK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WALK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFERS = 2,
 	}
 }

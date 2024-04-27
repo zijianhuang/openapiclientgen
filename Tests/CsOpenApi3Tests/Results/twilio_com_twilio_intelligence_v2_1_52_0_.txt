@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Intelligencev2service
 	{
 		
@@ -117,24 +116,21 @@ namespace MyNS
 		public string Webhook_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Intelligencev2serviceWebhook_http_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NULL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Intelligencev2transcript
 	{
 		
@@ -239,30 +235,27 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Intelligencev2transcriptStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Intelligencev2transcriptmedia
 	{
 		
@@ -315,8 +308,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Intelligencev2transcriptoperator_result
 	{
 		
@@ -420,30 +412,27 @@ namespace MyNS
 		public string[] Utterance_results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Intelligencev2transcriptoperator_resultOperator_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="conversation_classify")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		conversation_classify = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="utterance_classify")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		utterance_classify = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="extract")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		extract = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="extract_normalize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		extract_normalize = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pii_extract")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pii_extract = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Intelligencev2transcriptsentence
 	{
 		
@@ -493,82 +482,74 @@ namespace MyNS
 		public string Transcript { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Operator_result_enum_operator_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="conversation_classify")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		conversation_classify = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="utterance_classify")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		utterance_classify = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="extract")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		extract = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="extract_normalize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		extract_normalize = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pii_extract")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pii_extract = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Service_enum_http_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NULL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Transcript_enum_call_direction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outbound = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="internal")]
 		_internal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Transcript_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 4,
 	}
 	

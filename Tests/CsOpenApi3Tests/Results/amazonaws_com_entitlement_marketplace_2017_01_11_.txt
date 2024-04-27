@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The GetEntitlementsRequest contains results from the GetEntitlements operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEntitlementsResult
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entitlement
 	{
 		
@@ -59,8 +57,7 @@ namespace MyNS
 	/// <summary>
 	/// The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntitlementValue
 	{
 		
@@ -80,8 +77,7 @@ namespace MyNS
 	/// <summary>
 	/// The GetEntitlementsRequest contains parameters for the GetEntitlements operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEntitlementsRequest
 	{
 		
@@ -102,8 +98,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEntitlementFilters
 	{
 	}
@@ -111,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// One or more parameters in your request was invalid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 		
@@ -123,8 +117,7 @@ namespace MyNS
 	/// <summary>
 	/// The calls to the GetEntitlements API are throttled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 		
@@ -135,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceErrorException
 	{
 		
@@ -144,16 +136,14 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetEntitlementFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_IDENTIFIER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_IDENTIFIER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION = 1,
 	}
 	

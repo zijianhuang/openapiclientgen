@@ -232,22 +232,22 @@ namespace MyNS
 	public enum GET__version_incidents___format_Incident_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="crash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		crash = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hazard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hazard = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="theft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		theft = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unconfirmed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unconfirmed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="infrastructure_issue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		infrastructure_issue = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chop_shop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chop_shop = 5,
 	}
 }

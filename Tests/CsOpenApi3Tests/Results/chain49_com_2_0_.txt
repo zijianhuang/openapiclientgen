@@ -792,22 +792,22 @@ namespace MyNS
 	public enum GetAddressV2Details
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="basic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		basic = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tokens")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tokens = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tokenBalances")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tokenBalances = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="txids")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		txids = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="txslight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		txslight = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="txs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		txs = 5,
 	}
 	
@@ -1156,13 +1156,13 @@ namespace MyNS
 	public enum GetXpubV2Tokens
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nonzero")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nonzero = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="used")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		used = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="derived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		derived = 2,
 	}
 	

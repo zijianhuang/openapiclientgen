@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of AddTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsOutput
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -45,20 +43,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessPointNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateTagKeysException
 	{
 	}
@@ -66,8 +61,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of ApplySecurityGroupsToLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplySecurityGroupsToLoadBalancerOutput
 	{
 		
@@ -75,14 +69,12 @@ namespace MyNS
 		public string[] SecurityGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidConfigurationRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSecurityGroupException
 	{
 	}
@@ -90,8 +82,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of AttachLoadBalancerToSubnets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachLoadBalancerToSubnetsOutput
 	{
 		
@@ -99,14 +90,12 @@ namespace MyNS
 		public string[] Subnets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubnetNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSubnetException
 	{
 	}
@@ -114,8 +103,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of ConfigureHealthCheck.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigureHealthCheckOutput
 	{
 		
@@ -126,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a health check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthCheck
 	{
 		
@@ -170,20 +157,17 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output for CreateAppCookieStickinessPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAppCookieStickinessPolicyOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicatePolicyNameException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyPoliciesException
 	{
 	}
@@ -191,8 +175,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output for CreateLBCookieStickinessPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLBCookieStickinessPolicyOutput
 	{
 	}
@@ -200,8 +183,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output for CreateLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccessPointOutput
 	{
 		
@@ -212,8 +194,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Listener
 	{
 		
@@ -245,38 +226,32 @@ namespace MyNS
 		public string SSLCertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateAccessPointNameException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyAccessPointsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSchemeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedProtocolException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationNotPermittedException
 	{
 	}
@@ -284,14 +259,12 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for CreateLoadBalancerListener.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLoadBalancerListenerOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateListenerException
 	{
 	}
@@ -299,8 +272,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of CreateLoadBalancerPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLoadBalancerPolicyOutput
 	{
 	}
@@ -308,8 +280,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a policy attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyAttribute
 	{
 		
@@ -320,8 +291,7 @@ namespace MyNS
 		public string AttributeValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyTypeNotFoundException
 	{
 	}
@@ -329,8 +299,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of DeleteLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAccessPointOutput
 	{
 	}
@@ -338,8 +307,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of DeleteLoadBalancerListeners.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLoadBalancerListenerOutput
 	{
 	}
@@ -347,8 +315,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of DeleteLoadBalancerPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLoadBalancerPolicyOutput
 	{
 	}
@@ -356,8 +323,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of DeregisterInstancesFromLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterEndPointsOutput
 	{
 		
@@ -368,8 +334,7 @@ namespace MyNS
 	/// <summary>
 	/// The ID of an EC2 instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Instance
 	{
 		
@@ -377,14 +342,12 @@ namespace MyNS
 		public string InstanceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidEndPointException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAccountLimitsOutput
 	{
 		
@@ -398,8 +361,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an Elastic Load Balancing resource limit for your AWS account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Limit
 	{
 		
@@ -413,8 +375,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output for DescribeInstanceHealth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEndPointStateOutput
 	{
 		
@@ -425,8 +386,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the state of an EC2 instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceState
 	{
 		
@@ -446,8 +406,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of DescribeLoadBalancerAttributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLoadBalancerAttributesOutput
 	{
 		
@@ -458,8 +417,7 @@ namespace MyNS
 	/// <summary>
 	/// The attributes for a load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoadBalancerAttributes
 	{
 		
@@ -482,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the <code>CrossZoneLoadBalancing</code> attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CrossZoneLoadBalancing
 	{
 		
@@ -498,8 +455,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the <code>AccessLog</code> attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessLog
 	{
 		
@@ -523,8 +479,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the <code>ConnectionDraining</code> attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectionDraining
 	{
 		
@@ -542,8 +497,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the <code>ConnectionSettings</code> attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectionSettings
 	{
 		
@@ -558,8 +512,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about additional load balancer attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdditionalAttribute
 	{
 		
@@ -570,8 +523,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoadBalancerAttributeNotFoundException
 	{
 	}
@@ -579,8 +531,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of DescribeLoadBalancerPolicies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLoadBalancerPoliciesOutput
 	{
 		
@@ -591,8 +542,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyDescription
 	{
 		
@@ -609,8 +559,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a policy attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyAttributeDescription
 	{
 		
@@ -621,8 +570,7 @@ namespace MyNS
 		public string AttributeValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyNotFoundException
 	{
 	}
@@ -630,8 +578,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of DescribeLoadBalancerPolicyTypes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLoadBalancerPolicyTypesOutput
 	{
 		
@@ -642,8 +589,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a policy type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyTypeDescription
 	{
 		
@@ -660,8 +606,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a policy attribute type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyAttributeTypeDescription
 	{
 		
@@ -684,8 +629,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DescribeLoadBalancers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAccessPointsOutput
 	{
 		
@@ -699,8 +643,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoadBalancerDescription
 	{
 		
@@ -756,8 +699,7 @@ namespace MyNS
 	/// <summary>
 	/// The policies enabled for a listener.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListenerDescription
 	{
 		
@@ -771,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// The policies for a load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policies
 	{
 		
@@ -789,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a policy for application-controlled session stickiness.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppCookieStickinessPolicy
 	{
 		
@@ -804,8 +744,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a policy for duration-based session stickiness.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LBCookieStickinessPolicy
 	{
 		
@@ -819,8 +758,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the configuration of an EC2 instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendServerDescription
 	{
 		
@@ -834,8 +772,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a source security group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceSecurityGroup
 	{
 		
@@ -846,8 +783,7 @@ namespace MyNS
 		public string GroupName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DependencyThrottleException
 	{
 	}
@@ -855,8 +791,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output for DescribeTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTagsOutput
 	{
 		
@@ -867,8 +802,7 @@ namespace MyNS
 	/// <summary>
 	/// The tags associated with a load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagDescription
 	{
 		
@@ -882,8 +816,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of DetachLoadBalancerFromSubnets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachLoadBalancerFromSubnetsOutput
 	{
 		
@@ -894,8 +827,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output for DisableAvailabilityZonesForLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAvailabilityZonesOutput
 	{
 		
@@ -906,8 +838,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of EnableAvailabilityZonesForLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddAvailabilityZonesOutput
 	{
 		
@@ -918,8 +849,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of ModifyLoadBalancerAttributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyLoadBalancerAttributesOutput
 	{
 		
@@ -933,8 +863,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of RegisterInstancesWithLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterEndPointsOutput
 	{
 		
@@ -945,8 +874,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of RemoveTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsOutput
 	{
 	}
@@ -954,8 +882,7 @@ namespace MyNS
 	/// <summary>
 	/// The key of a tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagKeyOnly
 	{
 		
@@ -966,14 +893,12 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of SetLoadBalancerListenerSSLCertificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetLoadBalancerListenerSSLCertificateOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListenerNotFoundException
 	{
 	}
@@ -981,8 +906,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of SetLoadBalancerPoliciesForBackendServer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetLoadBalancerPoliciesForBackendServerOutput
 	{
 	}
@@ -990,8 +914,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the output of SetLoadBalancePoliciesOfListener.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetLoadBalancerPoliciesOfListenerOutput
 	{
 	}
@@ -999,8 +922,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for EnableAvailabilityZonesForLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddAvailabilityZonesInput
 	{
 		
@@ -1022,8 +944,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for AddTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsInput
 	{
 		
@@ -1045,8 +966,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for ApplySecurityGroupsToLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplySecurityGroupsToLoadBalancerInput
 	{
 		
@@ -1068,8 +988,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for AttachLoaBalancerToSubnets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachLoadBalancerToSubnetsInput
 	{
 		
@@ -1091,8 +1010,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for ConfigureHealthCheck.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigureHealthCheckInput
 	{
 		
@@ -1114,8 +1032,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for CreateLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccessPointInput
 	{
 		
@@ -1152,8 +1069,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for CreateAppCookieStickinessPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAppCookieStickinessPolicyInput
 	{
 		
@@ -1182,8 +1098,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for CreateLBCookieStickinessPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLBCookieStickinessPolicyInput
 	{
 		
@@ -1208,8 +1123,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for CreateLoadBalancerListeners.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLoadBalancerListenerInput
 	{
 		
@@ -1231,8 +1145,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for CreateLoadBalancerPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLoadBalancerPolicyInput
 	{
 		
@@ -1264,8 +1177,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DeleteLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAccessPointInput
 	{
 		
@@ -1280,8 +1192,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DeleteLoadBalancerListeners.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLoadBalancerListenerInput
 	{
 		
@@ -1303,8 +1214,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DeleteLoadBalancerPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLoadBalancerPolicyInput
 	{
 		
@@ -1326,8 +1236,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DeregisterInstancesFromLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterEndPointsInput
 	{
 		
@@ -1349,8 +1258,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DescribeLoadBalancers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAccessPointsInput
 	{
 		
@@ -1364,8 +1272,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> PageSize { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAccountLimitsInput
 	{
 		
@@ -1379,8 +1286,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DescribeInstanceHealth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEndPointStateInput
 	{
 		
@@ -1398,8 +1304,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DescribeLoadBalancerAttributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLoadBalancerAttributesInput
 	{
 		
@@ -1414,8 +1319,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DescribeLoadBalancerPolicies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLoadBalancerPoliciesInput
 	{
 		
@@ -1429,8 +1333,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DescribeLoadBalancerPolicyTypes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeLoadBalancerPolicyTypesInput
 	{
 		
@@ -1441,8 +1344,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DescribeTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTagsInput
 	{
 		
@@ -1457,8 +1359,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DetachLoadBalancerFromSubnets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetachLoadBalancerFromSubnetsInput
 	{
 		
@@ -1480,8 +1381,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for ModifyLoadBalancerAttributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyLoadBalancerAttributesInput
 	{
 		
@@ -1503,8 +1403,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for RegisterInstancesWithLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterEndPointsInput
 	{
 		
@@ -1526,8 +1425,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for DisableAvailabilityZonesForLoadBalancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAvailabilityZonesInput
 	{
 		
@@ -1549,8 +1447,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for RemoveTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsInput
 	{
 		
@@ -1572,8 +1469,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for SetLoadBalancerListenerSSLCertificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetLoadBalancerListenerSSLCertificateInput
 	{
 		
@@ -1602,8 +1498,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for SetLoadBalancerPoliciesForBackendServer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetLoadBalancerPoliciesForBackendServerInput
 	{
 		
@@ -1632,8 +1527,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for SetLoadBalancePoliciesOfListener.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetLoadBalancerPoliciesOfListenerInput
 	{
 		
@@ -2547,7 +2441,7 @@ namespace MyNS
 	public enum GET_AddTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddTags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddTags = 0,
 	}
 	
@@ -2568,7 +2462,7 @@ namespace MyNS
 	public enum GET_ApplySecurityGroupsToLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApplySecurityGroupsToLoadBalancer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApplySecurityGroupsToLoadBalancer = 0,
 	}
 	
@@ -2589,7 +2483,7 @@ namespace MyNS
 	public enum GET_AttachLoadBalancerToSubnetsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AttachLoadBalancerToSubnets")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AttachLoadBalancerToSubnets = 0,
 	}
 	
@@ -2649,7 +2543,7 @@ namespace MyNS
 	public enum GET_ConfigureHealthCheckAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigureHealthCheck")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfigureHealthCheck = 0,
 	}
 	
@@ -2670,7 +2564,7 @@ namespace MyNS
 	public enum GET_CreateAppCookieStickinessPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateAppCookieStickinessPolicy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateAppCookieStickinessPolicy = 0,
 	}
 	
@@ -2691,7 +2585,7 @@ namespace MyNS
 	public enum GET_CreateLBCookieStickinessPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateLBCookieStickinessPolicy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateLBCookieStickinessPolicy = 0,
 	}
 	
@@ -2712,7 +2606,7 @@ namespace MyNS
 	public enum GET_CreateLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateLoadBalancer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateLoadBalancer = 0,
 	}
 	
@@ -2733,7 +2627,7 @@ namespace MyNS
 	public enum GET_CreateLoadBalancerListenersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateLoadBalancerListeners")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateLoadBalancerListeners = 0,
 	}
 	
@@ -2754,7 +2648,7 @@ namespace MyNS
 	public enum GET_CreateLoadBalancerPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateLoadBalancerPolicy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateLoadBalancerPolicy = 0,
 	}
 	
@@ -2775,7 +2669,7 @@ namespace MyNS
 	public enum GET_DeleteLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteLoadBalancer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteLoadBalancer = 0,
 	}
 	
@@ -2796,7 +2690,7 @@ namespace MyNS
 	public enum GET_DeleteLoadBalancerListenersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteLoadBalancerListeners")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteLoadBalancerListeners = 0,
 	}
 	
@@ -2817,7 +2711,7 @@ namespace MyNS
 	public enum GET_DeleteLoadBalancerPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteLoadBalancerPolicy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteLoadBalancerPolicy = 0,
 	}
 	
@@ -2838,7 +2732,7 @@ namespace MyNS
 	public enum GET_DeregisterInstancesFromLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeregisterInstancesFromLoadBalancer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeregisterInstancesFromLoadBalancer = 0,
 	}
 	
@@ -2859,7 +2753,7 @@ namespace MyNS
 	public enum GET_DescribeAccountLimitsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAccountLimits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAccountLimits = 0,
 	}
 	
@@ -2880,7 +2774,7 @@ namespace MyNS
 	public enum GET_DescribeInstanceHealthAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeInstanceHealth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeInstanceHealth = 0,
 	}
 	
@@ -2901,7 +2795,7 @@ namespace MyNS
 	public enum GET_DescribeLoadBalancerAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoadBalancerAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeLoadBalancerAttributes = 0,
 	}
 	
@@ -2922,7 +2816,7 @@ namespace MyNS
 	public enum GET_DescribeLoadBalancerPoliciesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoadBalancerPolicies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeLoadBalancerPolicies = 0,
 	}
 	
@@ -2943,7 +2837,7 @@ namespace MyNS
 	public enum GET_DescribeLoadBalancerPolicyTypesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoadBalancerPolicyTypes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeLoadBalancerPolicyTypes = 0,
 	}
 	
@@ -2964,7 +2858,7 @@ namespace MyNS
 	public enum GET_DescribeLoadBalancersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoadBalancers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeLoadBalancers = 0,
 	}
 	
@@ -2985,7 +2879,7 @@ namespace MyNS
 	public enum GET_DescribeTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeTags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeTags = 0,
 	}
 	
@@ -3006,7 +2900,7 @@ namespace MyNS
 	public enum GET_DetachLoadBalancerFromSubnetsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DetachLoadBalancerFromSubnets")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DetachLoadBalancerFromSubnets = 0,
 	}
 	
@@ -3027,7 +2921,7 @@ namespace MyNS
 	public enum GET_DisableAvailabilityZonesForLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisableAvailabilityZonesForLoadBalancer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DisableAvailabilityZonesForLoadBalancer = 0,
 	}
 	
@@ -3048,7 +2942,7 @@ namespace MyNS
 	public enum GET_EnableAvailabilityZonesForLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnableAvailabilityZonesForLoadBalancer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EnableAvailabilityZonesForLoadBalancer = 0,
 	}
 	
@@ -3088,7 +2982,7 @@ namespace MyNS
 	public enum GET_ModifyLoadBalancerAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyLoadBalancerAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyLoadBalancerAttributes = 0,
 	}
 	
@@ -3109,7 +3003,7 @@ namespace MyNS
 	public enum GET_RegisterInstancesWithLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RegisterInstancesWithLoadBalancer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RegisterInstancesWithLoadBalancer = 0,
 	}
 	
@@ -3130,7 +3024,7 @@ namespace MyNS
 	public enum GET_RemoveTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveTags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RemoveTags = 0,
 	}
 	
@@ -3151,7 +3045,7 @@ namespace MyNS
 	public enum GET_SetLoadBalancerListenerSSLCertificateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetLoadBalancerListenerSSLCertificate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetLoadBalancerListenerSSLCertificate = 0,
 	}
 	
@@ -3172,7 +3066,7 @@ namespace MyNS
 	public enum GET_SetLoadBalancerPoliciesForBackendServerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetLoadBalancerPoliciesForBackendServer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetLoadBalancerPoliciesForBackendServer = 0,
 	}
 	
@@ -3193,7 +3087,7 @@ namespace MyNS
 	public enum GET_SetLoadBalancerPoliciesOfListenerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetLoadBalancerPoliciesOfListener")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetLoadBalancerPoliciesOfListener = 0,
 	}
 	

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A channel grouping defines a set of rules that can be used to categorize events in a path report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChannelGrouping
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// A Rule defines a name, and a boolean expression in [conjunctive normal form](http: //mathworld.wolfram.com/ConjunctiveNormalForm.html){.external} that can be // applied to a path event to determine if that name should be applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -65,8 +63,7 @@ namespace MyNS
 	/// <summary>
 	/// DisjunctiveMatchStatement that OR's all contained filters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisjunctiveMatchStatement
 	{
 		
@@ -80,8 +77,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the type of filter to be applied to the path, a DV360 event dimension filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventFilter
 	{
 		
@@ -95,8 +91,7 @@ namespace MyNS
 	/// <summary>
 	/// Dimension Filter on path events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathQueryOptionsFilter
 	{
 		
@@ -119,922 +114,917 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PathQueryOptionsFilterFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DAY_OF_WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DAY_OF_WEEK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_WEEK = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_MONTH = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_YEAR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TIME_OF_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TIME_OF_DAY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CONVERSION_DELAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CONVERSION_DELAY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_ID = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_SIZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_SIZE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_TYPE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_EXCHANGE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_EXCHANGE_ID = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AD_POSITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AD_POSITION = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PUBLIC_INVENTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PUBLIC_INVENTORY = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_SOURCE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CITY = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_REGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_REGION = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DMA = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_COUNTRY = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_SITE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_SITE_ID = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CHANNEL_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CHANNEL_ID = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PARTNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PARTNER = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ADVERTISER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ADVERTISER = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INSERTION_ORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INSERTION_ORDER = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PARTNER_CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PARTNER_CURRENCY = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ADVERTISER_CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ADVERTISER_CURRENCY = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ADVERTISER_TIMEZONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ADVERTISER_TIMEZONE = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_TYPE = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_USER_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_USER_LIST = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_USER_LIST_FIRST_PARTY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_USER_LIST_FIRST_PARTY = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_USER_LIST_THIRD_PARTY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_USER_LIST_THIRD_PARTY = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TARGETED_USER_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TARGETED_USER_LIST = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DATA_PROVIDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DATA_PROVIDER = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ORDER_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ORDER_ID = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_PLAYER_SIZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_PLAYER_SIZE = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_DURATION_SECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_DURATION_SECONDS = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_KEYWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_KEYWORD = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PAGE_CATEGORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PAGE_CATEGORY = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CAMPAIGN_DAILY_FREQUENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CAMPAIGN_DAILY_FREQUENCY = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_DAILY_FREQUENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_DAILY_FREQUENCY = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_LIFETIME_FREQUENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_LIFETIME_FREQUENCY = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_OS = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_BROWSER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_BROWSER = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CARRIER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CARRIER = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_SITE_LANGUAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_SITE_LANGUAGE = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_FORMAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_FORMAT = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ZIP_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ZIP_CODE = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_RATING_TIER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_RATING_TIER = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_FORMAT_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_FORMAT_SUPPORT = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_SKIPPABLE_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_SKIPPABLE_SUPPORT = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_CREATIVE_DURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_CREATIVE_DURATION = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PAGE_LAYOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PAGE_LAYOUT = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_AD_POSITION_IN_STREAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_AD_POSITION_IN_STREAM = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AGE = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GENDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GENDER = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_QUARTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_QUARTER = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_CONVERSION_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_CONVERSION_TYPE = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_MOBILE_GEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_MOBILE_GEO = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_MRAID_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_MRAID_SUPPORT = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ACTIVE_VIEW_EXPECTED_VIEWABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ACTIVE_VIEW_EXPECTED_VIEWABILITY = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_CREATIVE_DURATION_SKIPPABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_CREATIVE_DURATION_SKIPPABLE = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_NIELSEN_COUNTRY_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_NIELSEN_COUNTRY_CODE = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_NIELSEN_DEVICE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_NIELSEN_DEVICE_ID = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_NIELSEN_GENDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_NIELSEN_GENDER = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_NIELSEN_AGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_NIELSEN_AGE = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_SOURCE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_SOURCE_TYPE = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_WIDTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_WIDTH = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_HEIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_HEIGHT = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DFP_ORDER_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DFP_ORDER_ID = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_AGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_AGE = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_GENDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_GENDER = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_PARENTAL_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_PARENTAL_STATUS = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_REMARKETING_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_REMARKETING_LIST = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_INTEREST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_INTEREST = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_AD_GROUP_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_AD_GROUP_ID = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_AD_GROUP_AD_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_AD_GROUP_AD_ID = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_LANGUAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_LANGUAGE = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_GENDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_GENDER = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_AGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_AGE = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_CATEGORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_CATEGORY = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_COUNTRY = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_CITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_CITY = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_REGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_REGION = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_ZIPCODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_ZIPCODE = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_REMARKETING_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_REMARKETING_LIST = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_INTEREST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_INTEREST = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_PARENTAL_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_PARENTAL_STATUS = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_TIME_OF_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_TIME_OF_DAY = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_CUSTOM_AFFINITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_CUSTOM_AFFINITY = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_CATEGORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_CATEGORY = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_KEYWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_KEYWORD = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_PLACEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_PLACEMENT = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_URL = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_COUNTRY = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_REGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_REGION = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_CITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_CITY = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_DMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_DMA = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_ZIPCODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_ZIPCODE = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_NOT_SUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_NOT_SUPPORTED = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_MEDIA_PLAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_MEDIA_PLAN = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_YOUTUBE_CHANNEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_YOUTUBE_CHANNEL = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_YOUTUBE_VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_YOUTUBE_VIDEO = 102,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_SKIPPABLE_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_SKIPPABLE_SUPPORT = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_COMPANION_CREATIVE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_COMPANION_CREATIVE_ID = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_BUDGET_SEGMENT_DESCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_BUDGET_SEGMENT_DESCRIPTION = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_FLOODLIGHT_ACTIVITY_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_FLOODLIGHT_ACTIVITY_ID = 106,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DEVICE_MODEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DEVICE_MODEL = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DEVICE_MAKE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DEVICE_MAKE = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DEVICE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DEVICE_TYPE = 109,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_ATTRIBUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_ATTRIBUTE = 110,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_COMMITMENT_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_COMMITMENT_TYPE = 111,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_RATE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_RATE_TYPE = 112,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_DELIVERY_METHOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_DELIVERY_METHOD = 113,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_SOURCE_EXTERNAL_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_SOURCE_EXTERNAL_ID = 114,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AUTHORIZED_SELLER_STATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AUTHORIZED_SELLER_STATE = 115,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_DURATION_SECONDS_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_DURATION_SECONDS_RANGE = 116,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PARTNER_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PARTNER_NAME = 117,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PARTNER_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PARTNER_STATUS = 118,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ADVERTISER_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ADVERTISER_NAME = 119,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ADVERTISER_INTEGRATION_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ADVERTISER_INTEGRATION_CODE = 120,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ADVERTISER_INTEGRATION_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ADVERTISER_INTEGRATION_STATUS = 121,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CARRIER_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CARRIER_NAME = 122,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CHANNEL_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CHANNEL_NAME = 123,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CITY_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CITY_NAME = 124,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_COMPANION_CREATIVE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_COMPANION_CREATIVE_NAME = 125,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_USER_LIST_FIRST_PARTY_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_USER_LIST_FIRST_PARTY_NAME = 126,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_USER_LIST_THIRD_PARTY_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_USER_LIST_THIRD_PARTY_NAME = 127,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_NIELSEN_RESTATEMENT_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_NIELSEN_RESTATEMENT_DATE = 128,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_NIELSEN_DATE_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_NIELSEN_DATE_RANGE = 129,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INSERTION_ORDER_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INSERTION_ORDER_NAME = 130,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_REGION_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_REGION_NAME = 131,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DMA_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DMA_NAME = 132,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_REGION_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_REGION_NAME = 133,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_DMA_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_DMA_NAME = 134,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_REGION_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_REGION_NAME = 135,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ACTIVE_VIEW_CUSTOM_METRIC_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ACTIVE_VIEW_CUSTOM_METRIC_ID = 136,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ACTIVE_VIEW_CUSTOM_METRIC_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ACTIVE_VIEW_CUSTOM_METRIC_NAME = 137,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AD_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AD_TYPE = 138,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ALGORITHM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ALGORITHM = 139,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ALGORITHM_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ALGORITHM_ID = 140,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AMP_PAGE_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AMP_PAGE_REQUEST = 141,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ANONYMOUS_INVENTORY_MODELING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ANONYMOUS_INVENTORY_MODELING = 142,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_APP_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_APP_URL = 143,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_APP_URL_EXCLUDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_APP_URL_EXCLUDED = 144,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTED_USERLIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ATTRIBUTED_USERLIST = 145,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTED_USERLIST_COST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ATTRIBUTED_USERLIST_COST = 146,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTED_USERLIST_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ATTRIBUTED_USERLIST_TYPE = 147,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTION_MODEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ATTRIBUTION_MODEL = 148,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AUDIENCE_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AUDIENCE_LIST = 149,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AUDIENCE_LIST_COST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AUDIENCE_LIST_COST = 150,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AUDIENCE_LIST_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AUDIENCE_LIST_TYPE = 151,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AUDIENCE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AUDIENCE_NAME = 152,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AUDIENCE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AUDIENCE_TYPE = 153,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_BILLABLE_OUTCOME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_BILLABLE_OUTCOME = 154,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_BRAND_LIFT_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_BRAND_LIFT_TYPE = 155,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CHANNEL_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CHANNEL_TYPE = 156,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CM_PLACEMENT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CM_PLACEMENT_ID = 157,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CONVERSION_SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CONVERSION_SOURCE = 158,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CONVERSION_SOURCE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CONVERSION_SOURCE_ID = 159,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_COUNTRY_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_COUNTRY_ID = 160,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE = 161,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_ASSET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_ASSET = 162,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_INTEGRATION_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_INTEGRATION_CODE = 163,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_RENDERED_IN_AMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_RENDERED_IN_AMP = 164,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_SOURCE = 165,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CREATIVE_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CREATIVE_STATUS = 166,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DATA_PROVIDER_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DATA_PROVIDER_NAME = 167,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DETAILED_DEMOGRAPHICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DETAILED_DEMOGRAPHICS = 168,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DETAILED_DEMOGRAPHICS_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DETAILED_DEMOGRAPHICS_ID = 169,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DEVICE = 170,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GAM_INSERTION_ORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GAM_INSERTION_ORDER = 171,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GAM_LINE_ITEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GAM_LINE_ITEM = 172,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GAM_LINE_ITEM_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GAM_LINE_ITEM_ID = 173,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DIGITAL_CONTENT_LABEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DIGITAL_CONTENT_LABEL = 174,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DOMAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DOMAIN = 175,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ELIGIBLE_COOKIES_ON_FIRST_PARTY_AUDIENCE_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ELIGIBLE_COOKIES_ON_FIRST_PARTY_AUDIENCE_LIST = 176,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ELIGIBLE_COOKIES_ON_THIRD_PARTY_AUDIENCE_LIST_AND_INTEREST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ELIGIBLE_COOKIES_ON_THIRD_PARTY_AUDIENCE_LIST_AND_INTEREST = 177,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_EXCHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_EXCHANGE = 178,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_EXCHANGE_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_EXCHANGE_CODE = 179,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_EXTENSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_EXTENSION = 180,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_EXTENSION_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_EXTENSION_STATUS = 181,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_EXTENSION_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_EXTENSION_TYPE = 182,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_FIRST_PARTY_AUDIENCE_LIST_COST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_FIRST_PARTY_AUDIENCE_LIST_COST = 183,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_FIRST_PARTY_AUDIENCE_LIST_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_FIRST_PARTY_AUDIENCE_LIST_TYPE = 184,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_FLOODLIGHT_ACTIVITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_FLOODLIGHT_ACTIVITY = 185,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_FORMAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_FORMAT = 186,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GMAIL_AGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GMAIL_AGE = 187,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GMAIL_CITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GMAIL_CITY = 188,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GMAIL_COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GMAIL_COUNTRY = 189,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GMAIL_COUNTRY_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GMAIL_COUNTRY_NAME = 190,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GMAIL_DEVICE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GMAIL_DEVICE_TYPE = 191,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GMAIL_DEVICE_TYPE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GMAIL_DEVICE_TYPE_NAME = 192,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GMAIL_GENDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GMAIL_GENDER = 193,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GMAIL_REGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GMAIL_REGION = 194,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_GMAIL_REMARKETING_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_GMAIL_REMARKETING_LIST = 195,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_HOUSEHOLD_INCOME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_HOUSEHOLD_INCOME = 196,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_IMPRESSION_COUNTING_METHOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_IMPRESSION_COUNTING_METHOD = 197,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_YOUTUBE_PROGRAMMATIC_GUARANTEED_INSERTION_ORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_YOUTUBE_PROGRAMMATIC_GUARANTEED_INSERTION_ORDER = 198,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INSERTION_ORDER_INTEGRATION_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INSERTION_ORDER_INTEGRATION_CODE = 199,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INSERTION_ORDER_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INSERTION_ORDER_STATUS = 200,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INTEREST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INTEREST = 201,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_SOURCE_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_SOURCE_GROUP = 202,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_SOURCE_GROUP_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_SOURCE_GROUP_ID = 203,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_SOURCE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_SOURCE_ID = 204,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INVENTORY_SOURCE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INVENTORY_SOURCE_NAME = 205,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LIFE_EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LIFE_EVENT = 206,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LIFE_EVENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LIFE_EVENTS = 207,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_INTEGRATION_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_INTEGRATION_CODE = 208,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_NAME = 209,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_STATUS = 210,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_MATCH_RATIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_MATCH_RATIO = 211,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_MEASUREMENT_SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_MEASUREMENT_SOURCE = 212,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_MEDIA_PLAN_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_MEDIA_PLAN_NAME = 213,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PARENTAL_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PARENTAL_STATUS = 214,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PLACEMENT_ALL_YOUTUBE_CHANNELS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PLACEMENT_ALL_YOUTUBE_CHANNELS = 215,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PLATFORM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PLATFORM = 216,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PLAYBACK_METHOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PLAYBACK_METHOD = 217,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_POSITION_IN_CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_POSITION_IN_CONTENT = 218,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PUBLISHER_PROPERTY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PUBLISHER_PROPERTY = 219,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PUBLISHER_PROPERTY_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PUBLISHER_PROPERTY_ID = 220,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PUBLISHER_PROPERTY_SECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PUBLISHER_PROPERTY_SECTION = 221,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PUBLISHER_PROPERTY_SECTION_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PUBLISHER_PROPERTY_SECTION_ID = 222,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_REFUND_REASON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_REFUND_REASON = 223,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_REMARKETING_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_REMARKETING_LIST = 224,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_REWARDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_REWARDED = 225,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_SENSITIVE_CATEGORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_SENSITIVE_CATEGORY = 226,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_SERVED_PIXEL_DENSITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_SERVED_PIXEL_DENSITY = 227,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TARGETED_DATA_PROVIDERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TARGETED_DATA_PROVIDERS = 228,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_THIRD_PARTY_AUDIENCE_LIST_COST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_THIRD_PARTY_AUDIENCE_LIST_COST = 229,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_THIRD_PARTY_AUDIENCE_LIST_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_THIRD_PARTY_AUDIENCE_LIST_TYPE = 230,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_AD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_AD = 231,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_AD_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_AD_GROUP = 232,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_DETAILED_DEMOGRAPHICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_DETAILED_DEMOGRAPHICS = 233,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_DETAILED_DEMOGRAPHICS_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_DETAILED_DEMOGRAPHICS_ID = 234,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_HOUSEHOLD_INCOME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_HOUSEHOLD_INCOME = 235,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_IAR_COUNTRY_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_IAR_COUNTRY_NAME = 236,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_REMARKETING_LIST_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_REMARKETING_LIST_NAME = 237,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VARIANT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VARIANT_ID = 238,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VARIANT_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VARIANT_NAME = 239,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VARIANT_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VARIANT_VERSION = 240,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_VIDEO_PLAYER_SIZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_VIDEO_PLAYER_SIZE = 241,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_VIDEO_POSITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_VIDEO_POSITION = 242,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_COMPANION_CREATIVE_SIZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_COMPANION_CREATIVE_SIZE = 243,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_CONTINUOUS_PLAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_CONTINUOUS_PLAY = 244,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_DURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_DURATION = 245,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_YOUTUBE_ADAPTED_AUDIENCE_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_YOUTUBE_ADAPTED_AUDIENCE_LIST = 246,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_YOUTUBE_AD_VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_YOUTUBE_AD_VIDEO = 247,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_YOUTUBE_AD_VIDEO_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_YOUTUBE_AD_VIDEO_ID = 248,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_YOUTUBE_CHANNEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_YOUTUBE_CHANNEL = 249,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_YOUTUBE_PROGRAMMATIC_GUARANTEED_ADVERTISER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_YOUTUBE_PROGRAMMATIC_GUARANTEED_ADVERTISER = 250,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_YOUTUBE_PROGRAMMATIC_GUARANTEED_PARTNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_YOUTUBE_PROGRAMMATIC_GUARANTEED_PARTNER = 251,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_YOUTUBE_VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_YOUTUBE_VIDEO = 252,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ZIP_POSTAL_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_ZIP_POSTAL_CODE = 253,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PLACEMENT_NAME_ALL_YOUTUBE_CHANNELS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PLACEMENT_NAME_ALL_YOUTUBE_CHANNELS = 254,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_PLACEMENT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_PLACEMENT_ID = 255,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PATH_PATTERN_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PATH_PATTERN_ID = 256,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PATH_EVENT_INDEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PATH_EVENT_INDEX = 257,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_EVENT_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_EVENT_TYPE = 258,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CHANNEL_GROUPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CHANNEL_GROUPING = 259,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_OM_SDK_AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_OM_SDK_AVAILABLE = 260,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_DATA_SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_DATA_SOURCE = 261,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CM360_PLACEMENT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CM360_PLACEMENT_ID = 262,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_CLICK_TYPE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_CLICK_TYPE_NAME = 263,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_AD_TYPE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_AD_TYPE_NAME = 264,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_CONTENT_DURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_CONTENT_DURATION = 265,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_MATCHED_GENRE_TARGET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_MATCHED_GENRE_TARGET = 266,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VIDEO_CONTENT_LIVE_STREAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VIDEO_CONTENT_LIVE_STREAM = 267,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_BUDGET_SEGMENT_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_BUDGET_SEGMENT_TYPE = 268,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_BUDGET_SEGMENT_BUDGET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_BUDGET_SEGMENT_BUDGET = 269,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_BUDGET_SEGMENT_START_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_BUDGET_SEGMENT_START_DATE = 270,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_BUDGET_SEGMENT_END_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_BUDGET_SEGMENT_END_DATE = 271,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_BUDGET_SEGMENT_PACING_PERCENTAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_BUDGET_SEGMENT_PACING_PERCENTAGE = 272,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_BUDGET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_BUDGET = 273,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_START_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_START_DATE = 274,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_END_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_END_DATE = 275,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INSERTION_ORDER_GOAL_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INSERTION_ORDER_GOAL_TYPE = 276,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_LINE_ITEM_PACING_PERCENTAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_LINE_ITEM_PACING_PERCENTAGE = 277,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_INSERTION_ORDER_GOAL_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_INSERTION_ORDER_GOAL_VALUE = 278,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_OMID_CAPABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_OMID_CAPABLE = 279,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VENDOR_MEASUREMENT_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VENDOR_MEASUREMENT_MODE = 280,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_IMPRESSION_LOSS_REJECTION_REASON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_IMPRESSION_LOSS_REJECTION_REASON = 281,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_START = 282,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_FIRST_QUARTILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_FIRST_QUARTILE = 283,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_MID_POINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_MID_POINT = 284,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_THIRD_QUARTILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_THIRD_QUARTILE = 285,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_VIDEO_PLAYER_SIZE_COMPLETE = 286,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_VIDEO_RESIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_VIDEO_RESIZED = 287,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_AUDIBILITY_START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_AUDIBILITY_START = 288,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_VERIFICATION_AUDIBILITY_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_VERIFICATION_AUDIBILITY_COMPLETE = 289,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_MEDIA_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_MEDIA_TYPE = 290,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_AUDIO_FEED_TYPE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_AUDIO_FEED_TYPE_NAME = 291,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TRUEVIEW_TARGETING_EXPANSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TRUEVIEW_TARGETING_EXPANSION = 292,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_PUBLISHER_TRAFFIC_SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_PUBLISHER_TRAFFIC_SOURCE = 293,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PathQueryOptionsFilterMatch
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WILDCARD_EXPRESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WILDCARD_EXPRESSION = 4,
 	}
 	
 	/// <summary>
 	/// Filter used to match traffic data in your report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterPair
 	{
 		
@@ -1054,8 +1044,7 @@ namespace MyNS
 	/// <summary>
 	/// List queries response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueriesResponse
 	{
 		
@@ -1081,8 +1070,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Query
 	{
 		
@@ -1138,8 +1126,7 @@ namespace MyNS
 	/// <summary>
 	/// Query metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryMetadata
 	{
 		
@@ -1210,94 +1197,89 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryMetadataDataRange
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_DATES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_DATES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENT_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENT_DAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_DAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEK_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEK_TO_DATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH_TO_DATE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARTER_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARTER_TO_DATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR_TO_DATE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_WEEK = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_HALF_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_HALF_MONTH = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_MONTH = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_QUARTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_QUARTER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREVIOUS_YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREVIOUS_YEAR = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_7_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_7_DAYS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_30_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_30_DAYS = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_90_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_90_DAYS = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_365_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_365_DAYS = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_TIME = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_14_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_14_DAYS = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_NOT_SUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_NOT_SUPPORTED = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_60_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_60_DAYS = 19,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryMetadataFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSV = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCEL_CSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCEL_CSV = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XLSX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XLSX = 2,
 	}
 	
 	/// <summary>
 	/// Parameters of a query or report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parameters
 	{
 		
@@ -1341,8 +1323,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional query options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Options
 	{
 		
@@ -1362,8 +1343,7 @@ namespace MyNS
 	/// <summary>
 	/// Path Query Options for Report Options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathQueryOptions
 	{
 		
@@ -1383,8 +1363,7 @@ namespace MyNS
 	/// <summary>
 	/// Path filters specify which paths to include in a report. A path is the result of combining DV360 events based on User ID to create a workflow of users' actions. When a path filter is set, the resulting report will only include paths that match the specified event at the specified position. All other paths will be excluded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathFilter
 	{
 		
@@ -1401,136 +1380,131 @@ namespace MyNS
 		public System.Nullable<PathFilterPathMatchPosition> PathMatchPosition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PathFilterPathMatchPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParametersType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_GENERAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_GENERAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_AUDIENCE_PERFORMANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_AUDIENCE_PERFORMANCE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_INVENTORY_AVAILABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_INVENTORY_AVAILABILITY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_KEYWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_KEYWORD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_PIXEL_LOAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_PIXEL_LOAD = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_AUDIENCE_COMPOSITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_AUDIENCE_COMPOSITION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_CROSS_PARTNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_CROSS_PARTNER = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_PAGE_CATEGORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_PAGE_CATEGORY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_THIRD_PARTY_DATA_PROVIDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_THIRD_PARTY_DATA_PROVIDER = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_CROSS_PARTNER_THIRD_PARTY_DATA_PROVIDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_CROSS_PARTNER_THIRD_PARTY_DATA_PROVIDER = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_CLIENT_SAFE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_CLIENT_SAFE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_ORDER_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_ORDER_ID = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_FEE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_FEE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_CROSS_FEE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_CROSS_FEE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_ACTIVE_GRP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_ACTIVE_GRP = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_YOUTUBE_VERTICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_YOUTUBE_VERTICAL = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_COMSCORE_VCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_COMSCORE_VCE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_TRUEVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_TRUEVIEW = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_NIELSEN_AUDIENCE_PROFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_NIELSEN_AUDIENCE_PROFILE = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_NIELSEN_DAILY_REACH_BUILD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_NIELSEN_DAILY_REACH_BUILD = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_NIELSEN_SITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_NIELSEN_SITE = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_REACH_AND_FREQUENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_REACH_AND_FREQUENCY = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_ESTIMATED_CONVERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_ESTIMATED_CONVERSION = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_VERIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_VERIFICATION = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_TRUEVIEW_IAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_TRUEVIEW_IAR = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_NIELSEN_ONLINE_GLOBAL_MARKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_NIELSEN_ONLINE_GLOBAL_MARKET = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_PETRA_NIELSEN_AUDIENCE_PROFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_PETRA_NIELSEN_AUDIENCE_PROFILE = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_PETRA_NIELSEN_DAILY_REACH_BUILD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_PETRA_NIELSEN_DAILY_REACH_BUILD = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_PETRA_NIELSEN_ONLINE_GLOBAL_MARKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_PETRA_NIELSEN_ONLINE_GLOBAL_MARKET = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_NOT_SUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_NOT_SUPPORTED = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_REACH_AUDIENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_REACH_AUDIENCE = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_LINEAR_TV_SEARCH_LIFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_LINEAR_TV_SEARCH_LIFT = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_PATH = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_PATH_ATTRIBUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_PATH_ATTRIBUTION = 33,
 	}
 	
 	/// <summary>
 	/// Information on how frequently and when to run a query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuerySchedule
 	{
 		
@@ -1565,39 +1539,36 @@ namespace MyNS
 		public string StartTimeMs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryScheduleFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_TIME = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEKLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEMI_MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEMI_MONTHLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARTERLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARTERLY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEARLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEARLY = 6,
 	}
 	
 	/// <summary>
 	/// List reports response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReportsResponse
 	{
 		
@@ -1623,8 +1594,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Report
 	{
 		
@@ -1650,8 +1620,7 @@ namespace MyNS
 	/// <summary>
 	/// Key used to identify a report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportKey
 	{
 		
@@ -1671,8 +1640,7 @@ namespace MyNS
 	/// <summary>
 	/// Report metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportMetadata
 	{
 		
@@ -1704,8 +1672,7 @@ namespace MyNS
 	/// <summary>
 	/// Report status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportStatus
 	{
 		
@@ -1737,8 +1704,7 @@ namespace MyNS
 	/// <summary>
 	/// An explanation of a report failure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportFailure
 	{
 		
@@ -1749,88 +1715,83 @@ namespace MyNS
 		public System.Nullable<ReportFailureErrorCode> ErrorCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportFailureErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHENTICATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTHENTICATION_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAUTHORIZED_API_ACCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAUTHORIZED_API_ACCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_FATAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_FATAL_ERROR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_TRANSIENT_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_TRANSIENT_ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_IMCOMPATIBLE_METRICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_IMCOMPATIBLE_METRICS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_ILLEGAL_FILENAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_ILLEGAL_FILENAME = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_QUERY_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_QUERY_NOT_FOUND = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_BUCKET_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_BUCKET_NOT_FOUND = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_CREATE_BUCKET_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_CREATE_BUCKET_FAILED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_DELETE_BUCKET_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_DELETE_BUCKET_FAILED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_UPDATE_BUCKET_PERMISSION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_UPDATE_BUCKET_PERMISSION_FAILED = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_WRITE_BUCKET_OBJECT_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_WRITE_BUCKET_OBJECT_FAILED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPRECATED_REPORTING_INVALID_QUERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPRECATED_REPORTING_INVALID_QUERY = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_INVALID_QUERY_TOO_MANY_UNFILTERED_LARGE_GROUP_BYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_INVALID_QUERY_TOO_MANY_UNFILTERED_LARGE_GROUP_BYS = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_INVALID_QUERY_TITLE_MISSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_INVALID_QUERY_TITLE_MISSING = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_INVALID_QUERY_MISSING_PARTNER_AND_ADVERTISER_FILTERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_INVALID_QUERY_MISSING_PARTNER_AND_ADVERTISER_FILTERS = 17,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
 	/// <summary>
 	/// Request to run a stored query to generate a report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunQueryRequest
 	{
 		

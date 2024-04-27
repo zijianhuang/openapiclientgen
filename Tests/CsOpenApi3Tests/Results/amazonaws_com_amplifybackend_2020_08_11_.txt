@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloneBackendResponse
 	{
 		
@@ -41,32 +40,27 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GatewayTimeoutException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendResponse
 	{
 		
@@ -89,8 +83,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAPIResponse
 	{
 		
@@ -116,8 +109,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the auth types for your configured data models.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendAPIAuthType
 	{
 		
@@ -128,30 +120,27 @@ namespace MyNS
 		public BackendAPIAppSyncAuthSettings Settings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Mode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_KEY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_IAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_IAM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMAZON_COGNITO_USER_POOLS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMAZON_COGNITO_USER_POOLS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPENID_CONNECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPENID_CONNECT = 3,
 	}
 	
 	/// <summary>
 	/// The authentication settings for accessing provisioned data models in your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendAPIAppSyncAuthSettings
 	{
 		
@@ -183,8 +172,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the conflict resolution configuration for your data model configured in your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendAPIConflictResolution
 	{
 		
@@ -192,27 +180,24 @@ namespace MyNS
 		public ResolutionStrategy ResolutionStrategy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResolutionStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIMISTIC_CONCURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIMISTIC_CONCURRENCY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAMBDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAMBDA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMERGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMERGE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthResponse
 	{
 		
@@ -235,24 +220,21 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthResources
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_POOL_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_POOL_ONLY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDENTITY_POOL_AND_USER_POOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IDENTITY_POOL_AND_USER_POOL = 1,
 	}
 	
 	/// <summary>
 	/// Describes authorization configurations for the auth resources, configured as a part of your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthIdentityPoolConfig
 	{
 		
@@ -271,21 +253,18 @@ namespace MyNS
 		public bool UnauthenticatedLogin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Service
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COGNITO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COGNITO = 0,
 	}
 	
 	/// <summary>
 	/// Describes the Amazon Cognito user pool configuration for the auth resource to be configured for your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthUserPoolConfig
 	{
 		
@@ -329,8 +308,7 @@ namespace MyNS
 	/// <summary>
 	/// <b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthForgotPasswordConfig
 	{
 		
@@ -351,24 +329,21 @@ namespace MyNS
 	/// <summary>
 	/// The type of verification message to send.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMS = 1,
 	}
 	
 	/// <summary>
 	/// The configuration for the email sent when an app user forgets their password.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailSettings
 	{
 		
@@ -382,8 +357,7 @@ namespace MyNS
 	/// <summary>
 	/// SMS settings for authentication.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SmsSettings
 	{
 		
@@ -394,8 +368,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthMFAConfig
 	{
 		
@@ -410,27 +383,24 @@ namespace MyNS
 		public Settings Settings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MFAMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIONAL = 2,
 	}
 	
 	/// <summary>
 	/// The settings of your MFA configuration for the backend of your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Settings
 	{
 		
@@ -441,24 +411,21 @@ namespace MyNS
 		public string SmsMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MfaTypesElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOTP = 1,
 	}
 	
 	/// <summary>
 	/// Creates the OAuth configuration for your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthOAuthConfig
 	{
 		
@@ -497,46 +464,41 @@ namespace MyNS
 		public SocialProviderSettings SocialProviderSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OAuthGrantType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CODE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPLICIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPLICIT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OAuthScopesElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPENID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPENID = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_COGNITO_SIGNIN_USER_ADMIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_COGNITO_SIGNIN_USER_ADMIN = 4,
 	}
 	
 	/// <summary>
 	/// The settings for using the social identity providers for access to your Amplify app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SocialProviderSettings
 	{
 		
@@ -568,8 +530,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes third-party social federation configurations for allowing your app users to sign in using OAuth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendAuthSocialProviderConfig
 	{
 		
@@ -583,8 +544,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes Apple social federation configurations for allowing your app users to sign in using OAuth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendAuthAppleProviderConfig
 	{
 		
@@ -604,8 +564,7 @@ namespace MyNS
 	/// <summary>
 	/// The password policy configuration for the backend to your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthPasswordPolicyConfig
 	{
 		
@@ -620,107 +579,100 @@ namespace MyNS
 		public double MinimumLength { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdditionalConstraintsElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRE_DIGIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRE_DIGIT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRE_LOWERCASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRE_LOWERCASE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRE_SYMBOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRE_SYMBOL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRE_UPPERCASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRE_UPPERCASE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RequiredSignUpAttributesElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIRTHDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIRTHDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAMILY_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAMILY_NAME = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENDER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GIVEN_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GIVEN_NAME = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCALE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIDDLE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIDDLE_NAME = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAME = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NICKNAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NICKNAME = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_NUMBER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PICTURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PICTURE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFERRED_USERNAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFERRED_USERNAME = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED_AT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED_AT = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEBSITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEBSITE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZONE_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZONE_INFO = 16,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SignInMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL_AND_PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL_AND_PHONE_NUMBER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_NUMBER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USERNAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USERNAME = 3,
 	}
 	
 	/// <summary>
 	/// Creates an email or SMS verification message for the auth resource configured for your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthVerificationMessageConfig
 	{
 		
@@ -738,8 +690,7 @@ namespace MyNS
 		public SmsSettings SmsSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendConfigResponse
 	{
 		
@@ -756,8 +707,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendStorageResponse
 	{
 		
@@ -777,8 +727,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the read, write, and delete permissions users have against your storage S3 bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendStoragePermissions
 	{
 		
@@ -793,50 +742,43 @@ namespace MyNS
 		public UnAuthenticatedElement[] UnAuthenticated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthenticatedElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_AND_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_AND_UPDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UnAuthenticatedElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_AND_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_AND_UPDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServiceName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTokenResponse
 	{
 		
@@ -853,8 +795,7 @@ namespace MyNS
 		public string Ttl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendResponse
 	{
 		
@@ -877,8 +818,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendAPIResponse
 	{
 		
@@ -901,8 +841,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendAuthResponse
 	{
 		
@@ -925,8 +864,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendStorageResponse
 	{
 		
@@ -943,8 +881,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTokenResponse
 	{
 		
@@ -952,8 +889,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsSuccess { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateBackendAPIModelsResponse
 	{
 		
@@ -976,8 +912,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendResponse
 	{
 		
@@ -1003,8 +938,7 @@ namespace MyNS
 		public string Error { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendAPIResponse
 	{
 		
@@ -1027,8 +961,7 @@ namespace MyNS
 	/// <summary>
 	/// The resource config for the data model, configured as a part of the Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendAPIResourceConfig
 	{
 		
@@ -1051,8 +984,7 @@ namespace MyNS
 		public string TransformSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendAPIModelsResponse
 	{
 		
@@ -1066,21 +998,18 @@ namespace MyNS
 		public string ModelIntrospectionSchema { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATEST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STALE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STALE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendAuthResponse
 	{
 		
@@ -1103,8 +1032,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the resource configuration when creating an auth resource in your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthResourceConfig
 	{
 		
@@ -1133,8 +1061,7 @@ namespace MyNS
 		public CreateBackendAuthUserPoolConfig UserPoolConfigs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendJobResponse
 	{
 		
@@ -1163,8 +1090,7 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendStorageResponse
 	{
 		
@@ -1184,8 +1110,7 @@ namespace MyNS
 	/// <summary>
 	/// The details for a backend storage resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendStorageResourceConfig
 	{
 		
@@ -1210,8 +1135,7 @@ namespace MyNS
 		public ServiceName ServiceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTokenResponse
 	{
 		
@@ -1228,8 +1152,7 @@ namespace MyNS
 		public string Ttl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportBackendAuthResponse
 	{
 		
@@ -1252,8 +1175,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportBackendStorageResponse
 	{
 		
@@ -1270,8 +1192,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBackendJobsResponse
 	{
 		
@@ -1285,8 +1206,7 @@ namespace MyNS
 	/// <summary>
 	/// The response object for this operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BackendJobRespObj
 	{
 		
@@ -1323,8 +1243,7 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListS3BucketsResponse
 	{
 		
@@ -1338,8 +1257,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the metadata of the S3 bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3BucketInfo
 	{
 		
@@ -1350,8 +1268,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAllBackendsResponse
 	{
 		
@@ -1371,8 +1288,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveBackendConfigResponse
 	{
 		
@@ -1380,8 +1296,7 @@ namespace MyNS
 		public string Error { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAPIResponse
 	{
 		
@@ -1404,8 +1319,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthResponse
 	{
 		
@@ -1431,8 +1345,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthIdentityPoolConfig
 	{
 		
@@ -1443,8 +1356,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the Amazon Cognito user pool configuration for the authorization resource to be configured for your Amplify project on an update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthUserPoolConfig
 	{
 		
@@ -1467,8 +1379,7 @@ namespace MyNS
 	/// <summary>
 	/// <b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthForgotPasswordConfig
 	{
 		
@@ -1485,8 +1396,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the multi-factor authentication (MFA) configuration for the backend of your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthMFAConfig
 	{
 		
@@ -1500,8 +1410,7 @@ namespace MyNS
 	/// <summary>
 	/// The OAuth configurations for authenticating users into your Amplify app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthOAuthConfig
 	{
 		
@@ -1527,8 +1436,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the password policy for your Amazon Cognito user pool configured as a part of your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthPasswordPolicyConfig
 	{
 		
@@ -1542,8 +1450,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates the configuration of the email or SMS message for the auth resource configured for your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthVerificationMessageConfig
 	{
 		
@@ -1561,8 +1468,7 @@ namespace MyNS
 		public SmsSettings SmsSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendConfigResponse
 	{
 		
@@ -1582,8 +1488,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for this operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoginAuthConfigReqObj
 	{
 		
@@ -1600,8 +1505,7 @@ namespace MyNS
 		public string AwsUserPoolsWebClientId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendJobResponse
 	{
 		
@@ -1630,8 +1534,7 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendStorageResponse
 	{
 		
@@ -1651,8 +1554,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for CloneBackend.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloneBackendRequest
 	{
 		
@@ -1667,8 +1569,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for CreateBackendAPI.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAPIRequest
 	{
 		
@@ -1697,8 +1598,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for CreateBackendAuth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendAuthRequest
 	{
 		
@@ -1727,8 +1627,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for CreateBackendConfig.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendConfigRequest
 	{
 		
@@ -1739,8 +1638,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the resource configuration for the data model in your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceConfig
 	{
 	}
@@ -1748,8 +1646,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for CreateBackend.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendRequest
 	{
 		
@@ -1784,8 +1681,7 @@ namespace MyNS
 	/// <summary>
 	/// The resource configuration for creating backend storage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendStorageResourceConfig
 	{
 		
@@ -1810,8 +1706,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for CreateBackendStorage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBackendStorageRequest
 	{
 		
@@ -1837,8 +1732,7 @@ namespace MyNS
 		public string ResourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTokenRequest
 	{
 	}
@@ -1846,8 +1740,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for DeleteBackendAPI.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendAPIRequest
 	{
 		
@@ -1865,8 +1758,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for DeleteBackendAuth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendAuthRequest
 	{
 		
@@ -1878,8 +1770,7 @@ namespace MyNS
 		public string ResourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendRequest
 	{
 	}
@@ -1887,8 +1778,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for DeleteBackendStorage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBackendStorageRequest
 	{
 		
@@ -1907,8 +1797,7 @@ namespace MyNS
 		public ServiceName ServiceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTokenRequest
 	{
 	}
@@ -1916,8 +1805,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for GenerateBackendAPIModels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateBackendAPIModelsRequest
 	{
 		
@@ -1932,8 +1820,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for GetBackendAPIModels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendAPIModelsRequest
 	{
 		
@@ -1948,8 +1835,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for GetBackendAPI.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendAPIRequest
 	{
 		
@@ -1967,8 +1853,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for GetBackendAuth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendAuthRequest
 	{
 		
@@ -1980,8 +1865,7 @@ namespace MyNS
 		public string ResourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendJobRequest
 	{
 	}
@@ -1989,8 +1873,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for GetBackend.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendRequest
 	{
 		
@@ -2001,8 +1884,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for GetBackendStorage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBackendStorageRequest
 	{
 		
@@ -2014,8 +1896,7 @@ namespace MyNS
 		public string ResourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTokenRequest
 	{
 	}
@@ -2023,8 +1904,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for ImportBackendAuth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportBackendAuthRequest
 	{
 		
@@ -2056,8 +1936,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for ImportBackendStorage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportBackendStorageRequest
 	{
 		
@@ -2075,8 +1954,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for ListBackendJobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBackendJobsRequest
 	{
 		
@@ -2099,8 +1977,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for S3Buckets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListS3BucketsRequest
 	{
 		
@@ -2111,8 +1988,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for RemoveAllBackends.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAllBackendsRequest
 	{
 		
@@ -2120,8 +1996,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> CleanAmplifyApp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveBackendConfigRequest
 	{
 	}
@@ -2129,8 +2004,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for UpdateBackendAPI.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAPIRequest
 	{
 		
@@ -2148,8 +2022,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the resource configuration when updating an authentication resource in your Amplify project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthResourceConfig
 	{
 		
@@ -2181,8 +2054,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for UpdateBackendAuth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendAuthRequest
 	{
 		
@@ -2204,8 +2076,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for UpdateBackendConfig.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendConfigRequest
 	{
 		
@@ -2216,8 +2087,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for GetBackendJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendJobRequest
 	{
 		
@@ -2231,8 +2101,7 @@ namespace MyNS
 	/// <summary>
 	/// The resource configuration for updating backend storage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendStorageResourceConfig
 	{
 		
@@ -2254,8 +2123,7 @@ namespace MyNS
 	/// <summary>
 	/// The request body for UpdateBackendStorage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBackendStorageRequest
 	{
 		

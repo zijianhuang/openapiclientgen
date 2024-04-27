@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiException : Exception
 	{
 		
@@ -44,8 +43,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StatusCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationError
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiResponse
 	{
 		
@@ -85,8 +82,7 @@ namespace MyNS
 	///Contains relevant fields of Article DTO by masking actual Article entity's fields in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArticleDTO
 	{
 		
@@ -274,8 +270,7 @@ namespace MyNS
 	///Contains relevant fields of Gym DTO by masking actual Gym entity's fields in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GymDTO
 	{
 		
@@ -297,8 +292,7 @@ namespace MyNS
 	///Contains fields of GymArticleDetails DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GymArticleDetailsDTO
 	{
 		
@@ -377,8 +371,7 @@ namespace MyNS
 	///Contains relevant fields of ArticleSearch DTO by masking actual Article entity's fields in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArticleSearchDTO
 	{
 		
@@ -451,8 +444,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfArticleDTO
 	{
 		
@@ -474,8 +466,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfBoolean
 	{
 		
@@ -497,8 +488,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfGymDTO
 	{
 		
@@ -520,8 +510,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfInteger
 	{
 		
@@ -543,8 +532,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfListOfArticleSearchDTO
 	{
 		
@@ -566,8 +554,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfListOfPackageSearchDTO
 	{
 		
@@ -589,8 +576,7 @@ namespace MyNS
 	///Contains relevant fields of PackageSearch DTO by masking actual Package entity's fields in application.
 	///               
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackageSearchDTO
 	{
 		
@@ -749,8 +735,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfPackageDTO
 	{
 		
@@ -772,8 +757,7 @@ namespace MyNS
 	///Contains relevant fields of Package DTO by masking actual Package entity's fields in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackageDTO
 	{
 		
@@ -1101,8 +1085,7 @@ namespace MyNS
 	///Contains relevant fields of PackageItem DTO by masking actual Package entity's fields in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackageItemDTO
 	{
 		
@@ -1175,8 +1158,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfPackageSearchDTO
 	{
 		
@@ -1198,8 +1180,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfStatusDTO
 	{
 		
@@ -1220,8 +1201,7 @@ namespace MyNS
 	/// Imideate response for long running api call.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusDTO
 	{
 		
@@ -1252,8 +1232,7 @@ namespace MyNS
 	///Contains fields of DefaultResponse DTO in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultResponseDTOOfString
 	{
 		
@@ -1270,8 +1249,7 @@ namespace MyNS
 		public string Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Exception
 	{
 		
@@ -1293,8 +1271,7 @@ namespace MyNS
 	///Contains relevant fields of Login DTO.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoginDTO
 	{
 		
@@ -1311,8 +1288,7 @@ namespace MyNS
 	/// <summary>
 	/// Mesure unit to represent article mesure unit 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MeasureUnitDTO
 	{
 		
@@ -1340,8 +1316,7 @@ namespace MyNS
 	///Contains relevant fields of Member DTO by masking actual Member entity's fields in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemberDTO
 	{
 		
@@ -1349,8 +1324,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageStatus
 	{
 		
@@ -1370,8 +1344,7 @@ namespace MyNS
 		public string StatusText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProblemDetails
 	{
 		
@@ -1399,8 +1372,7 @@ namespace MyNS
 	///Contains relevant fields of Test DTO by masking actual Test entity's fields in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestDTO
 	{
 		
@@ -1417,8 +1389,7 @@ namespace MyNS
 	///Contains relevant fields of User DTO by masking actual User entity's fields in application.
 	///            
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDTO
 	{
 		

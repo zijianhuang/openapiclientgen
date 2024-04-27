@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SystemDataSpatialDbGeography
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public SystemDataSpatialDbGeographyWellKnownValue Geography { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SystemDataSpatialDbGeographyWellKnownValue
 	{
 		
@@ -41,14 +39,12 @@ namespace MyNS
 		public string WellKnownText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SystemObject
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiCommonApiVersionInfo
 	{
 		
@@ -65,8 +61,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiCommonDateRange
 	{
 		
@@ -77,8 +72,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiCommonDateRangeNullable
 	{
 		
@@ -89,8 +83,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiCommonGeoPoint
 	{
 		
@@ -109,8 +102,7 @@ namespace MyNS
 		public double Lon { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiCommonJourneyPlannerJpElevation
 	{
 		
@@ -136,8 +128,7 @@ namespace MyNS
 		public System.Nullable<System.Double> StartLon { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiCommonPlaceGeo
 	{
 		
@@ -160,8 +151,7 @@ namespace MyNS
 		public System.Nullable<System.Double> SwLon { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiCommonPostcodeInput
 	{
 		
@@ -173,8 +163,7 @@ namespace MyNS
 		public string Postcode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesAccidentStatsAccidentDetail
 	{
 		
@@ -206,8 +195,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesAccidentStatsVehicle[] Vehicles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesAccidentStatsCasualty
 	{
 		
@@ -227,8 +215,7 @@ namespace MyNS
 		public string Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesAccidentStatsVehicle
 	{
 		
@@ -236,8 +223,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesAccidentStatsAccidentStatsOrderedSummary
 	{
 		
@@ -251,8 +237,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Year { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesActiveServiceType
 	{
 		
@@ -263,8 +248,7 @@ namespace MyNS
 		public string ServiceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesAdditionalProperties
 	{
 		
@@ -287,8 +271,7 @@ namespace MyNS
 	/// <summary>
 	/// DTO to capture the prediction details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesArrivalDeparture
 	{
 		
@@ -374,27 +357,24 @@ namespace MyNS
 		public TflApiPresentationEntitiesPredictionTiming Timing { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesArrivalDepartureDepartureStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OnTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OnTime = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Delayed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Delayed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotStoppingAtStation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotStoppingAtStation = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesPredictionTiming
 	{
 		
@@ -420,8 +400,7 @@ namespace MyNS
 	/// <summary>
 	/// DTO to capture the prediction details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesArrivalDepartureWithLine
 	{
 		
@@ -519,8 +498,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesPredictionTiming Timing { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesBay
 	{
 		
@@ -540,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// Bike point occupancy
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesBikePointOccupancy
 	{
 		
@@ -588,8 +565,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalDocks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesCarParkOccupancy
 	{
 		
@@ -606,8 +582,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesChargeConnectorOccupancy
 	{
 		
@@ -621,8 +596,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesCoordinate
 	{
 		
@@ -645,8 +619,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YCoord { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesCrowding
 	{
 		
@@ -663,8 +636,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesTrainLoading[] TrainLoadings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesPassengerFlow
 	{
 		
@@ -681,8 +653,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesTrainLoading
 	{
 		
@@ -730,8 +701,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesCycleSuperhighway
 	{
 		
@@ -781,25 +751,23 @@ namespace MyNS
 		public System.Nullable<TflApiPresentationEntitiesCycleSuperhighwayStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesCycleSuperhighwayRouteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cycle Superhighways")]
 		Cycle_Superhighways = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quietways")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quietways = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cycleways")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cycleways = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mini-Hollands")]
@@ -812,25 +780,23 @@ namespace MyNS
 		Streetspace_Route = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesCycleSuperhighwayStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Open = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="In Progress")]
 		In_Progress = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Planned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Planned = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Planned - Subject to feasibility and consultation.")]
@@ -840,8 +806,7 @@ namespace MyNS
 		Not_Open = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesDisruptedPoint
 	{
 		
@@ -879,8 +844,7 @@ namespace MyNS
 	/// <summary>
 	/// keep old RouteSection name so as not to break contract
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesDisruptedRoute
 	{
 		
@@ -957,8 +921,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesRouteSectionNaptanEntrySequence Via { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRouteSectionNaptanEntrySequence
 	{
 		
@@ -969,8 +932,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesStopPoint StopPoint { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesStopPoint
 	{
 		
@@ -1090,8 +1052,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesPlace
 	{
 		
@@ -1151,8 +1112,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesLineGroup
 	{
 		
@@ -1166,8 +1126,7 @@ namespace MyNS
 		public string StationAtcoCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesLineModeGroup
 	{
 		
@@ -1178,8 +1137,7 @@ namespace MyNS
 		public string ModeName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesIdentifier
 	{
 		
@@ -1214,25 +1172,23 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesIdentifierRouteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cycle Superhighways")]
 		Cycle_Superhighways = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quietways")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quietways = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cycleways")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cycleways = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mini-Hollands")]
@@ -1245,25 +1201,23 @@ namespace MyNS
 		Streetspace_Route = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesIdentifierStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Open = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="In Progress")]
 		In_Progress = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Planned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Planned = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Planned - Subject to feasibility and consultation.")]
@@ -1276,8 +1230,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a disruption to a route within the transport network.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesDisruption
 	{
 		
@@ -1348,36 +1301,33 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesDisruptionCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Undefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Undefined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RealTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RealTime = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PlannedWork")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PlannedWork = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Information")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Information = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Event")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Event = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Crowding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Crowding = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StatusAlert")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StatusAlert = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresFare
 	{
 		
@@ -1415,8 +1365,7 @@ namespace MyNS
 		public string Zone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresFareBounds
 	{
 		
@@ -1460,8 +1409,7 @@ namespace MyNS
 		public string Via { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesMessage
 	{
 		
@@ -1481,8 +1429,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresFareDetails
 	{
 		
@@ -1553,8 +1500,7 @@ namespace MyNS
 		public string Via { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresTicket
 	{
 		
@@ -1583,8 +1529,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesFaresTicketType TicketType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresTicketTime
 	{
 		
@@ -1595,8 +1540,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresTicketType
 	{
 		
@@ -1607,8 +1551,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresFareStation
 	{
 		
@@ -1622,30 +1565,27 @@ namespace MyNS
 		public System.Nullable<TflApiPresentationEntitiesFaresFareStationFareCategory> FareCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesFaresFareStationFareCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cash = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Oyster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Oyster = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Contactless")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Contactless = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ContactlessOnly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ContactlessOnly = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresFaresMode
 	{
 		
@@ -1659,8 +1599,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresFaresPeriod
 	{
 		
@@ -1680,8 +1619,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ViewableDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresFaresSection
 	{
 		
@@ -1701,8 +1639,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesFaresFareDetails[] Rows { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresJourney
 	{
 		
@@ -1713,8 +1650,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesFaresFareStation ToStation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresPassengerType
 	{
 		
@@ -1731,8 +1667,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresRecommendation
 	{
 		
@@ -1791,8 +1726,7 @@ namespace MyNS
 		public string Zones { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesFaresRecommendationResponse
 	{
 		
@@ -1800,8 +1734,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesFaresRecommendation[] Recommendations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesGeoCodeSearchMatch
 	{
 		
@@ -1833,8 +1766,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesInstruction
 	{
 		
@@ -1848,8 +1780,7 @@ namespace MyNS
 		public string Summary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesInstructionStep
 	{
 		
@@ -1893,8 +1824,7 @@ namespace MyNS
 		public string TurnDirection { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesPathAttribute
 	{
 		
@@ -1905,70 +1835,65 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesInstructionStepSkyDirectionDescription
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="North")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		North = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NorthEast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NorthEast = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="East")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		East = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SouthEast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SouthEast = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="South")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		South = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SouthWest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SouthWest = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="West")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		West = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NorthWest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NorthWest = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesInstructionStepTrackType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CycleSuperHighway")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CycleSuperHighway = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CanalTowpath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CanalTowpath = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QuietRoad")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QuietRoad = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProvisionForCyclists")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProvisionForCyclists = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BusyRoads")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BusyRoads = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PushBike")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PushBike = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Quietway")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Quietway = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesInterval
 	{
 		
@@ -1979,8 +1904,7 @@ namespace MyNS
 		public System.Nullable<System.Double> TimeToArrival { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerFare
 	{
 		
@@ -2012,8 +1936,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesJourneyPlannerFareTap[] Taps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerFareTap
 	{
 		
@@ -2024,8 +1947,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesJourneyPlannerFareTapDetails TapDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerFareTapDetails
 	{
 		
@@ -2048,8 +1970,7 @@ namespace MyNS
 		public string ValidationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerFareCaveat
 	{
 		
@@ -2063,8 +1984,7 @@ namespace MyNS
 	/// <summary>
 	/// A DTO representing a list of possible journeys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerItineraryResult
 	{
 		
@@ -2090,8 +2010,7 @@ namespace MyNS
 		public string[] StopMessages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerJourneyPlannerCycleHireDockingStationData
 	{
 		
@@ -2114,8 +2033,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> OriginNumberOfEmptySlots { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerJourneyVector
 	{
 		
@@ -2135,8 +2053,7 @@ namespace MyNS
 	/// <summary>
 	/// Object that represents an end to end journey (see schematic).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerJourney
 	{
 		
@@ -2156,8 +2073,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> StartDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerJourneyFare
 	{
 		
@@ -2171,8 +2087,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalCost { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerLeg
 	{
 		
@@ -2246,8 +2161,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a point located at a latitude and longitude using the WGS84 co-ordinate system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesPoint
 	{
 		
@@ -2264,8 +2178,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Lon { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerObstacle
 	{
 		
@@ -2282,8 +2195,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerPath
 	{
 		
@@ -2297,8 +2209,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesIdentifier[] StopPoints { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerPlannedWork
 	{
 		
@@ -2315,8 +2226,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> LastUpdateDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerRouteOption
 	{
 		
@@ -2345,8 +2255,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesLine
 	{
 		
@@ -2381,8 +2290,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesLineServiceTypeInfo[] ServiceTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesLineStatus
 	{
 		
@@ -2420,8 +2328,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a period for which a planned works is valid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesValidityPeriod
 	{
 		
@@ -2447,8 +2354,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of a Route used in Route search results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesMatchedRoute
 	{
 		
@@ -2513,8 +2419,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> ValidTo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesLineServiceTypeInfo
 	{
 		
@@ -2525,8 +2430,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerSearchCriteria
 	{
 		
@@ -2540,21 +2444,18 @@ namespace MyNS
 		public TflApiPresentationEntitiesJourneyPlannerTimeAdjustments TimeAdjustments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesJourneyPlannerSearchCriteriaDateTimeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Arriving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Arriving = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Departing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Departing = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerTimeAdjustments
 	{
 		
@@ -2571,8 +2472,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesJourneyPlannerTimeAdjustment Latest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesJourneyPlannerTimeAdjustment
 	{
 		
@@ -2589,8 +2489,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesKnownJourney
 	{
 		
@@ -2604,8 +2503,7 @@ namespace MyNS
 		public string Minute { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesLineRouteSection
 	{
 		
@@ -2631,8 +2529,7 @@ namespace MyNS
 		public string VehicleDestinationText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesLineServiceType
 	{
 		
@@ -2643,8 +2540,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesLineSpecificServiceType[] LineSpecificServiceTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesLineSpecificServiceType
 	{
 		
@@ -2655,8 +2551,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> StopServesServiceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesMatchedRouteSections
 	{
 		
@@ -2664,8 +2559,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesMatchedStop
 	{
 		
@@ -2730,8 +2624,7 @@ namespace MyNS
 		public string Zone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesMode
 	{
 		
@@ -2757,8 +2650,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent travel network status
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesNetworkStatus
 	{
 		
@@ -2775,8 +2667,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StatusLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesOrderedRoute
 	{
 		
@@ -2790,8 +2681,7 @@ namespace MyNS
 		public string ServiceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesPeriod
 	{
 		
@@ -2808,8 +2698,7 @@ namespace MyNS
 		public System.Nullable<TflApiPresentationEntitiesPeriodType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesServiceFrequency
 	{
 		
@@ -2820,8 +2709,7 @@ namespace MyNS
 		public System.Nullable<System.Double> LowestFrequency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesTwentyFourHourClockTime
 	{
 		
@@ -2832,27 +2720,24 @@ namespace MyNS
 		public string Minute { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesPeriodType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FrequencyHours")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FrequencyHours = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FrequencyMinutes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FrequencyMinutes = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesPlaceCategory
 	{
 		
@@ -2863,8 +2748,7 @@ namespace MyNS
 		public string Category { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesPlacePolygon
 	{
 		
@@ -2878,8 +2762,7 @@ namespace MyNS
 	/// <summary>
 	/// DTO to capture the prediction details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesPrediction
 	{
 		
@@ -3001,8 +2884,7 @@ namespace MyNS
 		public string VehicleId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRedirect
 	{
 		
@@ -3016,8 +2898,7 @@ namespace MyNS
 		public string ShortUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRoadCorridor
 	{
 		
@@ -3085,8 +2966,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRoadDisruption
 	{
 		
@@ -3269,8 +3149,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRoadDisruptionSchedule
 	{
 		
@@ -3281,8 +3160,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRoadDisruptionImpactArea
 	{
 		
@@ -3308,8 +3186,7 @@ namespace MyNS
 		public string StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRoadDisruptionLine
 	{
 		
@@ -3338,8 +3215,7 @@ namespace MyNS
 		public string StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRoadProject
 	{
 		
@@ -3395,33 +3271,30 @@ namespace MyNS
 		public string SchemeName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesRoadProjectPhase
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unscoped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unscoped = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Concept")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Concept = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConsultationEnded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConsultationEnded = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Consultation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Consultation = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Construction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Construction = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Complete = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesStreet
 	{
 		
@@ -3474,8 +3347,7 @@ namespace MyNS
 		public string SourceSystemKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesStreetSegment
 	{
 		
@@ -3504,8 +3376,7 @@ namespace MyNS
 		public string Toid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRouteSearchMatch
 	{
 		
@@ -3543,8 +3414,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRouteSearchResponse
 	{
 		
@@ -3555,8 +3425,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesRouteSearchMatch[] SearchMatches { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesRouteSequence
 	{
 		
@@ -3588,8 +3457,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesStopPointSequence[] StopPointSequences { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesStopPointSequence
 	{
 		
@@ -3629,21 +3497,18 @@ namespace MyNS
 		public TflApiPresentationEntitiesMatchedStop[] StopPoint { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TflApiPresentationEntitiesStopPointSequenceServiceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Regular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Regular = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Night")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Night = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesSchedule
 	{
 		
@@ -3663,8 +3528,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesPeriod[] Periods { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesSearchMatch
 	{
 		
@@ -3684,8 +3548,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesSearchResponse
 	{
 		
@@ -3714,8 +3577,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesStationInterval
 	{
 		
@@ -3726,8 +3588,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesInterval[] Intervals { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesStatusSeverity
 	{
 		
@@ -3741,8 +3602,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> SeverityLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesStopPointCategory
 	{
 		
@@ -3753,8 +3613,7 @@ namespace MyNS
 		public string Category { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesStopPointRouteSection
 	{
 		
@@ -3798,8 +3657,7 @@ namespace MyNS
 	/// <summary>
 	/// A paged response containing StopPoints
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesStopPointsResponse
 	{
 		
@@ -3834,8 +3692,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesTimetable
 	{
 		
@@ -3846,8 +3703,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesTimetableRoute[] Routes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesTimetableRoute
 	{
 		
@@ -3858,8 +3714,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesStationInterval[] StationIntervals { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesTimetableResponse
 	{
 		
@@ -3891,8 +3746,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesTimetable Timetable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesTimetablesDisambiguation
 	{
 		
@@ -3900,8 +3754,7 @@ namespace MyNS
 		public TflApiPresentationEntitiesTimetablesDisambiguationOption[] DisambiguationOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TflApiPresentationEntitiesTimetablesDisambiguationOption
 	{
 		
@@ -6943,71 +6796,71 @@ namespace MyNS
 	public enum Journey_JourneyResultsJourneyPreference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LeastInterchange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LeastInterchange = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LeastTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LeastTime = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LeastWalking")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LeastWalking = 2,
 	}
 	
 	public enum Journey_JourneyResultsWalkingSpeed
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Slow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Slow = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fast = 2,
 	}
 	
 	public enum Journey_JourneyResultsCyclePreference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LeaveAtStation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LeaveAtStation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TakeOnTransport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TakeOnTransport = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AllTheWay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AllTheWay = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CycleHire")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CycleHire = 4,
 	}
 	
 	public enum Line_ArrivalsDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outbound = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 2,
 	}
 	
 	public enum TravelTime_GetCompareOverlayDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="From")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		From = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="To")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		To = 2,
 	}
 }

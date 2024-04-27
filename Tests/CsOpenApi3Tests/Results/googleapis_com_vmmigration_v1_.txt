@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Message describing AWS Credentials using access key id and secret.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessKeyCredentials
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// AdaptingOSStep contains specific step details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdaptingOSStep
 	{
 	}
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for 'AddGroupMigration' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddGroupMigrationRequest
 	{
 		
@@ -71,8 +68,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an appliance version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplianceVersion
 	{
 		
@@ -104,8 +100,7 @@ namespace MyNS
 	/// <summary>
 	/// AppliedLicense holds the license data returned by adaptation module report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppliedLicense
 	{
 		
@@ -122,30 +117,27 @@ namespace MyNS
 		public System.Nullable<AppliedLicenseType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppliedLicenseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BYOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BYOL = 3,
 	}
 	
 	/// <summary>
 	/// Holds informatiom about the available versions for upgrade.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AvailableUpdates
 	{
 		
@@ -165,8 +157,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of an AWS instance disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsDiskDetails
 	{
 		
@@ -192,8 +183,7 @@ namespace MyNS
 	/// <summary>
 	/// AwsSecurityGroup describes a security group of an AWS VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsSecurityGroup
 	{
 		
@@ -213,8 +203,7 @@ namespace MyNS
 	/// <summary>
 	/// AwsSourceDetails message describes a specific source details for the AWS source type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsSourceDetails
 	{
 		
@@ -270,8 +259,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -297,8 +285,7 @@ namespace MyNS
 	/// <summary>
 	/// Tag is an AWS tag representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -315,30 +302,27 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AwsSourceDetailsState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 3,
 	}
 	
 	/// <summary>
 	/// Represent the source AWS VM details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsSourceVmDetails
 	{
 		
@@ -367,27 +351,24 @@ namespace MyNS
 		public VmCapabilities VmCapabilitiesInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AwsSourceVmDetailsFirmware
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRMWARE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRMWARE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EFI = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIOS = 2,
 	}
 	
 	/// <summary>
 	/// Migrating VM source information about the VM capabilities needed for some Compute Engine features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmCapabilities
 	{
 		
@@ -407,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// AwsVmDetails describes a VM in AWS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsVmDetails
 	{
 		
@@ -521,87 +501,78 @@ namespace MyNS
 		public string Zone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AwsVmDetailsArchitecture
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VM_ARCHITECTURE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VM_ARCHITECTURE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="I386")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		I386 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="X86_64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		X86_64 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARM64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARM64 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="X86_64_MAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		X86_64_MAC = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AwsVmDetailsBootOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOT_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOT_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EFI = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIOS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AwsVmDetailsPowerState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWER_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWER_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AwsVmDetailsVirtualizationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VM_VIRTUALIZATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VM_VIRTUALIZATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HVM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HVM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARAVIRTUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARAVIRTUAL = 2,
 	}
 	
 	/// <summary>
 	/// AWSVmsDetails describes VMs in AWS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsVmsDetails
 	{
 		
@@ -615,8 +586,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of an Azure VM disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AzureDiskDetails
 	{
 		
@@ -642,8 +612,7 @@ namespace MyNS
 	/// <summary>
 	/// AzureSourceDetails message describes a specific source details for the Azure source type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AzureSourceDetails
 	{
 		
@@ -693,8 +662,7 @@ namespace MyNS
 	/// <summary>
 	/// Message describing Azure Credentials using tenant ID, client ID and secret.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientSecretCredentials
 	{
 		
@@ -720,8 +688,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent the source Azure VM details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AzureSourceVmDetails
 	{
 		
@@ -753,8 +720,7 @@ namespace MyNS
 	/// <summary>
 	/// AwsVmDetails describes a VM in AWS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AzureVmDetails
 	{
 		
@@ -840,8 +806,7 @@ namespace MyNS
 	/// <summary>
 	/// A message describing a data disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Disk
 	{
 		
@@ -867,8 +832,7 @@ namespace MyNS
 	/// <summary>
 	/// A message describing the VM's OS. Including OS, Publisher, Offer and Plan if applicable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSDescription
 	{
 		
@@ -900,8 +864,7 @@ namespace MyNS
 	/// <summary>
 	/// A message describing the OS disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSDisk
 	{
 		
@@ -924,42 +887,39 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AzureVmDetailsPowerState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWER_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWER_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEALLOCATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEALLOCATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEALLOCATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEALLOCATED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 7,
 	}
 	
 	/// <summary>
 	/// AzureVmsDetails describes VMs in Azure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AzureVmsDetails
 	{
 		
@@ -973,8 +933,7 @@ namespace MyNS
 	/// <summary>
 	/// BootDiskDefaults hold information about the boot disk of a VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BootDiskDefaults
 	{
 		
@@ -1009,30 +968,27 @@ namespace MyNS
 		public DiskImageDefaults Image { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BootDiskDefaultsDiskType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_DISK_TYPE_STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_DISK_TYPE_STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_DISK_TYPE_SSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_DISK_TYPE_SSD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_DISK_TYPE_BALANCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_DISK_TYPE_BALANCED = 3,
 	}
 	
 	/// <summary>
 	/// Encryption message describes the details of the applied encryption.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Encryption
 	{
 		
@@ -1046,8 +1002,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the image source used to create the disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiskImageDefaults
 	{
 		
@@ -1061,8 +1016,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for 'CancelCloneJob' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelCloneJobRequest
 	{
 	}
@@ -1070,8 +1024,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for 'CancelCutoverJob' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelCutoverJobRequest
 	{
 	}
@@ -1079,8 +1032,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelOperationRequest
 	{
 	}
@@ -1088,8 +1040,7 @@ namespace MyNS
 	/// <summary>
 	/// CloneJob describes the process of creating a clone of a MigratingVM to the requested target based on the latest successful uploaded snapshots. While the migration cycles of a MigratingVm take place, it is possible to verify the uploaded VM can be started in the cloud, by creating a clone. The clone can be created without any downtime, and it is created using the latest snapshots which are already in the cloud. The cloneJob is only responsible for its work, not its products, which means once it is finished, it will never touch the instance it created. It will only delete it in case of the CloneJob being cancelled or upon failure to clone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloneJob
 	{
 		
@@ -1151,8 +1102,7 @@ namespace MyNS
 	/// <summary>
 	/// ComputeEngineDisksTargetDetails is a collection of created Persistent Disks details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeEngineDisksTargetDetails
 	{
 		
@@ -1178,8 +1128,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a created Persistent Disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersistentDisk
 	{
 		
@@ -1199,8 +1148,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for a disks-only migration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisksMigrationDisksTargetDetails
 	{
 	}
@@ -1208,8 +1156,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for the VM created VM as part of disks migration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisksMigrationVmTargetDetails
 	{
 		
@@ -1223,8 +1170,7 @@ namespace MyNS
 	/// <summary>
 	/// ComputeEngineTargetDetails is a collection of details for creating a VM in a target Compute Engine project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeEngineTargetDetails
 	{
 		
@@ -1343,27 +1289,24 @@ namespace MyNS
 		public string Zone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeEngineTargetDetailsBootOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_BOOT_OPTION_EFI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_BOOT_OPTION_EFI = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_BOOT_OPTION_BIOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_BOOT_OPTION_BIOS = 2,
 	}
 	
 	/// <summary>
 	/// Scheduling information for VM on maintenance/restart behaviour and node allocation in sole tenant nodes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeScheduling
 	{
 		
@@ -1395,8 +1338,7 @@ namespace MyNS
 	/// <summary>
 	/// Node Affinity: the configuration of desired nodes onto which this Instance could be scheduled. Based on https://cloud.google.com/compute/docs/reference/rest/v1/instances/setScheduling
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchedulingNodeAffinity
 	{
 		
@@ -1419,75 +1361,66 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SchedulingNodeAffinityOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeSchedulingOnHostMaintenance
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON_HOST_MAINTENANCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON_HOST_MAINTENANCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeSchedulingRestartType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTART_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTART_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMATIC_RESTART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMATIC_RESTART = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_AUTOMATIC_RESTART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_AUTOMATIC_RESTART = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeEngineTargetDetailsLicenseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_LICENSE_TYPE_DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_LICENSE_TYPE_DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_LICENSE_TYPE_PAYG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_LICENSE_TYPE_PAYG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPUTE_ENGINE_LICENSE_TYPE_BYOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPUTE_ENGINE_LICENSE_TYPE_BYOL = 2,
 	}
 	
 	/// <summary>
 	/// NetworkInterface represents a NIC of a VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkInterface
 	{
 		
@@ -1516,42 +1449,39 @@ namespace MyNS
 		public string Subnetwork { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloneJobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADAPTING_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADAPTING_OS = 7,
 	}
 	
 	/// <summary>
 	/// CloneStep holds information about the clone step progress.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloneStep
 	{
 		
@@ -1589,8 +1519,7 @@ namespace MyNS
 	/// <summary>
 	/// InstantiatingMigratedVMStep contains specific step details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstantiatingMigratedVMStep
 	{
 	}
@@ -1598,8 +1527,7 @@ namespace MyNS
 	/// <summary>
 	/// PreparingVMDisksStep contains specific step details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PreparingVMDisksStep
 	{
 	}
@@ -1607,8 +1535,7 @@ namespace MyNS
 	/// <summary>
 	/// ComputeEngineDisksTargetDefaults is a collection of details for creating Persistent Disks in a target Compute Engine project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeEngineDisksTargetDefaults
 	{
 		
@@ -1646,8 +1573,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for creation of a Persistent Disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersistentDiskDefaults
 	{
 		
@@ -1691,8 +1617,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for attachment of the disk to a VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmAttachmentDetails
 	{
 		
@@ -1706,8 +1631,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for a disk only migration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisksMigrationDisksTargetDefaults
 	{
 	}
@@ -1715,8 +1639,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for creation of a VM that migrated data disks will be attached to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisksMigrationVmTargetDefaults
 	{
 		
@@ -1808,8 +1731,7 @@ namespace MyNS
 	/// <summary>
 	/// ComputeEngineTargetDefaults is a collection of details for creating a VM in a target Compute Engine project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeEngineTargetDefaults
 	{
 		
@@ -1931,8 +1853,7 @@ namespace MyNS
 	/// <summary>
 	/// CutoverForecast holds information about future CutoverJobs of a MigratingVm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CutoverForecast
 	{
 		
@@ -1946,8 +1867,7 @@ namespace MyNS
 	/// <summary>
 	/// CutoverJob message describes a cutover of a migrating VM. The CutoverJob is the operation of shutting down the VM, creating a snapshot and clonning the VM using the replicated snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CutoverJob
 	{
 		
@@ -2018,42 +1938,39 @@ namespace MyNS
 		public CutoverStep[] Steps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CutoverJobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADAPTING_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADAPTING_OS = 7,
 	}
 	
 	/// <summary>
 	/// CutoverStep holds information about the cutover step progress.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CutoverStep
 	{
 		
@@ -2103,8 +2020,7 @@ namespace MyNS
 	/// <summary>
 	/// ReplicationCycle contains information about the current replication cycle status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplicationCycle
 	{
 		
@@ -2169,33 +2085,30 @@ namespace MyNS
 		public MigrationWarning[] Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReplicationCycleState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 4,
 	}
 	
 	/// <summary>
 	/// CycleStep holds information about a step progress.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CycleStep
 	{
 		
@@ -2233,8 +2146,7 @@ namespace MyNS
 	/// <summary>
 	/// InitializingReplicationStep contains specific step details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InitializingReplicationStep
 	{
 	}
@@ -2242,8 +2154,7 @@ namespace MyNS
 	/// <summary>
 	/// PostProcessingStep contains specific step details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostProcessingStep
 	{
 	}
@@ -2251,8 +2162,7 @@ namespace MyNS
 	/// <summary>
 	/// ReplicatingStep contains specific step details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplicatingStep
 	{
 		
@@ -2284,8 +2194,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents migration resource warning information that can be used with google.rpc.Status message. MigrationWarning is used to present the user with warning information in migration operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MigrationWarning
 	{
 		
@@ -2323,8 +2232,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a localized error message that is safe to return to the user which can be attached to an RPC error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocalizedMessage
 	{
 		
@@ -2341,24 +2249,21 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MigrationWarningCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING_CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING_CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADAPTATION_WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADAPTATION_WARNING = 1,
 	}
 	
 	/// <summary>
 	/// Describes a URL link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Link
 	{
 		
@@ -2378,8 +2283,7 @@ namespace MyNS
 	/// <summary>
 	/// ShuttingDownSourceVMStep contains specific step details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShuttingDownSourceVMStep
 	{
 	}
@@ -2387,8 +2291,7 @@ namespace MyNS
 	/// <summary>
 	/// DatacenterConnector message describes a connector between the Source and Google Cloud, which is installed on a vmware datacenter (an OVA vm installed by the user) to connect the Datacenter to Google Cloud and support vm migration data transfer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatacenterConnector
 	{
 		
@@ -2477,33 +2380,30 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatacenterConnectorState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFLINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 4,
 	}
 	
 	/// <summary>
 	/// UpgradeStatus contains information about upgradeAppliance operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeStatus
 	{
 		
@@ -2538,30 +2438,27 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpgradeStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -2569,8 +2466,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for fetchInventory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchInventoryResponse
 	{
 		
@@ -2608,8 +2504,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareVmsDetails describes VMs in vCenter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareVmsDetails
 	{
 		
@@ -2623,8 +2518,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareVmDetails describes a VM in vCenter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareVmDetails
 	{
 		
@@ -2701,30 +2595,27 @@ namespace MyNS
 		public string VmId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VmwareVmDetailsPowerState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWER_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWER_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 3,
 	}
 	
 	/// <summary>
 	/// Request message for 'FinalizeMigration' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FinalizeMigrationRequest
 	{
 	}
@@ -2732,8 +2623,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes message for 'Group' resource. The Group is a collections of several MigratingVms.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group
 	{
 		
@@ -2774,27 +2664,24 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GroupMigrationTargetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATION_TARGET_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATION_TARGET_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATION_TARGET_TYPE_GCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATION_TARGET_TYPE_GCE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATION_TARGET_TYPE_DISKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATION_TARGET_TYPE_DISKS = 2,
 	}
 	
 	/// <summary>
 	/// Response message for 'ListCloneJobs' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCloneJobsResponse
 	{
 		
@@ -2820,8 +2707,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for 'ListCutoverJobs' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCutoverJobsResponse
 	{
 		
@@ -2847,8 +2733,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for 'ListDatacenterConnectors' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatacenterConnectorsResponse
 	{
 		
@@ -2874,8 +2759,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for 'ListGroups' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGroupsResponse
 	{
 		
@@ -2901,8 +2785,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -2922,8 +2805,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -2961,8 +2843,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for 'ListMigratingVms' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMigratingVmsResponse
 	{
 		
@@ -2988,8 +2869,7 @@ namespace MyNS
 	/// <summary>
 	/// MigratingVm describes the VM that will be migrated from a Source environment and its replication state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MigratingVm
 	{
 		
@@ -3135,8 +3015,7 @@ namespace MyNS
 	/// <summary>
 	/// ReplicationSync contain information about the last replica sync to the cloud.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReplicationSync
 	{
 		
@@ -3150,8 +3029,7 @@ namespace MyNS
 	/// <summary>
 	/// A policy for scheduling replications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchedulePolicy
 	{
 		
@@ -3168,54 +3046,51 @@ namespace MyNS
 		public System.Nullable<System.Boolean> SkipOsAdaptation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MigratingVmState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRST_SYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRST_SYNC = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUTTING_OVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUTTING_OVER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUTOVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUTOVER = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINAL_SYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINAL_SYNC = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINALIZING = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINALIZED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 11,
 	}
 	
 	/// <summary>
 	/// Represent the source Vmware VM details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareSourceVmDetails
 	{
 		
@@ -3247,8 +3122,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of a Vmware VM disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareDiskDetails
 	{
 		
@@ -3274,8 +3148,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -3295,8 +3168,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -3334,8 +3206,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for 'ListReplicationCycles' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReplicationCyclesResponse
 	{
 		
@@ -3361,8 +3232,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for 'ListSources' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSourcesResponse
 	{
 		
@@ -3388,8 +3258,7 @@ namespace MyNS
 	/// <summary>
 	/// Source message describes a specific vm migration Source resource. It contains the source environment information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Source
 	{
 		
@@ -3451,8 +3320,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareSourceDetails message describes a specific source details for the vmware source type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareSourceDetails
 	{
 		
@@ -3490,8 +3358,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for 'ListTargetProjects' call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTargetProjectsResponse
 	{
 		
@@ -3517,8 +3384,7 @@ namespace MyNS
 	/// <summary>
 	/// TargetProject message represents a target Compute Engine project for a migration or a clone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetProject
 	{
 		
@@ -3556,8 +3422,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for 'ListUtilizationReports' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUtilizationReportsResponse
 	{
 		
@@ -3583,8 +3448,7 @@ namespace MyNS
 	/// <summary>
 	/// Utilization report details the utilization (CPU, memory, etc.) of selected source VMs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UtilizationReport
 	{
 		
@@ -3649,49 +3513,44 @@ namespace MyNS
 		public VmUtilizationInfo[] Vms { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UtilizationReportState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UtilizationReportTimeFrame
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_FRAME_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_FRAME_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR = 3,
 	}
 	
 	/// <summary>
 	/// Utilization information of a single VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmUtilizationInfo
 	{
 		
@@ -3717,8 +3576,7 @@ namespace MyNS
 	/// <summary>
 	/// Utilization metrics values for a single VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmUtilizationMetrics
 	{
 		
@@ -3774,8 +3632,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents migration resource error information that can be used with google.rpc.Status message. MigrationError is used to present the user with error information in migration operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MigrationError
 	{
 		
@@ -3810,48 +3667,45 @@ namespace MyNS
 		public Link[] HelpLinks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MigrationErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_VALIDATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_VALIDATION_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_REPLICATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_REPLICATION_ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGET_REPLICATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGET_REPLICATION_ERROR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_ADAPTATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_ADAPTATION_ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLONE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLONE_ERROR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUTOVER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUTOVER_ERROR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTILIZATION_REPORT_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTILIZATION_REPORT_ERROR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLIANCE_UPGRADE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLIANCE_UPGRADE_ERROR = 9,
 	}
 	
 	/// <summary>
 	/// Represents the metadata of the long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		
@@ -3901,8 +3755,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for 'PauseMigration' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PauseMigrationRequest
 	{
 	}
@@ -3910,8 +3763,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for 'RemoveMigration' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveGroupMigrationRequest
 	{
 		
@@ -3925,8 +3777,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for 'ResumeMigration' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResumeMigrationRequest
 	{
 	}
@@ -3934,8 +3785,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for 'StartMigrationRequest' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMigrationRequest
 	{
 	}
@@ -3943,8 +3793,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for 'UpgradeAppliance' request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeApplianceRequest
 	{
 		
@@ -5218,26 +5067,26 @@ namespace MyNS
 	public enum Vmmigration_projects_locations_targetProjects_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTILIZATION_REPORT_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTILIZATION_REPORT_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 	
 	public enum Vmmigration_projects_locations_sources_migratingVms_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATING_VM_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATING_VM_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATING_VM_VIEW_BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATING_VM_VIEW_BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATING_VM_VIEW_FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATING_VM_VIEW_FULL = 2,
 	}
 }

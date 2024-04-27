@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -43,8 +42,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorField
 	{
 		
@@ -81,8 +79,7 @@ namespace MyNS
 		public string PathRelated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorLimit
 	{
 		
@@ -115,8 +112,7 @@ namespace MyNS
 		public string RetryAfterSec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PasswordError
 	{
 		
@@ -139,36 +135,33 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PasswordErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PW_BLACK_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PW_BLACK_LIST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PW_TOO_SHORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PW_TOO_SHORT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PW_TOO_LONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PW_TOO_LONG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PW_MISSING_UC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PW_MISSING_UC = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PW_MISSING_NUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PW_MISSING_NUM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PW_RECENTLY_USED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PW_RECENTLY_USED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PW_NOT_UNIQUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PW_NOT_UNIQUE = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Secret
 	{
 		
@@ -179,8 +172,7 @@ namespace MyNS
 		public string Secret1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shopper
 	{
 		
@@ -230,8 +222,7 @@ namespace MyNS
 		public string ShopperId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShopperId
 	{
 		
@@ -249,8 +240,7 @@ namespace MyNS
 		public string ShopperId1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShopperStatus
 	{
 		
@@ -261,24 +251,21 @@ namespace MyNS
 		public System.Nullable<ShopperStatusBillingState> BillingState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShopperStatusBillingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABANDONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABANDONED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShopperUpdate
 	{
 		
@@ -302,9 +289,7 @@ namespace MyNS
 		public string NameLast { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShopperUpdateMarketId
 	{
 		
@@ -477,8 +462,7 @@ namespace MyNS
 		zhMinusTW = 55,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubaccountCreate
 	{
 		
@@ -521,9 +505,7 @@ namespace MyNS
 		public string Password { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubaccountCreateMarketId
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of errors
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error_400
 	{
 		
@@ -85,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of errors
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error_500
 	{
 		
@@ -150,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// The Warning Definition
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warning
 	{
 		
@@ -209,8 +206,7 @@ namespace MyNS
 	/// <summary>
 	/// price metric
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Itinerary_price_metric
 	{
 		
@@ -298,35 +294,31 @@ namespace MyNS
 		public System.Nullable<Itinerary_price_metricPriceMetricsQuartileRanking> QuartileRanking { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Itinerary_price_metricPriceMetricsQuartileRanking
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINIMUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINIMUM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THIRD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THIRD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAXIMUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAXIMUM = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Itinerary_price_metricTransportType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLIGHT = 0,
 	}
 	

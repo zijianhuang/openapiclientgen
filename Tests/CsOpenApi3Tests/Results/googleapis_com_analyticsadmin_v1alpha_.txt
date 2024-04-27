@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// To express that the result needs to be between two numbers (inclusive).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessBetweenFilter
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// To represent a number.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaNumericValue
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// A binding of a user to a set of roles.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessBinding
 	{
 		
@@ -89,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// A contiguous range of days: startDate, startDate + 1, ..., endDate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessDateRange
 	{
 		
@@ -110,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// Dimensions are attributes of your data. For example, the dimension `userEmail` indicates the email of the user that accessed reporting data. Dimension values in report responses are strings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessDimension
 	{
 		
@@ -125,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a dimension column in the report. Dimensions requested in a report produce column entries within rows and DimensionHeaders. However, dimensions used exclusively within filters or expressions do not produce columns in a report; correspondingly, those dimensions do not produce headers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessDimensionHeader
 	{
 		
@@ -140,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// The value of a dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessDimensionValue
 	{
 		
@@ -155,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// An expression to filter dimension or metric values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessFilter
 	{
 		
@@ -194,8 +186,7 @@ namespace MyNS
 	/// <summary>
 	/// The result needs to be in a list of string values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessInListFilter
 	{
 		
@@ -215,8 +206,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters for numeric or date values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessNumericFilter
 	{
 		
@@ -233,36 +223,33 @@ namespace MyNS
 		public GoogleAnalyticsAdminV1alphaNumericValue Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAccessNumericFilterOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN_OR_EQUAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN_OR_EQUAL = 5,
 	}
 	
 	/// <summary>
 	/// The filter for strings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessStringFilter
 	{
 		
@@ -285,39 +272,36 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAccessStringFilterMatchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDS_WITH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_REGEXP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_REGEXP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL_REGEXP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL_REGEXP = 6,
 	}
 	
 	/// <summary>
 	/// Expresses dimension or metric filters. The fields in the same expression need to be either all dimensions or all metrics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessFilterExpression
 	{
 		
@@ -349,8 +333,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of filter expressions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessFilterExpressionList
 	{
 		
@@ -364,8 +347,7 @@ namespace MyNS
 	/// <summary>
 	/// The quantitative measurements of a report. For example, the metric `accessCount` is the total number of data access records.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessMetric
 	{
 		
@@ -379,8 +361,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a metric column in the report. Visible metrics requested in a report produce column entries within rows and MetricHeaders. However, metrics used exclusively within filters or expressions do not produce columns in a report; correspondingly, those metrics do not produce headers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessMetricHeader
 	{
 		
@@ -394,8 +375,7 @@ namespace MyNS
 	/// <summary>
 	/// The value of a metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessMetricValue
 	{
 		
@@ -409,8 +389,7 @@ namespace MyNS
 	/// <summary>
 	/// Order bys define how rows will be sorted in the response. For example, ordering rows by descending access count is one ordering, and ordering rows by the country string is a different ordering.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessOrderBy
 	{
 		
@@ -436,8 +415,7 @@ namespace MyNS
 	/// <summary>
 	/// Sorts by dimension values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessOrderByDimensionOrderBy
 	{
 		
@@ -454,30 +432,27 @@ namespace MyNS
 		public System.Nullable<GoogleAnalyticsAdminV1alphaAccessOrderByDimensionOrderByOrderType> OrderType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAccessOrderByDimensionOrderByOrderType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORDER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORDER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALPHANUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALPHANUMERIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CASE_INSENSITIVE_ALPHANUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CASE_INSENSITIVE_ALPHANUMERIC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC = 3,
 	}
 	
 	/// <summary>
 	/// Sorts by metric values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessOrderByMetricOrderBy
 	{
 		
@@ -491,8 +466,7 @@ namespace MyNS
 	/// <summary>
 	/// Current state of all quotas for this Analytics property. If any quota for a property is exhausted, all requests to that property will return Resource Exhausted errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessQuota
 	{
 		
@@ -530,8 +504,7 @@ namespace MyNS
 	/// <summary>
 	/// Current state for a particular quota group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessQuotaStatus
 	{
 		
@@ -551,8 +524,7 @@ namespace MyNS
 	/// <summary>
 	/// Access report data for each row.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccessRow
 	{
 		
@@ -572,8 +544,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource message representing a Google Analytics account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccount
 	{
 		
@@ -617,8 +588,7 @@ namespace MyNS
 	/// <summary>
 	/// A virtual resource representing an overview of an account and all its child GA4 properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAccountSummary
 	{
 		
@@ -650,8 +620,7 @@ namespace MyNS
 	/// <summary>
 	/// A virtual resource representing metadata for a GA4 property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaPropertySummary
 	{
 		
@@ -680,30 +649,27 @@ namespace MyNS
 		public System.Nullable<GoogleAnalyticsAdminV1alphaPropertySummaryPropertyType> PropertyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaPropertySummaryPropertyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPERTY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPERTY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPERTY_TYPE_ORDINARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPERTY_TYPE_ORDINARY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPERTY_TYPE_SUBPROPERTY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPERTY_TYPE_SUBPROPERTY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROPERTY_TYPE_ROLLUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROPERTY_TYPE_ROLLUP = 3,
 	}
 	
 	/// <summary>
 	/// Request message for AcknowledgeUserDataCollection RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAcknowledgeUserDataCollectionRequest
 	{
 		
@@ -717,8 +683,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for AcknowledgeUserDataCollection RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAcknowledgeUserDataCollectionResponse
 	{
 	}
@@ -726,8 +691,7 @@ namespace MyNS
 	/// <summary>
 	/// A link between a GA4 Property and an AdSense for Content ad client.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAdSenseLink
 	{
 		
@@ -747,8 +711,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ApproveDisplayVideo360AdvertiserLinkProposal RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaApproveDisplayVideo360AdvertiserLinkProposalRequest
 	{
 	}
@@ -756,8 +719,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ApproveDisplayVideo360AdvertiserLinkProposal RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaApproveDisplayVideo360AdvertiserLinkProposalResponse
 	{
 		
@@ -771,8 +733,7 @@ namespace MyNS
 	/// <summary>
 	/// A link between a GA4 property and a Display & Video 360 advertiser.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLink
 	{
 		
@@ -816,8 +777,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ArchiveAudience RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaArchiveAudienceRequest
 	{
 	}
@@ -825,8 +785,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ArchiveCustomDimension RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaArchiveCustomDimensionRequest
 	{
 	}
@@ -834,8 +793,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ArchiveCustomMetric RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaArchiveCustomMetricRequest
 	{
 	}
@@ -843,8 +801,7 @@ namespace MyNS
 	/// <summary>
 	/// The attribution settings used for a given property. This is a singleton resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAttributionSettings
 	{
 		
@@ -879,84 +836,75 @@ namespace MyNS
 		public System.Nullable<GoogleAnalyticsAdminV1alphaAttributionSettingsReportingAttributionModel> ReportingAttributionModel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAttributionSettingsAcquisitionConversionEventLookbackWindow
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAttributionSettingsAdsWebConversionDataExportScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_SELECTED_YET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_SELECTED_YET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAID_AND_ORGANIC_CHANNELS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAID_AND_ORGANIC_CHANNELS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_PAID_CHANNELS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_PAID_CHANNELS = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAttributionSettingsOtherConversionEventLookbackWindow
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_90_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_90_DAYS = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAttributionSettingsReportingAttributionModel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAID_AND_ORGANIC_CHANNELS_LAST_CLICK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAID_AND_ORGANIC_CHANNELS_LAST_CLICK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_PAID_CHANNELS_LAST_CLICK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_PAID_CHANNELS_LAST_CLICK = 3,
 	}
 	
 	/// <summary>
 	/// A resource message representing a GA4 Audience.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudience
 	{
 		
@@ -1012,8 +960,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an event to log when a user joins the Audience.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceEventTrigger
 	{
 		
@@ -1030,43 +977,38 @@ namespace MyNS
 		public System.Nullable<GoogleAnalyticsAdminV1alphaAudienceEventTriggerLogCondition> LogCondition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAudienceEventTriggerLogCondition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_CONDITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_CONDITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIENCE_JOINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIENCE_JOINED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIENCE_MEMBERSHIP_RENEWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIENCE_MEMBERSHIP_RENEWED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAudienceExclusionDurationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIENCE_EXCLUSION_DURATION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIENCE_EXCLUSION_DURATION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUDE_TEMPORARILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUDE_TEMPORARILY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUDE_PERMANENTLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUDE_PERMANENTLY = 2,
 	}
 	
 	/// <summary>
 	/// A clause for defining either a simple or sequence filter. A filter can be inclusive (For example, users satisfying the filter clause are included in the Audience) or exclusive (For example, users satisfying the filter clause are excluded from the Audience).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceFilterClause
 	{
 		
@@ -1089,27 +1031,24 @@ namespace MyNS
 		public GoogleAnalyticsAdminV1alphaAudienceSimpleFilter SimpleFilter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAudienceFilterClauseClauseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIENCE_CLAUSE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIENCE_CLAUSE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUDE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUDE = 2,
 	}
 	
 	/// <summary>
 	/// Defines filters that must occur in a specific order for the user to be a member of the Audience.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceSequenceFilter
 	{
 		
@@ -1132,30 +1071,27 @@ namespace MyNS
 		public GoogleAnalyticsAdminV1alphaAudienceSequenceFilterAudienceSequenceStep[] SequenceSteps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAudienceSequenceFilterScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIENCE_FILTER_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIENCE_FILTER_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS = 3,
 	}
 	
 	/// <summary>
 	/// A condition that must occur in the specified step order for this user to match the sequence.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceSequenceFilterAudienceSequenceStep
 	{
 		
@@ -1187,8 +1123,7 @@ namespace MyNS
 	/// <summary>
 	/// A logical expression of Audience dimension, metric, or event filters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceFilterExpression
 	{
 		
@@ -1226,8 +1161,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Audience filter expressions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceFilterExpressionList
 	{
 		
@@ -1241,8 +1175,7 @@ namespace MyNS
 	/// <summary>
 	/// A specific filter for a single dimension or metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilter
 	{
 		
@@ -1292,8 +1225,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter for numeric or date values between certain values on a dimension or metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterBetweenFilter
 	{
 		
@@ -1313,8 +1245,7 @@ namespace MyNS
 	/// <summary>
 	/// To represent a number.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterNumericValue
 	{
 		
@@ -1334,8 +1265,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter for a string dimension that matches a particular list of options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterInListFilter
 	{
 		
@@ -1355,8 +1285,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter for numeric or date values on a dimension or metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterNumericFilter
 	{
 		
@@ -1373,30 +1302,27 @@ namespace MyNS
 		public GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterNumericValue Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterNumericFilterOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN = 3,
 	}
 	
 	/// <summary>
 	/// A filter for a string-type dimension that matches a particular pattern.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterStringFilter
 	{
 		
@@ -1419,36 +1345,33 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterStringFilterMatchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDS_WITH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_REGEXP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_REGEXP = 5,
 	}
 	
 	/// <summary>
 	/// A filter that matches events of a single event name. If an event parameter is specified, only the subset of events that match both the single event name and the parameter filter expressions match this event filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceEventFilter
 	{
 		
@@ -1468,8 +1391,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a simple filter that a user must satisfy to be a member of the Audience.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaAudienceSimpleFilter
 	{
 		
@@ -1489,8 +1411,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for BatchCreateAccessBindings RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaBatchCreateAccessBindingsRequest
 	{
 		
@@ -1504,8 +1425,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CreateAccessBinding RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCreateAccessBindingRequest
 	{
 		
@@ -1525,8 +1445,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for BatchCreateAccessBindings RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaBatchCreateAccessBindingsResponse
 	{
 		
@@ -1540,8 +1459,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for BatchDeleteAccessBindings RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaBatchDeleteAccessBindingsRequest
 	{
 		
@@ -1555,8 +1473,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for DeleteAccessBinding RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDeleteAccessBindingRequest
 	{
 		
@@ -1570,8 +1487,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for BatchGetAccessBindings RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaBatchGetAccessBindingsResponse
 	{
 		
@@ -1585,8 +1501,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for BatchUpdateAccessBindings RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaBatchUpdateAccessBindingsRequest
 	{
 		
@@ -1600,8 +1515,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for UpdateAccessBinding RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaUpdateAccessBindingRequest
 	{
 		
@@ -1615,8 +1529,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for BatchUpdateAccessBindings RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaBatchUpdateAccessBindingsResponse
 	{
 		
@@ -1630,8 +1543,7 @@ namespace MyNS
 	/// <summary>
 	/// A link between a GA4 Property and BigQuery project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaBigQueryLink
 	{
 		
@@ -1693,8 +1605,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CancelDisplayVideo360AdvertiserLinkProposal RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCancelDisplayVideo360AdvertiserLinkProposalRequest
 	{
 	}
@@ -1702,8 +1613,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of a change to a single Google Analytics resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaChangeHistoryChange
 	{
 		
@@ -1732,30 +1642,27 @@ namespace MyNS
 		public GoogleAnalyticsAdminV1alphaChangeHistoryChangeChangeHistoryResource ResourceBeforeChange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaChangeHistoryChangeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
 	/// <summary>
 	/// A snapshot of a resource as before or after the result of a change in change history.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaChangeHistoryChangeChangeHistoryResource
 	{
 		
@@ -1907,8 +1814,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource message representing a Channel Group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaChannelGroup
 	{
 		
@@ -1946,8 +1852,7 @@ namespace MyNS
 	/// <summary>
 	/// The rules that govern how traffic is grouped into one channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaGroupingRule
 	{
 		
@@ -1967,8 +1872,7 @@ namespace MyNS
 	/// <summary>
 	/// A logical expression of Channel Group dimension filters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaChannelGroupFilterExpression
 	{
 		
@@ -2000,8 +1904,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Channel Group filter expressions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaChannelGroupFilterExpressionList
 	{
 		
@@ -2015,8 +1918,7 @@ namespace MyNS
 	/// <summary>
 	/// A specific filter for a single dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaChannelGroupFilter
 	{
 		
@@ -2042,8 +1944,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter for a string dimension that matches a particular list of options. The match is case insensitive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaChannelGroupFilterInListFilter
 	{
 		
@@ -2057,8 +1958,7 @@ namespace MyNS
 	/// <summary>
 	/// Filter where the field value is a String. The match is case insensitive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaChannelGroupFilterStringFilter
 	{
 		
@@ -2078,8 +1978,7 @@ namespace MyNS
 	/// <summary>
 	/// A conversion event in a Google Analytics property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaConversionEvent
 	{
 		
@@ -2126,27 +2025,24 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaConversionEventCountingMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONVERSION_COUNTING_METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONVERSION_COUNTING_METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONCE_PER_EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONCE_PER_EVENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONCE_PER_SESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONCE_PER_SESSION = 2,
 	}
 	
 	/// <summary>
 	/// Defines a default value/currency for a conversion event. Both value and currency must be provided.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaConversionEventDefaultConversionValue
 	{
 		
@@ -2166,8 +2062,7 @@ namespace MyNS
 	/// <summary>
 	/// A definition for a CustomDimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCustomDimension
 	{
 		
@@ -2208,30 +2103,27 @@ namespace MyNS
 		public System.Nullable<GoogleAnalyticsAdminV1alphaCustomDimensionScope> Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaCustomDimensionScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ITEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ITEM = 3,
 	}
 	
 	/// <summary>
 	/// A definition for a custom metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCustomMetric
 	{
 		
@@ -2278,64 +2170,59 @@ namespace MyNS
 		public System.Nullable<GoogleAnalyticsAdminV1alphaCustomMetricScope> Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaCustomMetricMeasurementUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEASUREMENT_UNIT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEASUREMENT_UNIT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENCY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEET = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METERS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KILOMETERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KILOMETERS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MILES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MILES = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MILLISECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MILLISECONDS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECONDS = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINUTES = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOURS = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaCustomMetricScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 1,
 	}
 	
 	/// <summary>
 	/// Settings for client-side data redaction. Singleton resource under a Web Stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDataRedactionSettings
 	{
 		
@@ -2367,8 +2254,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings values for data retention. This is a singleton resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDataRetentionSettings
 	{
 		
@@ -2391,36 +2277,33 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ResetUserDataOnNewActivity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaDataRetentionSettingsEventDataRetention
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETENTION_DURATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETENTION_DURATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWO_MONTHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWO_MONTHS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOURTEEN_MONTHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOURTEEN_MONTHS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWENTY_SIX_MONTHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWENTY_SIX_MONTHS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THIRTY_EIGHT_MONTHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THIRTY_EIGHT_MONTHS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIFTY_MONTHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIFTY_MONTHS = 5,
 	}
 	
 	/// <summary>
 	/// A resource message representing a data stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDataStream
 	{
 		
@@ -2476,8 +2359,7 @@ namespace MyNS
 	/// <summary>
 	/// Data specific to Android app streams.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDataStreamAndroidAppStreamData
 	{
 		
@@ -2497,8 +2379,7 @@ namespace MyNS
 	/// <summary>
 	/// Data specific to iOS app streams.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDataStreamIosAppStreamData
 	{
 		
@@ -2515,30 +2396,27 @@ namespace MyNS
 		public string FirebaseAppId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaDataStreamType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_STREAM_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_STREAM_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_DATA_STREAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_DATA_STREAM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID_APP_DATA_STREAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID_APP_DATA_STREAM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS_APP_DATA_STREAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS_APP_DATA_STREAM = 3,
 	}
 	
 	/// <summary>
 	/// Data specific to web streams.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDataStreamWebStreamData
 	{
 		
@@ -2564,8 +2442,7 @@ namespace MyNS
 	/// <summary>
 	/// A proposal for a link between a GA4 property and a Display & Video 360 advertiser. A proposal is converted to a DisplayVideo360AdvertiserLink once approved. Google Analytics admins approve inbound proposals while Display & Video 360 admins approve outbound proposals.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal
 	{
 		
@@ -2621,8 +2498,7 @@ namespace MyNS
 	/// <summary>
 	/// Status information for a link proposal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaLinkProposalStatusDetails
 	{
 		
@@ -2645,55 +2521,50 @@ namespace MyNS
 		public string RequestorEmail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaLinkProposalStatusDetailsLinkProposalInitiatingProduct
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_PROPOSAL_INITIATING_PRODUCT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_PROPOSAL_INITIATING_PRODUCT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_ANALYTICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_ANALYTICS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINKED_PRODUCT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINKED_PRODUCT = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaLinkProposalStatusDetailsLinkProposalState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_PROPOSAL_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_PROPOSAL_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWAITING_REVIEW_FROM_GOOGLE_ANALYTICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWAITING_REVIEW_FROM_GOOGLE_ANALYTICS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWAITING_REVIEW_FROM_LINKED_PRODUCT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWAITING_REVIEW_FROM_LINKED_PRODUCT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WITHDRAWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WITHDRAWN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECLINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECLINED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBSOLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBSOLETE = 6,
 	}
 	
 	/// <summary>
 	/// Singleton resource under a web DataStream, configuring measurement of additional site interactions and content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaEnhancedMeasurementSettings
 	{
 		
@@ -2767,8 +2638,7 @@ namespace MyNS
 	/// <summary>
 	/// An Event Create Rule defines conditions that will trigger the creation of an entirely new event based upon matched criteria of a source event. Additional mutations of the parameters from the source event can be defined. Unlike Event Edit rules, Event Creation Rules have no defined order. They will all be run independently. Event Edit and Event Create rules can't be used to modify an event created from an Event Create rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaEventCreateRule
 	{
 		
@@ -2806,8 +2676,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a condition for when an Event Edit or Event Creation rule applies to an event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaMatchingCondition
 	{
 		
@@ -2836,63 +2705,60 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaMatchingConditionComparisonType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPARISON_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPARISON_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUALS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUALS_CASE_INSENSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUALS_CASE_INSENSITIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS_CASE_INSENSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS_CASE_INSENSITIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTS_WITH = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTS_WITH_CASE_INSENSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTS_WITH_CASE_INSENSITIVE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDS_WITH = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDS_WITH_CASE_INSENSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDS_WITH_CASE_INSENSITIVE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN_OR_EQUAL = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN_OR_EQUAL = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGULAR_EXPRESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGULAR_EXPRESSION = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGULAR_EXPRESSION_CASE_INSENSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGULAR_EXPRESSION_CASE_INSENSITIVE = 14,
 	}
 	
 	/// <summary>
 	/// Defines an event parameter to mutate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaParameterMutation
 	{
 		
@@ -2912,8 +2778,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource message representing a GA4 ExpandedDataSet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaExpandedDataSet
 	{
 		
@@ -2963,8 +2828,7 @@ namespace MyNS
 	/// <summary>
 	/// A logical expression of EnhancedDataSet dimension filters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaExpandedDataSetFilterExpression
 	{
 		
@@ -2990,8 +2854,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of ExpandedDataSet filter expressions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaExpandedDataSetFilterExpressionList
 	{
 		
@@ -3005,8 +2868,7 @@ namespace MyNS
 	/// <summary>
 	/// A specific filter for a single dimension
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaExpandedDataSetFilter
 	{
 		
@@ -3032,8 +2894,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter for a string dimension that matches a particular list of options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaExpandedDataSetFilterInListFilter
 	{
 		
@@ -3053,8 +2914,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter for a string-type dimension that matches a particular pattern.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaExpandedDataSetFilterStringFilter
 	{
 		
@@ -3077,27 +2937,24 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaExpandedDataSetFilterStringFilterMatchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 2,
 	}
 	
 	/// <summary>
 	/// A link between a GA4 property and a Firebase project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaFirebaseLink
 	{
 		
@@ -3123,8 +2980,7 @@ namespace MyNS
 	/// <summary>
 	/// A link between a GA4 property and a Google Ads account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaGoogleAdsLink
 	{
 		
@@ -3174,8 +3030,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings values for Google Signals. This is a singleton resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaGoogleSignalsSettings
 	{
 		
@@ -3198,43 +3053,38 @@ namespace MyNS
 		public System.Nullable<GoogleAnalyticsAdminV1alphaGoogleSignalsSettingsState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaGoogleSignalsSettingsConsent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SIGNALS_CONSENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_SIGNALS_CONSENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SIGNALS_CONSENT_CONSENTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_SIGNALS_CONSENT_CONSENTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SIGNALS_CONSENT_NOT_CONSENTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_SIGNALS_CONSENT_NOT_CONSENTED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaGoogleSignalsSettingsState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SIGNALS_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_SIGNALS_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SIGNALS_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_SIGNALS_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SIGNALS_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_SIGNALS_DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// A secret value used for sending hits to Measurement Protocol.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaMeasurementProtocolSecret
 	{
 		
@@ -3260,8 +3110,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource message representing a Google Analytics GA4 property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaProperty
 	{
 		
@@ -3344,115 +3193,110 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaPropertyIndustryCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDUSTRY_CATEGORY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDUSTRY_CATEGORY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMOTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMOTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_AND_INDUSTRIAL_MARKETS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_AND_INDUSTRIAL_MARKETS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINANCE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALTHCARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALTHCARE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TECHNOLOGY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TECHNOLOGY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAVEL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARTS_AND_ENTERTAINMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARTS_AND_ENTERTAINMENT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEAUTY_AND_FITNESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEAUTY_AND_FITNESS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOKS_AND_LITERATURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOKS_AND_LITERATURE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOOD_AND_DRINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOOD_AND_DRINK = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GAMES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GAMES = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOBBIES_AND_LEISURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOBBIES_AND_LEISURE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOME_AND_GARDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOME_AND_GARDEN = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNET_AND_TELECOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNET_AND_TELECOM = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAW_AND_GOVERNMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAW_AND_GOVERNMENT = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEWS = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLINE_COMMUNITIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLINE_COMMUNITIES = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PEOPLE_AND_SOCIETY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PEOPLE_AND_SOCIETY = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PETS_AND_ANIMALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PETS_AND_ANIMALS = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REAL_ESTATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REAL_ESTATE = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFERENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REFERENCE = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCIENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCIENCE = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPORTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPORTS = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOBS_AND_EDUCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOBS_AND_EDUCATION = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOPPING = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaPropertyServiceLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_ANALYTICS_STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_ANALYTICS_STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_ANALYTICS_360")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_ANALYTICS_360 = 2,
 	}
 	
 	/// <summary>
 	/// A link between a GA4 property and a Search Ads 360 entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSearchAds360Link
 	{
 		
@@ -3502,8 +3346,7 @@ namespace MyNS
 	/// <summary>
 	/// SKAdNetwork conversion value schema of an iOS stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSKAdNetworkConversionValueSchema
 	{
 		
@@ -3541,8 +3384,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for a SKAdNetwork conversion postback window.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaPostbackWindow
 	{
 		
@@ -3562,8 +3404,7 @@ namespace MyNS
 	/// <summary>
 	/// Conversion value settings for a postback window for SKAdNetwork conversion value schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaConversionValues
 	{
 		
@@ -3598,30 +3439,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> LockEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaConversionValuesCoarseValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COARSE_VALUE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COARSE_VALUE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COARSE_VALUE_LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COARSE_VALUE_LOW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COARSE_VALUE_MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COARSE_VALUE_MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COARSE_VALUE_HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COARSE_VALUE_HIGH = 3,
 	}
 	
 	/// <summary>
 	/// Event setting conditions to match an event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaEventMapping
 	{
 		
@@ -3659,8 +3497,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of changes within a Google Analytics account or its child properties that resulted from the same cause. Common causes would be updates made in the Google Analytics UI, changes from customer support, or automatic Google Analytics system changes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaChangeHistoryEvent
 	{
 		
@@ -3701,30 +3538,27 @@ namespace MyNS
 		public string UserActorEmail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaChangeHistoryEventActorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTOR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTOR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUPPORT = 3,
 	}
 	
 	/// <summary>
 	/// Configuration for a specific Connected Site Tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaConnectedSiteTag
 	{
 		
@@ -3744,8 +3578,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CreateConnectedSiteTag RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCreateConnectedSiteTagRequest
 	{
 		
@@ -3765,8 +3598,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CreateConnectedSiteTag RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCreateConnectedSiteTagResponse
 	{
 	}
@@ -3774,8 +3606,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CreateRollupProperty RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCreateRollupPropertyRequest
 	{
 		
@@ -3795,8 +3626,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CreateRollupProperty RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCreateRollupPropertyResponse
 	{
 		
@@ -3816,8 +3646,7 @@ namespace MyNS
 	/// <summary>
 	/// A link that references a source property under the parent rollup property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaRollupPropertySourceLink
 	{
 		
@@ -3837,8 +3666,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CreateSubproperty RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCreateSubpropertyRequest
 	{
 		
@@ -3864,8 +3692,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource message representing a GA4 Subproperty event filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSubpropertyEventFilter
 	{
 		
@@ -3891,8 +3718,7 @@ namespace MyNS
 	/// <summary>
 	/// A clause for defining a filter. A filter may be inclusive (events satisfying the filter clause are included in the subproperty's data) or exclusive (events satisfying the filter clause are excluded from the subproperty's data).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSubpropertyEventFilterClause
 	{
 		
@@ -3909,27 +3735,24 @@ namespace MyNS
 		public GoogleAnalyticsAdminV1alphaSubpropertyEventFilterExpression FilterExpression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAnalyticsAdminV1alphaSubpropertyEventFilterClauseFilterClauseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_CLAUSE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_CLAUSE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUDE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUDE = 2,
 	}
 	
 	/// <summary>
 	/// A logical expression of Subproperty event filters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSubpropertyEventFilterExpression
 	{
 		
@@ -3955,8 +3778,7 @@ namespace MyNS
 	/// <summary>
 	/// A specific filter expression
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSubpropertyEventFilterCondition
 	{
 		
@@ -3982,8 +3804,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter for a string-type dimension that matches a particular pattern.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSubpropertyEventFilterConditionStringFilter
 	{
 		
@@ -4009,8 +3830,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Subproperty event filter expressions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSubpropertyEventFilterExpressionList
 	{
 		
@@ -4024,8 +3844,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CreateSubproperty RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaCreateSubpropertyResponse
 	{
 		
@@ -4045,8 +3864,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource message representing data sharing settings of a Google Analytics account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDataSharingSettings
 	{
 		
@@ -4090,8 +3908,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for DeleteConnectedSiteTag RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaDeleteConnectedSiteTagRequest
 	{
 		
@@ -4111,8 +3928,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for fetching the opt out status for the automated GA4 setup process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaFetchAutomatedGa4ConfigurationOptOutRequest
 	{
 		
@@ -4126,8 +3942,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for fetching the opt out status for the automated GA4 setup process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaFetchAutomatedGa4ConfigurationOptOutResponse
 	{
 		
@@ -4141,8 +3956,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for looking up GA4 property connected to a UA property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaFetchConnectedGa4PropertyResponse
 	{
 		
@@ -4156,8 +3970,7 @@ namespace MyNS
 	/// <summary>
 	/// Read-only resource with the tag for sending data from a website to a DataStream. Only present for web DataStream resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaGlobalSiteTag
 	{
 		
@@ -4177,8 +3990,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListAccessBindings RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListAccessBindingsResponse
 	{
 		
@@ -4198,8 +4010,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListAccountSummaries RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListAccountSummariesResponse
 	{
 		
@@ -4219,8 +4030,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ListAccounts RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListAccountsResponse
 	{
 		
@@ -4240,8 +4050,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListAdSenseLinks method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListAdSenseLinksResponse
 	{
 		
@@ -4261,8 +4070,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListAudiences RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListAudiencesResponse
 	{
 		
@@ -4282,8 +4090,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListBigQueryLinks RPC
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListBigQueryLinksResponse
 	{
 		
@@ -4303,8 +4110,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListChannelGroups RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListChannelGroupsResponse
 	{
 		
@@ -4324,8 +4130,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ListConnectedSiteTags RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListConnectedSiteTagsRequest
 	{
 		
@@ -4339,8 +4144,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListConnectedSiteTags RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListConnectedSiteTagsResponse
 	{
 		
@@ -4354,8 +4158,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListConversionEvents RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListConversionEventsResponse
 	{
 		
@@ -4375,8 +4178,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListCustomDimensions RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListCustomDimensionsResponse
 	{
 		
@@ -4396,8 +4198,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListCustomMetrics RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListCustomMetricsResponse
 	{
 		
@@ -4417,8 +4218,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListDataStreams RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListDataStreamsResponse
 	{
 		
@@ -4438,8 +4238,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListDisplayVideo360AdvertiserLinkProposals RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListDisplayVideo360AdvertiserLinkProposalsResponse
 	{
 		
@@ -4459,8 +4258,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListDisplayVideo360AdvertiserLinks RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListDisplayVideo360AdvertiserLinksResponse
 	{
 		
@@ -4480,8 +4278,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListEventCreateRules RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListEventCreateRulesResponse
 	{
 		
@@ -4501,8 +4298,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListExpandedDataSets RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListExpandedDataSetsResponse
 	{
 		
@@ -4522,8 +4318,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListFirebaseLinks RPC
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListFirebaseLinksResponse
 	{
 		
@@ -4543,8 +4338,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListGoogleAdsLinks RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListGoogleAdsLinksResponse
 	{
 		
@@ -4564,8 +4358,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListMeasurementProtocolSecret RPC
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListMeasurementProtocolSecretsResponse
 	{
 		
@@ -4585,8 +4378,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListProperties RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListPropertiesResponse
 	{
 		
@@ -4606,8 +4398,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListRollupPropertySourceLinks RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListRollupPropertySourceLinksResponse
 	{
 		
@@ -4627,8 +4418,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListSKAdNetworkConversionValueSchemas RPC
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListSKAdNetworkConversionValueSchemasResponse
 	{
 		
@@ -4648,8 +4438,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListSearchAds360Links RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListSearchAds360LinksResponse
 	{
 		
@@ -4669,8 +4458,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListSubpropertyEventFilter RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaListSubpropertyEventFiltersResponse
 	{
 		
@@ -4690,8 +4478,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ProvisionAccountTicket RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaProvisionAccountTicketRequest
 	{
 		
@@ -4711,8 +4498,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ProvisionAccountTicket RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaProvisionAccountTicketResponse
 	{
 		
@@ -4726,8 +4512,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for a Data Access Record Report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaRunAccessReportRequest
 	{
 		
@@ -4807,8 +4592,7 @@ namespace MyNS
 	/// <summary>
 	/// The customized Data Access Record Report response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaRunAccessReportResponse
 	{
 		
@@ -4846,8 +4630,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for SearchChangeHistoryEvents RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSearchChangeHistoryEventsRequest
 	{
 		
@@ -4903,8 +4686,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SearchAccounts RPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSearchChangeHistoryEventsResponse
 	{
 		
@@ -4924,8 +4706,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for setting the opt out status for the automated GA4 setup process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSetAutomatedGa4ConfigurationOptOutRequest
 	{
 		
@@ -4945,8 +4726,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for setting the opt out status for the automated GA4 setup process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAnalyticsAdminV1alphaSetAutomatedGa4ConfigurationOptOutResponse
 	{
 	}
@@ -4954,8 +4734,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

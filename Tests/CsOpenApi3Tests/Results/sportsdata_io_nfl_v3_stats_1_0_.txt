@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BoxScore
 	{
 		
@@ -83,8 +82,7 @@ namespace MyNS
 		public ScoringPlay[] ScoringPlays { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerDefense
 	{
 		
@@ -167,8 +165,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerKickPuntReturns
 	{
 		
@@ -239,8 +236,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerKicking
 	{
 		
@@ -311,8 +307,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerPassing
 	{
 		
@@ -392,8 +387,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerPunting
 	{
 		
@@ -446,8 +440,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerReceiving
 	{
 		
@@ -515,8 +508,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerRushing
 	{
 		
@@ -575,8 +567,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoringDetail
 	{
 		
@@ -617,8 +608,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Week { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoringPlay
 	{
 		
@@ -671,8 +661,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Week { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BoxScoreV3
 	{
 		
@@ -698,8 +687,7 @@ namespace MyNS
 		public TeamGame[] TeamGames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FantasyDefenseGame
 	{
 		
@@ -1034,8 +1022,7 @@ namespace MyNS
 		public System.Nullable<System.Double> YahooWideReceiverFantasyPointsAllowed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerGame
 	{
 		
@@ -1544,8 +1531,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YahooSalary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Quarter
 	{
 		
@@ -1577,8 +1563,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeamGame
 	{
 		
@@ -2351,8 +2336,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> WindSpeed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bye
 	{
 		
@@ -2366,8 +2350,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Week { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailyFantasyPlayer
 	{
 		
@@ -2435,8 +2418,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YahooSalary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailyFantasyScoring
 	{
 		
@@ -2483,8 +2465,7 @@ namespace MyNS
 		public string Team { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DfsSlate
 	{
 		
@@ -2531,8 +2512,7 @@ namespace MyNS
 		public string[] SlateRosterSlots { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DfsSlateGame
 	{
 		
@@ -2558,8 +2538,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> SlateID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DfsSlatePlayer
 	{
 		
@@ -2609,8 +2588,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TeamID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FantasyDefenseSeason
 	{
 		
@@ -2888,8 +2866,7 @@ namespace MyNS
 		public System.Nullable<System.Double> YahooWideReceiverFantasyPointsAllowed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FantasyPlayer
 	{
 		
@@ -2942,8 +2919,7 @@ namespace MyNS
 		public string Team { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Game
 	{
 		
@@ -3584,8 +3560,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> WindSpeed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Injury
 	{
 		
@@ -3644,8 +3619,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Week { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class News
 	{
 		
@@ -3704,8 +3678,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Player
 	{
 		
@@ -3932,8 +3905,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YahooPlayerID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerDetail
 	{
 		
@@ -4166,8 +4138,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YahooPlayerID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerGameRedZone
 	{
 		
@@ -4676,8 +4647,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YahooSalary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerInfo
 	{
 		
@@ -4697,8 +4667,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TeamID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerOwnership
 	{
 		
@@ -4739,8 +4708,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Week { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerSeason
 	{
 		
@@ -5168,8 +5136,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> WindSpeed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerSeasonRedZone
 	{
 		
@@ -5597,8 +5564,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> WindSpeed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerSeasonThirdDown
 	{
 		
@@ -6026,8 +5992,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> WindSpeed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schedule
 	{
 		
@@ -6119,8 +6084,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Week { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Score
 	{
 		
@@ -6356,8 +6320,7 @@ namespace MyNS
 		public string YardLineTerritory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Stadium
 	{
 		
@@ -6392,8 +6355,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Standing
 	{
 		
@@ -6470,8 +6432,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Wins { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Team
 	{
 		
@@ -6605,8 +6566,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> YahooPlayerID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeamSeason
 	{
 		
@@ -7328,8 +7288,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> WindSpeed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timeframe
 	{
 		
@@ -10230,95 +10189,95 @@ namespace MyNS
 	public enum LegacyBoxScoresActiveFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XML = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 1,
 	}
 	
 	public enum BoxScoresDeltaVPlayerstoinclude
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fantasy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fantasy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="idp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		idp = 2,
 	}
 	
 	public enum LeagueLeadersByWeekPosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFENSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFENSE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QB = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RB = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFENSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFENSE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DL = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LB = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DB = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="K")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		K = 10,
 	}
 	
 	public enum LeagueLeadersByWeekColumn
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FantasyPoints")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FantasyPoints = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PassingYards")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PassingYards = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RushingYards")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RushingYards = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Receptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Receptions = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sacks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sacks = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Interceptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Interceptions = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Touchdowns")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Touchdowns = 6,
 	}
 	
 	public enum PlayerGameLogsBySeasonFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XML = 1,
 	}
 }

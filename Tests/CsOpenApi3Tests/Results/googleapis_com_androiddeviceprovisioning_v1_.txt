@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message to claim a device on behalf of a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClaimDeviceRequest
 	{
 		
@@ -77,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates hardware and product IDs to identify a manufactured device. To understand requirements on identifier sets, read [Identifiers](https://developers.google.com/zero-touch/guides/identifiers).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceIdentifier
 	{
 		
@@ -125,27 +123,24 @@ namespace MyNS
 		public string SerialNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceIdentifierDeviceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_TYPE_ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_TYPE_ANDROID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_TYPE_CHROME_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_TYPE_CHROME_OS = 2,
 	}
 	
 	/// <summary>
 	/// Metadata entries that can be attached to a `Device`. To learn more, read [Device metadata](https://developers.google.com/zero-touch/guides/metadata).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceMetadata
 	{
 		
@@ -156,27 +151,24 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> Entries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClaimDeviceRequestSectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECTION_TYPE_SIM_LOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECTION_TYPE_SIM_LOCK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECTION_TYPE_ZERO_TOUCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECTION_TYPE_ZERO_TOUCH = 2,
 	}
 	
 	/// <summary>
 	/// Response message containing device id of the claim.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClaimDeviceResponse
 	{
 		
@@ -196,8 +188,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to claim devices asynchronously in batch. Claiming a device adds the device to zero-touch enrollment and shows the device in the customer's view of the portal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClaimDevicesRequest
 	{
 		
@@ -211,8 +202,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies one claim request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartnerClaim
 	{
 		
@@ -268,8 +258,7 @@ namespace MyNS
 	/// <summary>
 	/// A reseller, vendor, or customer in the zero-touch reseller and customer APIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Company
 	{
 		
@@ -331,8 +320,7 @@ namespace MyNS
 	/// <summary>
 	/// A Google Workspace customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleWorkspaceAccount
 	{
 		
@@ -349,30 +337,27 @@ namespace MyNS
 		public string[] PreProvisioningTokens { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompanyTermsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMS_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMS_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMS_STATUS_NOT_ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMS_STATUS_NOT_ACCEPTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMS_STATUS_ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMS_STATUS_ACCEPTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMS_STATUS_STALE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMS_STATUS_STALE = 3,
 	}
 	
 	/// <summary>
 	/// A configuration collects the provisioning options for Android devices. Each configuration combines the following: * The EMM device policy controller (DPC) installed on the devices. * EMM policies enforced on the devices. * Metadata displayed on the device to help users during setup. Customers can add as many configurations as they need. However, zero-touch enrollment works best when a customer sets a default configuration that's applied to any new devices the organization purchases.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Configuration
 	{
 		
@@ -446,8 +431,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message to create a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomerRequest
 	{
 		
@@ -461,8 +445,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for customer to assign a configuration to device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerApplyConfigurationRequest
 	{
 		
@@ -482,8 +465,7 @@ namespace MyNS
 	/// <summary>
 	/// A `DeviceReference` is an API abstraction that lets you supply a _device_ argument to a method using one of the following identifier types: * A numeric API resource ID. * Real-world hardware IDs, such as IMEI number, belonging to the manufactured device. Methods that operate on devices take a `DeviceReference` as a parameter type because it's more flexible for the caller. To learn more about device identifiers, read [Identifiers](https://developers.google.com/zero-touch/guides/identifiers).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceReference
 	{
 		
@@ -503,8 +485,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message of customer's listing configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerListConfigurationsResponse
 	{
 		
@@ -518,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing my customers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerListCustomersResponse
 	{
 		
@@ -539,8 +519,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message of customer's liting devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerListDevicesResponse
 	{
 		
@@ -560,8 +539,7 @@ namespace MyNS
 	/// <summary>
 	/// An Android or Chrome OS device registered for zero-touch enrollment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Device
 	{
 		
@@ -605,8 +583,7 @@ namespace MyNS
 	/// <summary>
 	/// A record of a device claimed by a reseller for a customer. Devices claimed for zero-touch enrollment have a claim with the type `SECTION_TYPE_ZERO_TOUCH`. To learn more, read [Claim devices for customers](/zero-touch/guides/how-it-works#claim).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceClaim
 	{
 		
@@ -653,24 +630,21 @@ namespace MyNS
 		public string VacationModeStartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceClaimAdditionalService
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDITIONAL_SERVICE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDITIONAL_SERVICE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_PROTECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_PROTECTION = 1,
 	}
 	
 	/// <summary>
 	/// Response message of customer's listing DPCs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerListDpcsResponse
 	{
 		
@@ -684,8 +658,7 @@ namespace MyNS
 	/// <summary>
 	/// An EMM's DPC ([device policy controller](http://developer.android.com/work/dpc/build-dpc.html)). Zero-touch enrollment installs a DPC (listed in the `Configuration`) on a device to maintain the customer's mobile policies. All the DPCs listed by the API support zero-touch enrollment and are available in Google Play.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dpc
 	{
 		
@@ -711,8 +684,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for customer to remove the configuration from device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerRemoveConfigurationRequest
 	{
 		
@@ -726,8 +698,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for customer to unclaim a device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerUnclaimDeviceRequest
 	{
 		
@@ -741,8 +712,7 @@ namespace MyNS
 	/// <summary>
 	/// Tracks the status of a long-running operation to asynchronously update a batch of reseller metadata attached to devices. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DevicesLongRunningOperationMetadata
 	{
 		
@@ -765,30 +735,27 @@ namespace MyNS
 		public System.Nullable<System.Int32> Progress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DevicesLongRunningOperationMetadataProcessingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_PROCESS_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATCH_PROCESS_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_PROCESS_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATCH_PROCESS_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_PROCESS_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATCH_PROCESS_IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_PROCESS_PROCESSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATCH_PROCESS_PROCESSED = 3,
 	}
 	
 	/// <summary>
 	/// Tracks the status of a long-running operation to claim, unclaim, or attach metadata to devices. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DevicesLongRunningOperationResponse
 	{
 		
@@ -808,8 +775,7 @@ namespace MyNS
 	/// <summary>
 	/// A task for each device in the operation. Corresponds to each device change in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationPerDevice
 	{
 		
@@ -841,8 +807,7 @@ namespace MyNS
 	/// <summary>
 	/// Captures the processing status for each device in the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PerDeviceStatusInBatch
 	{
 		
@@ -871,51 +836,48 @@ namespace MyNS
 		public System.Nullable<PerDeviceStatusInBatchStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PerDeviceStatusInBatchStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_UNKNOWN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_UNKNOWN_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_OTHER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_OTHER_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_SUCCESS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_PERMISSION_DENIED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_INVALID_TOKEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_INVALID_TOKEN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_REVOKED_TOKEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_REVOKED_TOKEN = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_DEVICE_LIMIT_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_DEVICE_STATUS_DEVICE_LIMIT_EXCEEDED = 10,
 	}
 	
 	/// <summary>
 	/// Identifies one unclaim request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartnerUnclaim
 	{
 		
@@ -953,8 +915,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies metadata updates to one device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMetadataArguments
 	{
 		
@@ -980,8 +941,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -989,8 +949,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to find devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindDevicesByDeviceIdentifierRequest
 	{
 		
@@ -1016,8 +975,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing found devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindDevicesByDeviceIdentifierResponse
 	{
 		
@@ -1043,8 +1001,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to find devices by customers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindDevicesByOwnerRequest
 	{
 		
@@ -1082,8 +1039,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing found devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindDevicesByOwnerResponse
 	{
 		
@@ -1109,8 +1065,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to get a device's SIM lock status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeviceSimLockStateRequest
 	{
 		
@@ -1124,8 +1079,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing a device's SimLock state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeviceSimLockStateResponse
 	{
 		
@@ -1133,30 +1087,27 @@ namespace MyNS
 		public System.Nullable<GetDeviceSimLockStateResponseSimLockState> SimLockState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetDeviceSimLockStateResponseSimLockState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIM_LOCK_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIM_LOCK_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLOCKED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCKED_TO_PARTNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCKED_TO_PARTNER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCKED_TO_OTHER_PARTNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCKED_TO_OTHER_PARTNER = 3,
 	}
 	
 	/// <summary>
 	/// Response message of all customers related to this partner.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomersResponse
 	{
 		
@@ -1182,8 +1133,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message to list customers of the vendor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVendorCustomersResponse
 	{
 		
@@ -1209,8 +1159,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message to list vendors of the partner.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVendorsResponse
 	{
 		
@@ -1236,8 +1185,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1275,8 +1223,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1302,8 +1249,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message to unclaim a device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnclaimDeviceRequest
 	{
 		
@@ -1341,8 +1287,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to unclaim devices asynchronously in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnclaimDevicesRequest
 	{
 		
@@ -1356,8 +1301,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update device metadata in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDeviceMetadataInBatchRequest
 	{
 		
@@ -1371,8 +1315,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to set metadata for a device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDeviceMetadataRequest
 	{
 		

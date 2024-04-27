@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AllocateInfo
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the AllocateQuota method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AllocateQuotaRequest
 	{
 		
@@ -53,8 +51,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information regarding a quota operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuotaOperation
 	{
 		
@@ -98,8 +95,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a set of metric values in the same metric. Each metric value in the set should have a unique combination of start time, end time, and label values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricValueSet
 	{
 		
@@ -119,8 +115,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single metric value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricValue
 	{
 		
@@ -182,8 +177,7 @@ namespace MyNS
 	/// <summary>
 	/// Distribution represents a frequency distribution of double-valued sample points. It contains the size of the population of sample points plus additional optional information: * the arithmetic mean of the samples * the minimum and maximum of the samples * the sum-squared-deviation of the samples, used to compute variance * a histogram of the values of the sample points
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Distribution
 	{
 		
@@ -251,8 +245,7 @@ namespace MyNS
 	/// <summary>
 	/// Exemplars are example points that may be used to annotate aggregated distribution values. They are metadata that gives information about a particular value added to a Distribution bucket, such as a trace ID that was active when a value was added. They may contain further information, such as a example values and timestamps, origin, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Exemplar
 	{
 		
@@ -278,8 +271,7 @@ namespace MyNS
 	/// <summary>
 	/// Describing buckets with arbitrary user-provided width.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExplicitBuckets
 	{
 		
@@ -293,8 +285,7 @@ namespace MyNS
 	/// <summary>
 	/// Describing buckets with exponentially growing width.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExponentialBuckets
 	{
 		
@@ -320,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// Describing buckets with constant width.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinearBuckets
 	{
 		
@@ -347,8 +337,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an amount of money with its currency type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Money
 	{
 		
@@ -371,33 +360,30 @@ namespace MyNS
 		public string Units { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QuotaOperationQuotaMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORMAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEST_EFFORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEST_EFFORT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECK_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECK_ONLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADJUST_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADJUST_ONLY = 4,
 	}
 	
 	/// <summary>
 	/// Response message for the AllocateQuota method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AllocateQuotaResponse
 	{
 		
@@ -432,8 +418,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents error information for QuotaOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuotaError
 	{
 		
@@ -462,60 +447,57 @@ namespace MyNS
 		public string Subject { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QuotaErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_EXHAUSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_EXHAUSTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_RANGE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_NOT_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_NOT_ACTIVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECT_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECT_DELETED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_KEY_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_KEY_INVALID = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_KEY_EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_KEY_EXPIRED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPATULA_HEADER_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPATULA_HEADER_INVALID = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOAS_ROLE_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOAS_ROLE_INVALID = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LOAS_PROJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LOAS_PROJECT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECT_STATUS_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECT_STATUS_UNAVAILABLE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_STATUS_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_STATUS_UNAVAILABLE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_STATUS_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_STATUS_UNAVAILABLE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTA_SYSTEM_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUOTA_SYSTEM_UNAVAILABLE = 13,
 	}
 	
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -541,8 +523,7 @@ namespace MyNS
 	/// <summary>
 	/// The allowed types for [VALUE] in a `[KEY]:[VALUE]` attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeValue
 	{
 		
@@ -568,8 +549,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a string that might be shortened to a specified length.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TruncatableString
 	{
 		
@@ -589,8 +569,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of attributes, each in the format `[KEY]:[VALUE]`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attributes
 	{
 		
@@ -610,8 +589,7 @@ namespace MyNS
 	/// <summary>
 	/// Common audit log format for Google Cloud Platform API operations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditLog
 	{
 		
@@ -709,8 +687,7 @@ namespace MyNS
 	/// <summary>
 	/// Authentication information for the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthenticationInfo
 	{
 		
@@ -760,8 +737,7 @@ namespace MyNS
 	/// <summary>
 	/// Identity delegation history of an authenticated service account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceAccountDelegationInfo
 	{
 		
@@ -787,8 +763,7 @@ namespace MyNS
 	/// <summary>
 	/// First party identity principal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstPartyPrincipal
 	{
 		
@@ -808,8 +783,7 @@ namespace MyNS
 	/// <summary>
 	/// Third party identity principal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyPrincipal
 	{
 		
@@ -823,8 +797,7 @@ namespace MyNS
 	/// <summary>
 	/// The history of delegation across multiple services as the result of the original user's action. Such as "service A uses its own account to do something for user B". This differs from ServiceAccountDelegationInfo, which only tracks the history of direct token exchanges (impersonation).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceDelegationHistory
 	{
 		
@@ -844,8 +817,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing the service and additional service specific information used to identify the job or unit of work at hand.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceMetadata
 	{
 		
@@ -871,8 +843,7 @@ namespace MyNS
 	/// <summary>
 	/// Authorization information for the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizationInfo
 	{
 		
@@ -904,8 +875,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines core attributes for a resource. A resource is an addressable (named) entity provided by the destination service. For example, a file stored on a network storage service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Resource
 	{
 		
@@ -985,8 +955,7 @@ namespace MyNS
 	/// <summary>
 	/// Information related to policy violations for this request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyViolationInfo
 	{
 		
@@ -1000,8 +969,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents OrgPolicy Violation information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrgPolicyViolationInfo
 	{
 		
@@ -1033,8 +1001,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the Policy violation info for this request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ViolationInfo
 	{
 		
@@ -1063,30 +1030,27 @@ namespace MyNS
 		public System.Nullable<ViolationInfoPolicyType> PolicyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ViolationInfoPolicyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POLICY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POLICY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN_CONSTRAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN_CONSTRAINT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIST_CONSTRAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIST_CONSTRAINT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_CONSTRAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_CONSTRAINT = 3,
 	}
 	
 	/// <summary>
 	/// Metadata about the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestMetadata
 	{
 		
@@ -1124,8 +1088,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines attributes for a node that handles a network request. The node can be either a service or an application that sends, forwards, or receives the request. Service peers should fill in `principal` and `labels` as appropriate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Peer
 	{
 		
@@ -1163,8 +1126,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines attributes for an HTTP request. If the actual request is not an HTTP request, the runtime system should try to map the actual request to an equivalent HTTP request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Request
 	{
 		
@@ -1244,8 +1206,7 @@ namespace MyNS
 	/// <summary>
 	/// This message defines request authentication attributes. Terminology is based on the JSON Web Token (JWT) standard, but the terms also correlate to concepts in other standards.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Auth
 	{
 		
@@ -1283,8 +1244,7 @@ namespace MyNS
 	/// <summary>
 	/// Location information about a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceLocation
 	{
 		
@@ -1304,8 +1264,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the errors to be returned in google.api.servicecontrol.v1.CheckResponse.check_errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckError
 	{
 		
@@ -1334,129 +1293,126 @@ namespace MyNS
 		public string Subject { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_DENIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_EXHAUSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_EXHAUSTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUDGET_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUDGET_EXCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENIAL_OF_SERVICE_DETECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENIAL_OF_SERVICE_DETECTED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOAD_SHEDDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOAD_SHEDDING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABUSER_DETECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABUSER_DETECTED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_NOT_ACTIVATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_NOT_ACTIVATED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VISIBILITY_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VISIBILITY_DENIED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_DISABLED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECT_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECT_DELETED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECT_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECT_INVALID = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSUMER_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSUMER_INVALID = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_ADDRESS_BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_ADDRESS_BLOCKED = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFERER_BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REFERER_BLOCKED = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_APP_BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_APP_BLOCKED = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_TARGET_BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_TARGET_BLOCKED = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_KEY_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_KEY_INVALID = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_KEY_EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_KEY_EXPIRED = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_KEY_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_KEY_NOT_FOUND = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPATULA_HEADER_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPATULA_HEADER_INVALID = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOAS_ROLE_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOAS_ROLE_INVALID = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LOAS_PROJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LOAS_PROJECT = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOAS_PROJECT_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOAS_PROJECT_DISABLED = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_POLICY_VIOLATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_POLICY_VIOLATED = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CREDENTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_CREDENTIAL = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_POLICY_VIOLATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_POLICY_VIOLATED = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAMESPACE_LOOKUP_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAMESPACE_LOOKUP_UNAVAILABLE = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_STATUS_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_STATUS_UNAVAILABLE = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_STATUS_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_STATUS_UNAVAILABLE = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTA_CHECK_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUOTA_CHECK_UNAVAILABLE = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOAS_PROJECT_LOOKUP_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOAS_PROJECT_LOOKUP_UNAVAILABLE = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_RESOURCE_MANAGER_BACKEND_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_RESOURCE_MANAGER_BACKEND_UNAVAILABLE = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_POLICY_BACKEND_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_POLICY_BACKEND_UNAVAILABLE = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_POLICY_BACKEND_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_POLICY_BACKEND_UNAVAILABLE = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INJECTED_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INJECTED_ERROR = 36,
 	}
 	
 	/// <summary>
 	/// Contains additional information about the check operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckInfo
 	{
 		
@@ -1476,8 +1432,7 @@ namespace MyNS
 	/// <summary>
 	/// `ConsumerInfo` provides information about the consumer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConsumerInfo
 	{
 		
@@ -1500,33 +1455,30 @@ namespace MyNS
 		public System.Nullable<ConsumerInfoType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConsumerInfoType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSUMER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSUMER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOLDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOLDER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_SPECIFIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_SPECIFIC = 4,
 	}
 	
 	/// <summary>
 	/// Request message for the Check method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckRequest
 	{
 		
@@ -1558,8 +1510,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information regarding an operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1642,30 +1593,27 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> UserLabels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationImportance
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBUG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBUG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMOTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROMOTED = 3,
 	}
 	
 	/// <summary>
 	/// An individual log entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogEntry
 	{
 		
@@ -1745,8 +1693,7 @@ namespace MyNS
 	/// <summary>
 	/// A common proto for logging HTTP requests. Only contains semantics defined by the HTTP specification. Product-specific logging information MUST be defined in a separate message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpRequest
 	{
 		
@@ -1844,8 +1791,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information about a potentially long-running operation with which a log entry is associated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogEntryOperation
 	{
 		
@@ -1874,45 +1820,42 @@ namespace MyNS
 		public string Producer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LogEntrySeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEBUG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEBUG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTICE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRITICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRITICAL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALERT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMERGENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMERGENCY = 8,
 	}
 	
 	/// <summary>
 	/// Additional information about the source code location that produced the log entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogEntrySourceLocation
 	{
 		
@@ -1938,8 +1881,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the properties needed for quota operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuotaProperties
 	{
 		
@@ -1950,27 +1892,24 @@ namespace MyNS
 		public System.Nullable<QuotaPropertiesQuotaMode> QuotaMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QuotaPropertiesQuotaMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACQUIRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACQUIRE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACQUIRE_BEST_EFFORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACQUIRE_BEST_EFFORT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECK = 2,
 	}
 	
 	/// <summary>
 	/// Describes a resource associated with this operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInfo
 	{
 		
@@ -2002,8 +1941,7 @@ namespace MyNS
 	/// <summary>
 	/// A span represents a single operation within a trace. Spans can be nested to form a trace tree. Often, a trace contains a root span that describes the end-to-end latency, and one or more subspans for its sub-operations. A trace can also contain multiple root spans, or none at all. Spans do not need to be contiguous—there may be gaps or overlaps between spans in a trace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TraceSpan
 	{
 		
@@ -2074,36 +2012,33 @@ namespace MyNS
 		public Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TraceSpanSpanKind
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPAN_KIND_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPAN_KIND_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSUMER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSUMER = 5,
 	}
 	
 	/// <summary>
 	/// Response message for the Check method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckResponse
 	{
 		
@@ -2147,8 +2082,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the quota information for a quota check response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuotaInfo
 	{
 		
@@ -2174,8 +2108,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the processing error of one Operation in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportError
 	{
 		
@@ -2195,8 +2128,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the Report method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportRequest
 	{
 		
@@ -2216,8 +2148,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the Report method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportResponse
 	{
 		
@@ -2243,8 +2174,7 @@ namespace MyNS
 	/// <summary>
 	/// The context of a span. This is attached to an Exemplar in Distribution values during aggregation. It contains the name of a span with format: projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpanContext
 	{
 		
@@ -2258,8 +2188,7 @@ namespace MyNS
 	/// <summary>
 	/// A common proto for logging HTTP requests. Only contains semantics defined by the HTTP specification. Product-specific logging information MUST be defined in a separate message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V1HttpRequest
 	{
 		
@@ -2357,8 +2286,7 @@ namespace MyNS
 	/// <summary>
 	/// An individual log entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V1LogEntry
 	{
 		
@@ -2444,8 +2372,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information about a potentially long-running operation with which a log entry is associated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V1LogEntryOperation
 	{
 		
@@ -2477,8 +2404,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information about the source code location that produced the log entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class V1LogEntrySourceLocation
 	{
 		

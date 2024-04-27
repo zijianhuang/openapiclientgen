@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// AMP inspection result of the live page or the current information from Google's index, depending on whether you requested a live inspection or not.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmpInspectionResult
 	{
 		
@@ -74,52 +73,47 @@ namespace MyNS
 		public AmpInspectionResultAmpIndexStatusVerdict Verdict { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmpInspectionResultAmpIndexStatusVerdict
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERDICT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERDICT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAIL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEUTRAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEUTRAL = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmpInspectionResultIndexingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMP_INDEXING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMP_INDEXING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMP_INDEXING_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMP_INDEXING_ALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED_DUE_TO_NOINDEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED_DUE_TO_NOINDEX = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED_DUE_TO_EXPIRED_UNAVAILABLE_AFTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED_DUE_TO_EXPIRED_UNAVAILABLE_AFTER = 3,
 	}
 	
 	/// <summary>
 	/// AMP issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmpIssue
 	{
 		
@@ -136,83 +130,76 @@ namespace MyNS
 		public System.Nullable<AmpIssueSeverity> Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmpIssueSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmpInspectionResultPageFetchState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_FETCH_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_FETCH_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESSFUL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOFT_404")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOFT_404 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED_ROBOTS_TXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED_ROBOTS_TXT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESS_DENIED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_ERROR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT_ERROR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESS_FORBIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESS_FORBIDDEN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED_4XX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED_4XX = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_CRAWL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_CRAWL_ERROR = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_URL = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmpInspectionResultRobotsTxtState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROBOTS_TXT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROBOTS_TXT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISALLOWED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiDataRow
 	{
 		
@@ -235,8 +222,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter test to be applied to each row in the data set, where a match can return the row. Filters are string comparisons, and values and dimension names are not case-sensitive. Individual filters are either AND'ed or OR'ed within their parent filter group, according to the group's group type. You do not need to group by a specified dimension to filter against it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiDimensionFilter
 	{
 		
@@ -250,58 +236,53 @@ namespace MyNS
 		public System.Nullable<ApiDimensionFilterOperator> Operator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiDimensionFilterDimension
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUERY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNTRY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_APPEARANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_APPEARANCE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiDimensionFilterOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUALS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_EQUALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_EQUALS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_CONTAINS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUDING_REGEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUDING_REGEX = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUDING_REGEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUDING_REGEX = 5,
 	}
 	
 	/// <summary>
 	/// A set of dimension value filters to test against each row. Only rows that pass all filter groups will be returned. All results within a filter group are either AND'ed or OR'ed together, depending on the group type selected. All filter groups are AND'ed together.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiDimensionFilterGroup
 	{
 		
@@ -312,21 +293,18 @@ namespace MyNS
 		public System.Nullable<ApiDimensionFilterGroupGroupType> GroupType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiDimensionFilterGroupGroupType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AND = 0,
 	}
 	
 	/// <summary>
 	/// Blocked resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockedResource
 	{
 		
@@ -340,8 +318,7 @@ namespace MyNS
 	/// <summary>
 	/// Rich Results items grouped by type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedItems
 	{
 		
@@ -361,8 +338,7 @@ namespace MyNS
 	/// <summary>
 	/// A specific rich result found on the page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Item
 	{
 		
@@ -382,8 +358,7 @@ namespace MyNS
 	/// <summary>
 	/// Severity and status of a single issue affecting a single rich result instance on a page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RichResultsIssue
 	{
 		
@@ -403,8 +378,7 @@ namespace MyNS
 	/// <summary>
 	/// Describe image data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image
 	{
 		
@@ -424,8 +398,7 @@ namespace MyNS
 	/// <summary>
 	/// Results of index status inspection for either the live page or the version in Google's index, depending on whether you requested a live inspection or not. For more information, see the [Index coverage report documentation](https://support.google.com/webmasters/answer/7440203).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexStatusInspectionResult
 	{
 		
@@ -496,49 +469,44 @@ namespace MyNS
 		public AmpInspectionResultAmpIndexStatusVerdict Verdict { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexStatusInspectionResultCrawledAs
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRAWLING_USER_AGENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRAWLING_USER_AGENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESKTOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexStatusInspectionResultIndexingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXING_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXING_ALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED_BY_META_TAG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED_BY_META_TAG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED_BY_HTTP_HEADER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED_BY_HTTP_HEADER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED_BY_ROBOTS_TXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED_BY_ROBOTS_TXT = 4,
 	}
 	
 	/// <summary>
 	/// Index inspection request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InspectUrlIndexRequest
 	{
 		
@@ -564,8 +532,7 @@ namespace MyNS
 	/// <summary>
 	/// Index-Status inspection response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InspectUrlIndexResponse
 	{
 		
@@ -579,8 +546,7 @@ namespace MyNS
 	/// <summary>
 	/// URL inspection result, including all inspection results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlInspectionResult
 	{
 		
@@ -618,8 +584,7 @@ namespace MyNS
 	/// <summary>
 	/// Mobile-usability inspection results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileUsabilityInspectionResult
 	{
 		
@@ -639,8 +604,7 @@ namespace MyNS
 	/// <summary>
 	/// Mobile-usability issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileUsabilityIssue
 	{
 		
@@ -663,39 +627,36 @@ namespace MyNS
 		public AmpIssueSeverity Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MobileUsabilityIssueIssueType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_USABILITY_ISSUE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE_USABILITY_ISSUE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USES_INCOMPATIBLE_PLUGINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USES_INCOMPATIBLE_PLUGINS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIGURE_VIEWPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIGURE_VIEWPORT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIXED_WIDTH_VIEWPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIXED_WIDTH_VIEWPORT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIZE_CONTENT_TO_VIEWPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIZE_CONTENT_TO_VIEWPORT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USE_LEGIBLE_FONT_SIZES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USE_LEGIBLE_FONT_SIZES = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAP_TARGETS_TOO_CLOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAP_TARGETS_TOO_CLOSE = 6,
 	}
 	
 	/// <summary>
 	/// Rich-Results inspection result, including any rich results found at this URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RichResultsInspectionResult
 	{
 		
@@ -715,8 +676,7 @@ namespace MyNS
 	/// <summary>
 	/// Mobile-friendly issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileFriendlyIssue
 	{
 		
@@ -727,39 +687,36 @@ namespace MyNS
 		public System.Nullable<MobileFriendlyIssueRule> Rule { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MobileFriendlyIssueRule
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_FRIENDLY_RULE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE_FRIENDLY_RULE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USES_INCOMPATIBLE_PLUGINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USES_INCOMPATIBLE_PLUGINS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIGURE_VIEWPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIGURE_VIEWPORT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIXED_WIDTH_VIEWPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIXED_WIDTH_VIEWPORT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIZE_CONTENT_TO_VIEWPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIZE_CONTENT_TO_VIEWPORT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USE_LEGIBLE_FONT_SIZES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USE_LEGIBLE_FONT_SIZES = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAP_TARGETS_TOO_CLOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAP_TARGETS_TOO_CLOSE = 6,
 	}
 	
 	/// <summary>
 	/// Information about a resource with issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceIssue
 	{
 		
@@ -773,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// Mobile-friendly test request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunMobileFriendlyTestRequest
 	{
 		
@@ -794,8 +750,7 @@ namespace MyNS
 	/// <summary>
 	/// Mobile-friendly test response, including mobile-friendly issues and resource issues.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunMobileFriendlyTestResponse
 	{
 		
@@ -830,27 +785,24 @@ namespace MyNS
 		public TestStatus TestStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RunMobileFriendlyTestResponseMobileFriendliness
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_FRIENDLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE_FRIENDLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_MOBILE_FRIENDLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_MOBILE_FRIENDLY = 2,
 	}
 	
 	/// <summary>
 	/// Final state of the test, including error details if necessary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestStatus
 	{
 		
@@ -867,27 +819,24 @@ namespace MyNS
 		public System.Nullable<TestStatusStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TestStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEST_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEST_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAGE_UNREACHABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAGE_UNREACHABLE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchAnalyticsQueryRequest
 	{
 		
@@ -952,71 +901,64 @@ namespace MyNS
 		public SearchAnalyticsQueryRequestSearchType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchAnalyticsQueryRequestAggregationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BY_PROPERTY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BY_PROPERTY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BY_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BY_PAGE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BY_NEWS_SHOWCASE_PANEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BY_NEWS_SHOWCASE_PANEL = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchAnalyticsQueryRequestDataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchAnalyticsQueryRequestSearchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEWS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCOVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCOVER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_NEWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_NEWS = 5,
 	}
 	
 	/// <summary>
 	/// A list of rows, one per result, grouped by key. Metrics in each row are aggregated for all data grouped by that key either by page or property, as specified by the aggregation type parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchAnalyticsQueryResponse
 	{
 		
@@ -1036,8 +978,7 @@ namespace MyNS
 	/// <summary>
 	/// List of sitemaps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SitemapsListResponse
 	{
 		
@@ -1051,8 +992,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains detailed information about a specific URL submitted as a [sitemap](https://support.google.com/webmasters/answer/156184).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WmxSitemap
 	{
 		
@@ -1114,8 +1054,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the various content types in the sitemap.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WmxSitemapContent
 	{
 		
@@ -1138,73 +1077,68 @@ namespace MyNS
 		public System.Nullable<WmxSitemapContentType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WmxSitemapContentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEWS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID_APP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATTERN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATTERN = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS_APP = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_FEED_ELEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_FEED_ELEMENT = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WmxSitemapType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_SITEMAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_SITEMAP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_LIST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITEMAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITEMAP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSS_FEED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSS_FEED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATOM_FEED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATOM_FEED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATTERN_SITEMAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATTERN_SITEMAP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OCEANFRONT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OCEANFRONT = 6,
 	}
 	
 	/// <summary>
 	/// List of sites with access level information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SitesListResponse
 	{
 		
@@ -1218,8 +1152,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains permission level information about a Search Console site. For more information, see [Permissions in Search Console](https://support.google.com/webmasters/answer/2451999).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WmxSite
 	{
 		
@@ -1236,25 +1169,23 @@ namespace MyNS
 		public string SiteUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WmxSitePermissionLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_PERMISSION_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_PERMISSION_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_OWNER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_FULL_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_FULL_USER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_RESTRICTED_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_RESTRICTED_USER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_UNVERIFIED_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_UNVERIFIED_USER = 4,
 	}
 	

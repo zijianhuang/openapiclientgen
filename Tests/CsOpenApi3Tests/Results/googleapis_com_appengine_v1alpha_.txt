@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An SSL certificate that a user has been authorized to administer. A user is authorized to administer any certificate that applies to one of their authorized domains.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizedCertificate
 	{
 		
@@ -83,8 +82,7 @@ namespace MyNS
 	/// <summary>
 	/// An SSL certificate obtained from a certificate authority.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateRawData
 	{
 		
@@ -104,8 +102,7 @@ namespace MyNS
 	/// <summary>
 	/// A certificate managed by App Engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedCertificate
 	{
 		
@@ -122,42 +119,39 @@ namespace MyNS
 		public System.Nullable<ManagedCertificateStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ManagedCertificateStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_STATUS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_RETRYING_INTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_RETRYING_INTERNAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_RETRYING_NOT_VISIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_RETRYING_NOT_VISIBLE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_PERMANENTLY_NOT_VISIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_PERMANENTLY_NOT_VISIBLE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_RETRYING_CAA_FORBIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_RETRYING_CAA_FORBIDDEN = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_RETRYING_CAA_CHECKING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_RETRYING_CAA_CHECKING = 7,
 	}
 	
 	/// <summary>
 	/// A domain that a user has been authorized to administer. To authorize use of a domain, verify ownership via Search Console (https://search.google.com/search-console/welcome).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizedDomain
 	{
 		
@@ -177,8 +171,7 @@ namespace MyNS
 	/// <summary>
 	/// ContainerState contains the externally-visible container state that is used to communicate the state and reasoning for that state to the CLH. This data is not persisted by CCFE, but is instead derived from CCFE's internal representation of the container state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerState
 	{
 		
@@ -204,8 +197,7 @@ namespace MyNS
 	/// <summary>
 	/// Containers transition between and within states based on reasons sent from various systems. CCFE will provide the CLH with reasons for the current state per system.The current systems that CCFE supports are: Service Management (Inception) Data Governance (Wipeout) Abuse (Ares) Billing (Internal Cloud Billing API)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Reasons
 	{
 		
@@ -222,118 +214,107 @@ namespace MyNS
 		public System.Nullable<ReasonsServiceManagement> ServiceManagement { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReasonsAbuse
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABUSE_UNKNOWN_REASON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABUSE_UNKNOWN_REASON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABUSE_CONTROL_PLANE_SYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABUSE_CONTROL_PLANE_SYNC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPEND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REINSTATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REINSTATE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReasonsBilling
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_UNKNOWN_REASON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_UNKNOWN_REASON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_CONTROL_PLANE_SYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_CONTROL_PLANE_SYNC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROBATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROBATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReasonsDataGovernance
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_GOVERNANCE_UNKNOWN_REASON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_GOVERNANCE_UNKNOWN_REASON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_GOVERNANCE_CONTROL_PLANE_SYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_GOVERNANCE_CONTROL_PLANE_SYNC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNHIDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNHIDE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PURGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PURGE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReasonsServiceManagement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_MANAGEMENT_UNKNOWN_REASON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_MANAGEMENT_UNKNOWN_REASON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_MANAGEMENT_CONTROL_PLANE_SYNC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_MANAGEMENT_CONTROL_PLANE_SYNC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREPARE_DEACTIVATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREPARE_DEACTIVATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORT_DEACTIVATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABORT_DEACTIVATION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMIT_DEACTIVATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMIT_DEACTIVATION = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContainerStateState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_STATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_STATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
 	/// <summary>
 	/// Metadata for the given google.longrunning.Operation during a google.appengine.v1.CreateVersionRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVersionMetadataV1
 	{
 		
@@ -347,8 +328,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the given google.longrunning.Operation during a google.appengine.v1alpha.CreateVersionRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVersionMetadataV1Alpha
 	{
 		
@@ -362,8 +342,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the given google.longrunning.Operation during a google.appengine.v1beta.CreateVersionRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVersionMetadataV1Beta
 	{
 		
@@ -377,8 +356,7 @@ namespace MyNS
 	/// <summary>
 	/// A domain serving an App Engine application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainMapping
 	{
 		
@@ -410,8 +388,7 @@ namespace MyNS
 	/// <summary>
 	/// A DNS resource record.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceRecord
 	{
 		
@@ -434,27 +411,24 @@ namespace MyNS
 		public System.Nullable<ResourceRecordType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceRecordType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AAAA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AAAA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CNAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CNAME = 2,
 	}
 	
 	/// <summary>
 	/// SSL configuration for a DomainMapping resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SslSettings
 	{
 		
@@ -474,8 +448,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -483,8 +456,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the given google.cloud.location.Location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppengineV1betaLocationMetadata
 	{
 		
@@ -510,8 +482,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for AuthorizedCertificates.ListAuthorizedCertificates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAuthorizedCertificatesResponse
 	{
 		
@@ -531,8 +502,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for AuthorizedDomains.ListAuthorizedDomains.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAuthorizedDomainsResponse
 	{
 		
@@ -552,8 +522,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for DomainMappings.ListDomainMappings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainMappingsResponse
 	{
 		
@@ -573,8 +542,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -594,8 +562,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -633,8 +600,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -654,8 +620,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -693,8 +658,7 @@ namespace MyNS
 	/// <summary>
 	/// The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -720,8 +684,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the given google.cloud.location.Location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationMetadata
 	{
 		
@@ -747,8 +710,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the given google.longrunning.Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadataV1
 	{
 		
@@ -804,8 +766,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the given google.longrunning.Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadataV1Alpha
 	{
 		
@@ -861,8 +822,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the given google.longrunning.Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadataV1Beta
 	{
 		
@@ -918,8 +878,7 @@ namespace MyNS
 	/// <summary>
 	/// The request sent to CLHs during project events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectEvent
 	{
 		
@@ -945,27 +904,24 @@ namespace MyNS
 		public ContainerState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProjectEventPhase
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEFORE_RESOURCE_HANDLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEFORE_RESOURCE_HANDLING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFTER_RESOURCE_HANDLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AFTER_RESOURCE_HANDLING = 2,
 	}
 	
 	/// <summary>
 	/// ProjectsMetadata is the metadata CCFE stores about the all the relevant projects (tenant, consumer, producer).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectsMetadata
 	{
 		
@@ -1752,23 +1708,23 @@ namespace MyNS
 	public enum Appengine_apps_authorizedCertificates_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_CERTIFICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC_CERTIFICATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_CERTIFICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_CERTIFICATE = 1,
 	}
 	
 	public enum Appengine_apps_domainMappings_createOverrideStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRICT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRICT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVERRIDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVERRIDE = 2,
 	}
 }

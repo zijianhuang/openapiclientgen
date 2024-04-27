@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChannelDetails
 	{
 		
@@ -52,8 +51,7 @@ namespace MyNS
 	/// <summary>
 	/// A ChannelStatus instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChannelStatus
 	{
 		
@@ -75,8 +73,7 @@ namespace MyNS
 	/// <summary>
 	/// An Occupancy instance indicating the occupancy of a channel. For events indicating regional activity of a channel this indicates activity in that region, not global activity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Occupancy
 	{
 		
@@ -111,8 +108,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Subscribers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceDetails
 	{
 		
@@ -165,52 +161,47 @@ namespace MyNS
 		public System.Nullable<DeviceDetailsPush_state> Push_state { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceDetailsFormFactor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phone = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tablet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tablet = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desktop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desktop = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tv = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="watch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		watch = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="car")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		car = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="embedded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		embedded = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceDetailsPlatform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ios")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ios = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="android")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		android = 1,
 	}
 	
 	/// <summary>
 	/// Push recipient details for a device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Recipient
 	{
 		
@@ -245,43 +236,38 @@ namespace MyNS
 		public System.Nullable<RecipientTransportType> TransportType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecipientTransportType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="apns")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		apns = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fcm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fcm = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gcm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gcm = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceDetailsPush_state
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 	}
 	
 	/// <summary>
 	/// Returned error from failed REST.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -319,8 +305,7 @@ namespace MyNS
 	/// <summary>
 	/// Extras object. Currently only allows for [push](https://www.ably.io/documentation/general/push/publish#channel-broadcast-example) extra.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Extras
 	{
 		
@@ -328,8 +313,7 @@ namespace MyNS
 		public Push Push { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Push
 	{
 		
@@ -368,8 +352,7 @@ namespace MyNS
 		public Notification Notification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notification
 	{
 		
@@ -421,8 +404,7 @@ namespace MyNS
 	/// <summary>
 	/// Message object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -475,8 +457,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PresenceMessage
 	{
 		
@@ -529,30 +510,27 @@ namespace MyNS
 		public System.Nullable<System.Int64> Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PresenceMessageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABSENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABSENT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRESENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRESENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEAVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEAVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignedTokenRequest : TokenRequest
 	{
 		
@@ -565,8 +543,7 @@ namespace MyNS
 		public string Mac { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TokenDetails
 	{
 		
@@ -601,8 +578,7 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TokenRequest
 	{
 		
@@ -1355,20 +1331,20 @@ namespace MyNS
 	public enum GetMetadataOfAllChannelsBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="value")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		value = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 1,
 	}
 	
 	public enum GetMessagesByChannelDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forwards")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forwards = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="backwards")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		backwards = 1,
 	}
 	
@@ -1406,16 +1382,16 @@ namespace MyNS
 	public enum GetStatsUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minute")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minute = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hour = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		day = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		month = 3,
 	}
 }

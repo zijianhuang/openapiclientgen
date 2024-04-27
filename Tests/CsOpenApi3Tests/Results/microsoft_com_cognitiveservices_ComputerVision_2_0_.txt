@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing whether the image contains adult-oriented content and/or is racy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdultInfo
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Result of AreaOfInterest operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AreaOfInterestResult
 	{
 		
@@ -80,8 +78,7 @@ namespace MyNS
 	/// <summary>
 	/// A bounding box for an area inside an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BoundingRect
 	{
 		
@@ -113,8 +110,7 @@ namespace MyNS
 	/// <summary>
 	/// Image metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageMetadata
 	{
 		
@@ -140,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing identified category.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Category
 	{
 		
@@ -167,8 +162,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing additional category details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryDetail
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing possible celebrity identification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CelebritiesModel
 	{
 		
@@ -215,8 +208,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing face rectangle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FaceRectangle
 	{
 		
@@ -248,8 +240,7 @@ namespace MyNS
 	/// <summary>
 	/// A landmark recognized in the image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandmarksModel
 	{
 		
@@ -269,8 +260,7 @@ namespace MyNS
 	/// <summary>
 	/// Result of domain-specific classifications for the domain of celebrities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CelebrityResults
 	{
 		
@@ -296,8 +286,7 @@ namespace MyNS
 	/// <summary>
 	/// An object providing additional metadata describing color attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColorInfo
 	{
 		
@@ -335,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the API request error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputerVisionError
 	{
 		
@@ -363,75 +351,72 @@ namespace MyNS
 		public string RequestId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputerVisionErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidImageFormat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidImageFormat = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnsupportedMediaType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnsupportedMediaType = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidImageUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidImageUrl = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSupportedFeature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSupportedFeature = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSupportedImage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSupportedImage = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Timeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Timeout = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServerError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServerError = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidImageSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidImageSize = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadArgument")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadArgument = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DetectFaceError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DetectFaceError = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSupportedLanguage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSupportedLanguage = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidThumbnailSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidThumbnailSize = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidDetails")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidDetails = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidModel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidModel = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancelledRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CancelledRequest = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotSupportedVisualFeature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotSupportedVisualFeature = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailedToProcess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailedToProcess = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unspecified = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StorageException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StorageException = 18,
 	}
 	
 	/// <summary>
 	/// Result of a DetectImage call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectResult
 	{
 		
@@ -457,8 +442,7 @@ namespace MyNS
 	/// <summary>
 	/// An object detected in an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedObject
 	{
 		
@@ -490,8 +474,7 @@ namespace MyNS
 	/// <summary>
 	/// An object detected inside an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectHierarchy
 	{
 		
@@ -517,8 +500,7 @@ namespace MyNS
 	/// <summary>
 	/// A brand detected in an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedBrand
 	{
 		
@@ -544,8 +526,7 @@ namespace MyNS
 	/// <summary>
 	/// Result of image analysis using a specific domain model including additional metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainModelResults
 	{
 		
@@ -571,8 +552,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing a face identified in the image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FaceDescription
 	{
 		
@@ -595,24 +575,21 @@ namespace MyNS
 		public System.Nullable<FaceDescriptionGender> Gender { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FaceDescriptionGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Male")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Male = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Female")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Female = 1,
 	}
 	
 	/// <summary>
 	/// Result of AnalyzeImage operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageAnalysis
 	{
 		
@@ -686,8 +663,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of content tags, along with a list of captions sorted by confidence level, and image metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageDescriptionDetails
 	{
 		
@@ -707,8 +683,7 @@ namespace MyNS
 	/// <summary>
 	/// An image caption, i.e. a brief description of what the image depicts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageCaption
 	{
 		
@@ -728,8 +703,7 @@ namespace MyNS
 	/// <summary>
 	/// An object providing possible image types and matching confidence levels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageType
 	{
 		
@@ -749,8 +723,7 @@ namespace MyNS
 	/// <summary>
 	/// An entity observation in the image, along with the confidence score.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageTag
 	{
 		
@@ -776,8 +749,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of content tags, along with a list of captions sorted by confidence level, and image metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageDescription
 	{
 		
@@ -800,8 +772,7 @@ namespace MyNS
 		public string RequestId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageUrl
 	{
 		
@@ -817,8 +788,7 @@ namespace MyNS
 	/// <summary>
 	/// Result of domain-specific classifications for the domain of landmarks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LandmarkResults
 	{
 		
@@ -844,8 +814,7 @@ namespace MyNS
 	/// <summary>
 	/// Result of the List Domain Models operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListModelsResult
 	{
 		
@@ -859,8 +828,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing supported model by name and categories.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModelDescription
 	{
 		
@@ -880,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing a single recognized line of text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OcrLine
 	{
 		
@@ -901,8 +868,7 @@ namespace MyNS
 	/// <summary>
 	/// Information on a recognized word.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OcrWord
 	{
 		
@@ -922,8 +888,7 @@ namespace MyNS
 	/// <summary>
 	/// A region consists of multiple lines (e.g. a column of text in a multi-column document).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OcrRegion
 	{
 		
@@ -940,8 +905,7 @@ namespace MyNS
 		public OcrLine[] Lines { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OcrResult
 	{
 		
@@ -973,8 +937,7 @@ namespace MyNS
 	/// <summary>
 	/// The results of a image tag operation, including any tags and image metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResult
 	{
 		
@@ -1414,26 +1377,26 @@ namespace MyNS
 	public enum AnalyzeImageLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ja = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zh = 4,
 	}
 	
 	public enum RecognizePrintedTextLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unk = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh-Hans")]
@@ -1442,67 +1405,67 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh-Hant")]
 		zhMinusHant = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cs = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="da")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		da = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nl = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fi = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="el")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		el = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hu = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ja = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ko = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nb = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pl = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ru")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ru = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tr = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ro = 23,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="sr-Cyrl")]
@@ -1511,7 +1474,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="sr-Latn")]
 		srMinusLatn = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sk = 26,
 	}
 }

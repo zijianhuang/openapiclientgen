@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An achievement configuration resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementConfiguration
 	{
 		
@@ -74,27 +73,24 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AchievementConfigurationAchievementType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACHIEVEMENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACHIEVEMENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCREMENTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCREMENTAL = 2,
 	}
 	
 	/// <summary>
 	/// An achievement configuration detail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementConfigurationDetail
 	{
 		
@@ -138,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// A localized string bundle resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocalizedStringBundle
 	{
 		
@@ -159,8 +154,7 @@ namespace MyNS
 	/// <summary>
 	/// A localized string resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocalizedString
 	{
 		
@@ -183,27 +177,24 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AchievementConfigurationInitialState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIAL_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIAL_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDDEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVEALED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVEALED = 2,
 	}
 	
 	/// <summary>
 	/// A ListConfigurations response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementConfigurationListResponse
 	{
 		
@@ -229,8 +220,7 @@ namespace MyNS
 	/// <summary>
 	/// A number affix resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GamesNumberAffixConfiguration
 	{
 		
@@ -274,8 +264,7 @@ namespace MyNS
 	/// <summary>
 	/// A number format resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GamesNumberFormatConfiguration
 	{
 		
@@ -304,30 +293,27 @@ namespace MyNS
 		public GamesNumberAffixConfiguration Suffix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GamesNumberFormatConfigurationNumberFormatType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_FORMAT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_FORMAT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_DURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_DURATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENCY = 3,
 	}
 	
 	/// <summary>
 	/// An leaderboard configuration resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LeaderboardConfiguration
 	{
 		
@@ -380,8 +366,7 @@ namespace MyNS
 	/// <summary>
 	/// A leaderboard configuration detail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LeaderboardConfigurationDetail
 	{
 		
@@ -416,27 +401,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> SortRank { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LeaderboardConfigurationScoreOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCORE_ORDER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCORE_ORDER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LARGER_IS_BETTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LARGER_IS_BETTER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMALLER_IS_BETTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMALLER_IS_BETTER = 2,
 	}
 	
 	/// <summary>
 	/// A ListConfigurations response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LeaderboardConfigurationListResponse
 	{
 		

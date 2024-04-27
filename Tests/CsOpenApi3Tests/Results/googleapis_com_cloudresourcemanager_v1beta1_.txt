@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifying information for a single ancestor of a project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ancestor
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// A container to reference an id for any resource type. A `resource` in Google Cloud Platform is a generic term for something you (a developer) may want to interact with through one of our API's. Some examples are an App Engine app, a Compute Engine instance, a Cloud SQL database, and so on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceId
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditConfig
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the configuration for logging a type of permissions. Example: { "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" } ] } This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting jose@example.com from DATA_READ logging.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditLogConfig
 	{
 		
@@ -95,30 +91,27 @@ namespace MyNS
 		public System.Nullable<AuditLogConfigLogType> LogType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuditLogConfigLogType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN_READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN_READ = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_WRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_WRITE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_READ = 3,
 	}
 	
 	/// <summary>
 	/// Associates `members`, or principals, with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -144,8 +137,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -177,8 +169,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing a long running folder operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudresourcemanagerGoogleCloudResourcemanagerV2alpha1FolderOperation
 	{
 		
@@ -207,27 +198,24 @@ namespace MyNS
 		public string SourceParent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudresourcemanagerGoogleCloudResourcemanagerV2alpha1FolderOperationOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOVE = 2,
 	}
 	
 	/// <summary>
 	/// Metadata describing a long running folder operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudresourcemanagerGoogleCloudResourcemanagerV2beta1FolderOperation
 	{
 		
@@ -259,8 +247,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata pertaining to the Folder creation process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFolderMetadata
 	{
 		
@@ -280,8 +267,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the Operation returned by CreateProject. It provides insight for when significant phases of Project creation have completed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateProjectMetadata
 	{
 		
@@ -307,8 +293,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime operation information for creating a TagValue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTagBindingMetadata
 	{
 	}
@@ -316,8 +301,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime operation information for creating a TagKey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTagKeyMetadata
 	{
 	}
@@ -325,8 +309,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime operation information for creating a TagValue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTagValueMetadata
 	{
 	}
@@ -334,8 +317,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the `Operation` returned by `DeleteFolder`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFolderMetadata
 	{
 	}
@@ -343,8 +325,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the operation returned by DeleteOrganization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteOrganizationMetadata
 	{
 	}
@@ -352,8 +333,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the Operation returned by `DeleteProject`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteProjectMetadata
 	{
 	}
@@ -361,8 +341,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime operation information for deleting a TagBinding.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTagBindingMetadata
 	{
 	}
@@ -370,8 +349,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime operation information for deleting a TagKey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTagKeyMetadata
 	{
 	}
@@ -379,8 +357,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime operation information for deleting a TagValue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteTagValueMetadata
 	{
 	}
@@ -388,8 +365,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -397,8 +373,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing a long running folder operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderOperation
 	{
 		
@@ -430,8 +405,7 @@ namespace MyNS
 	/// <summary>
 	/// A classification of the Folder Operation error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderOperationError
 	{
 		
@@ -442,48 +416,45 @@ namespace MyNS
 		public System.Nullable<FolderOperationErrorErrorMessageId> ErrorMessageId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FolderOperationErrorErrorMessageId
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE_FOLDER_HEIGHT_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE_FOLDER_HEIGHT_VIOLATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_CHILD_FOLDERS_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_CHILD_FOLDERS_VIOLATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOLDER_NAME_UNIQUENESS_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOLDER_NAME_UNIQUENESS_VIOLATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_DELETED_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_DELETED_VIOLATION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARENT_DELETED_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARENT_DELETED_VIOLATION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CYCLE_INTRODUCED_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CYCLE_INTRODUCED_VIOLATION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOLDER_BEING_MOVED_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOLDER_BEING_MOVED_VIOLATION = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOLDER_TO_DELETE_NON_EMPTY_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOLDER_TO_DELETE_NON_EMPTY_VIOLATION = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED_FOLDER_HEIGHT_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED_FOLDER_HEIGHT_VIOLATION = 9,
 	}
 	
 	/// <summary>
 	/// The request sent to the [google.cloudresourcemanager.projects.v1beta1.DeveloperProjects.GetAncestry] method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAncestryRequest
 	{
 	}
@@ -491,8 +462,7 @@ namespace MyNS
 	/// <summary>
 	/// Response from the projects.getAncestry method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAncestryResponse
 	{
 		
@@ -506,8 +476,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `GetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIamPolicyRequest
 	{
 		
@@ -521,8 +490,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates settings provided to GetIamPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPolicyOptions
 	{
 		
@@ -536,8 +504,7 @@ namespace MyNS
 	/// <summary>
 	/// The response returned from the `ListOrganizations` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOrganizationsResponse
 	{
 		
@@ -557,8 +524,7 @@ namespace MyNS
 	/// <summary>
 	/// The root node in the resource hierarchy to which a particular entity's (e.g., company) resources belong.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Organization
 	{
 		
@@ -599,27 +565,24 @@ namespace MyNS
 		public OrganizationOwner Owner { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrganizationLifecycleState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIFECYCLE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIFECYCLE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_REQUESTED = 2,
 	}
 	
 	/// <summary>
 	/// The entity that owns an Organization. The lifetime of the Organization and all of its descendants are bound to the `OrganizationOwner`. If the `OrganizationOwner` is deleted, the Organization and all its descendants will be deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationOwner
 	{
 		
@@ -633,8 +596,7 @@ namespace MyNS
 	/// <summary>
 	/// A page of the response received from the ListProjects method. A paginated response where more pages are available has `next_page_token` set. This token can be used in a subsequent request to retrieve the next request page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProjectsResponse
 	{
 		
@@ -654,8 +616,7 @@ namespace MyNS
 	/// <summary>
 	/// A Project is a high-level Google Cloud Platform entity. It is a container for ACLs, APIs, App Engine Apps, VMs, and other Google Cloud Platform resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Project
 	{
 		
@@ -702,30 +663,27 @@ namespace MyNS
 		public string ProjectNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProjectLifecycleState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIFECYCLE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIFECYCLE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_REQUESTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_IN_PROGRESS = 3,
 	}
 	
 	/// <summary>
 	/// Metadata pertaining to the folder move process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveFolderMetadata
 	{
 		
@@ -751,8 +709,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the Operation returned by MoveProject.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoveProjectMetadata
 	{
 	}
@@ -760,8 +717,7 @@ namespace MyNS
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -793,8 +749,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the Operation returned by CreateProject. It provides insight for when significant phases of Project creation have completed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectCreationStatus
 	{
 		
@@ -820,8 +775,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `SetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIamPolicyRequest
 	{
 		
@@ -841,8 +795,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsRequest
 	{
 		
@@ -856,8 +809,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		
@@ -871,8 +823,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the `Operation` returned by `UndeleteFolder`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UndeleteFolderMetadata
 	{
 	}
@@ -880,8 +831,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the Operation returned by UndeleteOrganization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UndeleteOrganizationMetadata
 	{
 	}
@@ -889,8 +839,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the Operation returned by `UndeleteProject`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UndeleteProjectMetadata
 	{
 	}
@@ -898,8 +847,7 @@ namespace MyNS
 	/// <summary>
 	/// The request sent to the UndeleteProject method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UndeleteProjectRequest
 	{
 	}
@@ -907,8 +855,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the Operation returned by UpdateFolder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFolderMetadata
 	{
 	}
@@ -916,8 +863,7 @@ namespace MyNS
 	/// <summary>
 	/// A status object which is used as the `metadata` field for the Operation returned by UpdateProject.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateProjectMetadata
 	{
 	}
@@ -925,8 +871,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime operation information for updating a TagKey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTagKeyMetadata
 	{
 	}
@@ -934,8 +879,7 @@ namespace MyNS
 	/// <summary>
 	/// Runtime operation information for updating a TagValue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTagValueMetadata
 	{
 	}

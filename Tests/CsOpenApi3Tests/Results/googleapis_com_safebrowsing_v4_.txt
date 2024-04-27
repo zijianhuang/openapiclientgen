@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// The expected state of a client's local database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4Checksum
 	{
 		
@@ -44,8 +42,7 @@ namespace MyNS
 	/// <summary>
 	/// The client metadata associated with Safe Browsing API requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ClientInfo
 	{
 		
@@ -65,8 +62,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a Safe Browsing API update request. Clients can request updates for multiple lists in a single request. The server may not respond to all requests, if the server has no updates for that list. NOTE: Field index 2 is unused. NEXT: 5
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequest
 	{
 		
@@ -86,8 +82,7 @@ namespace MyNS
 	/// <summary>
 	/// A single list update request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequest
 	{
 		
@@ -125,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// The constraints for this update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestConstraints
 	{
 		
@@ -167,131 +161,124 @@ namespace MyNS
 		public string[] SupportedCompressions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestPlatformType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATFORM_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATFORM_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OSX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OSX = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY_PLATFORM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY_PLATFORM = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_PLATFORMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_PLATFORMS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatEntryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THREAT_ENTRY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THREAT_ENTRY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IP_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IP_RANGE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_EXTENSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_EXTENSION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILENAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILENAME = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THREAT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THREAT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MALWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MALWARE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL_ENGINEERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL_ENGINEERING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNWANTED_SOFTWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNWANTED_SOFTWARE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POTENTIALLY_HARMFUL_APPLICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POTENTIALLY_HARMFUL_APPLICATION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL_ENGINEERING_INTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL_ENGINEERING_INTERNAL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_ABUSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_ABUSE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MALICIOUS_BINARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MALICIOUS_BINARY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSD_WHITELIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSD_WHITELIST = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSD_DOWNLOAD_WHITELIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSD_DOWNLOAD_WHITELIST = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_INCIDENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_INCIDENT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_INCIDENT_WHITELIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT_INCIDENT_WHITELIST = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APK_MALWARE_OFFLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APK_MALWARE_OFFLINE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBRESOURCE_FILTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBRESOURCE_FILTER = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPICIOUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPICIOUS = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRICK_TO_BILL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRICK_TO_BILL = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH_CONFIDENCE_ALLOWLIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH_CONFIDENCE_ALLOWLIST = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCURACY_TIPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCURACY_TIPS = 17,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponse
 	{
 		
@@ -311,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// An update to an individual list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponse
 	{
 		
@@ -368,8 +354,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of threats that should be added or removed from a client's local database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatEntrySet
 	{
 		
@@ -404,27 +389,24 @@ namespace MyNS
 		public GoogleSecuritySafebrowsingV4RiceDeltaEncoding RiceIndices { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleSecuritySafebrowsingV4ThreatEntrySetCompressionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPRESSION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPRESSION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RICE = 2,
 	}
 	
 	/// <summary>
 	/// The uncompressed threat entries in hash format of a particular prefix length. Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4 bytes, but some hashes are lengthened if they collide with the hash of a popular URL. Used for sending ThreatEntrySet to clients that do not support compression, or when sending non-4-byte hashes to clients that do support compression.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4RawHashes
 	{
 		
@@ -444,8 +426,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of raw indices to remove from a local list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4RawIndices
 	{
 		
@@ -459,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// The Rice-Golomb encoded data. Used for sending compressed 4-byte hashes or compressed removal indices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4RiceDeltaEncoding
 	{
 		
@@ -489,27 +469,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> RiceParameter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseResponseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESPONSE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESPONSE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL_UPDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_UPDATE = 2,
 	}
 	
 	/// <summary>
 	/// Request to return full hashes matched by the provided hash prefixes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4FindFullHashesRequest
 	{
 		
@@ -541,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// The information regarding one or more threats that a client submits when checking for matches in threat lists.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatInfo
 	{
 		
@@ -574,8 +550,7 @@ namespace MyNS
 	/// <summary>
 	/// An individual threat; for example, a malicious URL or its hash representation. Only one of these fields should be set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatEntry
 	{
 		
@@ -598,8 +573,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4FindFullHashesResponse
 	{
 		
@@ -625,8 +599,7 @@ namespace MyNS
 	/// <summary>
 	/// A match when checking a threat entry in the Safe Browsing threat lists.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatMatch
 	{
 		
@@ -670,8 +643,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata associated with a specific threat entry. The client is expected to know the metadata key/value pairs associated with each threat type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatEntryMetadata
 	{
 		
@@ -685,8 +657,7 @@ namespace MyNS
 	/// <summary>
 	/// A single metadata entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatEntryMetadataMetadataEntry
 	{
 		
@@ -706,8 +677,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to check entries against lists.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4FindThreatMatchesRequest
 	{
 		
@@ -724,8 +694,7 @@ namespace MyNS
 		public GoogleSecuritySafebrowsingV4ThreatInfo ThreatInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4FindThreatMatchesResponse
 	{
 		
@@ -736,8 +705,7 @@ namespace MyNS
 		public GoogleSecuritySafebrowsingV4ThreatMatch[] Matches { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ListThreatListsResponse
 	{
 		
@@ -751,8 +719,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an individual threat list. A list is defined by three parameters: the type of threat posed, the type of platform targeted by the threat, and the type of entries in the list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatListDescriptor
 	{
 		
@@ -775,8 +742,7 @@ namespace MyNS
 		public GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType ThreatType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatHit
 	{
 		
@@ -820,8 +786,7 @@ namespace MyNS
 	/// <summary>
 	/// A single resource related to a threat hit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatHitThreatSource
 	{
 		
@@ -850,33 +815,30 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleSecuritySafebrowsingV4ThreatHitThreatSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THREAT_SOURCE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THREAT_SOURCE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCHING_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCHING_URL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAB_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAB_URL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAB_REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAB_REDIRECT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAB_RESOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAB_RESOURCE = 4,
 	}
 	
 	/// <summary>
 	/// Details about the user that encountered the threat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV4ThreatHitUserInfo
 	{
 		

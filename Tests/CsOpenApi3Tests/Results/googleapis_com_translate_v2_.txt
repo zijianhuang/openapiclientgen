@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for language detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectLanguageRequest
 	{
 		
@@ -33,8 +32,7 @@ namespace MyNS
 		public string[] Q { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectionsListResponse
 	{
 		
@@ -45,8 +43,7 @@ namespace MyNS
 		public DetectionsResourceElement[][] Detections { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectionsResourceElement
 	{
 		
@@ -72,8 +69,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for discovering supported languages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSupportedLanguagesRequest
 	{
 		
@@ -85,8 +81,7 @@ namespace MyNS
 		public string Target { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguagesListResponse
 	{
 		
@@ -97,8 +92,7 @@ namespace MyNS
 		public LanguagesResource[] Languages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguagesResource
 	{
 		
@@ -120,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// The main translation request message for the Cloud Translation API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranslateTextRequest
 	{
 		
@@ -166,8 +159,7 @@ namespace MyNS
 	/// <summary>
 	/// The main language translation response message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranslationsListResponse
 	{
 		
@@ -178,8 +170,7 @@ namespace MyNS
 		public TranslationsResource[] Translations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TranslationsResource
 	{
 		
@@ -427,10 +418,10 @@ namespace MyNS
 	public enum Language_translations_listFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		html = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 1,
 	}
 }

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message includes the context and a list of matching results which contain the detail of associated entities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchResponse
 	{
 		

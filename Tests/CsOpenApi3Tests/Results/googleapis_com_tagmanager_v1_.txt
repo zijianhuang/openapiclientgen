@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the Google Tag Manager Account access permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountAccess
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a predicate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Condition
 	{
 		
@@ -89,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parameter
 	{
 		
@@ -125,79 +121,74 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParameterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="template")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		template = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="integer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		integer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="boolean")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		boolean = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="list")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		list = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="map")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		map = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="triggerReference")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		triggerReference = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagReference")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tagReference = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConditionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="equals")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		equals = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contains")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contains = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="startsWith")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		startsWith = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="endsWith")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		endsWith = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="matchRegex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		matchRegex = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="greater")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		greater = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="greaterOrEquals")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		greaterOrEquals = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="less")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		less = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lessOrEquals")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lessOrEquals = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cssSelector")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cssSelector = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="urlMatches")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		urlMatches = 10,
 	}
 	
 	/// <summary>
 	/// Represents a Google Tag Manager Container.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Container
 	{
 		
@@ -271,8 +262,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the Google Tag Manager Container access permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerAccess
 	{
 		
@@ -292,8 +282,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Container Version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerVersion
 	{
 		
@@ -385,8 +374,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Folder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Folder
 	{
 		
@@ -424,8 +412,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Macro.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Macro
 	{
 		
@@ -511,8 +498,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -562,8 +548,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -694,8 +679,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetupTag
 	{
 		
@@ -712,24 +696,21 @@ namespace MyNS
 		public string TagName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TagTagFiringOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unlimited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unlimited = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oncePerEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oncePerEvent = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oncePerLoad")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oncePerLoad = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeardownTag
 	{
 		
@@ -749,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Trigger
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Trigger
 	{
 		
@@ -923,75 +903,72 @@ namespace MyNS
 		public Parameter WaitForTagsTimeout { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TriggerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pageview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pageview = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="domReady")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		domReady = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="windowLoaded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		windowLoaded = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customEvent = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="triggerGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		triggerGroup = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="always")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		always = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formSubmission")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formSubmission = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="click")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		click = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="linkClick")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		linkClick = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jsError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jsError = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="historyChange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		historyChange = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timer = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClick")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClick = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampTimer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampTimer = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampScroll")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampScroll = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampVisibility")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampVisibility = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="youTubeVideo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		youTubeVideo = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scrollDepth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scrollDepth = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibility")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibility = 18,
 	}
 	
 	/// <summary>
 	/// Represents a Google Tag Manager Variable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Variable
 	{
 		
@@ -1077,8 +1054,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Container Version Header.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerVersionHeader
 	{
 		
@@ -1146,8 +1122,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for new container versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateContainerVersionRequestVersionOptions
 	{
 		
@@ -1173,8 +1148,7 @@ namespace MyNS
 	/// <summary>
 	/// Create container versions response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateContainerVersionResponse
 	{
 		
@@ -1194,8 +1168,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Environment. Note that a user can create, delete and update environments of type USER, but can only update the enable_debug and url fields of environments of other types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Environment
 	{
 		
@@ -1269,30 +1242,27 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="live")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		live = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="latest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		latest = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="draft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		draft = 3,
 	}
 	
 	/// <summary>
 	/// Represents a Google Tag Manager Folder's contents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderEntities
 	{
 		
@@ -1318,8 +1288,7 @@ namespace MyNS
 	/// <summary>
 	/// List AccountUsers Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountUsersResponse
 	{
 		
@@ -1333,8 +1302,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a user's permissions to an account and its container.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserAccess
 	{
 		
@@ -1372,8 +1340,7 @@ namespace MyNS
 	/// <summary>
 	/// List Accounts Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountsResponse
 	{
 		
@@ -1387,8 +1354,7 @@ namespace MyNS
 	/// <summary>
 	/// List container versions response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContainerVersionsResponse
 	{
 		
@@ -1408,8 +1374,7 @@ namespace MyNS
 	/// <summary>
 	/// List Containers Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContainersResponse
 	{
 		
@@ -1423,8 +1388,7 @@ namespace MyNS
 	/// <summary>
 	/// List Environments Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEnvironmentsResponse
 	{
 		
@@ -1438,8 +1402,7 @@ namespace MyNS
 	/// <summary>
 	/// List Folders Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFoldersResponse
 	{
 		
@@ -1453,8 +1416,7 @@ namespace MyNS
 	/// <summary>
 	/// List Tags Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsResponse
 	{
 		
@@ -1468,8 +1430,7 @@ namespace MyNS
 	/// <summary>
 	/// List triggers response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTriggersResponse
 	{
 		
@@ -1483,8 +1444,7 @@ namespace MyNS
 	/// <summary>
 	/// List Variables Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVariablesResponse
 	{
 		
@@ -1498,8 +1458,7 @@ namespace MyNS
 	/// <summary>
 	/// Publish container version response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishContainerVersionResponse
 	{
 		

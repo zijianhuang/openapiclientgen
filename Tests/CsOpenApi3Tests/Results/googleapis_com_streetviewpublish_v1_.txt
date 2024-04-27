@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to delete multiple Photos.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeletePhotosRequest
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to batch delete of one or more Photos.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeletePhotosResponse
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to batch get of Photos.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetPhotosResponse
 	{
 		
@@ -92,8 +88,7 @@ namespace MyNS
 	/// <summary>
 	/// Response payload for a single Photo in batch operations including BatchGetPhotos and BatchUpdatePhotos.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhotoResponse
 	{
 		
@@ -113,8 +108,7 @@ namespace MyNS
 	/// <summary>
 	/// Photo is used to store 360 photos along with photo metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Photo
 	{
 		
@@ -200,8 +194,7 @@ namespace MyNS
 	/// <summary>
 	/// A connection is the link from a source photo to a destination photo.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connection
 	{
 		
@@ -215,8 +208,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifier for a Photo.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhotoId
 	{
 		
@@ -227,27 +219,24 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PhotoMapsPublishStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_MAPS_PUBLISH_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_MAPS_PUBLISH_STATUS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED_UNKNOWN = 2,
 	}
 	
 	/// <summary>
 	/// Place metadata for an entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Place
 	{
 		
@@ -273,8 +262,7 @@ namespace MyNS
 	/// <summary>
 	/// Raw pose measurement for an entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pose
 	{
 		
@@ -330,8 +318,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatLng
 	{
 		
@@ -351,8 +338,7 @@ namespace MyNS
 	/// <summary>
 	/// Level information containing level number and its corresponding name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Level
 	{
 		
@@ -369,42 +355,39 @@ namespace MyNS
 		public System.Nullable<System.Double> Number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PhotoTransferStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_STATUS_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_STATUS_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER_TRANSFERRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER_TRANSFERRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECEIVED_VIA_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECEIVED_VIA_TRANSFER = 7,
 	}
 	
 	/// <summary>
 	/// Upload reference for media files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadRef
 	{
 		
@@ -418,8 +401,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update the metadata of photos. Updating the pixels of photos is not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdatePhotosRequest
 	{
 		
@@ -433,8 +415,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update the metadata of a Photo. Updating the pixels of a photo is not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePhotoRequest
 	{
 		
@@ -454,8 +435,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to batch update of metadata of one or more Photos.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUpdatePhotosResponse
 	{
 		
@@ -469,8 +449,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -478,8 +457,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to ProcessingFailureReason#GPS_DATA_GAP. If there are multiple GPS data gaps, only the one with the largest duration is reported here.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GpsDataGapFailureDetails
 	{
 		
@@ -499,8 +477,7 @@ namespace MyNS
 	/// <summary>
 	/// IMU data from the device sensors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Imu
 	{
 		
@@ -526,8 +503,7 @@ namespace MyNS
 	/// <summary>
 	/// A Generic 3d measurement sample.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Measurement3d
 	{
 		
@@ -559,8 +535,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to ProcessingFailureReason#IMU_DATA_GAP. If there are multiple IMU data gaps, only the one with the largest duration is reported here.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImuDataGapFailureDetails
 	{
 		
@@ -580,8 +555,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to ProcessingFailureReason#INSUFFICIENT_GPS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientGpsFailureDetails
 	{
 		
@@ -595,8 +569,7 @@ namespace MyNS
 	/// <summary>
 	/// A rectangle in geographical coordinates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatLngBounds
 	{
 		
@@ -616,8 +589,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to list all photo sequences that belong to a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPhotoSequencesResponse
 	{
 		
@@ -637,8 +609,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -676,8 +647,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to list all photos that belong to a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPhotosResponse
 	{
 		
@@ -697,8 +667,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to PhotoSequenceProcessingFailureReason#NO_OVERLAP_GPS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoOverlapGpsFailureDetails
 	{
 		
@@ -730,8 +699,7 @@ namespace MyNS
 	/// <summary>
 	/// Details related to ProcessingFailureReason#NOT_OUTDOORS. If there are multiple indoor frames found, the first frame is recorded here.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotOutdoorsFailureDetails
 	{
 		
@@ -745,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// A sequence of 360 photos along with metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhotoSequence
 	{
 		
@@ -844,8 +811,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional details to accompany the ProcessingFailureReason enum. This message is always expected to be used in conjunction with ProcessingFailureReason, and the oneof value set in this message should match the FailureReason.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProcessingFailureDetails
 	{
 		
@@ -880,117 +846,111 @@ namespace MyNS
 		public NotOutdoorsFailureDetails NotOutdoorsDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PhotoSequenceFailureReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_FAILURE_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_FAILURE_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW_RESOLUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW_RESOLUTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUPLICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DUPLICATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_GPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_GPS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_OVERLAP_GPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_OVERLAP_GPS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_GPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_GPS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_TO_REFINE_POSITIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_TO_REFINE_POSITIONS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAKEDOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAKEDOWN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CORRUPT_VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CORRUPT_VIDEO = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_VIDEO_FORMAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_VIDEO_FORMAT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_VIDEO_DIMENSIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_VIDEO_DIMENSIONS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CAPTURE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_CAPTURE_TIME = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GPS_DATA_GAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GPS_DATA_GAP = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JUMPY_GPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JUMPY_GPS = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_IMU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_IMU = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_IMU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_IMU = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_OVERLAP_TIME_SERIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_OVERLAP_TIME_SERIES = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMU_DATA_GAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMU_DATA_GAP = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED_CAMERA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUPPORTED_CAMERA = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_OUTDOORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_OUTDOORS = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_VIDEO_FRAMES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_VIDEO_FRAMES = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_MOVEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_MOVEMENT = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAST_DOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAST_DOWN = 23,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PhotoSequenceGpsSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHOTO_SEQUENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHOTO_SEQUENCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMERA_MOTION_METADATA_TRACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMERA_MOTION_METADATA_TRACK = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PhotoSequenceProcessingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 	}
 	
@@ -1550,23 +1510,23 @@ namespace MyNS
 	public enum Streetviewpublish_photo_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUDE_DOWNLOAD_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUDE_DOWNLOAD_URL = 1,
 	}
 	
 	public enum Streetviewpublish_photoSequence_createInputType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INPUT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INPUT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XDM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XDM = 2,
 	}
 }

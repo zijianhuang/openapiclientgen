@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single Apt package repository. This repository is added to a repo file that is stored at `/etc/apt/sources.list.d/google_osconfig.list`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AptRepository
 	{
 		
@@ -56,27 +55,24 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AptRepositoryArchiveType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEB = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEB_SRC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEB_SRC = 2,
 	}
 	
 	/// <summary>
 	/// Apt patching is completed by executing `apt-get update && apt-get upgrade`. Additional options can be set to control how this is executed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AptSettings
 	{
 		
@@ -99,27 +95,24 @@ namespace MyNS
 		public System.Nullable<AptSettingsType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AptSettingsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPGRADE = 2,
 	}
 	
 	/// <summary>
 	/// An assignment represents the group or groups of VM instances that the policy applies to. If an assignment is empty, it applies to all VM instances. Otherwise, the targeted VM instances must meet all the criteria specified. So if both labels and zones are specified, the policy applies to VM instances with those labels and in those zones.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Assignment
 	{
 		
@@ -157,8 +150,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a group of VM intances that can be identified as having all these labels, for example "env=prod and app=web".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssignmentGroupLabel
 	{
 		
@@ -172,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the criteria for selecting VM Instances by OS type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssignmentOsType
 	{
 		
@@ -199,8 +190,7 @@ namespace MyNS
 	/// <summary>
 	/// Message for canceling a patch job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelPatchJobRequest
 	{
 	}
@@ -208,8 +198,7 @@ namespace MyNS
 	/// <summary>
 	/// The effective guest policy that applies to a VM instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EffectiveGuestPolicy
 	{
 		
@@ -235,8 +224,7 @@ namespace MyNS
 	/// <summary>
 	/// A guest policy package repository including its source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EffectiveGuestPolicySourcedPackageRepository
 	{
 		
@@ -256,8 +244,7 @@ namespace MyNS
 	/// <summary>
 	/// A package repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackageRepository
 	{
 		
@@ -289,8 +276,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Goo package repository. These is added to a repo file that is stored at C:/ProgramData/GooGet/repos/google_osconfig.repo.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GooRepository
 	{
 		
@@ -310,8 +296,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single Yum package repository. This repository is added to a repo file that is stored at `/etc/yum.repos.d/google_osconfig.repo`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class YumRepository
 	{
 		
@@ -343,8 +328,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single Zypper package repository. This repository is added to a repo file that is stored at `/etc/zypp/repos.d/google_osconfig.repo`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZypperRepository
 	{
 		
@@ -376,8 +360,7 @@ namespace MyNS
 	/// <summary>
 	/// A guest policy package including its source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EffectiveGuestPolicySourcedPackage
 	{
 		
@@ -397,8 +380,7 @@ namespace MyNS
 	/// <summary>
 	/// Package is a reference to the software package to be installed or removed. The agent on the VM instance uses the system package manager to apply the config. These are the commands that the agent uses to install or remove packages. Apt install: `apt-get update && apt-get -y install package1 package2 package3` remove: `apt-get -y remove package1 package2 package3` Yum install: `yum -y install package1 package2 package3` remove: `yum -y remove package1 package2 package3` Zypper install: `zypper install package1 package2 package3` remove: `zypper rm package1 package2` Googet install: `googet -noconfirm install package1 package2 package3` remove: `googet -noconfirm remove package1 package2 package3`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Package
 	{
 		
@@ -421,55 +403,50 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PackageDesiredState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESIRED_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESIRED_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PackageManager
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YUM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZYPPER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZYPPER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOO = 5,
 	}
 	
 	/// <summary>
 	/// A guest policy recipe including its source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EffectiveGuestPolicySourcedSoftwareRecipe
 	{
 		
@@ -489,8 +466,7 @@ namespace MyNS
 	/// <summary>
 	/// A software recipe is a set of instructions for installing and configuring a piece of software. It consists of a set of artifacts that are downloaded, and a set of steps that install, configure, and/or update the software. Recipes support installing and updating software from artifacts in the following formats: Zip archive, Tar archive, Windows MSI, Debian package, and RPM package. Additionally, recipes support executing a script (either defined in a file or directly in this api) in bash, sh, cmd, and powershell. Updating a software recipe If a recipe is assigned to an instance and there is a recipe with the same name but a lower version already installed and the assigned state of the recipe is `UPDATED`, then the recipe is updated to the new version. Script Working Directories Each script or execution step is run in its own temporary directory which is deleted after completing the step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipe
 	{
 		
@@ -534,8 +510,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a resource to be used in the recipe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeArtifact
 	{
 		
@@ -567,8 +542,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an artifact available as a Google Cloud Storage object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeArtifactGcs
 	{
 		
@@ -594,8 +568,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an artifact available via some URI.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeArtifactRemote
 	{
 		
@@ -615,8 +588,7 @@ namespace MyNS
 	/// <summary>
 	/// An action that can be taken as part of installing or updating a recipe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeStep
 	{
 		
@@ -666,8 +638,7 @@ namespace MyNS
 	/// <summary>
 	/// Extracts an archive of the type specified in the specified directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeStepExtractArchive
 	{
 		
@@ -690,39 +661,36 @@ namespace MyNS
 		public System.Nullable<SoftwareRecipeStepExtractArchiveType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SoftwareRecipeStepExtractArchiveType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAR_GZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAR_GZIP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAR_BZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAR_BZIP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAR_LZMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAR_LZMA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAR_XZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAR_XZ = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZIP = 6,
 	}
 	
 	/// <summary>
 	/// Installs a deb via dpkg.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeStepInstallDpkg
 	{
 		
@@ -736,8 +704,7 @@ namespace MyNS
 	/// <summary>
 	/// Copies the artifact to the specified path on the instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeStepCopyFile
 	{
 		
@@ -769,8 +736,7 @@ namespace MyNS
 	/// <summary>
 	/// Executes an artifact or local file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeStepExecFile
 	{
 		
@@ -802,8 +768,7 @@ namespace MyNS
 	/// <summary>
 	/// Installs an MSI file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeStepInstallMsi
 	{
 		
@@ -829,8 +794,7 @@ namespace MyNS
 	/// <summary>
 	/// Installs an rpm file via the rpm utility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeStepInstallRpm
 	{
 		
@@ -844,8 +808,7 @@ namespace MyNS
 	/// <summary>
 	/// Runs a script through an interpreter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareRecipeStepRunScript
 	{
 		
@@ -868,27 +831,24 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SoftwareRecipeStepRunScriptInterpreter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERPRETER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERPRETER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHELL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHELL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWERSHELL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWERSHELL = 2,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -896,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// A step that runs an executable for a PatchJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecStep
 	{
 		
@@ -917,8 +876,7 @@ namespace MyNS
 	/// <summary>
 	/// Common configurations for an ExecStep.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecStepConfig
 	{
 		
@@ -950,8 +908,7 @@ namespace MyNS
 	/// <summary>
 	/// Google Cloud Storage object representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GcsObject
 	{
 		
@@ -974,30 +931,27 @@ namespace MyNS
 		public string Object { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecStepConfigInterpreter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERPRETER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERPRETER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHELL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHELL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWERSHELL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWERSHELL = 3,
 	}
 	
 	/// <summary>
 	/// A request message to initiate patching across Compute Engine instances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutePatchJobRequest
 	{
 		
@@ -1047,8 +1001,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter to target VM instances for patching. The targeted VMs must meet all criteria specified. So if both labels and zones are specified, the patch job targets only VMs with those labels and in those zones.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchInstanceFilter
 	{
 		
@@ -1086,8 +1039,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a group of VMs that can be identified as having all these labels, for example "env=prod and app=web".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchInstanceFilterGroupLabel
 	{
 		
@@ -1101,8 +1053,7 @@ namespace MyNS
 	/// <summary>
 	/// Patch configuration specifications. Contains details on how to apply the patch(es) to a VM instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchConfig
 	{
 		
@@ -1164,36 +1115,32 @@ namespace MyNS
 	/// <summary>
 	/// Googet patching is performed by running `googet update`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GooSettings
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchConfigRebootConfig
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBOOT_CONFIG_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REBOOT_CONFIG_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALWAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALWAYS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER = 3,
 	}
 	
 	/// <summary>
 	/// Windows patching is performed using the Windows Update Agent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WindowsUpdateSettings
 	{
 		
@@ -1219,8 +1166,7 @@ namespace MyNS
 	/// <summary>
 	/// Yum patching is performed by executing `yum update`. Additional options can be set to control how this is executed. Note that not all settings are supported on all platforms.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class YumSettings
 	{
 		
@@ -1252,8 +1198,7 @@ namespace MyNS
 	/// <summary>
 	/// Zypper patching is performed by running `zypper patch`. See also https://en.opensuse.org/SDB:Zypper_manual.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZypperSettings
 	{
 		
@@ -1297,8 +1242,7 @@ namespace MyNS
 	/// <summary>
 	/// Patch rollout configuration specifications. Contains details on the concurrency control when applying patch(es) to all targeted VMs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchRollout
 	{
 		
@@ -1318,8 +1262,7 @@ namespace MyNS
 	/// <summary>
 	/// Message encapsulating a value that can be either absolute ("fixed") or relative ("percent") to a value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FixedOrPercent
 	{
 		
@@ -1336,27 +1279,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchRolloutMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZONE_BY_ZONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZONE_BY_ZONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONCURRENT_ZONES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONCURRENT_ZONES = 2,
 	}
 	
 	/// <summary>
 	/// OS policy assignment operation metadata provided by OS policy assignment API methods that return long running operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadata
 	{
 		
@@ -1391,52 +1331,47 @@ namespace MyNS
 		public string RolloutUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataApiMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataRolloutState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLOUT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLLOUT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 4,
 	}
 	
 	/// <summary>
 	/// An OS Config resource representing a guest configuration policy. These policies represent the desired state for VM instance guest environments including packages to install or remove, package repository configurations, and software to install.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GuestPolicy
 	{
 		
@@ -1498,8 +1433,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for listing guest policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGuestPoliciesResponse
 	{
 		
@@ -1519,8 +1453,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message for listing patch deployments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPatchDeploymentsResponse
 	{
 		
@@ -1540,8 +1473,7 @@ namespace MyNS
 	/// <summary>
 	/// Patch deployments are configurations that individual patch jobs use to complete a patch. These configurations include instance filter, package repository settings, and a schedule. For more information about creating and managing patch deployments, see [Scheduling patch jobs](https://cloud.google.com/compute/docs/os-patch-management/schedule-patch-jobs).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchDeployment
 	{
 		
@@ -1621,8 +1553,7 @@ namespace MyNS
 	/// <summary>
 	/// Sets the time for a one time patch deployment. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OneTimeSchedule
 	{
 		
@@ -1636,8 +1567,7 @@ namespace MyNS
 	/// <summary>
 	/// Sets the time for recurring patch deployments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecurringSchedule
 	{
 		
@@ -1696,30 +1626,27 @@ namespace MyNS
 		public WeeklySchedule Weekly { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecurringScheduleFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FREQUENCY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FREQUENCY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEKLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 3,
 	}
 	
 	/// <summary>
 	/// Represents a monthly schedule. An example of a valid monthly schedule is "on the third Tuesday of the month" or "on the 15th of the month".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonthlySchedule
 	{
 		
@@ -1739,8 +1666,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents one week day in a month. An example is "the 4th Sunday".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WeekDayOfMonth
 	{
 		
@@ -1763,42 +1689,39 @@ namespace MyNS
 		public System.Nullable<System.Int32> WeekOrdinal { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WeekDayOfMonthDayOfWeek
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_OF_WEEK_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_OF_WEEK_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUESDAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEDNESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEDNESDAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THURSDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THURSDAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIDAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SATURDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SATURDAY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUNDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUNDAY = 7,
 	}
 	
 	/// <summary>
 	/// Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeOfDay
 	{
 		
@@ -1830,8 +1753,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeZone
 	{
 		
@@ -1851,8 +1773,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a weekly schedule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WeeklySchedule
 	{
 		
@@ -1863,27 +1784,24 @@ namespace MyNS
 		public WeekDayOfMonthDayOfWeek DayOfWeek { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchDeploymentState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 2,
 	}
 	
 	/// <summary>
 	/// A response message for listing the instances details for a patch job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPatchJobInstanceDetailsResponse
 	{
 		
@@ -1903,8 +1821,7 @@ namespace MyNS
 	/// <summary>
 	/// Patch details for a VM instance. For more information about reviewing VM instance details, see [Listing all VM instance details for a specific patch job](https://cloud.google.com/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchJobInstanceDetails
 	{
 		
@@ -1939,66 +1856,63 @@ namespace MyNS
 		public System.Nullable<PatchJobInstanceDetailsState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchJobInstanceDetailsState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATCH_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATCH_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFIED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWNLOADING_PATCHES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOWNLOADING_PATCHES = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLYING_PATCHES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLYING_PATCHES = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBOOTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REBOOTING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED_REBOOT_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED_REBOOT_REQUIRED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACKED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMED_OUT = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING_PRE_PATCH_STEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING_PRE_PATCH_STEP = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING_POST_PATCH_STEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING_POST_PATCH_STEP = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_AGENT_DETECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_AGENT_DETECTED = 15,
 	}
 	
 	/// <summary>
 	/// A response message for listing patch jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPatchJobsResponse
 	{
 		
@@ -2018,8 +1932,7 @@ namespace MyNS
 	/// <summary>
 	/// A high level representation of a patch job that is either in progress or has completed. Instance details are not included in the job. To paginate through instance details, use `ListPatchJobInstanceDetails`. For more information about patch jobs, see [Creating patch jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchJob
 	{
 		
@@ -2117,8 +2030,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of the current patch state across all instances that this patch job affects. Contains counts of instances in different states. These states map to `InstancePatchState`. List patch job instance details to see the specific states of each instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchJobInstanceDetailsSummary
 	{
 		
@@ -2213,42 +2125,39 @@ namespace MyNS
 		public string TimedOutInstanceCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchJobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_LOOKUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_LOOKUP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATCHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATCHING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED_WITH_ERRORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED_WITH_ERRORS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMED_OUT = 7,
 	}
 	
 	/// <summary>
 	/// A request message for getting the effective guest policy assigned to the instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupEffectiveGuestPolicyRequest
 	{
 		
@@ -2274,8 +2183,7 @@ namespace MyNS
 	/// <summary>
 	/// OS policy assignment operation metadata provided by OS policy assignment API methods that return long running operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSPolicyAssignmentOperationMetadata
 	{
 		
@@ -2313,8 +2221,7 @@ namespace MyNS
 	/// <summary>
 	/// A request message for pausing a patch deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PausePatchDeploymentRequest
 	{
 	}
@@ -2322,8 +2229,7 @@ namespace MyNS
 	/// <summary>
 	/// A request message for resuming a patch deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResumePatchDeploymentRequest
 	{
 	}

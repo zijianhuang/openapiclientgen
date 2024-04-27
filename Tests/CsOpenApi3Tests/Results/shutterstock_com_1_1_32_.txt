@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Access token details that are currently associated with this user
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessTokenDetails
 	{
 		
@@ -80,24 +79,21 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccessTokenDetailsRealm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contributor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contributor = 1,
 	}
 	
 	/// <summary>
 	/// Album metadata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Album
 	{
 		
@@ -121,8 +117,7 @@ namespace MyNS
 	/// <summary>
 	/// An allotment of credits as part of a subscription
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Allotment
 	{
 		
@@ -154,8 +149,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about the artist that created the media
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Artist
 	{
 		
@@ -171,8 +165,7 @@ namespace MyNS
 	/// <summary>
 	/// Audio metadata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Audio
 	{
 		
@@ -363,8 +356,7 @@ namespace MyNS
 	/// <summary>
 	/// Files that are available as part of an audio asset
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioAssets
 	{
 		
@@ -414,8 +406,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a file that is part of an audio asset
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioAssetDetails
 	{
 		
@@ -435,8 +426,7 @@ namespace MyNS
 	/// <summary>
 	/// Links for Shorts, Loops and Stems previews
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShortsLoopsStems
 	{
 		
@@ -453,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a contributor
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contributor
 	{
 		
@@ -470,8 +459,7 @@ namespace MyNS
 	/// <summary>
 	/// Model and property release metadata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModelRelease
 	{
 		
@@ -485,8 +473,7 @@ namespace MyNS
 	/// <summary>
 	/// List of tracks
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioDataList
 	{
 		
@@ -530,8 +517,7 @@ namespace MyNS
 	/// <summary>
 	/// Error object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -571,8 +557,7 @@ namespace MyNS
 	/// <summary>
 	/// The output of an audio render in WAV or MP3 format
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioRenderResult
 	{
 		
@@ -634,8 +619,7 @@ namespace MyNS
 	/// <summary>
 	/// Files associated with the render
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioRendersFilesList
 	{
 		
@@ -704,52 +688,47 @@ namespace MyNS
 		public string[] Tracks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderResultPreset
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MASTER_MP3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MASTER_MP3 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MASTER_WAV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MASTER_WAV = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEMS_WAV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEMS_WAV = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderResultStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAITING_COMPOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAITING_COMPOSE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING_COMPOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING_COMPOSE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAITING_RENDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAITING_RENDER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING_RENDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING_RENDER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_CREATE = 5,
 	}
 	
 	/// <summary>
 	/// A timeline object that represents either a request for music to be created or an entire music composition
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioRenderTimeline
 	{
 		
@@ -763,8 +742,7 @@ namespace MyNS
 	/// <summary>
 	/// The beginning of a non-overlapping period of absolute time
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioRenderTimelineSpan
 	{
 		
@@ -818,8 +796,7 @@ namespace MyNS
 	/// <summary>
 	/// An instrument and the status objects that specify when that instrument plays
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioRenderTimelineSpanInstrumentGroup
 	{
 		
@@ -841,8 +818,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of an instrument at a specific beat
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioRenderTimelineSpanInstrumentGroupStatus
 	{
 		
@@ -863,24 +839,21 @@ namespace MyNS
 		public AudioRenderTimelineSpanInstrumentGroupStatusStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderTimelineSpanInstrumentGroupStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 1,
 	}
 	
 	/// <summary>
 	/// A period of music or silence, measured in beats
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioRenderTimelineSpanRegion
 	{
 		
@@ -957,29 +930,25 @@ namespace MyNS
 		public AudioRenderTimelineSpanRegionEnd_typeType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderTimelineSpanRegionEnd_typeEvent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transition = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderTimelineSpanRegionEnd_typeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringout = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cut = 1,
 	}
 	
@@ -1005,127 +974,116 @@ namespace MyNS
 		public System.Nullable<AudioRenderTimelineSpanRegionKeyTonic_quality> Tonic_quality { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderTimelineSpanRegionKeyTonic_accidental
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="double flat")]
 		double_flat = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="flat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		flat = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="natural")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		natural = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sharp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sharp = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="double sharp")]
 		double_sharp = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderTimelineSpanRegionKeyTonic_note
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="c")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		c = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="d")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		d = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="e")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		e = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="f")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		f = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="g")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		g = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="b")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		b = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderTimelineSpanRegionKeyTonic_quality
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="major")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		major = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="natural_minor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		natural_minor = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="harmonic_minor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		harmonic_minor = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="melodic_minor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		melodic_minor = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ionian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ionian = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dorian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dorian = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phrygian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phrygian = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lydian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lydian = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mixolydian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mixolydian = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aeolian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aeolian = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="locrian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		locrian = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderTimelineSpanRegionRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="music")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		music = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="silence")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		silence = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioRenderTimelineSpanSpan_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="metered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		metered = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unmetered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unmetered = 1,
 	}
 	
 	/// <summary>
 	/// An inflection point in a tempo curve; the API creates the overall tempo by using a linear interpolation of the time between each tempo change
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioRenderTimelineSpanTempoChanges
 	{
 		
@@ -1149,8 +1107,7 @@ namespace MyNS
 	/// <summary>
 	/// Audio render data
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioRendersListResults
 	{
 		
@@ -1166,8 +1123,7 @@ namespace MyNS
 	/// <summary>
 	/// Audio search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioSearchResults
 	{
 		
@@ -1217,8 +1173,7 @@ namespace MyNS
 	/// <summary>
 	/// Audio License URL object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioUrl
 	{
 		
@@ -1240,8 +1195,7 @@ namespace MyNS
 	/// <summary>
 	/// A band that can be used to generate music
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bands
 	{
 		
@@ -1261,8 +1215,7 @@ namespace MyNS
 	/// <summary>
 	/// Data required to search for an image
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchImage
 	{
 		
@@ -1501,165 +1454,159 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width_to { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchImageLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bn = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cs = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="da")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		da = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="el")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		el = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fi = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gu = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="he")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		he = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hi = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hr = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hu = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ja = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kn = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ko = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ml = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mr = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nb = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nl = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="or")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		or = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pl = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ro = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ru")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ru = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sk = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sl = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ta")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ta = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="te")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		te = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="th")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		th = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tr = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uk = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ur")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ur = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vi = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zh = 40,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh-Hant")]
 		zhMinusHant = 41,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchImageOrientation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="horizontal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		horizontal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vertical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vertical = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchImagePeople_age
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="infants")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		infants = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="children")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		children = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="teenagers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		teenagers = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="20s")]
@@ -1677,63 +1624,56 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="60s")]
 		_60s = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="older")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		older = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchImagePeople_gender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="male")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		male = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="female")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		female = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="both")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		both = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchImageSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="popular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		popular = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevance = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="random")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		random = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchImageView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minimal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minimal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 1,
 	}
 	
 	/// <summary>
 	/// List of search results for each given query
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkImageSearchResults
 	{
 		
@@ -1753,8 +1693,7 @@ namespace MyNS
 	/// <summary>
 	/// Image search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageSearchResults
 	{
 		
@@ -1816,8 +1755,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an image
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image
 	{
 		
@@ -1957,8 +1895,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the assets that are part of an image
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageAssets
 	{
 		
@@ -2032,8 +1969,7 @@ namespace MyNS
 	/// <summary>
 	/// Image size information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageSizeDetails
 	{
 		
@@ -2080,8 +2016,7 @@ namespace MyNS
 	/// <summary>
 	/// Image thumbnail information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Thumbnail
 	{
 		
@@ -2113,8 +2048,7 @@ namespace MyNS
 	/// <summary>
 	/// Category information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Category
 	{
 		
@@ -2141,8 +2075,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a human model or property that appears in media; used to search for assets that this model is in
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Model
 	{
 		
@@ -2158,8 +2091,7 @@ namespace MyNS
 	/// <summary>
 	/// AI-powered insights about an asset, based on the specified audience and objective
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Insights
 	{
 		
@@ -2185,8 +2117,7 @@ namespace MyNS
 	/// <summary>
 	/// Catalog collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogCollection
 	{
 		
@@ -2250,8 +2181,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about an item that is part of a collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogCollectionItem
 	{
 		
@@ -2300,19 +2230,17 @@ namespace MyNS
 		public CatalogCollectionItemAssetType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CatalogCollectionItemAssetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="image")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		image = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="video")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		video = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="audio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		audio = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="editorial-image")]
@@ -2325,8 +2253,7 @@ namespace MyNS
 	/// <summary>
 	/// List of role assignments for a catalog collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogCollectionRoleAssignments
 	{
 		
@@ -2361,8 +2288,7 @@ namespace MyNS
 	/// <summary>
 	/// A user that has access to a catalog collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogCollectionRole
 	{
 		
@@ -2388,19 +2314,15 @@ namespace MyNS
 		public CatalogCollectionRoleType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CatalogCollectionRoleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CatalogCollectionVisibility
 	{
 		
@@ -2414,8 +2336,7 @@ namespace MyNS
 	/// <summary>
 	/// List of catalog collections
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogCollectionDataList
 	{
 		
@@ -2452,8 +2373,7 @@ namespace MyNS
 	/// <summary>
 	/// List of catalog collection items
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogCollectionItemDataList
 	{
 		
@@ -2490,8 +2410,7 @@ namespace MyNS
 	/// <summary>
 	/// List of categories that images can belong to
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryDataList
 	{
 		
@@ -2535,8 +2454,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about a collection of assets
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Collection
 	{
 		
@@ -2604,8 +2522,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about an item that is part of a collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionItem
 	{
 		
@@ -2633,8 +2550,7 @@ namespace MyNS
 	/// <summary>
 	/// Collection creation request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionCreateRequest
 	{
 		
@@ -2650,8 +2566,7 @@ namespace MyNS
 	/// <summary>
 	/// Collection creation response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionCreateResponse
 	{
 		
@@ -2667,8 +2582,7 @@ namespace MyNS
 	/// <summary>
 	/// List of collections
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionDataList
 	{
 		
@@ -2712,8 +2626,7 @@ namespace MyNS
 	/// <summary>
 	/// List of items in a collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionItemDataList
 	{
 		
@@ -2757,8 +2670,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to get a list of items in a collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionItemRequest
 	{
 		
@@ -2774,8 +2686,7 @@ namespace MyNS
 	/// <summary>
 	/// Collection update request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionUpdateRequest
 	{
 		
@@ -2791,8 +2702,7 @@ namespace MyNS
 	/// <summary>
 	/// Asset upload information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputerVisionImageCreateResponse
 	{
 		
@@ -2807,8 +2717,7 @@ namespace MyNS
 	/// <summary>
 	/// Contributor profile data
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContributorProfile
 	{
 		
@@ -2884,8 +2793,7 @@ namespace MyNS
 	/// <summary>
 	/// Contributor profile social media links
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContributorProfileSocialMedia
 	{
 		
@@ -2929,8 +2837,7 @@ namespace MyNS
 	/// <summary>
 	/// List of contributor profiles
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContributorProfileDataList
 	{
 		
@@ -2974,8 +2881,7 @@ namespace MyNS
 	/// <summary>
 	/// Cookie object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cookie
 	{
 		
@@ -2999,8 +2905,7 @@ namespace MyNS
 	/// <summary>
 	/// Data required to create an audio render
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAudioRender
 	{
 		
@@ -3032,8 +2937,7 @@ namespace MyNS
 	/// <summary>
 	/// Render request data
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAudioRendersRequest
 	{
 		
@@ -3046,8 +2950,7 @@ namespace MyNS
 		public CreateAudioRender[] Audio_renders { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCatalogCollection
 	{
 		
@@ -3073,8 +2976,7 @@ namespace MyNS
 		public System.Nullable<CreateCatalogCollectionVisibility> Visibility { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCatalogCollectionItem
 	{
 		
@@ -3100,9 +3002,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateCatalogCollectionVisibility
 	{
 		
@@ -3113,8 +3013,7 @@ namespace MyNS
 		_public = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCatalogCollectionItems
 	{
 		
@@ -3133,8 +3032,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom height or a custom width to resize the image to, but not both (experimental)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomSizeDimensions
 	{
 		
@@ -3158,8 +3056,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a descriptor
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Descriptors
 	{
 		
@@ -3221,8 +3118,7 @@ namespace MyNS
 	/// <summary>
 	/// Instruments
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Instruments
 	{
 		
@@ -3242,8 +3138,7 @@ namespace MyNS
 	/// <summary>
 	/// Preview information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Preview
 	{
 		
@@ -3260,9 +3155,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PreviewContent_type
 	{
 		
@@ -3273,8 +3166,7 @@ namespace MyNS
 	/// <summary>
 	/// List Descriptors results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescriptorsListResult
 	{
 		
@@ -3300,8 +3192,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a downloaded media item. Applicable for all media types, only one of 'audio', 'image' or 'video' will be in a single DownloadHistory object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadHistory
 	{
 		
@@ -3381,8 +3272,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the downloaded media
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadHistoryMediaDetails
 	{
 		
@@ -3404,8 +3294,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the format of a download
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadHistoryFormatDetails
 	{
 		
@@ -3425,8 +3314,7 @@ namespace MyNS
 	/// <summary>
 	/// Pricing information for revenue-sharing transactions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadHistoryRevshareDetails
 	{
 		
@@ -3450,8 +3338,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a user
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadHistoryUserDetails
 	{
 		
@@ -3467,8 +3354,7 @@ namespace MyNS
 	/// <summary>
 	/// List of download events
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadHistoryDataList
 	{
 		
@@ -3512,8 +3398,7 @@ namespace MyNS
 	/// <summary>
 	/// Asset information, including size and thumbnail URLs
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialAssets
 	{
 		
@@ -3563,8 +3448,7 @@ namespace MyNS
 	/// <summary>
 	/// Name of an editorial category
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialCategory
 	{
 		
@@ -3575,8 +3459,7 @@ namespace MyNS
 	/// <summary>
 	/// List of editorial categories
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialCategoryResults
 	{
 		
@@ -3590,8 +3473,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about editorial content
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialContent
 	{
 		
@@ -3642,8 +3524,7 @@ namespace MyNS
 	/// <summary>
 	/// List of editorial items
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialContentDataList
 	{
 		
@@ -3687,8 +3568,7 @@ namespace MyNS
 	/// <summary>
 	/// Cover image for editorial livefeed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialCoverItem
 	{
 		
@@ -3716,8 +3596,7 @@ namespace MyNS
 	/// <summary>
 	/// List of editorial categories
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialImageCategoryResults
 	{
 		
@@ -3728,8 +3607,7 @@ namespace MyNS
 	/// <summary>
 	/// List of editorial items
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialImageContentDataList
 	{
 		
@@ -3773,8 +3651,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about editorial livefeed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialImageLivefeed
 	{
 		
@@ -3818,8 +3695,7 @@ namespace MyNS
 	/// <summary>
 	/// List of editorial livefeeds
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialImageLivefeedList
 	{
 		
@@ -3861,8 +3737,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about editorial livefeed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialLivefeed
 	{
 		
@@ -3906,8 +3781,7 @@ namespace MyNS
 	/// <summary>
 	/// List of editorial livefeeds
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialLivefeedList
 	{
 		
@@ -3949,8 +3823,7 @@ namespace MyNS
 	/// <summary>
 	/// Editorial search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialSearchResults
 	{
 		
@@ -4010,8 +3883,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about updated editorial content
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialUpdatedContent
 	{
 		
@@ -4087,8 +3959,7 @@ namespace MyNS
 	/// <summary>
 	/// Editorial updated results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialUpdatedResults
 	{
 		
@@ -4128,8 +3999,7 @@ namespace MyNS
 	/// <summary>
 	/// Asset information, including size and thumbnail URLs
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialVideoAssets
 	{
 		
@@ -4161,8 +4031,7 @@ namespace MyNS
 	/// <summary>
 	/// Video asset information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoSizeDetails
 	{
 		
@@ -4212,8 +4081,7 @@ namespace MyNS
 	/// <summary>
 	/// Video preview information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoPreviewUrl
 	{
 		
@@ -4229,8 +4097,7 @@ namespace MyNS
 	/// <summary>
 	/// List of editorial video categories
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialVideoCategoryResults
 	{
 		
@@ -4241,8 +4108,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about editorial content
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialVideoContent
 	{
 		
@@ -4290,8 +4156,7 @@ namespace MyNS
 	/// <summary>
 	/// Editorial search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditorialVideoSearchResults
 	{
 		
@@ -4351,8 +4216,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about a featured collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeaturedCollection
 	{
 		
@@ -4420,8 +4284,7 @@ namespace MyNS
 	/// <summary>
 	/// Featured collection cover item metadata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeaturedCollectionCoverItem
 	{
 		
@@ -4437,8 +4300,7 @@ namespace MyNS
 	/// <summary>
 	/// List of featured collections
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeaturedCollectionDataList
 	{
 		
@@ -4482,8 +4344,7 @@ namespace MyNS
 	/// <summary>
 	/// List of audio genres
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenreList
 	{
 		
@@ -4499,8 +4360,7 @@ namespace MyNS
 	/// <summary>
 	/// A valid ISO 3166-1 Alpha-2 or ISO 3166-1 Alpha-3 code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ISOCountryCode
 	{
 	}
@@ -4508,8 +4368,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to upload an image
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageCreateRequest
 	{
 		
@@ -4525,8 +4384,7 @@ namespace MyNS
 	/// <summary>
 	/// Image upload information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageCreateResponse
 	{
 		
@@ -4541,8 +4399,7 @@ namespace MyNS
 	/// <summary>
 	/// List of images
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageDataList
 	{
 		
@@ -4586,8 +4443,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an musical instrument
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Instrument
 	{
 		
@@ -4619,8 +4475,7 @@ namespace MyNS
 	/// <summary>
 	/// List of instruments
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstrumentList
 	{
 		
@@ -4636,8 +4491,7 @@ namespace MyNS
 	/// <summary>
 	/// Image search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstrumentsListResult
 	{
 		
@@ -4663,8 +4517,7 @@ namespace MyNS
 	/// <summary>
 	/// List of keywords
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeywordDataList
 	{
 		
@@ -4690,133 +4543,131 @@ namespace MyNS
 	/// <summary>
 	/// Language code
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Language
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bn = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cs = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="da")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		da = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="el")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		el = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fi = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gu = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="he")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		he = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hi = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hr = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hu = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ja = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kn = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ko = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ml = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mr = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nb = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nl = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="or")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		or = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pl = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ro = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ru")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ru = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sk = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sl = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ta")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ta = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="te")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		te = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="th")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		th = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tr = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uk = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ur")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ur = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vi = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zh = 40,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh-Hant")]
@@ -4826,8 +4677,7 @@ namespace MyNS
 	/// <summary>
 	/// An audio track in a licensing request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseAudio
 	{
 		
@@ -4852,36 +4702,33 @@ namespace MyNS
 		public string Search_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseAudioLicense
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="audio_platform")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		audio_platform = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier_music_basic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier_music_basic = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier_music_extended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier_music_extended = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier_music_pro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier_music_pro = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier_music_comp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier_music_comp = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asset_all_music")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asset_all_music = 5,
 	}
 	
 	/// <summary>
 	/// Audio license request data
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseAudioRequest
 	{
 		
@@ -4899,8 +4746,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a licensing request for an audio track
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseAudioResult
 	{
 		
@@ -4940,8 +4786,7 @@ namespace MyNS
 	/// <summary>
 	/// List of audio license results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseAudioResultDataList
 	{
 		
@@ -4985,8 +4830,7 @@ namespace MyNS
 	/// <summary>
 	/// Individual editorial content to license
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseEditorialContent
 	{
 		
@@ -5022,33 +4866,29 @@ namespace MyNS
 	/// <summary>
 	/// Additional information for license requests for enterprise accounts and API subscriptions, 4 fields maximum; which fields are required is set by the account holder
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseRequestMetadata
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseEditorialContentSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="small")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		small = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="original")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		original = 2,
 	}
 	
 	/// <summary>
 	/// License editorial content request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseEditorialContentRequest
 	{
 		
@@ -5072,8 +4912,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a licensing request for editorial content
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseEditorialContentResult
 	{
 		
@@ -5104,8 +4943,7 @@ namespace MyNS
 	/// <summary>
 	/// URL object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Url
 	{
 		
@@ -5121,8 +4959,7 @@ namespace MyNS
 	/// <summary>
 	/// List of editorial license results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseEditorialContentResults
 	{
 		
@@ -5166,8 +5003,7 @@ namespace MyNS
 	/// <summary>
 	/// Individual editorial video content to license
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseEditorialVideoContent
 	{
 		
@@ -5200,40 +5036,35 @@ namespace MyNS
 		public System.Nullable<LicenseEditorialVideoContentSize> Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseEditorialVideoContentLicense
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier_editorial_video_digital_only")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier_editorial_video_digital_only = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier_editorial_video_all_media")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier_editorial_video_all_media = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier_editorial_video_all_media_single_territory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier_editorial_video_all_media_single_territory = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier_editorial_video_comp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier_editorial_video_comp = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseEditorialVideoContentSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="original")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		original = 0,
 	}
 	
 	/// <summary>
 	/// License editorial video content request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseEditorialVideoContentRequest
 	{
 		
@@ -5257,8 +5088,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of a license
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseFormat
 	{
 		
@@ -5293,30 +5123,27 @@ namespace MyNS
 		public string Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseFormatMedia_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="image")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		image = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="video")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		video = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="audio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		audio = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="editorial")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		editorial = 3,
 	}
 	
 	/// <summary>
 	/// Data required to license an image
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseImage
 	{
 		
@@ -5395,40 +5222,35 @@ namespace MyNS
 		public string Verification_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseImageFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jpg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jpg = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseImageSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="small")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		small = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="huge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		huge = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 3,
 	}
 	
 	/// <summary>
 	/// Image license request data
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseImageRequest
 	{
 		
@@ -5446,8 +5268,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a licensing request for an image
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseImageResult
 	{
 		
@@ -5493,8 +5314,7 @@ namespace MyNS
 	/// <summary>
 	/// Price
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Price
 	{
 		
@@ -5514,8 +5334,7 @@ namespace MyNS
 	/// <summary>
 	/// List of information about licensed images
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseImageResultDataList
 	{
 		
@@ -5559,8 +5378,7 @@ namespace MyNS
 	/// <summary>
 	/// Data required to license an image
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseImageVector
 	{
 		
@@ -5633,28 +5451,23 @@ namespace MyNS
 		public string Verification_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseImageVectorFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eps")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eps = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseImageVectorSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vector")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vector = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseSFX
 	{
 		
@@ -5687,40 +5500,35 @@ namespace MyNS
 		public string Subscription_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseSFXAudio_layout
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ambisonic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ambisonic = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="5.1")]
 		_5_1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stereo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stereo = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseSFXFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wav")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wav = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mp3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mp3 = 1,
 	}
 	
 	/// <summary>
 	/// License sounds effect asset request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseSFXRequest
 	{
 		
@@ -5736,8 +5544,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a licensing request for an sound effects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseSFXResult
 	{
 		
@@ -5777,8 +5584,7 @@ namespace MyNS
 	/// <summary>
 	/// List of information about licensed sound effects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseSFXResultDataList
 	{
 		
@@ -5804,8 +5610,7 @@ namespace MyNS
 	/// <summary>
 	/// Data required to license a video
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseVideo
 	{
 		
@@ -5866,19 +5671,17 @@ namespace MyNS
 		public string Video_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LicenseVideoSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		web = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sd = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hd = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="4k")]
@@ -5888,8 +5691,7 @@ namespace MyNS
 	/// <summary>
 	/// List of videos to license
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseVideoRequest
 	{
 		
@@ -5907,8 +5709,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a licensing request for a video
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseVideoResult
 	{
 		
@@ -5954,8 +5755,7 @@ namespace MyNS
 	/// <summary>
 	/// List of video license results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LicenseVideoResultDataList
 	{
 		
@@ -5999,8 +5799,7 @@ namespace MyNS
 	/// <summary>
 	/// List of audio moods
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MoodList
 	{
 		
@@ -6016,8 +5815,7 @@ namespace MyNS
 	/// <summary>
 	/// Access token response to client apps
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OauthAccessTokenResponse
 	{
 		
@@ -6060,8 +5858,7 @@ namespace MyNS
 	/// <summary>
 	/// Media Recommendation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Recommendation
 	{
 		
@@ -6077,8 +5874,7 @@ namespace MyNS
 	/// <summary>
 	/// List of recommended images
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendationDataList
 	{
 		
@@ -6122,8 +5918,7 @@ namespace MyNS
 	/// <summary>
 	/// Data required to redownload an image
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedownloadImage
 	{
 		
@@ -6152,33 +5947,30 @@ namespace MyNS
 		public string Verification_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RedownloadImageSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="small")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		small = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="huge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		huge = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="supersize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		supersize = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vector")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vector = 4,
 	}
 	
 	/// <summary>
 	/// Data required to redownload a video
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedownloadVideo
 	{
 		
@@ -6207,27 +5999,24 @@ namespace MyNS
 		public string Verification_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RedownloadVideoSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		web = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sd = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hd = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="4k")]
 		_4k = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveCatalogCollectionItem
 	{
 		
@@ -6239,8 +6028,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveCatalogCollectionItems
 	{
 		
@@ -6259,8 +6047,7 @@ namespace MyNS
 	/// <summary>
 	/// SFX metadata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SFX
 	{
 		
@@ -6355,8 +6142,7 @@ namespace MyNS
 	/// <summary>
 	/// Files that are available as part of an sound effect asset
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SFXAssets
 	{
 		
@@ -6376,8 +6162,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a file that is part of an sound effect asset
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SFXAssetDetails
 	{
 		
@@ -6397,8 +6182,7 @@ namespace MyNS
 	/// <summary>
 	/// List of sound effects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SFXDataList
 	{
 		
@@ -6412,8 +6196,7 @@ namespace MyNS
 	/// <summary>
 	/// Sound effects search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SFXSearchResults
 	{
 		
@@ -6463,8 +6246,7 @@ namespace MyNS
 	/// <summary>
 	/// Search entity request data
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchEntitiesRequest
 	{
 		
@@ -6484,8 +6266,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a request for keyword analysis
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchEntitiesResponse
 	{
 		
@@ -6499,8 +6280,7 @@ namespace MyNS
 	/// <summary>
 	/// Sound effect license URL object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SfxUrl
 	{
 		
@@ -6516,8 +6296,7 @@ namespace MyNS
 	/// <summary>
 	/// Subscription information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscription
 	{
 		
@@ -6581,8 +6360,7 @@ namespace MyNS
 	/// <summary>
 	/// Subscription metadata; different for each customer
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionMetadata
 	{
 	}
@@ -6590,8 +6368,7 @@ namespace MyNS
 	/// <summary>
 	/// List of subscriptions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionDataList
 	{
 		
@@ -6635,8 +6412,7 @@ namespace MyNS
 	/// <summary>
 	/// List of search suggestions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Suggestions
 	{
 		
@@ -6650,8 +6426,7 @@ namespace MyNS
 	/// <summary>
 	/// Text to echo in the response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestEcho
 	{
 		
@@ -6662,8 +6437,7 @@ namespace MyNS
 	/// <summary>
 	/// Validation results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestValidate
 	{
 		
@@ -6683,8 +6457,7 @@ namespace MyNS
 	/// <summary>
 	/// Validation results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestValidateHeader
 	{
 		
@@ -6698,8 +6471,7 @@ namespace MyNS
 	/// <summary>
 	/// Validation results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestValidateQuery
 	{
 		
@@ -6718,8 +6490,7 @@ namespace MyNS
 		public string[] Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCatalogCollection
 	{
 		
@@ -6750,9 +6521,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateCatalogCollectionVisibility
 	{
 		
@@ -6766,8 +6535,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a piece of updated media
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatedMedia
 	{
 		
@@ -6799,8 +6567,7 @@ namespace MyNS
 	/// <summary>
 	/// List of updated media
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatedMediaDataList
 	{
 		
@@ -6844,8 +6611,7 @@ namespace MyNS
 	/// <summary>
 	/// List of URLs
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Urls
 	{
 		
@@ -6861,8 +6627,7 @@ namespace MyNS
 	/// <summary>
 	/// User details
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDetails
 	{
 		
@@ -6960,8 +6725,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a video
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Video
 	{
 		
@@ -7083,8 +6847,7 @@ namespace MyNS
 	/// <summary>
 	/// Video asset information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoAssets
 	{
 		
@@ -7158,8 +6921,7 @@ namespace MyNS
 	/// <summary>
 	/// List of items in a collection
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoCollectionItemDataList
 	{
 		
@@ -7203,8 +6965,7 @@ namespace MyNS
 	/// <summary>
 	/// List of videos
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoDataList
 	{
 		
@@ -7248,8 +7009,7 @@ namespace MyNS
 	/// <summary>
 	/// Video search results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoSearchResults
 	{
 		
@@ -12218,81 +11978,81 @@ namespace MyNS
 	public enum GetTrackCollectionItemsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldest = 1,
 	}
 	
 	public enum GetTrackLicenseListDownload_availability
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="downloadable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		downloadable = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="non_downloadable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		non_downloadable = 2,
 	}
 	
 	public enum SearchTracksSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="score")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		score = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ranking_all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ranking_all = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="artist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		artist = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="title")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		title = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bpm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bpm = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="freshness")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		freshness = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		duration = 6,
 	}
 	
 	public enum SearchTracksSort_order
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 	
 	public enum SearchTracksLibrary
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shutterstock")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shutterstock = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier = 1,
 	}
 	
 	public enum BulkSearchImagesPeople_age
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="infants")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		infants = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="children")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		children = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="teenagers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		teenagers = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="20s")]
@@ -12310,43 +12070,43 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="60s")]
 		_60s = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="older")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		older = 8,
 	}
 	
 	public enum GetContributorCollectionsListSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_updated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_updated = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="item_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		item_count = 2,
 	}
 	
 	public enum SearchEditorialImagesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevant = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldest = 2,
 	}
 	
 	public enum GetUpdatedEditorialImagesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="edit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		edit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="addition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		addition = 1,
 	}
 	
@@ -12356,17 +12116,17 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="4k")]
 		_4k = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high_definition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high_definition = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard_definition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		standard_definition = 2,
 	}
 	
 	public enum GetFeaturedImageCollectionListEmbed
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="share_url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		share_url = 0,
 	}
 	
@@ -12393,77 +12153,77 @@ namespace MyNS
 	public enum LicenseImagesFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eps")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eps = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jpg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jpg = 1,
 	}
 	
 	public enum LicenseImagesSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="small")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		small = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="huge")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		huge = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vector")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vector = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 4,
 	}
 	
 	public enum SearchImagesAi_industry
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="automotive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		automotive = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cpg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cpg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="finance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		finance = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="healthcare")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		healthcare = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="retail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		retail = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="technology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		technology = 5,
 	}
 	
 	public enum SearchImagesAi_objective
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="awareness")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		awareness = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="traffic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		traffic = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="conversions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		conversions = 2,
 	}
 	
 	public enum SearchImagesPeople_age
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="infants")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		infants = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="children")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		children = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="teenagers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		teenagers = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="20s")]
@@ -12481,7 +12241,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="60s")]
 		_60s = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="older")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		older = 8,
 	}
 	
@@ -12536,71 +12296,69 @@ namespace MyNS
 		public string Refresh_token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateAccessTokenPostBodyGrant_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authorization_code")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authorization_code = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="client_credentials")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		client_credentials = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="refresh_token")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		refresh_token = 2,
 	}
 	
 	public enum AuthorizeResponse_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="code")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		code = 0,
 	}
 	
 	public enum GetSfxListDetailsLibrary
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shutterstock")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shutterstock = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premier = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premiumbeat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premiumbeat = 2,
 	}
 	
 	public enum SearchSFXSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="popular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		popular = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevance = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="random")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		random = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldest = 4,
 	}
 	
 	public enum LicenseVideosSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		web = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sd = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hd = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="4k")]
@@ -12616,20 +12374,20 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="16_9")]
 		_16_9 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nonstandard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nonstandard = 2,
 	}
 	
 	public enum SearchVideosPeople_age
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="infants")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		infants = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="children")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		children = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="teenagers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		teenagers = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="20s")]
@@ -12647,7 +12405,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="60s")]
 		_60s = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="older")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		older = 8,
 	}
 	
@@ -12657,10 +12415,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="4k")]
 		_4k = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard_definition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		standard_definition = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high_definition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high_definition = 2,
 	}
 }

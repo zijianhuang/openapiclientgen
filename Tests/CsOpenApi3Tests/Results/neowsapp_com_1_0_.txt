@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloseApproachData
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 		public RelVelocity Relative_velocity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissDistance
 	{
 		
@@ -59,8 +57,7 @@ namespace MyNS
 		public string Miles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelVelocity
 	{
 		
@@ -71,8 +68,7 @@ namespace MyNS
 		public string Miles_per_hour { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EstimatedDiameter
 	{
 		
@@ -89,8 +85,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Estimated_diameter_min { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EstimatedDiameterContainer
 	{
 		
@@ -107,14 +102,12 @@ namespace MyNS
 		public EstimatedDiameter Miles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HashMap_string_List_NearEarthObject_
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NearEarthObject
 	{
 		
@@ -167,8 +160,7 @@ namespace MyNS
 		public string Sentry_data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrbitalData
 	{
 		
@@ -242,8 +234,7 @@ namespace MyNS
 		public string Semi_major_axis { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrbitClass
 	{
 		
@@ -257,78 +248,75 @@ namespace MyNS
 		public System.Nullable<OrbitClassOrbit_class_type> Orbit_class_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrbitClassOrbit_class_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IEO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMO = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MCA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MCA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMB = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MBA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MBA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OMB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OMB = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TJN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TJN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CEN = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TNO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TNO = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAA = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HYA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HYA = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HYP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HYP = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAR = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COM = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JFC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JFC = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTC = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ETC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ETC = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CTC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CTC = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JFc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JFc = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NearEarthObjectList
 	{
 		
@@ -348,8 +336,7 @@ namespace MyNS
 		public HashMap_string_List_NearEarthObject_ Near_earth_objects { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageMetaData
 	{
 		
@@ -366,8 +353,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Total_pages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SentryImpactRiskObject
 	{
 		
@@ -426,8 +412,7 @@ namespace MyNS
 		public string Year_range_min { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SentryObjectPagingDto
 	{
 		
@@ -441,8 +426,7 @@ namespace MyNS
 		public SentryImpactRiskObject[] Sentry_objects { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Statistics
 	{
 		
@@ -471,8 +455,7 @@ namespace MyNS
 		public string Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class URL
 	{
 		

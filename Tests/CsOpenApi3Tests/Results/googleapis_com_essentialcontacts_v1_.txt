@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for the ComputeContacts method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudEssentialcontactsV1ComputeContactsResponse
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// A contact that will receive notifications from Google Cloud.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudEssentialcontactsV1Contact
 	{
 		
@@ -83,27 +81,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudEssentialcontactsV1ContactValidationState> ValidationState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudEssentialcontactsV1ContactValidationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID = 2,
 	}
 	
 	/// <summary>
 	/// Response message for the ListContacts method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudEssentialcontactsV1ListContactsResponse
 	{
 		
@@ -123,8 +118,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the SendTestMessage method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudEssentialcontactsV1SendTestMessageRequest
 	{
 		
@@ -141,45 +135,42 @@ namespace MyNS
 		public System.Nullable<GoogleCloudEssentialcontactsV1SendTestMessageRequestNotificationCategory> NotificationCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudEssentialcontactsV1SendTestMessageRequestNotificationCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_CATEGORY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATION_CATEGORY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENSION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TECHNICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TECHNICAL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEGAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEGAL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT_UPDATES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT_UPDATES = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TECHNICAL_INCIDENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TECHNICAL_INCIDENTS = 8,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

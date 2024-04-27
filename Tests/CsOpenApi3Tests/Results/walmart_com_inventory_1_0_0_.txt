@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Quantity of an item that is available to be allocated to orders
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AvailToSellQty
 	{
 		
@@ -42,18 +41,15 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AvailToSellQtyUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EACH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EACH = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cause
 	{
 		
@@ -70,8 +66,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Elements
 	{
 		
@@ -180,8 +175,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -214,22 +208,20 @@ namespace MyNS
 		public System.Nullable<ErrorSeverity> Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA = 3,
 	}
 	
@@ -249,24 +241,21 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedId
 	{
 		
@@ -283,8 +272,7 @@ namespace MyNS
 		public string FeedId1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAllInventoriesDTO
 	{
 		
@@ -386,8 +374,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAllInventoriesNodeDTO
 	{
 		
@@ -476,8 +463,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Headers
 	{
 		
@@ -503,8 +489,7 @@ namespace MyNS
 	/// <summary>
 	/// Quantity of an item that is input by the seller
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputQty
 	{
 		
@@ -525,8 +510,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoriesDTO
 	{
 		
@@ -679,8 +663,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inventory
 	{
 		
@@ -721,8 +704,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryWFS
 	{
 		
@@ -764,8 +746,7 @@ namespace MyNS
 		public string ShipNodeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Meta
 	{
 		
@@ -782,8 +763,7 @@ namespace MyNS
 		public System.Nullable<System.Double> TotalCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiNodeInventoryFetchResponseDTO
 	{
 		
@@ -918,8 +898,7 @@ namespace MyNS
 		public System.Nullable<System.Double> TotalCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiNodeInventoryUpdateRequestDTO
 	{
 		
@@ -982,8 +961,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiNodeInventoryUpdateResponseDTO
 	{
 		
@@ -1067,8 +1045,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeDTO
 	{
 		
@@ -1208,8 +1185,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Payload
 	{
 		
@@ -1261,8 +1237,7 @@ namespace MyNS
 	/// <summary>
 	/// Quantity that has been ordered by the customers but not yet shipped
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedQty
 	{
 		
@@ -1283,8 +1258,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShipNodes
 	{
 		
@@ -1316,8 +1290,7 @@ namespace MyNS
 	/// <summary>
 	/// Quantity that has been ordered by the customers but not yet shipped
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupplyQuantity
 	{
 		
@@ -1338,8 +1311,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInventoriesRequestDTO
 	{
 		
@@ -1391,8 +1363,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInventoriesRequestNodeDTO
 	{
 		
@@ -1433,8 +1404,7 @@ namespace MyNS
 		public AvailToSellQtyUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInventoriesResponseNodeDTO
 	{
 		
@@ -1505,8 +1475,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WfsInventoryDTO
 	{
 		
@@ -1844,10 +1813,10 @@ namespace MyNS
 	public enum UpdateBulkInventoryFeedType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inventory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inventory = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MP_INVENTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MP_INVENTORY = 1,
 	}
 	

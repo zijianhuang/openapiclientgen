@@ -17,62 +17,55 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Binding_enum_binding_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="apn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		apn = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gcm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gcm = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fcm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fcm = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="facebook-messenger")]
 		facebookMinusmessenger = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alexa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alexa = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Credential_enum_push_service
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gcm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gcm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="apn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		apn = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fcm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fcm = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Notification_enum_priority
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		low = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notifyv1credential
 	{
 		
@@ -134,8 +127,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notifyv1service
 	{
 		
@@ -296,8 +288,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notifyv1servicebinding
 	{
 		
@@ -410,8 +401,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notifyv1servicenotification
 	{
 		

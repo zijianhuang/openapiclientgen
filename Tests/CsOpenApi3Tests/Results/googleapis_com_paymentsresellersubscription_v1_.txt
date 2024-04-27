@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the amount unit including the currency code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1Amount
 	{
 		
@@ -38,8 +37,7 @@ namespace MyNS
 		public string CurrencyCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionRequest
 	{
 		
@@ -56,48 +54,45 @@ namespace MyNS
 		public System.Nullable<GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionRequestCancellationReason> CancellationReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionRequestCancellationReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_FRAUD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_FRAUD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_REMORSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_REMORSE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_ACCIDENTAL_PURCHASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_ACCIDENTAL_PURCHASE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_PAST_DUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_PAST_DUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_ACCOUNT_CLOSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_ACCOUNT_CLOSED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_UPGRADE_DOWNGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_UPGRADE_DOWNGRADE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_USER_DELINQUENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_USER_DELINQUENCY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_SYSTEM_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_SYSTEM_ERROR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_SYSTEM_CANCEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_SYSTEM_CANCEL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_OTHER = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionResponse
 	{
 		
@@ -111,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// A Subscription resource managed by 3P Partners.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1Subscription
 	{
 		
@@ -228,8 +222,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the details of a cancelled or cancelling subscription.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1SubscriptionCancellationDetails
 	{
 		
@@ -243,8 +236,7 @@ namespace MyNS
 	/// <summary>
 	/// Individual line item definition of a subscription.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem
 	{
 		
@@ -324,8 +316,7 @@ namespace MyNS
 	/// <summary>
 	/// The bundle details for a line item corresponding to a hard bundle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionLineItemBundleDetails
 	{
 		
@@ -339,8 +330,7 @@ namespace MyNS
 	/// <summary>
 	/// The details for an element in the hard bundle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemBundleDetailsBundleElementDetails
 	{
 		
@@ -360,8 +350,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for a subscriptiin line item with finite billing cycles.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1FiniteBillingCycleDetails
 	{
 		
@@ -375,8 +364,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the spec for one promotion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec
 	{
 		
@@ -408,8 +396,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the length of a period of a time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1Duration
 	{
 		
@@ -426,30 +413,27 @@ namespace MyNS
 		public System.Nullable<GoogleCloudPaymentsResellerSubscriptionV1DurationUnit> Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1DurationUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOUR = 3,
 	}
 	
 	/// <summary>
 	/// The details of a introductory pricing promotion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetails
 	{
 		
@@ -463,8 +447,7 @@ namespace MyNS
 	/// <summary>
 	/// The duration of an introductory pricing promotion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetailsIntroductoryPricingSpec
 	{
 		
@@ -493,27 +476,24 @@ namespace MyNS
 		public string RegionCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMOTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROMOTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMOTION_TYPE_FREE_TRIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROMOTION_TYPE_FREE_TRIAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMOTION_TYPE_INTRODUCTORY_PRICING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROMOTION_TYPE_INTRODUCTORY_PRICING = 2,
 	}
 	
 	/// <summary>
 	/// Details for a ONE_TIME recurrence line item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemOneTimeRecurrenceDetails
 	{
 		
@@ -527,8 +507,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of what time period or moment in time the product or service is being delivered over.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1ServicePeriod
 	{
 		
@@ -548,8 +527,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies product specific payload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1ProductPayload
 	{
 		
@@ -569,8 +547,7 @@ namespace MyNS
 	/// <summary>
 	/// Payload specific to Google One products.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayload
 	{
 		
@@ -599,55 +576,50 @@ namespace MyNS
 		public string StoreId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFERING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFERING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFERING_VAS_BUNDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFERING_VAS_BUNDLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFERING_VAS_STANDALONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFERING_VAS_STANDALONE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFERING_HARD_BUNDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFERING_HARD_BUNDLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFERING_SOFT_BUNDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFERING_SOFT_BUNDLE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_RETAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_RETAIL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_ONLINE_WEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_ONLINE_WEB = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_ONLINE_ANDROID_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_ONLINE_ANDROID_APP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_ONLINE_IOS_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_ONLINE_IOS_APP = 4,
 	}
 	
 	/// <summary>
 	/// Payload specific to Youtube products.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1YoutubePayload
 	{
 		
@@ -664,74 +636,67 @@ namespace MyNS
 		public string[] PartnerEligibilityIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_RECURRENCE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_RECURRENCE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_RECURRENCE_TYPE_PERIODIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_RECURRENCE_TYPE_PERIODIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_RECURRENCE_TYPE_ONE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_RECURRENCE_TYPE_ONE_TIME = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_STATE_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_STATE_ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_STATE_INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_STATE_INACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_STATE_NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_STATE_NEW = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_STATE_ACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_STATE_ACTIVATING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_STATE_DEACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_STATE_DEACTIVATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_STATE_WAITING_TO_DEACTIVATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_STATE_WAITING_TO_DEACTIVATE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_ITEM_STATE_OFF_CYCLE_CHARGING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_ITEM_STATE_OFF_CYCLE_CHARGING = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1SubscriptionProcessingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_STATE_CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_STATE_CANCELLING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_STATE_RECURRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_STATE_RECURRING = 2,
 	}
 	
 	/// <summary>
 	/// Describes a location of an end user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1Location
 	{
 		
@@ -748,39 +713,36 @@ namespace MyNS
 		public string RegionCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_CANCELLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_IN_GRACE_PERIOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_IN_GRACE_PERIOD = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_CANCEL_AT_END_OF_CYCLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_CANCEL_AT_END_OF_CYCLE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_SUSPENDED = 6,
 	}
 	
 	/// <summary>
 	/// Details about the previous subscription that this new subscription upgrades/downgrades from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1SubscriptionUpgradeDowngradeDetails
 	{
 		
@@ -797,27 +759,24 @@ namespace MyNS
 		public string PreviousSubscriptionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1SubscriptionUpgradeDowngradeDetailsBillingCycleSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_CYCLE_SPEC_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_CYCLE_SPEC_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_CYCLE_SPEC_ALIGN_WITH_PREVIOUS_SUBSCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_CYCLE_SPEC_ALIGN_WITH_PREVIOUS_SUBSCRIPTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_CYCLE_SPEC_START_IMMEDIATELY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_CYCLE_SPEC_START_IMMEDIATELY = 2,
 	}
 	
 	/// <summary>
 	/// Partner request for entitling the previously provisioned subscription to an end user. The end user identity is inferred from the request OAuth context.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionRequest
 	{
 		
@@ -831,8 +790,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of the line item to be entitled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionRequestLineItemEntitlementDetails
 	{
 		
@@ -849,8 +807,7 @@ namespace MyNS
 		public string[] Products { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionResponse
 	{
 		
@@ -864,8 +821,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for extending a Subscription resource. A new recurrence will be made based on the subscription schedule defined by the original product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1ExtendSubscriptionRequest
 	{
 		
@@ -885,8 +841,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the details of an extension request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1Extension
 	{
 		
@@ -903,8 +858,7 @@ namespace MyNS
 		public string PartnerUserToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1ExtendSubscriptionResponse
 	{
 		
@@ -927,8 +881,7 @@ namespace MyNS
 		public string RenewalTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsRequest
 	{
 		
@@ -954,8 +907,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing the found promotions for the current user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsResponse
 	{
 		
@@ -975,8 +927,7 @@ namespace MyNS
 	/// <summary>
 	/// A Promotion resource that defines a promotion for a subscription that can be resold.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1Promotion
 	{
 		
@@ -1038,8 +989,7 @@ namespace MyNS
 	/// <summary>
 	/// Localized variant of a text in a particular language.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeLocalizedText
 	{
 		
@@ -1056,8 +1006,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1ListProductsResponse
 	{
 		
@@ -1077,8 +1026,7 @@ namespace MyNS
 	/// <summary>
 	/// A Product resource that defines a subscription service that can be resold.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1Product
 	{
 		
@@ -1134,8 +1082,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for a bundle product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductBundleDetails
 	{
 		
@@ -1155,8 +1102,7 @@ namespace MyNS
 	/// <summary>
 	/// The individual product that is included in the bundle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1ProductBundleDetailsBundleElement
 	{
 		
@@ -1167,27 +1113,24 @@ namespace MyNS
 		public string Product { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProductBundleDetailsEntitlementMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTITLEMENT_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTITLEMENT_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTITLEMENT_MODE_FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTITLEMENT_MODE_FULL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTITLEMENT_MODE_INCREMENTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTITLEMENT_MODE_INCREMENTAL = 2,
 	}
 	
 	/// <summary>
 	/// Configs the prices in an available region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig
 	{
 		
@@ -1204,24 +1147,21 @@ namespace MyNS
 		public string RegionCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudPaymentsResellerSubscriptionV1ProductProductType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT_TYPE_SUBSCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT_TYPE_SUBSCRIPTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT_TYPE_BUNDLE_SUBSCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT_TYPE_BUNDLE_SUBSCRIPTION = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1ListPromotionsResponse
 	{
 		
@@ -1241,8 +1181,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to revoke a cancellation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1UndoCancelSubscriptionRequest
 	{
 	}
@@ -1250,8 +1189,7 @@ namespace MyNS
 	/// <summary>
 	/// Response that contains the updated subscription resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudPaymentsResellerSubscriptionV1UndoCancelSubscriptionResponse
 	{
 		

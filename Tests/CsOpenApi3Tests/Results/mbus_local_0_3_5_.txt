@@ -20,9 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Baudrate to use for the communication - valid values 300, 600, 1200, 2400, 4800, 9600
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Baudrate
 	{
 		
@@ -48,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// Raspberry Pi Hat Information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hat
 	{
 		

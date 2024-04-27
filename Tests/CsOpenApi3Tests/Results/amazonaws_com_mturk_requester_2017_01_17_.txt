@@ -17,14 +17,12 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptQualificationRequestResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptQualificationRequestRequest
 	{
 		
@@ -39,26 +37,22 @@ namespace MyNS
 		public System.Nullable<System.Int32> IntegerValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApproveAssignmentResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApproveAssignmentRequest
 	{
 		
@@ -76,14 +70,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> OverrideRejection { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateQualificationWithWorkerResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateQualificationWithWorkerRequest
 	{
 		
@@ -108,14 +100,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> SendNotification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAdditionalAssignmentsForHITResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAdditionalAssignmentsForHITRequest
 	{
 		
@@ -137,8 +127,7 @@ namespace MyNS
 		public string UniqueRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHITResponse
 	{
 		
@@ -149,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	///  The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HIT
 	{
 		
@@ -223,33 +211,30 @@ namespace MyNS
 		public System.Nullable<System.Int32> NumberOfAssignmentsCompleted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HITStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Assignable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Assignable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unassignable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unassignable = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Reviewable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Reviewable = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Reviewing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Reviewing = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disposed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disposed = 4,
 	}
 	
 	/// <summary>
 	///  The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QualificationRequirement
 	{
 		
@@ -280,48 +265,45 @@ namespace MyNS
 		public HITAccessActions ActionsGuarded { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Comparator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThan = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThanOrEqualTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThanOrEqualTo = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreaterThan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreaterThan = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreaterThanOrEqualTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreaterThanOrEqualTo = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EqualTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EqualTo = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotEqualTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotEqualTo = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Exists")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Exists = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DoesNotExist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DoesNotExist = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="In")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		In = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotIn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotIn = 9,
 	}
 	
 	/// <summary>
 	/// The Locale data structure represents a geographical region or location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Locale
 	{
 		
@@ -336,43 +318,38 @@ namespace MyNS
 		public string Subdivision { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HITAccessActions
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Accept")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Accept = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreviewAndAccept")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreviewAndAccept = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiscoverPreviewAndAccept")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DiscoverPreviewAndAccept = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HITReviewStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotReviewed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotReviewed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MarkedForReview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MarkedForReview = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReviewedAppropriate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReviewedAppropriate = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReviewedInappropriate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReviewedInappropriate = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHITRequest
 	{
 		
@@ -448,8 +425,7 @@ namespace MyNS
 	/// <summary>
 	///  HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReviewPolicy
 	{
 		
@@ -467,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	///  Name of the parameter from the Review policy. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyParameter
 	{
 		
@@ -485,8 +460,7 @@ namespace MyNS
 	/// <summary>
 	///  This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParameterMapEntry
 	{
 		
@@ -500,8 +474,7 @@ namespace MyNS
 	/// <summary>
 	///  The HITLayoutParameter data structure defines parameter values used with a HITLayout. A HITLayout is a reusable Amazon Mechanical Turk project template used to provide Human Intelligence Task (HIT) question data for CreateHIT. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HITLayoutParameter
 	{
 		
@@ -520,8 +493,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHITTypeResponse
 	{
 		
@@ -529,8 +501,7 @@ namespace MyNS
 		public string HITTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHITTypeRequest
 	{
 		
@@ -572,8 +543,7 @@ namespace MyNS
 		public QualificationRequirement[] QualificationRequirements { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHITWithHITTypeResponse
 	{
 		
@@ -581,8 +551,7 @@ namespace MyNS
 		public HIT HIT { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHITWithHITTypeRequest
 	{
 		
@@ -625,8 +594,7 @@ namespace MyNS
 		public HITLayoutParameter[] HITLayoutParameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateQualificationTypeResponse
 	{
 		
@@ -637,8 +605,7 @@ namespace MyNS
 	/// <summary>
 	///  The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QualificationType
 	{
 		
@@ -682,21 +649,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> AutoGrantedValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QualificationTypeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateQualificationTypeRequest
 	{
 		
@@ -743,14 +707,12 @@ namespace MyNS
 		public System.Nullable<System.Int32> AutoGrantedValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkerBlockResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkerBlockRequest
 	{
 		
@@ -769,14 +731,12 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHITResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteHITRequest
 	{
 		
@@ -788,14 +748,12 @@ namespace MyNS
 		public string HITId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteQualificationTypeResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteQualificationTypeRequest
 	{
 		
@@ -807,14 +765,12 @@ namespace MyNS
 		public string QualificationTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkerBlockResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkerBlockRequest
 	{
 		
@@ -829,14 +785,12 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateQualificationFromWorkerResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateQualificationFromWorkerRequest
 	{
 		
@@ -858,8 +812,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountBalanceResponse
 	{
 		
@@ -880,14 +833,12 @@ namespace MyNS
 		public string OnHoldBalance { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountBalanceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAssignmentResponse
 	{
 		
@@ -901,8 +852,7 @@ namespace MyNS
 	/// <summary>
 	///  The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Assignment
 	{
 		
@@ -943,24 +893,21 @@ namespace MyNS
 		public string RequesterFeedback { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssignmentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Submitted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Approved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Approved = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAssignmentRequest
 	{
 		
@@ -972,8 +919,7 @@ namespace MyNS
 		public string AssignmentId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFileUploadURLResponse
 	{
 		
@@ -981,8 +927,7 @@ namespace MyNS
 		public string FileUploadURL { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFileUploadURLRequest
 	{
 		
@@ -1001,8 +946,7 @@ namespace MyNS
 		public string QuestionIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHITResponse
 	{
 		
@@ -1010,8 +954,7 @@ namespace MyNS
 		public HIT HIT { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetHITRequest
 	{
 		
@@ -1023,8 +966,7 @@ namespace MyNS
 		public string HITId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQualificationScoreResponse
 	{
 		
@@ -1035,8 +977,7 @@ namespace MyNS
 	/// <summary>
 	/// The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Qualification
 	{
 		
@@ -1062,21 +1003,18 @@ namespace MyNS
 		public QualificationStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QualificationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Granted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Granted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Revoked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Revoked = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQualificationScoreRequest
 	{
 		
@@ -1095,8 +1033,7 @@ namespace MyNS
 		public string WorkerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQualificationTypeResponse
 	{
 		
@@ -1104,8 +1041,7 @@ namespace MyNS
 		public QualificationType QualificationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQualificationTypeRequest
 	{
 		
@@ -1117,8 +1053,7 @@ namespace MyNS
 		public string QualificationTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAssignmentsForHITResponse
 	{
 		
@@ -1139,8 +1074,7 @@ namespace MyNS
 		public Assignment[] Assignments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAssignmentsForHITRequest
 	{
 		
@@ -1166,8 +1100,7 @@ namespace MyNS
 		public AssignmentStatus[] AssignmentStatuses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBonusPaymentsResponse
 	{
 		
@@ -1191,8 +1124,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing a Bonus payment paid to a Worker.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BonusPayment
 	{
 		
@@ -1217,8 +1149,7 @@ namespace MyNS
 		public System.DateTimeOffset GrantTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBonusPaymentsRequest
 	{
 		
@@ -1240,8 +1171,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHITsResponse
 	{
 		
@@ -1262,8 +1192,7 @@ namespace MyNS
 		public HIT[] HITs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHITsRequest
 	{
 		
@@ -1279,8 +1208,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHITsForQualificationTypeResponse
 	{
 		
@@ -1301,8 +1229,7 @@ namespace MyNS
 		public HIT[] HITs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHITsForQualificationTypeRequest
 	{
 		
@@ -1320,8 +1247,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQualificationRequestsResponse
 	{
 		
@@ -1345,8 +1271,7 @@ namespace MyNS
 	/// <summary>
 	///  The QualificationRequest data structure represents a request a Worker has made for a Qualification. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QualificationRequest
 	{
 		
@@ -1369,8 +1294,7 @@ namespace MyNS
 		public System.DateTimeOffset SubmitTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQualificationRequestsRequest
 	{
 		
@@ -1391,8 +1315,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQualificationTypesResponse
 	{
 		
@@ -1413,8 +1336,7 @@ namespace MyNS
 		public QualificationType[] QualificationTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQualificationTypesRequest
 	{
 		
@@ -1445,8 +1367,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReviewPolicyResultsForHITResponse
 	{
 		
@@ -1479,8 +1400,7 @@ namespace MyNS
 	/// <summary>
 	///  Contains both ReviewResult and ReviewAction elements for a particular HIT. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReviewReport
 	{
 		
@@ -1494,8 +1414,7 @@ namespace MyNS
 	/// <summary>
 	///  This data structure is returned multiple times for each result specified in the Review Policy. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReviewResultDetail
 	{
 		
@@ -1521,8 +1440,7 @@ namespace MyNS
 	/// <summary>
 	///  Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReviewActionDetail
 	{
 		
@@ -1551,27 +1469,24 @@ namespace MyNS
 		public string ErrorCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReviewActionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Intended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Intended = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReviewPolicyResultsForHITRequest
 	{
 		
@@ -1598,21 +1513,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReviewPolicyLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Assignment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Assignment = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReviewableHITsResponse
 	{
 		
@@ -1633,8 +1545,7 @@ namespace MyNS
 		public HIT[] HITs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReviewableHITsRequest
 	{
 		
@@ -1651,21 +1562,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReviewableHITStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Reviewable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Reviewable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Reviewing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Reviewing = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkerBlocksResponse
 	{
 		
@@ -1689,8 +1597,7 @@ namespace MyNS
 	/// <summary>
 	///  The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkerBlock
 	{
 		
@@ -1701,8 +1608,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkerBlocksRequest
 	{
 		
@@ -1718,8 +1624,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkersWithQualificationTypeResponse
 	{
 		
@@ -1740,8 +1645,7 @@ namespace MyNS
 		public Qualification[] Qualifications { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkersWithQualificationTypeRequest
 	{
 		
@@ -1762,8 +1666,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifyWorkersResponse
 	{
 		
@@ -1774,8 +1677,7 @@ namespace MyNS
 	/// <summary>
 	///  When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifyWorkersFailureStatus
 	{
 		
@@ -1789,21 +1691,18 @@ namespace MyNS
 		public string WorkerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NotifyWorkersFailureCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SoftFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SoftFailure = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HardFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HardFailure = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifyWorkersRequest
 	{
 		
@@ -1829,14 +1728,12 @@ namespace MyNS
 		public string[] WorkerIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectAssignmentResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectAssignmentRequest
 	{
 		
@@ -1855,14 +1752,12 @@ namespace MyNS
 		public string RequesterFeedback { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectQualificationRequestResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectQualificationRequestRequest
 	{
 		
@@ -1877,14 +1772,12 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendBonusResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendBonusRequest
 	{
 		
@@ -1920,14 +1813,12 @@ namespace MyNS
 		public string UniqueRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTestEventNotificationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendTestEventNotificationRequest
 	{
 		
@@ -1949,8 +1840,7 @@ namespace MyNS
 	/// <summary>
 	/// The NotificationSpecification data structure describes a HIT event notification for a HIT type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationSpecification
 	{
 		
@@ -1983,73 +1873,67 @@ namespace MyNS
 		public EventType[] EventTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NotificationTransport
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Email = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SQS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SQS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssignmentAccepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssignmentAccepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssignmentAbandoned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssignmentAbandoned = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssignmentReturned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssignmentReturned = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssignmentSubmitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssignmentSubmitted = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssignmentRejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssignmentRejected = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssignmentApproved")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssignmentApproved = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HITCreated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HITCreated = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HITExpired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HITExpired = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HITReviewable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HITReviewable = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HITExtended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HITExtended = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HITDisposed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HITDisposed = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ping = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateExpirationForHITResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateExpirationForHITRequest
 	{
 		
@@ -2068,14 +1952,12 @@ namespace MyNS
 		public System.DateTimeOffset ExpireAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHITReviewStatusResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHITReviewStatusRequest
 	{
 		
@@ -2090,14 +1972,12 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Revert { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHITTypeOfHITResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateHITTypeOfHITRequest
 	{
 		
@@ -2116,14 +1996,12 @@ namespace MyNS
 		public string HITTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNotificationSettingsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNotificationSettingsRequest
 	{
 		
@@ -2141,8 +2019,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Active { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateQualificationTypeResponse
 	{
 		
@@ -2150,8 +2027,7 @@ namespace MyNS
 		public QualificationType QualificationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateQualificationTypeRequest
 	{
 		

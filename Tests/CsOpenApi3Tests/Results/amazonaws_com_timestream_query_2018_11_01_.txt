@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelQueryResponse
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public string CancellationMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelQueryRequest
 	{
 		
@@ -39,38 +37,32 @@ namespace MyNS
 		public string QueryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidEndpointException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateScheduledQueryResponse
 	{
 		
@@ -82,8 +74,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateScheduledQueryRequest
 	{
 		
@@ -145,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of the schedule of the query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduleConfiguration
 	{
 		
@@ -161,8 +151,7 @@ namespace MyNS
 	/// <summary>
 	/// Notification configuration for a scheduled query. A notification is sent by Timestream when a scheduled query is created, its state is updated or when it is deleted. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotificationConfiguration
 	{
 		
@@ -177,8 +166,7 @@ namespace MyNS
 	/// <summary>
 	/// Details on SNS that are required to send the notification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnsConfiguration
 	{
 		
@@ -193,8 +181,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration used for writing the output of a query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetConfiguration
 	{
 		
@@ -209,8 +196,7 @@ namespace MyNS
 	/// <summary>
 	///  Configuration to write data into Timestream database and table. This configuration allows the user to map the query result select columns into the destination table columns. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimestreamConfiguration
 	{
 		
@@ -255,8 +241,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is used to map column(s) from the query result to a dimension in the destination table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionMapping
 	{
 		
@@ -275,21 +260,18 @@ namespace MyNS
 		public DimensionValueType DimensionValueType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionValueType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VARCHAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VARCHAR = 0,
 	}
 	
 	/// <summary>
 	/// Only one of MixedMeasureMappings or MultiMeasureMappings is to be provided. MultiMeasureMappings can be used to ingest data as multi measures in the derived table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiMeasureMappings
 	{
 		
@@ -307,8 +289,7 @@ namespace MyNS
 	/// <summary>
 	/// Attribute mapping for MULTI value measures.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiMeasureAttributeMapping
 	{
 		
@@ -330,33 +311,30 @@ namespace MyNS
 		public ScalarMeasureValueType MeasureValueType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalarMeasureValueType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGINT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOUBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOUBLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VARCHAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VARCHAR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMESTAMP = 4,
 	}
 	
 	/// <summary>
 	/// MixedMeasureMappings are mappings that can be used to ingest data into a mixture of narrow and multi measures in the derived table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MixedMeasureMapping
 	{
 		
@@ -380,33 +358,30 @@ namespace MyNS
 		public MultiMeasureAttributeMapping[] MultiMeasureAttributeMappings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MeasureValueType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGINT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOUBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOUBLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VARCHAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VARCHAR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTI = 4,
 	}
 	
 	/// <summary>
 	/// A tag is a label that you assign to a Timestream database and/or table. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize databases and/or tables, for example, by purpose, owner, or environment. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -428,8 +403,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration required for error reporting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorReportConfiguration
 	{
 		
@@ -444,8 +418,7 @@ namespace MyNS
 	/// <summary>
 	/// Details on S3 location for error reports that result from running a query. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Configuration
 	{
 		
@@ -463,33 +436,28 @@ namespace MyNS
 		public S3EncryptionOption EncryptionOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum S3EncryptionOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSE_S3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSE_S3 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSE_KMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSE_KMS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScheduledQueryRequest
 	{
 		
@@ -501,14 +469,12 @@ namespace MyNS
 		public string ScheduledQueryArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEndpointsResponse
 	{
 		
@@ -523,8 +489,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an available endpoint against which to make API calls against, as well as the TTL for that endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Endpoint
 	{
 		
@@ -543,14 +508,12 @@ namespace MyNS
 		public int CachePeriodInMinutes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEndpointsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScheduledQueryResponse
 	{
 		
@@ -565,8 +528,7 @@ namespace MyNS
 	/// <summary>
 	/// Structure that describes scheduled query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledQueryDescription
 	{
 		
@@ -640,24 +602,21 @@ namespace MyNS
 		public ScheduledQueryRunSummary[] RecentlyFailedRuns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduledQueryState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// Run summary for the scheduled query
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledQueryRunSummary
 	{
 		
@@ -680,30 +639,27 @@ namespace MyNS
 		public string FailureReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduledQueryRunStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_TRIGGER_SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_TRIGGER_SUCCESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_TRIGGER_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_TRIGGER_FAILURE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANUAL_TRIGGER_SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANUAL_TRIGGER_SUCCESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANUAL_TRIGGER_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANUAL_TRIGGER_FAILURE = 3,
 	}
 	
 	/// <summary>
 	/// Statistics for a single scheduled query run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionStats
 	{
 		
@@ -726,8 +682,7 @@ namespace MyNS
 	/// <summary>
 	/// This contains the location of the error report for a single scheduled query call. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorReportLocation
 	{
 		
@@ -738,8 +693,7 @@ namespace MyNS
 	/// <summary>
 	///  S3 report location for the scheduled query run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3ReportLocation
 	{
 		
@@ -750,8 +704,7 @@ namespace MyNS
 		public string ObjectKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScheduledQueryRequest
 	{
 		
@@ -763,8 +716,7 @@ namespace MyNS
 		public string ScheduledQueryArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteScheduledQueryRequest
 	{
 		
@@ -786,8 +738,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListScheduledQueriesResponse
 	{
 		
@@ -805,8 +756,7 @@ namespace MyNS
 	/// <summary>
 	/// Scheduled Query
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledQuery
 	{
 		
@@ -853,8 +803,7 @@ namespace MyNS
 	/// <summary>
 	/// Destination details to write data for a target data source. Current supported data source is Timestream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetDestination
 	{
 		
@@ -865,8 +814,7 @@ namespace MyNS
 	/// <summary>
 	/// Destination for scheduled query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimestreamDestination
 	{
 		
@@ -877,8 +825,7 @@ namespace MyNS
 		public string TableName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListScheduledQueriesRequest
 	{
 		
@@ -889,8 +836,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -905,8 +851,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -924,8 +869,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrepareQueryResponse
 	{
 		
@@ -954,8 +898,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the column that is returned by the query. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectColumn
 	{
 		
@@ -981,8 +924,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Type
 	{
 		
@@ -999,51 +941,48 @@ namespace MyNS
 		public ColumnInfo[] RowColumnInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalarType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VARCHAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VARCHAR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGINT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOUBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOUBLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMESTAMP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERVAL_DAY_TO_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERVAL_DAY_TO_SECOND = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERVAL_YEAR_TO_MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERVAL_YEAR_TO_MONTH = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTEGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTEGER = 10,
 	}
 	
 	/// <summary>
 	///  Contains the metadata for query results such as the column names, data types, and other attributes. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnInfo
 	{
 		
@@ -1061,8 +1000,7 @@ namespace MyNS
 	/// <summary>
 	/// Mapping for named parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParameterMapping
 	{
 		
@@ -1082,8 +1020,7 @@ namespace MyNS
 		public Type Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrepareQueryRequest
 	{
 		
@@ -1098,8 +1035,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ValidateOnly { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryResponse
 	{
 		
@@ -1134,8 +1070,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single row in the query results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Row
 	{
 		
@@ -1150,8 +1085,7 @@ namespace MyNS
 	/// <summary>
 	///  Datum represents a single data point in a query result. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Datum
 	{
 		
@@ -1174,8 +1108,7 @@ namespace MyNS
 	/// <summary>
 	/// The timeseries data type represents the values of a measure over time. A time series is an array of rows of timestamps and measure values, with rows sorted in ascending order of time. A TimeSeriesDataPoint is a single data point in the time series. It represents a tuple of (time, measure value) in a time series. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSeriesDataPoint
 	{
 		
@@ -1197,8 +1130,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the status of the query, including progress and bytes scanned.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryStatus
 	{
 		
@@ -1212,8 +1144,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> CumulativeBytesMetered { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryRequest
 	{
 		
@@ -1234,20 +1165,17 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxRows { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryExecutionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1266,14 +1194,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -1292,8 +1218,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateScheduledQueryRequest
 	{
 		

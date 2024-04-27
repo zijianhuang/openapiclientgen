@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of audio data to be synthesized.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioConfig
 	{
 		
@@ -62,39 +61,36 @@ namespace MyNS
 		public System.Nullable<System.Double> VolumeGainDb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AudioConfigAudioEncoding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIO_ENCODING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIO_ENCODING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINEAR16")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINEAR16 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MP3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MP3 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MP3_64_KBPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MP3_64_KBPS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OGG_OPUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OGG_OPUS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULAW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULAW = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALAW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALAW = 6,
 	}
 	
 	/// <summary>
 	/// Description of the custom voice to be synthesized.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomVoiceParams
 	{
 		
@@ -111,27 +107,24 @@ namespace MyNS
 		public System.Nullable<CustomVoiceParamsReportedUsage> ReportedUsage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomVoiceParamsReportedUsage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTED_USAGE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTED_USAGE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REALTIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REALTIME = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFLINE = 2,
 	}
 	
 	/// <summary>
 	/// Metadata for response returned by the `SynthesizeLongAudio` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudTexttospeechV1beta1SynthesizeLongAudioMetadata
 	{
 		
@@ -151,8 +144,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -172,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -211,8 +202,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -238,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// The message returned to the client by the `ListVoices` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVoicesResponse
 	{
 		
@@ -253,8 +242,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of a voice supported by the TTS service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Voice
 	{
 		
@@ -283,30 +271,27 @@ namespace MyNS
 		public System.Nullable<VoiceSsmlGender> SsmlGender { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VoiceSsmlGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSML_VOICE_GENDER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSML_VOICE_GENDER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MALE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MALE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEMALE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEMALE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEUTRAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEUTRAL = 3,
 	}
 	
 	/// <summary>
 	/// Contains text input to be synthesized. Either `text` or `ssml` must be supplied. Supplying both or neither returns google.rpc.Code.INVALID_ARGUMENT. The input size is limited to 5000 bytes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SynthesisInput
 	{
 		
@@ -326,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for response returned by the `SynthesizeLongAudio` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SynthesizeLongAudioMetadata
 	{
 		
@@ -347,8 +331,7 @@ namespace MyNS
 	/// <summary>
 	/// The top-level message sent by the client for the `SynthesizeLongAudio` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SynthesizeLongAudioRequest
 	{
 		
@@ -380,8 +363,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of which voice to use for a synthesis request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceSelectionParams
 	{
 		
@@ -413,8 +395,7 @@ namespace MyNS
 	/// <summary>
 	/// The top-level message sent by the client for the `SynthesizeSpeech` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SynthesizeSpeechRequest
 	{
 		
@@ -446,8 +427,7 @@ namespace MyNS
 	/// <summary>
 	/// The message returned to the client by the `SynthesizeSpeech` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SynthesizeSpeechResponse
 	{
 		
@@ -473,8 +453,7 @@ namespace MyNS
 	/// <summary>
 	/// This contains a mapping between a certain point in the input text and a corresponding time in the output audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timepoint
 	{
 		

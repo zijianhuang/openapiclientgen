@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Doc
 	{
 		
@@ -288,10 +287,10 @@ namespace MyNS
 	public enum StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldest = 1,
 	}
 	

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bulkexportsv1export
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bulkexportsv1exportday
 	{
 		
@@ -77,8 +75,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bulkexportsv1exportday_instance
 	{
 		
@@ -86,8 +83,7 @@ namespace MyNS
 		public string Redirect_to { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bulkexportsv1exportexport_custom_job
 	{
 		
@@ -164,8 +160,7 @@ namespace MyNS
 		public string Webhook_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bulkexportsv1exportjob
 	{
 		
@@ -245,8 +240,7 @@ namespace MyNS
 		public string Webhook_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bulkexportsv1export_configuration
 	{
 		
@@ -281,65 +275,61 @@ namespace MyNS
 		public string Webhook_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Export_custom_job_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ErrorDuringRun")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ErrorDuringRun = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Submitted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Running = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CompletedEmptyRecords")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CompletedEmptyRecords = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RunningToBeDeleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RunningToBeDeleted = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeletedByUserRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeletedByUserRequest = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Job_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ErrorDuringRun")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ErrorDuringRun = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Submitted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Submitted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Running = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CompletedEmptyRecords")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CompletedEmptyRecords = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RunningToBeDeleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RunningToBeDeleted = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeletedByUserRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeletedByUserRequest = 7,
 	}
 	

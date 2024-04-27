@@ -21,8 +21,7 @@ namespace MyNS
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCallRequestBase
 	{
 		
@@ -90,24 +89,21 @@ namespace MyNS
 		public string[] To { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateCallRequestBaseEvent_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 1,
 	}
 	
 	/// <summary>
 	/// Connect to a Phone (PSTN) number
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointPhoneFrom
 	{
 		
@@ -134,16 +130,14 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateCallRequestBaseMachine_detection
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="continue")]
 		_continue = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hangup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hangup = 1,
 	}
 	
@@ -151,8 +145,7 @@ namespace MyNS
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCallResponse
 	{
 		
@@ -181,21 +174,18 @@ namespace MyNS
 		public string Uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateCallResponseDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DTMFRequest
 	{
 		
@@ -206,8 +196,7 @@ namespace MyNS
 		public string Digits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DTMFResponse
 	{
 		
@@ -227,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// Connect to an App User
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointApp
 	{
 		
@@ -252,8 +240,7 @@ namespace MyNS
 	/// <summary>
 	/// Connect to a Phone (PSTN) number
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointPhoneTo
 	{
 		
@@ -289,8 +276,7 @@ namespace MyNS
 	/// <summary>
 	/// Connect to a SIP Endpoint
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointSip
 	{
 		
@@ -316,8 +302,7 @@ namespace MyNS
 	/// <summary>
 	/// Connect to a VBC extension
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointVBCExtension
 	{
 		
@@ -340,8 +325,7 @@ namespace MyNS
 	/// <summary>
 	/// Connect to a Websocket
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointWebsocket
 	{
 		
@@ -376,9 +360,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EndpointWebsocketContent_type
 	{
 		
@@ -399,8 +381,7 @@ namespace MyNS
 		public string Customer_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCallResponse
 	{
 		
@@ -497,8 +478,7 @@ namespace MyNS
 	/// <summary>
 	/// The endpoint you called from. Possible values are the same as `to`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class From
 	{
 		
@@ -512,8 +492,7 @@ namespace MyNS
 	/// <summary>
 	/// The single or mixed collection of endpoint types you connected to
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class To
 	{
 		
@@ -524,8 +503,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCallsResponse
 	{
 		
@@ -572,18 +550,15 @@ namespace MyNS
 	/// <summary>
 	/// Transfer the call to a new NCCO
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RequestTransferActionParam
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transfer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transfer = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartStreamRequest
 	{
 		
@@ -608,8 +583,7 @@ namespace MyNS
 		public string[] Stream_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartStreamResponse
 	{
 		
@@ -626,8 +600,7 @@ namespace MyNS
 		public string Uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTalkRequest
 	{
 		
@@ -677,13 +650,11 @@ namespace MyNS
 		public System.Nullable<StartTalkRequestVoice_name> Voice_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StartTalkRequestLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ca-ES")]
@@ -822,303 +793,300 @@ namespace MyNS
 		yueMinusCN = 45,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StartTalkRequestVoice_name
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Aditi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Aditi = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Agnieszka")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Agnieszka = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Alva")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Alva = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Amy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Amy = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Astrid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Astrid = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bianca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bianca = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Brian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Brian = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Carla")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Carla = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Carmen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Carmen = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Carmit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Carmit = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Catarina")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Catarina = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Celine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Celine = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cem")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cem = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Chantal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Chantal = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Chipmunk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Chipmunk = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Conchita")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Conchita = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cristiano")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cristiano = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Damayanti")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Damayanti = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Dora")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Dora = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Emma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Emma = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Empar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Empar = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enrique")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enrique = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Eric")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Eric = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ewa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ewa = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Felipe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Felipe = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Filiz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Filiz = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Geraint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Geraint = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Giorgio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Giorgio = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gwyneth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gwyneth = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hans")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hans = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Henrik")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Henrik = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ines")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ines = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ioana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ioana = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Iveta")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Iveta = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ivy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ivy = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Jacek")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Jacek = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Jan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Jan = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Jennifer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Jennifer = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Joana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Joana = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Joanna")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Joanna = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Joey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Joey = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Jordi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Jordi = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Justin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Justin = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kanya")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kanya = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Karl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Karl = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kendra")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kendra = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kimberly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kimberly = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Laila")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Laila = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Laura")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Laura = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lea")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lea = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lekha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lekha = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Liv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Liv = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lotte")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lotte = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lucia")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lucia = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Luciana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Luciana = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mads")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mads = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maged")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maged = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maja = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mariska")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mariska = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Marlene")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Marlene = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mathieu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mathieu = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Matthew")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Matthew = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maxim")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maxim = 62,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mei-Jia")]
 		MeiMinusJia = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Melina")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Melina = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mia")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mia = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Miguel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Miguel = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Miren")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Miren = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mizuki")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mizuki = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Montserrat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Montserrat = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Naja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Naja = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nicole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nicole = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nikos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nikos = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nora")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nora = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Oskar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Oskar = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Penelope")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Penelope = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Raveena")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Raveena = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ricardo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ricardo = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ruben")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ruben = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Russell")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Russell = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Salli")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Salli = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Satu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Satu = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Seoyeon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Seoyeon = 82,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sin-Ji")]
 		SinMinusJi = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sora")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sora = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Takumi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Takumi = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tarik")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tarik = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tatyana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tatyana = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tessa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tessa = 88,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tian-Tian")]
 		TianMinusTian = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vicki")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vicki = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vitoria")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vitoria = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yelda")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yelda = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Zeina")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Zeina = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Zhiyu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Zhiyu = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Zuzana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Zuzana = 95,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTalkResponse
 	{
 		
@@ -1135,8 +1103,7 @@ namespace MyNS
 		public string Uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopStreamResponse
 	{
 		
@@ -1153,8 +1120,7 @@ namespace MyNS
 		public string Uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopTalkResponse
 	{
 		
@@ -1171,8 +1137,7 @@ namespace MyNS
 		public string Uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCallRequestEarmuff
 	{
 		
@@ -1183,18 +1148,15 @@ namespace MyNS
 		public System.Nullable<UpdateCallRequestEarmuffAction> Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateCallRequestEarmuffAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="earmuff")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		earmuff = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCallRequestHangup
 	{
 		
@@ -1205,18 +1167,15 @@ namespace MyNS
 		public System.Nullable<UpdateCallRequestHangupAction> Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateCallRequestHangupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hangup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hangup = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCallRequestMute
 	{
 		
@@ -1227,18 +1186,15 @@ namespace MyNS
 		public System.Nullable<UpdateCallRequestMuteAction> Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateCallRequestMuteAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mute")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mute = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCallRequestTransferAnswerUrl
 	{
 		
@@ -1278,8 +1234,7 @@ namespace MyNS
 		public string[] Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCallRequestTransferNcco
 	{
 		
@@ -1319,8 +1274,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCallRequestUnearmuff
 	{
 		
@@ -1331,18 +1285,15 @@ namespace MyNS
 		public System.Nullable<UpdateCallRequestUnearmuffAction> Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateCallRequestUnearmuffAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unearmuff")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unearmuff = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCallRequestUnmute
 	{
 		
@@ -1356,29 +1307,25 @@ namespace MyNS
 	/// <summary>
 	/// Possible values are `outbound` or `inbound`
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Direction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound = 1,
 	}
 	
 	/// <summary>
 	/// The language to use
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Language
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ca-ES")]
@@ -1520,298 +1467,296 @@ namespace MyNS
 	/// <summary>
 	/// <strong>DEPRECATED</strong> The voice & language to use
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Voice_name
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Aditi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Aditi = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Agnieszka")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Agnieszka = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Alva")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Alva = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Amy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Amy = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Astrid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Astrid = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bianca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bianca = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Brian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Brian = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Carla")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Carla = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Carmen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Carmen = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Carmit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Carmit = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Catarina")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Catarina = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Celine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Celine = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cem")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cem = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Chantal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Chantal = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Chipmunk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Chipmunk = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Conchita")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Conchita = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cristiano")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cristiano = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Damayanti")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Damayanti = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Dora")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Dora = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Emma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Emma = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Empar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Empar = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enrique")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enrique = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Eric")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Eric = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ewa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ewa = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Felipe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Felipe = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Filiz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Filiz = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Geraint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Geraint = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Giorgio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Giorgio = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gwyneth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gwyneth = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hans")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hans = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Henrik")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Henrik = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ines")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ines = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ioana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ioana = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Iveta")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Iveta = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ivy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ivy = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Jacek")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Jacek = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Jan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Jan = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Jennifer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Jennifer = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Joana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Joana = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Joanna")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Joanna = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Joey")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Joey = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Jordi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Jordi = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Justin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Justin = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kanya")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kanya = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Karl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Karl = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kendra")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kendra = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kimberly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kimberly = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Laila")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Laila = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Laura")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Laura = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lea")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lea = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lekha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lekha = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Liv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Liv = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lotte")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lotte = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lucia")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lucia = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Luciana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Luciana = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mads")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mads = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maged")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maged = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maja = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mariska")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mariska = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Marlene")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Marlene = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mathieu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mathieu = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Matthew")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Matthew = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maxim")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maxim = 62,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mei-Jia")]
 		MeiMinusJia = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Melina")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Melina = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mia")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mia = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Miguel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Miguel = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Miren")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Miren = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mizuki")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mizuki = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Montserrat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Montserrat = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Naja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Naja = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nicole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nicole = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nikos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nikos = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nora")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nora = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Oskar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Oskar = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Penelope")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Penelope = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Raveena")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Raveena = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ricardo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ricardo = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ruben")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ruben = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Russell")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Russell = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Salli")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Salli = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Satu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Satu = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Seoyeon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Seoyeon = 82,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sin-Ji")]
 		SinMinusJi = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sora")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sora = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Takumi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Takumi = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tarik")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tarik = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tatyana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tatyana = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tessa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tessa = 88,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tian-Tian")]
 		TianMinusTian = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vicki")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vicki = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Vitoria")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Vitoria = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yelda")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yelda = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Zeina")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Zeina = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Zhiyu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Zhiyu = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Zuzana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Zuzana = 95,
 	}
 	
@@ -2179,47 +2124,47 @@ namespace MyNS
 	public enum GetCallsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		started = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answered = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="machine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		machine = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="busy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		busy = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cancelled = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timeout = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unanswered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unanswered = 10,
 	}
 	
 	public enum GetCallsOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 }

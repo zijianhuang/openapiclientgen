@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for PlaceActions.ListPlaceActionLinks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlaceActionLinksResponse
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a place action link and its attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlaceActionLink
 	{
 		
@@ -104,58 +101,53 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlaceActionLinkPlaceActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLACE_ACTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLACE_ACTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPOINTMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPOINTMENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLINE_APPOINTMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLINE_APPOINTMENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DINING_RESERVATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DINING_RESERVATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOOD_ORDERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOOD_ORDERING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOOD_DELIVERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOOD_DELIVERY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOOD_TAKEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOOD_TAKEOUT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOP_ONLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOP_ONLINE = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlaceActionLinkProviderType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVIDER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVIDER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERCHANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERCHANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AGGREGATOR_3P")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AGGREGATOR_3P = 2,
 	}
 	
 	/// <summary>
 	/// Response message for PlaceActions.ListPlaceActionTypeMetadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPlaceActionTypeMetadataResponse
 	{
 		
@@ -175,8 +167,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for supported place action types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlaceActionTypeMetadata
 	{
 		

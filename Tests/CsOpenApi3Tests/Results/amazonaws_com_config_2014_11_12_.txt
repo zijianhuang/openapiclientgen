@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetAggregateResourceConfigResponse
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// The detailed configuration of a specified resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseConfigurationItem
 	{
 		
@@ -80,31 +78,27 @@ namespace MyNS
 		public SupplementaryConfiguration SupplementaryConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigurationItemStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceDiscovered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceDiscovered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotRecorded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotRecorded = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceDeleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceDeleted = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceDeletedNotRecorded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceDeletedNotRecorded = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
@@ -1063,8 +1057,7 @@ namespace MyNS
 		AWSKinesisFirehoseDeliveryStream = 317,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupplementaryConfiguration
 	{
 	}
@@ -1072,8 +1065,7 @@ namespace MyNS
 	/// <summary>
 	/// The details that identify a resource that is collected by Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateResourceIdentifier
 	{
 		
@@ -1109,8 +1101,7 @@ namespace MyNS
 		public string ResourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetAggregateResourceConfigRequest
 	{
 		
@@ -1129,20 +1120,17 @@ namespace MyNS
 		public AggregateResourceIdentifier[] ResourceIdentifiers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchConfigurationAggregatorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetResourceConfigResponse
 	{
 		
@@ -1156,8 +1144,7 @@ namespace MyNS
 	/// <summary>
 	/// The details that identify a resource within Config, including the resource type and resource ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceKey
 	{
 		
@@ -1176,8 +1163,7 @@ namespace MyNS
 		public string ResourceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetResourceConfigRequest
 	{
 		
@@ -1189,14 +1175,12 @@ namespace MyNS
 		public ResourceKey[] ResourceKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoAvailableConfigurationRecorderException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAggregationAuthorizationRequest
 	{
 		
@@ -1215,8 +1199,7 @@ namespace MyNS
 		public string AuthorizedAwsRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterValueException
 	{
 	}
@@ -1224,8 +1207,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigRuleRequest
 	{
 		
@@ -1237,20 +1219,17 @@ namespace MyNS
 		public string ConfigRuleName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchConfigRuleException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationAggregatorRequest
 	{
 		
@@ -1265,8 +1244,7 @@ namespace MyNS
 	/// <summary>
 	/// The request object for the <code>DeleteConfigurationRecorder</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConfigurationRecorderRequest
 	{
 		
@@ -1278,14 +1256,12 @@ namespace MyNS
 		public string ConfigurationRecorderName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchConfigurationRecorderException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConformancePackRequest
 	{
 		
@@ -1297,8 +1273,7 @@ namespace MyNS
 		public string ConformancePackName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchConformancePackException
 	{
 	}
@@ -1306,8 +1281,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data, in JSON format. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDeliveryChannelRequest
 	{
 		
@@ -1319,14 +1293,12 @@ namespace MyNS
 		public string DeliveryChannelName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchDeliveryChannelException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LastDeliveryChannelDeleteFailedException
 	{
 	}
@@ -1334,8 +1306,7 @@ namespace MyNS
 	/// <summary>
 	/// The output when you delete the evaluation results for the specified Config rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEvaluationResultsResponse
 	{
 	}
@@ -1343,8 +1314,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEvaluationResultsRequest
 	{
 		
@@ -1356,8 +1326,7 @@ namespace MyNS
 		public string ConfigRuleName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteOrganizationConfigRuleRequest
 	{
 		
@@ -1369,20 +1338,17 @@ namespace MyNS
 		public string OrganizationConfigRuleName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchOrganizationConfigRuleException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationAccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteOrganizationConformancePackRequest
 	{
 		
@@ -1394,14 +1360,12 @@ namespace MyNS
 		public string OrganizationConformancePackName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchOrganizationConformancePackException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePendingAggregationRequestRequest
 	{
 		
@@ -1420,14 +1384,12 @@ namespace MyNS
 		public string RequesterAwsRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRemediationConfigurationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRemediationConfigurationRequest
 	{
 		
@@ -1442,26 +1404,22 @@ namespace MyNS
 		public string ResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchRemediationConfigurationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationInProgressException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientPermissionsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRemediationExceptionsResponse
 	{
 		
@@ -1472,8 +1430,7 @@ namespace MyNS
 	/// <summary>
 	/// List of each of the failed delete remediation exceptions with specific reasons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailedDeleteRemediationExceptionsBatch
 	{
 		
@@ -1487,8 +1444,7 @@ namespace MyNS
 	/// <summary>
 	/// The details that identify a resource within Config, including the resource type and resource ID. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationExceptionResourceKey
 	{
 		
@@ -1499,8 +1455,7 @@ namespace MyNS
 		public string ResourceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRemediationExceptionsRequest
 	{
 		
@@ -1519,14 +1474,12 @@ namespace MyNS
 		public RemediationExceptionResourceKey[] ResourceKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchRemediationExceptionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteResourceConfigRequest
 	{
 		
@@ -1545,14 +1498,12 @@ namespace MyNS
 		public string ResourceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoRunningConfigurationRecorderException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRetentionConfigurationRequest
 	{
 		
@@ -1564,20 +1515,17 @@ namespace MyNS
 		public string RetentionConfigurationName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchRetentionConfigurationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStoredQueryResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStoredQueryRequest
 	{
 		
@@ -1589,8 +1537,7 @@ namespace MyNS
 		public string QueryName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
@@ -1598,8 +1545,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the <a>DeliverConfigSnapshot</a> action, in JSON format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliverConfigSnapshotResponse
 	{
 		
@@ -1610,8 +1556,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the <a>DeliverConfigSnapshot</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliverConfigSnapshotRequest
 	{
 		
@@ -1623,8 +1568,7 @@ namespace MyNS
 		public string DeliveryChannelName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAggregateComplianceByConfigRulesResponse
 	{
 		
@@ -1638,8 +1582,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Indicates whether an Config rule is compliant based on account ID, region, compliance, and rule name.</p> <p>A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateComplianceByConfigRule
 	{
 		
@@ -1659,8 +1602,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Compliance
 	{
 		
@@ -1671,30 +1613,27 @@ namespace MyNS
 		public ComplianceContributorCount ComplianceContributorCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComplianceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_COMPLIANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_APPLICABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_APPLICABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_DATA = 3,
 	}
 	
 	/// <summary>
 	/// The number of Amazon Web Services resources or Config rules responsible for the current compliance of the item, up to a maximum number.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplianceContributorCount
 	{
 		
@@ -1705,8 +1644,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> CapExceeded { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAggregateComplianceByConfigRulesRequest
 	{
 		
@@ -1730,8 +1668,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters the compliance results based on account ID, region, compliance type, and rule name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigRuleComplianceFilters
 	{
 		
@@ -1748,20 +1685,17 @@ namespace MyNS
 		public string AwsRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidLimitException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAggregateComplianceByConformancePacksResponse
 	{
 		
@@ -1775,8 +1709,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Provides aggregate compliance of the conformance pack. Indicates whether a conformance pack is compliant based on the name of the conformance pack, account ID, and region.</p> <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateComplianceByConformancePack
 	{
 		
@@ -1796,8 +1729,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Provides the number of compliant and noncompliant rules within a conformance pack. Also provides the compliance status of the conformance pack and the total rule count which includes compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.</p> <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateConformancePackCompliance
 	{
 		
@@ -1814,24 +1746,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalRuleCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConformancePackComplianceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_COMPLIANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_DATA = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAggregateComplianceByConformancePacksRequest
 	{
 		
@@ -1855,8 +1784,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters the conformance packs based on an account ID, region, compliance type, and the name of the conformance pack.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateConformancePackComplianceFilters
 	{
 		
@@ -1873,8 +1801,7 @@ namespace MyNS
 		public string AwsRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAggregationAuthorizationsResponse
 	{
 		
@@ -1888,8 +1815,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the authorizations granted to aggregator accounts and regions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregationAuthorization
 	{
 		
@@ -1906,8 +1832,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAggregationAuthorizationsRequest
 	{
 		
@@ -1921,8 +1846,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeComplianceByConfigRuleResponse
 	{
 		
@@ -1936,8 +1860,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates whether an Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplianceByConfigRule
 	{
 		
@@ -1951,8 +1874,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeComplianceByConfigRuleRequest
 	{
 		
@@ -1969,8 +1891,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeComplianceByResourceResponse
 	{
 		
@@ -1984,8 +1905,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates whether an Amazon Web Services resource that is evaluated according to one or more Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplianceByResource
 	{
 		
@@ -2002,8 +1922,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeComplianceByResourceRequest
 	{
 		
@@ -2026,8 +1945,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigRuleEvaluationStatusResponse
 	{
 		
@@ -2041,8 +1959,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Status information for your Config Managed rules and Config Custom Policy rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.</p> <p>This action does not return status information about Config Custom Lambda rules.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigRuleEvaluationStatus
 	{
 		
@@ -2095,8 +2012,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigRuleEvaluationStatusRequest
 	{
 		
@@ -2113,8 +2029,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigRulesResponse
 	{
 		
@@ -2128,8 +2043,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Config rules evaluate the configuration settings of your Amazon Web Services resources. A rule can run when Config detects a configuration change to an Amazon Web Services resource or at a periodic frequency that you choose (for example, every 24 hours). There are two types of rules: <i>Config Managed Rules</i> and <i>Config Custom Rules</i>.</p> <p>Config Managed Rules are predefined, customizable rules created by Config. For a list of managed rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>.</p> <p>Config Custom Rules are rules that you create from scratch. There are two ways to create Config custom rules: with Lambda functions (<a href="https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function"> Lambda Developer Guide</a>) and with Guard (<a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>), a policy-as-code language. Config custom rules created with Lambda are called <i>Config Custom Lambda Rules</i> and Config custom rules created with Guard are called <i>Config Custom Policy Rules</i>.</p> <p>For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Resource with Config Rules</a> in the <i>Config Developer Guide</i>.</p> <note> <p>You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to create a rule that triggers evaluations for your resources when Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigRule
 	{
 		
@@ -2174,8 +2088,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines which resources trigger an evaluation for an Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Scope
 	{
 		
@@ -2195,8 +2108,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the CustomPolicyDetails, the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the events that cause the evaluation of your Amazon Web Services resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Source
 	{
 		
@@ -2217,27 +2129,24 @@ namespace MyNS
 		public CustomPolicyDetails CustomPolicyDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Owner
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_LAMBDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_LAMBDA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_POLICY = 2,
 	}
 	
 	/// <summary>
 	/// Provides the source and the message types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceDetail
 	{
 		
@@ -2251,9 +2160,7 @@ namespace MyNS
 		public MaximumExecutionFrequency MaximumExecutionFrequency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventSource
 	{
 		
@@ -2261,52 +2168,47 @@ namespace MyNS
 		aws_config = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationItemChangeNotification")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfigurationItemChangeNotification = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationSnapshotDeliveryCompleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfigurationSnapshotDeliveryCompleted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ScheduledNotification")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ScheduledNotification = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OversizedConfigurationItemChangeNotification")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OversizedConfigurationItemChangeNotification = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MaximumExecutionFrequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="One_Hour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		One_Hour = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Three_Hours")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Three_Hours = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Six_Hours")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Six_Hours = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Twelve_Hours")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Twelve_Hours = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TwentyFour_Hours")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TwentyFour_Hours = 4,
 	}
 	
 	/// <summary>
 	/// Provides the runtime system, policy definition, and whether debug logging enabled. You can specify the following CustomPolicyDetails parameter values only for Config Custom Policy rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomPolicyDetails
 	{
 		
@@ -2328,30 +2230,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> EnableDebugLogDelivery { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigRuleState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING_RESULTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING_RESULTS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVALUATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVALUATING = 3,
 	}
 	
 	/// <summary>
 	/// The configuration object for Config rule evaluation mode. The Supported valid values are Detective or Proactive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EvaluationModeConfiguration
 	{
 		
@@ -2359,24 +2258,21 @@ namespace MyNS
 		public EvaluationMode Mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EvaluationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DETECTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DETECTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROACTIVE = 1,
 	}
 	
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigRulesRequest
 	{
 		
@@ -2393,8 +2289,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigRulesFilters
 	{
 		
@@ -2402,8 +2297,7 @@ namespace MyNS
 		public EvaluationMode EvaluationMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationAggregatorSourcesStatusResponse
 	{
 		
@@ -2417,8 +2311,7 @@ namespace MyNS
 	/// <summary>
 	/// The current sync status between the source and the aggregator account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregatedSourceStatus
 	{
 		
@@ -2444,37 +2337,32 @@ namespace MyNS
 		public string LastErrorMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AggregatedSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AggregatedSourceStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTDATED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationAggregatorSourcesStatusRequest
 	{
 		
@@ -2495,8 +2383,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationAggregatorsResponse
 	{
 		
@@ -2510,8 +2397,7 @@ namespace MyNS
 	/// <summary>
 	/// The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationAggregator
 	{
 		
@@ -2540,8 +2426,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of accounts and regions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountAggregationSource
 	{
 		
@@ -2562,8 +2447,7 @@ namespace MyNS
 	/// <summary>
 	/// This object contains regions to set up the aggregator and an IAM role to retrieve organization details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationAggregationSource
 	{
 		
@@ -2581,8 +2465,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> AllAwsRegions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationAggregatorsRequest
 	{
 		
@@ -2599,8 +2482,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the <a>DescribeConfigurationRecorderStatus</a> action, in JSON format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationRecorderStatusResponse
 	{
 		
@@ -2611,8 +2493,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The current status of the configuration recorder.</p> <note> <p>For a detailed status of recording events over time, add your Config events to CloudWatch metrics and use CloudWatch metrics.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationRecorderStatus
 	{
 		
@@ -2641,27 +2522,24 @@ namespace MyNS
 		public System.DateTimeOffset LastStatusChangeTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecorderStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Success = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failure = 2,
 	}
 	
 	/// <summary>
 	/// The input for the <a>DescribeConfigurationRecorderStatus</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationRecorderStatusRequest
 	{
 		
@@ -2672,8 +2550,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the <a>DescribeConfigurationRecorders</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationRecordersResponse
 	{
 		
@@ -2684,8 +2561,7 @@ namespace MyNS
 	/// <summary>
 	/// Records configuration changes to specified resource types. For more information about the configuration recorder, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationRecorder
 	{
 		
@@ -2702,8 +2578,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies which resource types Config records for configuration changes. In the recording group, you specify whether you want to record all supported resource types or to include or exclude specific types of resources.</p> <p>By default, Config records configuration changes for all supported types of <i>Regional resources</i> that Config discovers in the Amazon Web Services Region in which it is running. Regional resources are tied to a Region and can be used only in that Region. Examples of Regional resources are Amazon EC2 instances and Amazon EBS volumes.</p> <p>You can also have Config record supported types of <i>global resources</i>. Global resources are not tied to a specific Region and can be used in all Regions. The global resource types that Config supports include IAM users, groups, roles, and customer managed policies.</p> <important> <p>Global resource types onboarded to Config recording after February 2022 will be recorded only in the service's home Region for the commercial partition and Amazon Web Services GovCloud (US-West) for the Amazon Web Services GovCloud (US) partition. You can view the Configuration Items for these new global resource types only in their home Region and Amazon Web Services GovCloud (US-West).</p> </important> <p>If you don't want Config to record all resources, you can specify which types of resources Config records with the <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource types, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Resource Types</a> in the <i>Config developer guide</i>.</p> <p>For more information and a table of the Home Regions for Global Resource Types Onboarded after February 2022, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources Config Records</a> in the <i>Config developer guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordingGroup
 	{
 		
@@ -2726,8 +2601,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies whether the configuration recorder excludes resource types from being recorded. Use the <code>resourceTypes</code> field to enter a comma-separated list of resource types to exclude as exemptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExclusionByResourceTypes
 	{
 		
@@ -2738,8 +2612,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the recording strategy of the configuration recorder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordingStrategy
 	{
 		
@@ -2747,27 +2620,24 @@ namespace MyNS
 		public RecordingStrategyType UseOnly { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecordingStrategyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_SUPPORTED_RESOURCE_TYPES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_SUPPORTED_RESOURCE_TYPES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUSION_BY_RESOURCE_TYPES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUSION_BY_RESOURCE_TYPES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUSION_BY_RESOURCE_TYPES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUSION_BY_RESOURCE_TYPES = 2,
 	}
 	
 	/// <summary>
 	/// The input for the <a>DescribeConfigurationRecorders</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConfigurationRecordersRequest
 	{
 		
@@ -2775,8 +2645,7 @@ namespace MyNS
 		public string[] ConfigurationRecorderNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConformancePackComplianceResponse
 	{
 		
@@ -2801,8 +2670,7 @@ namespace MyNS
 	/// <summary>
 	/// Compliance information of one or more Config rules within a conformance pack. You can filter using Config rule names and compliance types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackRuleCompliance
 	{
 		
@@ -2816,8 +2684,7 @@ namespace MyNS
 		public string[] Controls { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConformancePackComplianceRequest
 	{
 		
@@ -2841,8 +2708,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters the conformance pack by compliance types and Config rule names.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackComplianceFilters
 	{
 		
@@ -2853,14 +2719,12 @@ namespace MyNS
 		public ConformancePackComplianceType ComplianceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchConfigRuleInConformancePackException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConformancePackStatusResponse
 	{
 		
@@ -2874,8 +2738,7 @@ namespace MyNS
 	/// <summary>
 	/// Status details of a conformance pack.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackStatusDetail
 	{
 		
@@ -2928,30 +2791,27 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateCompletedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConformancePackState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_COMPLETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_IN_PROGRESS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConformancePackStatusRequest
 	{
 		
@@ -2965,8 +2825,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConformancePacksResponse
 	{
 		
@@ -2980,8 +2839,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns details of a conformance pack. A conformance pack is a collection of Config rules and remediation actions that can be easily deployed in an account and a region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackDetail
 	{
 		
@@ -3028,8 +2886,7 @@ namespace MyNS
 	/// <summary>
 	/// Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 255 characters, and values can have a maximum length of 4096 characters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackInputParameter
 	{
 		
@@ -3051,8 +2908,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>This API allows you to create a conformance pack template with an Amazon Web Services Systems Manager document (SSM document). To deploy a conformance pack using an SSM document, first create an SSM document with conformance pack content, and then provide the <code>DocumentName</code> in the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack API</a>. You can also provide the <code>DocumentVersion</code>.</p> <p>The <code>TemplateSSMDocumentDetails</code> object contains the name of the SSM document and the version of the SSM document.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateSSMDocumentDetails
 	{
 		
@@ -3067,8 +2923,7 @@ namespace MyNS
 		public string DocumentVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeConformancePacksRequest
 	{
 		
@@ -3085,8 +2940,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the <a>DescribeDeliveryChannelStatus</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDeliveryChannelStatusResponse
 	{
 		
@@ -3097,8 +2951,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The status of a specified delivery channel.</p> <p>Valid values: <code>Success</code> | <code>Failure</code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryChannelStatus
 	{
 		
@@ -3118,8 +2971,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigExportDeliveryInfo
 	{
 		
@@ -3142,27 +2994,24 @@ namespace MyNS
 		public System.DateTimeOffset NextDeliveryTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failure = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Not_Applicable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Not_Applicable = 2,
 	}
 	
 	/// <summary>
 	/// A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigStreamDeliveryInfo
 	{
 		
@@ -3182,8 +3031,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the <a>DeliveryChannelStatus</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDeliveryChannelStatusRequest
 	{
 		
@@ -3194,8 +3042,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the <a>DescribeDeliveryChannels</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDeliveryChannelsResponse
 	{
 		
@@ -3206,8 +3053,7 @@ namespace MyNS
 	/// <summary>
 	/// The channel through which Config delivers notifications and updated configuration states.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeliveryChannel
 	{
 		
@@ -3233,8 +3079,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Provides options for how often Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.</p> <p>The frequency for a rule that triggers evaluations for your resources when Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:</p> <ul> <li> <p>The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often Config delivers configuration snapshots. This value also sets how often Config invokes evaluations for Config rules.</p> </li> <li> <p>The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.</p> </li> </ul> <p>If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, Config invokes the rule only as often as the <code>deliveryFrequency</code> value.</p> <ol> <li> <p>For example, you want your rule to run evaluations when Config delivers the configuration snapshot.</p> </li> <li> <p>You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>. </p> </li> <li> <p>You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.</p> </li> <li> <p>Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, Config invokes evaluations for the rule every 24 hours. </p> </li> </ol> <p>You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.</p> <p>To update the <code>deliveryFrequency</code> with which Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigSnapshotDeliveryProperties
 	{
 		
@@ -3245,8 +3090,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the <a>DescribeDeliveryChannels</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDeliveryChannelsRequest
 	{
 		
@@ -3254,8 +3098,7 @@ namespace MyNS
 		public string[] DeliveryChannelNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrganizationConfigRuleStatusesResponse
 	{
 		
@@ -3269,8 +3112,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns the status for an organization Config rule in an organization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationConfigRuleStatus
 	{
 		
@@ -3298,42 +3140,39 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrganizationRuleStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_SUCCESSFUL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_SUCCESSFUL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_IN_PROGRESS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_SUCCESSFUL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_IN_PROGRESS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrganizationConfigRuleStatusesRequest
 	{
 		
@@ -3347,8 +3186,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrganizationConfigRulesResponse
 	{
 		
@@ -3362,8 +3200,7 @@ namespace MyNS
 	/// <summary>
 	/// An organization Config rule that has information about Config rules that Config creates in member accounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationConfigRule
 	{
 		
@@ -3400,8 +3237,7 @@ namespace MyNS
 	/// <summary>
 	///  organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationManagedRuleMetadata
 	{
 		
@@ -3437,8 +3273,7 @@ namespace MyNS
 	/// <summary>
 	///  organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationCustomRuleMetadata
 	{
 		
@@ -3478,27 +3313,24 @@ namespace MyNS
 		public string TagValueScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrganizationConfigRuleTriggerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationItemChangeNotification")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfigurationItemChangeNotification = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OversizedConfigurationItemChangeNotification")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OversizedConfigurationItemChangeNotification = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ScheduledNotification")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ScheduledNotification = 2,
 	}
 	
 	/// <summary>
 	///  metadata for your organization Config Custom Policy rule including the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that trigger Config to evaluate Amazon Web Services resources against a rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationCustomPolicyRuleMetadataNoPolicy
 	{
 		
@@ -3533,21 +3365,18 @@ namespace MyNS
 		public string[] DebugLogDeliveryAccounts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrganizationConfigRuleTriggerTypeNoSN
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationItemChangeNotification")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfigurationItemChangeNotification = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OversizedConfigurationItemChangeNotification")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OversizedConfigurationItemChangeNotification = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrganizationConfigRulesRequest
 	{
 		
@@ -3561,8 +3390,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrganizationConformancePackStatusesResponse
 	{
 		
@@ -3576,8 +3404,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns the status for an organization conformance pack in an organization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationConformancePackStatus
 	{
 		
@@ -3605,8 +3432,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrganizationConformancePackStatusesRequest
 	{
 		
@@ -3620,8 +3446,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrganizationConformancePacksResponse
 	{
 		
@@ -3635,8 +3460,7 @@ namespace MyNS
 	/// <summary>
 	/// An organization conformance pack that has information about conformance packs that Config creates in member accounts. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationConformancePack
 	{
 		
@@ -3674,8 +3498,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrganizationConformancePacksRequest
 	{
 		
@@ -3689,8 +3512,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePendingAggregationRequestsResponse
 	{
 		
@@ -3704,8 +3526,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the account ID and region of an aggregator account that is requesting authorization but is not yet authorized.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PendingAggregationRequest
 	{
 		
@@ -3716,8 +3537,7 @@ namespace MyNS
 		public string RequesterAwsRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePendingAggregationRequestsRequest
 	{
 		
@@ -3728,8 +3548,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRemediationConfigurationsResponse
 	{
 		
@@ -3740,8 +3559,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationConfiguration
 	{
 		
@@ -3794,18 +3612,15 @@ namespace MyNS
 		public string CreatedByService { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemediationTargetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSM_DOCUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSM_DOCUMENT = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationParameters
 	{
 	}
@@ -3813,8 +3628,7 @@ namespace MyNS
 	/// <summary>
 	/// The controls that Config uses for executing remediations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionControls
 	{
 		
@@ -3825,8 +3639,7 @@ namespace MyNS
 	/// <summary>
 	/// Amazon Web Services Systems Manager (SSM) specific remediation controls.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SsmControls
 	{
 		
@@ -3837,8 +3650,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ErrorPercentage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRemediationConfigurationsRequest
 	{
 		
@@ -3850,8 +3662,7 @@ namespace MyNS
 		public string[] ConfigRuleNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRemediationExceptionsResponse
 	{
 		
@@ -3865,8 +3676,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the details about the remediation exception. The details include the rule name, an explanation of an exception, the time when the exception will be deleted, the resource ID, and resource type. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationException
 	{
 		
@@ -3898,8 +3708,7 @@ namespace MyNS
 		public System.DateTimeOffset ExpirationTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRemediationExceptionsRequest
 	{
 		
@@ -3920,8 +3729,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRemediationExecutionStatusResponse
 	{
 		
@@ -3935,8 +3743,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides details of the current status of the invoked remediation action for that resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationExecutionStatus
 	{
 		
@@ -3959,30 +3766,27 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemediationExecutionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEUED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// Name of the step from the SSM document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationExecutionStep
 	{
 		
@@ -4002,24 +3806,21 @@ namespace MyNS
 		public System.DateTimeOffset StopTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemediationExecutionStepState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRemediationExecutionStatusRequest
 	{
 		
@@ -4040,8 +3841,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRetentionConfigurationsResponse
 	{
 		
@@ -4055,8 +3855,7 @@ namespace MyNS
 	/// <summary>
 	/// An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in Config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetentionConfiguration
 	{
 		
@@ -4075,8 +3874,7 @@ namespace MyNS
 		public int RetentionPeriodInDays { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRetentionConfigurationsRequest
 	{
 		
@@ -4087,8 +3885,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateComplianceDetailsByConfigRuleResponse
 	{
 		
@@ -4102,8 +3899,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of an Config evaluation for an account ID and region in an aggregator. Provides the Amazon Web Services resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateEvaluationResult
 	{
 		
@@ -4132,8 +3928,7 @@ namespace MyNS
 	/// <summary>
 	/// Uniquely identifies an evaluation result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EvaluationResultIdentifier
 	{
 		
@@ -4150,8 +3945,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies an Config rule that evaluated an Amazon Web Services resource, and provides the type and ID of the resource that the rule evaluated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EvaluationResultQualifier
 	{
 		
@@ -4168,8 +3962,7 @@ namespace MyNS
 		public EvaluationMode EvaluationMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateComplianceDetailsByConfigRuleRequest
 	{
 		
@@ -4211,8 +4004,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateConfigRuleComplianceSummaryResponse
 	{
 		
@@ -4229,8 +4021,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateComplianceCount
 	{
 		
@@ -4244,8 +4035,7 @@ namespace MyNS
 	/// <summary>
 	/// The number of Config rules or Amazon Web Services resources that are compliant and noncompliant.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplianceSummary
 	{
 		
@@ -4259,8 +4049,7 @@ namespace MyNS
 		public System.DateTimeOffset ComplianceSummaryTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateConfigRuleComplianceSummaryRequest
 	{
 		
@@ -4287,8 +4076,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters the results based on the account IDs and regions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigRuleComplianceSummaryFilters
 	{
 		
@@ -4299,21 +4087,18 @@ namespace MyNS
 		public string AwsRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfigRuleComplianceSummaryGroupKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_ID = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_REGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_REGION = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateConformancePackComplianceSummaryResponse
 	{
 		
@@ -4330,8 +4115,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a summary of compliance based on either account ID or region. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateConformancePackComplianceSummary
 	{
 		
@@ -4345,8 +4129,7 @@ namespace MyNS
 	/// <summary>
 	/// The number of conformance packs that are compliant and noncompliant.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateConformancePackComplianceCount
 	{
 		
@@ -4357,8 +4140,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> NonCompliantConformancePackCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateConformancePackComplianceSummaryRequest
 	{
 		
@@ -4385,8 +4167,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters the results based on account ID and region. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregateConformancePackComplianceSummaryFilters
 	{
 		
@@ -4397,8 +4178,7 @@ namespace MyNS
 		public string AwsRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateDiscoveredResourceCountsResponse
 	{
 		
@@ -4422,8 +4202,7 @@ namespace MyNS
 	/// <summary>
 	/// The count of resources that are grouped by the group name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupedResourceCount
 	{
 		
@@ -4442,8 +4221,7 @@ namespace MyNS
 		public int ResourceCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateDiscoveredResourceCountsRequest
 	{
 		
@@ -4470,8 +4248,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters the resource count based on account ID, region, and resource type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceCountFilters
 	{
 		
@@ -4485,24 +4262,21 @@ namespace MyNS
 		public string Region { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceCountGroupKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_TYPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_ID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_REGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_REGION = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateResourceConfigResponse
 	{
 		
@@ -4513,8 +4287,7 @@ namespace MyNS
 	/// <summary>
 	/// A list that contains detailed configurations of a specified resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfigurationItem
 	{
 		
@@ -4573,8 +4346,7 @@ namespace MyNS
 		public SupplementaryConfiguration SupplementaryConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tags
 	{
 	}
@@ -4582,8 +4354,7 @@ namespace MyNS
 	/// <summary>
 	/// The relationship of the related resource to the main resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Relationship
 	{
 		
@@ -4600,8 +4371,7 @@ namespace MyNS
 		public string RelationshipName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAggregateResourceConfigRequest
 	{
 		
@@ -4620,14 +4390,12 @@ namespace MyNS
 		public AggregateResourceIdentifier ResourceIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OversizedConfigurationItemException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotDiscoveredException
 	{
 	}
@@ -4635,8 +4403,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComplianceDetailsByConfigRuleResponse
 	{
 		
@@ -4650,8 +4417,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of an Config evaluation. Provides the Amazon Web Services resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EvaluationResult
 	{
 		
@@ -4677,8 +4443,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComplianceDetailsByConfigRuleRequest
 	{
 		
@@ -4702,8 +4467,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComplianceDetailsByResourceResponse
 	{
 		
@@ -4717,8 +4481,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComplianceDetailsByResourceRequest
 	{
 		
@@ -4741,8 +4504,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComplianceSummaryByConfigRuleResponse
 	{
 		
@@ -4753,8 +4515,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComplianceSummaryByResourceTypeResponse
 	{
 		
@@ -4765,8 +4526,7 @@ namespace MyNS
 	/// <summary>
 	/// The number of Amazon Web Services resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplianceSummaryByResourceType
 	{
 		
@@ -4780,8 +4540,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComplianceSummaryByResourceTypeRequest
 	{
 		
@@ -4789,8 +4548,7 @@ namespace MyNS
 		public string[] ResourceTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConformancePackComplianceDetailsResponse
 	{
 		
@@ -4811,8 +4569,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of a conformance pack evaluation. Provides Config rule and Amazon Web Services resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackEvaluationResult
 	{
 		
@@ -4849,8 +4606,7 @@ namespace MyNS
 		public string Annotation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConformancePackComplianceDetailsRequest
 	{
 		
@@ -4874,8 +4630,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters a conformance pack by Config rule names, compliance types, Amazon Web Services resource types, and resource IDs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackEvaluationFilters
 	{
 		
@@ -4892,8 +4647,7 @@ namespace MyNS
 		public string[] ResourceIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConformancePackComplianceSummaryResponse
 	{
 		
@@ -4907,8 +4661,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary includes the name and status of the conformance pack.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackComplianceSummary
 	{
 		
@@ -4927,8 +4680,7 @@ namespace MyNS
 		public ConformancePackComplianceType ConformancePackComplianceStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConformancePackComplianceSummaryRequest
 	{
 		
@@ -4946,8 +4698,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCustomRulePolicyResponse
 	{
 		
@@ -4955,8 +4706,7 @@ namespace MyNS
 		public string PolicyText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCustomRulePolicyRequest
 	{
 		
@@ -4964,8 +4714,7 @@ namespace MyNS
 		public string ConfigRuleName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDiscoveredResourceCountsResponse
 	{
 		
@@ -4982,8 +4731,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the resource type and the number of resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceCount
 	{
 		
@@ -4994,8 +4742,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDiscoveredResourceCountsRequest
 	{
 		
@@ -5009,8 +4756,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrganizationConfigRuleDetailedStatusResponse
 	{
 		
@@ -5024,8 +4770,7 @@ namespace MyNS
 	/// <summary>
 	/// Organization Config rule creation or deletion status in each member account. This includes the name of the rule, the status, error code and error message when the rule creation or deletion failed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemberAccountStatus
 	{
 		
@@ -5060,8 +4805,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrganizationConfigRuleDetailedStatusRequest
 	{
 		
@@ -5085,8 +4829,7 @@ namespace MyNS
 	/// <summary>
 	/// Status filter object to filter results based on specific member account ID or status type for an organization Config rule. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusDetailFilters
 	{
 		
@@ -5097,8 +4840,7 @@ namespace MyNS
 		public OrganizationRuleStatus MemberAccountRuleStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrganizationConformancePackDetailedStatusResponse
 	{
 		
@@ -5112,8 +4854,7 @@ namespace MyNS
 	/// <summary>
 	/// Organization conformance pack creation or deletion status in each member account. This includes the name of the conformance pack, the status, error code and error message when the conformance pack creation or deletion failed. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationConformancePackDetailedStatus
 	{
 		
@@ -5148,8 +4889,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrganizationConformancePackDetailedStatusRequest
 	{
 		
@@ -5173,8 +4913,7 @@ namespace MyNS
 	/// <summary>
 	/// Status filter object to filter results based on specific member account ID or status type for an organization conformance pack.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationResourceDetailedStatusFilters
 	{
 		
@@ -5185,8 +4924,7 @@ namespace MyNS
 		public OrganizationRuleStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrganizationCustomRulePolicyResponse
 	{
 		
@@ -5194,8 +4932,7 @@ namespace MyNS
 		public string PolicyText { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOrganizationCustomRulePolicyRequest
 	{
 		
@@ -5210,8 +4947,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the <a>GetResourceConfigHistory</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceConfigHistoryResponse
 	{
 		
@@ -5225,8 +4961,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the <a>GetResourceConfigHistory</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceConfigHistoryRequest
 	{
 		
@@ -5260,27 +4995,23 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChronologicalOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Reverse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Reverse = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Forward")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Forward = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTimeRangeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceEvaluationSummaryResponse
 	{
 		
@@ -5309,8 +5040,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns status details of an evaluation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EvaluationStatus
 	{
 		
@@ -5325,27 +5055,24 @@ namespace MyNS
 		public string FailureReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceEvaluationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 2,
 	}
 	
 	/// <summary>
 	/// Use EvaluationContext to group independently initiated proactive resource evaluations. For example, CFN Stack. If you want to check just a resource definition, you do not need to provide evaluation context.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EvaluationContext
 	{
 		
@@ -5356,8 +5083,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns information about the resource being evaluated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceDetails
 	{
 		
@@ -5386,18 +5112,15 @@ namespace MyNS
 		public ResourceConfigurationSchemaType ResourceConfigurationSchemaType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceConfigurationSchemaType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CFN_RESOURCE_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CFN_RESOURCE_SCHEMA = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceEvaluationSummaryRequest
 	{
 		
@@ -5409,8 +5132,7 @@ namespace MyNS
 		public string ResourceEvaluationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStoredQueryResponse
 	{
 		
@@ -5421,8 +5143,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the details of a stored query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StoredQuery
 	{
 		
@@ -5446,8 +5167,7 @@ namespace MyNS
 		public string Expression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStoredQueryRequest
 	{
 		
@@ -5459,8 +5179,7 @@ namespace MyNS
 		public string QueryName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAggregateDiscoveredResourcesResponse
 	{
 		
@@ -5471,8 +5190,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAggregateDiscoveredResourcesRequest
 	{
 		
@@ -5503,8 +5221,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters the results by resource account ID, region, resource ID, and resource name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceFilters
 	{
 		
@@ -5521,8 +5238,7 @@ namespace MyNS
 		public string Region { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConformancePackComplianceScoresResponse
 	{
 		
@@ -5540,8 +5256,7 @@ namespace MyNS
 	/// <summary>
 	/// A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your conformance packs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackComplianceScore
 	{
 		
@@ -5555,8 +5270,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListConformancePackComplianceScoresRequest
 	{
 		
@@ -5579,8 +5293,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of filters to apply to the conformance pack compliance score result set. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackComplianceScoresFilters
 	{
 		
@@ -5592,34 +5305,29 @@ namespace MyNS
 		public string[] ConformancePackNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCORE = 0,
 	}
 	
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDiscoveredResourcesResponse
 	{
 		
@@ -5633,8 +5341,7 @@ namespace MyNS
 	/// <summary>
 	/// The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceIdentifier
 	{
 		
@@ -5654,8 +5361,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDiscoveredResourcesRequest
 	{
 		
@@ -5682,8 +5388,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceEvaluationsResponse
 	{
 		
@@ -5697,8 +5402,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns details of a resource evaluation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceEvaluation
 	{
 		
@@ -5712,8 +5416,7 @@ namespace MyNS
 		public System.DateTimeOffset EvaluationStartTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceEvaluationsRequest
 	{
 		
@@ -5730,8 +5433,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns details of a resource evaluation based on the selected filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceEvaluationFilters
 	{
 		
@@ -5748,8 +5450,7 @@ namespace MyNS
 	/// <summary>
 	/// Filters evaluation results based on start and end times.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeWindow
 	{
 		
@@ -5760,8 +5461,7 @@ namespace MyNS
 		public System.DateTimeOffset EndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStoredQueriesResponse
 	{
 		
@@ -5775,8 +5475,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns details of a specific query. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StoredQueryMetadata
 	{
 		
@@ -5805,8 +5504,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStoredQueriesRequest
 	{
 		
@@ -5817,8 +5515,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -5832,8 +5529,7 @@ namespace MyNS
 	/// <summary>
 	/// The tags for the resource. The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -5844,8 +5540,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -5863,8 +5558,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAggregationAuthorizationResponse
 	{
 		
@@ -5872,8 +5566,7 @@ namespace MyNS
 		public AggregationAuthorization AggregationAuthorization { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAggregationAuthorizationRequest
 	{
 		
@@ -5895,8 +5588,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigRuleRequest
 	{
 		
@@ -5911,14 +5603,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxNumberOfConfigRulesExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationAggregatorResponse
 	{
 		
@@ -5926,8 +5616,7 @@ namespace MyNS
 		public ConfigurationAggregator ConfigurationAggregator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationAggregatorRequest
 	{
 		
@@ -5948,26 +5637,22 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRoleException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoAvailableOrganizationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationAllFeaturesNotEnabledException
 	{
 	}
@@ -5975,8 +5660,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the <a>PutConfigurationRecorder</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConfigurationRecorderRequest
 	{
 		
@@ -5988,26 +5672,22 @@ namespace MyNS
 		public ConfigurationRecorder ConfigurationRecorder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxNumberOfConfigurationRecordersExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidConfigurationRecorderNameException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRecordingGroupException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConformancePackResponse
 	{
 		
@@ -6015,8 +5695,7 @@ namespace MyNS
 		public string ConformancePackArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutConformancePackRequest
 	{
 		
@@ -6046,14 +5725,12 @@ namespace MyNS
 		public TemplateSSMDocumentDetails TemplateSSMDocumentDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConformancePackTemplateValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxNumberOfConformancePacksExceededException
 	{
 	}
@@ -6061,8 +5738,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the <a>PutDeliveryChannel</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDeliveryChannelRequest
 	{
 		
@@ -6074,44 +5750,37 @@ namespace MyNS
 		public DeliveryChannel DeliveryChannel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxNumberOfDeliveryChannelsExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDeliveryChannelNameException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoSuchBucketException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidS3KeyPrefixException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidS3KmsKeyArnException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSNSTopicARNException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientDeliveryPolicyException
 	{
 	}
@@ -6119,8 +5788,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEvaluationsResponse
 	{
 		
@@ -6131,8 +5799,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Evaluation
 	{
 		
@@ -6171,8 +5838,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEvaluationsRequest
 	{
 		
@@ -6190,20 +5856,17 @@ namespace MyNS
 		public System.Nullable<System.Boolean> TestMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidResultTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutExternalEvaluationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutExternalEvaluationRequest
 	{
 		
@@ -6225,8 +5888,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExternalEvaluation
 	{
 		
@@ -6262,8 +5924,7 @@ namespace MyNS
 		public System.DateTimeOffset OrderingTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutOrganizationConfigRuleResponse
 	{
 		
@@ -6271,8 +5932,7 @@ namespace MyNS
 		public string OrganizationConfigRuleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutOrganizationConfigRuleRequest
 	{
 		
@@ -6299,8 +5959,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationCustomPolicyRuleMetadata
 	{
 		
@@ -6346,14 +6005,12 @@ namespace MyNS
 		public string[] DebugLogDeliveryAccounts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxNumberOfOrganizationConfigRulesExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutOrganizationConformancePackResponse
 	{
 		
@@ -6361,8 +6018,7 @@ namespace MyNS
 		public string OrganizationConformancePackArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutOrganizationConformancePackRequest
 	{
 		
@@ -6392,20 +6048,17 @@ namespace MyNS
 		public string[] ExcludedAccounts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxNumberOfOrganizationConformancePacksExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationConformancePackTemplateValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRemediationConfigurationsResponse
 	{
 		
@@ -6416,8 +6069,7 @@ namespace MyNS
 	/// <summary>
 	/// List of each of the failed remediations with specific reasons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailedRemediationBatch
 	{
 		
@@ -6428,8 +6080,7 @@ namespace MyNS
 		public RemediationConfiguration[] FailedItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRemediationConfigurationsRequest
 	{
 		
@@ -6441,8 +6092,7 @@ namespace MyNS
 		public RemediationConfiguration[] RemediationConfigurations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRemediationExceptionsResponse
 	{
 		
@@ -6453,8 +6103,7 @@ namespace MyNS
 	/// <summary>
 	/// List of each of the failed remediation exceptions with specific reasons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailedRemediationExceptionBatch
 	{
 		
@@ -6465,8 +6114,7 @@ namespace MyNS
 		public RemediationException[] FailedItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRemediationExceptionsRequest
 	{
 		
@@ -6491,8 +6139,7 @@ namespace MyNS
 		public System.DateTimeOffset ExpirationTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutResourceConfigRequest
 	{
 		
@@ -6531,14 +6178,12 @@ namespace MyNS
 		public Tags Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxActiveResourcesExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRetentionConfigurationResponse
 	{
 		
@@ -6546,8 +6191,7 @@ namespace MyNS
 		public RetentionConfiguration RetentionConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRetentionConfigurationRequest
 	{
 		
@@ -6559,14 +6203,12 @@ namespace MyNS
 		public int RetentionPeriodInDays { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaxNumberOfRetentionConfigurationsExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutStoredQueryResponse
 	{
 		
@@ -6574,8 +6216,7 @@ namespace MyNS
 		public string QueryArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutStoredQueryRequest
 	{
 		
@@ -6590,20 +6231,17 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceConcurrentModificationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectAggregateResourceConfigResponse
 	{
 		
@@ -6623,8 +6261,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryInfo
 	{
 		
@@ -6635,8 +6272,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the fields such as name of the field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldInfo
 	{
 		
@@ -6644,8 +6280,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectAggregateResourceConfigRequest
 	{
 		
@@ -6673,14 +6308,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidExpressionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectResourceConfigResponse
 	{
 		
@@ -6694,8 +6327,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectResourceConfigRequest
 	{
 		
@@ -6716,8 +6348,7 @@ namespace MyNS
 	/// <summary>
 	/// The output when you start the evaluation for the specified Config rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartConfigRulesEvaluationResponse
 	{
 	}
@@ -6725,8 +6356,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartConfigRulesEvaluationRequest
 	{
 		
@@ -6737,8 +6367,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the <a>StartConfigurationRecorder</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartConfigurationRecorderRequest
 	{
 		
@@ -6750,14 +6379,12 @@ namespace MyNS
 		public string ConfigurationRecorderName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NoAvailableDeliveryChannelException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartRemediationExecutionResponse
 	{
 		
@@ -6768,8 +6395,7 @@ namespace MyNS
 		public ResourceKey[] FailedItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartRemediationExecutionRequest
 	{
 		
@@ -6788,8 +6414,7 @@ namespace MyNS
 		public ResourceKey[] ResourceKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartResourceEvaluationResponse
 	{
 		
@@ -6797,8 +6422,7 @@ namespace MyNS
 		public string ResourceEvaluationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartResourceEvaluationRequest
 	{
 		
@@ -6826,8 +6450,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdempotentParameterMismatch
 	{
 	}
@@ -6835,8 +6458,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the <a>StopConfigurationRecorder</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopConfigurationRecorderRequest
 	{
 		
@@ -6848,8 +6470,7 @@ namespace MyNS
 		public string ConfigurationRecorderName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -6868,8 +6489,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -6888,126 +6508,117 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AggregateConformancePackComplianceSummaryGroupKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_ID = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_REGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_REGION = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MemberAccountRuleStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_SUCCESSFUL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_SUCCESSFUL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_IN_PROGRESS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_SUCCESSFUL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_IN_PROGRESS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrganizationResourceDetailedStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_SUCCESSFUL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_SUCCESSFUL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_IN_PROGRESS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_SUCCESSFUL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_IN_PROGRESS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrganizationResourceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_SUCCESSFUL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_SUCCESSFUL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_IN_PROGRESS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_SUCCESSFUL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_IN_PROGRESS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 8,
 	}
 	
 	/// <summary>
 	/// The dynamic value of the resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceValue
 	{
 		
@@ -7019,21 +6630,18 @@ namespace MyNS
 		public ResourceValueType Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceValueType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_ID = 0,
 	}
 	
 	/// <summary>
 	/// The static value of the resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StaticValue
 	{
 		
@@ -7048,8 +6656,7 @@ namespace MyNS
 	/// <summary>
 	/// The value is either a dynamic (resource) value or a static value. You must select either a dynamic value or a static value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationParameterValue
 	{
 		

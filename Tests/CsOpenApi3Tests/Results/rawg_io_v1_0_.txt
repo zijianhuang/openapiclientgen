@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Developer
 	{
 		
@@ -56,8 +55,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeveloperSingle
 	{
 		
@@ -98,8 +96,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Game
 	{
 		
@@ -191,22 +188,20 @@ namespace MyNS
 		public System.Nullable<GameEsrb_ratingSlug> Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameEsrb_ratingName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Everyone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Everyone = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Everyone 10+")]
 		Everyone_10Plus = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Teen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Teen = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mature = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Adults Only")]
@@ -216,22 +211,20 @@ namespace MyNS
 		Rating_Pending = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameEsrb_ratingSlug
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		everyone = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone-10-plus")]
 		everyoneMinus10Minusplus = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="teen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		teen = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mature = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="adults-only")]
@@ -277,8 +270,7 @@ namespace MyNS
 		public string Recommended { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GamePersonList
 	{
 		
@@ -317,8 +309,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GamePlatformMetacritic
 	{
 		
@@ -333,8 +324,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameSingle
 	{
 		
@@ -529,22 +519,20 @@ namespace MyNS
 		public System.Nullable<GameSingleEsrb_ratingSlug> Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameSingleEsrb_ratingName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Everyone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Everyone = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Everyone 10+")]
 		Everyone_10Plus = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Teen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Teen = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mature = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Adults Only")]
@@ -554,22 +542,20 @@ namespace MyNS
 		Rating_Pending = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameSingleEsrb_ratingSlug
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		everyone = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone-10-plus")]
 		everyoneMinus10Minusplus = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="teen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		teen = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mature = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="adults-only")]
@@ -615,8 +601,7 @@ namespace MyNS
 		public string Recommended { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameStoreFull
 	{
 		
@@ -641,8 +626,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Genre
 	{
 		
@@ -680,8 +664,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenreSingle
 	{
 		
@@ -722,8 +705,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Movie
 	{
 		
@@ -744,8 +726,7 @@ namespace MyNS
 		public string Preview { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParentAchievement
 	{
 		
@@ -773,8 +754,7 @@ namespace MyNS
 		public string Percent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Person
 	{
 		
@@ -813,8 +793,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonSingle
 	{
 		
@@ -872,8 +851,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Platform
 	{
 		
@@ -926,8 +904,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Year_start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlatformParentSingle
 	{
 		
@@ -962,8 +939,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlatformSingle
 	{
 		
@@ -1019,8 +995,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Year_start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Position
 	{
 		
@@ -1044,8 +1019,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Publisher
 	{
 		
@@ -1083,8 +1057,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublisherSingle
 	{
 		
@@ -1125,8 +1098,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Reddit
 	{
 		
@@ -1179,8 +1151,7 @@ namespace MyNS
 		public string Username_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScreenShot
 	{
 		
@@ -1206,8 +1177,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Store
 	{
 		
@@ -1252,8 +1222,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StoreSingle
 	{
 		
@@ -1301,8 +1270,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1347,8 +1315,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagSingle
 	{
 		
@@ -1389,8 +1356,7 @@ namespace MyNS
 		public string Slug { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Twitch
 	{
 		
@@ -1438,8 +1404,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> View_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Youtube
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a CreateInstruction operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1CreateInstructionMetadata
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -74,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of an ExportData operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1ExportDataOperationMetadata
 	{
 		
@@ -107,8 +104,7 @@ namespace MyNS
 	/// <summary>
 	/// Response used for ExportDataset longrunning operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1ExportDataOperationResponse
 	{
 		
@@ -152,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// Statistics about annotation specs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelStats
 	{
 		
@@ -167,8 +162,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of output data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1OutputConfig
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// Export destination of the data.Only gcs path is allowed in output_uri.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1GcsDestination
 	{
 		
@@ -209,8 +202,7 @@ namespace MyNS
 	/// <summary>
 	/// Export folder destination of the data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1GcsFolderDestination
 	{
 		
@@ -224,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for how human labeling task should be done.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1HumanAnnotationConfig
 	{
 		
@@ -287,8 +278,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of an ImportData operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1ImportDataOperationMetadata
 	{
 		
@@ -314,8 +304,7 @@ namespace MyNS
 	/// <summary>
 	/// Response used for ImportData longrunning operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1ImportDataOperationResponse
 	{
 		
@@ -341,8 +330,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageBoundingBox operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelImageBoundingBoxOperationMetadata
 	{
 		
@@ -356,8 +344,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of LabelImageBoundingPoly operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelImageBoundingPolyOperationMetadata
 	{
 		
@@ -371,8 +358,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a LabelImageClassification operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelImageClassificationOperationMetadata
 	{
 		
@@ -386,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageOrientedBoundingBox operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelImageOrientedBoundingBoxOperationMetadata
 	{
 		
@@ -401,8 +386,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of LabelImagePolyline operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelImagePolylineOperationMetadata
 	{
 		
@@ -416,8 +400,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageSegmentation operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelImageSegmentationOperationMetadata
 	{
 		
@@ -431,8 +414,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a labeling operation, such as LabelImage or LabelVideo. Next tag: 23
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelOperationMetadata
 	{
 		
@@ -542,8 +524,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelTextClassification operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelTextClassificationOperationMetadata
 	{
 		
@@ -557,8 +538,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelTextEntityExtraction operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelTextEntityExtractionOperationMetadata
 	{
 		
@@ -572,8 +552,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoClassification operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelVideoClassificationOperationMetadata
 	{
 		
@@ -587,8 +566,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoEvent operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelVideoEventOperationMetadata
 	{
 		
@@ -602,8 +580,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoObjectDetection operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelVideoObjectDetectionOperationMetadata
 	{
 		
@@ -617,8 +594,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoObjectTracking operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1alpha1LabelVideoObjectTrackingOperationMetadata
 	{
 		
@@ -632,8 +608,7 @@ namespace MyNS
 	/// <summary>
 	/// AnnotatedDataset is a set holding annotations for data in a Dataset. Each labeling task will generate an AnnotatedDataset under the Dataset that the task is requested for.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1AnnotatedDataset
 	{
 		
@@ -704,73 +679,68 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1AnnotatedDatasetAnnotationSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNOTATION_SOURCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNOTATION_SOURCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1AnnotatedDatasetAnnotationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNOTATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNOTATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_CLASSIFICATION_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_CLASSIFICATION_ANNOTATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_BOUNDING_BOX_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_BOUNDING_BOX_ANNOTATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_ORIENTED_BOUNDING_BOX_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_ORIENTED_BOUNDING_BOX_ANNOTATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_BOUNDING_POLY_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_BOUNDING_POLY_ANNOTATION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_POLYLINE_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_POLYLINE_ANNOTATION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_SEGMENTATION_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_SEGMENTATION_ANNOTATION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO_SHOTS_CLASSIFICATION_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO_SHOTS_CLASSIFICATION_ANNOTATION = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO_OBJECT_TRACKING_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO_OBJECT_TRACKING_ANNOTATION = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO_OBJECT_DETECTION_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO_OBJECT_DETECTION_ANNOTATION = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO_EVENT_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO_EVENT_ANNOTATION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_CLASSIFICATION_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_CLASSIFICATION_ANNOTATION = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_ENTITY_EXTRACTION_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_ENTITY_EXTRACTION_ANNOTATION = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERAL_CLASSIFICATION_ANNOTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENERAL_CLASSIFICATION_ANNOTATION = 13,
 	}
 	
 	/// <summary>
 	/// Statistics about annotation specs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelStats
 	{
 		
@@ -784,8 +754,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata on AnnotatedDataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1AnnotatedDatasetMetadata
 	{
 		
@@ -859,8 +828,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for image bounding poly (and bounding box) human labeling task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1BoundingPolyConfig
 	{
 		
@@ -880,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for video event human labeling task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1EventConfig
 	{
 		
@@ -907,8 +874,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for how human labeling task should be done.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1HumanAnnotationConfig
 	{
 		
@@ -970,8 +936,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for image classification human labeling task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ImageClassificationConfig
 	{
 		
@@ -994,30 +959,27 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatalabelingV1beta1ImageClassificationConfigAnswerAggregationType> AnswerAggregationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1ImageClassificationConfigAnswerAggregationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING_AGGREGATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING_AGGREGATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAJORITY_VOTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAJORITY_VOTE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNANIMOUS_VOTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNANIMOUS_VOTE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_AGGREGATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_AGGREGATION = 3,
 	}
 	
 	/// <summary>
 	/// Config for video object detection human labeling task. Object detection will be conducted on the images extracted from the video, and those objects will be labeled with bounding boxes. User need to specify the number of images to be extracted per second as the extraction frame rate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ObjectDetectionConfig
 	{
 		
@@ -1037,8 +999,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for video object tracking human labeling task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ObjectTrackingConfig
 	{
 		
@@ -1064,8 +1025,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for image polyline human labeling task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1PolylineConfig
 	{
 		
@@ -1085,8 +1045,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for image segmentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1SegmentationConfig
 	{
 		
@@ -1106,8 +1065,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for text classification human labeling task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1TextClassificationConfig
 	{
 		
@@ -1133,8 +1091,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for setting up sentiments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1SentimentConfig
 	{
 		
@@ -1148,8 +1105,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for text entity extraction human labeling task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1TextEntityExtractionConfig
 	{
 		
@@ -1163,8 +1119,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for video classification human labeling task. Currently two types of video classification are supported: 1. Assign labels on the entire video. 2. Split the video into multiple video clips based on camera shot, and assign labels on each video clip.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1VideoClassificationConfig
 	{
 		
@@ -1184,8 +1139,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation spec set with the setting of allowing multi labels or not.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1AnnotationSpecSetConfig
 	{
 		
@@ -1205,8 +1159,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation for Example. Each example may have one or more annotations. For example in image classification problem, each image might have one or more labels. We call labels binded with this image an Annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1Annotation
 	{
 		
@@ -1244,8 +1197,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information associated with the annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1AnnotationMetadata
 	{
 		
@@ -1259,8 +1211,7 @@ namespace MyNS
 	/// <summary>
 	/// General information useful for labels coming from contributors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1OperatorMetadata
 	{
 		
@@ -1289,27 +1240,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalVotes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1AnnotationAnnotationSentiment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNOTATION_SENTIMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNOTATION_SENTIMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEGATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEGATIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSITIVE = 2,
 	}
 	
 	/// <summary>
 	/// Annotation value for an example.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1AnnotationValue
 	{
 		
@@ -1371,8 +1319,7 @@ namespace MyNS
 	/// <summary>
 	/// Image bounding poly annotation. It represents a polygon including bounding box in the image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ImageBoundingPolyAnnotation
 	{
 		
@@ -1398,8 +1345,7 @@ namespace MyNS
 	/// <summary>
 	/// Container of information related to one possible annotation that can be used in a labeling task. For example, an image classification task where images are labeled as `dog` or `cat` must reference an AnnotationSpec for `dog` and an AnnotationSpec for `cat`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1AnnotationSpec
 	{
 		
@@ -1425,8 +1371,7 @@ namespace MyNS
 	/// <summary>
 	/// A bounding polygon in the image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1BoundingPoly
 	{
 		
@@ -1440,8 +1385,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1Vertex
 	{
 		
@@ -1461,8 +1405,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding polygon.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly
 	{
 		
@@ -1476,8 +1419,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1NormalizedVertex
 	{
 		
@@ -1497,8 +1439,7 @@ namespace MyNS
 	/// <summary>
 	/// Image classification annotation definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ImageClassificationAnnotation
 	{
 		
@@ -1512,8 +1453,7 @@ namespace MyNS
 	/// <summary>
 	/// A polyline for the image annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ImagePolylineAnnotation
 	{
 		
@@ -1539,8 +1479,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized polyline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1NormalizedPolyline
 	{
 		
@@ -1554,8 +1493,7 @@ namespace MyNS
 	/// <summary>
 	/// A line with multiple line segments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1Polyline
 	{
 		
@@ -1569,8 +1507,7 @@ namespace MyNS
 	/// <summary>
 	/// Image segmentation annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ImageSegmentationAnnotation
 	{
 		
@@ -1596,8 +1533,7 @@ namespace MyNS
 	/// <summary>
 	/// Text classification annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1TextClassificationAnnotation
 	{
 		
@@ -1611,8 +1547,7 @@ namespace MyNS
 	/// <summary>
 	/// Text entity extraction annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1TextEntityExtractionAnnotation
 	{
 		
@@ -1632,8 +1567,7 @@ namespace MyNS
 	/// <summary>
 	/// Start and end position in a sequence (e.g. text segment).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1SequentialSegment
 	{
 		
@@ -1653,8 +1587,7 @@ namespace MyNS
 	/// <summary>
 	/// Video classification annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1VideoClassificationAnnotation
 	{
 		
@@ -1674,8 +1607,7 @@ namespace MyNS
 	/// <summary>
 	/// A time period inside of an example that has a time dimension (e.g. video).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1TimeSegment
 	{
 		
@@ -1695,8 +1627,7 @@ namespace MyNS
 	/// <summary>
 	/// Video event annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1VideoEventAnnotation
 	{
 		
@@ -1716,8 +1647,7 @@ namespace MyNS
 	/// <summary>
 	/// Video object tracking annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1VideoObjectTrackingAnnotation
 	{
 		
@@ -1743,8 +1673,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation for object detection and tracking.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ObjectTrackingFrame
 	{
 		
@@ -1770,8 +1699,7 @@ namespace MyNS
 	/// <summary>
 	/// An AnnotationSpecSet is a collection of label definitions. For example, in image classification tasks, you define a set of possible labels for images as an AnnotationSpecSet. An AnnotationSpecSet is immutable upon creation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1AnnotationSpecSet
 	{
 		
@@ -1809,8 +1737,7 @@ namespace MyNS
 	/// <summary>
 	/// Records a failed evaluation job run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1Attempt
 	{
 		
@@ -1827,8 +1754,7 @@ namespace MyNS
 	/// <summary>
 	/// The BigQuery location for input data. If used in an EvaluationJob, this is where the service saves the prediction input and output sampled from the model version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1BigQuerySource
 	{
 		
@@ -1842,8 +1768,7 @@ namespace MyNS
 	/// <summary>
 	/// Options regarding evaluation between bounding boxes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1BoundingBoxEvaluationOptions
 	{
 		
@@ -1857,8 +1782,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for classification annotations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ClassificationMetadata
 	{
 		
@@ -1872,8 +1796,7 @@ namespace MyNS
 	/// <summary>
 	/// Metrics calculated for a classification model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ClassificationMetrics
 	{
 		
@@ -1890,8 +1813,7 @@ namespace MyNS
 	/// <summary>
 	/// Confusion matrix of the model running the classification. Only applicable when the metrics entry aggregates multiple labels. Not applicable when the entry is for a single label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ConfusionMatrix
 	{
 		
@@ -1902,8 +1824,7 @@ namespace MyNS
 	/// <summary>
 	/// A row in the confusion matrix. Each entry in this row has the same ground truth label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1Row
 	{
 		
@@ -1920,8 +1841,7 @@ namespace MyNS
 		public GoogleCloudDatalabelingV1beta1ConfusionMatrixEntry[] Entries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ConfusionMatrixEntry
 	{
 		
@@ -1938,8 +1858,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ItemCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1PrCurve
 	{
 		
@@ -1968,8 +1887,7 @@ namespace MyNS
 		public System.Nullable<System.Single> MeanAveragePrecision { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ConfidenceMetricsEntry
 	{
 		
@@ -2037,8 +1955,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CreateAnnotationSpecSet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1CreateAnnotationSpecSetRequest
 	{
 		
@@ -2052,8 +1969,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CreateDataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1CreateDatasetRequest
 	{
 		
@@ -2067,8 +1983,7 @@ namespace MyNS
 	/// <summary>
 	/// Dataset is the resource to hold your data. You can request multiple labeling tasks for a dataset while each one will generate an AnnotatedDataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1Dataset
 	{
 		
@@ -2124,8 +2039,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of input data, including data type, location, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1InputConfig
 	{
 		
@@ -2166,33 +2080,30 @@ namespace MyNS
 		public GoogleCloudDatalabelingV1beta1TextMetadata TextMetadata { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1InputConfigDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERAL_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENERAL_DATA = 4,
 	}
 	
 	/// <summary>
 	/// Source of the Cloud Storage file to be imported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1GcsSource
 	{
 		
@@ -2212,8 +2123,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1TextMetadata
 	{
 		
@@ -2227,8 +2137,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CreateEvaluationJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1CreateEvaluationJobRequest
 	{
 		
@@ -2242,8 +2151,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines an evaluation job that runs periodically to generate Evaluations. [Creating an evaluation job](/ml-engine/docs/continuous-evaluation/create-job) is the starting point for using continuous evaluation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1EvaluationJob
 	{
 		
@@ -2311,8 +2219,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures specific details of how a continuous evaluation job works. Provide this configuration when you create an EvaluationJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1EvaluationJobConfig
 	{
 		
@@ -2380,8 +2287,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration details used for calculating evaluation metrics and creating an Evaluation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1EvaluationConfig
 	{
 		
@@ -2395,8 +2301,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides details for how an evaluation job sends email alerts based on the results of a run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1EvaluationJobAlertConfig
 	{
 		
@@ -2413,33 +2318,30 @@ namespace MyNS
 		public System.Nullable<System.Double> MinAcceptableMeanAveragePrecision { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1EvaluationJobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEDULED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 4,
 	}
 	
 	/// <summary>
 	/// Metadata of a CreateInstruction operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1CreateInstructionMetadata
 	{
 		
@@ -2465,8 +2367,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CreateInstruction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1CreateInstructionRequest
 	{
 		
@@ -2480,8 +2381,7 @@ namespace MyNS
 	/// <summary>
 	/// Instruction of how to perform the labeling task for human operators. Currently only PDF instruction is supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1Instruction
 	{
 		
@@ -2543,8 +2443,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated: this instruction format is not supported any more. Instruction from a CSV file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1CsvInstruction
 	{
 		
@@ -2558,8 +2457,7 @@ namespace MyNS
 	/// <summary>
 	/// Instruction from a PDF file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1PdfInstruction
 	{
 		
@@ -2573,8 +2471,7 @@ namespace MyNS
 	/// <summary>
 	/// DataItem is a piece of data, without annotation. For example, an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1DataItem
 	{
 		
@@ -2606,8 +2503,7 @@ namespace MyNS
 	/// <summary>
 	/// Container of information about an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ImagePayload
 	{
 		
@@ -2639,8 +2535,7 @@ namespace MyNS
 	/// <summary>
 	/// Container of information about a piece of text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1TextPayload
 	{
 		
@@ -2654,8 +2549,7 @@ namespace MyNS
 	/// <summary>
 	/// Container of information of a video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1VideoPayload
 	{
 		
@@ -2693,8 +2587,7 @@ namespace MyNS
 	/// <summary>
 	/// Container of information of a video thumbnail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1VideoThumbnail
 	{
 		
@@ -2714,8 +2607,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an evaluation between a machine learning model's predictions and ground truth labels. Created when an EvaluationJob runs successfully.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1Evaluation
 	{
 		
@@ -2759,8 +2651,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1EvaluationMetrics
 	{
 		
@@ -2780,8 +2671,7 @@ namespace MyNS
 	/// <summary>
 	/// Metrics calculated for an image object detection (bounding box) model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ObjectDetectionMetrics
 	{
 		
@@ -2792,8 +2682,7 @@ namespace MyNS
 	/// <summary>
 	/// An Example is a piece of data and its annotation. For example, an image with label "house".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1Example
 	{
 		
@@ -2831,8 +2720,7 @@ namespace MyNS
 	/// <summary>
 	/// Example comparisons comparing ground truth output and predictions for a specific input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ExampleComparison
 	{
 		
@@ -2852,8 +2740,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of an ExportData operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ExportDataOperationMetadata
 	{
 		
@@ -2885,8 +2772,7 @@ namespace MyNS
 	/// <summary>
 	/// Response used for ExportDataset longrunning operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ExportDataOperationResponse
 	{
 		
@@ -2930,8 +2816,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of output data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1OutputConfig
 	{
 		
@@ -2951,8 +2836,7 @@ namespace MyNS
 	/// <summary>
 	/// Export destination of the data.Only gcs path is allowed in output_uri.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1GcsDestination
 	{
 		
@@ -2972,8 +2856,7 @@ namespace MyNS
 	/// <summary>
 	/// Export folder destination of the data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1GcsFolderDestination
 	{
 		
@@ -2987,8 +2870,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ExportData API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ExportDataRequest
 	{
 		
@@ -3020,8 +2902,7 @@ namespace MyNS
 	/// <summary>
 	/// A feedback message inside a feedback thread.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1FeedbackMessage
 	{
 		
@@ -3065,8 +2946,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing the feedback from the operator.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1OperatorFeedbackMetadata
 	{
 	}
@@ -3074,8 +2954,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing the feedback from the labeling task requester.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1RequesterFeedbackMetadata
 	{
 	}
@@ -3083,8 +2962,7 @@ namespace MyNS
 	/// <summary>
 	/// A feedback thread of a certain labeling task on a certain annotated dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1FeedbackThread
 	{
 		
@@ -3098,8 +2976,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1FeedbackThreadMetadata
 	{
 		
@@ -3125,27 +3002,24 @@ namespace MyNS
 		public string Thumbnail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1FeedbackThreadMetadataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEEDBACK_THREAD_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEEDBACK_THREAD_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLIED = 2,
 	}
 	
 	/// <summary>
 	/// Metadata of an ImportData operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ImportDataOperationMetadata
 	{
 		
@@ -3171,8 +3045,7 @@ namespace MyNS
 	/// <summary>
 	/// Response used for ImportData longrunning operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ImportDataOperationResponse
 	{
 		
@@ -3198,8 +3071,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ImportData API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ImportDataRequest
 	{
 		
@@ -3219,8 +3091,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageBoundingBox operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelImageBoundingBoxOperationMetadata
 	{
 		
@@ -3234,8 +3105,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of LabelImageBoundingPoly operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelImageBoundingPolyOperationMetadata
 	{
 		
@@ -3249,8 +3119,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a LabelImageClassification operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelImageClassificationOperationMetadata
 	{
 		
@@ -3264,8 +3133,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageOrientedBoundingBox operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelImageOrientedBoundingBoxOperationMetadata
 	{
 		
@@ -3279,8 +3147,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of LabelImagePolyline operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelImagePolylineOperationMetadata
 	{
 		
@@ -3294,8 +3161,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for starting an image labeling task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelImageRequest
 	{
 		
@@ -3336,39 +3202,36 @@ namespace MyNS
 		public GoogleCloudDatalabelingV1beta1SegmentationConfig SegmentationConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1LabelImageRequestFeature
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEATURE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEATURE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLASSIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLASSIFICATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOUNDING_BOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOUNDING_BOX = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORIENTED_BOUNDING_BOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORIENTED_BOUNDING_BOX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOUNDING_POLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOUNDING_POLY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POLYLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POLYLINE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEGMENTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEGMENTATION = 6,
 	}
 	
 	/// <summary>
 	/// Details of a LabelImageSegmentation operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelImageSegmentationOperationMetadata
 	{
 		
@@ -3382,8 +3245,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a labeling operation, such as LabelImage or LabelVideo. Next tag: 23
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelOperationMetadata
 	{
 		
@@ -3493,8 +3355,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelTextClassification operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelTextClassificationOperationMetadata
 	{
 		
@@ -3508,8 +3369,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelTextEntityExtraction operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelTextEntityExtractionOperationMetadata
 	{
 		
@@ -3523,8 +3383,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoClassification operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelVideoClassificationOperationMetadata
 	{
 		
@@ -3538,8 +3397,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoEvent operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelVideoEventOperationMetadata
 	{
 		
@@ -3553,8 +3411,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoObjectDetection operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelVideoObjectDetectionOperationMetadata
 	{
 		
@@ -3568,8 +3425,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoObjectTracking operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelVideoObjectTrackingOperationMetadata
 	{
 		
@@ -3583,8 +3439,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for LabelText.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelTextRequest
 	{
 		
@@ -3613,27 +3468,24 @@ namespace MyNS
 		public GoogleCloudDatalabelingV1beta1TextEntityExtractionConfig TextEntityExtractionConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1LabelTextRequestFeature
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEATURE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEATURE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_CLASSIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_CLASSIFICATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_ENTITY_EXTRACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_ENTITY_EXTRACTION = 2,
 	}
 	
 	/// <summary>
 	/// Request message for LabelVideo.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1LabelVideoRequest
 	{
 		
@@ -3674,33 +3526,30 @@ namespace MyNS
 		public GoogleCloudDatalabelingV1beta1VideoClassificationConfig VideoClassificationConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatalabelingV1beta1LabelVideoRequestFeature
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEATURE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEATURE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLASSIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLASSIFICATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT_DETECTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT_TRACKING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT_TRACKING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 4,
 	}
 	
 	/// <summary>
 	/// Results of listing annotated datasets for a dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ListAnnotatedDatasetsResponse
 	{
 		
@@ -3720,8 +3569,7 @@ namespace MyNS
 	/// <summary>
 	/// Results of listing annotation spec set under a project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ListAnnotationSpecSetsResponse
 	{
 		
@@ -3741,8 +3589,7 @@ namespace MyNS
 	/// <summary>
 	/// Results of listing data items in a dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ListDataItemsResponse
 	{
 		
@@ -3762,8 +3609,7 @@ namespace MyNS
 	/// <summary>
 	/// Results of listing datasets within a project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ListDatasetsResponse
 	{
 		
@@ -3783,8 +3629,7 @@ namespace MyNS
 	/// <summary>
 	/// Results for listing evaluation jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ListEvaluationJobsResponse
 	{
 		
@@ -3804,8 +3649,7 @@ namespace MyNS
 	/// <summary>
 	/// Results of listing Examples in and annotated dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ListExamplesResponse
 	{
 		
@@ -3825,8 +3669,7 @@ namespace MyNS
 	/// <summary>
 	/// Results for listing FeedbackMessages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ListFeedbackMessagesResponse
 	{
 		
@@ -3846,8 +3689,7 @@ namespace MyNS
 	/// <summary>
 	/// Results for listing FeedbackThreads.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ListFeedbackThreadsResponse
 	{
 		
@@ -3867,8 +3709,7 @@ namespace MyNS
 	/// <summary>
 	/// Results of listing instructions under a project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ListInstructionsResponse
 	{
 		
@@ -3888,8 +3729,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for PauseEvaluationJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1PauseEvaluationJobRequest
 	{
 	}
@@ -3897,8 +3737,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message ResumeEvaluationJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1ResumeEvaluationJobRequest
 	{
 	}
@@ -3906,8 +3745,7 @@ namespace MyNS
 	/// <summary>
 	/// Results of searching evaluations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1SearchEvaluationsResponse
 	{
 		
@@ -3927,8 +3765,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message of SearchExampleComparisons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1SearchExampleComparisonsRequest
 	{
 		
@@ -3948,8 +3785,7 @@ namespace MyNS
 	/// <summary>
 	/// Results of searching example comparisons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1beta1SearchExampleComparisonsResponse
 	{
 		
@@ -3969,8 +3805,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a CreateInstruction operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1CreateInstructionMetadata
 	{
 		
@@ -3996,8 +3831,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of an ExportData operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1ExportDataOperationMetadata
 	{
 		
@@ -4029,8 +3863,7 @@ namespace MyNS
 	/// <summary>
 	/// Response used for ExportDataset longrunning operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1ExportDataOperationResponse
 	{
 		
@@ -4074,8 +3907,7 @@ namespace MyNS
 	/// <summary>
 	/// Statistics about annotation specs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelStats
 	{
 		
@@ -4089,8 +3921,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of output data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1OutputConfig
 	{
 		
@@ -4110,8 +3941,7 @@ namespace MyNS
 	/// <summary>
 	/// Export destination of the data.Only gcs path is allowed in output_uri.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1GcsDestination
 	{
 		
@@ -4131,8 +3961,7 @@ namespace MyNS
 	/// <summary>
 	/// Export folder destination of the data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1GcsFolderDestination
 	{
 		
@@ -4146,8 +3975,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of an GenerateAnalysisReport operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1GenerateAnalysisReportOperationMetadata
 	{
 		
@@ -4167,8 +3995,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for how human labeling task should be done.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1HumanAnnotationConfig
 	{
 		
@@ -4230,8 +4057,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of an ImportData operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1ImportDataOperationMetadata
 	{
 		
@@ -4257,8 +4083,7 @@ namespace MyNS
 	/// <summary>
 	/// Response used for ImportData longrunning operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1ImportDataOperationResponse
 	{
 		
@@ -4284,8 +4109,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageBoundingBox operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelImageBoundingBoxOperationMetadata
 	{
 		
@@ -4299,8 +4123,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of LabelImageBoundingPoly operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelImageBoundingPolyOperationMetadata
 	{
 		
@@ -4314,8 +4137,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a LabelImageClassification operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelImageClassificationOperationMetadata
 	{
 		
@@ -4329,8 +4151,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageOrientedBoundingBox operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelImageOrientedBoundingBoxOperationMetadata
 	{
 		
@@ -4344,8 +4165,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of LabelImagePolyline operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelImagePolylineOperationMetadata
 	{
 		
@@ -4359,8 +4179,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageSegmentation operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelImageSegmentationOperationMetadata
 	{
 		
@@ -4374,8 +4193,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a labeling operation, such as LabelImage or LabelVideo. Next tag: 23
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelOperationMetadata
 	{
 		
@@ -4485,8 +4303,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelTextClassification operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelTextClassificationOperationMetadata
 	{
 		
@@ -4500,8 +4317,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelTextEntityExtraction operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelTextEntityExtractionOperationMetadata
 	{
 		
@@ -4515,8 +4331,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoClassification operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelVideoClassificationOperationMetadata
 	{
 		
@@ -4530,8 +4345,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoEvent operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelVideoEventOperationMetadata
 	{
 		
@@ -4545,8 +4359,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoObjectDetection operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelVideoObjectDetectionOperationMetadata
 	{
 		
@@ -4560,8 +4373,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoObjectTracking operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p1alpha1LabelVideoObjectTrackingOperationMetadata
 	{
 		
@@ -4575,8 +4387,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a CreateInstruction operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1CreateInstructionMetadata
 	{
 		
@@ -4602,8 +4413,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of an ExportData operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1ExportDataOperationMetadata
 	{
 		
@@ -4635,8 +4445,7 @@ namespace MyNS
 	/// <summary>
 	/// Response used for ExportDataset longrunning operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1ExportDataOperationResponse
 	{
 		
@@ -4680,8 +4489,7 @@ namespace MyNS
 	/// <summary>
 	/// Statistics about annotation specs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelStats
 	{
 		
@@ -4695,8 +4503,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of output data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1OutputConfig
 	{
 		
@@ -4716,8 +4523,7 @@ namespace MyNS
 	/// <summary>
 	/// Export destination of the data.Only gcs path is allowed in output_uri.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1GcsDestination
 	{
 		
@@ -4737,8 +4543,7 @@ namespace MyNS
 	/// <summary>
 	/// Export folder destination of the data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1GcsFolderDestination
 	{
 		
@@ -4752,8 +4557,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for how human labeling task should be done.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1HumanAnnotationConfig
 	{
 		
@@ -4815,8 +4619,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of an ImportData operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1ImportDataOperationMetadata
 	{
 		
@@ -4842,8 +4645,7 @@ namespace MyNS
 	/// <summary>
 	/// Response used for ImportData longrunning operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1ImportDataOperationResponse
 	{
 		
@@ -4869,8 +4671,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageBoundingBox operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelImageBoundingBoxOperationMetadata
 	{
 		
@@ -4884,8 +4685,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of LabelImageBoundingPoly operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelImageBoundingPolyOperationMetadata
 	{
 		
@@ -4899,8 +4699,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a LabelImageClassification operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelImageClassificationOperationMetadata
 	{
 		
@@ -4914,8 +4713,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageOrientedBoundingBox operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelImageOrientedBoundingBoxOperationMetadata
 	{
 		
@@ -4929,8 +4727,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of LabelImagePolyline operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelImagePolylineOperationMetadata
 	{
 		
@@ -4944,8 +4741,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelImageSegmentation operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelImageSegmentationOperationMetadata
 	{
 		
@@ -4959,8 +4755,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata of a labeling operation, such as LabelImage or LabelVideo. Next tag: 23
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelOperationMetadata
 	{
 		
@@ -5070,8 +4865,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelTextClassification operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelTextClassificationOperationMetadata
 	{
 		
@@ -5085,8 +4879,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelTextEntityExtraction operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelTextEntityExtractionOperationMetadata
 	{
 		
@@ -5100,8 +4893,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoClassification operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelVideoClassificationOperationMetadata
 	{
 		
@@ -5115,8 +4907,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoEvent operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelVideoEventOperationMetadata
 	{
 		
@@ -5130,8 +4921,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoObjectDetection operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelVideoObjectDetectionOperationMetadata
 	{
 		
@@ -5145,8 +4935,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a LabelVideoObjectTracking operation metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatalabelingV1p2alpha1LabelVideoObjectTrackingOperationMetadata
 	{
 		
@@ -5160,8 +4949,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -5181,8 +4969,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -5220,8 +5007,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

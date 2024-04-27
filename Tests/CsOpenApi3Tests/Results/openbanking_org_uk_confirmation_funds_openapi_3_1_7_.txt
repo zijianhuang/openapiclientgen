@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Links relevant to the payload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Links
 	{
 		
@@ -48,8 +47,7 @@ namespace MyNS
 	/// <summary>
 	/// Meta Data relevant to the payload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Meta
 	{
 		
@@ -73,8 +71,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalPages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBError1
 	{
 		
@@ -119,8 +116,7 @@ namespace MyNS
 	/// <summary>
 	/// An array of detail error codes, and messages, and URLs to documentation to help remediation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBErrorResponse1
 	{
 		
@@ -168,8 +164,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBFundsConfirmation1
 	{
 		
@@ -241,8 +236,7 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBFundsConfirmationConsent1
 	{
 		
@@ -321,8 +315,7 @@ namespace MyNS
 		public string SecondaryIdentification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBFundsConfirmationConsentResponse1
 	{
 		
@@ -453,27 +446,24 @@ namespace MyNS
 		public string SecondaryIdentification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBFundsConfirmationConsentResponse1DataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Authorised")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Authorised = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AwaitingAuthorisation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AwaitingAuthorisation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Revoked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Revoked = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBFundsConfirmationResponse1
 	{
 		

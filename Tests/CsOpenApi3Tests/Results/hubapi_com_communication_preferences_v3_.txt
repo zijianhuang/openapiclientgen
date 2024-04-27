@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -71,8 +70,7 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		
@@ -112,8 +110,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of a subscription for a contact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicSubscriptionStatus
 	{
 		
@@ -182,68 +179,61 @@ namespace MyNS
 		public PublicSubscriptionStatusStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublicSubscriptionStatusLegalBasis
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEGITIMATE_INTEREST_PQL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEGITIMATE_INTEREST_PQL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEGITIMATE_INTEREST_CLIENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEGITIMATE_INTEREST_CLIENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERFORMANCE_OF_CONTRACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERFORMANCE_OF_CONTRACT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSENT_WITH_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSENT_WITH_NOTICE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_GDPR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_GDPR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESS_AND_STORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESS_AND_STORE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEGITIMATE_INTEREST_OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEGITIMATE_INTEREST_OTHER = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublicSubscriptionStatusSourceOfStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PORTAL_WIDE_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PORTAL_WIDE_STATUS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BRAND_WIDE_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BRAND_WIDE_STATUS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBSCRIPTION_STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBSCRIPTION_STATUS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PublicSubscriptionStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBSCRIBED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBSCRIBED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_SUBSCRIBED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_SUBSCRIBED = 1,
 	}
 	
 	/// <summary>
 	/// A collection of subscription statuses for a contact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicSubscriptionStatusesResponse
 	{
 		
@@ -267,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to change the status of a contact's subscription.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicUpdateSubscriptionStatusRequest
 	{
 		
@@ -301,8 +290,7 @@ namespace MyNS
 		public string SubscriptionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionDefinition
 	{
 		
@@ -386,8 +374,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of subscription definitions for the portal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionDefinitionsResponse
 	{
 		

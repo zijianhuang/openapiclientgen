@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateUserToPermissionGroupResponse
 	{
 		
@@ -26,38 +25,32 @@ namespace MyNS
 		public System.Nullable<System.Int32> StatusCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
@@ -65,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from a CreateChangeset operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateChangesetResponse
 	{
 		
@@ -77,8 +69,7 @@ namespace MyNS
 		public string ChangesetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
@@ -86,8 +77,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for creating a data view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataViewResponse
 	{
 		
@@ -101,21 +91,18 @@ namespace MyNS
 	/// <summary>
 	/// Data View Export File Format
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportFileFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARQUET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARQUET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIMITED_TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIMITED_TEXT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3DestinationFormatOptions
 	{
 	}
@@ -123,8 +110,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from a CreateDataset operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDatasetResponse
 	{
 		
@@ -135,8 +121,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Resource permission for a dataset. When you create a dataset, all the other members of the same user group inherit access to the dataset. You can only create a dataset if your user group has application permission for Create Datasets.</p> <p>The following is a list of valid dataset permissions that you can apply: </p> <ul> <li> <p> <code>ViewDatasetDetails</code> </p> </li> <li> <p> <code>ReadDatasetDetails</code> </p> </li> <li> <p> <code>AddDatasetData</code> </p> </li> <li> <p> <code>CreateDataView</code> </p> </li> <li> <p> <code>EditDatasetMetadata</code> </p> </li> <li> <p> <code>DeleteDataset</code> </p> </li> </ul> <p>For more information on the dataset permissions, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported Dataset Permissions</a> in the FinSpace User Guide.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourcePermission
 	{
 		
@@ -147,8 +132,7 @@ namespace MyNS
 	/// <summary>
 	/// Definition for a schema on a tabular Dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaDefinition
 	{
 		
@@ -162,8 +146,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of a column in a tabular Dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnDefinition
 	{
 		
@@ -180,51 +163,48 @@ namespace MyNS
 	/// <summary>
 	/// Data type of a column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ColumnDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTEGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTEGER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TINYINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TINYINT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMALLINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMALLINT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGINT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLOAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLOAT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOUBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOUBLE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATETIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATETIME = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BINARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BINARY = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePermissionGroupResponse
 	{
 		
@@ -232,36 +212,33 @@ namespace MyNS
 		public string PermissionGroupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationPermission
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDataset")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDataset = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ManageClusters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ManageClusters = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ManageUsersAndGroups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ManageUsersAndGroups = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ManageAttributeSets")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ManageAttributeSets = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ViewAuditData")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ViewAuditData = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccessNotebooks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccessNotebooks = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetTemporaryCredentials")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetTemporaryCredentials = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateUserResponse
 	{
 		
@@ -272,8 +249,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from an DeleteDataset operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDatasetResponse
 	{
 		
@@ -281,8 +257,7 @@ namespace MyNS
 		public string DatasetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePermissionGroupResponse
 	{
 		
@@ -290,8 +265,7 @@ namespace MyNS
 		public string PermissionGroupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableUserResponse
 	{
 		
@@ -299,8 +273,7 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateUserFromPermissionGroupResponse
 	{
 		
@@ -308,8 +281,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StatusCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableUserResponse
 	{
 		
@@ -320,8 +292,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from a describe changeset operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetChangesetResponse
 	{
 		
@@ -368,27 +339,24 @@ namespace MyNS
 	/// <summary>
 	/// Indicates how the given change will be applied to the dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChangeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLACE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPEND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODIFY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODIFY = 2,
 	}
 	
 	/// <summary>
 	/// Source Parameters of a Changeset
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceParams
 	{
 	}
@@ -396,8 +364,7 @@ namespace MyNS
 	/// <summary>
 	/// Format Parameters of a Changeset
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormatParams
 	{
 	}
@@ -405,33 +372,30 @@ namespace MyNS
 	/// <summary>
 	/// Status of the ingestion process returned from scheduler service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IngestionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_REQUESTED = 4,
 	}
 	
 	/// <summary>
 	/// The structure with error messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangesetErrorInfo
 	{
 		
@@ -445,42 +409,39 @@ namespace MyNS
 	/// <summary>
 	/// Changeset Error Category
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_QUOTA_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_QUOTA_EXCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCESS_DENIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_NOT_FOUND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THROTTLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THROTTLING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_SERVICE_EXCEPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_SERVICE_EXCEPTION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_RECOVERABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_RECOVERABLE = 7,
 	}
 	
 	/// <summary>
 	/// Response from retrieving a dataview, which includes details on the target database and table name
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataViewResponse
 	{
 		
@@ -524,8 +485,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure with error messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataViewErrorInfo
 	{
 		
@@ -539,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// Structure for the Dataview destination type parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataViewDestinationTypeParams
 	{
 		
@@ -561,42 +520,39 @@ namespace MyNS
 	/// <summary>
 	/// Status of a DataView
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataViewStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMEOUT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_CLEANUP_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_CLEANUP_FAILED = 7,
 	}
 	
 	/// <summary>
 	/// Response for the GetDataset operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDatasetResponse
 	{
 		
@@ -634,24 +590,21 @@ namespace MyNS
 	/// <summary>
 	/// Dataset Kind
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatasetKind
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABULAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABULAR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_TABULAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_TABULAR = 1,
 	}
 	
 	/// <summary>
 	/// A union of schema types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchemaUnion
 	{
 		
@@ -662,27 +615,24 @@ namespace MyNS
 	/// <summary>
 	/// Status of the dataset process returned from scheduler service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DatasetStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExternalDataViewAccessDetailsResponse
 	{
 		
@@ -696,8 +646,7 @@ namespace MyNS
 	/// <summary>
 	///  The credentials required to access the external Dataview from the S3 location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsCredentials
 	{
 		
@@ -717,8 +666,7 @@ namespace MyNS
 	/// <summary>
 	/// The location of an external Dataview in an S3 bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Location
 	{
 		
@@ -737,8 +685,7 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPermissionGroupResponse
 	{
 		
@@ -752,8 +699,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure for a permission group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionGroup
 	{
 		
@@ -779,27 +725,24 @@ namespace MyNS
 		public PermissionGroupMembershipStatus MembershipStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionGroupMembershipStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDITION_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDITION_IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDITION_SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDITION_SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVAL_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVAL_IN_PROGRESS = 2,
 	}
 	
 	/// <summary>
 	/// Response for GetProgrammaticAccessCredentials operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProgrammaticAccessCredentialsResponse
 	{
 		
@@ -813,8 +756,7 @@ namespace MyNS
 	/// <summary>
 	/// Short term API credentials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Credentials
 	{
 		
@@ -828,8 +770,7 @@ namespace MyNS
 		public string SessionToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUserResponse
 	{
 		
@@ -873,50 +814,43 @@ namespace MyNS
 		public System.Nullable<System.Int32> LastLoginTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUPER_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUPER_USER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_USER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorkingLocationResponse
 	{
 		
@@ -933,8 +867,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to ListChangesetsResponse. This returns a list of dataset changesets that match the query criteria.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListChangesetsResponse
 	{
 		
@@ -948,8 +881,7 @@ namespace MyNS
 	/// <summary>
 	/// A Changeset is unit of data in a Dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangesetSummary
 	{
 		
@@ -993,8 +925,7 @@ namespace MyNS
 		public string UpdatedByChangesetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDataViewsResponse
 	{
 		
@@ -1008,8 +939,7 @@ namespace MyNS
 	/// <summary>
 	/// Structure for the summary of a Dataview.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataViewSummary
 	{
 		
@@ -1053,8 +983,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ListDatasets operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatasetsResponse
 	{
 		
@@ -1068,8 +997,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure for a Dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dataset
 	{
 		
@@ -1107,8 +1035,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for Dataset owner info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatasetOwnerInfo
 	{
 		
@@ -1122,8 +1049,7 @@ namespace MyNS
 		public string Email { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionGroupsResponse
 	{
 		
@@ -1134,8 +1060,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionGroupsByUserResponse
 	{
 		
@@ -1149,8 +1074,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure of a permission group associated with a user account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionGroupByUser
 	{
 		
@@ -1164,8 +1088,7 @@ namespace MyNS
 		public PermissionGroupMembershipStatus MembershipStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUsersResponse
 	{
 		
@@ -1179,8 +1102,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of the user account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -1224,8 +1146,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> LastLoginTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUsersByPermissionGroupResponse
 	{
 		
@@ -1239,8 +1160,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure of a user account associated with a permission group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserByPermissionGroup
 	{
 		
@@ -1272,8 +1192,7 @@ namespace MyNS
 		public PermissionGroupMembershipStatus MembershipStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetUserPasswordResponse
 	{
 		
@@ -1287,8 +1206,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from a update changeset operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateChangesetResponse
 	{
 		
@@ -1302,8 +1220,7 @@ namespace MyNS
 	/// <summary>
 	/// The response from an UpdateDataset operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDatasetResponse
 	{
 		
@@ -1311,8 +1228,7 @@ namespace MyNS
 		public string DatasetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePermissionGroupResponse
 	{
 		
@@ -1320,8 +1236,7 @@ namespace MyNS
 		public string PermissionGroupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateUserResponse
 	{
 		
@@ -1329,8 +1244,7 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateUserToPermissionGroupRequest
 	{
 		
@@ -1341,8 +1255,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for a CreateChangeset operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateChangesetRequest
 	{
 		
@@ -1374,8 +1287,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for creating a data view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataViewRequest
 	{
 		
@@ -1405,8 +1317,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Permission group parameters for Dataset permissions.</p> <p>Here is an example of how you could specify the <code>PermissionGroupParams</code>:</p> <p> <code> { "permissionGroupId": "0r6fCRtSTUk4XPfXQe3M0g", "datasetPermissions": [ {"permission": "ViewDatasetDetails"}, {"permission": "AddDatasetData"}, {"permission": "EditDatasetMetadata"}, {"permission": "DeleteDataset"} ] } </code> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionGroupParams
 	{
 		
@@ -1420,8 +1331,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for a CreateDataset operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDatasetRequest
 	{
 		
@@ -1462,8 +1372,7 @@ namespace MyNS
 		public SchemaUnion SchemaDefinition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePermissionGroupRequest
 	{
 		
@@ -1488,8 +1397,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateUserRequest
 	{
 		
@@ -1526,20 +1434,17 @@ namespace MyNS
 	/// <summary>
 	/// The request for a DeleteDataset operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDatasetRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePermissionGroupRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableUserRequest
 	{
 		
@@ -1547,14 +1452,12 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateUserFromPermissionGroupRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableUserRequest
 	{
 		
@@ -1565,8 +1468,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to describe a changeset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetChangesetRequest
 	{
 	}
@@ -1574,8 +1476,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for retrieving a data view detail. Grouped / accessible within a dataset by its dataset id.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataViewRequest
 	{
 	}
@@ -1583,20 +1484,17 @@ namespace MyNS
 	/// <summary>
 	/// Request for the GetDataset operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDatasetRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExternalDataViewAccessDetailsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPermissionGroupRequest
 	{
 	}
@@ -1604,33 +1502,28 @@ namespace MyNS
 	/// <summary>
 	/// Request for GetProgrammaticAccessCredentials operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProgrammaticAccessCredentialsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUserRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INGESTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INGESTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAGEMAKER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAGEMAKER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorkingLocationRequest
 	{
 		
@@ -1641,8 +1534,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to ListChangesetsRequest. It exposes minimal query filters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListChangesetsRequest
 	{
 	}
@@ -1650,8 +1542,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for a list data views.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDataViewsRequest
 	{
 	}
@@ -1659,38 +1550,32 @@ namespace MyNS
 	/// <summary>
 	/// Request for the ListDatasets operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatasetsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionGroupsByUserRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionGroupsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUsersByPermissionGroupRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUsersRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetUserPasswordRequest
 	{
 		
@@ -1701,8 +1586,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update an existing changeset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateChangesetRequest
 	{
 		
@@ -1727,8 +1611,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for an UpdateDataset operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDatasetRequest
 	{
 		
@@ -1759,8 +1642,7 @@ namespace MyNS
 		public SchemaUnion SchemaDefinition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePermissionGroupRequest
 	{
 		
@@ -1777,8 +1659,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateUserRequest
 	{
 		

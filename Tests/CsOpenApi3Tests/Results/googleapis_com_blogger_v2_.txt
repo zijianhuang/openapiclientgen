@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Blog
 	{
 		
@@ -161,8 +160,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Post
 	{
 		
@@ -370,19 +368,17 @@ namespace MyNS
 		public string Span { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostReaderComments
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONT_ALLOW_SHOW_EXISTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONT_ALLOW_SHOW_EXISTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONT_ALLOW_HIDE_EXISTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONT_ALLOW_HIDE_EXISTING = 2,
 	}
 	
@@ -408,8 +404,7 @@ namespace MyNS
 		public string TotalItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Comment
 	{
 		
@@ -548,59 +543,52 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMPTIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMPTIED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPAM = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEDULED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOFT_TRASHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOFT_TRASHED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BlogStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlogList
 	{
 		
@@ -623,8 +611,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlogUserInfo
 	{
 		
@@ -641,8 +628,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlogPerUserInfo
 	{
 		
@@ -683,27 +669,24 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BlogPerUserInfoRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTHOR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommentList
 	{
 		
@@ -738,8 +721,7 @@ namespace MyNS
 		public string PrevPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Page
 	{
 		
@@ -870,24 +852,21 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PageStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOFT_TRASHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOFT_TRASHED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageList
 	{
 		
@@ -916,8 +895,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostList
 	{
 		
@@ -952,8 +930,7 @@ namespace MyNS
 		public string PrevPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		

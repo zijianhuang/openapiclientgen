@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// (Restricted Access) Contains a signal helping apps differentiating between likely genuine and likely non-genuine user traffic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountActivity
 	{
 		
@@ -32,36 +31,33 @@ namespace MyNS
 		public System.Nullable<AccountActivityActivityLevel> ActivityLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountActivityActivityLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVITY_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVITY_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNEVALUATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNEVALUATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNUSUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNUSUAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPICAL_BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPICAL_BASIC = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPICAL_STRONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPICAL_STRONG = 5,
 	}
 	
 	/// <summary>
 	/// Contains the account information such as the licensing status for the user in the scope.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountDetails
 	{
 		
@@ -78,30 +74,27 @@ namespace MyNS
 		public System.Nullable<AccountDetailsAppLicensingVerdict> AppLicensingVerdict { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountDetailsAppLicensingVerdict
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LICENSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LICENSED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLICENSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLICENSED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNEVALUATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNEVALUATED = 3,
 	}
 	
 	/// <summary>
 	/// Contains signals about others apps on the device which could be used to access or control the requesting app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppAccessRiskVerdict
 	{
 		
@@ -118,36 +111,33 @@ namespace MyNS
 		public AppAccessRiskVerdictOtherApps PlayOrSystemApps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppAccessRiskVerdictOtherApps
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNEVALUATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNEVALUATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_INSTALLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAPTURING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAPTURING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTROLLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTROLLING = 5,
 	}
 	
 	/// <summary>
 	/// Contains the application integrity information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppIntegrity
 	{
 		
@@ -176,30 +166,27 @@ namespace MyNS
 		public string VersionCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppIntegrityAppRecognitionVerdict
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAY_RECOGNIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAY_RECOGNIZED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNRECOGNIZED_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNRECOGNIZED_VERSION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNEVALUATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNEVALUATED = 3,
 	}
 	
 	/// <summary>
 	/// Request to decode the integrity token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DecodeIntegrityTokenRequest
 	{
 		
@@ -213,8 +200,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing the decoded integrity payload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DecodeIntegrityTokenResponse
 	{
 		
@@ -228,8 +214,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains basic app information and integrity signals like device attestation and licensing details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TokenPayloadExternal
 	{
 		
@@ -273,8 +258,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the device attestation information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceIntegrity
 	{
 		
@@ -294,8 +278,7 @@ namespace MyNS
 	/// <summary>
 	/// Recent device activity can help developers identify devices that have exhibited hyperactive attestation activity, which could be a sign of an attack or token farming.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecentDeviceActivity
 	{
 		
@@ -306,36 +289,33 @@ namespace MyNS
 		public System.Nullable<RecentDeviceActivityDeviceActivityLevel> DeviceActivityLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecentDeviceActivityDeviceActivityLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_ACTIVITY_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_ACTIVITY_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNEVALUATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNEVALUATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEVEL_1 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEVEL_2 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEVEL_3 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEVEL_4 = 5,
 	}
 	
 	/// <summary>
 	/// Contains information about the environment Play Integrity API runs in, e.g. Play Protect verdict.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentDetails
 	{
 		
@@ -352,39 +332,36 @@ namespace MyNS
 		public System.Nullable<EnvironmentDetailsPlayProtectVerdict> PlayProtectVerdict { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentDetailsPlayProtectVerdict
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAY_PROTECT_VERDICT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAY_PROTECT_VERDICT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNEVALUATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNEVALUATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_ISSUES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_ISSUES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_DATA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM_RISK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM_RISK = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH_RISK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH_RISK = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSSIBLE_RISK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSSIBLE_RISK = 6,
 	}
 	
 	/// <summary>
 	/// Contains the integrity request information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestDetails
 	{
 		
@@ -416,8 +393,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains additional information generated for testing responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestingDetails
 	{
 		

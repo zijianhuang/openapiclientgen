@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of creating the IDP authentication URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAuthUriResponse
 	{
 		
@@ -84,8 +83,7 @@ namespace MyNS
 	/// <summary>
 	/// Respone of deleting account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAccountResponse
 	{
 		
@@ -100,8 +98,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of downloading accounts in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadAccountResponse
 	{
 		
@@ -128,8 +125,7 @@ namespace MyNS
 	/// <summary>
 	/// Template for an individual account info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserInfo
 	{
 		
@@ -303,8 +299,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of email signIn.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailLinkSigninResponse
 	{
 		
@@ -355,8 +350,7 @@ namespace MyNS
 	/// <summary>
 	/// Template for an email template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailTemplate
 	{
 		
@@ -400,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of getting account information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountInfoResponse
 	{
 		
@@ -422,8 +415,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of getting a code for user confirmation (reset password, change email etc.).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOobConfirmationCodeResponse
 	{
 		
@@ -450,8 +442,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of getting recaptcha param.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecaptchaParamResponse
 	{
 		
@@ -478,8 +469,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to get the IDP authentication URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyCreateAuthUriRequest
 	{
 		
@@ -583,8 +573,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to delete account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyDeleteAccountRequest
 	{
 		
@@ -610,8 +599,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to download user account in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyDownloadAccountRequest
 	{
 		
@@ -643,8 +631,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to sign in with email.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyEmailLinkSigninRequest
 	{
 		
@@ -670,8 +657,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to get the account information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyGetAccountInfoRequest
 	{
 		
@@ -709,8 +695,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of getting the project configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyGetProjectConfigResponse
 	{
 		
@@ -787,8 +772,7 @@ namespace MyNS
 	/// <summary>
 	/// Template for a single idp configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdpConfig
 	{
 		
@@ -832,8 +816,7 @@ namespace MyNS
 	/// <summary>
 	/// Respone of getting public keys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyGetPublicKeysResponse
 	{
 	}
@@ -841,8 +824,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to reset the password.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyResetPasswordRequest
 	{
 		
@@ -874,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for Identitytoolkit-SendVerificationCode
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartySendVerificationCodeRequest
 	{
 		
@@ -907,8 +888,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for Identitytoolkit-SendVerificationCode
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartySendVerificationCodeResponse
 	{
 		
@@ -922,8 +902,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to set the account information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartySetAccountInfoRequest
 	{
 		
@@ -1069,8 +1048,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to set the project configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartySetProjectConfigRequest
 	{
 		
@@ -1144,8 +1122,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of setting the project configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartySetProjectConfigResponse
 	{
 		
@@ -1159,8 +1136,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to sign out user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartySignOutUserRequest
 	{
 		
@@ -1180,8 +1156,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of signing out user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartySignOutUserResponse
 	{
 		
@@ -1195,8 +1170,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to signup new user, create anonymous user or anonymous user reauth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartySignupNewUserRequest
 	{
 		
@@ -1288,8 +1262,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to upload user account in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyUploadAccountRequest
 	{
 		
@@ -1372,8 +1345,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to verify the IDP assertion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyVerifyAssertionRequest
 	{
 		
@@ -1459,8 +1431,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to verify a custom token
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyVerifyCustomTokenRequest
 	{
 		
@@ -1492,8 +1463,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to verify the password.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyVerifyPasswordRequest
 	{
 		
@@ -1567,8 +1537,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for Identitytoolkit-VerifyPhoneNumber
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest
 	{
 		
@@ -1600,8 +1569,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for Identitytoolkit-VerifyPhoneNumber
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse
 	{
 		
@@ -1639,8 +1607,7 @@ namespace MyNS
 	/// <summary>
 	/// Request of getting a code for user confirmation (reset password, change email etc.)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Relyingparty
 	{
 		
@@ -1739,8 +1706,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of resetting the password.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetPasswordResponse
 	{
 		
@@ -1773,8 +1739,7 @@ namespace MyNS
 	/// <summary>
 	/// Respone of setting the account information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetAccountInfoResponse
 	{
 		
@@ -1883,8 +1848,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of signing up new user, creating anonymous user or anonymous user reauth.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignupNewUserResponse
 	{
 		
@@ -1935,8 +1899,7 @@ namespace MyNS
 	/// <summary>
 	/// Respone of uploading accounts in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadAccountResponse
 	{
 		
@@ -1973,8 +1936,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of verifying the IDP assertion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyAssertionResponse
 	{
 		
@@ -2217,8 +2179,7 @@ namespace MyNS
 	/// <summary>
 	/// Response from verifying a custom token
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyCustomTokenResponse
 	{
 		
@@ -2257,8 +2218,7 @@ namespace MyNS
 	/// <summary>
 	/// Request of verifying the password.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyPasswordResponse
 	{
 		

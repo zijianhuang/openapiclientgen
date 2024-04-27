@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Allowed IP range with user-provided description.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AllowedIpRange
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Message containing information about the result of an upgrade check operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckUpgradeResponse
 	{
 		
@@ -77,27 +75,24 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> PypiDependencies { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CheckUpgradeResponseContainsPypiModulesConflict
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFLICT_RESULT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFLICT_RESULT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFLICT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFLICT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_CONFLICT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_CONFLICT = 2,
 	}
 	
 	/// <summary>
 	/// CIDR block with an optional name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CidrBlock
 	{
 		
@@ -117,8 +112,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for Cloud Data Lineage integration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudDataLineageIntegration
 	{
 		
@@ -132,8 +126,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration setting for Airflow database data retention mechanism.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataRetentionConfig
 	{
 		
@@ -147,8 +140,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration setting for Task Logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaskLogsRetentionConfig
 	{
 		
@@ -159,27 +151,24 @@ namespace MyNS
 		public System.Nullable<TaskLogsRetentionConfigStorageMode> StorageMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TaskLogsRetentionConfigStorageMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TASK_LOGS_STORAGE_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TASK_LOGS_STORAGE_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_LOGGING_AND_CLOUD_STORAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_LOGGING_AND_CLOUD_STORAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_LOGGING_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_LOGGING_ONLY = 2,
 	}
 	
 	/// <summary>
 	/// The configuration of Cloud SQL instance that is used by the Apache Airflow software.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatabaseConfig
 	{
 		
@@ -199,8 +188,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to trigger database failover (only for highly resilient environments).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatabaseFailoverRequest
 	{
 	}
@@ -208,8 +196,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for DatabaseFailoverRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatabaseFailoverResponse
 	{
 	}
@@ -217,8 +204,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -244,8 +230,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -253,8 +238,7 @@ namespace MyNS
 	/// <summary>
 	/// The encryption options for the Cloud Composer environment and its dependencies.Supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionConfig
 	{
 		
@@ -268,8 +252,7 @@ namespace MyNS
 	/// <summary>
 	/// An environment for running orchestration tasks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Environment
 	{
 		
@@ -331,8 +314,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration information for an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentConfig
 	{
 		
@@ -451,30 +433,27 @@ namespace MyNS
 		public WorkloadsConfig WorkloadsConfig { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentConfigEnvironmentSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENVIRONMENT_SIZE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENVIRONMENT_SIZE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENVIRONMENT_SIZE_SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENVIRONMENT_SIZE_SMALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENVIRONMENT_SIZE_MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENVIRONMENT_SIZE_MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENVIRONMENT_SIZE_LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENVIRONMENT_SIZE_LARGE = 3,
 	}
 	
 	/// <summary>
 	/// The configuration settings for Cloud Composer maintenance window. The following example: ``` { "startTime":"2019-08-01T01:00:00Z" "endTime":"2019-08-01T07:00:00Z" "recurrence":"FREQ=WEEKLY;BYDAY=TU,WE" } ``` would define a maintenance window between 01 and 07 hours UTC during each Tuesday and Wednesday.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaintenanceWindow
 	{
 		
@@ -500,8 +479,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration options for the master authorized networks feature. Enabled master authorized networks will disallow all external traffic to access Kubernetes master through HTTPS except traffic from the given CIDR blocks, Google Compute Engine Public IPs and Google Prod IPs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MasterAuthorizedNetworksConfig
 	{
 		
@@ -521,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration information for the Kubernetes Engine nodes running the Apache Airflow software.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeConfig
 	{
 		
@@ -590,8 +567,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for controlling how IPs are allocated in the GKE cluster running the Apache Airflow software.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IPAllocationPolicy
 	{
 		
@@ -629,8 +605,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration information for configuring a Private IP Cloud Composer environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrivateEnvironmentConfig
 	{
 		
@@ -698,8 +673,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration options for networking connections in the Composer 2 environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkingConfig
 	{
 		
@@ -710,27 +684,24 @@ namespace MyNS
 		public System.Nullable<NetworkingConfigConnectionType> ConnectionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NetworkingConfigConnectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC_PEERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC_PEERING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE_SERVICE_CONNECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE_SERVICE_CONNECT = 2,
 	}
 	
 	/// <summary>
 	/// Configuration options for the private GKE cluster in a Cloud Composer environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrivateClusterConfig
 	{
 		
@@ -756,8 +727,7 @@ namespace MyNS
 	/// <summary>
 	/// The Recovery settings of an environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecoveryConfig
 	{
 		
@@ -771,8 +741,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for scheduled snapshot creation mechanism.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledSnapshotsConfig
 	{
 		
@@ -801,24 +770,21 @@ namespace MyNS
 		public string TimeZone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentConfigResilienceMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESILIENCE_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESILIENCE_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH_RESILIENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH_RESILIENCE = 1,
 	}
 	
 	/// <summary>
 	/// Specifies the selection and configuration of software inside the environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareConfig
 	{
 		
@@ -868,8 +834,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration settings for the Airflow web server App Engine instance. Supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebServerConfig
 	{
 		
@@ -883,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// Network-level access control policy for the Airflow web server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebServerNetworkAccessControl
 	{
 		
@@ -898,8 +862,7 @@ namespace MyNS
 	/// <summary>
 	/// The Kubernetes workloads configuration for GKE cluster associated with the Cloud Composer environment. Supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkloadsConfig
 	{
 		
@@ -931,8 +894,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for resources used by Airflow schedulers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchedulerResource
 	{
 		
@@ -964,8 +926,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for resources used by Airflow triggerers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TriggererResource
 	{
 		
@@ -991,8 +952,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for resources used by Airflow web server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebServerResource
 	{
 		
@@ -1018,8 +978,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for resources used by Airflow workers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkerResource
 	{
 		
@@ -1054,36 +1013,33 @@ namespace MyNS
 		public System.Nullable<System.Single> StorageGb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 5,
 	}
 	
 	/// <summary>
 	/// The configuration for data storage in the environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageConfig
 	{
 		
@@ -1097,8 +1053,7 @@ namespace MyNS
 	/// <summary>
 	/// Execute Airflow Command request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteAirflowCommandRequest
 	{
 		
@@ -1124,8 +1079,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to ExecuteAirflowCommandRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteAirflowCommandResponse
 	{
 		
@@ -1157,8 +1111,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about how a command ended.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExitInfo
 	{
 		
@@ -1178,8 +1131,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for FetchDatabasePropertiesRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchDatabasePropertiesResponse
 	{
 		
@@ -1205,8 +1157,7 @@ namespace MyNS
 	/// <summary>
 	/// ImageVersion information
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageVersion
 	{
 		
@@ -1250,8 +1201,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a single line from logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Line
 	{
 		
@@ -1271,8 +1221,7 @@ namespace MyNS
 	/// <summary>
 	/// The environments in a project and location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEnvironmentsResponse
 	{
 		
@@ -1292,8 +1241,7 @@ namespace MyNS
 	/// <summary>
 	/// The ImageVersions in a project and location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListImageVersionsResponse
 	{
 		
@@ -1313,8 +1261,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -1334,8 +1281,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1373,8 +1319,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1400,8 +1345,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to load a snapshot into a Cloud Composer environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoadSnapshotRequest
 	{
 		
@@ -1439,8 +1383,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to LoadSnapshotRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoadSnapshotResponse
 	{
 	}
@@ -1448,8 +1391,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing an operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		
@@ -1490,67 +1432,62 @@ namespace MyNS
 		public System.Nullable<OperationMetadataState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationMetadataOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECK = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAVE_SNAPSHOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAVE_SNAPSHOT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOAD_SNAPSHOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOAD_SNAPSHOT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATABASE_FAILOVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATABASE_FAILOVER = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESSFUL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 	}
 	
 	/// <summary>
 	/// Poll Airflow Command request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PollAirflowCommandRequest
 	{
 		
@@ -1582,8 +1519,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to PollAirflowCommandRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PollAirflowCommandResponse
 	{
 		
@@ -1609,8 +1545,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to create a snapshot of a Cloud Composer environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SaveSnapshotRequest
 	{
 		
@@ -1624,8 +1559,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to SaveSnapshotRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SaveSnapshotResponse
 	{
 		
@@ -1639,8 +1573,7 @@ namespace MyNS
 	/// <summary>
 	/// Stop Airflow Command request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopAirflowCommandRequest
 	{
 		
@@ -1672,8 +1605,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to StopAirflowCommandRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopAirflowCommandResponse
 	{
 		

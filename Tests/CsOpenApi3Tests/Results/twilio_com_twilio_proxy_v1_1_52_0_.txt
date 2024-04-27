@@ -17,180 +17,171 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_enum_resource_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="busy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		busy = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery-unknown")]
 		deliveryMinusunknown = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initiated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initiated = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="no-answer")]
 		noMinusanswer = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="received")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		received = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="receiving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		receiving = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="undelivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		undelivered = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_enum_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="message")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		message = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voice = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Message_interaction_enum_resource_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="busy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		busy = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery-unknown")]
 		deliveryMinusunknown = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initiated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initiated = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="no-answer")]
 		noMinusanswer = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="received")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		received = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="receiving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		receiving = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="undelivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		undelivered = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Message_interaction_enum_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="message")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		message = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voice = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Proxyv1service
 	{
 		
@@ -291,28 +282,24 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Proxyv1serviceGeo_match_level
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="area-code")]
 		areaMinuscode = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="overlay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		overlay = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="radius")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		radius = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Proxyv1serviceNumber_selection_behavior
 	{
 		
@@ -323,8 +310,7 @@ namespace MyNS
 		preferMinussticky = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Proxyv1servicephone_number
 	{
 		
@@ -435,8 +421,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Voice { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Proxyv1servicesession
 	{
 		
@@ -549,9 +534,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Proxyv1servicesessionMode
 	{
 		
@@ -565,30 +548,27 @@ namespace MyNS
 		voiceMinusandMinusmessage = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Proxyv1servicesessionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Proxyv1servicesessioninteraction
 	{
 		
@@ -746,148 +726,143 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Proxyv1servicesessioninteractionInbound_resource_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="busy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		busy = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery-unknown")]
 		deliveryMinusunknown = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initiated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initiated = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="no-answer")]
 		noMinusanswer = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="received")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		received = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="receiving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		receiving = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="undelivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		undelivered = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Proxyv1servicesessioninteractionOutbound_resource_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="busy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		busy = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery-unknown")]
 		deliveryMinusunknown = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initiated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initiated = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="no-answer")]
 		noMinusanswer = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="received")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		received = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="receiving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		receiving = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="undelivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		undelivered = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Proxyv1servicesessionparticipant
 	{
 		
@@ -1000,8 +975,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Proxyv1servicesessionparticipantmessage_interaction
 	{
 		
@@ -1171,148 +1145,143 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Proxyv1servicesessionparticipantmessage_interactionInbound_resource_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="busy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		busy = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery-unknown")]
 		deliveryMinusunknown = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initiated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initiated = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="no-answer")]
 		noMinusanswer = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="received")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		received = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="receiving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		receiving = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="undelivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		undelivered = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Proxyv1servicesessionparticipantmessage_interactionOutbound_resource_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		answered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="busy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		busy = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canceled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery-unknown")]
 		deliveryMinusunknown = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="initiated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		initiated = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="no-answer")]
 		noMinusanswer = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="received")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		received = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="receiving")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		receiving = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ringing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ringing = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sending = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sent = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="undelivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		undelivered = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Proxyv1serviceshort_code
 	{
 		
@@ -1411,28 +1380,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Voice { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Service_enum_geo_match_level
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="area-code")]
 		areaMinuscode = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="overlay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		overlay = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="radius")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		radius = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Service_enum_number_selection_behavior
 	{
 		
@@ -1443,9 +1408,7 @@ namespace MyNS
 		preferMinussticky = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Session_enum_mode
 	{
 		
@@ -1459,25 +1422,23 @@ namespace MyNS
 		voiceMinusandMinusmessage = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Session_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
 		inMinusprogress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 4,
 	}
 	

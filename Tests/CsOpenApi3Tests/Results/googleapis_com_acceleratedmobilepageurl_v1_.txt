@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// AMP URL response for a requested URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmpUrl
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// AMP URL Error resource for a requested URL that couldn't be found.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AmpUrlError
 	{
 		
@@ -71,36 +69,33 @@ namespace MyNS
 		public string OriginalUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmpUrlErrorErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INPUT_URL_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INPUT_URL_NOT_FOUND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_AMP_URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_AMP_URL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_IS_VALID_AMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_IS_VALID_AMP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_IS_INVALID_AMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_IS_INVALID_AMP = 5,
 	}
 	
 	/// <summary>
 	/// AMP URL request for a batch of URLs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetAmpUrlsRequest
 	{
 		
@@ -117,24 +112,21 @@ namespace MyNS
 		public string[] Urls { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatchGetAmpUrlsRequestLookupStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FETCH_LIVE_DOC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FETCH_LIVE_DOC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_INDEX_DOC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_INDEX_DOC = 1,
 	}
 	
 	/// <summary>
 	/// Batch AMP URL response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetAmpUrlsResponse
 	{
 		

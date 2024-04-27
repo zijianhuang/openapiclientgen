@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the BulkPublish operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkPublishResponse
 	{
 		
@@ -29,38 +28,32 @@ namespace MyNS
 		public string IdentityPoolId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotAuthorizedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlreadyStreamedException
 	{
 	}
@@ -68,8 +61,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a successful DeleteDataset request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDatasetResponse
 	{
 		
@@ -80,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dataset
 	{
 		
@@ -107,14 +98,12 @@ namespace MyNS
 		public System.Nullable<System.Int32> NumRecords { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceConflictException
 	{
 	}
@@ -122,8 +111,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a successful DescribeDataset request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDatasetResponse
 	{
 		
@@ -134,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a successful DescribeIdentityPoolUsage request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIdentityPoolUsageResponse
 	{
 		
@@ -146,8 +133,7 @@ namespace MyNS
 	/// <summary>
 	/// Usage information for the identity pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityPoolUsage
 	{
 		
@@ -167,8 +153,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a successful DescribeIdentityUsage request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIdentityUsageResponse
 	{
 		
@@ -179,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// Usage information for the identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityUsage
 	{
 		
@@ -203,8 +187,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the GetBulkPublishDetails operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBulkPublishDetailsResponse
 	{
 		
@@ -224,30 +207,27 @@ namespace MyNS
 		public string FailureMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BulkPublishStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_STARTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 	}
 	
 	/// <summary>
 	/// The response from the GetCognitoEvents request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCognitoEventsResponse
 	{
 		
@@ -255,8 +235,7 @@ namespace MyNS
 		public Events Events { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Events
 	{
 	}
@@ -264,8 +243,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the GetIdentityPoolConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityPoolConfigurationResponse
 	{
 		
@@ -282,8 +260,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration options to be applied to the identity pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PushSync
 	{
 		
@@ -297,8 +274,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration options for configure Cognito streams.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CognitoStreams
 	{
 		
@@ -312,24 +288,21 @@ namespace MyNS
 		public StreamingStatus StreamingStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StreamingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// Returned for a successful ListDatasets request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatasetsResponse
 	{
 		
@@ -346,8 +319,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned for a successful ListIdentityPoolUsage request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentityPoolUsageResponse
 	{
 		
@@ -367,8 +339,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned for a successful ListRecordsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecordsResponse
 	{
 		
@@ -403,8 +374,7 @@ namespace MyNS
 	/// <summary>
 	/// The basic data structure of a dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Record
 	{
 		
@@ -430,8 +400,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a RegisterDevice request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterDeviceResponse
 	{
 		
@@ -439,8 +408,7 @@ namespace MyNS
 		public string DeviceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidConfigurationException
 	{
 	}
@@ -448,8 +416,7 @@ namespace MyNS
 	/// <summary>
 	/// The output for the SetIdentityPoolConfiguration operation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityPoolConfigurationResponse
 	{
 		
@@ -463,8 +430,7 @@ namespace MyNS
 		public CognitoStreams CognitoStreams { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModificationException
 	{
 	}
@@ -472,8 +438,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a SubscribeToDataset request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscribeToDatasetResponse
 	{
 	}
@@ -481,8 +446,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to an UnsubscribeFromDataset request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsubscribeFromDatasetResponse
 	{
 	}
@@ -490,8 +454,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned for a successful UpdateRecordsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRecordsResponse
 	{
 		
@@ -502,8 +465,7 @@ namespace MyNS
 	/// <summary>
 	/// An update operation for a record.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecordPatch
 	{
 		
@@ -535,33 +497,28 @@ namespace MyNS
 		public System.DateTimeOffset DeviceLastModifiedDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Operation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="replace")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		replace = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="remove")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		remove = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidLambdaFunctionOutputException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaThrottledException
 	{
 	}
@@ -569,8 +526,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the BulkPublish operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkPublishRequest
 	{
 	}
@@ -578,8 +534,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to delete the specific dataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDatasetRequest
 	{
 	}
@@ -587,8 +542,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDatasetRequest
 	{
 	}
@@ -596,8 +550,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for usage information about the identity pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIdentityPoolUsageRequest
 	{
 	}
@@ -605,8 +558,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for information about the usage of an identity pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIdentityUsageRequest
 	{
 	}
@@ -614,8 +566,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the GetBulkPublishDetails operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBulkPublishDetailsRequest
 	{
 	}
@@ -623,8 +574,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for a list of the configured Cognito Events
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCognitoEventsRequest
 	{
 	}
@@ -632,8 +582,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the GetIdentityPoolConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityPoolConfigurationRequest
 	{
 	}
@@ -641,8 +590,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for a list of datasets for an identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDatasetsRequest
 	{
 	}
@@ -650,8 +598,7 @@ namespace MyNS
 	/// <summary>
 	/// A request for usage information on an identity pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentityPoolUsageRequest
 	{
 	}
@@ -659,36 +606,32 @@ namespace MyNS
 	/// <summary>
 	/// A request for a list of records.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecordsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Platform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_SANDBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS_SANDBOX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GCM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GCM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADM = 3,
 	}
 	
 	/// <summary>
 	/// A request to RegisterDevice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterDeviceRequest
 	{
 		
@@ -710,8 +653,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A request to configure Cognito Events"</p>"
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetCognitoEventsRequest
 	{
 		
@@ -726,8 +668,7 @@ namespace MyNS
 	/// <summary>
 	/// The input for the SetIdentityPoolConfiguration operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityPoolConfigurationRequest
 	{
 		
@@ -741,8 +682,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to SubscribeToDatasetRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscribeToDatasetRequest
 	{
 	}
@@ -750,8 +690,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to UnsubscribeFromDataset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsubscribeFromDatasetRequest
 	{
 	}
@@ -759,8 +698,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to post updates to records or add and delete records for a dataset and user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRecordsRequest
 	{
 		

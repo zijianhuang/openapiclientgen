@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// API invocation or processing error
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIError
 	{
 		
@@ -48,8 +47,7 @@ namespace MyNS
 	/// <summary>
 	/// API Platform authorization (API token) error
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizationError
 	{
 		
@@ -60,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// Veteran status confirmation for an individual
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VeteranStatusConfirmation
 	{
 		
@@ -73,13 +70,11 @@ namespace MyNS
 		public System.Nullable<VeteranStatusConfirmationVeteran_status> Veteran_status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VeteranStatusConfirmationVeteran_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="confirmed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		confirmed = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not confirmed")]
@@ -89,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// Attributes required to retrieve a Veteran's status
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VeteranStatusRequest
 	{
 		
@@ -139,16 +133,14 @@ namespace MyNS
 		public string Ssn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VeteranStatusRequestGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		M = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="F")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		F = 1,
 	}
 	

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -43,8 +42,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorField
 	{
 		
@@ -81,8 +79,7 @@ namespace MyNS
 		public string PathRelated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorLimit
 	{
 		
@@ -115,8 +112,7 @@ namespace MyNS
 		public string RetryAfterSec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pagination
 	{
 		
@@ -151,8 +147,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductGroup
 	{
 		
@@ -173,8 +168,7 @@ namespace MyNS
 		public int SubscriptionCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscription
 	{
 		
@@ -288,8 +282,7 @@ namespace MyNS
 		public bool Upgradeable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionAddon
 	{
 		
@@ -317,40 +310,35 @@ namespace MyNS
 		public int Quantity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubscriptionAddonCommitment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAID = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FREE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FREE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIAL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubscriptionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionBilling
 	{
 		
@@ -385,21 +373,18 @@ namespace MyNS
 		public SubscriptionBillingStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubscriptionBillingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAST_DUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAST_DUE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionList
 	{
 		
@@ -419,8 +404,7 @@ namespace MyNS
 		public Subscription[] Subscriptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionProduct
 	{
 		
@@ -489,27 +473,24 @@ namespace MyNS
 		public bool SupportBillOn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SubscriptionProductRenewalPeriodUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARTER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEMI_ANNUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEMI_ANNUAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionRelations
 	{
 		
@@ -526,8 +507,7 @@ namespace MyNS
 		public string Parent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionUpdate
 	{
 		
@@ -738,7 +718,7 @@ namespace MyNS
 	public enum ListSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expiresAt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expiresAt = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-expiresAt")]

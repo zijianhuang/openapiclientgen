@@ -17,32 +17,27 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterRoleAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDBClusterStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterRoleQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddSourceIdentifierToSubscriptionResult
 	{
 		
@@ -56,8 +51,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventSubscription
 	{
 		
@@ -92,14 +86,12 @@ namespace MyNS
 		public string EventSubscriptionArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceNotFoundFault
 	{
 	}
@@ -107,8 +99,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata assigned to an Amazon Neptune resource consisting of a key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -119,20 +110,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBInstanceNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSnapshotNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplyPendingMaintenanceActionResult
 	{
 		
@@ -146,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the pending maintenance actions for a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourcePendingMaintenanceActions
 	{
 		
@@ -158,14 +145,12 @@ namespace MyNS
 		public string[] PendingMaintenanceActionDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyDBClusterParameterGroupResult
 	{
 		
@@ -179,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterParameterGroup
 	{
 		
@@ -197,26 +181,22 @@ namespace MyNS
 		public string DBClusterParameterGroupArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBParameterGroupNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBParameterGroupQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBParameterGroupAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyDBClusterSnapshotResult
 	{
 		
@@ -230,8 +210,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterSnapshot
 	{
 		
@@ -296,38 +275,32 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IAMDatabaseAuthenticationEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterSnapshotAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterSnapshotNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDBClusterSnapshotStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSKeyNotAccessibleFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyDBParameterGroupResult
 	{
 		
@@ -341,8 +314,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the details of an Amazon Neptune DB parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBParameterGroup
 	{
 		
@@ -359,8 +331,7 @@ namespace MyNS
 		public string DBParameterGroupArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBClusterResult
 	{
 		
@@ -374,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBCluster
 	{
 		
@@ -515,8 +485,7 @@ namespace MyNS
 	/// <summary>
 	/// This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterPendingModifiedValues
 	{
 		
@@ -545,8 +514,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PendingCloudwatchLogsExports
 	{
 		
@@ -560,8 +528,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServerlessV2ScalingConfigurationInfo
 	{
 		
@@ -572,80 +539,67 @@ namespace MyNS
 		public System.Nullable<System.Double> MaxCapacity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientStorageClusterCapacityFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSubnetGroupNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidVPCNetworkStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDBSubnetGroupStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidSubnet
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDBInstanceStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterParameterGroupNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSubnetGroupDoesNotCoverEnoughAZs
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalClusterNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidGlobalClusterStateFault
 	{
 	}
@@ -653,8 +607,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li> <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li> <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li> </ul> <p>For the data structure that represents Amazon Neptune DB instance endpoints, see <code>Endpoint</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBClusterEndpointOutput
 	{
 		
@@ -689,20 +642,17 @@ namespace MyNS
 		public string DBClusterEndpointArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterEndpointQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterEndpointAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBClusterParameterGroupResult
 	{
 		
@@ -713,8 +663,7 @@ namespace MyNS
 		public DBClusterParameterGroup DBClusterParameterGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBClusterSnapshotResult
 	{
 		
@@ -725,8 +674,7 @@ namespace MyNS
 		public DBClusterSnapshot DBClusterSnapshot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBInstanceResult
 	{
 		
@@ -740,8 +688,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBInstance
 	{
 		
@@ -908,8 +855,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies a connection endpoint.</p> <p>For the data structure that represents Amazon Neptune DB cluster endpoints, see <code>DBClusterEndpoint</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Endpoint
 	{
 		
@@ -926,8 +872,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSubnetGroup
 	{
 		
@@ -953,8 +898,7 @@ namespace MyNS
 	/// <summary>
 	///  This data type is used as a response element in the <a>ModifyDBInstance</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PendingModifiedValues
 	{
 		
@@ -1001,62 +945,52 @@ namespace MyNS
 		public PendingCloudwatchLogsExports PendingCloudwatchLogsExports { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBInstanceAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientDBInstanceCapacityFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSecurityGroupNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisionedIopsNotAvailableInAZFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OptionGroupNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageTypeNotSupportedFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizationNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBParameterGroupResult
 	{
 		
@@ -1067,8 +1001,7 @@ namespace MyNS
 		public DBParameterGroup DBParameterGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBSubnetGroupResult
 	{
 		
@@ -1079,26 +1012,22 @@ namespace MyNS
 		public DBSubnetGroup DBSubnetGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSubnetGroupAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSubnetGroupQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSubnetQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEventSubscriptionResult
 	{
 		
@@ -1109,44 +1038,37 @@ namespace MyNS
 		public EventSubscription EventSubscription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventSubscriptionQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionAlreadyExistFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNSInvalidTopicFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNSNoAuthorizationFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SNSTopicArnNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionCategoryNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGlobalClusterResult
 	{
 		
@@ -1160,8 +1082,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the details of an Amazon Neptune global database.</p> <p>This data type is used as a response element for the <a>CreateGlobalCluster</a>, <a>DescribeGlobalClusters</a>, <a>ModifyGlobalCluster</a>, <a>DeleteGlobalCluster</a>, <a>FailoverGlobalCluster</a>, and <a>RemoveFromGlobalCluster</a> actions.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalCluster
 	{
 		
@@ -1193,20 +1114,17 @@ namespace MyNS
 		public string[] GlobalClusterMembers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalClusterAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalClusterQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBClusterResult
 	{
 		
@@ -1220,8 +1138,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li> <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li> <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li> </ul> <p>For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBClusterEndpointOutput
 	{
 		
@@ -1256,26 +1173,22 @@ namespace MyNS
 		public string DBClusterEndpointArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDBClusterEndpointStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterEndpointNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDBParameterGroupStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBClusterSnapshotResult
 	{
 		
@@ -1286,8 +1199,7 @@ namespace MyNS
 		public DBClusterSnapshot DBClusterSnapshot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBInstanceResult
 	{
 		
@@ -1298,20 +1210,17 @@ namespace MyNS
 		public DBInstance DBInstance { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSnapshotAlreadyExistsFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDBSubnetStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEventSubscriptionResult
 	{
 		
@@ -1322,14 +1231,12 @@ namespace MyNS
 		public EventSubscription EventSubscription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidEventSubscriptionStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGlobalClusterResult
 	{
 		
@@ -1340,8 +1247,7 @@ namespace MyNS
 		public GlobalCluster GlobalCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterEndpointMessage
 	{
 		
@@ -1355,8 +1261,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is not currently supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -1375,8 +1280,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterParameterGroupsMessage
 	{
 		
@@ -1387,8 +1291,7 @@ namespace MyNS
 		public string[] DBClusterParameterGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterParameterGroupDetails
 	{
 		
@@ -1399,8 +1302,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBClusterSnapshotAttributesResult
 	{
 		
@@ -1414,8 +1316,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterSnapshotAttributesResult
 	{
 		
@@ -1426,8 +1327,7 @@ namespace MyNS
 		public string[] DBClusterSnapshotAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterSnapshotMessage
 	{
 		
@@ -1438,8 +1338,7 @@ namespace MyNS
 		public string[] DBClusterSnapshots { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterMessage
 	{
 		
@@ -1450,8 +1349,7 @@ namespace MyNS
 		public string[] DBClusters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBEngineVersionMessage
 	{
 		
@@ -1462,8 +1360,7 @@ namespace MyNS
 		public string[] DBEngineVersions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBInstanceMessage
 	{
 		
@@ -1474,8 +1371,7 @@ namespace MyNS
 		public string[] DBInstances { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBParameterGroupsMessage
 	{
 		
@@ -1486,8 +1382,7 @@ namespace MyNS
 		public string[] DBParameterGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBParameterGroupDetails
 	{
 		
@@ -1498,8 +1393,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSubnetGroupMessage
 	{
 		
@@ -1510,8 +1404,7 @@ namespace MyNS
 		public string[] DBSubnetGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEngineDefaultClusterParametersResult
 	{
 		
@@ -1525,8 +1418,7 @@ namespace MyNS
 	/// <summary>
 	///  Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EngineDefaults
 	{
 		
@@ -1540,8 +1432,7 @@ namespace MyNS
 		public string[] Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEngineDefaultParametersResult
 	{
 		
@@ -1552,8 +1443,7 @@ namespace MyNS
 		public EngineDefaults EngineDefaults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventCategoriesMessage
 	{
 		
@@ -1561,8 +1451,7 @@ namespace MyNS
 		public string[] EventCategoriesMapList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventSubscriptionsMessage
 	{
 		
@@ -1573,8 +1462,7 @@ namespace MyNS
 		public string[] EventSubscriptionsList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsMessage
 	{
 		
@@ -1585,8 +1473,7 @@ namespace MyNS
 		public string[] Events { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalClustersMessage
 	{
 		
@@ -1597,8 +1484,7 @@ namespace MyNS
 		public string[] GlobalClusters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderableDBInstanceOptionsMessage
 	{
 		
@@ -1609,8 +1495,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PendingMaintenanceActionsMessage
 	{
 		
@@ -1621,8 +1506,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeValidDBInstanceModificationsResult
 	{
 		
@@ -1636,8 +1520,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidDBInstanceModificationsMessage
 	{
 		
@@ -1645,8 +1528,7 @@ namespace MyNS
 		public string[] Storage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailoverDBClusterResult
 	{
 		
@@ -1657,8 +1539,7 @@ namespace MyNS
 		public DBCluster DBCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailoverGlobalClusterResult
 	{
 		
@@ -1669,8 +1550,7 @@ namespace MyNS
 		public GlobalCluster GlobalCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagListMessage
 	{
 		
@@ -1678,8 +1558,7 @@ namespace MyNS
 		public string[] TagList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBClusterResult
 	{
 		
@@ -1690,8 +1569,7 @@ namespace MyNS
 		public DBCluster DBCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDBSecurityGroupStateFault
 	{
 	}
@@ -1699,8 +1577,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li> <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li> <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li> </ul> <p>For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBClusterEndpointOutput
 	{
 		
@@ -1735,8 +1612,7 @@ namespace MyNS
 		public string DBClusterEndpointArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterParameterGroupNameMessage
 	{
 		
@@ -1747,8 +1623,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parameter
 	{
 		
@@ -1783,21 +1658,18 @@ namespace MyNS
 		public ApplyMethod ApplyMethod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplyMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="immediate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		immediate = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending-reboot")]
 		pendingMinusreboot = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBClusterSnapshotAttributeResult
 	{
 		
@@ -1808,14 +1680,12 @@ namespace MyNS
 		public DBClusterSnapshotAttributesResult DBClusterSnapshotAttributesResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SharedSnapshotQuotaExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBInstanceResult
 	{
 		
@@ -1826,20 +1696,17 @@ namespace MyNS
 		public DBInstance DBInstance { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBUpgradeDependencyFailureFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBParameterGroupNameMessage
 	{
 		
@@ -1847,8 +1714,7 @@ namespace MyNS
 		public string DBParameterGroupName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBSubnetGroupResult
 	{
 		
@@ -1859,14 +1725,12 @@ namespace MyNS
 		public DBSubnetGroup DBSubnetGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubnetAlreadyInUse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyEventSubscriptionResult
 	{
 		
@@ -1877,8 +1741,7 @@ namespace MyNS
 		public EventSubscription EventSubscription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyGlobalClusterResult
 	{
 		
@@ -1889,8 +1752,7 @@ namespace MyNS
 		public GlobalCluster GlobalCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromoteReadReplicaDBClusterResult
 	{
 		
@@ -1901,8 +1763,7 @@ namespace MyNS
 		public DBCluster DBCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RebootDBInstanceResult
 	{
 		
@@ -1913,8 +1774,7 @@ namespace MyNS
 		public DBInstance DBInstance { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFromGlobalClusterResult
 	{
 		
@@ -1925,14 +1785,12 @@ namespace MyNS
 		public GlobalCluster GlobalCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterRoleNotFoundFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveSourceIdentifierFromSubscriptionResult
 	{
 		
@@ -1943,8 +1801,7 @@ namespace MyNS
 		public EventSubscription EventSubscription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreDBClusterFromSnapshotResult
 	{
 		
@@ -1955,26 +1812,22 @@ namespace MyNS
 		public DBCluster DBCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsufficientDBClusterCapacityFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDBSnapshotStateFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRestoreFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreDBClusterToPointInTimeResult
 	{
 		
@@ -1985,8 +1838,7 @@ namespace MyNS
 		public DBCluster DBCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDBClusterResult
 	{
 		
@@ -1997,8 +1849,7 @@ namespace MyNS
 		public DBCluster DBCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopDBClusterResult
 	{
 		
@@ -2009,8 +1860,7 @@ namespace MyNS
 		public DBCluster DBCluster { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddRoleToDBClusterMessage
 	{
 		
@@ -2032,8 +1882,7 @@ namespace MyNS
 		public string FeatureName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddSourceIdentifierToSubscriptionMessage
 	{
 		
@@ -2052,8 +1901,7 @@ namespace MyNS
 		public string SourceIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsToResourceMessage
 	{
 		
@@ -2072,8 +1920,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplyPendingMaintenanceActionMessage
 	{
 		
@@ -2102,8 +1949,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an Availability Zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AvailabilityZone
 	{
 		
@@ -2114,8 +1960,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a character set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CharacterSet
 	{
 		
@@ -2129,8 +1974,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudwatchLogsExportConfiguration
 	{
 		
@@ -2141,8 +1985,7 @@ namespace MyNS
 		public string[] DisableLogTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyDBClusterParameterGroupMessage
 	{
 		
@@ -2171,8 +2014,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyDBClusterSnapshotMessage
 	{
 		
@@ -2203,8 +2045,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CopyDBParameterGroupMessage
 	{
 		
@@ -2233,8 +2074,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBClusterEndpointMessage
 	{
 		
@@ -2272,8 +2112,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServerlessV2ScalingConfiguration
 	{
 		
@@ -2284,8 +2123,7 @@ namespace MyNS
 		public System.Nullable<System.Double> MaxCapacity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBClusterMessage
 	{
 		
@@ -2382,8 +2220,7 @@ namespace MyNS
 		public string GlobalClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBClusterParameterGroupMessage
 	{
 		
@@ -2412,8 +2249,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBClusterSnapshotMessage
 	{
 		
@@ -2435,8 +2271,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBInstanceMessage
 	{
 		
@@ -2586,8 +2421,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DeletionProtection { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBParameterGroupMessage
 	{
 		
@@ -2616,8 +2450,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDBSubnetGroupMessage
 	{
 		
@@ -2646,8 +2479,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEventSubscriptionMessage
 	{
 		
@@ -2681,8 +2513,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGlobalClusterMessage
 	{
 		
@@ -2712,8 +2543,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li> <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li> <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li> </ul> <p>For the data structure that represents Amazon Neptune DB instance endpoints, see <code>Endpoint</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterEndpoint
 	{
 		
@@ -2751,8 +2581,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about an instance that is part of a DB cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterMember
 	{
 		
@@ -2772,8 +2601,7 @@ namespace MyNS
 	/// <summary>
 	/// Not supported by Neptune.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterOptionGroupStatus
 	{
 		
@@ -2787,8 +2615,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Amazon Identity and Access Management (IAM) role that is associated with a DB cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterRole
 	{
 		
@@ -2805,8 +2632,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains the name and values of a manual DB cluster snapshot attribute.</p> <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBClusterSnapshotAttribute
 	{
 		
@@ -2820,8 +2646,7 @@ namespace MyNS
 	/// <summary>
 	///  This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBEngineVersion
 	{
 		
@@ -2868,8 +2693,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a list of status information for a DB instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBInstanceStatusInfo
 	{
 		
@@ -2889,8 +2713,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The status of the DB parameter group.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p> <a>DeleteDBInstance</a> </p> </li> <li> <p> <a>ModifyDBInstance</a> </p> </li> <li> <p> <a>RebootDBInstance</a> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBParameterGroupStatus
 	{
 		
@@ -2904,8 +2727,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies membership in a designated DB security group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DBSecurityGroupMembership
 	{
 		
@@ -2916,8 +2738,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBClusterEndpointMessage
 	{
 		
@@ -2929,8 +2750,7 @@ namespace MyNS
 		public string DBClusterEndpointIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBClusterMessage
 	{
 		
@@ -2948,8 +2768,7 @@ namespace MyNS
 		public string FinalDBSnapshotIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBClusterParameterGroupMessage
 	{
 		
@@ -2961,8 +2780,7 @@ namespace MyNS
 		public string DBClusterParameterGroupName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBClusterSnapshotMessage
 	{
 		
@@ -2974,8 +2792,7 @@ namespace MyNS
 		public string DBClusterSnapshotIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBInstanceMessage
 	{
 		
@@ -2993,8 +2810,7 @@ namespace MyNS
 		public string FinalDBSnapshotIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBParameterGroupMessage
 	{
 		
@@ -3006,8 +2822,7 @@ namespace MyNS
 		public string DBParameterGroupName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDBSubnetGroupMessage
 	{
 		
@@ -3019,8 +2834,7 @@ namespace MyNS
 		public string DBSubnetGroupName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEventSubscriptionMessage
 	{
 		
@@ -3032,8 +2846,7 @@ namespace MyNS
 		public string SubscriptionName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGlobalClusterMessage
 	{
 		
@@ -3045,8 +2858,7 @@ namespace MyNS
 		public string GlobalClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBClusterEndpointsMessage
 	{
 		
@@ -3066,8 +2878,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBClusterParameterGroupsMessage
 	{
 		
@@ -3084,8 +2895,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBClusterParametersMessage
 	{
 		
@@ -3109,8 +2919,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBClusterSnapshotAttributesMessage
 	{
 		
@@ -3122,8 +2931,7 @@ namespace MyNS
 		public string DBClusterSnapshotIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBClusterSnapshotsMessage
 	{
 		
@@ -3152,8 +2960,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IncludePublic { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBClustersMessage
 	{
 		
@@ -3170,8 +2977,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBEngineVersionsMessage
 	{
 		
@@ -3203,8 +3009,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ListSupportedTimezones { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBInstancesMessage
 	{
 		
@@ -3221,8 +3026,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBParameterGroupsMessage
 	{
 		
@@ -3239,8 +3043,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBParametersMessage
 	{
 		
@@ -3264,8 +3067,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDBSubnetGroupsMessage
 	{
 		
@@ -3282,8 +3084,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEngineDefaultClusterParametersMessage
 	{
 		
@@ -3304,8 +3105,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEngineDefaultParametersMessage
 	{
 		
@@ -3326,8 +3126,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventCategoriesMessage
 	{
 		
@@ -3338,8 +3137,7 @@ namespace MyNS
 		public string[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventSubscriptionsMessage
 	{
 		
@@ -3356,9 +3154,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SourceType
 	{
 		
@@ -3381,8 +3177,7 @@ namespace MyNS
 		dbMinusclusterMinussnapshot = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEventsMessage
 	{
 		
@@ -3414,8 +3209,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGlobalClustersMessage
 	{
 		
@@ -3429,8 +3223,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOrderableDBInstanceOptionsMessage
 	{
 		
@@ -3463,8 +3256,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePendingMaintenanceActionsMessage
 	{
 		
@@ -3481,8 +3273,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxRecords { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeValidDBInstanceModificationsMessage
 	{
 		
@@ -3497,8 +3288,7 @@ namespace MyNS
 	/// <summary>
 	/// An Active Directory Domain membership record associated with a DB instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainMembership
 	{
 		
@@ -3518,8 +3308,7 @@ namespace MyNS
 	/// <summary>
 	/// A range of double values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DoubleRange
 	{
 		
@@ -3533,8 +3322,7 @@ namespace MyNS
 	/// <summary>
 	///  This data type is used as a response element in the <a>DescribeEvents</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event
 	{
 		
@@ -3560,8 +3348,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventCategoriesMap
 	{
 		
@@ -3572,8 +3359,7 @@ namespace MyNS
 		public string[] EventCategories { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailoverDBClusterMessage
 	{
 		
@@ -3584,8 +3370,7 @@ namespace MyNS
 		public string TargetDBInstanceIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailoverGlobalClusterMessage
 	{
 		
@@ -3607,8 +3392,7 @@ namespace MyNS
 	/// <summary>
 	///  A data structure with information about any primary and secondary clusters associated with an Neptune global database. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalClusterMember
 	{
 		
@@ -3622,8 +3406,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsWriter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceMessage
 	{
 		
@@ -3638,8 +3421,7 @@ namespace MyNS
 		public string[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBClusterEndpointMessage
 	{
 		
@@ -3660,8 +3442,7 @@ namespace MyNS
 		public string[] ExcludedMembers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBClusterMessage
 	{
 		
@@ -3730,8 +3511,7 @@ namespace MyNS
 		public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBClusterParameterGroupMessage
 	{
 		
@@ -3750,8 +3530,7 @@ namespace MyNS
 		public string[] Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBClusterSnapshotAttributeMessage
 	{
 		
@@ -3776,8 +3555,7 @@ namespace MyNS
 		public string[] ValuesToRemove { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBInstanceMessage
 	{
 		
@@ -3897,8 +3675,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DeletionProtection { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBParameterGroupMessage
 	{
 		
@@ -3917,8 +3694,7 @@ namespace MyNS
 		public string[] Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyDBSubnetGroupMessage
 	{
 		
@@ -3940,8 +3716,7 @@ namespace MyNS
 		public string[] SubnetIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyEventSubscriptionMessage
 	{
 		
@@ -3965,8 +3740,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyGlobalClusterMessage
 	{
 		
@@ -3993,8 +3767,7 @@ namespace MyNS
 	/// <summary>
 	/// Not supported by Neptune.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OptionGroupMembership
 	{
 		
@@ -4008,8 +3781,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains a list of available options for a DB instance.</p> <p> This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrderableDBInstanceOption
 	{
 		
@@ -4080,8 +3852,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a pending maintenance action for a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PendingMaintenanceAction
 	{
 		
@@ -4104,8 +3875,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromoteReadReplicaDBClusterMessage
 	{
 		
@@ -4120,8 +3890,7 @@ namespace MyNS
 	/// <summary>
 	/// A range of integer values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Range
 	{
 		
@@ -4135,8 +3904,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Step { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RebootDBInstanceMessage
 	{
 		
@@ -4151,8 +3919,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ForceFailover { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFromGlobalClusterMessage
 	{
 		
@@ -4171,8 +3938,7 @@ namespace MyNS
 		public string DbClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveRoleFromDBClusterMessage
 	{
 		
@@ -4194,8 +3960,7 @@ namespace MyNS
 		public string FeatureName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveSourceIdentifierFromSubscriptionMessage
 	{
 		
@@ -4214,8 +3979,7 @@ namespace MyNS
 		public string SourceIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsFromResourceMessage
 	{
 		
@@ -4234,8 +3998,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetDBClusterParameterGroupMessage
 	{
 		
@@ -4253,8 +4016,7 @@ namespace MyNS
 		public string[] Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetDBParameterGroupMessage
 	{
 		
@@ -4272,8 +4034,7 @@ namespace MyNS
 		public string[] Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreDBClusterFromSnapshotMessage
 	{
 		
@@ -4347,8 +4108,7 @@ namespace MyNS
 		public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestoreDBClusterToPointInTimeMessage
 	{
 		
@@ -4412,8 +4172,7 @@ namespace MyNS
 		public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartDBClusterMessage
 	{
 		
@@ -4425,8 +4184,7 @@ namespace MyNS
 		public string DBClusterIdentifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopDBClusterMessage
 	{
 		
@@ -4441,8 +4199,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies a subnet.</p> <p> This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subnet
 	{
 		
@@ -4459,8 +4216,7 @@ namespace MyNS
 	/// <summary>
 	/// A time zone associated with a <a>DBInstance</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timezone
 	{
 		
@@ -4471,8 +4227,7 @@ namespace MyNS
 	/// <summary>
 	/// The version of the database engine that a DB instance can be upgraded to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeTarget
 	{
 		
@@ -4498,8 +4253,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Information about valid modifications that you can make to your DB instance.</p> <p>Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidStorageOptions
 	{
 		
@@ -4519,8 +4273,7 @@ namespace MyNS
 	/// <summary>
 	/// This data type is used as a response element for queries on VPC security group membership.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcSecurityGroupMembership
 	{
 		
@@ -6989,7 +6742,7 @@ namespace MyNS
 	public enum GET_AddRoleToDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddRoleToDBCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddRoleToDBCluster = 0,
 	}
 	
@@ -7010,7 +6763,7 @@ namespace MyNS
 	public enum GET_AddSourceIdentifierToSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddSourceIdentifierToSubscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddSourceIdentifierToSubscription = 0,
 	}
 	
@@ -7031,7 +6784,7 @@ namespace MyNS
 	public enum GET_AddTagsToResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddTagsToResource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddTagsToResource = 0,
 	}
 	
@@ -7052,7 +6805,7 @@ namespace MyNS
 	public enum GET_ApplyPendingMaintenanceActionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApplyPendingMaintenanceAction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApplyPendingMaintenanceAction = 0,
 	}
 	
@@ -7073,7 +6826,7 @@ namespace MyNS
 	public enum GET_CopyDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CopyDBClusterParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CopyDBClusterParameterGroup = 0,
 	}
 	
@@ -7094,7 +6847,7 @@ namespace MyNS
 	public enum GET_CopyDBClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CopyDBClusterSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CopyDBClusterSnapshot = 0,
 	}
 	
@@ -7115,7 +6868,7 @@ namespace MyNS
 	public enum GET_CopyDBParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CopyDBParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CopyDBParameterGroup = 0,
 	}
 	
@@ -7146,7 +6899,7 @@ namespace MyNS
 	public enum GET_CreateDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDBCluster = 0,
 	}
 	
@@ -7167,7 +6920,7 @@ namespace MyNS
 	public enum GET_CreateDBClusterEndpointAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBClusterEndpoint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDBClusterEndpoint = 0,
 	}
 	
@@ -7188,7 +6941,7 @@ namespace MyNS
 	public enum GET_CreateDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBClusterParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDBClusterParameterGroup = 0,
 	}
 	
@@ -7209,7 +6962,7 @@ namespace MyNS
 	public enum GET_CreateDBClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBClusterSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDBClusterSnapshot = 0,
 	}
 	
@@ -7230,7 +6983,7 @@ namespace MyNS
 	public enum GET_CreateDBInstanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBInstance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDBInstance = 0,
 	}
 	
@@ -7251,7 +7004,7 @@ namespace MyNS
 	public enum GET_CreateDBParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDBParameterGroup = 0,
 	}
 	
@@ -7272,7 +7025,7 @@ namespace MyNS
 	public enum GET_CreateDBSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBSubnetGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDBSubnetGroup = 0,
 	}
 	
@@ -7293,7 +7046,7 @@ namespace MyNS
 	public enum GET_CreateEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateEventSubscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateEventSubscription = 0,
 	}
 	
@@ -7314,7 +7067,7 @@ namespace MyNS
 	public enum GET_CreateGlobalClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateGlobalCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateGlobalCluster = 0,
 	}
 	
@@ -7335,7 +7088,7 @@ namespace MyNS
 	public enum GET_DeleteDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDBCluster = 0,
 	}
 	
@@ -7356,7 +7109,7 @@ namespace MyNS
 	public enum GET_DeleteDBClusterEndpointAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBClusterEndpoint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDBClusterEndpoint = 0,
 	}
 	
@@ -7377,7 +7130,7 @@ namespace MyNS
 	public enum GET_DeleteDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBClusterParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDBClusterParameterGroup = 0,
 	}
 	
@@ -7398,7 +7151,7 @@ namespace MyNS
 	public enum GET_DeleteDBClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBClusterSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDBClusterSnapshot = 0,
 	}
 	
@@ -7419,7 +7172,7 @@ namespace MyNS
 	public enum GET_DeleteDBInstanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBInstance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDBInstance = 0,
 	}
 	
@@ -7440,7 +7193,7 @@ namespace MyNS
 	public enum GET_DeleteDBParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDBParameterGroup = 0,
 	}
 	
@@ -7461,7 +7214,7 @@ namespace MyNS
 	public enum GET_DeleteDBSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBSubnetGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDBSubnetGroup = 0,
 	}
 	
@@ -7482,7 +7235,7 @@ namespace MyNS
 	public enum GET_DeleteEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteEventSubscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteEventSubscription = 0,
 	}
 	
@@ -7503,7 +7256,7 @@ namespace MyNS
 	public enum GET_DeleteGlobalClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteGlobalCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteGlobalCluster = 0,
 	}
 	
@@ -7524,7 +7277,7 @@ namespace MyNS
 	public enum GET_DescribeDBClusterEndpointsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusterEndpoints")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBClusterEndpoints = 0,
 	}
 	
@@ -7545,7 +7298,7 @@ namespace MyNS
 	public enum GET_DescribeDBClusterParameterGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusterParameterGroups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBClusterParameterGroups = 0,
 	}
 	
@@ -7566,7 +7319,7 @@ namespace MyNS
 	public enum GET_DescribeDBClusterParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusterParameters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBClusterParameters = 0,
 	}
 	
@@ -7587,7 +7340,7 @@ namespace MyNS
 	public enum GET_DescribeDBClusterSnapshotAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusterSnapshotAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBClusterSnapshotAttributes = 0,
 	}
 	
@@ -7608,7 +7361,7 @@ namespace MyNS
 	public enum GET_DescribeDBClusterSnapshotsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusterSnapshots")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBClusterSnapshots = 0,
 	}
 	
@@ -7629,7 +7382,7 @@ namespace MyNS
 	public enum GET_DescribeDBClustersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBClusters = 0,
 	}
 	
@@ -7650,7 +7403,7 @@ namespace MyNS
 	public enum GET_DescribeDBEngineVersionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBEngineVersions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBEngineVersions = 0,
 	}
 	
@@ -7671,7 +7424,7 @@ namespace MyNS
 	public enum GET_DescribeDBInstancesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBInstances")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBInstances = 0,
 	}
 	
@@ -7692,7 +7445,7 @@ namespace MyNS
 	public enum GET_DescribeDBParameterGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBParameterGroups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBParameterGroups = 0,
 	}
 	
@@ -7713,7 +7466,7 @@ namespace MyNS
 	public enum GET_DescribeDBParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBParameters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBParameters = 0,
 	}
 	
@@ -7734,7 +7487,7 @@ namespace MyNS
 	public enum GET_DescribeDBSubnetGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBSubnetGroups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDBSubnetGroups = 0,
 	}
 	
@@ -7755,7 +7508,7 @@ namespace MyNS
 	public enum GET_DescribeEngineDefaultClusterParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEngineDefaultClusterParameters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEngineDefaultClusterParameters = 0,
 	}
 	
@@ -7776,7 +7529,7 @@ namespace MyNS
 	public enum GET_DescribeEngineDefaultParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEngineDefaultParameters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEngineDefaultParameters = 0,
 	}
 	
@@ -7797,7 +7550,7 @@ namespace MyNS
 	public enum GET_DescribeEventCategoriesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEventCategories")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEventCategories = 0,
 	}
 	
@@ -7818,7 +7571,7 @@ namespace MyNS
 	public enum GET_DescribeEventSubscriptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEventSubscriptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEventSubscriptions = 0,
 	}
 	
@@ -7861,7 +7614,7 @@ namespace MyNS
 	public enum GET_DescribeEventsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEvents")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeEvents = 0,
 	}
 	
@@ -7882,7 +7635,7 @@ namespace MyNS
 	public enum GET_DescribeGlobalClustersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeGlobalClusters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeGlobalClusters = 0,
 	}
 	
@@ -7903,7 +7656,7 @@ namespace MyNS
 	public enum GET_DescribeOrderableDBInstanceOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeOrderableDBInstanceOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeOrderableDBInstanceOptions = 0,
 	}
 	
@@ -7924,7 +7677,7 @@ namespace MyNS
 	public enum GET_DescribePendingMaintenanceActionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribePendingMaintenanceActions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribePendingMaintenanceActions = 0,
 	}
 	
@@ -7945,7 +7698,7 @@ namespace MyNS
 	public enum GET_DescribeValidDBInstanceModificationsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeValidDBInstanceModifications")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeValidDBInstanceModifications = 0,
 	}
 	
@@ -7966,7 +7719,7 @@ namespace MyNS
 	public enum GET_FailoverDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailoverDBCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailoverDBCluster = 0,
 	}
 	
@@ -7987,7 +7740,7 @@ namespace MyNS
 	public enum GET_FailoverGlobalClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailoverGlobalCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailoverGlobalCluster = 0,
 	}
 	
@@ -8008,7 +7761,7 @@ namespace MyNS
 	public enum GET_ListTagsForResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListTagsForResource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListTagsForResource = 0,
 	}
 	
@@ -8049,7 +7802,7 @@ namespace MyNS
 	public enum GET_ModifyDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyDBCluster = 0,
 	}
 	
@@ -8070,7 +7823,7 @@ namespace MyNS
 	public enum GET_ModifyDBClusterEndpointAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBClusterEndpoint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyDBClusterEndpoint = 0,
 	}
 	
@@ -8091,7 +7844,7 @@ namespace MyNS
 	public enum GET_ModifyDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBClusterParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyDBClusterParameterGroup = 0,
 	}
 	
@@ -8112,7 +7865,7 @@ namespace MyNS
 	public enum GET_ModifyDBClusterSnapshotAttributeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBClusterSnapshotAttribute")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyDBClusterSnapshotAttribute = 0,
 	}
 	
@@ -8143,7 +7896,7 @@ namespace MyNS
 	public enum GET_ModifyDBInstanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBInstance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyDBInstance = 0,
 	}
 	
@@ -8164,7 +7917,7 @@ namespace MyNS
 	public enum GET_ModifyDBParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyDBParameterGroup = 0,
 	}
 	
@@ -8185,7 +7938,7 @@ namespace MyNS
 	public enum GET_ModifyDBSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBSubnetGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyDBSubnetGroup = 0,
 	}
 	
@@ -8206,7 +7959,7 @@ namespace MyNS
 	public enum GET_ModifyEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyEventSubscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyEventSubscription = 0,
 	}
 	
@@ -8227,7 +7980,7 @@ namespace MyNS
 	public enum GET_ModifyGlobalClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyGlobalCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ModifyGlobalCluster = 0,
 	}
 	
@@ -8248,7 +8001,7 @@ namespace MyNS
 	public enum GET_PromoteReadReplicaDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PromoteReadReplicaDBCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PromoteReadReplicaDBCluster = 0,
 	}
 	
@@ -8269,7 +8022,7 @@ namespace MyNS
 	public enum GET_RebootDBInstanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RebootDBInstance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RebootDBInstance = 0,
 	}
 	
@@ -8290,7 +8043,7 @@ namespace MyNS
 	public enum GET_RemoveFromGlobalClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveFromGlobalCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RemoveFromGlobalCluster = 0,
 	}
 	
@@ -8311,7 +8064,7 @@ namespace MyNS
 	public enum GET_RemoveRoleFromDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveRoleFromDBCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RemoveRoleFromDBCluster = 0,
 	}
 	
@@ -8332,7 +8085,7 @@ namespace MyNS
 	public enum GET_RemoveSourceIdentifierFromSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveSourceIdentifierFromSubscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RemoveSourceIdentifierFromSubscription = 0,
 	}
 	
@@ -8353,7 +8106,7 @@ namespace MyNS
 	public enum GET_RemoveTagsFromResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveTagsFromResource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RemoveTagsFromResource = 0,
 	}
 	
@@ -8374,7 +8127,7 @@ namespace MyNS
 	public enum GET_ResetDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResetDBClusterParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResetDBClusterParameterGroup = 0,
 	}
 	
@@ -8395,7 +8148,7 @@ namespace MyNS
 	public enum GET_ResetDBParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResetDBParameterGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResetDBParameterGroup = 0,
 	}
 	
@@ -8426,7 +8179,7 @@ namespace MyNS
 	public enum GET_RestoreDBClusterFromSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestoreDBClusterFromSnapshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RestoreDBClusterFromSnapshot = 0,
 	}
 	
@@ -8457,7 +8210,7 @@ namespace MyNS
 	public enum GET_RestoreDBClusterToPointInTimeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestoreDBClusterToPointInTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RestoreDBClusterToPointInTime = 0,
 	}
 	
@@ -8478,7 +8231,7 @@ namespace MyNS
 	public enum GET_StartDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StartDBCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StartDBCluster = 0,
 	}
 	
@@ -8499,7 +8252,7 @@ namespace MyNS
 	public enum GET_StopDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StopDBCluster")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StopDBCluster = 0,
 	}
 	

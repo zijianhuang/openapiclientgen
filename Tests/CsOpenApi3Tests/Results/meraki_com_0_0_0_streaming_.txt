@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNetworkSmTargetGroupCreatenetworksmtargetgroup
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 		public string Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNetworkApplianceFirewallInboundFirewallRulesUpdatenetworkappliancefirewallinboundfirewallrules
 	{
 		
@@ -113,38 +111,34 @@ namespace MyNS
 		public System.Nullable<System.Boolean> SyslogEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkApplianceFirewallInboundFirewallRulesUpdatenetworkappliancefirewallinboundfirewallrulesRulesPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="allow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		allow = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deny")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deny = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkApplianceFirewallInboundFirewallRulesUpdatenetworkappliancefirewallinboundfirewallrulesRulesProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		any = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="icmp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		icmp = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="icmp6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		icmp6 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tcp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tcp = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="udp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		udp = 4,
 	}
 	
@@ -9060,10 +9054,10 @@ namespace MyNS
 	public enum GetDeviceCameraAnalyticsOverviewObjectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="person")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		person = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vehicle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vehicle = 1,
 	}
 	
@@ -9549,16 +9543,14 @@ namespace MyNS
 		public string Uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkBluetoothSettingsPutBodyMajorMinorAssignmentMode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Non-unique")]
 		NonMinusunique = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unique")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unique = 1,
 	}
 	
@@ -9758,25 +9750,21 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV12SlashMV22SlashMV72Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV12SlashMV22SlashMV72Quality
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enhanced")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enhanced = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="High")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		High = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Standard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Standard = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV12SlashMV22SlashMV72Resolution
 	{
 		
@@ -9807,9 +9795,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV12WEResolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV12WEResolution
 	{
 		
@@ -9840,9 +9826,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV13Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV13Resolution
 	{
 		
@@ -9873,9 +9857,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV21SlashMV71Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV21SlashMV71Resolution
 	{
 		
@@ -9903,9 +9885,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV22XSlashMV72XResolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV22XSlashMV72XResolution
 	{
 		
@@ -9939,9 +9919,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV32Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV32Resolution
 	{
 		
@@ -9972,9 +9950,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV33Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV33Resolution
 	{
 		
@@ -10005,9 +9981,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV52Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV52Resolution
 	{
 		
@@ -10044,9 +10018,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63Resolution
 	{
 		
@@ -10077,9 +10049,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63XResolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63XResolution
 	{
 		
@@ -10113,9 +10083,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93Resolution
 	{
 		
@@ -10146,9 +10114,7 @@ namespace MyNS
 		public CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93XResolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93XResolution
 	{
 		
@@ -10316,9 +10282,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV12SlashMV22SlashMV72Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV12SlashMV22SlashMV72Resolution
 	{
 		
@@ -10349,9 +10313,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV12WEResolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV12WEResolution
 	{
 		
@@ -10382,9 +10344,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV13Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV13Resolution
 	{
 		
@@ -10415,9 +10375,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV21SlashMV71Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV21SlashMV71Resolution
 	{
 		
@@ -10445,9 +10403,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV22XSlashMV72XResolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV22XSlashMV72XResolution
 	{
 		
@@ -10481,9 +10437,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV32Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV32Resolution
 	{
 		
@@ -10514,9 +10468,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV33Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV33Resolution
 	{
 		
@@ -10547,9 +10499,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV52Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV52Resolution
 	{
 		
@@ -10586,9 +10536,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV63Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV63Resolution
 	{
 		
@@ -10619,9 +10567,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV63XResolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV63XResolution
 	{
 		
@@ -10655,9 +10601,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV93Resolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV93Resolution
 	{
 		
@@ -10688,9 +10632,7 @@ namespace MyNS
 		public UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV93XResolution Resolution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkCameraQualityRetentionProfilePutBodyVideoSettingsMV93XResolution
 	{
 		
@@ -10926,16 +10868,14 @@ namespace MyNS
 		public string Vlan { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetNetworkClientsReturnStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Offline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Offline = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Online")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Online = 1,
 	}
 	
@@ -11019,28 +10959,26 @@ namespace MyNS
 		public ProvisionNetworkClientsPostBodyPoliciesBySsid PoliciesBySsid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyDevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Allowed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Allowed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Per connection")]
 		Per_connection = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 5,
 	}
 	
@@ -11054,19 +10992,17 @@ namespace MyNS
 		public System.Nullable<ProvisionNetworkClientsPostBodyPoliciesBySecurityApplianceDevicePolicy> DevicePolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySecurityApplianceDevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 2,
 	}
 	
@@ -11182,22 +11118,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_0DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11219,22 +11153,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_1DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11256,22 +11188,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_2DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11293,22 +11223,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_3DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11330,22 +11258,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_4DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11367,22 +11293,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_5DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11404,22 +11328,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_6DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11441,22 +11363,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_7DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11478,22 +11398,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_8DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11515,22 +11433,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_9DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11552,22 +11468,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_10DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11589,22 +11503,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_11DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11626,22 +11538,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_12DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11663,22 +11573,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_13DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -11700,22 +11608,20 @@ namespace MyNS
 		public string GroupPolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvisionNetworkClientsPostBodyPoliciesBySsid_14DevicePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Blocked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Blocked = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group policy")]
 		Group_policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Whitelisted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Whitelisted = 3,
 	}
 	
@@ -12051,16 +11957,14 @@ namespace MyNS
 		public System.Nullable<UpdateNetworkContentFilteringPutBodyUrlCategoryListSize> UrlCategoryListSize { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkContentFilteringPutBodyUrlCategoryListSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fullList")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fullList = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="topSites")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		topSites = 1,
 	}
 	
@@ -12181,13 +12085,13 @@ namespace MyNS
 	public enum GetNetworkDeviceLossAndLatencyHistoryUplink
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cellular")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cellular = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wan1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wan1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wan2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wan2 = 2,
 	}
 	
@@ -12489,35 +12393,31 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkL7FirewallRulesPutBodyRulesPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deny")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deny = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkL7FirewallRulesPutBodyRulesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="application")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		application = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="applicationCategory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		applicationCategory = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="host")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		host = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ipRange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ipRange = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="port")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		port = 4,
 	}
 	
@@ -12611,29 +12511,25 @@ namespace MyNS
 		public string PublicPort { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkOneToManyNatRulesPutBodyRulesPortRulesProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tcp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tcp = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="udp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		udp = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkOneToManyNatRulesPutBodyRulesUplink
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="internet1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		internet1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="internet2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		internet2 = 1,
 	}
 	
@@ -12707,22 +12603,20 @@ namespace MyNS
 		public System.Nullable<UpdateNetworkOneToOneNatRulesPutBodyRulesAllowedInboundProtocol> Protocol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkOneToOneNatRulesPutBodyRulesAllowedInboundProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		any = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="icmp-ping")]
 		icmpMinusping = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tcp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tcp = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="udp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		udp = 3,
 	}
 	
@@ -12772,13 +12666,11 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkPiiRequestPostBodyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delete = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="restrict processing")]
@@ -12853,19 +12745,17 @@ namespace MyNS
 		public System.Nullable<UpdateNetworkPortForwardingRulesPutBodyRulesUplink> Uplink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkPortForwardingRulesPutBodyRulesUplink
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="both")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		both = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="internet1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		internet1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="internet2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		internet2 = 2,
 	}
 	
@@ -12891,35 +12781,31 @@ namespace MyNS
 		public UpdateNetworkSecurityIntrusionSettingsPutBodyProtectedNetworks ProtectedNetworks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSecurityIntrusionSettingsPutBodyIdsRulesets
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="balanced")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		balanced = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="connectivity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		connectivity = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="security")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		security = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSecurityIntrusionSettingsPutBodyMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="detection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		detection = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="prevention")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		prevention = 2,
 	}
 	
@@ -13009,16 +12895,14 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSecurityMalwareSettingsPutBodyMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 1,
 	}
 	
@@ -13064,19 +12948,17 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UseDefaultRoute { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSiteToSiteVpnPutBodyMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hub")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hub = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spoke")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spoke = 2,
 	}
 	
@@ -13501,9 +13383,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> VlanId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSsidPutBodyAuthMode
 	{
 		
@@ -13528,7 +13408,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ipsk-without-radius")]
 		ipskMinuswithoutMinusradius = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="open-enhanced")]
@@ -13540,26 +13420,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="open-with-radius")]
 		openMinuswithMinusradius = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="psk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		psk = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSsidPutBodyEncryptionMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wep")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wep = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wpa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wpa = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSsidPutBodyEnterpriseAdminAccess
 	{
 		
@@ -13594,9 +13470,7 @@ namespace MyNS
 		public string Secret { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSsidPutBodyRadiusFailoverPolicy
 	{
 		
@@ -13607,9 +13481,7 @@ namespace MyNS
 		Deny_access = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSsidPutBodyRadiusLoadBalancingPolicy
 	{
 		
@@ -13644,13 +13516,11 @@ namespace MyNS
 		public string Secret { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSsidPutBodySplashPage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Billing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Billing = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cisco ISE")]
@@ -13668,7 +13538,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Google OAuth")]
 		Google_OAuth = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Password-protected with Active Directory")]
@@ -13693,9 +13563,7 @@ namespace MyNS
 		Systems_Manager_Sentry = 13,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSsidPutBodyWpaEncryptionMode
 	{
 		
@@ -14480,19 +14348,17 @@ namespace MyNS
 		public string Serial { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkSwitchSettingsPutBodyPowerExceptionsPowerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="combined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		combined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="redundant")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		redundant = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="useNetworkSetting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		useNetworkSetting = 2,
 	}
 	
@@ -14614,19 +14480,17 @@ namespace MyNS
 		public int Vlan { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkSwitchSettingsQosRulePostBodyProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TCP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TCP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UDP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UDP = 2,
 	}
 	
@@ -14753,16 +14617,16 @@ namespace MyNS
 	public enum GetNetworkTrafficDeviceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appliance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appliance = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="combined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		combined = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="switch")]
 		_switch = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wireless")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wireless = 3,
 	}
 	
@@ -14982,9 +14846,7 @@ namespace MyNS
 		public string VpnNatSubnet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkVlanPutBodyDhcpHandling
 	{
 		
@@ -14998,9 +14860,7 @@ namespace MyNS
 		Run_a_DHCP_server = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkVlanPutBodyDhcpLeaseTime
 	{
 		
@@ -15051,22 +14911,20 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkVlanPutBodyDhcpOptionsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hex = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="integer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		integer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ip = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 3,
 	}
 	
@@ -15212,9 +15070,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> BandSteeringEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkWirelessRfProfilePostBodyApBandSettingsBandOperationMode
 	{
 		
@@ -15224,20 +15080,18 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="5ghz")]
 		_5ghz = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dual = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkWirelessRfProfilePostBodyBandSelectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ap")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ap = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ssid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ssid = 1,
 	}
 	
@@ -15281,16 +15135,14 @@ namespace MyNS
 		public int[] ValidAutoChannels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateNetworkWirelessRfProfilePostBodyMinBitrateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="band")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		band = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ssid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ssid = 1,
 	}
 	
@@ -15396,9 +15248,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> BandSteeringEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkWirelessRfProfilePutBodyApBandSettingsBandOperationMode
 	{
 		
@@ -15408,7 +15258,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="5ghz")]
 		_5ghz = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dual = 2,
 	}
 	
@@ -15526,16 +15376,14 @@ namespace MyNS
 		public System.Nullable<UpdateNetworkWirelessSettingsPutBodyUpgradeStrategy> UpgradeStrategy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateNetworkWirelessSettingsPutBodyUpgradeStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minimizeClientDowntime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minimizeClientDowntime = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minimizeUpgradeTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minimizeUpgradeTime = 1,
 	}
 	
@@ -15576,13 +15424,13 @@ namespace MyNS
 	public enum GetOrganizationActionBatchesStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 2,
 	}
 	
@@ -15698,16 +15546,14 @@ namespace MyNS
 		public CreateOrganizationAdminPostBodyTags[] CreateOrganizationAdminPostBodyTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateOrganizationAdminPostBodyAuthenticationMethod
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cisco SecureX Sign-On")]
 		Cisco_SecureX_SignMinusOn = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Email = 1,
 	}
 	
@@ -15731,19 +15577,17 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateOrganizationAdminPostBodyOrgAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enterprise")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enterprise = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="read-only")]
@@ -15818,19 +15662,17 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateOrganizationAdminPutBodyOrgAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enterprise")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enterprise = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="read-only")]
@@ -15897,16 +15739,14 @@ namespace MyNS
 		public System.Nullable<ClaimIntoOrganizationPostBodyLicensesMode> Mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClaimIntoOrganizationPostBodyLicensesMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="addDevices")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		addDevices = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="renew")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		renew = 1,
 	}
 	
@@ -15925,22 +15765,22 @@ namespace MyNS
 	public enum GetOrganizationLicensesState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expired = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expiring")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expiring = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recentlyQueued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recentlyQueued = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unused = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unusedActive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unusedActive = 5,
 	}
 	
@@ -16344,9 +16184,7 @@ namespace MyNS
 		public string Secret { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateOrganizationThirdPartyVPNPeersPutBodyPeersIkeVersion
 	{
 		

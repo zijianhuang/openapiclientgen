@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBridgeOutputsResponse
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// The output of the bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BridgeOutput
 	{
 		
@@ -47,8 +45,7 @@ namespace MyNS
 	/// <summary>
 	/// The output of the bridge. A flow output is delivered to the AWS cloud.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BridgeFlowOutput
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// The output of the bridge. A network output is delivered to your premises.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BridgeNetworkOutput
 	{
 		
@@ -125,9 +121,7 @@ namespace MyNS
 		public int Ttl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Protocol
 	{
 		
@@ -137,19 +131,19 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="rtp-fec")]
 		rtpMinusfec = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rtp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rtp = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zixi-pull")]
 		zixiMinuspull = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rist = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="st2110-jpegxs")]
 		st2110Minusjpegxs = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cdi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cdi = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="srt-listener")]
@@ -161,15 +155,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fujitsu-qos")]
 		fujitsuMinusqos = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="udp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		udp = 10,
 	}
 	
 	/// <summary>
 	/// Add an output to a bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBridgeOutputRequest
 	{
 		
@@ -180,8 +173,7 @@ namespace MyNS
 	/// <summary>
 	/// Add a network output to an existing bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBridgeNetworkOutputRequest
 	{
 		
@@ -228,50 +220,42 @@ namespace MyNS
 		public int Ttl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ForbiddenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBridgeSourcesResponse
 	{
 		
@@ -285,8 +269,7 @@ namespace MyNS
 	/// <summary>
 	/// The bridge's source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BridgeSource
 	{
 		
@@ -300,8 +283,7 @@ namespace MyNS
 	/// <summary>
 	/// The source of the bridge. A flow source originates in MediaConnect as an existing cloud flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BridgeFlowSource
 	{
 		
@@ -329,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for attaching a VPC interface to an resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcInterfaceAttachment
 	{
 		
@@ -341,8 +322,7 @@ namespace MyNS
 	/// <summary>
 	/// The source of the bridge. A network source originates at your premises.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BridgeNetworkSource
 	{
 		
@@ -385,8 +365,7 @@ namespace MyNS
 	/// <summary>
 	/// Add a source to an existing bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBridgeSourceRequest
 	{
 		
@@ -400,8 +379,7 @@ namespace MyNS
 	/// <summary>
 	/// Add a flow source to an existing bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBridgeFlowSourceRequest
 	{
 		
@@ -426,8 +404,7 @@ namespace MyNS
 	/// <summary>
 	/// Add a network source to an existing bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBridgeNetworkSourceRequest
 	{
 		
@@ -467,8 +444,7 @@ namespace MyNS
 		public Protocol Protocol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFlowMediaStreamsResponse
 	{
 		
@@ -482,8 +458,7 @@ namespace MyNS
 	/// <summary>
 	/// A single track or stream of media that contains video, audio, or ancillary data. After you add a media stream to a flow, you can associate it with sources and outputs on that flow, as long as they use the CDI protocol or the ST 2110 JPEG XS protocol. Each source or output can consist of one or many media streams.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaStream
 	{
 		
@@ -531,8 +506,7 @@ namespace MyNS
 	/// <summary>
 	/// Attributes that are related to the media stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaStreamAttributes
 	{
 		
@@ -550,8 +524,7 @@ namespace MyNS
 	/// <summary>
 	/// FMTP
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fmtp
 	{
 		
@@ -577,22 +550,20 @@ namespace MyNS
 		public Tcs Tcs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Colorimetry
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BT601")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BT601 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BT709")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BT709 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BT2020")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BT2020 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BT2100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BT2100 = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ST2065-1")]
@@ -601,64 +572,58 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ST2065-3")]
 		ST2065Minus3 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XYZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XYZ = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Range
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NARROW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NARROW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULLPROTECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULLPROTECT = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScanMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="progressive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		progressive = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="interlace")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		interlace = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progressive-segmented-frame")]
 		progressiveMinussegmentedMinusframe = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Tcs
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SDR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SDR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PQ = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HLG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HLG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINEAR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BT2100LINPQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BT2100LINPQ = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BT2100LINHLG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BT2100LINHLG = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ST2065-1")]
@@ -667,20 +632,18 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ST428-1")]
 		ST428Minus1 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENSITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENSITY = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaStreamType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="video")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		video = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="audio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		audio = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ancillary-data")]
@@ -690,8 +653,7 @@ namespace MyNS
 	/// <summary>
 	/// The media stream that you want to add to the flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMediaStreamRequest
 	{
 		
@@ -732,8 +694,7 @@ namespace MyNS
 	/// <summary>
 	/// Attributes that are related to the media stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaStreamAttributesRequest
 	{
 		
@@ -747,8 +708,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings that you want to use to define the media stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FmtpRequest
 	{
 		
@@ -774,8 +734,7 @@ namespace MyNS
 		public Tcs Tcs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFlowOutputsResponse
 	{
 		
@@ -789,8 +748,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for an output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Output
 	{
 		
@@ -851,8 +809,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the encryption of the flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Encryption
 	{
 		
@@ -888,29 +845,25 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Algorithm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aes128")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aes128 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aes192")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aes192 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="aes256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aes256 = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="speke")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		speke = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="static-key")]
@@ -923,8 +876,7 @@ namespace MyNS
 	/// <summary>
 	/// The media stream that is associated with the output, and the parameters for that association.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaStreamOutputConfiguration
 	{
 		
@@ -952,8 +904,7 @@ namespace MyNS
 	/// <summary>
 	/// The transport parameters that are associated with an outbound media stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DestinationConfiguration
 	{
 		
@@ -989,8 +940,7 @@ namespace MyNS
 	/// <summary>
 	/// The VPC interface that is used for the media stream associated with the source or output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Interface
 	{
 		
@@ -1002,30 +952,27 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncodingName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jxsv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jxsv = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="raw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		raw = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="smpte291")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		smpte291 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pcm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pcm = 3,
 	}
 	
 	/// <summary>
 	/// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncodingParameters
 	{
 		
@@ -1044,24 +991,21 @@ namespace MyNS
 		public EncoderProfile EncoderProfile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncoderProfile
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="main")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		main = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 1,
 	}
 	
 	/// <summary>
 	/// Attributes related to the transport stream that are used in a source or output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transport
 	{
 		
@@ -1112,8 +1056,7 @@ namespace MyNS
 	/// <summary>
 	/// The output that you want to add to this flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddOutputRequest
 	{
 		
@@ -1170,8 +1113,7 @@ namespace MyNS
 	/// <summary>
 	/// The media stream that you want to associate with the output, and the parameters for that association.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaStreamOutputConfigurationRequest
 	{
 		
@@ -1199,8 +1141,7 @@ namespace MyNS
 	/// <summary>
 	/// The transport parameters that you want to associate with an outbound media stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DestinationConfigurationRequest
 	{
 		
@@ -1229,8 +1170,7 @@ namespace MyNS
 	/// <summary>
 	/// The VPC interface that you want to designate where the media stream is coming from or going to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InterfaceRequest
 	{
 		
@@ -1245,8 +1185,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncodingParametersRequest
 	{
 		
@@ -1265,14 +1204,12 @@ namespace MyNS
 		public EncoderProfile EncoderProfile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFlowOutputs420Exception
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFlowSourcesResponse
 	{
 		
@@ -1286,8 +1223,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for the source of the flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Source
 	{
 		
@@ -1348,8 +1284,7 @@ namespace MyNS
 	/// <summary>
 	/// The media stream that is associated with the source, and the parameters for that association.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaStreamSourceConfiguration
 	{
 		
@@ -1374,8 +1309,7 @@ namespace MyNS
 	/// <summary>
 	/// The transport parameters that are associated with an incoming media stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputConfiguration
 	{
 		
@@ -1404,8 +1338,7 @@ namespace MyNS
 	/// <summary>
 	/// The source configuration for cloud flows receiving a stream from a bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GatewayBridgeSource
 	{
 		
@@ -1423,8 +1356,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for the source of the flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetSourceRequest
 	{
 		
@@ -1489,8 +1421,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of a media stream that you want to associate with the source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaStreamSourceConfigurationRequest
 	{
 		
@@ -1515,8 +1446,7 @@ namespace MyNS
 	/// <summary>
 	/// The transport parameters that you want to associate with an incoming media stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputConfigurationRequest
 	{
 		
@@ -1538,8 +1468,7 @@ namespace MyNS
 	/// <summary>
 	/// The source configuration for cloud flows receiving a stream from a bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetGatewayBridgeSourceRequest
 	{
 		
@@ -1554,8 +1483,7 @@ namespace MyNS
 		public VpcInterfaceAttachment VpcInterfaceAttachment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFlowVpcInterfacesResponse
 	{
 		
@@ -1569,8 +1497,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for a VPC Source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcInterface
 	{
 		
@@ -1617,24 +1544,21 @@ namespace MyNS
 		public string SubnetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NetworkInterfaceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ena")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ena = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="efa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		efa = 1,
 	}
 	
 	/// <summary>
 	/// Desired VPC Interface for a Flow
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcInterfaceRequest
 	{
 		
@@ -1670,8 +1594,7 @@ namespace MyNS
 		public string SubnetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBridgeResponse
 	{
 		
@@ -1682,8 +1605,7 @@ namespace MyNS
 	/// <summary>
 	/// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bridge
 	{
 		
@@ -1734,8 +1656,7 @@ namespace MyNS
 		public BridgeSource[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageDetail
 	{
 		
@@ -1757,51 +1678,48 @@ namespace MyNS
 		public string ResourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BridgeState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDBY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDBY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPLOYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPLOYING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START_FAILED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START_PENDING = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_FAILED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EgressGatewayBridge
 	{
 		
@@ -1816,8 +1734,7 @@ namespace MyNS
 		public int MaxBitrate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IngressGatewayBridge
 	{
 		
@@ -1842,8 +1759,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for source failover.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailoverConfig
 	{
 		
@@ -1860,24 +1776,21 @@ namespace MyNS
 		public State State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailoverMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERGE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILOVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILOVER = 1,
 	}
 	
 	/// <summary>
 	/// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourcePriority
 	{
 		
@@ -1885,27 +1798,23 @@ namespace MyNS
 		public string PrimarySource { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum State
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBridge420Exception
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFlowResponse
 	{
 		
@@ -1916,8 +1825,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for a flow, including its source, outputs, and entitlements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flow
 	{
 		
@@ -1995,8 +1903,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for a flow entitlement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entitlement
 	{
 		
@@ -2034,39 +1941,36 @@ namespace MyNS
 		public string[] Subscribers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDBY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDBY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 6,
 	}
 	
 	/// <summary>
 	/// The maintenance setting of a flow
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Maintenance
 	{
 		
@@ -2083,39 +1987,36 @@ namespace MyNS
 		public string MaintenanceStartHour { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MaintenanceDay
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Monday = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tuesday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tuesday = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Wednesday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Wednesday = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Thursday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Thursday = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Friday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Friday = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Saturday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Saturday = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sunday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sunday = 6,
 	}
 	
 	/// <summary>
 	/// The entitlements that you want to grant on a flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GrantEntitlementRequest
 	{
 		
@@ -2142,14 +2043,12 @@ namespace MyNS
 		public string[] Subscribers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFlow420Exception
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGatewayResponse
 	{
 		
@@ -2160,8 +2059,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for a gateway, including its networks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Gateway
 	{
 		
@@ -2200,36 +2098,33 @@ namespace MyNS
 		public GatewayNetwork[] Networks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GatewayState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 5,
 	}
 	
 	/// <summary>
 	/// The network settings for a gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GatewayNetwork
 	{
 		
@@ -2248,14 +2143,12 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGateway420Exception
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBridgeResponse
 	{
 		
@@ -2263,8 +2156,7 @@ namespace MyNS
 		public string BridgeArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFlowResponse
 	{
 		
@@ -2275,8 +2167,7 @@ namespace MyNS
 		public Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGatewayResponse
 	{
 		
@@ -2284,8 +2175,7 @@ namespace MyNS
 		public string GatewayArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterGatewayInstanceResponse
 	{
 		
@@ -2296,33 +2186,30 @@ namespace MyNS
 		public InstanceState InstanceState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGISTERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGISTERING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEREGISTERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEREGISTERING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEREGISTERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEREGISTERED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGISTRATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGISTRATION_ERROR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEREGISTRATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEREGISTRATION_ERROR = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBridgeResponse
 	{
 		
@@ -2330,8 +2217,7 @@ namespace MyNS
 		public Bridge Bridge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFlowResponse
 	{
 		
@@ -2345,8 +2231,7 @@ namespace MyNS
 	/// <summary>
 	/// Messages that provide the state of the flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Messages
 	{
 		
@@ -2358,8 +2243,7 @@ namespace MyNS
 		public string[] Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGatewayResponse
 	{
 		
@@ -2367,8 +2251,7 @@ namespace MyNS
 		public Gateway Gateway { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGatewayInstanceResponse
 	{
 		
@@ -2379,8 +2262,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for an instance in a gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GatewayInstance
 	{
 		
@@ -2437,34 +2319,29 @@ namespace MyNS
 		public int RunningBridgeCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BridgePlacement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCKED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConnectionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCONNECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCONNECTED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOfferingResponse
 	{
 		
@@ -2475,8 +2352,7 @@ namespace MyNS
 	/// <summary>
 	/// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Offering
 	{
 		
@@ -2537,31 +2413,26 @@ namespace MyNS
 		public ResourceSpecification ResourceSpecification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DurationUnits
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHS = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PriceUnits
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOURLY = 0,
 	}
 	
 	/// <summary>
 	/// A definition of what is being billed for, including the type and amount.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceSpecification
 	{
 		
@@ -2576,18 +2447,15 @@ namespace MyNS
 		public ResourceType ResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mbps_Outbound_Bandwidth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mbps_Outbound_Bandwidth = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservationResponse
 	{
 		
@@ -2598,8 +2466,7 @@ namespace MyNS
 	/// <summary>
 	/// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Reservation
 	{
 		
@@ -2695,27 +2562,24 @@ namespace MyNS
 		public string Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReservationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GrantFlowEntitlementsResponse
 	{
 		
@@ -2726,14 +2590,12 @@ namespace MyNS
 		public string FlowArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GrantFlowEntitlements420Exception
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBridgesResponse
 	{
 		
@@ -2747,8 +2609,7 @@ namespace MyNS
 	/// <summary>
 	/// Displays details of the selected bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedBridge
 	{
 		
@@ -2788,8 +2649,7 @@ namespace MyNS
 		public string PlacementArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEntitlementsResponse
 	{
 		
@@ -2803,8 +2663,7 @@ namespace MyNS
 	/// <summary>
 	/// An entitlement that has been granted to you from other AWS accounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedEntitlement
 	{
 		
@@ -2826,8 +2685,7 @@ namespace MyNS
 		public string EntitlementName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFlowsResponse
 	{
 		
@@ -2841,8 +2699,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a summary of a flow, including its ARN, Availability Zone, and source type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedFlow
 	{
 		
@@ -2892,21 +2749,18 @@ namespace MyNS
 		public Maintenance Maintenance { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTITLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTITLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGatewayInstancesResponse
 	{
 		
@@ -2920,8 +2774,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a summary of an instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedGatewayInstance
 	{
 		
@@ -2950,8 +2803,7 @@ namespace MyNS
 		public InstanceState InstanceState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGatewaysResponse
 	{
 		
@@ -2965,8 +2817,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a summary of a gateway, including its name, ARN, and status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListedGateway
 	{
 		
@@ -2992,8 +2843,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOfferingsResponse
 	{
 		
@@ -3004,8 +2854,7 @@ namespace MyNS
 		public Offering[] Offerings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReservationsResponse
 	{
 		
@@ -3016,8 +2865,7 @@ namespace MyNS
 		public Reservation[] Reservations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -3025,14 +2873,12 @@ namespace MyNS
 		public @__mapOf__string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class @__mapOf__string
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseOfferingResponse
 	{
 		
@@ -3040,8 +2886,7 @@ namespace MyNS
 		public Reservation Reservation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveBridgeOutputResponse
 	{
 		
@@ -3052,8 +2897,7 @@ namespace MyNS
 		public string OutputName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveBridgeSourceResponse
 	{
 		
@@ -3064,8 +2908,7 @@ namespace MyNS
 		public string SourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFlowMediaStreamResponse
 	{
 		
@@ -3076,8 +2919,7 @@ namespace MyNS
 		public string MediaStreamName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFlowOutputResponse
 	{
 		
@@ -3088,8 +2930,7 @@ namespace MyNS
 		public string OutputArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFlowSourceResponse
 	{
 		
@@ -3100,8 +2941,7 @@ namespace MyNS
 		public string SourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFlowVpcInterfaceResponse
 	{
 		
@@ -3115,8 +2955,7 @@ namespace MyNS
 		public string VpcInterfaceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeFlowEntitlementResponse
 	{
 		
@@ -3127,8 +2966,7 @@ namespace MyNS
 		public string FlowArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFlowResponse
 	{
 		
@@ -3139,8 +2977,7 @@ namespace MyNS
 		public Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopFlowResponse
 	{
 		
@@ -3151,8 +2988,7 @@ namespace MyNS
 		public Status Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeResponse
 	{
 		
@@ -3160,8 +2996,7 @@ namespace MyNS
 		public Bridge Bridge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeOutputResponse
 	{
 		
@@ -3172,8 +3007,7 @@ namespace MyNS
 		public BridgeOutput Output { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeSourceResponse
 	{
 		
@@ -3184,8 +3018,7 @@ namespace MyNS
 		public BridgeSource Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeStateResponse
 	{
 		
@@ -3196,24 +3029,21 @@ namespace MyNS
 		public DesiredState DesiredState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DesiredState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDBY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDBY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowResponse
 	{
 		
@@ -3221,8 +3051,7 @@ namespace MyNS
 		public Flow Flow { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowEntitlementResponse
 	{
 		
@@ -3233,8 +3062,7 @@ namespace MyNS
 		public string FlowArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowMediaStreamResponse
 	{
 		
@@ -3245,8 +3073,7 @@ namespace MyNS
 		public MediaStream MediaStream { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowOutputResponse
 	{
 		
@@ -3257,8 +3084,7 @@ namespace MyNS
 		public Output Output { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowSourceResponse
 	{
 		
@@ -3269,8 +3095,7 @@ namespace MyNS
 		public Source Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGatewayInstanceResponse
 	{
 		
@@ -3284,8 +3109,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add outputs to the specified bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBridgeOutputsRequest
 	{
 		
@@ -3300,8 +3124,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add sources to the specified bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddBridgeSourcesRequest
 	{
 		
@@ -3313,8 +3136,7 @@ namespace MyNS
 		public AddBridgeSourceRequest[] Sources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddEgressGatewayBridgeRequest
 	{
 		
@@ -3329,8 +3151,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add media streams to the flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFlowMediaStreamsRequest
 	{
 		
@@ -3345,8 +3166,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add outputs to the specified flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFlowOutputsRequest
 	{
 		
@@ -3361,8 +3181,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add sources to the flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFlowSourcesRequest
 	{
 		
@@ -3377,8 +3196,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add VPC interfaces to the flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddFlowVpcInterfacesRequest
 	{
 		
@@ -3390,8 +3208,7 @@ namespace MyNS
 		public VpcInterfaceRequest[] VpcInterfaces { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddIngressGatewayBridgeRequest
 	{
 		
@@ -3413,8 +3230,7 @@ namespace MyNS
 	/// <summary>
 	/// Create maintenance setting for a flow
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddMaintenance
 	{
 		
@@ -3436,8 +3252,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new bridge. The request must include one source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBridgeRequest
 	{
 		
@@ -3478,8 +3293,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFlowRequest
 	{
 		
@@ -3521,8 +3335,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a new gateway. The request must include at least one network (up to 4).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGatewayRequest
 	{
 		
@@ -3548,84 +3361,71 @@ namespace MyNS
 		public GatewayNetwork[] Networks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBridgeRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFlowRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGatewayRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterGatewayInstanceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBridgeRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFlowRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGatewayInstanceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGatewayRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOfferingRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntitlementStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// A request to grant entitlements on a flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GrantFlowEntitlementsRequest
 	{
 		
@@ -3637,50 +3437,42 @@ namespace MyNS
 		public GrantEntitlementRequest[] Entitlements { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBridgesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEntitlementsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFlowsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGatewayInstancesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGatewaysRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOfferingsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReservationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
@@ -3688,8 +3480,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to purchase a offering.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseOfferingRequest
 	{
 		
@@ -3708,56 +3499,47 @@ namespace MyNS
 		public string Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveBridgeOutputRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveBridgeSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFlowMediaStreamRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFlowOutputRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFlowSourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveFlowVpcInterfaceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeFlowEntitlementRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFlowRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopFlowRequest
 	{
 	}
@@ -3765,8 +3547,7 @@ namespace MyNS
 	/// <summary>
 	/// The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -3778,8 +3559,7 @@ namespace MyNS
 		public @__mapOf__string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -3787,8 +3567,7 @@ namespace MyNS
 	/// <summary>
 	/// Update the flow source of the bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeFlowSourceRequest
 	{
 		
@@ -3802,8 +3581,7 @@ namespace MyNS
 	/// <summary>
 	/// Update an existing network output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeNetworkOutputRequest
 	{
 		
@@ -3826,8 +3604,7 @@ namespace MyNS
 	/// <summary>
 	/// Update the network source of the bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeNetworkSourceRequest
 	{
 		
@@ -3847,8 +3624,7 @@ namespace MyNS
 	/// <summary>
 	/// The fields that you want to update in the bridge output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeOutputRequest
 	{
 		
@@ -3856,8 +3632,7 @@ namespace MyNS
 		public UpdateBridgeNetworkOutputRequest NetworkOutput { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEgressGatewayBridgeRequest
 	{
 		
@@ -3865,8 +3640,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxBitrate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateIngressGatewayBridgeRequest
 	{
 		
@@ -3880,8 +3654,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for source failover.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFailoverConfig
 	{
 		
@@ -3901,8 +3674,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to update the bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeRequest
 	{
 		
@@ -3919,8 +3691,7 @@ namespace MyNS
 	/// <summary>
 	/// The fields that you want to update in the bridge source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeSourceRequest
 	{
 		
@@ -3934,8 +3705,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to update the bridge state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBridgeStateRequest
 	{
 		
@@ -3950,8 +3720,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the encryption of the flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEncryption
 	{
 		
@@ -3986,8 +3755,7 @@ namespace MyNS
 	/// <summary>
 	/// The entitlement fields that you want to update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowEntitlementRequest
 	{
 		
@@ -4007,8 +3775,7 @@ namespace MyNS
 	/// <summary>
 	/// The fields that you want to update in the media stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowMediaStreamRequest
 	{
 		
@@ -4031,8 +3798,7 @@ namespace MyNS
 	/// <summary>
 	/// The fields that you want to update in the output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowOutputRequest
 	{
 		
@@ -4085,8 +3851,7 @@ namespace MyNS
 	/// <summary>
 	/// Update maintenance setting for a flow
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMaintenance
 	{
 		
@@ -4103,8 +3868,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to update flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowRequest
 	{
 		
@@ -4118,8 +3882,7 @@ namespace MyNS
 	/// <summary>
 	/// The source configuration for cloud flows receiving a stream from a bridge.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGatewayBridgeSourceRequest
 	{
 		
@@ -4133,8 +3896,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to update the source of a flow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFlowSourceRequest
 	{
 		
@@ -4196,8 +3958,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to update gateway instance state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGatewayInstanceRequest
 	{
 		
@@ -6513,16 +6274,14 @@ namespace MyNS
 		public string Lang { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateFlowMediaStreamPutBodyMediaStreamType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="video")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		video = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="audio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		audio = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ancillary-data")]
@@ -6654,9 +6413,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateFlowOutputPutBodyProtocol
 	{
 		
@@ -6666,19 +6423,19 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="rtp-fec")]
 		rtpMinusfec = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rtp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rtp = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zixi-pull")]
 		zixiMinuspull = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rist = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="st2110-jpegxs")]
 		st2110Minusjpegxs = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cdi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cdi = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="srt-listener")]
@@ -6690,7 +6447,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fujitsu-qos")]
 		fujitsuMinusqos = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="udp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		udp = 10,
 	}
 	
@@ -6844,9 +6601,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateFlowSourcePutBodyProtocol
 	{
 		
@@ -6856,19 +6611,19 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="rtp-fec")]
 		rtpMinusfec = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rtp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rtp = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zixi-pull")]
 		zixiMinuspull = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rist = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="st2110-jpegxs")]
 		st2110Minusjpegxs = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cdi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cdi = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="srt-listener")]
@@ -6880,7 +6635,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fujitsu-qos")]
 		fujitsuMinusqos = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="udp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		udp = 10,
 	}
 	

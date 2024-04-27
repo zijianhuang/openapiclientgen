@@ -17,14 +17,12 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptMatchOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptMatchInput
 	{
 		
@@ -50,45 +48,38 @@ namespace MyNS
 		public AcceptanceType AcceptanceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AcceptanceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedRegionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClaimGameServerOutput
 	{
 		
@@ -99,8 +90,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Properties describing a game server that is running on an instance in a game server group. </p> <p>A game server is created by a successful call to <code>RegisterGameServer</code> and deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to host a game session by calling <code>ClaimGameServer</code>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameServer
 	{
 		
@@ -138,31 +128,26 @@ namespace MyNS
 		public System.DateTimeOffset LastHealthCheckTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameServerClaimStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLAIMED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLAIMED = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameServerUtilizationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTILIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UTILIZED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClaimGameServerInput
 	{
 		
@@ -186,8 +171,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p> Filters which game servers may be claimed when calling <code>ClaimGameServer</code>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClaimFilterOption
 	{
 		
@@ -195,39 +179,33 @@ namespace MyNS
 		public FilterInstanceStatus[] InstanceStatuses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilterInstanceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAINING = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutOfCapacityException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnauthorizedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAliasOutput
 	{
 		
@@ -238,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Properties that describe an alias resource.</p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alias
 	{
 		
@@ -268,8 +245,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The routing configuration for a fleet alias.</p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoutingStrategy
 	{
 		
@@ -283,21 +259,18 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RoutingStrategyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIMPLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIMPLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAliasInput
 	{
 		
@@ -325,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A label that you can assign to a Amazon GameLift resource. </p> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p> <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -345,20 +317,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaggingFailedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBuildOutput
 	{
 		
@@ -375,8 +344,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Properties describing a custom game build.</p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Build
 	{
 		
@@ -408,49 +376,44 @@ namespace MyNS
 		public string ServerSdkVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuildStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperatingSystem
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS_2012")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS_2012 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMAZON_LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMAZON_LINUX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMAZON_LINUX_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMAZON_LINUX_2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS_2016")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS_2016 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMAZON_LINUX_2023")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMAZON_LINUX_2023 = 4,
 	}
 	
 	/// <summary>
 	/// Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsCredentials
 	{
 		
@@ -467,8 +430,7 @@ namespace MyNS
 	/// <summary>
 	/// The location in Amazon S3 where build or script files are stored for access by Amazon GameLift.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Location
 	{
 		
@@ -485,8 +447,7 @@ namespace MyNS
 		public string ObjectVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBuildInput
 	{
 		
@@ -509,8 +470,7 @@ namespace MyNS
 		public string ServerSdkVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFleetOutput
 	{
 		
@@ -524,8 +484,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes a Amazon GameLift fleet of game hosting resources.</p> <p> <b>Related actions</b> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FleetAttributes
 	{
 		
@@ -614,22 +573,18 @@ namespace MyNS
 		public AnywhereConfiguration AnywhereConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FleetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON_DEMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON_DEMAND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EC2InstanceType
 	{
 		
@@ -976,61 +931,56 @@ namespace MyNS
 		r5d_24xlarge = 113,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FleetStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWNLOADING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOWNLOADING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUILDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUILDING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProtectionPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoProtection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoProtection = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FullProtection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FullProtection = 1,
 	}
 	
 	/// <summary>
 	/// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p> <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceCreationLimitPolicy
 	{
 		
@@ -1041,21 +991,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> PolicyPeriodInMinutes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FleetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_SCALING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_SCALING = 0,
 	}
 	
 	/// <summary>
 	/// Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateConfiguration
 	{
 		
@@ -1067,37 +1014,32 @@ namespace MyNS
 		public CertificateType CertificateType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENERATED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANYWHERE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANYWHERE = 1,
 	}
 	
 	/// <summary>
 	/// Amazon GameLift Anywhere configuration options for your Anywhere fleets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnywhereConfiguration
 	{
 		
@@ -1112,8 +1054,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p> <ul> <li> <p> <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1. </p> </li> <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p> </li> <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p> </li> <li> <p> <b>TERMINATED</b> -- The fleet location no longer exists.</p> </li> <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationState
 	{
 		
@@ -1124,8 +1065,7 @@ namespace MyNS
 		public FleetStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFleetInput
 	{
 		
@@ -1203,8 +1143,7 @@ namespace MyNS
 	/// <summary>
 	/// A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IpPermission
 	{
 		
@@ -1237,24 +1176,21 @@ namespace MyNS
 		public IpProtocol Protocol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IpProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TCP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TCP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UDP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UDP = 1,
 	}
 	
 	/// <summary>
 	/// <p>A collection of server process configurations that describe the set of processes to run on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Amazon GameLift launches the configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an updated runtime configuration. </p> <p>A Amazon GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each server process. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuntimeConfiguration
 	{
 		
@@ -1271,8 +1207,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's runtime configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServerProcess
 	{
 		
@@ -1297,8 +1232,7 @@ namespace MyNS
 	/// <summary>
 	/// A remote location where a multi-location fleet can deploy game servers for game hosting. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationConfiguration
 	{
 		
@@ -1310,8 +1244,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFleetLocationsOutput
 	{
 		
@@ -1325,8 +1258,7 @@ namespace MyNS
 		public LocationState[] LocationStates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFleetLocationsInput
 	{
 		
@@ -1345,14 +1277,12 @@ namespace MyNS
 		public LocationConfiguration[] Locations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidFleetStatusException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGameServerGroupOutput
 	{
 		
@@ -1363,8 +1293,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding Amazon EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameServerGroup
 	{
 		
@@ -1408,8 +1337,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>An allowed instance type for a game server group. All game server groups must have at least two instance types defined for it. Amazon GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceDefinition
 	{
 		
@@ -1424,9 +1352,7 @@ namespace MyNS
 		public string WeightedCapacity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameServerGroupInstanceType
 	{
 		
@@ -1695,75 +1621,66 @@ namespace MyNS
 		m6g_16xlarge = 87,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BalancingStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT_ONLY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT_PREFERRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT_PREFERRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON_DEMAND_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON_DEMAND_ONLY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameServerProtectionPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_PROTECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_PROTECTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_PROTECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_PROTECTION = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameServerGroupStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_SCHEDULED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_SCHEDULED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameServerGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLACE_INSTANCE_TYPES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLACE_INSTANCE_TYPES = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGameServerGroupInput
 	{
 		
@@ -1828,8 +1745,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>An Amazon Elastic Compute Cloud launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LaunchTemplateSpecification
 	{
 		
@@ -1846,8 +1762,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameServerGroupAutoScalingPolicy
 	{
 		
@@ -1865,8 +1780,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Settings for a target-based scaling policy as part of a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html">GameServerGroupAutoScalingPolicy</a> . These settings are used to create a target-based policy that tracks the Amazon GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetTrackingConfiguration
 	{
 		
@@ -1878,8 +1792,7 @@ namespace MyNS
 		public double TargetValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGameSessionOutput
 	{
 		
@@ -1890,8 +1803,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Properties describing a game session.</p> <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. </p> <p>Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameSession
 	{
 		
@@ -1953,43 +1865,38 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameSessionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameSessionStatusReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERRUPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERRUPTED = 0,
 	}
 	
 	/// <summary>
 	/// Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"> Amazon GameLift Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameProperty
 	{
 		
@@ -2008,21 +1915,18 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayerSessionCreationPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPT_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCEPT_ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENY_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENY_ALL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGameSessionInput
 	{
 		
@@ -2061,26 +1965,22 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TerminalRoutingStrategyException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FleetCapacityExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdempotentParameterMismatchException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGameSessionQueueOutput
 	{
 		
@@ -2091,8 +1991,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be used on its own or as part of a matchmaking solution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameSessionQueue
 	{
 		
@@ -2127,8 +2026,7 @@ namespace MyNS
 	/// <summary>
 	/// Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used only with placement request that provide player latency information. Player latency policies can be stacked to gradually relax latency requirements over time. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerLatencyPolicy
 	{
 		
@@ -2142,8 +2040,7 @@ namespace MyNS
 	/// <summary>
 	/// A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new game session on any of the queue's destinations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameSessionQueueDestination
 	{
 		
@@ -2154,8 +2051,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterConfiguration
 	{
 		
@@ -2166,8 +2062,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Custom prioritization settings for use by a game session queue when placing new game sessions with available game servers. When defined, this configuration replaces the default FleetIQ prioritization process, which is as follows:</p> <ul> <li> <p>If player latency data is included in a game session request, destinations and locations are prioritized first based on lowest average latency (1), then on lowest hosting cost (2), then on destination list order (3), and finally on location (alphabetical) (4). This approach ensures that the queue's top priority is to place game sessions where average player latency is lowest, and--if latency is the same--where the hosting cost is less, etc.</p> </li> <li> <p>If player latency data is not included, destinations and locations are prioritized first on destination list order (1), and then on location (alphabetical) (2). This approach ensures that the queue's top priority is to place game sessions on the first destination fleet listed. If that fleet has multiple locations, the game session is placed on the first location (when listed alphabetically).</p> </li> </ul> <p>Changing the priority order will affect how game sessions are placed.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PriorityConfiguration
 	{
 		
@@ -2178,27 +2073,24 @@ namespace MyNS
 		public string[] LocationOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PriorityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATENCY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESTINATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGameSessionQueueInput
 	{
 		
@@ -2234,8 +2126,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLocationOutput
 	{
 		
@@ -2246,8 +2137,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of a location
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationModel
 	{
 		
@@ -2258,8 +2148,7 @@ namespace MyNS
 		public string LocationArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLocationInput
 	{
 		
@@ -2274,8 +2163,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMatchmakingConfigurationOutput
 	{
 		
@@ -2286,8 +2174,7 @@ namespace MyNS
 	/// <summary>
 	/// Guidelines for use with FlexMatch to match players into games. All matchmaking requests must specify a matchmaking configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchmakingConfiguration
 	{
 		
@@ -2343,34 +2230,29 @@ namespace MyNS
 		public FlexMatchMode FlexMatchMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BackfillMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMATIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMATIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANUAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FlexMatchMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDALONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDALONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WITH_QUEUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WITH_QUEUE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMatchmakingConfigurationInput
 	{
 		
@@ -2436,8 +2318,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMatchmakingRuleSetOutput
 	{
 		
@@ -2452,8 +2333,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches.</p> <p>A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a FlexMatch rule set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled. </p> </li> <li> <p>Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.</p> </li> <li> <p>Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role. </p> </li> <li> <p>Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchmakingRuleSet
 	{
 		
@@ -2474,8 +2354,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMatchmakingRuleSetInput
 	{
 		
@@ -2497,8 +2376,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePlayerSessionOutput
 	{
 		
@@ -2509,8 +2387,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents a player session. Player sessions are created either for a specific game session, or as part of a game session placement or matchmaking request. A player session can represents a reserved player slot in a game session (when status is <code>RESERVED</code>) or actual player activity in a game session (when status is <code>ACTIVE</code>). A player session object, including player data, is automatically passed to a game session when the player connects to the game session and is validated. After the game session ends, player sessions information is retained for 30 days and then removed.</p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerSession
 	{
 		
@@ -2551,27 +2428,24 @@ namespace MyNS
 		public string PlayerData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayerSessionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESERVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESERVED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMEDOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMEDOUT = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePlayerSessionInput
 	{
 		
@@ -2593,20 +2467,17 @@ namespace MyNS
 		public string PlayerData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidGameSessionStatusException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameSessionFullException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePlayerSessionsOutput
 	{
 		
@@ -2614,8 +2485,7 @@ namespace MyNS
 		public PlayerSession[] PlayerSessions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePlayerSessionsInput
 	{
 		
@@ -2637,14 +2507,12 @@ namespace MyNS
 		public PlayerDataMap PlayerDataMap { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerDataMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateScriptOutput
 	{
 		
@@ -2655,8 +2523,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Properties describing a Realtime script.</p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Script
 	{
 		
@@ -2682,8 +2549,7 @@ namespace MyNS
 		public S3Location StorageLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateScriptInput
 	{
 		
@@ -2703,8 +2569,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcPeeringAuthorizationOutput
 	{
 		
@@ -2715,8 +2580,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcPeeringAuthorization
 	{
 		
@@ -2736,8 +2600,7 @@ namespace MyNS
 		public System.DateTimeOffset ExpirationTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcPeeringAuthorizationInput
 	{
 		
@@ -2756,14 +2619,12 @@ namespace MyNS
 		public string PeerVpcId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcPeeringConnectionOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcPeeringConnectionInput
 	{
 		
@@ -2789,8 +2650,7 @@ namespace MyNS
 		public string PeerVpcId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAliasInput
 	{
 		
@@ -2802,8 +2662,7 @@ namespace MyNS
 		public string AliasId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBuildInput
 	{
 		
@@ -2815,8 +2674,7 @@ namespace MyNS
 		public string BuildId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFleetInput
 	{
 		
@@ -2828,8 +2686,7 @@ namespace MyNS
 		public string FleetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFleetLocationsOutput
 	{
 		
@@ -2843,8 +2700,7 @@ namespace MyNS
 		public LocationState[] LocationStates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFleetLocationsInput
 	{
 		
@@ -2863,8 +2719,7 @@ namespace MyNS
 		public string[] Locations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGameServerGroupOutput
 	{
 		
@@ -2872,8 +2727,7 @@ namespace MyNS
 		public GameServerGroup GameServerGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGameServerGroupInput
 	{
 		
@@ -2888,30 +2742,26 @@ namespace MyNS
 		public GameServerGroupDeleteOption DeleteOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameServerGroupDeleteOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAFE_DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAFE_DELETE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORCE_DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORCE_DELETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETAIN = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGameSessionQueueOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGameSessionQueueInput
 	{
 		
@@ -2923,14 +2773,12 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLocationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLocationInput
 	{
 		
@@ -2942,14 +2790,12 @@ namespace MyNS
 		public string LocationName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMatchmakingConfigurationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMatchmakingConfigurationInput
 	{
 		
@@ -2961,14 +2807,12 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMatchmakingRuleSetOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMatchmakingRuleSetInput
 	{
 		
@@ -2980,8 +2824,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScalingPolicyInput
 	{
 		
@@ -3000,8 +2843,7 @@ namespace MyNS
 		public string FleetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScriptInput
 	{
 		
@@ -3013,14 +2855,12 @@ namespace MyNS
 		public string ScriptId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcPeeringAuthorizationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcPeeringAuthorizationInput
 	{
 		
@@ -3039,14 +2879,12 @@ namespace MyNS
 		public string PeerVpcId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcPeeringConnectionOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcPeeringConnectionInput
 	{
 		
@@ -3065,14 +2903,12 @@ namespace MyNS
 		public string VpcPeeringConnectionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterComputeOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterComputeInput
 	{
 		
@@ -3091,8 +2927,7 @@ namespace MyNS
 		public string ComputeName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterGameServerInput
 	{
 		
@@ -3111,8 +2946,7 @@ namespace MyNS
 		public string GameServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAliasOutput
 	{
 		
@@ -3120,8 +2954,7 @@ namespace MyNS
 		public Alias Alias { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAliasInput
 	{
 		
@@ -3133,8 +2966,7 @@ namespace MyNS
 		public string AliasId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBuildOutput
 	{
 		
@@ -3142,8 +2974,7 @@ namespace MyNS
 		public Build Build { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeBuildInput
 	{
 		
@@ -3155,8 +2986,7 @@ namespace MyNS
 		public string BuildId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeComputeOutput
 	{
 		
@@ -3167,8 +2997,7 @@ namespace MyNS
 	/// <summary>
 	/// Resources used to host your game servers. A compute resource can be managed Amazon GameLift Amazon EC2 instances or your own resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Compute
 	{
 		
@@ -3209,24 +3038,21 @@ namespace MyNS
 		public string GameLiftServiceSdkEndpoint { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATING = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeComputeInput
 	{
 		
@@ -3245,8 +3071,7 @@ namespace MyNS
 		public string ComputeName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEC2InstanceLimitsOutput
 	{
 		
@@ -3257,8 +3082,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon GameLift service limits for an Amazon EC2 instance type and current utilization. Amazon GameLift allows Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for use with Amazon GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the Amazon GameLift console.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2InstanceLimit
 	{
 		
@@ -3275,8 +3099,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeEC2InstanceLimitsInput
 	{
 		
@@ -3287,8 +3110,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetAttributesOutput
 	{
 		
@@ -3299,8 +3121,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetAttributesInput
 	{
 		
@@ -3314,8 +3135,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetCapacityOutput
 	{
 		
@@ -3329,8 +3149,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Current resource capacity settings in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region. </p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FleetCapacity
 	{
 		
@@ -3356,8 +3175,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2InstanceCounts
 	{
 		
@@ -3383,8 +3201,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TERMINATING { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetCapacityInput
 	{
 		
@@ -3398,8 +3215,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetEventsOutput
 	{
 		
@@ -3413,8 +3229,7 @@ namespace MyNS
 	/// <summary>
 	/// Log entry describing an event that involves Amazon GameLift resources (such as a fleet). In addition to tracking activity, event codes and messages can provide additional information for troubleshooting and debugging problems.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event
 	{
 		
@@ -3437,117 +3252,114 @@ namespace MyNS
 		public string PreSignedLogUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERIC_EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENERIC_EVENT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_DELETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_SCALING_EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_SCALING_EVENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_STATE_DOWNLOADING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_STATE_DOWNLOADING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_STATE_VALIDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_STATE_VALIDATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_STATE_BUILDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_STATE_BUILDING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_STATE_ACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_STATE_ACTIVATING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_STATE_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_STATE_ACTIVE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_STATE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_STATE_ERROR = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_INITIALIZATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_INITIALIZATION_FAILED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_BINARY_DOWNLOAD_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_BINARY_DOWNLOAD_FAILED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_VALIDATION_TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_VALIDATION_TIMED_OUT = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_ACTIVATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_ACTIVATION_FAILED = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_ACTIVATION_FAILED_NO_INSTANCES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_ACTIVATION_FAILED_NO_INSTANCES = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_PROCESS_INVALID_PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_PROCESS_INVALID_PATH = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_PROCESS_PROCESS_READY_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_PROCESS_PROCESS_READY_TIMEOUT = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_PROCESS_CRASHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_PROCESS_CRASHED = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_PROCESS_TERMINATED_UNHEALTHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_PROCESS_TERMINATED_UNHEALTHY = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_PROCESS_FORCE_TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_PROCESS_FORCE_TERMINATED = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_PROCESS_PROCESS_EXIT_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GAME_SESSION_ACTIVATION_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GAME_SESSION_ACTIVATION_TIMEOUT = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_CREATION_EXTRACTING_BUILD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_CREATION_EXTRACTING_BUILD = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_CREATION_RUNNING_INSTALLER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_CREATION_RUNNING_INSTALLER = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_CREATION_VALIDATING_RUNTIME_CONFIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_CREATION_VALIDATING_RUNTIME_CONFIG = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_VPC_PEERING_SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_VPC_PEERING_SUCCEEDED = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_VPC_PEERING_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_VPC_PEERING_FAILED = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEET_VPC_PEERING_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEET_VPC_PEERING_DELETED = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_INTERRUPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_INTERRUPTED = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_RECYCLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_RECYCLED = 33,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetEventsInput
 	{
 		
@@ -3571,8 +3383,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetLocationAttributesOutput
 	{
 		
@@ -3592,8 +3403,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a location in a multi-location fleet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationAttributes
 	{
 		
@@ -3607,18 +3417,15 @@ namespace MyNS
 		public LocationUpdateStatus UpdateStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LocationUpdateStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_UPDATE = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetLocationAttributesInput
 	{
 		
@@ -3639,8 +3446,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetLocationCapacityOutput
 	{
 		
@@ -3648,8 +3454,7 @@ namespace MyNS
 		public FleetCapacity FleetCapacity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetLocationCapacityInput
 	{
 		
@@ -3668,8 +3473,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetLocationUtilizationOutput
 	{
 		
@@ -3680,8 +3484,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Current resource utilization statistics in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region.</p> <p> <b>Related actions</b> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FleetUtilization
 	{
 		
@@ -3707,8 +3510,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetLocationUtilizationInput
 	{
 		
@@ -3727,8 +3529,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetPortSettingsOutput
 	{
 		
@@ -3748,8 +3549,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetPortSettingsInput
 	{
 		
@@ -3764,8 +3564,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetUtilizationOutput
 	{
 		
@@ -3776,8 +3575,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetUtilizationInput
 	{
 		
@@ -3791,8 +3589,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameServerOutput
 	{
 		
@@ -3800,8 +3597,7 @@ namespace MyNS
 		public GameServer GameServer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameServerInput
 	{
 		
@@ -3820,8 +3616,7 @@ namespace MyNS
 		public string GameServerId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameServerGroupOutput
 	{
 		
@@ -3829,8 +3624,7 @@ namespace MyNS
 		public GameServerGroup GameServerGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameServerGroupInput
 	{
 		
@@ -3842,8 +3636,7 @@ namespace MyNS
 		public string GameServerGroupName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameServerInstancesOutput
 	{
 		
@@ -3857,8 +3650,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p> Additional properties, including status, that describe an EC2 instance in a game server group. Instance configurations are set with game server group properties (see <code>DescribeGameServerGroup</code> and with the EC2 launch template that was used when creating the game server group. </p> <p>Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameServerInstance
 	{
 		
@@ -3875,24 +3667,21 @@ namespace MyNS
 		public GameServerInstanceStatus InstanceStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameServerInstanceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAINING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT_TERMINATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT_TERMINATING = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameServerInstancesInput
 	{
 		
@@ -3913,8 +3702,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameSessionDetailsOutput
 	{
 		
@@ -3928,8 +3716,7 @@ namespace MyNS
 	/// <summary>
 	/// A game session's properties plus the protection policy currently in force.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameSessionDetail
 	{
 		
@@ -3940,8 +3727,7 @@ namespace MyNS
 		public ProtectionPolicy ProtectionPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameSessionDetailsInput
 	{
 		
@@ -3967,8 +3753,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameSessionPlacementOutput
 	{
 		
@@ -3979,8 +3764,7 @@ namespace MyNS
 	/// <summary>
 	/// This object includes the full details of the original request plus the current status and start/end time stamps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameSessionPlacement
 	{
 		
@@ -4039,33 +3823,30 @@ namespace MyNS
 		public string MatchmakerData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameSessionPlacementState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULFILLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULFILLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMED_OUT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 	}
 	
 	/// <summary>
 	/// Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerLatency
 	{
 		
@@ -4082,8 +3863,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a player session. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html">DescribePlayerSessions</a> with the player session ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlacedPlayerSession
 	{
 		
@@ -4094,8 +3874,7 @@ namespace MyNS
 		public string PlayerSessionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameSessionPlacementInput
 	{
 		
@@ -4107,8 +3886,7 @@ namespace MyNS
 		public string PlacementId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameSessionQueuesOutput
 	{
 		
@@ -4119,8 +3897,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameSessionQueuesInput
 	{
 		
@@ -4134,8 +3911,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameSessionsOutput
 	{
 		
@@ -4146,8 +3922,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeGameSessionsInput
 	{
 		
@@ -4173,8 +3948,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeInstancesOutput
 	{
 		
@@ -4188,8 +3962,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents an EC2 instance of virtual computing resources that hosts one or more game servers. In Amazon GameLift, a fleet can contain zero or more instances.</p> <p> <b>Related actions</b> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Instance
 	{
 		
@@ -4224,8 +3997,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeInstancesInput
 	{
 		
@@ -4249,8 +4021,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMatchmakingOutput
 	{
 		
@@ -4261,8 +4032,7 @@ namespace MyNS
 	/// <summary>
 	/// Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchmakingTicket
 	{
 		
@@ -4300,42 +4070,39 @@ namespace MyNS
 		public System.Nullable<System.Int32> EstimatedWaitTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MatchmakingConfigurationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLACING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLACING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEUED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRES_ACCEPTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRES_ACCEPTANCE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCHING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMED_OUT = 7,
 	}
 	
 	/// <summary>
 	/// Represents a player in matchmaking. When starting a matchmaking request, a player has a player ID, attributes, and may have latency data. Team information is added after a match has been successfully completed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Player
 	{
 		
@@ -4352,14 +4119,12 @@ namespace MyNS
 		public LatencyMap LatencyInMs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerAttributeMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatencyMap
 	{
 	}
@@ -4367,8 +4132,7 @@ namespace MyNS
 	/// <summary>
 	/// Connection information for a new game session that is created in response to a start matchmaking request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the matchmaking ticket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GameSessionConnectionInfo
 	{
 		
@@ -4391,8 +4155,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents a new player session that is created as a result of a successful FlexMatch match. A successful match automatically creates new player sessions for every player ID in the original matchmaking request. </p> <p>When players connect to the match's game session, they must include both player ID and player session ID in order to claim their assigned player slot.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchedPlayerSession
 	{
 		
@@ -4403,8 +4166,7 @@ namespace MyNS
 		public string PlayerSessionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMatchmakingInput
 	{
 		
@@ -4416,8 +4178,7 @@ namespace MyNS
 		public string[] TicketIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMatchmakingConfigurationsOutput
 	{
 		
@@ -4428,8 +4189,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMatchmakingConfigurationsInput
 	{
 		
@@ -4446,8 +4206,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMatchmakingRuleSetsOutput
 	{
 		
@@ -4462,8 +4221,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeMatchmakingRuleSetsInput
 	{
 		
@@ -4477,8 +4235,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePlayerSessionsOutput
 	{
 		
@@ -4489,8 +4246,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePlayerSessionsInput
 	{
 		
@@ -4513,8 +4269,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRuntimeConfigurationOutput
 	{
 		
@@ -4522,8 +4277,7 @@ namespace MyNS
 		public RuntimeConfiguration RuntimeConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRuntimeConfigurationInput
 	{
 		
@@ -4535,8 +4289,7 @@ namespace MyNS
 		public string FleetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingPoliciesOutput
 	{
 		
@@ -4550,8 +4303,7 @@ namespace MyNS
 	/// <summary>
 	/// Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingPolicy
 	{
 		
@@ -4598,130 +4350,119 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalingStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_REQUESTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_REQUESTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalingAdjustmentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChangeInCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChangeInCapacity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExactCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExactCapacity = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PercentChangeInCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PercentChangeInCapacity = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperatorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreaterThanOrEqualToThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreaterThanOrEqualToThreshold = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreaterThanThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreaterThanThreshold = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThanThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThanThreshold = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThanOrEqualToThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThanOrEqualToThreshold = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActivatingGameSessions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActivatingGameSessions = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActiveGameSessions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActiveGameSessions = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActiveInstances")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActiveInstances = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AvailableGameSessions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AvailableGameSessions = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AvailablePlayerSessions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AvailablePlayerSessions = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentPlayerSessions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentPlayerSessions = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IdleInstances")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IdleInstances = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PercentAvailableGameSessions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PercentAvailableGameSessions = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PercentIdleInstances")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PercentIdleInstances = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QueueDepth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QueueDepth = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WaitTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WaitTime = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConcurrentActivatableGameSessions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConcurrentActivatableGameSessions = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RuleBased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RuleBased = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TargetBased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TargetBased = 1,
 	}
 	
 	/// <summary>
 	/// Settings for a target-based scaling policy. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetConfiguration
 	{
 		
@@ -4733,8 +4474,7 @@ namespace MyNS
 		public double TargetValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingPoliciesInput
 	{
 		
@@ -4758,8 +4498,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScriptOutput
 	{
 		
@@ -4767,8 +4506,7 @@ namespace MyNS
 		public Script Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScriptInput
 	{
 		
@@ -4780,8 +4518,7 @@ namespace MyNS
 		public string ScriptId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVpcPeeringAuthorizationsOutput
 	{
 		
@@ -4789,14 +4526,12 @@ namespace MyNS
 		public VpcPeeringAuthorization[] VpcPeeringAuthorizations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVpcPeeringAuthorizationsInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVpcPeeringConnectionsOutput
 	{
 		
@@ -4807,8 +4542,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents a peering connection between a VPC on one of your Amazon Web Services accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcPeeringConnection
 	{
 		
@@ -4837,8 +4571,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents status information for a VPC peering connection. Status codes and messages are provided from EC2 (see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcPeeringConnectionStatus
 	{
 		
@@ -4849,8 +4582,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVpcPeeringConnectionsInput
 	{
 		
@@ -4858,8 +4590,7 @@ namespace MyNS
 		public string FleetId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComputeAccessOutput
 	{
 		
@@ -4879,8 +4610,7 @@ namespace MyNS
 		public AwsCredentials Credentials { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComputeAccessInput
 	{
 		
@@ -4899,8 +4629,7 @@ namespace MyNS
 		public string ComputeName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComputeAuthTokenOutput
 	{
 		
@@ -4923,8 +4652,7 @@ namespace MyNS
 		public System.DateTimeOffset ExpirationTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComputeAuthTokenInput
 	{
 		
@@ -4943,8 +4671,7 @@ namespace MyNS
 		public string ComputeName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGameSessionLogUrlOutput
 	{
 		
@@ -4952,8 +4679,7 @@ namespace MyNS
 		public string PreSignedUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGameSessionLogUrlInput
 	{
 		
@@ -4965,8 +4691,7 @@ namespace MyNS
 		public string GameSessionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInstanceAccessOutput
 	{
 		
@@ -4977,8 +4702,7 @@ namespace MyNS
 	/// <summary>
 	/// Information required to remotely connect to a fleet instance. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceAccess
 	{
 		
@@ -5001,8 +4725,7 @@ namespace MyNS
 	/// <summary>
 	/// Set of credentials required to remotely access a fleet instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceCredentials
 	{
 		
@@ -5013,8 +4736,7 @@ namespace MyNS
 		public string Secret { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInstanceAccessInput
 	{
 		
@@ -5033,8 +4755,7 @@ namespace MyNS
 		public string InstanceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAliasesOutput
 	{
 		
@@ -5045,8 +4766,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAliasesInput
 	{
 		
@@ -5063,8 +4783,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBuildsOutput
 	{
 		
@@ -5075,8 +4794,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBuildsInput
 	{
 		
@@ -5090,8 +4808,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListComputeOutput
 	{
 		
@@ -5102,8 +4819,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListComputeInput
 	{
 		
@@ -5124,8 +4840,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFleetsOutput
 	{
 		
@@ -5136,8 +4851,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFleetsInput
 	{
 		
@@ -5154,8 +4868,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGameServerGroupsOutput
 	{
 		
@@ -5166,8 +4879,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGameServerGroupsInput
 	{
 		
@@ -5178,8 +4890,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGameServersOutput
 	{
 		
@@ -5190,8 +4901,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGameServersInput
 	{
 		
@@ -5212,21 +4922,18 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsOutput
 	{
 		
@@ -5237,8 +4944,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsInput
 	{
 		
@@ -5252,21 +4958,18 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LocationFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListScriptsOutput
 	{
 		
@@ -5277,8 +4980,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListScriptsInput
 	{
 		
@@ -5289,8 +4991,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -5298,8 +4999,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -5311,8 +5011,7 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutScalingPolicyOutput
 	{
 		
@@ -5320,8 +5019,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutScalingPolicyInput
 	{
 		
@@ -5368,8 +5066,7 @@ namespace MyNS
 		public TargetConfiguration TargetConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterComputeOutput
 	{
 		
@@ -5377,8 +5074,7 @@ namespace MyNS
 		public Compute Compute { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterComputeInput
 	{
 		
@@ -5409,8 +5105,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterGameServerOutput
 	{
 		
@@ -5418,8 +5113,7 @@ namespace MyNS
 		public GameServer GameServer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterGameServerInput
 	{
 		
@@ -5451,8 +5145,7 @@ namespace MyNS
 		public string GameServerData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestUploadCredentialsOutput
 	{
 		
@@ -5463,8 +5156,7 @@ namespace MyNS
 		public S3Location StorageLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestUploadCredentialsInput
 	{
 		
@@ -5476,8 +5168,7 @@ namespace MyNS
 		public string BuildId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResolveAliasOutput
 	{
 		
@@ -5488,8 +5179,7 @@ namespace MyNS
 		public string FleetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResolveAliasInput
 	{
 		
@@ -5501,8 +5191,7 @@ namespace MyNS
 		public string AliasId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResumeGameServerGroupOutput
 	{
 		
@@ -5510,8 +5199,7 @@ namespace MyNS
 		public GameServerGroup GameServerGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResumeGameServerGroupInput
 	{
 		
@@ -5530,8 +5218,7 @@ namespace MyNS
 		public GameServerGroupAction[] ResumeActions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchGameSessionsOutput
 	{
 		
@@ -5542,8 +5229,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchGameSessionsInput
 	{
 		
@@ -5569,8 +5255,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFleetActionsOutput
 	{
 		
@@ -5581,8 +5266,7 @@ namespace MyNS
 		public string FleetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFleetActionsInput
 	{
 		
@@ -5604,8 +5288,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartGameSessionPlacementOutput
 	{
 		
@@ -5613,8 +5296,7 @@ namespace MyNS
 		public GameSessionPlacement GameSessionPlacement { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartGameSessionPlacementInput
 	{
 		
@@ -5658,8 +5340,7 @@ namespace MyNS
 	/// <summary>
 	/// Player information for use when creating player sessions using a game session placement request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DesiredPlayerSession
 	{
 		
@@ -5670,8 +5351,7 @@ namespace MyNS
 		public string PlayerData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMatchBackfillOutput
 	{
 		
@@ -5679,8 +5359,7 @@ namespace MyNS
 		public MatchmakingTicket MatchmakingTicket { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMatchBackfillInput
 	{
 		
@@ -5705,8 +5384,7 @@ namespace MyNS
 		public Player[] Players { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMatchmakingOutput
 	{
 		
@@ -5714,8 +5392,7 @@ namespace MyNS
 		public MatchmakingTicket MatchmakingTicket { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMatchmakingInput
 	{
 		
@@ -5737,8 +5414,7 @@ namespace MyNS
 		public Player[] Players { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopFleetActionsOutput
 	{
 		
@@ -5749,8 +5425,7 @@ namespace MyNS
 		public string FleetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopFleetActionsInput
 	{
 		
@@ -5772,8 +5447,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopGameSessionPlacementOutput
 	{
 		
@@ -5781,8 +5455,7 @@ namespace MyNS
 		public GameSessionPlacement GameSessionPlacement { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopGameSessionPlacementInput
 	{
 		
@@ -5794,14 +5467,12 @@ namespace MyNS
 		public string PlacementId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopMatchmakingOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopMatchmakingInput
 	{
 		
@@ -5813,8 +5484,7 @@ namespace MyNS
 		public string TicketId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuspendGameServerGroupOutput
 	{
 		
@@ -5822,8 +5492,7 @@ namespace MyNS
 		public GameServerGroup GameServerGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuspendGameServerGroupInput
 	{
 		
@@ -5842,14 +5511,12 @@ namespace MyNS
 		public GameServerGroupAction[] SuspendActions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -5868,14 +5535,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -5894,8 +5559,7 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAliasOutput
 	{
 		
@@ -5903,8 +5567,7 @@ namespace MyNS
 		public Alias Alias { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAliasInput
 	{
 		
@@ -5925,8 +5588,7 @@ namespace MyNS
 		public RoutingStrategy RoutingStrategy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBuildOutput
 	{
 		
@@ -5934,8 +5596,7 @@ namespace MyNS
 		public Build Build { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBuildInput
 	{
 		
@@ -5953,8 +5614,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFleetAttributesOutput
 	{
 		
@@ -5965,8 +5625,7 @@ namespace MyNS
 		public string FleetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFleetAttributesInput
 	{
 		
@@ -5996,8 +5655,7 @@ namespace MyNS
 		public AnywhereConfiguration AnywhereConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFleetCapacityOutput
 	{
 		
@@ -6011,8 +5669,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFleetCapacityInput
 	{
 		
@@ -6036,8 +5693,7 @@ namespace MyNS
 		public string Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFleetPortSettingsOutput
 	{
 		
@@ -6048,8 +5704,7 @@ namespace MyNS
 		public string FleetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFleetPortSettingsInput
 	{
 		
@@ -6067,8 +5722,7 @@ namespace MyNS
 		public IpPermission[] InboundPermissionRevocations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGameServerOutput
 	{
 		
@@ -6076,8 +5730,7 @@ namespace MyNS
 		public GameServer GameServer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGameServerInput
 	{
 		
@@ -6105,18 +5758,15 @@ namespace MyNS
 		public GameServerHealthCheck HealthCheck { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GameServerHealthCheck
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALTHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALTHY = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGameServerGroupOutput
 	{
 		
@@ -6124,8 +5774,7 @@ namespace MyNS
 		public GameServerGroup GameServerGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGameServerGroupInput
 	{
 		
@@ -6149,8 +5798,7 @@ namespace MyNS
 		public BalancingStrategy BalancingStrategy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGameSessionOutput
 	{
 		
@@ -6158,8 +5806,7 @@ namespace MyNS
 		public GameSession GameSession { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGameSessionInput
 	{
 		
@@ -6183,8 +5830,7 @@ namespace MyNS
 		public ProtectionPolicy ProtectionPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGameSessionQueueOutput
 	{
 		
@@ -6192,8 +5838,7 @@ namespace MyNS
 		public GameSessionQueue GameSessionQueue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGameSessionQueueInput
 	{
 		
@@ -6226,8 +5871,7 @@ namespace MyNS
 		public string NotificationTarget { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMatchmakingConfigurationOutput
 	{
 		
@@ -6235,8 +5879,7 @@ namespace MyNS
 		public MatchmakingConfiguration Configuration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMatchmakingConfigurationInput
 	{
 		
@@ -6287,8 +5930,7 @@ namespace MyNS
 		public FlexMatchMode FlexMatchMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRuntimeConfigurationOutput
 	{
 		
@@ -6296,8 +5938,7 @@ namespace MyNS
 		public RuntimeConfiguration RuntimeConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRuntimeConfigurationInput
 	{
 		
@@ -6316,8 +5957,7 @@ namespace MyNS
 		public RuntimeConfiguration RuntimeConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateScriptOutput
 	{
 		
@@ -6325,8 +5965,7 @@ namespace MyNS
 		public Script Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateScriptInput
 	{
 		
@@ -6350,8 +5989,7 @@ namespace MyNS
 		public string ZipFile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateMatchmakingRuleSetOutput
 	{
 		
@@ -6359,8 +5997,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Valid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateMatchmakingRuleSetInput
 	{
 		
@@ -6372,8 +6009,7 @@ namespace MyNS
 		public string RuleSetBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerAttributeStringDoubleMap
 	{
 	}
@@ -6381,8 +6017,7 @@ namespace MyNS
 	/// <summary>
 	/// Values for use in player attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeValue
 	{
 		
@@ -6399,19 +6034,17 @@ namespace MyNS
 		public PlayerAttributeStringDoubleMap SDM { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATING = 2,
 	}
 	

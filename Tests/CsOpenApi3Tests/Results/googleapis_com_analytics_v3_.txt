@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Analytics account entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -111,8 +110,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a linked account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountRef
 	{
 		
@@ -145,8 +143,7 @@ namespace MyNS
 	/// <summary>
 	/// An AccountSummary collection lists a summary of accounts, properties and views (profiles) to which the user has access. Each resource in the collection corresponds to a single AccountSummary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountSummaries
 	{
 		
@@ -203,8 +200,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics AccountSummary. An AccountSummary is a lightweight tree comprised of properties/profiles.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountSummary
 	{
 		
@@ -243,8 +239,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics WebPropertySummary. WebPropertySummary returns basic information (i.e., summary) for a web property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebPropertySummary
 	{
 		
@@ -301,8 +296,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics ProfileSummary. ProfileSummary returns basic information (i.e., summary) for a profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileSummary
 	{
 		
@@ -341,8 +335,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics account ticket. The account ticket consists of the ticket ID and the basic information for the account, property and profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountTicket
 	{
 		
@@ -387,8 +380,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics view (profile).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Profile
 	{
 		
@@ -598,8 +590,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics web property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Webproperty
 	{
 		
@@ -769,8 +760,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics account tree requests. The account tree request is used in the provisioning api to create an account, property, and view (profile). It contains the basic information required to make these fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountTreeRequest
 	{
 		
@@ -800,8 +790,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics account tree response. The account tree response is used in the provisioning api to return the result of creating an account, property, and view (profile).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountTreeResponse
 	{
 		
@@ -834,8 +823,7 @@ namespace MyNS
 	/// <summary>
 	/// An account collection provides a list of Analytics accounts to which a user has access. The account collection is the entry point to all management information. Each resource in the collection corresponds to a single Analytics account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Accounts
 	{
 		
@@ -892,8 +880,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Google Ads account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdWordsAccount
 	{
 		
@@ -920,8 +907,7 @@ namespace MyNS
 	/// <summary>
 	/// Request template for the delete upload data request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalyticsDataimportDeleteUploadDataRequest
 	{
 		
@@ -935,8 +921,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a metadata column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Column
 	{
 		
@@ -963,8 +948,7 @@ namespace MyNS
 	/// <summary>
 	/// Lists columns (dimensions and metrics) for a particular report type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Columns
 	{
 		
@@ -1003,8 +987,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics custom data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDataSource
 	{
 		
@@ -1136,8 +1119,7 @@ namespace MyNS
 	/// <summary>
 	/// Lists Analytics custom data sources to which the user has access. Each resource in the collection corresponds to a single Analytics custom data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDataSources
 	{
 		
@@ -1194,8 +1176,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Analytics Custom Dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDimension
 	{
 		
@@ -1293,8 +1274,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom dimension collection lists Analytics custom dimensions to which the user has access. Each resource in the collection corresponds to a single Analytics custom dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDimensions
 	{
 		
@@ -1351,8 +1331,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Analytics Custom Metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomMetric
 	{
 		
@@ -1468,8 +1447,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom metric collection lists Analytics custom metrics to which the user has access. Each resource in the collection corresponds to a single Analytics custom metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomMetrics
 	{
 		
@@ -1526,8 +1504,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Analytics Entity Google Ads Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityAdWordsLink
 	{
 		
@@ -1588,8 +1565,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a web property reference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebPropertyRef
 	{
 		
@@ -1634,8 +1610,7 @@ namespace MyNS
 	/// <summary>
 	/// An entity Google Ads link collection provides a list of GA-Google Ads links Each resource in this collection corresponds to a single link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityAdWordsLinks
 	{
 		
@@ -1686,8 +1661,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics Entity-User Link. Returns permissions that a user has for an entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityUserLink
 	{
 		
@@ -1754,8 +1728,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a linked view (profile).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileRef
 	{
 		
@@ -1822,8 +1795,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a user reference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserRef
 	{
 		
@@ -1847,8 +1819,7 @@ namespace MyNS
 	/// <summary>
 	/// An entity user link collection provides a list of Analytics ACL links Each resource in this collection corresponds to a single link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityUserLinks
 	{
 		
@@ -1899,8 +1870,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Analytics experiment resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Experiment
 	{
 		
@@ -2131,8 +2101,7 @@ namespace MyNS
 	/// <summary>
 	/// An experiment collection lists Analytics experiments to which the user has access. Each view (profile) can have a set of experiments. Each resource in the Experiment collection corresponds to a single Analytics experiment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Experiments
 	{
 		
@@ -2189,8 +2158,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics account filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -2371,8 +2339,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics filter expression.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterExpression
 	{
 		
@@ -2586,8 +2553,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a profile filter link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterRef
 	{
 		
@@ -2626,8 +2592,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter collection lists filters created by users in an Analytics account. Each resource in the collection corresponds to a filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filters
 	{
 		
@@ -2684,8 +2649,7 @@ namespace MyNS
 	/// <summary>
 	/// Analytics data for a given view (profile).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GaData
 	{
 		
@@ -2962,8 +2926,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Analytics goal resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Goal
 	{
 		
@@ -3235,8 +3198,7 @@ namespace MyNS
 	/// <summary>
 	/// A goal collection lists Analytics goals to which the user has access. Each view (profile) can have a set of goals. Each resource in the Goal collection corresponds to a single Analytics goal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Goals
 	{
 		
@@ -3293,8 +3255,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a hash Client Id request resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HashClientIdRequest
 	{
 		
@@ -3312,8 +3273,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a hash Client Id response resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HashClientIdResponse
 	{
 		
@@ -3334,8 +3294,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics Remarketing Include Conditions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncludeConditions
 	{
 		
@@ -3374,8 +3333,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics Remarketing Audience Foreign Link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkedForeignAccount
 	{
 		
@@ -3444,8 +3402,7 @@ namespace MyNS
 	/// <summary>
 	/// Multi-Channel Funnels data for a given view (profile).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class McfData
 	{
 		
@@ -3676,8 +3633,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics profile filter link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileFilterLink
 	{
 		
@@ -3724,8 +3680,7 @@ namespace MyNS
 	/// <summary>
 	/// A profile filter link collection lists profile filter links between profiles and filters. Each resource in the collection corresponds to a profile filter link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileFilterLinks
 	{
 		
@@ -3782,8 +3737,7 @@ namespace MyNS
 	/// <summary>
 	/// A view (profile) collection lists Analytics views (profiles) to which the user has access. Each resource in the collection corresponds to a single Analytics view (profile).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Profiles
 	{
 		
@@ -3840,8 +3794,7 @@ namespace MyNS
 	/// <summary>
 	/// Real time data for a given view (profile).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RealtimeData
 	{
 		
@@ -4006,8 +3959,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics remarketing audience.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemarketingAudience
 	{
 		
@@ -4142,8 +4094,7 @@ namespace MyNS
 	/// <summary>
 	/// A remarketing audience collection lists Analytics remarketing audiences to which the user has access. Each resource in the collection corresponds to a single Analytics remarketing audience.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemarketingAudiences
 	{
 		
@@ -4200,8 +4151,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for an Analytics segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Segment
 	{
 		
@@ -4264,8 +4214,7 @@ namespace MyNS
 	/// <summary>
 	/// An segment collection lists Analytics segments that the user has access to. Each resource in the collection corresponds to a single Analytics segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Segments
 	{
 		
@@ -4322,8 +4271,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for Analytics unsampled report resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsampledReport
 	{
 		
@@ -4472,8 +4420,7 @@ namespace MyNS
 	/// <summary>
 	/// An unsampled report collection lists Analytics unsampled reports to which the user has access. Each view (profile) can have a set of unsampled reports. Each resource in the unsampled report collection corresponds to a single Analytics unsampled report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsampledReports
 	{
 		
@@ -4530,8 +4477,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata returned for an upload operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Upload
 	{
 		
@@ -4582,8 +4528,7 @@ namespace MyNS
 	/// <summary>
 	/// Upload collection lists Analytics uploads to which the user has access. Each custom data source can have a set of uploads. Each resource in the upload collection corresponds to a single Analytics data upload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Uploads
 	{
 		
@@ -4634,8 +4579,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a user deletion request resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDeletionRequest
 	{
 		
@@ -4696,8 +4640,7 @@ namespace MyNS
 	/// <summary>
 	/// A web property collection lists Analytics web properties to which the user has access. Each resource in the collection corresponds to a single Analytics web property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Webproperties
 	{
 		
@@ -8238,23 +8181,23 @@ namespace MyNS
 	public enum Analytics_data_ga_getOutput
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dataTable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dataTable = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 1,
 	}
 	
 	public enum Analytics_data_ga_getSamplingLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FASTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FASTER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGHER_PRECISION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGHER_PRECISION = 2,
 	}
 }

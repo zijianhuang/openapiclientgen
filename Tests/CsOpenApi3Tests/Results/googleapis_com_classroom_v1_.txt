@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Announcement created by a teacher for students of the course
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Announcement
 	{
 		
@@ -98,27 +97,24 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnnouncementAssigneeMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSIGNEE_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSIGNEE_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_STUDENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_STUDENTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDIVIDUAL_STUDENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDIVIDUAL_STUDENTS = 2,
 	}
 	
 	/// <summary>
 	/// Assignee details about a coursework/announcement. This field is set if and only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndividualStudentsOptions
 	{
 		
@@ -132,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// Material attached to course work. When creating attachments, setting the `form` field is not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Material
 	{
 		
@@ -165,8 +160,7 @@ namespace MyNS
 	/// <summary>
 	/// Drive file that is used as material for course work.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SharedDriveFile
 	{
 		
@@ -186,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a Google Drive file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DriveFile
 	{
 		
@@ -216,30 +209,27 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SharedDriveFileShareMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_SHARE_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_SHARE_MODE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDIT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STUDENT_COPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STUDENT_COPY = 3,
 	}
 	
 	/// <summary>
 	/// Google Forms item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Form
 	{
 		
@@ -271,8 +261,7 @@ namespace MyNS
 	/// <summary>
 	/// URL item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Link
 	{
 		
@@ -298,8 +287,7 @@ namespace MyNS
 	/// <summary>
 	/// YouTube video item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class YouTubeVideo
 	{
 		
@@ -328,30 +316,27 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnnouncementState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNOUNCEMENT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNOUNCEMENT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
 	/// <summary>
 	/// Additional details for assignments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Assignment
 	{
 		
@@ -365,8 +350,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a Google Drive folder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DriveFolder
 	{
 		
@@ -392,8 +376,7 @@ namespace MyNS
 	/// <summary>
 	/// Student work for an assignment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssignmentSubmission
 	{
 		
@@ -407,8 +390,7 @@ namespace MyNS
 	/// <summary>
 	/// Attachment added to student assignment work. When creating attachments, setting the `form` field is not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attachment
 	{
 		
@@ -440,8 +422,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a Cloud Pub/Sub topic. To register for notifications, the owner of the topic must grant `classroom-notifications@system.gserviceaccount.com` the `projects.topics.publish` permission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudPubsubTopic
 	{
 		
@@ -455,8 +436,7 @@ namespace MyNS
 	/// <summary>
 	/// A Course in Classroom.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Course
 	{
 		
@@ -578,8 +558,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of materials that appears on the "About" page of the course. These materials might include a syllabus, schedule, or other background information relating to the course as a whole.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourseMaterialSet
 	{
 		
@@ -599,8 +578,7 @@ namespace MyNS
 	/// <summary>
 	/// A material attached to a course as part of a material set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourseMaterial
 	{
 		
@@ -629,36 +607,33 @@ namespace MyNS
 		public YouTubeVideo YouTubeVideo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CourseCourseState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COURSE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COURSE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECLINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECLINED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 5,
 	}
 	
 	/// <summary>
 	/// The gradebook settings for a course. See the [help center article](https://support.google.com/edu/classroom/answer/9184995) for details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GradebookSettings
 	{
 		
@@ -681,46 +656,41 @@ namespace MyNS
 		public GradeCategory[] GradeCategories { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GradebookSettingsCalculationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CALCULATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CALCULATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOTAL_POINTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOTAL_POINTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEIGHTED_CATEGORIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEIGHTED_CATEGORIES = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GradebookSettingsDisplaySetting
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISPLAY_SETTING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISPLAY_SETTING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOW_OVERALL_GRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOW_OVERALL_GRADE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDE_OVERALL_GRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDE_OVERALL_GRADE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOW_TEACHERS_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOW_TEACHERS_ONLY = 3,
 	}
 	
 	/// <summary>
 	/// Details for a grade category in a course. Coursework may have zero or one grade category, and the category may be used in computing the overall grade. See the [help center article](https://support.google.com/edu/classroom/answer/9184995) for details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GradeCategory
 	{
 		
@@ -752,8 +722,7 @@ namespace MyNS
 	/// <summary>
 	/// Alternative identifier for a course. An alias uniquely identifies a course. It must be unique within one of the following scopes: * domain: A domain-scoped alias is visible to all users within the alias creator's domain and can be created only by a domain admin. A domain-scoped alias is often used when a course has an identifier external to Classroom. * project: A project-scoped alias is visible to any request from an application using the Developer Console project ID that created the alias and can be created by any project. A project-scoped alias is often used when an application has alternative identifiers. A random value can also be used to avoid duplicate courses in the event of transmission failures, as retrying a request will return `ALREADY_EXISTS` if a previous one has succeeded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourseAlias
 	{
 		
@@ -767,8 +736,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a `Feed` with a `feed_type` of `COURSE_ROSTER_CHANGES`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourseRosterChangesInfo
 	{
 		
@@ -782,8 +750,7 @@ namespace MyNS
 	/// <summary>
 	/// Course work created by a teacher for students of the course.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourseWork
 	{
 		
@@ -929,8 +896,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -956,8 +922,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeOfDay
 	{
 		
@@ -989,8 +954,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional details for multiple-choice questions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultipleChoiceQuestion
 	{
 		
@@ -1001,65 +965,58 @@ namespace MyNS
 		public string[] Choices { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CourseWorkState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COURSE_WORK_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COURSE_WORK_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CourseWorkSubmissionModificationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMISSION_MODIFICATION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMISSION_MODIFICATION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODIFIABLE_UNTIL_TURNED_IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODIFIABLE_UNTIL_TURNED_IN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODIFIABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODIFIABLE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CourseWorkWorkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COURSE_WORK_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COURSE_WORK_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSIGNMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSIGNMENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHORT_ANSWER_QUESTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHORT_ANSWER_QUESTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTIPLE_CHOICE_QUESTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTIPLE_CHOICE_QUESTION = 3,
 	}
 	
 	/// <summary>
 	/// Information about a `Feed` with a `feed_type` of `COURSE_WORK_CHANGES`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourseWorkChangesInfo
 	{
 		
@@ -1073,8 +1030,7 @@ namespace MyNS
 	/// <summary>
 	/// Course work material created by a teacher for students of the course
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CourseWorkMaterial
 	{
 		
@@ -1163,30 +1119,27 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CourseWorkMaterialState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COURSEWORK_MATERIAL_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COURSEWORK_MATERIAL_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -1194,8 +1147,7 @@ namespace MyNS
 	/// <summary>
 	/// A class of notifications that an application can register to receive. For example: "all roster changes for a domain".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Feed
 	{
 		
@@ -1218,30 +1170,27 @@ namespace MyNS
 		public System.Nullable<FeedFeedType> FeedType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FeedFeedType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEED_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEED_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN_ROSTER_CHANGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN_ROSTER_CHANGES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COURSE_ROSTER_CHANGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COURSE_ROSTER_CHANGES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COURSE_WORK_CHANGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COURSE_WORK_CHANGES = 3,
 	}
 	
 	/// <summary>
 	/// Global user permission description.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalPermission
 	{
 		
@@ -1252,24 +1201,21 @@ namespace MyNS
 		public System.Nullable<GlobalPermissionPermission> Permission { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GlobalPermissionPermission
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_COURSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_COURSE = 1,
 	}
 	
 	/// <summary>
 	/// The history of each grade on this submission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GradeHistory
 	{
 		
@@ -1304,30 +1250,27 @@ namespace MyNS
 		public System.Nullable<System.Double> PointsEarned { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GradeHistoryGradeChangeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_GRADE_CHANGE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_GRADE_CHANGE_TYPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT_GRADE_POINTS_EARNED_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT_GRADE_POINTS_EARNED_CHANGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSIGNED_GRADE_POINTS_EARNED_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSIGNED_GRADE_POINTS_EARNED_CHANGE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_POINTS_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_POINTS_CHANGE = 3,
 	}
 	
 	/// <summary>
 	/// Association between a student and a guardian of that student. The guardian may receive information about the student's course work.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Guardian
 	{
 		
@@ -1359,8 +1302,7 @@ namespace MyNS
 	/// <summary>
 	/// Global information for a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserProfile
 	{
 		
@@ -1404,8 +1346,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the user's name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Name
 	{
 		
@@ -1431,8 +1372,7 @@ namespace MyNS
 	/// <summary>
 	/// An invitation to become the guardian of a specified user, sent to a specified email address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GuardianInvitation
 	{
 		
@@ -1467,27 +1407,24 @@ namespace MyNS
 		public string StudentId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GuardianInvitationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GUARDIAN_INVITATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GUARDIAN_INVITATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 2,
 	}
 	
 	/// <summary>
 	/// An invitation to join a course.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Invitation
 	{
 		
@@ -1516,30 +1453,27 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InvitationRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COURSE_ROLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COURSE_ROLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STUDENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STUDENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEACHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEACHER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER = 3,
 	}
 	
 	/// <summary>
 	/// Response when listing course work.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAnnouncementsResponse
 	{
 		
@@ -1559,8 +1493,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing course aliases.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCourseAliasesResponse
 	{
 		
@@ -1580,8 +1513,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing course work material.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCourseWorkMaterialResponse
 	{
 		
@@ -1601,8 +1533,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing course work.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCourseWorkResponse
 	{
 		
@@ -1622,8 +1553,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing courses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCoursesResponse
 	{
 		
@@ -1643,8 +1573,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing guardian invitations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGuardianInvitationsResponse
 	{
 		
@@ -1664,8 +1593,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing guardians.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGuardiansResponse
 	{
 		
@@ -1685,8 +1613,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing invitations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInvitationsResponse
 	{
 		
@@ -1706,8 +1633,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing student submissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStudentSubmissionsResponse
 	{
 		
@@ -1727,8 +1653,7 @@ namespace MyNS
 	/// <summary>
 	/// Student submission for course work. `StudentSubmission` items are generated when a `CourseWork` item is created. Student submissions that have never been accessed (i.e. with `state` = NEW) may not have a creation time or update time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StudentSubmission
 	{
 		
@@ -1838,8 +1763,7 @@ namespace MyNS
 	/// <summary>
 	/// Student work for a multiple-choice question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultipleChoiceSubmission
 	{
 		
@@ -1853,8 +1777,7 @@ namespace MyNS
 	/// <summary>
 	/// Student work for a short answer question.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShortAnswerSubmission
 	{
 		
@@ -1865,36 +1788,33 @@ namespace MyNS
 		public string Answer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StudentSubmissionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMISSION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMISSION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TURNED_IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TURNED_IN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETURNED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECLAIMED_BY_STUDENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECLAIMED_BY_STUDENT = 5,
 	}
 	
 	/// <summary>
 	/// The history of the submission. This currently includes state and grade histories.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubmissionHistory
 	{
 		
@@ -1914,8 +1834,7 @@ namespace MyNS
 	/// <summary>
 	/// The history of each state this submission has been in.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateHistory
 	{
 		
@@ -1938,36 +1857,33 @@ namespace MyNS
 		public string StateTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StateHistoryState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TURNED_IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TURNED_IN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETURNED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECLAIMED_BY_STUDENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECLAIMED_BY_STUDENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STUDENT_EDITED_AFTER_TURN_IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STUDENT_EDITED_AFTER_TURN_IN = 5,
 	}
 	
 	/// <summary>
 	/// Response when listing students.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStudentsResponse
 	{
 		
@@ -1987,8 +1903,7 @@ namespace MyNS
 	/// <summary>
 	/// Student in a course.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Student
 	{
 		
@@ -2020,8 +1935,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing teachers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTeachersResponse
 	{
 		
@@ -2041,8 +1955,7 @@ namespace MyNS
 	/// <summary>
 	/// Teacher of a course.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Teacher
 	{
 		
@@ -2068,8 +1981,7 @@ namespace MyNS
 	/// <summary>
 	/// Response when listing topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTopicResponse
 	{
 		
@@ -2089,8 +2001,7 @@ namespace MyNS
 	/// <summary>
 	/// Topic created by a teacher for the course
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Topic
 	{
 		
@@ -2122,8 +2033,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to modify assignee mode and options of an announcement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyAnnouncementAssigneesRequest
 	{
 		
@@ -2143,8 +2053,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains fields to add or remove students from a course work or announcement where the `assigneeMode` is set to `INDIVIDUAL_STUDENTS`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyIndividualStudentsOptions
 	{
 		
@@ -2164,8 +2073,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to modify the attachments of a student submission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyAttachmentsRequest
 	{
 		
@@ -2179,8 +2087,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to modify assignee mode and options of a coursework.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyCourseWorkAssigneesRequest
 	{
 		
@@ -2200,8 +2107,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to reclaim a student submission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReclaimStudentSubmissionRequest
 	{
 	}
@@ -2209,8 +2115,7 @@ namespace MyNS
 	/// <summary>
 	/// An instruction to Classroom to send notifications from the `feed` to the provided destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Registration
 	{
 		
@@ -2242,8 +2147,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to return a student submission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReturnStudentSubmissionRequest
 	{
 	}
@@ -2251,8 +2155,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to turn in a student submission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TurnInStudentSubmissionRequest
 	{
 	}
@@ -4606,13 +4509,13 @@ namespace MyNS
 	public enum Classroom_courses_courseWork_studentSubmissions_listLate
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATE_VALUES_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATE_VALUES_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATE_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATE_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_LATE_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_LATE_ONLY = 2,
 	}
 }

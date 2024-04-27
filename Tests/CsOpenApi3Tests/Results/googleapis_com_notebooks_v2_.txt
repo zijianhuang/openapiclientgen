@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An accelerator configuration for a VM instance Definition of a hardware accelerator. Note that there is no check on `type` and `core_count` combinations. TPUs are not supported. See [GPUs on Compute Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a valid combination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceleratorConfig
 	{
 		
@@ -38,51 +37,48 @@ namespace MyNS
 		public System.Nullable<AcceleratorConfigType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AcceleratorConfigType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCELERATOR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCELERATOR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_TESLA_P100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_TESLA_P100 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_TESLA_V100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_TESLA_V100 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_TESLA_P4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_TESLA_P4 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_TESLA_T4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_TESLA_T4 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_TESLA_A100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_TESLA_A100 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_A100_80GB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_A100_80GB = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_L4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_L4 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_TESLA_T4_VWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_TESLA_T4_VWS = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_TESLA_P100_VWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_TESLA_P100_VWS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NVIDIA_TESLA_P4_VWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NVIDIA_TESLA_P4_VWS = 10,
 	}
 	
 	/// <summary>
 	/// Associates `members`, or principals, with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -108,8 +104,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -141,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of a boot disk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BootDisk
 	{
 		
@@ -171,49 +165,44 @@ namespace MyNS
 		public string KmsKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BootDiskDiskEncryption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_ENCRYPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_ENCRYPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GMEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GMEK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CMEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CMEK = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BootDiskDiskType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PD_STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PD_STANDARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PD_SSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PD_SSD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PD_BALANCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PD_BALANCED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PD_EXTREME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PD_EXTREME = 4,
 	}
 	
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelOperationRequest
 	{
 	}
@@ -221,8 +210,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for checking if a notebook instance is upgradeable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CheckInstanceUpgradabilityResponse
 	{
 		
@@ -254,8 +242,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for getting WbI configurations in a location
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Config
 	{
 		
@@ -281,8 +268,7 @@ namespace MyNS
 	/// <summary>
 	/// ConfigImage represents an image release available to create a WbI
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageRelease
 	{
 		
@@ -302,8 +288,7 @@ namespace MyNS
 	/// <summary>
 	/// DefaultValues represents the default configuration values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultValues
 	{
 		
@@ -317,8 +302,7 @@ namespace MyNS
 	/// <summary>
 	/// SupportedValues represents the values supported by the configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupportedValues
 	{
 		
@@ -338,8 +322,7 @@ namespace MyNS
 	/// <summary>
 	/// Definition of a container image for starting a notebook instance with the environment installed in a container.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerImage
 	{
 		
@@ -359,8 +342,7 @@ namespace MyNS
 	/// <summary>
 	/// An instance-attached disk resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataDisk
 	{
 		
@@ -392,8 +374,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for creating a notebook instance diagnostic file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiagnoseInstanceRequest
 	{
 		
@@ -413,8 +394,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines flags that are used to run the diagnostic tool
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiagnosticConfig
 	{
 		
@@ -452,8 +432,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -461,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of an Event for a managed / semi-managed notebook instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event
 	{
 		
@@ -485,36 +463,33 @@ namespace MyNS
 		public System.Nullable<EventType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IDLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEARTBEAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEARTBEAT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALTH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAINTENANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAINTENANCE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METADATA_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METADATA_CHANGE = 5,
 	}
 	
 	/// <summary>
 	/// A GPU driver configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GPUDriverConfig
 	{
 		
@@ -534,8 +509,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of how to configure a VM instance outside of Resources and Identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GceSetup
 	{
 		
@@ -627,8 +601,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of a network interface resource attached to a VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkInterface
 	{
 		
@@ -651,27 +624,24 @@ namespace MyNS
 		public string Subnet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NetworkInterfaceNicType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NIC_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NIC_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIRTIO_NET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIRTIO_NET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GVNIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GVNIC = 2,
 	}
 	
 	/// <summary>
 	/// A service account that acts as an identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceAccount
 	{
 		
@@ -691,8 +661,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of Shielded Instance options. See [Images using supported Shielded VM features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm). Not all combinations are valid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShieldedInstanceConfig
 	{
 		
@@ -718,8 +687,7 @@ namespace MyNS
 	/// <summary>
 	/// Definition of a custom Compute Engine virtual machine image for starting a notebook instance with the environment installed directly on the VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmImage
 	{
 		
@@ -745,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of a notebook instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Instance
 	{
 		
@@ -841,73 +808,68 @@ namespace MyNS
 		public UpgradeHistoryEntry[] UpgradeHistory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceHealthState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALTH_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALTH_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALTHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALTHY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNHEALTHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNHEALTHY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AGENT_NOT_INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AGENT_NOT_INSTALLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AGENT_NOT_RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AGENT_NOT_RUNNING = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPGRADING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPGRADING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZING = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDING = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 10,
 	}
 	
 	/// <summary>
 	/// The entry of VM image upgrade history.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeHistoryEntry
 	{
 		
@@ -966,46 +928,41 @@ namespace MyNS
 		public string VmImage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpgradeHistoryEntryAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPGRADE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLBACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLLBACK = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpgradeHistoryEntryState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// Response for listing notebook instances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInstancesResponse
 	{
 		
@@ -1031,8 +988,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -1052,8 +1008,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -1091,8 +1046,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -1112,8 +1066,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1151,8 +1104,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1178,8 +1130,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the metadata of the long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		
@@ -1235,8 +1186,7 @@ namespace MyNS
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -1262,8 +1212,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for notebook instances to report information to Notebooks API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportInstanceInfoSystemRequest
 	{
 		
@@ -1283,8 +1232,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for resetting a notebook instance
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetInstanceRequest
 	{
 	}
@@ -1292,8 +1240,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for rollbacking a notebook instance
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RollbackInstanceRequest
 	{
 		
@@ -1313,8 +1260,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `SetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIamPolicyRequest
 	{
 		
@@ -1328,8 +1274,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for starting a notebook instance
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartInstanceRequest
 	{
 	}
@@ -1337,8 +1282,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for stopping a notebook instance
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopInstanceRequest
 	{
 	}
@@ -1346,8 +1290,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsRequest
 	{
 		
@@ -1361,8 +1304,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		
@@ -1376,8 +1318,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for upgrading a notebook instance
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeInstanceRequest
 	{
 	}
@@ -1385,8 +1326,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for upgrading a notebook instance from within the VM
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeInstanceSystemRequest
 	{
 		

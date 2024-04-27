@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The Add Client Secret Request Model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddClientSecret
 	{
 		
@@ -37,8 +36,7 @@ namespace MyNS
 	/// <summary>
 	/// The additional pay rate model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdditionalRate
 	{
 		
@@ -118,8 +116,7 @@ namespace MyNS
 	/// <summary>
 	/// The benefit setup model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BenefitSetup
 	{
 		
@@ -163,8 +160,7 @@ namespace MyNS
 	/// <summary>
 	/// The Client Credentials Response Model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientCredentialsResponse
 	{
 		
@@ -184,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// The Company Codes model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanyCodes
 	{
 		
@@ -202,8 +197,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomFieldDefinition
 	{
 		
@@ -263,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// The Direct Deposit model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectDeposit
 	{
 		
@@ -388,8 +381,7 @@ namespace MyNS
 	/// <summary>
 	/// The employee earning model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Earning
 	{
 		
@@ -533,8 +525,7 @@ namespace MyNS
 	/// <summary>
 	/// The emergency contact model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmergencyContact
 	{
 		
@@ -666,8 +657,7 @@ namespace MyNS
 	/// <summary>
 	/// The employee model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Employee
 	{
 		
@@ -1152,13 +1142,11 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EmployeeCustomBooleanFieldsCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PayrollAndHR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PayrollAndHR = 0,
 	}
 	
@@ -2399,8 +2387,7 @@ namespace MyNS
 	/// <summary>
 	/// The EmployeeId Response Model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmployeeIdResponse
 	{
 		
@@ -2414,8 +2401,7 @@ namespace MyNS
 	/// <summary>
 	/// The employee info model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmployeeInfo
 	{
 		
@@ -2441,8 +2427,7 @@ namespace MyNS
 	/// <summary>
 	/// The error model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -2490,8 +2475,7 @@ namespace MyNS
 	/// <summary>
 	/// The Local Tax model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocalTax
 	{
 		
@@ -2535,8 +2519,7 @@ namespace MyNS
 	/// <summary>
 	/// The Non-Primary State Tax model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NonPrimaryStateTax
 	{
 		
@@ -2628,8 +2611,7 @@ namespace MyNS
 	/// <summary>
 	/// The pay statement details model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PayStatementDetails
 	{
 		
@@ -2703,8 +2685,7 @@ namespace MyNS
 	/// <summary>
 	/// The pay statement summary model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PayStatementSummary
 	{
 		
@@ -2826,8 +2807,7 @@ namespace MyNS
 	/// <summary>
 	/// The sensitive data model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SensitiveData
 	{
 		
@@ -2973,8 +2953,7 @@ namespace MyNS
 	/// <summary>
 	/// The staged employee model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StagedEmployee
 	{
 		
@@ -4324,8 +4303,7 @@ namespace MyNS
 	/// <summary>
 	/// The State Tax model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateTax
 	{
 		
@@ -4411,8 +4389,7 @@ namespace MyNS
 	/// <summary>
 	/// The Tracking Number Response model
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrackingNumberResponse
 	{
 		

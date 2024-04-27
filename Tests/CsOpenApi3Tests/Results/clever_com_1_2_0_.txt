@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequest
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Credentials
 	{
 		
@@ -35,8 +33,7 @@ namespace MyNS
 		public string District_username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class District
 	{
 		
@@ -50,8 +47,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistrictAdmin
 	{
 		
@@ -71,8 +67,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Name
 	{
 		
@@ -86,8 +81,7 @@ namespace MyNS
 		public string Middle { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistrictAdminResponse
 	{
 		
@@ -95,8 +89,7 @@ namespace MyNS
 		public DistrictAdmin Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistrictAdminsResponse
 	{
 		
@@ -104,8 +97,7 @@ namespace MyNS
 		public DistrictAdmin[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistrictResponse
 	{
 		
@@ -113,8 +105,7 @@ namespace MyNS
 		public District Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistrictStatus
 	{
 		
@@ -146,27 +137,24 @@ namespace MyNS
 		public System.Nullable<DistrictStatusState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DistrictStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		running = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		paused = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistrictStatusResponse
 	{
 		
@@ -174,8 +162,7 @@ namespace MyNS
 		public DistrictStatus Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistrictStatusResponses
 	{
 		
@@ -183,8 +170,7 @@ namespace MyNS
 		public DistrictStatusResponse[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistrictsResponse
 	{
 		
@@ -192,8 +178,7 @@ namespace MyNS
 		public DistrictResponse[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GradeLevelsResponse
 	{
 		
@@ -201,8 +186,7 @@ namespace MyNS
 		public string[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalError
 	{
 		
@@ -210,8 +194,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -234,8 +217,7 @@ namespace MyNS
 		public string Zip { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFound
 	{
 		
@@ -243,8 +225,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Principal
 	{
 		
@@ -255,8 +236,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class School
 	{
 		
@@ -306,9 +286,7 @@ namespace MyNS
 		public string State_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SchoolHigh_grade
 	{
 		
@@ -348,22 +326,20 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="12")]
 		_12 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreKindergarten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreKindergarten = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kindergarten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kindergarten = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PostGraduate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PostGraduate = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 15,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SchoolLow_grade
 	{
 		
@@ -403,21 +379,20 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="12")]
 		_12 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreKindergarten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreKindergarten = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kindergarten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kindergarten = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PostGraduate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PostGraduate = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 15,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchoolAdmin
 	{
 		
@@ -446,8 +421,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchoolAdminResponse
 	{
 		
@@ -455,8 +429,7 @@ namespace MyNS
 		public SchoolAdmin Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchoolAdminsResponse
 	{
 		
@@ -464,8 +437,7 @@ namespace MyNS
 		public SchoolAdminResponse[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchoolResponse
 	{
 		
@@ -473,8 +445,7 @@ namespace MyNS
 		public School Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchoolsResponse
 	{
 		
@@ -482,8 +453,7 @@ namespace MyNS
 		public SchoolResponse[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Section
 	{
 		
@@ -542,9 +512,7 @@ namespace MyNS
 		public Term Term { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SectionGrade
 	{
 		
@@ -584,38 +552,36 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="12")]
 		_12 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreKindergarten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreKindergarten = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kindergarten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kindergarten = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PostGraduate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PostGraduate = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 15,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SectionSubject
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="english/language arts")]
 		english_language_arts = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="math")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		math = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="science")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		science = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="social studies")]
 		social_studies = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="language")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		language = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="homeroom/advisory")]
@@ -633,12 +599,11 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="arts and music")]
 		arts_and_music = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Term
 	{
 		
@@ -652,8 +617,7 @@ namespace MyNS
 		public string Start_date { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SectionResponse
 	{
 		
@@ -661,8 +625,7 @@ namespace MyNS
 		public Section Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SectionsResponse
 	{
 		
@@ -670,8 +633,7 @@ namespace MyNS
 		public SectionResponse[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Student
 	{
 		
@@ -740,41 +702,35 @@ namespace MyNS
 		public string Student_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StudentEll_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Y")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Y = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="N")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		N = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StudentGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="M")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		M = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="F")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		F = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StudentGrade
 	{
 		
@@ -814,45 +770,41 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="12")]
 		_12 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreKindergarten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreKindergarten = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kindergarten")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kindergarten = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PostGraduate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PostGraduate = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 15,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StudentHispanic_ethnicity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Y")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Y = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="N")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		N = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StudentRace
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Caucasian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Caucasian = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Asian")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Asian = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Black or African American")]
@@ -867,15 +819,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Two or More Races")]
 		Two_or_More_Races = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unknown = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StudentContact
 	{
 		
@@ -910,8 +861,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StudentContactResponse
 	{
 		
@@ -919,8 +869,7 @@ namespace MyNS
 		public StudentContact Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StudentContactsForStudentResponse
 	{
 		
@@ -928,8 +877,7 @@ namespace MyNS
 		public StudentContact[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StudentContactsResponse
 	{
 		
@@ -937,8 +885,7 @@ namespace MyNS
 		public StudentContactResponse[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StudentResponse
 	{
 		
@@ -946,8 +893,7 @@ namespace MyNS
 		public Student Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StudentsResponse
 	{
 		
@@ -955,8 +901,7 @@ namespace MyNS
 		public StudentResponse[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Teacher
 	{
 		
@@ -1000,8 +945,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeacherResponse
 	{
 		
@@ -1009,8 +953,7 @@ namespace MyNS
 		public Teacher Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeachersResponse
 	{
 		

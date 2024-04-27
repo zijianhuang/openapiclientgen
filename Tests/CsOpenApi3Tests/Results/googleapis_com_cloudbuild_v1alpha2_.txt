@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// ApprovalConfig describes configuration for manual approval of a build.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApprovalConfig
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// ApprovalResult describes the decision and associated metadata of a manual approval of a build.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApprovalResult
 	{
 		
@@ -71,27 +69,24 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApprovalResultDecision
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECISION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECISION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 2,
 	}
 	
 	/// <summary>
 	/// Files in the workspace to upload to Cloud Storage upon successful completion of all build steps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactObjects
 	{
 		
@@ -117,8 +112,7 @@ namespace MyNS
 	/// <summary>
 	/// Start and end times for a build execution phase.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSpan
 	{
 		
@@ -138,8 +132,7 @@ namespace MyNS
 	/// <summary>
 	/// An artifact that was uploaded during a build. This is a single record in the artifact manifest JSON file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactResult
 	{
 		
@@ -159,8 +152,7 @@ namespace MyNS
 	/// <summary>
 	/// Container message for hashes of byte content of files, used in SourceProvenance messages to verify integrity of source input to the build.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileHashes
 	{
 		
@@ -174,8 +166,7 @@ namespace MyNS
 	/// <summary>
 	/// Container message for hash values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hash
 	{
 		
@@ -192,27 +183,24 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HashType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHA256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHA256 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MD5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MD5 = 2,
 	}
 	
 	/// <summary>
 	/// Artifacts produced by a build that should be uploaded upon successful completion of all build steps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Artifacts
 	{
 		
@@ -244,8 +232,7 @@ namespace MyNS
 	/// <summary>
 	/// A Maven artifact to upload to Artifact Registry upon successful completion of all build steps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MavenArtifact
 	{
 		
@@ -283,8 +270,7 @@ namespace MyNS
 	/// <summary>
 	/// Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PythonPackage
 	{
 		
@@ -304,8 +290,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of BatchCreateBitbucketServerConnectedRepositories RPC method including all successfully connected Bitbucket Server repositories.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateBitbucketServerConnectedRepositoriesResponse
 	{
 		
@@ -319,8 +304,7 @@ namespace MyNS
 	/// <summary>
 	/// / BitbucketServerConnectedRepository represents a connected Bitbucket Server / repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BitbucketServerConnectedRepository
 	{
 		
@@ -346,8 +330,7 @@ namespace MyNS
 	/// <summary>
 	/// BitbucketServerRepositoryId identifies a specific repository hosted on a Bitbucket Server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BitbucketServerRepositoryId
 	{
 		
@@ -373,8 +356,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -400,8 +382,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `BatchCreateBitbucketServerConnectedRepositories` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateBitbucketServerConnectedRepositoriesResponseMetadata
 	{
 		
@@ -427,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of BatchCreateGitLabConnectedRepositories RPC method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateGitLabConnectedRepositoriesResponse
 	{
 		
@@ -442,8 +422,7 @@ namespace MyNS
 	/// <summary>
 	/// GitLabConnectedRepository represents a GitLab connected repository request response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GitLabConnectedRepository
 	{
 		
@@ -469,8 +448,7 @@ namespace MyNS
 	/// <summary>
 	/// GitLabRepositoryId identifies a specific repository hosted on GitLab.com or GitLabEnterprise
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GitLabRepositoryId
 	{
 		
@@ -490,8 +468,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `BatchCreateGitLabConnectedRepositories` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateGitLabConnectedRepositoriesResponseMetadata
 	{
 		
@@ -517,8 +494,7 @@ namespace MyNS
 	/// <summary>
 	/// Message for response of creating repositories in batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateRepositoriesResponse
 	{
 		
@@ -532,8 +508,7 @@ namespace MyNS
 	/// <summary>
 	/// A repository associated to a parent connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Repository
 	{
 		
@@ -577,8 +552,7 @@ namespace MyNS
 	/// <summary>
 	/// A build resource in the Cloud Build API. At a high level, a `Build` describes where to find source code, how to build it (for example, the builder image to run on the source), and where to store the built artifacts. Fields can include the following variables, which will be expanded when the build is created: - $PROJECT_ID: the project ID of the build. - $PROJECT_NUMBER: the project number of the build. - $LOCATION: the location/region of the build. - $BUILD_ID: the autogenerated ID of the build. - $REPO_NAME: the source repository name specified by RepoSource. - $BRANCH_NAME: the branch name specified by RepoSource. - $TAG_NAME: the tag name specified by RepoSource. - $REVISION_ID or $COMMIT_SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. - $SHORT_SHA: first 7 characters of $REVISION_ID or $COMMIT_SHA.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Build
 	{
 		
@@ -760,8 +734,7 @@ namespace MyNS
 	/// <summary>
 	/// BuildApproval describes a build's approval configuration, state, and result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildApproval
 	{
 		
@@ -784,33 +757,30 @@ namespace MyNS
 		public System.Nullable<BuildApprovalState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuildApprovalState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 	}
 	
 	/// <summary>
 	/// Secrets and secret environment variables.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Secrets
 	{
 		
@@ -830,8 +800,7 @@ namespace MyNS
 	/// <summary>
 	/// Pairs a set of secret environment variables mapped to encrypted values with the Cloud KMS key to use to decrypt the value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InlineSecret
 	{
 		
@@ -851,8 +820,7 @@ namespace MyNS
 	/// <summary>
 	/// Pairs a secret environment variable with a SecretVersion in Secret Manager.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecretManagerSecret
 	{
 		
@@ -872,8 +840,7 @@ namespace MyNS
 	/// <summary>
 	/// A fatal problem encountered during the execution of the build.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailureInfo
 	{
 		
@@ -890,39 +857,36 @@ namespace MyNS
 		public System.Nullable<FailureInfoType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailureInfoType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILURE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUSH_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUSH_FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUSH_IMAGE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUSH_IMAGE_NOT_FOUND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUSH_NOT_AUTHORIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUSH_NOT_AUTHORIZED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGGING_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGGING_FAILURE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_BUILD_STEP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_BUILD_STEP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FETCH_SOURCE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FETCH_SOURCE_FAILED = 6,
 	}
 	
 	/// <summary>
 	/// Optional arguments to enable specific features of builds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildOptions
 	{
 		
@@ -1005,74 +969,67 @@ namespace MyNS
 		public string WorkerPool { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuildOptionsLogStreamingOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STREAM_DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STREAM_DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STREAM_ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STREAM_ON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STREAM_OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STREAM_OFF = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuildOptionsLogging
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGGING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGGING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEGACY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEGACY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GCS_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GCS_ONLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STACKDRIVER_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STACKDRIVER_ONLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_LOGGING_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_LOGGING_ONLY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuildOptionsMachineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="N1_HIGHCPU_8")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		N1_HIGHCPU_8 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="N1_HIGHCPU_32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		N1_HIGHCPU_32 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="E2_HIGHCPU_8")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		E2_HIGHCPU_8 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="E2_HIGHCPU_32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		E2_HIGHCPU_32 = 4,
 	}
 	
 	/// <summary>
 	/// Details about how a build should be executed on a `WorkerPool`. See [running builds in a private pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool) for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PoolOption
 	{
 		
@@ -1083,37 +1040,32 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuildOptionsRequestedVerifyOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_VERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_VERIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFIED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuildOptionsSubstitutionOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MUST_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MUST_MATCH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_LOOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_LOOSE = 1,
 	}
 	
 	/// <summary>
 	/// Volume describes a Docker container volume which is mounted into build steps in order to persist files across build step execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Volume
 	{
 		
@@ -1133,8 +1085,7 @@ namespace MyNS
 	/// <summary>
 	/// Artifacts created by the build pipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Results
 	{
 		
@@ -1190,8 +1141,7 @@ namespace MyNS
 	/// <summary>
 	/// An image built by the pipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuiltImage
 	{
 		
@@ -1217,8 +1167,7 @@ namespace MyNS
 	/// <summary>
 	/// A Maven artifact uploaded using the MavenArtifact directive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadedMavenArtifact
 	{
 		
@@ -1244,8 +1193,7 @@ namespace MyNS
 	/// <summary>
 	/// Artifact uploaded using the PythonPackage directive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadedPythonPackage
 	{
 		
@@ -1271,8 +1219,7 @@ namespace MyNS
 	/// <summary>
 	/// Pairs a set of secret environment variables containing encrypted values with the Cloud KMS key to use to decrypt the value. Note: Use `kmsKeyName` with `available_secrets` instead of using `kmsKeyName` with `secret`. For instructions see: https://cloud.google.com/cloud-build/docs/securing-builds/use-encrypted-credentials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Secret
 	{
 		
@@ -1292,8 +1239,7 @@ namespace MyNS
 	/// <summary>
 	/// Location of the source in a supported storage service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Source
 	{
 		
@@ -1319,8 +1265,7 @@ namespace MyNS
 	/// <summary>
 	/// Location of the source in a Google Cloud Source Repository.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepoSource
 	{
 		
@@ -1376,8 +1321,7 @@ namespace MyNS
 	/// <summary>
 	/// Location of the source in an archive file in Google Cloud Storage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageSource
 	{
 		
@@ -1403,8 +1347,7 @@ namespace MyNS
 	/// <summary>
 	/// Location of the source manifest in Google Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageSourceManifest
 	{
 		
@@ -1430,8 +1373,7 @@ namespace MyNS
 	/// <summary>
 	/// Provenance of the source. Ways to find the original source, or verify that some source was used for this build.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceProvenance
 	{
 		
@@ -1460,48 +1402,45 @@ namespace MyNS
 		public StorageSourceManifest ResolvedStorageSourceManifest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuildStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEUED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILURE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ERROR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMEOUT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 9,
 	}
 	
 	/// <summary>
 	/// A step in the build pipeline.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildStep
 	{
 		
@@ -1611,8 +1550,7 @@ namespace MyNS
 	/// <summary>
 	/// A non-fatal problem encountered during the execution of the build.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warning
 	{
 		
@@ -1629,30 +1567,27 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WarningPriority
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIORITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIORITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALERT = 3,
 	}
 	
 	/// <summary>
 	/// Metadata for build operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildOperationMetadata
 	{
 		
@@ -1666,8 +1601,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelOperationRequest
 	{
 	}
@@ -1675,8 +1609,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `CreateBitbucketServerConfig` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBitbucketServerConfigOperationMetadata
 	{
 		
@@ -1702,8 +1635,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `CreateGithubEnterpriseConfig` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGitHubEnterpriseConfigOperationMetadata
 	{
 		
@@ -1729,8 +1661,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `CreateGitLabConfig` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateGitLabConfigOperationMetadata
 	{
 		
@@ -1756,8 +1687,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the `CreateWorkerPool` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorkerPoolOperationMetadata
 	{
 		
@@ -1783,8 +1713,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `DeleteBitbucketServerConfig` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBitbucketServerConfigOperationMetadata
 	{
 		
@@ -1810,8 +1739,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `DeleteGitHubEnterpriseConfig` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGitHubEnterpriseConfigOperationMetadata
 	{
 		
@@ -1837,8 +1765,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `DeleteGitLabConfig` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGitLabConfigOperationMetadata
 	{
 		
@@ -1864,8 +1791,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the `DeleteWorkerPool` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorkerPoolOperationMetadata
 	{
 		
@@ -1891,8 +1817,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -1900,8 +1825,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the metadata of the long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsCloudbuildV2OperationMetadata
 	{
 		
@@ -1951,8 +1875,7 @@ namespace MyNS
 	/// <summary>
 	/// HTTPDelivery is the delivery configuration for an HTTP notification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HTTPDelivery
 	{
 		
@@ -1966,8 +1889,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing existing `WorkerPools`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkerPoolsResponse
 	{
 		
@@ -1981,8 +1903,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for a WorkerPool to run the builds. Workers are machines that Cloud Build uses to run your builds. By default, all workers run in a project owned by Cloud Build. To have full control over the workers that execute your builds -- such as enabling them to access private resources on your private network -- you can request Cloud Build to run the workers in your own project by creating a custom workers pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkerPool
 	{
 		
@@ -2038,8 +1959,7 @@ namespace MyNS
 	/// <summary>
 	/// Network describes the network configuration for a `WorkerPool`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkConfig
 	{
 		
@@ -2050,33 +1970,30 @@ namespace MyNS
 		public string PeeredNetwork { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkerPoolState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 4,
 	}
 	
 	/// <summary>
 	/// WorkerConfig defines the configuration to be used for a creating workers in the pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkerConfig
 	{
 		
@@ -2096,8 +2013,7 @@ namespace MyNS
 	/// <summary>
 	/// Notification is the container which holds the data that is relevant to this particular notification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notification
 	{
 		
@@ -2135,8 +2051,7 @@ namespace MyNS
 	/// <summary>
 	/// SlackDelivery is the delivery configuration for delivering Slack messages via webhooks. See Slack webhook documentation at: https://api.slack.com/messaging/webhooks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlackDelivery
 	{
 		
@@ -2150,8 +2065,7 @@ namespace MyNS
 	/// <summary>
 	/// NotifierSecretRef contains the reference to a secret stored in the corresponding NotifierSpec.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifierSecretRef
 	{
 		
@@ -2165,8 +2079,7 @@ namespace MyNS
 	/// <summary>
 	/// SMTPDelivery is the delivery configuration for an SMTP (email) notification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMTPDelivery
 	{
 		
@@ -2210,8 +2123,7 @@ namespace MyNS
 	/// <summary>
 	/// NotifierConfig is the top-level configuration message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifierConfig
 	{
 		
@@ -2243,8 +2155,7 @@ namespace MyNS
 	/// <summary>
 	/// NotifierMetadata contains the data which can be used to reference or describe this notifier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifierMetadata
 	{
 		
@@ -2264,8 +2175,7 @@ namespace MyNS
 	/// <summary>
 	/// NotifierSpec is the configuration container for notifications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifierSpec
 	{
 		
@@ -2285,8 +2195,7 @@ namespace MyNS
 	/// <summary>
 	/// NotifierSecret is the container that maps a secret name (reference) to its Google Cloud Secret Manager resource path.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotifierSecret
 	{
 		
@@ -2306,8 +2215,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -2345,8 +2253,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the metadata of the long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		
@@ -2396,8 +2303,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `ProcessAppManifestCallback` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProcessAppManifestCallbackOperationMetadata
 	{
 		
@@ -2423,8 +2329,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the custom metadata of the RunWorkflow long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunWorkflowCustomOperationMetadata
 	{
 		
@@ -2474,8 +2379,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `UpdateBitbucketServerConfig` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBitbucketServerConfigOperationMetadata
 	{
 		
@@ -2501,8 +2405,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `UpdateGitHubEnterpriseConfig` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGitHubEnterpriseConfigOperationMetadata
 	{
 		
@@ -2528,8 +2431,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `UpdateGitLabConfig` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGitLabConfigOperationMetadata
 	{
 		
@@ -2555,8 +2457,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the `UpdateWorkerPool` operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorkerPoolOperationMetadata
 	{
 		

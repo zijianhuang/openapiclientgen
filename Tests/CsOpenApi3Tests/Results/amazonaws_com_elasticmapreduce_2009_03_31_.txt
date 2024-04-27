@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddInstanceFleetOutput
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 		public string ClusterArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddInstanceFleetInput
 	{
 		
@@ -55,8 +53,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The configuration that defines an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceFleetConfig
 	{
 		
@@ -86,27 +83,24 @@ namespace MyNS
 		public InstanceFleetResizingSpecifications ResizeSpecifications { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceFleetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MASTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MASTER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CORE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TASK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TASK = 2,
 	}
 	
 	/// <summary>
 	/// <p>An instance type configuration for each instance type in an instance fleet, which determines the Amazon EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. When you use an allocation strategy, you can include a maximum of 30 instance type configurations for a fleet. For more information about how to use an allocation strategy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure Instance Fleets</a>. Without an allocation strategy, you may specify a maximum of five instance type configurations for a fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceTypeConfig
 	{
 		
@@ -139,8 +133,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon EBS configuration of a cluster instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EbsConfiguration
 	{
 		
@@ -154,8 +147,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of requested EBS block device associated with the instance group with count of volumes that are associated to every instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EbsBlockDeviceConfig
 	{
 		
@@ -173,8 +165,7 @@ namespace MyNS
 	/// <summary>
 	/// EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeSpecification
 	{
 		
@@ -202,8 +193,7 @@ namespace MyNS
 	/// <summary>
 	/// <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Configuration
 	{
 		
@@ -217,8 +207,7 @@ namespace MyNS
 		public StringMap Properties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StringMap
 	{
 	}
@@ -226,8 +215,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot instance allocation strategies are available in Amazon EMR releases 5.12.1 and later.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceFleetProvisioningSpecifications
 	{
 		
@@ -241,8 +229,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p> </note> <note> <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpotProvisioningSpecification
 	{
 		
@@ -267,22 +254,18 @@ namespace MyNS
 		public SpotProvisioningAllocationStrategy AllocationStrategy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SpotProvisioningTimeoutAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SWITCH_TO_ON_DEMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SWITCH_TO_ON_DEMAND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE_CLUSTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE_CLUSTER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SpotProvisioningAllocationStrategy
 	{
 		
@@ -295,15 +278,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="lowest-price")]
 		lowestMinusprice = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="diversified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		diversified = 3,
 	}
 	
 	/// <summary>
 	/// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OnDemandProvisioningSpecification
 	{
 		
@@ -318,9 +300,7 @@ namespace MyNS
 		public OnDemandCapacityReservationOptions CapacityReservationOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OnDemandProvisioningAllocationStrategy
 	{
 		
@@ -331,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OnDemandCapacityReservationOptions
 	{
 		
@@ -346,9 +325,7 @@ namespace MyNS
 		public string CapacityReservationResourceGroupArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OnDemandCapacityReservationUsageStrategy
 	{
 		
@@ -356,24 +333,21 @@ namespace MyNS
 		useMinuscapacityMinusreservationsMinusfirst = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OnDemandCapacityReservationPreference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 1,
 	}
 	
 	/// <summary>
 	/// The resize specification for On-Demand and Spot Instances in the fleet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceFleetResizingSpecifications
 	{
 		
@@ -387,8 +361,7 @@ namespace MyNS
 	/// <summary>
 	/// The resize specification for Spot Instances in the instance fleet, which contains the resize timeout period. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpotResizingSpecification
 	{
 		
@@ -403,8 +376,7 @@ namespace MyNS
 	/// <summary>
 	/// The resize specification for On-Demand Instances in the instance fleet, which contains the resize timeout period. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OnDemandResizingSpecification
 	{
 		
@@ -416,14 +388,12 @@ namespace MyNS
 		public int TimeoutDurationMinutes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRequestException
 	{
 	}
@@ -431,8 +401,7 @@ namespace MyNS
 	/// <summary>
 	/// Output from an AddInstanceGroups call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddInstanceGroupsOutput
 	{
 		
@@ -449,8 +418,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to an AddInstanceGroups call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddInstanceGroupsInput
 	{
 		
@@ -472,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration defining a new instance group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceGroupConfig
 	{
 		
@@ -520,24 +487,21 @@ namespace MyNS
 		public string CustomAmiId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MarketType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON_DEMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON_DEMAND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT = 1,
 	}
 	
 	/// <summary>
 	/// An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScalingPolicy
 	{
 		
@@ -559,8 +523,7 @@ namespace MyNS
 	/// <summary>
 	/// The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingConstraints
 	{
 		
@@ -582,8 +545,7 @@ namespace MyNS
 	/// <summary>
 	/// A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how Amazon EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingRule
 	{
 		
@@ -615,8 +577,7 @@ namespace MyNS
 	/// <summary>
 	/// The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingAction
 	{
 		
@@ -634,8 +595,7 @@ namespace MyNS
 	/// <summary>
 	/// An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of Amazon EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleScalingPolicyConfiguration
 	{
 		
@@ -653,27 +613,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> CoolDown { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdjustmentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_IN_CAPACITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_IN_CAPACITY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENT_CHANGE_IN_CAPACITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENT_CHANGE_IN_CAPACITY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT_CAPACITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT_CAPACITY = 2,
 	}
 	
 	/// <summary>
 	/// The conditions that trigger an automatic scaling activity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingTrigger
 	{
 		
@@ -688,8 +645,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWatchAlarmDefinition
 	{
 		
@@ -737,140 +693,133 @@ namespace MyNS
 		public MetricDimension[] Dimensions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN_OR_EQUAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN_OR_EQUAL = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Statistic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAMPLE_COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAMPLE_COUNT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVERAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVERAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINIMUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINIMUM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAXIMUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAXIMUM = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Unit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECONDS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICRO_SECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICRO_SECONDS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MILLI_SECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MILLI_SECONDS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BYTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BYTES = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KILO_BYTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KILO_BYTES = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEGA_BYTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEGA_BYTES = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GIGA_BYTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GIGA_BYTES = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERA_BYTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERA_BYTES = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BITS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BITS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KILO_BITS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KILO_BITS = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEGA_BITS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEGA_BITS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GIGA_BITS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GIGA_BITS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERA_BITS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERA_BITS = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERCENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERCENT = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNT = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BYTES_PER_SECOND = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KILO_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KILO_BYTES_PER_SECOND = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEGA_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEGA_BYTES_PER_SECOND = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GIGA_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GIGA_BYTES_PER_SECOND = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERA_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERA_BYTES_PER_SECOND = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BITS_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BITS_PER_SECOND = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KILO_BITS_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KILO_BITS_PER_SECOND = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEGA_BITS_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEGA_BITS_PER_SECOND = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GIGA_BITS_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GIGA_BITS_PER_SECOND = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERA_BITS_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERA_BITS_PER_SECOND = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNT_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNT_PER_SECOND = 26,
 	}
 	
 	/// <summary>
 	/// A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>${emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDimension
 	{
 		
@@ -881,8 +830,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerError
 	{
 	}
@@ -890,8 +838,7 @@ namespace MyNS
 	/// <summary>
 	///  The output for the <a>AddJobFlowSteps</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddJobFlowStepsOutput
 	{
 		
@@ -902,8 +849,7 @@ namespace MyNS
 	/// <summary>
 	///  The input argument to the <a>AddJobFlowSteps</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddJobFlowStepsInput
 	{
 		
@@ -928,8 +874,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification for a cluster (job flow) step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepConfig
 	{
 		
@@ -951,30 +896,27 @@ namespace MyNS
 		public HadoopJarStepConfig HadoopJarStep { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionOnFailure
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE_JOB_FLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE_JOB_FLOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE_CLUSTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE_CLUSTER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCEL_AND_WAIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCEL_AND_WAIT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTINUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTINUE = 3,
 	}
 	
 	/// <summary>
 	/// A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HadoopJarStepConfig
 	{
 		
@@ -998,8 +940,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyValue
 	{
 		
@@ -1013,8 +954,7 @@ namespace MyNS
 	/// <summary>
 	/// This output indicates the result of adding tags to a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsOutput
 	{
 	}
@@ -1022,8 +962,7 @@ namespace MyNS
 	/// <summary>
 	/// This input identifies an Amazon EMR resource and a list of tags to attach.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsInput
 	{
 		
@@ -1045,8 +984,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1060,8 +998,7 @@ namespace MyNS
 	/// <summary>
 	///  The output for the <a>CancelSteps</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelStepsOutput
 	{
 		
@@ -1072,8 +1009,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelStepsInfo
 	{
 		
@@ -1087,24 +1023,21 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CancelStepsRequestStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMITTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 1,
 	}
 	
 	/// <summary>
 	/// The input argument to the <a>CancelSteps</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelStepsInput
 	{
 		
@@ -1126,21 +1059,18 @@ namespace MyNS
 		public StepCancellationOption StepCancellationOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StepCancellationOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEND_INTERRUPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEND_INTERRUPT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE_PROCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE_PROCESS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSecurityConfigurationOutput
 	{
 		
@@ -1159,8 +1089,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSecurityConfigurationInput
 	{
 		
@@ -1179,8 +1108,7 @@ namespace MyNS
 		public string SecurityConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStudioOutput
 	{
 		
@@ -1191,8 +1119,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStudioInput
 	{
 		
@@ -1268,21 +1195,18 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IAM = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateStudioSessionMappingInput
 	{
 		
@@ -1314,27 +1238,23 @@ namespace MyNS
 		public string SessionPolicyArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IdentityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GROUP = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSecurityConfigurationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSecurityConfigurationInput
 	{
 		
@@ -1346,8 +1266,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStudioInput
 	{
 		
@@ -1359,8 +1278,7 @@ namespace MyNS
 		public string StudioId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteStudioSessionMappingInput
 	{
 		
@@ -1388,8 +1306,7 @@ namespace MyNS
 	/// <summary>
 	/// This output contains the description of the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterOutput
 	{
 		
@@ -1400,8 +1317,7 @@ namespace MyNS
 	/// <summary>
 	/// The detailed description of the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cluster
 	{
 		
@@ -1502,8 +1418,7 @@ namespace MyNS
 	/// <summary>
 	/// The detailed status of the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterStatus
 	{
 		
@@ -1520,39 +1435,36 @@ namespace MyNS
 		public ErrorDetail[] ErrorDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOTSTRAPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOTSTRAPPING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAITING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAITING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED_WITH_ERRORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED_WITH_ERRORS = 6,
 	}
 	
 	/// <summary>
 	/// The reason that the cluster changed to its current state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterStateChangeReason
 	{
 		
@@ -1563,42 +1475,39 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterStateChangeReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_FAILURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_FLEET_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_FLEET_TIMEOUT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOTSTRAP_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOTSTRAP_FAILURE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_REQUEST = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STEP_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STEP_FAILURE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_STEPS_COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_STEPS_COMPLETED = 7,
 	}
 	
 	/// <summary>
 	/// Represents the timeline of the cluster's lifecycle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterTimeline
 	{
 		
@@ -1615,8 +1524,7 @@ namespace MyNS
 	/// <summary>
 	/// A tuple that provides information about an error that caused a cluster to terminate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		
@@ -1633,8 +1541,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ec2InstanceAttributes
 	{
 		
@@ -1672,24 +1579,21 @@ namespace MyNS
 		public string[] AdditionalSlaveSecurityGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceCollectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_FLEET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_FLEET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_GROUP = 1,
 	}
 	
 	/// <summary>
 	/// <p>With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p> <p>With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Application
 	{
 		
@@ -1706,37 +1610,32 @@ namespace MyNS
 		public StringMap AdditionalInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScaleDownBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE_AT_INSTANCE_HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE_AT_INSTANCE_HOUR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATE_AT_TASK_COMPLETION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATE_AT_TASK_COMPLETION = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RepoUpgradeOnBoot
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 	}
 	
 	/// <summary>
 	/// Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KerberosAttributes
 	{
 		
@@ -1767,8 +1666,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Placement group configuration for an Amazon EMR cluster. The configuration specifies the placement strategy that can be applied to instance roles during cluster creation.</p> <p>To use this configuration, consider attaching managed policy AmazonElasticMapReducePlacementGroupPolicy to the Amazon EMR role.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlacementGroupConfig
 	{
 		
@@ -1783,30 +1681,27 @@ namespace MyNS
 		public PlacementGroupStrategy PlacementStrategy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlacementGroupStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPREAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPREAD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTITION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLUSTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLUSTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 3,
 	}
 	
 	/// <summary>
 	/// This input determines which cluster to describe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterInput
 	{
 		
@@ -1821,8 +1716,7 @@ namespace MyNS
 	/// <summary>
 	///  The output for the <a>DescribeJobFlows</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobFlowsOutput
 	{
 		
@@ -1833,8 +1727,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of a cluster (job flow).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobFlowDetail
 	{
 		
@@ -1903,8 +1796,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the status of the cluster (job flow).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobFlowExecutionStatusDetail
 	{
 		
@@ -1938,42 +1830,39 @@ namespace MyNS
 	/// <summary>
 	/// The type of instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobFlowExecutionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOTSTRAPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOTSTRAPPING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAITING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAITING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHUTTING_DOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHUTTING_DOWN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 7,
 	}
 	
 	/// <summary>
 	/// Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobFlowInstancesDetail
 	{
 		
@@ -2032,8 +1921,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed information about an instance group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceGroupDetail
 	{
 		
@@ -2111,51 +1999,48 @@ namespace MyNS
 		public string CustomAmiId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceGroupState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOTSTRAPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOTSTRAPPING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECONFIGURING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECONFIGURING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESIZING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARRESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARRESTED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHUTTING_DOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHUTTING_DOWN = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDED = 10,
 	}
 	
 	/// <summary>
 	/// The Amazon EC2 Availability Zone configuration of the cluster (job flow).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlacementType
 	{
 		
@@ -2169,8 +2054,7 @@ namespace MyNS
 	/// <summary>
 	/// Combines the execution state and configuration of a step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepDetail
 	{
 		
@@ -2192,8 +2076,7 @@ namespace MyNS
 	/// <summary>
 	/// The execution state of a step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepExecutionStatusDetail
 	{
 		
@@ -2221,39 +2104,36 @@ namespace MyNS
 		public string LastStateChangeReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StepExecutionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTINUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTINUE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERRUPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERRUPTED = 6,
 	}
 	
 	/// <summary>
 	/// Reports the configuration of a bootstrap action in a cluster (job flow).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BootstrapActionDetail
 	{
 		
@@ -2264,8 +2144,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of a bootstrap action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BootstrapActionConfig
 	{
 		
@@ -2287,8 +2166,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of the script to run during a bootstrap action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScriptBootstrapActionConfig
 	{
 		
@@ -2306,8 +2184,7 @@ namespace MyNS
 	/// <summary>
 	///  The input for the <a>DescribeJobFlows</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobFlowsInput
 	{
 		
@@ -2324,8 +2201,7 @@ namespace MyNS
 		public JobFlowExecutionState[] JobFlowStates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeNotebookExecutionOutput
 	{
 		
@@ -2336,8 +2212,7 @@ namespace MyNS
 	/// <summary>
 	/// A notebook execution. An execution is a specific instance that an Amazon EMR Notebook is run using the <code>StartNotebookExecution</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotebookExecution
 	{
 		
@@ -2396,8 +2271,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the execution engine (cluster) to run the notebook and perform the notebook execution, for example, an Amazon EMR cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionEngineConfig
 	{
 		
@@ -2418,58 +2292,53 @@ namespace MyNS
 		public string ExecutionRoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecutionEngineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMR = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NotebookExecutionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START_PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINISHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINISHING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINISHED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_PENDING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPING = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPED = 9,
 	}
 	
 	/// <summary>
 	/// The Amazon S3 location that stores the notebook execution input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotebookS3LocationForOutput
 	{
 		
@@ -2483,8 +2352,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon S3 location that stores the notebook execution output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputNotebookS3LocationForOutput
 	{
 		
@@ -2495,24 +2363,20 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutputNotebookFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentVariablesMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeNotebookExecutionInput
 	{
 		
@@ -2524,8 +2388,7 @@ namespace MyNS
 		public string NotebookExecutionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReleaseLabelOutput
 	{
 		
@@ -2545,8 +2408,7 @@ namespace MyNS
 	/// <summary>
 	/// The returned release label application names or versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimplifiedApplication
 	{
 		
@@ -2560,8 +2422,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon Linux release specified for a cluster in the RunJobFlow request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OSRelease
 	{
 		
@@ -2569,8 +2430,7 @@ namespace MyNS
 		public string Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReleaseLabelInput
 	{
 		
@@ -2584,8 +2444,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSecurityConfigurationOutput
 	{
 		
@@ -2599,8 +2458,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSecurityConfigurationInput
 	{
 		
@@ -2615,8 +2473,7 @@ namespace MyNS
 	/// <summary>
 	/// This output contains the description of the cluster step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStepOutput
 	{
 		
@@ -2627,8 +2484,7 @@ namespace MyNS
 	/// <summary>
 	/// This represents a step in a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Step
 	{
 		
@@ -2654,8 +2510,7 @@ namespace MyNS
 	/// <summary>
 	/// A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HadoopStepConfig
 	{
 		
@@ -2675,8 +2530,7 @@ namespace MyNS
 	/// <summary>
 	/// The execution status details of the cluster step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepStatus
 	{
 		
@@ -2693,39 +2547,36 @@ namespace MyNS
 		public StepTimeline Timeline { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StepState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCEL_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCEL_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERRUPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERRUPTED = 6,
 	}
 	
 	/// <summary>
 	/// The details of the step state change reason.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepStateChangeReason
 	{
 		
@@ -2736,21 +2587,18 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StepStateChangeReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 	}
 	
 	/// <summary>
 	/// The details of the step failure. The service attempts to detect the root cause for many common failures.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailureDetails
 	{
 		
@@ -2767,8 +2615,7 @@ namespace MyNS
 	/// <summary>
 	/// The timeline of the cluster step lifecycle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepTimeline
 	{
 		
@@ -2785,8 +2632,7 @@ namespace MyNS
 	/// <summary>
 	/// This input determines which step to describe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStepInput
 	{
 		
@@ -2805,8 +2651,7 @@ namespace MyNS
 		public string StepId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStudioOutput
 	{
 		
@@ -2817,8 +2662,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for an Amazon EMR Studio including ID, creation time, name, and so on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Studio
 	{
 		
@@ -2874,8 +2718,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStudioInput
 	{
 		
@@ -2887,8 +2730,7 @@ namespace MyNS
 		public string StudioId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAutoTerminationPolicyOutput
 	{
 		
@@ -2899,8 +2741,7 @@ namespace MyNS
 	/// <summary>
 	/// An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoTerminationPolicy
 	{
 		
@@ -2908,8 +2749,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> IdleTimeout { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAutoTerminationPolicyInput
 	{
 		
@@ -2921,8 +2761,7 @@ namespace MyNS
 		public string ClusterId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBlockPublicAccessConfigurationOutput
 	{
 		
@@ -2944,8 +2783,7 @@ namespace MyNS
 	/// <summary>
 	/// A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockPublicAccessConfiguration
 	{
 		
@@ -2963,8 +2801,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PortRange
 	{
 		
@@ -2982,8 +2819,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockPublicAccessConfigurationMetadata
 	{
 		
@@ -3002,14 +2838,12 @@ namespace MyNS
 		public string CreatedByArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBlockPublicAccessConfigurationInput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetClusterSessionCredentialsOutput
 	{
 		
@@ -3023,8 +2857,7 @@ namespace MyNS
 	/// <summary>
 	/// The credentials that you can use to connect to cluster endpoints. Credentials consist of a username and a password.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Credentials
 	{
 		
@@ -3035,8 +2868,7 @@ namespace MyNS
 	/// <summary>
 	/// The username and password that you use to connect to cluster endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsernamePassword
 	{
 		
@@ -3047,8 +2879,7 @@ namespace MyNS
 		public string Password { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetClusterSessionCredentialsInput
 	{
 		
@@ -3067,8 +2898,7 @@ namespace MyNS
 		public string ExecutionRoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetManagedScalingPolicyOutput
 	{
 		
@@ -3079,8 +2909,7 @@ namespace MyNS
 	/// <summary>
 	///  Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedScalingPolicy
 	{
 		
@@ -3091,8 +2920,7 @@ namespace MyNS
 	/// <summary>
 	///  The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeLimits
 	{
 		
@@ -3124,24 +2952,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaximumCoreCapacityUnits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeLimitsUnitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InstanceFleetUnits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InstanceFleetUnits = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Instances")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Instances = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCPU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCPU = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetManagedScalingPolicyInput
 	{
 		
@@ -3153,8 +2978,7 @@ namespace MyNS
 		public string ClusterId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStudioSessionMappingOutput
 	{
 		
@@ -3165,8 +2989,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for an Amazon EMR Studio session mapping including creation time, user or group ID, Studio ID, and so on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SessionMappingDetail
 	{
 		
@@ -3192,8 +3015,7 @@ namespace MyNS
 		public System.DateTimeOffset LastModifiedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetStudioSessionMappingInput
 	{
 		
@@ -3221,8 +3043,7 @@ namespace MyNS
 	/// <summary>
 	/// This output contains the bootstrap actions detail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBootstrapActionsOutput
 	{
 		
@@ -3236,8 +3057,7 @@ namespace MyNS
 	/// <summary>
 	/// An entity describing an executable that runs on a cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Command
 	{
 		
@@ -3254,8 +3074,7 @@ namespace MyNS
 	/// <summary>
 	/// This input determines which bootstrap actions to retrieve.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBootstrapActionsInput
 	{
 		
@@ -3273,8 +3092,7 @@ namespace MyNS
 	/// <summary>
 	/// This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersOutput
 	{
 		
@@ -3288,8 +3106,7 @@ namespace MyNS
 	/// <summary>
 	/// The summary description of the cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterSummary
 	{
 		
@@ -3315,8 +3132,7 @@ namespace MyNS
 	/// <summary>
 	/// This input determines how the ListClusters action filters the list of clusters that it returns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersInput
 	{
 		
@@ -3333,8 +3149,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInstanceFleetsOutput
 	{
 		
@@ -3348,8 +3163,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes an instance fleet, which is a group of Amazon EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot Instances, which are provisioned to meet a defined target capacity. </p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceFleet
 	{
 		
@@ -3390,8 +3204,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The status of the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceFleetStatus
 	{
 		
@@ -3405,39 +3218,36 @@ namespace MyNS
 		public InstanceFleetTimeline Timeline { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceFleetState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOTSTRAPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOTSTRAPPING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESIZING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED = 6,
 	}
 	
 	/// <summary>
 	/// <p>Provides status change reason details for the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceFleetStateChangeReason
 	{
 		
@@ -3448,30 +3258,27 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceFleetStateChangeReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_FAILURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLUSTER_TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLUSTER_TERMINATED = 3,
 	}
 	
 	/// <summary>
 	/// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceFleetTimeline
 	{
 		
@@ -3488,8 +3295,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The configuration specification for each instance type in an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceTypeSpecification
 	{
 		
@@ -3521,8 +3327,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of requested EBS block device associated with the instance group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EbsBlockDevice
 	{
 		
@@ -3533,8 +3338,7 @@ namespace MyNS
 		public string Device { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInstanceFleetsInput
 	{
 		
@@ -3552,8 +3356,7 @@ namespace MyNS
 	/// <summary>
 	/// This input determines which instance groups to retrieve.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInstanceGroupsOutput
 	{
 		
@@ -3567,8 +3370,7 @@ namespace MyNS
 	/// <summary>
 	/// This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceGroup
 	{
 		
@@ -3630,8 +3432,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of the instance group status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceGroupStatus
 	{
 		
@@ -3648,8 +3449,7 @@ namespace MyNS
 	/// <summary>
 	/// The status change reason details for the instance group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceGroupStateChangeReason
 	{
 		
@@ -3663,8 +3463,7 @@ namespace MyNS
 	/// <summary>
 	/// The timeline of the instance group lifecycle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceGroupTimeline
 	{
 		
@@ -3681,8 +3480,7 @@ namespace MyNS
 	/// <summary>
 	/// Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShrinkPolicy
 	{
 		
@@ -3696,8 +3494,7 @@ namespace MyNS
 	/// <summary>
 	/// Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceResizePolicy
 	{
 		
@@ -3714,8 +3511,7 @@ namespace MyNS
 	/// <summary>
 	/// An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScalingPolicyDescription
 	{
 		
@@ -3732,8 +3528,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of an automatic scaling policy. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScalingPolicyStatus
 	{
 		
@@ -3744,36 +3539,33 @@ namespace MyNS
 		public AutoScalingPolicyStateChangeReason StateChangeReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoScalingPolicyState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACHING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACHED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DETACHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DETACHING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DETACHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DETACHED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 	}
 	
 	/// <summary>
 	/// The reason for an <a>AutoScalingPolicyStatus</a> change.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScalingPolicyStateChangeReason
 	{
 		
@@ -3784,27 +3576,24 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoScalingPolicyStateChangeReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_REQUEST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISION_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISION_FAILURE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLEANUP_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLEANUP_FAILURE = 2,
 	}
 	
 	/// <summary>
 	/// This input determines which instance groups to retrieve.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInstanceGroupsInput
 	{
 		
@@ -3822,8 +3611,7 @@ namespace MyNS
 	/// <summary>
 	/// This output contains the list of instances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInstancesOutput
 	{
 		
@@ -3837,8 +3625,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an Amazon EC2 instance provisioned as part of cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Instance
 	{
 		
@@ -3882,8 +3669,7 @@ namespace MyNS
 	/// <summary>
 	/// The instance status details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceStatus
 	{
 		
@@ -3897,33 +3683,30 @@ namespace MyNS
 		public InstanceTimeline Timeline { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWAITING_FULFILLMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWAITING_FULFILLMENT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOTSTRAPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOTSTRAPPING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TERMINATED = 4,
 	}
 	
 	/// <summary>
 	/// The details of the status change reason for the instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceStateChangeReason
 	{
 		
@@ -3934,33 +3717,30 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceStateChangeReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_FAILURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOTSTRAP_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOTSTRAP_FAILURE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLUSTER_TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLUSTER_TERMINATED = 4,
 	}
 	
 	/// <summary>
 	/// The timeline of the instance lifecycle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceTimeline
 	{
 		
@@ -3977,8 +3757,7 @@ namespace MyNS
 	/// <summary>
 	/// EBS block device that's attached to an Amazon EC2 instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EbsVolume
 	{
 		
@@ -3992,8 +3771,7 @@ namespace MyNS
 	/// <summary>
 	/// This input determines which instances to list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInstancesInput
 	{
 		
@@ -4023,24 +3801,21 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceGroupType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MASTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MASTER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CORE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TASK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TASK = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNotebookExecutionsOutput
 	{
 		
@@ -4054,8 +3829,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for a notebook execution. The details include information such as the unique ID and status of the notebook execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotebookExecutionSummary
 	{
 		
@@ -4084,8 +3858,7 @@ namespace MyNS
 		public string ExecutionEngineId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNotebookExecutionsInput
 	{
 		
@@ -4108,8 +3881,7 @@ namespace MyNS
 		public string ExecutionEngineId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReleaseLabelsOutput
 	{
 		
@@ -4120,8 +3892,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReleaseLabelsInput
 	{
 		
@@ -4138,8 +3909,7 @@ namespace MyNS
 	/// <summary>
 	/// The release label filters by application or version prefix.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReleaseLabelFilter
 	{
 		
@@ -4150,8 +3920,7 @@ namespace MyNS
 		public string Application { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSecurityConfigurationsOutput
 	{
 		
@@ -4165,8 +3934,7 @@ namespace MyNS
 	/// <summary>
 	/// The creation date and time, and name, of a security configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecurityConfigurationSummary
 	{
 		
@@ -4177,8 +3945,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSecurityConfigurationsInput
 	{
 		
@@ -4189,8 +3956,7 @@ namespace MyNS
 	/// <summary>
 	/// This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStepsOutput
 	{
 		
@@ -4204,8 +3970,7 @@ namespace MyNS
 	/// <summary>
 	/// The summary of the cluster step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepSummary
 	{
 		
@@ -4228,8 +3993,7 @@ namespace MyNS
 	/// <summary>
 	/// This input determines which steps to list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStepsInput
 	{
 		
@@ -4250,8 +4014,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStudioSessionMappingsOutput
 	{
 		
@@ -4265,8 +4028,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for an Amazon EMR Studio session mapping. The details do not include the time the session mapping was last modified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SessionMappingSummary
 	{
 		
@@ -4289,8 +4051,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStudioSessionMappingsInput
 	{
 		
@@ -4304,8 +4065,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStudiosOutput
 	{
 		
@@ -4319,8 +4079,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for an Amazon EMR Studio, including ID, Name, VPC, and Description. The details do not include subnets, IAM roles, security groups, or tags associated with the Studio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StudioSummary
 	{
 		
@@ -4346,8 +4105,7 @@ namespace MyNS
 		public System.DateTimeOffset CreationTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStudiosInput
 	{
 		
@@ -4355,8 +4113,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSupportedInstanceTypesOutput
 	{
 		
@@ -4370,8 +4127,7 @@ namespace MyNS
 	/// <summary>
 	/// An instance type that the specified Amazon EMR release supports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupportedInstanceType
 	{
 		
@@ -4409,8 +4165,7 @@ namespace MyNS
 		public string Architecture { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSupportedInstanceTypesInput
 	{
 		
@@ -4425,8 +4180,7 @@ namespace MyNS
 		public string Marker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterOutput
 	{
 		
@@ -4434,8 +4188,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StepConcurrencyLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyClusterInput
 	{
 		
@@ -4450,8 +4203,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StepConcurrencyLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyInstanceFleetInput
 	{
 		
@@ -4473,8 +4225,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Configuration parameters for an instance fleet modification request.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceFleetModifyConfig
 	{
 		
@@ -4498,8 +4249,7 @@ namespace MyNS
 	/// <summary>
 	/// Change the size of some instance groups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyInstanceGroupsInput
 	{
 		
@@ -4513,8 +4263,7 @@ namespace MyNS
 	/// <summary>
 	/// Modify the size or configurations of an instance group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceGroupModifyConfig
 	{
 		
@@ -4541,21 +4290,18 @@ namespace MyNS
 		public Configuration[] Configurations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReconfigurationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVERWRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVERWRITE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERGE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAutoScalingPolicyOutput
 	{
 		
@@ -4572,8 +4318,7 @@ namespace MyNS
 		public string ClusterArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAutoScalingPolicyInput
 	{
 		
@@ -4599,14 +4344,12 @@ namespace MyNS
 		public AutoScalingPolicy AutoScalingPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAutoTerminationPolicyOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAutoTerminationPolicyInput
 	{
 		
@@ -4621,14 +4364,12 @@ namespace MyNS
 		public AutoTerminationPolicy AutoTerminationPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutBlockPublicAccessConfigurationOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutBlockPublicAccessConfigurationInput
 	{
 		
@@ -4640,14 +4381,12 @@ namespace MyNS
 		public BlockPublicAccessConfiguration BlockPublicAccessConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutManagedScalingPolicyOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutManagedScalingPolicyInput
 	{
 		
@@ -4666,14 +4405,12 @@ namespace MyNS
 		public ManagedScalingPolicy ManagedScalingPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAutoScalingPolicyOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAutoScalingPolicyInput
 	{
 		
@@ -4692,14 +4429,12 @@ namespace MyNS
 		public string InstanceGroupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAutoTerminationPolicyOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAutoTerminationPolicyInput
 	{
 		
@@ -4711,14 +4446,12 @@ namespace MyNS
 		public string ClusterId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveManagedScalingPolicyOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveManagedScalingPolicyInput
 	{
 		
@@ -4733,8 +4466,7 @@ namespace MyNS
 	/// <summary>
 	/// This output indicates the result of removing tags from the resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsOutput
 	{
 	}
@@ -4742,8 +4474,7 @@ namespace MyNS
 	/// <summary>
 	/// This input identifies an Amazon EMR resource and a list of tags to remove.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsInput
 	{
 		
@@ -4765,8 +4496,7 @@ namespace MyNS
 	/// <summary>
 	///  The result of the <a>RunJobFlow</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunJobFlowOutput
 	{
 		
@@ -4780,8 +4510,7 @@ namespace MyNS
 	/// <summary>
 	///  Input to the <a>RunJobFlow</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunJobFlowInput
 	{
 		
@@ -4887,8 +4616,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobFlowInstancesConfig
 	{
 		
@@ -4947,8 +4675,7 @@ namespace MyNS
 	/// <summary>
 	/// The list of supported product configurations that allow user-supplied arguments. Amazon EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupportedProductConfig
 	{
 		
@@ -4962,8 +4689,7 @@ namespace MyNS
 	/// <summary>
 	///  The input argument to the <a>TerminationProtection</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetTerminationProtectionInput
 	{
 		
@@ -4985,8 +4711,7 @@ namespace MyNS
 	/// <summary>
 	/// The input to the SetVisibleToAllUsers action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetVisibleToAllUsersInput
 	{
 		
@@ -5005,8 +4730,7 @@ namespace MyNS
 		public bool VisibleToAllUsers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartNotebookExecutionOutput
 	{
 		
@@ -5014,8 +4738,7 @@ namespace MyNS
 		public string NotebookExecutionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartNotebookExecutionInput
 	{
 		
@@ -5067,8 +4790,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon S3 location that stores the notebook execution input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotebookS3LocationFromInput
 	{
 		
@@ -5082,8 +4804,7 @@ namespace MyNS
 	/// <summary>
 	/// The Amazon S3 location that stores the notebook execution output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputNotebookS3LocationFromInput
 	{
 		
@@ -5094,8 +4815,7 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopNotebookExecutionInput
 	{
 		
@@ -5110,8 +4830,7 @@ namespace MyNS
 	/// <summary>
 	///  Input to the <a>TerminateJobFlows</a> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TerminateJobFlowsInput
 	{
 		
@@ -5123,8 +4842,7 @@ namespace MyNS
 		public string[] JobFlowIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStudioInput
 	{
 		
@@ -5148,8 +4866,7 @@ namespace MyNS
 		public string DefaultS3Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateStudioSessionMappingInput
 	{
 		
@@ -5181,38 +4898,34 @@ namespace MyNS
 		public string SessionPolicyArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceRoleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MASTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MASTER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CORE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TASK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TASK = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceGroupStateChangeReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_FAILURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLUSTER_TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLUSTER_TERMINATED = 3,
 	}
 	

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSessionResponse
 	{
 		
@@ -35,44 +34,37 @@ namespace MyNS
 		public string SessionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSessionResponse
 	{
 		
@@ -92,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for text that is returned to the customer..
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -114,30 +105,27 @@ namespace MyNS
 		public ImageResponseCard ImageResponseCard { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessageContentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CustomPayload")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CustomPayload = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ImageResponseCard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ImageResponseCard = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PlainText")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PlainText = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SSML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SSML = 3,
 	}
 	
 	/// <summary>
 	/// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p> <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageResponseCard
 	{
 		
@@ -161,8 +149,7 @@ namespace MyNS
 	/// <summary>
 	/// A button that appears on a response card show to the user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Button
 	{
 		
@@ -184,8 +171,7 @@ namespace MyNS
 	/// <summary>
 	/// An intent that Amazon Lex V2 determined might satisfy the user's utterance. The intents are ordered by the confidence score. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Interpretation
 	{
 		
@@ -202,8 +188,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a score that indicates the confidence that Amazon Lex V2 has that an intent is the one that satisfies the user's intent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConfidenceScore
 	{
 		
@@ -214,8 +199,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Provides information about the sentiment expressed in a user's response in a conversation. Sentiments are determined using Amazon Comprehend. Sentiments are only returned if they are enabled for the bot.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html"> Determine Sentiment </a> in the <i>Amazon Comprehend developer guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SentimentResponse
 	{
 		
@@ -229,30 +213,27 @@ namespace MyNS
 		public SentimentScore SentimentScore { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SentimentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIXED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIXED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEGATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEGATIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEUTRAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEUTRAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSITIVE = 3,
 	}
 	
 	/// <summary>
 	/// The individual sentiment responses for the utterance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SentimentScore
 	{
 		
@@ -272,8 +253,7 @@ namespace MyNS
 	/// <summary>
 	/// The current intent that Amazon Lex V2 is attempting to fulfill.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Intent
 	{
 		
@@ -294,58 +274,52 @@ namespace MyNS
 		public ConfirmationState ConfirmationState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Slots
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IntentState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fulfilled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fulfilled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReadyForFulfillment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReadyForFulfillment = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Waiting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Waiting = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FulfillmentInProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FulfillmentInProgress = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConfirmationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Confirmed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Confirmed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Denied")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Denied = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 2,
 	}
 	
 	/// <summary>
 	/// The state of the user's session with Amazon Lex V2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SessionState
 	{
 		
@@ -371,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	/// The next action that Amazon Lex V2 should take.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DialogAction
 	{
 		
@@ -393,52 +366,47 @@ namespace MyNS
 		public ElicitSubSlot SubSlotToElicit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DialogActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Close")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Close = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfirmIntent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfirmIntent = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Delegate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Delegate = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ElicitIntent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ElicitIntent = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ElicitSlot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ElicitSlot = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StyleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Default")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Default = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SpellByLetter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SpellByLetter = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SpellByWord")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SpellByWord = 2,
 	}
 	
 	/// <summary>
 	/// The specific constituent sub slot of the composite slot to elicit in dialog action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElicitSubSlot
 	{
 		
@@ -456,8 +424,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains information about the contexts that a user is using in a session. You can configure Amazon Lex V2 to set a context when an intent is fulfilled, or you can set a context using the , , or operations.</p> <p>Use a context to indicate to Amazon Lex V2 intents that should be used as follow-up intents. For example, if the active context is <code>order-fulfilled</code>, only intents that have <code>order-fulfilled</code> configured as a trigger are considered for follow up.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActiveContext
 	{
 		
@@ -486,8 +453,7 @@ namespace MyNS
 	/// <summary>
 	/// The time that a context is active. You can specify the time to live in seconds or in conversation turns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActiveContextTimeToLive
 	{
 		
@@ -506,14 +472,12 @@ namespace MyNS
 		public int TurnsToLive { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActiveContextParametersMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StringMap
 	{
 	}
@@ -521,8 +485,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>You can provide Amazon Lex V2 with hints to the phrases that a customer is likely to use for a slot. When a slot with hints is resolved, the phrases in the runtime hints are preferred in the resolution. You can provide hints for a maximum of 100 intents. You can provide a maximum of 100 slots.</p> <p>Before you can use runtime hints with an existing bot, you must first rebuild the bot.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using runtime hints to improve recognition of slot values</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuntimeHints
 	{
 		
@@ -530,14 +493,12 @@ namespace MyNS
 		public SlotHintsIntentMap SlotHints { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlotHintsIntentMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSessionResponse
 	{
 		
@@ -545,20 +506,17 @@ namespace MyNS
 		public string AudioStream { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DependencyFailedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadGatewayException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognizeTextResponse
 	{
 		
@@ -584,8 +542,7 @@ namespace MyNS
 	/// <summary>
 	/// The bot member that processes the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognizedBotMember
 	{
 		
@@ -600,8 +557,7 @@ namespace MyNS
 		public string BotName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognizeUtteranceResponse
 	{
 		
@@ -609,20 +565,17 @@ namespace MyNS
 		public string AudioStream { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSessionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSessionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutSessionRequest
 	{
 		
@@ -640,8 +593,7 @@ namespace MyNS
 		public StringMap RequestAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognizeTextRequest
 	{
 		
@@ -659,8 +611,7 @@ namespace MyNS
 		public StringMap RequestAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecognizeUtteranceRequest
 	{
 		
@@ -671,8 +622,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the phrase that Amazon Lex V2 should look for in the user's input to the bot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuntimeHintValue
 	{
 		
@@ -684,8 +634,7 @@ namespace MyNS
 		public string Phrase { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlotHintsSlotMap
 	{
 	}
@@ -693,8 +642,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides an array of phrases that should be given preference when resolving values for a slot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuntimeHintDetails
 	{
 		
@@ -705,27 +653,24 @@ namespace MyNS
 		public SlotHintsSlotMap SubSlotHints { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Shape
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Scalar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Scalar = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="List")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		List = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Composite")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Composite = 2,
 	}
 	
 	/// <summary>
 	/// The value of a slot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Value
 	{
 		
@@ -746,8 +691,7 @@ namespace MyNS
 	/// <summary>
 	/// A value that Amazon Lex V2 uses to fulfill an intent. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Slot
 	{
 		

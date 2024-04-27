@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Message storing info about the first admin user. Next ID: 3
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdminUser
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelOperationRequest
 	{
 	}
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// Message describing ContactCenter object Next ID: 18
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContactCenter
 	{
 		
@@ -149,8 +146,7 @@ namespace MyNS
 	/// <summary>
 	/// Message storing the instance configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceConfig
 	{
 		
@@ -161,42 +157,39 @@ namespace MyNS
 		public System.Nullable<InstanceConfigInstanceSize> InstanceSize { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceConfigInstanceSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE_SIZE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE_SIZE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_SMALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_LARGE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_XLARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_XLARGE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_2XLARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_2XLARGE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_3XLARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_3XLARGE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEV_XSMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEV_XSMALL = 7,
 	}
 	
 	/// <summary>
 	/// Message storing SAML params to enable Google as IDP.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SAMLParams
 	{
 		
@@ -231,42 +224,39 @@ namespace MyNS
 		public string UserEmail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContactCenterState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_DEPLOYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_DEPLOYING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_DEPLOYED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_DEPLOYED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_TERMINATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_TERMINATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_TERMINATING_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_TERMINATING_FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_TERMINATED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_IN_GRACE_PERIOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_IN_GRACE_PERIOD = 7,
 	}
 	
 	/// <summary>
 	/// Message storing the URIs of the ContactCenter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class URIs
 	{
 		
@@ -298,8 +288,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a quota for contact centers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContactCenterQuota
 	{
 		
@@ -325,8 +314,7 @@ namespace MyNS
 	/// <summary>
 	/// Quota details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Quota
 	{
 		
@@ -352,8 +340,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -361,8 +348,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the metadata of the long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudCommonOperationMetadata
 	{
 		
@@ -412,8 +398,7 @@ namespace MyNS
 	/// <summary>
 	/// Message for response to listing ContactCenters
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContactCentersResponse
 	{
 		
@@ -439,8 +424,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -460,8 +444,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -499,8 +482,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -520,8 +502,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -559,8 +540,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -586,8 +566,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the metadata of the long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		

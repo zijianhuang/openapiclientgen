@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A SubscriptionPurchase resource indicates the status of a user's subscription purchase.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubscriptionPurchase
 	{
 		

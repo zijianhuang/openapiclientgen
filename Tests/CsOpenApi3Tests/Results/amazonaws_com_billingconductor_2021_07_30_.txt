@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateAccountsOutput
 	{
 		
@@ -26,50 +25,42 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatePricingRulesOutput
 	{
 		
@@ -77,8 +68,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAssociateResourcesToCustomLineItemOutput
 	{
 		
@@ -92,8 +82,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource association result for a percentage custom line item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateResourceResponseElement
 	{
 		
@@ -107,8 +96,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a resource association error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateResourceError
 	{
 		
@@ -119,30 +107,27 @@ namespace MyNS
 		public AssociateResourceErrorReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssociateResourceErrorReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_ARN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_LIMIT_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_LIMIT_EXCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ILLEGAL_CUSTOMLINEITEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ILLEGAL_CUSTOMLINEITEM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_SERVER_EXCEPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_SERVER_EXCEPTION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_BILLING_PERIOD_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_BILLING_PERIOD_RANGE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDisassociateResourcesFromCustomLineItemOutput
 	{
 		
@@ -156,8 +141,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource disassociation result for a percentage custom line item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateResourceResponseElement
 	{
 		
@@ -168,8 +152,7 @@ namespace MyNS
 		public AssociateResourceError Error { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBillingGroupOutput
 	{
 		
@@ -177,8 +160,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomLineItemOutput
 	{
 		
@@ -189,8 +171,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of the charge details that are associated with a flat custom line item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomLineItemFlatChargeDetails
 	{
 		
@@ -205,8 +186,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of the charge details that are associated with a percentage custom line item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomLineItemPercentageChargeDetails
 	{
 		
@@ -221,21 +201,18 @@ namespace MyNS
 		public string[] AssociatedValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomLineItemType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREDIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREDIT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePricingPlanOutput
 	{
 		
@@ -243,8 +220,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePricingRuleOutput
 	{
 		
@@ -255,8 +231,7 @@ namespace MyNS
 	/// <summary>
 	///  The possible Amazon Web Services Free Tier configurations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFreeTierConfig
 	{
 		
@@ -268,8 +243,7 @@ namespace MyNS
 		public bool Activated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBillingGroupOutput
 	{
 		
@@ -277,8 +251,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCustomLineItemOutput
 	{
 		
@@ -286,8 +259,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePricingPlanOutput
 	{
 		
@@ -295,8 +267,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePricingRuleOutput
 	{
 		
@@ -304,8 +275,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateAccountsOutput
 	{
 		
@@ -313,8 +283,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociatePricingRulesOutput
 	{
 		
@@ -322,8 +291,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountAssociationsOutput
 	{
 		
@@ -337,8 +305,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a linked account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountAssociationsListElement
 	{
 		
@@ -355,8 +322,7 @@ namespace MyNS
 		public string AccountEmail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBillingGroupCostReportsOutput
 	{
 		
@@ -370,8 +336,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary report of actual Amazon Web Services charges and calculated Amazon Web Services charges, based on the associated pricing plan of a billing group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BillingGroupCostReportElement
 	{
 		
@@ -394,8 +359,7 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBillingGroupsOutput
 	{
 		
@@ -409,8 +373,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a billing group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BillingGroupListElement
 	{
 		
@@ -454,8 +417,7 @@ namespace MyNS
 	/// <summary>
 	/// The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputationPreference
 	{
 		
@@ -467,24 +429,21 @@ namespace MyNS
 		public string PricingPlanArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BillingGroupStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARY_ACCOUNT_MISSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMARY_ACCOUNT_MISSING = 1,
 	}
 	
 	/// <summary>
 	/// Specifies if the billing group has the following features enabled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBillingGroupAccountGrouping
 	{
 		
@@ -492,8 +451,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> AutoAssociate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemVersionsOutput
 	{
 		
@@ -507,8 +465,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a custom line item version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomLineItemVersionListElement
 	{
 		
@@ -558,8 +515,7 @@ namespace MyNS
 	/// <summary>
 	///  A representation of the charge details of a custom line item. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemChargeDetails
 	{
 		
@@ -580,8 +536,7 @@ namespace MyNS
 	/// <summary>
 	///  A representation of the charge details that are associated with a flat custom line item. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemFlatChargeDetails
 	{
 		
@@ -596,8 +551,7 @@ namespace MyNS
 	/// <summary>
 	///  A representation of the charge details that are associated with a percentage custom line item. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemPercentageChargeDetails
 	{
 		
@@ -609,24 +563,21 @@ namespace MyNS
 		public double PercentageValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CurrencyCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CNY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CNY = 1,
 	}
 	
 	/// <summary>
 	/// A billing period filter that specifies the custom line item versions to retrieve.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemVersionsBillingPeriodRangeFilter
 	{
 		
@@ -637,8 +588,7 @@ namespace MyNS
 		public string EndBillingPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemsOutput
 	{
 		
@@ -652,8 +602,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a custom line item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomLineItemListElement
 	{
 		
@@ -688,8 +637,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> AssociationSize { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingPlansOutput
 	{
 		
@@ -706,8 +654,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a pricing plan.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PricingPlanListElement
 	{
 		
@@ -730,8 +677,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> LastModifiedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingPlansAssociatedWithPricingRuleOutput
 	{
 		
@@ -748,8 +694,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingRulesOutput
 	{
 		
@@ -766,8 +711,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a pricing rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PricingRuleListElement
 	{
 		
@@ -814,46 +758,41 @@ namespace MyNS
 		public string Operation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PricingRuleScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GLOBAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GLOBAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BILLING_ENTITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BILLING_ENTITY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKU = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PricingRuleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARKUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARKUP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISCOUNT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIERING = 2,
 	}
 	
 	/// <summary>
 	///  The set of tiering configurations for the pricing rule. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tiering
 	{
 		
@@ -868,8 +807,7 @@ namespace MyNS
 	/// <summary>
 	///  The possible Amazon Web Services Free Tier configurations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FreeTierConfig
 	{
 		
@@ -881,8 +819,7 @@ namespace MyNS
 		public bool Activated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingRulesAssociatedToPricingPlanOutput
 	{
 		
@@ -899,8 +836,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesAssociatedToCustomLineItemOutput
 	{
 		
@@ -917,8 +853,7 @@ namespace MyNS
 	/// <summary>
 	///  A representation of a resource association for a custom line item. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesAssociatedToCustomLineItemResponseElement
 	{
 		
@@ -932,21 +867,18 @@ namespace MyNS
 		public string EndBillingPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomLineItemRelationship
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARENT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHILD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHILD = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -954,26 +886,22 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBillingGroupOutput
 	{
 		
@@ -1011,8 +939,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies if the billing group has the following features enabled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBillingGroupAccountGrouping
 	{
 		
@@ -1020,8 +947,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> AutoAssociate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomLineItemOutput
 	{
 		
@@ -1050,8 +976,7 @@ namespace MyNS
 	/// <summary>
 	///  A representation of the new charge details that are associated with a flat custom line item. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomLineItemFlatChargeDetails
 	{
 		
@@ -1066,8 +991,7 @@ namespace MyNS
 	/// <summary>
 	///  A representation of the new charge details that are associated with a percentage custom line item. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomLineItemPercentageChargeDetails
 	{
 		
@@ -1079,8 +1003,7 @@ namespace MyNS
 		public double PercentageValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePricingPlanOutput
 	{
 		
@@ -1100,8 +1023,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> LastModifiedTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePricingRuleOutput
 	{
 		
@@ -1148,8 +1070,7 @@ namespace MyNS
 	/// <summary>
 	///  The set of tiering configurations for the pricing rule. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTieringInput
 	{
 		
@@ -1164,8 +1085,7 @@ namespace MyNS
 	/// <summary>
 	///  The possible Amazon Web Services Free Tier configurations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFreeTierConfig
 	{
 		
@@ -1180,8 +1100,7 @@ namespace MyNS
 	/// <summary>
 	/// The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountGrouping
 	{
 		
@@ -1196,8 +1115,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> AutoAssociate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateAccountsInput
 	{
 		
@@ -1216,8 +1134,7 @@ namespace MyNS
 		public string[] AccountIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatePricingRulesInput
 	{
 		
@@ -1239,8 +1156,7 @@ namespace MyNS
 	/// <summary>
 	/// The billing period range in which the custom line item request will be applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomLineItemBillingPeriodRange
 	{
 		
@@ -1255,8 +1171,7 @@ namespace MyNS
 		public string ExclusiveEndBillingPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAssociateResourcesToCustomLineItemInput
 	{
 		
@@ -1281,8 +1196,7 @@ namespace MyNS
 		public CustomLineItemBillingPeriodRange BillingPeriodRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDisassociateResourcesFromCustomLineItemInput
 	{
 		
@@ -1307,8 +1221,7 @@ namespace MyNS
 		public CustomLineItemBillingPeriodRange BillingPeriodRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBillingGroupInput
 	{
 		
@@ -1346,8 +1259,7 @@ namespace MyNS
 	/// <summary>
 	/// The charge details of a custom line item. It should contain only one of <code>Flat</code> or <code>Percentage</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomLineItemChargeDetails
 	{
 		
@@ -1365,8 +1277,7 @@ namespace MyNS
 		public CustomLineItemType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCustomLineItemInput
 	{
 		
@@ -1405,8 +1316,7 @@ namespace MyNS
 		public CustomLineItemChargeDetails ChargeDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePricingPlanInput
 	{
 		
@@ -1430,8 +1340,7 @@ namespace MyNS
 	/// <summary>
 	///  The set of tiering configurations for the pricing rule. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTieringInput
 	{
 		
@@ -1443,8 +1352,7 @@ namespace MyNS
 		public CreateFreeTierConfig FreeTier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePricingRuleInput
 	{
 		
@@ -1494,8 +1402,7 @@ namespace MyNS
 		public string Operation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBillingGroupInput
 	{
 		
@@ -1507,8 +1414,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCustomLineItemInput
 	{
 		
@@ -1526,8 +1432,7 @@ namespace MyNS
 		public CustomLineItemBillingPeriodRange BillingPeriodRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePricingPlanInput
 	{
 		
@@ -1539,8 +1444,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePricingRuleInput
 	{
 		
@@ -1552,8 +1456,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateAccountsInput
 	{
 		
@@ -1572,8 +1475,7 @@ namespace MyNS
 		public string[] AccountIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociatePricingRulesInput
 	{
 		
@@ -1595,8 +1497,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The filter on the account ID of the linked account, or any of the following:</p> <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountAssociationsFilter
 	{
 		
@@ -1610,8 +1511,7 @@ namespace MyNS
 		public string[] AccountIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountAssociationsInput
 	{
 		
@@ -1628,8 +1528,7 @@ namespace MyNS
 	/// <summary>
 	/// The filter used to retrieve specific <code>BillingGroupCostReportElements</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBillingGroupCostReportsFilter
 	{
 		
@@ -1637,8 +1536,7 @@ namespace MyNS
 		public string[] BillingGroupArns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBillingGroupCostReportsInput
 	{
 		
@@ -1658,8 +1556,7 @@ namespace MyNS
 	/// <summary>
 	/// The filter that specifies the billing groups and pricing plans to retrieve billing group information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBillingGroupsFilter
 	{
 		
@@ -1676,8 +1573,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> AutoAssociate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBillingGroupsInput
 	{
 		
@@ -1697,8 +1593,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter that specifies the billing period range where the custom line item versions reside.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemVersionsFilter
 	{
 		
@@ -1706,8 +1601,7 @@ namespace MyNS
 		public ListCustomLineItemVersionsBillingPeriodRangeFilter BillingPeriodRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemVersionsInput
 	{
 		
@@ -1731,8 +1625,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter that specifies the custom line items and billing groups to retrieve FFLI information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemsFilter
 	{
 		
@@ -1746,8 +1639,7 @@ namespace MyNS
 		public string[] Arns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomLineItemsInput
 	{
 		
@@ -1764,8 +1656,7 @@ namespace MyNS
 		public ListCustomLineItemsFilter Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingPlansAssociatedWithPricingRuleInput
 	{
 		
@@ -1789,8 +1680,7 @@ namespace MyNS
 	/// <summary>
 	/// The filter that specifies the Amazon Resource Names (ARNs) of pricing plans, to retrieve pricing plan information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingPlansFilter
 	{
 		
@@ -1798,8 +1688,7 @@ namespace MyNS
 		public string[] Arns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingPlansInput
 	{
 		
@@ -1816,8 +1705,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingRulesAssociatedToPricingPlanInput
 	{
 		
@@ -1841,8 +1729,7 @@ namespace MyNS
 	/// <summary>
 	///  The filter that specifies criteria that the pricing rules returned by the <code>ListPricingRules</code> API will adhere to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingRulesFilter
 	{
 		
@@ -1850,8 +1737,7 @@ namespace MyNS
 		public string[] Arns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPricingRulesInput
 	{
 		
@@ -1871,8 +1757,7 @@ namespace MyNS
 	/// <summary>
 	///  A filter that specifies the type of resource associations that should be retrieved for a custom line item. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesAssociatedToCustomLineItemFilter
 	{
 		
@@ -1880,8 +1765,7 @@ namespace MyNS
 		public CustomLineItemRelationship Relationship { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesAssociatedToCustomLineItemInput
 	{
 		
@@ -1905,14 +1789,12 @@ namespace MyNS
 		public ListResourcesAssociatedToCustomLineItemFilter Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1924,14 +1806,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBillingGroupInput
 	{
 		
@@ -1961,8 +1841,7 @@ namespace MyNS
 	/// <summary>
 	///  A representation of the new charge details of a custom line item. This should contain only one of <code>Flat</code> or <code>Percentage</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomLineItemChargeDetails
 	{
 		
@@ -1973,8 +1852,7 @@ namespace MyNS
 		public UpdateCustomLineItemPercentageChargeDetails Percentage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCustomLineItemInput
 	{
 		
@@ -2001,8 +1879,7 @@ namespace MyNS
 		public CustomLineItemBillingPeriodRange BillingPeriodRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePricingPlanInput
 	{
 		
@@ -2020,8 +1897,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePricingRuleInput
 	{
 		

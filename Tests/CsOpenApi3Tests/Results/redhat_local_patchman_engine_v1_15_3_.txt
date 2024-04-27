@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersAdvisoriesResponse
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 		public ControllersListMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersAdvisoryItem
 	{
 		
@@ -47,8 +45,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersAdvisoryItemAttributes
 	{
 		
@@ -74,8 +71,7 @@ namespace MyNS
 		public string Synopsis { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersLinks
 	{
 		
@@ -92,8 +88,7 @@ namespace MyNS
 		public string Previous { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersListMeta
 	{
 		
@@ -119,8 +114,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total_items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersFilterData
 	{
 		
@@ -131,8 +125,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersAdvisoriesSystemsResponse
 	{
 		
@@ -140,8 +133,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string[]> Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersAdvisoryDetailAttributes
 	{
 		
@@ -179,8 +171,7 @@ namespace MyNS
 		public string Topic { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersAdvisoryDetailItem
 	{
 		
@@ -194,8 +185,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersAdvisoryDetailResponse
 	{
 		
@@ -203,8 +193,7 @@ namespace MyNS
 		public ControllersAdvisoryDetailItem Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersAdvisoryInlineItem
 	{
 		
@@ -233,8 +222,7 @@ namespace MyNS
 		public string Synopsis { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersAdvisorySystemsResponse
 	{
 		
@@ -248,8 +236,7 @@ namespace MyNS
 		public ControllersListMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemItem
 	{
 		
@@ -263,8 +250,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemItemAttributes
 	{
 		
@@ -329,8 +315,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Third_party { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersPackageDetailAttributes
 	{
 		
@@ -350,8 +335,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersPackageDetailItem
 	{
 		
@@ -365,8 +349,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersPackageDetailResponse
 	{
 		
@@ -374,8 +357,7 @@ namespace MyNS
 		public ControllersPackageDetailItem Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersPackageItem
 	{
 		
@@ -392,8 +374,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Systems_updatable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersPackageSystemItem
 	{
 		
@@ -413,8 +394,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Updatable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersPackageSystemsResponse
 	{
 		
@@ -428,8 +408,7 @@ namespace MyNS
 		public ControllersListMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersPackageVersionItem
 	{
 		
@@ -437,8 +416,7 @@ namespace MyNS
 		public string Evra { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersPackageVersionsResponse
 	{
 		
@@ -452,8 +430,7 @@ namespace MyNS
 		public ControllersListMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersPackagesResponse
 	{
 		
@@ -467,8 +444,7 @@ namespace MyNS
 		public ControllersListMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemAdvisoriesDBLookup
 	{
 		
@@ -494,8 +470,7 @@ namespace MyNS
 		public string Synopsis { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemAdvisoriesResponse
 	{
 		
@@ -512,8 +487,7 @@ namespace MyNS
 		public ControllersListMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemAdvisoryItem
 	{
 		
@@ -527,8 +501,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemAdvisoryItemAttributes
 	{
 		
@@ -551,8 +524,7 @@ namespace MyNS
 		public string Synopsis { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemDetailResponse
 	{
 		
@@ -560,8 +532,7 @@ namespace MyNS
 		public ControllersSystemItem Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemInlineItem
 	{
 		
@@ -629,8 +600,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Third_party { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemPackageData
 	{
 		
@@ -653,8 +623,7 @@ namespace MyNS
 		public ModelsPackageUpdate[] Updates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModelsPackageUpdate
 	{
 		
@@ -665,8 +634,7 @@ namespace MyNS
 		public string Evra { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemPackageInline
 	{
 		
@@ -689,8 +657,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Updatable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemPackageResponse
 	{
 		
@@ -704,8 +671,7 @@ namespace MyNS
 		public ControllersListMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemsAdvisoriesRequest
 	{
 		
@@ -716,8 +682,7 @@ namespace MyNS
 		public string[] Systems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemsAdvisoriesResponse
 	{
 		
@@ -725,8 +690,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string[]> Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ControllersSystemsResponse
 	{
 		
@@ -1734,125 +1698,125 @@ namespace MyNS
 	public enum ListAdvisoriesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="advisory_type")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		advisory_type = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="synopsis")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		synopsis = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="public_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		public_date = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="applicable_systems")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		applicable_systems = 5,
 	}
 	
 	public enum ListAdvisorySystemsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="display_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		display_name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_evaluation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_evaluation = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_upload")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_upload = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rhsa_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rhsa_count = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rhba_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rhba_count = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rhea_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rhea_count = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other_count = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stale")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stale = 8,
 	}
 	
 	public enum ExportPackagesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="systems_installed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		systems_installed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="systems_updatable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		systems_updatable = 3,
 	}
 	
 	public enum ListSystemsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="display_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		display_name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_evaluation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_evaluation = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_upload")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last_upload = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rhsa_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rhsa_count = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rhba_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rhba_count = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rhea_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rhea_count = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other_count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other_count = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stale")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stale = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="packages_installed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		packages_installed = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="packages_updatable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		packages_updatable = 10,
 	}
 	
 	public enum ListSystemAdvisoriesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="type")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		type = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="synopsis")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		synopsis = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="public_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		public_date = 4,
 	}
 }

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddLFTagsToResourceResponse
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing an error related to a <code>TagResource</code> or <code>UnTagResource</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LFTagError
 	{
 		
@@ -44,8 +42,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing an LF-tag key-value pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LFTagPair
 	{
 		
@@ -70,8 +67,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about an error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		
@@ -85,8 +81,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for the catalog object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CatalogResource
 	{
 	}
@@ -94,8 +89,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for the database object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatabaseResource
 	{
 		
@@ -113,8 +107,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableResource
 	{
 		
@@ -138,8 +131,7 @@ namespace MyNS
 	/// <summary>
 	/// A wildcard object representing every table under a database.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableWildcard
 	{
 	}
@@ -147,8 +139,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p> <p>This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableWithColumnsResource
 	{
 		
@@ -179,8 +170,7 @@ namespace MyNS
 	/// <summary>
 	/// A wildcard object, consisting of an optional list of excluded column names or indexes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnWildcard
 	{
 		
@@ -191,8 +181,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for a data location object where permissions are granted or revoked. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataLocationResource
 	{
 		
@@ -210,8 +199,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for a data cells filter resource. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataCellsFilterResource
 	{
 		
@@ -231,8 +219,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing an LF-tag key and values for a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LFTagKeyResource
 	{
 		
@@ -257,8 +244,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing a list of LF-tag conditions that apply to a resource's LF-tag policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LFTagPolicyResource
 	{
 		
@@ -280,24 +266,21 @@ namespace MyNS
 		public LFTag[] Expression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATABASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATABASE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE = 1,
 	}
 	
 	/// <summary>
 	/// A structure that allows an admin to grant user permissions on certain conditions. For example, granting a role access to all columns that do not have the LF-tag 'PII' in tables that have the LF-tag 'Prod'.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LFTag
 	{
 		
@@ -316,44 +299,37 @@ namespace MyNS
 		public string[] TagValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidInputException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationTimeoutException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModificationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssumeDecoratedRoleWithSAMLResponse
 	{
 		
@@ -370,8 +346,7 @@ namespace MyNS
 		public System.DateTimeOffset Expiration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGrantPermissionsResponse
 	{
 		
@@ -382,8 +357,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of failures when performing a batch grant or batch revoke operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPermissionsFailureEntry
 	{
 		
@@ -397,8 +371,7 @@ namespace MyNS
 	/// <summary>
 	/// A permission to a resource granted by batch operation to the principal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPermissionsRequestEntry
 	{
 		
@@ -425,8 +398,7 @@ namespace MyNS
 	/// <summary>
 	/// The Lake Formation principal. Supported principals are IAM users or IAM roles.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataLakePrincipal
 	{
 		
@@ -437,8 +409,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for the resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Resource
 	{
 		
@@ -467,54 +438,51 @@ namespace MyNS
 		public LFTagPolicyResource LFTagPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Permission
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DROP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DROP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSERT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCRIBE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCRIBE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_DATABASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_DATABASE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_TABLE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_LOCATION_ACCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_LOCATION_ACCESS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_LF_TAG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_LF_TAG = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANT_WITH_LF_TAG_EXPRESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANT_WITH_LF_TAG_EXPRESSION = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRevokePermissionsResponse
 	{
 		
@@ -522,26 +490,22 @@ namespace MyNS
 		public BatchPermissionsFailureEntry[] Failures { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelTransactionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionCommittedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionCommitInProgressException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitTransactionResponse
 	{
 		
@@ -549,33 +513,29 @@ namespace MyNS
 		public TransactionStatus TransactionStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransactionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMITTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABORTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMIT_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMIT_IN_PROGRESS = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionCanceledException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataCellsFilterResponse
 	{
 	}
@@ -583,8 +543,7 @@ namespace MyNS
 	/// <summary>
 	/// A PartiQL predicate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RowFilter
 	{
 		
@@ -598,44 +557,37 @@ namespace MyNS
 	/// <summary>
 	/// A structure that you pass to indicate you want all rows in a filter. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AllRowsWildcard
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNumberLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLFTagResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDataCellsFilterResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLFTagResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteObjectsOnCancelResponse
 	{
 	}
@@ -643,8 +595,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that defines an Amazon S3 object to be deleted if a transaction cancels, provided that <code>VirtualPut</code> was called before writing the object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VirtualObject
 	{
 		
@@ -659,20 +610,17 @@ namespace MyNS
 		public string ETag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotReadyException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeResourceResponse
 	{
 		
@@ -683,8 +631,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing information about an Lake Formation resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInfo
 	{
 		
@@ -701,8 +648,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WithFederation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTransactionResponse
 	{
 		
@@ -713,8 +659,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains information about a transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionDescription
 	{
 		
@@ -731,14 +676,12 @@ namespace MyNS
 		public System.DateTimeOffset TransactionEndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendTransactionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataCellsFilterResponse
 	{
 		
@@ -749,8 +692,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that describes certain columns on certain rows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataCellsFilter
 	{
 		
@@ -795,8 +737,7 @@ namespace MyNS
 		public string VersionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataLakeSettingsResponse
 	{
 		
@@ -807,8 +748,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure representing a list of Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataLakeSettings
 	{
 		
@@ -846,8 +786,7 @@ namespace MyNS
 	/// <summary>
 	/// Permissions granted to a principal.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrincipalPermissions
 	{
 		
@@ -858,14 +797,12 @@ namespace MyNS
 		public Permission[] Permissions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParametersMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEffectivePermissionsForPathResponse
 	{
 		
@@ -879,8 +816,7 @@ namespace MyNS
 	/// <summary>
 	/// The permissions granted or revoked on a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrincipalResourcePermissions
 	{
 		
@@ -903,8 +839,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.</p> <p>If a catalog resource is shared through Resource Access Manager (RAM), then there will exist a corresponding RAM resource share ARN.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetailsMap
 	{
 		
@@ -912,8 +847,7 @@ namespace MyNS
 		public string[] ResourceShare { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLFTagResponse
 	{
 		
@@ -930,8 +864,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for the output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueryStateResponse
 	{
 		
@@ -946,30 +879,27 @@ namespace MyNS
 		public QueryStateString State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryStateString
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKUNITS_AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKUNITS_AVAILABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINISHED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueryStatisticsResponse
 	{
 		
@@ -986,8 +916,7 @@ namespace MyNS
 	/// <summary>
 	/// Statistics related to the processing of a query statement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecutionStatistics
 	{
 		
@@ -1004,8 +933,7 @@ namespace MyNS
 	/// <summary>
 	/// Statistics related to the processing of a query statement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlanningStatistics
 	{
 		
@@ -1022,26 +950,22 @@ namespace MyNS
 		public System.Nullable<System.Int32> WorkUnitsGeneratedCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatisticsNotReadyYetException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiredException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottledException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceLFTagsResponse
 	{
 		
@@ -1058,8 +982,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing the name of a column resource and the LF-tags attached to it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnLFTag
 	{
 		
@@ -1070,14 +993,12 @@ namespace MyNS
 		public LFTagPair[] LFTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlueEncryptionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTableObjectsResponse
 	{
 		
@@ -1091,8 +1012,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing a list of partition values and table objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartitionObjects
 	{
 		
@@ -1106,8 +1026,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the details of a governed table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableObject
 	{
 		
@@ -1121,8 +1040,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTemporaryGluePartitionCredentialsResponse
 	{
 		
@@ -1139,33 +1057,29 @@ namespace MyNS
 		public System.DateTimeOffset Expiration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PermissionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLUMN_PERMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLUMN_PERMISSION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CELL_FILTER_PERMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CELL_FILTER_PERMISSION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NESTED_PERMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NESTED_PERMISSION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NESTED_CELL_PERMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NESTED_CELL_PERMISSION = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionTypeMismatchException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTemporaryGlueTableCredentialsResponse
 	{
 		
@@ -1185,8 +1099,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for the output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorkUnitResultsResponse
 	{
 		
@@ -1197,8 +1110,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for the output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorkUnitsResponse
 	{
 		
@@ -1223,8 +1135,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the valid range of work unit IDs for querying the execution service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkUnitRange
 	{
 		
@@ -1250,20 +1161,17 @@ namespace MyNS
 		public string WorkUnitToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkUnitsNotReadyYetException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GrantPermissionsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDataCellsFilterResponse
 	{
 		
@@ -1274,8 +1182,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLFTagsResponse
 	{
 		
@@ -1286,8 +1193,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionsResponse
 	{
 		
@@ -1298,8 +1204,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesResponse
 	{
 		
@@ -1313,8 +1218,7 @@ namespace MyNS
 	/// <summary>
 	/// This structure describes the filtering of columns in a table based on a filter condition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterCondition
 	{
 		
@@ -1328,64 +1232,59 @@ namespace MyNS
 		public string[] StringValueList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FieldNameString
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_ARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_ARN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLE_ARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLE_ARN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_MODIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_MODIFIED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_CONTAINS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEGINS_WITH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEGINS_WITH = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BETWEEN = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTableStorageOptimizersResponse
 	{
 		
@@ -1399,8 +1298,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure describing the configuration and details of a storage optimizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageOptimizer
 	{
 		
@@ -1420,30 +1318,26 @@ namespace MyNS
 		public string LastRunDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OptimizerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPACTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GARBAGE_COLLECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GARBAGE_COLLECTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageOptimizerConfig
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTransactionsResponse
 	{
 		
@@ -1454,20 +1348,17 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDataLakeSettingsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveLFTagsFromResourceResponse
 	{
 		
@@ -1475,14 +1366,12 @@ namespace MyNS
 		public LFTagError[] Failures { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokePermissionsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchDatabasesByLFTagsResponse
 	{
 		
@@ -1496,8 +1385,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure describing a database resource with LF-tags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaggedDatabase
 	{
 		
@@ -1508,8 +1396,7 @@ namespace MyNS
 		public LFTagPair[] LFTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchTablesByLFTagsResponse
 	{
 		
@@ -1523,8 +1410,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure describing a table resource with LF-tags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaggedTable
 	{
 		
@@ -1544,8 +1430,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure for the output.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartQueryPlanningResponse
 	{
 		
@@ -1557,14 +1442,12 @@ namespace MyNS
 		public string QueryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryParameterMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTransactionResponse
 	{
 		
@@ -1572,26 +1455,22 @@ namespace MyNS
 		public string TransactionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataCellsFilterResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLFTagResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTableObjectsResponse
 	{
 	}
@@ -1599,8 +1478,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines an object to add to or delete from a governed table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteOperation
 	{
 		
@@ -1614,8 +1492,7 @@ namespace MyNS
 	/// <summary>
 	/// A new object to add to the governed table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddObjectInput
 	{
 		
@@ -1647,8 +1524,7 @@ namespace MyNS
 	/// <summary>
 	/// An object to delete from the governed table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteObjectInput
 	{
 		
@@ -1666,8 +1542,7 @@ namespace MyNS
 		public string[] PartitionValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTableStorageOptimizerResponse
 	{
 		
@@ -1675,8 +1550,7 @@ namespace MyNS
 		public string Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddLFTagsToResourceRequest
 	{
 		
@@ -1698,8 +1572,7 @@ namespace MyNS
 		public LFTagPair[] LFTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssumeDecoratedRoleWithSAMLRequest
 	{
 		
@@ -1731,8 +1604,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure used to include auditing information on the privileged API. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuditContext
 	{
 		
@@ -1740,8 +1612,7 @@ namespace MyNS
 		public string AdditionalAuditContext { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGrantPermissionsRequest
 	{
 		
@@ -1756,8 +1627,7 @@ namespace MyNS
 		public BatchPermissionsRequestEntry[] Entries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRevokePermissionsRequest
 	{
 		
@@ -1772,8 +1642,7 @@ namespace MyNS
 		public BatchPermissionsRequestEntry[] Entries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelTransactionRequest
 	{
 		
@@ -1785,8 +1654,7 @@ namespace MyNS
 		public string TransactionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitTransactionRequest
 	{
 		
@@ -1798,8 +1666,7 @@ namespace MyNS
 		public string TransactionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDataCellsFilterRequest
 	{
 		
@@ -1811,8 +1678,7 @@ namespace MyNS
 		public DataCellsFilter TableData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLFTagRequest
 	{
 		
@@ -1834,39 +1700,36 @@ namespace MyNS
 		public string[] TagValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataLakeResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATALOG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATALOG = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATABASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATABASE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_LOCATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LF_TAG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LF_TAG = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LF_TAG_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LF_TAG_POLICY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LF_TAG_POLICY_DATABASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LF_TAG_POLICY_DATABASE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LF_TAG_POLICY_TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LF_TAG_POLICY_TABLE = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDataCellsFilterRequest
 	{
 		
@@ -1883,8 +1746,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteLFTagRequest
 	{
 		
@@ -1899,8 +1761,7 @@ namespace MyNS
 		public string TagKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteObjectsOnCancelRequest
 	{
 		
@@ -1936,8 +1797,7 @@ namespace MyNS
 		public VirtualObject[] Objects { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterResourceRequest
 	{
 		
@@ -1949,8 +1809,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeResourceRequest
 	{
 		
@@ -1962,8 +1821,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeTransactionRequest
 	{
 		
@@ -1975,8 +1833,7 @@ namespace MyNS
 		public string TransactionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendTransactionRequest
 	{
 		
@@ -1984,8 +1841,7 @@ namespace MyNS
 		public string TransactionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataCellsFilterRequest
 	{
 		
@@ -2018,8 +1874,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDataLakeSettingsRequest
 	{
 		
@@ -2027,8 +1882,7 @@ namespace MyNS
 		public string CatalogId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEffectivePermissionsForPathRequest
 	{
 		
@@ -2049,8 +1903,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLFTagRequest
 	{
 		
@@ -2065,8 +1918,7 @@ namespace MyNS
 		public string TagKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueryStateRequest
 	{
 		
@@ -2078,8 +1930,7 @@ namespace MyNS
 		public string QueryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueryStatisticsRequest
 	{
 		
@@ -2091,8 +1942,7 @@ namespace MyNS
 		public string QueryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceLFTagsRequest
 	{
 		
@@ -2110,8 +1960,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ShowAssignedLFTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTableObjectsRequest
 	{
 		
@@ -2151,8 +2000,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a list of values defining partitions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartitionValueList
 	{
 		
@@ -2164,8 +2012,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTemporaryGluePartitionCredentialsRequest
 	{
 		
@@ -2196,8 +2043,7 @@ namespace MyNS
 		public PermissionType[] SupportedPermissionTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTemporaryGlueTableCredentialsRequest
 	{
 		
@@ -2221,8 +2067,7 @@ namespace MyNS
 		public PermissionType[] SupportedPermissionTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorkUnitResultsRequest
 	{
 		
@@ -2248,8 +2093,7 @@ namespace MyNS
 		public string WorkUnitToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorkUnitsRequest
 	{
 		
@@ -2267,8 +2111,7 @@ namespace MyNS
 		public string QueryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GrantPermissionsRequest
 	{
 		
@@ -2300,8 +2143,7 @@ namespace MyNS
 		public Permission[] PermissionsWithGrantOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDataCellsFilterRequest
 	{
 		
@@ -2315,21 +2157,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceShareType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOREIGN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOREIGN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLFTagsRequest
 	{
 		
@@ -2346,8 +2185,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPermissionsRequest
 	{
 		
@@ -2373,8 +2211,7 @@ namespace MyNS
 		public string IncludeRelated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourcesRequest
 	{
 		
@@ -2388,8 +2225,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTableStorageOptimizersRequest
 	{
 		
@@ -2420,30 +2256,27 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransactionStatusFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMITTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABORTED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTransactionsRequest
 	{
 		
@@ -2460,8 +2293,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDataLakeSettingsRequest
 	{
 		
@@ -2479,8 +2311,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure containing information about the query plan.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryPlanningContext
 	{
 		
@@ -2504,8 +2335,7 @@ namespace MyNS
 		public string TransactionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterResourceRequest
 	{
 		
@@ -2526,8 +2356,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WithFederation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveLFTagsFromResourceRequest
 	{
 		
@@ -2549,8 +2378,7 @@ namespace MyNS
 		public LFTagPair[] LFTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokePermissionsRequest
 	{
 		
@@ -2582,8 +2410,7 @@ namespace MyNS
 		public Permission[] PermissionsWithGrantOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchDatabasesByLFTagsRequest
 	{
 		
@@ -2604,8 +2431,7 @@ namespace MyNS
 		public LFTag[] Expression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchTablesByLFTagsRequest
 	{
 		
@@ -2626,8 +2452,7 @@ namespace MyNS
 		public LFTag[] Expression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartQueryPlanningRequest
 	{
 		
@@ -2646,21 +2471,18 @@ namespace MyNS
 		public string QueryString { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransactionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_AND_WRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_AND_WRITE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_ONLY = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartTransactionRequest
 	{
 		
@@ -2668,14 +2490,12 @@ namespace MyNS
 		public TransactionType TransactionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageOptimizerConfigMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDataCellsFilterRequest
 	{
 		
@@ -2687,8 +2507,7 @@ namespace MyNS
 		public DataCellsFilter TableData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLFTagRequest
 	{
 		
@@ -2709,8 +2528,7 @@ namespace MyNS
 		public string[] TagValuesToAdd { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateResourceRequest
 	{
 		
@@ -2732,8 +2550,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WithFederation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTableObjectsRequest
 	{
 		
@@ -2765,8 +2582,7 @@ namespace MyNS
 		public WriteOperation[] WriteOperations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTableStorageOptimizerRequest
 	{
 		

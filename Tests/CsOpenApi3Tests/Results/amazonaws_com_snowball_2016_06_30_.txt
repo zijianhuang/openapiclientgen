@@ -17,14 +17,12 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelClusterResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelClusterRequest
 	{
 		
@@ -36,32 +34,27 @@ namespace MyNS
 		public string ClusterId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KMSRequestFailedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidJobStateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidResourceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelJobResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelJobRequest
 	{
 		
@@ -73,8 +66,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAddressResult
 	{
 		
@@ -82,8 +74,7 @@ namespace MyNS
 		public string AddressId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAddressRequest
 	{
 		
@@ -98,8 +89,7 @@ namespace MyNS
 	/// <summary>
 	/// The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address
 	{
 		
@@ -149,33 +139,28 @@ namespace MyNS
 		public AddressType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AddressType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUST_PICKUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUST_PICKUP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_SHIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_SHIP = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidAddressException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedAddressException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterResult
 	{
 		
@@ -189,8 +174,7 @@ namespace MyNS
 	/// <summary>
 	/// Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobListEntry
 	{
 		
@@ -216,107 +200,100 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="New")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		New = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreparingAppliance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreparingAppliance = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreparingShipment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreparingShipment = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InTransitToCustomer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InTransitToCustomer = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WithCustomer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WithCustomer = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InTransitToAWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InTransitToAWS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WithAWSSortingFacility")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WithAWSSortingFacility = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WithAWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WithAWS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Complete = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Listing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Listing = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPORT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL_USE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnowballType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDGE_C")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDGE_C = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDGE_CG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDGE_CG = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDGE_S")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDGE_S = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNC1_HDD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNC1_HDD = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNC1_SSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNC1_SSD = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V3_5C")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V3_5C = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V3_5S")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V3_5S = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RACK_5U_C")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RACK_5U_C = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClusterRequest
 	{
 		
@@ -391,8 +368,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobResource
 	{
 		
@@ -409,8 +385,7 @@ namespace MyNS
 	/// <summary>
 	/// Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Resource
 	{
 		
@@ -427,8 +402,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyRange
 	{
 		
@@ -442,8 +416,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetOnDeviceService
 	{
 		
@@ -454,24 +427,21 @@ namespace MyNS
 		public JobType TransferOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceServiceName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NFS_ON_DEVICE_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NFS_ON_DEVICE_SERVICE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3_ON_DEVICE_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3_ON_DEVICE_SERVICE = 1,
 	}
 	
 	/// <summary>
 	/// Identifies 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaResource
 	{
 		
@@ -485,8 +455,7 @@ namespace MyNS
 	/// <summary>
 	/// The container for the <a>EventTriggerDefinition$EventResourceARN</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventTriggerDefinition
 	{
 		
@@ -497,8 +466,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2-compatible AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ec2AmiResource
 	{
 		
@@ -516,8 +484,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OnDeviceServiceConfiguration
 	{
 		
@@ -537,8 +504,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NFSOnDeviceServiceConfiguration
 	{
 		
@@ -549,21 +515,18 @@ namespace MyNS
 		public StorageUnit StorageUnit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StorageUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TB = 0,
 	}
 	
 	/// <summary>
 	/// An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TGWOnDeviceServiceConfiguration
 	{
 		
@@ -577,8 +540,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing the metadata and configuration settings of EKS Anywhere on the Snow Family device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EKSOnDeviceServiceConfiguration
 	{
 		
@@ -592,8 +554,7 @@ namespace MyNS
 	/// <summary>
 	/// Amazon S3 compatible storage on Snow family devices configuration items.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3OnDeviceServiceConfiguration
 	{
 		
@@ -610,30 +571,27 @@ namespace MyNS
 		public System.Nullable<System.Int32> FaultTolerance { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShippingOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECOND_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECOND_DAY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEXT_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEXT_DAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 3,
 	}
 	
 	/// <summary>
 	/// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notification
 	{
 		
@@ -653,8 +611,7 @@ namespace MyNS
 	/// <summary>
 	/// The tax documents required in your Amazon Web Services Region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TaxDocuments
 	{
 		
@@ -668,8 +625,7 @@ namespace MyNS
 	/// <summary>
 	/// The tax documents required in Amazon Web Services Region in India.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class INDTaxDocuments
 	{
 		
@@ -677,76 +633,69 @@ namespace MyNS
 		public string GSTIN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemoteManagement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED_ONLY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED_AUTOSTART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED_AUTOSTART = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_INSTALLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnowballCapacity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T50")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T50 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T80")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T80 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T100 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T42")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T42 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T98")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T98 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T8")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T8 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T14")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T14 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T32 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoPreference")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoPreference = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T240")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T240 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T13")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T13 = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidInputCombinationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ec2RequestFailedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobResult
 	{
 		
@@ -754,8 +703,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobRequest
 	{
 		
@@ -820,8 +768,7 @@ namespace MyNS
 	/// <summary>
 	/// The container for <code>SnowconeDeviceConfiguration</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceConfiguration
 	{
 		
@@ -832,8 +779,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the device configuration for an Snowcone job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnowconeDeviceConfiguration
 	{
 		
@@ -844,8 +790,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures the wireless connection on an Snowcone device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WirelessConnection
 	{
 		
@@ -853,33 +798,30 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsWifiEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImpactLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IL2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IL4 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IL5 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IL6 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL99")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IL99 = 4,
 	}
 	
 	/// <summary>
 	/// Information identifying the person picking up the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PickupDetails
 	{
 		
@@ -905,14 +847,12 @@ namespace MyNS
 		public string DevicePickupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterLimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLongTermPricingResult
 	{
 		
@@ -920,8 +860,7 @@ namespace MyNS
 		public string LongTermPricingId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateLongTermPricingRequest
 	{
 		
@@ -943,24 +882,21 @@ namespace MyNS
 		public SnowballType SnowballType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LongTermPricingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneYear")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneYear = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThreeYear")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ThreeYear = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneMonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneMonth = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReturnShippingLabelResult
 	{
 		
@@ -968,27 +904,24 @@ namespace MyNS
 		public ShippingLabelStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShippingLabelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TimedOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TimedOut = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReturnShippingLabelRequest
 	{
 		
@@ -1003,20 +936,17 @@ namespace MyNS
 		public ShippingOption ShippingOption { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReturnShippingLabelAlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAddressResult
 	{
 		
@@ -1024,8 +954,7 @@ namespace MyNS
 		public Address Address { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAddressRequest
 	{
 		
@@ -1037,8 +966,7 @@ namespace MyNS
 		public string AddressId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAddressesResult
 	{
 		
@@ -1049,8 +977,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAddressesRequest
 	{
 		
@@ -1061,14 +988,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterResult
 	{
 		
@@ -1079,8 +1004,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata about a specific cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterMetadata
 	{
 		
@@ -1130,30 +1054,27 @@ namespace MyNS
 		public OnDeviceServiceConfiguration OnDeviceServiceConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClusterState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AwaitingQuorum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AwaitingQuorum = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InUse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InUse = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Complete = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeClusterRequest
 	{
 		
@@ -1165,8 +1086,7 @@ namespace MyNS
 		public string ClusterId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobResult
 	{
 		
@@ -1180,8 +1100,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobMetadata
 	{
 		
@@ -1267,8 +1186,7 @@ namespace MyNS
 	/// <summary>
 	/// A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShippingDetails
 	{
 		
@@ -1285,8 +1203,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shipment
 	{
 		
@@ -1300,8 +1217,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataTransfer
 	{
 		
@@ -1321,8 +1237,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Contains job logs. Whenever a Snow device is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobLogs
 	{
 		
@@ -1336,8 +1251,7 @@ namespace MyNS
 		public string JobFailureLogURI { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobRequest
 	{
 		
@@ -1349,8 +1263,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReturnShippingLabelResult
 	{
 		
@@ -1364,8 +1277,7 @@ namespace MyNS
 		public string ReturnShippingLabelURI { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReturnShippingLabelRequest
 	{
 		
@@ -1377,8 +1289,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobManifestResult
 	{
 		
@@ -1386,8 +1297,7 @@ namespace MyNS
 		public string ManifestURI { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobManifestRequest
 	{
 		
@@ -1399,8 +1309,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobUnlockCodeResult
 	{
 		
@@ -1408,8 +1317,7 @@ namespace MyNS
 		public string UnlockCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJobUnlockCodeRequest
 	{
 		
@@ -1421,8 +1329,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSnowballUsageResult
 	{
 		
@@ -1433,14 +1340,12 @@ namespace MyNS
 		public System.Nullable<System.Int32> SnowballsInUse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSnowballUsageRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSoftwareUpdatesResult
 	{
 		
@@ -1448,8 +1353,7 @@ namespace MyNS
 		public string UpdatesURI { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSoftwareUpdatesRequest
 	{
 		
@@ -1461,8 +1365,7 @@ namespace MyNS
 		public string JobId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClusterJobsResult
 	{
 		
@@ -1473,8 +1376,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClusterJobsRequest
 	{
 		
@@ -1492,8 +1394,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersResult
 	{
 		
@@ -1507,8 +1408,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a cluster's state, a cluster's ID, and other important information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterListEntry
 	{
 		
@@ -1525,8 +1425,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClustersRequest
 	{
 		
@@ -1537,8 +1436,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCompatibleImagesResult
 	{
 		
@@ -1552,8 +1450,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snow device AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompatibleImage
 	{
 		
@@ -1564,8 +1461,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCompatibleImagesRequest
 	{
 		
@@ -1576,8 +1472,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsResult
 	{
 		
@@ -1588,8 +1483,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsRequest
 	{
 		
@@ -1600,8 +1494,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLongTermPricingResult
 	{
 		
@@ -1615,8 +1508,7 @@ namespace MyNS
 	/// <summary>
 	/// Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LongTermPricingListEntry
 	{
 		
@@ -1651,8 +1543,7 @@ namespace MyNS
 		public string[] JobIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLongTermPricingRequest
 	{
 		
@@ -1663,8 +1554,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPickupLocationsResult
 	{
 		
@@ -1675,8 +1565,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPickupLocationsRequest
 	{
 		
@@ -1687,8 +1576,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServiceVersionsResult
 	{
 		
@@ -1716,8 +1604,7 @@ namespace MyNS
 	/// <summary>
 	/// The version of the requested service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceVersion
 	{
 		
@@ -1725,24 +1612,21 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServiceName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KUBERNETES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KUBERNETES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EKS_ANYWHERE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EKS_ANYWHERE = 1,
 	}
 	
 	/// <summary>
 	/// The name and version of the service dependant on the requested service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DependentService
 	{
 		
@@ -1753,8 +1637,7 @@ namespace MyNS
 		public ServiceVersion ServiceVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServiceVersionsRequest
 	{
 		
@@ -1775,14 +1658,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateClusterResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateClusterRequest
 	{
 		
@@ -1818,14 +1699,12 @@ namespace MyNS
 		public string ForwardingAddressId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJobResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJobRequest
 	{
 		
@@ -1870,14 +1749,12 @@ namespace MyNS
 		public PickupDetails PickupDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJobShipmentStateResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJobShipmentStateRequest
 	{
 		
@@ -1896,27 +1773,23 @@ namespace MyNS
 		public ShipmentState ShipmentState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShipmentState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECEIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECEIVED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETURNED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLongTermPricingResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLongTermPricingRequest
 	{
 		
@@ -1934,19 +1807,17 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsLongTermPricingAutoRenew { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransferOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPORT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL_USE = 2,
 	}
 	

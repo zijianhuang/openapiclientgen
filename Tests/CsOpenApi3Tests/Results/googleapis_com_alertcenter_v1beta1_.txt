@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic alert for abusive user activity occurring with a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbuseDetected
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// EntityList stores entities in a format that can be translated to a table in the Alert Center UI.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityList
 	{
 		
@@ -80,8 +78,7 @@ namespace MyNS
 	/// <summary>
 	/// Individual entity affected by, or related to, an alert.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity
 	{
 		
@@ -104,27 +101,24 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AbuseDetectedVariationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABUSE_DETECTED_VARIATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABUSE_DETECTED_VARIATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVE_ABUSIVE_CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVE_ABUSIVE_CONTENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIMITED_DISABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIMITED_DISABLE = 2,
 	}
 	
 	/// <summary>
 	/// Alert that is triggered when Google support requests to access customer data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessApproval
 	{
 		
@@ -168,8 +162,7 @@ namespace MyNS
 	/// <summary>
 	/// Support ticket related to Access Approvals request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupportTicket
 	{
 		
@@ -189,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about why an account is receiving an account suspension warning.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountSuspensionDetails
 	{
 		
@@ -207,45 +199,42 @@ namespace MyNS
 		public string ProductName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountSuspensionDetailsAbuseReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_SUSPENSION_ABUSE_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_SUSPENSION_ABUSE_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOS_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOS_VIOLATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPAM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHISHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHISHING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAFFIC_PUMPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAFFIC_PUMPING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRAUD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRAUD = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_HARVESTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_HARVESTING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENTS_FRAUD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENTS_FRAUD = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNWANTED_CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNWANTED_CONTENT = 8,
 	}
 	
 	/// <summary>
 	/// A warning that the customer's account is about to be suspended.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountSuspensionWarning
 	{
 		
@@ -268,33 +257,30 @@ namespace MyNS
 		public AccountSuspensionDetails[] SuspensionDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountSuspensionWarningState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_SUSPENSION_WARNING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_SUSPENSION_WARNING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPEAL_APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPEAL_APPROVED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPEAL_SUBMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPEAL_SUBMITTED = 4,
 	}
 	
 	/// <summary>
 	/// Alerts for user account warning events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountWarning
 	{
 		
@@ -314,8 +300,7 @@ namespace MyNS
 	/// <summary>
 	/// The details of the login action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoginDetails
 	{
 		
@@ -335,8 +320,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionInfo
 	{
 	}
@@ -344,8 +328,7 @@ namespace MyNS
 	/// <summary>
 	/// Alerts from Google Workspace Security Center rules service configured by an admin.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityRule
 	{
 		
@@ -425,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// An alert affecting a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alert
 	{
 		
@@ -512,8 +494,7 @@ namespace MyNS
 	/// <summary>
 	/// An alert metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertMetadata
 	{
 		
@@ -563,8 +544,7 @@ namespace MyNS
 	/// <summary>
 	/// A customer feedback about an alert.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertFeedback
 	{
 		
@@ -605,30 +585,27 @@ namespace MyNS
 		public System.Nullable<AlertFeedbackType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlertFeedbackType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALERT_FEEDBACK_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALERT_FEEDBACK_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_USEFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_USEFUL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOMEWHAT_USEFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOMEWHAT_USEFUL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERY_USEFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERY_USEFUL = 3,
 	}
 	
 	/// <summary>
 	/// The explanation message associated with "APNS certificate is expiring soon" and "APNS certificate has expired" alerts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApnsCertificateExpirationInfo
 	{
 		
@@ -654,8 +631,7 @@ namespace MyNS
 	/// <summary>
 	/// Alerts from App Maker to notify admins to set up default SQL instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppMakerSqlSetupNotification
 	{
 		
@@ -669,8 +645,7 @@ namespace MyNS
 	/// <summary>
 	/// Requests for one application that needs default SQL setup.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestInfo
 	{
 		
@@ -696,8 +671,7 @@ namespace MyNS
 	/// <summary>
 	/// Alerts from AppSettingsChanged bucket Rules configured by Admin which contain the below rules. Calendar settings changed Drive settings changed Email settings changed Mobile settings changed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppSettingsChanged
 	{
 		
@@ -717,8 +691,7 @@ namespace MyNS
 	/// <summary>
 	/// An outage incident reported for a Google Workspace service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppsOutage
 	{
 		
@@ -768,8 +741,7 @@ namespace MyNS
 	/// <summary>
 	/// New alert tracking numbers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MergeInfo
 	{
 		
@@ -786,42 +758,39 @@ namespace MyNS
 		public string NewIncidentTrackingId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppsOutageStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONGOING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONGOING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOLVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOLVED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FALSE_POSITIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FALSE_POSITIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIALLY_RESOLVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIALLY_RESOLVED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERGED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWNGRADED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOWNGRADED = 7,
 	}
 	
 	/// <summary>
 	/// Attachment with application-specific information about an alert.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attachment
 	{
 		
@@ -835,8 +804,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a CSV file attachment, as a list of column headers and a list of data rows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Csv
 	{
 		
@@ -856,8 +824,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a single data row in a CSV file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CsvRow
 	{
 		
@@ -871,8 +838,7 @@ namespace MyNS
 	/// <summary>
 	/// Alert for setting the domain or IP that malicious email comes from as whitelisted domain or IP in Gmail advanced settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadWhitelist
 	{
 		
@@ -904,8 +870,7 @@ namespace MyNS
 	/// <summary>
 	/// Domain ID of Gmail phishing alerts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainId
 	{
 		
@@ -919,8 +884,7 @@ namespace MyNS
 	/// <summary>
 	/// Entity whose actions triggered a Gmail phishing alert.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MaliciousEntity
 	{
 		
@@ -946,8 +910,7 @@ namespace MyNS
 	/// <summary>
 	/// A user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -967,8 +930,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a message in phishing spike alert.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GmailMessageInfo
 	{
 		
@@ -1030,8 +992,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to perform batch delete on alerts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteAlertsRequest
 	{
 		
@@ -1051,8 +1012,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to batch delete operation on alerts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteAlertsResponse
 	{
 		
@@ -1072,8 +1032,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1099,8 +1058,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to perform batch undelete on alerts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUndeleteAlertsRequest
 	{
 		
@@ -1120,8 +1078,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to batch undelete operation on alerts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUndeleteAlertsResponse
 	{
 		
@@ -1141,8 +1098,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a Cloud Pubsub topic. To register for notifications, the owner of the topic must grant `alerts-api-push-notifications@system.gserviceaccount.com` the `projects.topics.publish` permission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudPubsubTopic
 	{
 		
@@ -1159,24 +1115,21 @@ namespace MyNS
 		public string TopicName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CloudPubsubTopicPayloadFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYLOAD_FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYLOAD_FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 1,
 	}
 	
 	/// <summary>
 	/// A mobile device compromised alert. Derived from audit logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceCompromised
 	{
 		
@@ -1196,8 +1149,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed information of a single MDM device compromised event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceCompromisedSecurityDetail
 	{
 		
@@ -1247,8 +1199,7 @@ namespace MyNS
 	/// <summary>
 	/// Alerts that get triggered on violations of Data Loss Prevention (DLP) rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DlpRuleViolation
 	{
 		
@@ -1262,8 +1213,7 @@ namespace MyNS
 	/// <summary>
 	/// Common alert information about violated rules that are configured by Google Workspace administrators.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleViolationInfo
 	{
 		
@@ -1328,24 +1278,21 @@ namespace MyNS
 		public string TriggeringUserEmail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuleViolationInfoDataSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_SOURCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_SOURCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVE = 1,
 	}
 	
 	/// <summary>
 	/// Proto that contains match information from the condition part of the rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchInfo
 	{
 		
@@ -1365,8 +1312,7 @@ namespace MyNS
 	/// <summary>
 	/// Detector provided by Google.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PredefinedDetectorInfo
 	{
 		
@@ -1380,8 +1326,7 @@ namespace MyNS
 	/// <summary>
 	/// Detector defined by administrators.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDefinedDetectorInfo
 	{
 		
@@ -1401,8 +1346,7 @@ namespace MyNS
 	/// <summary>
 	/// Proto that contains resource information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInfo
 	{
 		
@@ -1422,8 +1366,7 @@ namespace MyNS
 	/// <summary>
 	/// Proto that contains rule information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleInfo
 	{
 		
@@ -1440,24 +1383,21 @@ namespace MyNS
 		public string ResourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuleViolationInfoTrigger
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIGGER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIGGER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVE_SHARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVE_SHARE = 1,
 	}
 	
 	/// <summary>
 	/// A takeout operation for the entire domain was initiated by an admin. Derived from audit logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainWideTakeoutInitiated
 	{
 		
@@ -1477,8 +1417,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -1486,8 +1425,7 @@ namespace MyNS
 	/// <summary>
 	/// An incident reported by Google Operations for a Google Workspace application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleOperations
 	{
 		
@@ -1531,8 +1469,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for an alert feedback listing request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAlertFeedbackResponse
 	{
 		
@@ -1546,8 +1483,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for an alert listing request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAlertsResponse
 	{
 		
@@ -1567,8 +1503,7 @@ namespace MyNS
 	/// <summary>
 	/// Proto for all phishing alerts with common payload. Supported types are any of the following: * User reported phishing * User reported spam spike * Suspicious message reported * Phishing reclassification * Malware reclassification * Gmail potential employee spoofing
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailPhishing
 	{
 		
@@ -1603,27 +1538,24 @@ namespace MyNS
 		public System.Nullable<MailPhishingSystemActionType> SystemActionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MailPhishingSystemActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_ACTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_ACTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_OPERATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_OPERATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVED_FROM_INBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVED_FROM_INBOX = 2,
 	}
 	
 	/// <summary>
 	/// Alert Created by the MSA team for communications necessary for continued use of Google Workspace Products.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MandatoryServiceAnnouncement
 	{
 		
@@ -1643,8 +1575,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for callback notifications. For more details see [Google Workspace Alert Notification](https://developers.google.com/admin-sdk/alertcenter/guides/notifications).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notification
 	{
 		
@@ -1658,8 +1589,7 @@ namespace MyNS
 	/// <summary>
 	/// Alert for a spike in user reported phishing. *Warning*: This type has been deprecated. Use [MailPhishing](/admin-sdk/alertcenter/reference/rest/v1beta1/MailPhishing) instead.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhishingSpike
 	{
 		
@@ -1691,8 +1621,7 @@ namespace MyNS
 	/// <summary>
 	/// Event occurred when primary admin changed in customer's account. The event are being received from insight forwarder
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrimaryAdminChangedEvent
 	{
 		
@@ -1718,8 +1647,7 @@ namespace MyNS
 	/// <summary>
 	/// Alerts from Reporting Rules configured by Admin.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportingRule
 	{
 		
@@ -1745,8 +1673,7 @@ namespace MyNS
 	/// <summary>
 	/// Event occurred when SSO Profile created in customer's account. The event are being received from insight forwarder
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSOProfileCreatedEvent
 	{
 		
@@ -1760,8 +1687,7 @@ namespace MyNS
 	/// <summary>
 	/// Event occurred when SSO Profile deleted in customer's account. The event are being received from insight forwarder
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSOProfileDeletedEvent
 	{
 		
@@ -1775,8 +1701,7 @@ namespace MyNS
 	/// <summary>
 	/// Event occurred when SSO Profile updated in customer's account. The event are being received from insight forwarder
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SSOProfileUpdatedEvent
 	{
 		
@@ -1796,8 +1721,7 @@ namespace MyNS
 	/// <summary>
 	/// Alert that is triggered when Sensitive Admin Action occur in customer account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SensitiveAdminAction
 	{
 		
@@ -1847,8 +1771,7 @@ namespace MyNS
 	/// <summary>
 	/// Event occurred when password was reset for super admin in customer's account. The event are being received from insight forwarder
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuperAdminPasswordResetEvent
 	{
 		
@@ -1862,8 +1785,7 @@ namespace MyNS
 	/// <summary>
 	/// Customer-level settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Settings
 	{
 		
@@ -1877,8 +1799,7 @@ namespace MyNS
 	/// <summary>
 	/// A state-sponsored attack alert. Derived from audit logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StateSponsoredAttack
 	{
 		
@@ -1892,8 +1813,7 @@ namespace MyNS
 	/// <summary>
 	/// A mobile suspicious activity alert. Derived from audit logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuspiciousActivity
 	{
 		
@@ -1913,8 +1833,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed information of a single MDM suspicious activity event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuspiciousActivitySecurityDetail
 	{
 		
@@ -1976,8 +1895,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for an invalid transfer or forward.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransferError
 	{
 		
@@ -2012,52 +1930,47 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransferErrorEntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_ENTITY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_ENTITY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_AUTO_ATTENDANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_AUTO_ATTENDANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_RING_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_RING_GROUP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_USER = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TransferErrorInvalidReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_INVALID_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_INVALID_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_TARGET_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_TARGET_DELETED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLICENSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLICENSED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_PHONE_NUMBER = 4,
 	}
 	
 	/// <summary>
 	/// Error related to transferring or forwarding a phone call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransferMisconfiguration
 	{
 		
@@ -2071,8 +1984,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to undelete a specific alert that was marked for deletion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UndeleteAlertRequest
 	{
 		
@@ -2086,8 +1998,7 @@ namespace MyNS
 	/// <summary>
 	/// Alerts from UserChanges bucket Rules for predefined rules which contain the below rules. Suspended user made active New user Added User suspended (by admin) User granted admin privileges User admin privileges revoked User deleted Users password changed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserChanges
 	{
 		
@@ -2101,8 +2012,7 @@ namespace MyNS
 	/// <summary>
 	/// An alert triggered when Google Voice configuration becomes invalid, generally due to an external entity being modified or deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceMisconfiguration
 	{
 		
@@ -2143,27 +2053,24 @@ namespace MyNS
 		public VoicemailMisconfiguration VoicemailMisconfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VoiceMisconfigurationEntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTITY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTITY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_ATTENDANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_ATTENDANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RING_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RING_GROUP = 2,
 	}
 	
 	/// <summary>
 	/// Issue(s) with sending to voicemail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoicemailMisconfiguration
 	{
 		
@@ -2177,8 +2084,7 @@ namespace MyNS
 	/// <summary>
 	/// Issue(s) with a voicemail recipient.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoicemailRecipientError
 	{
 		
@@ -2195,19 +2101,17 @@ namespace MyNS
 		public System.Nullable<VoicemailRecipientErrorInvalidReason> InvalidReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VoicemailRecipientErrorInvalidReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL_INVALID_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL_INVALID_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_QUOTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_QUOTA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECIPIENT_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECIPIENT_DELETED = 2,
 	}
 	

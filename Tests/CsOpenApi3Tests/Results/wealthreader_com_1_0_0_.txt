@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Cuentas bancarias. En cuentas europeas, solamente activado cuando el cliente de Wealth Reader cuenta con licencia PSD2
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Accounts
 	{
 		
@@ -111,8 +110,7 @@ namespace MyNS
 	/// <summary>
 	/// Tarjetas de crédito, débito y prepago
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cards
 	{
 		
@@ -194,43 +192,38 @@ namespace MyNS
 		public System.Nullable<System.Double> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CardsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cancelled = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CardsSubtype
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="credit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		credit = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="debit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		debit = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="prepaid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		prepaid = 2,
 	}
 	
 	/// <summary>
 	/// Solamente estará informado cuando el valor de code sea 2020 (usuario multicontrato)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contracts
 	{
 		
@@ -251,8 +244,7 @@ namespace MyNS
 		public string Description { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entities
 	{
 		
@@ -425,8 +417,7 @@ namespace MyNS
 		public string Validation_rule { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Statistics
 	{
 		
@@ -459,8 +450,7 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity_data
 	{
 		
@@ -519,8 +509,7 @@ namespace MyNS
 	/// <summary>
 	/// Activos inmobiliarios
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Properties
 	{
 		
@@ -587,8 +576,7 @@ namespace MyNS
 	/// <summary>
 	/// Información relativa a la persona que hace login
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User_information
 	{
 		
@@ -646,34 +634,29 @@ namespace MyNS
 		public string Postal_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum User_informationGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="male")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		male = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="female")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		female = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum User_informationMarital_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="single")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		single = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="married")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		married = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -699,8 +682,7 @@ namespace MyNS
 		public bool Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error_detail
 	{
 		
@@ -727,8 +709,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error_codes
 	{
 		
@@ -757,8 +738,7 @@ namespace MyNS
 		public string Possible_reasons { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Owner
 	{
 		
@@ -784,13 +764,11 @@ namespace MyNS
 		public OwnerRole Role { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OwnerRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="owner")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		owner = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="co-owner")]
@@ -799,21 +777,20 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="legal representative")]
 		legal_representative = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="administrator")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		administrator = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="attorney-in-fact")]
 		attorneyMinusinMinusfact = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authorised")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authorised = 5,
 	}
 	
 	/// <summary>
 	/// Carteras de acciones, fondos y planes de pensiones
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Portfolios
 	{
 		
@@ -934,16 +911,14 @@ namespace MyNS
 		public double Yield { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PortfoliosSubtype
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="funds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		funds = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stocks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stocks = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pension-plans")]
@@ -1044,10 +1019,10 @@ namespace MyNS
 	public enum Entity_dataGetByLangLang
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 1,
 	}
 }

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -65,8 +64,7 @@ namespace MyNS
 		public string TagManagerUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountFeatures
 	{
 		
@@ -86,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the Google Tag Manager Account access permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountAccess
 	{
 		
@@ -98,30 +95,27 @@ namespace MyNS
 		public System.Nullable<AccountAccessPermission> Permission { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountAccessPermission
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accountPermissionUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accountPermissionUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="noAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		noAccess = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="admin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		admin = 3,
 	}
 	
 	/// <summary>
 	/// Built-in variables are a special category of variables that are pre-created and non-customizable. They provide common functionality like accessing properties of the gtm data layer, monitoring clicks, or accessing elements of a page URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuiltInVariable
 	{
 		
@@ -162,357 +156,354 @@ namespace MyNS
 		public string WorkspaceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuiltInVariableType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="builtInVariableTypeUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		builtInVariableTypeUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pageUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pageUrl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pageHostname")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pageHostname = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pagePath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pagePath = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="referrer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		referrer = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="event")]
 		_event = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickElement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickElement = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickClasses")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickClasses = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickId = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickTarget")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickTarget = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickUrl = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickText")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickText = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firstPartyServingUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firstPartyServingUrl = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formElement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formElement = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formClasses")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formClasses = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formId = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formTarget")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formTarget = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formUrl = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formText")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formText = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="errorMessage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		errorMessage = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="errorUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		errorUrl = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="errorLine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		errorLine = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newHistoryUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newHistoryUrl = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldHistoryUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldHistoryUrl = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newHistoryFragment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newHistoryFragment = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldHistoryFragment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldHistoryFragment = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newHistoryState")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newHistoryState = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldHistoryState")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldHistoryState = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="historySource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		historySource = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="containerVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		containerVersion = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="debugMode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		debugMode = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="randomNumber")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		randomNumber = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="containerId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		containerId = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appId = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appName = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appVersionCode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appVersionCode = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appVersionName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appVersionName = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="language")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		language = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="osVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		osVersion = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="platform")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		platform = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sdkVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sdkVersion = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deviceName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deviceName = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="resolution")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		resolution = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="advertiserId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		advertiserId = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="advertisingTrackingEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		advertisingTrackingEnabled = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="htmlId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		htmlId = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		environmentName = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampBrowserLanguage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampBrowserLanguage = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampCanonicalPath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampCanonicalPath = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampCanonicalUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampCanonicalUrl = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampCanonicalHost")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampCanonicalHost = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampReferrer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampReferrer = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampTitle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampTitle = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientId = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientTimezone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientTimezone = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientTimestamp = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientScreenWidth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientScreenWidth = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientScreenHeight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientScreenHeight = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientScrollX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientScrollX = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientScrollY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientScrollY = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientMaxScrollX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientMaxScrollX = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientMaxScrollY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientMaxScrollY = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampTotalEngagedTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampTotalEngagedTime = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampPageViewId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampPageViewId = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampPageLoadTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampPageLoadTime = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampPageDownloadTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampPageDownloadTime = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampGtmEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampGtmEvent = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eventName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eventName = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaign")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaign = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignAclid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignAclid = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignAnid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignAnid = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignClickTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignClickTimestamp = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignContent = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignCp1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignCp1 = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignGclid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignGclid = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignSource = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignTerm = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCurrency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCurrency = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterDynamicLinkAcceptTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterDynamicLinkAcceptTime = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterDynamicLinkLinkid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterDynamicLinkLinkid = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationMessageDeviceTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationMessageDeviceTime = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationMessageId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationMessageId = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationMessageName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationMessageName = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationMessageTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationMessageTime = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationTopic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationTopic = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterPreviousAppVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterPreviousAppVersion = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterPreviousOsVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterPreviousOsVersion = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterPrice = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterProductId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterProductId = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterQuantity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterQuantity = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterValue = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoProvider")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoProvider = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoUrl = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoTitle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoTitle = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoDuration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoDuration = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoPercent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoPercent = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoVisible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoVisible = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoStatus = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoCurrentTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoCurrentTime = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scrollDepthThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scrollDepthThreshold = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scrollDepthUnits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scrollDepthUnits = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scrollDepthDirection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scrollDepthDirection = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibilityRatio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibilityRatio = 102,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibilityTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibilityTime = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibilityFirstTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibilityFirstTime = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibilityRecentTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibilityRecentTime = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requestPath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requestPath = 106,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requestMethod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requestMethod = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clientName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clientName = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queryString")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queryString = 109,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="serverPageLocationUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		serverPageLocationUrl = 110,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="serverPageLocationPath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		serverPageLocationPath = 111,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="serverPageLocationHostname")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		serverPageLocationHostname = 112,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="visitorRegion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		visitorRegion = 113,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Client
 	{
 		
@@ -598,8 +589,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parameter
 	{
 		
@@ -640,42 +630,39 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParameterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="typeUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		typeUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="template")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		template = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="integer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		integer = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="boolean")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		boolean = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="list")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		list = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="map")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		map = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="triggerReference")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		triggerReference = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagReference")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tagReference = 7,
 	}
 	
 	/// <summary>
 	/// Represents a predicate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Condition
 	{
 		
@@ -692,54 +679,51 @@ namespace MyNS
 		public System.Nullable<ConditionType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConditionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="conditionTypeUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		conditionTypeUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="equals")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		equals = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contains")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contains = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="startsWith")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		startsWith = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="endsWith")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		endsWith = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="matchRegex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		matchRegex = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="greater")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		greater = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="greaterOrEquals")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		greaterOrEquals = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="less")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		less = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lessOrEquals")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lessOrEquals = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cssSelector")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cssSelector = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="urlMatches")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		urlMatches = 11,
 	}
 	
 	/// <summary>
 	/// Represents a Google Tag Manager Container, which specifies the platform tags will run on, manages workspaces, and retains container versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Container
 	{
 		
@@ -819,8 +803,7 @@ namespace MyNS
 		public string[] UsageContext { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerFeatures
 	{
 		
@@ -912,8 +895,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the Google Tag Manager Container access permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerAccess
 	{
 		
@@ -930,36 +912,33 @@ namespace MyNS
 		public System.Nullable<ContainerAccessPermission> Permission { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContainerAccessPermission
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="containerPermissionUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		containerPermissionUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="noAccess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		noAccess = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="read")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		read = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="edit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		edit = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="approve")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		approve = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publish")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publish = 5,
 	}
 	
 	/// <summary>
 	/// Represents a Google Tag Manager Container Version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerVersion
 	{
 		
@@ -1087,8 +1066,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Custom Template's contents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomTemplate
 	{
 		
@@ -1156,8 +1134,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the link between a custom template and an entry on the Community Template Gallery site.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GalleryReference
 	{
 		
@@ -1201,8 +1178,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Folder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Folder
 	{
 		
@@ -1264,8 +1240,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google tag configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GtagConfig
 	{
 		
@@ -1327,8 +1302,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1492,8 +1466,7 @@ namespace MyNS
 		public string WorkspaceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagConsentSetting
 	{
 		
@@ -1510,27 +1483,24 @@ namespace MyNS
 		public Parameter ConsentType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TagConsentSettingConsentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notSet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notSet = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notNeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notNeeded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="needed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		needed = 2,
 	}
 	
 	/// <summary>
 	/// Represents a reference to atag that fires before another tag in order to set up dependencies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetupTag
 	{
 		
@@ -1547,30 +1517,27 @@ namespace MyNS
 		public string TagName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TagTagFiringOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagFiringOptionUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tagFiringOptionUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unlimited")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unlimited = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oncePerEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oncePerEvent = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oncePerLoad")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oncePerLoad = 3,
 	}
 	
 	/// <summary>
 	/// Represents a tag that fires after another tag in order to tear down dependencies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TeardownTag
 	{
 		
@@ -1590,8 +1557,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Transformation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transformation
 	{
 		
@@ -1671,8 +1637,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Trigger
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Trigger
 	{
 		
@@ -1869,123 +1834,120 @@ namespace MyNS
 		public string WorkspaceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TriggerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eventTypeUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eventTypeUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pageview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pageview = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="domReady")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		domReady = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="windowLoaded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		windowLoaded = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customEvent = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="triggerGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		triggerGroup = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="init")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		init = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="consentInit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		consentInit = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="serverPageview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		serverPageview = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="always")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		always = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseAppException")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseAppException = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseAppUpdate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseAppUpdate = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseCampaign")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseCampaign = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseFirstOpen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseFirstOpen = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseInAppPurchase")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseInAppPurchase = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseNotificationDismiss")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseNotificationDismiss = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseNotificationForeground")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseNotificationForeground = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseNotificationOpen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseNotificationOpen = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseNotificationReceive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseNotificationReceive = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseOsUpdate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseOsUpdate = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseSessionStart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseSessionStart = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseUserEngagement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseUserEngagement = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formSubmission")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formSubmission = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="click")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		click = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="linkClick")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		linkClick = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jsError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jsError = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="historyChange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		historyChange = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timer = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClick")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClick = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampTimer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampTimer = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampScroll")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampScroll = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampVisibility")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampVisibility = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="youTubeVideo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		youTubeVideo = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scrollDepth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scrollDepth = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibility")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibility = 34,
 	}
 	
 	/// <summary>
 	/// Represents a Google Tag Manager Variable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Variable
 	{
 		
@@ -2089,8 +2051,7 @@ namespace MyNS
 		public string WorkspaceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VariableFormatValue
 	{
 		
@@ -2125,27 +2086,24 @@ namespace MyNS
 		public Parameter ConvertUndefinedToValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VariableFormatValueCaseConversionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lowercase")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lowercase = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uppercase")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uppercase = 2,
 	}
 	
 	/// <summary>
 	/// Represents a Google Tag Manager Zone's contents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Zone
 	{
 		
@@ -2225,8 +2183,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Zone's boundaries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZoneBoundary
 	{
 		
@@ -2246,8 +2203,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a child container of a Zone.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZoneChildContainer
 	{
 		
@@ -2267,8 +2223,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Zone's type restrictions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZoneTypeRestriction
 	{
 		
@@ -2288,8 +2243,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Container Version Header.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerVersionHeader
 	{
 		
@@ -2390,8 +2344,7 @@ namespace MyNS
 		public string Path { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateBuiltInVariableResponse
 	{
 		
@@ -2405,8 +2358,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for new container versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateContainerVersionRequestVersionOptions
 	{
 		
@@ -2426,8 +2378,7 @@ namespace MyNS
 	/// <summary>
 	/// Create container versions response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateContainerVersionResponse
 	{
 		
@@ -2459,8 +2410,7 @@ namespace MyNS
 	/// <summary>
 	/// The status of a workspace after synchronization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SyncStatus
 	{
 		
@@ -2480,8 +2430,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Destination
 	{
 		
@@ -2537,8 +2486,7 @@ namespace MyNS
 	/// <summary>
 	/// A workspace entity that may represent a tag, trigger, variable, or folder in addition to its status in the workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity
 	{
 		
@@ -2606,33 +2554,30 @@ namespace MyNS
 		public Zone Zone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntityChangeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="changeStatusUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		changeStatusUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		added = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="updated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		updated = 4,
 	}
 	
 	/// <summary>
 	/// Represents a Google Tag Manager Environment. Note that a user can create, delete and update environments of type USER, but can only update the enable_debug and url fields of environments of other types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Environment
 	{
 		
@@ -2727,30 +2672,27 @@ namespace MyNS
 		public string WorkspaceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnvironmentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="live")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		live = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="latest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		latest = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="workspace")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		workspace = 3,
 	}
 	
 	/// <summary>
 	/// Represents a Google Tag Manager Folder's contents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderEntities
 	{
 		
@@ -2779,8 +2721,7 @@ namespace MyNS
 		public Variable[] Variable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetContainerSnippetResponse
 	{
 		
@@ -2794,8 +2735,7 @@ namespace MyNS
 	/// <summary>
 	/// The changes that have occurred in the workspace since the base container version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorkspaceStatusResponse
 	{
 		
@@ -2815,8 +2755,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a merge conflict.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MergeConflict
 	{
 		
@@ -2836,8 +2775,7 @@ namespace MyNS
 	/// <summary>
 	/// List Accounts Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountsResponse
 	{
 		
@@ -2854,8 +2792,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListClientsResponse
 	{
 		
@@ -2875,8 +2812,7 @@ namespace MyNS
 	/// <summary>
 	/// List container versions response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContainerVersionsResponse
 	{
 		
@@ -2896,8 +2832,7 @@ namespace MyNS
 	/// <summary>
 	/// List Containers Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListContainersResponse
 	{
 		
@@ -2914,8 +2849,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDestinationsResponse
 	{
 		
@@ -2935,8 +2869,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of enabled built-in variables.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEnabledBuiltInVariablesResponse
 	{
 		
@@ -2956,8 +2889,7 @@ namespace MyNS
 	/// <summary>
 	/// List Environments Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEnvironmentsResponse
 	{
 		
@@ -2977,8 +2909,7 @@ namespace MyNS
 	/// <summary>
 	/// List Folders Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFoldersResponse
 	{
 		
@@ -2995,8 +2926,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListGtagConfigResponse
 	{
 		
@@ -3016,8 +2946,7 @@ namespace MyNS
 	/// <summary>
 	/// List Tags Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsResponse
 	{
 		
@@ -3034,8 +2963,7 @@ namespace MyNS
 		public Tag[] Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTemplatesResponse
 	{
 		
@@ -3052,8 +2980,7 @@ namespace MyNS
 		public CustomTemplate[] Template { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTransformationsResponse
 	{
 		
@@ -3073,8 +3000,7 @@ namespace MyNS
 	/// <summary>
 	/// List triggers response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTriggersResponse
 	{
 		
@@ -3094,8 +3020,7 @@ namespace MyNS
 	/// <summary>
 	/// List user permissions response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUserPermissionsResponse
 	{
 		
@@ -3115,8 +3040,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a user's permissions to an account and its container.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserPermission
 	{
 		
@@ -3154,8 +3078,7 @@ namespace MyNS
 	/// <summary>
 	/// List Variables Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVariablesResponse
 	{
 		
@@ -3175,8 +3098,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of workspaces in a container.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorkspacesResponse
 	{
 		
@@ -3196,8 +3118,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Google Tag Manager Container Workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Workspace
 	{
 		
@@ -3250,8 +3171,7 @@ namespace MyNS
 		public string WorkspaceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListZonesResponse
 	{
 		
@@ -3271,8 +3191,7 @@ namespace MyNS
 	/// <summary>
 	/// Publish container version response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishContainerVersionResponse
 	{
 		
@@ -3292,8 +3211,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to quick previewing a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuickPreviewResponse
 	{
 		
@@ -3319,8 +3237,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of reverting a built-in variable in a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevertBuiltInVariableResponse
 	{
 		
@@ -3334,8 +3251,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of reverting a client in a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevertClientResponse
 	{
 		
@@ -3346,8 +3262,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of reverting folder changes in a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevertFolderResponse
 	{
 		
@@ -3361,8 +3276,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of reverting a tag in a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevertTagResponse
 	{
 		
@@ -3376,8 +3290,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of reverting a template in a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevertTemplateResponse
 	{
 		
@@ -3391,8 +3304,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of reverting a transformation in a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevertTransformationResponse
 	{
 		
@@ -3406,8 +3318,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of reverting a trigger in a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevertTriggerResponse
 	{
 		
@@ -3421,8 +3332,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of reverting a variable in a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevertVariableResponse
 	{
 		
@@ -3436,8 +3346,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of reverting a zone in a workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevertZoneResponse
 	{
 		
@@ -3451,8 +3360,7 @@ namespace MyNS
 	/// <summary>
 	/// A response after synchronizing the workspace to the latest container version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SyncWorkspaceResponse
 	{
 		
@@ -5416,359 +5324,359 @@ namespace MyNS
 	public enum Tagmanager_accounts_containers_workspaces_built_in_variables_revertType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="builtInVariableTypeUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		builtInVariableTypeUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pageUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pageUrl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pageHostname")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pageHostname = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pagePath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pagePath = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="referrer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		referrer = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="event")]
 		_event = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickElement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickElement = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickClasses")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickClasses = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickId = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickTarget")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickTarget = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickUrl = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clickText")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clickText = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firstPartyServingUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firstPartyServingUrl = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formElement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formElement = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formClasses")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formClasses = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formId = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formTarget")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formTarget = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formUrl = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="formText")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		formText = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="errorMessage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		errorMessage = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="errorUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		errorUrl = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="errorLine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		errorLine = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newHistoryUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newHistoryUrl = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldHistoryUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldHistoryUrl = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newHistoryFragment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newHistoryFragment = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldHistoryFragment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldHistoryFragment = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newHistoryState")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newHistoryState = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldHistoryState")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oldHistoryState = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="historySource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		historySource = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="containerVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		containerVersion = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="debugMode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		debugMode = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="randomNumber")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		randomNumber = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="containerId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		containerId = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appId = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appName = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appVersionCode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appVersionCode = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appVersionName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appVersionName = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="language")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		language = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="osVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		osVersion = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="platform")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		platform = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sdkVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sdkVersion = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deviceName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deviceName = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="resolution")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		resolution = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="advertiserId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		advertiserId = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="advertisingTrackingEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		advertisingTrackingEnabled = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="htmlId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		htmlId = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		environmentName = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampBrowserLanguage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampBrowserLanguage = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampCanonicalPath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampCanonicalPath = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampCanonicalUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampCanonicalUrl = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampCanonicalHost")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampCanonicalHost = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampReferrer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampReferrer = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampTitle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampTitle = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientId = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientTimezone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientTimezone = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientTimestamp = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientScreenWidth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientScreenWidth = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientScreenHeight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientScreenHeight = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientScrollX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientScrollX = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientScrollY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientScrollY = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientMaxScrollX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientMaxScrollX = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampClientMaxScrollY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampClientMaxScrollY = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampTotalEngagedTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampTotalEngagedTime = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampPageViewId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampPageViewId = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampPageLoadTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampPageLoadTime = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampPageDownloadTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampPageDownloadTime = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ampGtmEvent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ampGtmEvent = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eventName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eventName = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaign")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaign = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignAclid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignAclid = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignAnid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignAnid = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignClickTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignClickTimestamp = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignContent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignContent = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignCp1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignCp1 = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignGclid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignGclid = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignSource = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCampaignTerm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCampaignTerm = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterCurrency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterCurrency = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterDynamicLinkAcceptTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterDynamicLinkAcceptTime = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterDynamicLinkLinkid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterDynamicLinkLinkid = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationMessageDeviceTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationMessageDeviceTime = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationMessageId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationMessageId = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationMessageName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationMessageName = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationMessageTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationMessageTime = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterNotificationTopic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterNotificationTopic = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterPreviousAppVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterPreviousAppVersion = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterPreviousOsVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterPreviousOsVersion = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterPrice = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterProductId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterProductId = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterQuantity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterQuantity = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firebaseEventParameterValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firebaseEventParameterValue = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoProvider")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoProvider = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoUrl = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoTitle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoTitle = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoDuration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoDuration = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoPercent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoPercent = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoVisible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoVisible = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoStatus = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="videoCurrentTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		videoCurrentTime = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scrollDepthThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scrollDepthThreshold = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scrollDepthUnits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scrollDepthUnits = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scrollDepthDirection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scrollDepthDirection = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibilityRatio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibilityRatio = 102,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibilityTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibilityTime = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibilityFirstTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibilityFirstTime = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elementVisibilityRecentTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elementVisibilityRecentTime = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requestPath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requestPath = 106,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="requestMethod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		requestMethod = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clientName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clientName = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queryString")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queryString = 109,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="serverPageLocationUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		serverPageLocationUrl = 110,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="serverPageLocationPath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		serverPageLocationPath = 111,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="serverPageLocationHostname")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		serverPageLocationHostname = 112,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="visitorRegion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		visitorRegion = 113,
 	}
 	
 	public enum Tagmanager_accounts_containers_combineSettingSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingSourceUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		settingSourceUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="current")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		current = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 2,
 	}
 }

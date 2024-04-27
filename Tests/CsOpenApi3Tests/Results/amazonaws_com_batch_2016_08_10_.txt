@@ -17,26 +17,22 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelJobResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateComputeEnvironmentResponse
 	{
 		
@@ -47,46 +43,41 @@ namespace MyNS
 		public string ComputeEnvironmentArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CRType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FARGATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FARGATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FARGATE_SPOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FARGATE_SPOT = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CRAllocationStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEST_FIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEST_FIT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEST_FIT_PROGRESSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEST_FIT_PROGRESSIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT_CAPACITY_OPTIMIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT_CAPACITY_OPTIMIZED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT_PRICE_CAPACITY_OPTIMIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT_PRICE_CAPACITY_OPTIMIZED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagsMap
 	{
 	}
@@ -94,8 +85,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>An object that represents a launch template that's associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.</p> <p>If security groups are specified using both the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will be used.</p> <note> <p>This object isn't applicable to jobs that are running on Fargate resources.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LaunchTemplateSpecification
 	{
 		
@@ -112,8 +102,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Provides information used to select Amazon Machine Images (AMIs) for instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code> (<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>).</p> <note> <p>This object isn't applicable to jobs that are running on Fargate resources.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ec2Configuration
 	{
 		
@@ -131,8 +120,7 @@ namespace MyNS
 		public string ImageKubernetesVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobQueueResponse
 	{
 		
@@ -154,8 +142,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The order that compute environments are tried in for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note> <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeEnvironmentOrder
 	{
 		
@@ -174,8 +161,7 @@ namespace MyNS
 		public string ComputeEnvironment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSchedulingPolicyResponse
 	{
 		
@@ -197,8 +183,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ShareAttributes
 	{
 		
@@ -213,32 +198,27 @@ namespace MyNS
 		public float WeightFactor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteComputeEnvironmentResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteJobQueueResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSchedulingPolicyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterJobDefinitionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeComputeEnvironmentsResponse
 	{
 		
@@ -252,8 +232,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents an Batch compute environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeEnvironmentDetail
 	{
 		
@@ -311,68 +290,60 @@ namespace MyNS
 		public string Uuid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagrisTagsMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CEType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNMANAGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNMANAGED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CEState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CEStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALID = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID = 5,
 	}
 	
 	/// <summary>
 	/// An object that represents an Batch compute resource. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeResource
 	{
 		
@@ -443,8 +414,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePolicy
 	{
 		
@@ -458,8 +428,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for the Amazon EKS cluster that supports the Batch compute environment. The cluster must exist before the compute environment can be created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksConfiguration
 	{
 		
@@ -478,21 +447,18 @@ namespace MyNS
 		public string KubernetesNamespace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrchestrationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EKS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobDefinitionsResponse
 	{
 		
@@ -506,8 +472,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents an Batch job definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobDefinition
 	{
 		
@@ -576,8 +541,7 @@ namespace MyNS
 		public OrchestrationType ContainerOrchestrationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParametersMap
 	{
 	}
@@ -585,8 +549,7 @@ namespace MyNS
 	/// <summary>
 	/// The retry strategy that's associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>Batch User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetryStrategy
 	{
 		
@@ -600,8 +563,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an array of up to 5 conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all conditions are met. If none of the <code>EvaluateOnExit</code> conditions in a <code>RetryStrategy</code> match, then the job is retried.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EvaluateOnExit
 	{
 		
@@ -622,24 +584,21 @@ namespace MyNS
 		public RetryAction Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RetryAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXIT = 1,
 	}
 	
 	/// <summary>
 	/// Container properties are used for Amazon ECS based job definitions. These properties to describe the container that's launched as part of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerProperties
 	{
 		
@@ -716,8 +675,7 @@ namespace MyNS
 	/// <summary>
 	/// A data volume that's used in a job's container properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Volume
 	{
 		
@@ -734,8 +692,7 @@ namespace MyNS
 	/// <summary>
 	/// Determine whether your data volume persists on the host container instance and where it's stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Host
 	{
 		
@@ -746,8 +703,7 @@ namespace MyNS
 	/// <summary>
 	/// This is used when you're using an Amazon Elastic File System file system for job storage. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Batch User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EFSVolumeConfiguration
 	{
 		
@@ -774,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// The authorization configuration details for the Amazon EFS file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EFSAuthorizationConfig
 	{
 		
@@ -789,8 +744,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyValuePair
 	{
 		
@@ -804,8 +758,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for a Docker volume mount point that's used in a job's container properties. This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create a container</a> section of the <i>Docker Remote API</i> and the <code>--volume</code> option to docker run.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MountPoint
 	{
 		
@@ -822,8 +775,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The <code>ulimit</code> settings to pass to the container.</p> <note> <p>This object isn't applicable to jobs that are running on Fargate resources.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ulimit
 	{
 		
@@ -852,8 +804,7 @@ namespace MyNS
 	/// <summary>
 	/// The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceRequirement
 	{
 		
@@ -872,27 +823,24 @@ namespace MyNS
 		public ResourceType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GPU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GPU = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCPU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCPU = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY = 2,
 	}
 	
 	/// <summary>
 	/// Linux-specific modifications that are applied to the container, such as details for device mappings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinuxParameters
 	{
 		
@@ -918,8 +866,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>An object that represents a container instance host device.</p> <note> <p>This object isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Device
 	{
 		
@@ -937,27 +884,24 @@ namespace MyNS
 		public DeviceCgroupPermission[] Permissions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceCgroupPermission
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MKNOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MKNOD = 2,
 	}
 	
 	/// <summary>
 	/// <p>The container path, mount options, and size of the <code>tmpfs</code> mount.</p> <note> <p>This object isn't applicable to jobs that are running on Fargate resources.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tmpfs
 	{
 		
@@ -982,8 +926,7 @@ namespace MyNS
 	/// <summary>
 	/// Log configuration options to send to a custom log driver for the container.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogConfiguration
 	{
 		
@@ -1001,36 +944,33 @@ namespace MyNS
 		public Secret[] SecretOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LogDriver
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="json-file")]
 		jsonMinusfile = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="syslog")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		syslog = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="journald")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		journald = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gelf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gelf = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fluentd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fluentd = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="awslogs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		awslogs = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="splunk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		splunk = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogConfigurationOptionsMap
 	{
 	}
@@ -1038,8 +978,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>An object that represents the secret to expose to your container. Secrets can be exposed to a container in the following ways:</p> <ul> <li> <p>To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.</p> </li> <li> <p>To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Batch User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Secret
 	{
 		
@@ -1061,8 +1000,7 @@ namespace MyNS
 	/// <summary>
 	/// The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkConfiguration
 	{
 		
@@ -1073,8 +1011,7 @@ namespace MyNS
 	/// <summary>
 	/// The platform configuration for jobs that are running on Fargate resources. Jobs that run on EC2 resources must not specify this parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FargatePlatformConfiguration
 	{
 		
@@ -1085,8 +1022,7 @@ namespace MyNS
 	/// <summary>
 	/// The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EphemeralStorage
 	{
 		
@@ -1101,8 +1037,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the compute environment architecture for Batch jobs on Fargate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuntimePlatform
 	{
 		
@@ -1116,8 +1051,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents a job timeout configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobTimeout
 	{
 		
@@ -1128,8 +1062,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>An object that represents the node properties of a multi-node parallel job.</p> <note> <p>Node properties can't be specified for Amazon EKS based job definitions.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeProperties
 	{
 		
@@ -1158,8 +1091,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the properties of the node range for a multi-node parallel job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeRangeProperty
 	{
 		
@@ -1174,24 +1106,21 @@ namespace MyNS
 		public ContainerProperties Container { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlatformCapability
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FARGATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FARGATE = 1,
 	}
 	
 	/// <summary>
 	/// An object that contains the properties for the Kubernetes resources of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksProperties
 	{
 		
@@ -1202,8 +1131,7 @@ namespace MyNS
 	/// <summary>
 	/// The properties for the pod.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksPodProperties
 	{
 		
@@ -1229,8 +1157,7 @@ namespace MyNS
 	/// <summary>
 	/// EKS container properties are used in job definitions for Amazon EKS based job definitions to describe the properties for a container node in the pod that's launched as part of a job. This can't be specified for Amazon ECS based job definitions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksContainer
 	{
 		
@@ -1269,8 +1196,7 @@ namespace MyNS
 	/// <summary>
 	/// An environment variable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksContainerEnvironmentVariable
 	{
 		
@@ -1288,8 +1214,7 @@ namespace MyNS
 	/// <summary>
 	/// The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksContainerResourceRequirements
 	{
 		
@@ -1300,14 +1225,12 @@ namespace MyNS
 		public EksRequests Requests { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksLimits
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksRequests
 	{
 	}
@@ -1315,8 +1238,7 @@ namespace MyNS
 	/// <summary>
 	/// The volume mounts for a container for an Amazon EKS job. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksContainerVolumeMount
 	{
 		
@@ -1333,8 +1255,7 @@ namespace MyNS
 	/// <summary>
 	/// The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksContainerSecurityContext
 	{
 		
@@ -1357,8 +1278,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an Amazon EKS volume for a job definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksVolume
 	{
 		
@@ -1382,8 +1302,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration of a Kubernetes <code>hostPath</code> volume. A <code>hostPath</code> volume mounts an existing file or directory from the host node's filesystem into your pod. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksHostPath
 	{
 		
@@ -1394,8 +1313,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. An <code>emptyDir</code> volume is first created when a pod is assigned to a node. It exists as long as that pod is running on that node. The <code>emptyDir</code> volume is initially empty. All containers in the pod can read and write the files in the <code>emptyDir</code> volume. However, the <code>emptyDir</code> volume can be mounted at the same or different paths in each container. When a pod is removed from a node for any reason, the data in the <code>emptyDir</code> is deleted permanently. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksEmptyDir
 	{
 		
@@ -1409,8 +1327,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksSecret
 	{
 		
@@ -1428,8 +1345,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes and uniquely identifies Kubernetes resources. For example, the compute environment that a pod runs in or the <code>jobID</code> for a job running in the pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksMetadata
 	{
 		
@@ -1437,14 +1353,12 @@ namespace MyNS
 		public EksLabelsMap Labels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksLabelsMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobQueuesResponse
 	{
 		
@@ -1458,8 +1372,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the details for an Batch job queue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobQueueDetail
 	{
 		
@@ -1511,8 +1424,7 @@ namespace MyNS
 		public TagrisTagsMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobsResponse
 	{
 		
@@ -1523,8 +1435,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents an Batch job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobDetail
 	{
 		
@@ -1637,39 +1548,36 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsTerminated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMITTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMITTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 6,
 	}
 	
 	/// <summary>
 	/// An object that represents a job attempt.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttemptDetail
 	{
 		
@@ -1689,8 +1597,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the details of a container that's part of a job attempt.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttemptContainerDetail
 	{
 		
@@ -1716,8 +1623,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the elastic network interface for a multi-node parallel job node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkInterface
 	{
 		
@@ -1734,8 +1640,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents an Batch job dependency.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobDependency
 	{
 		
@@ -1746,24 +1651,21 @@ namespace MyNS
 		public ArrayJobDependency Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArrayJobDependency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="N_TO_N")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		N_TO_N = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEQUENTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEQUENTIAL = 1,
 	}
 	
 	/// <summary>
 	/// An object that represents the details of a container that's part of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerDetail
 	{
 		
@@ -1858,8 +1760,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the details of a multi-node parallel job node.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeDetails
 	{
 		
@@ -1873,8 +1774,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the array properties of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArrayPropertiesDetail
 	{
 		
@@ -1888,8 +1788,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Index { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArrayJobStatusSummary
 	{
 	}
@@ -1897,8 +1796,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the details for the Kubernetes resources of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksPropertiesDetail
 	{
 		
@@ -1909,8 +1807,7 @@ namespace MyNS
 	/// <summary>
 	/// The details for the pod.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksPodPropertiesDetail
 	{
 		
@@ -1945,8 +1842,7 @@ namespace MyNS
 	/// <summary>
 	/// The details for container properties that are returned by <code>DescribeJobs</code> for jobs that use Amazon EKS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksContainerDetail
 	{
 		
@@ -1987,8 +1883,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the details of a job attempt for a job attempt by an Amazon EKS container.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksAttemptDetail
 	{
 		
@@ -2014,8 +1909,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the details for an attempt for a job attempt that an Amazon EKS container runs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksAttemptContainerDetail
 	{
 		
@@ -2026,8 +1920,7 @@ namespace MyNS
 		public string Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSchedulingPoliciesResponse
 	{
 		
@@ -2038,8 +1931,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents a scheduling policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchedulingPolicyDetail
 	{
 		
@@ -2067,8 +1959,7 @@ namespace MyNS
 	/// <summary>
 	/// The fair share policy for a scheduling policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FairsharePolicy
 	{
 		
@@ -2082,8 +1973,7 @@ namespace MyNS
 		public ShareAttributes[] ShareDistribution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsResponse
 	{
 		
@@ -2101,8 +1991,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents summary details of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobSummary
 	{
 		
@@ -2154,8 +2043,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents summary details of a container within a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerSummary
 	{
 		
@@ -2169,8 +2057,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the array properties of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArrayPropertiesSummary
 	{
 		
@@ -2184,8 +2071,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the properties of a node that's associated with a multi-node parallel job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodePropertiesSummary
 	{
 		
@@ -2202,8 +2088,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter name and value pair that's used to return a more specific list of results from a <code>ListJobs</code> API operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyValuesPair
 	{
 		
@@ -2214,8 +2099,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSchedulingPoliciesResponse
 	{
 		
@@ -2229,8 +2113,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains the details of a scheduling policy that's returned in a <code>ListSchedulingPolicy</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SchedulingPolicyListingDetail
 	{
 		
@@ -2242,8 +2125,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -2251,8 +2133,7 @@ namespace MyNS
 		public TagrisTagsMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterJobDefinitionResponse
 	{
 		
@@ -2278,8 +2159,7 @@ namespace MyNS
 		public int Revision { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubmitJobResponse
 	{
 		
@@ -2304,8 +2184,7 @@ namespace MyNS
 	/// <summary>
 	/// The object that represents any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodePropertyOverride
 	{
 		
@@ -2323,8 +2202,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The overrides that should be sent to a container.</p> <p>For information about using Batch overrides when you connect event sources to targets, see <a href="https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_BatchContainerOverrides.html">BatchContainerOverrides</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerOverrides
 	{
 		
@@ -2350,8 +2228,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that contains overrides for the Kubernetes pod properties of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksPodPropertiesOverride
 	{
 		
@@ -2365,8 +2242,7 @@ namespace MyNS
 	/// <summary>
 	/// Object representing any Kubernetes overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksContainerOverride
 	{
 		
@@ -2386,26 +2262,22 @@ namespace MyNS
 		public EksContainerResourceRequirements Resources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TerminateJobResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateComputeEnvironmentResponse
 	{
 		
@@ -2416,24 +2288,21 @@ namespace MyNS
 		public string ComputeEnvironmentArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CRUpdateAllocationStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEST_FIT_PROGRESSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEST_FIT_PROGRESSIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT_CAPACITY_OPTIMIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT_CAPACITY_OPTIMIZED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPOT_PRICE_CAPACITY_OPTIMIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPOT_PRICE_CAPACITY_OPTIMIZED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJobQueueResponse
 	{
 		
@@ -2444,8 +2313,7 @@ namespace MyNS
 		public string JobQueueArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSchedulingPolicyResponse
 	{
 	}
@@ -2453,8 +2321,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents an Batch array job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArrayProperties
 	{
 		
@@ -2462,24 +2329,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssignPublicIp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// Contains the parameters for <code>CancelJob</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelJobRequest
 	{
 		
@@ -2501,8 +2365,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents the attributes of a compute environment that can be updated. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeResourceUpdate
 	{
 		
@@ -2561,8 +2424,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>CreateComputeEnvironment</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateComputeEnvironmentRequest
 	{
 		
@@ -2599,24 +2461,21 @@ namespace MyNS
 		public EksConfiguration EksConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JQState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// Contains the parameters for <code>CreateJobQueue</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobQueueRequest
 	{
 		
@@ -2654,8 +2513,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>CreateSchedulingPolicy</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSchedulingPolicyRequest
 	{
 		
@@ -2676,8 +2534,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>DeleteComputeEnvironment</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteComputeEnvironmentRequest
 	{
 		
@@ -2692,8 +2549,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>DeleteJobQueue</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteJobQueueRequest
 	{
 		
@@ -2708,8 +2564,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>DeleteSchedulingPolicy</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSchedulingPolicyRequest
 	{
 		
@@ -2721,8 +2576,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterJobDefinitionRequest
 	{
 		
@@ -2737,8 +2591,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>DescribeComputeEnvironments</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeComputeEnvironmentsRequest
 	{
 		
@@ -2755,8 +2608,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>DescribeJobDefinitions</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobDefinitionsRequest
 	{
 		
@@ -2779,8 +2631,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>DescribeJobQueues</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobQueuesRequest
 	{
 		
@@ -2797,8 +2648,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>DescribeJobs</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeJobsRequest
 	{
 		
@@ -2813,8 +2663,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>DescribeSchedulingPolicies</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSchedulingPoliciesRequest
 	{
 		
@@ -2826,37 +2675,32 @@ namespace MyNS
 		public string[] Arns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EFSAuthorizationConfigIAM
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EFSTransitEncryption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// An object that contains overrides for the Kubernetes resources of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EksPropertiesOverride
 	{
 		
@@ -2864,49 +2708,44 @@ namespace MyNS
 		public EksPodPropertiesOverride PodProperties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JQStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALID = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobDefinitionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="container")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		container = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="multinode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		multinode = 1,
 	}
 	
 	/// <summary>
 	/// Contains the parameters for <code>ListJobs</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsRequest
 	{
 		
@@ -2935,8 +2774,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>ListSchedulingPolicies</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSchedulingPoliciesRequest
 	{
 		
@@ -2950,8 +2788,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>ListTagsForResource</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
@@ -2959,8 +2796,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>An object that represents any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.</p> <note> <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs. Rather, use <code>containerOverrides</code> instead.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeOverrides
 	{
 		
@@ -2974,8 +2810,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>RegisterJobDefinition</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterJobDefinitionRequest
 	{
 		
@@ -3027,8 +2862,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>SubmitJob</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubmitJobRequest
 	{
 		
@@ -3093,8 +2927,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>TagResource</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -3109,8 +2942,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>TerminateJob</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TerminateJobRequest
 	{
 		
@@ -3132,8 +2964,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>UntagResource</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -3141,8 +2972,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>UpdateComputeEnvironment</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateComputeEnvironmentRequest
 	{
 		
@@ -3172,8 +3002,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>UpdateJobQueue</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJobQueueRequest
 	{
 		
@@ -3200,8 +3029,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the parameters for <code>UpdateSchedulingPolicy</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSchedulingPolicyRequest
 	{
 		

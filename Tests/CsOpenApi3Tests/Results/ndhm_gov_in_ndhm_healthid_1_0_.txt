@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AadharNumberRequestPayload
 	{
 		
@@ -30,8 +29,7 @@ namespace MyNS
 		public string Aadhaar { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AadharOtpGenerateRequestPayLoad
 	{
 		
@@ -43,8 +41,7 @@ namespace MyNS
 		public string Aadhaar { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthAccountAadhaarBioRequest
 	{
 		
@@ -61,24 +58,21 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthAccountAadhaarBioRequestAuthType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINGERSCAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINGERSCAN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IRIS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IRIS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTP = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthAccountAadhaarOTPRequest
 	{
 		
@@ -99,8 +93,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthAccountMobileOTPRequest
 	{
 		
@@ -111,8 +104,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthAccountWithDemographicsRequest
 	{
 		
@@ -141,8 +133,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthInitRequest
 	{
 		
@@ -157,30 +148,27 @@ namespace MyNS
 		public string Healthid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AuthInitRequestAuthMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AADHAAR_OTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AADHAAR_OTP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_OTP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE_OTP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEMOGRAPHICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEMOGRAPHICS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AADHAAR_BIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AADHAAR_BIO = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthMobileOTPRequest
 	{
 		
@@ -188,8 +176,7 @@ namespace MyNS
 		public string Healthid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthWithMobileTxnAndUserData
 	{
 		
@@ -216,8 +203,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthWithPasswordRequest
 	{
 		
@@ -236,8 +222,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BenefitDTO
 	{
 		
@@ -260,8 +245,7 @@ namespace MyNS
 		public System.Nullable<System.DateOnly> Validity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ByteArrayResource
 	{
 		
@@ -297,8 +281,7 @@ namespace MyNS
 		public URL Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File
 	{
 		
@@ -348,14 +331,12 @@ namespace MyNS
 		public System.Nullable<System.Int64> UsableSpace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputStream
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class URI
 	{
 		
@@ -411,8 +392,7 @@ namespace MyNS
 		public string UserInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class URL
 	{
 		
@@ -450,8 +430,7 @@ namespace MyNS
 		public string UserInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CovinTxnResponse
 	{
 		
@@ -462,8 +441,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccountByVerifiedMobileRequest
 	{
 		
@@ -557,8 +535,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccountJwtResponse
 	{
 		
@@ -626,8 +603,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccountWithAadhaarOtp
 	{
 		
@@ -665,8 +641,7 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAccountWithPreVerifiedAadhaar
 	{
 		
@@ -695,8 +670,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHIdDemoAuthRequest
 	{
 		
@@ -739,8 +713,7 @@ namespace MyNS
 		public string Validity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHealthIdOptRequest
 	{
 		
@@ -769,8 +742,7 @@ namespace MyNS
 		public string Validity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHidBiometricRequest
 	{
 		
@@ -806,8 +778,7 @@ namespace MyNS
 		public string Validity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHidMobileRequest
 	{
 		
@@ -858,57 +829,54 @@ namespace MyNS
 		public string Validity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateHidMobileRequestBenefitDocType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOTER_ID_CARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOTER_ID_CARD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RATION_CARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RATION_CARD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAN_CARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAN_CARD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVING_LICENSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVING_LICENSE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENSIONER_PHOTO_CARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENSIONER_PHOTO_CARD = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KISSAN_PHOTO_PASSBOOK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KISSAN_PHOTO_PASSBOOK = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FREEDOM_FIGHTER_PHOTO_CARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FREEDOM_FIGHTER_PHOTO_CARD = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERTIFICATE_IDENTIFY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERTIFICATE_IDENTIFY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABILITY_ID_CARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABILITY_ID_CARD = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MNREGA_JOB_CARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MNREGA_JOB_CARD = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIRTH_CERTIFICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIRTH_CERTIFICATE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARRIAGE_CERTIFICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARRIAGE_CERTIFICATE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_GOVERNMENT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_GOVERNMENT_ID = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADOPTION_CERTIFICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADOPTION_CERTIFICATE = 13,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateHidNotifyBenefitRequest
 	{
 		
@@ -950,8 +918,7 @@ namespace MyNS
 		public string Validity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DistrictDTO
 	{
 		
@@ -962,8 +929,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateMobileOTPForTxnRequest
 	{
 		
@@ -974,8 +940,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateMobileOTPRequest
 	{
 		
@@ -983,8 +948,7 @@ namespace MyNS
 		public string Mobile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthFacilityAuthenticationRequest
 	{
 		
@@ -995,8 +959,7 @@ namespace MyNS
 		public string Password { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthFacilityAuthenticationResponse
 	{
 		
@@ -1007,8 +970,7 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthFacilityChangedPasswordRequest
 	{
 		
@@ -1022,8 +984,7 @@ namespace MyNS
 		public string OldPassword { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthFacilityPasswordRequest
 	{
 		
@@ -1031,8 +992,7 @@ namespace MyNS
 		public string HfrUid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthFacilityPasswordResponse
 	{
 		
@@ -1040,8 +1000,7 @@ namespace MyNS
 		public string Password { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidBenefitDelinkRequestPayload
 	{
 		
@@ -1052,8 +1011,7 @@ namespace MyNS
 		public string UidToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidBenefitLinkedRequestPayload
 	{
 		
@@ -1073,8 +1031,7 @@ namespace MyNS
 		public string Validity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidBenefitLinkedResponsePayload
 	{
 		
@@ -1088,8 +1045,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidBenefitNameSearchRequest
 	{
 		
@@ -1100,8 +1056,7 @@ namespace MyNS
 		public string HealthId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidBenefitRequestPayload
 	{
 		
@@ -1211,8 +1166,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidBenefitSearchResponsePayload
 	{
 		
@@ -1229,8 +1183,7 @@ namespace MyNS
 		public string StateCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidChangePasswordRequestPayload
 	{
 		
@@ -1241,8 +1194,7 @@ namespace MyNS
 		public string OldPassword { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidOtpRequestPaylaod
 	{
 		
@@ -1256,8 +1208,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidStatusRequestPayload
 	{
 		
@@ -1265,8 +1216,7 @@ namespace MyNS
 		public string HealthIdNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidUpdateAccountRequest
 	{
 		
@@ -1328,8 +1278,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HidUpdateMobiletRequest
 	{
 		
@@ -1340,8 +1289,7 @@ namespace MyNS
 		public string Mobile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JwtRequest
 	{
 		
@@ -1352,8 +1300,7 @@ namespace MyNS
 		public string Password { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JwtResponse
 	{
 		
@@ -1361,8 +1308,7 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MobileVerificationToken
 	{
 		
@@ -1370,8 +1316,7 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResendOTPRequest
 	{
 		
@@ -1383,8 +1328,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseEntity
 	{
 		
@@ -1398,9 +1342,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StatusCodeValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResponseEntityStatusCode
 	{
 		
@@ -1606,8 +1548,7 @@ namespace MyNS
 		_511_NETWORK_AUTHENTICATION_REQUIRED = 66,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetrieveHealthIdPayloadResponse
 	{
 		
@@ -1618,8 +1559,7 @@ namespace MyNS
 		public string HealthIdNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetriveHealthIdMobilePayLoad
 	{
 		
@@ -1674,8 +1614,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchByHealthIdRequest
 	{
 		
@@ -1683,8 +1622,7 @@ namespace MyNS
 		public string HealthId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchByMobileRequest
 	{
 		
@@ -1701,8 +1639,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchResponseSingle
 	{
 		
@@ -1722,8 +1659,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatesDTO
 	{
 		
@@ -1737,8 +1673,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagRequest
 	{
 		
@@ -1749,8 +1684,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TxnResponse
 	{
 		
@@ -1758,8 +1692,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAccountRequest
 	{
 		
@@ -1818,8 +1751,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDTO
 	{
 		
@@ -1920,8 +1852,7 @@ namespace MyNS
 		public string YearOfBirth { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidateTokenRequest
 	{
 		
@@ -1929,8 +1860,7 @@ namespace MyNS
 		public string AuthToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyAadhaarOtp
 	{
 		
@@ -1944,8 +1874,7 @@ namespace MyNS
 		public string TxnId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyAadhaarWithBio
 	{
 		
@@ -1966,8 +1895,7 @@ namespace MyNS
 		public string Restrictions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyMobileRequest
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for a variable font axis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Axis
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata describing a family of fonts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Webfont
 	{
 		
@@ -116,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing the list of fonts currently served by the Google Fonts API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebfontList
 	{
 		
@@ -194,22 +191,22 @@ namespace MyNS
 	public enum Webfonts_webfonts_listSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORT_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SORT_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALPHA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALPHA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POPULARITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POPULARITY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STYLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STYLE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRENDING = 5,
 	}
 }

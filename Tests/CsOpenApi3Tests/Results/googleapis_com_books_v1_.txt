@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Annotation
 	{
 		
@@ -144,8 +143,7 @@ namespace MyNS
 		public BooksAnnotationsRange ImageCfiRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BooksAnnotationsRange
 	{
 		
@@ -218,8 +216,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> RemainingCharacterCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Annotations
 	{
 		
@@ -248,8 +245,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnnotationsSummary
 	{
 		
@@ -279,8 +275,7 @@ namespace MyNS
 		public string Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Annotationsdata
 	{
 		
@@ -309,8 +304,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoAnnotationdata
 	{
 		
@@ -366,8 +360,7 @@ namespace MyNS
 		public string VolumeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Geolayerdata
 	{
 		
@@ -497,8 +490,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Longitude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BooksCloudloadingResource
 	{
 		
@@ -515,8 +507,7 @@ namespace MyNS
 		public string VolumeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BooksVolumesRecommendedRateResponse
 	{
 		
@@ -524,8 +515,7 @@ namespace MyNS
 		public string Consistency_token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bookshelf
 	{
 		
@@ -590,8 +580,7 @@ namespace MyNS
 		public string VolumesLastUpdated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bookshelves
 	{
 		
@@ -608,8 +597,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Category
 	{
 		
@@ -639,8 +627,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentAccessRestriction
 	{
 		
@@ -711,8 +698,7 @@ namespace MyNS
 		public string VolumeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DictionaryAnnotationdata
 	{
 		
@@ -768,8 +754,7 @@ namespace MyNS
 		public string VolumeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dictlayerdata
 	{
 		
@@ -983,8 +968,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Discoveryclusters
 	{
 		
@@ -1045,8 +1029,7 @@ namespace MyNS
 		public string TextColorArgb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Volume
 	{
 		
@@ -1202,8 +1185,7 @@ namespace MyNS
 		public string WebReaderLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadAccessRestriction
 	{
 		
@@ -1665,8 +1647,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsSharingDisabledByFop { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadingPosition
 	{
 		
@@ -1723,8 +1704,7 @@ namespace MyNS
 		public string StartUtcSec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Review
 	{
 		
@@ -2098,8 +2078,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Volumeseriesinfo
 	{
 		
@@ -2163,8 +2142,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> IssueOrderNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadAccesses
 	{
 		
@@ -2184,14 +2162,12 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FamilyInfo
 	{
 		
@@ -2239,8 +2215,7 @@ namespace MyNS
 		public string Role { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Layersummaries
 	{
 		
@@ -2263,8 +2238,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Layersummary
 	{
 		
@@ -2347,8 +2321,7 @@ namespace MyNS
 		public string VolumeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metadata
 	{
 		
@@ -2384,8 +2357,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notification
 	{
 		
@@ -2444,8 +2416,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Offers
 	{
 		
@@ -2500,8 +2471,7 @@ namespace MyNS
 		public string VolumeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestAccessData
 	{
 		
@@ -2518,8 +2488,7 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Series
 	{
 		
@@ -2615,8 +2584,7 @@ namespace MyNS
 		public string ReleaseTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Seriesmembership
 	{
 		
@@ -2633,8 +2601,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Usersettings
 	{
 		
@@ -2718,8 +2685,7 @@ namespace MyNS
 		public string Opted_state { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Volume2
 	{
 		
@@ -2739,8 +2705,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Volumeannotation
 	{
 		
@@ -2848,8 +2813,7 @@ namespace MyNS
 		public BooksAnnotationsRange GbTextRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Volumeannotations
 	{
 		
@@ -2884,8 +2848,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Volumes
 	{
 		
@@ -4848,68 +4811,68 @@ namespace MyNS
 	public enum Books_myconfig_requestAccessLicenseTypes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LICENSE_TYPES_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LICENSE_TYPES_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONCURRENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONCURRENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWNLOAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOWNLOAD = 3,
 	}
 	
 	public enum Books_mylibrary_bookshelves_addVolumeReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REASON_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REASON_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS_PREX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS_PREX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS_SEARCH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDING = 3,
 	}
 	
 	public enum Books_mylibrary_bookshelves_removeVolumeReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REASON_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REASON_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDING = 1,
 	}
 	
 	public enum Books_mylibrary_bookshelves_volumes_listProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECTION_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECTION_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LITE = 2,
 	}
 	
 	public enum Books_mylibrary_readingpositions_setPositionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bookmark")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bookmark = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chapter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chapter = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="next-page")]
@@ -4918,20 +4881,20 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="prev-page")]
 		prevMinuspage = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scroll")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scroll = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="search")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		search = 6,
 	}
 	
 	public enum Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]
@@ -4941,10 +4904,10 @@ namespace MyNS
 	public enum Books_personalizedstream_getMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]
@@ -4954,39 +4917,39 @@ namespace MyNS
 	public enum Books_volumes_listDownload
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWNLOAD_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOWNLOAD_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EPUB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EPUB = 1,
 	}
 	
 	public enum Books_volumes_listFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ebooks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ebooks = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="free-ebooks")]
 		freeMinusebooks = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="paid-ebooks")]
 		paidMinusebooks = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="partial")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		@partial = 5,
 	}
 	
 	public enum Books_volumes_listLibraryRestrict
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIBRARY_RESTRICT_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIBRARY_RESTRICT_UNDEFINED = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="my-library")]
@@ -4999,10 +4962,10 @@ namespace MyNS
 	public enum Books_volumes_listMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]
@@ -5012,39 +4975,39 @@ namespace MyNS
 	public enum Books_volumes_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORDER_BY_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORDER_BY_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newest = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevance = 2,
 	}
 	
 	public enum Books_volumes_listPrintType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRINT_TYPE_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRINT_TYPE_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOKS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAGAZINES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAGAZINES = 3,
 	}
 	
 	public enum Books_volumes_recommended_listMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]
@@ -5054,20 +5017,20 @@ namespace MyNS
 	public enum Books_volumes_recommended_rateRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RATING_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HAVE_IT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HAVE_IT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_INTERESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_INTERESTED = 2,
 	}
 	
 	public enum Books_volumes_associated_listAssociation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATION_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATION_UNDEFINED = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="end-of-sample")]
@@ -5083,10 +5046,10 @@ namespace MyNS
 	public enum Books_volumes_associated_listMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]

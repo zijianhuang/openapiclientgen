@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateScalingPlanResponse
 	{
 		
@@ -30,8 +29,7 @@ namespace MyNS
 		public int ScalingPlanVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateScalingPlanRequest
 	{
 		
@@ -60,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an application source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationSource
 	{
 		
@@ -75,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagFilter
 	{
 		
@@ -90,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes a scaling instruction for a scalable resource in a scaling plan. Each scaling instruction applies to one resource.</p> <p>AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified. </p> <p>AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast. </p> <important> <p>We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-best-practices.html">Best Practices for AWS Auto Scaling</a> in the <i>AWS Auto Scaling User Guide</i>.</p> </important>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingInstruction
 	{
 		
@@ -162,31 +157,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DisableDynamicScaling { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServiceNamespace
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="autoscaling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		autoscaling = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecs = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ec2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ec2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rds = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dynamodb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dynamodb = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalableDimension
 	{
 		
@@ -218,8 +209,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetTrackingConfiguration
 	{
 		
@@ -252,8 +242,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PredefinedScalingMetricSpecification
 	{
 		
@@ -268,57 +257,54 @@ namespace MyNS
 		public string ResourceLabel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalingMetricType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASGAverageCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASGAverageCPUUtilization = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASGAverageNetworkIn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASGAverageNetworkIn = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASGAverageNetworkOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASGAverageNetworkOut = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DynamoDBReadCapacityUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DynamoDBReadCapacityUtilization = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DynamoDBWriteCapacityUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DynamoDBWriteCapacityUtilization = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECSServiceAverageCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECSServiceAverageCPUUtilization = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECSServiceAverageMemoryUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECSServiceAverageMemoryUtilization = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALBRequestCountPerTarget")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALBRequestCountPerTarget = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RDSReaderAverageCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RDSReaderAverageCPUUtilization = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RDSReaderAverageDatabaseConnections")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RDSReaderAverageDatabaseConnections = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SpotFleetRequestAverageCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SpotFleetRequestAverageCPUUtilization = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SpotFleetRequestAverageNetworkIn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SpotFleetRequestAverageNetworkIn = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SpotFleetRequestAverageNetworkOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SpotFleetRequestAverageNetworkOut = 12,
 	}
 	
 	/// <summary>
 	/// <p>Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. </p> <p>To create your customized scaling metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. </p> </li> </ul> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomizedScalingMetricSpecification
 	{
 		
@@ -353,8 +339,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a dimension for a customized metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDimension
 	{
 		
@@ -373,33 +358,30 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricStatistic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Minimum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Minimum = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maximum = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SampleCount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SampleCount = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sum = 4,
 	}
 	
 	/// <summary>
 	/// <p>Represents a predefined metric that can be used for predictive scaling.</p> <p>After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PredefinedLoadMetricSpecification
 	{
 		
@@ -414,30 +396,27 @@ namespace MyNS
 		public string ResourceLabel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LoadMetricType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASGTotalCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASGTotalCPUUtilization = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASGTotalNetworkIn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASGTotalNetworkIn = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASGTotalNetworkOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASGTotalNetworkOut = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALBTargetGroupRequestCount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALBTargetGroupRequestCount = 3,
 	}
 	
 	/// <summary>
 	/// <p>Represents a CloudWatch metric of your choosing that can be used for predictive scaling. </p> <p>For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data.</p> <p>When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group. </p> <p>If you publish your own metrics, you can aggregate the data points at a given interval and then publish the aggregated data points to CloudWatch. Before AWS Auto Scaling generates the forecast, it sums up all the metric data points that occurred within each hour to match the granularity period that is used in the forecast (60 minutes).</p> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomizedLoadMetricSpecification
 	{
 		
@@ -469,80 +448,68 @@ namespace MyNS
 		public string Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PredictiveScalingMaxCapacityBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetForecastCapacityToMaxCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetForecastCapacityToMaxCapacity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetMaxCapacityToForecastCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetMaxCapacityToForecastCapacity = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetMaxCapacityAboveForecastCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetMaxCapacityAboveForecastCapacity = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PredictiveScalingMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ForecastAndScale")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ForecastAndScale = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ForecastOnly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ForecastOnly = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalingPolicyUpdateBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KeepExternalPolicies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KeepExternalPolicies = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReplaceExternalPolicies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReplaceExternalPolicies = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentUpdateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScalingPlanResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScalingPlanRequest
 	{
 		
@@ -561,14 +528,12 @@ namespace MyNS
 		public int ScalingPlanVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingPlanResourcesResponse
 	{
 		
@@ -582,8 +547,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a scalable resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingPlanResource
 	{
 		
@@ -639,8 +603,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a scaling policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingPolicy
 	{
 		
@@ -662,34 +625,29 @@ namespace MyNS
 		public TargetTrackingConfiguration TargetTrackingConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TargetTrackingScaling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TargetTrackingScaling = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalingStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PartiallyActive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PartiallyActive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingPlanResourcesRequest
 	{
 		
@@ -714,14 +672,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingPlansResponse
 	{
 		
@@ -735,8 +691,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a scaling plan.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingPlan
 	{
 		
@@ -785,39 +740,36 @@ namespace MyNS
 		public System.DateTimeOffset CreationTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalingPlanStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActiveWithProblems")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActiveWithProblems = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreationInProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreationInProgress = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreationFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreationFailed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeletionInProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeletionInProgress = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeletionFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeletionFailed = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateInProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateInProgress = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateFailed = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingPlansRequest
 	{
 		
@@ -837,8 +789,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetScalingPlanResourceForecastDataResponse
 	{
 		
@@ -853,8 +804,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a single value in the forecast data used for predictive scaling.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Datapoint
 	{
 		
@@ -865,8 +815,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetScalingPlanResourceForecastDataRequest
 	{
 		
@@ -927,33 +876,29 @@ namespace MyNS
 		public System.DateTimeOffset EndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ForecastDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CapacityForecast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CapacityForecast = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LoadForecast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LoadForecast = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ScheduledActionMinCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ScheduledActionMinCapacity = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ScheduledActionMaxCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ScheduledActionMaxCapacity = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateScalingPlanResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateScalingPlanRequest
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An Anywhere Cache instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnywhereCache
 	{
 		
@@ -102,8 +101,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of Anywhere Caches.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnywhereCaches
 	{
 		
@@ -130,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// A bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bucket
 	{
 		
@@ -338,8 +335,7 @@ namespace MyNS
 	/// <summary>
 	/// An access-control entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BucketAccessControl
 	{
 		
@@ -517,8 +513,7 @@ namespace MyNS
 	/// <summary>
 	/// An access-control entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectAccessControl
 	{
 		
@@ -930,8 +925,7 @@ namespace MyNS
 	/// <summary>
 	/// An access-control list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BucketAccessControls
 	{
 		
@@ -952,8 +946,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of buckets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Buckets
 	{
 		
@@ -980,8 +973,7 @@ namespace MyNS
 	/// <summary>
 	/// A bulk restore objects request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkRestoreObjectsRequest
 	{
 		
@@ -1019,8 +1011,7 @@ namespace MyNS
 	/// <summary>
 	/// An notification channel used to watch for resource changes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -1089,8 +1080,7 @@ namespace MyNS
 	/// <summary>
 	/// A Compose request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComposeRequest
 	{
 		
@@ -1117,8 +1107,7 @@ namespace MyNS
 	/// <summary>
 	/// An object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Object
 	{
 		
@@ -1417,8 +1406,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an expression text. Example: title: "User account presence" description: "Determines whether the request has a user account" expression: "size(request.user) > 0"
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -1450,8 +1438,7 @@ namespace MyNS
 	/// <summary>
 	/// A folder. Only available in buckets with hierarchical namespace enabled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Folder
 	{
 		
@@ -1530,8 +1517,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of folders.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Folders
 	{
 		
@@ -1558,8 +1544,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for storage.buckets.operations.list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -1579,8 +1564,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -1618,8 +1602,7 @@ namespace MyNS
 	/// <summary>
 	/// The "Status" type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each "Status" message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -1645,8 +1628,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template to produce a JSON-style HMAC Key resource for Create responses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HmacKey
 	{
 		
@@ -1673,8 +1655,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template to produce a JSON-style HMAC Key metadata resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HmacKeyMetadata
 	{
 		
@@ -1743,8 +1724,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of hmacKeys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HmacKeysMetadata
 	{
 		
@@ -1771,8 +1751,7 @@ namespace MyNS
 	/// <summary>
 	/// A managed folder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedFolder
 	{
 		
@@ -1829,8 +1808,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of managed folders.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedFolders
 	{
 		
@@ -1857,8 +1835,7 @@ namespace MyNS
 	/// <summary>
 	/// A subscription to receive Google PubSub notifications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notification
 	{
 		
@@ -1922,8 +1899,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of notification subscriptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notifications
 	{
 		
@@ -1944,8 +1920,7 @@ namespace MyNS
 	/// <summary>
 	/// An access-control list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectAccessControls
 	{
 		
@@ -1966,8 +1941,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Objects
 	{
 		
@@ -2000,8 +1974,7 @@ namespace MyNS
 	/// <summary>
 	/// A bucket/object/managedFolder IAM policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -2081,8 +2054,7 @@ namespace MyNS
 	/// <summary>
 	/// A rewrite response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RewriteResponse
 	{
 		
@@ -2127,8 +2099,7 @@ namespace MyNS
 	/// <summary>
 	/// A subscription to receive Google PubSub notifications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceAccount
 	{
 		
@@ -2149,8 +2120,7 @@ namespace MyNS
 	/// <summary>
 	/// A storage.(buckets|objects|managedFolders).testIamPermissions response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		
@@ -5193,265 +5163,265 @@ namespace MyNS
 	public enum Storage_buckets_listProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="noAcl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		noAcl = 1,
 	}
 	
 	public enum Storage_buckets_insertPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicReadWrite")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicReadWrite = 4,
 	}
 	
 	public enum Storage_buckets_insertPredefinedDefaultObjectAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 5,
 	}
 	
 	public enum Storage_buckets_patchPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicReadWrite")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicReadWrite = 4,
 	}
 	
 	public enum Storage_buckets_patchPredefinedDefaultObjectAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 5,
 	}
 	
 	public enum Storage_buckets_updatePredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicReadWrite")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicReadWrite = 4,
 	}
 	
 	public enum Storage_buckets_updatePredefinedDefaultObjectAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_insertPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_patchPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_updatePredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_composeDestinationPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_copyDestinationPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_rewriteDestinationPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		publicRead = 5,
 	}
 }

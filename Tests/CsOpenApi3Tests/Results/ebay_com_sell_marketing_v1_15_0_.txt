@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for an ad.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ad
 	{
 		
@@ -77,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the alert message fields for the ad.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alert
 	{
 		
@@ -98,8 +96,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the alert detail fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertDetails
 	{
 		
@@ -119,8 +116,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the aspect fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Aspect
 	{
 		
@@ -140,8 +136,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the dimension fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertDimension
 	{
 		
@@ -161,8 +156,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for the details of an existing ad group.<br /><br />An ad group can be added to a campaign that uses the Cost Per Click (CPC) funding model. A campaign may have multiple ad groups. All listings that are promoted in the campaign are included in the ad group.<br /><br /><span class="tablenote"><b>Note:</b> This type only applies to the CPC funding model; it does not apply to the Cost Per Sale (CPS) funding model.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdGroup
 	{
 		
@@ -194,8 +188,7 @@ namespace MyNS
 	/// <summary>
 	/// A complex type that describes the value of a monetary amount as represented by a global currency.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Amount
 	{
 		
@@ -215,8 +208,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for the details of a paged collection of ad groups.<br /><br /><span class="tablenote"><b>Note:</b> This type only applies to the Cost Per Click (CPC) funding model; it does not apply to the Cost Per Sale (CPS) funding model.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdGroupPagedCollectionResponse
 	{
 		
@@ -266,8 +258,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is a container for a list of ad IDs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdIds
 	{
 		
@@ -281,8 +272,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that paginate the ads returned by the request. The entire <i>result set</i> consists of 0 or more sequenced <i>response pages</i>, where each page consists of 0 or more items from the complete result set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdPagedCollectionResponse
 	{
 		
@@ -332,8 +322,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for an ad ID and its associated URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdReference
 	{
 		
@@ -353,8 +342,7 @@ namespace MyNS
 	/// <summary>
 	/// This type is a container for a list of ad IDs and their associated URIs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdReferences
 	{
 		
@@ -368,8 +356,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields returned in an ad response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdResponse
 	{
 		
@@ -413,8 +400,7 @@ namespace MyNS
 	/// <summary>
 	/// A container that defines the elements of error and warning messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -476,8 +462,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for a error parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorParameter
 	{
 		
@@ -497,8 +482,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the ad update response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdUpdateResponse
 	{
 		
@@ -536,8 +520,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the ad update status by listing ID response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdUpdateStatusByListingIdResponse
 	{
 		
@@ -575,8 +558,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the ad update status response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdUpdateStatusResponse
 	{
 		
@@ -608,8 +590,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that provides additional information for suggested keywords.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdditionalInfo
 	{
 		
@@ -629,8 +610,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the data produced for additional information about suggested keywords.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdditionalInfoData
 	{
 		
@@ -650,8 +630,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the container for an array of ads.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ads
 	{
 		
@@ -665,8 +644,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for any warning error messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseResponse
 	{
 		
@@ -680,8 +658,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for the budget details of a Promoted Listings campaign that uses the Cost Per Click (CPC) funding model.<br /><br /><span class="tablenote"><b>Note:</b> This container will only be returned for campaigns using the CPC funding model; it does not apply to the Cost Per Sale (CPS) funding model.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Budget
 	{
 		
@@ -701,8 +678,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for the budget details of a Promoted Listings campaign that uses the Cost Per Click (CPC) funding model.<br /><br /><span class="tablenote"><b>Note:</b> This container will only be returned for campaigns using the CPC funding model; it does not apply to the Cost Per Sale (CPS) funding model.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BudgetRequest
 	{
 		
@@ -716,8 +692,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for the create ads in bulk response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkAdResponse
 	{
 		
@@ -731,8 +706,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for updated ads in the bulk response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkAdUpdateResponse
 	{
 		
@@ -746,8 +720,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the updated ad status in the bulk response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkAdUpdateStatusByListingIdResponse
 	{
 		
@@ -761,8 +734,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the updated ad status in the bulk response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkAdUpdateStatusResponse
 	{
 		
@@ -776,8 +748,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for the create ads in bulk by listing IDs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkCreateAdRequest
 	{
 		
@@ -791,8 +762,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for the create ad request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAdRequest
 	{
 		
@@ -818,8 +788,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields used to create ads in bulk by inventory reference IDs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkCreateAdsByInventoryReferenceRequest
 	{
 		
@@ -833,8 +802,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields needed to create ads by inventory reference ID request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAdsByInventoryReferenceRequest
 	{
 		
@@ -866,8 +834,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the response fields used by the <b>bulkCreateAdsByInventoryReference</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkCreateAdsByInventoryReferenceResponse
 	{
 		
@@ -881,8 +848,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields returned when you create an ad by inventory reference ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAdsByInventoryReferenceResponse
 	{
 		
@@ -926,8 +892,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the bulk request to create keywords.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkCreateKeywordRequest
 	{
 		
@@ -941,8 +906,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>CreateKeyword</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateKeywordRequest
 	{
 		
@@ -974,8 +938,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the response fields for the bulk request to create keywords.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkCreateKeywordResponse
 	{
 		
@@ -989,8 +952,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the response fields used by the <b>Keyword</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeywordResponse
 	{
 		
@@ -1040,8 +1002,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the bulk request to create negative keywords.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkCreateNegativeKeywordRequest
 	{
 		
@@ -1055,8 +1016,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>CreateNegativeKeyword</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNegativeKeywordRequest
 	{
 		
@@ -1088,8 +1048,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the response fields for the bulk request to create negative keywords.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkCreateNegativeKeywordResponse
 	{
 		
@@ -1103,8 +1062,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the negative keyword response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NegativeKeywordResponse
 	{
 		
@@ -1160,8 +1118,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that the call uses to remove ads in bulk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkDeleteAdRequest
 	{
 		
@@ -1175,8 +1132,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields used in a delete-ad request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAdRequest
 	{
 		
@@ -1190,8 +1146,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines a container that lists the ads that <b>bulkDeleteAdsByListingId</b> deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkDeleteAdResponse
 	{
 		
@@ -1205,8 +1160,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields returned in a delete-ad response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAdResponse
 	{
 		
@@ -1238,8 +1192,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the request fields that <b>bulkDeleteAdsByInventoryReference</b> uses to delete ads in bulk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkDeleteAdsByInventoryReferenceRequest
 	{
 		
@@ -1253,8 +1206,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields needed to delete an ad by its inventory reference ID.  You must always supply both <b>inventory_reference_id</b> and <b>inventory_reference_type</b>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAdsByInventoryReferenceRequest
 	{
 		
@@ -1274,8 +1226,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines a container that lists the ads that <b>bulkDeleteAdsByInventoryReference</b> deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkDeleteAdsByInventoryReferenceResponse
 	{
 		
@@ -1289,8 +1240,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields returned by request to delete a set of ads by inventory reference ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAdsByInventoryReferenceResponse
 	{
 		
@@ -1328,8 +1278,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>BulkUpdateAdStatusByListingId</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkUpdateAdStatusByListingIdRequest
 	{
 		
@@ -1343,8 +1292,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the <b>UpdateAdStatusByListingId</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAdStatusByListingIdRequest
 	{
 		
@@ -1370,8 +1318,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>BulkUpdateAdStatus</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkUpdateAdStatusRequest
 	{
 		
@@ -1385,8 +1332,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the <b>UpdateAdStatus</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAdStatusRequest
 	{
 		
@@ -1406,8 +1352,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>BulkUpdateAdStatusByInventoryReference</b> response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkUpdateAdsByInventoryReferenceResponse
 	{
 		
@@ -1421,8 +1366,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the response fields used by the <b>UpdateAdsByInventoryReference</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAdsByInventoryReferenceResponse
 	{
 		
@@ -1460,8 +1404,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>BulkUpdateKeyword</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkUpdateKeywordRequest
 	{
 		
@@ -1475,8 +1418,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the <b>UpdateKeywordByKeywordId</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateKeywordByKeywordIdRequest
 	{
 		
@@ -1502,8 +1444,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>BulkUpdateKeyword</b> response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkUpdateKeywordResponse
 	{
 		
@@ -1517,8 +1458,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the <b>UpdateKeyword</b> response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateKeywordResponse
 	{
 		
@@ -1544,8 +1484,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>BulkUpdateNegativeKeyword</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkUpdateNegativeKeywordRequest
 	{
 		
@@ -1559,8 +1498,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields used to update a negative keyword.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNegativeKeywordIdRequest
 	{
 		
@@ -1580,8 +1518,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>BulkUpdateNegativeKeyword</b> response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BulkUpdateNegativeKeywordResponse
 	{
 		
@@ -1595,8 +1532,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the <b>UpdateNegativeKeyword</b> response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNegativeKeywordResponse
 	{
 		
@@ -1622,8 +1558,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that describe an ad campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Campaign
 	{
 		
@@ -1691,8 +1626,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the budget details for a Cost Per Click (CPC) Promoted Listings campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignBudget
 	{
 		
@@ -1706,8 +1640,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for specifying the criterion (selection rule) settings of an ad campaign. If you populate the campaignCriterion object in your <b>createCampaign</b> request, ads for the campaign are created by rule for the listings that meet the criteria you specify, and these ads are associated with the newly created campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignCriterion
 	{
 		
@@ -1733,8 +1666,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines all rules/inclusion filters used to add listings to campaigns or promotions. Use of the specific fields is different for campaigns or promotions. See <a href= "/api-docs/sell/static/marketing/using-the-selectionrules-container.html ">Using the selectionRules container</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectionRule
 	{
 		
@@ -1778,8 +1710,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines how the Promoted Listings fee is calculated for a Promoted Listings ad campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FundingStrategy
 	{
 		
@@ -1811,8 +1742,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the ad rate details for a Promoted Listings Standard (PLS) ad campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DynamicAdRatePreference
 	{
 		
@@ -1832,8 +1762,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for the details of a Promoted Listings campaign that uses the Cost Per Click (CPC) funding model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignBudgetRequest
 	{
 		
@@ -1847,8 +1776,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that paginate the campaigns returned by the request. The entire <i>result set</i> consists of 0 or more sequenced <i>response pages</i>, where each page consists of 0 or more items from the complete result set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignPagedCollectionResponse
 	{
 		
@@ -1898,8 +1826,7 @@ namespace MyNS
 	/// <summary>
 	/// This type contains a list of campaigns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Campaigns
 	{
 		
@@ -1913,8 +1840,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields needed for a clone-campaign request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloneCampaignRequest
 	{
 		
@@ -1946,8 +1872,7 @@ namespace MyNS
 	/// <summary>
 	/// This container defines a coded coupon promotion. It is required if the promotion type is CODED_COUPON.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CouponConfiguration
 	{
 		
@@ -1973,8 +1898,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for the <b>CreateAdGroup</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAdGroupRequest
 	{
 		
@@ -1994,8 +1918,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields needed to create a campaign. To create a campaign, you need to specify a name, start and end dates, funding, marketplace, and optionally the criterion (selection rules).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCampaignRequest
 	{
 		
@@ -2045,8 +1968,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the rules that govern the generation of a report task and the criteria that's used to create the report. The report-generation rules include the starting and ending dates for the report. Report-task criteria includes the report dimensions, metrics, listings covered in the report, and so on. For information on the required and optional fields for each report type, see <a href="/api-docs/sell/static/marketing/pl-reports.html">Promoted Listings reporting</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateReportTask
 	{
 		
@@ -2126,8 +2048,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the annotation and dimension key used by the report. For information on how to set these values, see <a href="/api-docs/sell/static/marketing/pl-reports.html">Promoted Listings reporting</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimension
 	{
 		
@@ -2147,8 +2068,7 @@ namespace MyNS
 	/// <summary>
 	/// This complex type is used to identify an item that is managed by the Inventory API. The type defines the fields contained in an inventory reference ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryReference
 	{
 		
@@ -2168,8 +2088,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the annotation values associated with a dimension. Annotations are metadata of the dimension. For example, annotations for a listing ID could be <code>listing_title</code> or <code>listing_quantity_sold</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionKeyAnnotation
 	{
 		
@@ -2189,8 +2108,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the dimension used to create the report and the annotation keys associated with that dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionMetadata
 	{
 		
@@ -2216,8 +2134,7 @@ namespace MyNS
 	/// <summary>
 	/// This container defines the promotional discount as either a monetary amount or a percentage of the sales price.  <p class="tablenote"><b>Important!:</b> You must populate one and only one of the fields in this container: <ul><li><b>amountOffItem</b></li> <li><b>amountOffOrder</b></li> <li><b>percentageOffItem</b></li> <li><b>percentageOffOrder</b></li></ul></p>  <p class="tablenote"><b>Tip:</b> Refer to <a href="/api-docs/sell/static/marketing/pm-specifying-discounts.html">Configuring discounts for threshold promotions</a> for information and examples on how to combine <b>discountBenefit</b> and <b>discountSpecification</b> values to create different types of promotions.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiscountBenefit
 	{
 		
@@ -2249,8 +2166,7 @@ namespace MyNS
 	/// <summary>
 	/// This complex type defines a promotion as being either a monetary amount or a percentage of a sales price that's subtracted from the price of an item or order. <p>Set the amount of the discount and the rules that govern when the discount triggers using the <b>discountBenefit</b> and <b>discountSpecification</b> fields.</p>  <p class="tablenote"><b>Note:</b> In <b>volume pricing promotions</b>, you must configure at least two <b>discountRule</b> containers and at most four.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiscountRule
 	{
 		
@@ -2282,8 +2198,7 @@ namespace MyNS
 	/// <summary>
 	/// This container defines the criteria for when the discounts of a promotion trigger, such as the minimum quantity the buyer must purchase before the promotion kicks in. The promotional discount is applied each time the criteria defined by this container is met.  <p><b>Note:</b> When configuring the rules that govern when the discounts are applied, populate just one of the following fields in the <b>discountSpecification</b> container:</p>  <ul><li><b>minAmount</b></li> <li><b>minQuantity</b></li> <li><b>forEachQuantity</b></li> <li><b>forEachAmount</b></li></ul> <p class="tablenote"><b>Tip:</b> Refer to <a href="/api-docs/sell/static/marketing/pm-specifying-discounts.html">Configuring discounts for threshold promotions</a> for information and examples on how to combine <b>discountBenefit</b> and <b>discountSpecification</b> to create different types of promotions.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiscountSpecification
 	{
 		
@@ -2321,8 +2236,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines either the selections rules or the list of listing IDs for the promotion. The "listing IDs" are are either the seller's item IDs or the eBay listing IDs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryCriterion
 	{
 		
@@ -2354,8 +2268,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for the seller inventory reference IDs (also known as an "SKU" or "custom label").
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryItem
 	{
 		
@@ -2369,8 +2282,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for a set of inventory selection rules.  <br><br><b>Required:</b> When <b>inventoryCriterionType</b> is set to <code>INVENTORY_BY_RULE</code> or <code>INVENTORY_ANY</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleCriteria
 	{
 		
@@ -2408,8 +2320,7 @@ namespace MyNS
 	/// <summary>
 	/// A container for details regarding the basis for an item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemBasis
 	{
 		
@@ -2429,8 +2340,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the status of a markdown promotion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemMarkdownStatus
 	{
 		
@@ -2456,8 +2366,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields used to describe an item price markdown promotion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemPriceMarkdown
 	{
 		
@@ -2537,8 +2446,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that describe the discounts applied to a set of inventory items and the order in which the selection rules are applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectedInventoryDiscount
 	{
 		
@@ -2570,8 +2478,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that describe a threshold promotion and includes the promotional discount, the items included in the promotion, and the rules that specify when the promotion is applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemPromotion
 	{
 		
@@ -2663,8 +2570,7 @@ namespace MyNS
 	/// <summary>
 	/// This complex type defines the fields returned for an item (threshold) promotion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemPromotionResponse
 	{
 		
@@ -2762,8 +2668,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields for a paginated result set of promotions. The response consists of 0 or more sequenced pages that are returned from the complete <i>result set</i>, where each page consists of 0 or more items.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemsPagedCollection
 	{
 		
@@ -2819,8 +2724,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that describe a listing that is in a promotion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListingDetail
 	{
 		
@@ -2900,8 +2804,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the details for keywords that are associated with an ad group.<br /><br /><span class="tablenote"><b>Note:</b> This type only applies to the Cost Per Click (CPC) funding model; it does not apply to the Cost Per Sale (CPS) funding model.</span>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Keyword
 	{
 		
@@ -2945,8 +2848,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the keywords of the paged collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeywordPagedCollectionResponse
 	{
 		
@@ -2996,8 +2898,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields used by the <b>Keyword</b> method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeywordRequest
 	{
 		
@@ -3017,8 +2918,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the name and data type of a metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricMetadata
 	{
 		
@@ -3038,8 +2938,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the fields for a negative keyword.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NegativeKeyword
 	{
 		
@@ -3083,8 +2982,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the negative keywords, returned in a paged collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NegativeKeywordPagedCollectionResponse
 	{
 		
@@ -3134,8 +3032,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that describe a promotion. This includes all the information about a promotion except for the listings that are a part of the promotion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromotionDetail
 	{
 		
@@ -3215,8 +3112,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields in a promotion-level report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromotionReportDetail
 	{
 		
@@ -3320,8 +3216,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields in a paginated result set of seller promotions. The response consists of 0 or more sequenced pages that are returned from the complete <i>result set</i>, where each page consists of 0 or more items.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromotionsPagedCollection
 	{
 		
@@ -3371,8 +3266,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields in a paginated result set of promotion-level reports. The response consists of 0 or more sequenced pages that are returned from the complete <i>result set</i>, where each page consists of 0 or more items.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PromotionsReportPagedCollection
 	{
 		
@@ -3422,8 +3316,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the data for a payment amount, such as the sale price.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProposedBid
 	{
 		
@@ -3455,8 +3348,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields included in the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportMetadata
 	{
 		
@@ -3494,8 +3386,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the metadata used by the all report types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportMetadatas
 	{
 		
@@ -3509,8 +3400,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields in a report task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportTask
 	{
 		
@@ -3644,8 +3534,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields that paginate the reports tasks returned by the request. The entire <i>result set</i> consists of 0 or more sequenced <i>response pages</i>, where each page consists of 0 or more items from the complete result set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportTaskPagedCollection
 	{
 		
@@ -3695,8 +3584,7 @@ namespace MyNS
 	/// <summary>
 	/// The suggested bid rate for the item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedBids
 	{
 		
@@ -3722,8 +3610,7 @@ namespace MyNS
 	/// <summary>
 	/// The suggested keywords for the item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggestedKeywords
 	{
 		
@@ -3749,8 +3636,7 @@ namespace MyNS
 	/// <summary>
 	/// This type defines the fields in an Promotions Manager Summary report. Reports are formatted in JSON. For more details, see <a href="/api-docs/sell/static/marketing/pm-summary-reports.html">Reading item promotion Summary reports</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SummaryReportResponse
 	{
 		
@@ -3788,8 +3674,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the keywords of the paged collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetedAdsPagedCollection
 	{
 		
@@ -3839,8 +3724,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the targeted items.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetingItems
 	{
 		
@@ -3860,8 +3744,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the targeted bid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetedBidRequest
 	{
 		
@@ -3875,8 +3758,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the keywords of the paged collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetedBidsPagedCollection
 	{
 		
@@ -3890,8 +3772,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that provides details for the targeted keywords.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetedKeywordRequest
 	{
 		
@@ -3923,8 +3804,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the keywords of the paged collection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetedKeywordsPagedCollection
 	{
 		
@@ -3938,8 +3818,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields used by the <b>UpdateAdGroup</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAdGroupRequest
 	{
 		
@@ -3965,8 +3844,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that defines the request fields used to update the ad rate strategy for a Promoted Listings ad campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAdrateStrategyRequest
 	{
 		
@@ -3992,8 +3870,7 @@ namespace MyNS
 	/// <summary>
 	/// This type specifies the bid percentage for an ad campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBidPercentageRequest
 	{
 		
@@ -4007,8 +3884,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the <b>UpdateCampaignBudget</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCampaignBudgetRequest
 	{
 		
@@ -4022,8 +3898,7 @@ namespace MyNS
 	/// <summary>
 	/// This type specifies the updated name, and start and end dates for an update-campaign request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCampaignIdentificationRequest
 	{
 		
@@ -4049,8 +3924,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the <b>UpdateKeyword</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateKeywordRequest
 	{
 		
@@ -4070,8 +3944,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that contains the fields for the <b>UpdateNegativeKeyword</b> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNegativeKeywordRequest
 	{
 		

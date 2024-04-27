@@ -89,10 +89,10 @@ namespace MyNS
 	public enum CompileLatex_compiler
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pdflatex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pdflatex = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lualatex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lualatex = 1,
 	}
 }

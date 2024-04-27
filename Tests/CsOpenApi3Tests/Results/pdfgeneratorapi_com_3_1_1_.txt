@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDataElement
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Template { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Data
 	{
 		
@@ -47,8 +45,7 @@ namespace MyNS
 	/// <summary>
 	/// Template component definition
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Component
 	{
 		
@@ -107,69 +104,66 @@ namespace MyNS
 		public System.Nullable<System.Int32> Zindex { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComponentCls
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="labelComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		labelComponent = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		numberComponent = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="textComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		textComponent = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="imageComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		imageComponent = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dateComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dateComponent = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hlineComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hlineComponent = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vlineComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vlineComponent = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tableComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tableComponent = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="compositeComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		compositeComponent = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="barcodeComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		barcodeComponent = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="qrcodeComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		qrcodeComponent = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chartComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chartComponent = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rectangleComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rectangleComponent = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="headerComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		headerComponent = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="footerComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		footerComponent = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="checkboxComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		checkboxComponent = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="radioComponent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		radioComponent = 16,
 	}
 	
 	/// <summary>
 	/// Template object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Template
 	{
 		
@@ -204,8 +198,7 @@ namespace MyNS
 		public string[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateDefinition
 	{
 		
@@ -333,19 +326,17 @@ namespace MyNS
 		public System.Nullable<System.Double> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TemplateDefinitionLayoutFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A4 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="letter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		letter = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 2,
 	}
 	
@@ -365,16 +356,14 @@ namespace MyNS
 		public System.Nullable<System.Double> Top { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TemplateDefinitionLayoutOrientation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="portrait")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		portrait = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="landscape")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		landscape = 1,
 	}
 	
@@ -400,9 +389,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TemplateDefinitionLayoutRotation
 	{
 		
@@ -419,13 +406,11 @@ namespace MyNS
 		_270 = 270,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TemplateDefinitionLayoutUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cm = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in")]
@@ -473,8 +458,7 @@ namespace MyNS
 	/// <summary>
 	/// Template configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateDefinitionNew
 	{
 		
@@ -607,9 +591,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TemplateDefinitionNewLayoutRotaion
 	{
 		
@@ -626,13 +608,11 @@ namespace MyNS
 		_270 = 270,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TemplateDefinitionNewLayoutUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cm = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in")]
@@ -677,8 +657,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Right { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Workspace
 	{
 		
@@ -1167,29 +1146,29 @@ namespace MyNS
 	public enum MergeTemplatesFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pdf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pdf = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		html = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zip = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="xlsx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		xlsx = 3,
 	}
 	
 	public enum MergeTemplatesOutput
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="base64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		base64 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		url = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		I = 2,
 	}
 	
@@ -1285,19 +1264,19 @@ namespace MyNS
 	public enum GetEditorUrlLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="et")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		et = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cs = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sk = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ru")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ru = 4,
 	}
 	

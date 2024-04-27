@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Interval
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntervalCollection
 	{
 		
@@ -65,8 +63,7 @@ namespace MyNS
 		public string Symbol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntervalCollectionResponse
 	{
 		
@@ -89,8 +86,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate
 	{
 		
@@ -104,8 +100,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RateResponse
 	{
 		
@@ -128,8 +123,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Success { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Summary
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 		public System.Nullable<System.Double> YearToDatePercentChange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SummaryResponse
 	{
 		
@@ -976,38 +969,38 @@ namespace MyNS
 	public enum Currencies_History_GETFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		xml = 1,
 	}
 	
 	public enum Metals_BenchmarkHistory_GETUnitofmeasure
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mg = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="g")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		g = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kg = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gr = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="oz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		oz = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="toz")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		toz = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ct")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ct = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dwt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dwt = 7,
 	}
 }

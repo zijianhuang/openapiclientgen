@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAccountingConversionOptions
 	{
 		
@@ -44,8 +43,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> PercentValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAccountingDomainWhitelistEntry
 	{
 		
@@ -56,8 +54,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAccountingExtendedGrants
 	{
 		
@@ -68,8 +65,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> AllowGroupCreation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAccountingGuest
 	{
 		
@@ -155,8 +151,7 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoGrantsGrant
 	{
 		
@@ -176,8 +171,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreResponsesEntityUri_SystemInt64_
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAccountingHitOptions
 	{
 		
@@ -197,21 +190,18 @@ namespace MyNS
 		public System.Nullable<System.Boolean> HideReferrer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiCoreDtoAccountingGuestTimeFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmPm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmPm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="H24")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		H24 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAccountingIpBlacklistEntry
 	{
 		
@@ -222,8 +212,7 @@ namespace MyNS
 		public string Ip { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAccountingPlan
 	{
 		
@@ -279,8 +268,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> UsedMonthlyEvents { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAccountingUser
 	{
 		
@@ -330,8 +318,7 @@ namespace MyNS
 		public string Timezonename { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAggregatedAggregatedResult
 	{
 		
@@ -399,14 +386,12 @@ namespace MyNS
 		public System.Nullable<System.Int64> UniqueViews { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SystemObject
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoAggregatedAggregatedSummaryResult
 	{
 		
@@ -423,8 +408,7 @@ namespace MyNS
 		public ApiCoreDtoAggregatedAggregatedResult[] Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoClickStreamHit
 	{
 		
@@ -498,8 +482,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoClickStreamHitBrowserInfo
 	{
 		
@@ -519,8 +502,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoClickStreamHitConversionInfo
 	{
 		
@@ -558,8 +540,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoClickStreamHitDatapointInfo
 	{
 		
@@ -615,27 +596,24 @@ namespace MyNS
 		public string TrackingCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiCoreDtoClickStreamHitDatapointInfoStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Paused = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Abuse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Abuse = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deleted = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoTagsTag
 	{
 		
@@ -652,8 +630,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoClickStreamHitLocationInfo
 	{
 		
@@ -688,8 +665,7 @@ namespace MyNS
 		public string RegionName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoClickStreamHitOsInfo
 	{
 		
@@ -706,8 +682,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoClickStreamHitSource
 	{
 		
@@ -721,8 +696,7 @@ namespace MyNS
 		public string Param { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoClickStreamHitListPage
 	{
 		
@@ -733,8 +707,7 @@ namespace MyNS
 		public string LastKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoConversionsConversion
 	{
 		
@@ -766,21 +739,18 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiCoreDtoConversionsConversionProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Http")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Http = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Https")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Https = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsBrowserBaseDestinationItem
 	{
 		
@@ -794,8 +764,7 @@ namespace MyNS
 		public string SpidersDestinationUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsDatapoint
 	{
 		
@@ -893,21 +862,18 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WritePermited { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiCoreDtoDatapointsDatapointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TrackingLink")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TrackingLink = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TrackingPixel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TrackingPixel = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsTrackingLinkSpecifics
 	{
 		
@@ -999,45 +965,42 @@ namespace MyNS
 		public ApiCoreDtoDatapointsWeightedDestinationItem[] WeightedDestinationItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiCoreDtoDatapointsTrackingLinkSpecificsDestinationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Simple")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Simple = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RandomDestination")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RandomDestination = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DestinationByLanguage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DestinationByLanguage = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SpilloverDestination")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SpilloverDestination = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DynamicUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DynamicUrl = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BrowserDestination")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BrowserDestination = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DestinationByNation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DestinationByNation = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UniqueDestination")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UniqueDestination = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SequentialDestination")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SequentialDestination = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WeightedDestination")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WeightedDestination = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsMultipleDestinationItem
 	{
 		
@@ -1045,37 +1008,32 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiCoreDtoDatapointsTrackingLinkSpecificsRedirectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PermanentRedirect")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PermanentRedirect = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemporaryRedirect")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TemporaryRedirect = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiCoreDtoDatapointsTrackingLinkSpecificsReferrerClean
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Clean")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Clean = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Myself")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Myself = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsDatapointRetargetingInfo
 	{
 		
@@ -1086,8 +1044,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsUniqueDestinationItem
 	{
 		
@@ -1095,8 +1052,7 @@ namespace MyNS
 		public string FirstDestinationUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsUrlByLanguageItem
 	{
 		
@@ -1107,8 +1063,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsUrlByNationItem
 	{
 		
@@ -1119,8 +1074,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsWeightedDestinationItem
 	{
 		
@@ -1131,8 +1085,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Weight { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDatapointsTrackingPixelSpecifics
 	{
 		
@@ -1140,8 +1093,7 @@ namespace MyNS
 		public string ParameterNote { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoDomainsDomain
 	{
 		
@@ -1161,27 +1113,24 @@ namespace MyNS
 		public System.Nullable<ApiCoreDtoDomainsDomainType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApiCoreDtoDomainsDomainType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="System")]
 		_System = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Go")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Go = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Dedicated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Dedicated = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Personal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Personal = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoEntityUriLong
 	{
 		
@@ -1192,8 +1141,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoGroupsGroup
 	{
 		
@@ -1231,8 +1179,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WritePermited { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoRetargetingRetargetingScript
 	{
 		
@@ -1246,8 +1193,7 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoTopsTop
 	{
 		
@@ -1264,8 +1210,7 @@ namespace MyNS
 		public string Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreDtoTopsTopItem
 	{
 		
@@ -1321,8 +1266,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> UniqueViews { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreRequestsConversionPatchBody
 	{
 		
@@ -1336,8 +1280,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> ReplaceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreRequestsDatapointsBatch
 	{
 		
@@ -1345,8 +1288,7 @@ namespace MyNS
 		public ApiCoreDtoDatapointsDatapoint[] List { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreRequestsDeleteBatch
 	{
 		
@@ -1354,8 +1296,7 @@ namespace MyNS
 		public ApiCoreDtoEntityUriLong[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreRequestsGenericTextPatch
 	{
 		
@@ -1363,8 +1304,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreRequestsPatchBody
 	{
 		
@@ -1375,8 +1315,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreRequestsPatchBodyBatch
 	{
 		
@@ -1384,8 +1323,7 @@ namespace MyNS
 		public ApiCoreRequestsPatchBody[] PatchRequests { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreRequestsPermissionPatchRequest
 	{
 		
@@ -1399,8 +1337,7 @@ namespace MyNS
 		public string Verb { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreResponsesCountResponce
 	{
 		
@@ -1408,8 +1345,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingDomainWhitelistEntry_
 	{
 		
@@ -1417,8 +1353,7 @@ namespace MyNS
 		public ApiCoreDtoAccountingDomainWhitelistEntry[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingIpBlacklistEntry_
 	{
 		
@@ -1426,8 +1361,7 @@ namespace MyNS
 		public ApiCoreDtoAccountingIpBlacklistEntry[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_
 	{
 		
@@ -1435,8 +1369,7 @@ namespace MyNS
 		public ApiCoreDtoAggregatedAggregatedResult[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreResponsesEntitiesResponse_ApiCoreDtoClickStreamHit_
 	{
 		
@@ -1444,8 +1377,7 @@ namespace MyNS
 		public ApiCoreDtoClickStreamHit[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreResponsesEntitiesResponse_ApiCoreDtoGrantsGrant_
 	{
 		
@@ -1453,8 +1385,7 @@ namespace MyNS
 		public ApiCoreDtoGrantsGrant[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_
 	{
 		
@@ -1462,8 +1393,7 @@ namespace MyNS
 		public ApiCoreResponsesEntityUri_SystemInt64_[] Entities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_
 	{
 		
@@ -1480,8 +1410,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClickMeterInfrastructureValidationValidationFailure
 	{
 		
@@ -5526,125 +5455,125 @@ namespace MyNS
 	public enum Account_GetGuestsSortDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 	
 	public enum Account_GetPermissionsEntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="datapoint")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		datapoint = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group = 1,
 	}
 	
 	public enum Account_GetPermissionsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="r")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		r = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="w")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		w = 1,
 	}
 	
 	public enum Aggregated_GetStatisticsSingleTimeFrame
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="today")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		today = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="yesterday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		yesterday = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last7")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last7 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last30")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last30 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastmonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastmonth = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="currentmonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		currentmonth = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="previousmonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		previousmonth = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last90")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last90 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last120")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last120 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last180")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last180 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last12months")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last12months = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastyear")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastyear = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="currentyear")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		currentyear = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="beginning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		beginning = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 14,
 	}
 	
 	public enum Aggregated_GetStatisticsListGroupBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="week")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		week = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="month")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		month = 1,
 	}
 	
 	public enum Aggregated_GetConversionsSummaryStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 1,
 	}
 	
 	public enum Aggregated_GetDatapointsSummaryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tp = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tl = 1,
 	}
 	
 	public enum Aggregated_GetDatapointsSummaryStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		paused = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spam")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spam = 3,
 	}
 	
@@ -5654,98 +5583,98 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spiders")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spiders = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uniques")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uniques = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nonuniques")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nonuniques = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="conversions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		conversions = 4,
 	}
 	
 	public enum Conversions_GetHitsTimeframe
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="yesterday")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		yesterday = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last7")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last7 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last30")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last30 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lastmonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lastmonth = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="currentmonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		currentmonth = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="previousmonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		previousmonth = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last90")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last90 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last120")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last120 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="last180")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		last180 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 9,
 	}
 	
 	public enum Conversions_GetHitsFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spiders")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spiders = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uniques")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uniques = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nonuniques")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nonuniques = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="conversions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		conversions = 3,
 	}
 	
 	public enum Domains_GetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="system")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		system = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="go")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		go = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="personal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		personal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dedicated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dedicated = 3,
 	}
 	
 	public enum Tags_GetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tp = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dp = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gr = 3,
 	}
 }

@@ -122,16 +122,16 @@ namespace MyNS
 	public enum QueryGetByExtensionAndQAndStartAndCountAndSubdomainsAndInUrlPrefixesExtension
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="atom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		atom = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rss")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rss = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		html = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 3,
 	}
 }

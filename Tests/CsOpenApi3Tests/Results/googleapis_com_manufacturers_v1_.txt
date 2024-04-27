@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Attributes of the product. For more information, see https://support.google.com/manufacturers/answer/6124116.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attributes
 	{
 		
@@ -269,8 +268,7 @@ namespace MyNS
 	/// <summary>
 	/// An image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image
 	{
 		
@@ -293,73 +291,68 @@ namespace MyNS
 		public System.Nullable<ImageType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_PROCESSING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_CRAWL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_CRAWL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROBOTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROBOTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XROBOTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XROBOTED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRAWL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRAWL_ERROR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING_ERROR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECODING_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECODING_ERROR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_BIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_BIG = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRAWL_SKIPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRAWL_SKIPPED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOSTLOADED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOSTLOADED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTP_404")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTP_404 = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRAWLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRAWLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOADED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOADED = 2,
 	}
 	
 	/// <summary>
 	/// The capacity of a product. For more information, see https://support.google.com/manufacturers/answer/6124116#capacity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Capacity
 	{
 		
@@ -379,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of a certification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleShoppingManufacturersV1ProductCertification
 	{
 		
@@ -406,8 +398,7 @@ namespace MyNS
 	/// <summary>
 	/// The number of products in a single package. For more information, see https://support.google.com/manufacturers/answer/6124116#count.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Count
 	{
 		
@@ -427,8 +418,7 @@ namespace MyNS
 	/// <summary>
 	/// A feature description of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#featuredesc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeatureDescription
 	{
 		
@@ -451,8 +441,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Grocery
 	{
 		
@@ -511,8 +500,7 @@ namespace MyNS
 		public string StorageInstructions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Nutrition
 	{
 		
@@ -778,8 +766,7 @@ namespace MyNS
 	/// <summary>
 	/// Combination of float amount and unit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FloatUnit
 	{
 		
@@ -799,8 +786,7 @@ namespace MyNS
 	/// <summary>
 	/// Voluntary Nutrition Facts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoluntaryNutritionFact
 	{
 		
@@ -826,8 +812,7 @@ namespace MyNS
 	/// <summary>
 	/// A product detail of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#productdetail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductDetail
 	{
 		
@@ -853,8 +838,7 @@ namespace MyNS
 	/// <summary>
 	/// A price.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Price
 	{
 		
@@ -874,8 +858,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of a certification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Certification
 	{
 		
@@ -925,8 +908,7 @@ namespace MyNS
 	/// <summary>
 	/// The destination status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DestinationStatus
 	{
 		
@@ -943,30 +925,27 @@ namespace MyNS
 		public System.Nullable<DestinationStatusStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DestinationStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISAPPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISAPPROVED = 3,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -974,8 +953,7 @@ namespace MyNS
 	/// <summary>
 	/// Product issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Issue
 	{
 		
@@ -1028,46 +1006,41 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IssueResolution
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOLUTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOLUTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ACTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_PROCESSING = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IssueSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 3,
 	}
 	
 	/// <summary>
 	/// Response for ListProductCertifications method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProductCertificationsResponse
 	{
 		
@@ -1087,8 +1060,7 @@ namespace MyNS
 	/// <summary>
 	/// Product certification data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProductCertification
 	{
 		
@@ -1153,8 +1125,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProductsResponse
 	{
 		
@@ -1174,8 +1145,7 @@ namespace MyNS
 	/// <summary>
 	/// Product data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Product
 	{
 		

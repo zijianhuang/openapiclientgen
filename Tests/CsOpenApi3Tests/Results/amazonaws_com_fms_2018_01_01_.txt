@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateAdminAccountRequest
 	{
 		
@@ -30,38 +29,32 @@ namespace MyNS
 		public string AdminAccount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidOperationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidInputException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateThirdPartyFirewallResponse
 	{
 		
@@ -69,30 +62,27 @@ namespace MyNS
 		public ThirdPartyFirewallAssociationStatus ThirdPartyFirewallStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ThirdPartyFirewallAssociationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARD_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARD_COMPLETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFBOARDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFBOARDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFBOARD_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFBOARD_COMPLETE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_EXIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_EXIST = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateThirdPartyFirewallRequest
 	{
 		
@@ -104,21 +94,18 @@ namespace MyNS
 		public ThirdPartyFirewall ThirdPartyFirewall { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ThirdPartyFirewall
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PALO_ALTO_NETWORKS_CLOUD_NGFW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PALO_ALTO_NETWORKS_CLOUD_NGFW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORTIGATE_CLOUD_NATIVE_FIREWALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORTIGATE_CLOUD_NATIVE_FIREWALL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAssociateResourceResponse
 	{
 		
@@ -140,8 +127,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a resource that failed when trying to update it's association to a resource set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailedItem
 	{
 		
@@ -152,33 +138,30 @@ namespace MyNS
 		public FailedItemReason Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailedItemReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_VALID_ARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_VALID_ARN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_VALID_PARTITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_VALID_PARTITION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_VALID_REGION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_VALID_REGION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_VALID_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_VALID_SERVICE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_VALID_RESOURCE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_VALID_RESOURCE_TYPE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_VALID_ACCOUNT_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_VALID_ACCOUNT_ID = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchAssociateResourceRequest
 	{
 		
@@ -197,8 +180,7 @@ namespace MyNS
 		public string[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDisassociateResourceResponse
 	{
 		
@@ -217,8 +199,7 @@ namespace MyNS
 		public FailedItem[] FailedItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDisassociateResourceRequest
 	{
 		
@@ -237,8 +218,7 @@ namespace MyNS
 		public string[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAppsListRequest
 	{
 		
@@ -250,14 +230,12 @@ namespace MyNS
 		public string ListId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteNotificationChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePolicyRequest
 	{
 		
@@ -272,8 +250,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DeleteAllPolicyResources { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteProtocolsListRequest
 	{
 		
@@ -285,8 +262,7 @@ namespace MyNS
 		public string ListId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteResourceSetRequest
 	{
 		
@@ -298,14 +274,12 @@ namespace MyNS
 		public string Identifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateAdminAccountRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateThirdPartyFirewallResponse
 	{
 		
@@ -313,8 +287,7 @@ namespace MyNS
 		public ThirdPartyFirewallAssociationStatus ThirdPartyFirewallStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateThirdPartyFirewallRequest
 	{
 		
@@ -326,8 +299,7 @@ namespace MyNS
 		public ThirdPartyFirewall ThirdPartyFirewall { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAdminAccountResponse
 	{
 		
@@ -338,36 +310,32 @@ namespace MyNS
 		public AccountRoleStatus RoleStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountRoleStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_DELETION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_DELETION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAdminAccountRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAdminScopeResponse
 	{
 		
@@ -381,8 +349,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the resources that the Firewall Manager administrator can manage. For more information about administrative scope, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdminScope
 	{
 		
@@ -402,8 +369,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures the accounts within the administrator's Organizations organization that the specified Firewall Manager administrator can apply policies to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountScope
 	{
 		
@@ -420,8 +386,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the Organizations organizational units (OUs) that the specified Firewall Manager administrator can apply policies to. For more information about OUs in Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs) </a> in the <i>Organizations User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationalUnitScope
 	{
 		
@@ -438,8 +403,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the Amazon Web Services Regions that the specified Firewall Manager administrator can manage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegionScope
 	{
 		
@@ -453,8 +417,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the policy types that the specified Firewall Manager administrator can manage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyTypeScope
 	{
 		
@@ -465,64 +428,59 @@ namespace MyNS
 		public System.Nullable<System.Boolean> AllPolicyTypesEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SecurityServiceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAF = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAFV2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAFV2 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIELD_ADVANCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIELD_ADVANCED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_GROUPS_COMMON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_GROUPS_COMMON = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_GROUPS_CONTENT_AUDIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_GROUPS_CONTENT_AUDIT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_GROUPS_USAGE_AUDIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_GROUPS_USAGE_AUDIT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_FIREWALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_FIREWALL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS_FIREWALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS_FIREWALL = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THIRD_PARTY_FIREWALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THIRD_PARTY_FIREWALL = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_NETWORK_FIREWALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_NETWORK_FIREWALL = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OrganizationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDING_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDING_COMPLETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFBOARDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFBOARDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFBOARDING_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFBOARDING_COMPLETE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAdminScopeRequest
 	{
 		
@@ -534,8 +492,7 @@ namespace MyNS
 		public string AdminAccount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppsListResponse
 	{
 		
@@ -549,8 +506,7 @@ namespace MyNS
 	/// <summary>
 	/// An Firewall Manager applications list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppsListData
 	{
 		
@@ -587,8 +543,7 @@ namespace MyNS
 	/// <summary>
 	/// An individual Firewall Manager application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App
 	{
 		
@@ -614,14 +569,12 @@ namespace MyNS
 		public int Port { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PreviousAppsList
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppsListRequest
 	{
 		
@@ -636,8 +589,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DefaultList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComplianceDetailResponse
 	{
 		
@@ -648,8 +600,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the noncompliant resources in a member account for a specific Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyComplianceDetail
 	{
 		
@@ -678,8 +629,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the resource that is not protected by the policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplianceViolator
 	{
 		
@@ -696,111 +646,106 @@ namespace MyNS
 		public ComplianceViolatorMetadata Metadata { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ViolationReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_ACL_MISSING_RULE_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_ACL_MISSING_RULE_GROUP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_MISSING_WEB_ACL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_MISSING_WEB_ACL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_INCORRECT_WEB_ACL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_INCORRECT_WEB_ACL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_MISSING_SHIELD_PROTECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_MISSING_SHIELD_PROTECTION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_MISSING_SECURITY_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_MISSING_SECURITY_GROUP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_GROUP_UNUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_GROUP_UNUSED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_GROUP_REDUNDANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_GROUP_REDUNDANT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FMS_CREATED_SECURITY_GROUP_EDITED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FMS_CREATED_SECURITY_GROUP_EDITED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_FIREWALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_FIREWALL = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_FIREWALL_SUBNET_IN_AZ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_FIREWALL_SUBNET_IN_AZ = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_EXPECTED_ROUTE_TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_EXPECTED_ROUTE_TABLE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_FIREWALL_POLICY_MODIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_FIREWALL_POLICY_MODIFIED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIREWALL_SUBNET_IS_OUT_OF_SCOPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIREWALL_SUBNET_IS_OUT_OF_SCOPE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNEXPECTED_FIREWALL_ROUTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNEXPECTED_FIREWALL_ROUTES = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNEXPECTED_TARGET_GATEWAY_ROUTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNEXPECTED_TARGET_GATEWAY_ROUTES = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ROUTE_CONFIGURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_ROUTE_CONFIGURATION = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_TARGET_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_TARGET_GATEWAY = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNET_TRAFFIC_NOT_INSPECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNET_TRAFFIC_NOT_INSPECTED = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLACK_HOLE_ROUTE_DETECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLACK_HOLE_ROUTE_DETECTED = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_MISSING_DNS_FIREWALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_MISSING_DNS_FIREWALL = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT = 27,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplianceViolatorMetadata
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IssueInfoMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetComplianceDetailRequest
 	{
 		
@@ -819,8 +764,7 @@ namespace MyNS
 		public string MemberAccount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetNotificationChannelResponse
 	{
 		
@@ -831,14 +775,12 @@ namespace MyNS
 		public string SnsRoleName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetNotificationChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPolicyResponse
 	{
 		
@@ -852,8 +794,7 @@ namespace MyNS
 	/// <summary>
 	/// An Firewall Manager policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -926,8 +867,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the security service that is being used to protect the resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecurityServicePolicyData
 	{
 		
@@ -948,8 +888,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the Network Firewall firewall policy options to configure the policy's deployment model and third-party firewall policy settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyOption
 	{
 		
@@ -963,8 +902,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures the firewall policy deployment model of Network Firewall. For information about Network Firewall deployment models, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures.html">Network Firewall example architectures with routing</a> in the <i>Network Firewall Developer Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallPolicy
 	{
 		
@@ -972,24 +910,21 @@ namespace MyNS
 		public FirewallDeploymentModel FirewallDeploymentModel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FirewallDeploymentModel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTRALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTRALIZED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISTRIBUTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISTRIBUTED = 1,
 	}
 	
 	/// <summary>
 	/// Configures the deployment model for the third-party firewall.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyFirewallPolicy
 	{
 		
@@ -1000,8 +935,7 @@ namespace MyNS
 	/// <summary>
 	/// The resource tags that Firewall Manager uses to determine if a particular resource should be included or excluded from the Firewall Manager policy. Tags enable you to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceTag
 	{
 		
@@ -1016,27 +950,23 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerPolicyScopeMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomerPolicyStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_ADMIN_SCOPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_ADMIN_SCOPE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPolicyRequest
 	{
 		
@@ -1048,14 +978,12 @@ namespace MyNS
 		public string PolicyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTypeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProtectionStatusResponse
 	{
 		
@@ -1072,8 +1000,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProtectionStatusRequest
 	{
 		
@@ -1100,8 +1027,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProtocolsListResponse
 	{
 		
@@ -1115,8 +1041,7 @@ namespace MyNS
 	/// <summary>
 	/// An Firewall Manager protocols list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProtocolsListData
 	{
 		
@@ -1150,14 +1075,12 @@ namespace MyNS
 		public PreviousProtocolsList PreviousProtocolsList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PreviousProtocolsList
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetProtocolsListRequest
 	{
 		
@@ -1172,8 +1095,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DefaultList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceSetResponse
 	{
 		
@@ -1195,8 +1117,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of resources to include in a policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceSet
 	{
 		
@@ -1230,8 +1151,7 @@ namespace MyNS
 		public CustomerPolicyStatus ResourceSetStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceSetRequest
 	{
 		
@@ -1243,8 +1163,7 @@ namespace MyNS
 		public string Identifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetThirdPartyFirewallAssociationStatusResponse
 	{
 		
@@ -1255,24 +1174,21 @@ namespace MyNS
 		public MarketplaceSubscriptionOnboardingStatus MarketplaceOnboardingStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MarketplaceSubscriptionOnboardingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_SUBSCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_SUBSCRIPTION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_COMPLETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetThirdPartyFirewallAssociationStatusRequest
 	{
 		
@@ -1284,8 +1200,7 @@ namespace MyNS
 		public ThirdPartyFirewall ThirdPartyFirewall { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetViolationDetailsResponse
 	{
 		
@@ -1296,8 +1211,7 @@ namespace MyNS
 	/// <summary>
 	/// Violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ViolationDetail
 	{
 		
@@ -1346,8 +1260,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail based on resource type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceViolation
 	{
 		
@@ -1427,8 +1340,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for the rule violation in a security group when compared to the primary security group of the Firewall Manager policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsVPCSecurityGroupViolation
 	{
 		
@@ -1448,8 +1360,7 @@ namespace MyNS
 	/// <summary>
 	/// The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartialMatch
 	{
 		
@@ -1463,8 +1374,7 @@ namespace MyNS
 	/// <summary>
 	/// Remediation option for the rule specified in the <code>ViolationTarget</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecurityGroupRemediationAction
 	{
 		
@@ -1481,24 +1391,21 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsDefaultAction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RemediationActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODIFY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODIFY = 1,
 	}
 	
 	/// <summary>
 	/// Describes a set of permissions for a security group rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecurityGroupRuleDescription
 	{
 		
@@ -1524,8 +1431,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for network interfaces associated with an EC2 instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsEc2NetworkInterfaceViolation
 	{
 		
@@ -1539,8 +1445,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for an EC2 instance resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AwsEc2InstanceViolation
 	{
 		
@@ -1554,8 +1459,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for Network Firewall for a subnet that doesn't have a Firewall Manager managed firewall in its VPC. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallMissingFirewallViolation
 	{
 		
@@ -1575,8 +1479,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for Network Firewall for an Availability Zone that's missing the expected Firewall Manager managed subnet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallMissingSubnetViolation
 	{
 		
@@ -1596,8 +1499,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for Network Firewall for a subnet that's not associated to the expected Firewall Manager managed route table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallMissingExpectedRTViolation
 	{
 		
@@ -1620,8 +1522,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for Network Firewall for a firewall policy that has a different <a>NetworkFirewallPolicyDescription</a> than is required by the Firewall Manager policy. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallPolicyModifiedViolation
 	{
 		
@@ -1638,8 +1539,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of the Network Firewall firewall policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallPolicyDescription
 	{
 		
@@ -1668,8 +1568,7 @@ namespace MyNS
 	/// <summary>
 	/// Network Firewall stateless rule group, used in a <a>NetworkFirewallPolicyDescription</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatelessRuleGroup
 	{
 		
@@ -1686,8 +1585,7 @@ namespace MyNS
 	/// <summary>
 	/// Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatefulRuleGroup
 	{
 		
@@ -1707,8 +1605,7 @@ namespace MyNS
 	/// <summary>
 	/// The setting that allows the policy owner to change the behavior of the rule group within a policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallStatefulRuleGroupOverride
 	{
 		
@@ -1716,21 +1613,18 @@ namespace MyNS
 		public NetworkFirewallOverrideAction Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NetworkFirewallOverrideAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DROP_TO_ALERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DROP_TO_ALERT = 0,
 	}
 	
 	/// <summary>
 	/// Configuration settings for the handling of the stateful rule groups in a Network Firewall firewall policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatefulEngineOptions
 	{
 		
@@ -1738,24 +1632,21 @@ namespace MyNS
 		public RuleOrder RuleOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuleOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRICT_ORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRICT_ORDER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT_ACTION_ORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT_ACTION_ORDER = 1,
 	}
 	
 	/// <summary>
 	/// Violation detail for the subnet for which internet traffic that hasn't been inspected.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallInternetTrafficNotInspectedViolation
 	{
 		
@@ -1808,8 +1699,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a route in a route table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Route
 	{
 		
@@ -1826,64 +1716,59 @@ namespace MyNS
 		public string Target { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DestinationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPV4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IPV4 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPV6")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IPV6 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFIX_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFIX_LIST = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TargetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GATEWAY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CARRIER_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CARRIER_GATEWAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANCE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL_GATEWAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAT_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAT_GATEWAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_INTERFACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_INTERFACE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC_ENDPOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC_ENDPOINT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC_PEERING_CONNECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPC_PEERING_CONNECTION = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EGRESS_ONLY_INTERNET_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EGRESS_ONLY_INTERNET_GATEWAY = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIT_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIT_GATEWAY = 9,
 	}
 	
 	/// <summary>
 	/// Information about the expected route in the route table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpectedRoute
 	{
 		
@@ -1909,8 +1794,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for the improperly configured subnet route. It's possible there is a missing route table route, or a configuration that causes traffic to cross an Availability Zone boundary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallInvalidRouteConfigurationViolation
 	{
 		
@@ -1966,8 +1850,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallBlackHoleRouteDetectedViolation
 	{
 		
@@ -1987,8 +1870,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for an unexpected route that's present in a route table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallUnexpectedFirewallRoutesViolation
 	{
 		
@@ -2011,8 +1893,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for an unexpected gateway route that’s present in a route table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallUnexpectedGatewayRoutesViolation
 	{
 		
@@ -2032,8 +1913,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation detail for an expected route missing in Network Firewall.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkFirewallMissingExpectedRoutesViolation
 	{
 		
@@ -2050,8 +1930,7 @@ namespace MyNS
 	/// <summary>
 	/// A rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DnsRuleGroupPriorityConflictViolation
 	{
 		
@@ -2074,8 +1953,7 @@ namespace MyNS
 	/// <summary>
 	/// A DNS Firewall rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DnsDuplicateRuleGroupViolation
 	{
 		
@@ -2089,8 +1967,7 @@ namespace MyNS
 	/// <summary>
 	/// The VPC that Firewall Manager was applying a DNS Fireall policy to reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed due to the limit. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DnsRuleGroupLimitExceededViolation
 	{
 		
@@ -2107,8 +1984,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PossibleRemediationActions
 	{
 		
@@ -2122,8 +1998,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of remediation actions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PossibleRemediationAction
 	{
 		
@@ -2144,8 +2019,7 @@ namespace MyNS
 	/// <summary>
 	/// An ordered list of actions you can take to remediate a violation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationActionWithOrder
 	{
 		
@@ -2159,8 +2033,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an individual action you can take to remediate a violation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemediationAction
 	{
 		
@@ -2195,8 +2068,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the CreateRoute action in Amazon EC2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2CreateRouteAction
 	{
 		
@@ -2229,8 +2101,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a remediation action target.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionTarget
 	{
 		
@@ -2244,8 +2115,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the ReplaceRoute action in Amazon EC2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2ReplaceRouteAction
 	{
 		
@@ -2275,8 +2145,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the DeleteRoute action in Amazon EC2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2DeleteRouteAction
 	{
 		
@@ -2303,8 +2172,7 @@ namespace MyNS
 	/// <summary>
 	/// An action that copies the EC2 route table for use in remediation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2CopyRouteTableAction
 	{
 		
@@ -2329,8 +2197,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the ReplaceRouteTableAssociation action in Amazon EC2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2ReplaceRouteTableAssociationAction
 	{
 		
@@ -2355,8 +2222,7 @@ namespace MyNS
 	/// <summary>
 	/// The action of associating an EC2 resource, such as a subnet or internet gateway, with a route table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2AssociateRouteTableAction
 	{
 		
@@ -2380,8 +2246,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the CreateRouteTable action in Amazon EC2.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EC2CreateRouteTableAction
 	{
 		
@@ -2399,8 +2264,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the actions that you can take to remediate scope violations caused by your policy's <code>FirewallCreationConfig</code>. <code>FirewallCreationConfig</code> is an optional configuration that you can use to choose which Availability Zones Firewall Manager creates Network Firewall endpoints in.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FMSPolicyUpdateFirewallCreationConfigAction
 	{
 		
@@ -2414,8 +2278,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the firewall subnet that violates the policy scope.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirewallSubnetIsOutOfScopeViolation
 	{
 		
@@ -2438,8 +2301,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the route endpoint that violates the policy scope.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RouteHasOutOfScopeEndpointViolation
 	{
 		
@@ -2483,8 +2345,7 @@ namespace MyNS
 	/// <summary>
 	/// The violation details about a third-party firewall's subnet that doesn't have a Firewall Manager managed firewall in its VPC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyFirewallMissingFirewallViolation
 	{
 		
@@ -2504,8 +2365,7 @@ namespace MyNS
 	/// <summary>
 	/// The violation details for a third-party firewall for an Availability Zone that's missing the Firewall Manager managed subnet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyFirewallMissingSubnetViolation
 	{
 		
@@ -2525,8 +2385,7 @@ namespace MyNS
 	/// <summary>
 	/// The violation details for a third-party firewall that's not associated with an Firewall Manager managed route table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyFirewallMissingExpectedRouteTableViolation
 	{
 		
@@ -2549,8 +2408,7 @@ namespace MyNS
 	/// <summary>
 	/// The violation details for a firewall subnet's VPC endpoint that's deleted or missing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirewallSubnetMissingVPCEndpointViolation
 	{
 		
@@ -2570,8 +2428,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of key:value pairs associated with an Amazon Web Services resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each Amazon Web Services resource. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -2590,8 +2447,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetViolationDetailsRequest
 	{
 		
@@ -2624,8 +2480,7 @@ namespace MyNS
 		public string ResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdminAccountsForOrganizationResponse
 	{
 		
@@ -2639,8 +2494,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains high level information about the Firewall Manager administrator account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdminAccountSummary
 	{
 		
@@ -2654,8 +2508,7 @@ namespace MyNS
 		public OrganizationStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdminAccountsForOrganizationRequest
 	{
 		
@@ -2666,8 +2519,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdminsManagingAccountResponse
 	{
 		
@@ -2678,8 +2530,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdminsManagingAccountRequest
 	{
 		
@@ -2690,8 +2541,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAppsListsResponse
 	{
 		
@@ -2705,8 +2555,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the Firewall Manager applications list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppsListDataSummary
 	{
 		
@@ -2723,8 +2572,7 @@ namespace MyNS
 		public App[] AppsList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAppsListsRequest
 	{
 		
@@ -2742,8 +2590,7 @@ namespace MyNS
 		public int MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListComplianceStatusResponse
 	{
 		
@@ -2757,8 +2604,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyComplianceStatus
 	{
 		
@@ -2787,8 +2633,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EvaluationResult
 	{
 		
@@ -2802,21 +2647,18 @@ namespace MyNS
 		public System.Nullable<System.Boolean> EvaluationLimitExceeded { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyComplianceStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_COMPLIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_COMPLIANT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListComplianceStatusRequest
 	{
 		
@@ -2834,8 +2676,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDiscoveredResourcesResponse
 	{
 		
@@ -2849,8 +2690,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource in the organization that's available to be associated with a Firewall Manager resource set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiscoveredResource
 	{
 		
@@ -2867,8 +2707,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDiscoveredResourcesRequest
 	{
 		
@@ -2893,8 +2732,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMemberAccountsResponse
 	{
 		
@@ -2905,8 +2743,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMemberAccountsRequest
 	{
 		
@@ -2917,8 +2754,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPoliciesResponse
 	{
 		
@@ -2932,8 +2768,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the Firewall Manager policy. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicySummary
 	{
 		
@@ -2962,8 +2797,7 @@ namespace MyNS
 		public CustomerPolicyStatus PolicyStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPoliciesRequest
 	{
 		
@@ -2974,8 +2808,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProtocolsListsResponse
 	{
 		
@@ -2989,8 +2822,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the Firewall Manager protocols list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProtocolsListDataSummary
 	{
 		
@@ -3007,8 +2839,7 @@ namespace MyNS
 		public string[] ProtocolsList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProtocolsListsRequest
 	{
 		
@@ -3026,8 +2857,7 @@ namespace MyNS
 		public int MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceSetResourcesResponse
 	{
 		
@@ -3045,8 +2875,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a resource that is associated to an Firewall Manager resource set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Resource
 	{
 		
@@ -3061,8 +2890,7 @@ namespace MyNS
 		public string AccountId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceSetResourcesRequest
 	{
 		
@@ -3080,8 +2908,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceSetsResponse
 	{
 		
@@ -3095,8 +2922,7 @@ namespace MyNS
 	/// <summary>
 	/// Summarizes the resource sets used in a policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceSetSummary
 	{
 		
@@ -3116,8 +2942,7 @@ namespace MyNS
 		public CustomerPolicyStatus ResourceSetStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListResourceSetsRequest
 	{
 		
@@ -3128,8 +2953,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -3137,8 +2961,7 @@ namespace MyNS
 		public Tag[] TagList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -3150,8 +2973,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListThirdPartyFirewallFirewallPoliciesResponse
 	{
 		
@@ -3165,8 +2987,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures the third-party firewall's firewall policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThirdPartyFirewallFirewallPolicy
 	{
 		
@@ -3177,8 +2998,7 @@ namespace MyNS
 		public string FirewallPolicyName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListThirdPartyFirewallFirewallPoliciesRequest
 	{
 		
@@ -3200,8 +3020,7 @@ namespace MyNS
 		public int MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAdminAccountRequest
 	{
 		
@@ -3216,8 +3035,7 @@ namespace MyNS
 		public AdminScope AdminScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAppsListResponse
 	{
 		
@@ -3228,8 +3046,7 @@ namespace MyNS
 		public string AppsListArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAppsListRequest
 	{
 		
@@ -3244,8 +3061,7 @@ namespace MyNS
 		public Tag[] TagList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutNotificationChannelRequest
 	{
 		
@@ -3264,8 +3080,7 @@ namespace MyNS
 		public string SnsRoleName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutPolicyResponse
 	{
 		
@@ -3276,8 +3091,7 @@ namespace MyNS
 		public string PolicyArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutPolicyRequest
 	{
 		
@@ -3292,8 +3106,7 @@ namespace MyNS
 		public Tag[] TagList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutProtocolsListResponse
 	{
 		
@@ -3304,8 +3117,7 @@ namespace MyNS
 		public string ProtocolsListArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutProtocolsListRequest
 	{
 		
@@ -3320,8 +3132,7 @@ namespace MyNS
 		public Tag[] TagList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutResourceSetResponse
 	{
 		
@@ -3340,8 +3151,7 @@ namespace MyNS
 		public string ResourceSetArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutResourceSetRequest
 	{
 		
@@ -3356,14 +3166,12 @@ namespace MyNS
 		public Tag[] TagList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -3382,14 +3190,12 @@ namespace MyNS
 		public Tag[] TagList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		
@@ -3408,48 +3214,42 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomerPolicyScopeIdType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORG_UNIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORG_UNIT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DependentServiceName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSCONFIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSCONFIG = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSWAF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSWAF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSSHIELD_ADVANCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSSHIELD_ADVANCED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSVPC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSVPC = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceSetStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_ADMIN_SCOPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_ADMIN_SCOPE = 1,
 	}
 	

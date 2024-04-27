@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Lookupsv2phone_number
 	{
 		
@@ -119,44 +118,40 @@ namespace MyNS
 		public Phone_number_enum_validation_error[] Validation_errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Phone_number_enum_validation_error
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_SHORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_SHORT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_LONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_LONG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_BUT_POSSIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_BUT_POSSIBLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_COUNTRY_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_COUNTRY_CODE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_LENGTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_LENGTH = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_A_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_A_NUMBER = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Phone_number_enum_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="landline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		landline = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mobile = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voip = 2,
 	}
 	

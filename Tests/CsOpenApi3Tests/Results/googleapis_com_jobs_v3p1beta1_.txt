@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Application related details of a job posting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationInfo
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. Batch delete jobs request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteJobsRequest
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents starting and ending value of a range in double.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BucketRange
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents count of jobs within one bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BucketizedCount
 	{
 		
@@ -104,8 +100,7 @@ namespace MyNS
 	/// <summary>
 	/// An event issued when an end user interacts with the application that implements Cloud Talent Solution. Providing this information improves the quality of search and recommendation for the API clients, enabling the service to perform optimally. The number of events sent must be consistent with other calls, such as job searches, issued to the service by the client.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientEvent
 	{
 		
@@ -149,8 +144,7 @@ namespace MyNS
 	/// <summary>
 	/// An event issued when a job seeker interacts with the application that implements Cloud Talent Solution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobEvent
 	{
 		
@@ -167,69 +161,66 @@ namespace MyNS
 		public System.Nullable<JobEventType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_EVENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_EVENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPRESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPRESSION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_REDIRECT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_START = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_FINISH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_FINISH = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_QUICK_SUBMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_QUICK_SUBMISSION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_REDIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_REDIRECT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_START_FROM_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_START_FROM_SEARCH = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_REDIRECT_FROM_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_REDIRECT_FROM_SEARCH = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_COMPANY_SUBMIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_COMPANY_SUBMIT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOKMARK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOKMARK = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATION = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIRED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SENT_CV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SENT_CV = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERVIEW_GRANTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERVIEW_GRANTED = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_INTERESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_INTERESTED = 16,
 	}
 	
 	/// <summary>
 	/// Input only. Parameters needed for commute search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommuteFilter
 	{
 		
@@ -270,33 +261,30 @@ namespace MyNS
 		public string TravelDuration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommuteFilterCommuteMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMUTE_METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMUTE_METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSIT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WALKING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WALKING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CYCLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CYCLING = 4,
 	}
 	
 	/// <summary>
 	/// Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeOfDay
 	{
 		
@@ -325,27 +313,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> Seconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommuteFilterRoadTraffic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROAD_TRAFFIC_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROAD_TRAFFIC_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAFFIC_FREE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAFFIC_FREE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSY_HOUR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSY_HOUR = 2,
 	}
 	
 	/// <summary>
 	/// An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatLng
 	{
 		
@@ -365,8 +350,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Commute details related to this job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommuteInfo
 	{
 		
@@ -386,8 +370,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. A resource that represents a location with full geographic information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -416,51 +399,48 @@ namespace MyNS
 		public System.Nullable<System.Double> RadiusInMiles { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LocationLocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNTRY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMINISTRATIVE_AREA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMINISTRATIVE_AREA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUB_ADMINISTRATIVE_AREA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUB_ADMINISTRATIVE_AREA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCALITY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTAL_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTAL_CODE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUB_LOCALITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUB_LOCALITY = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUB_LOCALITY_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUB_LOCALITY_1 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUB_LOCALITY_2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUB_LOCALITY_2 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEIGHBORHOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEIGHBORHOOD = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STREET_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STREET_ADDRESS = 10,
 	}
 	
 	/// <summary>
 	/// Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostalAddress
 	{
 		
@@ -534,8 +514,7 @@ namespace MyNS
 	/// <summary>
 	/// A Company resource represents a company in the service. A company is the entity that owns job postings, that is, the hiring entity responsible for employing applicants for the job position.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Company
 	{
 		
@@ -621,8 +600,7 @@ namespace MyNS
 	/// <summary>
 	/// Derived details about the company.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompanyDerivedInfo
 	{
 		
@@ -633,42 +611,39 @@ namespace MyNS
 		public Location HeadquartersLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompanySize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY_SIZE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY_SIZE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINI = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMALL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMEDIUM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIG = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGGER = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GIANT = 7,
 	}
 	
 	/// <summary>
 	/// A compensation entry that represents one component of compensation, such as base pay, bonus, or other compensation type. Annualization: One compensation entry can be annualized if - it contains valid amount or range. - and its expected_units_per_year is set or can be derived. Its annualized range is determined as (amount or range) times expected_units_per_year.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompensationEntry
 	{
 		
@@ -712,8 +687,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an amount of money with its currency type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Money
 	{
 		
@@ -739,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// Compensation range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompensationRange
 	{
 		
@@ -757,76 +730,71 @@ namespace MyNS
 		public Money MinCompensation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompensationEntryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPENSATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPENSATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BONUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BONUS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIGNING_BONUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIGNING_BONUS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUITY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFIT_SHARING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFIT_SHARING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMISSIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMISSIONS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIPS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_COMPENSATION_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_COMPENSATION_TYPE = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompensationEntryUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPENSATION_UNIT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPENSATION_UNIT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOURLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEKLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEARLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEARLY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_TIME = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_COMPENSATION_UNIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_COMPENSATION_UNIT = 7,
 	}
 	
 	/// <summary>
 	/// Input only. Filter on job compensation type and amount.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompensationFilter
 	{
 		
@@ -855,33 +823,30 @@ namespace MyNS
 		public CompensationEntryUnit[] Units { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompensationFilterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIT_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIT_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIT_AND_AMOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIT_AND_AMOUNT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNUALIZED_BASE_AMOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNUALIZED_BASE_AMOUNT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNUALIZED_TOTAL_AMOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNUALIZED_TOTAL_AMOUNT = 4,
 	}
 	
 	/// <summary>
 	/// Input only. Compensation based histogram request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompensationHistogramRequest
 	{
 		
@@ -901,8 +866,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. Use this field to specify bucketing option for the histogram search response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumericBucketingOption
 	{
 		
@@ -919,30 +883,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> RequiresMinMax { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompensationHistogramRequestType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPENSATION_HISTOGRAM_REQUEST_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPENSATION_HISTOGRAM_REQUEST_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNUALIZED_BASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNUALIZED_BASE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNUALIZED_TOTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNUALIZED_TOTAL = 3,
 	}
 	
 	/// <summary>
 	/// Output only. Compensation based histogram result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompensationHistogramResult
 	{
 		
@@ -962,8 +923,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Custom numeric bucketing result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumericBucketingResult
 	{
 		
@@ -989,8 +949,7 @@ namespace MyNS
 	/// <summary>
 	/// Job compensation details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompensationInfo
 	{
 		
@@ -1016,8 +975,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Response of auto-complete query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompleteQueryResponse
 	{
 		
@@ -1037,8 +995,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Resource that represents completion results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompletionResult
 	{
 		
@@ -1061,30 +1018,27 @@ namespace MyNS
 		public System.Nullable<CompletionResultType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompletionResultType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_TITLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_TITLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY_NAME = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMBINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMBINED = 3,
 	}
 	
 	/// <summary>
 	/// Output only. Additional information returned to client, such as debugging information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseMetadata
 	{
 		
@@ -1098,8 +1052,7 @@ namespace MyNS
 	/// <summary>
 	/// The report event request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateClientEventRequest
 	{
 		
@@ -1113,8 +1066,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. The Request of the CreateCompany method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCompanyRequest
 	{
 		
@@ -1128,8 +1080,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. Create job request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobRequest
 	{
 		
@@ -1143,8 +1094,7 @@ namespace MyNS
 	/// <summary>
 	/// A Job resource represents a job posting (also referred to as a "job listing" or "job requisition"). A job belongs to a Company, which is the hiring entity responsible for the job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Job
 	{
 		
@@ -1332,8 +1282,7 @@ namespace MyNS
 	/// <summary>
 	/// Custom attribute values that are either filterable or non-filterable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomAttribute
 	{
 		
@@ -1359,8 +1308,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Derived details about the job posting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobDerivedInfo
 	{
 		
@@ -1377,55 +1325,50 @@ namespace MyNS
 		public Location[] Locations { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobJobLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTRY_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTRY_LEVEL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPERIENCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPERIENCED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECTOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIRECTOR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTIVE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobPostingRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTING_REGION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTING_REGION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMINISTRATIVE_AREA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMINISTRATIVE_AREA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TELECOMMUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TELECOMMUTE = 3,
 	}
 	
 	/// <summary>
 	/// Input only. Options for job processing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProcessingOptions
 	{
 		
@@ -1442,46 +1385,41 @@ namespace MyNS
 		public System.Nullable<ProcessingOptionsHtmlSanitization> HtmlSanitization { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProcessingOptionsHtmlSanitization
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML_SANITIZATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML_SANITIZATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTML_SANITIZATION_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTML_SANITIZATION_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIMPLE_FORMATTING_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIMPLE_FORMATTING_ONLY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VISIBILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VISIBILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHARED_WITH_GOOGLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHARED_WITH_GOOGLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHARED_WITH_PUBLIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHARED_WITH_PUBLIC = 3,
 	}
 	
 	/// <summary>
 	/// Custom attributes histogram request. An error is thrown if neither string_value_histogram or long_value_histogram_bucketing_option has been defined.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomAttributeHistogramRequest
 	{
 		
@@ -1507,8 +1445,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Custom attribute histogram result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomAttributeHistogramResult
 	{
 		
@@ -1534,8 +1471,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. Custom ranking information for SearchJobsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomRankingInfo
 	{
 		
@@ -1552,39 +1488,36 @@ namespace MyNS
 		public string RankingExpression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomRankingInfoImportanceLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORTANCE_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORTANCE_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MILD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MILD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTREME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTREME = 6,
 	}
 	
 	/// <summary>
 	/// Device information collected from the job seeker, candidate, or other entity conducting the job search. Providing this information improves the quality of the search results across devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceInfo
 	{
 		
@@ -1601,39 +1534,36 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceInfoDeviceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_WEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE_WEB = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 6,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -1641,8 +1571,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. Histogram facets to be specified in SearchJobsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistogramFacets
 	{
 		
@@ -1668,8 +1597,7 @@ namespace MyNS
 	/// <summary>
 	/// Input Only. The histogram request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistogramQuery
 	{
 		
@@ -1683,8 +1611,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Histogram result that matches HistogramSpec specified in searches.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistogramQueryResult
 	{
 		
@@ -1704,8 +1631,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Result of a histogram call. The response contains the histogram map for the search type specified by HistogramResult.field. The response is a map of each filter value to the corresponding count of jobs for that filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistogramResult
 	{
 		
@@ -1722,69 +1648,66 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, int> Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HistogramResultSearchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY_ID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMPLOYMENT_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMPLOYMENT_TYPE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY_SIZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY_SIZE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_PUBLISHED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDUCATION_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDUCATION_LEVEL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPERIENCE_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPERIENCE_LEVEL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN_1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN_1 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNTRY = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CITY = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCALE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LANGUAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LANGUAGE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATEGORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATEGORY = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CITY_COORDINATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CITY_COORDINATE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN_1_COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN_1_COUNTRY = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY_DISPLAY_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY_DISPLAY_NAME = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASE_COMPENSATION_UNIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASE_COMPENSATION_UNIT = 16,
 	}
 	
 	/// <summary>
 	/// Output only. Histogram results that match HistogramFacets specified in SearchJobsRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistogramResults
 	{
 		
@@ -1810,8 +1733,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. The query required to perform a search query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobQuery
 	{
 		
@@ -1903,8 +1825,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. Geographic region of the search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationFilter
 	{
 		
@@ -1939,30 +1860,27 @@ namespace MyNS
 		public System.Nullable<LocationFilterTelecommutePreference> TelecommutePreference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LocationFilterTelecommutePreference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TELECOMMUTE_PREFERENCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TELECOMMUTE_PREFERENCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TELECOMMUTE_EXCLUDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TELECOMMUTE_EXCLUDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TELECOMMUTE_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TELECOMMUTE_ALLOWED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TELECOMMUTE_JOBS_EXCLUDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TELECOMMUTE_JOBS_EXCLUDED = 3,
 	}
 	
 	/// <summary>
 	/// Message representing a period of time between two timestamps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimestampRange
 	{
 		
@@ -1982,8 +1900,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. The List companies response object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCompaniesResponse
 	{
 		
@@ -2009,8 +1926,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. List jobs response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsResponse
 	{
 		
@@ -2036,8 +1952,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Job entry with metadata inside SearchJobsResponse.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchingJob
 	{
 		
@@ -2075,8 +1990,7 @@ namespace MyNS
 	/// <summary>
 	/// Message representing input to a Mendel server for debug forcing. See go/mendel-debug-forcing for more details. Next ID: 2
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MendelDebugInput
 	{
 		
@@ -2090,8 +2004,7 @@ namespace MyNS
 	/// <summary>
 	/// Next ID: 16
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamespacedDebugInput
 	{
 		
@@ -2186,27 +2099,24 @@ namespace MyNS
 		public System.Nullable<NamespacedDebugInputTestingMode> TestingMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NamespacedDebugInputTestingMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TESTING_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TESTING_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TESTING_MODE_ALL_OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TESTING_MODE_ALL_OFF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TESTING_MODE_ALL_ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TESTING_MODE_ALL_ON = 2,
 	}
 	
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -2244,8 +2154,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -2271,8 +2180,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. Meta information related to the job searcher or entity conducting the job search. This information is used to improve the performance of the service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestMetadata
 	{
 		
@@ -2304,8 +2212,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. The Request body of the `SearchJobs` call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchJobsRequest
 	{
 		
@@ -2400,65 +2307,58 @@ namespace MyNS
 		public System.Nullable<SearchJobsRequestSearchMode> SearchMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchJobsRequestDiversificationLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIVERSIFICATION_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIVERSIFICATION_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIMPLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIMPLE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchJobsRequestJobView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_VIEW_ID_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_VIEW_ID_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_VIEW_MINIMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_VIEW_MINIMAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_VIEW_SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_VIEW_SMALL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_VIEW_FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_VIEW_FULL = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchJobsRequestSearchMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOB_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOB_SEARCH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEATURED_JOB_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEATURED_JOB_SEARCH = 2,
 	}
 	
 	/// <summary>
 	/// Output only. Response for SearchJob method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchJobsResponse
 	{
 		
@@ -2526,8 +2426,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Spell check result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpellingCorrection
 	{
 		
@@ -2547,8 +2446,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. Request for updating a specified company.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCompanyRequest
 	{
 		
@@ -2568,8 +2466,7 @@ namespace MyNS
 	/// <summary>
 	/// Input only. Update job request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJobRequest
 	{
 		
@@ -3080,13 +2977,13 @@ namespace MyNS
 	public enum Jobs_projects_completeScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETION_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETION_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TENANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TENANT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC = 2,
 	}
 }

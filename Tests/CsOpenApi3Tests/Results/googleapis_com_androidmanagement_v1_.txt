@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A shell command was issued over ADB via “adb shell command”.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdbShellCommandEvent
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// An ADB interactive shell was opened via “adb shell”. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdbShellInteractiveEvent
 	{
 	}
@@ -44,8 +42,7 @@ namespace MyNS
 	/// <summary>
 	/// Security policies set to secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvancedSecurityOverrides
 	{
 		
@@ -80,78 +77,69 @@ namespace MyNS
 		public System.Nullable<AdvancedSecurityOverridesUntrustedAppsPolicy> UntrustedAppsPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdvancedSecurityOverridesCommonCriteriaMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON_CRITERIA_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON_CRITERIA_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON_CRITERIA_MODE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON_CRITERIA_MODE_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON_CRITERIA_MODE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON_CRITERIA_MODE_ENABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdvancedSecurityOverridesDeveloperSettings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVELOPER_SETTINGS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVELOPER_SETTINGS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVELOPER_SETTINGS_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVELOPER_SETTINGS_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVELOPER_SETTINGS_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVELOPER_SETTINGS_ALLOWED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdvancedSecurityOverridesGooglePlayProtectVerifyApps
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_PLAY_PROTECT_VERIFY_APPS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_PLAY_PROTECT_VERIFY_APPS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFY_APPS_ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFY_APPS_ENFORCED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFY_APPS_USER_CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFY_APPS_USER_CHOICE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdvancedSecurityOverridesUntrustedAppsPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNTRUSTED_APPS_POLICY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNTRUSTED_APPS_POLICY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOW_INSTALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISALLOW_INSTALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_INSTALL_IN_PERSONAL_PROFILE_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_INSTALL_IN_PERSONAL_PROFILE_ONLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_INSTALL_DEVICE_WIDE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_INSTALL_DEVICE_WIDE = 3,
 	}
 	
 	/// <summary>
 	/// Configuration for an always-on VPN connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlwaysOnVpnPackage
 	{
 		
@@ -171,8 +159,7 @@ namespace MyNS
 	/// <summary>
 	/// A compliance rule condition which is satisfied if the Android Framework API level on the device doesn't meet a minimum requirement. There can only be one rule with this type of condition per policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiLevelCondition
 	{
 		
@@ -186,8 +173,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a process. It contains process name, start time, app Uid, app Pid, seinfo tag, hash of the base APK.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppProcessInfo
 	{
 		
@@ -237,8 +223,7 @@ namespace MyNS
 	/// <summary>
 	/// An app process was started. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppProcessStartEvent
 	{
 		
@@ -252,8 +237,7 @@ namespace MyNS
 	/// <summary>
 	/// Id to name association of a app track.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppTrackInfo
 	{
 		
@@ -273,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// This represents a single version of the app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppVersion
 	{
 		
@@ -306,8 +289,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Application
 	{
 		
@@ -444,74 +426,67 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationAppPricing
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_PRICING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_PRICING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FREE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FREE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FREE_WITH_IN_APP_PURCHASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FREE_WITH_IN_APP_PURCHASE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAID = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationContentRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTENT_RATING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTENT_RATING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THREE_YEARS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THREE_YEARS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVEN_YEARS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVEN_YEARS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWELVE_YEARS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWELVE_YEARS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIXTEEN_YEARS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIXTEEN_YEARS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EIGHTEEN_YEARS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EIGHTEEN_YEARS = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationDistributionChannel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISTRIBUTION_CHANNEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISTRIBUTION_CHANNEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_GOOGLE_HOSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_GOOGLE_HOSTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE_GOOGLE_HOSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE_GOOGLE_HOSTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE_SELF_HOSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE_SELF_HOSTED = 3,
 	}
 	
 	/// <summary>
 	/// Managed property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedProperty
 	{
 		
@@ -561,8 +536,7 @@ namespace MyNS
 	/// <summary>
 	/// An entry of a managed property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedPropertyEntry
 	{
 		
@@ -579,45 +553,42 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ManagedPropertyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGED_PROPERTY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGED_PROPERTY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTEGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTEGER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHOICE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTISELECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTISELECT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDDEN = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUNDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUNDLE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUNDLE_ARRAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUNDLE_ARRAY = 8,
 	}
 	
 	/// <summary>
 	/// A permission required by the app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationPermission
 	{
 		
@@ -643,8 +614,7 @@ namespace MyNS
 	/// <summary>
 	/// An app-related event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationEvent
 	{
 		
@@ -661,45 +631,42 @@ namespace MyNS
 		public System.Nullable<ApplicationEventEventType> EventType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationEventEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_EVENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_EVENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_CLEARED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_CLEARED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLACED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLACED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTARTED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PINNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PINNED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNPINNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNPINNED = 8,
 	}
 	
 	/// <summary>
 	/// Policy for an individual app. Note: Application availability on a given device cannot be changed using this policy if installAppsDisabled is enabled. The maximum number of applications that you can specify per policy is 3,000.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationPolicy
 	{
 		
@@ -800,81 +767,72 @@ namespace MyNS
 		public System.Nullable<ApplicationPolicyWorkProfileWidgets> WorkProfileWidgets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationPolicyAlwaysOnVpnLockdownExemption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALWAYS_ON_VPN_LOCKDOWN_EXEMPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALWAYS_ON_VPN_LOCKDOWN_EXEMPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPN_LOCKDOWN_ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPN_LOCKDOWN_ENFORCED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPN_LOCKDOWN_EXEMPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPN_LOCKDOWN_EXEMPTION = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationPolicyAutoUpdateMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_UPDATE_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_UPDATE_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_UPDATE_DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_UPDATE_DEFAULT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_UPDATE_POSTPONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_UPDATE_POSTPONED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_UPDATE_HIGH_PRIORITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_UPDATE_HIGH_PRIORITY = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationPolicyConnectedWorkAndPersonalApp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTED_WORK_AND_PERSONAL_APP_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTED_WORK_AND_PERSONAL_APP_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTED_WORK_AND_PERSONAL_APP_DISALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTED_WORK_AND_PERSONAL_APP_DISALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTED_WORK_AND_PERSONAL_APP_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTED_WORK_AND_PERSONAL_APP_ALLOWED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationPolicyDefaultPermissionPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_POLICY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_POLICY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROMPT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENY = 3,
 	}
 	
 	/// <summary>
 	/// Configuration to enable an app as an extension app, with the capability of interacting with Android Device Policy offline. For Android versions 13 and above, extension apps are exempt from battery restrictions so will not be placed into the restricted App Standby Bucket (https://developer.android.com/topic/performance/appstandby#restricted-bucket). Extensions apps are also protected against users clearing their data or force-closing the application, although admins can continue to use the clear app data command (https://developer.android.com/management/reference/rest/v1/enterprises.devices/issueCommand#CommandType) on extension apps if needed for Android 13 and above.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtensionConfig
 	{
 		
@@ -891,39 +849,36 @@ namespace MyNS
 		public string[] SigningKeyFingerprintsSha256 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationPolicyInstallType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREINSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREINSTALLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORCE_INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORCE_INSTALLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRED_FOR_SETUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRED_FOR_SETUP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KIOSK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KIOSK = 6,
 	}
 	
 	/// <summary>
 	/// The managed configurations template for the app, saved from the managed configurations iframe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedConfigurationTemplate
 	{
 		
@@ -943,8 +898,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for an Android permission and its grant state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PermissionGrant
 	{
 		
@@ -961,27 +915,24 @@ namespace MyNS
 		public ApplicationPolicyDefaultPermissionPolicy Policy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationPolicyWorkProfileWidgets
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_PROFILE_WIDGETS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_PROFILE_WIDGETS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_PROFILE_WIDGETS_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_PROFILE_WIDGETS_ALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_PROFILE_WIDGETS_DISALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_PROFILE_WIDGETS_DISALLOWED = 2,
 	}
 	
 	/// <summary>
 	/// Information reported about an installed app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationReport
 	{
 		
@@ -1058,30 +1009,27 @@ namespace MyNS
 		public string VersionName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationReportApplicationSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_SOURCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_SOURCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_APP_FACTORY_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_APP_FACTORY_VERSION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_APP_UPDATED_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_APP_UPDATED_VERSION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED_FROM_PLAY_STORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED_FROM_PLAY_STORE = 3,
 	}
 	
 	/// <summary>
 	/// Keyed app state reported by the app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyedAppState
 	{
 		
@@ -1122,59 +1070,52 @@ namespace MyNS
 		public System.Nullable<KeyedAppStateSeverity> Severity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyedAppStateSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationReportState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLICATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLICATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationReportUserFacingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_FACING_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_FACING_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_USER_FACING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_USER_FACING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_FACING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_FACING = 2,
 	}
 	
 	/// <summary>
 	/// Settings controlling the behavior of application reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationReportingSettings
 	{
 		
@@ -1188,8 +1129,7 @@ namespace MyNS
 	/// <summary>
 	/// Batched event logs of events from the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchUsageLogEvents
 	{
 		
@@ -1221,8 +1161,7 @@ namespace MyNS
 	/// <summary>
 	/// An event logged on the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageLogEvent
 	{
 		
@@ -1434,8 +1373,7 @@ namespace MyNS
 	/// <summary>
 	/// A new root certificate was installed into the system's trusted credential storage. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertAuthorityInstalledEvent
 	{
 		
@@ -1461,8 +1399,7 @@ namespace MyNS
 	/// <summary>
 	/// A root certificate was removed from the system's trusted credential storage. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertAuthorityRemovedEvent
 	{
 		
@@ -1488,8 +1425,7 @@ namespace MyNS
 	/// <summary>
 	/// An X.509v3 certificate failed to validate, currently this validation is performed on the Wi-FI access point and failure may be due to a mismatch upon server certificate validation. However it may in the future include other validation events of an X.509v3 certificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertValidationFailureEvent
 	{
 		
@@ -1503,8 +1439,7 @@ namespace MyNS
 	/// <summary>
 	/// A TCP connect event was initiated through the standard network stack.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectEvent
 	{
 		
@@ -1530,8 +1465,7 @@ namespace MyNS
 	/// <summary>
 	/// Validates whether Android’s built-in cryptographic library (BoringSSL) is valid. Should always succeed on device boot, if it fails, the device should be considered untrusted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CryptoSelfTestCompletedEvent
 	{
 		
@@ -1545,8 +1479,7 @@ namespace MyNS
 	/// <summary>
 	/// A DNS lookup event was initiated through the standard network stack.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DnsEvent
 	{
 		
@@ -1578,120 +1511,116 @@ namespace MyNS
 	/// <summary>
 	/// Represents that the device has completed enrollment. User should be in the launcher at this point, device at this point will be compliant and all setup steps have been completed. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnrollmentCompleteEvent
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UsageLogEventEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADB_SHELL_COMMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADB_SHELL_COMMAND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADB_SHELL_INTERACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADB_SHELL_INTERACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_PROCESS_START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_PROCESS_START = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEYGUARD_DISMISSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEYGUARD_DISMISSED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEYGUARD_DISMISS_AUTH_ATTEMPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEYGUARD_DISMISS_AUTH_ATTEMPT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEYGUARD_SECURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEYGUARD_SECURED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_PULLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_PULLED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_PUSHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_PUSHED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_AUTHORITY_INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_AUTHORITY_INSTALLED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_AUTHORITY_REMOVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_AUTHORITY_REMOVED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERT_VALIDATION_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERT_VALIDATION_FAILURE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRYPTO_SELF_TEST_COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRYPTO_SELF_TEST_COMPLETED = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_DESTRUCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_DESTRUCTION = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_GENERATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_GENERATED = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_IMPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_IMPORT = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_INTEGRITY_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_INTEGRITY_VIOLATION = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGGING_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGGING_STARTED = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGGING_STOPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGGING_STOPPED = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_BUFFER_SIZE_CRITICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_BUFFER_SIZE_CRITICAL = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIA_MOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIA_MOUNT = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIA_UNMOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIA_UNMOUNT = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_SHUTDOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_SHUTDOWN = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_STARTUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_STARTUP = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOTE_LOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOTE_LOCK = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIPE_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIPE_FAILURE = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECT = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_LOST_MODE_USER_ATTEMPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_LOST_MODE_USER_ATTEMPT = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOST_MODE_OUTGOING_PHONE_CALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOST_MODE_OUTGOING_PHONE_CALL = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOST_MODE_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOST_MODE_LOCATION = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENROLLMENT_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENROLLMENT_COMPLETE = 31,
 	}
 	
 	/// <summary>
 	/// A file was downloaded from the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilePulledEvent
 	{
 		
@@ -1705,8 +1634,7 @@ namespace MyNS
 	/// <summary>
 	/// A file was uploaded onto the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilePushedEvent
 	{
 		
@@ -1720,8 +1648,7 @@ namespace MyNS
 	/// <summary>
 	/// A cryptographic key including user installed, admin installed and system maintained private key is removed from the device either by the user or management. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyDestructionEvent
 	{
 		
@@ -1747,8 +1674,7 @@ namespace MyNS
 	/// <summary>
 	/// A cryptographic key including user installed, admin installed and system maintained private key is installed on the device either by the user or management.This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyGeneratedEvent
 	{
 		
@@ -1774,8 +1700,7 @@ namespace MyNS
 	/// <summary>
 	/// A cryptographic key including user installed, admin installed and system maintained private key is imported on the device either by the user or management. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyImportEvent
 	{
 		
@@ -1801,8 +1726,7 @@ namespace MyNS
 	/// <summary>
 	/// A cryptographic key including user installed, admin installed and system maintained private key is determined to be corrupted due to storage corruption, hardware failure or some OS issue. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyIntegrityViolationEvent
 	{
 		
@@ -1822,8 +1746,7 @@ namespace MyNS
 	/// <summary>
 	/// An attempt was made to unlock the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyguardDismissAuthAttemptEvent
 	{
 		
@@ -1843,8 +1766,7 @@ namespace MyNS
 	/// <summary>
 	/// The keyguard was dismissed. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyguardDismissedEvent
 	{
 	}
@@ -1852,8 +1774,7 @@ namespace MyNS
 	/// <summary>
 	/// The device was locked either by user or timeout. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyguardSecuredEvent
 	{
 	}
@@ -1861,8 +1782,7 @@ namespace MyNS
 	/// <summary>
 	/// The usageLog buffer on the device has reached 90% of its capacity, therefore older events may be dropped. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogBufferSizeCriticalEvent
 	{
 	}
@@ -1870,8 +1790,7 @@ namespace MyNS
 	/// <summary>
 	/// usageLog policy has been enabled. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingStartedEvent
 	{
 	}
@@ -1879,8 +1798,7 @@ namespace MyNS
 	/// <summary>
 	/// usageLog policy has been disabled. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingStoppedEvent
 	{
 	}
@@ -1888,8 +1806,7 @@ namespace MyNS
 	/// <summary>
 	/// A lost mode event containing the device location and battery level as a percentage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LostModeLocationEvent
 	{
 		
@@ -1909,8 +1826,7 @@ namespace MyNS
 	/// <summary>
 	/// The device location containing the latitude and longitude.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -1930,8 +1846,7 @@ namespace MyNS
 	/// <summary>
 	/// An event indicating an outgoing phone call has been made when a device is in lost mode. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LostModeOutgoingPhoneCallEvent
 	{
 	}
@@ -1939,8 +1854,7 @@ namespace MyNS
 	/// <summary>
 	/// Removable media was mounted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaMountEvent
 	{
 		
@@ -1960,8 +1874,7 @@ namespace MyNS
 	/// <summary>
 	/// Removable media was unmounted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediaUnmountEvent
 	{
 		
@@ -1981,8 +1894,7 @@ namespace MyNS
 	/// <summary>
 	/// Device was shutdown. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OsShutdownEvent
 	{
 	}
@@ -1990,8 +1902,7 @@ namespace MyNS
 	/// <summary>
 	/// Device was started.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OsStartupEvent
 	{
 		
@@ -2008,49 +1919,44 @@ namespace MyNS
 		public System.Nullable<OsStartupEventVerityMode> VerityMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OsStartupEventVerifiedBootState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFIED_BOOT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFIED_BOOT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YELLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YELLOW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORANGE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OsStartupEventVerityMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DM_VERITY_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DM_VERITY_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENFORCING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENFORCING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IO_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IO_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 3,
 	}
 	
 	/// <summary>
 	/// The device or profile has been remotely locked via the LOCK command.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoteLockEvent
 	{
 		
@@ -2076,8 +1982,7 @@ namespace MyNS
 	/// <summary>
 	/// A lost mode event indicating the user has attempted to stop lost mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopLostModeUserAttemptEvent
 	{
 		
@@ -2088,27 +1993,24 @@ namespace MyNS
 		public System.Nullable<StopLostModeUserAttemptEventStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StopLostModeUserAttemptEventStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTEMPT_SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTEMPT_SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTEMPT_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTEMPT_FAILED = 2,
 	}
 	
 	/// <summary>
 	/// The work profile or company-owned device failed to wipe when requested. This could be user initiated or admin initiated e.g. delete was received. Intentionally empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WipeFailureEvent
 	{
 	}
@@ -2116,8 +2018,7 @@ namespace MyNS
 	/// <summary>
 	/// An action to block access to apps and data on a fully managed device or in a work profile. This action also triggers a device or work profile to displays a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockAction
 	{
 		
@@ -2134,27 +2035,24 @@ namespace MyNS
 		public System.Nullable<BlockActionBlockScope> BlockScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BlockActionBlockScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCK_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCK_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCK_SCOPE_WORK_PROFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCK_SCOPE_WORK_PROFILE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCK_SCOPE_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCK_SCOPE_DEVICE = 2,
 	}
 	
 	/// <summary>
 	/// Controls apps' access to private keys. The rule determines which private key, if any, Android Device Policy grants to the specified app. Access is granted either when the app calls KeyChain.choosePrivateKeyAlias (https://developer.android.com/reference/android/security/KeyChain#choosePrivateKeyAlias%28android.app.Activity,%20android.security.KeyChainAliasCallback,%20java.lang.String[],%20java.security.Principal[],%20java.lang.String,%20int,%20java.lang.String%29) (or any overloads) to request a private key alias for a given URL, or for rules that are not URL-specific (that is, if urlPattern is not set, or set to the empty string or .*) on Android 11 and above, directly so that the app can call KeyChain.getPrivateKey (https://developer.android.com/reference/android/security/KeyChain#getPrivateKey%28android.content.Context,%20java.lang.String%29), without first having to call KeyChain.choosePrivateKeyAlias.When an app calls KeyChain.choosePrivateKeyAlias if more than one choosePrivateKeyRules matches, the last matching rule defines which key alias to return.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChoosePrivateKeyRule
 	{
 		
@@ -2180,8 +2078,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters associated with the CLEAR_APP_DATA command to clear the data of specified apps from the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClearAppsDataParams
 	{
 		
@@ -2195,8 +2092,7 @@ namespace MyNS
 	/// <summary>
 	/// Status of the CLEAR_APP_DATA command to clear the data of specified apps from the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClearAppsDataStatus
 	{
 		
@@ -2210,8 +2106,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of an attempt to clear the data of a single app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PerAppResult
 	{
 		
@@ -2222,33 +2117,30 @@ namespace MyNS
 		public System.Nullable<PerAppResultClearingResult> ClearingResult { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PerAppResultClearingResult
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLEARING_RESULT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLEARING_RESULT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_NOT_FOUND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_PROTECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_PROTECTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_LEVEL = 4,
 	}
 	
 	/// <summary>
 	/// A command.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Command
 	{
 		
@@ -2331,36 +2223,33 @@ namespace MyNS
 		public string UserName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommandErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMAND_ERROR_CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMAND_ERROR_CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_LEVEL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGEMENT_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGEMENT_MODE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_VALUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUPPORTED = 5,
 	}
 	
 	/// <summary>
 	/// Parameters associated with the START_LOST_MODE command to put the device into lost mode. At least one of the parameters, not including the organization name, must be provided in order for the device to be put into lost mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartLostModeParams
 	{
 		
@@ -2398,8 +2287,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a user-facing message with locale info. The maximum message length is 4096 characters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserFacingMessage
 	{
 		
@@ -2419,8 +2307,7 @@ namespace MyNS
 	/// <summary>
 	/// Status of the START_LOST_MODE command to put the device into lost mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartLostModeStatus
 	{
 		
@@ -2431,33 +2318,30 @@ namespace MyNS
 		public System.Nullable<StartLostModeStatusStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StartLostModeStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESET_PASSWORD_RECENTLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESET_PASSWORD_RECENTLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_EXIT_LOST_MODE_RECENTLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_EXIT_LOST_MODE_RECENTLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALREADY_IN_LOST_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALREADY_IN_LOST_MODE = 4,
 	}
 	
 	/// <summary>
 	/// Parameters associated with the STOP_LOST_MODE command to take the device out of lost mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopLostModeParams
 	{
 	}
@@ -2465,8 +2349,7 @@ namespace MyNS
 	/// <summary>
 	/// Status of the STOP_LOST_MODE command to take the device out of lost mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopLostModeStatus
 	{
 		
@@ -2477,58 +2360,53 @@ namespace MyNS
 		public System.Nullable<StopLostModeStatusStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StopLostModeStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN_LOST_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN_LOST_MODE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommandType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMAND_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMAND_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESET_PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESET_PASSWORD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBOOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REBOOT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELINQUISH_OWNERSHIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELINQUISH_OWNERSHIP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLEAR_APP_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLEAR_APP_DATA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START_LOST_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START_LOST_MODE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP_LOST_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP_LOST_MODE = 7,
 	}
 	
 	/// <summary>
 	/// Information about Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC).This information is only available if statusReportingSettings.commonCriteriaModeEnabled is true in the device's policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommonCriteriaModeInfo
 	{
 		
@@ -2539,27 +2417,24 @@ namespace MyNS
 		public System.Nullable<CommonCriteriaModeInfoCommonCriteriaModeStatus> CommonCriteriaModeStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommonCriteriaModeInfoCommonCriteriaModeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON_CRITERIA_MODE_STATUS_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON_CRITERIA_MODE_STATUS_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON_CRITERIA_MODE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON_CRITERIA_MODE_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMON_CRITERIA_MODE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMON_CRITERIA_MODE_ENABLED = 2,
 	}
 	
 	/// <summary>
 	/// A rule declaring which mitigating actions to take when a device is not compliant with its policy. For every rule, there is always an implicit mitigating action to set policy_compliant to false for the Device resource, and display a message on the device indicating that the device is not compliant with its policy. Other mitigating actions may optionally be taken as well, depending on the field values in the rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplianceRule
 	{
 		
@@ -2591,8 +2466,7 @@ namespace MyNS
 	/// <summary>
 	/// A compliance rule condition which is satisfied if there exists any matching NonComplianceDetail for the device. A NonComplianceDetail matches a NonComplianceDetailCondition if all the fields which are set within the NonComplianceDetailCondition match the corresponding NonComplianceDetail fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NonComplianceDetailCondition
 	{
 		
@@ -2615,54 +2489,51 @@ namespace MyNS
 		public string SettingName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NonComplianceDetailConditionNonComplianceReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_COMPLIANCE_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_COMPLIANCE_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="API_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		API_LEVEL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGEMENT_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGEMENT_MODE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_ACTION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_VALUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_NOT_INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_NOT_INSTALLED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUPPORTED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_INSTALLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_INSTALLED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_INCOMPATIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_INCOMPATIBLE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_NOT_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_NOT_UPDATED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_INCOMPATIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_INCOMPATIBLE = 11,
 	}
 	
 	/// <summary>
 	/// Contact details for managed Google Play enterprises.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContactInfo
 	{
 		
@@ -2712,8 +2583,7 @@ namespace MyNS
 	/// <summary>
 	/// This feature is not generally available.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentProviderEndpoint
 	{
 		
@@ -2739,8 +2609,7 @@ namespace MyNS
 	/// <summary>
 	/// Controls the data from the work profile that can be accessed from the personal profile and vice versa. A nonComplianceDetail with MANAGEMENT_MODE is reported if the device does not have a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CrossProfilePolicies
 	{
 		
@@ -2775,46 +2644,41 @@ namespace MyNS
 		public System.Nullable<CrossProfilePoliciesWorkProfileWidgetsDefault> WorkProfileWidgetsDefault { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CrossProfilePoliciesCrossProfileCopyPaste
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CROSS_PROFILE_COPY_PASTE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CROSS_PROFILE_COPY_PASTE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPY_FROM_WORK_TO_PERSONAL_DISALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPY_FROM_WORK_TO_PERSONAL_DISALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CROSS_PROFILE_COPY_PASTE_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CROSS_PROFILE_COPY_PASTE_ALLOWED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CrossProfilePoliciesCrossProfileDataSharing
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CROSS_PROFILE_DATA_SHARING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CROSS_PROFILE_DATA_SHARING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CROSS_PROFILE_DATA_SHARING_DISALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CROSS_PROFILE_DATA_SHARING_DISALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CROSS_PROFILE_DATA_SHARING_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CROSS_PROFILE_DATA_SHARING_ALLOWED = 3,
 	}
 	
 	/// <summary>
 	/// A list of package names.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackageNameList
 	{
 		
@@ -2825,46 +2689,41 @@ namespace MyNS
 		public string[] PackageNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CrossProfilePoliciesShowWorkContactsInPersonalProfile
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED_EXCEPT_SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED_EXCEPT_SYSTEM = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CrossProfilePoliciesWorkProfileWidgetsDefault
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_PROFILE_WIDGETS_DEFAULT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_PROFILE_WIDGETS_DEFAULT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_PROFILE_WIDGETS_DEFAULT_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_PROFILE_WIDGETS_DEFAULT_ALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORK_PROFILE_WIDGETS_DEFAULT_DISALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORK_PROFILE_WIDGETS_DEFAULT_DISALLOWED = 2,
 	}
 	
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: A full date, with non-zero year, month, and day values. A month and day, with a zero year (for example, an anniversary). A year on its own, with a zero month and a zero day. A year and month, with a zero day (for example, a credit card expiration date).Related types: google.type.TimeOfDay google.type.DateTime google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -2890,8 +2749,7 @@ namespace MyNS
 	/// <summary>
 	/// A device owned by an enterprise. Unless otherwise noted, all fields are read-only and can't be modified by enterprises.devices.patch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Device
 	{
 		
@@ -3109,8 +2967,7 @@ namespace MyNS
 	/// <summary>
 	/// Requirements for the password used to unlock a device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PasswordRequirements
 	{
 		
@@ -3199,124 +3056,113 @@ namespace MyNS
 		public System.Nullable<PasswordRequirementsUnifiedLockSettings> UnifiedLockSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PasswordRequirementsPasswordQuality
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_QUALITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_QUALITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIOMETRIC_WEAK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIOMETRIC_WEAK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOMETHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOMETHING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC_COMPLEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC_COMPLEX = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALPHABETIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALPHABETIC = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALPHANUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALPHANUMERIC = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLEX = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLEXITY_LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLEXITY_LOW = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLEXITY_MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLEXITY_MEDIUM = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLEXITY_HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLEXITY_HIGH = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PasswordRequirementsPasswordScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCOPE_DEVICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_PROFILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCOPE_PROFILE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PasswordRequirementsRequirePasswordUnlock
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRE_PASSWORD_UNLOCK_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRE_PASSWORD_UNLOCK_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USE_DEFAULT_DEVICE_TIMEOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USE_DEFAULT_DEVICE_TIMEOUT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRE_EVERY_DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRE_EVERY_DAY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PasswordRequirementsUnifiedLockSettings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIFIED_LOCK_SETTINGS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIFIED_LOCK_SETTINGS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_UNIFIED_WORK_AND_PERSONAL_LOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_UNIFIED_WORK_AND_PERSONAL_LOCK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRE_SEPARATE_WORK_LOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRE_SEPARATE_WORK_LOCK = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceAppliedState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOST = 5,
 	}
 	
 	/// <summary>
 	/// Information about security related device settings on device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceSettings
 	{
 		
@@ -3363,39 +3209,36 @@ namespace MyNS
 		public System.Nullable<System.Boolean> VerifyAppsEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceSettingsEncryptionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCRYPTION_STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCRYPTION_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUPPORTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE_DEFAULT_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE_DEFAULT_KEY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE_PER_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE_PER_USER = 6,
 	}
 	
 	/// <summary>
 	/// Device display information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Display
 	{
 		
@@ -3442,33 +3285,30 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DisplayState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISPLAY_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISPLAY_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOZE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 4,
 	}
 	
 	/// <summary>
 	/// Information about device hardware. The fields related to temperature thresholds are only available if hardwareStatusEnabled is true in the device's policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HardwareInfo
 	{
 		
@@ -3566,8 +3406,7 @@ namespace MyNS
 	/// <summary>
 	/// Hardware status. Temperatures may be compared to the temperature thresholds available in hardwareInfo to determine hardware health.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HardwareStatus
 	{
 		
@@ -3614,27 +3453,24 @@ namespace MyNS
 		public double[] SkinTemperatures { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceManagementMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGEMENT_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGEMENT_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_OWNER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE_OWNER = 2,
 	}
 	
 	/// <summary>
 	/// An event related to memory and storage measurements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemoryEvent
 	{
 		
@@ -3657,36 +3493,33 @@ namespace MyNS
 		public System.Nullable<MemoryEventEventType> EventType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MemoryEventEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_EVENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_EVENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAM_MEASURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAM_MEASURED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_STORAGE_MEASURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_STORAGE_MEASURED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_STORAGE_DETECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_STORAGE_DETECTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_STORAGE_REMOVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_STORAGE_REMOVED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_STORAGE_MEASURED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_STORAGE_MEASURED = 5,
 	}
 	
 	/// <summary>
 	/// Information about device memory and storage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemoryInfo
 	{
 		
@@ -3706,8 +3539,7 @@ namespace MyNS
 	/// <summary>
 	/// Device network info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkInfo
 	{
 		
@@ -3745,8 +3577,7 @@ namespace MyNS
 	/// <summary>
 	/// Telephony information associated with a given SIM card on the device. Only supported on fully managed devices starting from Android API level 23.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TelephonyInfo
 	{
 		
@@ -3766,8 +3597,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides detail about non-compliance with a policy setting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NonComplianceDetail
 	{
 		
@@ -3820,57 +3650,54 @@ namespace MyNS
 		public System.Nullable<NonComplianceDetailSpecificNonComplianceReason> SpecificNonComplianceReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NonComplianceDetailInstallationFailureReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLATION_FAILURE_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLATION_FAILURE_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALLATION_FAILURE_REASON_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALLATION_FAILURE_REASON_UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_COMPATIBLE_WITH_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_COMPATIBLE_WITH_DEVICE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_APPROVED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSIONS_NOT_ACCEPTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSIONS_NOT_ACCEPTED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_AVAILABLE_IN_COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_AVAILABLE_IN_COUNTRY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LICENSES_REMAINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LICENSES_REMAINING = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_ENROLLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_ENROLLED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_INVALID = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_ERROR_UNRELIABLE_CONNECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_ERROR_UNRELIABLE_CONNECTION = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_STORAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_STORAGE = 12,
 	}
 	
 	/// <summary>
 	/// Additional context for SpecificNonComplianceReason.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpecificNonComplianceContext
 	{
 		
@@ -3890,8 +3717,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional context for non-compliance related to Wi-Fi configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OncWifiContext
 	{
 		
@@ -3905,8 +3731,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional context for non-compliance related to password policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PasswordPoliciesContext
 	{
 		
@@ -3917,55 +3742,50 @@ namespace MyNS
 		public PasswordRequirementsPasswordScope PasswordPolicyScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NonComplianceDetailSpecificNonComplianceReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPECIFIC_NON_COMPLIANCE_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPECIFIC_NON_COMPLIANCE_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_POLICIES_USER_CREDENTIALS_CONFIRMATION_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_POLICIES_USER_CREDENTIALS_CONFIRMATION_REQUIRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_POLICIES_PASSWORD_EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_POLICIES_PASSWORD_EXPIRED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_POLICIES_PASSWORD_NOT_SUFFICIENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_POLICIES_PASSWORD_NOT_SUFFICIENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONC_WIFI_INVALID_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONC_WIFI_INVALID_VALUE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONC_WIFI_API_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONC_WIFI_API_LEVEL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONC_WIFI_INVALID_ENTERPRISE_CONFIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONC_WIFI_INVALID_ENTERPRISE_CONFIG = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceOwnership
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNERSHIP_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNERSHIP_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY_OWNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPANY_OWNED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSONALLY_OWNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSONALLY_OWNED = 2,
 	}
 	
 	/// <summary>
 	/// A power management event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PowerManagementEvent
 	{
 		
@@ -3988,42 +3808,39 @@ namespace MyNS
 		public System.Nullable<PowerManagementEventEventType> EventType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PowerManagementEventEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWER_MANAGEMENT_EVENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWER_MANAGEMENT_EVENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATTERY_LEVEL_COLLECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATTERY_LEVEL_COLLECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWER_CONNECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWER_CONNECTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWER_DISCONNECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWER_DISCONNECTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATTERY_LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATTERY_LOW = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATTERY_OKAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATTERY_OKAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOT_COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOT_COMPLETED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHUTDOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHUTDOWN = 7,
 	}
 	
 	/// <summary>
 	/// The security posture of the device, as determined by the current device state and the policies applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SecurityPosture
 	{
 		
@@ -4040,30 +3857,27 @@ namespace MyNS
 		public PostureDetail[] PostureDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SecurityPostureDevicePosture
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTURE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTURE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AT_RISK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AT_RISK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POTENTIALLY_COMPROMISED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POTENTIALLY_COMPROMISED = 3,
 	}
 	
 	/// <summary>
 	/// Additional details regarding the security posture of the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostureDetail
 	{
 		
@@ -4080,30 +3894,27 @@ namespace MyNS
 		public System.Nullable<PostureDetailSecurityRisk> SecurityRisk { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostureDetailSecurityRisk
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_RISK_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_RISK_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_OS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPROMISED_OS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPROMISED_OS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HARDWARE_BACKED_EVALUATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HARDWARE_BACKED_EVALUATION_FAILED = 3,
 	}
 	
 	/// <summary>
 	/// Information about device software.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareInfo
 	{
 		
@@ -4177,8 +3988,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a potential pending system update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SystemUpdateInfo
 	{
 		
@@ -4195,33 +4005,30 @@ namespace MyNS
 		public System.Nullable<SystemUpdateInfoUpdateStatus> UpdateStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SystemUpdateInfoUpdateStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_STATUS_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_STATUS_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UP_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UP_TO_DATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_UPDATE_AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_UPDATE_AVAILABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY_UPDATE_AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY_UPDATE_AVAILABLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_UPDATE_AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_UPDATE_AVAILABLE = 4,
 	}
 	
 	/// <summary>
 	/// A user belonging to an enterprise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -4235,8 +4042,7 @@ namespace MyNS
 	/// <summary>
 	/// Covers controls for device connectivity such as Wi-Fi, USB data access, keyboard/mouse connections, and more.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceConnectivityManagement
 	{
 		
@@ -4265,84 +4071,75 @@ namespace MyNS
 		public System.Nullable<DeviceConnectivityManagementWifiDirectSettings> WifiDirectSettings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceConnectivityManagementConfigureWifi
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIGURE_WIFI_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIGURE_WIFI_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_CONFIGURING_WIFI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_CONFIGURING_WIFI = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOW_ADD_WIFI_CONFIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISALLOW_ADD_WIFI_CONFIG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOW_CONFIGURING_WIFI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISALLOW_CONFIGURING_WIFI = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceConnectivityManagementTetheringSettings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TETHERING_SETTINGS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TETHERING_SETTINGS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_ALL_TETHERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_ALL_TETHERING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOW_WIFI_TETHERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISALLOW_WIFI_TETHERING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOW_ALL_TETHERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISALLOW_ALL_TETHERING = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceConnectivityManagementUsbDataAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USB_DATA_ACCESS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USB_DATA_ACCESS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_USB_DATA_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_USB_DATA_TRANSFER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOW_USB_FILE_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISALLOW_USB_FILE_TRANSFER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOW_USB_DATA_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISALLOW_USB_DATA_TRANSFER = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceConnectivityManagementWifiDirectSettings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI_DIRECT_SETTINGS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI_DIRECT_SETTINGS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_WIFI_DIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_WIFI_DIRECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOW_WIFI_DIRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISALLOW_WIFI_DIRECT = 2,
 	}
 	
 	/// <summary>
 	/// Controls for device radio settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceRadioState
 	{
 		
@@ -4377,97 +4174,86 @@ namespace MyNS
 		public System.Nullable<DeviceRadioStateWifiState> WifiState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceRadioStateAirplaneModeState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AIRPLANE_MODE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AIRPLANE_MODE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AIRPLANE_MODE_USER_CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AIRPLANE_MODE_USER_CHOICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AIRPLANE_MODE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AIRPLANE_MODE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceRadioStateCellularTwoGState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CELLULAR_TWO_G_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CELLULAR_TWO_G_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CELLULAR_TWO_G_USER_CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CELLULAR_TWO_G_USER_CHOICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CELLULAR_TWO_G_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CELLULAR_TWO_G_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceRadioStateMinimumWifiSecurityLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINIMUM_WIFI_SECURITY_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINIMUM_WIFI_SECURITY_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN_NETWORK_SECURITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN_NETWORK_SECURITY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSONAL_NETWORK_SECURITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSONAL_NETWORK_SECURITY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTERPRISE_NETWORK_SECURITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTERPRISE_NETWORK_SECURITY = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceRadioStateUltraWidebandState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ULTRA_WIDEBAND_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ULTRA_WIDEBAND_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ULTRA_WIDEBAND_USER_CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ULTRA_WIDEBAND_USER_CHOICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ULTRA_WIDEBAND_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ULTRA_WIDEBAND_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceRadioStateWifiState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI_STATE_USER_CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI_STATE_USER_CHOICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI_ENABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI_DISABLED = 3,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -4475,8 +4261,7 @@ namespace MyNS
 	/// <summary>
 	/// An enrollment token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnrollmentToken
 	{
 		
@@ -4541,27 +4326,24 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnrollmentTokenAllowPersonalUsage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_PERSONAL_USAGE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_PERSONAL_USAGE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSONAL_USAGE_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSONAL_USAGE_ALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSONAL_USAGE_DISALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSONAL_USAGE_DISALLOWED = 2,
 	}
 	
 	/// <summary>
 	/// The configuration applied to an enterprise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Enterprise
 	{
 		
@@ -4629,8 +4411,7 @@ namespace MyNS
 	/// <summary>
 	/// Data hosted at an external location. The data is to be downloaded by Android Device Policy and verified against the hash.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExternalData
 	{
 		
@@ -4650,8 +4431,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource containing sign in details for an enterprise. Use enterprises to manage SigninDetails for a given enterprise.For an enterprise, we can have any number of SigninDetails that is uniquely identified by combination of the following three fields (signin_url, allow_personal_usage, token_tag). One cannot create two SigninDetails with the same (signin_url, allow_personal_usage, token_tag). (token_tag is an optional field).Patch: The operation updates the current list of SigninDetails with the new list of SigninDetails. If the stored SigninDetail configuration is passed, it returns the same signin_enrollment_token and qr_code. If we pass multiple identical SigninDetail configurations that are not stored, it will store the first one amongst those SigninDetail configurations. if the configuration already exists we cannot request it more than once in a particular patch API call, otherwise it will give a duplicate key error and the whole operation will fail. If we remove certain SigninDetail configuration from the request then it will get removed from the storage. We can then request another signin_enrollment_token and qr_code for the same SigninDetail configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SigninDetail
 	{
 		
@@ -4689,8 +4469,7 @@ namespace MyNS
 	/// <summary>
 	/// A terms and conditions page to be accepted during provisioning.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TermsAndConditions
 	{
 		
@@ -4710,8 +4489,7 @@ namespace MyNS
 	/// <summary>
 	/// A system freeze period. When a device’s clock is within the freeze period, all incoming system updates (including security patches) are blocked and won’t be installed.When the device is outside any set freeze periods, the normal policy behavior (automatic, windowed, or postponed) applies.Leap years are ignored in freeze period calculations, in particular: If Feb. 29th is set as the start or end date of a freeze period, the freeze period will start or end on Feb. 28th instead. When a device’s system clock reads Feb. 29th, it’s treated as Feb. 28th. When calculating the number of days in a freeze period or the time between two freeze periods, Feb. 29th is ignored and not counted as a day.Note: For Freeze Periods to take effect, SystemUpdateType cannot be specified as SYSTEM_UPDATE_TYPE_UNSPECIFIED, because freeze periods require a defined policy to be specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FreezePeriod
 	{
 		
@@ -4731,8 +4509,7 @@ namespace MyNS
 	/// <summary>
 	/// Response on issuing a command. This is currently empty as a placeholder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IssueCommandResponse
 	{
 	}
@@ -4740,8 +4517,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings controlling the behavior of a device in kiosk mode. To enable kiosk mode, set kioskCustomLauncherEnabled to true or specify an app in the policy with installType KIOSK.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KioskCustomization
 	{
 		
@@ -4776,97 +4552,86 @@ namespace MyNS
 		public System.Nullable<KioskCustomizationSystemNavigation> SystemNavigation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KioskCustomizationDeviceSettings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_SETTINGS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_SETTINGS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SETTINGS_ACCESS_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SETTINGS_ACCESS_ALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SETTINGS_ACCESS_BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SETTINGS_ACCESS_BLOCKED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KioskCustomizationPowerButtonActions
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWER_BUTTON_ACTIONS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWER_BUTTON_ACTIONS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWER_BUTTON_AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWER_BUTTON_AVAILABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POWER_BUTTON_BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POWER_BUTTON_BLOCKED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KioskCustomizationStatusBar
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_BAR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_BAR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATIONS_AND_SYSTEM_INFO_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATIONS_AND_SYSTEM_INFO_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATIONS_AND_SYSTEM_INFO_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTIFICATIONS_AND_SYSTEM_INFO_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_INFO_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_INFO_ONLY = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KioskCustomizationSystemErrorWarnings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_ERROR_WARNINGS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_ERROR_WARNINGS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_AND_WARNINGS_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_AND_WARNINGS_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_AND_WARNINGS_MUTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_AND_WARNINGS_MUTED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KioskCustomizationSystemNavigation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_NAVIGATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_NAVIGATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAVIGATION_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAVIGATION_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NAVIGATION_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NAVIGATION_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOME_BUTTON_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOME_BUTTON_ONLY = 3,
 	}
 	
 	/// <summary>
 	/// An action to launch an app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LaunchAppAction
 	{
 		
@@ -4880,8 +4645,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a request to list devices for a given enterprise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDevicesResponse
 	{
 		
@@ -4901,8 +4665,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a request to list enrollment tokens for a given enterprise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEnrollmentTokensResponse
 	{
 		
@@ -4922,8 +4685,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a request to list enterprises.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEnterprisesResponse
 	{
 		
@@ -4943,8 +4705,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -4964,8 +4725,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -5003,8 +4763,7 @@ namespace MyNS
 	/// <summary>
 	/// The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -5030,8 +4789,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a request to list policies for a given enterprise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPoliciesResponse
 	{
 		
@@ -5051,8 +4809,7 @@ namespace MyNS
 	/// <summary>
 	/// A policy resource represents a group of settings that govern the behavior of a managed device and the apps installed on it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -5597,134 +5354,121 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WifiConfigsLockdownEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyAppAutoUpdatePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_AUTO_UPDATE_POLICY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_AUTO_UPDATE_POLICY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHOICE_TO_THE_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHOICE_TO_THE_USER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEVER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI_ONLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALWAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALWAYS = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyAutoDateAndTimeZone
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_DATE_AND_TIME_ZONE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_DATE_AND_TIME_ZONE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_DATE_AND_TIME_ZONE_USER_CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_DATE_AND_TIME_ZONE_USER_CHOICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO_DATE_AND_TIME_ZONE_ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO_DATE_AND_TIME_ZONE_ENFORCED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyCameraAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMERA_ACCESS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMERA_ACCESS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMERA_ACCESS_USER_CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMERA_ACCESS_USER_CHOICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMERA_ACCESS_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMERA_ACCESS_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAMERA_ACCESS_ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAMERA_ACCESS_ENFORCED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyEncryptionPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCRYPTION_POLICY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCRYPTION_POLICY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED_WITHOUT_PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED_WITHOUT_PASSWORD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED_WITH_PASSWORD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED_WITH_PASSWORD = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyLocationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH_ACCURACY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH_ACCURACY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SENSORS_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SENSORS_ONLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATTERY_SAVING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATTERY_SAVING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_USER_CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_USER_CHOICE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_ENFORCED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_DISABLED = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyMicrophoneAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICROPHONE_ACCESS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICROPHONE_ACCESS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICROPHONE_ACCESS_USER_CHOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICROPHONE_ACCESS_USER_CHOICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICROPHONE_ACCESS_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICROPHONE_ACCESS_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICROPHONE_ACCESS_ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICROPHONE_ACCESS_ENFORCED = 3,
 	}
 	
 	/// <summary>
 	/// This feature is not generally available.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OncCertificateProvider
 	{
 		
@@ -5744,8 +5488,7 @@ namespace MyNS
 	/// <summary>
 	/// A default activity for handling intents that match a particular intent filter. Note: To set up a kiosk, use InstallType to KIOSK rather than use persistent preferred activities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersistentPreferredActivity
 	{
 		
@@ -5771,8 +5514,7 @@ namespace MyNS
 	/// <summary>
 	/// Policies controlling personal usage on a company-owned device with a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalUsagePolicies
 	{
 		
@@ -5816,8 +5558,7 @@ namespace MyNS
 	/// <summary>
 	/// Policies for apps in the personal profile of a company-owned device with a work profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalApplicationPolicy
 	{
 		
@@ -5834,62 +5575,55 @@ namespace MyNS
 		public string PackageName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PersonalApplicationPolicyInstallType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTALL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTALL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PersonalUsagePoliciesPersonalPlayStoreMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAY_STORE_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAY_STORE_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLACKLIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLACKLIST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCKLIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOCKLIST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOWLIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOWLIST = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyPlayStoreMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAY_STORE_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAY_STORE_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WHITELIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WHITELIST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLACKLIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLACKLIST = 2,
 	}
 	
 	/// <summary>
 	/// A rule that defines the actions to take if a device or work profile is not compliant with the policy specified in settingName. In the case of multiple matching or multiple triggered enforcement rules, a merge will occur with the most severe action being taken. However, all triggered rules are still kept track of: this includes initial trigger time and all associated non-compliance details. In the situation where the most severe enforcement rule is satisfied, the next most appropriate action is applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyEnforcementRule
 	{
 		
@@ -5915,8 +5649,7 @@ namespace MyNS
 	/// <summary>
 	/// An action to reset a company owned device or delete a work profile. Note: blockAction must also be specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WipeAction
 	{
 		
@@ -5933,27 +5666,24 @@ namespace MyNS
 		public System.Nullable<System.Int32> WipeAfterDays { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyPreferentialNetworkService
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFERENTIAL_NETWORK_SERVICE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFERENTIAL_NETWORK_SERVICE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFERENTIAL_NETWORK_SERVICE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFERENTIAL_NETWORK_SERVICE_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFERENTIAL_NETWORK_SERVICE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFERENTIAL_NETWORK_SERVICE_ENABLED = 2,
 	}
 	
 	/// <summary>
 	/// Configuration info for an HTTP proxy. For a direct proxy, set the host, port, and excluded_hosts fields. For a PAC script proxy, set the pac_uri field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProxyInfo
 	{
 		
@@ -5985,8 +5715,7 @@ namespace MyNS
 	/// <summary>
 	/// An action executed during setup.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetupAction
 	{
 		
@@ -6012,8 +5741,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings controlling the behavior of status reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusReportingSettings
 	{
 		
@@ -6087,8 +5815,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for managing system updates
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SystemUpdate
 	{
 		
@@ -6117,30 +5844,27 @@ namespace MyNS
 		public System.Nullable<SystemUpdateType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SystemUpdateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_UPDATE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_UPDATE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOMATIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOMATIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTPONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTPONE = 3,
 	}
 	
 	/// <summary>
 	/// Controls types of device activity logs collected from the device and reported via Pub/Sub notification (https://developers.google.com/android/management/notifications).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageLog
 	{
 		
@@ -6160,8 +5884,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to a request to list web apps for a given enterprise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWebAppsResponse
 	{
 		
@@ -6181,8 +5904,7 @@ namespace MyNS
 	/// <summary>
 	/// A web app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebApp
 	{
 		
@@ -6223,30 +5945,27 @@ namespace MyNS
 		public string VersionCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebAppDisplayMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISPLAY_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISPLAY_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINIMAL_UI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINIMAL_UI = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDALONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDALONE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_SCREEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_SCREEN = 3,
 	}
 	
 	/// <summary>
 	/// An icon for a web app. Supported formats are: png, jpg and webp.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebAppIcon
 	{
 		
@@ -6260,8 +5979,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a device that is available during setup.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisioningInfo
 	{
 		
@@ -6311,8 +6029,7 @@ namespace MyNS
 	/// <summary>
 	/// An enterprise signup URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignupUrl
 	{
 		
@@ -6332,8 +6049,7 @@ namespace MyNS
 	/// <summary>
 	/// A web token used to access the managed Google Play iframe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebToken
 	{
 		
@@ -6954,10 +6670,10 @@ namespace MyNS
 	public enum Androidmanagement_enterprises_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTERPRISE_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTERPRISE_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 	}
 }

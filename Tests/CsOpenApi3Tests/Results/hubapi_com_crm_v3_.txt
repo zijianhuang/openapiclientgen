@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionConfirmationBody
 	{
 		
@@ -44,8 +43,7 @@ namespace MyNS
 		public string Prompt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionHookActionBody
 	{
 		
@@ -85,55 +83,50 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionHookActionBodyHttpMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEAD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIONS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATCH = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRACE = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionHookActionBodyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_HOOK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_HOOK = 0,
 	}
 	
 	/// <summary>
 	/// Configuration for custom user actions on cards.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardActions
 	{
 		
@@ -149,8 +142,7 @@ namespace MyNS
 	/// <summary>
 	/// State of card definition to be created
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardCreateRequest
 	{
 		
@@ -190,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for displayed info on a card
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardDisplayBody
 	{
 		
@@ -207,8 +198,7 @@ namespace MyNS
 	/// <summary>
 	/// Definition for a card display property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardDisplayProperty
 	{
 		
@@ -245,45 +235,42 @@ namespace MyNS
 		public DisplayOption[] Options { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CardDisplayPropertyDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENCY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATETIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATETIME = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERIC = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS = 8,
 	}
 	
 	/// <summary>
 	/// Option definition for STATUS dataTypes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisplayOption
 	{
 		
@@ -312,33 +299,30 @@ namespace MyNS
 		public DisplayOptionType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DisplayOptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DANGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DANGER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 4,
 	}
 	
 	/// <summary>
 	/// Configuration for this card's data fetch request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardFetchBody
 	{
 		
@@ -359,8 +343,7 @@ namespace MyNS
 		public string TargetUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardObjectTypeBody
 	{
 		
@@ -381,30 +364,27 @@ namespace MyNS
 		public string[] PropertiesToSend { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CardObjectTypeBodyName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contacts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contacts = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deals")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deals = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="companies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		companies = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tickets")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tickets = 3,
 	}
 	
 	/// <summary>
 	/// Variant of CardFetchBody with fields as optional for patches
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardFetchBodyPatch
 	{
 		
@@ -426,8 +406,7 @@ namespace MyNS
 	/// <summary>
 	/// List of card definitions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardListResponse
 	{
 		
@@ -443,8 +422,7 @@ namespace MyNS
 	/// <summary>
 	/// Current state of Card Definition
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardResponse
 	{
 		
@@ -504,8 +482,7 @@ namespace MyNS
 	/// <summary>
 	/// Body for a patch with optional fields
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardPatchRequest
 	{
 		
@@ -534,8 +511,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -588,8 +564,7 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		
@@ -626,8 +601,7 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IFrameActionBody
 	{
 		
@@ -671,21 +645,18 @@ namespace MyNS
 		public int Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IFrameActionBodyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IFRAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IFRAME = 0,
 	}
 	
 	/// <summary>
 	/// The card details payload, sent to HubSpot by an app in response to a data fetch request when a user visits a CRM record page.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntegratorCardPayloadResponse
 	{
 		
@@ -722,21 +693,18 @@ namespace MyNS
 		public int TotalCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IntegratorCardPayloadResponseResponseVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="v1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		v1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="v3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		v3 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntegratorObjectResult
 	{
 		
@@ -772,8 +740,7 @@ namespace MyNS
 		public ObjectToken[] Tokens { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectToken
 	{
 		
@@ -794,8 +761,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TopLevelActions
 	{
 		

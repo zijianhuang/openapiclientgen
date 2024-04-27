@@ -17,14 +17,12 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRecommendationPreferencesResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRecommendationPreferencesRequest
 	{
 		
@@ -46,36 +44,33 @@ namespace MyNS
 		public RecommendationPreferenceName[] RecommendationPreferenceNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ec2Instance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ec2Instance = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AutoScalingGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AutoScalingGroup = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EbsVolume")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EbsVolume = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunction = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotApplicable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotApplicable = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EcsService")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EcsService = 5,
 	}
 	
 	/// <summary>
 	/// <p>Describes the scope of a recommendation preference.</p> <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note> <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Scope
 	{
 		
@@ -86,88 +81,75 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScopeName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Organization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Organization = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountId = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceArn = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecommendationPreferenceName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnhancedInfrastructureMetrics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EnhancedInfrastructureMetrics = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InferredWorkloadTypes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InferredWorkloadTypes = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExternalMetricsPreference")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExternalMetricsPreference = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OptInRequiredException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterValueException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingAuthenticationToken
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRecommendationExportJobsResponse
 	{
 		
@@ -181,8 +163,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes a recommendation export job.</p> <p>Use the <a>DescribeRecommendationExportJobs</a> action to view your recommendation export jobs.</p> <p>Use the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions to request an export of your recommendations.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendationExportJob
 	{
 		
@@ -211,8 +192,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the destination of the recommendations export and metadata files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportDestination
 	{
 		
@@ -223,8 +203,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Destination
 	{
 		
@@ -238,27 +217,24 @@ namespace MyNS
 		public string MetadataKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Queued = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Complete = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRecommendationExportJobsRequest
 	{
 		
@@ -278,8 +254,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes a filter that returns a more specific list of recommendation export jobs. Use this filter with the <a>DescribeRecommendationExportJobs</a> action.</p> <p>You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action, <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, and <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobFilter
 	{
 		
@@ -290,21 +265,18 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceType = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JobStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JobStatus = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportAutoScalingGroupRecommendationsResponse
 	{
 		
@@ -315,8 +287,7 @@ namespace MyNS
 		public S3Destination S3Destination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportAutoScalingGroupRecommendationsRequest
 	{
 		
@@ -349,8 +320,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes a filter that returns a more specific list of recommendations. Use this filter with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p> <p>You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action, <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, and <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -361,199 +331,194 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finding = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FindingReasonCodes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FindingReasonCodes = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationSourceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationSourceType = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InferredWorkloadTypes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InferredWorkloadTypes = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportableAutoScalingGroupField
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AutoScalingGroupArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AutoScalingGroupArn = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AutoScalingGroupName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AutoScalingGroupName = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finding = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsCpuMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsCpuMaximum = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsMemoryMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsMemoryMaximum = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsEbsReadOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsEbsReadOpsPerSecondMaximum = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsEbsWriteOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsEbsWriteOpsPerSecondMaximum = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsEbsReadBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsEbsReadBytesPerSecondMaximum = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsEbsWriteBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsEbsWriteBytesPerSecondMaximum = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDiskReadOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDiskReadOpsPerSecondMaximum = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDiskWriteOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDiskWriteOpsPerSecondMaximum = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDiskReadBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDiskReadBytesPerSecondMaximum = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDiskWriteBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDiskWriteBytesPerSecondMaximum = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsNetworkInBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsNetworkInBytesPerSecondMaximum = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsNetworkOutBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsNetworkOutBytesPerSecondMaximum = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsNetworkPacketsInPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsNetworkPacketsInPerSecondMaximum = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsNetworkPacketsOutPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsNetworkPacketsOutPerSecondMaximum = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LookbackPeriodInDays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LookbackPeriodInDays = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationInstanceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationInstanceType = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationDesiredCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationDesiredCapacity = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationMinSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationMinSize = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationMaxSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationMaxSize = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentOnDemandPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentOnDemandPrice = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentStandardOneYearNoUpfrontReservedPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentStandardOneYearNoUpfrontReservedPrice = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentStandardThreeYearNoUpfrontReservedPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentStandardThreeYearNoUpfrontReservedPrice = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentVCpus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentVCpus = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentMemory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentMemory = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentStorage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentStorage = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentNetwork")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentNetwork = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationInstanceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationInstanceType = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationDesiredCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationDesiredCapacity = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationMinSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationMinSize = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationMaxSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationMaxSize = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsProjectedUtilizationMetricsCpuMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsPerformanceRisk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsPerformanceRisk = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsOnDemandPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsOnDemandPrice = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsStandardOneYearNoUpfrontReservedPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsVcpus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsVcpus = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsMemory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsMemory = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsStorage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsStorage = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsNetwork")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsNetwork = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastRefreshTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastRefreshTimestamp = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentPerformanceRisk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentPerformanceRisk = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsSavingsOpportunityPercentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsSavingsOpportunityPercentage = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsCurrency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsCurrency = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsValue = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EffectiveRecommendationPreferencesCpuVendorArchitectures")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EffectiveRecommendationPreferencesCpuVendorArchitectures = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EffectiveRecommendationPreferencesInferredWorkloadTypes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EffectiveRecommendationPreferencesInferredWorkloadTypes = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InferredWorkloadTypes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InferredWorkloadTypes = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsMigrationEffort")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsMigrationEffort = 53,
 	}
 	
 	/// <summary>
 	/// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p> <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3DestinationConfig
 	{
 		
@@ -564,21 +529,18 @@ namespace MyNS
 		public string KeyPrefix { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Csv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Csv = 0,
 	}
 	
 	/// <summary>
 	/// Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, and <a>GetEC2RecommendationProjectedMetrics</a> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendationPreferences
 	{
 		
@@ -586,27 +548,23 @@ namespace MyNS
 		public CpuVendorArchitecture[] CpuVendorArchitectures { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CpuVendorArchitecture
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_ARM64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_ARM64 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CURRENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CURRENT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportEBSVolumeRecommendationsResponse
 	{
 		
@@ -620,8 +578,7 @@ namespace MyNS
 		public S3Destination S3Destination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportEBSVolumeRecommendationsRequest
 	{
 		
@@ -652,8 +609,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes a filter that returns a more specific list of Amazon Elastic Block Store (Amazon EBS) volume recommendations. Use this filter with the <a>GetEBSVolumeRecommendations</a> action.</p> <p>You can use <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action, and <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EBSFilter
 	{
 		
@@ -664,115 +620,110 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EBSFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finding = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportableVolumeField
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VolumeArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VolumeArn = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finding = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsVolumeReadOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsVolumeReadOpsPerSecondMaximum = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsVolumeWriteOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsVolumeWriteOpsPerSecondMaximum = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsVolumeReadBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsVolumeReadBytesPerSecondMaximum = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsVolumeWriteBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsVolumeWriteBytesPerSecondMaximum = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LookbackPeriodInDays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LookbackPeriodInDays = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationVolumeType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationVolumeType = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationVolumeBaselineIOPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationVolumeBaselineIOPS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationVolumeBaselineThroughput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationVolumeBaselineThroughput = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationVolumeBurstIOPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationVolumeBurstIOPS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationVolumeBurstThroughput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationVolumeBurstThroughput = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationVolumeSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationVolumeSize = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentMonthlyPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentMonthlyPrice = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationVolumeType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationVolumeType = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationVolumeBaselineIOPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationVolumeBaselineIOPS = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationVolumeBaselineThroughput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationVolumeBaselineThroughput = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationVolumeBurstIOPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationVolumeBurstIOPS = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationVolumeBurstThroughput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationVolumeBurstThroughput = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationVolumeSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationVolumeSize = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsMonthlyPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsMonthlyPrice = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsPerformanceRisk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsPerformanceRisk = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastRefreshTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastRefreshTimestamp = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentPerformanceRisk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentPerformanceRisk = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsSavingsOpportunityPercentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsSavingsOpportunityPercentage = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsCurrency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsCurrency = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsValue = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RootVolume")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RootVolume = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tags = 29,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportEC2InstanceRecommendationsResponse
 	{
 		
@@ -783,8 +734,7 @@ namespace MyNS
 		public S3Destination S3Destination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportEC2InstanceRecommendationsRequest
 	{
 		
@@ -814,186 +764,183 @@ namespace MyNS
 		public RecommendationPreferences RecommendationPreferences { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportableInstanceField
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InstanceArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InstanceArn = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InstanceName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InstanceName = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finding = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FindingReasonCodes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FindingReasonCodes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LookbackPeriodInDays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LookbackPeriodInDays = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentInstanceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentInstanceType = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsCpuMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsCpuMaximum = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsMemoryMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsMemoryMaximum = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsEbsReadOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsEbsReadOpsPerSecondMaximum = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsEbsWriteOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsEbsWriteOpsPerSecondMaximum = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsEbsReadBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsEbsReadBytesPerSecondMaximum = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsEbsWriteBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsEbsWriteBytesPerSecondMaximum = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDiskReadOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDiskReadOpsPerSecondMaximum = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDiskWriteOpsPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDiskWriteOpsPerSecondMaximum = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDiskReadBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDiskReadBytesPerSecondMaximum = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDiskWriteBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDiskWriteBytesPerSecondMaximum = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsNetworkInBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsNetworkInBytesPerSecondMaximum = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsNetworkOutBytesPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsNetworkOutBytesPerSecondMaximum = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsNetworkPacketsInPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsNetworkPacketsInPerSecondMaximum = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsNetworkPacketsOutPerSecondMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsNetworkPacketsOutPerSecondMaximum = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentOnDemandPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentOnDemandPrice = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentStandardOneYearNoUpfrontReservedPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentStandardOneYearNoUpfrontReservedPrice = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentStandardThreeYearNoUpfrontReservedPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentStandardThreeYearNoUpfrontReservedPrice = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentVCpus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentVCpus = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentMemory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentMemory = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentStorage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentStorage = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentNetwork")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentNetwork = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsInstanceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsInstanceType = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsProjectedUtilizationMetricsCpuMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsPlatformDifferences")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsPlatformDifferences = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsPerformanceRisk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsPerformanceRisk = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsVcpus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsVcpus = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsMemory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsMemory = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsStorage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsStorage = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsNetwork")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsNetwork = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsOnDemandPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsOnDemandPrice = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsStandardOneYearNoUpfrontReservedPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationsSourcesRecommendationSourceArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationsSourcesRecommendationSourceArn = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationsSourcesRecommendationSourceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationsSourcesRecommendationSourceType = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastRefreshTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastRefreshTimestamp = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentPerformanceRisk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentPerformanceRisk = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsSavingsOpportunityPercentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsSavingsOpportunityPercentage = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsCurrency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsCurrency = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsValue = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EffectiveRecommendationPreferencesCpuVendorArchitectures")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EffectiveRecommendationPreferencesCpuVendorArchitectures = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EffectiveRecommendationPreferencesInferredWorkloadTypes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EffectiveRecommendationPreferencesInferredWorkloadTypes = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InferredWorkloadTypes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InferredWorkloadTypes = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsMigrationEffort")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsMigrationEffort = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EffectiveRecommendationPreferencesExternalMetricsSource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EffectiveRecommendationPreferencesExternalMetricsSource = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InstanceState")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InstanceState = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tags = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExternalMetricStatusCode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExternalMetricStatusCode = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExternalMetricStatusReason")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExternalMetricStatusReason = 56,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportECSServiceRecommendationsResponse
 	{
 		
@@ -1007,8 +954,7 @@ namespace MyNS
 		public S3Destination S3Destination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportECSServiceRecommendationsRequest
 	{
 		
@@ -1039,8 +985,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes a filter that returns a more specific list of Amazon ECS service recommendations. Use this filter with the <a>GetECSServiceRecommendations</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ECSServiceRecommendationFilter
 	{
 		
@@ -1051,100 +996,95 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ECSServiceRecommendationFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finding = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FindingReasonCode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FindingReasonCode = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportableECSServiceField
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ServiceArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ServiceArn = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LookbackPeriodInDays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LookbackPeriodInDays = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastRefreshTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastRefreshTimestamp = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LaunchType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LaunchType = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentPerformanceRisk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentPerformanceRisk = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentServiceConfigurationMemory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentServiceConfigurationMemory = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentServiceConfigurationCpu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentServiceConfigurationCpu = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentServiceConfigurationTaskDefinitionArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentServiceConfigurationTaskDefinitionArn = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentServiceConfigurationAutoScalingConfiguration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentServiceConfigurationAutoScalingConfiguration = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentServiceContainerConfigurations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentServiceContainerConfigurations = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsCpuMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsCpuMaximum = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsMemoryMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsMemoryMaximum = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finding = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FindingReasonCodes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FindingReasonCodes = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsMemory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsMemory = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsCpu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsCpu = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsSavingsOpportunityPercentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsSavingsOpportunityPercentage = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsCurrency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsCurrency = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsValue = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsContainerRecommendations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsContainerRecommendations = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsProjectedUtilizationMetricsCpuMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tags = 23,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportLambdaFunctionRecommendationsResponse
 	{
 		
@@ -1158,8 +1098,7 @@ namespace MyNS
 		public S3Destination S3Destination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportLambdaFunctionRecommendationsRequest
 	{
 		
@@ -1190,8 +1129,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes a filter that returns a more specific list of Lambda function recommendations. Use this filter with the <a>GetLambdaFunctionRecommendations</a> action.</p> <p>You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action, <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action, and <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionRecommendationFilter
 	{
 		
@@ -1202,96 +1140,93 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExportableLambdaFunctionField
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccountId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FunctionArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FunctionArn = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FunctionVersion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FunctionVersion = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finding = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FindingReasonCodes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FindingReasonCodes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NumberOfInvocations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NumberOfInvocations = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDurationMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDurationMaximum = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsDurationAverage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsDurationAverage = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsMemoryMaximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsMemoryMaximum = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UtilizationMetricsMemoryAverage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UtilizationMetricsMemoryAverage = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LookbackPeriodInDays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LookbackPeriodInDays = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationMemorySize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationMemorySize = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentConfigurationTimeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentConfigurationTimeout = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentCostTotal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentCostTotal = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentCostAverage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentCostAverage = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsConfigurationMemorySize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsConfigurationMemorySize = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsCostLow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsCostLow = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsCostHigh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsCostHigh = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsProjectedUtilizationMetricsDurationExpected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsProjectedUtilizationMetricsDurationExpected = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastRefreshTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastRefreshTimestamp = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CurrentPerformanceRisk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CurrentPerformanceRisk = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsSavingsOpportunityPercentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsSavingsOpportunityPercentage = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsCurrency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsCurrency = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RecommendationOptionsEstimatedMonthlySavingsValue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RecommendationOptionsEstimatedMonthlySavingsValue = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Tags = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAutoScalingGroupRecommendationsResponse
 	{
 		
@@ -1308,8 +1243,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Auto Scaling group recommendation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScalingGroupRecommendation
 	{
 		
@@ -1350,30 +1284,27 @@ namespace MyNS
 		public InferredWorkloadType[] InferredWorkloadTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Finding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Underprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Underprovisioned = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Overprovisioned = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Optimized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Optimized = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotOptimized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotOptimized = 3,
 	}
 	
 	/// <summary>
 	/// <p>Describes a utilization metric of a resource, such as an Amazon EC2 instance.</p> <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UtilizationMetric
 	{
 		
@@ -1387,73 +1318,68 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cpu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cpu = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Memory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Memory = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EBS_READ_OPS_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EBS_READ_OPS_PER_SECOND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EBS_WRITE_OPS_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EBS_WRITE_OPS_PER_SECOND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EBS_READ_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EBS_READ_BYTES_PER_SECOND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EBS_WRITE_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EBS_WRITE_BYTES_PER_SECOND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_READ_OPS_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_READ_OPS_PER_SECOND = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_WRITE_OPS_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_WRITE_OPS_PER_SECOND = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_READ_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_READ_BYTES_PER_SECOND = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK_WRITE_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK_WRITE_BYTES_PER_SECOND = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_IN_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_IN_BYTES_PER_SECOND = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_OUT_BYTES_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_OUT_BYTES_PER_SECOND = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_PACKETS_IN_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_PACKETS_IN_PER_SECOND = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_PACKETS_OUT_PER_SECOND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_PACKETS_OUT_PER_SECOND = 13,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricStatistic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maximum = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 1,
 	}
 	
 	/// <summary>
 	/// Describes the configuration of an Auto Scaling group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScalingGroupConfiguration
 	{
 		
@@ -1473,8 +1399,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a recommendation option for an Auto Scaling group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoScalingGroupRecommendationOption
 	{
 		
@@ -1500,8 +1425,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p> <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important> <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p> </important>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsOpportunity
 	{
 		
@@ -1515,8 +1439,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation">Estimated monthly savings and savings opportunities</a> in the <i>Compute Optimizer User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EstimatedMonthlySavings
 	{
 		
@@ -1527,43 +1450,38 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Currency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CNY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CNY = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MigrationEffort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VeryLow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VeryLow = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Low = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Medium = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="High")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		High = 3,
 	}
 	
 	/// <summary>
 	/// Describes the effective recommendation preferences for a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EffectiveRecommendationPreferences
 	{
 		
@@ -1580,24 +1498,21 @@ namespace MyNS
 		public ExternalMetricsPreference ExternalMetricsPreference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnhancedInfrastructureMetrics
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 1,
 	}
 	
 	/// <summary>
 	///  Describes the external metrics preferences for EC2 rightsizing recommendations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExternalMetricsPreference
 	{
 		
@@ -1605,64 +1520,59 @@ namespace MyNS
 		public ExternalMetricsSource Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExternalMetricsSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Datadog")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Datadog = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Dynatrace")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Dynatrace = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewRelic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NewRelic = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Instana")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Instana = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InferredWorkloadType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonEmr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmazonEmr = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApacheCassandra")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApacheCassandra = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApacheHadoop")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApacheHadoop = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Memcached")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Memcached = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nginx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nginx = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PostgreSql")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PostgreSql = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Redis")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Redis = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kafka")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kafka = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SQLServer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SQLServer = 8,
 	}
 	
 	/// <summary>
 	/// <p>Describes an error experienced when getting recommendations.</p> <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommendationError
 	{
 		
@@ -1676,8 +1586,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAutoScalingGroupRecommendationsRequest
 	{
 		
@@ -1700,8 +1609,7 @@ namespace MyNS
 		public RecommendationPreferences RecommendationPreferences { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEBSVolumeRecommendationsResponse
 	{
 		
@@ -1718,8 +1626,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Amazon Elastic Block Store (Amazon EBS) volume recommendation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeRecommendation
 	{
 		
@@ -1757,8 +1664,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the configuration of an Amazon Elastic Block Store (Amazon EBS) volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeConfiguration
 	{
 		
@@ -1784,24 +1690,21 @@ namespace MyNS
 		public System.Nullable<System.Boolean> RootVolume { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EBSFinding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Optimized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Optimized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotOptimized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotOptimized = 1,
 	}
 	
 	/// <summary>
 	/// <p>Describes a utilization metric of an Amazon Elastic Block Store (Amazon EBS) volume.</p> <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EBSUtilizationMetric
 	{
 		
@@ -1815,30 +1718,27 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EBSMetricName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VolumeReadOpsPerSecond")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VolumeReadOpsPerSecond = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VolumeWriteOpsPerSecond")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VolumeWriteOpsPerSecond = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VolumeReadBytesPerSecond")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VolumeReadBytesPerSecond = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VolumeWriteBytesPerSecond")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VolumeWriteBytesPerSecond = 3,
 	}
 	
 	/// <summary>
 	/// Describes a recommendation option for an Amazon Elastic Block Store (Amazon EBS) instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeRecommendationOption
 	{
 		
@@ -1858,8 +1758,7 @@ namespace MyNS
 	/// <summary>
 	///  A list of tag key and value pairs that you define. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1870,8 +1769,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEBSVolumeRecommendationsRequest
 	{
 		
@@ -1891,8 +1789,7 @@ namespace MyNS
 		public string[] AccountIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEC2InstanceRecommendationsResponse
 	{
 		
@@ -1909,8 +1806,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Amazon EC2 instance recommendation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceRecommendation
 	{
 		
@@ -1966,66 +1862,63 @@ namespace MyNS
 		public ExternalMetricStatus ExternalMetricStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceRecommendationFindingReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPUOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPUOverprovisioned = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPUUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPUUnderprovisioned = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryOverprovisioned = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryUnderprovisioned = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EBSThroughputOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EBSThroughputOverprovisioned = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EBSThroughputUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EBSThroughputUnderprovisioned = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EBSIOPSOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EBSIOPSOverprovisioned = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EBSIOPSUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EBSIOPSUnderprovisioned = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkBandwidthOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkBandwidthOverprovisioned = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkBandwidthUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkBandwidthUnderprovisioned = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkPPSOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkPPSOverprovisioned = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkPPSUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkPPSUnderprovisioned = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiskIOPSOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DiskIOPSOverprovisioned = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiskIOPSUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DiskIOPSUnderprovisioned = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiskThroughputOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DiskThroughputOverprovisioned = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiskThroughputUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DiskThroughputUnderprovisioned = 15,
 	}
 	
 	/// <summary>
 	/// Describes a recommendation option for an Amazon EC2 instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceRecommendationOption
 	{
 		
@@ -2051,36 +1944,33 @@ namespace MyNS
 		public MigrationEffort MigrationEffort { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlatformDifference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hypervisor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hypervisor = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NetworkInterface")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NetworkInterface = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StorageInterface")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StorageInterface = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InstanceStoreAvailability")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InstanceStoreAvailability = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VirtualizationType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VirtualizationType = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Architecture")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Architecture = 5,
 	}
 	
 	/// <summary>
 	/// Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendationSource
 	{
 		
@@ -2091,58 +1981,53 @@ namespace MyNS
 		public RecommendationSourceType RecommendationSourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecommendationSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ec2Instance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ec2Instance = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AutoScalingGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AutoScalingGroup = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EbsVolume")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EbsVolume = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaFunction")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaFunction = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EcsService")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EcsService = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		running = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="shutting-down")]
 		shuttingMinusdown = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="terminated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		terminated = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stopping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stopping = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stopped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stopped = 5,
 	}
 	
 	/// <summary>
 	///  Describes Compute Optimizer's integration status with your chosen external metric provider. For example, Datadog. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExternalMetricStatus
 	{
 		
@@ -2153,45 +2038,42 @@ namespace MyNS
 		public string StatusReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExternalMetricStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_EXTERNAL_METRIC_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_EXTERNAL_METRIC_SET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTEGRATION_SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTEGRATION_SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATADOG_INTEGRATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATADOG_INTEGRATION_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DYNATRACE_INTEGRATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DYNATRACE_INTEGRATION_ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEWRELIC_INTEGRATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEWRELIC_INTEGRATION_ERROR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTANA_INTEGRATION_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTANA_INTEGRATION_ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_DATADOG_METRICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_DATADOG_METRICS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_DYNATRACE_METRICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_DYNATRACE_METRICS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_NEWRELIC_METRICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_NEWRELIC_METRICS = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_INSTANA_METRICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_INSTANA_METRICS = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEC2InstanceRecommendationsRequest
 	{
 		
@@ -2214,8 +2096,7 @@ namespace MyNS
 		public RecommendationPreferences RecommendationPreferences { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEC2RecommendationProjectedMetricsResponse
 	{
 		
@@ -2226,8 +2107,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes a projected utilization metric of a recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <a>GetEC2RecommendationProjectedMetrics</a> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendedOptionProjectedMetric
 	{
 		
@@ -2244,8 +2124,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. This represents the projected utilization of a recommendation option had you used that resource during the analyzed period.</p> <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <a>GetEC2RecommendationProjectedMetrics</a> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectedMetric
 	{
 		
@@ -2259,8 +2138,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEC2RecommendationProjectedMetricsRequest
 	{
 		
@@ -2303,8 +2181,7 @@ namespace MyNS
 		public RecommendationPreferences RecommendationPreferences { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetECSServiceRecommendationProjectedMetricsResponse
 	{
 		
@@ -2315,8 +2192,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Describes the projected metrics of an Amazon ECS service recommendation option. </p> <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ECSServiceRecommendedOptionProjectedMetric
 	{
 		
@@ -2333,8 +2209,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Describes the projected metrics of an Amazon ECS service recommendation option. </p> <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ECSServiceProjectedMetric
 	{
 		
@@ -2351,21 +2226,18 @@ namespace MyNS
 		public System.Nullable<System.Double> LowerBoundValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ECSServiceMetricName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cpu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cpu = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Memory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Memory = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetECSServiceRecommendationProjectedMetricsRequest
 	{
 		
@@ -2405,8 +2277,7 @@ namespace MyNS
 		public System.DateTimeOffset EndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetECSServiceRecommendationsResponse
 	{
 		
@@ -2423,8 +2294,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes an Amazon ECS service recommendation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ECSServiceRecommendation
 	{
 		
@@ -2468,8 +2338,7 @@ namespace MyNS
 	/// <summary>
 	///  The Amazon ECS service configurations used for recommendations. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceConfiguration
 	{
 		
@@ -2492,8 +2361,7 @@ namespace MyNS
 	/// <summary>
 	///  Describes the container configurations within the tasks of your Amazon ECS service. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerConfiguration
 	{
 		
@@ -2510,8 +2378,7 @@ namespace MyNS
 	/// <summary>
 	///  The memory size configurations of a container. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemorySizeConfiguration
 	{
 		
@@ -2522,24 +2389,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> MemoryReservation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoScalingConfiguration
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TargetTrackingScalingCpu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TargetTrackingScalingCpu = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TargetTrackingScalingMemory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TargetTrackingScalingMemory = 1,
 	}
 	
 	/// <summary>
 	/// <p> Describes the utilization metric of an Amazon ECS service. </p> <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ECSServiceUtilizationMetric
 	{
 		
@@ -2553,59 +2417,52 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ECSServiceLaunchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fargate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fargate = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ECSServiceRecommendationFinding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Optimized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Optimized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Underprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Underprovisioned = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Overprovisioned = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ECSServiceRecommendationFindingReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryOverprovisioned = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryUnderprovisioned = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPUOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPUOverprovisioned = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPUUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPUUnderprovisioned = 3,
 	}
 	
 	/// <summary>
 	///  Describes the recommendation options for an Amazon ECS service. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ECSServiceRecommendationOption
 	{
 		
@@ -2631,8 +2488,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Describes the projected utilization metrics of an Amazon ECS service recommendation option. </p> <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ECSServiceProjectedUtilizationMetric
 	{
 		
@@ -2652,8 +2508,7 @@ namespace MyNS
 	/// <summary>
 	///  The CPU and memory recommendations for a container within the tasks of your Amazon ECS service. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContainerRecommendation
 	{
 		
@@ -2667,8 +2522,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Cpu { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetECSServiceRecommendationsRequest
 	{
 		
@@ -2688,8 +2542,7 @@ namespace MyNS
 		public string[] AccountIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEffectiveRecommendationPreferencesResponse
 	{
 		
@@ -2700,8 +2553,7 @@ namespace MyNS
 		public ExternalMetricsPreference ExternalMetricsPreference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEffectiveRecommendationPreferencesRequest
 	{
 		
@@ -2713,8 +2565,7 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEnrollmentStatusResponse
 	{
 		
@@ -2734,33 +2585,29 @@ namespace MyNS
 		public System.Nullable<System.Int32> NumberOfMemberAccountsOptedIn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEnrollmentStatusRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEnrollmentStatusesForOrganizationResponse
 	{
 		
@@ -2774,8 +2621,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the enrollment status of an organization's member accounts in Compute Optimizer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccountEnrollmentStatus
 	{
 		
@@ -2792,8 +2638,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEnrollmentStatusesForOrganizationRequest
 	{
 		
@@ -2810,8 +2655,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a filter that returns a more specific list of account enrollment statuses. Use this filter with the <a>GetEnrollmentStatusesForOrganization</a> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnrollmentFilter
 	{
 		
@@ -2822,18 +2666,15 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EnrollmentFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Status = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLambdaFunctionRecommendationsResponse
 	{
 		
@@ -2847,8 +2688,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an Lambda function recommendation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionRecommendation
 	{
 		
@@ -2895,8 +2735,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a utilization metric of an Lambda function.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionUtilizationMetric
 	{
 		
@@ -2910,59 +2749,52 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LambdaFunctionMetricName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Duration = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Memory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Memory = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LambdaFunctionRecommendationFinding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Optimized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Optimized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotOptimized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotOptimized = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unavailable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unavailable = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LambdaFunctionRecommendationFindingReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryOverprovisioned = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryUnderprovisioned = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InsufficientData")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InsufficientData = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inconclusive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inconclusive = 3,
 	}
 	
 	/// <summary>
 	/// Describes a recommendation option for an Lambda function.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionMemoryRecommendationOption
 	{
 		
@@ -2982,8 +2814,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a projected utilization metric of an Lambda function recommendation option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LambdaFunctionMemoryProjectedMetric
 	{
 		
@@ -2997,34 +2828,29 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LambdaFunctionMemoryMetricName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Duration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Duration = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LambdaFunctionMemoryMetricStatistic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LowerBound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LowerBound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpperBound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpperBound = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Expected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Expected = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLambdaFunctionRecommendationsRequest
 	{
 		
@@ -3044,8 +2870,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommendationPreferencesResponse
 	{
 		
@@ -3059,8 +2884,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a recommendation preference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendationPreferencesDetail
 	{
 		
@@ -3080,8 +2904,7 @@ namespace MyNS
 		public ExternalMetricsPreference ExternalMetricsPreference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommendationPreferencesRequest
 	{
 		
@@ -3102,8 +2925,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommendationSummariesResponse
 	{
 		
@@ -3117,8 +2939,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of a recommendation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommendationSummary
 	{
 		
@@ -3144,8 +2965,7 @@ namespace MyNS
 	/// <summary>
 	/// The summary of a recommendation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Summary
 	{
 		
@@ -3162,8 +2982,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of a finding reason code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReasonCodeSummary
 	{
 		
@@ -3174,24 +2993,21 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FindingReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryOverprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryOverprovisioned = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryUnderprovisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryUnderprovisioned = 1,
 	}
 	
 	/// <summary>
 	/// <p>Describes the performance risk ratings for a given resource type.</p> <p>Resources with a <code>high</code> or <code>medium</code> rating are at risk of not meeting the performance needs of their workloads, while resources with a <code>low</code> rating are performing well in their workloads.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CurrentPerformanceRiskRatings
 	{
 		
@@ -3211,8 +3027,7 @@ namespace MyNS
 	/// <summary>
 	///  The estimated monthly savings after you adjust the configurations of your instances running on the inferred workload types to the recommended configurations. If the <code>inferredWorkloadTypes</code> list contains multiple entries, then the savings are the sum of the monthly savings from instances that run the exact combination of the inferred workload types. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InferredWorkloadSaving
 	{
 		
@@ -3223,8 +3038,7 @@ namespace MyNS
 		public EstimatedMonthlySavings EstimatedMonthlySavings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommendationSummariesRequest
 	{
 		
@@ -3238,14 +3052,12 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecommendationPreferencesResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRecommendationPreferencesRequest
 	{
 		
@@ -3269,8 +3081,7 @@ namespace MyNS
 		public ExternalMetricsPreference ExternalMetricsPreference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEnrollmentStatusResponse
 	{
 		
@@ -3281,8 +3092,7 @@ namespace MyNS
 		public string StatusReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEnrollmentStatusRequest
 	{
 		
@@ -3297,74 +3107,64 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IncludeMemberAccounts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CurrentPerformanceRisk
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VeryLow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VeryLow = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Low = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Medium = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="High")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		High = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ECSServiceMetricStatistic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maximum = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InferredWorkloadTypesPreference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LambdaFunctionMetricStatistic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maximum = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LambdaFunctionRecommendationFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finding")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finding = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FindingReasonCode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FindingReasonCode = 1,
 	}
 	

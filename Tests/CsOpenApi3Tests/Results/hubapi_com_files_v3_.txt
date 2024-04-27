@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Collections of files
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionResponseFile
 	{
 		
@@ -36,8 +35,7 @@ namespace MyNS
 		public File[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Paging
 	{
 		
@@ -48,8 +46,7 @@ namespace MyNS
 		public PreviousPage Prev { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NextPage
 	{
 		
@@ -64,8 +61,7 @@ namespace MyNS
 		public string Link { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PreviousPage
 	{
 		
@@ -83,8 +79,7 @@ namespace MyNS
 	/// <summary>
 	/// File
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File
 	{
 		
@@ -210,33 +205,30 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileAccess
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_INDEXABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_INDEXABLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_NOT_INDEXABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC_NOT_INDEXABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDDEN_INDEXABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDDEN_INDEXABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDDEN_NOT_INDEXABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDDEN_NOT_INDEXABLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDDEN_PRIVATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDDEN_PRIVATE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionResponseFolder
 	{
 		
@@ -251,8 +243,7 @@ namespace MyNS
 		public Folder[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Folder
 	{
 		
@@ -313,8 +304,7 @@ namespace MyNS
 		public System.DateTimeOffset UpdatedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -367,8 +357,7 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetail
 	{
 		
@@ -405,8 +394,7 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileActionResponse
 	{
 		
@@ -473,8 +461,7 @@ namespace MyNS
 		public string TaskId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StandardError
 	{
 		
@@ -527,27 +514,24 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FileActionResponseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileStat
 	{
 		
@@ -564,8 +548,7 @@ namespace MyNS
 	/// <summary>
 	/// Object for updating files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileUpdateInput
 	{
 		
@@ -604,8 +587,7 @@ namespace MyNS
 		public string ParentFolderPath { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderActionResponse
 	{
 		
@@ -672,8 +654,7 @@ namespace MyNS
 	/// <summary>
 	/// Object for creating a folder.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderInput
 	{
 		
@@ -701,8 +682,7 @@ namespace MyNS
 	/// <summary>
 	/// Object for updating folders.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderUpdateInput
 	{
 		
@@ -730,8 +710,7 @@ namespace MyNS
 	/// <summary>
 	/// Information on the task that has been started, and where to check it's status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FolderUpdateTaskLocator
 	{
 		
@@ -752,8 +731,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportFromUrlInput
 	{
 		
@@ -819,40 +797,35 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImportFromUrlInputDuplicateValidationScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTIRE_PORTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTIRE_PORTAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT_FOLDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT_FOLDER = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImportFromUrlInputDuplicateValidationStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURN_EXISTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETURN_EXISTING = 2,
 	}
 	
 	/// <summary>
 	/// Information on the task that has been started, and where to check it's status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportFromUrlTaskLocator
 	{
 		
@@ -876,8 +849,7 @@ namespace MyNS
 	/// <summary>
 	/// Signed Url object with optional ancillary metadata of requested file
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignedUrl
 	{
 		
@@ -1609,16 +1581,16 @@ namespace MyNS
 	public enum Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrlSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="thumb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		thumb = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="icon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		icon = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="preview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		preview = 3,
 	}
 }

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateAwsAccountWithPartnerAccountResponse
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Sidewalk account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkAccountInfo
 	{
 		
@@ -47,8 +45,7 @@ namespace MyNS
 	/// <summary>
 	/// A simple label consisting of a customer-defined key-value pair
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -67,68 +64,57 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateMulticastGroupWithFuotaTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessDeviceWithFuotaTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessDeviceWithMulticastGroupResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessDeviceWithThingResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessGatewayWithCertificateResponse
 	{
 		
@@ -136,20 +122,17 @@ namespace MyNS
 		public string IotCertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessGatewayWithThingResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelMulticastGroupSessionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDestinationResponse
 	{
 		
@@ -160,8 +143,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeviceProfileResponse
 	{
 		
@@ -172,8 +154,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFuotaTaskResponse
 	{
 		
@@ -197,19 +178,17 @@ namespace MyNS
 	/// <summary>
 	/// Supported RfRegions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SupportedRfRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU868")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU868 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US915 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU915 = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-1")]
@@ -224,27 +203,26 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-4")]
 		AS923Minus4 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU433")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU433 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN470")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN470 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN779")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN779 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RU864")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RU864 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KR920")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KR920 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN865")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN865 = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMulticastGroupResponse
 	{
 		
@@ -268,21 +246,18 @@ namespace MyNS
 	/// <summary>
 	/// DlClass for LoRaWAM, valid values are ClassB and ClassC.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DlClass
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClassB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClassB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClassC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClassC = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNetworkAnalyzerConfigurationResponse
 	{
 		
@@ -305,56 +280,49 @@ namespace MyNS
 	/// <summary>
 	///  <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessDeviceFrameInfo
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LogLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 	}
 	
 	/// <summary>
 	///  <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MulticastFrameInfo
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateServiceProfileResponse
 	{
 		
@@ -365,8 +333,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWirelessDeviceResponse
 	{
 		
@@ -380,8 +347,7 @@ namespace MyNS
 	/// <summary>
 	/// OTAA device object for v1.1
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OtaaV1_1
 	{
 		
@@ -398,8 +364,7 @@ namespace MyNS
 	/// <summary>
 	/// OTAA device object for v1.0.x
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OtaaV1_0_x
 	{
 		
@@ -416,8 +381,7 @@ namespace MyNS
 	/// <summary>
 	/// ABP device object for LoRaWAN specification v1.1
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbpV1_1
 	{
 		
@@ -434,8 +398,7 @@ namespace MyNS
 	/// <summary>
 	/// Session keys for ABP v1.1
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SessionKeysAbpV1_1
 	{
 		
@@ -455,8 +418,7 @@ namespace MyNS
 	/// <summary>
 	/// ABP device object for LoRaWAN specification v1.0.x
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbpV1_0_x
 	{
 		
@@ -473,8 +435,7 @@ namespace MyNS
 	/// <summary>
 	/// Session keys for ABP v1.1
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SessionKeysAbpV1_0_x
 	{
 		
@@ -488,8 +449,7 @@ namespace MyNS
 	/// <summary>
 	/// List of FPort assigned for different LoRaWAN application packages to use
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FPorts
 	{
 		
@@ -530,8 +490,7 @@ namespace MyNS
 	/// <summary>
 	/// The FPorts for the position information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Positioning
 	{
 		
@@ -566,8 +525,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWAN application configuration, which can be used to perform geolocation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationConfig
 	{
 		
@@ -587,18 +545,15 @@ namespace MyNS
 		public string DestinationName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ApplicationConfigType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SemtechGeolocation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SemtechGeolocation = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWirelessGatewayResponse
 	{
 		
@@ -612,8 +567,7 @@ namespace MyNS
 	/// <summary>
 	/// Beaconing parameters for configuring the wireless gateways.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Beaconing
 	{
 		
@@ -624,8 +578,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Frequencies { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWirelessGatewayTaskResponse
 	{
 		
@@ -636,33 +589,30 @@ namespace MyNS
 		public WirelessGatewayTaskStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessGatewayTaskStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIRST_RETRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIRST_RETRY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECOND_RETRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECOND_RETRY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWirelessGatewayTaskDefinitionResponse
 	{
 		
@@ -676,8 +626,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWANUpdateGatewayTaskCreate object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANUpdateGatewayTaskCreate
 	{
 		
@@ -697,8 +646,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWANGatewayVersion object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANGatewayVersion
 	{
 		
@@ -712,128 +660,107 @@ namespace MyNS
 		public string Station { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDestinationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDeviceProfileResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFuotaTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMulticastGroupResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteNetworkAnalyzerConfigurationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteQueuedMessagesResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteServiceProfileResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessDeviceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessDeviceImportTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessGatewayResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessGatewayTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessGatewayTaskDefinitionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterWirelessDeviceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateAwsAccountFromPartnerAccountResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateMulticastGroupFromFuotaTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessDeviceFromFuotaTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessDeviceFromMulticastGroupResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessDeviceFromThingResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessGatewayFromCertificateResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessGatewayFromThingResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDestinationResponse
 	{
 		
@@ -856,21 +783,18 @@ namespace MyNS
 		public string RoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExpressionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RuleName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RuleName = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MqttTopic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MqttTopic = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeviceProfileResponse
 	{
 		
@@ -893,8 +817,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWANDeviceProfile object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANDeviceProfile
 	{
 		
@@ -959,8 +882,7 @@ namespace MyNS
 	/// <summary>
 	/// Gets information about a Sidewalk device profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkGetDeviceProfile
 	{
 		
@@ -977,8 +899,7 @@ namespace MyNS
 	/// <summary>
 	/// The device attestation key (DAK) information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DakCertificateMetadata
 	{
 		
@@ -1002,8 +923,7 @@ namespace MyNS
 		public string DeviceTypeId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEventConfigurationByResourceTypesResponse
 	{
 		
@@ -1026,8 +946,7 @@ namespace MyNS
 	/// <summary>
 	/// Device registration state resource type event configuration object for enabling or disabling topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceRegistrationStateResourceTypeEventConfiguration
 	{
 		
@@ -1038,8 +957,7 @@ namespace MyNS
 	/// <summary>
 	/// Sidewalk resource type event configuration object for enabling or disabling topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkResourceTypeEventConfiguration
 	{
 		
@@ -1047,24 +965,21 @@ namespace MyNS
 		public EventNotificationTopicStatus WirelessDeviceEventTopic { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventNotificationTopicStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 1,
 	}
 	
 	/// <summary>
 	/// Proximity resource type event configuration object for enabling or disabling topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProximityResourceTypeEventConfiguration
 	{
 		
@@ -1075,8 +990,7 @@ namespace MyNS
 	/// <summary>
 	/// Join resource type event configuration object for enabling or disabling topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JoinResourceTypeEventConfiguration
 	{
 		
@@ -1087,8 +1001,7 @@ namespace MyNS
 	/// <summary>
 	/// Object for LoRaWAN join resource type event configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANJoinResourceTypeEventConfiguration
 	{
 		
@@ -1099,8 +1012,7 @@ namespace MyNS
 	/// <summary>
 	/// Connection status resource type event configuration object for enabling or disabling topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectionStatusResourceTypeEventConfiguration
 	{
 		
@@ -1111,8 +1023,7 @@ namespace MyNS
 	/// <summary>
 	/// Object for LoRaWAN connection status resource type event configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANConnectionStatusResourceTypeEventConfiguration
 	{
 		
@@ -1123,8 +1034,7 @@ namespace MyNS
 	/// <summary>
 	/// Message delivery status resource type event configuration object for enabling or disabling relevant topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageDeliveryStatusResourceTypeEventConfiguration
 	{
 		
@@ -1135,8 +1045,7 @@ namespace MyNS
 		public SidewalkResourceTypeEventConfiguration Sidewalk { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFuotaTaskResponse
 	{
 		
@@ -1236,33 +1145,30 @@ namespace MyNS
 		public System.Nullable<System.Int32> FragmentIntervalMS { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetFuotaTaskResponseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FuotaSession_Waiting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FuotaSession_Waiting = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="In_FuotaSession")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		In_FuotaSession = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FuotaDone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FuotaDone = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Delete_Waiting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Delete_Waiting = 4,
 	}
 	
 	/// <summary>
 	/// The LoRaWAN information returned from getting a FUOTA task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANFuotaTaskGetInfo
 	{
 		
@@ -1281,8 +1187,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLogLevelsByResourceTypesResponse
 	{
 		
@@ -1308,8 +1213,7 @@ namespace MyNS
 	/// <summary>
 	/// The log options for wireless gateways and can be used to set log levels for a specific type of wireless gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WirelessGatewayLogOption
 	{
 		
@@ -1336,21 +1240,18 @@ namespace MyNS
 		public WirelessGatewayEventLogOption[] Events { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessGatewayLogOptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LoRaWAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LoRaWAN = 0,
 	}
 	
 	/// <summary>
 	/// <p>The log options for a wireless gateway event and can be used to set log levels for a specific wireless gateway event.</p> <p>For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code> and <code>Certificate</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WirelessGatewayEventLogOption
 	{
 		
@@ -1371,24 +1272,21 @@ namespace MyNS
 		public LogLevel LogLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessGatewayEventLogOptionEvent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUPS_Request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUPS_Request = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Certificate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Certificate = 1,
 	}
 	
 	/// <summary>
 	/// The log options for wireless devices and can be used to set log levels for a specific type of wireless device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WirelessDeviceLogOption
 	{
 		
@@ -1414,24 +1312,21 @@ namespace MyNS
 		public WirelessDeviceEventLogOption[] Events { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessDeviceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sidewalk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sidewalk = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LoRaWAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LoRaWAN = 1,
 	}
 	
 	/// <summary>
 	/// <p>The log options for a wireless device event and can be used to set log levels for a specific wireless device event.</p> <p>For a LoRaWAN device, possible events for a log messsage are: <code>Join</code>, <code>Rejoin</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>. For a Sidewalk device, possible events for a log message are <code>Registration</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WirelessDeviceEventLogOption
 	{
 		
@@ -1452,30 +1347,27 @@ namespace MyNS
 		public LogLevel LogLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessDeviceEventLogOptionEvent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Join")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Join = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejoin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejoin = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Uplink_Data")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Uplink_Data = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Downlink_Data")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Downlink_Data = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Registration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Registration = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMulticastGroupResponse
 	{
 		
@@ -1535,8 +1427,7 @@ namespace MyNS
 	/// <summary>
 	/// The LoRaWAN information that is to be returned from getting multicast group information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANMulticastGet
 	{
 		
@@ -1567,19 +1458,17 @@ namespace MyNS
 		public System.Nullable<System.Int32> NumberOfDevicesInGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LoRaWANMulticastGetRfRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU868")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU868 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US915 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU915 = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-1")]
@@ -1594,27 +1483,26 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-4")]
 		AS923Minus4 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU433")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU433 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN470")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN470 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN779")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN779 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RU864")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RU864 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KR920")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KR920 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN865")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN865 = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMulticastGroupSessionResponse
 	{
 		
@@ -1628,8 +1516,7 @@ namespace MyNS
 	/// <summary>
 	/// The LoRaWAN information used with the multicast session.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANMulticastSession
 	{
 		
@@ -1670,8 +1557,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> PingSlotPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetNetworkAnalyzerConfigurationResponse
 	{
 		
@@ -1717,8 +1603,7 @@ namespace MyNS
 	/// <summary>
 	/// Trace content for your wireless gateway and wireless device resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TraceContent
 	{
 		
@@ -1741,8 +1626,7 @@ namespace MyNS
 		public WirelessDeviceFrameInfo MulticastFrameInfo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPartnerAccountResponse
 	{
 		
@@ -1756,8 +1640,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Sidewalk account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkAccountInfoWithFingerprint
 	{
 		
@@ -1774,8 +1657,7 @@ namespace MyNS
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPositionResponse
 	{
 		
@@ -1801,8 +1683,7 @@ namespace MyNS
 	/// <summary>
 	/// The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Accuracy
 	{
 		
@@ -1813,31 +1694,26 @@ namespace MyNS
 		public float VerticalAccuracy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PositionSolverType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GNSS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GNSS = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PositionSolverProvider
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Semtech")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Semtech = 0,
 	}
 	
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPositionConfigurationResponse
 	{
 		
@@ -1851,8 +1727,7 @@ namespace MyNS
 	/// <summary>
 	/// The wrapper for position solver details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionSolverDetails
 	{
 		
@@ -1863,8 +1738,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the Semtech GNSS solver object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SemtechGnssDetail
 	{
 		
@@ -1881,21 +1755,18 @@ namespace MyNS
 		public PositionConfigurationFec Fec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PositionConfigurationFec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROSE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPositionEstimateResponse
 	{
 		
@@ -1906,8 +1777,7 @@ namespace MyNS
 	/// <summary>
 	/// Wi-Fi access point.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WiFiAccessPoint
 	{
 		
@@ -1929,8 +1799,7 @@ namespace MyNS
 	/// <summary>
 	/// GSM object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GsmObj
 	{
 		
@@ -1978,8 +1847,7 @@ namespace MyNS
 	/// <summary>
 	/// GSM local ID information, which corresponds to the local identification parameters of a GSM cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GsmLocalId
 	{
 		
@@ -2001,8 +1869,7 @@ namespace MyNS
 	/// <summary>
 	/// GSM object for network measurement reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GsmNmrObj
 	{
 		
@@ -2030,8 +1897,7 @@ namespace MyNS
 	/// <summary>
 	/// Global identity information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalIdentity
 	{
 		
@@ -2053,8 +1919,7 @@ namespace MyNS
 	/// <summary>
 	/// WCDMA.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WcdmaObj
 	{
 		
@@ -2098,8 +1963,7 @@ namespace MyNS
 	/// <summary>
 	/// WCDMA local identification (local ID) information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WcdmaLocalId
 	{
 		
@@ -2121,8 +1985,7 @@ namespace MyNS
 	/// <summary>
 	/// Network Measurement Reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WcdmaNmrObj
 	{
 		
@@ -2157,8 +2020,7 @@ namespace MyNS
 	/// <summary>
 	/// TD-SCDMA object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TdscdmaObj
 	{
 		
@@ -2205,8 +2067,7 @@ namespace MyNS
 	/// <summary>
 	/// TD-SCDMA local identification (local Id) information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TdscdmaLocalId
 	{
 		
@@ -2228,8 +2089,7 @@ namespace MyNS
 	/// <summary>
 	/// TD-SCDMA object for network measurement reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TdscdmaNmrObj
 	{
 		
@@ -2260,8 +2120,7 @@ namespace MyNS
 	/// <summary>
 	/// LTE object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LteObj
 	{
 		
@@ -2311,8 +2170,7 @@ namespace MyNS
 	/// <summary>
 	/// LTE local identification (local ID) information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LteLocalId
 	{
 		
@@ -2334,8 +2192,7 @@ namespace MyNS
 	/// <summary>
 	/// LTE object for network measurement reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LteNmrObj
 	{
 		
@@ -2370,8 +2227,7 @@ namespace MyNS
 	/// <summary>
 	/// CDMA (Code-division multiple access) object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CdmaObj
 	{
 		
@@ -2418,8 +2274,7 @@ namespace MyNS
 	/// <summary>
 	/// CDMA local ID information, which corresponds to the local identification parameters of a CDMA cell.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CdmaLocalId
 	{
 		
@@ -2441,8 +2296,7 @@ namespace MyNS
 	/// <summary>
 	/// CDMA object for network measurement reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CdmaNmrObj
 	{
 		
@@ -2467,8 +2321,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> BaseStationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceEventConfigurationResponse
 	{
 		
@@ -2491,8 +2344,7 @@ namespace MyNS
 	/// <summary>
 	/// Device registration state event configuration object for enabling and disabling relevant topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceRegistrationStateEventConfiguration
 	{
 		
@@ -2506,8 +2358,7 @@ namespace MyNS
 	/// <summary>
 	///  <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkEventNotificationConfigurations
 	{
 		
@@ -2518,8 +2369,7 @@ namespace MyNS
 	/// <summary>
 	/// Proximity event configuration object for enabling and disabling relevant topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProximityEventConfiguration
 	{
 		
@@ -2533,8 +2383,7 @@ namespace MyNS
 	/// <summary>
 	/// Join event configuration object for enabling or disabling topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JoinEventConfiguration
 	{
 		
@@ -2548,8 +2397,7 @@ namespace MyNS
 	/// <summary>
 	/// Object for LoRaWAN join resource type event configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANJoinEventNotificationConfigurations
 	{
 		
@@ -2560,8 +2408,7 @@ namespace MyNS
 	/// <summary>
 	/// Connection status event configuration object for enabling or disabling topic.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectionStatusEventConfiguration
 	{
 		
@@ -2575,8 +2422,7 @@ namespace MyNS
 	/// <summary>
 	/// Object for LoRaWAN connection status resource type event configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANConnectionStatusEventNotificationConfigurations
 	{
 		
@@ -2587,8 +2433,7 @@ namespace MyNS
 	/// <summary>
 	/// Message delivery status event configuration object for enabling and disabling relevant topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageDeliveryStatusEventConfiguration
 	{
 		
@@ -2602,8 +2447,7 @@ namespace MyNS
 		public EventNotificationTopicStatus WirelessDeviceIdEventTopic { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceLogLevelResponse
 	{
 		
@@ -2614,8 +2458,7 @@ namespace MyNS
 		public LogLevel LogLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourcePositionResponse
 	{
 		
@@ -2623,8 +2466,7 @@ namespace MyNS
 		public string GeoJsonPayload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetServiceEndpointResponse
 	{
 		
@@ -2638,21 +2480,18 @@ namespace MyNS
 		public string ServerTrust { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessGatewayServiceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUPS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LNS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetServiceProfileResponse
 	{
 		
@@ -2672,8 +2511,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWANGetServiceProfileInfo object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANGetServiceProfileInfo
 	{
 		
@@ -2735,8 +2573,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MinGwDiversity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessDeviceResponse
 	{
 		
@@ -2777,8 +2614,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWAN object for create functions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANDevice
 	{
 		
@@ -2813,8 +2649,7 @@ namespace MyNS
 	/// <summary>
 	/// Sidewalk device object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkDevice
 	{
 		
@@ -2851,8 +2686,7 @@ namespace MyNS
 	/// <summary>
 	/// List of sidewalk certificates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateList
 	{
 		
@@ -2874,40 +2708,35 @@ namespace MyNS
 	/// <summary>
 	/// The certificate chain algorithm provided by sidewalk.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SigningAlg
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ed25519")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ed25519 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P256r1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P256r1 = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessDeviceSidewalkStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGISTERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGISTERED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessDeviceImportTaskResponse
 	{
 		
@@ -2948,8 +2777,7 @@ namespace MyNS
 	/// <summary>
 	/// Sidewalk-related information for devices in an import task that are being onboarded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkGetStartImportInfo
 	{
 		
@@ -2960,33 +2788,30 @@ namespace MyNS
 		public string Role { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImportTaskStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessDeviceStatisticsResponse
 	{
 		
@@ -3006,8 +2831,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWAN device metatdata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANDeviceMetadata
 	{
 		
@@ -3033,8 +2857,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWAN gateway metatdata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANGatewayMetadata
 	{
 		
@@ -3051,8 +2874,7 @@ namespace MyNS
 	/// <summary>
 	/// MetaData for Sidewalk device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkDeviceMetadata
 	{
 		
@@ -3072,71 +2894,64 @@ namespace MyNS
 	/// <summary>
 	/// Sidewalk device battery level.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BatteryLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		normal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		low = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="critical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		critical = 2,
 	}
 	
 	/// <summary>
 	/// Sidewalk device status notification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Event
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="discovered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		discovered = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lost")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lost = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ack")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ack = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nack")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nack = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="passthrough")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		passthrough = 4,
 	}
 	
 	/// <summary>
 	/// Device state defines the device status of sidewalk device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Provisioned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Provisioned = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RegisteredNotSeen")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RegisteredNotSeen = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RegisteredReachable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RegisteredReachable = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RegisteredUnreachable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RegisteredUnreachable = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayResponse
 	{
 		
@@ -3165,8 +2980,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWANGateway object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANGateway
 	{
 		
@@ -3213,8 +3027,7 @@ namespace MyNS
 		public float MaxEirp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayCertificateResponse
 	{
 		
@@ -3225,8 +3038,7 @@ namespace MyNS
 		public string LoRaWANNetworkServerCertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayFirmwareInformationResponse
 	{
 		
@@ -3237,8 +3049,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWANGatewayCurrentVersion object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANGatewayCurrentVersion
 	{
 		
@@ -3246,8 +3057,7 @@ namespace MyNS
 		public LoRaWANGatewayVersion CurrentVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayStatisticsResponse
 	{
 		
@@ -3261,21 +3071,18 @@ namespace MyNS
 		public ConnectionStatus ConnectionStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConnectionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Connected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Connected = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disconnected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disconnected = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayTaskResponse
 	{
 		
@@ -3295,8 +3102,7 @@ namespace MyNS
 		public WirelessGatewayTaskStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayTaskDefinitionResponse
 	{
 		
@@ -3316,8 +3122,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateWirelessGatewayTaskCreate object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWirelessGatewayTaskCreate
 	{
 		
@@ -3331,8 +3136,7 @@ namespace MyNS
 		public LoRaWANUpdateGatewayTaskCreate LoRaWAN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDestinationsResponse
 	{
 		
@@ -3346,8 +3150,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a destination.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Destinations
 	{
 		
@@ -3370,8 +3173,7 @@ namespace MyNS
 		public string RoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeviceProfilesResponse
 	{
 		
@@ -3385,8 +3187,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a device profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeviceProfile
 	{
 		
@@ -3400,8 +3201,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDevicesForWirelessDeviceImportTaskResponse
 	{
 		
@@ -3418,8 +3218,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a wireless device that has been added to an import task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportedWirelessDevice
 	{
 		
@@ -3430,8 +3229,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Sidewalk device that has been added to an import task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportedSidewalkDevice
 	{
 		
@@ -3448,27 +3246,24 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OnboardStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONBOARDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEventConfigurationsResponse
 	{
 		
@@ -3482,8 +3277,7 @@ namespace MyNS
 	/// <summary>
 	/// Event configuration object for a single resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventConfigurationItem
 	{
 		
@@ -3503,43 +3297,38 @@ namespace MyNS
 		public EventNotificationItemConfigurations Events { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IdentifierType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PartnerAccountId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PartnerAccountId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DevEui")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DevEui = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GatewayEui")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GatewayEui = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WirelessDeviceId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WirelessDeviceId = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WirelessGatewayId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WirelessGatewayId = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventNotificationPartnerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sidewalk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sidewalk = 0,
 	}
 	
 	/// <summary>
 	/// Object of all event configurations and the status of the event topics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventNotificationItemConfigurations
 	{
 		
@@ -3559,8 +3348,7 @@ namespace MyNS
 		public MessageDeliveryStatusEventConfiguration MessageDeliveryStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFuotaTasksResponse
 	{
 		
@@ -3577,8 +3365,7 @@ namespace MyNS
 	/// <summary>
 	/// A FUOTA task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FuotaTask
 	{
 		
@@ -3607,8 +3394,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMulticastGroupsResponse
 	{
 		
@@ -3625,8 +3411,7 @@ namespace MyNS
 	/// <summary>
 	/// A multicast group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MulticastGroup
 	{
 		
@@ -3655,8 +3440,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMulticastGroupsByFuotaTaskResponse
 	{
 		
@@ -3673,8 +3457,7 @@ namespace MyNS
 	/// <summary>
 	/// A multicast group that is associated with a FUOTA task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MulticastGroupByFuotaTask
 	{
 		
@@ -3687,8 +3470,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNetworkAnalyzerConfigurationsResponse
 	{
 		
@@ -3702,8 +3484,7 @@ namespace MyNS
 	/// <summary>
 	/// Network analyzer configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkAnalyzerConfigurations
 	{
 		
@@ -3723,8 +3504,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPartnerAccountsResponse
 	{
 		
@@ -3738,8 +3518,7 @@ namespace MyNS
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPositionConfigurationsResponse
 	{
 		
@@ -3753,8 +3532,7 @@ namespace MyNS
 	/// <summary>
 	/// The wrapper for a position configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionConfigurationItem
 	{
 		
@@ -3771,21 +3549,18 @@ namespace MyNS
 		public string Destination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PositionResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WirelessDevice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WirelessDevice = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WirelessGateway")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WirelessGateway = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueuedMessagesResponse
 	{
 		
@@ -3799,8 +3574,7 @@ namespace MyNS
 	/// <summary>
 	/// The message in the downlink queue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownlinkQueueMessage
 	{
 		
@@ -3823,8 +3597,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWAN router info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANSendDataToDevice
 	{
 		
@@ -3844,8 +3617,7 @@ namespace MyNS
 	/// <summary>
 	/// Specify the list of gateways to which you want to send downlink data traffic when the wireless device is running in class B or class C mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParticipatingGateways
 	{
 		
@@ -3871,27 +3643,24 @@ namespace MyNS
 		public int TransmissionInterval { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DownlinkMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEQUENTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEQUENTIAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONCURRENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONCURRENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USING_UPLINK_GATEWAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USING_UPLINK_GATEWAY = 2,
 	}
 	
 	/// <summary>
 	/// Gateway list item object that specifies the frequency and list of gateways for which the downlink message should be sent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GatewayListItem
 	{
 		
@@ -3910,8 +3679,7 @@ namespace MyNS
 		public int DownlinkFrequency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServiceProfilesResponse
 	{
 		
@@ -3925,8 +3693,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a service profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceProfile
 	{
 		
@@ -3940,8 +3707,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -3949,8 +3715,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWirelessDeviceImportTasksResponse
 	{
 		
@@ -3964,8 +3729,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an import task for wireless devices.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WirelessDeviceImportTask
 	{
 		
@@ -4003,8 +3767,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> FailedImportedDeviceCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWirelessDevicesResponse
 	{
 		
@@ -4018,8 +3781,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a wireless device's operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WirelessDeviceStatistics
 	{
 		
@@ -4069,8 +3831,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWAN object for list functions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANListDevice
 	{
 		
@@ -4081,8 +3842,7 @@ namespace MyNS
 	/// <summary>
 	/// Sidewalk object used by list functions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkListDevice
 	{
 		
@@ -4105,48 +3865,45 @@ namespace MyNS
 		public WirelessDeviceSidewalkStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessDeviceStatisticsFuotaDeviceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Initial")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Initial = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Package_Not_Supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Package_Not_Supported = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FragAlgo_unsupported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FragAlgo_unsupported = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Not_enough_memory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Not_enough_memory = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FragIndex_unsupported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FragIndex_unsupported = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Wrong_descriptor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Wrong_descriptor = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SessionCnt_replay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SessionCnt_replay = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MissingFrag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MissingFrag = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryError = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICError = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Successful")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Successful = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWirelessGatewayTaskDefinitionsResponse
 	{
 		
@@ -4160,8 +3917,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateWirelessGatewayTaskEntry object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWirelessGatewayTaskEntry
 	{
 		
@@ -4178,8 +3934,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWANUpdateGatewayTaskEntry object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANUpdateGatewayTaskEntry
 	{
 		
@@ -4190,8 +3945,7 @@ namespace MyNS
 		public LoRaWANGatewayVersion UpdateVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWirelessGatewaysResponse
 	{
 		
@@ -4205,8 +3959,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a wireless gateway's operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WirelessGatewayStatistics
 	{
 		
@@ -4232,8 +3985,7 @@ namespace MyNS
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutPositionConfigurationResponse
 	{
 	}
@@ -4241,8 +3993,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the Semtech GNSS solver configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SemtechGnssConfiguration
 	{
 		
@@ -4261,26 +4012,22 @@ namespace MyNS
 		public PositionConfigurationFec Fec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutResourceLogLevelResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetAllResourceLogLevelsResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetResourceLogLevelResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendDataToMulticastGroupResponse
 	{
 		
@@ -4296,8 +4043,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata information of the LoRaWAN multicast group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANMulticastMetadata
 	{
 		
@@ -4311,8 +4057,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> FPort { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendDataToWirelessDeviceResponse
 	{
 		
@@ -4323,8 +4068,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Sidewalk router.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkSendDataToDevice
 	{
 		
@@ -4341,51 +4085,44 @@ namespace MyNS
 		public System.Nullable<System.Int32> AckModeRetryDurationSecs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SidewalkSendDataToDeviceMessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_COMMAND_ID_NOTIFY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_COMMAND_ID_NOTIFY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_COMMAND_ID_GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_COMMAND_ID_GET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_COMMAND_ID_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_COMMAND_ID_SET = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_COMMAND_ID_RESP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_COMMAND_ID_RESP = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartBulkAssociateWirelessDeviceWithMulticastGroupResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFuotaTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMulticastGroupSessionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSingleWirelessDeviceImportTaskResponse
 	{
 		
@@ -4396,8 +4133,7 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartWirelessDeviceImportTaskResponse
 	{
 		
@@ -4408,20 +4144,17 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestWirelessDeviceResponse
 	{
 		
@@ -4429,50 +4162,42 @@ namespace MyNS
 		public string Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDestinationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEventConfigurationByResourceTypesResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFuotaTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLogLevelsByResourceTypesResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMulticastGroupResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNetworkAnalyzerConfigurationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePartnerAccountResponse
 	{
 	}
@@ -4480,26 +4205,22 @@ namespace MyNS
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePositionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateResourceEventConfigurationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateResourcePositionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWirelessDeviceResponse
 	{
 	}
@@ -4507,8 +4228,7 @@ namespace MyNS
 	/// <summary>
 	/// ABP device object for LoRaWAN specification v1.1
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAbpV1_1
 	{
 		
@@ -4519,8 +4239,7 @@ namespace MyNS
 	/// <summary>
 	/// ABP device object for LoRaWAN specification v1.0.x
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAbpV1_0_x
 	{
 		
@@ -4531,8 +4250,7 @@ namespace MyNS
 	/// <summary>
 	/// Object for updating the FPorts information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFPorts
 	{
 		
@@ -4543,20 +4261,17 @@ namespace MyNS
 		public ApplicationConfig[] Applications { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWirelessDeviceImportTaskResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWirelessGatewayResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateAwsAccountWithPartnerAccountRequest
 	{
 		
@@ -4574,8 +4289,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateMulticastGroupWithFuotaTaskRequest
 	{
 		
@@ -4590,8 +4304,7 @@ namespace MyNS
 		public string MulticastGroupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessDeviceWithFuotaTaskRequest
 	{
 		
@@ -4606,8 +4319,7 @@ namespace MyNS
 		public string WirelessDeviceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessDeviceWithMulticastGroupRequest
 	{
 		
@@ -4622,8 +4334,7 @@ namespace MyNS
 		public string WirelessDeviceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessDeviceWithThingRequest
 	{
 		
@@ -4635,8 +4346,7 @@ namespace MyNS
 		public string ThingArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessGatewayWithCertificateRequest
 	{
 		
@@ -4648,8 +4358,7 @@ namespace MyNS
 		public string IotCertificateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociateWirelessGatewayWithThingRequest
 	{
 		
@@ -4661,8 +4370,7 @@ namespace MyNS
 		public string ThingArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelMulticastGroupSessionRequest
 	{
 	}
@@ -4670,8 +4378,7 @@ namespace MyNS
 	/// <summary>
 	/// The cell towers that were used to perform the measurements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CellTowers
 	{
 		
@@ -4691,8 +4398,7 @@ namespace MyNS
 		public CdmaObj[] Cdma { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDestinationRequest
 	{
 		
@@ -4737,14 +4443,12 @@ namespace MyNS
 	/// <summary>
 	/// Sidewalk object for creating a device profile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkCreateDeviceProfile
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeviceProfileRequest
 	{
 		
@@ -4767,8 +4471,7 @@ namespace MyNS
 	/// <summary>
 	/// The LoRaWAN information used with a FUOTA task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANFuotaTask
 	{
 		
@@ -4779,19 +4482,17 @@ namespace MyNS
 		public System.Nullable<LoRaWANFuotaTaskRfRegion> RfRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LoRaWANFuotaTaskRfRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU868")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU868 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US915 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU915 = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-1")]
@@ -4806,27 +4507,26 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-4")]
 		AS923Minus4 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU433")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU433 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN470")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN470 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN779")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN779 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RU864")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RU864 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KR920")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KR920 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN865")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN865 = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFuotaTaskRequest
 	{
 		
@@ -4927,8 +4627,7 @@ namespace MyNS
 	/// <summary>
 	/// The LoRaWAN information that is to be used with the multicast group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANMulticast
 	{
 		
@@ -4947,19 +4646,17 @@ namespace MyNS
 		public DlClass DlClass { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LoRaWANMulticastRfRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU868")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU868 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US915 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU915 = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-1")]
@@ -4974,27 +4671,26 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-4")]
 		AS923Minus4 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU433")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU433 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN470")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN470 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN779")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN779 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RU864")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RU864 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KR920")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KR920 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN865")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN865 = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMulticastGroupRequest
 	{
 		
@@ -5031,8 +4727,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateNetworkAnalyzerConfigurationRequest
 	{
 		
@@ -5099,8 +4794,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWANServiceProfile object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANServiceProfile
 	{
 		
@@ -5120,8 +4814,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> RaAllowed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateServiceProfileRequest
 	{
 		
@@ -5138,24 +4831,21 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PositioningConfigStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 1,
 	}
 	
 	/// <summary>
 	/// Sidewalk object for creating a wireless device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkCreateWirelessDevice
 	{
 		
@@ -5163,8 +4853,7 @@ namespace MyNS
 		public string DeviceProfileId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWirelessDeviceRequest
 	{
 		
@@ -5204,8 +4893,7 @@ namespace MyNS
 		public SidewalkCreateWirelessDevice Sidewalk { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWirelessGatewayRequest
 	{
 		
@@ -5229,8 +4917,7 @@ namespace MyNS
 		public string ClientRequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWirelessGatewayTaskDefinitionRequest
 	{
 		
@@ -5254,8 +4941,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWirelessGatewayTaskRequest
 	{
 		
@@ -5267,283 +4953,244 @@ namespace MyNS
 		public string WirelessGatewayTaskDefinitionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDestinationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDeviceProfileRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFuotaTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMulticastGroupRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteNetworkAnalyzerConfigurationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteQueuedMessagesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteServiceProfileRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessDeviceImportTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessDeviceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessGatewayRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessGatewayTaskDefinitionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWirelessGatewayTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterWirelessDeviceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeviceProfileType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sidewalk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sidewalk = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LoRaWAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LoRaWAN = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartnerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sidewalk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sidewalk = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateAwsAccountFromPartnerAccountRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateMulticastGroupFromFuotaTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessDeviceFromFuotaTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessDeviceFromMulticastGroupRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessDeviceFromThingRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessGatewayFromCertificateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisassociateWirelessGatewayFromThingRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventNotificationResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SidewalkAccount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SidewalkAccount = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WirelessDevice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WirelessDevice = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WirelessGateway")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WirelessGateway = 2,
 	}
 	
 	/// <summary>
 	/// The status of a wireless device in a FUOTA task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FuotaDeviceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Initial")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Initial = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Package_Not_Supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Package_Not_Supported = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FragAlgo_unsupported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FragAlgo_unsupported = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Not_enough_memory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Not_enough_memory = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FragIndex_unsupported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FragIndex_unsupported = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Wrong_descriptor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Wrong_descriptor = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SessionCnt_replay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SessionCnt_replay = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MissingFrag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MissingFrag = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MemoryError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MemoryError = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICError = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Successful")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Successful = 10,
 	}
 	
 	/// <summary>
 	/// The status of a FUOTA task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FuotaTaskStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FuotaSession_Waiting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FuotaSession_Waiting = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="In_FuotaSession")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		In_FuotaSession = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FuotaDone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FuotaDone = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Delete_Waiting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Delete_Waiting = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDestinationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDeviceProfileRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEventConfigurationByResourceTypesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFuotaTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetLogLevelsByResourceTypesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMulticastGroupRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMulticastGroupSessionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetNetworkAnalyzerConfigurationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPartnerAccountRequest
 	{
 	}
@@ -5551,8 +5198,7 @@ namespace MyNS
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPositionConfigurationRequest
 	{
 	}
@@ -5560,8 +5206,7 @@ namespace MyNS
 	/// <summary>
 	/// IP address used for resolving device location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ip
 	{
 		
@@ -5576,8 +5221,7 @@ namespace MyNS
 	/// <summary>
 	/// Global navigation satellite system (GNSS) object used for positioning.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Gnss
 	{
 		
@@ -5604,8 +5248,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Use2DSolver { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPositionEstimateRequest
 	{
 		
@@ -5628,181 +5271,153 @@ namespace MyNS
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPositionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceEventConfigurationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourceLogLevelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetResourcePositionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetServiceEndpointRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetServiceProfileRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessDeviceImportTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessDeviceIdType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WirelessDeviceId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WirelessDeviceId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DevEui")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DevEui = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThingName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ThingName = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SidewalkManufacturingSn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SidewalkManufacturingSn = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessDeviceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessDeviceStatisticsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayCertificateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayFirmwareInformationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessGatewayIdType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GatewayEui")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GatewayEui = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WirelessGatewayId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WirelessGatewayId = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThingName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ThingName = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayStatisticsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayTaskDefinitionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWirelessGatewayTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDestinationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeviceProfilesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDevicesForWirelessDeviceImportTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListEventConfigurationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFuotaTasksRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMulticastGroupsByFuotaTaskRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMulticastGroupsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNetworkAnalyzerConfigurationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPartnerAccountsRequest
 	{
 	}
@@ -5810,60 +5425,50 @@ namespace MyNS
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPositionConfigurationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueuedMessagesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServiceProfilesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWirelessDeviceImportTasksRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWirelessDevicesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessGatewayTaskDefinitionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWirelessGatewayTaskDefinitionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWirelessGatewaysRequest
 	{
 	}
@@ -5871,8 +5476,7 @@ namespace MyNS
 	/// <summary>
 	/// The LoRaWAN information used to start a FUOTA task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANStartFuotaTask
 	{
 		
@@ -5886,8 +5490,7 @@ namespace MyNS
 	/// <summary>
 	/// LoRaWAN object for update functions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoRaWANUpdateDevice
 	{
 		
@@ -5910,30 +5513,27 @@ namespace MyNS
 	/// <summary>
 	/// Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_COMMAND_ID_NOTIFY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_COMMAND_ID_NOTIFY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_COMMAND_ID_GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_COMMAND_ID_GET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_COMMAND_ID_SET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_COMMAND_ID_SET = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM_COMMAND_ID_RESP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM_COMMAND_ID_RESP = 3,
 	}
 	
 	/// <summary>
 	/// Wireless metadata that is to be sent to multicast group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MulticastWirelessMetadata
 	{
 		
@@ -5944,24 +5544,21 @@ namespace MyNS
 		public LoRaWANMulticastMetadata LoRaWAN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PositionConfigurationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disabled = 1,
 	}
 	
 	/// <summary>
 	/// The wrapper for position solver configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PositionSolverConfigurations
 	{
 		
@@ -5972,8 +5569,7 @@ namespace MyNS
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutPositionConfigurationRequest
 	{
 		
@@ -5984,8 +5580,7 @@ namespace MyNS
 		public string Destination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutResourceLogLevelRequest
 	{
 		
@@ -5998,20 +5593,17 @@ namespace MyNS
 		public LogLevel LogLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetAllResourceLogLevelsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetResourceLogLevelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendDataToMulticastGroupRequest
 	{
 		
@@ -6039,8 +5631,7 @@ namespace MyNS
 	/// <summary>
 	/// WirelessMetadata object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WirelessMetadata
 	{
 		
@@ -6051,8 +5642,7 @@ namespace MyNS
 		public SidewalkSendDataToDevice Sidewalk { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendDataToWirelessDeviceRequest
 	{
 		
@@ -6082,8 +5672,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an import task created for an individual Sidewalk device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkSingleStartImportInfo
 	{
 		
@@ -6094,8 +5683,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an import task created for bulk provisioning.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkStartImportInfo
 	{
 		
@@ -6109,8 +5697,7 @@ namespace MyNS
 	/// <summary>
 	/// Sidewalk update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkUpdateAccount
 	{
 		
@@ -6121,8 +5708,7 @@ namespace MyNS
 	/// <summary>
 	/// Sidewalk object information for updating an import task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SidewalkUpdateImportInfo
 	{
 		
@@ -6130,8 +5716,7 @@ namespace MyNS
 		public string DeviceCreationFile { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartBulkAssociateWirelessDeviceWithMulticastGroupRequest
 	{
 		
@@ -6154,8 +5739,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest
 	{
 		
@@ -6178,8 +5762,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartFuotaTaskRequest
 	{
 		
@@ -6190,8 +5773,7 @@ namespace MyNS
 		public LoRaWANStartFuotaTask LoRaWAN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMulticastGroupSessionRequest
 	{
 		
@@ -6204,8 +5786,7 @@ namespace MyNS
 		public LoRaWANMulticastSession LoRaWAN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSingleWirelessDeviceImportTaskRequest
 	{
 		
@@ -6249,8 +5830,7 @@ namespace MyNS
 		public SidewalkSingleStartImportInfo Sidewalk { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartWirelessDeviceImportTaskRequest
 	{
 		
@@ -6291,8 +5871,7 @@ namespace MyNS
 		public SidewalkStartImportInfo Sidewalk { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -6304,20 +5883,17 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestWirelessDeviceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDestinationRequest
 	{
 		
@@ -6334,8 +5910,7 @@ namespace MyNS
 		public string RoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEventConfigurationByResourceTypesRequest
 	{
 		
@@ -6355,8 +5930,7 @@ namespace MyNS
 		public MessageDeliveryStatusResourceTypeEventConfiguration MessageDeliveryStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateFuotaTaskRequest
 	{
 		
@@ -6428,8 +6002,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> FragmentIntervalMS { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateLogLevelsByResourceTypesRequest
 	{
 		
@@ -6452,8 +6025,7 @@ namespace MyNS
 		public WirelessGatewayLogOption[] WirelessGatewayLogOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateMulticastGroupRequest
 	{
 		
@@ -6480,8 +6052,7 @@ namespace MyNS
 		public LoRaWANMulticast LoRaWAN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateNetworkAnalyzerConfigurationRequest
 	{
 		
@@ -6518,8 +6089,7 @@ namespace MyNS
 		public string[] MulticastGroupsToRemove { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePartnerAccountRequest
 	{
 		
@@ -6534,8 +6104,7 @@ namespace MyNS
 	/// <summary>
 	/// This operation is no longer supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePositionRequest
 	{
 		
@@ -6547,8 +6116,7 @@ namespace MyNS
 		public double[] Position { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateResourceEventConfigurationRequest
 	{
 		
@@ -6568,8 +6136,7 @@ namespace MyNS
 		public MessageDeliveryStatusEventConfiguration MessageDeliveryStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateResourcePositionRequest
 	{
 		
@@ -6577,8 +6144,7 @@ namespace MyNS
 		public string GeoJsonPayload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWirelessDeviceImportTaskRequest
 	{
 		
@@ -6590,8 +6156,7 @@ namespace MyNS
 		public SidewalkUpdateImportInfo Sidewalk { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWirelessDeviceRequest
 	{
 		
@@ -6611,8 +6176,7 @@ namespace MyNS
 		public EventNotificationTopicStatus Positioning { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWirelessGatewayRequest
 	{
 		
@@ -6649,54 +6213,48 @@ namespace MyNS
 	/// <summary>
 	/// The event for a log message, if the log message is tied to a wireless device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessDeviceEvent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Join")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Join = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejoin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejoin = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Uplink_Data")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Uplink_Data = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Downlink_Data")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Downlink_Data = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Registration")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Registration = 4,
 	}
 	
 	/// <summary>
 	/// The event for a log message, if the log message is tied to a wireless gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessGatewayEvent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUPS_Request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUPS_Request = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Certificate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Certificate = 1,
 	}
 	
 	/// <summary>
 	/// The wireless gateway type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WirelessGatewayType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LoRaWAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LoRaWAN = 0,
 	}
 	
@@ -11005,19 +10563,17 @@ namespace MyNS
 		public System.Nullable<CreateFuotaTaskPostBodyLoRaWANRfRegion> RfRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateFuotaTaskPostBodyLoRaWANRfRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU868")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU868 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US915 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU915 = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-1")]
@@ -11032,22 +10588,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-4")]
 		AS923Minus4 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU433")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU433 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN470")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN470 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN779")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN779 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RU864")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RU864 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KR920")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KR920 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN865")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN865 = 12,
 	}
 	
@@ -11119,19 +10675,17 @@ namespace MyNS
 		public DlClass DlClass { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateMulticastGroupPostBodyLoRaWANRfRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU868")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU868 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US915 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU915 = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-1")]
@@ -11146,22 +10700,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-4")]
 		AS923Minus4 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU433")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU433 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN470")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN470 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN779")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN779 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RU864")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RU864 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KR920")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KR920 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN865")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN865 = 12,
 	}
 	
@@ -11756,19 +11310,17 @@ namespace MyNS
 		public System.Nullable<UpdateFuotaTaskPatchBodyLoRaWANRfRegion> RfRegion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateFuotaTaskPatchBodyLoRaWANRfRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU868")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU868 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US915 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU915 = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-1")]
@@ -11783,22 +11335,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-4")]
 		AS923Minus4 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU433")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU433 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN470")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN470 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN779")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN779 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RU864")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RU864 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KR920")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KR920 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN865")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN865 = 12,
 	}
 	
@@ -11846,19 +11398,17 @@ namespace MyNS
 		public DlClass DlClass { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpdateMulticastGroupPatchBodyLoRaWANRfRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU868")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU868 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US915 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU915")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU915 = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-1")]
@@ -11873,22 +11423,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="AS923-4")]
 		AS923Minus4 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU433")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU433 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN470")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN470 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CN779")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CN779 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RU864")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RU864 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KR920")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KR920 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN865")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN865 = 12,
 	}
 	

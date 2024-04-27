@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorModel
 	{
 		
@@ -43,8 +42,7 @@ namespace MyNS
 		public string Errorcode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Accurate_programme_time
 	{
 		
@@ -55,8 +53,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Accurate_time : DateRange
 	{
 		
@@ -68,8 +65,7 @@ namespace MyNS
 		public string Duration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Affected_by
 	{
 		
@@ -116,8 +112,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alternate_images_mixin
 	{
 		
@@ -184,8 +179,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ancestor_titles
 	{
 		
@@ -324,8 +318,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ancestors : ReferenceAttributes
 	{
 		
@@ -336,8 +329,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Result_type_deprecated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ancestors_titles
 	{
 		
@@ -476,8 +468,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Availability
 	{
 		
@@ -520,8 +511,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateRange
 	{
 		
@@ -532,8 +522,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Availability_debug
 	{
 		
@@ -554,8 +543,7 @@ namespace MyNS
 		public string Territory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PidReference
 	{
 		
@@ -582,8 +570,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Media_profile_groups
 	{
 		
@@ -591,8 +578,7 @@ namespace MyNS
 		public Media_profile_group[] Media_profile_group { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Media_profile_group
 	{
 		
@@ -619,8 +605,7 @@ namespace MyNS
 		public string Transport { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceReference
 	{
 		
@@ -646,8 +631,7 @@ namespace MyNS
 		public string Sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Availability_of
 	{
 		
@@ -678,24 +662,21 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AvailabilityAvailability_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ondemand")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ondemand = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="simulcast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		simulcast = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webcast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webcast = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Scheduled_time
 	{
 		
@@ -706,8 +687,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Availability_mixin
 	{
 		
@@ -850,24 +830,21 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Availability_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ondemand")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ondemand = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="simulcast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		simulcast = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webcast")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webcast = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Available_media_sets
 	{
 		
@@ -918,8 +895,7 @@ namespace MyNS
 		public string _text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Available_mixins
 	{
 		
@@ -1008,8 +984,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Available_versions_media_sets
 	{
 		
@@ -1132,8 +1107,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Available_simulcasts
 	{
 		
@@ -1152,8 +1126,7 @@ namespace MyNS
 		public Available_versions_element Available_versions_element { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Available_versions_element
 	{
 		
@@ -1200,8 +1173,7 @@ namespace MyNS
 		public Available_versions_elementVersionVersion[] Available_versions_elementVersionVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Guidance_warnings
 	{
 		
@@ -1222,8 +1194,7 @@ namespace MyNS
 		public Guidance_warningsWarningsWarnings Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warning_items
 	{
 		
@@ -1260,8 +1231,7 @@ namespace MyNS
 		public string Warning_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warning_texts
 	{
 		
@@ -1352,8 +1322,7 @@ namespace MyNS
 		public string[] Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Available_versions
 	{
 		
@@ -1372,8 +1341,7 @@ namespace MyNS
 		public Available_versions_element Available_versions_element { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Available_webcasts
 	{
 		
@@ -1392,8 +1360,7 @@ namespace MyNS
 		public Available_versions_element Available_versions_element { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Brand
 	{
 		
@@ -1490,8 +1457,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contributions_mixin
 	{
 		
@@ -1530,8 +1496,7 @@ namespace MyNS
 		public string Href { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contributions_mixin_contribution
 	{
 		
@@ -1576,8 +1541,7 @@ namespace MyNS
 		public Contributions_mixin_contributionContributionContributionCredit_role Credit_role { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contributions_mixin_contributor
 	{
 		
@@ -1609,8 +1573,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contributions_mixin_contributor_name
 	{
 		
@@ -1694,9 +1657,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BrandEmbargoed
 	{
 		
@@ -1707,8 +1668,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenreGroupingsType
 	{
 		
@@ -1716,8 +1676,7 @@ namespace MyNS
 		public Genre_group[] Genre_group { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Genre_group
 	{
 		
@@ -1742,8 +1701,7 @@ namespace MyNS
 		public Genre[] Genre { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Genre
 	{
 		
@@ -1757,8 +1715,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Identifiers
 	{
 		
@@ -1772,8 +1729,7 @@ namespace MyNS
 		public Identifier[] Identifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Identifier
 	{
 		
@@ -1787,8 +1743,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image_link
 	{
 		
@@ -1800,8 +1755,7 @@ namespace MyNS
 		public string Image { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Images_mixin
 	{
 		
@@ -1894,8 +1848,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Master_brand_link
 	{
 		
@@ -1964,8 +1917,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Previous_next_mixin
 	{
 		
@@ -2004,8 +1956,7 @@ namespace MyNS
 		public Reference Previous { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Programme_formats
 	{
 		
@@ -2019,8 +1970,7 @@ namespace MyNS
 		public Format[] Format { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Format
 	{
 		
@@ -2031,8 +1981,7 @@ namespace MyNS
 		public string Format_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Programme_type
 	{
 		
@@ -2044,8 +1993,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Related_links
 	{
 		
@@ -2053,8 +2001,7 @@ namespace MyNS
 		public Related_link[] Related_link { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Related_link
 	{
 		
@@ -2099,8 +2046,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Synopses
 	{
 		
@@ -2114,8 +2060,7 @@ namespace MyNS
 		public string Short { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Release_date_group
 	{
 		
@@ -2141,8 +2086,7 @@ namespace MyNS
 		public string Release_year_month { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Broadcast
 	{
 		
@@ -2213,8 +2157,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ids
 	{
 		
@@ -2228,8 +2171,7 @@ namespace MyNS
 		public Id[] Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Id
 	{
 		
@@ -2243,8 +2185,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tx_time
 	{
 		
@@ -2258,8 +2199,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BroadcastTime : DateRange
 	{
 		
@@ -2271,8 +2211,7 @@ namespace MyNS
 		public string Duration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Broadcast_of
 	{
 		
@@ -2299,8 +2238,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Broadcaster
 	{
 		
@@ -2328,8 +2266,7 @@ namespace MyNS
 		public string Sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Chapter
 	{
 		
@@ -2472,8 +2409,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Offsets
 	{
 		
@@ -2481,8 +2417,7 @@ namespace MyNS
 		public Offset_in[] Offset_in { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Offset_in
 	{
 		
@@ -2518,8 +2453,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Play_events
 	{
 		
@@ -2527,8 +2461,7 @@ namespace MyNS
 		public Play_event[] Play_event { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Play_event
 	{
 		
@@ -2557,8 +2490,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Played_in_links
 	{
 		
@@ -2589,8 +2521,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Clip
 	{
 		
@@ -2714,9 +2645,7 @@ namespace MyNS
 		public Versions_mixin Versions_mixin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClipEmbargoed
 	{
 		
@@ -2727,21 +2656,18 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClipMedia_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Video")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Video = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Audio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Audio = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Original_version_duration
 	{
 		
@@ -2806,8 +2732,7 @@ namespace MyNS
 		public string Pid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Versions_mixin
 	{
 		
@@ -2824,8 +2749,7 @@ namespace MyNS
 		public Versions[] Versions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Versions
 	{
 		
@@ -2844,8 +2768,7 @@ namespace MyNS
 		public Version_availability_mixin Version_availability_mixin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Version_availability_mixin
 	{
 		
@@ -2905,8 +2828,7 @@ namespace MyNS
 		public Version_availability[] Version_availability { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Version_availability
 	{
 		
@@ -3028,8 +2950,7 @@ namespace MyNS
 		public string[] Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Clip_of
 	{
 		
@@ -3056,8 +2977,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Collection
 	{
 		
@@ -3127,9 +3047,7 @@ namespace MyNS
 		public string Url_key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CollectionEmbargoed
 	{
 		
@@ -3140,8 +3058,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class For_programmes
 	{
 		
@@ -3149,8 +3066,7 @@ namespace MyNS
 		public For_programme[] For_programme { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class For_programme
 	{
 		
@@ -3158,8 +3074,7 @@ namespace MyNS
 		public string Href { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Scheduled
 	{
 		
@@ -3170,8 +3085,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Context
 	{
 		
@@ -3198,8 +3112,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contributor
 	{
 		
@@ -3243,8 +3156,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contributor_name
 	{
 		
@@ -3301,8 +3213,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contributor_to
 	{
 		
@@ -3321,8 +3232,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Credits_time
 	{
 		
@@ -3333,8 +3243,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Squeeze_start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Data
 	{
 		
@@ -3342,8 +3251,7 @@ namespace MyNS
 		public string Datum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date_range
 	{
 		
@@ -3354,8 +3262,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dependency_on
 	{
 		
@@ -3366,8 +3273,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deprecated
 	{
 		
@@ -3401,8 +3307,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeprecatedReferenceElement : ReferenceAttributes
 	{
 		
@@ -3430,8 +3335,7 @@ namespace MyNS
 		public string Replaced_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeprecationAttributes
 	{
 		
@@ -3459,8 +3363,7 @@ namespace MyNS
 		public string Replaced_by { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deprecations
 	{
 		
@@ -3468,8 +3371,7 @@ namespace MyNS
 		public Deprecated[] Deprecated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimensions
 	{
 		
@@ -3480,9 +3382,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Embargoed
 	{
 		
@@ -3493,8 +3393,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Episode
 	{
 		
@@ -3627,9 +3526,7 @@ namespace MyNS
 		public Versions_mixin Versions_mixin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EpisodeEmbargoed
 	{
 		
@@ -3640,8 +3537,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Episode_of
 	{
 		
@@ -3668,8 +3564,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -3731,9 +3626,7 @@ namespace MyNS
 		public ErrorXquery_version Xquery_version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorXquery_version
 	{
 		
@@ -3746,12 +3639,11 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="1.0")]
 		_1_0 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XSLT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XSLT = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Errors
 	{
 		
@@ -3759,8 +3651,7 @@ namespace MyNS
 		public Error Error { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Feed
 	{
 		
@@ -3808,8 +3699,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filters
 	{
 		
@@ -3820,8 +3710,7 @@ namespace MyNS
 		public Unstable_filters Unstable_filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -3897,8 +3786,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Option
 	{
 		
@@ -3923,27 +3811,24 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OptionRelease_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alpha = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="beta")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		beta = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		supported = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deprecated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deprecated = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Prohibits
 	{
 		
@@ -4004,8 +3889,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Unstable_filters
 	{
 		
@@ -4013,8 +3897,7 @@ namespace MyNS
 		public Filter[] Filter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Mixins
 	{
 		
@@ -4025,8 +3908,7 @@ namespace MyNS
 		public Unstable_mixins Unstable_mixins { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Mixin
 	{
 		
@@ -4083,8 +3965,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Unstable_mixins
 	{
 		
@@ -4092,8 +3973,7 @@ namespace MyNS
 		public Mixin[] Mixin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sorts
 	{
 		
@@ -4104,8 +3984,7 @@ namespace MyNS
 		public Unstable_sorts Unstable_sorts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sort
 	{
 		
@@ -4153,8 +4032,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sort_direction
 	{
 		
@@ -4187,8 +4065,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Unstable_sorts
 	{
 		
@@ -4196,8 +4073,7 @@ namespace MyNS
 		public Sort[] Sort { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Feeds
 	{
 		
@@ -4211,8 +4087,7 @@ namespace MyNS
 		public Feed[] Feed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Focus_point
 	{
 		
@@ -4223,8 +4098,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Y { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Franchise
 	{
 		
@@ -4294,9 +4168,7 @@ namespace MyNS
 		public string Url_key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FranchiseEmbargoed
 	{
 		
@@ -4307,8 +4179,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Franchises : ReferenceAttributes
 	{
 		
@@ -4319,8 +4190,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Result_type_deprecated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Gallery
 	{
 		
@@ -4390,9 +4260,7 @@ namespace MyNS
 		public string Url_key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GalleryEmbargoed
 	{
 		
@@ -4403,8 +4271,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenreGroupsType : DeprecatedReferenceElement
 	{
 		
@@ -4412,8 +4279,7 @@ namespace MyNS
 		public Genre_group[] Genre_group { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Genre_groupings
 	{
 		
@@ -4421,8 +4287,7 @@ namespace MyNS
 		public Genre_group[] Genre_group { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Genre_groups : DeprecatedReferenceElement
 	{
 		
@@ -4430,8 +4295,7 @@ namespace MyNS
 		public Genre_group[] Genre_group { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group_body
 	{
 		
@@ -4501,9 +4365,7 @@ namespace MyNS
 		public string Url_key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Group_bodyEmbargoed
 	{
 		
@@ -4514,8 +4376,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Highlight
 	{
 		
@@ -4658,8 +4519,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image
 	{
 		
@@ -4713,9 +4573,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageEmbargoed
 	{
 		
@@ -4726,8 +4584,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Source_asset
 	{
 		
@@ -4747,8 +4604,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Size
 	{
 		
@@ -4756,8 +4612,7 @@ namespace MyNS
 		public string Units { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Item
 	{
 		
@@ -4900,8 +4755,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Item_of : ReferenceAttributes
 	{
 		
@@ -4912,8 +4766,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Result_type_deprecated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Items_for : ReferenceAttributes
 	{
 		
@@ -4924,8 +4777,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Result_type_deprecated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Master_brand
 	{
 		
@@ -5025,8 +4877,7 @@ namespace MyNS
 		public string Short { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Media_availability_time
 	{
 		
@@ -5037,21 +4888,18 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Media_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Video")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Video = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Audio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Audio = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Music
 	{
 		
@@ -5194,8 +5042,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Next
 	{
 		
@@ -5207,8 +5054,7 @@ namespace MyNS
 		public string Href { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Nitro
 	{
 		
@@ -5231,8 +5077,7 @@ namespace MyNS
 		public Sorts Sorts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pagination
 	{
 		
@@ -5243,8 +5088,7 @@ namespace MyNS
 		public Previous Previous { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Previous
 	{
 		
@@ -5256,8 +5100,7 @@ namespace MyNS
 		public string Href { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Results
 	{
 		
@@ -5348,8 +5191,7 @@ namespace MyNS
 		public Window Window { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Promotion
 	{
 		
@@ -5421,8 +5263,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Series
 	{
 		
@@ -5528,9 +5369,7 @@ namespace MyNS
 		public string Uri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SeriesEmbargoed
 	{
 		
@@ -5541,8 +5380,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Service
 	{
 		
@@ -5604,8 +5442,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Version_group
 	{
 		
@@ -5675,8 +5512,7 @@ namespace MyNS
 		public Warnings Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Types_with_id
 	{
 		
@@ -5786,8 +5622,7 @@ namespace MyNS
 		public Warnings Warnings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Version_types_with_id
 	{
 		
@@ -5846,8 +5681,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warnings
 	{
 		
@@ -5858,8 +5692,7 @@ namespace MyNS
 		public Warning_text[] Warning_text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warning
 	{
 		
@@ -5873,8 +5706,7 @@ namespace MyNS
 		public string Warning_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warning_text
 	{
 		
@@ -5885,8 +5717,7 @@ namespace MyNS
 		public string Length { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Window
 	{
 		
@@ -5948,8 +5779,7 @@ namespace MyNS
 		public PidReference[] Window_of { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Scheduled_publication_rights
 	{
 		
@@ -5957,8 +5787,7 @@ namespace MyNS
 		public Publication_rights[] Publication_rights { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Publication_rights
 	{
 		
@@ -5978,8 +5807,7 @@ namespace MyNS
 		public string Transport { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Other
 	{
 		
@@ -6122,8 +5950,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Promotion_of
 	{
 		
@@ -6150,8 +5977,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Published_time : DateRange
 	{
 		
@@ -6163,8 +5989,7 @@ namespace MyNS
 		public string Duration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Reference : ReferenceAttributes
 	{
 		
@@ -6175,8 +6000,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Result_type_deprecated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceAttributes
 	{
 		
@@ -6195,27 +6019,24 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Release_status_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alpha = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="beta")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		beta = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		supported = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deprecated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deprecated = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Season
 	{
 		
@@ -6285,9 +6106,7 @@ namespace MyNS
 		public string Url_key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SeasonEmbargoed
 	{
 		
@@ -6298,8 +6117,7 @@ namespace MyNS
 		_false = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Series_of
 	{
 		
@@ -6326,8 +6144,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Speech
 	{
 		
@@ -6470,8 +6287,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Version_of
 	{
 		
@@ -6498,8 +6314,7 @@ namespace MyNS
 		public string Result_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Window_of
 	{
 		
@@ -6529,9 +6344,7 @@ namespace MyNS
 	/// <summary>
 	/// The XQuery language version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Xquery_version
 	{
 		
@@ -6544,7 +6357,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="1.0")]
 		_1_0 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XSLT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XSLT = 3,
 	}
 	
@@ -7897,109 +7710,109 @@ namespace MyNS
 	public enum ListAvailabilitySort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled_start")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled_start = 0,
 	}
 	
 	public enum ListAvailabilitySort_direction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ascending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ascending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="descending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		descending = 1,
 	}
 	
 	public enum ListBroadcastsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="start_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		start_date = 0,
 	}
 	
 	public enum ListGroupsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pid = 0,
 	}
 	
 	public enum ListGroupsSort_direction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="descending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		descending = 0,
 	}
 	
 	public enum ListGroupsEmbargoed
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="include")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		include = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="exclude")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		exclude = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="only")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		only = 2,
 	}
 	
 	public enum ListImagesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group_position")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group_position = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pid = 1,
 	}
 	
 	public enum ListMasterbrandsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mid = 0,
 	}
 	
 	public enum ListMasterbrandsSort_direction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ascending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ascending = 0,
 	}
 	
 	public enum ListProgrammesSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="group_position")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		group_position = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pid = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="position")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		position = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="promotion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		promotion = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="release_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		release_date = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevance = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled_start")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled_start = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="strict_title")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		strict_title = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="title")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		title = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tree")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tree = 9,
 	}
 }

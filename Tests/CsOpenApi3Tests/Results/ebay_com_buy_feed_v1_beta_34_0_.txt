@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The type that defines the columns returned in the <b>Item</b> feed file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Item
 	{
 		
@@ -605,8 +604,7 @@ namespace MyNS
 	/// <summary>
 	/// The type that defines the columns returned in the <b>Item Group</b> feed file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemGroup
 	{
 		
@@ -656,8 +654,7 @@ namespace MyNS
 	/// <summary>
 	/// The type that defines the array for the items returned in the <b>Item Group</b> feed file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemGroupResponse
 	{
 		
@@ -668,8 +665,7 @@ namespace MyNS
 		public ItemGroup[] ItemGroups { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemPriority
 	{
 		
@@ -692,8 +688,7 @@ namespace MyNS
 		public string PriorityListingPayload { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemPriorityResponse
 	{
 		
@@ -707,8 +702,7 @@ namespace MyNS
 	/// <summary>
 	/// The type that defines the array for the items returned in the <b>Item</b> feed file. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemResponse
 	{
 		
@@ -722,8 +716,7 @@ namespace MyNS
 	/// <summary>
 	/// The type that defines the columns returned in the <b>Hourly Snapshot</b> feed file.  <p>  <b>Note: </b> When the value of the <b> availability</b> column is <code>UNAVAILABLE</code>, only the <b>itemId</b> and <b> availability</b> columns are populated.  </p> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemSnapshot
 	{
 		
@@ -1325,8 +1318,7 @@ namespace MyNS
 	/// <summary>
 	/// The type that defines the array for the items returned in the <b>Hourly Snapshot</b> feed file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemSnapshotResponse
 	{
 		

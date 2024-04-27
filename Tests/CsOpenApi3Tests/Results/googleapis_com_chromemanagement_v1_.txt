@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Android app information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1AndroidAppInfo
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Permission requested by an Android app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1AndroidAppPermission
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource representing app details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1AppDetails
 	{
 		
@@ -173,8 +170,7 @@ namespace MyNS
 	/// <summary>
 	/// Chrome Web Store app information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1ChromeAppInfo
 	{
 		
@@ -248,8 +244,7 @@ namespace MyNS
 	/// <summary>
 	/// Permission requested by a Chrome app or extension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1ChromeAppPermission
 	{
 		
@@ -275,8 +270,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent one host permission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1ChromeAppSiteAccess
 	{
 		
@@ -287,27 +281,24 @@ namespace MyNS
 		public string HostMatch { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1ChromeAppInfoType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ITEM_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ITEM_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTENSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTENSION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHERS = 2,
 	}
 	
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -330,30 +321,27 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1AppDetailsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_ITEM_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_ITEM_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB = 3,
 	}
 	
 	/// <summary>
 	/// Status data for storage. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceAudioStatus](https://chromeenterprise.google/policies/#ReportDeviceAudioStatus) * Data Collection Frequency: 10 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_AUDIO_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1AudioStatusReport
 	{
 		
@@ -403,8 +391,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the battery. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDevicePowerStatus](https://chromeenterprise.google/policies/#ReportDevicePowerStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_BATTERY_INFO
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1BatteryInfo
 	{
 		
@@ -448,8 +435,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDate
 	{
 		
@@ -475,8 +461,7 @@ namespace MyNS
 	/// <summary>
 	/// Sampling data for battery. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDevicePowerStatus](https://chromeenterprise.google/policies/#ReportDevicePowerStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1BatterySampleReport
 	{
 		
@@ -532,8 +517,7 @@ namespace MyNS
 	/// <summary>
 	/// Status data for battery. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDevicePowerStatus](https://chromeenterprise.google/policies/#ReportDevicePowerStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_BATTERY_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1BatteryStatusReport
 	{
 		
@@ -574,30 +558,27 @@ namespace MyNS
 		public string SerialNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1BatteryStatusReportBatteryHealth
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATTERY_HEALTH_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATTERY_HEALTH_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATTERY_HEALTH_NORMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATTERY_HEALTH_NORMAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATTERY_REPLACE_SOON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATTERY_REPLACE_SOON = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATTERY_REPLACE_NOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BATTERY_REPLACE_NOW = 3,
 	}
 	
 	/// <summary>
 	/// Boot performance report of a device. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceBootMode](https://chromeenterprise.google/policies/#ReportDeviceBootMode) * Data Collection Frequency: On every boot up event * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_OS_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1BootPerformanceReport
 	{
 		
@@ -638,33 +619,30 @@ namespace MyNS
 		public string ShutdownTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1BootPerformanceReportShutdownReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHUTDOWN_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHUTDOWN_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_REQUEST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_UPDATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW_BATTERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW_BATTERY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 4,
 	}
 	
 	/// <summary>
 	/// Describes a browser version and its install count.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1BrowserVersion
 	{
 		
@@ -699,64 +677,59 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1BrowserVersionChannel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEASE_CHANNEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEASE_CHANNEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEV = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BETA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STABLE = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1BrowserVersionSystem
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_SYSTEM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_SYSTEM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_OTHER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_ANDROID = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_IOS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_CROS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_CROS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_WINDOWS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_WINDOWS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_MAC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_MAC = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_LINUX = 7,
 	}
 	
 	/// <summary>
 	/// Details of an app installation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1ChromeAppRequest
 	{
 		
@@ -806,8 +779,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing summary of requested app installations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CountChromeAppRequestsResponse
 	{
 		
@@ -833,8 +805,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing counts for browsers that need attention.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CountChromeBrowsersNeedingAttentionResponse
 	{
 		
@@ -860,8 +831,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing a list of devices expiring in each month of a selected time frame. Counts are grouped by model and Auto Update Expiration date.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CountChromeDevicesReachingAutoExpirationDateResponse
 	{
 		
@@ -875,8 +845,7 @@ namespace MyNS
 	/// <summary>
 	/// Report for CountChromeDevicesPerAueDateResponse, contains the count of devices of a specific model and auto update expiration range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1DeviceAueCountReport
 	{
 		
@@ -911,57 +880,54 @@ namespace MyNS
 		public string Model { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1DeviceAueCountReportAueMonth
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JANUARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JANUARY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEBRUARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEBRUARY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARCH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APRIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APRIL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JUNE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JUNE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JULY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JULY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUGUST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUGUST = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEPTEMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEPTEMBER = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OCTOBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OCTOBER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOVEMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOVEMBER = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECEMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECEMBER = 12,
 	}
 	
 	/// <summary>
 	/// Response containing counts for devices that need attention.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CountChromeDevicesThatNeedAttentionResponse
 	{
 		
@@ -999,8 +965,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing a list of devices with a specific type of hardware specification from the requested hardware type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CountChromeHardwareFleetDevicesResponse
 	{
 		
@@ -1032,8 +997,7 @@ namespace MyNS
 	/// <summary>
 	/// Report for CountChromeDevicesPerHardwareSpecResponse, contains the count of devices with a unique hardware specification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1DeviceHardwareCountReport
 	{
 		
@@ -1053,8 +1017,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing requested browser versions details and counts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CountChromeVersionsResponse
 	{
 		
@@ -1080,8 +1043,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing details of queried installed apps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CountInstalledAppsResponse
 	{
 		
@@ -1107,8 +1069,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an installed app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1InstalledApp
 	{
 		
@@ -1179,80 +1140,73 @@ namespace MyNS
 		public string[] Permissions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1InstalledAppAppInstallType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_INSTALL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_INSTALL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTIPLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTIPLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORMAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVELOPMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVELOPMENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIDELOAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIDELOAD = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1InstalledAppAppSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_SOURCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_SOURCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHROME_WEBSTORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHROME_WEBSTORE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLAY_STORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLAY_STORE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1InstalledAppAppType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTENSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTENSION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THEME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THEME = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOSTED_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOSTED_APP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID_APP = 5,
 	}
 	
 	/// <summary>
 	/// Response containing a summary printing report for each printer from the specified organizational unit for the requested time interval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CountPrintJobsByPrinterResponse
 	{
 		
@@ -1278,8 +1232,7 @@ namespace MyNS
 	/// <summary>
 	/// Report for CountPrintJobsByPrinter, contains statistics on printer usage. Contains the total number of print jobs initiated with this printer, the number of users and the number of devices that have initiated at least one print job with this printer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1PrinterReport
 	{
 		
@@ -1323,8 +1276,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing a summary printing report for each user that has initiated a print job with a printer from the specified organizational unit during the requested time interval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CountPrintJobsByUserResponse
 	{
 		
@@ -1350,8 +1302,7 @@ namespace MyNS
 	/// <summary>
 	/// Report for CountPrintJobsByUser, contains printing statistics for a user. Contains the number of printers, the number of devices used to initiate print jobs, and the number of print jobs initiated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1UserPrintReport
 	{
 		
@@ -1389,8 +1340,7 @@ namespace MyNS
 	/// <summary>
 	/// CPU specifications for the device * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_CPU_INFO
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CpuInfo
 	{
 		
@@ -1425,24 +1375,21 @@ namespace MyNS
 		public string Model { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1CpuInfoArchitecture
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHITECTURE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHITECTURE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="X64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		X64 = 1,
 	}
 	
 	/// <summary>
 	/// Provides information about the status of the CPU. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Every 10 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_CPU_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CpuStatusReport
 	{
 		
@@ -1474,8 +1421,7 @@ namespace MyNS
 	/// <summary>
 	/// CPU temperature of a device. Sampled per CPU core in Celsius. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Every 10 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1CpuTemperatureInfo
 	{
 		
@@ -1495,8 +1441,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a device reporting Chrome browser information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1Device
 	{
 		
@@ -1516,8 +1461,7 @@ namespace MyNS
 	/// <summary>
 	/// Device activity report. * Granular permission needed: TELEMETRY_API_DEVICE_ACTIVITY_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1DeviceActivityReport
 	{
 		
@@ -1534,30 +1478,27 @@ namespace MyNS
 		public string ReportTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1DeviceActivityReportDeviceActivityState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_ACTIVITY_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEVICE_ACTIVITY_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IDLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCKED = 3,
 	}
 	
 	/// <summary>
 	/// Status of the single storage device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1DiskInfo
 	{
 		
@@ -1643,8 +1584,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of a display device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1DisplayDevice
 	{
 		
@@ -1694,8 +1634,7 @@ namespace MyNS
 	/// <summary>
 	/// Information for a display.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1DisplayInfo
 	{
 		
@@ -1739,8 +1678,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing a list of print jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1EnumeratePrintJobsResponse
 	{
 		
@@ -1766,8 +1704,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a request to print a document that has been submitted to a printer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1PrintJob
 	{
 		
@@ -1850,65 +1787,58 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1PrintJobColorMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLOR_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLOR_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLACK_AND_WHITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLACK_AND_WHITE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLOR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1PrintJobDuplexMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUPLEX_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DUPLEX_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_SIDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_SIDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWO_SIDED_LONG_EDGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWO_SIDED_LONG_EDGE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWO_SIDED_SHORT_EDGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TWO_SIDED_SHORT_EDGE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1PrintJobState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRINTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRINTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// Response containing a list of devices with queried app installed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1FindInstalledAppDevicesResponse
 	{
 		
@@ -1934,8 +1864,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of a graphics adapter (GPU).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1GraphicsAdapterInfo
 	{
 		
@@ -1961,8 +1890,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of the graphics subsystem. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceGraphicsStatus](https://chromeenterprise.google/policies/#ReportDeviceGraphicsStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_GRAPHICS_INFO
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1GraphicsInfo
 	{
 		
@@ -1994,8 +1922,7 @@ namespace MyNS
 	/// <summary>
 	/// Information on the device touch screen.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TouchScreenInfo
 	{
 		
@@ -2015,8 +1942,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of an internal touch screen device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TouchScreenDevice
 	{
 		
@@ -2042,8 +1968,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of the graphics subsystem. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceGraphicsInfo](https://chromeenterprise.google/policies/#ReportDeviceGraphicsInfo) * Data Collection Frequency: 3 hours. * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_GRAPHICS_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1GraphicsStatusReport
 	{
 		
@@ -2063,8 +1988,7 @@ namespace MyNS
 	/// <summary>
 	/// Heartbeat status report of a device. * Available for Kiosks * This field provides online/offline/unknown status of a device and will only be included if the status has changed (e.g. Online -> Offline) * Data for this field is controlled via policy: [HeartbeatEnabled](https://chromeenterprise.google/policies/#HeartbeatEnabled) [More Info](https://support.google.com/chrome/a/answer/6179663#:~:text=On%20the%20Chrome,device%20status%20alerts) * Heartbeat Frequency: 2 mins * Note: If a device goes offline, it can take up to 12 minutes for the online status of the device to be updated * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: N/A * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_DEVICE_ACTIVITY_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1HeartbeatStatusReport
 	{
 		
@@ -2081,30 +2005,27 @@ namespace MyNS
 		public System.Nullable<GoogleChromeManagementV1HeartbeatStatusReportState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1HeartbeatStatusReportState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFLINE = 3,
 	}
 	
 	/// <summary>
 	/// Data that describes the result of the HTTPS latency diagnostics routine, with the HTTPS requests issued to Google websites.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1HttpsLatencyRoutineData
 	{
 		
@@ -2121,33 +2042,30 @@ namespace MyNS
 		public System.Nullable<GoogleChromeManagementV1HttpsLatencyRoutineDataProblem> Problem { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1HttpsLatencyRoutineDataProblem
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTPS_LATENCY_PROBLEM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTPS_LATENCY_PROBLEM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_DNS_RESOLUTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_DNS_RESOLUTIONS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_HTTPS_REQUESTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_HTTPS_REQUESTS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH_LATENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH_LATENCY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERY_HIGH_LATENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERY_HIGH_LATENCY = 4,
 	}
 	
 	/// <summary>
 	/// Kiosk app status report of a device. * Available for Kiosks * This field provides the app id and version number running on a kiosk device and the timestamp of when the report was last updated * Data for this field is controlled via policy: [ReportDeviceSessionStatus](https://chromeenterprise.google/policies/#ReportDeviceSessionStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_APPS_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1KioskAppStatusReport
 	{
 		
@@ -2170,8 +2088,7 @@ namespace MyNS
 		public string ReportTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1ListTelemetryDevicesResponse
 	{
 		
@@ -2191,8 +2108,7 @@ namespace MyNS
 	/// <summary>
 	/// Telemetry data collected from a managed device. * Granular permission needed: TELEMETRY_API_DEVICE
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryDevice
 	{
 		
@@ -2356,8 +2272,7 @@ namespace MyNS
 	/// <summary>
 	/// Memory information of a device. * This field has both telemetry and device information: - `totalRamBytes` - Device information - `availableRamBytes` - Telemetry information - `totalMemoryEncryption` - Device information * Data for this field is controlled via policy: [ReportDeviceMemoryInfo](https://chromeenterprise.google/policies/#ReportDeviceMemoryInfo) * Data Collection Frequency: - `totalRamBytes` - Only at upload - `availableRamBytes` - Every 10 minutes - `totalMemoryEncryption` - at device startup * Default Data Reporting Frequency: - `totalRamBytes` - 3 hours - `availableRamBytes` - 3 hours - `totalMemoryEncryption` - at device startup - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: only for `totalMemoryEncryption` * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_MEMORY_INFO
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1MemoryInfo
 	{
 		
@@ -2383,8 +2298,7 @@ namespace MyNS
 	/// <summary>
 	/// Memory encryption information of a device. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceMemoryInfo](https://chromeenterprise.google/policies/#ReportDeviceMemoryInfo) * Data Collection Frequency: At device startup * Default Data Reporting Frequency: At device startup - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TotalMemoryEncryptionInfo
 	{
 		
@@ -2413,52 +2327,47 @@ namespace MyNS
 		public string MaxKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_ENCRYPTION_ALGORITHM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_ENCRYPTION_ALGORITHM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_ENCRYPTION_ALGORITHM_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_ENCRYPTION_ALGORITHM_UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_128")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_128 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_256")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_256 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_ENCRYPTION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_ENCRYPTION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_ENCRYPTION_STATE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_ENCRYPTION_STATE_UNKNOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_ENCRYPTION_STATE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_ENCRYPTION_STATE_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_ENCRYPTION_STATE_TME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_ENCRYPTION_STATE_TME = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMORY_ENCRYPTION_STATE_MKTME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMORY_ENCRYPTION_STATE_MKTME = 4,
 	}
 	
 	/// <summary>
 	/// Contains samples of memory status reports. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceMemoryInfo](https://chromeenterprise.google/policies/#ReportDeviceMemoryInfo) * Data Collection Frequency: Only at upload, SystemRamFreeByes is collected every 10 minutes * Default Data Reporting Frequency: Every 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_MEMORY_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1MemoryStatusReport
 	{
 		
@@ -2490,8 +2399,7 @@ namespace MyNS
 	/// <summary>
 	/// Network bandwidth report. * Granular permission needed: TELEMETRY_API_NETWORK_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1NetworkBandwidthReport
 	{
 		
@@ -2511,8 +2419,7 @@ namespace MyNS
 	/// <summary>
 	/// Network testing results to determine the health of the device's network connection, for example whether the HTTPS latency is high or normal. * Granular permission needed: TELEMETRY_API_NETWORK_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1NetworkDiagnosticsReport
 	{
 		
@@ -2532,8 +2439,7 @@ namespace MyNS
 	/// <summary>
 	/// Network device information. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportNetworkDeviceConfiguration](https://chromeenterprise.google/policies/#ReportNetworkDeviceConfiguration) * Data Collection Frequency: At device startup * Default Data Reporting Frequency: At device startup - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_NETWORK_INFO
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1NetworkInfo
 	{
 		
@@ -2547,8 +2453,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the network device. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportNetworkDeviceConfiguration](https://chromeenterprise.google/policies/#ReportNetworkDeviceConfiguration) * Data Collection Frequency: At device startup * Default Data Reporting Frequency: At device startup - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1NetworkDevice
 	{
 		
@@ -2589,30 +2494,27 @@ namespace MyNS
 		public System.Nullable<GoogleChromeManagementV1NetworkDeviceType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1NetworkDeviceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_DEVICE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_DEVICE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CELLULAR_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CELLULAR_DEVICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ETHERNET_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ETHERNET_DEVICE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI_DEVICE = 3,
 	}
 	
 	/// <summary>
 	/// State of visible/configured networks. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportNetworkStatus](https://chromeenterprise.google/policies/#ReportNetworkStatus) * Data Collection Frequency: 60 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: Yes * Granular permission needed: TELEMETRY_API_NETWORK_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1NetworkStatusReport
 	{
 		
@@ -2701,61 +2603,56 @@ namespace MyNS
 		public System.Nullable<System.Boolean> WifiPowerManagementEnabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1NetworkStatusReportConnectionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_CONNECTION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_CONNECTION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONLINE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PORTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PORTAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_CONNECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_CONNECTED = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1NetworkStatusReportConnectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CELLULAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CELLULAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ETHERNET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ETHERNET = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TETHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TETHER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI = 5,
 	}
 	
 	/// <summary>
 	/// Contains information regarding the current OS update status. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceOsUpdateStatus](https://chromeenterprise.google/policies/#ReportDeviceOsUpdateStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_OS_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1OsUpdateStatus
 	{
 		
@@ -2796,30 +2693,27 @@ namespace MyNS
 		public System.Nullable<GoogleChromeManagementV1OsUpdateStatusUpdateState> UpdateState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1OsUpdateStatusUpdateState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_IMAGE_DOWNLOAD_NOT_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_IMAGE_DOWNLOAD_NOT_STARTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_IMAGE_DOWNLOAD_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_IMAGE_DOWNLOAD_IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OS_UPDATE_NEED_REBOOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OS_UPDATE_NEED_REBOOT = 3,
 	}
 	
 	/// <summary>
 	/// Peripherals report. * Granular permission needed: TELEMETRY_API_PERIPHERALS_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1PeripheralsReport
 	{
 		
@@ -2839,8 +2733,7 @@ namespace MyNS
 	/// <summary>
 	/// USB connected peripheral report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1UsbPeripheralReport
 	{
 		
@@ -2896,8 +2789,7 @@ namespace MyNS
 	/// <summary>
 	/// Status data for storage. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceStorageStatus](https://chromeenterprise.google/policies/#ReportDeviceStorageStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_STORAGE_INFO
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1StorageInfo
 	{
 		
@@ -2923,8 +2815,7 @@ namespace MyNS
 	/// <summary>
 	/// Information for disk volumes
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1StorageInfoDiskVolume
 	{
 		
@@ -2950,8 +2841,7 @@ namespace MyNS
 	/// <summary>
 	/// Status data for storage. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceStorageStatus](https://chromeenterprise.google/policies/#ReportDeviceStorageStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_STORAGE_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1StorageStatusReport
 	{
 		
@@ -2971,8 +2861,7 @@ namespace MyNS
 	/// <summary>
 	/// Thunderbolt bus info. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceSecurityStatus](https://chromeenterprise.google/policies/#ReportDeviceSecurityStatus) * Data Collection Frequency: At device startup * Default Data Reporting Frequency: At device startup - Policy Controlled: No * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_BUS_DEVICE_INFO
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1ThunderboltInfo
 	{
 		
@@ -2983,39 +2872,36 @@ namespace MyNS
 		public System.Nullable<GoogleChromeManagementV1ThunderboltInfoSecurityLevel> SecurityLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1ThunderboltInfoSecurityLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THUNDERBOLT_SECURITY_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THUNDERBOLT_SECURITY_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THUNDERBOLT_SECURITY_NONE_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THUNDERBOLT_SECURITY_NONE_LEVEL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THUNDERBOLT_SECURITY_USER_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THUNDERBOLT_SECURITY_USER_LEVEL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THUNDERBOLT_SECURITY_SECURE_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THUNDERBOLT_SECURITY_SECURE_LEVEL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THUNDERBOLT_SECURITY_DP_ONLY_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THUNDERBOLT_SECURITY_DP_ONLY_LEVEL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THUNDERBOLT_SECURITY_USB_ONLY_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THUNDERBOLT_SECURITY_USB_ONLY_LEVEL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THUNDERBOLT_SECURITY_NO_PCIE_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THUNDERBOLT_SECURITY_NO_PCIE_LEVEL = 6,
 	}
 	
 	/// <summary>
 	/// Response message for listing telemetry events for a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1ListTelemetryEventsResponse
 	{
 		
@@ -3035,8 +2921,7 @@ namespace MyNS
 	/// <summary>
 	/// Telemetry data reported by a managed device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryEvent
 	{
 		
@@ -3110,8 +2995,7 @@ namespace MyNS
 	/// <summary>
 	/// `TelemetryAudioSevereUnderrunEvent` is triggered when a audio devices run out of buffer data for more than 5 seconds. * Granular permission needed: TELEMETRY_API_AUDIO_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent
 	{
 	}
@@ -3119,8 +3003,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a device associated with telemetry data. * Granular Permission needed: TELEMETRY_API_DEVICE
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryDeviceInfo
 	{
 		
@@ -3137,45 +3020,42 @@ namespace MyNS
 		public string OrgUnitId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1TelemetryEventEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIO_SEVERE_UNDERRUN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIO_SEVERE_UNDERRUN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_STATE_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_STATE_CHANGE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USB_ADDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USB_ADDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USB_REMOVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USB_REMOVED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_HTTPS_LATENCY_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NETWORK_HTTPS_LATENCY_CHANGE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI_SIGNAL_STRENGTH_LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI_SIGNAL_STRENGTH_LOW = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIFI_SIGNAL_STRENGTH_RECOVERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIFI_SIGNAL_STRENGTH_RECOVERED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPN_CONNECTION_STATE_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VPN_CONNECTION_STATE_CHANGE = 8,
 	}
 	
 	/// <summary>
 	/// Https latency routine is run periodically and `TelemetryHttpsLatencyChangeEvent` is triggered if a latency problem was detected or if the device has recovered from a latency problem. * Granular permission needed: TELEMETRY_API_NETWORK_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent
 	{
 		
@@ -3192,27 +3072,24 @@ namespace MyNS
 		public System.Nullable<GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState> HttpsLatencyState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HTTPS_LATENCY_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HTTPS_LATENCY_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECOVERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECOVERY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROBLEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROBLEM = 2,
 	}
 	
 	/// <summary>
 	/// `TelemetryNetworkConnectionStateChangeEvent` is triggered on network connection state changes. * Granular permission needed: TELEMETRY_API_NETWORK_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryNetworkConnectionStateChangeEvent
 	{
 		
@@ -3232,8 +3109,7 @@ namespace MyNS
 	/// <summary>
 	/// `TelemetryUsbPeripheralsEvent` is triggered USB devices are either added or removed. * Granular permission needed: TELEMETRY_API_PERIPHERALS_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryUsbPeripheralsEvent
 	{
 		
@@ -3247,8 +3123,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a user associated with telemetry data. * Granular permission needed: TELEMETRY_API_USER
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryUserInfo
 	{
 		
@@ -3268,8 +3143,7 @@ namespace MyNS
 	/// <summary>
 	/// `TelemetryNetworkSignalStrengthEvent` is triggered on WiFi signal strength events. * Granular permission needed: TELEMETRY_API_NETWORK_REPORT
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryNetworkSignalStrengthEvent
 	{
 		
@@ -3289,8 +3163,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing notification configs for a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1ListTelemetryNotificationConfigsResponse
 	{
 		
@@ -3310,8 +3183,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration to receive notifications of telemetry data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryNotificationConfig
 	{
 		
@@ -3343,8 +3215,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures how the telemetry data should be filtered.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryNotificationFilter
 	{
 		
@@ -3382,8 +3253,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures how the telemetry events should be filtered.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryEventNotificationFilter
 	{
 		
@@ -3397,8 +3267,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing telemetry users for a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1ListTelemetryUsersResponse
 	{
 		
@@ -3418,8 +3287,7 @@ namespace MyNS
 	/// <summary>
 	/// Telemetry data collected from a managed user. * Granular permission needed: TELEMETRY_API_USER
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryUser
 	{
 		
@@ -3463,8 +3331,7 @@ namespace MyNS
 	/// <summary>
 	/// Telemetry data collected for a managed user and device. * Granular permission needed: TELEMETRY_API_DEVICE
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChromeManagementV1TelemetryUserDevice
 	{
 		
@@ -3502,8 +3369,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

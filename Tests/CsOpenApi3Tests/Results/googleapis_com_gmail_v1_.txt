@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Auto-forwarding settings for an account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoForwarding
 	{
 		
@@ -44,30 +43,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoForwardingDisposition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dispositionUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dispositionUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="leaveInInbox")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		leaveInInbox = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archive = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trash = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="markRead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		markRead = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteMessagesRequest
 	{
 		
@@ -78,8 +74,7 @@ namespace MyNS
 		public string[] Ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchModifyMessagesRequest
 	{
 		
@@ -105,8 +100,7 @@ namespace MyNS
 	/// <summary>
 	/// The client-side encryption (CSE) configuration for the email address of an authenticated user. Gmail uses CSE configurations to save drafts of client-side encrypted email messages, and to sign and send encrypted email messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CseIdentity
 	{
 		
@@ -132,8 +126,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of a CSE identity that uses different key pairs for signing and encryption.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SignAndEncryptKeyPairs
 	{
 		
@@ -153,8 +146,7 @@ namespace MyNS
 	/// <summary>
 	/// A client-side encryption S/MIME key pair, which is comprised of a public key, its certificate chain, and metadata for its paired private key. Gmail uses the key pair to complete the following tasks: - Sign outgoing client-side encrypted messages. - Save and reopen drafts of client-side encrypted messages. - Save and reopen sent messages. - Decrypt incoming or archived S/MIME messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CseKeyPair
 	{
 		
@@ -201,27 +193,24 @@ namespace MyNS
 		public string[] SubjectEmailAddresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CseKeyPairEnablementState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stateUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stateUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 2,
 	}
 	
 	/// <summary>
 	/// Metadata for a private key instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CsePrivateKeyMetadata
 	{
 		
@@ -247,8 +236,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for hardware keys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HardwareKeyMetadata
 	{
 		
@@ -262,8 +250,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for private keys managed by an external key access control list service. For details about managing key access, see [Google Workspace CSE API Reference](https://developers.google.com/workspace/cse/reference).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KaclsKeyMetadata
 	{
 		
@@ -283,8 +270,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for a delegate. Delegates can read, send, and delete messages, as well as view and add contacts, for the delegator's account. See "Set up mail delegation" for more information about delegates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Delegate
 	{
 		
@@ -301,33 +287,30 @@ namespace MyNS
 		public System.Nullable<DelegateVerificationStatus> VerificationStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DelegateVerificationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verificationStatusUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verificationStatusUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rejected = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expired = 4,
 	}
 	
 	/// <summary>
 	/// Requests to turn off a client-side encryption key pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableCseKeyPairRequest
 	{
 	}
@@ -335,8 +318,7 @@ namespace MyNS
 	/// <summary>
 	/// A draft email in the user's mailbox.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Draft
 	{
 		
@@ -356,8 +338,7 @@ namespace MyNS
 	/// <summary>
 	/// An email message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -419,8 +400,7 @@ namespace MyNS
 	/// <summary>
 	/// A single MIME message part.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessagePart
 	{
 		
@@ -464,8 +444,7 @@ namespace MyNS
 	/// <summary>
 	/// The body of a single MIME message part.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessagePartBody
 	{
 		
@@ -488,8 +467,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessagePartHeader
 	{
 		
@@ -509,8 +487,7 @@ namespace MyNS
 	/// <summary>
 	/// Requests to turn on a client-side encryption key pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableCseKeyPairRequest
 	{
 	}
@@ -518,8 +495,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource definition for Gmail filters. Filters apply to specific messages instead of an entire email thread.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -545,8 +521,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of actions to perform on a message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterAction
 	{
 		
@@ -572,8 +547,7 @@ namespace MyNS
 	/// <summary>
 	/// Message matching criteria.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilterCriteria
 	{
 		
@@ -632,27 +606,24 @@ namespace MyNS
 		public string To { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilterCriteriaSizeComparison
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="smaller")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		smaller = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="larger")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		larger = 2,
 	}
 	
 	/// <summary>
 	/// Settings for a forwarding address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ForwardingAddress
 	{
 		
@@ -669,27 +640,24 @@ namespace MyNS
 		public System.Nullable<ForwardingAddressVerificationStatus> VerificationStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ForwardingAddressVerificationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verificationStatusUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verificationStatusUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accepted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 2,
 	}
 	
 	/// <summary>
 	/// A record of a change to the user's mailbox. Each history change may affect multiple messages in multiple ways.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class History
 	{
 		
@@ -730,8 +698,7 @@ namespace MyNS
 		public HistoryMessageDeleted[] MessagesDeleted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoryLabelAdded
 	{
 		
@@ -748,8 +715,7 @@ namespace MyNS
 		public Message Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoryLabelRemoved
 	{
 		
@@ -766,8 +732,7 @@ namespace MyNS
 		public Message Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoryMessageAdded
 	{
 		
@@ -778,8 +743,7 @@ namespace MyNS
 		public Message Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HistoryMessageDeleted
 	{
 		
@@ -793,8 +757,7 @@ namespace MyNS
 	/// <summary>
 	/// IMAP settings for an account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImapSettings
 	{
 		
@@ -823,30 +786,27 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxFolderSize { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImapSettingsExpungeBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expungeBehaviorUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expungeBehaviorUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trash = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleteForever")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deleteForever = 3,
 	}
 	
 	/// <summary>
 	/// Labels are used to categorize messages and threads within the user's mailbox. The maximum number of labels supported for a user's mailbox is 10,000.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Label
 	{
 		
@@ -908,8 +868,7 @@ namespace MyNS
 		public System.Nullable<LabelType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelColor
 	{
 		
@@ -926,53 +885,46 @@ namespace MyNS
 		public string TextColor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LabelLabelListVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="labelShow")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		labelShow = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="labelShowIfUnread")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		labelShowIfUnread = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="labelHide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		labelHide = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LabelMessageListVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="show")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		show = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hide = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LabelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="system")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		system = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 1,
 	}
 	
 	/// <summary>
 	/// Language settings for an account. These settings correspond to the "Language settings" feature in the web interface.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguageSettings
 	{
 		
@@ -983,8 +935,7 @@ namespace MyNS
 		public string DisplayLanguage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCseIdentitiesResponse
 	{
 		
@@ -1001,8 +952,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCseKeyPairsResponse
 	{
 		
@@ -1022,8 +972,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ListDelegates method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDelegatesResponse
 	{
 		
@@ -1034,8 +983,7 @@ namespace MyNS
 		public Delegate[] Delegates { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDraftsResponse
 	{
 		
@@ -1061,8 +1009,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ListFilters method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFiltersResponse
 	{
 		
@@ -1076,8 +1023,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ListForwardingAddresses method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListForwardingAddressesResponse
 	{
 		
@@ -1088,8 +1034,7 @@ namespace MyNS
 		public ForwardingAddress[] ForwardingAddresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListHistoryResponse
 	{
 		
@@ -1112,8 +1057,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLabelsResponse
 	{
 		
@@ -1124,8 +1068,7 @@ namespace MyNS
 		public Label[] Labels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMessagesResponse
 	{
 		
@@ -1151,8 +1094,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ListSendAs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSendAsResponse
 	{
 		
@@ -1166,8 +1108,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings associated with a send-as alias, which can be either the primary login address associated with the account or a custom "from" address. Send-as aliases correspond to the "Send Mail As" feature in the web interface.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendAs
 	{
 		
@@ -1229,8 +1170,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for communication with an SMTP service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SmtpMsa
 	{
 		
@@ -1265,27 +1205,24 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SmtpMsaSecurityMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="securityModeUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		securityModeUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ssl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ssl = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="starttls")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		starttls = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSmimeInfoResponse
 	{
 		
@@ -1299,8 +1236,7 @@ namespace MyNS
 	/// <summary>
 	/// An S/MIME email config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SmimeInfo
 	{
 		
@@ -1347,8 +1283,7 @@ namespace MyNS
 		public string Pkcs12 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListThreadsResponse
 	{
 		
@@ -1374,8 +1309,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of messages representing a conversation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Thread
 	{
 		
@@ -1404,8 +1338,7 @@ namespace MyNS
 		public string Snippet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyMessageRequest
 	{
 		
@@ -1422,8 +1355,7 @@ namespace MyNS
 		public string[] RemoveLabelIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyThreadRequest
 	{
 		
@@ -1443,8 +1375,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to obliterate a CSE key pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObliterateCseKeyPairRequest
 	{
 	}
@@ -1452,8 +1383,7 @@ namespace MyNS
 	/// <summary>
 	/// POP settings for an account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PopSettings
 	{
 		
@@ -1470,30 +1400,27 @@ namespace MyNS
 		public AutoForwardingDisposition Disposition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PopSettingsAccessWindow
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accessWindowUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accessWindowUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fromNowOn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fromNowOn = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="allMail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		allMail = 3,
 	}
 	
 	/// <summary>
 	/// Profile for a Gmail user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Profile
 	{
 		
@@ -1525,8 +1452,7 @@ namespace MyNS
 	/// <summary>
 	/// Vacation auto-reply settings for an account. These settings correspond to the "Vacation responder" feature in the web interface.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VacationSettings
 	{
 		
@@ -1582,8 +1508,7 @@ namespace MyNS
 	/// <summary>
 	/// Set up or update a new push notification watch on this user's mailbox.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WatchRequest
 	{
 		
@@ -1612,24 +1537,21 @@ namespace MyNS
 		public string TopicName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WatchRequestLabelFilterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="include")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		include = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="exclude")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		exclude = 1,
 	}
 	
 	/// <summary>
 	/// Push notification watch response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WatchResponse
 	{
 		
@@ -4274,39 +4196,39 @@ namespace MyNS
 	public enum Gmail_users_drafts_getFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minimal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minimal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="raw")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		raw = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="metadata")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		metadata = 3,
 	}
 	
 	public enum Gmail_users_messages_insertInternalDateSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="receivedTime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		receivedTime = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dateHeader")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dateHeader = 1,
 	}
 	
 	public enum Gmail_users_threads_getFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="metadata")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		metadata = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minimal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minimal = 2,
 	}
 }

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes how to combine multiple time series to provide a different view of the data. Aggregation of time series is done in two steps. First, each time series in the set is aligned to the same time interval boundaries, then the set of time series is optionally reduced in number.Alignment consists of applying the per_series_aligner operation to each time series after its data has been divided into regular alignment_period time intervals. This process takes all of the data points in an alignment period, applies a mathematical transformation such as averaging, minimum, maximum, delta, etc., and converts them into a single data point per period.Reduction is when the aligned and transformed time series can optionally be combined, reducing the number of time series through similar mathematical transformations. Reduction involves applying a cross_series_reducer to all the time series, optionally sorting the time series into subsets with group_by_fields, and applying the reducer to each subset.The raw time series data can contain a huge amount of information from multiple sources. Alignment and reduction transforms this mass of data into a more manageable and representative collection of data, for example "the 95% latency across the average of all tasks in a cluster". This representative data can be more easily graphed and comprehended, and the individual time series data is still available for later drilldown. For more details, see Filtering and aggregation (https://cloud.google.com/monitoring/api/v3/aggregation).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Aggregation
 	{
 		
@@ -50,124 +49,119 @@ namespace MyNS
 		public System.Nullable<AggregationPerSeriesAligner> PerSeriesAligner { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AggregationCrossSeriesReducer
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_MEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_MEAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_MIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_MIN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_MAX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_MAX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_SUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_SUM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_STDDEV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_STDDEV = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_COUNT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_COUNT_TRUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_COUNT_TRUE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_COUNT_FALSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_COUNT_FALSE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_FRACTION_TRUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_FRACTION_TRUE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_PERCENTILE_99")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_PERCENTILE_99 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_PERCENTILE_95")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_PERCENTILE_95 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_PERCENTILE_50")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_PERCENTILE_50 = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDUCE_PERCENTILE_05")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDUCE_PERCENTILE_05 = 13,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AggregationPerSeriesAligner
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_DELTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_DELTA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_RATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_RATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_INTERPOLATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_INTERPOLATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_NEXT_OLDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_NEXT_OLDER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_MIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_MIN = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_MAX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_MAX = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_MEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_MEAN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_COUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_COUNT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_SUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_SUM = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_STDDEV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_STDDEV = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_COUNT_TRUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_COUNT_TRUE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_COUNT_FALSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_COUNT_FALSE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_FRACTION_TRUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_FRACTION_TRUE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_PERCENTILE_99")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_PERCENTILE_99 = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_PERCENTILE_95")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_PERCENTILE_95 = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_PERCENTILE_50")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_PERCENTILE_50 = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_PERCENTILE_05")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_PERCENTILE_05 = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALIGN_PERCENT_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALIGN_PERCENT_CHANGE = 18,
 	}
 	
 	/// <summary>
 	/// Preview: An identifier for an aggregation function. Aggregation functions are SQL functions that group or transform data from multiple points to a single point. This is a preview feature and may be subject to change before final release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregationFunction
 	{
 		
@@ -187,8 +181,7 @@ namespace MyNS
 	/// <summary>
 	/// Preview: Parameter value applied to the aggregation function. This is a preview feature and may be subject to change before final release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parameter
 	{
 		
@@ -208,8 +201,7 @@ namespace MyNS
 	/// <summary>
 	/// A chart that displays alert policy data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlertChart
 	{
 		
@@ -223,8 +215,7 @@ namespace MyNS
 	/// <summary>
 	/// A chart axis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Axis
 	{
 		
@@ -241,27 +232,24 @@ namespace MyNS
 		public System.Nullable<AxisScale> Scale { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AxisScale
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCALE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCALE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINEAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG10")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG10 = 2,
 	}
 	
 	/// <summary>
 	/// Preview: A breakdown is an aggregation applied to the measures over a specified column. A breakdown can result in multiple series across a category for the provided measure. This is a preview feature and may be subject to change before final release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Breakdown
 	{
 		
@@ -290,30 +278,27 @@ namespace MyNS
 		public System.Nullable<BreakdownSortOrder> SortOrder { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BreakdownSortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORT_ORDER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SORT_ORDER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORT_ORDER_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SORT_ORDER_NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORT_ORDER_ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SORT_ORDER_ASCENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORT_ORDER_DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SORT_ORDER_DESCENDING = 3,
 	}
 	
 	/// <summary>
 	/// Options to control visual rendering of a chart.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChartOptions
 	{
 		
@@ -330,30 +315,27 @@ namespace MyNS
 		public System.Nullable<ChartOptionsMode> Mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChartOptionsMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="X_RAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		X_RAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATS = 3,
 	}
 	
 	/// <summary>
 	/// A widget that groups the other widgets. All widgets that are within the area spanned by the grouping widget are considered member widgets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollapsibleGroup
 	{
 		
@@ -367,8 +349,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the layout properties and content for a column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Column
 	{
 		
@@ -388,8 +369,7 @@ namespace MyNS
 	/// <summary>
 	/// Widget contains a single dashboard component and configuration of how to present the component in the dashboard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Widget
 	{
 		
@@ -487,8 +467,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -496,8 +475,7 @@ namespace MyNS
 	/// <summary>
 	/// A widget that displays a list of error groups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorReportingPanel
 	{
 		
@@ -523,8 +501,7 @@ namespace MyNS
 	/// <summary>
 	/// A widget that displays a list of incidents
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncidentList
 	{
 		
@@ -544,8 +521,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing a resource that can be used for monitoring, logging, billing, or other purposes. Examples include virtual machine instances, databases, and storage devices such as disks. The type field identifies a MonitoredResourceDescriptor object that describes the resource's schema. Information in the labels field identifies the actual resource and its attributes according to the schema. For example, a particular Compute Engine VM instance could be represented by the following object, because the MonitoredResourceDescriptor for "gce_instance" has labels "project_id", "instance_id" and "zone": { "type": "gce_instance", "labels": { "project_id": "my-project", "instance_id": "12345678901234", "zone": "us-central1-a" }} 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonitoredResource
 	{
 		
@@ -565,8 +541,7 @@ namespace MyNS
 	/// <summary>
 	/// A widget that displays a stream of log.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogsPanel
 	{
 		
@@ -586,8 +561,7 @@ namespace MyNS
 	/// <summary>
 	/// A widget that displays timeseries data as a pie or a donut.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PieChart
 	{
 		
@@ -610,27 +584,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ShowLabels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PieChartChartType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIE_CHART_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIE_CHART_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONUT = 2,
 	}
 	
 	/// <summary>
 	/// Groups a time series query definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PieChartDataSet
 	{
 		
@@ -668,8 +639,7 @@ namespace MyNS
 	/// <summary>
 	/// A chart dimension. Dimensions are a structured labewl, class, or category for a set of measurements in your data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimension
 	{
 		
@@ -725,8 +695,7 @@ namespace MyNS
 	/// <summary>
 	/// A chart measure. Measures represent a measured property in your chart data such as rainfall in inches, number of units sold, revenue gained, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Measure
 	{
 		
@@ -746,8 +715,7 @@ namespace MyNS
 	/// <summary>
 	/// TimeSeriesQuery collects the set of supported methods for querying time series data from the Stackdriver metrics API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSeriesQuery
 	{
 		
@@ -797,8 +765,7 @@ namespace MyNS
 	/// <summary>
 	/// Preview: A query that produces an aggregated response and supporting data. This is a preview feature and may be subject to change before final release.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpsAnalyticsQuery
 	{
 		
@@ -812,8 +779,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter that defines a subset of time series data that is displayed in a widget. Time series data is fetched using the ListTimeSeries (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSeriesFilter
 	{
 		
@@ -851,8 +817,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a ranking-based time series filter. Each input time series is ranked with an aligner. The filter will allow up to num_time_series time series to pass through it, selecting them based on the relative ranking.For example, if ranking_method is METHOD_MEAN,direction is BOTTOM, and num_time_series is 3, then the 3 times series with the lowest mean values will pass through the filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PickTimeSeriesFilter
 	{
 		
@@ -881,27 +846,24 @@ namespace MyNS
 		public System.Nullable<PickTimeSeriesFilterRankingMethod> RankingMethod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PickTimeSeriesFilterDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIRECTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM = 2,
 	}
 	
 	/// <summary>
 	/// Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive).The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Interval
 	{
 		
@@ -918,36 +880,33 @@ namespace MyNS
 		public string StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PickTimeSeriesFilterRankingMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_MEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METHOD_MEAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_MAX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METHOD_MAX = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_MIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METHOD_MIN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_SUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METHOD_SUM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_LATEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METHOD_LATEST = 5,
 	}
 	
 	/// <summary>
 	/// A filter that ranks streams based on their statistical relation to other streams in a request. Note: This field is deprecated and completely ignored by the API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatisticalTimeSeriesFilter
 	{
 		
@@ -964,24 +923,21 @@ namespace MyNS
 		public System.Nullable<StatisticalTimeSeriesFilterRankingMethod> RankingMethod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StatisticalTimeSeriesFilterRankingMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METHOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_CLUSTER_OUTLIER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METHOD_CLUSTER_OUTLIER = 1,
 	}
 	
 	/// <summary>
 	/// A pair of time series filters that define a ratio computation. The output time series is the pair-wise division of each aligned element from the numerator and denominator time series.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSeriesFilterRatio
 	{
 		
@@ -1019,8 +975,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a query to build the numerator or denominator of a TimeSeriesFilterRatio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RatioPart
 	{
 		
@@ -1040,8 +995,7 @@ namespace MyNS
 	/// <summary>
 	/// A widget showing the latest value of a metric, and how this value relates to one or more thresholds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Scorecard
 	{
 		
@@ -1079,8 +1033,7 @@ namespace MyNS
 	/// <summary>
 	/// A gauge chart shows where the current value sits within a pre-defined range. The upper and lower bounds should define the possible range of values for the scorecard's query (inclusive).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GaugeView
 	{
 		
@@ -1100,8 +1053,7 @@ namespace MyNS
 	/// <summary>
 	/// A sparkChart is a small chart suitable for inclusion in a table-cell or inline in text. This message contains the configuration for a sparkChart to show up on a Scorecard, showing recent trends of the scorecard's timeseries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparkChartView
 	{
 		
@@ -1118,27 +1070,24 @@ namespace MyNS
 		public System.Nullable<SparkChartViewSparkChartType> SparkChartType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SparkChartViewSparkChartType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPARK_CHART_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPARK_CHART_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPARK_LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPARK_LINE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPARK_BAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPARK_BAR = 2,
 	}
 	
 	/// <summary>
 	/// Defines a threshold for categorizing time series values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Threshold
 	{
 		
@@ -1173,59 +1122,52 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ThresholdColor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YELLOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YELLOW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ThresholdDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIRECTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABOVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BELOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BELOW = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ThresholdTargetAxis
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGET_AXIS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGET_AXIS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Y1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Y1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Y2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Y2 = 2,
 	}
 	
 	/// <summary>
 	/// A widget that defines a new section header. Sections populate a table of contents and allow easier navigation of long-form content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SectionHeader
 	{
 		
@@ -1245,8 +1187,7 @@ namespace MyNS
 	/// <summary>
 	/// A widget that groups the other widgets by using a dropdown menu. All widgets that are within the area spanned by the grouping widget are considered member widgets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SingleViewGroup
 	{
 	}
@@ -1254,8 +1195,7 @@ namespace MyNS
 	/// <summary>
 	/// A widget that displays textual content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Text
 	{
 		
@@ -1278,27 +1218,24 @@ namespace MyNS
 		public TextStyle Style { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MARKDOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MARKDOWN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RAW = 2,
 	}
 	
 	/// <summary>
 	/// Properties that determine how the title and content are styled
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextStyle
 	{
 		
@@ -1345,145 +1282,134 @@ namespace MyNS
 		public System.Nullable<TextStyleVerticalAlignment> VerticalAlignment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextStyleFontSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FONT_SIZE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FONT_SIZE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FS_EXTRA_SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FS_EXTRA_SMALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FS_SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FS_SMALL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FS_MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FS_MEDIUM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FS_LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FS_LARGE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FS_EXTRA_LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FS_EXTRA_LARGE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextStyleHorizontalAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HORIZONTAL_ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HORIZONTAL_ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="H_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		H_LEFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="H_CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		H_CENTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="H_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		H_RIGHT = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextStylePadding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PADDING_SIZE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PADDING_SIZE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P_EXTRA_SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P_EXTRA_SMALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P_SMALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P_SMALL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P_MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P_MEDIUM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P_LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P_LARGE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P_EXTRA_LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P_EXTRA_LARGE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextStylePointerLocation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POINTER_LOCATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POINTER_LOCATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_TOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_RIGHT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_BOTTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_BOTTOM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_LEFT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_TOP_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_TOP_LEFT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_TOP_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_TOP_RIGHT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_RIGHT_TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_RIGHT_TOP = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_RIGHT_BOTTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_RIGHT_BOTTOM = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_BOTTOM_RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_BOTTOM_RIGHT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_BOTTOM_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_BOTTOM_LEFT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_LEFT_BOTTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_LEFT_BOTTOM = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PL_LEFT_TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PL_LEFT_TOP = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TextStyleVerticalAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERTICAL_ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERTICAL_ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V_TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V_TOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V_CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V_CENTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V_BOTTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V_BOTTOM = 3,
 	}
 	
 	/// <summary>
 	/// A table that displays time series data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSeriesTable
 	{
 		
@@ -1509,8 +1435,7 @@ namespace MyNS
 	/// <summary>
 	/// The persistent settings for a table's columns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnSettings
 	{
 		
@@ -1530,8 +1455,7 @@ namespace MyNS
 	/// <summary>
 	/// Groups a time series query definition with table options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableDataSet
 	{
 		
@@ -1563,8 +1487,7 @@ namespace MyNS
 	/// <summary>
 	/// Table display options that can be reused.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableDisplayOptions
 	{
 		
@@ -1575,27 +1498,24 @@ namespace MyNS
 		public string[] ShownColumns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TimeSeriesTableMetricVisualization
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_VISUALIZATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_VISUALIZATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAR = 2,
 	}
 	
 	/// <summary>
 	/// A chart that displays data on a 2D (X and Y axes) plane.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class XyChart
 	{
 		
@@ -1645,8 +1565,7 @@ namespace MyNS
 	/// <summary>
 	/// Groups a time series query definition with charting options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSet
 	{
 		
@@ -1699,33 +1618,30 @@ namespace MyNS
 		public TimeSeriesQuery TimeSeriesQuery { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataSetPlotType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLOT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLOT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STACKED_AREA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STACKED_AREA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STACKED_BAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STACKED_BAR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEATMAP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEATMAP = 4,
 	}
 	
 	/// <summary>
 	/// A simplified layout that divides the available space into vertical columns and arranges a set of widgets vertically in each column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColumnLayout
 	{
 		
@@ -1739,8 +1655,7 @@ namespace MyNS
 	/// <summary>
 	/// A Google Stackdriver dashboard. Dashboards define the content and layout of pages in the Stackdriver web application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dashboard
 	{
 		
@@ -1802,8 +1717,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter to reduce the amount of data charted in relevant widgets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DashboardFilter
 	{
 		
@@ -1832,36 +1746,33 @@ namespace MyNS
 		public string TemplateVariable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DashboardFilterFilterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_LABEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_LABEL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_LABEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_LABEL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_METADATA_LABEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_METADATA_LABEL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM_METADATA_LABEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM_METADATA_LABEL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GROUP = 5,
 	}
 	
 	/// <summary>
 	/// A basic layout divides the available space into vertical columns of equal width and arranges a list of widgets using a row-first strategy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GridLayout
 	{
 		
@@ -1881,8 +1792,7 @@ namespace MyNS
 	/// <summary>
 	/// A mosaic layout divides the available space into a grid of blocks, and overlays the grid with tiles. Unlike GridLayout, tiles may span multiple grid blocks and can be placed at arbitrary locations in the grid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MosaicLayout
 	{
 		
@@ -1902,8 +1812,7 @@ namespace MyNS
 	/// <summary>
 	/// A single tile in the mosaic. The placement and size of the tile are configurable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tile
 	{
 		
@@ -1941,8 +1850,7 @@ namespace MyNS
 	/// <summary>
 	/// A simplified layout that divides the available space into rows and arranges a set of widgets horizontally in each row.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RowLayout
 	{
 		
@@ -1956,8 +1864,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines the layout properties and content for a row.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Row
 	{
 		
@@ -1977,8 +1884,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of (label, value) pairs that were removed from a Distribution time series during aggregation and then added as an attachment to a Distribution.Exemplar.The full label set for the exemplars is constructed by using the dropped pairs in combination with the label values that remain on the aggregated Distribution time series. The constructed full label set can be used to identify the specific entity, such as the instance or job, which might be contributing to a long-tail. However, with dropped labels, the storage requirements are reduced because only the aggregated distribution values for a large group of time series are stored.Note that there are no guarantees on ordering of the labels from exemplar-to-exemplar and from distribution-to-distribution in the same stream, and there may be duplicates. It is up to clients to resolve any ambiguities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DroppedLabels
 	{
 		
@@ -1992,8 +1898,7 @@ namespace MyNS
 	/// <summary>
 	/// A single field of a message type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Field
 	{
 		
@@ -2058,94 +1963,89 @@ namespace MyNS
 		public string TypeUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FieldCardinality
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CARDINALITY_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CARDINALITY_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CARDINALITY_OPTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CARDINALITY_OPTIONAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CARDINALITY_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CARDINALITY_REQUIRED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CARDINALITY_REPEATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CARDINALITY_REPEATED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FieldKind
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_DOUBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_DOUBLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_FLOAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_FLOAT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_INT64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_INT64 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UINT64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UINT64 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_INT32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_INT32 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_FIXED64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_FIXED64 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_FIXED32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_FIXED32 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_BOOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_BOOL = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_STRING = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_GROUP = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_MESSAGE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_BYTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_BYTES = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UINT32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UINT32 = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_ENUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_ENUM = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_SFIXED32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_SFIXED32 = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_SFIXED64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_SFIXED64 = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_SINT32")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_SINT32 = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_SINT64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_SINT64 = 18,
 	}
 	
 	/// <summary>
 	/// A protocol buffer option, which can be attached to a message, field, enumeration, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Option
 	{
 		
@@ -2165,8 +2065,7 @@ namespace MyNS
 	/// <summary>
 	/// Message that represents an arbitrary HTTP body. It should only be used for payload formats that can't be represented as JSON, such as raw binary or an HTML page.This message can be used both in streaming and non-streaming API methods in the request as well as the response.It can be used as a top-level request field, which is convenient if one wants to extract parameters from either the URL or HTTP template into the request fields and also want access to the raw HTTP body.Example: message GetResourceRequest { // A unique request id. string request_id = 1; // The raw HTTP body is bound to this field. google.api.HttpBody http_body = 2; } service ResourceService { rpc GetResource(GetResourceRequest) returns (google.api.HttpBody); rpc UpdateResource(google.api.HttpBody) returns (google.protobuf.Empty); } Example with streaming methods: service CaldavService { rpc GetCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); rpc UpdateCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); } Use of this type only changes how the request and response bodies are handled, all other features will continue to work unchanged.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpBody
 	{
 		
@@ -2192,8 +2091,7 @@ namespace MyNS
 	/// <summary>
 	/// The ListDashboards request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDashboardsResponse
 	{
 		
@@ -2213,8 +2111,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ListMetricsScopesByMonitoredProject method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMetricsScopesByMonitoredProjectResponse
 	{
 		
@@ -2228,8 +2125,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a Metrics Scope (https://cloud.google.com/monitoring/settings#concept-scope) in Cloud Monitoring, which specifies one or more Google projects and zero or more AWS accounts to monitor together.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricsScope
 	{
 		
@@ -2261,8 +2157,7 @@ namespace MyNS
 	/// <summary>
 	/// A project being monitored (https://cloud.google.com/monitoring/settings/multiple-projects#create-multi) by a Metrics Scope.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MonitoredProject
 	{
 		
@@ -2282,8 +2177,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -2321,8 +2215,7 @@ namespace MyNS
 	/// <summary>
 	/// The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -2348,8 +2241,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata for longrunning operation for the edit Metrics Scope endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		
@@ -2372,33 +2264,30 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DONE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 4,
 	}
 	
 	/// <summary>
 	/// QueryExemplarsRequest holds all parameters of the Prometheus upstream API for querying exemplars.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryExemplarsRequest
 	{
 		
@@ -2424,8 +2313,7 @@ namespace MyNS
 	/// <summary>
 	/// QueryInstantRequest holds all parameters of the Prometheus upstream instant query API plus GCM specific parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryInstantRequest
 	{
 		
@@ -2451,8 +2339,7 @@ namespace MyNS
 	/// <summary>
 	/// QueryLabelsRequest holds all parameters of the Prometheus upstream API for returning a list of label names.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryLabelsRequest
 	{
 		
@@ -2478,8 +2365,7 @@ namespace MyNS
 	/// <summary>
 	/// QueryRangeRequest holds all parameters of the Prometheus upstream range query API plus GCM specific parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryRangeRequest
 	{
 		
@@ -2517,8 +2403,7 @@ namespace MyNS
 	/// <summary>
 	/// QuerySeries holds all parameters of the Prometheus upstream API for querying series.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuerySeriesRequest
 	{
 		
@@ -2538,8 +2423,7 @@ namespace MyNS
 	/// <summary>
 	/// SourceContext represents information about the source of a protobuf element, like the file in which it is defined.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceContext
 	{
 		
@@ -2553,8 +2437,7 @@ namespace MyNS
 	/// <summary>
 	/// The context of a span. This is attached to an Exemplar in Distribution values during aggregation.It contains the name of a span with format: projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID] 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpanContext
 	{
 		
@@ -2568,8 +2451,7 @@ namespace MyNS
 	/// <summary>
 	/// A protocol buffer message type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Type
 	{
 		
@@ -2616,19 +2498,17 @@ namespace MyNS
 		public System.Nullable<TypeSyntax> Syntax { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TypeSyntax
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYNTAX_PROTO2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYNTAX_PROTO2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYNTAX_PROTO3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYNTAX_PROTO3 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYNTAX_EDITIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYNTAX_EDITIONS = 2,
 	}
 	

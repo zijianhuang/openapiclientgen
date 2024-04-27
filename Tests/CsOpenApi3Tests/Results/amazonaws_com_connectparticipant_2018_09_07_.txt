@@ -17,50 +17,42 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompleteAttachmentUploadResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateParticipantConnectionResponse
 	{
 		
@@ -74,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// The websocket for the participant's connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Websocket
 	{
 		
@@ -89,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// Connection credentials. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectionCredentials
 	{
 		
@@ -101,27 +91,23 @@ namespace MyNS
 		public string Expiry { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConnectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEBSOCKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEBSOCKET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTION_CREDENTIALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTION_CREDENTIALS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisconnectParticipantResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAttachmentResponse
 	{
 		
@@ -132,8 +118,7 @@ namespace MyNS
 		public string UrlExpiry { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTranscriptResponse
 	{
 		
@@ -150,8 +135,7 @@ namespace MyNS
 	/// <summary>
 	/// An item - message or event - that has been sent. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Item
 	{
 		
@@ -192,70 +176,65 @@ namespace MyNS
 		public string ContactId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChatItemType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTICIPANT_JOINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTICIPANT_JOINED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTICIPANT_LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTICIPANT_LEFT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHAT_ENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHAT_ENDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_SUCCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MESSAGE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTACHMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTACHMENT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTION_ACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTION_ACK = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MESSAGE_DELIVERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MESSAGE_DELIVERED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MESSAGE_READ")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MESSAGE_READ = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ParticipantRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AGENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AGENT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM = 2,
 	}
 	
 	/// <summary>
 	/// The case-insensitive input to indicate standard MIME type that describes the format of the file that will be uploaded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachmentItem
 	{
 		
@@ -272,27 +251,24 @@ namespace MyNS
 		public ArtifactStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArtifactStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 2,
 	}
 	
 	/// <summary>
 	/// Contains metadata related to a message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageMetadata
 	{
 		
@@ -306,8 +282,7 @@ namespace MyNS
 	/// <summary>
 	/// The receipt for the message delivered to the recipient.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Receipt
 	{
 		
@@ -321,8 +296,7 @@ namespace MyNS
 		public string RecipientParticipantId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendEventResponse
 	{
 		
@@ -333,8 +307,7 @@ namespace MyNS
 		public string AbsoluteTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessageResponse
 	{
 		
@@ -345,8 +318,7 @@ namespace MyNS
 		public string AbsoluteTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartAttachmentUploadResponse
 	{
 		
@@ -360,8 +332,7 @@ namespace MyNS
 	/// <summary>
 	/// Fields to be used while uploading the attachment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadMetadata
 	{
 		
@@ -375,14 +346,12 @@ namespace MyNS
 		public UploadMetadataSignedHeaders HeadersToInclude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadMetadataSignedHeaders
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompleteAttachmentUploadRequest
 	{
 		
@@ -401,8 +370,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateParticipantConnectionRequest
 	{
 		
@@ -413,8 +381,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ConnectParticipant { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisconnectParticipantRequest
 	{
 		
@@ -422,8 +389,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAttachmentRequest
 	{
 		
@@ -435,37 +401,32 @@ namespace MyNS
 		public string AttachmentId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScanDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORWARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORWARD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKWARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKWARD = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 1,
 	}
 	
 	/// <summary>
 	/// A filtering option for where to start. For example, if you sent 100 messages, start with message 50. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartPosition
 	{
 		
@@ -479,8 +440,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MostRecent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetTranscriptRequest
 	{
 		
@@ -503,8 +463,7 @@ namespace MyNS
 		public StartPosition StartPosition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendEventRequest
 	{
 		
@@ -522,8 +481,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessageRequest
 	{
 		
@@ -545,8 +503,7 @@ namespace MyNS
 		public string ClientToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartAttachmentUploadRequest
 	{
 		

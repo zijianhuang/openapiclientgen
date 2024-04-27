@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation progress. Included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_AnnotateVideoProgress
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation progress for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_VideoAnnotationProgress
 	{
 		
@@ -77,48 +75,45 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEATURE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEATURE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABEL_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABEL_DETECTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOT_CHANGE_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOT_CHANGE_DETECTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPLICIT_CONTENT_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPLICIT_CONTENT_DETECTION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FACE_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FACE_DETECTION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPEECH_TRANSCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPEECH_TRANSCRIPTION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_DETECTION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT_TRACKING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT_TRACKING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGO_RECOGNITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGO_RECOGNITION = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSON_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSON_DETECTION = 9,
 	}
 	
 	/// <summary>
 	/// Video segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_VideoSegment
 	{
 		
@@ -138,8 +133,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation response. Included in the `response` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_AnnotateVideoResponse
 	{
 		
@@ -153,8 +147,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation results for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_VideoAnnotationResults
 	{
 		
@@ -264,8 +257,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpc_Status
 	{
 		
@@ -291,8 +283,7 @@ namespace MyNS
 	/// <summary>
 	/// Explicit content annotation (based on per-frame visual signals only). If no explicit content has been detected in a frame, no annotations are present for that frame.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_ExplicitContentAnnotation
 	{
 		
@@ -312,8 +303,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for explicit content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_ExplicitContentFrame
 	{
 		
@@ -330,36 +320,33 @@ namespace MyNS
 		public string TimeOffset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIKELIHOOD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIKELIHOOD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERY_UNLIKELY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERY_UNLIKELY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLIKELY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLIKELY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSSIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSSIBLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIKELY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIKELY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERY_LIKELY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERY_LIKELY = 5,
 	}
 	
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_FaceAnnotation
 	{
 		
@@ -385,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_FaceFrame
 	{
 		
@@ -406,8 +392,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_NormalizedBoundingBox
 	{
 		
@@ -439,8 +424,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_FaceSegment
 	{
 		
@@ -454,8 +438,7 @@ namespace MyNS
 	/// <summary>
 	/// Face detection annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_FaceDetectionAnnotation
 	{
 		
@@ -481,8 +464,7 @@ namespace MyNS
 	/// <summary>
 	/// A track of an object instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_Track
 	{
 		
@@ -514,8 +496,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected attribute represented by name in string format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_DetectedAttribute
 	{
 		
@@ -541,8 +522,7 @@ namespace MyNS
 	/// <summary>
 	/// For tracking related features. An object at time_offset with attributes, and located with normalized_bounding_box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_TimestampedObject
 	{
 		
@@ -574,8 +554,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected landmark represented by name in string format and a 2D location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_DetectedLandmark
 	{
 		
@@ -601,8 +580,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_NormalizedVertex
 	{
 		
@@ -622,8 +600,7 @@ namespace MyNS
 	/// <summary>
 	/// Label annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_LabelAnnotation
 	{
 		
@@ -661,8 +638,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity from video analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_Entity
 	{
 		
@@ -688,8 +664,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_LabelFrame
 	{
 		
@@ -709,8 +684,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_LabelSegment
 	{
 		
@@ -730,8 +704,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation corresponding to one detected, tracked and recognized logo class.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_LogoRecognitionAnnotation
 	{
 		
@@ -757,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations corresponding to one tracked object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_ObjectTrackingAnnotation
 	{
 		
@@ -802,8 +774,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotations for object detection and tracking. This field stores per frame location, time offset, and confidence.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_ObjectTrackingFrame
 	{
 		
@@ -823,8 +794,7 @@ namespace MyNS
 	/// <summary>
 	/// Person detection annotation per video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_PersonDetectionAnnotation
 	{
 		
@@ -844,8 +814,7 @@ namespace MyNS
 	/// <summary>
 	/// A speech recognition result corresponding to a portion of the audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_SpeechTranscription
 	{
 		
@@ -865,8 +834,7 @@ namespace MyNS
 	/// <summary>
 	/// Alternative hypotheses (a.k.a. n-best list).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_SpeechRecognitionAlternative
 	{
 		
@@ -892,8 +860,7 @@ namespace MyNS
 	/// <summary>
 	/// Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_WordInfo
 	{
 		
@@ -931,8 +898,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations related to one detected OCR text snippet. This will contain the corresponding text, confidence value, and frame level information for each detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_TextAnnotation
 	{
 		
@@ -958,8 +924,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for text detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_TextSegment
 	{
 		
@@ -985,8 +950,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for text annotation (OCR). Contains information regarding timestamp and bounding box locations for the frames containing detected OCR text snippets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_TextFrame
 	{
 		
@@ -1006,8 +970,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding polygon for text (that might not be aligned with axis). Contains list of the corner points in clockwise order starting from top-left corner. For example, for a rectangular bounding box: When the text is horizontal it might look like: 0----1 | | 3----2 When it's clockwise rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3). Note that values can be less than 0, or greater than 1 due to trignometric calculations for location of the box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1_NormalizedBoundingPoly
 	{
 		
@@ -1021,8 +984,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation progress. Included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_AnnotateVideoProgress
 	{
 		
@@ -1036,8 +998,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation progress for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress
 	{
 		
@@ -1081,8 +1042,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_VideoSegment
 	{
 		
@@ -1102,8 +1062,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_AnnotateVideoRequest
 	{
 		
@@ -1147,8 +1106,7 @@ namespace MyNS
 	/// <summary>
 	/// Video context and/or feature-specific parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_VideoContext
 	{
 		
@@ -1210,8 +1168,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for EXPLICIT_CONTENT_DETECTION.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_ExplicitContentDetectionConfig
 	{
 		
@@ -1225,8 +1182,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for FACE_DETECTION.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_FaceDetectionConfig
 	{
 		
@@ -1252,8 +1208,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for LABEL_DETECTION.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_LabelDetectionConfig
 	{
 		
@@ -1288,30 +1243,27 @@ namespace MyNS
 		public System.Nullable<System.Single> VideoConfidenceThreshold { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudVideointelligenceV1beta2_LabelDetectionConfigLabelDetectionMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABEL_DETECTION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABEL_DETECTION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOT_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOT_MODE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRAME_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRAME_MODE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOT_AND_FRAME_MODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOT_AND_FRAME_MODE = 3,
 	}
 	
 	/// <summary>
 	/// Config for OBJECT_TRACKING.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_ObjectTrackingConfig
 	{
 		
@@ -1325,8 +1277,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for PERSON_DETECTION.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_PersonDetectionConfig
 	{
 		
@@ -1352,8 +1303,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for SHOT_CHANGE_DETECTION.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_ShotChangeDetectionConfig
 	{
 		
@@ -1367,8 +1317,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for SPEECH_TRANSCRIPTION.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_SpeechTranscriptionConfig
 	{
 		
@@ -1430,8 +1379,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides "hints" to the speech recognizer to favor specific words and phrases in the results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_SpeechContext
 	{
 		
@@ -1445,8 +1393,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for TEXT_DETECTION.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_TextDetectionConfig
 	{
 		
@@ -1466,8 +1413,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation response. Included in the `response` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_AnnotateVideoResponse
 	{
 		
@@ -1481,8 +1427,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation results for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_VideoAnnotationResults
 	{
 		
@@ -1592,8 +1537,7 @@ namespace MyNS
 	/// <summary>
 	/// Explicit content annotation (based on per-frame visual signals only). If no explicit content has been detected in a frame, no annotations are present for that frame.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation
 	{
 		
@@ -1613,8 +1557,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for explicit content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame
 	{
 		
@@ -1634,8 +1577,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_FaceAnnotation
 	{
 		
@@ -1661,8 +1603,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_FaceFrame
 	{
 		
@@ -1682,8 +1623,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_NormalizedBoundingBox
 	{
 		
@@ -1715,8 +1655,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_FaceSegment
 	{
 		
@@ -1730,8 +1669,7 @@ namespace MyNS
 	/// <summary>
 	/// Face detection annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_FaceDetectionAnnotation
 	{
 		
@@ -1757,8 +1695,7 @@ namespace MyNS
 	/// <summary>
 	/// A track of an object instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_Track
 	{
 		
@@ -1790,8 +1727,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected attribute represented by name in string format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_DetectedAttribute
 	{
 		
@@ -1817,8 +1753,7 @@ namespace MyNS
 	/// <summary>
 	/// For tracking related features. An object at time_offset with attributes, and located with normalized_bounding_box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_TimestampedObject
 	{
 		
@@ -1850,8 +1785,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected landmark represented by name in string format and a 2D location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_DetectedLandmark
 	{
 		
@@ -1877,8 +1811,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_NormalizedVertex
 	{
 		
@@ -1898,8 +1831,7 @@ namespace MyNS
 	/// <summary>
 	/// Label annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_LabelAnnotation
 	{
 		
@@ -1937,8 +1869,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity from video analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_Entity
 	{
 		
@@ -1964,8 +1895,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_LabelFrame
 	{
 		
@@ -1985,8 +1915,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_LabelSegment
 	{
 		
@@ -2006,8 +1935,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation corresponding to one detected, tracked and recognized logo class.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_LogoRecognitionAnnotation
 	{
 		
@@ -2033,8 +1961,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations corresponding to one tracked object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation
 	{
 		
@@ -2078,8 +2005,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotations for object detection and tracking. This field stores per frame location, time offset, and confidence.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_ObjectTrackingFrame
 	{
 		
@@ -2099,8 +2025,7 @@ namespace MyNS
 	/// <summary>
 	/// Person detection annotation per video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_PersonDetectionAnnotation
 	{
 		
@@ -2120,8 +2045,7 @@ namespace MyNS
 	/// <summary>
 	/// A speech recognition result corresponding to a portion of the audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_SpeechTranscription
 	{
 		
@@ -2141,8 +2065,7 @@ namespace MyNS
 	/// <summary>
 	/// Alternative hypotheses (a.k.a. n-best list).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_SpeechRecognitionAlternative
 	{
 		
@@ -2168,8 +2091,7 @@ namespace MyNS
 	/// <summary>
 	/// Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_WordInfo
 	{
 		
@@ -2207,8 +2129,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations related to one detected OCR text snippet. This will contain the corresponding text, confidence value, and frame level information for each detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_TextAnnotation
 	{
 		
@@ -2234,8 +2155,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for text detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_TextSegment
 	{
 		
@@ -2261,8 +2181,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for text annotation (OCR). Contains information regarding timestamp and bounding box locations for the frames containing detected OCR text snippets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_TextFrame
 	{
 		
@@ -2282,8 +2201,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding polygon for text (that might not be aligned with axis). Contains list of the corner points in clockwise order starting from top-left corner. For example, for a rectangular bounding box: When the text is horizontal it might look like: 0----1 | | 3----2 When it's clockwise rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3). Note that values can be less than 0, or greater than 1 due to trignometric calculations for location of the box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1beta2_NormalizedBoundingPoly
 	{
 		
@@ -2297,8 +2215,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation progress. Included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_AnnotateVideoProgress
 	{
 		
@@ -2312,8 +2229,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation progress for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress
 	{
 		
@@ -2357,8 +2273,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_VideoSegment
 	{
 		
@@ -2378,8 +2293,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation response. Included in the `response` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_AnnotateVideoResponse
 	{
 		
@@ -2393,8 +2307,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation results for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationResults
 	{
 		
@@ -2504,8 +2417,7 @@ namespace MyNS
 	/// <summary>
 	/// Explicit content annotation (based on per-frame visual signals only). If no explicit content has been detected in a frame, no annotations are present for that frame.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_ExplicitContentAnnotation
 	{
 		
@@ -2525,8 +2437,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for explicit content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame
 	{
 		
@@ -2546,8 +2457,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_FaceAnnotation
 	{
 		
@@ -2573,8 +2483,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_FaceFrame
 	{
 		
@@ -2594,8 +2503,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingBox
 	{
 		
@@ -2627,8 +2535,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_FaceSegment
 	{
 		
@@ -2642,8 +2549,7 @@ namespace MyNS
 	/// <summary>
 	/// Face detection annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_FaceDetectionAnnotation
 	{
 		
@@ -2669,8 +2575,7 @@ namespace MyNS
 	/// <summary>
 	/// A track of an object instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_Track
 	{
 		
@@ -2702,8 +2607,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected attribute represented by name in string format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_DetectedAttribute
 	{
 		
@@ -2729,8 +2633,7 @@ namespace MyNS
 	/// <summary>
 	/// For tracking related features. An object at time_offset with attributes, and located with normalized_bounding_box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_TimestampedObject
 	{
 		
@@ -2762,8 +2665,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected landmark represented by name in string format and a 2D location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_DetectedLandmark
 	{
 		
@@ -2789,8 +2691,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_NormalizedVertex
 	{
 		
@@ -2810,8 +2711,7 @@ namespace MyNS
 	/// <summary>
 	/// Label annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation
 	{
 		
@@ -2849,8 +2749,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity from video analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_Entity
 	{
 		
@@ -2876,8 +2775,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_LabelFrame
 	{
 		
@@ -2897,8 +2795,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_LabelSegment
 	{
 		
@@ -2918,8 +2815,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation corresponding to one detected, tracked and recognized logo class.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_LogoRecognitionAnnotation
 	{
 		
@@ -2945,8 +2841,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations corresponding to one tracked object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingAnnotation
 	{
 		
@@ -2990,8 +2885,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotations for object detection and tracking. This field stores per frame location, time offset, and confidence.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingFrame
 	{
 		
@@ -3011,8 +2905,7 @@ namespace MyNS
 	/// <summary>
 	/// Person detection annotation per video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_PersonDetectionAnnotation
 	{
 		
@@ -3032,8 +2925,7 @@ namespace MyNS
 	/// <summary>
 	/// A speech recognition result corresponding to a portion of the audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_SpeechTranscription
 	{
 		
@@ -3053,8 +2945,7 @@ namespace MyNS
 	/// <summary>
 	/// Alternative hypotheses (a.k.a. n-best list).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_SpeechRecognitionAlternative
 	{
 		
@@ -3080,8 +2971,7 @@ namespace MyNS
 	/// <summary>
 	/// Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_WordInfo
 	{
 		
@@ -3119,8 +3009,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations related to one detected OCR text snippet. This will contain the corresponding text, confidence value, and frame level information for each detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_TextAnnotation
 	{
 		
@@ -3146,8 +3035,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for text detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_TextSegment
 	{
 		
@@ -3173,8 +3061,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for text annotation (OCR). Contains information regarding timestamp and bounding box locations for the frames containing detected OCR text snippets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_TextFrame
 	{
 		
@@ -3194,8 +3081,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding polygon for text (that might not be aligned with axis). Contains list of the corner points in clockwise order starting from top-left corner. For example, for a rectangular bounding box: When the text is horizontal it might look like: 0----1 | | 3----2 When it's clockwise rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3). Note that values can be less than 0, or greater than 1 due to trignometric calculations for location of the box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingPoly
 	{
 		
@@ -3209,8 +3095,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation progress. Included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_AnnotateVideoProgress
 	{
 		
@@ -3224,8 +3109,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation progress for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress
 	{
 		
@@ -3269,8 +3153,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_VideoSegment
 	{
 		
@@ -3290,8 +3173,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation response. Included in the `response` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_AnnotateVideoResponse
 	{
 		
@@ -3305,8 +3187,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation results for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationResults
 	{
 		
@@ -3416,8 +3297,7 @@ namespace MyNS
 	/// <summary>
 	/// Explicit content annotation (based on per-frame visual signals only). If no explicit content has been detected in a frame, no annotations are present for that frame.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_ExplicitContentAnnotation
 	{
 		
@@ -3437,8 +3317,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for explicit content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame
 	{
 		
@@ -3458,8 +3337,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_FaceAnnotation
 	{
 		
@@ -3485,8 +3363,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_FaceFrame
 	{
 		
@@ -3506,8 +3383,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox
 	{
 		
@@ -3539,8 +3415,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_FaceSegment
 	{
 		
@@ -3554,8 +3429,7 @@ namespace MyNS
 	/// <summary>
 	/// Face detection annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_FaceDetectionAnnotation
 	{
 		
@@ -3581,8 +3455,7 @@ namespace MyNS
 	/// <summary>
 	/// A track of an object instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_Track
 	{
 		
@@ -3614,8 +3487,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected attribute represented by name in string format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_DetectedAttribute
 	{
 		
@@ -3641,8 +3513,7 @@ namespace MyNS
 	/// <summary>
 	/// For tracking related features. An object at time_offset with attributes, and located with normalized_bounding_box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_TimestampedObject
 	{
 		
@@ -3674,8 +3545,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected landmark represented by name in string format and a 2D location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_DetectedLandmark
 	{
 		
@@ -3701,8 +3571,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_NormalizedVertex
 	{
 		
@@ -3722,8 +3591,7 @@ namespace MyNS
 	/// <summary>
 	/// Label annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation
 	{
 		
@@ -3761,8 +3629,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity from video analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_Entity
 	{
 		
@@ -3788,8 +3655,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_LabelFrame
 	{
 		
@@ -3809,8 +3675,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_LabelSegment
 	{
 		
@@ -3830,8 +3695,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation corresponding to one detected, tracked and recognized logo class.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_LogoRecognitionAnnotation
 	{
 		
@@ -3857,8 +3721,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations corresponding to one tracked object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation
 	{
 		
@@ -3902,8 +3765,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotations for object detection and tracking. This field stores per frame location, time offset, and confidence.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingFrame
 	{
 		
@@ -3923,8 +3785,7 @@ namespace MyNS
 	/// <summary>
 	/// Person detection annotation per video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_PersonDetectionAnnotation
 	{
 		
@@ -3944,8 +3805,7 @@ namespace MyNS
 	/// <summary>
 	/// A speech recognition result corresponding to a portion of the audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_SpeechTranscription
 	{
 		
@@ -3965,8 +3825,7 @@ namespace MyNS
 	/// <summary>
 	/// Alternative hypotheses (a.k.a. n-best list).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_SpeechRecognitionAlternative
 	{
 		
@@ -3992,8 +3851,7 @@ namespace MyNS
 	/// <summary>
 	/// Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_WordInfo
 	{
 		
@@ -4031,8 +3889,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations related to one detected OCR text snippet. This will contain the corresponding text, confidence value, and frame level information for each detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_TextAnnotation
 	{
 		
@@ -4058,8 +3915,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for text detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_TextSegment
 	{
 		
@@ -4085,8 +3941,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for text annotation (OCR). Contains information regarding timestamp and bounding box locations for the frames containing detected OCR text snippets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_TextFrame
 	{
 		
@@ -4106,8 +3961,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding polygon for text (that might not be aligned with axis). Contains list of the corner points in clockwise order starting from top-left corner. For example, for a rectangular bounding box: When the text is horizontal it might look like: 0----1 | | 3----2 When it's clockwise rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3). Note that values can be less than 0, or greater than 1 due to trignometric calculations for location of the box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingPoly
 	{
 		
@@ -4121,8 +3975,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation progress. Included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoProgress
 	{
 		
@@ -4136,8 +3989,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation progress for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress
 	{
 		
@@ -4178,51 +4030,48 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgressFeature
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEATURE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEATURE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABEL_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABEL_DETECTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOT_CHANGE_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOT_CHANGE_DETECTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPLICIT_CONTENT_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPLICIT_CONTENT_DETECTION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FACE_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FACE_DETECTION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPEECH_TRANSCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPEECH_TRANSCRIPTION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_DETECTION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJECT_TRACKING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJECT_TRACKING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGO_RECOGNITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGO_RECOGNITION = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CELEBRITY_RECOGNITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CELEBRITY_RECOGNITION = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSON_DETECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSON_DETECTION = 10,
 	}
 	
 	/// <summary>
 	/// Video segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_VideoSegment
 	{
 		
@@ -4242,8 +4091,7 @@ namespace MyNS
 	/// <summary>
 	/// Video annotation response. Included in the `response` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoResponse
 	{
 		
@@ -4257,8 +4105,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation results for a single video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationResults
 	{
 		
@@ -4374,8 +4221,7 @@ namespace MyNS
 	/// <summary>
 	/// Celebrity recognition annotation per video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_CelebrityRecognitionAnnotation
 	{
 		
@@ -4395,8 +4241,7 @@ namespace MyNS
 	/// <summary>
 	/// The annotation result of a celebrity face track. RecognizedCelebrity field could be empty if the face track does not have any matched celebrities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack
 	{
 		
@@ -4416,8 +4261,7 @@ namespace MyNS
 	/// <summary>
 	/// The recognized celebrity with confidence score.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_RecognizedCelebrity
 	{
 		
@@ -4437,8 +4281,7 @@ namespace MyNS
 	/// <summary>
 	/// Celebrity definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_Celebrity
 	{
 		
@@ -4464,8 +4307,7 @@ namespace MyNS
 	/// <summary>
 	/// A track of an object instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_Track
 	{
 		
@@ -4497,8 +4339,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected attribute represented by name in string format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute
 	{
 		
@@ -4524,8 +4365,7 @@ namespace MyNS
 	/// <summary>
 	/// For tracking related features. An object at time_offset with attributes, and located with normalized_bounding_box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_TimestampedObject
 	{
 		
@@ -4557,8 +4397,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic detected landmark represented by name in string format and a 2D location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_DetectedLandmark
 	{
 		
@@ -4584,8 +4423,7 @@ namespace MyNS
 	/// <summary>
 	/// A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_NormalizedVertex
 	{
 		
@@ -4605,8 +4443,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1].
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox
 	{
 		
@@ -4638,8 +4475,7 @@ namespace MyNS
 	/// <summary>
 	/// Explicit content annotation (based on per-frame visual signals only). If no explicit content has been detected in a frame, no annotations are present for that frame.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation
 	{
 		
@@ -4659,8 +4495,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for explicit content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame
 	{
 		
@@ -4680,8 +4515,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_FaceAnnotation
 	{
 		
@@ -4707,8 +4541,7 @@ namespace MyNS
 	/// <summary>
 	/// Deprecated. No effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_FaceFrame
 	{
 		
@@ -4728,8 +4561,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for face detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_FaceSegment
 	{
 		
@@ -4743,8 +4575,7 @@ namespace MyNS
 	/// <summary>
 	/// Face detection annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_FaceDetectionAnnotation
 	{
 		
@@ -4770,8 +4601,7 @@ namespace MyNS
 	/// <summary>
 	/// Label annotation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation
 	{
 		
@@ -4809,8 +4639,7 @@ namespace MyNS
 	/// <summary>
 	/// Detected entity from video analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_Entity
 	{
 		
@@ -4836,8 +4665,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_LabelFrame
 	{
 		
@@ -4857,8 +4685,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for label detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_LabelSegment
 	{
 		
@@ -4878,8 +4705,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation corresponding to one detected, tracked and recognized logo class.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_LogoRecognitionAnnotation
 	{
 		
@@ -4905,8 +4731,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations corresponding to one tracked object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation
 	{
 		
@@ -4950,8 +4775,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotations for object detection and tracking. This field stores per frame location, time offset, and confidence.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingFrame
 	{
 		
@@ -4971,8 +4795,7 @@ namespace MyNS
 	/// <summary>
 	/// Person detection annotation per video.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_PersonDetectionAnnotation
 	{
 		
@@ -4992,8 +4815,7 @@ namespace MyNS
 	/// <summary>
 	/// A speech recognition result corresponding to a portion of the audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_SpeechTranscription
 	{
 		
@@ -5013,8 +4835,7 @@ namespace MyNS
 	/// <summary>
 	/// Alternative hypotheses (a.k.a. n-best list).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_SpeechRecognitionAlternative
 	{
 		
@@ -5040,8 +4861,7 @@ namespace MyNS
 	/// <summary>
 	/// Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_WordInfo
 	{
 		
@@ -5079,8 +4899,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotations related to one detected OCR text snippet. This will contain the corresponding text, confidence value, and frame level information for each detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_TextAnnotation
 	{
 		
@@ -5106,8 +4925,7 @@ namespace MyNS
 	/// <summary>
 	/// Video segment level annotation results for text detection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_TextSegment
 	{
 		
@@ -5133,8 +4951,7 @@ namespace MyNS
 	/// <summary>
 	/// Video frame level annotation results for text annotation (OCR). Contains information regarding timestamp and bounding box locations for the frames containing detected OCR text snippets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_TextFrame
 	{
 		
@@ -5154,8 +4971,7 @@ namespace MyNS
 	/// <summary>
 	/// Normalized bounding polygon for text (that might not be aligned with axis). Contains list of the corner points in clockwise order starting from top-left corner. For example, for a rectangular bounding box: When the text is horizontal it might look like: 0----1 | | 3----2 When it's clockwise rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3). Note that values can be less than 0, or greater than 1 due to trignometric calculations for location of the box.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingPoly
 	{
 		
@@ -5169,8 +4985,7 @@ namespace MyNS
 	/// <summary>
 	/// `StreamingAnnotateVideoResponse` is the only message returned to the client by `StreamingAnnotateVideo`. A series of zero or more `StreamingAnnotateVideoResponse` messages are streamed back to the client.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_StreamingAnnotateVideoResponse
 	{
 		
@@ -5196,8 +5011,7 @@ namespace MyNS
 	/// <summary>
 	/// Streaming annotation results corresponding to a portion of the video that is currently being processed. Only ONE type of annotation will be specified in the response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults
 	{
 		
@@ -5235,8 +5049,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunning_Operation
 	{
 		

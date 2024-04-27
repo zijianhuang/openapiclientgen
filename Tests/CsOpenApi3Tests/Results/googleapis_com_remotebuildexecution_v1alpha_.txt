@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An `Action` captures all the information about an execution which is required to reproduce it. `Action`s are the core component of the [Execution] service. A single `Action` represents a repeatable action that can be performed by the execution service. `Action`s can be succinctly identified by the digest of their wire format encoding and, once an `Action` has been executed, will be cached in the action cache. Future requests can then use the cached result rather than needing to run afresh. When a server completes execution of an Action, it MAY choose to cache the result in the ActionCache unless `do_not_cache` is `true`. Clients SHOULD expect the server to do so. By default, future calls to Execute the same `Action` will also serve their results from the cache. Clients must take care to understand the caching behaviour. Ideally, all `Action`s will be reproducible so that serving a result from cache is always desirable and correct.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2Action
 	{
 		
@@ -65,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// A content digest. A digest for a given blob consists of the size of the blob and its hash. The hash algorithm to use is defined by the server. The size is considered to be an integral part of the digest and cannot be separated. That is, even if the `hash` field is correctly specified but `size_bytes` is not, the server MUST reject the request. The reason for including the size in the digest is as follows: in a great many cases, the server needs to know the size of the blob it is about to work with prior to starting an operation with it, such as flattening Merkle tree structures or streaming it to a worker. Technically, the server could implement a separate metadata store, but this results in a significantly more complicated implementation as opposed to having the client specify the size up-front (or storing the size along with the digest in every message where digests are embedded). This does mean that the API leaks some implementation details of (what we consider to be) a reasonable server implementation, but we consider this to be a worthwhile tradeoff. When a `Digest` is used to refer to a proto message, it always refers to the message in binary encoded form. To ensure consistent hashing, clients and servers MUST ensure that they serialize messages according to the following rules, even if there are alternate valid encodings for the same message: * Fields are serialized in tag order. * There are no unknown fields. * There are no duplicate fields. * Fields are serialized according to the default semantics for their type. Most protocol buffer implementations will always follow these rules when serializing, but care should be taken to avoid shortcuts. For instance, concatenating two messages to merge them may produce duplicate fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2Digest
 	{
 		
@@ -86,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Platform` is a set of requirements, such as hardware, operating system, or compiler toolchain, for an Action's execution environment. A `Platform` is represented as a series of key-value pairs representing the properties that are required of the platform.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2Platform
 	{
 		
@@ -101,8 +98,7 @@ namespace MyNS
 	/// <summary>
 	/// A single property for the environment. The server is responsible for specifying the property `name`s that it accepts. If an unknown `name` is provided in the requirements for an Action, the server SHOULD reject the execution request. If permitted by the server, the same `name` may occur multiple times. The server is also responsible for specifying the interpretation of property `value`s. For instance, a property describing how much RAM must be available may be interpreted as allowing a worker with 16GB to fulfill a request for 8GB, while a property describing the OS environment on which the action must be performed may require an exact match with the worker's OS. The server MAY use the `value` of one or more properties to determine how it sets up the execution environment, such as by making specific system files available to the worker. Both names and values are typically case-sensitive. Note that the platform is implicitly part of the action digest, so even tiny changes in the names or values (like changing case) may result in different action cache entries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2PlatformProperty
 	{
 		
@@ -122,8 +118,7 @@ namespace MyNS
 	/// <summary>
 	/// An ActionResult represents the result of an Action being run. It is advised that at least one field (for example `ActionResult.execution_metadata.Worker`) have a non-default value, to ensure that the serialized value is non-empty, which can then be used as a basic data sanity check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2ActionResult
 	{
 		
@@ -197,8 +192,7 @@ namespace MyNS
 	/// <summary>
 	/// ExecutedActionMetadata contains details about a completed execution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2ExecutedActionMetadata
 	{
 		
@@ -278,8 +272,7 @@ namespace MyNS
 	/// <summary>
 	/// An `OutputDirectory` is the output in an `ActionResult` corresponding to a directory's full contents rather than a single file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2OutputDirectory
 	{
 		
@@ -305,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// An `OutputSymlink` is similar to a Symlink, but it is used as an output in an `ActionResult`. `OutputSymlink` is binary-compatible with `SymlinkNode`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2OutputSymlink
 	{
 		
@@ -332,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// Node properties for FileNodes, DirectoryNodes, and SymlinkNodes. The server is responsible for specifying the properties that it accepts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2NodeProperties
 	{
 		
@@ -359,8 +350,7 @@ namespace MyNS
 	/// <summary>
 	/// A single property for FileNodes, DirectoryNodes, and SymlinkNodes. The server is responsible for specifying the property `name`s that it accepts. If permitted by the server, the same `name` may occur multiple times.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2NodeProperty
 	{
 		
@@ -380,8 +370,7 @@ namespace MyNS
 	/// <summary>
 	/// An `OutputFile` is similar to a FileNode, but it is used as an output in an `ActionResult`. It allows a full file path rather than only a name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2OutputFile
 	{
 		
@@ -419,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Command` is the actual command executed by a worker running an Action and specifications of its environment. Except as otherwise required, the environment (such as which system libraries or binaries are available, and what filesystems are mounted where) is defined by and specific to the implementation of the remote execution API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2Command
 	{
 		
@@ -476,8 +464,7 @@ namespace MyNS
 	/// <summary>
 	/// An `EnvironmentVariable` is one variable to set in the running program's environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2CommandEnvironmentVariable
 	{
 		
@@ -497,8 +484,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Directory` represents a directory node in a file tree, containing zero or more children FileNodes, DirectoryNodes and SymlinkNodes. Each `Node` contains its name in the directory, either the digest of its content (either a file blob or a `Directory` proto) or a symlink target, as well as possibly some metadata about the file or directory. In order to ensure that two equivalent directory trees hash to the same value, the following restrictions MUST be obeyed when constructing a a `Directory`: * Every child in the directory must have a path of exactly one segment. Multiple levels of directory hierarchy may not be collapsed. * Each child in the directory must have a unique path segment (file name). Note that while the API itself is case-sensitive, the environment where the Action is executed may or may not be case-sensitive. That is, it is legal to call the API with a Directory that has both "Foo" and "foo" as children, but the Action may be rejected by the remote system upon execution. * The files, directories and symlinks in the directory must each be sorted in lexicographical order by path. The path strings must be sorted by code point, equivalently, by UTF-8 bytes. * The NodeProperties of files, directories, and symlinks must be sorted in lexicographical order by property name. A `Directory` that obeys the restrictions is said to be in canonical form. As an example, the following could be used for a file named `bar` and a directory named `foo` with an executable file named `baz` (hashes shortened for readability): ```json // (Directory proto) { files: [ { name: "bar", digest: { hash: "4a73bc9d03...", size: 65534 }, node_properties: [ { "name": "MTime", "value": "2017-01-15T01:30:15.01Z" } ] } ], directories: [ { name: "foo", digest: { hash: "4cf2eda940...", size: 43 } } ] } // (Directory proto with hash "4cf2eda940..." and size 43) { files: [ { name: "baz", digest: { hash: "b2c941073e...", size: 1294, }, is_executable: true } ] } ```
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2Directory
 	{
 		
@@ -530,8 +516,7 @@ namespace MyNS
 	/// <summary>
 	/// A `DirectoryNode` represents a child of a Directory which is itself a `Directory` and its associated metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2DirectoryNode
 	{
 		
@@ -551,8 +536,7 @@ namespace MyNS
 	/// <summary>
 	/// A `FileNode` represents a single file and associated metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2FileNode
 	{
 		
@@ -584,8 +568,7 @@ namespace MyNS
 	/// <summary>
 	/// A `SymlinkNode` represents a symbolic link.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2SymlinkNode
 	{
 		
@@ -611,8 +594,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about an ongoing execution, which will be contained in the metadata field of the Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2ExecuteOperationMetadata
 	{
 		
@@ -647,33 +629,30 @@ namespace MyNS
 		public string StdoutStreamName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BuildBazelRemoteExecutionV2ExecuteOperationMetadataStage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_CHECK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CACHE_CHECK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEUED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 4,
 	}
 	
 	/// <summary>
 	/// The response message for Execution.Execute, which will be contained in the response field of the Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2ExecuteResponse
 	{
 		
@@ -711,8 +690,7 @@ namespace MyNS
 	/// <summary>
 	/// A `LogFile` is a log stored in the CAS.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2LogFile
 	{
 		
@@ -732,8 +710,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -759,8 +736,7 @@ namespace MyNS
 	/// <summary>
 	/// An optional Metadata to attach to any RPC request to tell the server about an external context of the request. The server may use this for logging or other purposes. To use it, the client attaches the header to the call using the canonical proto serialization: * name: `build.bazel.remote.execution.v2.requestmetadata-bin` * contents: the base64 encoded binary `RequestMetadata` message. Note: the gRPC library serializes binary headers encoded in base64 by default (https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md#requests). Therefore, if the gRPC library is used to pass/retrieve this metadata, the user may ignore the base64 encoding and assume it is simply serialized as a binary message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2RequestMetadata
 	{
 		
@@ -810,8 +786,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for the tool used to call the API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2ToolDetails
 	{
 		
@@ -831,8 +806,7 @@ namespace MyNS
 	/// <summary>
 	/// A `Tree` contains all the Directory protos in a single directory Merkle tree, compressed into one message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildBazelRemoteExecutionV2Tree
 	{
 		
@@ -852,8 +826,7 @@ namespace MyNS
 	/// <summary>
 	/// CommandDuration contains the various duration metrics tracked when a bot performs a command.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildbotCommandDurations
 	{
 		
@@ -945,8 +918,7 @@ namespace MyNS
 	/// <summary>
 	/// CommandEvents contains counters for the number of warnings and errors that occurred during the execution of a command.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildbotCommandEvents
 	{
 		
@@ -1005,55 +977,50 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UsedAsyncContainer { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildbotCommandEventsCmUsage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIG_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIG_NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIG_MATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIG_MATCH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIG_MISMATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIG_MISMATCH = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildbotCommandEventsOutputLocation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_UNDEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_EXEC_ROOT_RELATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_EXEC_ROOT_RELATIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_WORKING_DIR_RELATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_WORKING_DIR_RELATIVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_EXEC_ROOT_AND_WORKING_DIR_RELATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_EXEC_ROOT_AND_WORKING_DIR_RELATIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_EXEC_ROOT_RELATIVE_OUTPUT_OUTSIDE_WORKING_DIR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_EXEC_ROOT_RELATIVE_OUTPUT_OUTSIDE_WORKING_DIR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_EXEC_ROOT_AND_WORKING_DIR_RELATIVE_OUTPUT_OUTSIDE_WORKING_DIR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_EXEC_ROOT_AND_WORKING_DIR_RELATIVE_OUTPUT_OUTSIDE_WORKING_DIR = 6,
 	}
 	
 	/// <summary>
 	/// The internal status of the command result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildbotCommandStatus
 	{
 		
@@ -1070,171 +1037,168 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildbotCommandStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ARGUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_ARGUMENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEADLINE_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEADLINE_EXCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_DENIED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABORTED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_PRECONDITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_PRECONDITION = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLEANUP_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLEANUP_ERROR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWNLOAD_INPUTS_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOWNLOAD_INPUTS_ERROR = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOAD_OUTPUTS_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOAD_OUTPUTS_ERROR = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOAD_OUTPUTS_BYTES_LIMIT_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOAD_OUTPUTS_BYTES_LIMIT_EXCEEDED = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_LOGIN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_LOGIN_ERROR = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_IMAGE_PULL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_IMAGE_PULL_ERROR = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_IMAGE_EXIST_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_IMAGE_EXIST_ERROR = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUPLICATE_INPUTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DUPLICATE_INPUTS = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_IMAGE_PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_IMAGE_PERMISSION_DENIED = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_IMAGE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_IMAGE_NOT_FOUND = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKING_DIR_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKING_DIR_NOT_FOUND = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKING_DIR_NOT_IN_BASE_DIR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKING_DIR_NOT_IN_BASE_DIR = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_UNAVAILABLE = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_CUDA_CAPABLE_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_CUDA_CAPABLE_DEVICE = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOTE_CAS_DOWNLOAD_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOTE_CAS_DOWNLOAD_ERROR = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOTE_CAS_UPLOAD_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOTE_CAS_UPLOAD_ERROR = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL_CASPROXY_NOT_RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL_CASPROXY_NOT_RUNNING = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_CREATE_CONTAINER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_CREATE_CONTAINER_ERROR = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_INVALID_ULIMIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_INVALID_ULIMIT = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_UNKNOWN_RUNTIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_UNKNOWN_RUNTIME = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_UNKNOWN_CAPABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_UNKNOWN_CAPABILITY = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_UNKNOWN_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_UNKNOWN_ERROR = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_CREATE_COMPUTE_SYSTEM_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_CREATE_COMPUTE_SYSTEM_ERROR = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_PREPARELAYER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_PREPARELAYER_ERROR = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_INCOMPATIBLE_OS_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_INCOMPATIBLE_OS_ERROR = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_CREATE_RUNTIME_FILE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_CREATE_RUNTIME_FILE_NOT_FOUND = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_CREATE_RUNTIME_PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_CREATE_RUNTIME_PERMISSION_DENIED = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_CREATE_PROCESS_FILE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_CREATE_PROCESS_FILE_NOT_FOUND = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_CREATE_COMPUTE_SYSTEM_INCORRECT_PARAMETER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_CREATE_COMPUTE_SYSTEM_INCORRECT_PARAMETER_ERROR = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_TOO_MANY_SYMBOLIC_LINK_LEVELS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_TOO_MANY_SYMBOLIC_LINK_LEVELS = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL_CONTAINER_MANAGER_NOT_RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL_CONTAINER_MANAGER_NOT_RUNNING = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_IMAGE_VPCSC_PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_IMAGE_VPCSC_PERMISSION_DENIED = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKING_DIR_NOT_RELATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKING_DIR_NOT_RELATIVE = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_MISSING_CONTAINER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_MISSING_CONTAINER = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_MISSING_BLOB_IN_IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_MISSING_BLOB_IN_IMAGE = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_INVALID_VOLUME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_INVALID_VOLUME = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_CREATE_RUNTIME_CANNOT_MOUNT_TO_PROC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_CREATE_RUNTIME_CANNOT_MOUNT_TO_PROC = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_START_RUNTIME_FILE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_START_RUNTIME_FILE_NOT_FOUND = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_CREATE_INVALID_LAYERCHAIN_JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_CREATE_INVALID_LAYERCHAIN_JSON = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCOMPATIBLE_CUDA_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCOMPATIBLE_CUDA_VERSION = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL_WORKER_MANAGER_NOT_RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL_WORKER_MANAGER_NOT_RUNNING = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCKER_START_RUNTIME_FILE_FORMAT_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCKER_START_RUNTIME_FILE_FORMAT_ERROR = 50,
 	}
 	
 	/// <summary>
 	/// ResourceUsage is the system resource usage of the host machine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildbotResourceUsage
 	{
 		
@@ -1254,24 +1218,21 @@ namespace MyNS
 		public GoogleDevtoolsRemotebuildbotResourceUsageIOStats TotalDiskIoStats { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildbotResourceUsageBotState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IDLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildbotResourceUsageStat
 	{
 		
@@ -1282,8 +1243,7 @@ namespace MyNS
 		public string Used { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildbotResourceUsageIOStats
 	{
 		
@@ -1309,8 +1269,7 @@ namespace MyNS
 	/// <summary>
 	/// AcceleratorConfig defines the accelerator cards to attach to the VM.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaAcceleratorConfig
 	{
 		
@@ -1330,8 +1289,7 @@ namespace MyNS
 	/// <summary>
 	/// Autoscale defines the autoscaling policy of a worker pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale
 	{
 		
@@ -1357,8 +1315,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used for `CreateInstance`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaCreateInstanceRequest
 	{
 		
@@ -1384,8 +1341,7 @@ namespace MyNS
 	/// <summary>
 	/// Instance conceptually encapsulates all Remote Build Execution resources for remote builds. An instance consists of storage and compute resources (for example, `ContentAddressableStorage`, `ActionCache`, `WorkerPools`) used for running remote builds. All Remote Build Execution API calls are scoped to an instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance
 	{
 		
@@ -1429,8 +1385,7 @@ namespace MyNS
 	/// <summary>
 	/// FeaturePolicy defines features allowed to be used on RBE instances, as well as instance-wide behavior changes that take effect without opt-in or opt-out at usage time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicy
 	{
 		
@@ -1537,46 +1492,41 @@ namespace MyNS
 		public System.Nullable<GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyWindowsExecution> WindowsExecution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyActionHermeticity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_HERMETICITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_HERMETICITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_HERMETICITY_OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_HERMETICITY_OFF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_HERMETICITY_ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_HERMETICITY_ENFORCED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_HERMETICITY_BEST_EFFORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_HERMETICITY_BEST_EFFORT = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyActionIsolation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_ISOLATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_ISOLATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_ISOLATION_OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_ISOLATION_OFF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_ISOLATION_ENFORCED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_ISOLATION_ENFORCED = 2,
 	}
 	
 	/// <summary>
 	/// Defines whether a feature can be used or what values are accepted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature
 	{
 		
@@ -1593,116 +1543,103 @@ namespace MyNS
 		public System.Nullable<GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeaturePolicy> Policy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeaturePolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POLICY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POLICY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOWED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORBIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORBIDDEN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTRICTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTRICTED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyLinuxExecution
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX_EXECUTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX_EXECUTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX_EXECUTION_FORBIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX_EXECUTION_FORBIDDEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX_EXECUTION_UNRESTRICTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX_EXECUTION_UNRESTRICTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX_EXECUTION_HARDENED_GVISOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX_EXECUTION_HARDENED_GVISOR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX_EXECUTION_HARDENED_GVISOR_OR_TERMINAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX_EXECUTION_HARDENED_GVISOR_OR_TERMINAL = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyLinuxIsolation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX_ISOLATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX_ISOLATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GVISOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GVISOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFF = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyMacExecution
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC_EXECUTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC_EXECUTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAC_EXECUTION_FORBIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAC_EXECUTION_FORBIDDEN = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyVmVerification
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VM_VERIFICATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VM_VERIFICATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VM_VERIFICATION_GCP_TOKEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VM_VERIFICATION_GCP_TOKEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VM_VERIFICATION_OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VM_VERIFICATION_OFF = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyWindowsExecution
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS_EXECUTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS_EXECUTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS_EXECUTION_FORBIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS_EXECUTION_FORBIDDEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS_EXECUTION_UNRESTRICTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS_EXECUTION_UNRESTRICTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WINDOWS_EXECUTION_TERMINAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WINDOWS_EXECUTION_TERMINAL = 3,
 	}
 	
 	/// <summary>
 	/// Defines configurations for an instance's scheduler notifications, where a target Pub/Sub topic will be notified whenever a task (e.g. an action or reservation) completes on this instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaSchedulerNotificationConfig
 	{
 		
@@ -1713,30 +1650,27 @@ namespace MyNS
 		public string Topic { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstanceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 3,
 	}
 	
 	/// <summary>
 	/// The request used for `CreateWorkerPool`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaCreateWorkerPoolRequest
 	{
 		
@@ -1762,8 +1696,7 @@ namespace MyNS
 	/// <summary>
 	/// A worker pool resource in the Remote Build Execution API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPool
 	{
 		
@@ -1810,36 +1743,33 @@ namespace MyNS
 		public string WorkerCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPoolState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 5,
 	}
 	
 	/// <summary>
 	/// Defines the configuration to be used for creating workers in the worker pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig
 	{
 		
@@ -1925,8 +1855,7 @@ namespace MyNS
 	/// <summary>
 	/// Disks defines the disks that would be attached to the workers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaDisks
 	{
 		
@@ -1946,8 +1875,7 @@ namespace MyNS
 	/// <summary>
 	/// PersistentDisk specifies how to attach a persistent disk to the workers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaDisksPersistentDisk
 	{
 		
@@ -1973,8 +1901,7 @@ namespace MyNS
 	/// <summary>
 	/// LocalSSD specifies how to attach local SSD to the workers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaDisksLocalSSD
 	{
 		
@@ -1994,8 +1921,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used for `DeleteInstance`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaDeleteInstanceRequest
 	{
 		
@@ -2009,8 +1935,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used for DeleteWorkerPool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaDeleteWorkerPoolRequest
 	{
 		
@@ -2024,8 +1949,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used for `GetInstance`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaGetInstanceRequest
 	{
 		
@@ -2039,8 +1963,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used for GetWorkerPool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaGetWorkerPoolRequest
 	{
 		
@@ -2054,8 +1977,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used for `ListInstances`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaListInstancesRequest
 	{
 		
@@ -2069,8 +1991,7 @@ namespace MyNS
 	/// <summary>
 	/// The response used for `ListInstances`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaListInstancesResponse
 	{
 		
@@ -2087,8 +2008,7 @@ namespace MyNS
 		public string[] Unreachable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaListWorkerPoolsRequest
 	{
 		
@@ -2105,8 +2025,7 @@ namespace MyNS
 		public string Parent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaListWorkerPoolsResponse
 	{
 		
@@ -2120,8 +2039,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used for `TestNotifyInstance`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaTestNotifyInstanceRequest
 	{
 	}
@@ -2129,8 +2047,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used for `UpdateInstance`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaUpdateInstanceRequest
 	{
 		
@@ -2162,8 +2079,7 @@ namespace MyNS
 	/// <summary>
 	/// The request used for UpdateWorkerPool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemotebuildexecutionAdminV1alphaUpdateWorkerPoolRequest
 	{
 		
@@ -2183,8 +2099,7 @@ namespace MyNS
 	/// <summary>
 	/// AdminTemp is a prelimiary set of administration tasks. It's called "Temp" because we do not yet know the best way to represent admin tasks; it's possible that this will be entirely replaced in later versions of this API. If this message proves to be sufficient, it will be renamed in the alpha or beta release of this API. This message (suitably marshalled into a protobuf.Any) can be used as the inline_assignment field in a lease; the lease assignment field should simply be `"admin"` in these cases. This message is heavily based on Swarming administration tasks from the LUCI project (http://github.com/luci/luci-py/appengine/swarming).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2AdminTemp
 	{
 		
@@ -2201,33 +2116,30 @@ namespace MyNS
 		public System.Nullable<GoogleDevtoolsRemoteworkersV1test2AdminTempCommand> Command { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDevtoolsRemoteworkersV1test2AdminTempCommand
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOT_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOT_UPDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOT_RESTART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOT_RESTART = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOT_TERMINATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOT_TERMINATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOST_RESTART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOST_RESTART = 4,
 	}
 	
 	/// <summary>
 	/// Describes a blob of binary content with its digest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2Blob
 	{
 		
@@ -2247,8 +2159,7 @@ namespace MyNS
 	/// <summary>
 	/// The CommandTask and CommandResult messages assume the existence of a service that can serve blobs of content, identified by a hash and size known as a "digest." The method by which these blobs may be retrieved is not specified here, but a model implementation is in the Remote Execution API's "ContentAddressibleStorage" interface. In the context of the RWAPI, a Digest will virtually always refer to the contents of a file or a directory. The latter is represented by the byte-encoded Directory message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2Digest
 	{
 		
@@ -2268,8 +2179,7 @@ namespace MyNS
 	/// <summary>
 	/// DEPRECATED - use CommandResult instead. Describes the actual outputs from the task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2CommandOutputs
 	{
 		
@@ -2289,8 +2199,7 @@ namespace MyNS
 	/// <summary>
 	/// DEPRECATED - use CommandResult instead. Can be used as part of CompleteRequest.metadata, or are part of a more sophisticated message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2CommandOverhead
 	{
 		
@@ -2310,8 +2219,7 @@ namespace MyNS
 	/// <summary>
 	/// All information about the execution of a command, suitable for providing as the Bots interface's `Lease.result` field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2CommandResult
 	{
 		
@@ -2355,8 +2263,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a shell-style task to execute, suitable for providing as the Bots interface's `Lease.payload` field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2CommandTask
 	{
 		
@@ -2382,8 +2289,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the expected outputs of the command.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2CommandTaskOutputs
 	{
 		
@@ -2415,8 +2321,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the inputs to a shell-style task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2CommandTaskInputs
 	{
 		
@@ -2454,8 +2359,7 @@ namespace MyNS
 	/// <summary>
 	/// An environment variable required by this task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2CommandTaskInputsEnvironmentVariable
 	{
 		
@@ -2475,8 +2379,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the timeouts associated with this task.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2CommandTaskTimeouts
 	{
 		
@@ -2502,8 +2405,7 @@ namespace MyNS
 	/// <summary>
 	/// The contents of a directory. Similar to the equivalent message in the Remote Execution API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2Directory
 	{
 		
@@ -2523,8 +2425,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for a directory. Similar to the equivalent message in the Remote Execution API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2DirectoryMetadata
 	{
 		
@@ -2544,8 +2445,7 @@ namespace MyNS
 	/// <summary>
 	/// The metadata for a file. Similar to the equivalent message in the Remote Execution API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDevtoolsRemoteworkersV1test2FileMetadata
 	{
 		
@@ -2577,8 +2477,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -2616,8 +2515,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

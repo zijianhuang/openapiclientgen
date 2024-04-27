@@ -17,14 +17,12 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScalingPolicyResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScalingPolicyRequest
 	{
 		
@@ -57,58 +55,54 @@ namespace MyNS
 		public ScalableDimension ScalableDimension { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ServiceNamespace
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecs = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elasticmapreduce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elasticmapreduce = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ec2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ec2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="appstream")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		appstream = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dynamodb")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dynamodb = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rds = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sagemaker")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sagemaker = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom-resource")]
 		customMinusresource = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="comprehend")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		comprehend = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lambda")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lambda = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cassandra")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cassandra = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kafka")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kafka = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elasticache")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elasticache = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neptune")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neptune = 13,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalableDimension
 	{
 		
@@ -176,38 +170,32 @@ namespace MyNS
 		sagemakervariantDesiredProvisionedConcurrency = 20,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentUpdateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScheduledActionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteScheduledActionRequest
 	{
 		
@@ -240,14 +228,12 @@ namespace MyNS
 		public ScalableDimension ScalableDimension { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterScalableTargetResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterScalableTargetRequest
 	{
 		
@@ -273,8 +259,7 @@ namespace MyNS
 		public ScalableDimension ScalableDimension { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalableTargetsResponse
 	{
 		
@@ -288,8 +273,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a scalable target.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalableTarget
 	{
 		
@@ -352,8 +336,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies whether the scaling activities for a scalable target are in a suspended state. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuspendedState
 	{
 		
@@ -367,8 +350,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ScheduledScalingSuspended { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalableTargetsRequest
 	{
 		
@@ -392,14 +374,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextTokenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingActivitiesResponse
 	{
 		
@@ -413,8 +393,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a scaling activity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingActivity
 	{
 		
@@ -487,36 +466,33 @@ namespace MyNS
 		public NotScaledReason[] NotScaledReasons { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScalingActivityStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Successful")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Successful = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overridden")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Overridden = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unfulfilled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unfulfilled = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 5,
 	}
 	
 	/// <summary>
 	/// Describes the reason for an activity that isn't scaled (<i>not scaled activity</i>), in machine-readable format. For help interpreting the not scaled reason details, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotScaledReason
 	{
 		
@@ -537,8 +513,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> CurrentCapacity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingActivitiesRequest
 	{
 		
@@ -565,8 +540,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IncludeNotScaledActivities { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingPoliciesResponse
 	{
 		
@@ -580,8 +554,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents a scaling policy to use with Application Auto Scaling.</p> <p>For more information about configuring scaling policies for a specific service, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/integrated-services-list.html">Amazon Web Services services that you can use with Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingPolicy
 	{
 		
@@ -644,24 +617,21 @@ namespace MyNS
 		public System.DateTimeOffset CreationTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PolicyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StepScaling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StepScaling = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TargetTrackingScaling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TargetTrackingScaling = 1,
 	}
 	
 	/// <summary>
 	/// <p>Represents a step scaling policy configuration to use with Application Auto Scaling.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepScalingPolicyConfiguration
 	{
 		
@@ -681,27 +651,24 @@ namespace MyNS
 		public MetricAggregationType MetricAggregationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdjustmentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChangeInCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChangeInCapacity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PercentChangeInCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PercentChangeInCapacity = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExactCapacity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExactCapacity = 2,
 	}
 	
 	/// <summary>
 	/// <p>Represents a step adjustment for a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm. </p> <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> <ul> <li> <p>To initiate the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of <code>0</code> and an upper bound of <code>10</code>.</p> </li> <li> <p>To initiate the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of <code>-10</code> and an upper bound of <code>0</code>.</p> </li> </ul> <p>There are a few rules for the step adjustments for your step policy:</p> <ul> <li> <p>The ranges of your step adjustments can't overlap or have a gap.</p> </li> <li> <p>At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</p> </li> <li> <p>At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</p> </li> <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StepAdjustment
 	{
 		
@@ -719,27 +686,24 @@ namespace MyNS
 		public int ScalingAdjustment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricAggregationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Minimum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Minimum = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maximum = 2,
 	}
 	
 	/// <summary>
 	/// <p>Represents a target tracking scaling policy configuration to use with Application Auto Scaling.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target tracking scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetTrackingScalingPolicyConfiguration
 	{
 		
@@ -769,8 +733,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>Only the Amazon Web Services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building dashboards with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PredefinedMetricSpecification
 	{
 		
@@ -785,87 +748,84 @@ namespace MyNS
 		public string ResourceLabel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DynamoDBReadCapacityUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DynamoDBReadCapacityUtilization = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DynamoDBWriteCapacityUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DynamoDBWriteCapacityUtilization = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALBRequestCountPerTarget")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALBRequestCountPerTarget = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RDSReaderAverageCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RDSReaderAverageCPUUtilization = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RDSReaderAverageDatabaseConnections")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RDSReaderAverageDatabaseConnections = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SpotFleetRequestAverageCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SpotFleetRequestAverageCPUUtilization = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SpotFleetRequestAverageNetworkIn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SpotFleetRequestAverageNetworkIn = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2SpotFleetRequestAverageNetworkOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2SpotFleetRequestAverageNetworkOut = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SageMakerVariantInvocationsPerInstance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SageMakerVariantInvocationsPerInstance = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECSServiceAverageCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECSServiceAverageCPUUtilization = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECSServiceAverageMemoryUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECSServiceAverageMemoryUtilization = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AppStreamAverageCapacityUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AppStreamAverageCapacityUtilization = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ComprehendInferenceUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ComprehendInferenceUtilization = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaProvisionedConcurrencyUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaProvisionedConcurrencyUtilization = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CassandraReadCapacityUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CassandraReadCapacityUtilization = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CassandraWriteCapacityUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CassandraWriteCapacityUtilization = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KafkaBrokerStorageUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KafkaBrokerStorageUtilization = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ElastiCachePrimaryEngineCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ElastiCachePrimaryEngineCPUUtilization = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ElastiCacheReplicaEngineCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ElastiCacheReplicaEngineCPUUtilization = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NeptuneReaderAverageCPUUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NeptuneReaderAverageCPUUtilization = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SageMakerVariantProvisionedConcurrencyUtilization")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SageMakerVariantProvisionedConcurrencyUtilization = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage = 22,
 	}
 	
 	/// <summary>
 	/// <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>To create your customized metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases. </p> </li> </ul> <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomizedMetricSpecification
 	{
 		
@@ -891,8 +851,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the dimension names and values associated with a metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDimension
 	{
 		
@@ -911,33 +870,30 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricStatistic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Minimum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Minimum = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maximum = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SampleCount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SampleCount = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sum = 4,
 	}
 	
 	/// <summary>
 	/// <p>The metric data to return. Also defines whether this call is returning data for one metric only, or whether it is performing a math expression on the values of returned metric statistics to create a new time series. A time series is a series of data points, each of which is associated with a timestamp.</p> <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking-metric-math.html">Create a target tracking scaling policy for Application Auto Scaling using metric math</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetTrackingMetricDataQuery
 	{
 		
@@ -964,8 +920,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>This structure defines the CloudWatch metric to return, along with the statistic, period, and unit.</p> <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetTrackingMetricStat
 	{
 		
@@ -990,8 +945,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents a specific metric.</p> <p>Metric is a property of the <a>TargetTrackingMetricStat</a> object.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetTrackingMetric
 	{
 		
@@ -1008,8 +962,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the dimension of a metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetTrackingMetricDimension
 	{
 		
@@ -1031,8 +984,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a CloudWatch alarm associated with a scaling policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alarm
 	{
 		
@@ -1051,8 +1003,7 @@ namespace MyNS
 		public string AlarmARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingPoliciesRequest
 	{
 		
@@ -1079,14 +1030,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailedResourceAccessException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScheduledActionsResponse
 	{
 		
@@ -1100,8 +1049,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a scheduled action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledAction
 	{
 		
@@ -1166,8 +1114,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the minimum and maximum capacity for a scheduled action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalableTargetAction
 	{
 		
@@ -1178,8 +1125,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxCapacity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScheduledActionsRequest
 	{
 		
@@ -1206,8 +1152,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -1215,14 +1160,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -1234,14 +1177,12 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutScalingPolicyResponse
 	{
 		
@@ -1256,8 +1197,7 @@ namespace MyNS
 		public Alarm[] Alarms { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutScalingPolicyRequest
 	{
 		
@@ -1299,20 +1239,17 @@ namespace MyNS
 		public TargetTrackingScalingPolicyConfiguration TargetTrackingScalingPolicyConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutScheduledActionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutScheduledActionRequest
 	{
 		
@@ -1360,8 +1297,7 @@ namespace MyNS
 		public ScalableTargetAction ScalableTargetAction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterScalableTargetResponse
 	{
 		
@@ -1369,8 +1305,7 @@ namespace MyNS
 		public string ScalableTargetARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterScalableTargetRequest
 	{
 		
@@ -1411,14 +1346,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1437,20 +1370,17 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		

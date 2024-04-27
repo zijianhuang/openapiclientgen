@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildSuggestersResponse
 	{
 		
@@ -32,26 +31,22 @@ namespace MyNS
 		public string[] FieldNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
@@ -59,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDomainResponse
 	{
 		
@@ -74,8 +68,7 @@ namespace MyNS
 	/// <summary>
 	/// The current status of the search domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainStatus
 	{
 		
@@ -149,8 +142,7 @@ namespace MyNS
 	/// <summary>
 	/// The endpoint to which service requests can be submitted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceEndpoint
 	{
 		
@@ -161,8 +153,7 @@ namespace MyNS
 		public string Endpoint { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Limits
 	{
 		
@@ -185,14 +176,12 @@ namespace MyNS
 		public int MaximumPartitionCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceAlreadyExistsException
 	{
 	}
@@ -200,8 +189,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains the status of the newly-configured analysis scheme.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefineAnalysisSchemeResponse
 	{
 		
@@ -217,8 +205,7 @@ namespace MyNS
 	/// <summary>
 	/// The status and configuration of an <code>AnalysisScheme</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisSchemeStatus
 	{
 		
@@ -242,8 +229,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisScheme
 	{
 		
@@ -276,109 +262,107 @@ namespace MyNS
 		public AnalysisOptions AnalysisOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnalysisSchemeAnalysisSchemeLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ca = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cs = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="da")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		da = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="el")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		el = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eu = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fa = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fi = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ga")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ga = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gl = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="he")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		he = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hi = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hu = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hy = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ja = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ko = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lv = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mul")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mul = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nl = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ro = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ru")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ru = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="th")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		th = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tr = 32,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh-Hans")]
@@ -391,8 +375,7 @@ namespace MyNS
 	/// <summary>
 	/// Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnalysisOptions
 	{
 		
@@ -412,30 +395,27 @@ namespace MyNS
 		public AlgorithmicStemming AlgorithmicStemming { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlgorithmicStemming
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minimal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minimal = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="light")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		light = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		full = 3,
 	}
 	
 	/// <summary>
 	/// The status of domain configuration option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OptionStatus
 	{
 		
@@ -470,131 +450,127 @@ namespace MyNS
 	/// <summary>
 	/// <p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OptionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequiresIndexDocuments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequiresIndexDocuments = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Processing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailedToValidate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailedToValidate = 3,
 	}
 	
 	/// <summary>
 	/// An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnalysisSchemeLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ca = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cs = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="da")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		da = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="el")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		el = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eu = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fa = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fi = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ga")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ga = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gl = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="he")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		he = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hi = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hu = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hy = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ja = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ko = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lv = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mul")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mul = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nl = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ro = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ru")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ru = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="th")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		th = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tr = 32,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh-Hans")]
@@ -604,8 +580,7 @@ namespace MyNS
 		zhMinusHant = 34,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTypeException
 	{
 	}
@@ -613,8 +588,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefineExpressionResponse
 	{
 		
@@ -630,8 +604,7 @@ namespace MyNS
 	/// <summary>
 	/// The value of an <code>Expression</code> and its current status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpressionStatus
 	{
 		
@@ -654,8 +627,7 @@ namespace MyNS
 	/// <summary>
 	/// A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expression
 	{
 		
@@ -689,8 +661,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>DefineIndexField</a></code> request. Contains the status of the newly-configured index field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefineIndexFieldResponse
 	{
 		
@@ -706,8 +677,7 @@ namespace MyNS
 	/// <summary>
 	/// The value of an <code>IndexField</code> and its current status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexFieldStatus
 	{
 		
@@ -731,8 +701,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexField
 	{
 		
@@ -818,9 +787,7 @@ namespace MyNS
 		public DateArrayOptions DateArrayOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexFieldIndexFieldType
 	{
 		
@@ -830,16 +797,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="double")]
 		_double = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="literal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		literal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="latlon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		latlon = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="int-array")]
@@ -861,8 +828,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntOptions
 	{
 		
@@ -888,8 +854,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DoubleOptions
 	{
 		
@@ -915,8 +880,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiteralOptions
 	{
 		
@@ -951,8 +915,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextOptions
 	{
 		
@@ -987,8 +950,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateOptions
 	{
 		
@@ -1023,8 +985,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatLonOptions
 	{
 		
@@ -1059,8 +1020,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IntArrayOptions
 	{
 		
@@ -1083,8 +1043,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DoubleArrayOptions
 	{
 		
@@ -1107,8 +1066,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LiteralArrayOptions
 	{
 		
@@ -1131,8 +1089,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextArrayOptions
 	{
 		
@@ -1155,8 +1112,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateArrayOptions
 	{
 		
@@ -1179,9 +1135,7 @@ namespace MyNS
 	/// <summary>
 	/// The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexFieldType
 	{
 		
@@ -1191,16 +1145,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="double")]
 		_double = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="literal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		literal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="latlon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		latlon = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="int-array")]
@@ -1222,8 +1176,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefineSuggesterResponse
 	{
 		
@@ -1239,8 +1192,7 @@ namespace MyNS
 	/// <summary>
 	/// The value of a <code>Suggester</code> and its current status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuggesterStatus
 	{
 		
@@ -1264,8 +1216,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Suggester
 	{
 		
@@ -1295,8 +1246,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a search suggester.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DocumentSuggesterOptions
 	{
 		
@@ -1314,27 +1264,24 @@ namespace MyNS
 		public string SortExpression { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SuggesterFuzzyMatching
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		low = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 2,
 	}
 	
 	/// <summary>
 	/// The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAnalysisSchemeResponse
 	{
 		
@@ -1349,8 +1296,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DeleteDomain</code> request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDomainResponse
 	{
 		
@@ -1364,8 +1310,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>DeleteExpression</a></code> request. Specifies the expression being deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteExpressionResponse
 	{
 		
@@ -1380,8 +1325,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>DeleteIndexField</a></code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIndexFieldResponse
 	{
 		
@@ -1396,8 +1340,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSuggesterResponse
 	{
 		
@@ -1412,8 +1355,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAnalysisSchemesResponse
 	{
 		
@@ -1428,8 +1370,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAvailabilityOptionsResponse
 	{
 		
@@ -1440,8 +1381,7 @@ namespace MyNS
 	/// <summary>
 	/// The status and configuration of the domain's availability options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AvailabilityOptionsStatus
 	{
 		
@@ -1461,8 +1401,7 @@ namespace MyNS
 		public OptionStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisabledOperationException
 	{
 	}
@@ -1470,8 +1409,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeDomainEndpointOptions</code> request. Contains the status and configuration of a search domain's endpoint options. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainEndpointOptionsResponse
 	{
 		
@@ -1482,8 +1420,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration and status of the domain's endpoint options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainEndpointOptionsStatus
 	{
 		
@@ -1505,8 +1442,7 @@ namespace MyNS
 	/// <summary>
 	/// The domain's endpoint options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainEndpointOptions
 	{
 		
@@ -1520,9 +1456,7 @@ namespace MyNS
 	/// <summary>
 	/// The minimum required TLS version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TLSSecurityPolicy
 	{
 		
@@ -1536,8 +1470,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainsResponse
 	{
 		
@@ -1553,8 +1486,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeExpressionsResponse
 	{
 		
@@ -1569,8 +1501,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIndexFieldsResponse
 	{
 		
@@ -1585,8 +1516,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingParametersResponse
 	{
 		
@@ -1602,8 +1532,7 @@ namespace MyNS
 	/// <summary>
 	/// The status and configuration of a search domain's scaling parameters. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingParametersStatus
 	{
 		
@@ -1627,8 +1556,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired instance type and desired number of replicas of each index partition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScalingParameters
 	{
 		
@@ -1645,9 +1573,7 @@ namespace MyNS
 	/// <summary>
 	/// The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PartitionInstanceType
 	{
 		
@@ -1706,8 +1632,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeServiceAccessPolicies</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeServiceAccessPoliciesResponse
 	{
 		
@@ -1722,8 +1647,7 @@ namespace MyNS
 	/// <summary>
 	/// The configured access rules for the domain's document and search endpoints, and the current status of those rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessPoliciesStatus
 	{
 		
@@ -1747,8 +1671,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeSuggesters</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSuggestersResponse
 	{
 		
@@ -1763,8 +1686,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexDocumentsResponse
 	{
 		
@@ -1775,8 +1697,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>ListDomainNames</code> request. Contains a list of the domains owned by an account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainNamesResponse
 	{
 		
@@ -1787,8 +1708,7 @@ namespace MyNS
 	/// <summary>
 	/// A collection of domain names.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainNameMap
 	{
 	}
@@ -1796,8 +1716,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status of the domain's availability options. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAvailabilityOptionsResponse
 	{
 		
@@ -1808,8 +1727,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>UpdateDomainEndpointOptions</code> request. Contains the configuration and status of the domain's endpoint options. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDomainEndpointOptionsResponse
 	{
 		
@@ -1820,8 +1738,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateScalingParametersResponse
 	{
 		
@@ -1837,8 +1754,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateServiceAccessPoliciesResponse
 	{
 		
@@ -1853,8 +1769,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>BuildSuggester</a></code> operation. Specifies the name of the domain you want to update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BuildSuggestersRequest
 	{
 		
@@ -1876,8 +1791,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>CreateDomain</a></code> operation. Specifies a name for the new search domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDomainRequest
 	{
 		
@@ -1892,8 +1806,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DefineAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefineAnalysisSchemeRequest
 	{
 		
@@ -1923,8 +1836,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DefineExpression</a></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefineExpressionRequest
 	{
 		
@@ -1954,8 +1866,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DefineIndexField</a></code> operation. Specifies the name of the domain you want to update and the index field configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefineIndexFieldRequest
 	{
 		
@@ -1984,8 +1895,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DefineSuggester</a></code> operation. Specifies the name of the domain you want to update and the suggester configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefineSuggesterRequest
 	{
 		
@@ -2015,8 +1925,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DeleteAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAnalysisSchemeRequest
 	{
 		
@@ -2045,8 +1954,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DeleteDomain</a></code> operation. Specifies the name of the domain you want to delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDomainRequest
 	{
 		
@@ -2061,8 +1969,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DeleteExpression</a></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteExpressionRequest
 	{
 		
@@ -2091,8 +1998,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DeleteIndexField</a></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIndexFieldRequest
 	{
 		
@@ -2121,8 +2027,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DeleteSuggester</a></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSuggesterRequest
 	{
 		
@@ -2151,8 +2056,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeAnalysisSchemes</a></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAnalysisSchemesRequest
 	{
 		
@@ -2173,8 +2077,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAvailabilityOptionsRequest
 	{
 		
@@ -2192,8 +2095,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainEndpointOptionsRequest
 	{
 		
@@ -2211,8 +2113,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeDomains</a></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainsRequest
 	{
 		
@@ -2223,8 +2124,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeDomains</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeExpressionsRequest
 	{
 		
@@ -2245,8 +2145,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeIndexFields</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIndexFieldsRequest
 	{
 		
@@ -2267,8 +2166,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeScalingParameters</a></code> operation. Specifies the name of the domain you want to describe. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeScalingParametersRequest
 	{
 		
@@ -2290,8 +2188,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeServiceAccessPoliciesRequest
 	{
 		
@@ -2309,8 +2206,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeSuggester</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSuggestersRequest
 	{
 		
@@ -2331,8 +2227,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>IndexDocuments</a></code> operation. Specifies the name of the domain you want to re-index.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexDocumentsRequest
 	{
 		
@@ -2354,8 +2249,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>UpdateAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAvailabilityOptionsRequest
 	{
 		
@@ -2384,8 +2278,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>UpdateDomainEndpointOptions</a></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateDomainEndpointOptionsRequest
 	{
 		
@@ -2407,8 +2300,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>UpdateScalingParameters</a></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateScalingParametersRequest
 	{
 		
@@ -2438,8 +2330,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>UpdateServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateServiceAccessPoliciesRequest
 	{
 		
@@ -3326,7 +3217,7 @@ namespace MyNS
 	public enum GET_BuildSuggestersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BuildSuggesters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BuildSuggesters = 0,
 	}
 	
@@ -3347,7 +3238,7 @@ namespace MyNS
 	public enum GET_CreateDomainAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDomain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateDomain = 0,
 	}
 	
@@ -3397,109 +3288,107 @@ namespace MyNS
 		public AnalysisOptions AnalysisOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GET_DefineAnalysisSchemeAnalysisSchemeAnalysisSchemeLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ar = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="bg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ca = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cs = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="da")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		da = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="el")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		el = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eu = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fa = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fi = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ga")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ga = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gl = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="he")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		he = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hi = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hu")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hu = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hy = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		id = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ja")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ja = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ko = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lv = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mul")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mul = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nl = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ro")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ro = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ru")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ru = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sv = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="th")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		th = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tr = 32,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="zh-Hans")]
@@ -3512,7 +3401,7 @@ namespace MyNS
 	public enum GET_DefineAnalysisSchemeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DefineAnalysisScheme")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DefineAnalysisScheme = 0,
 	}
 	
@@ -3563,7 +3452,7 @@ namespace MyNS
 	public enum GET_DefineExpressionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DefineExpression")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DefineExpression = 0,
 	}
 	
@@ -3666,9 +3555,7 @@ namespace MyNS
 		public DateArrayOptions DateArrayOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GET_DefineIndexFieldIndexFieldIndexFieldType
 	{
 		
@@ -3678,16 +3565,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="double")]
 		_double = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="literal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		literal = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		text = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="latlon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		latlon = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="int-array")]
@@ -3709,7 +3596,7 @@ namespace MyNS
 	public enum GET_DefineIndexFieldAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DefineIndexField")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DefineIndexField = 0,
 	}
 	
@@ -3756,7 +3643,7 @@ namespace MyNS
 	public enum GET_DefineSuggesterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DefineSuggester")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DefineSuggester = 0,
 	}
 	
@@ -3777,7 +3664,7 @@ namespace MyNS
 	public enum GET_DeleteAnalysisSchemeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteAnalysisScheme")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteAnalysisScheme = 0,
 	}
 	
@@ -3798,7 +3685,7 @@ namespace MyNS
 	public enum GET_DeleteDomainAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDomain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDomain = 0,
 	}
 	
@@ -3819,7 +3706,7 @@ namespace MyNS
 	public enum GET_DeleteExpressionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteExpression")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteExpression = 0,
 	}
 	
@@ -3840,7 +3727,7 @@ namespace MyNS
 	public enum GET_DeleteIndexFieldAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteIndexField")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteIndexField = 0,
 	}
 	
@@ -3861,7 +3748,7 @@ namespace MyNS
 	public enum GET_DeleteSuggesterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteSuggester")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteSuggester = 0,
 	}
 	
@@ -3882,7 +3769,7 @@ namespace MyNS
 	public enum GET_DescribeAnalysisSchemesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAnalysisSchemes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAnalysisSchemes = 0,
 	}
 	
@@ -3903,7 +3790,7 @@ namespace MyNS
 	public enum GET_DescribeAvailabilityOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAvailabilityOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAvailabilityOptions = 0,
 	}
 	
@@ -3924,7 +3811,7 @@ namespace MyNS
 	public enum GET_DescribeDomainEndpointOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDomainEndpointOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDomainEndpointOptions = 0,
 	}
 	
@@ -3945,7 +3832,7 @@ namespace MyNS
 	public enum GET_DescribeDomainsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDomains")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeDomains = 0,
 	}
 	
@@ -3966,7 +3853,7 @@ namespace MyNS
 	public enum GET_DescribeExpressionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeExpressions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeExpressions = 0,
 	}
 	
@@ -3987,7 +3874,7 @@ namespace MyNS
 	public enum GET_DescribeIndexFieldsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeIndexFields")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeIndexFields = 0,
 	}
 	
@@ -4008,7 +3895,7 @@ namespace MyNS
 	public enum GET_DescribeScalingParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeScalingParameters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeScalingParameters = 0,
 	}
 	
@@ -4029,7 +3916,7 @@ namespace MyNS
 	public enum GET_DescribeServiceAccessPoliciesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeServiceAccessPolicies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeServiceAccessPolicies = 0,
 	}
 	
@@ -4050,7 +3937,7 @@ namespace MyNS
 	public enum GET_DescribeSuggestersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeSuggesters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeSuggesters = 0,
 	}
 	
@@ -4071,7 +3958,7 @@ namespace MyNS
 	public enum GET_IndexDocumentsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IndexDocuments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IndexDocuments = 0,
 	}
 	
@@ -4092,7 +3979,7 @@ namespace MyNS
 	public enum GET_ListDomainNamesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListDomainNames")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListDomainNames = 0,
 	}
 	
@@ -4113,7 +4000,7 @@ namespace MyNS
 	public enum GET_UpdateAvailabilityOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateAvailabilityOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateAvailabilityOptions = 0,
 	}
 	
@@ -4144,7 +4031,7 @@ namespace MyNS
 	public enum GET_UpdateDomainEndpointOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateDomainEndpointOptions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateDomainEndpointOptions = 0,
 	}
 	
@@ -4178,7 +4065,7 @@ namespace MyNS
 	public enum GET_UpdateScalingParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateScalingParameters")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateScalingParameters = 0,
 	}
 	
@@ -4199,7 +4086,7 @@ namespace MyNS
 	public enum GET_UpdateServiceAccessPoliciesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateServiceAccessPolicies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpdateServiceAccessPolicies = 0,
 	}
 	

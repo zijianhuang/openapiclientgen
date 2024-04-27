@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of an account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -68,30 +67,27 @@ namespace MyNS
 		public TimeZone TimeZone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEEDS_ATTENTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEEDS_ATTENTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSED = 3,
 	}
 	
 	/// <summary>
 	/// Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeZone
 	{
 		
@@ -111,8 +107,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of an ad blocking recovery tag. See https://support.google.com/adsense/answer/11575177.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdBlockingRecoveryTag
 	{
 		
@@ -132,8 +127,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of an ad client. An ad client represents a user's subscription with a specific AdSense product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdClient
 	{
 		
@@ -162,30 +156,27 @@ namespace MyNS
 		public System.Nullable<AdClientState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdClientState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GETTING_READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GETTING_READY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRES_REVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRES_REVIEW = 3,
 	}
 	
 	/// <summary>
 	/// Representation of the AdSense code for a given ad client. For more information, see [About the AdSense code](https://support.google.com/adsense/answer/9274634).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdClientAdCode
 	{
 		
@@ -211,8 +202,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of an ad unit. An ad unit represents a saved ad unit with a specific set of ad settings that have been customized within an account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdUnit
 	{
 		
@@ -250,8 +240,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings specific to content ads (AFC).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentAdsSettings
 	{
 		
@@ -268,52 +257,47 @@ namespace MyNS
 		public System.Nullable<ContentAdsSettingsType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ContentAdsSettingsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISPLAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISPLAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARTICLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARTICLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCHED_CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCHED_CONTENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdUnitState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARCHIVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARCHIVED = 2,
 	}
 	
 	/// <summary>
 	/// Representation of the ad unit code for a given ad unit. For more information, see [About the AdSense code](https://support.google.com/adsense/answer/9274634) and [Where to place the ad code in your HTML](https://support.google.com/adsense/answer/9190028).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdUnitAdCode
 	{
 		
@@ -327,8 +311,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of an alert.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alert
 	{
 		
@@ -357,30 +340,27 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlertSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERE = 3,
 	}
 	
 	/// <summary>
 	/// Cell representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Cell
 	{
 		
@@ -394,8 +374,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a custom channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomChannel
 	{
 		
@@ -427,8 +406,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -454,8 +432,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -463,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// The header information of the columns requested in the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Header
 	{
 		
@@ -487,39 +463,36 @@ namespace MyNS
 		public System.Nullable<HeaderType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HeaderType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEADER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEADER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_TALLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_TALLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_RATIO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_RATIO = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_CURRENCY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_MILLISECONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_MILLISECONDS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_DECIMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_DECIMAL = 6,
 	}
 	
 	/// <summary>
 	/// Message that represents an arbitrary HTTP body. It should only be used for payload formats that can't be represented as JSON, such as raw binary or an HTML page. This message can be used both in streaming and non-streaming API methods in the request as well as the response. It can be used as a top-level request field, which is convenient if one wants to extract parameters from either the URL or HTTP template into the request fields and also want access to the raw HTTP body. Example: message GetResourceRequest { // A unique request id. string request_id = 1; // The raw HTTP body is bound to this field. google.api.HttpBody http_body = 2; } service ResourceService { rpc GetResource(GetResourceRequest) returns (google.api.HttpBody); rpc UpdateResource(google.api.HttpBody) returns (google.protobuf.Empty); } Example with streaming methods: service CaldavService { rpc GetCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); rpc UpdateCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); } Use of this type only changes how the request and response bodies are handled, all other features will continue to work unchanged.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HttpBody
 	{
 		
@@ -545,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the account list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountsResponse
 	{
 		
@@ -566,8 +538,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the ad client list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdClientsResponse
 	{
 		
@@ -587,8 +558,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the adunit list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdUnitsResponse
 	{
 		
@@ -608,8 +578,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the alerts list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAlertsResponse
 	{
 		
@@ -623,8 +592,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the child account list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListChildAccountsResponse
 	{
 		
@@ -644,8 +612,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the custom channel list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCustomChannelsResponse
 	{
 		
@@ -665,8 +632,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the ad units linked to a custom channel list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLinkedAdUnitsResponse
 	{
 		
@@ -686,8 +652,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the custom channels linked to an adunit list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLinkedCustomChannelsResponse
 	{
 		
@@ -707,8 +672,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the payments list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPaymentsResponse
 	{
 		
@@ -722,8 +686,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of an unpaid or paid payment. See [Payment timelines for AdSense](https://support.google.com/adsense/answer/7164703) for more information about payments and the [YouTube homepage and payments account](https://support.google.com/adsense/answer/11622510) article for information about dedicated payments accounts for YouTube.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Payment
 	{
 		
@@ -749,8 +712,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the saved reports list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSavedReportsResponse
 	{
 		
@@ -770,8 +732,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a saved report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavedReport
 	{
 		
@@ -791,8 +752,7 @@ namespace MyNS
 	/// <summary>
 	/// Response definition for the sites list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSitesResponse
 	{
 		
@@ -812,8 +772,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a Site.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Site
 	{
 		
@@ -848,33 +807,30 @@ namespace MyNS
 		public System.Nullable<SiteState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SiteState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUIRES_REVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUIRES_REVIEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GETTING_READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GETTING_READY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEEDS_ATTENTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEEDS_ATTENTION = 4,
 	}
 	
 	/// <summary>
 	/// Response definition for the url channels list rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUrlChannelsResponse
 	{
 		
@@ -894,8 +850,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a URL channel. URL channels allow you to track the performance of particular pages in your site; see [URL channels](https://support.google.com/adsense/answer/2923836) for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlChannel
 	{
 		
@@ -921,8 +876,7 @@ namespace MyNS
 	/// <summary>
 	/// Result of a generated report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportResult
 	{
 		
@@ -978,8 +932,7 @@ namespace MyNS
 	/// <summary>
 	/// Row representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Row
 	{
 		
@@ -1955,41 +1908,41 @@ namespace MyNS
 	public enum Adsense_accounts_reports_generateDateRange
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_DATE_RANGE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_DATE_RANGE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TODAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TODAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YESTERDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YESTERDAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH_TO_DATE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR_TO_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR_TO_DATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_7_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_7_DAYS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAST_30_DAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAST_30_DAYS = 7,
 	}
 	
 	public enum Adsense_accounts_reports_generateReportingTimeZone
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORTING_TIME_ZONE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORTING_TIME_ZONE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_TIME_ZONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_TIME_ZONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_TIME_ZONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_TIME_ZONE = 2,
 	}
 }

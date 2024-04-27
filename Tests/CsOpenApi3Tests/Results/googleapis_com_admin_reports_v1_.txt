@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a collection of activities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Activities
 	{
 		
@@ -54,8 +53,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for the activity resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Activity
 	{
 		
@@ -218,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a parameter used in various reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NestedParameter
 	{
 		
@@ -307,8 +304,7 @@ namespace MyNS
 	/// <summary>
 	/// A notification channel used to watch for resource changes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Channel
 	{
 		
@@ -377,8 +373,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a usage report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageReport
 	{
 		
@@ -488,8 +483,7 @@ namespace MyNS
 		public string StringValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageReports
 	{
 		
@@ -849,74 +843,74 @@ namespace MyNS
 	public enum Reports_activities_listApplicationName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="access_transparency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		access_transparency = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="admin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		admin = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calendar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calendar = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chat = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="drive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		drive = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gcp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gcp = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gplus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gplus = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groups = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groups_enterprise")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groups_enterprise = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jamboard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jamboard = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="login")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		login = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="meet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		meet = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mobile = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rules = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="saml")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		saml = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="token")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		token = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user_accounts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user_accounts = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="context_aware_access")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		context_aware_access = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chrome")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chrome = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="data_studio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		data_studio = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="keep")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		keep = 20,
 	}
 	
 	public enum Reports_entityUsageReports_getEntityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gplus_communities")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gplus_communities = 0,
 	}
 }

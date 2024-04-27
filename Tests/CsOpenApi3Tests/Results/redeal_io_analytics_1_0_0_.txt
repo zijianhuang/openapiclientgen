@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventRecord
 	{
 		
@@ -353,13 +352,13 @@ namespace MyNS
 	public enum GetEventsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="clicks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clicks = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="contacts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		contacts = 2,
 	}
 }

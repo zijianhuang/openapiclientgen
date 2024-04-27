@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// A Canadian holiday. Includes a name, the literal date of the holiday, the observed date of the holiday (ie, accommodating for weekends), and a list of regions that observe this holiday.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Holiday
 	{
 		
@@ -113,9 +111,7 @@ namespace MyNS
 		public Province[] Provinces { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HolidayFederal
 	{
 		
@@ -126,9 +122,7 @@ namespace MyNS
 		_0 = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HolidayOptional
 	{
 		
@@ -139,8 +133,7 @@ namespace MyNS
 	/// <summary>
 	/// A Canadian province or territory 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Province
 	{
 		
@@ -202,55 +195,51 @@ namespace MyNS
 		public string SourceLink { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvinceId
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AB = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MB = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NB = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NU = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QC = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SK = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YT = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProvinceOptional
 	{
 		

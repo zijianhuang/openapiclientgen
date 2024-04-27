@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionDescription
 	{
 		
@@ -44,8 +43,7 @@ namespace MyNS
 		public EntryPoint Entry_point { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntryPoint
 	{
 		
@@ -114,27 +112,24 @@ namespace MyNS
 		public string Url_template { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntryPointHttp_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntryPointParameter
 	{
 		
@@ -190,30 +185,27 @@ namespace MyNS
 		public EntryPointParameterType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EntryPointParameterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="query")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		query = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="header")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		header = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uri")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uri = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="path")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		path = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="body")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		body = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionHelp
 	{
 		
@@ -242,8 +234,7 @@ namespace MyNS
 		public string Service_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionHelpResponse
 	{
 		
@@ -279,18 +270,15 @@ namespace MyNS
 		public ActionHelpResponseStatus Status { get; set; } = ActionHelpResponseStatus.success;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionHelpResponseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		success = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeActionResponse
 	{
 		
@@ -326,8 +314,7 @@ namespace MyNS
 		public ActionHelpResponseStatus Status { get; set; } = ActionHelpResponseStatus.success;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeServiceResponse
 	{
 		
@@ -363,8 +350,7 @@ namespace MyNS
 		public ActionHelpResponseStatus Status { get; set; } = ActionHelpResponseStatus.success;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceDescription
 	{
 		
@@ -399,8 +385,7 @@ namespace MyNS
 		public string Service_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorModel
 	{
 		
@@ -426,18 +411,15 @@ namespace MyNS
 		public System.Nullable<ErrorModelStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorModelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecBody
 	{
 		
@@ -484,24 +466,21 @@ namespace MyNS
 		public string Osdb_response_format { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExecBodyOsdb_output_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="url_only")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		url_only = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="generate_rdf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		generate_rdf = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="display_rdf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		display_rdf = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListActionsResponse
 	{
 		
@@ -537,8 +516,7 @@ namespace MyNS
 		public ActionHelpResponseStatus Status { get; set; } = ActionHelpResponseStatus.success;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListServicesResponse
 	{
 		
@@ -574,8 +552,7 @@ namespace MyNS
 		public ActionHelpResponseStatus Status { get; set; } = ActionHelpResponseStatus.success;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoginResponse
 	{
 		
@@ -623,8 +600,7 @@ namespace MyNS
 		public string User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogoutResponse
 	{
 		

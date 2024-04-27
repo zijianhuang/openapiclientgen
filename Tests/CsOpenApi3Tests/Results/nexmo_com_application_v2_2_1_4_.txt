@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationResponse
 	{
 		
@@ -50,8 +49,7 @@ namespace MyNS
 	/// <summary>
 	/// Your application can use multiple products. This contains the configuration for each product. This replaces the application `type` from version 1 of the Application API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Capabilities
 	{
 		
@@ -95,8 +93,7 @@ namespace MyNS
 	/// <summary>
 	/// Meetings related configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MeetingsCapability
 	{
 		
@@ -136,19 +133,17 @@ namespace MyNS
 		public System.Nullable<MeetingsCapabilityWebhooksRecording_changedHttp_method> Http_method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MeetingsCapabilityWebhooksRecording_changedHttp_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUT = 2,
 	}
 	
@@ -175,8 +170,7 @@ namespace MyNS
 	/// <summary>
 	/// Messages / Dispatch related configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessagesCapability
 	{
 		
@@ -216,13 +210,11 @@ namespace MyNS
 		public System.Nullable<MessagesCapabilityWebhooksInbound_urlHttp_method> Http_method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessagesCapabilityWebhooksInbound_urlHttp_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 0,
 	}
 	
@@ -239,8 +231,7 @@ namespace MyNS
 	/// <summary>
 	/// RTC / Conversation Service related configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RtcCapability
 	{
 		
@@ -279,24 +270,21 @@ namespace MyNS
 		public System.Nullable<RtcCapabilityWebhooksEvent_urlHttp_method> Http_method { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RtcCapabilityWebhooksEvent_urlHttp_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 1,
 	}
 	
 	/// <summary>
 	/// Two factor authentication related configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyCapability
 	{
 		
@@ -310,13 +298,11 @@ namespace MyNS
 		public VerifyCapabilityWebhooks Webhooks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VerifyCapabilityVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="v2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		v2 = 0,
 	}
 	
@@ -343,8 +329,7 @@ namespace MyNS
 	/// <summary>
 	/// Voice related configuration
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceCapability
 	{
 		
@@ -402,16 +387,14 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VoiceCapabilityPaymentsGatewaysMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="test")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		test = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="live")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		live = 1,
 	}
 	
@@ -545,8 +528,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Improve_ai { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationResponseCollection
 	{
 		

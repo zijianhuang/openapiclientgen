@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A message containing availability data relevant to DoubleClick Search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Availability
 	{
 		
@@ -71,8 +70,7 @@ namespace MyNS
 	/// <summary>
 	/// A conversion containing data relevant to DoubleClick Search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Conversion
 	{
 		
@@ -287,27 +285,24 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConversionAdUserDataConsent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRANTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRANTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DENIED = 2,
 	}
 	
 	/// <summary>
 	/// A message containing the custom dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDimension
 	{
 		
@@ -327,8 +322,7 @@ namespace MyNS
 	/// <summary>
 	/// A message containing the custom metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomMetric
 	{
 		
@@ -348,8 +342,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of conversions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConversionList
 	{
 		
@@ -369,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// File returned to https://developers.google.com/search-ads/v2/reference/reports/getIdMappingFile.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdMappingFile
 	{
 	}
@@ -378,8 +370,7 @@ namespace MyNS
 	/// <summary>
 	/// A DoubleClick Search report. This object contains the report request, some report metadata such as currency code, and the generated report rows or report files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Report
 	{
 		
@@ -457,8 +448,7 @@ namespace MyNS
 	/// <summary>
 	/// A request object used to create a DoubleClick Search report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportRequest
 	{
 		
@@ -550,8 +540,7 @@ namespace MyNS
 	/// <summary>
 	/// A request object used to create a DoubleClick Search report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportApiColumnSpec
 	{
 		
@@ -731,8 +720,7 @@ namespace MyNS
 	/// <summary>
 	/// A row in a DoubleClick Search report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportRow
 	{
 	}
@@ -740,8 +728,7 @@ namespace MyNS
 	/// <summary>
 	/// A saved column
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavedColumn
 	{
 		
@@ -767,8 +754,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of saved columns. Advertisers create saved columns to report on Floodlight activities, Google Analytics goals, or custom KPIs. To request reports with saved columns, you'll need the saved column names that are available from this list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavedColumnList
 	{
 		
@@ -788,8 +774,7 @@ namespace MyNS
 	/// <summary>
 	/// The request to update availability.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAvailabilityRequest
 	{
 		
@@ -803,8 +788,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a update availability request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAvailabilityResponse
 	{
 		

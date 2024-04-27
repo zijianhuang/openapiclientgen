@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiResponse
 	{
 		
@@ -29,8 +28,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindingsElement
 	{
 		
@@ -115,27 +113,24 @@ namespace MyNS
 		public string[] Cwe { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FindingsElementSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="info")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		info = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		low = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScanDefinition
 	{
 		
@@ -165,29 +160,25 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScanDefinitionAssetsCriticity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		low = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="medium")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		medium = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		high = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScanDefinitionAssetsDatatype
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ip = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ip-range")]
@@ -196,28 +187,28 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ip-subnet")]
 		ipMinussubnet = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fqdn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fqdn = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="domain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		domain = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		url = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="keyword")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		keyword = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="person")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		person = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="organisation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		organisation = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="path")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		path = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="application")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		application = 10,
 	}
 	

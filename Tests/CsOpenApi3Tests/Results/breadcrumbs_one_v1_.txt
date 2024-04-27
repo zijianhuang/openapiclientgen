@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsAddressAddressResponse
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public string Address { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsAddressAddressRiskResponse
 	{
 		
@@ -41,8 +39,7 @@ namespace MyNS
 		public string Risk_score { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsAddressExposureResponse
 	{
 		
@@ -53,8 +50,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Hop { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsAddressRiskExposureResponse
 	{
 		
@@ -71,8 +67,7 @@ namespace MyNS
 		public string Risk_score { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsNodeNodeRequest
 	{
 		
@@ -104,33 +99,30 @@ namespace MyNS
 		public string Token_address { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BreadcrumbsAPIModelsNodeNodeRequestChain
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ETH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ETH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BTC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BTC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATIC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RON = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRX = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsNodeNodeResponse
 	{
 		
@@ -144,8 +136,7 @@ namespace MyNS
 		public BreadcrumbsAPIModelsAddressAddressResponse[] Outgoing { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsPathfinderPathfinderRequest
 	{
 		
@@ -203,56 +194,49 @@ namespace MyNS
 		public string Source_address { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BreadcrumbsAPIModelsPathfinderPathfinderRequestChain
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ETH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ETH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BTC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BTC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BreadcrumbsAPIModelsPathfinderPathfinderRequestDirection_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Incoming")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Incoming = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Outgoing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Outgoing = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BreadcrumbsAPIModelsPathfinderPathfinderRequestSearch_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ShortestPath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ShortestPath = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MultiplePath")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MultiplePath = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClosestEntity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClosestEntity = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClosestIllicit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClosestIllicit = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsPathfinderPathfinderResponse
 	{
 		
@@ -266,8 +250,7 @@ namespace MyNS
 		public string[] Result_paths { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsSanctionSanctionedRequest
 	{
 		
@@ -293,8 +276,7 @@ namespace MyNS
 		public BreadcrumbsAPIModelsNodeNodeRequestChain Chain { get; set; } = BreadcrumbsAPIModelsNodeNodeRequestChain.ETH;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsSanctionSanctionedResponse
 	{
 		
@@ -308,8 +290,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsSanctioned { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsAPIModelsTransactionRiskResponse
 	{
 		
@@ -317,8 +298,7 @@ namespace MyNS
 		public BreadcrumbsAPIModelsAddressAddressRiskResponse[] Addresses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsResponseUnauthorizedResponse
 	{
 		
@@ -329,8 +309,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BreadcrumbsResponseUnprocessableResponse
 	{
 		

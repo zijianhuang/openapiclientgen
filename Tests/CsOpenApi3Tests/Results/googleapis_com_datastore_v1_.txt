@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines an aggregation that produces a single result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Aggregation
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Average of the values of the requested property. * Only numeric values will be aggregated. All non-numeric values including `NULL` are skipped. * If the aggregated values contain `NaN`, returns `NaN`. Infinity math follows IEEE-754 standards. * If the aggregated value set is empty, returns `NULL`. * Always returns the result as a double.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Avg
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to a property relative to the kind expressions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PropertyReference
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// Count of entities that match the query. The `COUNT(*)` aggregation function operates on the entire entity so it does not require a field reference.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Count
 	{
 		
@@ -98,8 +94,7 @@ namespace MyNS
 	/// <summary>
 	/// Sum of the values of the requested property. * Only numeric values will be aggregated. All non-numeric values including `NULL` are skipped. * If the aggregated values contain `NaN`, returns `NaN`. Infinity math follows IEEE-754 standards. * If the aggregated value set is empty, returns 0. * Returns a 64-bit integer if all aggregated numbers are integers and the sum result does not overflow. Otherwise, the result is returned as a double. Note that even if all the aggregated values are integers, the result is returned as a double if it cannot fit within a 64-bit signed integer. When this occurs, the returned value will lose precision. * When underflow occurs, floating-point aggregation is non-deterministic. This means that running the same query repeatedly without any changes to the underlying values could produce slightly different results each time. In those cases, values should be stored as integers over floating-point numbers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sum
 	{
 		
@@ -113,8 +108,7 @@ namespace MyNS
 	/// <summary>
 	/// Datastore query for running an aggregation over a Query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregationQuery
 	{
 		
@@ -134,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// A query for entities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Query
 	{
 		
@@ -197,8 +190,7 @@ namespace MyNS
 	/// <summary>
 	/// A holder for any type of filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -218,8 +210,7 @@ namespace MyNS
 	/// <summary>
 	/// A filter that merges multiple other filters using the given operator.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompositeFilter
 	{
 		
@@ -236,27 +227,24 @@ namespace MyNS
 		public System.Nullable<CompositeFilterOp> Op { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompositeFilterOp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OR = 2,
 	}
 	
 	/// <summary>
 	/// A filter on a specific property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PropertyFilter
 	{
 		
@@ -279,48 +267,45 @@ namespace MyNS
 		public Value Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PropertyFilterOp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LESS_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LESS_THAN_OR_EQUAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREATER_THAN_OR_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREATER_THAN_OR_EQUAL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUAL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_EQUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_EQUAL = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HAS_ANCESTOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HAS_ANCESTOR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_IN = 9,
 	}
 	
 	/// <summary>
 	/// A message that can hold any of the supported value types and associated metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Value
 	{
 		
@@ -406,8 +391,7 @@ namespace MyNS
 	/// <summary>
 	/// An array value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArrayValue
 	{
 		
@@ -421,8 +405,7 @@ namespace MyNS
 	/// <summary>
 	/// A Datastore data object. Must not exceed 1 MiB - 4 bytes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Entity
 	{
 		
@@ -442,8 +425,7 @@ namespace MyNS
 	/// <summary>
 	/// A unique identifier for an entity. If a key's partition ID or any of its path kinds or names are reserved/read-only, the key is reserved/read-only. A reserved/read-only key is forbidden in certain documented contexts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Key
 	{
 		
@@ -463,8 +445,7 @@ namespace MyNS
 	/// <summary>
 	/// A partition ID identifies a grouping of entities. The grouping is always by project and namespace, however the namespace ID may be empty. A partition ID contains several dimensions: project ID and namespace ID. Partition dimensions: - May be `""`. - Must be valid UTF-8 bytes. - Must have values that match regex `[A-Za-z\d\.\-_]{1,100}` If the value of any dimension matches regex `__.*__`, the partition is reserved/read-only. A reserved/read-only partition ID is forbidden in certain documented contexts. Foreign partition IDs (in which the project ID does not match the context project ID ) are discouraged. Reads and writes of foreign partition IDs may fail if the project is not in an active state.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartitionId
 	{
 		
@@ -490,8 +471,7 @@ namespace MyNS
 	/// <summary>
 	/// A (kind, ID/name) pair used to construct a key path. If either name or ID is set, the element is complete. If neither is set, the element is incomplete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PathElement
 	{
 		
@@ -517,8 +497,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatLng
 	{
 		
@@ -535,21 +514,18 @@ namespace MyNS
 		public System.Nullable<System.Double> Longitude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValueNullValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NULL_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NULL_VALUE = 0,
 	}
 	
 	/// <summary>
 	/// A representation of a kind.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KindExpression
 	{
 		
@@ -563,8 +539,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired order for a specific property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PropertyOrder
 	{
 		
@@ -581,27 +556,24 @@ namespace MyNS
 		public PropertyReference Property { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PropertyOrderDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIRECTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 2,
 	}
 	
 	/// <summary>
 	/// A representation of a property in a projection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Projection
 	{
 		
@@ -615,8 +587,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a single bucket from a Datastore aggregation query. The keys of `aggregate_properties` are the same for all results in an aggregation query, unlike entity queries which can have different fields present for each result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregationResult
 	{
 		
@@ -630,8 +601,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch of aggregation results produced by an aggregation query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AggregationResultBatch
 	{
 		
@@ -654,33 +624,30 @@ namespace MyNS
 		public string ReadTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AggregationResultBatchMoreResults
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MORE_RESULTS_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MORE_RESULTS_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FINISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FINISHED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MORE_RESULTS_AFTER_LIMIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MORE_RESULTS_AFTER_LIMIT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MORE_RESULTS_AFTER_CURSOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MORE_RESULTS_AFTER_CURSOR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_MORE_RESULTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_MORE_RESULTS = 4,
 	}
 	
 	/// <summary>
 	/// The request for Datastore.AllocateIds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AllocateIdsRequest
 	{
 		
@@ -700,8 +667,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for Datastore.AllocateIds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AllocateIdsResponse
 	{
 		
@@ -715,8 +681,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for Datastore.BeginTransaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BeginTransactionRequest
 	{
 		
@@ -736,8 +701,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for beginning a new transaction. Transactions can be created explicitly with calls to Datastore.BeginTransaction or implicitly by setting ReadOptions.new_transaction in read requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransactionOptions
 	{
 		
@@ -757,8 +721,7 @@ namespace MyNS
 	/// <summary>
 	/// Options specific to read-only transactions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadOnly
 	{
 		
@@ -772,8 +735,7 @@ namespace MyNS
 	/// <summary>
 	/// Options specific to read / write transactions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadWrite
 	{
 		
@@ -787,8 +749,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for Datastore.BeginTransaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BeginTransactionResponse
 	{
 		
@@ -802,8 +763,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for Datastore.Commit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitRequest
 	{
 		
@@ -838,27 +798,24 @@ namespace MyNS
 		public string Transaction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommitRequestMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSACTIONAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_TRANSACTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_TRANSACTIONAL = 2,
 	}
 	
 	/// <summary>
 	/// A mutation to apply to an entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Mutation
 	{
 		
@@ -902,8 +859,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for Datastore.Commit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommitResponse
 	{
 		
@@ -929,8 +885,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of applying a mutation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MutationResult
 	{
 		
@@ -968,8 +923,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -977,8 +931,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of fetching an entity from Datastore.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityResult
 	{
 		
@@ -1016,8 +969,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata common to all Datastore Admin operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1CommonMetadata
 	{
 		
@@ -1052,64 +1004,59 @@ namespace MyNS
 		public System.Nullable<GoogleDatastoreAdminV1CommonMetadataState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDatastoreAdminV1CommonMetadataOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPORT_ENTITIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPORT_ENTITIES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_ENTITIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_ENTITIES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_INDEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_INDEX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_INDEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_INDEX = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDatastoreAdminV1CommonMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FINALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FINALIZING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESSFUL = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 7,
 	}
 	
 	/// <summary>
 	/// Metadata for Datastore to Firestore migration operations. The DatastoreFirestoreMigration operation is not started by the end-user via an explicit "creation" method. This is an intentional deviation from the LRO design pattern. This singleton resource can be accessed at: "projects/{project_id}/operations/datastore-firestore-migration"
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadata
 	{
 		
@@ -1126,61 +1073,56 @@ namespace MyNS
 		public System.Nullable<GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep> MigrationStep { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIGRATION_STEP_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIGRATION_STEP_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREPARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREPARE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLY_WRITES_SYNCHRONOUSLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLY_WRITES_SYNCHRONOUSLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPY_AND_VERIFY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPY_AND_VERIFY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT_EVENTUALLY_CONSISTENT_READS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT_EVENTUALLY_CONSISTENT_READS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT_STRONGLY_CONSISTENT_READS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT_STRONGLY_CONSISTENT_READS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDIRECT_WRITES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDIRECT_WRITES = 7,
 	}
 	
 	/// <summary>
 	/// Identifies a subset of entities in a project. This is specified as combinations of kinds and namespaces (either or both of which may be all, as described in the following examples). Example usage: Entire project: kinds=[], namespace_ids=[] Kinds Foo and Bar in all namespaces: kinds=['Foo', 'Bar'], namespace_ids=[] Kinds Foo and Bar only in the default namespace: kinds=['Foo', 'Bar'], namespace_ids=[''] Kinds Foo and Bar in both the default and Baz namespaces: kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz'] The entire Baz namespace: kinds=[], namespace_ids=['Baz']
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1EntityFilter
 	{
 		
@@ -1200,8 +1142,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for ExportEntities operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1ExportEntitiesMetadata
 	{
 		
@@ -1239,8 +1180,7 @@ namespace MyNS
 	/// <summary>
 	/// Measures the progress of a particular metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1Progress
 	{
 		
@@ -1260,8 +1200,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for google.datastore.admin.v1.DatastoreAdmin.ExportEntities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1ExportEntitiesRequest
 	{
 		
@@ -1287,8 +1226,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for google.datastore.admin.v1.DatastoreAdmin.ExportEntities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1ExportEntitiesResponse
 	{
 		
@@ -1302,8 +1240,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for ImportEntities operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1ImportEntitiesMetadata
 	{
 		
@@ -1341,8 +1278,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for google.datastore.admin.v1.DatastoreAdmin.ImportEntities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1ImportEntitiesRequest
 	{
 		
@@ -1368,8 +1304,7 @@ namespace MyNS
 	/// <summary>
 	/// Datastore composite index definition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1Index
 	{
 		
@@ -1410,27 +1345,24 @@ namespace MyNS
 		public System.Nullable<GoogleDatastoreAdminV1IndexState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDatastoreAdminV1IndexAncestor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANCESTOR_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANCESTOR_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_ANCESTORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_ANCESTORS = 2,
 	}
 	
 	/// <summary>
 	/// A property of an index.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1IndexedProperty
 	{
 		
@@ -1447,33 +1379,30 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDatastoreAdminV1IndexState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 4,
 	}
 	
 	/// <summary>
 	/// Metadata for Index operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1IndexOperationMetadata
 	{
 		
@@ -1499,8 +1428,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for google.datastore.admin.v1.DatastoreAdmin.ListIndexes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1ListIndexesResponse
 	{
 		
@@ -1520,8 +1448,7 @@ namespace MyNS
 	/// <summary>
 	/// An event signifying the start of a new step in a [migration from Cloud Datastore to Cloud Firestore in Datastore mode](https://cloud.google.com/datastore/docs/upgrade-to-firestore).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1MigrationProgressEvent
 	{
 		
@@ -1547,8 +1474,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for the `PREPARE` step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1PrepareStepDetails
 	{
 		
@@ -1559,30 +1485,27 @@ namespace MyNS
 		public System.Nullable<GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode> ConcurrencyMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONCURRENCY_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONCURRENCY_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PESSIMISTIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PESSIMISTIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIMISTIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIMISTIC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIMISTIC_WITH_ENTITY_GROUPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIMISTIC_WITH_ENTITY_GROUPS = 3,
 	}
 	
 	/// <summary>
 	/// Details for the `REDIRECT_WRITES` step.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1RedirectWritesStepDetails
 	{
 		
@@ -1596,8 +1519,7 @@ namespace MyNS
 	/// <summary>
 	/// An event signifying a change in state of a [migration from Cloud Datastore to Cloud Firestore in Datastore mode](https://cloud.google.com/datastore/docs/upgrade-to-firestore).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1MigrationStateEvent
 	{
 		
@@ -1611,8 +1533,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata common to all Datastore Admin operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1beta1CommonMetadata
 	{
 		
@@ -1647,27 +1568,24 @@ namespace MyNS
 		public GoogleDatastoreAdminV1CommonMetadataState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleDatastoreAdminV1beta1CommonMetadataOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPORT_ENTITIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPORT_ENTITIES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_ENTITIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_ENTITIES = 2,
 	}
 	
 	/// <summary>
 	/// Identifies a subset of entities in a project. This is specified as combinations of kinds and namespaces (either or both of which may be all, as described in the following examples). Example usage: Entire project: kinds=[], namespace_ids=[] Kinds Foo and Bar in all namespaces: kinds=['Foo', 'Bar'], namespace_ids=[] Kinds Foo and Bar only in the default namespace: kinds=['Foo', 'Bar'], namespace_ids=[''] Kinds Foo and Bar in both the default and Baz namespaces: kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz'] The entire Baz namespace: kinds=[], namespace_ids=['Baz']
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1beta1EntityFilter
 	{
 		
@@ -1687,8 +1605,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for ExportEntities operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1beta1ExportEntitiesMetadata
 	{
 		
@@ -1726,8 +1643,7 @@ namespace MyNS
 	/// <summary>
 	/// Measures the progress of a particular metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1beta1Progress
 	{
 		
@@ -1747,8 +1663,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for google.datastore.admin.v1beta1.DatastoreAdmin.ExportEntities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1beta1ExportEntitiesResponse
 	{
 		
@@ -1762,8 +1677,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for ImportEntities operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleDatastoreAdminV1beta1ImportEntitiesMetadata
 	{
 		
@@ -1801,8 +1715,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -1822,8 +1735,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -1861,8 +1773,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1888,8 +1799,7 @@ namespace MyNS
 	/// <summary>
 	/// A [GQL query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GqlQuery
 	{
 		
@@ -1921,8 +1831,7 @@ namespace MyNS
 	/// <summary>
 	/// A binding parameter for a GQL query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GqlQueryParameter
 	{
 		
@@ -1942,8 +1851,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for Datastore.Lookup.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupRequest
 	{
 		
@@ -1969,8 +1877,7 @@ namespace MyNS
 	/// <summary>
 	/// The options shared by read requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadOptions
 	{
 		
@@ -1999,27 +1906,24 @@ namespace MyNS
 		public string Transaction { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReadOptionsReadConsistency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_CONSISTENCY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_CONSISTENCY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRONG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENTUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENTUAL = 2,
 	}
 	
 	/// <summary>
 	/// The response for Datastore.Lookup.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupResponse
 	{
 		
@@ -2057,8 +1961,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch of results produced by a query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryResultBatch
 	{
 		
@@ -2111,30 +2014,27 @@ namespace MyNS
 		public string SnapshotVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueryResultBatchEntityResultType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESULT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESULT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_ONLY = 3,
 	}
 	
 	/// <summary>
 	/// The request for Datastore.ReserveIds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReserveIdsRequest
 	{
 		
@@ -2154,8 +2054,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for Datastore.ReserveIds.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReserveIdsResponse
 	{
 	}
@@ -2163,8 +2062,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for Datastore.Rollback.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RollbackRequest
 	{
 		
@@ -2184,8 +2082,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for Datastore.Rollback. (an empty message).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RollbackResponse
 	{
 	}
@@ -2193,8 +2090,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for Datastore.RunAggregationQuery.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunAggregationQueryRequest
 	{
 		
@@ -2232,8 +2128,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for Datastore.RunAggregationQuery.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunAggregationQueryResponse
 	{
 		
@@ -2259,8 +2154,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for Datastore.RunQuery.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunQueryRequest
 	{
 		
@@ -2298,8 +2192,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for Datastore.RunQuery.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RunQueryResponse
 	{
 		

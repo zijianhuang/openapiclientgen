@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Article
 	{
 		
@@ -183,92 +182,92 @@ namespace MyNS
 	public enum StoriesGetBySectionAndFormatAndCallbackSection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="home")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		home = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="opinion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		opinion = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="world")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		world = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="national")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		national = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="politics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		politics = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="upshot")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		upshot = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nyregion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nyregion = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		business = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="technology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		technology = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="science")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		science = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="health")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		health = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sports")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sports = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="arts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		arts = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="books")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		books = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="movies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		movies = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="theater")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		theater = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sundayreview")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sundayreview = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fashion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fashion = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tmagazine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tmagazine = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="food")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		food = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="travel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		travel = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="magazine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		magazine = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="realestate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		realestate = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="automobiles")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		automobiles = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="obituaries")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		obituaries = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="insider")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		insider = 25,
 	}
 	
 	public enum StoriesGetBySectionAndFormatAndCallbackFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jsonp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jsonp = 1,
 	}
 	

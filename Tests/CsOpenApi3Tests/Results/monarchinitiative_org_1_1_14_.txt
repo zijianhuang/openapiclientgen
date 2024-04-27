@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class A_page_of_results
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AbstractPropertyValue
 	{
 		
@@ -71,8 +69,7 @@ namespace MyNS
 		public string[] Xrefs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnnotationExtension
 	{
 		
@@ -89,14 +86,12 @@ namespace MyNS
 		public Relation[] Relation_chain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Relation : NamedObject
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Association
 	{
 		
@@ -199,8 +194,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Graph
 	{
 		
@@ -217,8 +211,7 @@ namespace MyNS
 		public Node[] Nodes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Edge
 	{
 		
@@ -247,8 +240,7 @@ namespace MyNS
 		public string Sub { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Node
 	{
 		
@@ -267,8 +259,7 @@ namespace MyNS
 		public string Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityReference
 	{
 		
@@ -285,8 +276,7 @@ namespace MyNS
 		public string Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociationResults : SearchResult
 	{
 		
@@ -309,8 +299,7 @@ namespace MyNS
 		public string[] Objects { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompactAssociationSet
 	{
 		
@@ -339,8 +328,7 @@ namespace MyNS
 		public string Subject { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutocompleteResult
 	{
 		
@@ -399,8 +387,7 @@ namespace MyNS
 		public string Taxon_label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutocompleteResults
 	{
 		
@@ -411,8 +398,7 @@ namespace MyNS
 		public AutocompleteResult[] Docs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BioObject : NamedObject
 	{
 		
@@ -435,8 +421,7 @@ namespace MyNS
 		public string[] Xrefs { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Taxon
 	{
 		
@@ -453,8 +438,7 @@ namespace MyNS
 		public string Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BioObjectCore : NamedObjectCore
 	{
 		
@@ -465,8 +449,7 @@ namespace MyNS
 		public Taxon Taxon { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompareInput
 	{
 		
@@ -483,8 +466,7 @@ namespace MyNS
 		public string[] Reference_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class D2PAssociation : Association
 	{
 		
@@ -501,8 +483,7 @@ namespace MyNS
 		public EntityReference Onset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class D2PAssociationResults : SearchResult
 	{
 		
@@ -525,8 +506,7 @@ namespace MyNS
 		public string[] Objects { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityAnnotationResult
 	{
 		
@@ -541,8 +521,7 @@ namespace MyNS
 		public Span[] Spans { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Span
 	{
 		
@@ -571,8 +550,7 @@ namespace MyNS
 		public Token[] Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Token
 	{
 		
@@ -595,8 +573,7 @@ namespace MyNS
 		public string[] Terms { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Feature
 	{
 		
@@ -625,8 +602,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IcNode : Node
 	{
 		
@@ -637,8 +613,7 @@ namespace MyNS
 		public System.Nullable<System.Double> IC { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LayAutocomplete
 	{
 		
@@ -667,8 +642,7 @@ namespace MyNS
 		public string Matched_synonym { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LayResults
 	{
 		
@@ -679,8 +653,7 @@ namespace MyNS
 		public LayAutocomplete[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamedObject : NamedObjectCore
 	{
 		
@@ -712,14 +685,12 @@ namespace MyNS
 		public string[] Types { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SynonymPropertyValue : AbstractPropertyValue
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NamedObjectCore
 	{
 		
@@ -747,8 +718,7 @@ namespace MyNS
 		public string Label { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Page_of_variant_sets : A_page_of_results
 	{
 		
@@ -756,8 +726,7 @@ namespace MyNS
 		public Variant_set[] Items { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Variant_set
 	{
 		
@@ -793,8 +762,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PairwiseMatch
 	{
 		
@@ -817,8 +785,7 @@ namespace MyNS
 		public IcNode Reference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelationRef : NamedObjectCore
 	{
 		
@@ -829,8 +796,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Inverse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchResult
 	{
 		
@@ -859,8 +825,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> NumFound { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Seq : BioObject
 	{
 		
@@ -889,8 +854,7 @@ namespace MyNS
 		public string Seqlen { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SequenceFeature : BioObject
 	{
 		
@@ -904,8 +868,7 @@ namespace MyNS
 		public Seq Seq { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SequenceLocation : BioObject
 	{
 		
@@ -928,8 +891,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Strand { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SequencePosition
 	{
 		
@@ -940,8 +902,7 @@ namespace MyNS
 		public string Reference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimMatch : TypedNode
 	{
 		
@@ -967,8 +928,7 @@ namespace MyNS
 		public string Significance { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimMetadata
 	{
 		
@@ -979,8 +939,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Max_max_ic { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimQuery
 	{
 		
@@ -1006,8 +965,7 @@ namespace MyNS
 		public string[] Unresolved_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimResult
 	{
 		
@@ -1021,8 +979,7 @@ namespace MyNS
 		public SimQuery Query { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SufficiencyOutput
 	{
 		
@@ -1045,8 +1002,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Simple_score { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SufficiencyPostInput
 	{
 		
@@ -1063,8 +1019,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TypedNode : Node
 	{
 		
@@ -1081,8 +1036,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Mme
 	{
 	}
@@ -8788,107 +8742,107 @@ namespace MyNS
 	public enum Get_disease_gene_associationsAssociation_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="causal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		causal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="non_causal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		non_causal = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="both")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		both = 2,
 	}
 	
 	public enum Get_function_gene_associationsRelationship_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="involved_in")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		involved_in = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="involved_in_regulation_of")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		involved_in_regulation_of = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="acts_upstream_of_or_within")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		acts_upstream_of_or_within = 2,
 	}
 	
 	public enum Get_gene_homolog_associationsHomology_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="O")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		O = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LDO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LDO = 2,
 	}
 	
 	public enum Get_entity_set_function_slimmerRelationship_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="involved_in")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		involved_in = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="acts_upstream_of_or_within")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		acts_upstream_of_or_within = 1,
 	}
 	
 	public enum Get_edge_resourceDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCOMING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCOMING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUTGOING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUTGOING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTH = 2,
 	}
 	
 	public enum Get_edge_resourceGraph
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="data")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		data = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ontology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ontology = 1,
 	}
 	
 	public enum Get_ontology_term_graphGraph_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="topology_graph")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		topology_graph = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regulates_transitivity_graph")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regulates_transitivity_graph = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neighborhood_graph")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neighborhood_graph = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neighborhood_limited_graph")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neighborhood_limited_graph = 3,
 	}
 	
 	public enum Get_sim_compareMetric
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phenodigm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phenodigm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jaccard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jaccard = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="simGIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		simGIC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="resnik")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		resnik = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="symmetric_resnik")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		symmetric_resnik = 4,
 	}
 	

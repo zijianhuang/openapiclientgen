@@ -20,22 +20,20 @@ namespace MyNS
 	/// <summary>
 	/// Enumeration of aggregate values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Aggregate
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ok")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ok = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="test")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		test = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="staging")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		staging = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no = 3,
 	}
 	
@@ -49,8 +47,7 @@ namespace MyNS
 	///      The second group is formed by the fourth site. Sites of the first group (the second and the third) are never present at the same time as the fourth site.
 	///      30 % of times sites 1 and 2 are present (and site 3 is absent); 70 % of times site 3 is present (and sites 1 and 2 are absent).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Assembly
 	{
 		
@@ -86,8 +83,7 @@ namespace MyNS
 	///    id
 	///    type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attributes
 	{
 	}
@@ -95,8 +91,7 @@ namespace MyNS
 	/// <summary>
 	/// A JSON object containing information about an available API version
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AvailableApiVersion
 	{
 		
@@ -130,8 +125,7 @@ namespace MyNS
 	/// <summary>
 	/// Attributes for Base URL Info endpoint
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseInfoAttributes
 	{
 		
@@ -187,8 +181,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource objects appear in a JSON API document to represent resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseInfoResource
 	{
 		
@@ -241,8 +234,7 @@ namespace MyNS
 	/// <summary>
 	/// A Resource Links object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceLinks
 	{
 		
@@ -256,8 +248,7 @@ namespace MyNS
 	/// <summary>
 	/// Non-standard meta-information that can not be represented as an attribute or relationship.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Meta
 	{
 	}
@@ -268,8 +259,7 @@ namespace MyNS
 	///    type
 	///    id
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Relationships
 	{
 	}
@@ -277,8 +267,7 @@ namespace MyNS
 	/// <summary>
 	/// Specific meta field for base relationship resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseRelationshipMeta
 	{
 		
@@ -294,8 +283,7 @@ namespace MyNS
 	/// <summary>
 	/// Minimum requirements to represent a relationship resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseRelationshipResource
 	{
 		
@@ -327,39 +315,36 @@ namespace MyNS
 	///
 	///See the section "Data types" in the OPTIMADE API specification for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="string")]
 		_string = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="integer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		integer = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="float")]
 		_float = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="boolean")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		boolean = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="timestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		timestamp = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="list")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		list = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dictionary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dictionary = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntryInfoProperty
 	{
 		
@@ -397,8 +382,7 @@ namespace MyNS
 		public string Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntryInfoResource
 	{
 		
@@ -438,8 +422,7 @@ namespace MyNS
 	/// <summary>
 	/// errors are not allowed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntryInfoResponse
 	{
 		
@@ -487,8 +470,7 @@ namespace MyNS
 	/// <summary>
 	/// An error response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -544,8 +526,7 @@ namespace MyNS
 	/// <summary>
 	/// A Links object specific to Error objects
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorLinks
 	{
 		
@@ -559,8 +540,7 @@ namespace MyNS
 	/// <summary>
 	/// an object containing references to the source of the error
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorSource
 	{
 		
@@ -580,8 +560,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource objects appear in a JSON API document to represent resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Resource
 	{
 		
@@ -630,8 +609,7 @@ namespace MyNS
 	/// <summary>
 	/// An object describing the server's implementation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JsonApi
 	{
 		
@@ -652,8 +630,7 @@ namespace MyNS
 	/// <summary>
 	/// A set of Links objects, possibly including pagination
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ToplevelLinks
 	{
 		
@@ -703,8 +680,7 @@ namespace MyNS
 	///specified in this document, MUST start with a
 	///database-provider-specific prefix.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseMeta
 	{
 		
@@ -803,8 +779,7 @@ namespace MyNS
 	/// <summary>
 	/// Information on the server implementation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Implementation
 	{
 		
@@ -848,8 +823,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the maintainer of the implementation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImplementationMaintainer
 	{
 		
@@ -865,8 +839,7 @@ namespace MyNS
 	/// <summary>
 	/// Information on the database provider of the implementation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Provider
 	{
 		
@@ -906,8 +879,7 @@ namespace MyNS
 	/// <summary>
 	/// Information on the query that was requested.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResponseMetaQuery
 	{
 		
@@ -933,8 +905,7 @@ namespace MyNS
 	///
 	///Note: Must be named "Warnings", since "Warning" is a built-in Python class.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warnings
 	{
 		
@@ -996,8 +967,7 @@ namespace MyNS
 	/// <summary>
 	/// This model wraps the JSON API Relationships to include type-specific top level keys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntryRelationships
 	{
 		
@@ -1017,8 +987,7 @@ namespace MyNS
 	/// <summary>
 	/// Similar to normal JSON API relationship, but with addition of OPTIONAL meta field for a resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceRelationship
 	{
 		
@@ -1046,8 +1015,7 @@ namespace MyNS
 	///Relationships may be to-one or to-many.
 	///Relationships can be specified by including a member in a resource's links object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RelationshipLinks
 	{
 		
@@ -1070,8 +1038,7 @@ namespace MyNS
 	/// <summary>
 	/// Similar to normal JSON API relationship, but with addition of OPTIONAL meta field for a resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StructureRelationship
 	{
 		
@@ -1097,8 +1064,7 @@ namespace MyNS
 	/// <summary>
 	/// The base model for an entry resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntryResource
 	{
 		
@@ -1175,8 +1141,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains key-value pairs representing the entry's properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntryResourceAttributes
 	{
 		
@@ -1218,8 +1183,7 @@ namespace MyNS
 	/// <summary>
 	/// errors MUST be present and data MUST be skipped
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorResponse
 	{
 		
@@ -1267,8 +1231,7 @@ namespace MyNS
 	/// <summary>
 	/// detail MUST be present
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OptimadeError
 	{
 		
@@ -1326,8 +1289,7 @@ namespace MyNS
 	/// <summary>
 	/// errors are not allowed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InfoResponse
 	{
 		
@@ -1375,8 +1337,7 @@ namespace MyNS
 	/// <summary>
 	/// A link **MUST** be represented as either: a string containing the link's URL or a link object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Link
 	{
 		
@@ -1402,30 +1363,27 @@ namespace MyNS
 	/// <summary>
 	/// Enumeration of link_type values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LinkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="child")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		child = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="root")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		root = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="providers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		providers = 3,
 	}
 	
 	/// <summary>
 	/// A Links endpoint resource object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinksResource
 	{
 		
@@ -1492,8 +1450,7 @@ namespace MyNS
 	/// <summary>
 	/// Links endpoint resource object attributes
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinksResourceAttributes
 	{
 		
@@ -1565,8 +1522,7 @@ namespace MyNS
 	/// <summary>
 	/// errors are not allowed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinksResponse
 	{
 		
@@ -1611,9 +1567,7 @@ namespace MyNS
 	/// <summary>
 	/// Integer enumeration of dimension_types values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Periodicity
 	{
 		
@@ -1627,8 +1581,7 @@ namespace MyNS
 	/// <summary>
 	/// A person, i.e., an author, editor or other.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Person
 	{
 		
@@ -1670,8 +1623,7 @@ namespace MyNS
 	///        If supported, filters MAY support only a subset of comparison operators.
 	///    - Every references entry MUST contain at least one of the properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceResource
 	{
 		
@@ -1752,8 +1704,7 @@ namespace MyNS
 	///Many properties match the meaning described in the
 	///[BibTeX specification](http://bibtexml.sourceforge.net/btxdoc.pdf).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceResourceAttributes
 	{
 		
@@ -1955,8 +1906,7 @@ namespace MyNS
 	/// <summary>
 	/// errors are not allowed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceResponseMany
 	{
 		
@@ -2001,8 +1951,7 @@ namespace MyNS
 	/// <summary>
 	/// errors are not allowed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReferenceResponseOne
 	{
 		
@@ -2062,8 +2011,7 @@ namespace MyNS
 	///    - `[ {"name": "C13", "chemical_symbols": ["C"], "concentration": [1.0], "mass": [13.0]} ]`: any site with this species is occupied by a carbon isotope with mass 13.
 	///    - `[ {"name": "CH3", "chemical_symbols": ["C"], "concentration": [1.0], "attached": ["H"], "nattached": [3]} ]`: any site with this species is occupied by a methyl group, -CH3, which is represented without specifying precise positions of the hydrogen atoms.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Species
 	{
 		
@@ -2133,30 +2081,27 @@ namespace MyNS
 	/// <summary>
 	/// Enumeration of structure_features values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StructureFeatures
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disorder")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disorder = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="implicit_atoms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		implicit_atoms = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="site_attachments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		site_attachments = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="assemblies")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		assemblies = 3,
 	}
 	
 	/// <summary>
 	/// Representing a structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StructureResource
 	{
 		
@@ -2235,8 +2180,7 @@ namespace MyNS
 	/// <summary>
 	/// This class contains the Field for the attributes used to represent a structure, e.g. unit cell, atoms, positions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StructureResourceAttributes
 	{
 		
@@ -2823,8 +2767,7 @@ namespace MyNS
 	/// <summary>
 	/// errors are not allowed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StructureResponseMany
 	{
 		
@@ -2869,8 +2812,7 @@ namespace MyNS
 	/// <summary>
 	/// errors are not allowed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StructureResponseOne
 	{
 		

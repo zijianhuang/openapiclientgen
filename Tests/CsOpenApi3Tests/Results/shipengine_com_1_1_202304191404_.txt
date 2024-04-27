@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// A ShipEngine account settings response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_settings
 	{
 		
@@ -32,24 +31,21 @@ namespace MyNS
 	/// <summary>
 	/// The possible default label layout values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Default_label_layout
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="4x6")]
 		_4x6 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Letter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Letter = 1,
 	}
 	
 	/// <summary>
 	/// A ShipEngine account images body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account_settings_images
 	{
 		
@@ -118,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// An add funds to carrier request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Add_funds_to_carrier_request_body
 	{
 	}
@@ -127,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// The current balance of the requested carrier account
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Add_funds_to_carrier_response_body
 	{
 		
@@ -145,8 +139,7 @@ namespace MyNS
 	/// A monetary value, such as the price of a shipping label, the insured value of a package, or an account balance.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Monetary_value
 	{
 		
@@ -171,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// An add funds to insurance request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Add_funds_to_insurance_request_body
 	{
 	}
@@ -180,8 +172,7 @@ namespace MyNS
 	/// <summary>
 	/// Add funds to insurance response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Add_funds_to_insurance_response_body
 	{
 	}
@@ -189,8 +180,7 @@ namespace MyNS
 	/// <summary>
 	/// An add to batch request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Add_to_batch_request_body
 	{
 	}
@@ -201,8 +191,7 @@ namespace MyNS
 	///> **Note:** Either `name` or `company_name` must be set. Both may be specified, if relevant.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address
 	{
 	}
@@ -210,19 +199,17 @@ namespace MyNS
 	/// <summary>
 	/// Indicates whether an address is residential.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Address_residential_indicator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		yes = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no = 2,
 	}
 	
@@ -230,8 +217,7 @@ namespace MyNS
 	/// Any residential or business mailing address, anywhere in the world.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address_to_validate
 	{
 	}
@@ -239,8 +225,7 @@ namespace MyNS
 	/// <summary>
 	/// An address validating shipment
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address_validating_shipment
 	{
 	}
@@ -248,260 +233,253 @@ namespace MyNS
 	/// <summary>
 	/// The error codes that can be returned by the address validation API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Address_validation_code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a1000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a1000 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a1001")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a1001 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a1002")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a1002 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a1003")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a1003 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a1004")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a1004 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a1005")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a1005 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a1006")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a1006 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a1007")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a1007 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="a1008")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		a1008 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="r1000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		r1000 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="r1001")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		r1001 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="r1002")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		r1002 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="r1003")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		r1003 = 12,
 	}
 	
 	/// <summary>
 	/// The detailed error codes that can be returned by the address validation API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Address_validation_detail_code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsupported_country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsupported_country = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="non_supported_country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		non_supported_country = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minimum_postal_code_verification_failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minimum_postal_code_verification_failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="street_does_not_match_unique_street_name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		street_does_not_match_unique_street_name = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="multiple_directionals")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		multiple_directionals = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="multiple_matches")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		multiple_matches = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="suite_not_valid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		suite_not_valid = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="suite_missing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		suite_missing = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="incompatible_paired_labels")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		incompatible_paired_labels = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_house_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_house_number = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="missing_house_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		missing_house_number = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_box_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_box_number = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_charge_event")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_charge_event = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="missing_box_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		missing_box_number = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="missing_cmra_or_private_mail_box_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		missing_cmra_or_private_mail_box_number = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="suite_has_no_secondaries")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		suite_has_no_secondaries = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="postal_code_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		postal_code_changed_or_added = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="state_province_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		state_province_changed_or_added = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="city_locality_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		city_locality_changed_or_added = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="urbanization_changed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		urbanization_changed = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="street_name_spelling_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		street_name_spelling_changed_or_added = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="street_name_type_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		street_name_type_changed_or_added = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="street_direction_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		street_direction_changed_or_added = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="suite_type_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		suite_type_changed_or_added = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="suite_unit_number_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		suite_unit_number_changed_or_added = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="double_dependent_locality_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		double_dependent_locality_changed_or_added = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subadministrative_area_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subadministrative_area_changed_or_added = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subnational_area_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subnational_area_changed_or_added = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="po_box_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		po_box_changed_or_added = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premise_type_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premise_type_changed_or_added = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="house_number_changed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		house_number_changed = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="organization_changed_or_added")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		organization_changed_or_added = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="partially_verified_to_state_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		partially_verified_to_state_level = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="partially_verified_to_city_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		partially_verified_to_city_level = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="partially_verified_to_street_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		partially_verified_to_street_level = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="partially_verified_to_premise_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		partially_verified_to_premise_level = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verified_to_state_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verified_to_state_level = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verified_to_city_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verified_to_city_level = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verified_to_street_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verified_to_street_level = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verified_to_premise_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verified_to_premise_level = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verified_to_suite_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verified_to_suite_level = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="coded_to_street_lavel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		coded_to_street_lavel = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="coded_to_neighborhood_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		coded_to_neighborhood_level = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="coded_to_community_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		coded_to_community_level = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="coded_to_state_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		coded_to_state_level = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="coded_to_rooftop_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		coded_to_rooftop_level = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="coded_to_rooftop_interpolation_level")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		coded_to_rooftop_interpolation_level = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name_max_length_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name_max_length_exceeded = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phone_max_length_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phone_max_length_exceeded = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="company_name_max_length_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		company_name_max_length_exceeded = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="line1_min_max_length")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		line1_min_max_length = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="line2_max_length_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		line2_max_length_exceeded = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="line3_max_length_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		line3_max_length_exceeded = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="city_locality_max_length_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		city_locality_max_length_exceeded = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="state_province_max_length_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		state_province_max_length_exceeded = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_postal_code")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_postal_code = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country_invalid_length")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country_invalid_length = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="address_not_found")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		address_not_found = 57,
 	}
 	
 	/// <summary>
 	/// The different types of messages that can be returned by the address validation API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Address_validation_message_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="warning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		warning = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="info")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		info = 2,
 	}
 	
 	/// <summary>
 	/// An address validation result
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address_validation_result
 	{
 		
@@ -540,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message that displays when additional info is needed for an address validation request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Response_message
 	{
 		
@@ -580,30 +557,27 @@ namespace MyNS
 	/// <summary>
 	/// The possible address validation status values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Address_validation_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unverified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unverified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verified = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="warning")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		warning = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 3,
 	}
 	
 	/// <summary>
 	/// Advanced shipment options
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Advanced_shipment_options
 	{
 		
@@ -742,24 +716,21 @@ namespace MyNS
 	/// <summary>
 	/// The possible bill to party values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Bill_to_party
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recipient")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recipient = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="third_party")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		third_party = 1,
 	}
 	
 	/// <summary>
 	/// Defer payment until package is delivered, instead of when it is ordered.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Collect_on_delivery
 	{
 		
@@ -770,8 +741,7 @@ namespace MyNS
 		public Collect_on_delivery_payment_type Payment_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Payment_amount
 	{
 		
@@ -789,30 +759,27 @@ namespace MyNS
 	/// <summary>
 	/// Types of payment that are supported
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Collect_on_delivery_payment_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		any = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cash = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cash_equivalent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cash_equivalent = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 3,
 	}
 	
 	/// <summary>
 	/// The weight of a package
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Weight
 	{
 		
@@ -837,22 +804,20 @@ namespace MyNS
 	/// <summary>
 	/// The possible weight unit values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Weight_unit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ounce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ounce = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gram")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gram = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kilogram")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kilogram = 3,
 	}
 	
@@ -869,16 +834,14 @@ namespace MyNS
 	/// <summary>
 	/// Indicates if the package will be picked up or dropped off by the carrier
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Origin_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pickup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pickup = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="drop_off")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		drop_off = 1,
 	}
 	
@@ -886,8 +849,7 @@ namespace MyNS
 	/// Additional information some carriers may provide by which to identify a given label in their system. 
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Alternative_identifier
 	{
 		
@@ -923,28 +885,26 @@ namespace MyNS
 	///| `leave_if_no_response`         |
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ancillary_service_endorsement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="return_service_requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		return_service_requested = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forwarding_service_requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forwarding_service_requested = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="address_service_requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		address_service_requested = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="change_service_requested")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		change_service_requested = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="leave_if_no_response")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		leave_if_no_response = 5,
 	}
 	
@@ -953,8 +913,7 @@ namespace MyNS
 	///thousands of labels at a time.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Batch
 	{
 		
@@ -1129,8 +1088,7 @@ namespace MyNS
 	/// <summary>
 	/// A link to a related resource, or an empty object if there is no resource to link to
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Optional_link
 	{
 		
@@ -1153,8 +1111,7 @@ namespace MyNS
 	/// Reference to the various downloadable file formats for the generated label
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Label_download
 	{
 		
@@ -1193,19 +1150,17 @@ namespace MyNS
 	///|`zpl`         | `access_worldwide` <br> `apc` <br> `asendia` <br> `dhl_global_mail` <br> `dhl_express` <br> `dhl_express_australia` <br> `dhl_express_canada` <br> `dhl_express_worldwide` <br> `dhl_express_uk` <br> `dpd` <br> `endicia` <br> `fedex` <br> `fedex_uk` <br> `firstmile` <br> `imex` <br> `newgistics` <br> `ontrac` <br> `rr_donnelley` <br> `stamps_com` <br> `ups` <br> `usps`
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Label_format
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pdf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pdf = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="png")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		png = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zpl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		zpl = 2,
 	}
 	
@@ -1213,58 +1168,53 @@ namespace MyNS
 	/// The available layouts (sizes) in which shipping labels can be downloaded.  The label format determines which sizes are supported.  `4x6` is supported for all label formats, whereas `letter` (8.5" x 11") is only supported for `pdf` format.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Label_layout
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="4x6")]
 		_4x6 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="letter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		letter = 1,
 	}
 	
 	/// <summary>
 	/// The possible batch status values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Batch_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		processing = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed_with_errors")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed_with_errors = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archived")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		archived = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notifying")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notifying = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid = 7,
 	}
 	
 	/// <summary>
 	/// A batch response error
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Batch_response_error
 	{
 		
@@ -1292,27 +1242,24 @@ namespace MyNS
 	/// <summary>
 	/// The possible batches sort by values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Batches_sort_by
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ship_date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ship_date = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="processed_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		processed_at = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created_at = 2,
 	}
 	
 	/// <summary>
 	/// A bulk rate
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Bulk_rate
 	{
 		
@@ -1358,30 +1305,27 @@ namespace MyNS
 	/// <summary>
 	/// The possible rate response status values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Rate_response_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="working")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		working = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="partial")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		@partial = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 3,
 	}
 	
 	/// <summary>
 	/// A rate shipment request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Calculate_rates_request_body
 	{
 	}
@@ -1389,8 +1333,7 @@ namespace MyNS
 	/// <summary>
 	/// A rate shipment response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Calculate_rates_response_body
 	{
 	}
@@ -1400,8 +1343,7 @@ namespace MyNS
 	///that has been tied to the current account.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Carrier
 	{
 		
@@ -1495,8 +1437,7 @@ namespace MyNS
 	/// <summary>
 	/// Advanced options that are specific to the carrier
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Carrier_advanced_option
 	{
 		
@@ -1528,121 +1469,116 @@ namespace MyNS
 	/// <summary>
 	/// The shipping carriers that are supported by ShipEngine
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Carrier_name
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="access_worldwide")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		access_worldwide = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="amazon_buy_shipping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		amazon_buy_shipping = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="amazon_shipping_uk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		amazon_shipping_uk = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="apc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		apc = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asendia")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asendia = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="australia_post")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		australia_post = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="canada_post")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		canada_post = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dhl_ecommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dhl_ecommerce = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dhl_express")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dhl_express = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dhl_express_au")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dhl_express_au = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dhl_express_ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dhl_express_ca = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dhl_express_uk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dhl_express_uk = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dpd")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dpd = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="endicia")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		endicia = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fedex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fedex = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fedex_uk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fedex_uk = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="firstmile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		firstmile = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="imex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		imex = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newgistics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newgistics = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ontrac")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ontrac = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="purolator_canada")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		purolator_canada = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="royal_mail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		royal_mail = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rr_donnelley")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rr_donnelley = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="seko")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		seko = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sendle")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sendle = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stamps_com")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stamps_com = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ups = 26,
 	}
 	
 	/// <summary>
 	/// The shipping carriers for which ShipEngine supports carrier settings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Carrier_name_with_settings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dhl_express")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dhl_express = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fedex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fedex = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newgistics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newgistics = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ups")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ups = 3,
 	}
 	
 	/// <summary>
 	/// A rate shipments request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Compare_bulk_rates_request_body
 	{
 	}
@@ -1650,8 +1586,7 @@ namespace MyNS
 	/// <summary>
 	/// An Access Worldwide account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_access_worldwide_request_body
 	{
 		
@@ -1689,8 +1624,7 @@ namespace MyNS
 	/// <summary>
 	/// An Amazon account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_amazon_buy_shipping_request_body
 	{
 		
@@ -1733,8 +1667,7 @@ namespace MyNS
 	/// <summary>
 	/// An Amazon Shipping UK account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_amazon_shipping_uk
 	{
 		
@@ -1762,8 +1695,7 @@ namespace MyNS
 	/// <summary>
 	/// An APC account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_apc_request_body
 	{
 		
@@ -1801,8 +1733,7 @@ namespace MyNS
 	/// <summary>
 	/// An Asendia account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_asendia_request_body
 	{
 		
@@ -1850,8 +1781,7 @@ namespace MyNS
 	/// <summary>
 	/// An Australia Post account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_australia_post_request_body
 	{
 		
@@ -1899,8 +1829,7 @@ namespace MyNS
 	/// <summary>
 	/// A Canada Post account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_canada_post_request_body
 	{
 		
@@ -1955,8 +1884,7 @@ namespace MyNS
 		public string Nickname { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_carrier_request_body
 	{
 	}
@@ -1964,8 +1892,7 @@ namespace MyNS
 	/// <summary>
 	/// A connect account response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_carrier_response_body
 	{
 		
@@ -1981,8 +1908,7 @@ namespace MyNS
 	/// <summary>
 	/// A DHL Ecommerce account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_dhl_ecommerce_request_body
 	{
 		
@@ -2107,8 +2033,7 @@ namespace MyNS
 	/// <summary>
 	/// A DHL Express AU account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_dhl_express_au_request_body
 	{
 		
@@ -2136,8 +2061,7 @@ namespace MyNS
 	/// <summary>
 	/// A DHL Express CA account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_dhl_express_ca_request_body
 	{
 		
@@ -2165,8 +2089,7 @@ namespace MyNS
 	/// <summary>
 	/// A DHL express account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_dhl_express_request_body
 	{
 		
@@ -2213,8 +2136,7 @@ namespace MyNS
 	/// <summary>
 	/// A DHL Express UK account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_dhl_express_uk_request_body
 	{
 		
@@ -2260,8 +2182,7 @@ namespace MyNS
 	/// <summary>
 	/// A DPD account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_dpd_request_body
 	{
 		
@@ -2299,8 +2220,7 @@ namespace MyNS
 	/// <summary>
 	/// An Endicia account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_endicia_request_body
 	{
 		
@@ -2338,8 +2258,7 @@ namespace MyNS
 	/// <summary>
 	/// A Fedex account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_fedex_request_body
 	{
 		
@@ -2487,8 +2406,7 @@ namespace MyNS
 	/// <summary>
 	/// A Fedex UK account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_fedex_uk_request_body
 	{
 		
@@ -2636,8 +2554,7 @@ namespace MyNS
 	/// <summary>
 	/// A First Mile account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_firstmile_request_body
 	{
 		
@@ -2681,8 +2598,7 @@ namespace MyNS
 	/// <summary>
 	/// An Imex account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_imex_request_body
 	{
 		
@@ -2720,8 +2636,7 @@ namespace MyNS
 	/// <summary>
 	/// A create shipsurance connection request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_insurer_request_body
 	{
 		
@@ -2742,8 +2657,7 @@ namespace MyNS
 		public string Policy_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_insurer_response_body
 	{
 	}
@@ -2751,8 +2665,7 @@ namespace MyNS
 	/// <summary>
 	/// A Newgistics account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_newgistics_request_body
 	{
 		
@@ -2796,8 +2709,7 @@ namespace MyNS
 	/// <summary>
 	/// An Ontrac account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_ontrac_request_body
 	{
 		
@@ -2835,8 +2747,7 @@ namespace MyNS
 	/// <summary>
 	/// A Purolator account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_purolator_request_body
 	{
 		
@@ -2874,8 +2785,7 @@ namespace MyNS
 	/// <summary>
 	/// A Royal Mail account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_royal_mail_request_body
 	{
 		
@@ -2985,8 +2895,7 @@ namespace MyNS
 	/// <summary>
 	/// A RR Donnelley account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_rr_donnelley_request_body
 	{
 		
@@ -3024,8 +2933,7 @@ namespace MyNS
 	/// <summary>
 	/// A SEKO account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_seko_request_body
 	{
 		
@@ -3053,8 +2961,7 @@ namespace MyNS
 	/// <summary>
 	/// A Sendle account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_sendle_request_body
 	{
 		
@@ -3090,8 +2997,7 @@ namespace MyNS
 	/// <summary>
 	/// A Stamps account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_stamps_request_body
 	{
 		
@@ -3129,8 +3035,7 @@ namespace MyNS
 	/// <summary>
 	/// A UPS account information request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connect_ups_request_body
 	{
 		
@@ -3318,8 +3223,7 @@ namespace MyNS
 	/// <summary>
 	/// UPS invoice
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ups_invoice
 	{
 		
@@ -3356,8 +3260,7 @@ namespace MyNS
 		public string Invoice_number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Contact_details
 	{
 		
@@ -3391,8 +3294,7 @@ namespace MyNS
 	/// <summary>
 	/// A ShipEngine account settings images request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_account_settings_image_request_body
 	{
 	}
@@ -3400,8 +3302,7 @@ namespace MyNS
 	/// <summary>
 	/// A create and validate shipment resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_and_validate_shipment
 	{
 	}
@@ -3409,8 +3310,7 @@ namespace MyNS
 	/// <summary>
 	/// A create batch request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_batch_request_body
 	{
 		
@@ -3444,8 +3344,7 @@ namespace MyNS
 	/// <summary>
 	/// A create batch response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_batch_response_body
 	{
 	}
@@ -3453,8 +3352,7 @@ namespace MyNS
 	/// <summary>
 	/// A purchase label without shipment request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_label_from_rate_request_body
 	{
 	}
@@ -3462,8 +3360,7 @@ namespace MyNS
 	/// <summary>
 	/// A create label from rate response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_label_from_rate_response_body
 	{
 	}
@@ -3471,8 +3368,7 @@ namespace MyNS
 	/// <summary>
 	/// A purchase label without shipment request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_label_from_shipment_request_body
 	{
 		
@@ -3501,19 +3397,17 @@ namespace MyNS
 	/// <summary>
 	/// The display format that the label should be shown in.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Display_scheme
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="label")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		label = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="qr_code")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		qr_code = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="label_and_qr_code")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		label_and_qr_code = 2,
 	}
 	
@@ -3526,43 +3420,38 @@ namespace MyNS
 	///|`inline`            |You will receive the Base64-encoded label as part of the response. No need for a second request to download the label.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Label_download_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="url")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		url = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inline = 1,
 	}
 	
 	/// <summary>
 	/// The possible validate address values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Validate_address
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="no_validation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		no_validation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="validate_only")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		validate_only = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="validate_and_clean")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		validate_and_clean = 2,
 	}
 	
 	/// <summary>
 	/// A create label from shipment response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_label_from_shipment_response_body
 	{
 	}
@@ -3570,8 +3459,7 @@ namespace MyNS
 	/// <summary>
 	/// A purchase label request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_label_request_body
 	{
 		
@@ -3591,8 +3479,7 @@ namespace MyNS
 	/// <summary>
 	/// A create label response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_label_response_body
 	{
 	}
@@ -3600,8 +3487,7 @@ namespace MyNS
 	/// <summary>
 	/// A create manifest request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_manifest_by_object_request_body
 	{
 		
@@ -3647,8 +3533,7 @@ namespace MyNS
 	/// <summary>
 	/// A create manifest request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_manifest_label_ids_request_body
 	{
 		
@@ -3661,8 +3546,7 @@ namespace MyNS
 		public string[] Label_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_manifest_request_body
 	{
 	}
@@ -3670,8 +3554,7 @@ namespace MyNS
 	/// <summary>
 	/// A create manifest response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_manifest_response_body
 	{
 	}
@@ -3679,8 +3562,7 @@ namespace MyNS
 	/// <summary>
 	/// A create package type request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_package_type_request_body
 	{
 	}
@@ -3688,8 +3570,7 @@ namespace MyNS
 	/// <summary>
 	/// A create package type response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_package_type_response_body
 	{
 	}
@@ -3697,8 +3578,7 @@ namespace MyNS
 	/// <summary>
 	/// A create return label request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_return_label_request_body
 	{
 		
@@ -3746,33 +3626,29 @@ namespace MyNS
 	/// <summary>
 	/// Determines when the user's account will be charged for the label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Label_charge_event
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carrier_default")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carrier_default = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="on_creation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		on_creation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="on_carrier_acceptance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		on_carrier_acceptance = 2,
 	}
 	
 	/// <summary>
 	/// A create return label response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_return_label_response_body
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_shipment_response_body_fields
 	{
 		
@@ -3792,8 +3668,7 @@ namespace MyNS
 	/// <summary>
 	/// A create shipments request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_shipments_request_body
 	{
 		
@@ -3811,8 +3686,7 @@ namespace MyNS
 	/// <summary>
 	/// A create shipments response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_shipments_response_body
 	{
 		
@@ -3837,8 +3711,7 @@ namespace MyNS
 	/// <summary>
 	/// Response body for creating tags
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_tag_response_body
 	{
 	}
@@ -3846,8 +3719,7 @@ namespace MyNS
 	/// <summary>
 	/// A create warehouse request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_warehouse_request_body
 	{
 	}
@@ -3855,8 +3727,7 @@ namespace MyNS
 	/// <summary>
 	/// A create warehouse response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_warehouse_response_body
 	{
 	}
@@ -3864,8 +3735,7 @@ namespace MyNS
 	/// <summary>
 	/// A create webhook request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_webhook_request_body
 	{
 		
@@ -3888,39 +3758,36 @@ namespace MyNS
 	/// <summary>
 	/// The possible webook event values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Webhook_event
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="batch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		batch = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carrier_connected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carrier_connected = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="order_source_refresh_complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		order_source_refresh_complete = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rate = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="report_complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		report_complete = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sales_orders_imported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sales_orders_imported = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="track")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		track = 6,
 	}
 	
 	/// <summary>
 	/// A webhook response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Create_webhook_response_body
 	{
 	}
@@ -3928,8 +3795,7 @@ namespace MyNS
 	/// <summary>
 	/// The customs declaration for a single item in the shipment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Customs_item
 	{
 		
@@ -3998,8 +3864,7 @@ namespace MyNS
 		public Weight Weight { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Delete_pickup_by_id_response_body : Error_response_body
 	{
 		
@@ -4014,8 +3879,7 @@ namespace MyNS
 	/// <summary>
 	/// A delete scheduled pickup response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Delete_scheduled_pickup_response_body
 	{
 		
@@ -4030,39 +3894,36 @@ namespace MyNS
 	/// <summary>
 	/// The possible delivery confirmation values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Delivery_confirmation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivery = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="signature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		signature = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="adult_signature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		adult_signature = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="direct_signature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		direct_signature = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery_mailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivery_mailed = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verbal_confirmation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verbal_confirmation = 6,
 	}
 	
 	/// <summary>
 	/// Deprecated manifest resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deprecated_manifest
 	{
 		
@@ -4135,8 +3996,7 @@ namespace MyNS
 	/// <summary>
 	/// Object containing the href link to download the manifest file
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Manifest_download
 	{
 		
@@ -4150,8 +4010,7 @@ namespace MyNS
 	/// <summary>
 	/// A DHL Express account settings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dhl_express_account_settings
 	{
 		
@@ -4179,8 +4038,7 @@ namespace MyNS
 	/// <summary>
 	/// A DHL Express response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dhl_express_settings_response_body
 	{
 	}
@@ -4188,24 +4046,21 @@ namespace MyNS
 	/// <summary>
 	/// The dimension units that are supported by ShipEngine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Dimension_unit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inch = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="centimeter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		centimeter = 1,
 	}
 	
 	/// <summary>
 	/// The dimensions of a package
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimensions
 	{
 		
@@ -4251,8 +4106,7 @@ namespace MyNS
 		public double Width { get; set; } = 0;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Disconnect_insurer_response_body
 	{
 	}
@@ -4261,8 +4115,7 @@ namespace MyNS
 	/// The error structure that gets returned with almost all failed API calls
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -4301,124 +4154,122 @@ namespace MyNS
 	/// <summary>
 	/// The error code specified for the failed API Call
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Error_code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="auto_fund_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		auto_fund_not_supported = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="batch_cannot_be_modified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		batch_cannot_be_modified = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carrier_conflict")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carrier_conflict = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carrier_disconnected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carrier_disconnected = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carrier_not_connected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carrier_not_connected = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carrier_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carrier_not_supported = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="confirmation_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		confirmation_not_supported = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="default_warehouse_cannot_be_deleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		default_warehouse_cannot_be_deleted = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="field_conflict")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		field_conflict = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="field_value_required")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		field_value_required = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="forbidden")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		forbidden = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="identifier_conflict")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		identifier_conflict = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="identifiers_must_match")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		identifiers_must_match = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="insufficient_funds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		insufficient_funds = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_address")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_address = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_billing_plan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_billing_plan = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_field_value")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_field_value = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_identifier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_identifier = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_status = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid_string_length")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid_string_length = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="label_images_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		label_images_not_supported = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="meter_failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		meter_failure = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="order_source_not_active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		order_source_not_active = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="rate_limit_exceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		rate_limit_exceeded = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="refresh_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		refresh_not_supported = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="request_body_required")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		request_body_required = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="return_label_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		return_label_not_supported = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="settings_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		settings_not_supported = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscription_inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscription_inactive = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="terms_not_accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		terms_not_accepted = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tracking_not_supported")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tracking_not_supported = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trial_expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		trial_expired = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unauthorized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unauthorized = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unspecified = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verification_failure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verification_failure = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="warehouse_conflict")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		warehouse_conflict = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhook_event_type_conflict")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		webhook_event_type_conflict = 37,
 	}
 	
@@ -4427,19 +4278,17 @@ namespace MyNS
 	///carrier, the order source, or the ShipEngine API itself.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Error_source
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carrier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carrier = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="order_source")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		order_source = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shipengine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shipengine = 2,
 	}
 	
@@ -4447,36 +4296,33 @@ namespace MyNS
 	/// The type of error
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Error_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="account_status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		account_status = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="business_rules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		business_rules = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="validation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		validation = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="security")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		security = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="system")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		system = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrations")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		integrations = 5,
 	}
 	
 	/// <summary>
 	/// An error response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error_response_body
 	{
 		
@@ -4502,8 +4348,7 @@ namespace MyNS
 	/// <summary>
 	/// An error response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error_with_label_id_response_body
 	{
 		
@@ -4529,8 +4374,7 @@ namespace MyNS
 	/// <summary>
 	/// A rate estimate request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Estimate_rates_request_body
 	{
 	}
@@ -4538,8 +4382,7 @@ namespace MyNS
 	/// <summary>
 	/// A Fedex account settings request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fedex_account_settings
 	{
 		
@@ -4583,148 +4426,143 @@ namespace MyNS
 	///|`station`                 | You will drop-off the package at a FedEx Station
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Fedex_pickup_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regular_pickup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		regular_pickup = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="request_courier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		request_courier = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="drop_box")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		drop_box = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="business_service_center")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		business_service_center = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="station")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		station = 5,
 	}
 	
 	/// <summary>
 	/// The possible smart post hub values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Smart_post_hub
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="allentown_pa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		allentown_pa = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="atlanta_ga")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		atlanta_ga = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="baltimore_md")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		baltimore_md = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="charlotte_nc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		charlotte_nc = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chino_ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chino_ca = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dallas_tx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dallas_tx = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="denver_co")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		denver_co = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="detroit_mi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		detroit_mi = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="edison_nj")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		edison_nj = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="grove_city_oh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		grove_city_oh = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groveport_oh")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groveport_oh = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="houston_tx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		houston_tx = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="indianapolis_in")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		indianapolis_in = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kansas_city_ks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kansas_city_ks = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="los_angeles_ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		los_angeles_ca = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="martinsburg_wv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		martinsburg_wv = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="memphis_tn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		memphis_tn = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minneapolis_mn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minneapolis_mn = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="new_berlin_wi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		new_berlin_wi = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="northborough_ma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		northborough_ma = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="orlando_fl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		orlando_fl = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="phoneix_az")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		phoneix_az = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pittsburgh_pa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pittsburgh_pa = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reno_nv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		reno_nv = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sacramento_ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sacramento_ca = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="salt_lake_city_ut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		salt_lake_city_ut = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="seattle_wa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		seattle_wa = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="st_louis_mo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		st_louis_mo = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="windsor_ct")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		windsor_ct = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="newark_ny")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		newark_ny = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="south_brunswick_nj")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		south_brunswick_nj = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scranton_pa")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scranton_pa = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wheeling_il")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wheeling_il = 33,
 	}
 	
 	/// <summary>
 	/// A Fedex account settings request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fedex_account_settings_request_body
 	{
 	}
@@ -4732,8 +4570,7 @@ namespace MyNS
 	/// <summary>
 	/// A Fedex settings response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fedex_settings_response_body
 	{
 	}
@@ -4741,14 +4578,12 @@ namespace MyNS
 	/// <summary>
 	/// A get account images by id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_account_settings_images_response_body
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_account_settings_response_body
 	{
 	}
@@ -4756,8 +4591,7 @@ namespace MyNS
 	/// <summary>
 	/// A get batch by external id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_batch_by_external_id_response_body
 	{
 	}
@@ -4765,8 +4599,7 @@ namespace MyNS
 	/// <summary>
 	/// A get batch by id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_batch_by_id_response_body
 	{
 	}
@@ -4774,8 +4607,7 @@ namespace MyNS
 	/// <summary>
 	/// A get carrier by id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_carrier_by_id_response_body
 	{
 	}
@@ -4783,8 +4615,7 @@ namespace MyNS
 	/// <summary>
 	/// A carrier list options response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_carrier_options_response_body
 	{
 		
@@ -4795,14 +4626,12 @@ namespace MyNS
 		public string[] Options { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_carrier_settings_response_body
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_carriers_response_body : List_carriers_response_body
 	{
 		
@@ -4828,8 +4657,7 @@ namespace MyNS
 	/// <summary>
 	/// A get insurance balance response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_insurance_balance_response_body
 	{
 	}
@@ -4837,8 +4665,7 @@ namespace MyNS
 	/// <summary>
 	/// A get label by external shipment id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_label_by_external_shipment_id_response_body
 	{
 	}
@@ -4846,8 +4673,7 @@ namespace MyNS
 	/// <summary>
 	/// A get label by id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_label_by_id_response_body
 	{
 	}
@@ -4855,8 +4681,7 @@ namespace MyNS
 	/// <summary>
 	/// A get manifest by id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_manifest_by_id_response_body
 	{
 	}
@@ -4864,14 +4689,12 @@ namespace MyNS
 	/// <summary>
 	/// A get package type by id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_package_type_by_id_response_body
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_pickup_by_id_response_body : Pickup_response_body
 	{
 		
@@ -4894,8 +4717,7 @@ namespace MyNS
 		public string Request_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_pickups_response_body : List_pickup_response_body
 	{
 		
@@ -4921,8 +4743,7 @@ namespace MyNS
 	/// <summary>
 	/// A rate response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_rate_by_id_response_body
 	{
 	}
@@ -4930,8 +4751,7 @@ namespace MyNS
 	/// <summary>
 	/// A get service point by ID response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_service_point_by_id_response_body
 	{
 		
@@ -5083,21 +4903,18 @@ namespace MyNS
 		public string Open { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Get_service_point_by_id_response_bodyService_pointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pudo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pudo = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="locker")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		locker = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_service_points_request
 	{
 	}
@@ -5105,8 +4922,7 @@ namespace MyNS
 	/// <summary>
 	/// A get service points request body. Caller must provide exactly one of address_query, address, or lat / long pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_service_points_request_body
 	{
 		
@@ -5200,8 +5016,7 @@ namespace MyNS
 	/// <summary>
 	/// A get shipment by external id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_shipment_by_external_id_response_body
 	{
 	}
@@ -5209,8 +5024,7 @@ namespace MyNS
 	/// <summary>
 	/// A get shipment by id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_shipment_by_id_response_body
 	{
 	}
@@ -5218,8 +5032,7 @@ namespace MyNS
 	/// <summary>
 	/// A get tracking log from label response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_tracking_log_from_label_response_body
 	{
 	}
@@ -5227,8 +5040,7 @@ namespace MyNS
 	/// <summary>
 	/// A get tracking log response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_tracking_log_response_body
 	{
 	}
@@ -5236,8 +5048,7 @@ namespace MyNS
 	/// <summary>
 	/// A get warehouse by id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_warehouse_by_id_response_body
 	{
 	}
@@ -5245,8 +5056,7 @@ namespace MyNS
 	/// <summary>
 	/// A get webhook id response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get_webhook_by_id_response_body
 	{
 	}
@@ -5266,64 +5076,59 @@ namespace MyNS
 	///|`voec`         | The tax identifier is a Norwegian VAT On E-Commerce(VOEC).
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Identifier_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vat = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="eori")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		eori = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ssn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ssn = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ein")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ein = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tin = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ioss")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ioss = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pan = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voec")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voec = 7,
 	}
 	
 	/// <summary>
 	/// The possible insurance provider values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Insurance_provider
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shipsurance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shipsurance = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="carrier")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		carrier = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="third_party")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		third_party = 3,
 	}
 	
 	/// <summary>
 	/// Options for international shipments, such as customs declarations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class International_shipment_options
 	{
 		
@@ -5357,41 +5162,37 @@ namespace MyNS
 	/// <summary>
 	/// The possible package contents values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Package_contents
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="merchandise")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		merchandise = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="documents")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		documents = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gift")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gift = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="returned_goods")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		returned_goods = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sample")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sample = 4,
 	}
 	
 	/// <summary>
 	/// The possible non delivery values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Non_delivery
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="return_to_sender")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		return_to_sender = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="treat_as_abandoned")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		treat_as_abandoned = 1,
 	}
 	
@@ -5399,8 +5200,7 @@ namespace MyNS
 	/// A label represents the physical sticker that you affix to a package to ship it.  ShipEngine makes it easy for you to [create labels](https://www.shipengine.com/docs/labels/create-a-label/) and then download them in PDF, PNG, or ZPL format so you can print them.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Label
 	{
 		
@@ -5640,8 +5440,7 @@ namespace MyNS
 	/// <summary>
 	/// A link to a related resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Link
 	{
 	}
@@ -5650,8 +5449,7 @@ namespace MyNS
 	/// A package associated with a [shipping label](https://www.shipengine.com/docs/labels/create-a-label/)
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Package
 	{
 		
@@ -5748,8 +5546,7 @@ namespace MyNS
 	///|OnTrac             |2         |25
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Label_messages
 	{
 		
@@ -5787,8 +5584,7 @@ namespace MyNS
 	///> **Note:** Either `ship_from` or `warehouse_id` must be set.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shipment
 	{
 	}
@@ -5804,52 +5600,47 @@ namespace MyNS
 	///|`voided`     |The label has been [voided](https://www.shipengine.com/docs/labels/voiding/)
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Label_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		processing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voided")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voided = 3,
 	}
 	
 	/// <summary>
 	/// The different statuses that can apply to a shipment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Tracking_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="in_transit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		in_transit = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 3,
 	}
 	
 	/// <summary>
 	/// A list account images response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_account_images_response_body
 	{
 		
@@ -5867,14 +5658,12 @@ namespace MyNS
 	/// <summary>
 	/// An account settings list response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_account_settings_body
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_account_settings_images_response_body
 	{
 	}
@@ -5882,8 +5671,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch errors response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_batch_errors_response_body
 	{
 		
@@ -5906,8 +5694,7 @@ namespace MyNS
 	/// <summary>
 	/// Helpful links to other pages of results
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pagination_link
 	{
 		
@@ -5951,8 +5738,7 @@ namespace MyNS
 	/// <summary>
 	/// A list batch response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_batches_response_body
 	{
 		
@@ -6007,8 +5793,7 @@ namespace MyNS
 	/// <summary>
 	/// A list carrier package types response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_carrier_package_types_response_body
 	{
 		
@@ -6022,8 +5807,7 @@ namespace MyNS
 	/// <summary>
 	/// A carrier list services response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_carrier_services_response_body
 	{
 		
@@ -6037,8 +5821,7 @@ namespace MyNS
 	/// <summary>
 	/// A carrier list response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_carriers_response_body
 	{
 		
@@ -6054,8 +5837,7 @@ namespace MyNS
 	/// <summary>
 	/// A list label response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_labels_response_body
 	{
 		
@@ -6310,8 +6092,7 @@ namespace MyNS
 	/// <summary>
 	/// A list manifests response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_manifests_response_body
 	{
 		
@@ -6365,8 +6146,7 @@ namespace MyNS
 	/// <summary>
 	/// A list package types response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_package_types_response_body
 	{
 		
@@ -6380,8 +6160,7 @@ namespace MyNS
 	/// <summary>
 	/// A list pickup response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_pickup_response_body
 	{
 		
@@ -6435,8 +6214,7 @@ namespace MyNS
 	/// <summary>
 	/// A list service points response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_service_points_response_body
 	{
 		
@@ -6607,8 +6385,7 @@ namespace MyNS
 	/// <summary>
 	/// A list shipment rates response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_shipment_rates_response_body
 	{
 	}
@@ -6616,8 +6393,7 @@ namespace MyNS
 	/// <summary>
 	/// A list shipment response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_shipments_response_body
 	{
 		
@@ -6668,8 +6444,7 @@ namespace MyNS
 	/// <summary>
 	/// Response body from a successful GET /tags API call
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_tags_response_body
 	{
 		
@@ -6683,8 +6458,7 @@ namespace MyNS
 	/// <summary>
 	/// A warehouse list response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List_warehouses_response_body
 	{
 		
@@ -6702,8 +6476,7 @@ namespace MyNS
 	///number of shipments
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Manifest
 	{
 		
@@ -6776,8 +6549,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to the manifest request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Manifest_request
 	{
 		
@@ -6794,24 +6566,21 @@ namespace MyNS
 	/// <summary>
 	/// The possible statuses of a manifest request
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Manifest_request_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="in_progress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		in_progress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 	}
 	
 	/// <summary>
 	/// An array of manifest resources
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Manifests
 	{
 		
@@ -6825,8 +6594,7 @@ namespace MyNS
 	/// <summary>
 	/// An array of manifest requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Manifests_requests
 	{
 		
@@ -6840,8 +6608,7 @@ namespace MyNS
 	/// <summary>
 	/// A modify batch object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Modify_batch
 	{
 		
@@ -6866,8 +6633,7 @@ namespace MyNS
 	///Some entities have other information in addition to, or instead of a `value`.  For example, a "dimensions" entity will have separate fields for `length`, `width`, `height`, and `unit`.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Normalized_entity
 	{
 	}
@@ -6875,78 +6641,75 @@ namespace MyNS
 	/// <summary>
 	/// The order sources that are supported by ShipEngine
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Order_source_name
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="amazon_ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		amazon_ca = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="amazon_us")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		amazon_us = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="brightpearl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		brightpearl = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="channel_advisor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		channel_advisor = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cratejoy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cratejoy = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ebay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ebay = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="etsy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		etsy = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="jane")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		jane = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="groupon_goods")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		groupon_goods = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="magento")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		magento = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="paypal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		paypal = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="seller_active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		seller_active = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shopify")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shopify = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="stitch_labs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		stitch_labs = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="squarespace")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		squarespace = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="three_dcart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		three_dcart = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tophatter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tophatter = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="walmart")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		walmart = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="woo_commerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		woo_commerce = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="volusion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		volusion = 19,
 	}
 	
 	/// <summary>
 	/// A package type that a carrier supports for shipment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Package_type
 	{
 		
@@ -6989,8 +6752,7 @@ namespace MyNS
 	/// Many ShipEngine endpoints return a paged list of items.  In addition to the returned items, these responses also include information about the total number of items, the number of pages of results, and URLs of other pages of results.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Paged_list_response_body
 	{
 		
@@ -7036,8 +6798,7 @@ namespace MyNS
 	/// The only required field is `text`, which is the text to be parsed. You can optionally also provide an `address` containing already-known values. For example, you may already know the recipient's name, city, and country, and only want to parse the street address into separate lines.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parse_address_request_body
 	{
 		
@@ -7062,8 +6823,7 @@ namespace MyNS
 	/// <summary>
 	/// A complete or partial mailing address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Partial_address
 	{
 		
@@ -7167,8 +6927,7 @@ namespace MyNS
 	/// The parsed address, as well as a confidence score and a list of all the entities that were recognized in the text.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parse_address_response_body
 	{
 		
@@ -7211,8 +6970,7 @@ namespace MyNS
 	/// An entity is a single piece of data that was recognized in unstructured text.  For example, a city, a postal code, package dimensions, insured value, etc.  Each entity includes the original text and the parsed value.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Recognized_entity
 	{
 		
@@ -7284,8 +7042,7 @@ namespace MyNS
 	/// The only required field is `text`, which is the text to be parsed. You can optionally also provide a `shipment` containing any already-known values. For example, you probably already know the `ship_from` address, and you may also already know what carrier and service you want to use.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parse_shipment_request_body
 	{
 		
@@ -7311,8 +7068,7 @@ namespace MyNS
 	/// The information necessary to ship a package, such as the origin, the destination, the carrier service, and the package dimensions and weight.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Partial_shipment
 	{
 		
@@ -7498,8 +7254,7 @@ namespace MyNS
 		public string Warehouse_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shipping_address
 	{
 	}
@@ -7507,22 +7262,20 @@ namespace MyNS
 	/// <summary>
 	/// The possible shipment status values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Shipment_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		processing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="label_purchased")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		label_purchased = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cancelled = 3,
 	}
 	
@@ -7530,8 +7283,7 @@ namespace MyNS
 	/// The parsed shipment, as well as a confidence score and a list of all the shipping entities that were recognized in the text.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parse_shipment_response_body
 	{
 		
@@ -7573,8 +7325,7 @@ namespace MyNS
 	/// <summary>
 	/// A complete or partial mailing address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Partial_shipping_address
 	{
 		
@@ -7592,8 +7343,7 @@ namespace MyNS
 	/// The information necessary to schedule a package pickup
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pickup
 	{
 		
@@ -7667,8 +7417,7 @@ namespace MyNS
 	/// <summary>
 	/// The desired time range for the package pickup.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pickup_window
 	{
 		
@@ -7690,14 +7439,12 @@ namespace MyNS
 	/// <summary>
 	/// A pickup response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pickup_response_body
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pickup_windows
 	{
 		
@@ -7711,8 +7458,7 @@ namespace MyNS
 	/// <summary>
 	/// A process batch request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Process_batch_request_body
 	{
 		
@@ -7741,8 +7487,7 @@ namespace MyNS
 	/// <summary>
 	/// A purchase label without shipment resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Purchase_label_without_shipment
 	{
 		
@@ -7771,8 +7516,7 @@ namespace MyNS
 	/// <summary>
 	/// A rate
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate
 	{
 		
@@ -7993,46 +7737,41 @@ namespace MyNS
 	/// <summary>
 	/// The possible rate type values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Rate_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="check")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		check = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shipment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shipment = 1,
 	}
 	
 	/// <summary>
 	/// The possible validation status values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Validation_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="valid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		valid = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="invalid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		invalid = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="has_warnings")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		has_warnings = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 3,
 	}
 	
 	/// <summary>
 	/// A rate estimate
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_estimate
 	{
 		
@@ -8242,8 +7981,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Zone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_estimate_by_carrier_id
 	{
 		
@@ -8254,8 +7992,7 @@ namespace MyNS
 		public string Carrier_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_estimate_by_carrier_ids
 	{
 		
@@ -8268,8 +8005,7 @@ namespace MyNS
 		public string[] Carrier_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_estimate_options
 	{
 		
@@ -8345,8 +8081,7 @@ namespace MyNS
 	/// <summary>
 	/// A rate request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_request_body
 	{
 		
@@ -8382,8 +8117,7 @@ namespace MyNS
 		public string[] Service_codes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_request_by_shipment_ids
 	{
 		
@@ -8396,8 +8130,7 @@ namespace MyNS
 		public string[] Shipment_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_request_by_shipments
 	{
 		
@@ -8412,8 +8145,7 @@ namespace MyNS
 		public string[] Shipments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_request_options
 	{
 		
@@ -8424,8 +8156,7 @@ namespace MyNS
 		public Rate_request_body Rate_options { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_request_rate_options
 	{
 		
@@ -8436,8 +8167,7 @@ namespace MyNS
 		public Rate_request_body Rate_options { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rate_response
 	{
 		
@@ -8451,8 +8181,7 @@ namespace MyNS
 	/// <summary>
 	/// A rates information resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rates_information
 	{
 		
@@ -8496,9 +8225,7 @@ namespace MyNS
 	/// <summary>
 	/// The resource to return a redirect URL to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Redirect
 	{
 		
@@ -8509,8 +8236,7 @@ namespace MyNS
 	/// <summary>
 	/// A modify batch request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Remove_from_batch_request_body
 	{
 	}
@@ -8518,14 +8244,12 @@ namespace MyNS
 	/// <summary>
 	/// A schedule pickup request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schedule_pickup_request_body
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schedule_pickup_response_body : Pickup
 	{
 		
@@ -8551,8 +8275,7 @@ namespace MyNS
 	/// <summary>
 	/// A service offered by the carrier
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Service
 	{
 		
@@ -8600,8 +8323,7 @@ namespace MyNS
 		public string Service_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shipment_id_request
 	{
 		
@@ -8615,8 +8337,7 @@ namespace MyNS
 	/// <summary>
 	/// A shipment item
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shipment_item
 	{
 		
@@ -8680,8 +8401,7 @@ namespace MyNS
 		public string Sku { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shipment_request
 	{
 		
@@ -8695,16 +8415,14 @@ namespace MyNS
 	/// <summary>
 	/// The possible shipments sort by values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Shipments_sort_by
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		modified_at = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created_at = 1,
 	}
 	
@@ -8717,16 +8435,14 @@ namespace MyNS
 	///|`desc`    |Return results in descending order
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Sort_dir
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 	
@@ -8744,31 +8460,29 @@ namespace MyNS
 	///|`ny` | Not Yet In System
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status_code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="un")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		un = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ac")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ac = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="it")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		it = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ex")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ex = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="at")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		at = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ny")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ny = 6,
 	}
 	
@@ -8776,8 +8490,7 @@ namespace MyNS
 	/// Tags are arbitrary strings that you can use to categorize shipments.  For example, you may want to use tags to distinguish between domestic and international shipments, or between insured and uninsured shipments.  Or maybe you want to create a tag for each of your customers so you can easily retrieve every shipment for a customer.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -8795,8 +8508,7 @@ namespace MyNS
 	/// <summary>
 	/// A shipment add tag response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag_shipment_response_body
 	{
 		
@@ -8820,8 +8532,7 @@ namespace MyNS
 	/// <summary>
 	/// A tax identifier object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tax_identifier
 	{
 		
@@ -8865,21 +8576,18 @@ namespace MyNS
 	///|`recipient` | The recipient of the shipment is responsible for this tax.
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Taxable_entity_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shipper")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shipper = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recipient")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recipient = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tokens_get_ephemeral_token_response_bodyyaml
 	{
 		
@@ -8899,8 +8607,7 @@ namespace MyNS
 	/// <summary>
 	/// A track event
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Track_event
 	{
 		
@@ -9052,8 +8759,7 @@ namespace MyNS
 	/// <summary>
 	/// A tracking information resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tracking_information
 	{
 		
@@ -9134,8 +8840,7 @@ namespace MyNS
 	/// <summary>
 	/// A ShipEngine account settings images request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_account_settings_image_request_body
 	{
 	}
@@ -9143,8 +8848,7 @@ namespace MyNS
 	/// <summary>
 	/// An amazon buy shipping account settings request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_amazon_buy_shipping_request_body
 	{
 		
@@ -9157,8 +8861,7 @@ namespace MyNS
 		public string Email { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_carrier_settings_request_body
 	{
 	}
@@ -9166,8 +8869,7 @@ namespace MyNS
 	/// <summary>
 	/// An update dhl express settings request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_dhl_express_settings_request_body
 	{
 	}
@@ -9175,8 +8877,7 @@ namespace MyNS
 	/// <summary>
 	/// An update Fedex settings request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_fedex_settings_request_body
 	{
 	}
@@ -9184,8 +8885,7 @@ namespace MyNS
 	/// <summary>
 	/// A newgistics account settings request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_newgistics_settings_request_body
 	{
 		
@@ -9199,14 +8899,12 @@ namespace MyNS
 	/// <summary>
 	/// An update package type request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_package_type_request_body
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_shipment_fields
 	{
 		
@@ -9218,8 +8916,7 @@ namespace MyNS
 	/// <summary>
 	/// An update shipment request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_shipment_request_body
 	{
 	}
@@ -9227,8 +8924,7 @@ namespace MyNS
 	/// <summary>
 	/// An update shipment response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_shipment_response_body
 	{
 	}
@@ -9236,8 +8932,7 @@ namespace MyNS
 	/// <summary>
 	/// An update UPS settings request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_ups_settings_request_body
 	{
 	}
@@ -9245,8 +8940,7 @@ namespace MyNS
 	/// <summary>
 	/// An update warehouse request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_warehouse_request_body
 	{
 	}
@@ -9254,8 +8948,7 @@ namespace MyNS
 	/// <summary>
 	/// An update warehouse settings request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_warehouse_settings_request_body
 	{
 		
@@ -9269,8 +8962,7 @@ namespace MyNS
 	/// <summary>
 	/// An update webhook request body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Update_webhook_request_body
 	{
 		
@@ -9284,8 +8976,7 @@ namespace MyNS
 	/// <summary>
 	/// UPS account settings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ups_account_settings
 	{
 		
@@ -9365,33 +9056,29 @@ namespace MyNS
 	/// <summary>
 	/// The possible ups pickup type values
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ups_pickup_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="daily_pickup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		daily_pickup = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="occasional_pickup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		occasional_pickup = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer_counter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer_counter = 2,
 	}
 	
 	/// <summary>
 	/// A UPS settings response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Ups_settings_response_body
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Validate_shipment_fields
 	{
 		
@@ -9403,8 +9090,7 @@ namespace MyNS
 	/// <summary>
 	/// A void label response body
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Void_label_response_body
 	{
 		
@@ -9429,8 +9115,7 @@ namespace MyNS
 	/// <summary>
 	/// A warehouse
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warehouse
 	{
 		
@@ -9478,8 +9163,7 @@ namespace MyNS
 	/// <summary>
 	/// A webhook
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Webhook
 	{
 		

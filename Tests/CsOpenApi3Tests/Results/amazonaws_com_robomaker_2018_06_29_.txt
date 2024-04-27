@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteWorldsResponse
 	{
 		
@@ -26,26 +25,22 @@ namespace MyNS
 		public string[] UnprocessedWorlds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDescribeSimulationJobResponse
 	{
 		
@@ -59,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a simulation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimulationJob
 	{
 		
@@ -128,161 +122,154 @@ namespace MyNS
 		public ComputeResponse Compute { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SimulationJobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Preparing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Preparing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Running = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Restarting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Restarting = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RunningFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RunningFailed = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terminating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terminating = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terminated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terminated = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceled = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailureBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fail = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Continue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Continue = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SimulationJobErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServiceError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServiceError = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RobotApplicationCrash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RobotApplicationCrash = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SimulationApplicationCrash")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SimulationApplicationCrash = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RobotApplicationHealthCheckFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RobotApplicationHealthCheckFailure = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SimulationApplicationHealthCheckFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SimulationApplicationHealthCheckFailure = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadPermissionsRobotApplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadPermissionsRobotApplication = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadPermissionsSimulationApplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadPermissionsSimulationApplication = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadPermissionsS3Object")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadPermissionsS3Object = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadPermissionsS3Output")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadPermissionsS3Output = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadPermissionsCloudwatchLogs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadPermissionsCloudwatchLogs = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SubnetIpLimitExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SubnetIpLimitExceeded = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENILimitExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENILimitExceeded = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadPermissionsUserCredentials")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadPermissionsUserCredentials = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidBundleRobotApplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidBundleRobotApplication = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidBundleSimulationApplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidBundleSimulationApplication = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidS3Resource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidS3Resource = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThrottlingError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ThrottlingError = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LimitExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LimitExceeded = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MismatchedEtag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MismatchedEtag = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RobotApplicationVersionMismatchedEtag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RobotApplicationVersionMismatchedEtag = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SimulationApplicationVersionMismatchedEtag")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SimulationApplicationVersionMismatchedEtag = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFound = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestThrottled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestThrottled = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchTimedOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BatchTimedOut = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchCanceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BatchCanceled = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidInput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidInput = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WrongRegionS3Bucket")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WrongRegionS3Bucket = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WrongRegionS3Output")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WrongRegionS3Output = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WrongRegionRobotApplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WrongRegionRobotApplication = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WrongRegionSimulationApplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WrongRegionSimulationApplication = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UploadContentMismatchError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UploadContentMismatchError = 30,
 	}
 	
 	/// <summary>
 	/// The output location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutputLocation
 	{
 		
@@ -296,8 +283,7 @@ namespace MyNS
 	/// <summary>
 	/// The logging configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoggingConfig
 	{
 		
@@ -308,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// Application configuration information for a robot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RobotApplicationConfig
 	{
 		
@@ -346,8 +331,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a launch configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LaunchConfig
 	{
 		
@@ -370,8 +354,7 @@ namespace MyNS
 		public string[] Command { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnvironmentVariableMap
 	{
 	}
@@ -379,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration information for port forwarding.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PortForwardingConfig
 	{
 		
@@ -391,8 +373,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing a port mapping.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PortMapping
 	{
 		
@@ -417,8 +398,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides upload configuration information. Files are uploaded from the simulation job to a location you specify. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadConfiguration
 	{
 		
@@ -444,24 +424,21 @@ namespace MyNS
 		public UploadBehavior UploadBehavior { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UploadBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOAD_ON_TERMINATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOAD_ON_TERMINATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOAD_ROLLING_AUTO_REMOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOAD_ROLLING_AUTO_REMOVE = 1,
 	}
 	
 	/// <summary>
 	/// Information about a tool. Tools are used in a simulation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tool
 	{
 		
@@ -489,24 +466,21 @@ namespace MyNS
 		public ExitBehavior ExitBehavior { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExitBehavior
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAIL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTART = 1,
 	}
 	
 	/// <summary>
 	/// Information about a simulation application configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimulationApplicationConfig
 	{
 		
@@ -546,8 +520,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration information for a world.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorldConfig
 	{
 		
@@ -558,8 +531,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSource
 	{
 		
@@ -582,8 +554,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about S3 keys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3KeyOutput
 	{
 		
@@ -594,24 +565,21 @@ namespace MyNS
 		public string Etag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Prefix")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Prefix = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Archive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Archive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="File")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		File = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
@@ -619,8 +587,7 @@ namespace MyNS
 	/// <summary>
 	/// VPC configuration associated with your simulation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPCConfigResponse
 	{
 		
@@ -640,8 +607,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a network interface.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkInterface
 	{
 		
@@ -658,8 +624,7 @@ namespace MyNS
 	/// <summary>
 	/// Compute information for the simulation job
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComputeResponse
 	{
 		
@@ -673,21 +638,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> GpuUnitLimit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComputeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPU = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GPU_AND_CPU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GPU_AND_CPU = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
@@ -695,32 +657,27 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelDeploymentJobResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelSimulationJobResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelSimulationJobBatchResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelWorldExportJobResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelWorldGenerationJobResponse
 	{
 	}
@@ -728,8 +685,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeploymentJobResponse
 	{
 		
@@ -761,36 +717,33 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeploymentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Preparing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Preparing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Succeeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Succeeded = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceled = 5,
 	}
 	
 	/// <summary>
 	/// Information about a deployment application configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeploymentApplicationConfig
 	{
 		
@@ -819,8 +772,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration information for a deployment launch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeploymentLaunchConfig
 	{
 		
@@ -848,90 +800,87 @@ namespace MyNS
 		public EnvironmentVariableMap EnvironmentVariables { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeploymentJobErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnvironmentSetupError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EnvironmentSetupError = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EtagMismatch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EtagMismatch = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailureThresholdBreached")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FailureThresholdBreached = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RobotDeploymentAborted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RobotDeploymentAborted = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RobotDeploymentNoResponse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RobotDeploymentNoResponse = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RobotAgentConnectionTimeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RobotAgentConnectionTimeout = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreengrassDeploymentFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreengrassDeploymentFailed = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidGreengrassGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidGreengrassGroup = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MissingRobotArchitecture")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MissingRobotArchitecture = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MissingRobotApplicationArchitecture")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MissingRobotApplicationArchitecture = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MissingRobotDeploymentResource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MissingRobotDeploymentResource = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreengrassGroupVersionDoesNotExist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreengrassGroupVersionDoesNotExist = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LambdaDeleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LambdaDeleted = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExtractingBundleFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExtractingBundleFailure = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PreLaunchFileFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PreLaunchFileFailure = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PostLaunchFileFailure")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PostLaunchFileFailure = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadPermissionError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadPermissionError = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DownloadConditionFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DownloadConditionFailed = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BadLambdaAssociated")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BadLambdaAssociated = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServerError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServerError = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RobotApplicationDoesNotExist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RobotApplicationDoesNotExist = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeploymentFleetDoesNotExist")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeploymentFleetDoesNotExist = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FleetDeploymentTimeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FleetDeploymentTimeout = 23,
 	}
 	
 	/// <summary>
 	/// Information about a deployment configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeploymentConfig
 	{
 		
@@ -951,8 +900,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an S3 object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class S3Object
 	{
 		
@@ -974,20 +922,17 @@ namespace MyNS
 		public string Etag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentDeploymentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdempotentParameterMismatchException
 	{
 	}
@@ -995,8 +940,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFleetResponse
 	{
 		
@@ -1016,8 +960,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRobotResponse
 	{
 		
@@ -1040,30 +983,26 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Architecture
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="X86_64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		X86_64 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARM64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARM64 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARMHF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARMHF = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceAlreadyExistsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRobotApplicationResponse
 	{
 		
@@ -1098,8 +1037,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Source
 	{
 		
@@ -1119,8 +1057,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a robot software suite (ROS distribution).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RobotSoftwareSuite
 	{
 		
@@ -1131,46 +1068,41 @@ namespace MyNS
 		public RobotSoftwareSuiteVersionType Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RobotSoftwareSuiteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROS2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROS2 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="General")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		General = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RobotSoftwareSuiteVersionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kinetic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kinetic = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Melodic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Melodic = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Dashing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Dashing = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Foxy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Foxy = 3,
 	}
 	
 	/// <summary>
 	/// The object that contains the Docker image URI for either your robot or simulation applications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Environment
 	{
 		
@@ -1181,8 +1113,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a source configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceConfig
 	{
 		
@@ -1196,8 +1127,7 @@ namespace MyNS
 		public Architecture Architecture { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRobotApplicationVersionResponse
 	{
 		
@@ -1226,8 +1156,7 @@ namespace MyNS
 		public Environment Environment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSimulationApplicationResponse
 	{
 		
@@ -1268,8 +1197,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a simulation software suite.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimulationSoftwareSuite
 	{
 		
@@ -1280,27 +1208,24 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SimulationSoftwareSuiteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gazebo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gazebo = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RosbagPlay")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RosbagPlay = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SimulationRuntime")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SimulationRuntime = 2,
 	}
 	
 	/// <summary>
 	/// Information about a rendering engine.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RenderingEngine
 	{
 		
@@ -1311,18 +1236,15 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RenderingEngineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OGRE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OGRE = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSimulationApplicationVersionResponse
 	{
 		
@@ -1357,8 +1279,7 @@ namespace MyNS
 		public Environment Environment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSimulationJobResponse
 	{
 		
@@ -1420,8 +1341,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataSourceConfig
 	{
 		
@@ -1453,14 +1373,12 @@ namespace MyNS
 		public string Destination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceUnavailableException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorldExportJobResponse
 	{
 		
@@ -1492,58 +1410,53 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorldExportJobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Running = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceling = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceled = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorldExportJobErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServiceError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServiceError = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LimitExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LimitExceeded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFound = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestThrottled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestThrottled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidInput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidInput = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccessDenied")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccessDenied = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorldGenerationJobResponse
 	{
 		
@@ -1575,64 +1488,59 @@ namespace MyNS
 		public TagMap WorldTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorldGenerationJobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Running = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PartialFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PartialFailed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceling = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceled = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorldGenerationJobErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServiceError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServiceError = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LimitExceeded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LimitExceeded = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFound = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestThrottled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestThrottled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidInput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidInput = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AllWorldGenerationFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AllWorldGenerationFailed = 5,
 	}
 	
 	/// <summary>
 	/// <p>The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>. </p> <p>If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans. </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorldCount
 	{
 		
@@ -1643,8 +1551,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> InteriorCountPerFloorplan { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorldTemplateResponse
 	{
 		
@@ -1667,8 +1574,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFleetResponse
 	{
 	}
@@ -1676,26 +1582,22 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRobotResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRobotApplicationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSimulationApplicationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorldTemplateResponse
 	{
 	}
@@ -1703,8 +1605,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterRobotResponse
 	{
 		
@@ -1718,8 +1619,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDeploymentJobResponse
 	{
 		
@@ -1757,8 +1657,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a robot deployment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RobotDeployment
 	{
 		
@@ -1784,39 +1683,36 @@ namespace MyNS
 		public DeploymentJobErrorCode FailureCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RobotStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Available")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Available = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Registered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Registered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingNewDeployment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PendingNewDeployment = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deploying")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deploying = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InSync")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InSync = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoResponse")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoResponse = 6,
 	}
 	
 	/// <summary>
 	/// Information about the progress of a deployment job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProgressDetail
 	{
 		
@@ -1833,39 +1729,36 @@ namespace MyNS
 		public string TargetResource { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RobotDeploymentStep
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Validating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Validating = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DownloadingExtracting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DownloadingExtracting = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExecutingDownloadCondition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExecutingDownloadCondition = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExecutingPreLaunch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExecutingPreLaunch = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Launching")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Launching = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExecutingPostLaunch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExecutingPostLaunch = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finished")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Finished = 6,
 	}
 	
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetResponse
 	{
 		
@@ -1897,8 +1790,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a robot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Robot
 	{
 		
@@ -1933,8 +1825,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRobotResponse
 	{
 		
@@ -1969,8 +1860,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRobotApplicationResponse
 	{
 		
@@ -2005,8 +1895,7 @@ namespace MyNS
 		public string ImageDigest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSimulationApplicationResponse
 	{
 		
@@ -2047,8 +1936,7 @@ namespace MyNS
 		public string ImageDigest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSimulationJobResponse
 	{
 		
@@ -2116,8 +2004,7 @@ namespace MyNS
 		public ComputeResponse Compute { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSimulationJobBatchResponse
 	{
 		
@@ -2158,45 +2045,42 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SimulationJobBatchStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InProgress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceled = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceling")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceling = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Completing = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TimingOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TimingOut = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TimedOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TimedOut = 8,
 	}
 	
 	/// <summary>
 	/// Information about the batch policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPolicy
 	{
 		
@@ -2207,21 +2091,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxConcurrency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SimulationJobBatchErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServiceError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServiceError = 0,
 	}
 	
 	/// <summary>
 	/// Information about a failed create simulation job request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailedCreateSimulationJobRequest
 	{
 		
@@ -2241,8 +2122,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a simulation job request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimulationJobRequest
 	{
 		
@@ -2299,8 +2179,7 @@ namespace MyNS
 	/// <summary>
 	/// If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPCConfig
 	{
 		
@@ -2321,8 +2200,7 @@ namespace MyNS
 	/// <summary>
 	/// Compute information for the simulation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Compute
 	{
 		
@@ -2339,8 +2217,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information for a simulation job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimulationJobSummary
 	{
 		
@@ -2369,8 +2246,7 @@ namespace MyNS
 		public ComputeType ComputeType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorldResponse
 	{
 		
@@ -2393,8 +2269,7 @@ namespace MyNS
 		public string WorldDescriptionBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorldExportJobResponse
 	{
 		
@@ -2432,8 +2307,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorldGenerationJobResponse
 	{
 		
@@ -2474,8 +2348,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about worlds that finished.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FinishedWorldsSummary
 	{
 		
@@ -2492,8 +2365,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about worlds that failed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailureSummary
 	{
 		
@@ -2507,8 +2379,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a failed world.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorldFailure
 	{
 		
@@ -2522,8 +2393,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> FailureCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorldTemplateResponse
 	{
 		
@@ -2549,8 +2419,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorldTemplateBodyResponse
 	{
 		
@@ -2561,8 +2430,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeploymentJobsResponse
 	{
 		
@@ -2576,8 +2444,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a deployment job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeploymentJob
 	{
 		
@@ -2609,8 +2476,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -2624,8 +2490,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFleetsResponse
 	{
 		
@@ -2639,8 +2504,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a fleet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fleet
 	{
 		
@@ -2663,8 +2527,7 @@ namespace MyNS
 		public System.DateTimeOffset LastDeploymentTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRobotApplicationsResponse
 	{
 		
@@ -2678,8 +2541,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information for a robot application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RobotApplicationSummary
 	{
 		
@@ -2702,8 +2564,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRobotsResponse
 	{
 		
@@ -2714,8 +2575,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSimulationApplicationsResponse
 	{
 		
@@ -2729,8 +2589,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information for a simulation application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimulationApplicationSummary
 	{
 		
@@ -2753,8 +2612,7 @@ namespace MyNS
 		public SimulationSoftwareSuite SimulationSoftwareSuite { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSimulationJobBatchesResponse
 	{
 		
@@ -2768,8 +2626,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a simulation job batch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimulationJobBatchSummary
 	{
 		
@@ -2795,8 +2652,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> CreatedRequestCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSimulationJobsResponse
 	{
 		
@@ -2811,8 +2667,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -2820,8 +2675,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorldExportJobsResponse
 	{
 		
@@ -2839,8 +2693,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a world export job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorldExportJobSummary
 	{
 		
@@ -2863,8 +2716,7 @@ namespace MyNS
 		public OutputLocation OutputLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorldGenerationJobsResponse
 	{
 		
@@ -2882,8 +2734,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a world generator job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorldGenerationJobSummary
 	{
 		
@@ -2909,8 +2760,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> FailedWorldCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorldTemplatesResponse
 	{
 		
@@ -2924,8 +2774,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information for a template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateSummary
 	{
 		
@@ -2945,8 +2794,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorldsResponse
 	{
 		
@@ -2960,8 +2808,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a world.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorldSummary
 	{
 		
@@ -2981,8 +2828,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterRobotResponse
 	{
 		
@@ -2993,14 +2839,12 @@ namespace MyNS
 		public string Robot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestartSimulationJobResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSimulationJobBatchResponse
 	{
 		
@@ -3041,8 +2885,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SyncDeploymentJobResponse
 	{
 		
@@ -3071,20 +2914,17 @@ namespace MyNS
 		public System.DateTimeOffset CreatedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRobotApplicationResponse
 	{
 		
@@ -3113,8 +2953,7 @@ namespace MyNS
 		public Environment Environment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSimulationApplicationResponse
 	{
 		
@@ -3149,8 +2988,7 @@ namespace MyNS
 		public Environment Environment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorldTemplateResponse
 	{
 		
@@ -3167,8 +3005,7 @@ namespace MyNS
 		public System.DateTimeOffset LastUpdatedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteWorldsRequest
 	{
 		
@@ -3180,8 +3017,7 @@ namespace MyNS
 		public string[] Worlds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDescribeSimulationJobRequest
 	{
 		
@@ -3196,8 +3032,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelDeploymentJobRequest
 	{
 		
@@ -3209,8 +3044,7 @@ namespace MyNS
 		public string Job { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelSimulationJobBatchRequest
 	{
 		
@@ -3222,8 +3056,7 @@ namespace MyNS
 		public string Batch { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelSimulationJobRequest
 	{
 		
@@ -3235,8 +3068,7 @@ namespace MyNS
 		public string Job { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelWorldExportJobRequest
 	{
 		
@@ -3248,8 +3080,7 @@ namespace MyNS
 		public string Job { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelWorldGenerationJobRequest
 	{
 		
@@ -3264,8 +3095,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDeploymentJobRequest
 	{
 		
@@ -3300,8 +3130,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateFleetRequest
 	{
 		
@@ -3316,8 +3145,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRobotApplicationRequest
 	{
 		
@@ -3345,8 +3173,7 @@ namespace MyNS
 		public Environment Environment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRobotApplicationVersionRequest
 	{
 		
@@ -3370,8 +3197,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRobotRequest
 	{
 		
@@ -3400,8 +3226,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSimulationApplicationRequest
 	{
 		
@@ -3439,8 +3264,7 @@ namespace MyNS
 		public Environment Environment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSimulationApplicationVersionRequest
 	{
 		
@@ -3461,8 +3285,7 @@ namespace MyNS
 		public string ImageDigest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSimulationJobRequest
 	{
 		
@@ -3511,8 +3334,7 @@ namespace MyNS
 		public Compute Compute { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorldExportJobRequest
 	{
 		
@@ -3545,8 +3367,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorldGenerationJobRequest
 	{
 		
@@ -3577,8 +3398,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a template location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateLocation
 	{
 		
@@ -3597,8 +3417,7 @@ namespace MyNS
 		public string S3Key { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWorldTemplateRequest
 	{
 		
@@ -3621,8 +3440,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteFleetRequest
 	{
 		
@@ -3634,8 +3452,7 @@ namespace MyNS
 		public string Fleet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRobotApplicationRequest
 	{
 		
@@ -3653,8 +3470,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRobotRequest
 	{
 		
@@ -3666,8 +3482,7 @@ namespace MyNS
 		public string Robot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSimulationApplicationRequest
 	{
 		
@@ -3682,8 +3497,7 @@ namespace MyNS
 		public string ApplicationVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWorldTemplateRequest
 	{
 		
@@ -3698,8 +3512,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeregisterRobotRequest
 	{
 		
@@ -3721,8 +3534,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDeploymentJobRequest
 	{
 		
@@ -3737,8 +3549,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeFleetRequest
 	{
 		
@@ -3750,8 +3561,7 @@ namespace MyNS
 		public string Fleet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRobotApplicationRequest
 	{
 		
@@ -3769,8 +3579,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeRobotRequest
 	{
 		
@@ -3782,8 +3591,7 @@ namespace MyNS
 		public string Robot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSimulationApplicationRequest
 	{
 		
@@ -3798,8 +3606,7 @@ namespace MyNS
 		public string ApplicationVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSimulationJobBatchRequest
 	{
 		
@@ -3811,8 +3618,7 @@ namespace MyNS
 		public string Batch { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSimulationJobRequest
 	{
 		
@@ -3824,8 +3630,7 @@ namespace MyNS
 		public string Job { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorldExportJobRequest
 	{
 		
@@ -3837,8 +3642,7 @@ namespace MyNS
 		public string Job { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorldGenerationJobRequest
 	{
 		
@@ -3850,8 +3654,7 @@ namespace MyNS
 		public string Job { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorldRequest
 	{
 		
@@ -3863,8 +3666,7 @@ namespace MyNS
 		public string World { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeWorldTemplateRequest
 	{
 		
@@ -3876,8 +3678,7 @@ namespace MyNS
 		public string Template { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWorldTemplateBodyRequest
 	{
 		
@@ -3891,8 +3692,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeploymentJobsRequest
 	{
 		
@@ -3909,8 +3709,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFleetsRequest
 	{
 		
@@ -3924,8 +3723,7 @@ namespace MyNS
 		public Filter[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRobotApplicationsRequest
 	{
 		
@@ -3945,8 +3743,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRobotsRequest
 	{
 		
@@ -3960,8 +3757,7 @@ namespace MyNS
 		public Filter[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSimulationApplicationsRequest
 	{
 		
@@ -3978,8 +3774,7 @@ namespace MyNS
 		public Filter[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSimulationJobBatchesRequest
 	{
 		
@@ -3993,8 +3788,7 @@ namespace MyNS
 		public Filter[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSimulationJobsRequest
 	{
 		
@@ -4008,14 +3802,12 @@ namespace MyNS
 		public Filter[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorldExportJobsRequest
 	{
 		
@@ -4029,8 +3821,7 @@ namespace MyNS
 		public Filter[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorldGenerationJobsRequest
 	{
 		
@@ -4044,8 +3835,7 @@ namespace MyNS
 		public Filter[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorldTemplatesRequest
 	{
 		
@@ -4056,8 +3846,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListWorldsRequest
 	{
 		
@@ -4074,8 +3863,7 @@ namespace MyNS
 	/// <summary>
 	/// AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterRobotRequest
 	{
 		
@@ -4094,8 +3882,7 @@ namespace MyNS
 		public string Robot { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RestartSimulationJobRequest
 	{
 		
@@ -4107,8 +3894,7 @@ namespace MyNS
 		public string Job { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartSimulationJobBatchRequest
 	{
 		
@@ -4132,8 +3918,7 @@ namespace MyNS
 	/// <summary>
 	/// Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SyncDeploymentJobRequest
 	{
 		
@@ -4152,8 +3937,7 @@ namespace MyNS
 		public string Fleet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -4165,14 +3949,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRobotApplicationRequest
 	{
 		
@@ -4200,8 +3982,7 @@ namespace MyNS
 		public Environment Environment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSimulationApplicationRequest
 	{
 		
@@ -4239,8 +4020,7 @@ namespace MyNS
 		public Environment Environment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWorldTemplateRequest
 	{
 		

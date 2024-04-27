@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBEvent1
 	{
 		
@@ -37,8 +36,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource-Update Event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBEventResourceUpdate1
 	{
 		
@@ -54,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// The resource-update event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBEventSubject1
 	{
 		
@@ -109,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource links to other available versions of the resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBEventLink1
 	{
 		
@@ -138,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// The resource-update event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBEventNotification1
 	{
 		

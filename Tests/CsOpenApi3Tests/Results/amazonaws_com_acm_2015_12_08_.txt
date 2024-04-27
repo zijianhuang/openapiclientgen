@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsToCertificateRequest
 	{
 		
@@ -40,8 +39,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair that identifies or specifies metadata about an ACM resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -56,50 +54,42 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArnException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTagException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyTagsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagPolicyException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCertificateRequest
 	{
 		
@@ -111,26 +101,22 @@ namespace MyNS
 		public string CertificateArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCertificateResponse
 	{
 		
@@ -141,8 +127,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateDetail
 	{
 		
@@ -228,8 +213,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the validation of each domain name in the certificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainValidation
 	{
 		
@@ -256,27 +240,24 @@ namespace MyNS
 		public ValidationMethod ValidationMethod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_VALIDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_VALIDATION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
 	/// <summary>
 	/// Contains a DNS record value that you can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceRecord
 	{
 		
@@ -302,201 +283,186 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecordType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CNAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CNAME = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValidationMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DNS = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_VALIDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_VALIDATION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ISSUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ISSUED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_TIMED_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_TIMED_OUT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVOKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVOKED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RevocationReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_COMPROMISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_COMPROMISE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CA_COMPROMISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CA_COMPROMISE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFFILIATION_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AFFILIATION_CHANGED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUPERCEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUPERCEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CESSATION_OF_OPERATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CESSATION_OF_OPERATION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERTIFICATE_HOLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERTIFICATE_HOLD = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVE_FROM_CRL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVE_FROM_CRL = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVILEGE_WITHDRAWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVILEGE_WITHDRAWN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A_A_COMPROMISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A_A_COMPROMISE = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyAlgorithm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_1024")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_1024 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_2048 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_3072")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_3072 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_4096")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RSA_4096 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC_prime256v1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC_prime256v1 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC_secp384r1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC_secp384r1 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC_secp521r1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC_secp521r1 = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailureReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_AVAILABLE_CONTACTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_AVAILABLE_CONTACTS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDITIONAL_VERIFICATION_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDITIONAL_VERIFICATION_REQUIRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN_NOT_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN_NOT_ALLOWED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_PUBLIC_DOMAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_PUBLIC_DOMAIN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN_VALIDATION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN_VALIDATION_DENIED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAA_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAA_ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCA_LIMIT_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCA_LIMIT_EXCEEDED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCA_INVALID_ARN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCA_INVALID_ARN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCA_INVALID_STATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCA_INVALID_STATE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCA_REQUEST_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCA_REQUEST_FAILED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCA_NAME_CONSTRAINTS_VALIDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCA_NAME_CONSTRAINTS_VALIDATION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCA_RESOURCE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCA_RESOURCE_NOT_FOUND = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCA_INVALID_ARGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCA_INVALID_ARGS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCA_INVALID_DURATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCA_INVALID_DURATION = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PCA_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PCA_ACCESS_DENIED = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SLR_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SLR_NOT_FOUND = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 16,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMAZON_ISSUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMAZON_ISSUED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE = 2,
 	}
 	
 	/// <summary>
 	/// Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RenewalSummary
 	{
 		
@@ -525,30 +491,27 @@ namespace MyNS
 		public System.DateTimeOffset UpdatedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RenewalStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_AUTO_RENEWAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_AUTO_RENEWAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_VALIDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_VALIDATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyUsage
 	{
 		
@@ -556,51 +519,48 @@ namespace MyNS
 		public KeyUsageName Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyUsageName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIGITAL_SIGNATURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIGITAL_SIGNATURE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NON_REPUDIATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NON_REPUDIATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_ENCIPHERMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_ENCIPHERMENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_ENCIPHERMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_ENCIPHERMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_AGREEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEY_AGREEMENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CERTIFICATE_SIGNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CERTIFICATE_SIGNING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRL_SIGNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CRL_SIGNING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCIPHER_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCIPHER_ONLY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECIPHER_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECIPHER_ONLY = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 10,
 	}
 	
 	/// <summary>
 	/// The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedKeyUsage
 	{
 		
@@ -611,67 +571,62 @@ namespace MyNS
 		public string OID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ExtendedKeyUsageName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TLS_WEB_SERVER_AUTHENTICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TLS_WEB_SERVER_AUTHENTICATION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TLS_WEB_CLIENT_AUTHENTICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TLS_WEB_CLIENT_AUTHENTICATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CODE_SIGNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CODE_SIGNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL_PROTECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL_PROTECTION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_STAMPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_STAMPING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OCSP_SIGNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OCSP_SIGNING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPSEC_END_SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IPSEC_END_SYSTEM = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPSEC_TUNNEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IPSEC_TUNNEL = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPSEC_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IPSEC_USER = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RenewalEligibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ELIGIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ELIGIBLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INELIGIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INELIGIBLE = 1,
 	}
 	
 	/// <summary>
 	/// Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateOptions
 	{
 		
@@ -679,21 +634,18 @@ namespace MyNS
 		public CertificateTransparencyLoggingPreference CertificateTransparencyLoggingPreference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CertificateTransparencyLoggingPreference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCertificateRequest
 	{
 		
@@ -705,8 +657,7 @@ namespace MyNS
 		public string CertificateArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportCertificateResponse
 	{
 		
@@ -720,8 +671,7 @@ namespace MyNS
 		public string PrivateKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportCertificateRequest
 	{
 		
@@ -740,14 +690,12 @@ namespace MyNS
 		public string Passphrase { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestInProgressException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccountConfigurationResponse
 	{
 		
@@ -758,8 +706,7 @@ namespace MyNS
 	/// <summary>
 	/// Object containing expiration events options associated with an Amazon Web Services account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiryEventsConfiguration
 	{
 		
@@ -767,8 +714,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> DaysBeforeExpiry { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCertificateResponse
 	{
 		
@@ -779,8 +725,7 @@ namespace MyNS
 		public string CertificateChain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCertificateRequest
 	{
 		
@@ -792,8 +737,7 @@ namespace MyNS
 		public string CertificateArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportCertificateResponse
 	{
 		
@@ -801,8 +745,7 @@ namespace MyNS
 		public string CertificateArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportCertificateRequest
 	{
 		
@@ -830,14 +773,12 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCertificatesResponse
 	{
 		
@@ -851,8 +792,7 @@ namespace MyNS
 	/// <summary>
 	/// This structure is returned in the response object of <a>ListCertificates</a> action. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CertificateSummary
 	{
 		
@@ -911,8 +851,7 @@ namespace MyNS
 		public System.DateTimeOffset RevokedAt { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCertificatesRequest
 	{
 		
@@ -938,8 +877,7 @@ namespace MyNS
 	/// <summary>
 	/// This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filters
 	{
 		
@@ -953,43 +891,36 @@ namespace MyNS
 		public KeyAlgorithm[] KeyTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED_AT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED_AT = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidArgsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForCertificateResponse
 	{
 		
@@ -997,8 +928,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForCertificateRequest
 	{
 		
@@ -1010,8 +940,7 @@ namespace MyNS
 		public string CertificateArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAccountConfigurationRequest
 	{
 		
@@ -1026,8 +955,7 @@ namespace MyNS
 		public string IdempotencyToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsFromCertificateRequest
 	{
 		
@@ -1046,8 +974,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RenewCertificateRequest
 	{
 		
@@ -1059,8 +986,7 @@ namespace MyNS
 		public string CertificateArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestCertificateResponse
 	{
 		
@@ -1068,8 +994,7 @@ namespace MyNS
 		public string CertificateArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RequestCertificateRequest
 	{
 		
@@ -1108,8 +1033,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about the domain names that you want ACM to use to send you emails that enable you to validate domain ownership.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainValidationOption
 	{
 		
@@ -1128,14 +1052,12 @@ namespace MyNS
 		public string ValidationDomain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidDomainValidationOptionsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResendValidationEmailRequest
 	{
 		
@@ -1161,14 +1083,12 @@ namespace MyNS
 		public string ValidationDomain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidStateException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCertificateOptionsRequest
 	{
 		

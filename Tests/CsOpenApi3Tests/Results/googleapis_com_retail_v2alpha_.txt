@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Message that represents an arbitrary HTTP body. It should only be used for payload formats that can't be represented as JSON, such as raw binary or an HTML page. This message can be used both in streaming and non-streaming API methods in the request as well as the response. It can be used as a top-level request field, which is convenient if one wants to extract parameters from either the URL or HTTP template into the request fields and also want access to the raw HTTP body. Example: message GetResourceRequest { // A unique request id. string request_id = 1; // The raw HTTP body is bound to this field. google.api.HttpBody http_body = 2; } service ResourceService { rpc GetResource(GetResourceRequest) returns (google.api.HttpBody); rpc UpdateResource(google.api.HttpBody) returns (google.protobuf.Empty); } Example with streaming methods: service CaldavService { rpc GetCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); rpc UpdateCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); } Use of this type only changes how the request and response bodies are handled, all other features will continue to work unchanged.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleApiHttpBody
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of the context in which an error occurred.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailLoggingErrorContext
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// HTTP request data that is related to a reported error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailLoggingHttpRequestContext
 	{
 		
@@ -83,8 +80,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates a location in the source code of the service for which errors are reported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailLoggingSourceLocation
 	{
 		
@@ -98,8 +94,7 @@ namespace MyNS
 	/// <summary>
 	/// An error log which is reported to the Error Reporting system. This proto a superset of google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailLoggingErrorLog
 	{
 		
@@ -149,8 +144,7 @@ namespace MyNS
 	/// <summary>
 	/// The error payload that is populated on LRO import APIs, including "google.cloud.retail.v2.ProductService.ImportProducts" and "google.cloud.retail.v2.EventService.ImportUserEvents".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailLoggingImportErrorContext
 	{
 		
@@ -194,8 +188,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a running service that sends errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailLoggingServiceContext
 	{
 		
@@ -209,8 +202,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -236,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the AddFulfillmentPlaces operation. Currently empty because there is no meaningful metadata populated from the ProductService.AddFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2AddFulfillmentPlacesMetadata
 	{
 	}
@@ -245,8 +236,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the AddFulfillmentPlacesRequest. Currently empty because there is no meaningful response populated from the ProductService.AddFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2AddFulfillmentPlacesResponse
 	{
 	}
@@ -254,8 +244,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the AddLocalInventories operation. Currently empty because there is no meaningful metadata populated from the ProductService.AddLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2AddLocalInventoriesMetadata
 	{
 	}
@@ -263,8 +252,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ProductService.AddLocalInventories API. Currently empty because there is no meaningful response populated from the ProductService.AddLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2AddLocalInventoriesResponse
 	{
 	}
@@ -272,8 +260,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata associated with a create operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2CreateModelMetadata
 	{
 		
@@ -287,8 +274,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportCompletionDataRequest. If the long running operation is done, this message is returned by the google.longrunning.Operations.response field if the operation is successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2ImportCompletionDataResponse
 	{
 		
@@ -302,8 +288,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of destination for Import related errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2ImportErrorsConfig
 	{
 		
@@ -317,8 +302,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Import operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2ImportMetadata
 	{
 		
@@ -362,8 +346,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportProductsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2ImportProductsResponse
 	{
 		
@@ -383,8 +366,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportUserEventsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2ImportUserEventsResponse
 	{
 		
@@ -410,8 +392,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of import result. The UserEventImportSummary summarizes the import status for user events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2UserEventImportSummary
 	{
 		
@@ -431,8 +412,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata that describes the training and serving parameters of a Model. A Model can be associated with a ServingConfig and then queried through the Predict API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2Model
 	{
 		
@@ -527,43 +507,38 @@ namespace MyNS
 		public string UpdateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2ModelDataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_OK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_ERROR = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2ModelFilteringOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECOMMENDATIONS_FILTERING_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECOMMENDATIONS_FILTERING_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECOMMENDATIONS_FILTERING_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECOMMENDATIONS_FILTERING_ENABLED = 2,
 	}
 	
 	/// <summary>
 	/// Additional model features config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2ModelModelFeaturesConfig
 	{
 		
@@ -577,8 +552,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional configs for the frequently-bought-together model type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2ModelFrequentlyBoughtTogetherFeaturesConfig
 	{
 		
@@ -589,46 +563,41 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRetailV2ModelFrequentlyBoughtTogetherFeaturesConfigContextProductsType> ContextProductsType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2ModelFrequentlyBoughtTogetherFeaturesConfigContextProductsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTEXT_PRODUCTS_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTEXT_PRODUCTS_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_CONTEXT_PRODUCT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_CONTEXT_PRODUCT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTIPLE_CONTEXT_PRODUCTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTIPLE_CONTEXT_PRODUCTS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2ModelPeriodicTuningState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIODIC_TUNING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIODIC_TUNING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIODIC_TUNING_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIODIC_TUNING_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_TUNING_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_TUNING_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIODIC_TUNING_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIODIC_TUNING_ENABLED = 3,
 	}
 	
 	/// <summary>
 	/// Represents an ordered combination of valid serving configs, which can be used for `PAGE_OPTIMIZATION` recommendations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2ModelServingConfigList
 	{
 		
@@ -639,46 +608,41 @@ namespace MyNS
 		public string[] ServingConfigIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2ModelServingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUNED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUNED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2ModelTrainingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINING = 2,
 	}
 	
 	/// <summary>
 	/// Metadata related to the progress of the Purge operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2PurgeMetadata
 	{
 	}
@@ -686,8 +650,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeProducts operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2PurgeProductsMetadata
 	{
 		
@@ -719,8 +682,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the PurgeProductsRequest. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2PurgeProductsResponse
 	{
 		
@@ -740,8 +702,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the PurgeUserEventsRequest. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2PurgeUserEventsResponse
 	{
 		
@@ -755,8 +716,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `RejoinUserEvents` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2RejoinUserEventsMetadata
 	{
 	}
@@ -764,8 +724,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `RejoinUserEvents` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2RejoinUserEventsResponse
 	{
 		
@@ -779,8 +738,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the RemoveFulfillmentPlaces operation. Currently empty because there is no meaningful metadata populated from the ProductService.RemoveFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2RemoveFulfillmentPlacesMetadata
 	{
 	}
@@ -788,8 +746,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the RemoveFulfillmentPlacesRequest. Currently empty because there is no meaningful response populated from the ProductService.RemoveFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2RemoveFulfillmentPlacesResponse
 	{
 	}
@@ -797,8 +754,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the RemoveLocalInventories operation. Currently empty because there is no meaningful metadata populated from the ProductService.RemoveLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2RemoveLocalInventoriesMetadata
 	{
 	}
@@ -806,8 +762,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ProductService.RemoveLocalInventories API. Currently empty because there is no meaningful response populated from the ProductService.RemoveLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2RemoveLocalInventoriesResponse
 	{
 	}
@@ -815,8 +770,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SetInventory operation. Currently empty because there is no meaningful metadata populated from the ProductService.SetInventory method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2SetInventoryMetadata
 	{
 	}
@@ -824,8 +778,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the SetInventoryRequest. Currently empty because there is no meaningful response populated from the ProductService.SetInventory method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2SetInventoryResponse
 	{
 	}
@@ -833,8 +786,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2TuneModelMetadata
 	{
 		
@@ -848,8 +800,7 @@ namespace MyNS
 	/// <summary>
 	/// Response associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2TuneModelResponse
 	{
 	}
@@ -857,8 +808,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for AcceptTerms method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAcceptTermsRequest
 	{
 	}
@@ -866,8 +816,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for CatalogService.AddCatalogAttribute method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAddCatalogAttributeRequest
 	{
 		
@@ -881,8 +830,7 @@ namespace MyNS
 	/// <summary>
 	/// Catalog level attribute config for an attribute. For example, if customers want to enable/disable facet for a specific attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCatalogAttribute
 	{
 		
@@ -947,43 +895,38 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRetailV2alphaCatalogAttributeType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaCatalogAttributeDynamicFacetableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DYNAMIC_FACETABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DYNAMIC_FACETABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DYNAMIC_FACETABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DYNAMIC_FACETABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DYNAMIC_FACETABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DYNAMIC_FACETABLE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaCatalogAttributeExactSearchableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT_SEARCHABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT_SEARCHABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT_SEARCHABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT_SEARCHABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXACT_SEARCHABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXACT_SEARCHABLE_DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// Possible options for the facet that corresponds to the current attribute config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCatalogAttributeFacetConfig
 	{
 		
@@ -1015,8 +958,7 @@ namespace MyNS
 	/// <summary>
 	/// A floating point interval.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaInterval
 	{
 		
@@ -1048,8 +990,7 @@ namespace MyNS
 	/// <summary>
 	/// Facet values to ignore on facets during the specified time range for the given SearchResponse.Facet.key attribute.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCatalogAttributeFacetConfigIgnoredFacetValues
 	{
 		
@@ -1075,8 +1016,7 @@ namespace MyNS
 	/// <summary>
 	/// Replaces a set of textual facet values by the same (possibly different) merged facet value. Each facet value should appear at most once as a value per CatalogAttribute. This feature is available only for textual custom attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCatalogAttributeFacetConfigMergedFacetValue
 	{
 		
@@ -1096,8 +1036,7 @@ namespace MyNS
 	/// <summary>
 	/// Options to rerank based on facet values engaged by the user for the current key. That key needs to be a custom textual key and facetable. To use this control, you also need to pass all the facet keys engaged by the user in the request using the field [SearchRequest.FacetSpec]. In particular, if you don't pass the facet keys engaged that you want to rerank on, this control won't be effective. Moreover, to obtain better results, the facet values that you want to rerank on should be close to English (ideally made of words, underscores, and spaces).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCatalogAttributeFacetConfigRerankConfig
 	{
 		
@@ -1114,75 +1053,66 @@ namespace MyNS
 		public System.Nullable<System.Boolean> RerankFacet { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaCatalogAttributeIndexableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXABLE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaCatalogAttributeRetrievableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRIEVABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRIEVABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRIEVABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRIEVABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRIEVABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETRIEVABLE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaCatalogAttributeSearchableOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCHABLE_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCHABLE_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCHABLE_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCHABLE_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCHABLE_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCHABLE_DISABLED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaCatalogAttributeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXTUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXTUAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMERICAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMERICAL = 2,
 	}
 	
 	/// <summary>
 	/// Request for AddControl method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAddControlRequest
 	{
 		
@@ -1196,8 +1126,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the AddFulfillmentPlaces operation. Currently empty because there is no meaningful metadata populated from the ProductService.AddFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAddFulfillmentPlacesMetadata
 	{
 	}
@@ -1205,8 +1134,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ProductService.AddFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAddFulfillmentPlacesRequest
 	{
 		
@@ -1238,8 +1166,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the AddFulfillmentPlacesRequest. Currently empty because there is no meaningful response populated from the ProductService.AddFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAddFulfillmentPlacesResponse
 	{
 	}
@@ -1247,8 +1174,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the AddLocalInventories operation. Currently empty because there is no meaningful metadata populated from the ProductService.AddLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAddLocalInventoriesMetadata
 	{
 	}
@@ -1256,8 +1182,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ProductService.AddLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAddLocalInventoriesRequest
 	{
 		
@@ -1289,8 +1214,7 @@ namespace MyNS
 	/// <summary>
 	/// The inventory information at a place (e.g. a store) identified by a place ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaLocalInventory
 	{
 		
@@ -1322,8 +1246,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom attribute that is not explicitly modeled in Product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCustomAttribute
 	{
 		
@@ -1355,8 +1278,7 @@ namespace MyNS
 	/// <summary>
 	/// The price information of a Product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPriceInfo
 	{
 		
@@ -1406,8 +1328,7 @@ namespace MyNS
 	/// <summary>
 	/// The price range of all variant Product having the same Product.primary_product_id.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPriceInfoPriceRange
 	{
 		
@@ -1427,8 +1348,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ProductService.AddLocalInventories API. Currently empty because there is no meaningful response populated from the ProductService.AddLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAddLocalInventoriesResponse
 	{
 	}
@@ -1436,8 +1356,7 @@ namespace MyNS
 	/// <summary>
 	/// Catalog level attribute config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAttributesConfig
 	{
 		
@@ -1460,27 +1379,24 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaAttributesConfigAttributeConfigLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT_LEVEL_ATTRIBUTE_CONFIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT_LEVEL_ATTRIBUTE_CONFIG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CATALOG_LEVEL_ATTRIBUTE_CONFIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CATALOG_LEVEL_ATTRIBUTE_CONFIG = 2,
 	}
 	
 	/// <summary>
 	/// An intended audience of the Product for whom it's sold.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaAudience
 	{
 		
@@ -1500,8 +1416,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for CatalogService.BatchRemoveCatalogAttributes method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaBatchRemoveCatalogAttributesRequest
 	{
 		
@@ -1515,8 +1430,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the CatalogService.BatchRemoveCatalogAttributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaBatchRemoveCatalogAttributesResponse
 	{
 		
@@ -1536,8 +1450,7 @@ namespace MyNS
 	/// <summary>
 	/// A BigQuery output result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaBigQueryOutputResult
 	{
 		
@@ -1557,8 +1470,7 @@ namespace MyNS
 	/// <summary>
 	/// BigQuery source import data from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaBigQuerySource
 	{
 		
@@ -1602,8 +1514,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDate
 	{
 		
@@ -1629,8 +1540,7 @@ namespace MyNS
 	/// <summary>
 	/// The catalog configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCatalog
 	{
 		
@@ -1662,8 +1572,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures Merchant Center linking. Links contained in the config will be used to sync data from a Merchant Center account to a Cloud Retail branch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaMerchantCenterLinkingConfig
 	{
 		
@@ -1677,8 +1586,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a link between a Merchant Center account and a branch. After a link is established, products from the linked Merchant Center account are streamed to the linked branch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaMerchantCenterLink
 	{
 		
@@ -1722,8 +1630,7 @@ namespace MyNS
 	/// <summary>
 	/// Merchant Center Feed filter criterion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaMerchantCenterFeedFilter
 	{
 		
@@ -1743,8 +1650,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures what level the product should be uploaded with regards to how users will be send events and how predictions will be made.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaProductLevelConfig
 	{
 		
@@ -1764,8 +1670,7 @@ namespace MyNS
 	/// <summary>
 	/// The color information of a Product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaColorInfo
 	{
 		
@@ -1785,8 +1690,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the autocomplete query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCompleteQueryResponse
 	{
 		
@@ -1818,8 +1722,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource that represents attribute results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCompleteQueryResponseAttributeResult
 	{
 		
@@ -1833,8 +1736,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource that represents completion results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCompleteQueryResponseCompletionResult
 	{
 		
@@ -1866,8 +1768,7 @@ namespace MyNS
 	/// <summary>
 	/// A facet result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchResponseFacet
 	{
 		
@@ -1893,8 +1794,7 @@ namespace MyNS
 	/// <summary>
 	/// A facet value which contains value names and their count.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchResponseFacetFacetValue
 	{
 		
@@ -1932,8 +1832,7 @@ namespace MyNS
 	/// <summary>
 	/// Recent search of this user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCompleteQueryResponseRecentSearchResult
 	{
 		
@@ -1947,8 +1846,7 @@ namespace MyNS
 	/// <summary>
 	/// Catalog level autocomplete config for customers to customize autocomplete feature's settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCompletionConfig
 	{
 		
@@ -2022,8 +1920,7 @@ namespace MyNS
 	/// <summary>
 	/// The input config source for completion data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCompletionDataInputConfig
 	{
 		
@@ -2037,8 +1934,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed completion information including completion attribution token and clicked completion info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCompletionDetail
 	{
 		
@@ -2064,8 +1960,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata that is used to define a condition that triggers an action. A valid condition must specify at least one of 'query_terms' or 'products_filter'. If multiple fields are specified, the condition is met if all the fields are satisfied e.g. if a set of query terms and product_filter are set, then only items matching the product_filter for requests with a query matching the query terms wil get boosted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCondition
 	{
 		
@@ -2091,8 +1986,7 @@ namespace MyNS
 	/// <summary>
 	/// Used for time-dependent conditions. Example: Want to have rule applied for week long sale.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaConditionTimeRange
 	{
 		
@@ -2112,8 +2006,7 @@ namespace MyNS
 	/// <summary>
 	/// Query terms that we want to match on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaConditionQueryTerm
 	{
 		
@@ -2133,8 +2026,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures dynamic metadata that can be linked to a ServingConfig and affect search or recommendation results at serving time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaControl
 	{
 		
@@ -2184,8 +2076,7 @@ namespace MyNS
 	/// <summary>
 	/// A facet specification to perform faceted search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchRequestFacetSpec
 	{
 		
@@ -2217,8 +2108,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies how a facet is computed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchRequestFacetSpecFacetKey
 	{
 		
@@ -2280,8 +2170,7 @@ namespace MyNS
 	/// <summary>
 	/// A rule is a condition-action pair * A condition defines when a rule is to be triggered. * An action specifies what occurs on that trigger. Currently rules only work for controls with SOLUTION_TYPE_SEARCH.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRule
 	{
 		
@@ -2355,8 +2244,7 @@ namespace MyNS
 	/// <summary>
 	/// A boost action to apply to results matching condition specified above.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleBoostAction
 	{
 		
@@ -2376,8 +2264,7 @@ namespace MyNS
 	/// <summary>
 	/// Prevents `query_term` from being associated with specified terms during search. Example: Don't associate "gShoe" and "cheap".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleDoNotAssociateAction
 	{
 		
@@ -2403,8 +2290,7 @@ namespace MyNS
 	/// <summary>
 	/// * Rule Condition: - No Condition.query_terms provided is a global match. - 1 or more Condition.query_terms provided are combined with OR operator. * Action Input: The request query and filter that are applied to the retrieved products, in addition to any filters already provided with the SearchRequest. The AND operator is used to combine the query's existing filters with the filter rule(s). NOTE: May result in 0 results when filters conflict. * Action Result: Filters the returned objects to be ONLY those that passed the filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleFilterAction
 	{
 		
@@ -2418,8 +2304,7 @@ namespace MyNS
 	/// <summary>
 	/// Force returns an attribute/facet in the request around a certain position or above. * Rule Condition: Must specify non-empty Condition.query_terms (for search only) or Condition.page_categories (for browse only), but can't specify both. * Action Inputs: attribute name, position * Action Result: Will force return a facet key around a certain position or above if the condition is satisfied. Example: Suppose the query is "shoes", the Condition.query_terms is "shoes", the ForceReturnFacetAction.FacetPositionAdjustment.attribute_name is "size" and the ForceReturnFacetAction.FacetPositionAdjustment.position is 8. Two cases: a) The facet key "size" is not already in the top 8 slots, then the facet "size" will appear at a position close to 8. b) The facet key "size" in among the top 8 positions in the request, then it will stay at its current rank.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleForceReturnFacetAction
 	{
 		
@@ -2433,8 +2318,7 @@ namespace MyNS
 	/// <summary>
 	/// Each facet position adjustment consists of a single attribute name (i.e. facet key) along with a specified position.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleForceReturnFacetActionFacetPositionAdjustment
 	{
 		
@@ -2454,8 +2338,7 @@ namespace MyNS
 	/// <summary>
 	/// Prevents a term in the query from being used in search. Example: Don't search for "shoddy".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleIgnoreAction
 	{
 		
@@ -2469,8 +2352,7 @@ namespace MyNS
 	/// <summary>
 	/// Maps a set of terms to a set of synonyms. Set of synonyms will be treated as synonyms of each query term only. `query_terms` will not be treated as synonyms of each other. Example: "sneakers" will use a synonym of "shoes". "shoes" will not use a synonym of "sneakers".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleOnewaySynonymsAction
 	{
 		
@@ -2496,8 +2378,7 @@ namespace MyNS
 	/// <summary>
 	/// Redirects a shopper to a specific page. * Rule Condition: Must specify Condition.query_terms. * Action Input: Request Query * Action Result: Redirects shopper to provided uri.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleRedirectAction
 	{
 		
@@ -2511,8 +2392,7 @@ namespace MyNS
 	/// <summary>
 	/// Removes an attribute/facet in the request if is present. * Rule Condition: Must specify non-empty Condition.query_terms (for search only) or Condition.page_categories (for browse only), but can't specify both. * Action Input: attribute name * Action Result: Will remove the attribute (as a facet) from the request if it is present. Example: Suppose the query is "shoes", the Condition.query_terms is "shoes" and the attribute name "size", then facet key "size" will be removed from the request (if it is present).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleRemoveFacetAction
 	{
 		
@@ -2526,8 +2406,7 @@ namespace MyNS
 	/// <summary>
 	/// Replaces a term in the query. Multiple replacement candidates can be specified. All `query_terms` will be replaced with the replacement term. Example: Replace "gShoe" with "google shoe".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleReplacementAction
 	{
 		
@@ -2553,8 +2432,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a set of terms that will be treated as synonyms of each other. Example: synonyms of "sneakers" and "shoes": * "sneakers" will use a synonym of "shoes". * "shoes" will use a synonym of "sneakers".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRuleTwowaySynonymsAction
 	{
 		
@@ -2568,8 +2446,7 @@ namespace MyNS
 	/// <summary>
 	/// Common metadata related to the progress of the operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCreateMerchantCenterAccountLinkMetadata
 	{
 		
@@ -2589,8 +2466,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata associated with a create operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaCreateModelMetadata
 	{
 		
@@ -2604,8 +2480,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the EnrollSolution method. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaEnrollSolutionMetadata
 	{
 	}
@@ -2613,8 +2488,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for EnrollSolution method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaEnrollSolutionRequest
 	{
 		
@@ -2625,27 +2499,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRetailV2alphaEnrollSolutionRequestSolution> Solution { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaEnrollSolutionRequestSolution
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLUTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLUTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLUTION_TYPE_RECOMMENDATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLUTION_TYPE_RECOMMENDATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLUTION_TYPE_SEARCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLUTION_TYPE_SEARCH = 2,
 	}
 	
 	/// <summary>
 	/// Response for EnrollSolution method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaEnrollSolutionResponse
 	{
 		
@@ -2659,8 +2530,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for active A/B testing Experiment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaExperimentInfo
 	{
 		
@@ -2680,8 +2550,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for active serving config A/B tests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaExperimentInfoServingConfigExperiment
 	{
 		
@@ -2701,8 +2570,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the `ExportAnalyticsMetrics` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaExportAnalyticsMetricsRequest
 	{
 		
@@ -2722,8 +2590,7 @@ namespace MyNS
 	/// <summary>
 	/// The output configuration setting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaOutputConfig
 	{
 		
@@ -2743,8 +2610,7 @@ namespace MyNS
 	/// <summary>
 	/// The BigQuery output destination configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaOutputConfigBigQueryDestination
 	{
 		
@@ -2770,8 +2636,7 @@ namespace MyNS
 	/// <summary>
 	/// The Google Cloud Storage output destination configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaOutputConfigGcsDestination
 	{
 		
@@ -2785,8 +2650,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ExportAnalyticsMetricsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaExportAnalyticsMetricsResponse
 	{
 		
@@ -2812,8 +2676,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of destination for Export related errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaExportErrorsConfig
 	{
 		
@@ -2827,8 +2690,7 @@ namespace MyNS
 	/// <summary>
 	/// Output result that stores the information about where the exported data is stored.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaOutputResult
 	{
 		
@@ -2848,8 +2710,7 @@ namespace MyNS
 	/// <summary>
 	/// A Gcs output result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaGcsOutputResult
 	{
 		
@@ -2863,8 +2724,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Export operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaExportMetadata
 	{
 		
@@ -2884,8 +2744,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ExportProductsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaExportProductsResponse
 	{
 		
@@ -2911,8 +2770,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ExportUserEventsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaExportUserEventsResponse
 	{
 		
@@ -2938,8 +2796,7 @@ namespace MyNS
 	/// <summary>
 	/// Fulfillment information, such as the store IDs for in-store pickup or region IDs for different shipping methods.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaFulfillmentInfo
 	{
 		
@@ -2959,8 +2816,7 @@ namespace MyNS
 	/// <summary>
 	/// Google Cloud Storage location for input content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaGcsSource
 	{
 		
@@ -2980,8 +2836,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message of CatalogService.GetDefaultBranch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaGetDefaultBranchResponse
 	{
 		
@@ -3007,8 +2862,7 @@ namespace MyNS
 	/// <summary>
 	/// Product image. Recommendations AI and Retail Search do not use product images to improve prediction and search results. However, product images can be returned in results, and are shown in prediction or search previews in the console.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaImage
 	{
 		
@@ -3034,8 +2888,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ImportCompletionData methods.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaImportCompletionDataRequest
 	{
 		
@@ -3055,8 +2908,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportCompletionDataRequest. If the long running operation is done, this message is returned by the google.longrunning.Operations.response field if the operation is successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaImportCompletionDataResponse
 	{
 		
@@ -3070,8 +2922,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of destination for Import related errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaImportErrorsConfig
 	{
 		
@@ -3085,8 +2936,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Import operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaImportMetadata
 	{
 		
@@ -3136,8 +2986,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to transform user events operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaTransformedUserEventsMetadata
 	{
 		
@@ -3157,8 +3006,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for Import methods.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaImportProductsRequest
 	{
 		
@@ -3208,8 +3056,7 @@ namespace MyNS
 	/// <summary>
 	/// The input config source for products.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaProductInputConfig
 	{
 		
@@ -3235,8 +3082,7 @@ namespace MyNS
 	/// <summary>
 	/// The inline source for the input config for ImportProducts method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaProductInlineSource
 	{
 		
@@ -3250,8 +3096,7 @@ namespace MyNS
 	/// <summary>
 	/// Product captures all metadata information of items to be recommended or searched.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaProduct
 	{
 		
@@ -3460,33 +3305,30 @@ namespace MyNS
 		public GoogleCloudRetailV2alphaProduct[] Variants { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaProductAvailability
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_STOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_STOCK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_STOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_STOCK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREORDER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BACKORDER = 4,
 	}
 	
 	/// <summary>
 	/// Promotion specification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPromotion
 	{
 		
@@ -3500,8 +3342,7 @@ namespace MyNS
 	/// <summary>
 	/// The rating of a Product.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRating
 	{
 		
@@ -3524,46 +3365,41 @@ namespace MyNS
 		public int[] RatingHistogram { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaProductType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMARY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VARIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VARIANT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COLLECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COLLECTION = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaImportProductsRequestReconciliationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECONCILIATION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECONCILIATION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCREMENTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCREMENTAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 	
 	/// <summary>
 	/// Response of the ImportProductsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaImportProductsResponse
 	{
 		
@@ -3583,8 +3419,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for the ImportUserEvents request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaImportUserEventsRequest
 	{
 		
@@ -3604,8 +3439,7 @@ namespace MyNS
 	/// <summary>
 	/// The input config source for user events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaUserEventInputConfig
 	{
 		
@@ -3631,8 +3465,7 @@ namespace MyNS
 	/// <summary>
 	/// The inline source for the input config for ImportUserEvents method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaUserEventInlineSource
 	{
 		
@@ -3646,8 +3479,7 @@ namespace MyNS
 	/// <summary>
 	/// UserEvent captures all metadata information Retail API needs to know about how end users interact with customers' website.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaUserEvent
 	{
 		
@@ -3781,8 +3613,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed product information associated with a user event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaProductDetail
 	{
 		
@@ -3802,8 +3633,7 @@ namespace MyNS
 	/// <summary>
 	/// A transaction represents the entire purchase transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPurchaseTransaction
 	{
 		
@@ -3841,8 +3671,7 @@ namespace MyNS
 	/// <summary>
 	/// Information of an end user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaUserInfo
 	{
 		
@@ -3874,8 +3703,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportUserEventsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaImportUserEventsResponse
 	{
 		
@@ -3901,8 +3729,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of import result. The UserEventImportSummary summarizes the import status for user events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaUserEventImportSummary
 	{
 		
@@ -3922,8 +3749,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for CatalogService.ListCatalogs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaListCatalogsResponse
 	{
 		
@@ -3943,8 +3769,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListControls method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaListControlsResponse
 	{
 		
@@ -3964,8 +3789,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListEnrolledSolutions method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaListEnrolledSolutionsResponse
 	{
 		
@@ -3979,8 +3803,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for MerchantCenterAccountLinkService.ListMerchantCenterAccountLinks method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaListMerchantCenterAccountLinksResponse
 	{
 		
@@ -3994,8 +3817,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a link between a Merchant Center account and a branch. After a link is established, products from the linked Merchant Center account are streamed to the linked branch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaMerchantCenterAccountLink
 	{
 		
@@ -4063,8 +3885,7 @@ namespace MyNS
 	/// <summary>
 	/// Merchant Center Feed filter criterion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaMerchantCenterAccountLinkMerchantCenterFeedFilter
 	{
 		
@@ -4081,30 +3902,27 @@ namespace MyNS
 		public string PrimaryFeedName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaMerchantCenterAccountLinkState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// Response to a ListModelRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaListModelsResponse
 	{
 		
@@ -4124,8 +3942,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata that describes the training and serving parameters of a Model. A Model can be associated with a ServingConfig and then queried through the Predict API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaModel
 	{
 		
@@ -4229,8 +4046,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional model features config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaModelModelFeaturesConfig
 	{
 		
@@ -4244,8 +4060,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional configs for the frequently-bought-together model type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaModelFrequentlyBoughtTogetherFeaturesConfig
 	{
 		
@@ -4259,8 +4074,7 @@ namespace MyNS
 	/// <summary>
 	/// The PageOptimizationConfig for model training. This determines how many panels to optimize for, and which serving configs to consider for each panel. The purpose of this model is to optimize which ServingConfig to show on which panels in way that optimizes the visitors shopping journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaModelPageOptimizationConfig
 	{
 		
@@ -4286,8 +4100,7 @@ namespace MyNS
 	/// <summary>
 	/// An individual panel with a list of ServingConfigs to consider for it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaModelPageOptimizationConfigPanel
 	{
 		
@@ -4313,8 +4126,7 @@ namespace MyNS
 	/// <summary>
 	/// A candidate to consider for a given panel. Currently only ServingConfig are valid candidates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate
 	{
 		
@@ -4325,33 +4137,30 @@ namespace MyNS
 		public string ServingConfigId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaModelPageOptimizationConfigRestriction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTRICTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTRICTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_RESTRICTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_RESTRICTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIQUE_SERVING_CONFIG_RESTRICTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIQUE_SERVING_CONFIG_RESTRICTION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIQUE_MODEL_RESTRICTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIQUE_MODEL_RESTRICTION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIQUE_MODEL_TYPE_RESTRICTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIQUE_MODEL_TYPE_RESTRICTION = 4,
 	}
 	
 	/// <summary>
 	/// Represents an ordered combination of valid serving configs, which can be used for `PAGE_OPTIMIZATION` recommendations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaModelServingConfigList
 	{
 		
@@ -4365,8 +4174,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ProductService.ListProducts method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaListProductsResponse
 	{
 		
@@ -4392,8 +4200,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListServingConfigs method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaListServingConfigsResponse
 	{
 		
@@ -4413,8 +4220,7 @@ namespace MyNS
 	/// <summary>
 	/// Configures metadata that is used to generate serving time results (e.g. search results or recommendation predictions).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaServingConfig
 	{
 		
@@ -4533,27 +4339,24 @@ namespace MyNS
 		public string[] TwowaySynonymsControlIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaServingConfigDiversityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIVERSITY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIVERSITY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RULE_BASED_DIVERSITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RULE_BASED_DIVERSITY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_DRIVEN_DIVERSITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_DRIVEN_DIVERSITY = 2,
 	}
 	
 	/// <summary>
 	/// The specifications of dynamically generated facets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchRequestDynamicFacetSpec
 	{
 		
@@ -4564,27 +4367,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRetailV2alphaSearchRequestDynamicFacetSpecMode> Mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaSearchRequestDynamicFacetSpecMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 2,
 	}
 	
 	/// <summary>
 	/// The specification for personalization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchRequestPersonalizationSpec
 	{
 		
@@ -4595,27 +4395,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRetailV2alphaSearchRequestPersonalizationSpecMode> Mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaSearchRequestPersonalizationSpecMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 2,
 	}
 	
 	/// <summary>
 	/// Project level logging config to control what level of log will be generated and written to Cloud Logging.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaLoggingConfig
 	{
 		
@@ -4641,8 +4438,7 @@ namespace MyNS
 	/// <summary>
 	/// The logging configurations for services supporting log generation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaLoggingConfigLogGenerationRule
 	{
 		
@@ -4659,33 +4455,30 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRetailV2alphaLoggingConfigLogGenerationRuleLoggingLevel> LoggingLevel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaLoggingConfigLogGenerationRuleLoggingLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGGING_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGGING_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOGGING_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOGGING_DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_ERRORS_AND_ABOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_ERRORS_AND_ABOVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_WARNINGS_AND_ABOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_WARNINGS_AND_ABOVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG_ALL = 4,
 	}
 	
 	/// <summary>
 	/// The granular logging configurations for supported services.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaLoggingConfigServiceLogGenerationRule
 	{
 		
@@ -4705,8 +4498,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for pausing training of a model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPauseModelRequest
 	{
 	}
@@ -4714,8 +4506,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for Predict method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPredictRequest
 	{
 		
@@ -4765,8 +4556,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for predict method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPredictResponse
 	{
 		
@@ -4798,8 +4588,7 @@ namespace MyNS
 	/// <summary>
 	/// PredictionResult represents the recommendation prediction results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPredictResponsePredictionResult
 	{
 		
@@ -4819,8 +4608,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata that describes a Cloud Retail Project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaProject
 	{
 		
@@ -4840,8 +4628,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Purge operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPurgeMetadata
 	{
 	}
@@ -4849,8 +4636,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeProducts operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPurgeProductsMetadata
 	{
 		
@@ -4882,8 +4668,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for PurgeProducts method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPurgeProductsRequest
 	{
 		
@@ -4903,8 +4688,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the PurgeProductsRequest. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPurgeProductsResponse
 	{
 		
@@ -4924,8 +4708,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for PurgeUserEvents method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPurgeUserEventsRequest
 	{
 		
@@ -4945,8 +4728,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the PurgeUserEventsRequest. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaPurgeUserEventsResponse
 	{
 		
@@ -4960,8 +4742,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `RejoinUserEvents` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRejoinUserEventsMetadata
 	{
 	}
@@ -4969,8 +4750,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for RejoinUserEvents method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRejoinUserEventsRequest
 	{
 		
@@ -4981,27 +4761,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRetailV2alphaRejoinUserEventsRequestUserEventRejoinScope> UserEventRejoinScope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaRejoinUserEventsRequestUserEventRejoinScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_EVENT_REJOIN_SCOPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_EVENT_REJOIN_SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOINED_EVENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOINED_EVENTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNJOINED_EVENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNJOINED_EVENTS = 2,
 	}
 	
 	/// <summary>
 	/// Response message for `RejoinUserEvents` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRejoinUserEventsResponse
 	{
 		
@@ -5015,8 +4792,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for CatalogService.RemoveCatalogAttribute method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRemoveCatalogAttributeRequest
 	{
 		
@@ -5030,8 +4806,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for RemoveControl method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRemoveControlRequest
 	{
 		
@@ -5045,8 +4820,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the RemoveFulfillmentPlaces operation. Currently empty because there is no meaningful metadata populated from the ProductService.RemoveFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRemoveFulfillmentPlacesMetadata
 	{
 	}
@@ -5054,8 +4828,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ProductService.RemoveFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRemoveFulfillmentPlacesRequest
 	{
 		
@@ -5087,8 +4860,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the RemoveFulfillmentPlacesRequest. Currently empty because there is no meaningful response populated from the ProductService.RemoveFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRemoveFulfillmentPlacesResponse
 	{
 	}
@@ -5096,8 +4868,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the RemoveLocalInventories operation. Currently empty because there is no meaningful metadata populated from the ProductService.RemoveLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRemoveLocalInventoriesMetadata
 	{
 	}
@@ -5105,8 +4876,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ProductService.RemoveLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRemoveLocalInventoriesRequest
 	{
 		
@@ -5132,8 +4902,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ProductService.RemoveLocalInventories API. Currently empty because there is no meaningful response populated from the ProductService.RemoveLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaRemoveLocalInventoriesResponse
 	{
 	}
@@ -5141,8 +4910,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for CatalogService.ReplaceCatalogAttribute method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaReplaceCatalogAttributeRequest
 	{
 		
@@ -5162,8 +4930,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for resuming training of a model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaResumeModelRequest
 	{
 	}
@@ -5171,8 +4938,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for SearchService.Search method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchRequest
 	{
 		
@@ -5312,8 +5078,7 @@ namespace MyNS
 	/// <summary>
 	/// Boost specification to boost certain items.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchRequestBoostSpec
 	{
 		
@@ -5333,8 +5098,7 @@ namespace MyNS
 	/// <summary>
 	/// Boost applies to products which match a condition.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchRequestBoostSpecConditionBoostSpec
 	{
 		
@@ -5354,8 +5118,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification to determine under which conditions query expansion should occur.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchRequestQueryExpansionSpec
 	{
 		
@@ -5372,65 +5135,58 @@ namespace MyNS
 		public System.Nullable<System.Boolean> PinUnexpandedResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaSearchRequestQueryExpansionSpecCondition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONDITION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONDITION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaSearchRequestRelevanceThreshold
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELEVANCE_THRESHOLD_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELEVANCE_THRESHOLD_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOWEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOWEST = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaSearchRequestSearchMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRODUCT_SEARCH_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRODUCT_SEARCH_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FACETED_SEARCH_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FACETED_SEARCH_ONLY = 2,
 	}
 	
 	/// <summary>
 	/// The specification for query spell correction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchRequestSpellCorrectionSpec
 	{
 		
@@ -5441,27 +5197,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRetailV2alphaSearchRequestSpellCorrectionSpecMode> Mode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRetailV2alphaSearchRequestSpellCorrectionSpecMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUGGESTION_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUGGESTION_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTO = 2,
 	}
 	
 	/// <summary>
 	/// Response message for SearchService.Search method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchResponse
 	{
 		
@@ -5535,8 +5288,7 @@ namespace MyNS
 	/// <summary>
 	/// Information describing query expansion including whether expansion has occurred.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchResponseQueryExpansionInfo
 	{
 		
@@ -5556,8 +5308,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the search results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSearchResponseSearchResult
 	{
 		
@@ -5601,8 +5352,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message to set a specified branch as new default_branch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSetDefaultBranchRequest
 	{
 		
@@ -5628,8 +5378,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SetInventory operation. Currently empty because there is no meaningful metadata populated from the ProductService.SetInventory method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSetInventoryMetadata
 	{
 	}
@@ -5637,8 +5386,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ProductService.SetInventory method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSetInventoryRequest
 	{
 		
@@ -5670,8 +5418,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the SetInventoryRequest. Currently empty because there is no meaningful response populated from the ProductService.SetInventory method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaSetInventoryResponse
 	{
 	}
@@ -5679,8 +5426,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaTuneModelMetadata
 	{
 		
@@ -5694,8 +5440,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to manually start a tuning process now (instead of waiting for the periodically scheduled tuning to happen).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaTuneModelRequest
 	{
 	}
@@ -5703,8 +5448,7 @@ namespace MyNS
 	/// <summary>
 	/// Response associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2alphaTuneModelResponse
 	{
 	}
@@ -5712,8 +5456,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the AddFulfillmentPlaces operation. Currently empty because there is no meaningful metadata populated from the ProductService.AddFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaAddFulfillmentPlacesMetadata
 	{
 	}
@@ -5721,8 +5464,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the AddFulfillmentPlacesRequest. Currently empty because there is no meaningful response populated from the ProductService.AddFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaAddFulfillmentPlacesResponse
 	{
 	}
@@ -5730,8 +5472,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the AddLocalInventories operation. Currently empty because there is no meaningful metadata populated from the ProductService.AddLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaAddLocalInventoriesMetadata
 	{
 	}
@@ -5739,8 +5480,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ProductService.AddLocalInventories API. Currently empty because there is no meaningful response populated from the ProductService.AddLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaAddLocalInventoriesResponse
 	{
 	}
@@ -5748,8 +5488,7 @@ namespace MyNS
 	/// <summary>
 	/// A BigQuery output result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaBigQueryOutputResult
 	{
 		
@@ -5769,8 +5508,7 @@ namespace MyNS
 	/// <summary>
 	/// Common metadata related to the progress of the operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaCreateMerchantCenterAccountLinkMetadata
 	{
 		
@@ -5790,8 +5528,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata associated with a create operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaCreateModelMetadata
 	{
 		
@@ -5805,8 +5542,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of destination for Export related errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaExportErrorsConfig
 	{
 		
@@ -5820,8 +5556,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Export operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaExportMetadata
 	{
 		
@@ -5841,8 +5576,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ExportProductsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaExportProductsResponse
 	{
 		
@@ -5868,8 +5602,7 @@ namespace MyNS
 	/// <summary>
 	/// Output result that stores the information about where the exported data is stored.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaOutputResult
 	{
 		
@@ -5889,8 +5622,7 @@ namespace MyNS
 	/// <summary>
 	/// A Gcs output result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaGcsOutputResult
 	{
 		
@@ -5904,8 +5636,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ExportUserEventsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaExportUserEventsResponse
 	{
 		
@@ -5931,8 +5662,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportCompletionDataRequest. If the long running operation is done, this message is returned by the google.longrunning.Operations.response field if the operation is successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaImportCompletionDataResponse
 	{
 		
@@ -5946,8 +5676,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration of destination for Import related errors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaImportErrorsConfig
 	{
 		
@@ -5961,8 +5690,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Import operation. This is returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaImportMetadata
 	{
 		
@@ -6006,8 +5734,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportProductsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaImportProductsResponse
 	{
 		
@@ -6027,8 +5754,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ImportUserEventsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaImportUserEventsResponse
 	{
 		
@@ -6054,8 +5780,7 @@ namespace MyNS
 	/// <summary>
 	/// A summary of import result. The UserEventImportSummary summarizes the import status for user events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaUserEventImportSummary
 	{
 		
@@ -6075,8 +5800,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a link between a Merchant Center account and a branch. After a link is established, products from the linked Merchant Center account are streamed to the linked branch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaMerchantCenterAccountLink
 	{
 		
@@ -6144,8 +5868,7 @@ namespace MyNS
 	/// <summary>
 	/// Merchant Center Feed filter criterion.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaMerchantCenterAccountLinkMerchantCenterFeedFilter
 	{
 		
@@ -6165,8 +5888,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata that describes the training and serving parameters of a Model. A Model can be associated with a ServingConfig and then queried through the Predict API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaModel
 	{
 		
@@ -6264,8 +5986,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional model features config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaModelModelFeaturesConfig
 	{
 		
@@ -6279,8 +6000,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional configs for the frequently-bought-together model type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaModelFrequentlyBoughtTogetherFeaturesConfig
 	{
 		
@@ -6294,8 +6014,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an ordered combination of valid serving configs, which can be used for `PAGE_OPTIMIZATION` recommendations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaModelServingConfigList
 	{
 		
@@ -6309,8 +6028,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the Purge operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaPurgeMetadata
 	{
 	}
@@ -6318,8 +6036,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the PurgeProducts operation. This will be returned by the google.longrunning.Operation.metadata field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaPurgeProductsMetadata
 	{
 		
@@ -6351,8 +6068,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the PurgeProductsRequest. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaPurgeProductsResponse
 	{
 		
@@ -6372,8 +6088,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the PurgeUserEventsRequest. If the long running operation is successfully done, then this message is returned by the google.longrunning.Operations.response field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaPurgeUserEventsResponse
 	{
 		
@@ -6387,8 +6102,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for `RejoinUserEvents` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaRejoinUserEventsMetadata
 	{
 	}
@@ -6396,8 +6110,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `RejoinUserEvents` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaRejoinUserEventsResponse
 	{
 		
@@ -6411,8 +6124,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the RemoveFulfillmentPlaces operation. Currently empty because there is no meaningful metadata populated from the ProductService.RemoveFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaRemoveFulfillmentPlacesMetadata
 	{
 	}
@@ -6420,8 +6132,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the RemoveFulfillmentPlacesRequest. Currently empty because there is no meaningful response populated from the ProductService.RemoveFulfillmentPlaces method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaRemoveFulfillmentPlacesResponse
 	{
 	}
@@ -6429,8 +6140,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the RemoveLocalInventories operation. Currently empty because there is no meaningful metadata populated from the ProductService.RemoveLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaRemoveLocalInventoriesMetadata
 	{
 	}
@@ -6438,8 +6148,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the ProductService.RemoveLocalInventories API. Currently empty because there is no meaningful response populated from the ProductService.RemoveLocalInventories method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaRemoveLocalInventoriesResponse
 	{
 	}
@@ -6447,8 +6156,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata related to the progress of the SetInventory operation. Currently empty because there is no meaningful metadata populated from the ProductService.SetInventory method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaSetInventoryMetadata
 	{
 	}
@@ -6456,8 +6164,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of the SetInventoryRequest. Currently empty because there is no meaningful response populated from the ProductService.SetInventory method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaSetInventoryResponse
 	{
 	}
@@ -6465,8 +6172,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaTuneModelMetadata
 	{
 		
@@ -6480,8 +6186,7 @@ namespace MyNS
 	/// <summary>
 	/// Response associated with a tune operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRetailV2betaTuneModelResponse
 	{
 	}
@@ -6489,8 +6194,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -6510,8 +6214,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -6549,8 +6252,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelOperationRequest
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -38,8 +36,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an app in Checks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksAccountV1alphaApp
 	{
 		
@@ -59,8 +56,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for AccountService.ListApps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksAccountV1alphaListAppsResponse
 	{
 		
@@ -80,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for ReportService.AnalyzeUpload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaAnalyzeUploadRequest
 	{
 		
@@ -98,30 +93,27 @@ namespace MyNS
 		public string CodeReferenceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChecksReportV1alphaAnalyzeUploadRequestAppBinaryFileType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_BINARY_FILE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_BINARY_FILE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID_APK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID_APK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID_AAB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID_AAB = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS_IPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS_IPA = 3,
 	}
 	
 	/// <summary>
 	/// Information about the analyzed app bundle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaAppBundle
 	{
 		
@@ -156,27 +148,24 @@ namespace MyNS
 		public string VersionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChecksReportV1alphaAppBundleReleaseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_BUNDLE_RELEASE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_BUNDLE_RELEASE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRE_RELEASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRE_RELEASE = 2,
 	}
 	
 	/// <summary>
 	/// A check that was run on your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheck
 	{
 		
@@ -226,8 +215,7 @@ namespace MyNS
 	/// <summary>
 	/// Regulation or policy that serves as the legal basis for the check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckCitation
 	{
 		
@@ -238,78 +226,75 @@ namespace MyNS
 		public System.Nullable<GoogleChecksReportV1alphaCheckCitationType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChecksReportV1alphaCheckCitationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CITATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CITATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPPA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GDPR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GDPR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FERPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FERPA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAL_OPPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAL_OPPA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CCPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CCPA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOPIPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOPIPA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LGPD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LGPD = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPRA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPRA = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VCDPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VCDPA = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_PLAY_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_PLAY_POLICY = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_STORE_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_STORE_POLICY = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CPA = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CTDPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CTDPA = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UCPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UCPA = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PIPEDA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PIPEDA = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALBERTA_PIPA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALBERTA_PIPA = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEBEC_ACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEBEC_ACT = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUEBEC_BILL_64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUEBEC_BILL_64 = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHINA_PIPL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHINA_PIPL = 19,
 	}
 	
 	/// <summary>
 	/// Evidence for a check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckEvidence
 	{
 		
@@ -377,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence concerning data security.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckDataSecurityEvidence
 	{
 		
@@ -392,8 +376,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence related to data in transit detected in your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckDataSecurityEvidenceDataInTransitInfo
 	{
 		
@@ -407,8 +390,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence concerning a data type that was found in your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckDataTypeEvidence
 	{
 		
@@ -425,132 +407,129 @@ namespace MyNS
 		public GoogleChecksReportV1alphaDataTypeEvidence DataTypeEvidence { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChecksReportV1alphaCheckDataTypeEvidenceDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_APPROXIMATE_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_APPROXIMATE_LOCATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_PRECISE_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_PRECISE_LOCATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_PERSONAL_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_PERSONAL_NAME = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_EMAIL_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_EMAIL_ADDRESS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_USER_IDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_USER_IDS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_PHYSICAL_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_PHYSICAL_ADDRESS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_PHONE_NUMBER = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_RACE_AND_ETHNICITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_RACE_AND_ETHNICITY = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_POLITICAL_OR_RELIGIOUS_BELIEFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_POLITICAL_OR_RELIGIOUS_BELIEFS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_SEXUAL_ORIENTATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_SEXUAL_ORIENTATION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_OTHER_PERSONAL_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_OTHER_PERSONAL_INFO = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_PAYMENT_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_PAYMENT_INFO = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_PURCHASE_HISTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_PURCHASE_HISTORY = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_CREDIT_SCORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_CREDIT_SCORE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_OTHER_FINANCIAL_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_OTHER_FINANCIAL_INFO = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_HEALTH_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_HEALTH_INFO = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_FITNESS_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_FITNESS_INFO = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_EMAILS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_EMAILS = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_TEXT_MESSAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_TEXT_MESSAGES = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_PHOTOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_PHOTOS = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_VIDEOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_VIDEOS = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_VOICE_OR_SOUND_RECORDINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_VOICE_OR_SOUND_RECORDINGS = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_MUSIC_FILES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_MUSIC_FILES = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_OTHER_AUDIO_FILES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_OTHER_AUDIO_FILES = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_FILES_AND_DOCS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_FILES_AND_DOCS = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_CALENDAR_EVENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_CALENDAR_EVENTS = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_CONTACTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_CONTACTS = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_APP_INTERACTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_APP_INTERACTIONS = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_IN_APP_SEARCH_HISTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_IN_APP_SEARCH_HISTORY = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_INSTALLED_APPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_INSTALLED_APPS = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_OTHER_USER_GENERATED_CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_OTHER_USER_GENERATED_CONTENT = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_OTHER_ACTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_OTHER_ACTIONS = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_WEB_BROWSING_HISTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_WEB_BROWSING_HISTORY = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_CRASH_LOGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_CRASH_LOGS = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_PERFORMANCE_DIAGNOSTICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_PERFORMANCE_DIAGNOSTICS = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_OTHER_APP_PERFORMANCE_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_OTHER_APP_PERFORMANCE_DATA = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_DEVICE_OR_OTHER_IDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_DEVICE_OR_OTHER_IDS = 37,
 	}
 	
 	/// <summary>
 	/// Evidence collected about a data type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataTypeEvidence
 	{
 		
@@ -576,8 +555,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence based on an endpoint that data was sent to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataTypeEndpointEvidence
 	{
 		
@@ -603,8 +581,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of SDK that is attributed to the exfiltration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataTypeEndpointEvidenceAttributedSdk
 	{
 		
@@ -618,8 +595,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an SDK.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaSdk
 	{
 		
@@ -633,8 +609,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the endpoint the data type was sent to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataTypeEndpointEvidenceEndpointDetails
 	{
 		
@@ -648,8 +623,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaEndpoint
 	{
 		
@@ -660,75 +634,72 @@ namespace MyNS
 		public string Domain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChecksReportV1alphaDataTypeEndpointEvidenceExfiltratedDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_PHONE_NUMBER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_PRECISE_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_PRECISE_LOCATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_CONTACT_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_CONTACT_NAME = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_CONTACT_EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_CONTACT_EMAIL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_CONTACT_PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_CONTACT_PHONE_NUMBER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_INCOMING_TEXT_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_INCOMING_TEXT_NUMBER = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_INCOMING_TEXT_MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_INCOMING_TEXT_MESSAGE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_OUTGOING_TEXT_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_OUTGOING_TEXT_NUMBER = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_OUTGOING_TEXT_MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_OUTGOING_TEXT_MESSAGE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_ADVERTISING_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_ADVERTISING_ID = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_ANDROID_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_ANDROID_ID = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_IMEI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_IMEI = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_IMSI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_IMSI = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_SIM_SERIAL_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_SIM_SERIAL_NUMBER = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_SSID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_SSID = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_ACCOUNT = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_EXTERNAL_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_EXTERNAL_ACCOUNT = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXFILTRATED_DATA_TYPE_INSTALLED_PACKAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXFILTRATED_DATA_TYPE_INSTALLED_PACKAGES = 18,
 	}
 	
 	/// <summary>
 	/// Evidence based on the inclusion of a permission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataTypePermissionEvidence
 	{
 		
@@ -742,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a permission.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaPermission
 	{
 		
@@ -757,8 +727,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence based on information from the privacy policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataTypePrivacyPolicyTextEvidence
 	{
 		
@@ -772,8 +741,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a policy fragment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaPolicyFragment
 	{
 		
@@ -793,8 +761,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence collected from endpoint restriction violation analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckEndpointRestrictionViolationEvidence
 	{
 		
@@ -808,8 +775,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the endpoint in violation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckEndpointRestrictionViolationEvidenceEndpointDetails
 	{
 		
@@ -823,8 +789,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence concerning an endpoint that was contacted by your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckEndpointEvidence
 	{
 		
@@ -838,8 +803,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence collected from permission restriction violation analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckPermissionRestrictionViolationEvidence
 	{
 		
@@ -853,8 +817,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the permission in violation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckPermissionRestrictionViolationEvidencePermissionDetails
 	{
 		
@@ -868,8 +831,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence concerning a permission that was found in your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckPermissionEvidence
 	{
 		
@@ -883,8 +845,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence collected from your privacy policy(s).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckPrivacyPolicyTextEvidence
 	{
 		
@@ -898,8 +859,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence concerning an SDK issue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckSdkIssueEvidence
 	{
 		
@@ -919,8 +879,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence collected from SDK restriction violation analysis.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckSdkRestrictionViolationEvidence
 	{
 		
@@ -934,8 +893,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of the SDK in violation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckSdkRestrictionViolationEvidenceSdkDetails
 	{
 		
@@ -949,8 +907,7 @@ namespace MyNS
 	/// <summary>
 	/// Evidence conerning an SDK that was found in your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckSdkEvidence
 	{
 		
@@ -961,49 +918,44 @@ namespace MyNS
 		public GoogleChecksReportV1alphaSdk Sdk { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChecksReportV1alphaCheckSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECK_SEVERITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECK_SEVERITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIORITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIORITY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POTENTIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POTENTIAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPPORTUNITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPPORTUNITY = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChecksReportV1alphaCheckState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECK_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECK_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNCHECKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNCHECKED = 3,
 	}
 	
 	/// <summary>
 	/// Additional information about the check state in relation to past reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaCheckStateMetadata
 	{
 		
@@ -1026,279 +978,276 @@ namespace MyNS
 		public string LastFailingTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleChecksReportV1alphaCheckType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECK_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECK_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STORE_LISTING_PRIVACY_POLICY_LINK_PRESENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STORE_LISTING_PRIVACY_POLICY_LINK_PRESENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_UPDATE_DATE_RECENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_UPDATE_DATE_RECENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_GDPR_GENERAL_RULES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_GDPR_GENERAL_RULES = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_CCPA_GENERAL_RULES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_CCPA_GENERAL_RULES = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_COLLECTION_CATEGORIES_DATA_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_COLLECTION_CATEGORIES_DATA_NOTICE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PROCESSING_PURPOSE_DATA_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PROCESSING_PURPOSE_DATA_NOTICE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_SHARING_CATEGORIES_DATA_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_SHARING_CATEGORIES_DATA_NOTICE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_RETENTION_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_RETENTION_NOTICE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_CONTACT_DETAILS_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_CONTACT_DETAILS_NOTICE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_CHILDREN_GENERAL_RULES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_CHILDREN_GENERAL_RULES = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_PHONE_NUMBER = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_USER_ACCOUNT_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_USER_ACCOUNT_INFO = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_PRECISE_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_PRECISE_LOCATION = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_DEVICE_ID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_DEVICE_ID = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_APPS_ON_DEVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_APPS_ON_DEVICE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_CONTACTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_CONTACTS = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_TEXT_MESSAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_TEXT_MESSAGES = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_PII")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_PII = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_PII_CATEGORIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_PII_CATEGORIES = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_TYPE_HEALTH_AND_BIOMETRIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_TYPE_HEALTH_AND_BIOMETRIC = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_BRAZIL_LGPD_GENERAL_RULES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_BRAZIL_LGPD_GENERAL_RULES = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_VIRGINIA_VCDPA_GENERAL_RULES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_VIRGINIA_VCDPA_GENERAL_RULES = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_AFFILIATION_MENTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_AFFILIATION_MENTION = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_RIGHT_TO_DELETE_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_RIGHT_TO_DELETE_NOTICE = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_RIGHT_TO_ACCESS_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_RIGHT_TO_ACCESS_NOTICE = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_RIGHT_TO_RECTIFICATION_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_RIGHT_TO_RECTIFICATION_NOTICE = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_RIGHT_TO_KNOW_ABOUT_SELLING_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_RIGHT_TO_KNOW_ABOUT_SELLING_NOTICE = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_RIGHT_TO_KNOW_ABOUT_SHARING_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_RIGHT_TO_KNOW_ABOUT_SHARING_NOTICE = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_RIGHT_TO_OPT_OUT_FROM_SELLING_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_RIGHT_TO_OPT_OUT_FROM_SELLING_NOTICE = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_METHOD_TO_OPT_OUT_FROM_SELLING_OR_SHARING_NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_METHOD_TO_OPT_OUT_FROM_SELLING_OR_SHARING_NOTICE = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DATA_CONTROLLER_IDENTITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DATA_CONTROLLER_IDENTITY = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_DPO_CONTACT_DETAILS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_DPO_CONTACT_DETAILS = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_RIGHT_TO_LODGE_A_COMPLAINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_RIGHT_TO_LODGE_A_COMPLAINT = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_LEGAL_BASIS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_LEGAL_BASIS = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_CHILDREN_INFO_COLLECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_CHILDREN_INFO_COLLECTION = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_CHILDREN_INFO_USAGE_PURPOSES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_CHILDREN_INFO_USAGE_PURPOSES = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_CHILDREN_INFO_DISCLOSURE_PRACTICES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_CHILDREN_INFO_DISCLOSURE_PRACTICES = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_CHILDREN_INFO_PUBLICITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_CHILDREN_INFO_PUBLICITY = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PARENTS_METHOD_OF_INFO_DELETION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PARENTS_METHOD_OF_INFO_DELETION = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PARENTS_METHOD_TO_INFO_REVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PARENTS_METHOD_TO_INFO_REVIEW = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PARENTS_METHOD_TO_STOP_FURTHER_INFO_COLLECTION_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PARENTS_METHOD_TO_STOP_FURTHER_INFO_COLLECTION_USE = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PARENTS_RIGHT_TO_INFO_DELETION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PARENTS_RIGHT_TO_INFO_DELETION = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PARENTS_RIGHT_TO_INFO_REVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PARENTS_RIGHT_TO_INFO_REVIEW = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PARENTS_RIGHT_TO_STOP_FURTHER_INFO_COLLECTION_USE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PARENTS_RIGHT_TO_STOP_FURTHER_INFO_COLLECTION_USE = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_APPROXIMATE_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_APPROXIMATE_LOCATION = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_PRECISE_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_PRECISE_LOCATION = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_NAME = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_EMAIL_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_EMAIL_ADDRESS = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_USER_IDENTIFIERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_USER_IDENTIFIERS = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_ADDRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_ADDRESS = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_PHONE_NUMBER = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_RACE_AND_ETHNICITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_RACE_AND_ETHNICITY = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_CREDIT_SCORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_CREDIT_SCORE = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_PURCHASE_HISTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_PURCHASE_HISTORY = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_HEALTH_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_HEALTH_INFO = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_FITNESS_INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_FITNESS_INFO = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_EMAIL_MESSAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_EMAIL_MESSAGES = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_TEXT_MESSAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_TEXT_MESSAGES = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_PHOTOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_PHOTOS = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_VIDEOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_VIDEOS = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_MUSIC_FILES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_MUSIC_FILES = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_VOICE_OR_SOUND_RECORDINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_VOICE_OR_SOUND_RECORDINGS = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_FILES_AND_DOCS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_FILES_AND_DOCS = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_CALENDAR_EVENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_CALENDAR_EVENTS = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_CONTACTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_CONTACTS = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_APP_INTERACTIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_APP_INTERACTIONS = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_IN_APP_SEARCH_HISTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_IN_APP_SEARCH_HISTORY = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_WEB_BROWSING_HISTORY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_WEB_BROWSING_HISTORY = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_INSTALLED_APPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_INSTALLED_APPS = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_CRASH_LOGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_CRASH_LOGS = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_DIAGNOSTICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_DIAGNOSTICS = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVACY_POLICY_PSL_DEVICE_OR_OTHER_IDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVACY_POLICY_PSL_DEVICE_OR_OTHER_IDS = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_NEW_ENDPOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_NEW_ENDPOINT = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_NEW_PERMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_NEW_PERMISSION = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_NEW_DATA_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_NEW_DATA_TYPE = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_NEW_SDK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_NEW_SDK = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_ENCRYPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_ENCRYPTION = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_NEW_DATA_TYPE_VERSION_DIFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_NEW_DATA_TYPE_VERSION_DIFF = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_NEW_ENDPOINT_VERSION_DIFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_NEW_ENDPOINT_VERSION_DIFF = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_NEW_PERMISSION_VERSION_DIFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_NEW_PERMISSION_VERSION_DIFF = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_NEW_SDK_VERSION_DIFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_NEW_SDK_VERSION_DIFF = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_SDKS_DENYLIST_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_SDKS_DENYLIST_VIOLATION = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_PERMISSIONS_DENYLIST_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_PERMISSIONS_DENYLIST_VIOLATION = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_ENDPOINTS_DENYLIST_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_ENDPOINTS_DENYLIST_VIOLATION = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_OUTDATED_SDK_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_OUTDATED_SDK_VERSION = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_MONITORING_CRITICAL_SDK_ISSUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_MONITORING_CRITICAL_SDK_ISSUE = 86,
 	}
 	
 	/// <summary>
 	/// Represents the data monitoring section of the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataMonitoring
 	{
 		
@@ -1330,8 +1279,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a data type that was found in your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataMonitoringDataTypeResult
 	{
 		
@@ -1357,8 +1305,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a data monitoring result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataMonitoringResultMetadata
 	{
 		
@@ -1390,8 +1337,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an endpoint that was contacted by your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataMonitoringEndpointResult
 	{
 		
@@ -1417,8 +1363,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a permission that was found in your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataMonitoringPermissionResult
 	{
 		
@@ -1438,8 +1383,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an SDK that was found in your app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaDataMonitoringSdkResult
 	{
 		
@@ -1459,8 +1403,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for ReportService.ListReports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaListReportsResponse
 	{
 		
@@ -1480,8 +1423,7 @@ namespace MyNS
 	/// <summary>
 	/// Privacy report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleChecksReportV1alphaReport
 	{
 		
@@ -1519,8 +1461,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -1540,8 +1481,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -1579,8 +1519,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -1606,8 +1545,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.WaitOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaitOperationRequest
 	{
 		

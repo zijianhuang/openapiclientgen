@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An achievement definition object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementDefinition
 	{
 		
@@ -104,40 +103,35 @@ namespace MyNS
 		public string UnlockedIconUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AchievementDefinitionAchievementType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCREMENTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCREMENTAL = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AchievementDefinitionInitialState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDDEN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVEALED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVEALED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLOCKED = 2,
 	}
 	
 	/// <summary>
 	/// A list of achievement definition objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementDefinitionsListResponse
 	{
 		
@@ -163,8 +157,7 @@ namespace MyNS
 	/// <summary>
 	/// An achievement increment response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementIncrementResponse
 	{
 		
@@ -190,8 +183,7 @@ namespace MyNS
 	/// <summary>
 	/// An achievement reveal response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementRevealResponse
 	{
 		
@@ -208,24 +200,21 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AchievementRevealResponseCurrentState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVEALED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVEALED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLOCKED = 1,
 	}
 	
 	/// <summary>
 	/// An achievement set steps at least response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementSetStepsAtLeastResponse
 	{
 		
@@ -251,8 +240,7 @@ namespace MyNS
 	/// <summary>
 	/// An achievement unlock response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementUnlockResponse
 	{
 		
@@ -272,8 +260,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of achievement update requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementUpdateMultipleRequest
 	{
 		
@@ -293,8 +280,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to update an achievement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementUpdateRequest
 	{
 		
@@ -332,8 +318,7 @@ namespace MyNS
 	/// <summary>
 	/// The payload to request to increment an achievement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GamesAchievementIncrement
 	{
 		
@@ -359,8 +344,7 @@ namespace MyNS
 	/// <summary>
 	/// The payload to request to increment an achievement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GamesAchievementSetStepsAtLeast
 	{
 		
@@ -377,30 +361,27 @@ namespace MyNS
 		public System.Nullable<System.Int32> Steps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AchievementUpdateRequestUpdateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVEAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVEAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLOCK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCREMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCREMENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SET_STEPS_AT_LEAST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SET_STEPS_AT_LEAST = 3,
 	}
 	
 	/// <summary>
 	/// Response message for UpdateMultipleAchievements rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementUpdateMultipleResponse
 	{
 		
@@ -420,8 +401,7 @@ namespace MyNS
 	/// <summary>
 	/// An updated achievement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementUpdateResponse
 	{
 		
@@ -465,8 +445,7 @@ namespace MyNS
 	/// <summary>
 	/// The Application resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Application
 	{
 		
@@ -552,8 +531,7 @@ namespace MyNS
 	/// <summary>
 	/// An image asset object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageAsset
 	{
 		
@@ -591,8 +569,7 @@ namespace MyNS
 	/// <summary>
 	/// An application category object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationCategory
 	{
 		
@@ -618,8 +595,7 @@ namespace MyNS
 	/// <summary>
 	/// The Instance resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Instance
 	{
 		
@@ -681,8 +657,7 @@ namespace MyNS
 	/// <summary>
 	/// The Android instance details resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceAndroidDetails
 	{
 		
@@ -714,8 +689,7 @@ namespace MyNS
 	/// <summary>
 	/// The iOS details resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceIosDetails
 	{
 		
@@ -762,27 +736,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> SupportIphone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstancePlatformType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB_APP = 2,
 	}
 	
 	/// <summary>
 	/// The Web details resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceWebDetails
 	{
 		
@@ -808,8 +779,7 @@ namespace MyNS
 	/// <summary>
 	/// Primary scoped player identifier for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationPlayerId
 	{
 		
@@ -829,8 +799,7 @@ namespace MyNS
 	/// <summary>
 	/// A third party application verification response resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationVerifyResponse
 	{
 		
@@ -856,8 +825,7 @@ namespace MyNS
 	/// <summary>
 	/// Data related to individual game categories.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Category
 	{
 		
@@ -883,8 +851,7 @@ namespace MyNS
 	/// <summary>
 	/// A third party list metagame categories response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CategoryListResponse
 	{
 		
@@ -910,8 +877,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for a URL end point of the requested type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndPoint
 	{
 		
@@ -925,8 +891,7 @@ namespace MyNS
 	/// <summary>
 	/// A batch update failure resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventBatchRecordFailure
 	{
 		
@@ -949,36 +914,33 @@ namespace MyNS
 		public EventPeriodRange Range { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventBatchRecordFailureFailureCause
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_LARGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_LARGE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_PERIOD_EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_PERIOD_EXPIRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_PERIOD_SHORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_PERIOD_SHORT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_PERIOD_LONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_PERIOD_LONG = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALREADY_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALREADY_UPDATED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECORD_RATE_HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECORD_RATE_HIGH = 5,
 	}
 	
 	/// <summary>
 	/// An event period time range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventPeriodRange
 	{
 		
@@ -1004,8 +966,7 @@ namespace MyNS
 	/// <summary>
 	/// An event child relationship resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventChild
 	{
 		
@@ -1025,8 +986,7 @@ namespace MyNS
 	/// <summary>
 	/// An event definition resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDefinition
 	{
 		
@@ -1079,24 +1039,21 @@ namespace MyNS
 		public System.Nullable<EventDefinitionVisibility> Visibility { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventDefinitionVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVEALED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVEALED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDDEN = 1,
 	}
 	
 	/// <summary>
 	/// A ListDefinitions response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDefinitionListResponse
 	{
 		
@@ -1122,8 +1079,7 @@ namespace MyNS
 	/// <summary>
 	/// An event period update resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventPeriodUpdate
 	{
 		
@@ -1149,8 +1105,7 @@ namespace MyNS
 	/// <summary>
 	/// An event period update resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventUpdateRequest
 	{
 		
@@ -1176,8 +1131,7 @@ namespace MyNS
 	/// <summary>
 	/// An event update failure resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventRecordFailure
 	{
 		
@@ -1200,24 +1154,21 @@ namespace MyNS
 		public string Kind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EventRecordFailureFailureCause
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_UPDATE_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_UPDATE_VALUE = 1,
 	}
 	
 	/// <summary>
 	/// An event period update resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventRecordRequest
 	{
 		
@@ -1249,8 +1200,7 @@ namespace MyNS
 	/// <summary>
 	/// An event period update resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventUpdateResponse
 	{
 		
@@ -1282,8 +1232,7 @@ namespace MyNS
 	/// <summary>
 	/// An event status resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerEvent
 	{
 		
@@ -1321,8 +1270,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for GetMultipleApplicationPlayerIds rpc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMultipleApplicationPlayerIdsResponse
 	{
 		
@@ -1336,8 +1284,7 @@ namespace MyNS
 	/// <summary>
 	/// The Leaderboard resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Leaderboard
 	{
 		
@@ -1378,24 +1325,21 @@ namespace MyNS
 		public System.Nullable<LeaderboardOrder> Order { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LeaderboardOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LARGER_IS_BETTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LARGER_IS_BETTER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMALLER_IS_BETTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMALLER_IS_BETTER = 1,
 	}
 	
 	/// <summary>
 	/// The Leaderboard Entry resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LeaderboardEntry
 	{
 		
@@ -1457,8 +1401,7 @@ namespace MyNS
 	/// <summary>
 	/// A Player resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Player
 	{
 		
@@ -1544,8 +1487,7 @@ namespace MyNS
 	/// <summary>
 	/// 1P/3P metadata about the player's experience.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerExperienceInfo
 	{
 		
@@ -1583,8 +1525,7 @@ namespace MyNS
 	/// <summary>
 	/// 1P/3P metadata about a user's level.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerLevel
 	{
 		
@@ -1613,16 +1554,14 @@ namespace MyNS
 		public string MinExperiencePoints { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlayerFriendStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_RELATIONSHIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_RELATIONSHIP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIEND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIEND = 1,
 	}
 	
@@ -1645,8 +1584,7 @@ namespace MyNS
 	/// <summary>
 	/// Profile settings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileSettings
 	{
 		
@@ -1666,43 +1604,38 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ProfileVisible { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ProfileSettingsFriendsListVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VISIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VISIBLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST_REQUIRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAVAILABLE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LeaderboardEntryTimeSpan
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_TIME = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEKLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 2,
 	}
 	
 	/// <summary>
 	/// A list of leaderboard objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LeaderboardListResponse
 	{
 		
@@ -1728,8 +1661,7 @@ namespace MyNS
 	/// <summary>
 	/// A score rank in a leaderboard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LeaderboardScoreRank
 	{
 		
@@ -1767,8 +1699,7 @@ namespace MyNS
 	/// <summary>
 	/// A ListScores response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LeaderboardScores
 	{
 		
@@ -1812,8 +1743,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to link an in-game account with a PGS principal (encoded in the session id).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkPersonaRequest
 	{
 		
@@ -1860,34 +1790,29 @@ namespace MyNS
 		public string Ttl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LinkPersonaRequestCardinalityConstraint
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONE_PERSONA_TO_ONE_PLAYER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONE_PERSONA_TO_ONE_PLAYER = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LinkPersonaRequestConflictingLinksResolutionPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEEP_EXISTING_LINKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEEP_EXISTING_LINKS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_NEW_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_NEW_LINK = 1,
 	}
 	
 	/// <summary>
 	/// Outcome of a persona linking attempt.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkPersonaResponse
 	{
 		
@@ -1898,24 +1823,21 @@ namespace MyNS
 		public System.Nullable<LinkPersonaResponseState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LinkPersonaResponseState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSONA_OR_PLAYER_ALREADY_LINKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSONA_OR_PLAYER_ALREADY_LINKED = 1,
 	}
 	
 	/// <summary>
 	/// The metagame config resource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetagameConfig
 	{
 		
@@ -1941,8 +1863,7 @@ namespace MyNS
 	/// <summary>
 	/// An achievement object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerAchievement
 	{
 		
@@ -1992,8 +1913,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of achievement objects.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerAchievementListResponse
 	{
 		
@@ -2019,8 +1939,7 @@ namespace MyNS
 	/// <summary>
 	/// A ListByPlayer response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerEventListResponse
 	{
 		
@@ -2046,8 +1965,7 @@ namespace MyNS
 	/// <summary>
 	/// A player leaderboard score object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerLeaderboardScore
 	{
 		
@@ -2115,8 +2033,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of player leaderboard scores.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerLeaderboardScoreListResponse
 	{
 		
@@ -2148,8 +2065,7 @@ namespace MyNS
 	/// <summary>
 	/// A third party player list response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerListResponse
 	{
 		
@@ -2175,8 +2091,7 @@ namespace MyNS
 	/// <summary>
 	/// A player score.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerScore
 	{
 		
@@ -2214,8 +2129,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of score submission statuses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerScoreListResponse
 	{
 		
@@ -2235,8 +2149,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of leaderboard entry resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerScoreResponse
 	{
 		
@@ -2280,8 +2193,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of score submission requests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerScoreSubmissionList
 	{
 		
@@ -2301,8 +2213,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to submit a score to leaderboards.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoreSubmission
 	{
 		
@@ -2340,8 +2251,7 @@ namespace MyNS
 	/// <summary>
 	/// Recall token data returned from RetrievePlayerTokens RPC
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecallToken
 	{
 		
@@ -2367,8 +2277,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to remove all Recall tokens associated with a persona for an app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetPersonaRequest
 	{
 		
@@ -2382,8 +2291,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ResetPersona RPC
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResetPersonaResponse
 	{
 		
@@ -2397,8 +2305,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the RetrievePlayerTokens RPC
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RetrievePlayerTokensResponse
 	{
 		
@@ -2412,8 +2319,7 @@ namespace MyNS
 	/// <summary>
 	/// A third party checking a revision response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevisionCheckResponse
 	{
 		
@@ -2436,27 +2342,24 @@ namespace MyNS
 		public System.Nullable<RevisionCheckResponseRevisionStatus> RevisionStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RevisionCheckResponseRevisionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPRECATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPRECATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID = 2,
 	}
 	
 	/// <summary>
 	/// Scoped player identifiers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScopedPlayerIds
 	{
 		
@@ -2476,8 +2379,7 @@ namespace MyNS
 	/// <summary>
 	/// An snapshot object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Snapshot
 	{
 		
@@ -2551,8 +2453,7 @@ namespace MyNS
 	/// <summary>
 	/// An image of a snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotImage
 	{
 		
@@ -2587,21 +2488,18 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SnapshotType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAVE_GAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SAVE_GAME = 0,
 	}
 	
 	/// <summary>
 	/// A third party list snapshots response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotListResponse
 	{
 		
@@ -2627,8 +2525,7 @@ namespace MyNS
 	/// <summary>
 	/// A third party stats resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatsResponse
 	{
 		
@@ -2702,8 +2599,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to remove a Recall token linking PGS principal and an in-game account
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnlinkPersonaRequest
 	{
 		
@@ -2729,8 +2625,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the UnlinkPersona RPC
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnlinkPersonaResponse
 	{
 		
@@ -4000,91 +3895,91 @@ namespace MyNS
 	public enum Games_applications_getEndPointEndPointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE_CREATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE_CREATION = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROFILE_SETTINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROFILE_SETTINGS = 1,
 	}
 	
 	public enum Games_scores_listCollection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIENDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIENDS = 2,
 	}
 	
 	public enum Games_players_listCollection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VISIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VISIBLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIENDS_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIENDS_ALL = 2,
 	}
 	
 	public enum Games_achievements_listState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIDDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIDDEN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVEALED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVEALED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLOCKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLOCKED = 3,
 	}
 	
 	public enum Games_metagame_listCategoriesByPlayerCollection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 	}
 	
 	public enum Games_scores_getTimeSpan
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_TIME = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEKLY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 3,
 	}
 	
 	public enum Games_scores_getIncludeRankType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIENDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIENDS = 3,
 	}
 }

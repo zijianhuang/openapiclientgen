@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddOrDeleteRulesRequest
 	{
 	}
@@ -26,8 +25,7 @@ namespace MyNS
 	/// <summary>
 	/// A response from modifying user-specified stream filtering rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddOrDeleteRulesResponse
 	{
 		
@@ -55,8 +53,7 @@ namespace MyNS
 	/// <summary>
 	/// A user-provided stream filtering rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -86,8 +83,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP Problem Details object, as defined in IETF RFC 7807 (https://tools.ietf.org/html/rfc7807).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Problem
 	{
 		
@@ -112,8 +108,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RulesResponseMetadata
 	{
 		
@@ -145,8 +140,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to add a user-specified stream filtering rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddRulesRequest
 	{
 		
@@ -161,8 +155,7 @@ namespace MyNS
 	/// <summary>
 	/// A user-provided stream filtering rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RuleNoId
 	{
 		
@@ -181,8 +174,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnimatedGif : Media
 	{
 		
@@ -196,8 +188,7 @@ namespace MyNS
 		public Variant[] Variants { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Variant
 	{
 		
@@ -220,8 +211,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockUserMutationResponse
 	{
 		
@@ -243,8 +233,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Blocking { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BlockUserRequest
 	{
 		
@@ -259,8 +248,7 @@ namespace MyNS
 		public string Target_user_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BookmarkAddRequest
 	{
 		
@@ -275,8 +263,7 @@ namespace MyNS
 		public string Tweet_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BookmarkMutationResponse
 	{
 		
@@ -298,8 +285,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Bookmarked { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CashtagEntity : EntityIndicesInclusiveExclusive
 	{
 		
@@ -314,8 +300,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent the portion of text recognized as a Cashtag, and its start and end position within the text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CashtagFields
 	{
 		
@@ -330,8 +315,7 @@ namespace MyNS
 	/// <summary>
 	/// Your client has gone away.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientDisconnectedProblem
 	{
 	}
@@ -339,8 +323,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates your client is forbidden from making this request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientForbiddenProblem : Problem
 	{
 		
@@ -351,9 +334,7 @@ namespace MyNS
 		public string Registration_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ClientForbiddenProblemReason
 	{
 		
@@ -364,8 +345,7 @@ namespace MyNS
 		clientMinusnotMinusenrolled = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ComplianceJob
 	{
 		
@@ -444,46 +424,41 @@ namespace MyNS
 		public string Upload_url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComplianceJobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="in_progress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		in_progress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complete = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="expired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		expired = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComplianceJobType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tweets")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tweets = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="users")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		users = 1,
 	}
 	
 	/// <summary>
 	/// You cannot create a new job if one is already in progress.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictProblem
 	{
 	}
@@ -491,8 +466,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates something is wrong with the connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConnectionExceptionProblem : Problem
 	{
 		
@@ -500,30 +474,27 @@ namespace MyNS
 		public System.Nullable<ConnectionExceptionProblemConnection_issue> Connection_issue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ConnectionExceptionProblemConnection_issue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TooManyConnections")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TooManyConnections = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProvisioningSubscription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProvisioningSubscription = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RuleConfigurationIssue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RuleConfigurationIssue = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RulesInvalidIssue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RulesInvalidIssue = 3,
 	}
 	
 	/// <summary>
 	/// Annotation inferred from the Tweet text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContextAnnotation
 	{
 		
@@ -547,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the data for the context annotation domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContextAnnotationDomainFields
 	{
 		
@@ -578,8 +548,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the data for the context annotation entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContextAnnotationEntityFields
 	{
 		
@@ -606,8 +575,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAttachmentsMessageRequest
 	{
 		
@@ -628,8 +596,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DmMediaAttachment
 	{
 		
@@ -647,8 +614,7 @@ namespace MyNS
 	/// <summary>
 	/// A request to create a new batch compliance job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateComplianceJobRequest
 	{
 		
@@ -675,8 +641,7 @@ namespace MyNS
 		public ComplianceJobType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateComplianceJobResponse
 	{
 		
@@ -691,8 +656,7 @@ namespace MyNS
 		public Problem[] Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDmConversationRequest
 	{
 		
@@ -724,18 +688,15 @@ namespace MyNS
 		public string[] Participant_ids { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateDmConversationRequestConversation_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Group")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Group = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateDmEventResponse
 	{
 		
@@ -774,14 +735,12 @@ namespace MyNS
 		public string Dm_event_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateMessageRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTextMessageRequest
 	{
 		
@@ -805,8 +764,7 @@ namespace MyNS
 	/// <summary>
 	/// A response from deleting user-specified stream filtering rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRulesRequest
 	{
 		
@@ -838,8 +796,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates that the resource requested violates the precepts of this API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisallowedResourceProblem : Problem
 	{
 		
@@ -865,43 +822,38 @@ namespace MyNS
 		public DisallowedResourceProblemSection Section { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DisallowedResourceProblemResource_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tweet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tweet = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="media")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		media = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="list")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		list = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="space")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		space = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DisallowedResourceProblemSection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="data")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		data = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="includes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		includes = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DmEvent
 	{
 		
@@ -1004,8 +956,7 @@ namespace MyNS
 	/// <summary>
 	/// The rule you have submitted is a duplicate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateRuleProblem : Problem
 	{
 		
@@ -1019,8 +970,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent a boundary range (start and end index) for a recognized entity (for example a hashtag or a mention). `start` must be smaller than `end`.  The start index is inclusive, the end index is exclusive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityIndicesInclusiveExclusive
 	{
 		
@@ -1048,8 +998,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent a boundary range (start and end index) for a recognized entity (for example a hashtag or a mention). `start` must be smaller than `end`.  The start index is inclusive, the end index is inclusive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EntityIndicesInclusiveInclusive
 	{
 		
@@ -1074,8 +1023,7 @@ namespace MyNS
 		public int Start { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -1094,8 +1042,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expansions
 	{
 		
@@ -1142,8 +1089,7 @@ namespace MyNS
 		public User[] Users { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Media
 	{
 		
@@ -1179,8 +1125,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Place
 	{
 		
@@ -1234,8 +1179,7 @@ namespace MyNS
 		public System.Nullable<PlacePlace_type> Place_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Geo
 	{
 		
@@ -1274,8 +1218,7 @@ namespace MyNS
 	/// <summary>
 	/// A [GeoJson Point](https://tools.ietf.org/html/rfc7946#section-3.1.2) geometry object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point
 	{
 		
@@ -1299,56 +1242,49 @@ namespace MyNS
 		public PointType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Point")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Point = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GeoType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Feature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Feature = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlacePlace_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="poi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		poi = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neighborhood")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neighborhood = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="city")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		city = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="admin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		admin = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 5,
 	}
 	
 	/// <summary>
 	/// Represent a Poll attached to a Tweet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Poll
 	{
 		
@@ -1391,8 +1327,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a choice in a Poll object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PollOption
 	{
 		
@@ -1425,24 +1360,21 @@ namespace MyNS
 		public int Votes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PollVoting_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		open = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 1,
 	}
 	
 	/// <summary>
 	/// The topic of a Space, as selected by its creator.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Topic
 	{
 		
@@ -1469,8 +1401,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tweet
 	{
 		
@@ -1670,8 +1601,7 @@ namespace MyNS
 		public bool Is_edit_eligible { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FullTextEntities
 	{
 		
@@ -1711,8 +1641,7 @@ namespace MyNS
 		public UrlEntity[] Urls { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HashtagEntity : EntityIndicesInclusiveExclusive
 	{
 		
@@ -1725,8 +1654,7 @@ namespace MyNS
 		public string Tag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MentionEntity : EntityIndicesInclusiveExclusive
 	{
 		
@@ -1752,8 +1680,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent the portion of text recognized as a URL, and its start and end position within the text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlEntity : EntityIndicesInclusiveExclusive
 	{
 		
@@ -1823,8 +1750,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent the information for the URL image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlImage
 	{
 		
@@ -2004,46 +1930,41 @@ namespace MyNS
 		public TweetReferenced_tweetsType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TweetReferenced_tweetsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="retweeted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		retweeted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="quoted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		quoted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="replied_to")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		replied_to = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TweetReply_settings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		everyone = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mentionedUsers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mentionedUsers = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="following")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		following = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 3,
 	}
 	
 	/// <summary>
 	/// Indicates withholding details for [withheld content](https://help.twitter.com/en/rules-and-policies/tweet-withheld-by-country).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetWithheld
 	{
 		
@@ -2072,24 +1993,21 @@ namespace MyNS
 		public System.Nullable<TweetWithheldScope> Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TweetWithheldScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tweet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tweet = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 1,
 	}
 	
 	/// <summary>
 	/// The Twitter User object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -2259,8 +2177,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates withholding details for [withheld content](https://help.twitter.com/en/rules-and-policies/tweet-withheld-by-country).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserWithheld
 	{
 		
@@ -2281,21 +2198,18 @@ namespace MyNS
 		public System.Nullable<UserWithheldScope> Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserWithheldScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="user")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		user = 0,
 	}
 	
 	/// <summary>
 	/// A problem that indicates that you are not allowed to see a particular field on a Tweet, User, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldUnauthorizedProblem : Problem
 	{
 		
@@ -2324,8 +2238,7 @@ namespace MyNS
 	/// <summary>
 	/// A Tweet or error that can be returned by the streaming Tweet API. The values returned with a successful streamed Tweet includes the user provided rules that the Tweet matched.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FilteredStreamingTweetResponse
 	{
 		
@@ -2372,14 +2285,12 @@ namespace MyNS
 	/// <summary>
 	/// A generic problem with no additional information beyond that provided by the HTTP status code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenericProblem
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2ComplianceJobsIdResponse
 	{
 		
@@ -2394,8 +2305,7 @@ namespace MyNS
 		public Problem[] Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2ComplianceJobsResponse
 	{
 		
@@ -2427,8 +2337,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2DmConversationsIdDmEventsResponse
 	{
 		
@@ -2479,8 +2388,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2DmConversationsWithParticipantIdDmEventsResponse
 	{
 		
@@ -2531,8 +2439,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2DmEventsResponse
 	{
 		
@@ -2583,8 +2490,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2ListsIdFollowersResponse
 	{
 		
@@ -2635,8 +2541,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2ListsIdMembersResponse
 	{
 		
@@ -2687,8 +2592,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2ListsIdResponse
 	{
 		
@@ -2712,8 +2616,7 @@ namespace MyNS
 	/// <summary>
 	/// A Twitter List is a curated group of accounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class List
 	{
 		
@@ -2759,8 +2662,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Private { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2ListsIdTweetsResponse
 	{
 		
@@ -2811,8 +2713,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2SpacesByCreatorIdsResponse
 	{
 		
@@ -2837,8 +2738,7 @@ namespace MyNS
 		public Get2SpacesByCreatorIdsResponseMeta Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Space
 	{
 		
@@ -2953,19 +2853,17 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SpaceState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="live")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		live = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ended = 2,
 	}
 	
@@ -3005,8 +2903,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2SpacesIdBuyersResponse
 	{
 		
@@ -3057,8 +2954,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2SpacesIdResponse
 	{
 		
@@ -3076,8 +2972,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2SpacesIdTweetsResponse
 	{
 		
@@ -3128,8 +3023,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2SpacesResponse
 	{
 		
@@ -3151,8 +3045,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2SpacesSearchResponse
 	{
 		
@@ -3187,8 +3080,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsCountsAllResponse
 	{
 		
@@ -3213,8 +3105,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent a Search Count Result.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchCount
 	{
 		
@@ -3273,8 +3164,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total_tweet_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsCountsRecentResponse
 	{
 		
@@ -3326,8 +3216,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total_tweet_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsFirehoseStreamResponse
 	{
 		
@@ -3345,8 +3234,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsIdLikingUsersResponse
 	{
 		
@@ -3397,8 +3285,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsIdQuoteTweetsResponse
 	{
 		
@@ -3441,8 +3328,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsIdResponse
 	{
 		
@@ -3460,8 +3346,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsIdRetweetedByResponse
 	{
 		
@@ -3512,8 +3397,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsResponse
 	{
 		
@@ -3535,8 +3419,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsSample10StreamResponse
 	{
 		
@@ -3554,8 +3437,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsSampleStreamResponse
 	{
 		
@@ -3573,8 +3455,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsSearchAllResponse
 	{
 		
@@ -3629,8 +3510,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsSearchRecentResponse
 	{
 		
@@ -3685,8 +3565,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2TweetsSearchStreamResponse
 	{
 		
@@ -3704,8 +3583,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersByResponse
 	{
 		
@@ -3727,8 +3605,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersByUsernameUsernameResponse
 	{
 		
@@ -3749,8 +3626,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdBlockingResponse
 	{
 		
@@ -3801,8 +3677,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdBookmarksResponse
 	{
 		
@@ -3853,8 +3728,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdFollowedListsResponse
 	{
 		
@@ -3905,8 +3779,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdFollowersResponse
 	{
 		
@@ -3957,8 +3830,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdFollowingResponse
 	{
 		
@@ -4009,8 +3881,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdLikedTweetsResponse
 	{
 		
@@ -4061,8 +3932,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdListMembershipsResponse
 	{
 		
@@ -4113,8 +3983,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdMentionsResponse
 	{
 		
@@ -4177,8 +4046,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdMutingResponse
 	{
 		
@@ -4229,8 +4097,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdOwnedListsResponse
 	{
 		
@@ -4281,8 +4148,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdPinnedListsResponse
 	{
 		
@@ -4317,8 +4183,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdResponse
 	{
 		
@@ -4339,8 +4204,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdTimelinesReverseChronologicalResponse
 	{
 		
@@ -4403,8 +4267,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersIdTweetsResponse
 	{
 		
@@ -4467,8 +4330,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Result_count { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersMeResponse
 	{
 		
@@ -4489,8 +4351,7 @@ namespace MyNS
 		public Expansions Includes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Get2UsersResponse
 	{
 		
@@ -4515,8 +4376,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent the portion of text recognized as a Hashtag, and its start and end position within the text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HashtagFields
 	{
 		
@@ -4532,8 +4392,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates this request is invalid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRequestProblem : Problem
 	{
 		
@@ -4558,14 +4417,12 @@ namespace MyNS
 	/// <summary>
 	/// The rule you have submitted is invalid.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidRuleProblem
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAddUserRequest
 	{
 		
@@ -4580,8 +4437,7 @@ namespace MyNS
 		public string User_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCreateRequest
 	{
 		
@@ -4609,8 +4465,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Private { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCreateResponse
 	{
 		
@@ -4650,8 +4505,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeleteResponse
 	{
 		
@@ -4673,8 +4527,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Deleted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFollowedRequest
 	{
 		
@@ -4689,8 +4542,7 @@ namespace MyNS
 		public string List_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListFollowedResponse
 	{
 		
@@ -4712,8 +4564,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Following { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMutateResponse
 	{
 		
@@ -4735,8 +4586,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Is_member { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPinnedRequest
 	{
 		
@@ -4751,8 +4601,7 @@ namespace MyNS
 		public string List_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPinnedResponse
 	{
 		
@@ -4774,8 +4623,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Pinned { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUnpinResponse
 	{
 		
@@ -4797,8 +4645,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Pinned { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUpdateRequest
 	{
 		
@@ -4824,8 +4671,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Private { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUpdateResponse
 	{
 		
@@ -4850,8 +4696,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent the portion of text recognized as a User mention, and its start and end position within the text.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MentionFields
 	{
 		
@@ -4874,8 +4719,7 @@ namespace MyNS
 		public string Username { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MuteUserMutationResponse
 	{
 		
@@ -4897,8 +4741,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Muting { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MuteUserRequest
 	{
 		
@@ -4916,8 +4759,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates the user's rule set is not compliant.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NonCompliantRulesProblem
 	{
 	}
@@ -4925,8 +4767,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates your client application does not have the required OAuth1 permissions for the requested endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Oauth1PermissionsProblem
 	{
 	}
@@ -4934,8 +4775,7 @@ namespace MyNS
 	/// <summary>
 	/// You have been disconnected for operational reasons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationalDisconnectProblem : Problem
 	{
 		
@@ -4943,39 +4783,36 @@ namespace MyNS
 		public System.Nullable<OperationalDisconnectProblemDisconnect_type> Disconnect_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationalDisconnectProblemDisconnect_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OperationalDisconnect")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OperationalDisconnect = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpstreamOperationalDisconnect")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpstreamOperationalDisconnect = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ForceDisconnect")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ForceDisconnect = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpstreamUncleanDisconnect")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UpstreamUncleanDisconnect = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SlowReader")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SlowReader = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalError = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ClientApplicationStateDegraded")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ClientApplicationStateDegraded = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidRules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidRules = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Photo : Media
 	{
 		
@@ -4986,58 +4823,53 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PlaceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="poi")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		poi = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neighborhood")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neighborhood = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="city")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		city = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="admin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		admin = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 5,
 	}
 	
 	/// <summary>
 	/// Shows who can reply a Tweet. Fields returned are everyone, mentioned_users, and following.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReplySettings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		everyone = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mentionedUsers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mentionedUsers = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="following")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		following = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		other = 3,
 	}
 	
 	/// <summary>
 	/// A problem that indicates that a given Tweet, User, etc. does not exist.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundProblem : Problem
 	{
 		
@@ -5076,8 +4908,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates you are not allowed to see a particular Tweet, User, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceUnauthorizedProblem : Problem
 	{
 		
@@ -5120,8 +4951,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates a particular Tweet, User, etc. is not available to you.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceUnavailableProblem : Problem
 	{
 		
@@ -5152,14 +4982,12 @@ namespace MyNS
 	/// <summary>
 	/// You have exceeded the maximum number of rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RulesCapProblem
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RulesLookupResponse
 	{
 		
@@ -5174,14 +5002,12 @@ namespace MyNS
 		public RulesResponseMetadata Meta { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RulesRequestSummary
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamingTweetResponse
 	{
 		
@@ -5202,14 +5028,12 @@ namespace MyNS
 	/// <summary>
 	/// Tweet compliance data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetComplianceData
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetComplianceSchema
 	{
 		
@@ -5264,14 +5088,12 @@ namespace MyNS
 	/// <summary>
 	/// Tweet compliance stream events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetComplianceStreamResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetCreateRequest
 	{
 		
@@ -5409,16 +5231,14 @@ namespace MyNS
 		public System.Nullable<TweetCreateRequestPollReply_settings> Reply_settings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TweetCreateRequestPollReply_settings
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="following")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		following = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mentionedUsers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mentionedUsers = 1,
 	}
 	
@@ -5442,8 +5262,7 @@ namespace MyNS
 		public string In_reply_to_tweet_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetCreateResponse
 	{
 		
@@ -5480,8 +5299,7 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetDeleteComplianceSchema
 	{
 		
@@ -5493,8 +5311,7 @@ namespace MyNS
 		public TweetComplianceSchema Delete { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetDeleteResponse
 	{
 		
@@ -5520,8 +5337,7 @@ namespace MyNS
 		public bool Deleted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetDropComplianceSchema
 	{
 		
@@ -5533,8 +5349,7 @@ namespace MyNS
 		public TweetComplianceSchema Drop { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetEditComplianceObjectSchema
 	{
 		
@@ -5587,8 +5402,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetEditComplianceSchema
 	{
 		
@@ -5600,8 +5414,7 @@ namespace MyNS
 		public TweetEditComplianceObjectSchema Tweet_edit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetHideRequest
 	{
 		
@@ -5613,8 +5426,7 @@ namespace MyNS
 		public bool Hidden { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetHideResponse
 	{
 		
@@ -5632,8 +5444,7 @@ namespace MyNS
 	/// <summary>
 	/// Tweet label data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetLabelData
 	{
 	}
@@ -5641,14 +5452,12 @@ namespace MyNS
 	/// <summary>
 	/// Tweet label stream events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetLabelStreamResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetNotice
 	{
 		
@@ -5726,8 +5535,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetNoticeSchema
 	{
 		
@@ -5739,8 +5547,7 @@ namespace MyNS
 		public TweetNotice Public_tweet_notice { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetTakedownComplianceSchema
 	{
 		
@@ -5801,8 +5608,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetUndropComplianceSchema
 	{
 		
@@ -5814,8 +5620,7 @@ namespace MyNS
 		public TweetComplianceSchema Undrop { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetUnviewable
 	{
 		
@@ -5867,8 +5672,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetUnviewableSchema
 	{
 		
@@ -5880,8 +5684,7 @@ namespace MyNS
 		public TweetUnviewable Public_tweet_unviewable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TweetWithheldComplianceSchema
 	{
 		
@@ -5896,8 +5699,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates that the authentication used is not supported.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedAuthenticationProblem
 	{
 	}
@@ -5905,8 +5707,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent the portion of text recognized as a URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlFields
 	{
 		
@@ -5976,8 +5777,7 @@ namespace MyNS
 	/// <summary>
 	/// A problem that indicates that a usage cap has been exceeded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsageCapExceededProblem : Problem
 	{
 		
@@ -5988,43 +5788,37 @@ namespace MyNS
 		public System.Nullable<UsageCapExceededProblemScope> Scope { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UsageCapExceededProblemPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Daily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Daily = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monthly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Monthly = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UsageCapExceededProblemScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Account")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Account = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Product")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Product = 1,
 	}
 	
 	/// <summary>
 	/// User compliance data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserComplianceData
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserComplianceSchema
 	{
 		
@@ -6061,14 +5855,12 @@ namespace MyNS
 	/// <summary>
 	/// User compliance stream events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserComplianceStreamResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDeleteComplianceSchema
 	{
 		
@@ -6080,8 +5872,7 @@ namespace MyNS
 		public UserComplianceSchema User_delete { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserProfileModificationComplianceSchema
 	{
 		
@@ -6093,8 +5884,7 @@ namespace MyNS
 		public UserProfileModificationObjectSchema User_profile_modification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserProfileModificationObjectSchema
 	{
 		
@@ -6142,8 +5932,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserProtectComplianceSchema
 	{
 		
@@ -6155,8 +5944,7 @@ namespace MyNS
 		public UserComplianceSchema User_protect { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserScrubGeoObjectSchema
 	{
 		
@@ -6200,8 +5988,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserScrubGeoSchema
 	{
 		
@@ -6213,8 +6000,7 @@ namespace MyNS
 		public UserScrubGeoObjectSchema Scrub_geo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserSuspendComplianceSchema
 	{
 		
@@ -6226,8 +6012,7 @@ namespace MyNS
 		public UserComplianceSchema User_suspend { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserTakedownComplianceSchema
 	{
 		
@@ -6270,8 +6055,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserUndeleteComplianceSchema
 	{
 		
@@ -6283,8 +6067,7 @@ namespace MyNS
 		public UserComplianceSchema User_undelete { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserUnprotectComplianceSchema
 	{
 		
@@ -6296,8 +6079,7 @@ namespace MyNS
 		public UserComplianceSchema User_unprotect { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserUnsuspendComplianceSchema
 	{
 		
@@ -6309,8 +6091,7 @@ namespace MyNS
 		public UserComplianceSchema User_unsuspend { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserWithheldComplianceSchema
 	{
 		
@@ -6322,8 +6103,7 @@ namespace MyNS
 		public UserTakedownComplianceSchema User_withheld { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersFollowingCreateRequest
 	{
 		
@@ -6338,8 +6118,7 @@ namespace MyNS
 		public string Target_user_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersFollowingCreateResponse
 	{
 		
@@ -6364,8 +6143,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Pending_follow { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersFollowingDeleteResponse
 	{
 		
@@ -6387,8 +6165,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Following { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersLikesCreateRequest
 	{
 		
@@ -6403,8 +6180,7 @@ namespace MyNS
 		public string Tweet_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersLikesCreateResponse
 	{
 		
@@ -6426,8 +6202,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Liked { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersLikesDeleteResponse
 	{
 		
@@ -6449,8 +6224,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Liked { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersRetweetsCreateRequest
 	{
 		
@@ -6465,8 +6239,7 @@ namespace MyNS
 		public string Tweet_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersRetweetsCreateResponse
 	{
 		
@@ -6488,8 +6261,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Retweeted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UsersRetweetsDeleteResponse
 	{
 		
@@ -6511,8 +6283,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Retweeted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Video : Media
 	{
 		
@@ -10532,52 +10303,52 @@ namespace MyNS
 	public enum ListBatchComplianceJobsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		created = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="in_progress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		in_progress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		complete = 3,
 	}
 	
 	public enum SearchSpacesState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="live")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		live = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		scheduled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 2,
 	}
 	
 	public enum TweetCountsFullArchiveSearchGranularity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="minute")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		minute = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hour")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hour = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="day")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		day = 2,
 	}
 	
 	public enum TweetsFullarchiveSearchSort_order
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recency")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recency = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevancy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		relevancy = 1,
 	}
 }

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Physical adaptations made to the property in consideration of varying levels of human physical ability.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Accessibility
 	{
 		
@@ -74,30 +73,27 @@ namespace MyNS
 		public AccessibilityMobilityAccessibleElevatorException MobilityAccessiblePoolException { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccessibilityMobilityAccessibleElevatorException
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCEPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCEPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNDER_CONSTRUCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNDER_CONSTRUCTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPENDENT_ON_SEASON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPENDENT_ON_SEASON = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPENDENT_ON_DAY_OF_WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPENDENT_ON_DAY_OF_WEEK = 3,
 	}
 	
 	/// <summary>
 	/// Amenities and features related to leisure and play.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Activities
 	{
 		
@@ -309,8 +305,7 @@ namespace MyNS
 	/// <summary>
 	/// Features of the property of specific interest to the business traveler.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Business
 	{
 		
@@ -354,8 +349,7 @@ namespace MyNS
 	/// <summary>
 	/// The ways in which the property provides guests with the ability to access the internet.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Connectivity
 	{
 		
@@ -411,8 +405,7 @@ namespace MyNS
 	/// <summary>
 	/// An eco certificate awarded to the hotel. Deprecated: this message is no longer populated. All certification data is now provided by BeCause.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EcoCertification
 	{
 		
@@ -435,102 +428,99 @@ namespace MyNS
 		public System.Nullable<EcoCertificationEcoCertificate> EcoCertificate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EcoCertificationEcoCertificate
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECO_CERTIFICATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECO_CERTIFICATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ISO14001")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ISO14001 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ISO50001")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ISO50001 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASIAN_ECOTOURISM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASIAN_ECOTOURISM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIOSPHERE_RESPOSNIBLE_TOURISM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIOSPHERE_RESPOSNIBLE_TOURISM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUREAU_VERITAS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUREAU_VERITAS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTROL_UNION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTROL_UNION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EARTHCHECK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EARTHCHECK = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECO_CERTIFICATION_MALTA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECO_CERTIFICATION_MALTA = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECOTOURISM_AUSTRALIAS_ECO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ECOTOURISM_AUSTRALIAS_ECO = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREAT_GREEN_DEAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREAT_GREEN_DEAL = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREEN_GLOBE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREEN_GLOBE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREEN_GROWTH2050")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREEN_GROWTH2050 = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREEN_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREEN_KEY = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREEN_KEY_ECO_RATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREEN_KEY_ECO_RATING = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREEN_SEAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREEN_SEAL = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREEN_STAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREEN_STAR = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GREEN_TOURISM_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GREEN_TOURISM_ACTIVE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HILTON_LIGHTSTAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HILTON_LIGHTSTAY = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOSTELLING_INTERNATIONALS_QUALITY_AND_SUSTAINABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOSTELLING_INTERNATIONALS_QUALITY_AND_SUSTAINABILITY = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOTELES_MAS_VERDES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOTELES_MAS_VERDES = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORDIC_SWAN_ECOLABEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORDIC_SWAN_ECOLABEL = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFERRED_BY_NATURE_SUSTAINABLE_TOURISM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFERRED_BY_NATURE_SUSTAINABLE_TOURISM = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSTAINABLE_TRAVEL_IRELAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSTAINABLE_TRAVEL_IRELAND = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOF_TIGERS_INITITIVES_PUG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOF_TIGERS_INITITIVES_PUG = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAVELIFE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAVELIFE = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNITED_CERTIFICATION_SYSTEMS_LIMITED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNITED_CERTIFICATION_SYSTEMS_LIMITED = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIREO_SRL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIREO_SRL = 27,
 	}
 	
 	/// <summary>
 	/// Energy efficiency practices implemented at the hotel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnergyEfficiency
 	{
 		
@@ -622,8 +612,7 @@ namespace MyNS
 	/// <summary>
 	/// Enhanced cleaning measures implemented by the hotel during COVID-19.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnhancedCleaning
 	{
 		
@@ -703,8 +692,7 @@ namespace MyNS
 	/// <summary>
 	/// Services and amenities for families and young guests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Families
 	{
 		
@@ -760,8 +748,7 @@ namespace MyNS
 	/// <summary>
 	/// Meals, snacks, and beverages available at the property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FoodAndDrink
 	{
 		
@@ -913,8 +900,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for LodgingService.GetGoogleUpdatedLodging
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGoogleUpdatedLodgingResponse
 	{
 		
@@ -934,8 +920,7 @@ namespace MyNS
 	/// <summary>
 	/// Lodging of a location that provides accomodations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Lodging
 	{
 		
@@ -1081,8 +1066,7 @@ namespace MyNS
 	/// <summary>
 	/// Features and available amenities in the guest unit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GuestUnitFeatures
 	{
 		
@@ -1207,27 +1191,24 @@ namespace MyNS
 		public ViewsFromUnit Views { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GuestUnitFeaturesTier
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIT_TIER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIT_TIER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_UNIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_UNIT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELUXE_UNIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELUXE_UNIT = 2,
 	}
 	
 	/// <summary>
 	/// An individual room, such as kitchen, bathroom, bedroom, within a bookable guest unit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LivingArea
 	{
 		
@@ -1265,8 +1246,7 @@ namespace MyNS
 	/// <summary>
 	/// Accessibility features of the living area.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LivingAreaAccessibility
 	{
 		
@@ -1370,8 +1350,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about eating features in the living area.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LivingAreaEating
 	{
 		
@@ -1571,8 +1550,7 @@ namespace MyNS
 	/// <summary>
 	/// Features in the living area.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LivingAreaFeatures
 	{
 		
@@ -1820,8 +1798,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the layout of the living area.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LivingAreaLayout
 	{
 		
@@ -1901,8 +1878,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about sleeping features in the living area.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LivingAreaSleeping
 	{
 		
@@ -2078,8 +2054,7 @@ namespace MyNS
 	/// <summary>
 	/// Views available from the guest unit itself.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ViewsFromUnit
 	{
 		
@@ -2183,8 +2158,7 @@ namespace MyNS
 	/// <summary>
 	/// A specific type of unit primarily defined by its features.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GuestUnitType
 	{
 		
@@ -2210,8 +2184,7 @@ namespace MyNS
 	/// <summary>
 	/// Health and safety measures implemented by the hotel during COVID-19.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthAndSafety
 	{
 		
@@ -2249,8 +2222,7 @@ namespace MyNS
 	/// <summary>
 	/// Increased food safety measures implemented by the hotel during COVID-19.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncreasedFoodSafety
 	{
 		
@@ -2318,8 +2290,7 @@ namespace MyNS
 	/// <summary>
 	/// Minimized contact measures implemented by the hotel during COVID-19.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MinimizedContact
 	{
 		
@@ -2411,8 +2382,7 @@ namespace MyNS
 	/// <summary>
 	/// Personal protection measures implemented by the hotel during COVID-19.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalProtection
 	{
 		
@@ -2468,8 +2438,7 @@ namespace MyNS
 	/// <summary>
 	/// Physical distancing measures implemented by the hotel during COVID-19.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhysicalDistancing
 	{
 		
@@ -2537,8 +2506,7 @@ namespace MyNS
 	/// <summary>
 	/// Conveniences provided in guest units to facilitate an easier, more comfortable stay.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Housekeeping
 	{
 		
@@ -2582,8 +2550,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata for the Lodging.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LodgingMetadata
 	{
 		
@@ -2597,8 +2564,7 @@ namespace MyNS
 	/// <summary>
 	/// Parking options at the property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Parking
 	{
 		
@@ -2690,8 +2656,7 @@ namespace MyNS
 	/// <summary>
 	/// Policies regarding guest-owned animals.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pets
 	{
 		
@@ -2747,8 +2712,7 @@ namespace MyNS
 	/// <summary>
 	/// Property rules that impact guests.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policies
 	{
 		
@@ -2858,8 +2822,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeOfDay
 	{
 		
@@ -2891,8 +2854,7 @@ namespace MyNS
 	/// <summary>
 	/// Forms of payment accepted at the property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentOptions
 	{
 		
@@ -2960,8 +2922,7 @@ namespace MyNS
 	/// <summary>
 	/// Swimming pool or recreational water facilities available at the hotel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pools
 	{
 		
@@ -3137,8 +3098,7 @@ namespace MyNS
 	/// <summary>
 	/// General factual information about the property's physical structure and important dates.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Property
 	{
 		
@@ -3194,8 +3154,7 @@ namespace MyNS
 	/// <summary>
 	/// Conveniences or help provided by the property to facilitate an easier, more comfortable stay.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Services
 	{
 		
@@ -3353,8 +3312,7 @@ namespace MyNS
 	/// <summary>
 	/// Language spoken by at least one staff member.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LanguageSpoken
 	{
 		
@@ -3380,8 +3338,7 @@ namespace MyNS
 	/// <summary>
 	/// Sustainability practices implemented at the hotel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sustainability
 	{
 		
@@ -3419,8 +3376,7 @@ namespace MyNS
 	/// <summary>
 	/// Sustainability certifications the hotel has been awarded. Deprecated: this message is no longer populated. All certification data is now provided by BeCause.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SustainabilityCertifications
 	{
 		
@@ -3455,64 +3411,59 @@ namespace MyNS
 		public AccessibilityMobilityAccessibleElevatorException LeedCertificationException { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SustainabilityCertificationsBreeamCertification
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREEAM_CERTIFICATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREEAM_CERTIFICATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_BREEAM_CERTIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_BREEAM_CERTIFICATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREEAM_PASS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREEAM_PASS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREEAM_GOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREEAM_GOOD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREEAM_VERY_GOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREEAM_VERY_GOOD = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREEAM_EXCELLENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREEAM_EXCELLENT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREEAM_OUTSTANDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREEAM_OUTSTANDING = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SustainabilityCertificationsLeedCertification
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEED_CERTIFICATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEED_CERTIFICATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_LEED_CERTIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_LEED_CERTIFICATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEED_CERTIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEED_CERTIFIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEED_SILVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEED_SILVER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEED_GOLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEED_GOLD = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEED_PLATINUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEED_PLATINUM = 5,
 	}
 	
 	/// <summary>
 	/// Sustainable sourcing practices implemented at the hotel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SustainableSourcing
 	{
 		
@@ -3616,8 +3567,7 @@ namespace MyNS
 	/// <summary>
 	/// Waste reduction practices implemented at the hotel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WasteReduction
 	{
 		
@@ -3817,8 +3767,7 @@ namespace MyNS
 	/// <summary>
 	/// Water conservation practices implemented at the hotel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaterConservation
 	{
 		
@@ -3898,8 +3847,7 @@ namespace MyNS
 	/// <summary>
 	/// Vehicles or vehicular services facilitated or owned by the property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transportation
 	{
 		
@@ -3991,8 +3939,7 @@ namespace MyNS
 	/// <summary>
 	/// Guest facilities at the property to promote or maintain health, beauty, and fitness.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Wellness
 	{
 		

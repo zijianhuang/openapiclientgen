@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.ActivateEntitlement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ActivateEntitlementRequest
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Information needed to create an Admin User for Google Workspace.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1AdminUser
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// Association links that an entitlement has to other entitlements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1AssociationInfo
 	{
 		
@@ -77,8 +74,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the Billable SKU information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1BillableSku
 	{
 		
@@ -110,8 +106,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a billing account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1BillingAccount
 	{
 		
@@ -149,8 +144,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a billing account that can be used to make a purchase.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1BillingAccountPurchaseInfo
 	{
 		
@@ -164,8 +158,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.CancelEntitlement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CancelEntitlementRequest
 	{
 		
@@ -179,8 +172,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.ChangeOffer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ChangeOfferRequest
 	{
 		
@@ -218,8 +210,7 @@ namespace MyNS
 	/// <summary>
 	/// Definition for extended entitlement parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Parameter
 	{
 		
@@ -245,8 +236,7 @@ namespace MyNS
 	/// <summary>
 	/// Data type and value of a parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Value
 	{
 		
@@ -284,8 +274,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.ChangeParametersRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ChangeParametersRequest
 	{
 		
@@ -311,8 +300,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.ChangeRenewalSettings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ChangeRenewalSettingsRequest
 	{
 		
@@ -332,8 +320,7 @@ namespace MyNS
 	/// <summary>
 	/// Renewal settings for renewable Offers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RenewalSettings
 	{
 		
@@ -365,8 +352,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents period in days/months/years.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Period
 	{
 		
@@ -383,55 +369,50 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1PeriodPeriodType> PeriodType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1PeriodPeriodType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERIOD_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERIOD_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YEAR = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1RenewalSettingsPaymentPlan
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENT_PLAN_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENT_PLAN_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMITMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMITMENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLEXIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLEXIBLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FREE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FREE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIAL = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFLINE = 5,
 	}
 	
 	/// <summary>
 	/// Entity representing a link between distributors and their indirect resellers in an n-tier resale channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ChannelPartnerLink
 	{
 		
@@ -487,8 +468,7 @@ namespace MyNS
 	/// <summary>
 	/// Cloud Identity information for the Cloud Channel Customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CloudIdentityInfo
 	{
 		
@@ -541,27 +521,24 @@ namespace MyNS
 		public string PrimaryDomain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1CloudIdentityInfoCustomerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMAIN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEAM = 2,
 	}
 	
 	/// <summary>
 	/// Required Edu Attributes
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1EduData
 	{
 		
@@ -584,80 +561,73 @@ namespace MyNS
 		public string Website { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1EduDataInstituteSize
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTITUTE_SIZE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTITUTE_SIZE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIZE_1_100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIZE_1_100 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIZE_101_500")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIZE_101_500 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIZE_501_1000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIZE_501_1000 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIZE_1001_2000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIZE_1001_2000 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIZE_2001_5000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIZE_2001_5000 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIZE_5001_10000")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIZE_5001_10000 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIZE_10001_OR_MORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIZE_10001_OR_MORE = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1EduDataInstituteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTITUTE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSTITUTE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="K12")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		K12 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIVERSITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIVERSITY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1ChannelPartnerLinkLinkState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVITED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVITED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REVOKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REVOKED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 4,
 	}
 	
 	/// <summary>
 	/// Configuration for how a distributor will rebill a channel partner (also known as a distributor-authorized reseller).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ChannelPartnerRepricingConfig
 	{
 		
@@ -683,8 +653,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for repricing a Google bill over a period of time.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RepricingConfig
 	{
 		
@@ -728,8 +697,7 @@ namespace MyNS
 	/// <summary>
 	/// A type that represents the various adjustments you can apply to a bill.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RepricingAdjustment
 	{
 		
@@ -743,8 +711,7 @@ namespace MyNS
 	/// <summary>
 	/// An adjustment that applies a flat markup or markdown to an entire bill.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1PercentageAdjustment
 	{
 		
@@ -758,8 +725,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of a decimal value, such as 2.5. Clients may convert values into language-native decimal formats, such as Java's BigDecimal or Python's decimal.Decimal. [BigDecimal]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html [decimal.Decimal]: https://docs.python.org/3/library/decimal.html
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDecimal
 	{
 		
@@ -773,8 +739,7 @@ namespace MyNS
 	/// <summary>
 	/// Applies the repricing configuration at the channel partner level. The channel partner value is derived from the resource name. Takes an empty json object. Deprecated: This is no longer supported. Use RepricingConfig.EntitlementGranularity instead.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity
 	{
 	}
@@ -782,8 +747,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the override to conditionally apply.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ConditionalOverride
 	{
 		
@@ -806,27 +770,24 @@ namespace MyNS
 		public GoogleCloudChannelV1RepricingCondition RepricingCondition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1ConditionalOverrideRebillingBasis
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBILLING_BASIS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REBILLING_BASIS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COST_AT_LIST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COST_AT_LIST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECT_CUSTOMER_COST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIRECT_CUSTOMER_COST = 2,
 	}
 	
 	/// <summary>
 	/// Represents the various repricing conditions you can use for a conditional override.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RepricingCondition
 	{
 		
@@ -840,8 +801,7 @@ namespace MyNS
 	/// <summary>
 	/// A condition that applies the override if a line item SKU is found in the SKU group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1SkuGroupCondition
 	{
 		
@@ -855,8 +815,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDate
 	{
 		
@@ -882,8 +841,7 @@ namespace MyNS
 	/// <summary>
 	/// Applies the repricing configuration at the entitlement level.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RepricingConfigEntitlementGranularity
 	{
 		
@@ -897,8 +855,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.CheckCloudIdentityAccountsExist.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CheckCloudIdentityAccountsExistRequest
 	{
 		
@@ -912,8 +869,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.CheckCloudIdentityAccountsExist.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CheckCloudIdentityAccountsExistResponse
 	{
 		
@@ -927,8 +883,7 @@ namespace MyNS
 	/// <summary>
 	/// Entity representing a Cloud Identity account that may be associated with a Channel Services API partner.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CloudIdentityCustomerAccount
 	{
 		
@@ -960,8 +915,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of a report column. Specifies the data properties in the corresponding position of the report rows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Column
 	{
 		
@@ -984,39 +938,36 @@ namespace MyNS
 		public string DisplayName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1ColumnDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECIMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECIMAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONEY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_TIME = 6,
 	}
 	
 	/// <summary>
 	/// Commitment settings for commitment-based offers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CommitmentSettings
 	{
 		
@@ -1042,8 +993,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the constraints for buying the Offer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Constraints
 	{
 		
@@ -1057,8 +1007,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents constraints required to purchase the Offer for a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CustomerConstraints
 	{
 		
@@ -1084,8 +1033,7 @@ namespace MyNS
 	/// <summary>
 	/// Contact information for a customer account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ContactInfo
 	{
 		
@@ -1129,8 +1077,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.CreateEntitlement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CreateEntitlementRequest
 	{
 		
@@ -1150,8 +1097,7 @@ namespace MyNS
 	/// <summary>
 	/// An entitlement is a representation of a customer's ability to use a service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Entitlement
 	{
 		
@@ -1237,8 +1183,7 @@ namespace MyNS
 	/// <summary>
 	/// Service provisioned for an entitlement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ProvisionedService
 	{
 		
@@ -1261,27 +1206,24 @@ namespace MyNS
 		public string SkuId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1EntitlementProvisioningState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 2,
 	}
 	
 	/// <summary>
 	/// Settings for trial offers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1TrialSettings
 	{
 		
@@ -1301,8 +1243,7 @@ namespace MyNS
 	/// <summary>
 	/// Entity representing a customer of a reseller or distributor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Customer
 	{
 		
@@ -1388,8 +1329,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypePostalAddress
 	{
 		
@@ -1463,8 +1403,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents Pub/Sub message content describing customer update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CustomerEvent
 	{
 		
@@ -1481,27 +1420,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1CustomerEventEventType> EventType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1CustomerEventEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARY_DOMAIN_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMARY_DOMAIN_CHANGED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARY_DOMAIN_VERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMARY_DOMAIN_VERIFIED = 2,
 	}
 	
 	/// <summary>
 	/// Configuration for how a reseller will reprice a Customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1CustomerRepricingConfig
 	{
 		
@@ -1527,8 +1463,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of usage or invoice date ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1DateRange
 	{
 		
@@ -1560,8 +1495,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDateTime
 	{
 		
@@ -1623,8 +1557,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeTimeZone
 	{
 		
@@ -1644,8 +1577,7 @@ namespace MyNS
 	/// <summary>
 	/// Change event entry for Entitlement order history
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1EntitlementChange
 	{
 		
@@ -1722,151 +1654,140 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1EntitlementChangeSuspensionReason> SuspensionReason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1EntitlementChangeActivationReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATION_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATION_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESELLER_REVOKED_SUSPENSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESELLER_REVOKED_SUSPENSION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_ACCEPTED_PENDING_TOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_ACCEPTED_PENDING_TOS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RENEWAL_SETTINGS_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RENEWAL_SETTINGS_CHANGED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER_ACTIVATION_REASON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER_ACTIVATION_REASON = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1EntitlementChangeCancellationReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLATION_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLATION_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_TERMINATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_TERMINATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELATIONSHIP_ENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELATIONSHIP_ENDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL_TRANSFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL_TRANSFER = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1EntitlementChangeChangeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE_PLAN_SWITCHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE_PLAN_SWITCHED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMITMENT_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMITMENT_CHANGED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RENEWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RENEWED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKU_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKU_CHANGED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RENEWAL_SETTING_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RENEWAL_SETTING_CHANGED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAID_SUBSCRIPTION_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAID_SUBSCRIPTION_STARTED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LICENSE_CAP_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LICENSE_CAP_CHANGED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENSION_DETAILS_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENSION_DETAILS_CHANGED = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIAL_END_DATE_EXTENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIAL_END_DATE_EXTENDED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIAL_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIAL_STARTED = 14,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1EntitlementChangeOperatorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATOR_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATOR_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_SERVICE_REPRESENTATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER_SERVICE_REPRESENTATIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOMER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESELLER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESELLER = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1EntitlementChangeSuspensionReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENSION_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENSION_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESELLER_INITIATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESELLER_INITIATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIAL_ENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIAL_ENDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RENEWAL_WITH_TYPE_CANCEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RENEWAL_WITH_TYPE_CANCEL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_TOS_ACCEPTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_TOS_ACCEPTANCE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 5,
 	}
 	
 	/// <summary>
 	/// Represents Pub/Sub message content describing entitlement update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1EntitlementEvent
 	{
 		
@@ -1883,57 +1804,54 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1EntitlementEventEventType> EventType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1EntitlementEventEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRICE_PLAN_SWITCHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRICE_PLAN_SWITCHED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMITMENT_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMMITMENT_CHANGED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RENEWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RENEWED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKU_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKU_CHANGED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RENEWAL_SETTING_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RENEWAL_SETTING_CHANGED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAID_SERVICE_STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAID_SERVICE_STARTED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LICENSE_ASSIGNMENT_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LICENSE_ASSIGNMENT_CHANGED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LICENSE_CAP_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LICENSE_CAP_CHANGED = 12,
 	}
 	
 	/// <summary>
 	/// Request message for CloudChannelReportsService.FetchReportResults.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1FetchReportResultsRequest
 	{
 		
@@ -1959,8 +1877,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelReportsService.FetchReportResults. Contains a tabular representation of the report results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1FetchReportResultsResponse
 	{
 		
@@ -1986,8 +1903,7 @@ namespace MyNS
 	/// <summary>
 	/// The features describing the data. Returned by CloudChannelReportsService.RunReportJob and CloudChannelReportsService.FetchReportResults.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ReportResultsMetadata
 	{
 		
@@ -2019,8 +1935,7 @@ namespace MyNS
 	/// <summary>
 	/// The ID and description of a report that was used to generate report data. For example, "Google Cloud Daily Spend", "Google Workspace License Activity", etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Report
 	{
 		
@@ -2052,8 +1967,7 @@ namespace MyNS
 	/// <summary>
 	/// A row of report values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Row
 	{
 		
@@ -2073,8 +1987,7 @@ namespace MyNS
 	/// <summary>
 	/// A single report value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ReportValue
 	{
 		
@@ -2118,8 +2031,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an amount of money with its currency type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeMoney
 	{
 		
@@ -2145,8 +2057,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.ImportCustomer
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ImportCustomerRequest
 	{
 		
@@ -2190,8 +2101,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.ListChannelPartnerLinks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListChannelPartnerLinksResponse
 	{
 		
@@ -2211,8 +2121,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.ListChannelPartnerRepricingConfigs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse
 	{
 		
@@ -2232,8 +2141,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.ListCustomerRepricingConfigs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListCustomerRepricingConfigsResponse
 	{
 		
@@ -2253,8 +2161,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.ListCustomers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListCustomersResponse
 	{
 		
@@ -2274,8 +2181,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.ListEntitlementChanges
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListEntitlementChangesResponse
 	{
 		
@@ -2295,8 +2201,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.ListEntitlements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListEntitlementsResponse
 	{
 		
@@ -2316,8 +2221,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListOffers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListOffersResponse
 	{
 		
@@ -2337,8 +2241,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an offer made to resellers for purchase. An offer is associated with a Sku, has a plan for payment, a price, and defines the constraints for buying.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Offer
 	{
 		
@@ -2406,8 +2309,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the marketing information for a Product, SKU or Offer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1MarketingInfo
 	{
 		
@@ -2433,8 +2335,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents media information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Media
 	{
 		
@@ -2457,24 +2358,21 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1MediaType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1MediaType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIA_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIA_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIA_TYPE_IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIA_TYPE_IMAGE = 1,
 	}
 	
 	/// <summary>
 	/// Parameter's definition. Specifies what parameter is required to use the current Offer to purchase.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ParameterDefinition
 	{
 		
@@ -2515,33 +2413,30 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1ParameterDefinitionParameterType> ParameterType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1ParameterDefinitionParameterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARAMETER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARAMETER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INT64")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INT64 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOUBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOUBLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOLEAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOLEAN = 4,
 	}
 	
 	/// <summary>
 	/// The payment plan for the Offer. Describes how to make a payment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Plan
 	{
 		
@@ -2576,27 +2471,24 @@ namespace MyNS
 		public GoogleCloudChannelV1Period TrialPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1PlanPaymentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREPAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREPAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTPAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTPAY = 2,
 	}
 	
 	/// <summary>
 	/// Represents price by resource type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1PriceByResource
 	{
 		
@@ -2622,8 +2514,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the price of the Offer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Price
 	{
 		
@@ -2655,8 +2546,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the price by the duration of months. For example, a 20% discount for the first six months, then a 10% discount starting on the seventh month.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1PricePhase
 	{
 		
@@ -2694,8 +2584,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines price at resource tier level. For example, an offer with following definition : * Tier 1: Provide 25% discount for all seats between 1 and 25. * Tier 2: Provide 10% discount for all seats between 26 and 100. * Tier 3: Provide flat 15% discount for all seats above 100. Each of these tiers is represented as a PriceTier.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1PriceTier
 	{
 		
@@ -2718,42 +2607,39 @@ namespace MyNS
 		public GoogleCloudChannelV1Price Price { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1PriceByResourceResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEAT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAU = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GB = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LICENSED_USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LICENSED_USER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MINUTES = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IAAS_USAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IAAS_USAGE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBSCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBSCRIPTION = 7,
 	}
 	
 	/// <summary>
 	/// Represents a product's purchasable Stock Keeping Unit (SKU). SKUs represent the different variations of the product. For example, Google Workspace Business Standard and Google Workspace Business Plus are Google Workspace product SKUs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Sku
 	{
 		
@@ -2779,8 +2665,7 @@ namespace MyNS
 	/// <summary>
 	/// A Product is the entity a customer uses when placing an order. For example, Google Workspace, Google Voice, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1Product
 	{
 		
@@ -2800,8 +2685,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListProducts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListProductsResponse
 	{
 		
@@ -2821,8 +2705,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListPurchasableOffers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListPurchasableOffersResponse
 	{
 		
@@ -2842,8 +2725,7 @@ namespace MyNS
 	/// <summary>
 	/// Offer that you can purchase for a customer. This is used in the ListPurchasableOffer API response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1PurchasableOffer
 	{
 		
@@ -2857,8 +2739,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListPurchasableSkus.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListPurchasableSkusResponse
 	{
 		
@@ -2878,8 +2759,7 @@ namespace MyNS
 	/// <summary>
 	/// SKU that you can purchase. This is used in ListPurchasableSku API response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1PurchasableSku
 	{
 		
@@ -2893,8 +2773,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelReportsService.ListReports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListReportsResponse
 	{
 		
@@ -2914,8 +2793,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListSkuGroupBillableSkus.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListSkuGroupBillableSkusResponse
 	{
 		
@@ -2935,8 +2813,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListSkuGroups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListSkuGroupsResponse
 	{
 		
@@ -2956,8 +2833,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the SKU group information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1SkuGroup
 	{
 		
@@ -2977,8 +2853,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListSkus.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListSkusResponse
 	{
 		
@@ -2998,8 +2873,7 @@ namespace MyNS
 	/// <summary>
 	/// Response Message for ListSubscribers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListSubscribersResponse
 	{
 		
@@ -3025,8 +2899,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.ListTransferableOffers
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListTransferableOffersRequest
 	{
 		
@@ -3076,8 +2949,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.ListTransferableOffers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListTransferableOffersResponse
 	{
 		
@@ -3097,8 +2969,7 @@ namespace MyNS
 	/// <summary>
 	/// TransferableOffer represents an Offer that can be used in Transfer. Read-only.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1TransferableOffer
 	{
 		
@@ -3112,8 +2983,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.ListTransferableSkus
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListTransferableSkusRequest
 	{
 		
@@ -3157,8 +3027,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.ListTransferableSkus.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ListTransferableSkusResponse
 	{
 		
@@ -3178,8 +3047,7 @@ namespace MyNS
 	/// <summary>
 	/// TransferableSku represents information a reseller needs to view existing provisioned services for a customer that they do not own. Read-only.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1TransferableSku
 	{
 		
@@ -3205,8 +3073,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies transfer eligibility of a SKU.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1TransferEligibility
 	{
 		
@@ -3229,33 +3096,30 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsEligible { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1TransferEligibilityIneligibilityReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_TOS_ACCEPTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_TOS_ACCEPTANCE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKU_NOT_ELIGIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKU_NOT_ELIGIBLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKU_SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKU_SUSPENDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU = 4,
 	}
 	
 	/// <summary>
 	/// Provides contextual information about a google.longrunning.Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1OperationMetadata
 	{
 		
@@ -3266,54 +3130,51 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1OperationMetadataOperationType> OperationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1OperationMetadataOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_ENTITLEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_ENTITLEMENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_RENEWAL_SETTINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_RENEWAL_SETTINGS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START_PAID_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START_PAID_SERVICE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATE_ENTITLEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATE_ENTITLEMENT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPEND_ENTITLEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPEND_ENTITLEMENT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCEL_ENTITLEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCEL_ENTITLEMENT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_ENTITLEMENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_ENTITLEMENTS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_ENTITLEMENTS_TO_GOOGLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_ENTITLEMENTS_TO_GOOGLE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_OFFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_OFFER = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_PARAMETERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_PARAMETERS = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISION_CLOUD_IDENTITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISION_CLOUD_IDENTITY = 11,
 	}
 	
 	/// <summary>
 	/// Request message for CloudChannelService.ProvisionCloudIdentity
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ProvisionCloudIdentityRequest
 	{
 		
@@ -3339,8 +3200,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for QueryEligibleBillingAccounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1QueryEligibleBillingAccountsResponse
 	{
 		
@@ -3354,8 +3214,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a set of SKUs that must be purchased using the same billing account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1SkuPurchaseGroup
 	{
 		
@@ -3375,8 +3234,7 @@ namespace MyNS
 	/// <summary>
 	/// Request Message for RegisterSubscriber.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RegisterSubscriberRequest
 	{
 		
@@ -3390,8 +3248,7 @@ namespace MyNS
 	/// <summary>
 	/// Response Message for RegisterSubscriber.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RegisterSubscriberResponse
 	{
 		
@@ -3405,8 +3262,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a RunReportJob operation. Contains the name to use in FetchReportResultsRequest.report_job and the status of the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ReportJob
 	{
 		
@@ -3426,8 +3282,7 @@ namespace MyNS
 	/// <summary>
 	/// Status of a report generation process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1ReportStatus
 	{
 		
@@ -3450,33 +3305,30 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1ReportStatusState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1ReportStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STARTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRITING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRITING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 	}
 	
 	/// <summary>
 	/// Request message for CloudChannelReportsService.RunReportJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RunReportJobRequest
 	{
 		
@@ -3502,8 +3354,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelReportsService.RunReportJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1RunReportJobResponse
 	{
 		
@@ -3523,8 +3374,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.StartPaidService.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1StartPaidServiceRequest
 	{
 		
@@ -3538,8 +3388,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information which resellers will get as part of notification from Pub/Sub.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1SubscriberEvent
 	{
 		
@@ -3559,8 +3408,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.SuspendEntitlement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1SuspendEntitlementRequest
 	{
 		
@@ -3574,8 +3422,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.TransferEntitlements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1TransferEntitlementsRequest
 	{
 		
@@ -3601,8 +3448,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.TransferEntitlements. This is put in the response field of google.longrunning.Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1TransferEntitlementsResponse
 	{
 		
@@ -3616,8 +3462,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.TransferEntitlementsToGoogle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1TransferEntitlementsToGoogleRequest
 	{
 		
@@ -3637,8 +3482,7 @@ namespace MyNS
 	/// <summary>
 	/// Request Message for UnregisterSubscriber.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1UnregisterSubscriberRequest
 	{
 		
@@ -3652,8 +3496,7 @@ namespace MyNS
 	/// <summary>
 	/// Response Message for UnregisterSubscriber.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1UnregisterSubscriberResponse
 	{
 		
@@ -3667,8 +3510,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for CloudChannelService.UpdateChannelPartnerLink
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1UpdateChannelPartnerLinkRequest
 	{
 		
@@ -3688,8 +3530,7 @@ namespace MyNS
 	/// <summary>
 	/// Association links that an entitlement has to other entitlements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1AssociationInfo
 	{
 		
@@ -3703,8 +3544,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents Pub/Sub messages about updates to a Channel Partner. You can retrieve updated values through the ChannelPartnerLinks API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1ChannelPartnerEvent
 	{
 		
@@ -3721,27 +3561,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1alpha1ChannelPartnerEventEventType> EventType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1alpha1ChannelPartnerEventEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_STATE_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK_STATE_CHANGED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTNER_ADVANTAGE_INFO_CHANGED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTNER_ADVANTAGE_INFO_CHANGED = 2,
 	}
 	
 	/// <summary>
 	/// The definition of a report column. Specifies the data properties in the corresponding position of the report rows.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1Column
 	{
 		
@@ -3767,8 +3604,7 @@ namespace MyNS
 	/// <summary>
 	/// Commitment settings for commitment-based offers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1CommitmentSettings
 	{
 		
@@ -3794,8 +3630,7 @@ namespace MyNS
 	/// <summary>
 	/// Renewal settings for renewable Offers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1RenewalSettings
 	{
 		
@@ -3845,8 +3680,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents period in days/months/years.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1Period
 	{
 		
@@ -3863,27 +3697,24 @@ namespace MyNS
 		public GoogleCloudChannelV1PeriodPeriodType PeriodType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1alpha1RenewalSettingsPaymentOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENT_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENT_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNUAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNUAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 2,
 	}
 	
 	/// <summary>
 	/// Represents Pub/Sub message content describing customer update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1CustomerEvent
 	{
 		
@@ -3903,8 +3734,7 @@ namespace MyNS
 	/// <summary>
 	/// A representation of usage or invoice date ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1DateRange
 	{
 		
@@ -3936,8 +3766,7 @@ namespace MyNS
 	/// <summary>
 	/// An entitlement is a representation of a customer's ability to use a service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1Entitlement
 	{
 		
@@ -4047,8 +3876,7 @@ namespace MyNS
 	/// <summary>
 	/// Definition for extended entitlement parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1Parameter
 	{
 		
@@ -4074,8 +3902,7 @@ namespace MyNS
 	/// <summary>
 	/// Data type and value of a parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1Value
 	{
 		
@@ -4113,8 +3940,7 @@ namespace MyNS
 	/// <summary>
 	/// Service provisioned for an entitlement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1ProvisionedService
 	{
 		
@@ -4137,36 +3963,33 @@ namespace MyNS
 		public string SkuId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1alpha1EntitlementProvisioningState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPENDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPENDED = 5,
 	}
 	
 	/// <summary>
 	/// Settings for trial offers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1TrialSettings
 	{
 		
@@ -4186,8 +4009,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents Pub/Sub message content describing entitlement update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1EntitlementEvent
 	{
 		
@@ -4207,8 +4029,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides contextual information about a google.longrunning.Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1OperationMetadata
 	{
 		
@@ -4219,63 +4040,60 @@ namespace MyNS
 		public System.Nullable<GoogleCloudChannelV1alpha1OperationMetadataOperationType> OperationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudChannelV1alpha1OperationMetadataOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_ENTITLEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_ENTITLEMENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_QUANTITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_QUANTITY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_RENEWAL_SETTINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_RENEWAL_SETTINGS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_PLAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_PLAN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START_PAID_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START_PAID_SERVICE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_SKU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_SKU = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVATE_ENTITLEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVATE_ENTITLEMENT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUSPEND_ENTITLEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUSPEND_ENTITLEMENT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCEL_ENTITLEMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCEL_ENTITLEMENT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_ENTITLEMENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_ENTITLEMENTS = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFER_ENTITLEMENTS_TO_GOOGLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSFER_ENTITLEMENTS_TO_GOOGLE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_OFFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_OFFER = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_PARAMETERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_PARAMETERS = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISION_CLOUD_IDENTITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISION_CLOUD_IDENTITY = 14,
 	}
 	
 	/// <summary>
 	/// The ID and description of a report that was used to generate report data. For example, "Google Cloud Daily Spend", "Google Workspace License Activity", etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1Report
 	{
 		
@@ -4307,8 +4125,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a RunReportJob operation. Contains the name to use in FetchReportResultsRequest.report_job and the status of the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1ReportJob
 	{
 		
@@ -4328,8 +4145,7 @@ namespace MyNS
 	/// <summary>
 	/// Status of a report generation process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1ReportStatus
 	{
 		
@@ -4355,8 +4171,7 @@ namespace MyNS
 	/// <summary>
 	/// The features describing the data. Returned by CloudChannelReportsService.RunReportJob and CloudChannelReportsService.FetchReportResults.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1ReportResultsMetadata
 	{
 		
@@ -4388,8 +4203,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelReportsService.RunReportJob.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1RunReportJobResponse
 	{
 		
@@ -4409,8 +4223,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information which resellers will get as part of notification from Pub/Sub.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1SubscriberEvent
 	{
 		
@@ -4436,8 +4249,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for CloudChannelService.TransferEntitlements. This is put in the response field of google.longrunning.Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudChannelV1alpha1TransferEntitlementsResponse
 	{
 		
@@ -4451,8 +4263,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningCancelOperationRequest
 	{
 	}
@@ -4460,8 +4271,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -4481,8 +4291,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -4520,8 +4329,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -4547,8 +4355,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}
@@ -6263,26 +6070,26 @@ namespace MyNS
 	public enum Cloudchannel_accounts_customers_listPurchasableSkusChangeOfferPurchase_changeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHANGE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHANGE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPGRADE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWNGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOWNGRADE = 2,
 	}
 	
 	public enum Cloudchannel_operations_listFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

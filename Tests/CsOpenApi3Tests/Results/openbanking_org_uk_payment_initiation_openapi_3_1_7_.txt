@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File
 	{
 	}
@@ -26,8 +25,7 @@ namespace MyNS
 	/// <summary>
 	/// Links relevant to the payload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Links
 	{
 		
@@ -54,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Meta Data relevant to the payload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Meta
 	{
 		
@@ -82,8 +79,7 @@ namespace MyNS
 	/// <summary>
 	/// Amount of money associated with the charge type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBActiveOrHistoricCurrencyAndAmount
 	{
 		
@@ -111,39 +107,36 @@ namespace MyNS
 	/// <summary>
 	/// Identifies the nature of the postal address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBAddressTypeCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Business")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Business = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Correspondence")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Correspondence = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeliveryTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeliveryTo = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MailTo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MailTo = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POBox")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POBox = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Postal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Postal = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Residential")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Residential = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Statement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Statement = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBCashAccountCreditor3
 	{
 		
@@ -185,8 +178,7 @@ namespace MyNS
 	/// <summary>
 	/// ^ Only incuded in the response if `Data. ReadRefundAccount` is set to `Yes` in the consent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBCashAccountDebtor4
 	{
 		
@@ -218,27 +210,24 @@ namespace MyNS
 	/// <summary>
 	/// Specifies which party/parties will bear the charges associated with the processing of the payment transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBChargeBearerType1Code
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BorneByCreditor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BorneByCreditor = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BorneByDebtor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BorneByDebtor = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FollowingServiceLevel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FollowingServiceLevel = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Shared")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Shared = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBError1
 	{
 		
@@ -283,8 +272,7 @@ namespace MyNS
 	/// <summary>
 	/// An array of detail error codes, and messages, and URLs to documentation to help remediation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBErrorResponse1
 	{
 		
@@ -335,8 +323,7 @@ namespace MyNS
 	/// <summary>
 	/// Information that locates and identifies a specific address, as defined by postal services.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBPostalAddress6
 	{
 		
@@ -437,8 +424,7 @@ namespace MyNS
 	/// <summary>
 	/// The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Payments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBRisk1
 	{
 		
@@ -550,33 +536,30 @@ namespace MyNS
 		public string TownName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBRisk1PaymentContextCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BillPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BillPayment = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EcommerceGoods")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EcommerceGoods = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EcommerceServices")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EcommerceServices = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Other = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PartyToParty")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PartyToParty = 4,
 	}
 	
 	/// <summary>
 	/// Supporting Data provided by TPP, when requesting SCA Exemption.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBSCASupportData1
 	{
 		
@@ -606,58 +589,52 @@ namespace MyNS
 		public System.Nullable<OBSCASupportData1RequestedSCAExemptionType> RequestedSCAExemptionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBSCASupportData1AppliedAuthenticationApproach
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CA = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCA = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBSCASupportData1RequestedSCAExemptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BillPayment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BillPayment = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ContactlessTravel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ContactlessTravel = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EcommerceGoods")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EcommerceGoods = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EcommerceServices")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EcommerceServices = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kiosk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kiosk = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Parking")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Parking = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PartyToParty")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PartyToParty = 6,
 	}
 	
 	/// <summary>
 	/// Additional information that can not be captured in the structured fields and/or any other specific block.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBSupplementaryData1
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomestic2
 	{
 		
@@ -926,8 +903,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticConsent4
 	{
 		
@@ -997,16 +973,14 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> CompletionDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteDomesticConsent4DataAuthorisationAuthorisationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Any = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Single")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Single = 1,
 	}
 	
@@ -1235,21 +1209,18 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteDomesticConsent4DataReadRefundAccount
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="No")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		No = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Yes = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticConsentResponse5
 	{
 		
@@ -1657,27 +1628,24 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteDomesticConsentResponse5DataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Authorised")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Authorised = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AwaitingAuthorisation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AwaitingAuthorisation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Consumed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Consumed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticResponse5
 	{
 		
@@ -2095,19 +2063,17 @@ namespace MyNS
 		public OBWriteDomesticResponse5DataMultiAuthorisationStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteDomesticResponse5DataMultiAuthorisationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Authorised")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Authorised = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AwaitingFurtherAuthorisation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AwaitingFurtherAuthorisation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 2,
 	}
 	
@@ -2172,33 +2138,30 @@ namespace MyNS
 		public string SecondaryIdentification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteDomesticResponse5DataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedCreditSettlementCompleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedCreditSettlementCompleted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedSettlementCompleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedSettlementCompleted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedSettlementInProcess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedSettlementInProcess = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedWithoutPosting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedWithoutPosting = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticScheduled2
 	{
 		
@@ -2476,8 +2439,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticScheduledConsent4
 	{
 		
@@ -2789,18 +2751,15 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteDomesticScheduledConsent4DataPermission
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Create")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Create = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticScheduledConsentResponse5
 	{
 		
@@ -3225,8 +3184,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticScheduledResponse5
 	{
 		
@@ -3714,27 +3672,24 @@ namespace MyNS
 		public string SecondaryIdentification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteDomesticScheduledResponse5DataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InitiationCompleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InitiationCompleted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InitiationFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InitiationFailed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InitiationPending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InitiationPending = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticStandingOrder3
 	{
 		
@@ -4073,8 +4028,7 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticStandingOrderConsent5
 	{
 		
@@ -4447,8 +4401,7 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticStandingOrderConsentResponse6
 	{
 		
@@ -4918,8 +4871,7 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteDomesticStandingOrderResponse6
 	{
 		
@@ -5452,8 +5404,7 @@ namespace MyNS
 		public string SecondaryIdentification { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteFile2
 	{
 		
@@ -5644,8 +5595,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteFileConsent3
 	{
 		
@@ -5856,8 +5806,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteFileConsentResponse4
 	{
 		
@@ -6165,30 +6114,27 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteFileConsentResponse4DataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Authorised")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Authorised = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AwaitingAuthorisation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AwaitingAuthorisation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AwaitingUpload")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AwaitingUpload = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Consumed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Consumed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteFileResponse3
 	{
 		
@@ -6514,24 +6460,21 @@ namespace MyNS
 		public OBWriteDomesticResponse5DataMultiAuthorisationStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteFileResponse3DataStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InitiationCompleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InitiationCompleted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InitiationFailed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InitiationFailed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InitiationPending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InitiationPending = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteFundsConfirmationResponse1
 	{
 		
@@ -6593,8 +6536,7 @@ namespace MyNS
 		public System.DateTimeOffset FundsAvailableDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternational3
 	{
 		
@@ -6970,19 +6912,17 @@ namespace MyNS
 		public string UnitCurrency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteInternational3DataInitiationExchangeRateInformationRateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Actual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Actual = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Agreed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Agreed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Indicative")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Indicative = 2,
 	}
 	
@@ -7010,16 +6950,14 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWriteInternational3DataInitiationInstructionPriority
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Normal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Urgent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Urgent = 1,
 	}
 	
@@ -7050,8 +6988,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalConsent5
 	{
 		
@@ -7504,8 +7441,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalConsentResponse6
 	{
 		
@@ -8125,8 +8061,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalResponse5
 	{
 		
@@ -8882,8 +8817,7 @@ namespace MyNS
 		public OBPostalAddress6 PostalAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalScheduled3
 	{
 		
@@ -9319,8 +9253,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalScheduledConsent5
 	{
 		
@@ -9790,8 +9723,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalScheduledConsentResponse6
 	{
 		
@@ -10428,8 +10360,7 @@ namespace MyNS
 		public string Unstructured { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalScheduledResponse6
 	{
 		
@@ -11194,8 +11125,7 @@ namespace MyNS
 		public OBPostalAddress6 PostalAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalStandingOrder4
 	{
 		
@@ -11581,8 +11511,7 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalStandingOrderConsent6
 	{
 		
@@ -12002,8 +11931,7 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalStandingOrderConsentResponse7
 	{
 		
@@ -12520,8 +12448,7 @@ namespace MyNS
 		public string Currency { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWriteInternationalStandingOrderResponse7
 	{
 		
@@ -13166,8 +13093,7 @@ namespace MyNS
 		public OBPostalAddress6 PostalAddress { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OBWritePaymentDetailsResponse1
 	{
 		
@@ -13238,70 +13164,68 @@ namespace MyNS
 		public System.DateTimeOffset StatusUpdateDateTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWritePaymentDetailsResponse1DataPaymentStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Accepted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Accepted = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedCancellationRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedCancellationRequest = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedCreditSettlementCompleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedCreditSettlementCompleted = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedCustomerProfile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedCustomerProfile = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedFundsChecked")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedFundsChecked = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedSettlementCompleted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedSettlementCompleted = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedSettlementInProcess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedSettlementInProcess = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedTechnicalValidation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedTechnicalValidation = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedWithChange")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedWithChange = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptedWithoutPosting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AcceptedWithoutPosting = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoCancellationProcess")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoCancellationProcess = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PartiallyAcceptedCancellationRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PartiallyAcceptedCancellationRequest = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PartiallyAcceptedTechnicalCorrect")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PartiallyAcceptedTechnicalCorrect = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PaymentCancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PaymentCancelled = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Pending = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingCancellationRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PendingCancellationRequest = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Received")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Received = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rejected = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RejectedCancellationRequest")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RejectedCancellationRequest = 19,
 	}
 	
@@ -13344,31 +13268,29 @@ namespace MyNS
 		public string StatusReasonDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OBWritePaymentDetailsResponse1DataPaymentStatusStatusDetailStatusReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cancelled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingFailingSettlement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PendingFailingSettlement = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingSettlement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PendingSettlement = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Proprietary")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Proprietary = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ProprietaryRejection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ProprietaryRejection = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Suspended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Suspended = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unmatched")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unmatched = 6,
 	}
 	

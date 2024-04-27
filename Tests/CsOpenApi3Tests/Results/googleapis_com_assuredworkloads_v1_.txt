@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for acknowledging the violation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequest
 	{
 		
@@ -44,27 +43,24 @@ namespace MyNS
 		public string NonCompliantOrgPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequestAcknowledgeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACKNOWLEDGE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACKNOWLEDGE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_VIOLATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXISTING_CHILD_RESOURCE_VIOLATIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXISTING_CHILD_RESOURCE_VIOLATIONS = 2,
 	}
 	
 	/// <summary>
 	/// Response for violation acknowledgement
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1AcknowledgeViolationResponse
 	{
 	}
@@ -72,8 +68,7 @@ namespace MyNS
 	/// <summary>
 	/// Response containing the analysis results for the hypothetical resource move.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1AnalyzeWorkloadMoveResponse
 	{
 		
@@ -93,8 +88,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents move analysis results for an asset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1AssetMoveAnalysis
 	{
 		
@@ -120,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a logical group of checks performed for an asset. If successful, the group contains the analysis result, otherwise it contains an error with the failure reason.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1MoveAnalysisGroup
 	{
 		
@@ -147,8 +140,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the successful move analysis results for a group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1MoveAnalysisResult
 	{
 		
@@ -168,8 +160,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the impact of moving the asset to the target.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1MoveImpact
 	{
 		
@@ -183,8 +174,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -210,8 +200,7 @@ namespace MyNS
 	/// <summary>
 	/// Operation metadata to give request details of CreateWorkload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadata
 	{
 		
@@ -240,75 +229,72 @@ namespace MyNS
 		public string Parent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLIANCE_REGIME_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLIANCE_REGIME_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IL4 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CJIS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CJIS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEDRAMP_HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEDRAMP_HIGH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FEDRAMP_MODERATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FEDRAMP_MODERATE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="US_REGIONAL_ACCESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		US_REGIONAL_ACCESS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIPAA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIPAA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HITRUST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HITRUST = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EU_REGIONS_AND_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EU_REGIONS_AND_SUPPORT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CA_REGIONS_AND_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CA_REGIONS_AND_SUPPORT = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ITAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ITAR = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AU_REGIONS_AND_US_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AU_REGIONS_AND_US_SUPPORT = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSURED_WORKLOADS_FOR_PARTNERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSURED_WORKLOADS_FOR_PARTNERS = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ISR_REGIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ISR_REGIONS = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ISR_REGIONS_AND_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ISR_REGIONS_AND_SUPPORT = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CA_PROTECTED_B")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CA_PROTECTED_B = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL5")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IL5 = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IL2 = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JP_REGIONS_AND_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JP_REGIONS_AND_SUPPORT = 18,
 	}
 	
 	/// <summary>
 	/// Response for EnableResourceMonitoring endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1EnableResourceMonitoringResponse
 	{
 	}
@@ -316,8 +302,7 @@ namespace MyNS
 	/// <summary>
 	/// Response of ListViolations endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1ListViolationsResponse
 	{
 		
@@ -337,8 +322,7 @@ namespace MyNS
 	/// <summary>
 	/// Workload monitoring Violation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1Violation
 	{
 		
@@ -466,8 +450,7 @@ namespace MyNS
 	/// <summary>
 	/// Violation exception detail.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1ViolationExceptionContext
 	{
 		
@@ -493,8 +476,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents remediation guidance to resolve compliance violation for AssuredWorkload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1ViolationRemediation
 	{
 		
@@ -520,8 +502,7 @@ namespace MyNS
 	/// <summary>
 	/// Instructions to remediate violation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1ViolationRemediationInstructions
 	{
 		
@@ -541,8 +522,7 @@ namespace MyNS
 	/// <summary>
 	/// Remediation instructions to resolve violation via cloud console
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsConsole
 	{
 		
@@ -568,8 +548,7 @@ namespace MyNS
 	/// <summary>
 	/// Remediation instructions to resolve violation via gcloud cli
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsGcloud
 	{
 		
@@ -592,71 +571,64 @@ namespace MyNS
 		public string[] Steps { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMEDIATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMEDIATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMEDIATION_BOOLEAN_ORG_POLICY_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMEDIATION_BOOLEAN_ORG_POLICY_VIOLATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMEDIATION_LIST_ALLOWED_VALUES_ORG_POLICY_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMEDIATION_LIST_ALLOWED_VALUES_ORG_POLICY_VIOLATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMEDIATION_LIST_DENIED_VALUES_ORG_POLICY_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMEDIATION_LIST_DENIED_VALUES_ORG_POLICY_VIOLATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMEDIATION_RESTRICT_CMEK_CRYPTO_KEY_PROJECTS_ORG_POLICY_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMEDIATION_RESTRICT_CMEK_CRYPTO_KEY_PROJECTS_ORG_POLICY_VIOLATION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMEDIATION_RESOURCE_VIOLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMEDIATION_RESOURCE_VIOLATION = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1ViolationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOLVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOLVED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNRESOLVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNRESOLVED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCEPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCEPTION = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1ViolationViolationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIOLATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIOLATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORG_POLICY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORG_POLICY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE = 2,
 	}
 	
 	/// <summary>
 	/// Response of ListWorkloads endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1ListWorkloadsResponse
 	{
 		
@@ -676,8 +648,7 @@ namespace MyNS
 	/// <summary>
 	/// A Workload object for managing highly regulated workloads of cloud customers.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1Workload
 	{
 		
@@ -811,8 +782,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the Compliance Status of this workload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1WorkloadComplianceStatus
 	{
 		
@@ -844,8 +814,7 @@ namespace MyNS
 	/// <summary>
 	/// External key management systems(EKM) Provisioning response
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1WorkloadEkmProvisioningResponse
 	{
 		
@@ -868,90 +837,81 @@ namespace MyNS
 		public System.Nullable<GoogleCloudAssuredworkloadsV1WorkloadEkmProvisioningResponseEkmProvisioningState> EkmProvisioningState { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1WorkloadEkmProvisioningResponseEkmProvisioningErrorDomain
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EKM_PROVISIONING_ERROR_DOMAIN_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EKM_PROVISIONING_ERROR_DOMAIN_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SERVER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_SERVER_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_USER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_USER_ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_PARTNER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL_PARTNER_ERROR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMEOUT_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMEOUT_ERROR = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1WorkloadEkmProvisioningResponseEkmProvisioningErrorMapping
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EKM_PROVISIONING_ERROR_MAPPING_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EKM_PROVISIONING_ERROR_MAPPING_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_SERVICE_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_SERVICE_ACCOUNT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_METRICS_SCOPE_ADMIN_PERMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_METRICS_SCOPE_ADMIN_PERMISSION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_EKM_CONNECTION_ADMIN_PERMISSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_EKM_CONNECTION_ADMIN_PERMISSION = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1WorkloadEkmProvisioningResponseEkmProvisioningState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EKM_PROVISIONING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EKM_PROVISIONING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EKM_PROVISIONING_STATE_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EKM_PROVISIONING_STATE_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EKM_PROVISIONING_STATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EKM_PROVISIONING_STATE_FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EKM_PROVISIONING_STATE_COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EKM_PROVISIONING_STATE_COMPLETED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1WorkloadKajEnrollmentState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KAJ_ENROLLMENT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KAJ_ENROLLMENT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KAJ_ENROLLMENT_STATE_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KAJ_ENROLLMENT_STATE_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KAJ_ENROLLMENT_STATE_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KAJ_ENROLLMENT_STATE_COMPLETE = 2,
 	}
 	
 	/// <summary>
 	/// Settings specific to the Key Management Service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1WorkloadKMSSettings
 	{
 		
@@ -968,33 +928,30 @@ namespace MyNS
 		public string RotationPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1WorkloadPartner
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTNER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTNER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL_CONTROLS_BY_S3NS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCAL_CONTROLS_BY_S3NS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOVEREIGN_CONTROLS_BY_T_SYSTEMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOVEREIGN_CONTROLS_BY_T_SYSTEMS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOVEREIGN_CONTROLS_BY_SIA_MINSAIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOVEREIGN_CONTROLS_BY_SIA_MINSAIT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOVEREIGN_CONTROLS_BY_PSN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOVEREIGN_CONTROLS_BY_PSN = 4,
 	}
 	
 	/// <summary>
 	/// Permissions granted to the AW Partner SA account for the customer workload
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions
 	{
 		
@@ -1020,8 +977,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent the custom settings for the resources to be created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1WorkloadResourceSettings
 	{
 		
@@ -1044,33 +1000,30 @@ namespace MyNS
 		public System.Nullable<GoogleCloudAssuredworkloadsV1WorkloadResourceSettingsResourceType> ResourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1WorkloadResourceSettingsResourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSUMER_PROJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSUMER_PROJECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONSUMER_FOLDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONSUMER_FOLDER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCRYPTION_KEYS_PROJECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENCRYPTION_KEYS_PROJECT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEYRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEYRING = 4,
 	}
 	
 	/// <summary>
 	/// Represent the resources that are children of this Workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1WorkloadResourceInfo
 	{
 		
@@ -1090,8 +1043,7 @@ namespace MyNS
 	/// <summary>
 	/// Signed Access Approvals (SAA) enrollment response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponse
 	{
 		
@@ -1108,27 +1060,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponseSetupStatus> SetupStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponseSetupStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SETUP_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SETUP_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_COMPLETE = 2,
 	}
 	
 	/// <summary>
 	/// Request for updating permission settings for a partner workload.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1MutatePartnerPermissionsRequest
 	{
 		
@@ -1154,8 +1103,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for restricting list of available resources in Workload environment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequest
 	{
 		
@@ -1166,30 +1114,27 @@ namespace MyNS
 		public System.Nullable<GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType> RestrictionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTRICTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTRICTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_ALL_GCP_RESOURCES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_ALL_GCP_RESOURCES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALLOW_COMPLIANT_RESOURCES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALLOW_COMPLIANT_RESOURCES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPEND_COMPLIANT_RESOURCES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPEND_COMPLIANT_RESOURCES = 3,
 	}
 	
 	/// <summary>
 	/// Response for restricting the list of allowed resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesResponse
 	{
 	}
@@ -1197,8 +1142,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningListOperationsResponse
 	{
 		
@@ -1218,8 +1162,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleLongrunningOperation
 	{
 		
@@ -1257,8 +1200,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

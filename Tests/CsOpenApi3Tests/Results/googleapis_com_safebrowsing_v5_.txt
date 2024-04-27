@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The full hash identified with one or more matches.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV5FullHash
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a matching full hash. An important note about forward compatibility: new threat types and threat attributes may be added by the server at any time; those additions are considered minor version changes. It is Google's policy not to expose minor version numbers in APIs (see https://cloud.google.com/apis/design/versioning), so clients MUST be prepared to receive FullHashDetail messages containing ThreatType enum values or ThreatAttribute enum values that are considered invalid by the client. Therefore, it is the client's responsibility to check for the validity of all ThreatType and ThreatAttribute enum values; if any value is considered invalid, the client MUST disregard the entire FullHashDetail message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV5FullHashFullHashDetail
 	{
 		
@@ -59,33 +57,30 @@ namespace MyNS
 		public System.Nullable<GoogleSecuritySafebrowsingV5FullHashFullHashDetailThreatType> ThreatType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleSecuritySafebrowsingV5FullHashFullHashDetailThreatType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THREAT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THREAT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MALWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MALWARE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOCIAL_ENGINEERING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOCIAL_ENGINEERING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNWANTED_SOFTWARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNWANTED_SOFTWARE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POTENTIALLY_HARMFUL_APPLICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POTENTIALLY_HARMFUL_APPLICATION = 4,
 	}
 	
 	/// <summary>
 	/// The response returned after searching threat hashes. Note that if nothing is found, the server will return an OK status (HTTP status code 200) with the `full_hashes` field empty, rather than returning a NOT_FOUND status (HTTP status code 404).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleSecuritySafebrowsingV5SearchHashesResponse
 	{
 		

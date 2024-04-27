@@ -17,24 +17,21 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Answered
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Any")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Any = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Answered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Answered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unanswered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Unanswered = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachmentViewModel
 	{
 		
@@ -51,8 +48,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailyReportViewModel
 	{
 		
@@ -69,24 +65,21 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DailyReportViewModelHouse
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bicameral")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bicameral = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Commons")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Commons = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lords")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lords = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailyReportViewModelItem
 	{
 		
@@ -97,8 +90,7 @@ namespace MyNS
 		public DailyReportViewModel Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Link
 	{
 		
@@ -112,8 +104,7 @@ namespace MyNS
 		public string Rel { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DailyReportViewModelSearchResult
 	{
 		
@@ -124,8 +115,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GroupedQuestionViewModel
 	{
 		
@@ -136,24 +126,21 @@ namespace MyNS
 		public string QuestionUin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HouseEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bicameral")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bicameral = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Commons")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Commons = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lords")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lords = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LinkedStatements
 	{
 		
@@ -167,24 +154,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> LinkedStatementId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LinkedStatementsLinkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CorrectedStatement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CorrectedStatement = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CorrectedAnswer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CorrectedAnswer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JointStatement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JointStatement = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MemberViewModel
 	{
 		
@@ -213,8 +197,7 @@ namespace MyNS
 		public string ThumbnailUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProblemDetails
 	{
 		
@@ -234,24 +217,21 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QuestionStatusEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotAnswered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotAnswered = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AnsweredOnly")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AnsweredOnly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AllQuestions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AllQuestions = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuestionsViewModel
 	{
 		
@@ -346,8 +326,7 @@ namespace MyNS
 		public string Uin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuestionsViewModelItem
 	{
 		
@@ -358,8 +337,7 @@ namespace MyNS
 		public QuestionsViewModel Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuestionsViewModelSearchResult
 	{
 		
@@ -370,24 +348,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StatementLinkTypeEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CorrectedStatement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CorrectedStatement = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CorrectedAnswer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CorrectedAnswer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JointStatement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JointStatement = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatementsViewModel
 	{
 		
@@ -440,8 +415,7 @@ namespace MyNS
 		public string Uin { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatementsViewModelItem
 	{
 		
@@ -452,8 +426,7 @@ namespace MyNS
 		public StatementsViewModel Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatementsViewModelSearchResult
 	{
 		

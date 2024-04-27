@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>DescribeStream</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamOutput
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents all of the data describing a particular stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamDescription
 	{
 		
@@ -65,49 +63,44 @@ namespace MyNS
 		public string LastEvaluatedShardId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StreamStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StreamViewType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW_IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW_IMAGE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OLD_IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OLD_IMAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW_AND_OLD_IMAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW_AND_OLD_IMAGES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEYS_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KEYS_ONLY = 3,
 	}
 	
 	/// <summary>
 	/// <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeySchemaElement
 	{
 		
@@ -126,24 +119,21 @@ namespace MyNS
 		public KeyType KeyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum KeyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HASH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HASH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RANGE = 1,
 	}
 	
 	/// <summary>
 	/// A uniquely identified group of stream records within a stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Shard
 	{
 		
@@ -160,8 +150,7 @@ namespace MyNS
 	/// <summary>
 	/// The beginning and ending sequence numbers for the stream records contained within a shard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SequenceNumberRange
 	{
 		
@@ -175,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>DescribeStream</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeStreamInput
 	{
 		
@@ -194,14 +182,12 @@ namespace MyNS
 		public string ExclusiveStartShardId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerError
 	{
 	}
@@ -209,8 +195,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetRecords</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecordsOutput
 	{
 		
@@ -224,8 +209,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of a unique event within a stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Record
 	{
 		
@@ -251,27 +235,24 @@ namespace MyNS
 		public Identity UserIdentity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSERT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODIFY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODIFY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVE = 2,
 	}
 	
 	/// <summary>
 	/// A description of a single data modification that was performed on an item in a DynamoDB table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StreamRecord
 	{
 		
@@ -297,8 +278,7 @@ namespace MyNS
 		public StreamViewType StreamViewType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeMap
 	{
 	}
@@ -306,8 +286,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains details about the type of identity that made the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Identity
 	{
 		
@@ -321,8 +300,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>GetRecords</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecordsInput
 	{
 		
@@ -337,20 +315,17 @@ namespace MyNS
 		public System.Nullable<System.Int32> Limit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiredIteratorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TrimmedDataAccessException
 	{
 	}
@@ -358,8 +333,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>GetShardIterator</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetShardIteratorOutput
 	{
 		
@@ -370,8 +344,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>GetShardIterator</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetShardIteratorInput
 	{
 		
@@ -400,30 +373,27 @@ namespace MyNS
 		public string SequenceNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ShardIteratorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIM_HORIZON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRIM_HORIZON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LATEST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AT_SEQUENCE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AT_SEQUENCE_NUMBER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFTER_SEQUENCE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AFTER_SEQUENCE_NUMBER = 3,
 	}
 	
 	/// <summary>
 	/// Represents the output of a <code>ListStreams</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStreamsOutput
 	{
 		
@@ -437,8 +407,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents all of the data describing a particular stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Stream
 	{
 		
@@ -455,8 +424,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the input of a <code>ListStreams</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListStreamsInput
 	{
 		
@@ -473,8 +441,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Represents the data for an attribute.</p> <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeValue
 	{
 		
@@ -509,8 +476,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> BOOL { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapAttributeValue
 	{
 	}

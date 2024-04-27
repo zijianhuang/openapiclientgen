@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The color derived from BadgeConfig and changed to the closest recommended supported color.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaBadgeColors
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ...
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeColor
 	{
 		
@@ -80,8 +78,7 @@ namespace MyNS
 	/// <summary>
 	/// Badge status of the label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaBadgeConfig
 	{
 		
@@ -101,8 +98,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes one of more Label Permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaBatchDeleteLabelPermissionsRequest
 	{
 		
@@ -122,8 +118,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes a Label Permission. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeleteLabelPermissionRequest
 	{
 		
@@ -143,8 +138,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates one or more Label Permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsRequest
 	{
 		
@@ -164,8 +158,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates a Label Permission. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaUpdateLabelPermissionRequest
 	{
 		
@@ -191,8 +184,7 @@ namespace MyNS
 	/// <summary>
 	/// The permission that applies to a principal (user, group, audience) on a label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabelPermission
 	{
 		
@@ -233,33 +225,30 @@ namespace MyNS
 		public System.Nullable<GoogleAppsDriveLabelsV2betaLabelPermissionRole> Role { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsDriveLabelsV2betaLabelPermissionRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABEL_ROLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABEL_ROLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPLIER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPLIER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDITOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDITOR = 4,
 	}
 	
 	/// <summary>
 	/// Response for updating one or more Label Permissions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsResponse
 	{
 		
@@ -273,8 +262,7 @@ namespace MyNS
 	/// <summary>
 	/// Limits for date Field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDateLimits
 	{
 		
@@ -294,8 +282,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleTypeDate
 	{
 		
@@ -321,8 +308,7 @@ namespace MyNS
 	/// <summary>
 	/// The set of requests for updating aspects of a Label. If any request is not valid, no requests will be applied.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequest
 	{
 		
@@ -360,8 +346,7 @@ namespace MyNS
 	/// <summary>
 	/// A single kind of update to apply to a Label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestRequest
 	{
 		
@@ -441,8 +426,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to create a Field within a Label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestCreateFieldRequest
 	{
 		
@@ -456,8 +440,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a field that has a display name, data type, and other configuration options. This field defines the kind of metadata that may be set on a Drive item.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaField
 	{
 		
@@ -585,8 +568,7 @@ namespace MyNS
 	/// <summary>
 	/// The capabilities related to this field on applied metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldAppliedCapabilities
 	{
 		
@@ -612,8 +594,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaUserInfo
 	{
 		
@@ -627,8 +608,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for the date field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldDateOptions
 	{
 		
@@ -657,27 +637,24 @@ namespace MyNS
 		public GoogleTypeDate MinValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsDriveLabelsV2betaFieldDateOptionsDateFormatType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_FORMAT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_FORMAT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LONG_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LONG_DATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHORT_DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHORT_DATE = 2,
 	}
 	
 	/// <summary>
 	/// UI display hints for rendering a field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldDisplayHints
 	{
 		
@@ -709,8 +686,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for the Integer field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldIntegerOptions
 	{
 		
@@ -730,8 +706,7 @@ namespace MyNS
 	/// <summary>
 	/// The lifecycle state of an object, such as label, field, or choice. The lifecycle enforces the following transitions: * `UNPUBLISHED_DRAFT` (starting state) * `UNPUBLISHED_DRAFT` -> `PUBLISHED` * `UNPUBLISHED_DRAFT` -> (Deleted) * `PUBLISHED` -> `DISABLED` * `DISABLED` -> `PUBLISHED` * `DISABLED` -> (Deleted) The published and disabled states have some distinct characteristics: * Published—Some kinds of changes might be made to an object in this state, in which case `has_unpublished_changes` will be true. Also, some kinds of changes are not permitted. Generally, any change that would invalidate or cause new restrictions on existing metadata related to the label are rejected. * Disabled—When disabled, the configured `DisabledPolicy` takes effect.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLifecycle
 	{
 		
@@ -757,8 +732,7 @@ namespace MyNS
 	/// <summary>
 	/// The policy that governs how to treat a disabled label, field, or selection choice in different contexts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLifecycleDisabledPolicy
 	{
 		
@@ -775,33 +749,30 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ShowInApply { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsDriveLabelsV2betaLifecycleState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNPUBLISHED_DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNPUBLISHED_DRAFT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 4,
 	}
 	
 	/// <summary>
 	/// Contains information about whether a label component should be considered locked.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLockStatus
 	{
 		
@@ -815,8 +786,7 @@ namespace MyNS
 	/// <summary>
 	/// The basic properties of the field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldProperties
 	{
 		
@@ -842,8 +812,7 @@ namespace MyNS
 	/// <summary>
 	/// The capabilities related to this field when editing the field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldSchemaCapabilities
 	{
 		
@@ -875,8 +844,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for the selection field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldSelectionOptions
 	{
 		
@@ -896,8 +864,7 @@ namespace MyNS
 	/// <summary>
 	/// Selection field choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoice
 	{
 		
@@ -995,8 +962,7 @@ namespace MyNS
 	/// <summary>
 	/// The capabilities related to this choice on applied metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceAppliedCapabilities
 	{
 		
@@ -1022,8 +988,7 @@ namespace MyNS
 	/// <summary>
 	/// UI display hints for rendering an option.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceDisplayHints
 	{
 		
@@ -1067,8 +1032,7 @@ namespace MyNS
 	/// <summary>
 	/// Basic properties of the choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceProperties
 	{
 		
@@ -1100,8 +1064,7 @@ namespace MyNS
 	/// <summary>
 	/// The capabilities related to this choice when editing the choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceSchemaCapabilities
 	{
 		
@@ -1133,8 +1096,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for a multi-valued variant of an associated field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldListOptions
 	{
 		
@@ -1148,8 +1110,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for the Text field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldTextOptions
 	{
 		
@@ -1169,8 +1130,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for the user field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldUserOptions
 	{
 		
@@ -1184,8 +1144,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to create a Selection Choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestCreateSelectionChoiceRequest
 	{
 		
@@ -1205,8 +1164,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to delete the Field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDeleteFieldRequest
 	{
 		
@@ -1220,8 +1178,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to delete a Choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDeleteSelectionChoiceRequest
 	{
 		
@@ -1241,8 +1198,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to disable the Field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDisableFieldRequest
 	{
 		
@@ -1268,8 +1224,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to disable a Choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDisableSelectionChoiceRequest
 	{
 		
@@ -1301,8 +1256,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to enable the Field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestEnableFieldRequest
 	{
 		
@@ -1316,8 +1270,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to enable a Choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestEnableSelectionChoiceRequest
 	{
 		
@@ -1337,8 +1290,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update Field properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateFieldPropertiesRequest
 	{
 		
@@ -1364,8 +1316,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to change the type of a Field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateFieldTypeRequest
 	{
 		
@@ -1415,8 +1366,7 @@ namespace MyNS
 	/// <summary>
 	/// Updates basic properties of a Label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateLabelPropertiesRequest
 	{
 		
@@ -1436,8 +1386,7 @@ namespace MyNS
 	/// <summary>
 	/// Basic properties of the label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabelProperties
 	{
 		
@@ -1457,8 +1406,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update a Choice properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateSelectionChoicePropertiesRequest
 	{
 		
@@ -1487,24 +1435,21 @@ namespace MyNS
 		public string UpdateMask { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABEL_VIEW_BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABEL_VIEW_BASIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABEL_VIEW_FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABEL_VIEW_FULL = 1,
 	}
 	
 	/// <summary>
 	/// Provides control over how write requests are executed. When not specified, the last write wins.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaWriteControl
 	{
 		
@@ -1518,8 +1463,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for Label update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponse
 	{
 		
@@ -1539,8 +1483,7 @@ namespace MyNS
 	/// <summary>
 	/// A single response from an update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseResponse
 	{
 		
@@ -1620,8 +1563,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following Field create.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseCreateFieldResponse
 	{
 		
@@ -1641,8 +1583,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following Selection Choice create.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseCreateSelectionChoiceResponse
 	{
 		
@@ -1662,8 +1603,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following Field delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDeleteFieldResponse
 	{
 	}
@@ -1671,8 +1611,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following Choice delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDeleteSelectionChoiceResponse
 	{
 	}
@@ -1680,8 +1619,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following Field disable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDisableFieldResponse
 	{
 	}
@@ -1689,8 +1627,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following Choice disable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDisableSelectionChoiceResponse
 	{
 	}
@@ -1698,8 +1635,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following Field enable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseEnableFieldResponse
 	{
 	}
@@ -1707,8 +1643,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following Choice enable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseEnableSelectionChoiceResponse
 	{
 	}
@@ -1716,8 +1651,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following update to Field properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateFieldPropertiesResponse
 	{
 		
@@ -1731,8 +1665,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following update to Field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateFieldTypeResponse
 	{
 	}
@@ -1740,8 +1673,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following update to Label properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateLabelPropertiesResponse
 	{
 	}
@@ -1749,8 +1681,7 @@ namespace MyNS
 	/// <summary>
 	/// Response following update to Selection Choice properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponse
 	{
 		
@@ -1764,8 +1695,7 @@ namespace MyNS
 	/// <summary>
 	/// A label defines a taxonomy that can be applied to Drive items in order to organize and search across items. Labels can be simple strings, or can contain fields that describe additional metadata that can be further used to organize and search Drive items.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabel
 	{
 		
@@ -1905,8 +1835,7 @@ namespace MyNS
 	/// <summary>
 	/// The capabilities a user has on this label's applied metadata.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabelAppliedCapabilities
 	{
 		
@@ -1932,8 +1861,7 @@ namespace MyNS
 	/// <summary>
 	/// Behavior of this label when it's applied to Drive items.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabelAppliedLabelPolicy
 	{
 		
@@ -1944,30 +1872,27 @@ namespace MyNS
 		public System.Nullable<GoogleAppsDriveLabelsV2betaLabelAppliedLabelPolicyCopyMode> CopyMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsDriveLabelsV2betaLabelAppliedLabelPolicyCopyMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPY_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPY_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DO_NOT_COPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DO_NOT_COPY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALWAYS_COPY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALWAYS_COPY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPY_APPLIABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPY_APPLIABLE = 3,
 	}
 	
 	/// <summary>
 	/// UI display hints for rendering the label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabelDisplayHints
 	{
 		
@@ -1996,30 +1921,27 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ShownInApply { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsDriveLabelsV2betaLabelLabelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LABEL_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LABEL_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHARED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHARED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOOGLE_APP = 3,
 	}
 	
 	/// <summary>
 	/// The capabilities related to this label when editing the label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabelSchemaCapabilities
 	{
 		
@@ -2051,8 +1973,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to deprecate a published Label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaDisableLabelRequest
 	{
 		
@@ -2090,8 +2011,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to enable a label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaEnableLabelRequest
 	{
 		
@@ -2117,8 +2037,7 @@ namespace MyNS
 	/// <summary>
 	/// Field constants governing the structure of a Field; such as, the maximum title length, minimum and maximum field values or length, etc.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaFieldLimits
 	{
 		
@@ -2180,8 +2099,7 @@ namespace MyNS
 	/// <summary>
 	/// Limits for integer Field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaIntegerLimits
 	{
 		
@@ -2201,8 +2119,7 @@ namespace MyNS
 	/// <summary>
 	/// Limits for long text Field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLongTextLimits
 	{
 		
@@ -2222,8 +2139,7 @@ namespace MyNS
 	/// <summary>
 	/// Limits for selection Field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaSelectionLimits
 	{
 		
@@ -2261,8 +2177,7 @@ namespace MyNS
 	/// <summary>
 	/// Limits for list-variant of a Field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaListLimits
 	{
 		
@@ -2276,8 +2191,7 @@ namespace MyNS
 	/// <summary>
 	/// Limits for text Field type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaTextLimits
 	{
 		
@@ -2297,8 +2211,7 @@ namespace MyNS
 	/// <summary>
 	/// Limits for Field.Type.USER.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaUserLimits
 	{
 		
@@ -2312,8 +2225,7 @@ namespace MyNS
 	/// <summary>
 	/// Label constraints governing the structure of a Label; such as, the maximum number of Fields allowed and maximum length of the label title.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabelLimits
 	{
 		
@@ -2363,8 +2275,7 @@ namespace MyNS
 	/// <summary>
 	/// A Lock that can be applied to a Label, Field, or Choice.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabelLock
 	{
 		
@@ -2420,8 +2331,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of a user's capabilities on a LabelLock.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaLabelLockCapabilities
 	{
 		
@@ -2432,27 +2342,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> CanViewPolicy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsDriveLabelsV2betaLabelLockState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 2,
 	}
 	
 	/// <summary>
 	/// The response to a ListLabelLocksRequest.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaListLabelLocksResponse
 	{
 		
@@ -2472,8 +2379,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for listing the permissions on a Label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaListLabelPermissionsResponse
 	{
 		
@@ -2493,8 +2399,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for listing Labels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaListLabelsResponse
 	{
 		
@@ -2514,8 +2419,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to publish a label.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaPublishLabelRequest
 	{
 		
@@ -2541,8 +2445,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update the `CopyMode` of the given Label. Changes to this policy are not revisioned, do not require publishing, and take effect immediately. \
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaUpdateLabelCopyModeRequest
 	{
 		
@@ -2574,8 +2477,7 @@ namespace MyNS
 	/// <summary>
 	/// The capabilities of a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsDriveLabelsV2betaUserCapabilities
 	{
 		
@@ -2613,8 +2515,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

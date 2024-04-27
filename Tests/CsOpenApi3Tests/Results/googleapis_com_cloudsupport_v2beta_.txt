@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An Actor represents an entity that performed an action. For example, an actor could be a user who posted a comment on a support case, a user who uploaded an attachment, or a service account that created a support case.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Actor
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// An Attachment contains metadata about a file that was uploaded to a case - it is NOT a file itself. That being said, the name of an Attachment object can be used to download its accompanying file through the `media.download` endpoint. While attachments can be uploaded in the console at the same time as a comment, they're associated on a "case" level, not a "comment" level.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attachment
 	{
 		
@@ -98,8 +96,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Blobstore2Info
 	{
 		
@@ -137,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// A Case is an object that contains the details of a support case. It contains fields for the time it was created, its priority, its classification, and more. Cases can also have comments and attachments that get added over time. A case is parented by a Google Cloud organization or project. Organizations are identified by a number, so the name of a case parented by an organization would look like this: ``` organizations/123/cases/456 ``` Projects have two unique identifiers, an ID and a number, and they look like this: ``` projects/abc/cases/456 ``` ``` projects/123/cases/456 ``` You can use either of them when calling the API. To learn more about project identifiers, see [AIP-2510](https://google.aip.dev/cloud/2510).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Case
 	{
 		
@@ -242,8 +238,7 @@ namespace MyNS
 	/// <summary>
 	/// A Case Classification represents the topic that a case is about. It's very important to use accurate classifications, because they're used to route your cases to specialists who can help you. A classification always has an ID that is its unique identifier. A valid ID is required when creating a case.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaseClassification
 	{
 		
@@ -260,86 +255,79 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CasePriority
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIORITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIORITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P0 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P1 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P2 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P3 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P4 = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseSeverity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEVERITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEVERITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S0")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S0 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S1 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S2 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S3 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S4")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S4 = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CaseState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS_GOOGLE_SUPPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS_GOOGLE_SUPPORT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_REQUIRED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLUTION_PROVIDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLUTION_PROVIDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSED = 5,
 	}
 	
 	/// <summary>
 	/// The request message for the CloseCase endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloseCaseRequest
 	{
 	}
@@ -347,8 +335,7 @@ namespace MyNS
 	/// <summary>
 	/// Case comments are the main way Google Support communicates with a user who has opened a case. When a user responds to Google Support, the user's responses also appear as comments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Comment
 	{
 		
@@ -386,8 +373,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompositeMedia
 	{
 		
@@ -461,8 +447,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjectId
 	{
 		
@@ -485,33 +470,30 @@ namespace MyNS
 		public string ObjectName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompositeMediaReferenceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOB_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOB_REF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INLINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGSTORE_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGSTORE_REF = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COSMO_BINARY_REFERENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COSMO_BINARY_REFERENCE = 4,
 	}
 	
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContentTypeInfo
 	{
 		
@@ -549,8 +531,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for the CreateAttachment endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAttachmentRequest
 	{
 		
@@ -564,8 +545,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiffChecksumsResponse
 	{
 		
@@ -603,8 +583,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiffDownloadResponse
 	{
 		
@@ -618,8 +597,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiffUploadRequest
 	{
 		
@@ -645,8 +623,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiffUploadResponse
 	{
 		
@@ -666,8 +643,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DiffVersionResponse
 	{
 		
@@ -687,8 +663,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DownloadParameters
 	{
 		
@@ -708,8 +683,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for the EscalateCase endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EscalateCaseRequest
 	{
 		
@@ -723,8 +697,7 @@ namespace MyNS
 	/// <summary>
 	/// An escalation of a support case.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Escalation
 	{
 		
@@ -741,30 +714,27 @@ namespace MyNS
 		public System.Nullable<EscalationReason> Reason { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EscalationReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOLUTION_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOLUTION_TIME = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TECHNICAL_EXPERTISE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TECHNICAL_EXPERTISE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUSINESS_IMPACT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUSINESS_IMPACT = 3,
 	}
 	
 	/// <summary>
 	/// The response message for the ListAttachments endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAttachmentsResponse
 	{
 		
@@ -784,8 +754,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for the ListCases endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCasesResponse
 	{
 		
@@ -805,8 +774,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for the ListComments endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCommentsResponse
 	{
 		
@@ -826,8 +794,7 @@ namespace MyNS
 	/// <summary>
 	/// # gdata.* are outside protos with mising documentation
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Media
 	{
 		
@@ -1012,57 +979,54 @@ namespace MyNS
 		public string Token { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediaReferenceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PATH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOB_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLOB_REF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INLINE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET_MEDIA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPOSITE_MEDIA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPOSITE_MEDIA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGSTORE_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGSTORE_REF = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_VERSION_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_VERSION_RESPONSE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_CHECKSUMS_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_CHECKSUMS_RESPONSE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_DOWNLOAD_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_DOWNLOAD_RESPONSE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_UPLOAD_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_UPLOAD_REQUEST = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIFF_UPLOAD_RESPONSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIFF_UPLOAD_RESPONSE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COSMO_BINARY_REFERENCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COSMO_BINARY_REFERENCE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ARBITRARY_BYTES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ARBITRARY_BYTES = 12,
 	}
 	
 	/// <summary>
 	/// The response message for SearchCaseClassifications endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchCaseClassificationsResponse
 	{
 		
@@ -1082,8 +1046,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for the SearchCases endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchCasesResponse
 	{
 		
@@ -1103,8 +1066,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata about the operation. Used to lookup the current status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WorkflowOperationMetadata
 	{
 		
@@ -1127,38 +1089,34 @@ namespace MyNS
 		public System.Nullable<WorkflowOperationMetadataWorkflowOperationType> WorkflowOperationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkflowOperationMetadataOperationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_ACTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_ACTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_SUPPORT_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_SUPPORT_ACCOUNT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_SUPPORT_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_SUPPORT_ACCOUNT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PURCHASE_SUPPORT_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PURCHASE_SUPPORT_ACCOUNT = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WorkflowOperationMetadataWorkflowOperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_OPERATION_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_OPERATION_TYPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKFLOWS_V1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKFLOWS_V1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WORKFLOWS_V2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WORKFLOWS_V2 = 2,
 	}
 	

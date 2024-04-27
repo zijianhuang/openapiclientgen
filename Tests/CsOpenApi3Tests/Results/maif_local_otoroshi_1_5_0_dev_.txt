@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An Otoroshi Api Key. An Api Key is defined for a group of services to allow usage of the same Api Key for multiple services.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiKey
 	{
 		
@@ -93,8 +92,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for Auth0 domain
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Auth0Config
 	{
 		
@@ -134,8 +132,7 @@ namespace MyNS
 	/// <summary>
 	/// An HTTP response that is not supposed to be returned by a service
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadResponse
 	{
 		
@@ -167,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for bad requests injection fault
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadResponsesFaultConfig
 	{
 		
@@ -192,8 +188,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of the canary mode for a service descriptor
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Canary
 	{
 		
@@ -233,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// A Target is where an HTTP call will be forwarded in the end from a service domain
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Target
 	{
 		
@@ -258,8 +252,7 @@ namespace MyNS
 	/// <summary>
 	/// A SSL/TLS X509 certificate
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Certificate
 	{
 		
@@ -363,8 +356,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for the faults that can be injected in requests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChaosConfig
 	{
 		
@@ -404,8 +396,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for large request injection fault
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LargeRequestFaultConfig
 	{
 		
@@ -429,8 +420,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for large response injection fault
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LargeResponseFaultConfig
 	{
 		
@@ -452,8 +442,7 @@ namespace MyNS
 	/// <summary>
 	/// Config for large latency injection fault
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatencyInjectionFaultConfig
 	{
 		
@@ -485,8 +474,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for CleverCloud client
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CleverSettings
 	{
 		
@@ -534,8 +522,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of the circuit breaker for a service descriptor
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClientConfig
 	{
 		
@@ -604,8 +591,7 @@ namespace MyNS
 		public bool UseCircuitBreaker { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConsoleDataExporterConfig
 	{
 	}
@@ -613,8 +599,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for cors support
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CorsSettings
 	{
 		
@@ -683,8 +668,7 @@ namespace MyNS
 		public int MaxAge { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDataExporterConfig
 	{
 		
@@ -708,8 +692,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings to export Otorshi events
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataExporterConfig
 	{
 		
@@ -801,8 +784,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for elastic access
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticConfig
 	{
 		
@@ -855,8 +837,7 @@ namespace MyNS
 		public string User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filtering
 	{
 		
@@ -873,8 +854,7 @@ namespace MyNS
 		public string[] Include { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -895,36 +875,33 @@ namespace MyNS
 		public string Tenant { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DataExporterConfigTyp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="kafka")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		kafka = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pulsar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pulsar = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="file")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		file = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mailer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mailer = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="elastic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		elastic = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="console")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		console = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Deleted
 	{
 		
@@ -936,8 +913,7 @@ namespace MyNS
 		public bool Deleted1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Done
 	{
 		
@@ -952,8 +928,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for an EC + SHA signing algorithm
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ESAlgoSettings
 	{
 		
@@ -991,8 +966,7 @@ namespace MyNS
 	/// <summary>
 	/// Error templates for a service descriptor
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorTemplate
 	{
 		
@@ -1048,8 +1022,7 @@ namespace MyNS
 	/// <summary>
 	/// The Open API configuration for your service (if one)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExposedApi
 	{
 		
@@ -1068,8 +1041,7 @@ namespace MyNS
 		public string OpenApiDescriptorUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FileDataExporterConfig
 	{
 		
@@ -1085,8 +1057,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings to authenticate users using a generic OAuth2 provider
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenericOauth2ModuleConfig
 	{
 		
@@ -1272,8 +1243,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for an HMAC + SHA signing algorithm
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HSAlgoSettings
 	{
 		
@@ -1305,8 +1275,7 @@ namespace MyNS
 	/// <summary>
 	/// The global config object of Otoroshi, used to customize settings of the current Otoroshi instance
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalConfig
 	{
 		
@@ -1486,8 +1455,7 @@ namespace MyNS
 	/// <summary>
 	/// A callback URL where events are posted
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Webhook
 	{
 		
@@ -1511,8 +1479,7 @@ namespace MyNS
 	/// <summary>
 	/// The filtering configuration block for a service of globally.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IpFiltering
 	{
 		
@@ -1536,8 +1503,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for mailgun api client
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailerSettings
 	{
 		
@@ -1597,8 +1563,7 @@ namespace MyNS
 	/// <summary>
 	/// A JWT verifier used by multiple service descriptor
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GlobalJwtVerifier
 	{
 		
@@ -1667,8 +1632,7 @@ namespace MyNS
 	/// <summary>
 	/// JWT location in a query param
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InQueryParam
 	{
 		
@@ -1692,8 +1656,7 @@ namespace MyNS
 	/// <summary>
 	/// Strategy where only signature and field values are verified
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PassThrough
 	{
 		
@@ -1717,8 +1680,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings to verify the value of JWT token fields
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerificationSettings
 	{
 		
@@ -1740,8 +1702,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings to change fields of a JWT token
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MappingSettings
 	{
 		
@@ -1773,8 +1734,7 @@ namespace MyNS
 	/// <summary>
 	/// An Otoroshi service group is just a group of service descriptor. It is useful to be able to define Api Keys for the whole group
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group
 	{
 		
@@ -1804,8 +1764,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for gzip of service responses
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Gzip
 	{
 		
@@ -1869,8 +1828,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for checking health of a service. Otoroshi will perform GET call on the URL to check if the service is still alive
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HealthCheck
 	{
 		
@@ -1892,8 +1850,7 @@ namespace MyNS
 	/// <summary>
 	/// The structure that can be imported to or exported from Otoroshi. It represent the memory state of Otoroshi
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportExport
 	{
 		
@@ -2446,8 +2403,7 @@ namespace MyNS
 	/// <summary>
 	/// A JWT verifier used only for the current service descriptor
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocalJwtVerifier
 	{
 		
@@ -2500,8 +2456,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for redirection per service
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedirectionSettings
 	{
 		
@@ -2533,8 +2488,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for statsd metrics push
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatsdConfig
 	{
 		
@@ -2628,8 +2582,7 @@ namespace MyNS
 	/// <summary>
 	/// Global stats for the current Otoroshi instances
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportExportStats
 	{
 		
@@ -2661,8 +2614,7 @@ namespace MyNS
 	/// <summary>
 	/// JWT location in a cookie
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InCookie
 	{
 		
@@ -2686,8 +2638,7 @@ namespace MyNS
 	/// <summary>
 	/// JWT location in a header
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InHeader
 	{
 		
@@ -2719,8 +2670,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings to authenticate users using the in memory user store
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InMemoryAuthModuleConfig
 	{
 		
@@ -2776,8 +2726,7 @@ namespace MyNS
 	/// <summary>
 	/// A user
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InMemoryUser
 	{
 		
@@ -2817,8 +2766,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for a JWK set
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JWKSAlgoSettings
 	{
 		
@@ -2864,8 +2812,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for kafka access
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KafkaConfig
 	{
 		
@@ -2905,8 +2852,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings to authenticate users using a generic OAuth2 provider
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LdapAuthModuleConfig
 	{
 		
@@ -3032,8 +2978,7 @@ namespace MyNS
 	/// <summary>
 	/// A user
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LdapUser
 	{
 		
@@ -3062,8 +3007,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailerConsoleExporterConfig
 	{
 		
@@ -3074,18 +3018,15 @@ namespace MyNS
 		public System.Nullable<MailerConsoleExporterConfigType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MailerConsoleExporterConfigType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="generic")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		generic = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailerGenericExporterConfig
 	{
 		
@@ -3116,8 +3057,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailerMailgunExporterConfig
 	{
 		
@@ -3154,18 +3094,15 @@ namespace MyNS
 		public MailerMailgunExporterConfigType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MailerMailgunExporterConfigType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mailgun")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mailgun = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailerMailjetExporterConfig
 	{
 		
@@ -3196,18 +3133,15 @@ namespace MyNS
 		public MailerMailjetExporterConfigType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MailerMailjetExporterConfigType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mailjet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mailjet = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MailerSendgridExporterConfig
 	{
 		
@@ -3232,21 +3166,18 @@ namespace MyNS
 		public MailerSendgridExporterConfigType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MailerSendgridExporterConfigType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sendgrid")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sendgrid = 0,
 	}
 	
 	/// <summary>
 	/// The structure that represent current Otoroshi health
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OtoroshiHealth
 	{
 		
@@ -3265,43 +3196,38 @@ namespace MyNS
 		public OtoroshiHealthOtoroshi Otoroshi { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OtoroshiHealthDatastore
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="healthy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		healthy = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unhealthy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unhealthy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unreachable")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unreachable = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OtoroshiHealthOtoroshi
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="healthy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		healthy = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unhealthy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unhealthy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="down")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		down = 2,
 	}
 	
 	/// <summary>
 	/// An outage by the Snow Monkey on a service
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Outage
 	{
 		
@@ -3338,21 +3264,18 @@ namespace MyNS
 		public string Until { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutageStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneServicePerGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OneServicePerGroup = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AllServicesPerGroup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AllServicesPerGroup = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchElement
 	{
 		
@@ -3374,33 +3297,30 @@ namespace MyNS
 		public object Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchElementOp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		add = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="replace")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		replace = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="remove")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		remove = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="copy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		copy = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="test")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		test = 4,
 	}
 	
 	/// <summary>
 	/// The configuration for kafka access
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PulsarDataExporterConfig
 	{
 		
@@ -3440,8 +3360,7 @@ namespace MyNS
 	/// <summary>
 	/// Quotas state for an api key on a service group
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Quotas
 	{
 		
@@ -3521,8 +3440,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for an HMAC + SHA signing algorithm
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RSAlgoSettings
 	{
 		
@@ -3560,8 +3478,7 @@ namespace MyNS
 	/// <summary>
 	/// Reference to a global JWT verifier
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RefJwtVerifier
 	{
 		
@@ -3593,8 +3510,7 @@ namespace MyNS
 	/// <summary>
 	/// A script to transformer otoroshi requests 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Script
 	{
 		
@@ -3634,8 +3550,7 @@ namespace MyNS
 	/// <summary>
 	/// The error of the compilation of a Script
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScriptCompilationError
 	{
 		
@@ -3683,8 +3598,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of the compilation of a Script
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScriptCompilationResult
 	{
 		
@@ -3706,8 +3620,7 @@ namespace MyNS
 	/// <summary>
 	/// An otoroshi service descriptor. Represent a forward HTTP call on a domain to another location with some optional api management mecanism
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Service
 	{
 		
@@ -4001,8 +3914,7 @@ namespace MyNS
 	/// <summary>
 	/// Strategy where signature and field values are verified, and then token si re-signed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Sign
 	{
 		
@@ -4033,8 +3945,7 @@ namespace MyNS
 	/// <summary>
 	/// Administrator using just login/password tuple to access Otoroshi
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleAdmin
 	{
 		
@@ -4074,8 +3985,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for the faults that can be injected in requests. The name Snow Monkey is an hommage to Netflix's Chaos Monkey 😉
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnowMonkeyConfig
 	{
 		
@@ -4170,8 +4080,7 @@ namespace MyNS
 	/// <summary>
 	/// Live stats for a service or globally
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Stats
 	{
 		
@@ -4251,8 +4160,7 @@ namespace MyNS
 	/// <summary>
 	/// Strategy where signature and field values are verified, trasnformed and then token si re-signed
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Transform
 	{
 		
@@ -4289,8 +4197,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings to transform a JWT token and its location
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransformSettings
 	{
 		
@@ -4313,8 +4220,7 @@ namespace MyNS
 	/// <summary>
 	/// Administrator using FIDO U2F device to access Otoroshi
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class U2FAdmin
 	{
 		
@@ -4362,8 +4268,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings to access a validation authority server
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationAuthority
 	{
 		
@@ -4475,8 +4380,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for webhook
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WhebhookConfig
 	{
 		
@@ -8313,9 +8217,7 @@ namespace MyNS
 		public System.Nullable<DeletebulkDataExporterConfigReturnStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeletebulkDataExporterConfigReturnStatus
 	{
 		

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Authorization defines the On-Prem cluster authorization configuration to bootstrap onto the admin cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Authorization
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// ClusterUser configures user principals for an RBAC policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClusterUser
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminApiServerArgument represents an arg name->value pair. Only a subset of customized flags are supported. Please refer to the API server documentation below to know the exact format: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminApiServerArgument
 	{
 		
@@ -71,8 +68,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource that represents a bare metal admin cluster. LINT.IfChange
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminCluster
 	{
 		
@@ -254,8 +250,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for Binary Authorization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BinaryAuthorization
 	{
 		
@@ -266,27 +261,24 @@ namespace MyNS
 		public System.Nullable<BinaryAuthorizationEvaluationMode> EvaluationMode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BinaryAuthorizationEvaluationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVALUATION_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVALUATION_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECT_SINGLETON_POLICY_ENFORCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROJECT_SINGLETON_POLICY_ENFORCE = 2,
 	}
 	
 	/// <summary>
 	/// BareMetalAdminClusterOperationsConfig specifies the admin cluster's observability infrastructure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminClusterOperationsConfig
 	{
 		
@@ -300,8 +292,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminControlPlaneConfig specifies the control plane configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminControlPlaneConfig
 	{
 		
@@ -321,8 +312,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminControlPlaneNodePoolConfig specifies the control plane node pool configuration. We have a control plane specific node pool config so that we can flexible about supporting control plane specific fields in the future.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminControlPlaneNodePoolConfig
 	{
 		
@@ -336,8 +326,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalNodePoolConfig describes the configuration of all nodes within a given bare metal node pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalNodePoolConfig
 	{
 		
@@ -375,8 +364,7 @@ namespace MyNS
 	/// <summary>
 	/// KubeletConfig defines the modifiable kubelet configurations for bare metal machines. Note: this list includes fields supported in GKE (see https://cloud.google.com/kubernetes-engine/docs/how-to/node-system-config#kubelet-options).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalKubeletConfig
 	{
 		
@@ -402,8 +390,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalNodeConfig lists machine addresses to access Nodes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalNodeConfig
 	{
 		
@@ -420,24 +407,21 @@ namespace MyNS
 		public string NodeIp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BareMetalNodePoolConfigOperatingSystem
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATING_SYSTEM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATING_SYSTEM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINUX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINUX = 1,
 	}
 	
 	/// <summary>
 	/// NodeTaint applied to every Kubernetes node in a node pool. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes. Node taints are permanent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeTaint
 	{
 		
@@ -460,30 +444,27 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NodeTaintEffect
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFFECT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EFFECT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_SCHEDULE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_SCHEDULE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFER_NO_SCHEDULE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFER_NO_SCHEDULE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_EXECUTE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_EXECUTE = 3,
 	}
 	
 	/// <summary>
 	/// Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ##
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Fleet
 	{
 		
@@ -497,8 +478,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminLoadBalancerConfig specifies the load balancer configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminLoadBalancerConfig
 	{
 		
@@ -524,8 +504,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminManualLbConfig represents configuration parameters for a manual load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminManualLbConfig
 	{
 		
@@ -539,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminPortConfig is the specification of load balancer ports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminPortConfig
 	{
 		
@@ -554,8 +532,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminVipConfig for bare metal load balancer configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminVipConfig
 	{
 		
@@ -569,8 +546,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminMaintenanceConfig specifies configurations to put bare metal Admin cluster CRs nodes in and out of maintenance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminMaintenanceConfig
 	{
 		
@@ -584,8 +560,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminMaintenanceStatus represents the maintenance status for bare metal Admin cluster CR's nodes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminMaintenanceStatus
 	{
 		
@@ -599,8 +574,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminMachineDrainStatus represents the status of bare metal node machines that are undergoing drain operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminMachineDrainStatus
 	{
 		
@@ -620,8 +594,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminDrainedMachine represents the machines that are drained.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminDrainedMachine
 	{
 		
@@ -635,8 +608,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminDrainingMachine represents the machines that are currently draining.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminDrainingMachine
 	{
 		
@@ -656,8 +628,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminNetworkConfig specifies the cluster network configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminNetworkConfig
 	{
 		
@@ -671,8 +642,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminIslandModeCidrConfig specifies the cluster CIDR configuration while running in island mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminIslandModeCidrConfig
 	{
 		
@@ -692,8 +662,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the node access related settings for the bare metal admin cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminNodeAccessConfig
 	{
 		
@@ -707,8 +676,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminWorkloadNodeConfig specifies the workload node configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminWorkloadNodeConfig
 	{
 		
@@ -722,8 +690,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies operating system operation settings for cluster provisioning.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminOsEnvironmentConfig
 	{
 		
@@ -737,8 +704,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalAdminProxyConfig specifies the cluster proxy configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminProxyConfig
 	{
 		
@@ -758,8 +724,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the security related settings for the bare metal admin cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminSecurityConfig
 	{
 		
@@ -770,39 +735,36 @@ namespace MyNS
 		public Authorization Authorization { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BareMetalAdminClusterState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECONCILING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECONCILING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOPPING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEGRADED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEGRADED = 6,
 	}
 	
 	/// <summary>
 	/// ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceStatus
 	{
 		
@@ -822,8 +784,7 @@ namespace MyNS
 	/// <summary>
 	/// ResourceCondition provides a standard mechanism for higher-level status reporting from controller.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceCondition
 	{
 		
@@ -858,30 +819,27 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ResourceConditionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_TRUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_TRUE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_FALSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_FALSE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNKNOWN = 3,
 	}
 	
 	/// <summary>
 	/// BareMetalAdminStorageConfig specifies the cluster storage configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalAdminStorageConfig
 	{
 		
@@ -901,8 +859,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configs for local persistent volumes (PVs).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalLvpConfig
 	{
 		
@@ -922,8 +879,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configs for local persistent volumes under a shared file system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalLvpShareConfig
 	{
 		
@@ -943,8 +899,7 @@ namespace MyNS
 	/// <summary>
 	/// ValidationCheck represents the result of preflight check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationCheck
 	{
 		
@@ -967,43 +922,38 @@ namespace MyNS
 		public ValidationCheckStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValidationCheckOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPTIONS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPTIONS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIP_VALIDATION_CHECK_BLOCKING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIP_VALIDATION_CHECK_BLOCKING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SKIP_VALIDATION_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SKIP_VALIDATION_ALL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValidationCheckScenario
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCENARIO_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCENARIO_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 2,
 	}
 	
 	/// <summary>
 	/// ValidationCheckStatus defines the detailed validation check status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationCheckStatus
 	{
 		
@@ -1017,8 +967,7 @@ namespace MyNS
 	/// <summary>
 	/// ValidationCheckResult defines the details about the validation check.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationCheckResult
 	{
 		
@@ -1053,33 +1002,30 @@ namespace MyNS
 		public System.Nullable<ValidationCheckResultState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ValidationCheckResultState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_FAILURE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_SKIPPED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_SKIPPED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_FATAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_FATAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_WARNING = 4,
 	}
 	
 	/// <summary>
 	/// Represents an arg name->value pair. Only a subset of customized flags are supported. For the exact format, refer to the [API server documentation](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalApiServerArgument
 	{
 		
@@ -1099,8 +1045,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalBgpLbConfig represents configuration parameters for a Border Gateway Protocol (BGP) load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalBgpLbConfig
 	{
 		
@@ -1132,8 +1077,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an IP pool used by the load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalLoadBalancerAddressPool
 	{
 		
@@ -1165,8 +1109,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalBgpPeerConfig represents configuration parameters for a Border Gateway Protocol (BGP) peer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalBgpPeerConfig
 	{
 		
@@ -1192,8 +1135,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the load balancer's node pool configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalLoadBalancerNodePoolConfig
 	{
 		
@@ -1207,8 +1149,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource that represents a bare metal user cluster. LINT.IfChange
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalCluster
 	{
 		
@@ -1408,8 +1349,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the bare metal user cluster's observability infrastructure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalClusterOperationsConfig
 	{
 		
@@ -1423,8 +1363,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the control plane configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalControlPlaneConfig
 	{
 		
@@ -1444,8 +1383,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the control plane node pool configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalControlPlaneNodePoolConfig
 	{
 		
@@ -1459,8 +1397,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the load balancer configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalLoadBalancerConfig
 	{
 		
@@ -1498,8 +1435,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents configuration parameters for a manual load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalManualLbConfig
 	{
 		
@@ -1513,8 +1449,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents configuration parameters for a MetalLB load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalMetalLbConfig
 	{
 		
@@ -1534,8 +1469,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies load balancer ports for the bare metal user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalPortConfig
 	{
 		
@@ -1549,8 +1483,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the VIP config for the bare metal load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalVipConfig
 	{
 		
@@ -1570,8 +1503,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies configurations to put bare metal nodes in and out of maintenance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalMaintenanceConfig
 	{
 		
@@ -1585,8 +1517,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the maintenance status of the bare metal user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalMaintenanceStatus
 	{
 		
@@ -1600,8 +1531,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the status of node machines that are undergoing drain operations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalMachineDrainStatus
 	{
 		
@@ -1621,8 +1551,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a machine that is currently drained.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalDrainedMachine
 	{
 		
@@ -1636,8 +1565,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a machine that is currently draining.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalDrainingMachine
 	{
 		
@@ -1657,8 +1585,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the cluster network configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalNetworkConfig
 	{
 		
@@ -1690,8 +1617,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the cluster CIDR configuration while running in island mode.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalIslandModeCidrConfig
 	{
 		
@@ -1711,8 +1637,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the multiple networking interfaces cluster configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalMultipleNetworkInterfacesConfig
 	{
 		
@@ -1726,8 +1651,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the SR-IOV networking operator config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalSrIovConfig
 	{
 		
@@ -1741,8 +1665,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the node access related settings for the bare metal user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalNodeAccessConfig
 	{
 		
@@ -1756,8 +1679,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the workload node configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalWorkloadNodeConfig
 	{
 		
@@ -1774,24 +1696,21 @@ namespace MyNS
 		public string MaxPodsPerNode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BareMetalWorkloadNodeConfigContainerRuntime
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINER_RUNTIME_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINER_RUNTIME_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINERD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINERD = 1,
 	}
 	
 	/// <summary>
 	/// Specifies operating system settings for cluster provisioning.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalOsEnvironmentConfig
 	{
 		
@@ -1805,8 +1724,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the cluster proxy configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalProxyConfig
 	{
 		
@@ -1826,8 +1744,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the security related settings for the bare metal user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalSecurityConfig
 	{
 		
@@ -1841,8 +1758,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalStorageConfig specifies the cluster storage configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalStorageConfig
 	{
 		
@@ -1862,8 +1778,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalClusterUpgradePolicy defines the cluster upgrade policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalClusterUpgradePolicy
 	{
 		
@@ -1874,27 +1789,24 @@ namespace MyNS
 		public System.Nullable<BareMetalClusterUpgradePolicyPolicy> Policy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BareMetalClusterUpgradePolicyPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODE_POOL_POLICY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODE_POOL_POLICY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERIAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONCURRENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONCURRENT = 2,
 	}
 	
 	/// <summary>
 	/// Resource that represents a bare metal node pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalNodePool
 	{
 		
@@ -1980,8 +1892,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalNodePoolUpgradePolicy defines the node pool upgrade policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalNodePoolUpgradePolicy
 	{
 		
@@ -1995,8 +1906,7 @@ namespace MyNS
 	/// <summary>
 	/// BareMetalParallelUpgradeConfig defines the parallel upgrade settings for worker node pools.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalParallelUpgradeConfig
 	{
 		
@@ -2016,8 +1926,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a specific Anthos on bare metal version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BareMetalVersionInfo
 	{
 		
@@ -2043,8 +1952,7 @@ namespace MyNS
 	/// <summary>
 	/// UpgradeDependency represents a dependency when upgrading a resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeDependency
 	{
 		
@@ -2076,8 +1984,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates `members`, or principals, with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -2103,8 +2010,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -2136,8 +2042,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message for Operations.CancelOperation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelOperationRequest
 	{
 	}
@@ -2145,8 +2050,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -2154,8 +2058,7 @@ namespace MyNS
 	/// <summary>
 	/// Message for enrolling an existing bare metal admin cluster to the GKE on-prem API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnrollBareMetalAdminClusterRequest
 	{
 		
@@ -2175,8 +2078,7 @@ namespace MyNS
 	/// <summary>
 	/// Message for enrolling an existing bare metal cluster to the Anthos On-Prem API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnrollBareMetalClusterRequest
 	{
 		
@@ -2202,8 +2104,7 @@ namespace MyNS
 	/// <summary>
 	/// Message for enrolling an existing bare metal node pool to the GKE on-prem API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnrollBareMetalNodePoolRequest
 	{
 		
@@ -2223,8 +2124,7 @@ namespace MyNS
 	/// <summary>
 	/// Message for enrolling an existing VMware admin cluster to the GKE on-prem API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnrollVmwareAdminClusterRequest
 	{
 		
@@ -2244,8 +2144,7 @@ namespace MyNS
 	/// <summary>
 	/// Message for enrolling an existing VMware cluster to the Anthos On-Prem API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnrollVmwareClusterRequest
 	{
 		
@@ -2277,8 +2176,7 @@ namespace MyNS
 	/// <summary>
 	/// Message for enrolling a VMware node pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnrollVmwareNodePoolRequest
 	{
 		
@@ -2292,8 +2190,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing bare metal admin clusters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBareMetalAdminClustersResponse
 	{
 		
@@ -2319,8 +2216,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing bare metal Clusters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBareMetalClustersResponse
 	{
 		
@@ -2346,8 +2242,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing bare metal node pools.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBareMetalNodePoolsResponse
 	{
 		
@@ -2373,8 +2268,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Locations.ListLocations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationsResponse
 	{
 		
@@ -2394,8 +2288,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource that represents a Google Cloud location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Location
 	{
 		
@@ -2433,8 +2326,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -2454,8 +2346,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -2493,8 +2384,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -2520,8 +2410,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing VMware admin clusters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVmwareAdminClustersResponse
 	{
 		
@@ -2547,8 +2436,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource that represents a VMware admin cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminCluster
 	{
 		
@@ -2712,8 +2600,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminAddonNodeConfig contains add-on node configurations for VMware admin cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminAddonNodeConfig
 	{
 		
@@ -2727,8 +2614,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents auto resizing configurations for the VMware user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAutoResizeConfig
 	{
 		
@@ -2742,8 +2628,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies anti affinity group config for the VMware user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAAGConfig
 	{
 		
@@ -2757,8 +2642,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminAuthorizationConfig represents configuration for admin cluster authorization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminAuthorizationConfig
 	{
 		
@@ -2772,8 +2656,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies config to enable/disable auto repair. The cluster-health-controller is deployed only if Enabled is true.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAutoRepairConfig
 	{
 		
@@ -2787,8 +2670,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminControlPlaneNodeConfig contains control plane node configuration for VMware admin cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminControlPlaneNodeConfig
 	{
 		
@@ -2814,8 +2696,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminLoadBalancerConfig contains load balancer configuration for VMware admin cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminLoadBalancerConfig
 	{
 		
@@ -2850,8 +2731,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminF5BigIpConfig represents configuration parameters for an F5 BIG-IP load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminF5BigIpConfig
 	{
 		
@@ -2874,8 +2754,7 @@ namespace MyNS
 		public string SnatPool { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminManualLbConfig
 	{
 		
@@ -2913,8 +2792,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminMetalLbConfig represents configuration parameters for a MetalLB load balancer. For admin clusters, currently no configurations is needed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminMetalLbConfig
 	{
 	}
@@ -2922,8 +2800,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareSeesawConfig represents configuration parameters for an already existing Seesaw load balancer. IMPORTANT: Please note that the Anthos On-Prem API will not generate or update Seesaw configurations it can only bind a pre-existing configuration to a new user cluster. IMPORTANT: When attempting to create a user cluster with a pre-existing Seesaw load balancer you will need to follow some preparation steps before calling the 'CreateVmwareCluster' API method. First you will need to create the user cluster's namespace via kubectl. The namespace will need to use the following naming convention : -gke-onprem-mgmt or -gke-onprem-mgmt depending on whether you used the 'VmwareCluster.local_name' to disambiguate collisions; for more context see the documentation of 'VmwareCluster.local_name'. Once the namespace is created you will need to create a secret resource via kubectl. This secret will contain copies of your Seesaw credentials. The Secret must be called 'user-cluster-creds' and contain Seesaw's SSH and Cert credentials. The credentials must be keyed with the following names: 'seesaw-ssh-private-key', 'seesaw-ssh-public-key', 'seesaw-ssh-ca-key', 'seesaw-ssh-ca-cert'.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminSeesawConfig
 	{
 		
@@ -2967,8 +2844,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a collection of IP addresses to assign to nodes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareIpBlock
 	{
 		
@@ -2994,8 +2870,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents VMware user cluster node's network configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareHostIp
 	{
 		
@@ -3015,8 +2890,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminVipConfig for VMware load balancer configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminVipConfig
 	{
 		
@@ -3036,8 +2910,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminNetworkConfig contains network configuration for VMware admin cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminNetworkConfig
 	{
 		
@@ -3087,8 +2960,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the network configuration required for the VMware user clusters with DHCP IP configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareDhcpIpConfig
 	{
 		
@@ -3102,8 +2974,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies HA admin control plane config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminHAControlPlaneConfig
 	{
 		
@@ -3117,8 +2988,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the common parameters for all the hosts irrespective of their IP address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareHostConfig
 	{
 		
@@ -3144,8 +3014,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the network configuration required for the VMware user clusters with Static IP configurations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareStaticIpConfig
 	{
 		
@@ -3159,8 +3028,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwarePlatformConfig represents configuration for the VMware platform.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwarePlatformConfig
 	{
 		
@@ -3192,8 +3060,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareBundleConfig represents configuration for the bundle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareBundleConfig
 	{
 		
@@ -3213,8 +3080,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminPreparedSecretsConfig represents configuration for admin cluster prepared secrets.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminPreparedSecretsConfig
 	{
 		
@@ -3228,8 +3094,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareAdminVCenterConfig contains VCenter configuration for VMware admin cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAdminVCenterConfig
 	{
 		
@@ -3291,8 +3156,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing VMware Clusters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVmwareClustersResponse
 	{
 		
@@ -3318,8 +3182,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource that represents a VMware user cluster. ##
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareCluster
 	{
 		
@@ -3513,8 +3376,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies control plane node config for the VMware user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareControlPlaneNodeConfig
 	{
 		
@@ -3552,8 +3414,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies control plane node config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareControlPlaneVsphereConfig
 	{
 		
@@ -3573,8 +3434,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains configurations for Dataplane V2, which is optimized dataplane for Kubernetes networking. For more information, see: https://cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareDataplaneV2Config
 	{
 		
@@ -3600,8 +3460,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the locad balancer config for the VMware user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareLoadBalancerConfig
 	{
 		
@@ -3639,8 +3498,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents configuration parameters for an F5 BIG-IP load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareF5BigIpConfig
 	{
 		
@@ -3666,8 +3524,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents configuration parameters for an already existing manual load balancer. Given the nature of manual load balancers it is expected that said load balancer will be fully managed by users. IMPORTANT: Please note that the Anthos On-Prem API will not generate or update ManualLB configurations it can only bind a pre-existing configuration to a new VMware user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareManualLbConfig
 	{
 		
@@ -3699,8 +3556,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents configuration parameters for the MetalLB load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareMetalLbConfig
 	{
 		
@@ -3714,8 +3570,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an IP pool used by the load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareAddressPool
 	{
 		
@@ -3747,8 +3602,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareSeesawConfig represents configuration parameters for an already existing Seesaw load balancer. IMPORTANT: Please note that the Anthos On-Prem API will not generate or update Seesaw configurations it can only bind a pre-existing configuration to a new user cluster. IMPORTANT: When attempting to create a user cluster with a pre-existing Seesaw load balancer you will need to follow some preparation steps before calling the 'CreateVmwareCluster' API method. First you will need to create the user cluster's namespace via kubectl. The namespace will need to use the following naming convention : -gke-onprem-mgmt or -gke-onprem-mgmt depending on whether you used the 'VmwareCluster.local_name' to disambiguate collisions; for more context see the documentation of 'VmwareCluster.local_name'. Once the namespace is created you will need to create a secret resource via kubectl. This secret will contain copies of your Seesaw credentials. The Secret must be called 'user-cluster-creds' and contain Seesaw's SSH and Cert credentials. The credentials must be keyed with the following names: 'seesaw-ssh-private-key', 'seesaw-ssh-public-key', 'seesaw-ssh-ca-key', 'seesaw-ssh-ca-cert'.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareSeesawConfig
 	{
 		
@@ -3792,8 +3646,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the VIP config for the VMware user cluster load balancer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareVipConfig
 	{
 		
@@ -3813,8 +3666,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies network config for the VMware user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareNetworkConfig
 	{
 		
@@ -3864,8 +3716,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies control plane V2 config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareControlPlaneV2Config
 	{
 		
@@ -3879,8 +3730,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies vSphere CSI components deployment config in the VMware user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareStorageConfig
 	{
 		
@@ -3894,8 +3744,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareClusterUpgradePolicy defines the cluster upgrade policy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareClusterUpgradePolicy
 	{
 		
@@ -3909,8 +3758,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents configuration for the VMware VCenter for the user cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareVCenterConfig
 	{
 		
@@ -3966,8 +3814,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for listing VMware node pools.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVmwareNodePoolsResponse
 	{
 		
@@ -3993,8 +3840,7 @@ namespace MyNS
 	/// <summary>
 	/// Resource VmwareNodePool represents a VMware node pool. ##
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareNodePool
 	{
 		
@@ -4086,8 +3932,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters that describe the configuration of all nodes within a given node pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareNodeConfig
 	{
 		
@@ -4155,8 +4000,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareVsphereConfig represents configuration for the VMware VCenter for node pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareVsphereConfig
 	{
 		
@@ -4182,8 +4026,7 @@ namespace MyNS
 	/// <summary>
 	/// VmwareVsphereTag describes a vSphere tag to be placed on VMs in the node pool. For more information, see https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vcenterhost.doc/GUID-E8E854DD-AA97-4E0C-8419-CE84F93C4058.html
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareVsphereTag
 	{
 		
@@ -4203,8 +4046,7 @@ namespace MyNS
 	/// <summary>
 	/// NodePoolAutoscaling config for the NodePool to allow for the kubernetes to scale NodePool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareNodePoolAutoscalingConfig
 	{
 		
@@ -4224,8 +4066,7 @@ namespace MyNS
 	/// <summary>
 	/// Progress metric is (string, int|float|string) pair.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metric
 	{
 		
@@ -4254,60 +4095,57 @@ namespace MyNS
 		public string StringValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricMetric1
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_ID_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_ID_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODES_TOTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODES_TOTAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODES_DRAINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODES_DRAINING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODES_UPGRADING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODES_UPGRADING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODES_PENDING_UPGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODES_PENDING_UPGRADE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODES_UPGRADED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODES_UPGRADED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODES_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODES_FAILED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODES_HEALTHY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODES_HEALTHY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODES_RECONCILING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODES_RECONCILING = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODES_IN_MAINTENANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODES_IN_MAINTENANCE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFLIGHTS_COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFLIGHTS_COMPLETED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFLIGHTS_RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFLIGHTS_RUNNING = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFLIGHTS_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFLIGHTS_FAILED = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFLIGHTS_TOTAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFLIGHTS_TOTAL = 13,
 	}
 	
 	/// <summary>
 	/// Represents the metadata of the long-running operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationMetadata
 	{
 		
@@ -4375,8 +4213,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about operation progress. LINT.IfChange
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationProgress
 	{
 		
@@ -4390,8 +4227,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a particular stage of an operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperationStage
 	{
 		
@@ -4426,83 +4262,76 @@ namespace MyNS
 		public System.Nullable<OperationStageState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationStageStage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STAGE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STAGE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREFLIGHT_CHECK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREFLIGHT_CHECK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIGURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIGURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPLOY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPLOY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HEALTH_CHECK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HEALTH_CHECK = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationStageState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperationMetadataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPERATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPERATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPGRADE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATFORM_UPGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATFORM_UPGRADE = 5,
 	}
 	
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -4528,8 +4357,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for querying bare metal admin cluster version config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryBareMetalAdminVersionConfigResponse
 	{
 		
@@ -4543,8 +4371,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for querying bare metal admin cluster version config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryBareMetalVersionConfigResponse
 	{
 		
@@ -4558,8 +4385,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for querying VMware user cluster version config.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryVmwareVersionConfigResponse
 	{
 		
@@ -4573,8 +4399,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains information about a specific Anthos on VMware version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VmwareVersionInfo
 	{
 		
@@ -4606,8 +4431,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `SetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIamPolicyRequest
 	{
 		
@@ -4621,8 +4445,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsRequest
 	{
 		
@@ -4636,8 +4459,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		
@@ -5835,26 +5657,26 @@ namespace MyNS
 	public enum Gkeonprem_projects_locations_vmwareClusters_vmwareNodePools_operations_getView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NODE_POOL_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NODE_POOL_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 	
 	public enum Gkeonprem_projects_locations_bareMetalAdminClusters_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLUSTER_VIEW_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLUSTER_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL = 2,
 	}
 }

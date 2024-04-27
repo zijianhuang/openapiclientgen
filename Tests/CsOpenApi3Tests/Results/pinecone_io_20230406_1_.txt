@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Collection
 	{
 		
@@ -46,8 +45,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CollectionDefinition
 	{
 		
@@ -72,8 +70,7 @@ namespace MyNS
 		public string Source { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRequest
 	{
 		
@@ -103,20 +100,17 @@ namespace MyNS
 	/// <summary>
 	/// If this parameter is present, the operation only affects vectors that satisfy the filter. See https://www.pinecone.io/docs/metadata-filtering/.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VectorFilter
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIndexStatsRequest
 	{
 		
@@ -127,8 +121,7 @@ namespace MyNS
 		public VectorFilter Filter { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIndexStatsResponse
 	{
 		
@@ -154,8 +147,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> TotalVectorCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexNamespaceStats
 	{
 		
@@ -163,9 +155,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> VectorCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Environment
 	{
 		
@@ -191,8 +181,7 @@ namespace MyNS
 		usMinuseast1Minusaws = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchRequest
 	{
 		
@@ -212,8 +201,7 @@ namespace MyNS
 		public string Namespace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FetchResponse
 	{
 		
@@ -227,8 +215,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, double[]> Vectors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Index
 	{
 		
@@ -239,8 +226,7 @@ namespace MyNS
 		public IndexStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexDatabase
 	{
 		
@@ -297,25 +283,21 @@ namespace MyNS
 		public System.Nullable<System.Int32> Shards { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexDatabaseMetric
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="euclidean")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		euclidean = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cosine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cosine = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotproduct")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dotproduct = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexDatabasePod_type
 	{
 		
@@ -356,8 +338,7 @@ namespace MyNS
 		p2_x8 = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexStatus
 	{
 		
@@ -377,30 +358,27 @@ namespace MyNS
 		public System.Nullable<IndexStatusState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexStatusState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Initializing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Initializing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ScalingUp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ScalingUp = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ScalingDown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ScalingDown = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terminating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terminating = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ready")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ready = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexConfiguration
 	{
 		
@@ -419,9 +397,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Replicas { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexConfigurationPod_type
 	{
 		
@@ -462,8 +438,7 @@ namespace MyNS
 		p2_x8 = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexDefinition
 	{
 		
@@ -534,8 +509,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration for the behavior of Pinecone's internal metadata index. By default, all metadata is indexed; when metadata_config is present, only specified metadata fields are indexed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndexMetadataConfig
 	{
 		
@@ -547,9 +521,7 @@ namespace MyNS
 		public string[] Indexed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexDefinitionPod_type
 	{
 		
@@ -593,53 +565,47 @@ namespace MyNS
 	/// <summary>
 	/// The vector similarity metric of the index
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexMetric
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="euclidean")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		euclidean = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cosine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cosine = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotproduct")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dotproduct = 2,
 	}
 	
 	/// <summary>
 	/// The current status of a index.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum IndexState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Initializing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Initializing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ScalingUp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ScalingUp = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ScalingDown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ScalingDown = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terminating")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terminating = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ready")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ready = 4,
 	}
 	
 	/// <summary>
 	/// The pod type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PodType
 	{
 		
@@ -680,8 +646,7 @@ namespace MyNS
 		p2_x8 = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryMatch
 	{
 		
@@ -712,8 +677,7 @@ namespace MyNS
 		public double[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VectorMetadata
 	{
 	}
@@ -721,8 +685,7 @@ namespace MyNS
 	/// <summary>
 	/// Vector sparse data. Represented as a list of indices and a list of corresponded values, which must be the same length.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SparseVectorData
 	{
 		
@@ -743,8 +706,7 @@ namespace MyNS
 		public double[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryRequest
 	{
 		
@@ -796,8 +758,7 @@ namespace MyNS
 		public double[] Vector { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryResponse
 	{
 		
@@ -811,8 +772,7 @@ namespace MyNS
 		public string Namespace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRequest
 	{
 		
@@ -846,14 +806,12 @@ namespace MyNS
 		public double[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpsertRequest
 	{
 		
@@ -873,8 +831,7 @@ namespace MyNS
 		public UpsertVector[] Vectors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpsertVector
 	{
 		
@@ -900,8 +857,7 @@ namespace MyNS
 		public double[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpsertResponse
 	{
 		

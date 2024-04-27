@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Achievement reset all response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementResetAllResponse
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// An achievement reset response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementResetResponse
 	{
 		
@@ -71,8 +69,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UpdateOccurred { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AchievementResetMultipleForAllRequest
 	{
 		
@@ -92,8 +89,7 @@ namespace MyNS
 	/// <summary>
 	/// Multiple events reset all request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsResetMultipleForAllRequest
 	{
 		
@@ -113,8 +109,7 @@ namespace MyNS
 	/// <summary>
 	/// 1P/3P metadata about the player's experience.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GamesPlayerExperienceInfoResource
 	{
 		
@@ -146,8 +141,7 @@ namespace MyNS
 	/// <summary>
 	/// 1P/3P metadata about a user's level.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GamesPlayerLevelResource
 	{
 		
@@ -173,8 +167,7 @@ namespace MyNS
 	/// <summary>
 	/// The HiddenPlayer resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HiddenPlayer
 	{
 		
@@ -200,8 +193,7 @@ namespace MyNS
 	/// <summary>
 	/// A Player resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Player
 	{
 		
@@ -291,8 +283,7 @@ namespace MyNS
 	/// <summary>
 	/// Profile settings
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProfileSettings
 	{
 		
@@ -309,8 +300,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of hidden players.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HiddenPlayerList
 	{
 		
@@ -336,8 +326,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of leaderboard reset resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerScoreResetAllResponse
 	{
 		
@@ -357,8 +346,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of reset leaderboard entry resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayerScoreResetResponse
 	{
 		
@@ -381,8 +369,7 @@ namespace MyNS
 		public string[] ResetScoreTimeSpans { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScoresResetMultipleForAllRequest
 	{
 		

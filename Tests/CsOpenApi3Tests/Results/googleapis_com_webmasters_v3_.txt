@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiDataRow
 	{
 		
@@ -38,8 +37,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Position { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiDimensionFilter
 	{
 		
@@ -53,8 +51,7 @@ namespace MyNS
 		public string Operator { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiDimensionFilterGroup
 	{
 		
@@ -65,8 +62,7 @@ namespace MyNS
 		public string GroupType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchAnalyticsQueryRequest
 	{
 		
@@ -132,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of rows, one per result, grouped by key. Metrics in each row are aggregated for all data grouped by that key either by page or property, as specified by the aggregation type parameter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchAnalyticsQueryResponse
 	{
 		
@@ -153,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// List of sitemaps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SitemapsListResponse
 	{
 		
@@ -168,8 +162,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains detailed information about a specific URL submitted as a sitemap.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WmxSitemap
 	{
 		
@@ -231,8 +224,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the various content types in the sitemap.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WmxSitemapContent
 	{
 		
@@ -258,8 +250,7 @@ namespace MyNS
 	/// <summary>
 	/// List of sites with access level information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SitesListResponse
 	{
 		
@@ -273,8 +264,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains permission level information about a Search Console site. For more information, see  Permissions in Search Console.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WmxSite
 	{
 		

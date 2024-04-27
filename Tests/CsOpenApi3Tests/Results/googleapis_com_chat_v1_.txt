@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// List of string parameters to supply when the action method is invoked. For example, consider three snooze buttons: snooze now, snooze one day, snooze next week. You might use `action method = snooze()`, passing the snooze type and snooze time in the list of string parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionParameter
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters that a Chat app can use to configure how its response is posted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionResponse
 	{
 		
@@ -74,8 +72,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains a [dialog](https://developers.google.com/chat/how-tos/dialogs) and request status code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DialogAction
 	{
 		
@@ -95,8 +92,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the status for a request to either invoke or submit a [dialog](https://developers.google.com/chat/how-tos/dialogs).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActionStatus
 	{
 		
@@ -113,69 +109,66 @@ namespace MyNS
 		public string UserFacingMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionStatusStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ARGUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_ARGUMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEADLINE_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEADLINE_EXCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_FOUND = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALREADY_EXISTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALREADY_EXISTS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_DENIED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAUTHENTICATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAUTHENTICATED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_EXHAUSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCE_EXHAUSTED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_PRECONDITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED_PRECONDITION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABORTED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT_OF_RANGE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIMPLEMENTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNIMPLEMENTED = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNAVAILABLE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_LOSS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_LOSS = 16,
 	}
 	
 	/// <summary>
 	/// Wrapper around the card body of the dialog.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dialog
 	{
 		
@@ -189,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// A card interface displayed in a Google Chat message or Google Workspace Add-on. Cards support a defined layout, interactive UI elements like buttons, and rich media like images. Use cards to present detailed information, gather information from users, and guide users to take a next step. [Card builder](https://addons.gsuite.google.com/uikit/builder) To learn how to build cards, see the following documentation: * For Google Chat apps, see [Design dynamic, interactive, and consistent UIs with cards](https://developers.google.com/chat/ui). * For Google Workspace Add-ons, see [Card-based interfaces](https://developers.google.com/apps-script/add-ons/concepts/cards). **Example: Card message for a Google Chat app** ![Example contact card](https://developers.google.com/chat/images/card_api_reference.png) To create the sample card message in Google Chat, use the following JSON: ``` { "cardsV2": [ { "cardId": "unique-card-id", "card": { "header": { "title": "Sasha", "subtitle": "Software Engineer", "imageUrl": "https://developers.google.com/chat/images/quickstart-app-avatar.png", "imageType": "CIRCLE", "imageAltText": "Avatar for Sasha", }, "sections": [ { "header": "Contact Info", "collapsible": true, "uncollapsibleWidgetsCount": 1, "widgets": [ { "decoratedText": { "startIcon": { "knownIcon": "EMAIL", }, "text": "sasha@example.com", } }, { "decoratedText": { "startIcon": { "knownIcon": "PERSON", }, "text": "Online", }, }, { "decoratedText": { "startIcon": { "knownIcon": "PHONE", }, "text": "+1 (555) 555-1234", } }, { "buttonList": { "buttons": [ { "text": "Share", "onClick": { "openLink": { "url": "https://example.com/share", } } }, { "text": "Edit", "onClick": { "action": { "function": "goToView", "parameters": [ { "key": "viewType", "value": "EDIT", } ], } } }, ], } }, ], }, ], }, } ], } ```
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Card
 	{
 		
@@ -246,8 +238,7 @@ namespace MyNS
 	/// <summary>
 	/// A card action is the action associated with the card. For example, an invoice card might include actions such as delete invoice, email invoice, or open the invoice in a browser. [Google Workspace Add-ons](https://developers.google.com/workspace/add-ons):
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1CardAction
 	{
 		
@@ -267,8 +258,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents how to respond when users click an interactive element on a card, such as a button.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1OnClick
 	{
 		
@@ -300,8 +290,7 @@ namespace MyNS
 	/// <summary>
 	/// An action that describes the behavior when the form is submitted. For example, you can invoke an Apps Script script to handle the form. If the action is triggered, the form values are sent to the server.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Action
 	{
 		
@@ -336,37 +325,32 @@ namespace MyNS
 		public System.Nullable<System.Boolean> PersistValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1ActionInteraction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERACTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERACTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN_DIALOG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN_DIALOG = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1ActionLoadIndicator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPINNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPINNER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 1,
 	}
 	
 	/// <summary>
 	/// List of string parameters to supply when the action method is invoked. For example, consider three snooze buttons: snooze now, snooze one day, or snooze next week. You might use `action method = snooze()`, passing the snooze type and snooze time in the list of string parameters. To learn more, see [`CommonEventObject`](https://developers.google.com/chat/api/reference/rest/v1/Event#commoneventobject).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1ActionParameter
 	{
 		
@@ -386,8 +370,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an `onClick` event that opens a hyperlink.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1OpenLink
 	{
 		
@@ -410,53 +393,46 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1OpenLinkOnClose
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTHING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELOAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELOAD = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1OpenLinkOpenAs
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL_SIZE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FULL_SIZE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVERLAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVERLAY = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1CardDisplayStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISPLAY_STYLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISPLAY_STYLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PEEK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLACE = 2,
 	}
 	
 	/// <summary>
 	/// A persistent (sticky) footer that that appears at the bottom of the card. For an example in Google Chat apps, see [Card footer](https://developers.google.com/chat/ui/widgets/card-fixed-footer). Setting `fixedFooter` without specifying a `primaryButton` or a `secondaryButton` causes an error. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend): For Chat apps, you can use fixed footers in [dialogs](https://developers.google.com/chat/how-tos/dialogs), but not [card messages](https://developers.google.com/chat/api/guides/v1/messages/create#create).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1CardFixedFooter
 	{
 		
@@ -476,8 +452,7 @@ namespace MyNS
 	/// <summary>
 	/// A text, icon, or text and icon button that users can click. For an example in Google Chat apps, see [Button list](https://developers.google.com/chat/ui/widgets/button-list). To make an image a clickable button, specify an `Image` (not an `ImageComponent`) and set an `onClick` action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Button
 	{
 		
@@ -521,8 +496,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ...
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Color
 	{
 		
@@ -554,8 +528,7 @@ namespace MyNS
 	/// <summary>
 	/// An icon displayed in a widget on a card. For an example in Google Chat apps, see [Icon](https://developers.google.com/chat/ui/widgets/icon). Supports [built-in](https://developers.google.com/chat/format-messages#builtinicons) and [custom](https://developers.google.com/chat/format-messages#customicons) icons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Icon
 	{
 		
@@ -584,24 +557,21 @@ namespace MyNS
 		public string KnownIcon { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1IconImageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SQUARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SQUARE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CIRCLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CIRCLE = 1,
 	}
 	
 	/// <summary>
 	/// Represents a card header. For an example in Google Chat apps, see [Card header](https://developers.google.com/chat/ui/widgets/card-header).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1CardHeader
 	{
 		
@@ -636,27 +606,24 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1CardSectionDividerStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIVIDER_STYLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIVIDER_STYLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOLID_DIVIDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOLID_DIVIDER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_DIVIDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_DIVIDER = 2,
 	}
 	
 	/// <summary>
 	/// A section contains a collection of widgets that are rendered vertically in the order that they're specified.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Section
 	{
 		
@@ -688,8 +655,7 @@ namespace MyNS
 	/// <summary>
 	/// Each card is made up of widgets. A widget is a composite object that can represent one of text, images, buttons, and other object types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Widget
 	{
 		
@@ -763,8 +729,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of buttons layed out horizontally. For an example in Google Chat apps, see [Button list](https://developers.google.com/chat/ui/widgets/button-list).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1ButtonList
 	{
 		
@@ -778,8 +743,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Columns` widget displays up to 2 columns in a card message or dialog. You can add widgets to each column; the widgets appear in the order that they are specified. For an example in Google Chat apps, see [Columns](https://developers.google.com/chat/ui/widgets/columns). The height of each column is determined by the taller column. For example, if the first column is taller than the second column, both columns have the height of the first column. Because each column can contain a different number of widgets, you can't define rows or align widgets between the columns. Columns are displayed side-by-side. You can customize the width of each column using the `HorizontalSizeStyle` field. If the user's screen width is too narrow, the second column wraps below the first: * On web, the second column wraps if the screen width is less than or equal to 480 pixels. * On iOS devices, the second column wraps if the screen width is less than or equal to 300 pt. * On Android devices, the second column wraps if the screen width is less than or equal to 320 dp. To include more than 2 columns, or to use rows, use the `Grid` widget. Supported by Chat apps, but not Google Workspace Add-ons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Columns
 	{
 		
@@ -793,8 +757,7 @@ namespace MyNS
 	/// <summary>
 	/// A column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Column
 	{
 		
@@ -823,65 +786,58 @@ namespace MyNS
 		public GoogleAppsCardV1Widgets[] Widgets { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1ColumnHorizontalAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HORIZONTAL_ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HORIZONTAL_ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="END")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		END = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1ColumnHorizontalSizeStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HORIZONTAL_SIZE_STYLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HORIZONTAL_SIZE_STYLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILL_AVAILABLE_SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILL_AVAILABLE_SPACE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILL_MINIMUM_SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILL_MINIMUM_SPACE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1ColumnVerticalAlignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERTICAL_ALIGNMENT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERTICAL_ALIGNMENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM = 3,
 	}
 	
 	/// <summary>
 	/// The supported widgets that you can include in a column.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Widgets
 	{
 		
@@ -931,8 +887,7 @@ namespace MyNS
 	/// <summary>
 	/// Lets users input a date, a time, or both a date and a time. For an example in Google Chat apps, see [Date time picker](https://developers.google.com/chat/ui/widgets/date-time-picker). Users can input text or use the picker to select dates and times. If users input an invalid date or time, the picker shows an error that prompts users to input the information correctly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1DateTimePicker
 	{
 		
@@ -973,27 +928,24 @@ namespace MyNS
 		public string ValueMsEpoch { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1DateTimePickerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_AND_TIME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_AND_TIME = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_ONLY = 2,
 	}
 	
 	/// <summary>
 	/// A widget that displays text with optional decorations such as a label above or below the text, an icon in front of the text, a selection widget, or a button after the text. For an example in Google Chat apps, see [Decorated text](https://developers.google.com/chat/ui/widgets/decorated-text).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1DecoratedText
 	{
 		
@@ -1061,8 +1013,7 @@ namespace MyNS
 	/// <summary>
 	/// Either a toggle-style switch or a checkbox inside a `decoratedText` widget. Only supported in the `decoratedText` widget.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1SwitchControl
 	{
 		
@@ -1097,27 +1048,24 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1SwitchControlControlType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SWITCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SWITCH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECKBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECKBOX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECK_BOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECK_BOX = 2,
 	}
 	
 	/// <summary>
 	/// An image that is specified by a URL and can have an `onClick` action. For an example, see [Image](https://developers.google.com/chat/ui/widgets/image).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Image
 	{
 		
@@ -1143,8 +1091,7 @@ namespace MyNS
 	/// <summary>
 	/// A widget that creates one or more UI items that users can select. For example, a dropdown menu or checkboxes. You can use this widget to collect data that can be predicted or enumerated. For an example in Google Chat apps, see [Selection input](https://developers.google.com/chat/ui/widgets/selection-input). Chat apps can process the value of items that users select or input. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/ui/read-form-data). To collect undefined or abstract data from users, use the TextInput widget.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1SelectionInput
 	{
 		
@@ -1206,8 +1153,7 @@ namespace MyNS
 	/// <summary>
 	/// An item that users can select in a selection input, such as a checkbox or switch.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1SelectionItem
 	{
 		
@@ -1245,8 +1191,7 @@ namespace MyNS
 	/// <summary>
 	/// Chat apps only. For a `SelectionInput` widget that uses a multiselect menu, a data source from Google Workspace. Used to populate items in a multiselect menu.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1PlatformDataSource
 	{
 		
@@ -1263,24 +1208,21 @@ namespace MyNS
 		public HostAppDataSourceMarkup HostAppDataSource { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1PlatformDataSourceCommonDataSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER = 1,
 	}
 	
 	/// <summary>
 	/// Chat apps only. For a `SelectionInput` widget that uses a multiselect menu, a data source from a Google Workspace application. The data source populates selection items for the multiselect menu.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HostAppDataSourceMarkup
 	{
 		
@@ -1294,8 +1236,7 @@ namespace MyNS
 	/// <summary>
 	/// Chat apps only. For a `SelectionInput` widget that uses a multiselect menu, a data source from Google Chat. The data source populates selection items for the multiselect menu. For example, a user can select Google Chat spaces that they're a member of.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChatClientDataSourceMarkup
 	{
 		
@@ -1309,8 +1250,7 @@ namespace MyNS
 	/// <summary>
 	/// A data source that populates Google Chat spaces as selection items for a multiselect menu. Only populates spaces that the user is a member of.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpaceDataSource
 	{
 		
@@ -1321,33 +1261,30 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DefaultToCurrentSpace { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1SelectionInputType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECK_BOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECK_BOX = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RADIO_BUTTON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RADIO_BUTTON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SWITCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SWITCH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DROPDOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DROPDOWN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTI_SELECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTI_SELECT = 4,
 	}
 	
 	/// <summary>
 	/// A field in which users can enter text. Supports suggestions and on-change actions. For an example in Google Chat apps, see [Text input](https://developers.google.com/chat/ui/widgets/text-input). Chat apps receive and can process the value of entered text during form input events. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/ui/read-form-data). When you need to collect undefined or abstract data from users, use a text input. To collect defined or enumerated data from users, use the SelectionInput widget.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1TextInput
 	{
 		
@@ -1409,8 +1346,7 @@ namespace MyNS
 	/// <summary>
 	/// Suggested values that users can enter. These values appear when users click inside the text input field. As users type, the suggested values dynamically filter to match what the users have typed. For example, a text input field for programming language might suggest Java, JavaScript, Python, and C++. When users start typing `Jav`, the list of suggestions filters to show `Java` and `JavaScript`. Suggested values help guide users to enter values that your app can make sense of. When referring to JavaScript, some users might enter `javascript` and others `java script`. Suggesting `JavaScript` can standardize how users interact with your app. When specified, `TextInput.type` is always `SINGLE_LINE`, even if it's set to `MULTIPLE_LINE`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Suggestions
 	{
 		
@@ -1424,8 +1360,7 @@ namespace MyNS
 	/// <summary>
 	/// One suggested value that users can enter in a text input field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1SuggestionItem
 	{
 		
@@ -1436,24 +1371,21 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1TextInputType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_LINE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTIPLE_LINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTIPLE_LINE = 1,
 	}
 	
 	/// <summary>
 	/// A paragraph of text that supports formatting. For an example in Google Chat apps, see [Text paragraph](https://developers.google.com/chat/ui/widgets/text-paragraph). For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1TextParagraph
 	{
 		
@@ -1467,8 +1399,7 @@ namespace MyNS
 	/// <summary>
 	/// Displays a divider between widgets as a horizontal line. For an example in Google Chat apps, see [Divider](https://developers.google.com/chat/ui/widgets/divider). For example, the following JSON creates a divider: ``` "divider": {} ```
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Divider
 	{
 	}
@@ -1476,8 +1407,7 @@ namespace MyNS
 	/// <summary>
 	/// Displays a grid with a collection of items. Items can only include text or images. For responsive columns, or to include more than text or images, use `Columns`. For an example in Google Chat apps, see [Grid](https://developers.google.com/chat/ui/widgets/grid). A grid supports any number of columns and items. The number of rows is determined by items divided by columns. A grid with 10 items and 2 columns has 5 rows. A grid with 11 items and 2 columns has 6 rows. For example, the following JSON creates a 2 column grid with a single item: ``` "grid": { "title": "A fine collection of items", "columnCount": 2, "borderStyle": { "type": "STROKE", "cornerRadius": 4 }, "items": [ { "image": { "imageUri": "https://www.example.com/image.png", "cropStyle": { "type": "SQUARE" }, "borderStyle": { "type": "STROKE" } }, "title": "An item", "textAlignment": "CENTER" } ], "onClick": { "openLink": { "url": "https://www.example.com" } } } ```
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1Grid
 	{
 		
@@ -1515,8 +1445,7 @@ namespace MyNS
 	/// <summary>
 	/// The style options for the border of a card or widget, including the border type and color.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1BorderStyle
 	{
 		
@@ -1539,27 +1468,24 @@ namespace MyNS
 		public System.Nullable<GoogleAppsCardV1BorderStyleType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1BorderStyleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BORDER_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BORDER_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_BORDER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_BORDER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STROKE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STROKE = 2,
 	}
 	
 	/// <summary>
 	/// Represents an item in a grid layout. Items can contain text, an image, or both text and an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1GridItem
 	{
 		
@@ -1597,8 +1523,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents an image.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1ImageComponent
 	{
 		
@@ -1630,8 +1555,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the crop style applied to an image. For example, here's how to apply a 16:9 aspect ratio: ``` cropStyle { "type": "RECTANGLE_CUSTOM", "aspectRatio": 16/9 } ```
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleAppsCardV1ImageCropStyle
 	{
 		
@@ -1648,77 +1572,70 @@ namespace MyNS
 		public System.Nullable<GoogleAppsCardV1ImageCropStyleType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1ImageCropStyleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_CROP_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_CROP_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SQUARE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SQUARE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CIRCLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CIRCLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECTANGLE_CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECTANGLE_CUSTOM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECTANGLE_4_3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECTANGLE_4_3 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleAppsCardV1GridItemLayout
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRID_ITEM_LAYOUT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRID_ITEM_LAYOUT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_BELOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_BELOW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_ABOVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_ABOVE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionResponseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEW_MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEW_MESSAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_MESSAGE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_USER_MESSAGE_CARDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_USER_MESSAGE_CARDS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST_CONFIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST_CONFIG = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIALOG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIALOG = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_WIDGET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_WIDGET = 6,
 	}
 	
 	/// <summary>
 	/// The response of the updated widget. Used to provide autocomplete options for a widget.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatedWidget
 	{
 		
@@ -1738,8 +1655,7 @@ namespace MyNS
 	/// <summary>
 	/// List of widget autocomplete results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SelectionItems
 	{
 		
@@ -1753,8 +1669,7 @@ namespace MyNS
 	/// <summary>
 	/// Output only. Annotations associated with the plain-text body of the message. To add basic formatting to a text message, see [Format text messages](https://developers.google.com/chat/format-messages). Example plain-text message body: ``` Hello @FooBot how are you!" ``` The corresponding annotations metadata: ``` "annotations":[{ "type":"USER_MENTION", "startIndex":6, "length":7, "userMention": { "user": { "name":"users/{user}", "displayName":"FooBot", "avatarUrl":"https://goo.gl/aeDtrS", "type":"BOT" }, "type":"MENTION" } }] ```
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Annotation
 	{
 		
@@ -1792,8 +1707,7 @@ namespace MyNS
 	/// <summary>
 	/// Annotation metadata for slash commands (/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlashCommandMetadata
 	{
 		
@@ -1831,8 +1745,7 @@ namespace MyNS
 	/// <summary>
 	/// A user in Google Chat. When returned as an output from a request, if your Chat app [authenticates as a user](https://developers.google.com/chat/api/guides/auth/users), the output for a `User` resource only populates the user's `name` and `type`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class User
 	{
 		
@@ -1867,59 +1780,52 @@ namespace MyNS
 		public System.Nullable<UserType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HUMAN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HUMAN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOT = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SlashCommandMetadataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVOKE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVOKE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnnotationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNOTATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNOTATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_MENTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_MENTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SLASH_COMMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SLASH_COMMAND = 2,
 	}
 	
 	/// <summary>
 	/// Annotation metadata for user mentions (@).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserMentionMetadata
 	{
 		
@@ -1936,27 +1842,24 @@ namespace MyNS
 		public User User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UserMentionMetadataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MENTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MENTION = 2,
 	}
 	
 	/// <summary>
 	/// A GIF image that's specified by a URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachedGif
 	{
 		
@@ -1970,8 +1873,7 @@ namespace MyNS
 	/// <summary>
 	/// An attachment in Google Chat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attachment
 	{
 		
@@ -2021,8 +1923,7 @@ namespace MyNS
 		public string ThumbnailUri { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachmentDataRef
 	{
 		
@@ -2042,8 +1943,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to the data of a drive attachment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DriveDataRef
 	{
 		
@@ -2054,27 +1954,24 @@ namespace MyNS
 		public string DriveFileId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AttachmentSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SOURCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVE_FILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVE_FILE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPLOADED_CONTENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPLOADED_CONTENT = 2,
 	}
 	
 	/// <summary>
 	/// A button. Can be a text button or an image button.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Button
 	{
 		
@@ -2094,8 +1991,7 @@ namespace MyNS
 	/// <summary>
 	/// An image button with an `onclick` action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageButton
 	{
 		
@@ -2124,111 +2020,108 @@ namespace MyNS
 		public OnClick OnClick { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageButtonIcon
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ICON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ICON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AIRPLANE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AIRPLANE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOKMARK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOKMARK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BUS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOCK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOCK = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIRMATION_NUMBER_ICON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONFIRMATION_NUMBER_ICON = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOLLAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOLLAR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCRIPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCRIPTION = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_PERFORMER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_PERFORMER = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_SEAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_SEAT = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLIGHT_ARRIVAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLIGHT_ARRIVAL = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLIGHT_DEPARTURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLIGHT_DEPARTURE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOTEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOTEL = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOTEL_ROOM_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOTEL_ROOM_TYPE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVITE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAP_PIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MAP_PIN = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMBERSHIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMBERSHIP = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MULTIPLE_PEOPLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MULTIPLE_PEOPLE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OFFER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OFFER = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSON = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESTAURANT_ICON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESTAURANT_ICON = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOPPING_CART")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOPPING_CART = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STAR = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STORE = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TICKET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TICKET = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAIN = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO_CAMERA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO_CAMERA = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO_PLAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO_PLAY = 30,
 	}
 	
 	/// <summary>
 	/// An `onclick` action (for example, open a link).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OnClick
 	{
 		
@@ -2248,8 +2141,7 @@ namespace MyNS
 	/// <summary>
 	/// A form action describes the behavior when the form is submitted. For example, you can invoke Apps Script to handle the form.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormAction
 	{
 		
@@ -2269,8 +2161,7 @@ namespace MyNS
 	/// <summary>
 	/// A link that opens a new window.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenLink
 	{
 		
@@ -2284,8 +2175,7 @@ namespace MyNS
 	/// <summary>
 	/// A button with text and `onclick` action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextButton
 	{
 		
@@ -2305,8 +2195,7 @@ namespace MyNS
 	/// <summary>
 	/// A card is a UI element that can contain UI widgets such as text and images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Card
 	{
 		
@@ -2335,8 +2224,7 @@ namespace MyNS
 	/// <summary>
 	/// A card action is the action associated with the card. For an invoice card, a typical action would be: delete invoice, email invoice or open the invoice in browser. Not supported by Google Chat apps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardAction
 	{
 		
@@ -2353,8 +2241,7 @@ namespace MyNS
 		public OnClick OnClick { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardHeader
 	{
 		
@@ -2383,27 +2270,24 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CardHeaderImageStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_STYLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_STYLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVATAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVATAR = 2,
 	}
 	
 	/// <summary>
 	/// A section contains a collection of widgets that are rendered (vertically) in the order that they are specified. Across all platforms, cards have a narrow fixed width, so there's currently no need for layout properties (for example, float).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Section
 	{
 		
@@ -2423,8 +2307,7 @@ namespace MyNS
 	/// <summary>
 	/// A widget is a UI element that presents text and images.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WidgetMarkup
 	{
 		
@@ -2456,8 +2339,7 @@ namespace MyNS
 	/// <summary>
 	/// An image that's specified by a URL and can have an `onclick` action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Image
 	{
 		
@@ -2483,8 +2365,7 @@ namespace MyNS
 	/// <summary>
 	/// A UI element contains a key (label) and a value (content). This element can also contain some actions such as `onclick` button.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class KeyValue
 	{
 		
@@ -2540,8 +2421,7 @@ namespace MyNS
 	/// <summary>
 	/// A paragraph of text. Formatted text supported. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TextParagraph
 	{
 		
@@ -2552,8 +2432,7 @@ namespace MyNS
 	/// <summary>
 	/// A [card](https://developers.google.com/chat/api/reference/rest/v1/cards) in a Google Chat message. Only Chat apps can create cards. If your Chat app [authenticates as a user](https://developers.google.com/chat/api/guides/auth/users), the message can't contain cards. [Card builder](https://addons.gsuite.google.com/uikit/builder)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CardWithId
 	{
 		
@@ -2573,8 +2452,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON payload of error messages. If the Cloud Logging API is enabled, these error messages are logged to [Google Cloud Logging](https://cloud.google.com/logging/docs).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChatAppLogEntry
 	{
 		
@@ -2600,8 +2478,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -2627,8 +2504,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes data submitted by users interacting with cards, like data entered in [dialogs](https://developers.google.com/chat/how-tos/dialogs).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommonEventObject
 	{
 		
@@ -2678,8 +2554,7 @@ namespace MyNS
 	/// <summary>
 	/// Types of data that users can enter on cards or dialogs. To learn how to process information from users, see [Read form data input by users on cards](https://developers.google.com/chat/ui/read-form-data).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Inputs
 	{
 		
@@ -2711,8 +2586,7 @@ namespace MyNS
 	/// <summary>
 	/// Date input values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateInput
 	{
 		
@@ -2726,8 +2600,7 @@ namespace MyNS
 	/// <summary>
 	/// Date and time input values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateTimeInput
 	{
 		
@@ -2753,8 +2626,7 @@ namespace MyNS
 	/// <summary>
 	/// Input parameter for regular widgets. For single-valued widgets, it is a single value list. For multi-valued widgets, such as checkbox, all the values are presented.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StringInputs
 	{
 		
@@ -2768,8 +2640,7 @@ namespace MyNS
 	/// <summary>
 	/// Time input values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeInput
 	{
 		
@@ -2786,70 +2657,65 @@ namespace MyNS
 		public System.Nullable<System.Int32> Minutes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommonEventObjectHostApp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED_HOST_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED_HOST_APP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GMAIL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CALENDAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CALENDAR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRIVE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEMO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEMO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEET = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHEETS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHEETS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SLIDES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SLIDES = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAWINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAWINGS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHAT = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CommonEventObjectPlatform
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_PLATFORM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_PLATFORM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEB = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IOS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANDROID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANDROID = 3,
 	}
 	
 	/// <summary>
 	/// The timezone ID and offset from Coordinated Universal Time (UTC). Only supported for the event types [`CARD_CLICKED`](https://developers.google.com/chat/api/reference/rest/v1/EventType#ENUM_VALUES.CARD_CLICKED) and [`SUBMIT_DIALOG`](https://developers.google.com/chat/api/reference/rest/v1/DialogEventType#ENUM_VALUES.SUBMIT_DIALOG).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeZone
 	{
 		
@@ -2869,14 +2735,12 @@ namespace MyNS
 	/// <summary>
 	/// Request message for completing the import process for a space.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompleteImportSpaceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompleteImportSpaceResponse
 	{
 		
@@ -2890,8 +2754,7 @@ namespace MyNS
 	/// <summary>
 	/// A space in Google Chat. Spaces are conversations between two or more users or 1:1 messages between a user and a Chat app.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Space
 	{
 		
@@ -2977,8 +2840,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the space including description and rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SpaceDetails
 	{
 		
@@ -2995,81 +2857,72 @@ namespace MyNS
 		public string Guidelines { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SpaceSpaceHistoryState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HISTORY_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HISTORY_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HISTORY_OFF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HISTORY_OFF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HISTORY_ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HISTORY_ON = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SpaceSpaceThreadingState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPACE_THREADING_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPACE_THREADING_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THREADED_MESSAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THREADED_MESSAGES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GROUPED_MESSAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GROUPED_MESSAGES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNTHREADED_MESSAGES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNTHREADED_MESSAGES = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SpaceSpaceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPACE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPACE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPACE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GROUP_CHAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GROUP_CHAT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECT_MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIRECT_MESSAGE = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SpaceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROOM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DM = 2,
 	}
 	
 	/// <summary>
 	/// Represents a custom emoji.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomEmoji
 	{
 		
@@ -3083,8 +2936,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a deleted message. A message is deleted when `delete_time` is set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletionMetadata
 	{
 		
@@ -3095,39 +2947,36 @@ namespace MyNS
 		public System.Nullable<DeletionMetadataDeletionType> DeletionType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeletionMetadataDeletionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPACE_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPACE_OWNER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_MESSAGE_EXPIRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_MESSAGE_EXPIRY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATOR_VIA_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATOR_VIA_APP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPACE_OWNER_VIA_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPACE_OWNER_VIA_APP = 6,
 	}
 	
 	/// <summary>
 	/// A Google Chat app interaction event. To learn about interaction events, see [Receive and respond to interactions with your Google Chat app](https://developers.google.com/chat/api/guides/message-formats). To learn about event types and for example event payloads, see [Types of Google Chat app interaction events](https://developers.google.com/chat/api/guides/message-formats/events).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeprecatedEvent
 	{
 		
@@ -3204,30 +3053,27 @@ namespace MyNS
 		public User User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeprecatedEventDialogEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUEST_DIALOG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REQUEST_DIALOG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMIT_DIALOG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUBMIT_DIALOG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCEL_DIALOG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCEL_DIALOG = 3,
 	}
 	
 	/// <summary>
 	/// A message in a Google Chat space.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -3385,8 +3231,7 @@ namespace MyNS
 	/// <summary>
 	/// The number of people who reacted to a message with a specific emoji.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmojiReactionSummary
 	{
 		
@@ -3406,8 +3251,7 @@ namespace MyNS
 	/// <summary>
 	/// An emoji that is used as a reaction to a message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Emoji
 	{
 		
@@ -3427,8 +3271,7 @@ namespace MyNS
 	/// <summary>
 	/// A matched URL in a Chat message. Chat apps can preview matched URLs. For more information, see [Preview links](https://developers.google.com/chat/how-tos/preview-links).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchedUrl
 	{
 		
@@ -3442,8 +3285,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a quoted message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuotedMessageMetadata
 	{
 		
@@ -3463,8 +3305,7 @@ namespace MyNS
 	/// <summary>
 	/// A [slash command](https://developers.google.com/chat/how-tos/slash-commands) in Google Chat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SlashCommand
 	{
 		
@@ -3478,8 +3319,7 @@ namespace MyNS
 	/// <summary>
 	/// A thread in a Google Chat space. For example usage, see [Start or reply to a message thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread). If you specify a thread when creating a message, you can set the [`messageReplyOption`](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages/create#messagereplyoption) field to determine what happens if no matching thread is found.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Thread
 	{
 		
@@ -3496,36 +3336,33 @@ namespace MyNS
 		public string ThreadKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeprecatedEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MESSAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MESSAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDED_TO_SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADDED_TO_SPACE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REMOVED_FROM_SPACE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REMOVED_FROM_SPACE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CARD_CLICKED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CARD_CLICKED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIDGET_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WIDGET_UPDATED = 5,
 	}
 	
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -3533,8 +3370,7 @@ namespace MyNS
 	/// <summary>
 	/// A Google Group in Google Chat.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Group
 	{
 		
@@ -3545,8 +3381,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMembershipsResponse
 	{
 		
@@ -3566,8 +3401,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a membership relation in Google Chat, such as whether a user or Chat app is invited to, part of, or absent from a space.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Membership
 	{
 		
@@ -3614,43 +3448,38 @@ namespace MyNS
 		public System.Nullable<MembershipState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MembershipRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMBERSHIP_ROLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMBERSHIP_ROLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLE_MEMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLE_MEMBER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLE_MANAGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROLE_MANAGER = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MembershipState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMBERSHIP_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMBERSHIP_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JOINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JOINED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVITED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVITED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_A_MEMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_A_MEMBER = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMessagesResponse
 	{
 		
@@ -3667,8 +3496,7 @@ namespace MyNS
 		public string NextPageToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListReactionsResponse
 	{
 		
@@ -3688,8 +3516,7 @@ namespace MyNS
 	/// <summary>
 	/// A reaction to a message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Reaction
 	{
 		
@@ -3712,8 +3539,7 @@ namespace MyNS
 		public User User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListSpacesResponse
 	{
 		
@@ -3733,8 +3559,7 @@ namespace MyNS
 	/// <summary>
 	/// Media resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Media
 	{
 		
@@ -3745,8 +3570,7 @@ namespace MyNS
 		public string ResourceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetUpSpaceRequest
 	{
 		
@@ -3769,8 +3593,7 @@ namespace MyNS
 		public Space Space { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadAttachmentRequest
 	{
 		
@@ -3781,8 +3604,7 @@ namespace MyNS
 		public string Filename { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UploadAttachmentResponse
 	{
 		
@@ -4436,13 +4258,13 @@ namespace MyNS
 	public enum Chat_spaces_messages_createMessageReplyOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MESSAGE_REPLY_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MESSAGE_REPLY_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLY_MESSAGE_OR_FAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPLY_MESSAGE_OR_FAIL = 2,
 	}
 }

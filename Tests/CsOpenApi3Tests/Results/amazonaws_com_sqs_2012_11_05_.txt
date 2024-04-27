@@ -17,14 +17,12 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OverLimit
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelMessageMoveTaskResult
 	{
 		
@@ -32,26 +30,22 @@ namespace MyNS
 		public System.Nullable<System.Int32> ApproximateNumberOfMessagesMoved { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnsupportedOperation
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageNotInflight
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReceiptHandleIsInvalid
 	{
 	}
@@ -59,8 +53,7 @@ namespace MyNS
 	/// <summary>
 	/// For each message in the batch, the response contains a <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeMessageVisibilityBatchResult
 	{
 		
@@ -82,8 +75,7 @@ namespace MyNS
 	/// <summary>
 	/// Encloses a receipt handle and an entry ID for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeMessageVisibilityBatchRequestEntry
 	{
 		
@@ -105,26 +97,22 @@ namespace MyNS
 		public System.Nullable<System.Int32> VisibilityTimeout { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyEntriesInBatchRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmptyBatchRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchEntryIdsNotDistinct
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidBatchEntryId
 	{
 	}
@@ -132,8 +120,7 @@ namespace MyNS
 	/// <summary>
 	/// Returns the <code>QueueUrl</code> attribute of the created queue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateQueueResult
 	{
 		
@@ -141,20 +128,17 @@ namespace MyNS
 		public string QueueUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueueDeletedRecently
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueueNameExists
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidIdFormat
 	{
 	}
@@ -162,8 +146,7 @@ namespace MyNS
 	/// <summary>
 	/// For each message in the batch, the response contains a <code> <a>DeleteMessageBatchResultEntry</a> </code> tag if the message is deleted or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message can't be deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMessageBatchResult
 	{
 		
@@ -185,8 +168,7 @@ namespace MyNS
 	/// <summary>
 	/// Encloses a receipt handle and an identifier for it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMessageBatchRequestEntry
 	{
 		
@@ -208,8 +190,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of returned queue attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueueAttributesResult
 	{
 		
@@ -217,87 +198,83 @@ namespace MyNS
 		public QueueAttributeMap Attributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueueAttributeMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum QueueAttributeName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Policy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VisibilityTimeout")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VisibilityTimeout = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MaximumMessageSize")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MaximumMessageSize = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageRetentionPeriod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MessageRetentionPeriod = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateNumberOfMessages")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApproximateNumberOfMessages = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateNumberOfMessagesNotVisible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApproximateNumberOfMessagesNotVisible = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatedTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreatedTimestamp = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastModifiedTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LastModifiedTimestamp = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QueueArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QueueArn = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateNumberOfMessagesDelayed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApproximateNumberOfMessagesDelayed = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DelaySeconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DelaySeconds = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReceiveMessageWaitTimeSeconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReceiveMessageWaitTimeSeconds = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RedrivePolicy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RedrivePolicy = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FifoQueue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FifoQueue = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ContentBasedDeduplication")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ContentBasedDeduplication = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KmsMasterKeyId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KmsMasterKeyId = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KmsDataKeyReusePeriodSeconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KmsDataKeyReusePeriodSeconds = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeduplicationScope")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeduplicationScope = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FifoThroughputLimit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FifoThroughputLimit = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RedriveAllowPolicy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RedriveAllowPolicy = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SqsManagedSseEnabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SqsManagedSseEnabled = 21,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidAttributeName
 	{
 	}
@@ -305,8 +282,7 @@ namespace MyNS
 	/// <summary>
 	/// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting Responses</a> in the <i>Amazon SQS Developer Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueueUrlResult
 	{
 		
@@ -314,8 +290,7 @@ namespace MyNS
 		public string QueueUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueueDoesNotExist
 	{
 	}
@@ -323,8 +298,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of your dead letter source queues.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeadLetterSourceQueuesResult
 	{
 		
@@ -339,8 +313,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMessageMoveTasksResult
 	{
 		
@@ -348,8 +321,7 @@ namespace MyNS
 		public string[] Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueueTagsResult
 	{
 		
@@ -357,8 +329,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
@@ -366,8 +337,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of your queues.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueuesResult
 	{
 		
@@ -378,8 +348,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurgeQueueInProgress
 	{
 	}
@@ -387,8 +356,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of received messages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReceiveMessageResult
 	{
 		
@@ -399,8 +367,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessageResult
 	{
 		
@@ -423,8 +390,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code> </p> <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KiB or 262,144 bytes).</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageAttributeValue
 	{
 		
@@ -451,8 +417,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code> </p> <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageSystemAttributeValue
 	{
 		
@@ -476,8 +441,7 @@ namespace MyNS
 		public string DataType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidMessageContents
 	{
 	}
@@ -485,8 +449,7 @@ namespace MyNS
 	/// <summary>
 	/// For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessageBatchResult
 	{
 		
@@ -508,8 +471,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the details of a single Amazon SQS message along with an <code>Id</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessageBatchRequestEntry
 	{
 		
@@ -543,26 +505,22 @@ namespace MyNS
 		public string MessageGroupId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageBodyAttributeMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageBodySystemAttributeMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchRequestTooLong
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMessageMoveTaskResult
 	{
 		
@@ -573,8 +531,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddPermissionRequest
 	{
 		
@@ -610,8 +567,7 @@ namespace MyNS
 	/// <summary>
 	/// Gives a detailed description of the result of an action on each entry in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchResultErrorEntry
 	{
 		
@@ -640,8 +596,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelMessageMoveTaskRequest
 	{
 		
@@ -656,8 +611,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeMessageVisibilityBatchRequest
 	{
 		
@@ -679,8 +633,7 @@ namespace MyNS
 	/// <summary>
 	/// Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a>.</code> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeMessageVisibilityBatchResultEntry
 	{
 		
@@ -692,8 +645,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeMessageVisibilityRequest
 	{
 		
@@ -722,8 +674,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateQueueRequest
 	{
 		
@@ -744,8 +695,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMessageBatchRequest
 	{
 		
@@ -767,8 +717,7 @@ namespace MyNS
 	/// <summary>
 	/// Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a>.</code> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMessageBatchResultEntry
 	{
 		
@@ -783,8 +732,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMessageRequest
 	{
 		
@@ -806,8 +754,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteQueueRequest
 	{
 		
@@ -822,8 +769,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueueAttributesRequest
 	{
 		
@@ -841,8 +787,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetQueueUrlRequest
 	{
 		
@@ -860,8 +805,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDeadLetterSourceQueuesRequest
 	{
 		
@@ -879,8 +823,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMessageMoveTasksRequest
 	{
 		
@@ -898,8 +841,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the details of a message movement task. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMessageMoveTasksResultEntry
 	{
 		
@@ -931,8 +873,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> StartedTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueueTagsRequest
 	{
 		
@@ -947,8 +888,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListQueuesRequest
 	{
 		
@@ -962,8 +902,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageSystemAttributeMap
 	{
 	}
@@ -971,8 +910,7 @@ namespace MyNS
 	/// <summary>
 	/// An Amazon SQS message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -998,55 +936,50 @@ namespace MyNS
 		public MessageBodyAttributeMap MessageAttributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessageSystemAttributeName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SenderId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SenderId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SentTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SentTimestamp = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateReceiveCount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApproximateReceiveCount = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateFirstReceiveTimestamp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ApproximateFirstReceiveTimestamp = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SequenceNumber")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SequenceNumber = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageDeduplicationId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MessageDeduplicationId = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageGroupId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MessageGroupId = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSTraceHeader")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSTraceHeader = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeadLetterQueueSourceArn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeadLetterQueueSourceArn = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessageSystemAttributeNameForSends
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSTraceHeader")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSTraceHeader = 0,
 	}
 	
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurgeQueueRequest
 	{
 		
@@ -1061,8 +994,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReceiveMessageRequest
 	{
 		
@@ -1095,8 +1027,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemovePermissionRequest
 	{
 		
@@ -1118,8 +1049,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessageBatchRequest
 	{
 		
@@ -1141,8 +1071,7 @@ namespace MyNS
 	/// <summary>
 	/// Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <a>SendMessageBatch</a>.</code> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessageBatchResultEntry
 	{
 		
@@ -1180,8 +1109,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessageRequest
 	{
 		
@@ -1218,8 +1146,7 @@ namespace MyNS
 	/// <summary>
 	/// <p/>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetQueueAttributesRequest
 	{
 		
@@ -1238,8 +1165,7 @@ namespace MyNS
 		public QueueAttributeMap Attributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMessageMoveTaskRequest
 	{
 		
@@ -1257,8 +1183,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxNumberOfMessagesPerSecond { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagQueueRequest
 	{
 		
@@ -1277,8 +1202,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagQueueRequest
 	{
 		
@@ -2017,7 +1941,7 @@ namespace MyNS
 	public enum GET_AddPermissionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddPermission")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AddPermission = 0,
 	}
 	
@@ -2038,7 +1962,7 @@ namespace MyNS
 	public enum GET_CancelMessageMoveTaskAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancelMessageMoveTask")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CancelMessageMoveTask = 0,
 	}
 	
@@ -2059,7 +1983,7 @@ namespace MyNS
 	public enum GET_ChangeMessageVisibilityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChangeMessageVisibility")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChangeMessageVisibility = 0,
 	}
 	
@@ -2080,7 +2004,7 @@ namespace MyNS
 	public enum GET_ChangeMessageVisibilityBatchAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChangeMessageVisibilityBatch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ChangeMessageVisibilityBatch = 0,
 	}
 	
@@ -2101,7 +2025,7 @@ namespace MyNS
 	public enum GET_CreateQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateQueue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CreateQueue = 0,
 	}
 	
@@ -2122,7 +2046,7 @@ namespace MyNS
 	public enum GET_DeleteMessageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteMessage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteMessage = 0,
 	}
 	
@@ -2143,7 +2067,7 @@ namespace MyNS
 	public enum GET_DeleteMessageBatchAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteMessageBatch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteMessageBatch = 0,
 	}
 	
@@ -2164,7 +2088,7 @@ namespace MyNS
 	public enum GET_DeleteQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteQueue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteQueue = 0,
 	}
 	
@@ -2185,7 +2109,7 @@ namespace MyNS
 	public enum GET_GetQueueAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetQueueAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetQueueAttributes = 0,
 	}
 	
@@ -2206,7 +2130,7 @@ namespace MyNS
 	public enum GET_GetQueueUrlAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetQueueUrl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetQueueUrl = 0,
 	}
 	
@@ -2227,7 +2151,7 @@ namespace MyNS
 	public enum GET_ListDeadLetterSourceQueuesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListDeadLetterSourceQueues")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListDeadLetterSourceQueues = 0,
 	}
 	
@@ -2248,7 +2172,7 @@ namespace MyNS
 	public enum GET_ListMessageMoveTasksAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListMessageMoveTasks")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListMessageMoveTasks = 0,
 	}
 	
@@ -2269,7 +2193,7 @@ namespace MyNS
 	public enum GET_ListQueueTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListQueueTags")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListQueueTags = 0,
 	}
 	
@@ -2290,7 +2214,7 @@ namespace MyNS
 	public enum GET_ListQueuesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListQueues")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListQueues = 0,
 	}
 	
@@ -2311,7 +2235,7 @@ namespace MyNS
 	public enum GET_PurgeQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PurgeQueue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PurgeQueue = 0,
 	}
 	
@@ -2332,7 +2256,7 @@ namespace MyNS
 	public enum GET_ReceiveMessageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReceiveMessage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ReceiveMessage = 0,
 	}
 	
@@ -2353,7 +2277,7 @@ namespace MyNS
 	public enum GET_RemovePermissionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemovePermission")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RemovePermission = 0,
 	}
 	
@@ -2374,7 +2298,7 @@ namespace MyNS
 	public enum GET_SendMessageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendMessage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SendMessage = 0,
 	}
 	
@@ -2395,7 +2319,7 @@ namespace MyNS
 	public enum GET_SendMessageBatchAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendMessageBatch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SendMessageBatch = 0,
 	}
 	
@@ -2416,7 +2340,7 @@ namespace MyNS
 	public enum GET_SetQueueAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetQueueAttributes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetQueueAttributes = 0,
 	}
 	
@@ -2437,7 +2361,7 @@ namespace MyNS
 	public enum GET_StartMessageMoveTaskAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StartMessageMoveTask")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StartMessageMoveTask = 0,
 	}
 	
@@ -2458,7 +2382,7 @@ namespace MyNS
 	public enum GET_TagQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TagQueue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TagQueue = 0,
 	}
 	
@@ -2479,7 +2403,7 @@ namespace MyNS
 	public enum GET_UntagQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UntagQueue")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UntagQueue = 0,
 	}
 	

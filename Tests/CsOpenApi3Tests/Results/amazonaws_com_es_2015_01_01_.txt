@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation. Contains details of accepted inbound connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptInboundCrossClusterSearchConnectionResponse
 	{
 		
@@ -32,8 +31,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies details of an inbound connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InboundCrossClusterSearchConnection
 	{
 		
@@ -50,8 +48,7 @@ namespace MyNS
 		public InboundCrossClusterSearchConnectionStatus ConnectionStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainInformation
 	{
 		
@@ -85,8 +82,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the coonection status of an inbound cross-cluster search connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InboundCrossClusterSearchConnectionStatus
 	{
 		
@@ -97,45 +93,40 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InboundCrossClusterSearchConnectionStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_ACCEPTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_ACCEPTANCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisabledOperationException
 	{
 	}
@@ -143,8 +134,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a key value pair for a resource tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -163,20 +153,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalException
 	{
 	}
@@ -184,8 +171,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for response returned by <code> <a>AssociatePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatePackageResponse
 	{
 		
@@ -196,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// Information on a package that is associated with a domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainPackageDetails
 	{
 		
@@ -229,9 +214,7 @@ namespace MyNS
 		public ErrorDetails ErrorDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PackageType
 	{
 		
@@ -239,30 +222,27 @@ namespace MyNS
 		TXTMinusDICTIONARY = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DomainPackageStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSOCIATION_FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISSOCIATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISSOCIATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISSOCIATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISSOCIATION_FAILED = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorDetails
 	{
 		
@@ -273,14 +253,12 @@ namespace MyNS
 		public string ErrorMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
@@ -288,8 +266,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for response parameters to the <code><a>AuthorizeVpcEndpointAccess</a></code> operation. Contains the account ID and the type of the account being authorized to access the VPC endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizeVpcEndpointAccessResponse
 	{
 		
@@ -304,8 +281,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about an account or service that has access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizedPrincipal
 	{
 		
@@ -319,24 +295,21 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the type of AWS account permitted to manage VPC endpoints.: <ul> <li>AWS_ACCOUNT: Indicates that the account is owned by an AWS user.</li> <li>AWS_SERVICE: Indicates the the account is owned by an AWS service.</li> </ul> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PrincipalType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_ACCOUNT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_ACCOUNT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWS_SERVICE = 1,
 	}
 	
 	/// <summary>
 	/// The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelElasticsearchServiceSoftwareUpdateResponse
 	{
 		
@@ -347,8 +320,7 @@ namespace MyNS
 	/// <summary>
 	/// The current options of an Elasticsearch domain service software options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceSoftwareOptions
 	{
 		
@@ -377,33 +349,30 @@ namespace MyNS
 		public System.Nullable<System.Boolean> OptionalDeployment { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeploymentStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_UPDATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_ELIGIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_ELIGIBLE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ELIGIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ELIGIBLE = 4,
 	}
 	
 	/// <summary>
 	/// The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateElasticsearchDomainResponse
 	{
 		
@@ -414,8 +383,7 @@ namespace MyNS
 	/// <summary>
 	/// The current status of an Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchDomainStatus
 	{
 		
@@ -515,8 +483,7 @@ namespace MyNS
 		public ChangeProgressDetails ChangeProgressDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointsMap
 	{
 	}
@@ -524,8 +491,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration for the domain cluster, such as the type and number of instances.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchClusterConfig
 	{
 		
@@ -563,9 +529,7 @@ namespace MyNS
 		public ColdStorageOptions ColdStorageOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ESPartitionInstanceType
 	{
 		
@@ -747,8 +711,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ZoneAwarenessConfig
 	{
 		
@@ -756,9 +719,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> AvailabilityZoneCount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ESWarmPartitionInstanceType
 	{
 		
@@ -772,8 +733,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration for cold storage options such as enabled
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ColdStorageOptions
 	{
 		
@@ -788,8 +748,7 @@ namespace MyNS
 	/// <summary>
 	/// Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EBSOptions
 	{
 		
@@ -812,30 +771,27 @@ namespace MyNS
 	/// <summary>
 	///  The type of EBS volume, standard, gp2, gp3 or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VolumeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		standard = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gp2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gp2 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="io1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		io1 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gp3")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gp3 = 3,
 	}
 	
 	/// <summary>
 	/// Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotOptions
 	{
 		
@@ -846,8 +802,7 @@ namespace MyNS
 	/// <summary>
 	/// Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPCDerivedInfo
 	{
 		
@@ -867,8 +822,7 @@ namespace MyNS
 	/// <summary>
 	/// Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CognitoOptions
 	{
 		
@@ -888,8 +842,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Encryption At Rest Options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionAtRestOptions
 	{
 		
@@ -903,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the node-to-node encryption options.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeToNodeEncryptionOptions
 	{
 		
@@ -915,14 +867,12 @@ namespace MyNS
 	/// <summary>
 	/// <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvancedOptions
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogPublishingOptions
 	{
 	}
@@ -930,8 +880,7 @@ namespace MyNS
 	/// <summary>
 	/// Options to configure endpoint for the Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainEndpointOptions
 	{
 		
@@ -951,9 +900,7 @@ namespace MyNS
 		public string CustomEndpointCertificateArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TLSSecurityPolicy
 	{
 		
@@ -967,8 +914,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvancedSecurityOptions
 	{
 		
@@ -991,8 +937,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the SAML application configured for the domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SAMLOptionsOutput
 	{
 		
@@ -1015,8 +960,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the SAML Identity Provider's information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SAMLIdp
 	{
 		
@@ -1038,8 +982,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoTuneOptionsOutput
 	{
 		
@@ -1053,45 +996,42 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Auto-Tune state for the Elasticsearch domain. For valid states see the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoTuneState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLE_IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLE_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLE_IN_PROGRESS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_AND_ROLLBACK_SCHEDULED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED_AND_ROLLBACK_SCHEDULED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_AND_ROLLBACK_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED_AND_ROLLBACK_IN_PROGRESS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_AND_ROLLBACK_COMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED_AND_ROLLBACK_COMPLETE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_AND_ROLLBACK_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED_AND_ROLLBACK_ERROR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 8,
 	}
 	
 	/// <summary>
 	/// Specifies change details of the domain configuration change.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeProgressDetails
 	{
 		
@@ -1105,8 +1045,7 @@ namespace MyNS
 	/// <summary>
 	/// Log Publishing option that is set for given domain. <br/>Attributes and their details: <ul> <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li> <li>Enabled: Whether the log publishing for given log type is enabled or not</li> </ul> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogPublishingOption
 	{
 		
@@ -1123,8 +1062,7 @@ namespace MyNS
 	/// <summary>
 	/// Credentials for the master user: username and password, ARN, or both.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MasterUserOptions
 	{
 		
@@ -1141,8 +1079,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the SAML application configuration for the domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SAMLOptionsInput
 	{
 		
@@ -1171,24 +1108,21 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoTuneDesiredState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
 	/// <summary>
 	/// Specifies Auto-Tune maitenance schedule. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoTuneMaintenanceSchedule
 	{
 		
@@ -1205,8 +1139,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies maintenance schedule duration: duration value and duration unit. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Duration
 	{
 		
@@ -1220,24 +1153,20 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the unit of a maintenance schedule duration. Valid value is HOUR. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TimeUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOURS = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidTypeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceAlreadyExistsException
 	{
 	}
@@ -1245,8 +1174,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>CreateOutboundCrossClusterSearchConnection</a></code> request. Contains the details of the newly created cross-cluster search connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOutboundCrossClusterSearchConnectionResponse
 	{
 		
@@ -1269,8 +1197,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the connection status of an outbound cross-cluster search connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutboundCrossClusterSearchConnectionStatus
 	{
 		
@@ -1281,42 +1208,39 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OutboundCrossClusterSearchConnectionStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_ACCEPTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_ACCEPTANCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROVISIONING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROVISIONING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REJECTED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 7,
 	}
 	
 	/// <summary>
 	///  Container for response returned by <code> <a>CreatePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePackageResponse
 	{
 		
@@ -1327,8 +1251,7 @@ namespace MyNS
 	/// <summary>
 	/// Basic information about a package.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackageDetails
 	{
 		
@@ -1360,42 +1283,39 @@ namespace MyNS
 		public ErrorDetails ErrorDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PackageStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPYING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPYING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPY_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPY_FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDATION_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDATION_FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVAILABLE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 7,
 	}
 	
 	/// <summary>
 	/// Container for response parameters to the <code><a>CreateVpcEndpoint</a></code> operation. Contains the configuration and status of the VPC Endpoint being created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcEndpointResponse
 	{
 		
@@ -1410,8 +1330,7 @@ namespace MyNS
 	/// <summary>
 	/// The connection endpoint for connecting to an Amazon OpenSearch Service domain through a proxy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcEndpoint
 	{
 		
@@ -1437,39 +1356,36 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the current status of the VPC endpoint: <ul> <li>CREATING: Indicates that the VPC endpoint is currently being created.</li> <li>CREATE_FAILED: Indicates that the VPC endpoint creation failed.</li> <li>ACTIVE: Indicates that the VPC endpoint is currently active.</li> <li>UPDATING: Indicates that the VPC endpoint is currently being updated.</li> <li>UPDATE_FAILED: Indicates that the VPC endpoint update failed.</li> <li>DELETING: Indicates that the VPC endpoint is currently being deleted.</li> <li>DELETE_FAILED: Indicates that the VPC endpoint deletion failed.</li> </ul> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VpcEndpointStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE_FAILED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETE_FAILED = 6,
 	}
 	
 	/// <summary>
 	/// The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteElasticsearchDomainResponse
 	{
 		
@@ -1480,8 +1396,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation. Contains details of deleted inbound connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteInboundCrossClusterSearchConnectionResponse
 	{
 		
@@ -1492,8 +1407,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>DeleteOutboundCrossClusterSearchConnection</a></code> operation. Contains details of deleted outbound connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteOutboundCrossClusterSearchConnectionResponse
 	{
 		
@@ -1504,8 +1418,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies details of an outbound connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutboundCrossClusterSearchConnection
 	{
 		
@@ -1528,8 +1441,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for response parameters to <code> <a>DeletePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePackageResponse
 	{
 		
@@ -1540,8 +1452,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for response parameters to the <code><a>DeleteVpcEndpoint</a></code> operation. Contains the summarized detail of the VPC Endpoint being deleted.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcEndpointResponse
 	{
 		
@@ -1556,8 +1467,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary information for an Amazon OpenSearch Service-managed VPC endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcEndpointSummary
 	{
 		
@@ -1577,8 +1487,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of <code>DescribeDomainAutoTunes</code> request. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainAutoTunesResponse
 	{
 		
@@ -1592,8 +1501,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies Auto-Tune type and Auto-Tune action details. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoTune
 	{
 		
@@ -1607,21 +1515,18 @@ namespace MyNS
 	/// <summary>
 	/// Specifies Auto-Tune type. Valid value is SCHEDULED_ACTION. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AutoTuneType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULED_ACTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEDULED_ACTION = 0,
 	}
 	
 	/// <summary>
 	/// Specifies details of the Auto-Tune action. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoTuneDetails
 	{
 		
@@ -1635,8 +1540,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies details of the scheduled Auto-Tune action. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ScheduledAutoTuneDetails
 	{
 		
@@ -1656,43 +1560,38 @@ namespace MyNS
 	/// <summary>
 	/// Specifies Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduledAutoTuneActionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JVM_HEAP_SIZE_TUNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JVM_HEAP_SIZE_TUNING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JVM_YOUNG_GEN_TUNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JVM_YOUNG_GEN_TUNING = 1,
 	}
 	
 	/// <summary>
 	/// Specifies Auto-Tune action severity. Valid values are LOW, MEDIUM and HIGH. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScheduledAutoTuneSeverityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH = 2,
 	}
 	
 	/// <summary>
 	/// The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress information of the requested domain change. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainChangeProgressResponse
 	{
 		
@@ -1703,8 +1602,7 @@ namespace MyNS
 	/// <summary>
 	/// The progress details of a specific domain configuration change.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeProgressStatusDetails
 	{
 		
@@ -1733,30 +1631,27 @@ namespace MyNS
 	/// <summary>
 	/// The overall status value of the domain configuration change.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OverallChangeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// A progress stage details of a specific domain configuration change.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangeProgressStage
 	{
 		
@@ -1776,8 +1671,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeElasticsearchDomain</code> request. Contains the status of the domain specified in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeElasticsearchDomainResponse
 	{
 		
@@ -1792,8 +1686,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeElasticsearchDomainConfig</code> request. Contains the configuration information of the requested domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeElasticsearchDomainConfigResponse
 	{
 		
@@ -1808,8 +1701,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration of an Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchDomainConfig
 	{
 		
@@ -1862,8 +1754,7 @@ namespace MyNS
 	/// <summary>
 	///  Status of the Elasticsearch version options for the specified Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchVersionStatus
 	{
 		
@@ -1885,8 +1776,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the current status of the entity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OptionStatus
 	{
 		
@@ -1921,27 +1811,24 @@ namespace MyNS
 	/// <summary>
 	/// <p>The state of a requested change. One of the following:</p> <ul> <li>Processing: The request change is still in-process.</li> <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OptionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequiresIndexDocuments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequiresIndexDocuments = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Processing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Processing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Active = 2,
 	}
 	
 	/// <summary>
 	///  Specifies the configuration status for the specified Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ElasticsearchClusterConfigStatus
 	{
 		
@@ -1963,8 +1850,7 @@ namespace MyNS
 	/// <summary>
 	///  Status of the EBS options for the specified Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EBSOptionsStatus
 	{
 		
@@ -1986,8 +1872,7 @@ namespace MyNS
 	/// <summary>
 	/// The configured access rules for the domain's document and search endpoints, and the current status of those rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessPoliciesStatus
 	{
 		
@@ -2009,8 +1894,7 @@ namespace MyNS
 	/// <summary>
 	/// Status of a daily automated snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SnapshotOptionsStatus
 	{
 		
@@ -2032,8 +1916,7 @@ namespace MyNS
 	/// <summary>
 	///  Status of the VPC options for the specified Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPCDerivedInfoStatus
 	{
 		
@@ -2055,8 +1938,7 @@ namespace MyNS
 	/// <summary>
 	/// Status of the Cognito options for the specified Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CognitoOptionsStatus
 	{
 		
@@ -2078,8 +1960,7 @@ namespace MyNS
 	/// <summary>
 	///  Status of the Encryption At Rest options for the specified Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionAtRestOptionsStatus
 	{
 		
@@ -2101,8 +1982,7 @@ namespace MyNS
 	/// <summary>
 	/// Status of the node-to-node encryption options for the specified Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NodeToNodeEncryptionOptionsStatus
 	{
 		
@@ -2124,8 +2004,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvancedOptionsStatus
 	{
 		
@@ -2147,8 +2026,7 @@ namespace MyNS
 	/// <summary>
 	/// The configured log publishing options for the domain and their current status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LogPublishingOptionsStatus
 	{
 		
@@ -2162,8 +2040,7 @@ namespace MyNS
 	/// <summary>
 	/// The configured endpoint options for the domain and their current status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainEndpointOptionsStatus
 	{
 		
@@ -2185,8 +2062,7 @@ namespace MyNS
 	/// <summary>
 	///  Specifies the status of advanced security options for the specified Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvancedSecurityOptionsStatus
 	{
 		
@@ -2208,8 +2084,7 @@ namespace MyNS
 	/// <summary>
 	///  Specifies the status of Auto-Tune options for the specified Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoTuneOptionsStatus
 	{
 		
@@ -2223,8 +2098,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Auto-Tune options: the Auto-Tune desired state for the domain, rollback state when disabling Auto-Tune options and list of maintenance schedules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoTuneOptions
 	{
 		
@@ -2241,24 +2115,21 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RollbackOnDisable
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_ROLLBACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_ROLLBACK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT_ROLLBACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT_ROLLBACK = 1,
 	}
 	
 	/// <summary>
 	/// Provides the current status of the Auto-Tune options. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoTuneStatus
 	{
 		
@@ -2296,8 +2167,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeElasticsearchDomainsResponse
 	{
 		
@@ -2312,8 +2182,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for the parameters received from <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeElasticsearchInstanceTypeLimitsResponse
 	{
 		
@@ -2327,8 +2196,7 @@ namespace MyNS
 	/// <summary>
 	///  Map of Role of the Instance and Limits that are applicable. Role performed by given Instance in Elasticsearch can be one of the following: <ul> <li>data: If the given InstanceType is used as data node</li> <li>master: If the given InstanceType is used as master node</li> <li>ultra_warm: If the given InstanceType is used as warm node</li> </ul> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitsByRole
 	{
 	}
@@ -2336,8 +2204,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>DescribeInboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeInboundCrossClusterSearchConnectionsResponse
 	{
 		
@@ -2351,8 +2218,7 @@ namespace MyNS
 	/// <summary>
 	///  A filter used to limit results when describing inbound or outbound cross-cluster search connections. Multiple values can be specified per filter. A cross-cluster search connection must match at least one of the specified values for it to be returned from an operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Filter
 	{
 		
@@ -2363,8 +2229,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidPaginationTokenException
 	{
 	}
@@ -2372,8 +2237,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOutboundCrossClusterSearchConnectionsResponse
 	{
 		
@@ -2387,8 +2251,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for response returned by <code> <a>DescribePackages</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePackagesResponse
 	{
 		
@@ -2402,8 +2265,7 @@ namespace MyNS
 	/// <summary>
 	/// Filter to apply in <code>DescribePackage</code> response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePackagesFilter
 	{
 		
@@ -2414,27 +2276,24 @@ namespace MyNS
 		public string[] Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DescribePackagesFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PackageID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PackageID = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PackageName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PackageName = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PackageStatus")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PackageStatus = 2,
 	}
 	
 	/// <summary>
 	/// Container for results from <code>DescribeReservedElasticsearchInstanceOfferings</code>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservedElasticsearchInstanceOfferingsResponse
 	{
 		
@@ -2448,8 +2307,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a reserved Elasticsearch instance offering.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedElasticsearchInstanceOffering
 	{
 		
@@ -2478,27 +2336,24 @@ namespace MyNS
 		public RecurringCharge[] RecurringCharges { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReservedElasticsearchInstancePaymentOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_UPFRONT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_UPFRONT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL_UPFRONT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL_UPFRONT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_UPFRONT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_UPFRONT = 2,
 	}
 	
 	/// <summary>
 	/// Contains the specific price and frequency of a recurring charges for a reserved Elasticsearch instance, or for a reserved Elasticsearch instance offering.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecurringCharge
 	{
 		
@@ -2512,8 +2367,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for results from <code>DescribeReservedElasticsearchInstances</code>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservedElasticsearchInstancesResponse
 	{
 		
@@ -2527,8 +2381,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a reserved Elasticsearch instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReservedElasticsearchInstance
 	{
 		
@@ -2575,8 +2428,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for response parameters to the <code><a>DescribeVpcEndpoints</a></code> operation. Returns a list containing configuration details and status of the VPC Endpoints as well as a list containing error responses of the endpoints that could not be described
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVpcEndpointsResponse
 	{
 		
@@ -2598,8 +2450,7 @@ namespace MyNS
 	/// <summary>
 	/// Error information when attempting to describe an Amazon OpenSearch Service-managed VPC endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VpcEndpointError
 	{
 		
@@ -2616,24 +2467,21 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the error code of the failure encountered while describing the VPC endpoint: <ul> <li>ENDPOINT_NOT_FOUND: Indicates that the requested VPC endpoint does not exist.</li> <li>SERVER_ERROR: Indicates the describe endpoint operation failed due to an internal server error.</li> </ul> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VpcEndpointErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDPOINT_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDPOINT_NOT_FOUND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVER_ERROR = 1,
 	}
 	
 	/// <summary>
 	///  Container for response returned by <code> <a>DissociatePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DissociatePackageResponse
 	{
 		
@@ -2644,8 +2492,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for response returned by <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCompatibleElasticsearchVersionsResponse
 	{
 		
@@ -2656,8 +2503,7 @@ namespace MyNS
 	/// <summary>
 	///  A map from an <code> <a>ElasticsearchVersion</a> </code> to a list of compatible <code> <a>ElasticsearchVersion</a> </code> s to which the domain can be upgraded. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompatibleVersionsMap
 	{
 		
@@ -2674,8 +2520,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for response returned by <code> <a>GetPackageVersionHistory</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPackageVersionHistoryResponse
 	{
 		
@@ -2692,8 +2537,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a package version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackageVersionHistory
 	{
 		
@@ -2710,8 +2554,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for response returned by <code> <a>GetUpgradeHistory</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUpgradeHistoryResponse
 	{
 		
@@ -2725,8 +2568,7 @@ namespace MyNS
 	/// <summary>
 	/// History of the last 10 Upgrades and Upgrade Eligibility Checks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeHistory
 	{
 		
@@ -2743,30 +2585,27 @@ namespace MyNS
 		public UpgradeStepItem[] StepsList { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpgradeStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED_WITH_ISSUES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED_WITH_ISSUES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 3,
 	}
 	
 	/// <summary>
 	/// Represents a single step of the Upgrade or Upgrade Eligibility Check workflow.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeStepItem
 	{
 		
@@ -2783,27 +2622,24 @@ namespace MyNS
 		public System.Nullable<System.Double> ProgressPercent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UpgradeStep
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRE_UPGRADE_CHECK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRE_UPGRADE_CHECK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SNAPSHOT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SNAPSHOT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPGRADE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPGRADE = 2,
 	}
 	
 	/// <summary>
 	///  Container for response returned by <code> <a>GetUpgradeStatus</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUpgradeStatusResponse
 	{
 		
@@ -2820,8 +2656,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainNamesResponse
 	{
 		
@@ -2829,8 +2664,7 @@ namespace MyNS
 		public DomainInfo[] DomainNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DomainInfo
 	{
 		
@@ -2841,24 +2675,21 @@ namespace MyNS
 		public EngineType EngineType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EngineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OpenSearch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OpenSearch = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Elasticsearch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Elasticsearch = 1,
 	}
 	
 	/// <summary>
 	///  Container for response parameters to <code> <a>ListDomainsForPackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainsForPackageResponse
 	{
 		
@@ -2872,8 +2703,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for the parameters returned by <code> <a>ListElasticsearchInstanceTypes</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListElasticsearchInstanceTypesResponse
 	{
 		
@@ -2887,8 +2717,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for the parameters for response received from <code> <a>ListElasticsearchVersions</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListElasticsearchVersionsResponse
 	{
 		
@@ -2908,8 +2737,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for response parameters to <code> <a>ListPackagesForDomain</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPackagesForDomainResponse
 	{
 		
@@ -2923,8 +2751,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch domains.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsResponse
 	{
 		
@@ -2935,8 +2762,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for response parameters to the <code><a>ListVpcEndpointAccess</a></code> operation. Returns a list of accounts id and account type authorized to manage VPC endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVpcEndpointAccessResponse
 	{
 		
@@ -2958,8 +2784,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for response parameters to the <code><a>ListVpcEndpoints</a></code> operation. Returns a list containing summarized details of the VPC endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVpcEndpointsResponse
 	{
 		
@@ -2981,8 +2806,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for response parameters to the <code><a>ListVpcEndpointsForDomain</a></code> operation. Returns a list containing summarized details of the VPC endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVpcEndpointsForDomainResponse
 	{
 		
@@ -3004,8 +2828,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseReservedElasticsearchInstanceOfferingResponse
 	{
 		
@@ -3019,8 +2842,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation. Contains details of rejected inbound connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectInboundCrossClusterSearchConnectionResponse
 	{
 		
@@ -3031,8 +2853,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for response parameters to the <code><a>RevokeVpcEndpointAccess</a></code> operation. The response body for this operation is empty.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeVpcEndpointAccessResponse
 	{
 	}
@@ -3040,8 +2861,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a <code>StartElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartElasticsearchServiceSoftwareUpdateResponse
 	{
 		
@@ -3052,8 +2872,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of an <code>UpdateElasticsearchDomain</code> request. Contains the status of the Elasticsearch domain being updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateElasticsearchDomainConfigResponse
 	{
 		
@@ -3068,8 +2887,7 @@ namespace MyNS
 		public DryRunResults DryRunResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DryRunResults
 	{
 		
@@ -3083,8 +2901,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for response returned by <code> <a>UpdatePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePackageResponse
 	{
 		
@@ -3095,8 +2912,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the configuration and status of the VPC endpoint being updated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVpcEndpointResponse
 	{
 		
@@ -3111,8 +2927,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for response returned by <code> <a>UpgradeElasticsearchDomain</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeElasticsearchDomainResponse
 	{
 		
@@ -3144,8 +2959,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptInboundCrossClusterSearchConnectionRequest
 	{
 	}
@@ -3153,8 +2967,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach to the Elasticsearch domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddTagsRequest
 	{
 		
@@ -3176,8 +2989,7 @@ namespace MyNS
 	/// <summary>
 	///  List of limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> . 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdditionalLimit
 	{
 		
@@ -3191,8 +3003,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvancedSecurityOptionsInput
 	{
 		
@@ -3215,8 +3026,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>AssociatePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssociatePackageRequest
 	{
 	}
@@ -3224,8 +3034,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for request parameters to the <code><a>AuthorizeVpcEndpointAccess</a></code> operation. Specifies the account to be permitted to manage VPC endpoints against the domain.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AuthorizeVpcEndpointAccessRequest
 	{
 		
@@ -3240,8 +3049,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AutoTuneOptionsInput
 	{
 		
@@ -3255,8 +3063,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelElasticsearchServiceSoftwareUpdateRequest
 	{
 		
@@ -3271,8 +3078,7 @@ namespace MyNS
 	/// <summary>
 	/// Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VPCOptions
 	{
 		
@@ -3283,8 +3089,7 @@ namespace MyNS
 		public string[] SecurityGroupIds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateElasticsearchDomainRequest
 	{
 		
@@ -3344,8 +3149,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateOutboundCrossClusterSearchConnectionRequest
 	{
 		
@@ -3374,8 +3178,7 @@ namespace MyNS
 	/// <summary>
 	/// The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackageSource
 	{
 		
@@ -3389,8 +3192,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>CreatePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePackageRequest
 	{
 		
@@ -3422,8 +3224,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>CreateVpcEndpointRequest</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVpcEndpointRequest
 	{
 		
@@ -3448,8 +3249,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteElasticsearchDomainRequest
 	{
 	}
@@ -3457,8 +3257,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteInboundCrossClusterSearchConnectionRequest
 	{
 	}
@@ -3466,8 +3265,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DeleteOutboundCrossClusterSearchConnection</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteOutboundCrossClusterSearchConnectionRequest
 	{
 	}
@@ -3475,8 +3273,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>DeletePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePackageRequest
 	{
 	}
@@ -3484,8 +3281,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVpcEndpointRequest
 	{
 	}
@@ -3493,8 +3289,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code>DescribeDomainAutoTunes</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainAutoTunesRequest
 	{
 		
@@ -3508,8 +3303,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the domain name and optional change specific identity for which you want progress information. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeDomainChangeProgressRequest
 	{
 	}
@@ -3517,8 +3311,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeElasticsearchDomainConfigRequest
 	{
 	}
@@ -3526,8 +3319,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeElasticsearchDomain</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeElasticsearchDomainRequest
 	{
 	}
@@ -3535,8 +3327,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API returns the status of all Elasticsearch domains.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeElasticsearchDomainsRequest
 	{
 		
@@ -3551,8 +3342,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeElasticsearchInstanceTypeLimitsRequest
 	{
 	}
@@ -3560,8 +3350,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeInboundCrossClusterSearchConnectionsRequest
 	{
 		
@@ -3578,8 +3367,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeOutboundCrossClusterSearchConnectionsRequest
 	{
 		
@@ -3596,8 +3384,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>DescribePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribePackagesRequest
 	{
 		
@@ -3614,8 +3401,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservedElasticsearchInstanceOfferingsRequest
 	{
 	}
@@ -3623,8 +3409,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for parameters to <code>DescribeReservedElasticsearchInstances</code>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReservedElasticsearchInstancesRequest
 	{
 	}
@@ -3632,8 +3417,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for request parameters to the <code><a>DescribeVpcEndpoints</a></code> operation. Specifies the list of VPC endpoints to be described.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeVpcEndpointsRequest
 	{
 		
@@ -3648,8 +3432,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>DissociatePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DissociatePackageRequest
 	{
 	}
@@ -3657,8 +3440,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCompatibleElasticsearchVersionsRequest
 	{
 	}
@@ -3666,8 +3448,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>GetPackageVersionHistory</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPackageVersionHistoryRequest
 	{
 	}
@@ -3675,8 +3456,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUpgradeHistoryRequest
 	{
 	}
@@ -3684,8 +3464,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>GetUpgradeStatus</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUpgradeStatusRequest
 	{
 	}
@@ -3693,8 +3472,7 @@ namespace MyNS
 	/// <summary>
 	///  InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceCountLimits
 	{
 		
@@ -3714,8 +3492,7 @@ namespace MyNS
 	/// <summary>
 	/// InstanceLimits represents the list of instance related attributes that are available for given InstanceType. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceLimits
 	{
 		
@@ -3729,8 +3506,7 @@ namespace MyNS
 	/// <summary>
 	/// StorageTypes represents the list of storage related types and their attributes that are available for given InstanceType. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageType
 	{
 		
@@ -3753,8 +3529,7 @@ namespace MyNS
 	/// <summary>
 	/// Limits that are applicable for given storage type. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StorageTypeLimit
 	{
 		
@@ -3768,8 +3543,7 @@ namespace MyNS
 	/// <summary>
 	///  Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> <a>InstanceLimits</a> </code> and <code> <a>AdditionalLimits</a> </code> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Limits
 	{
 		
@@ -3789,8 +3563,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for the parameters to the <code><a>ListDomainNames</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainNamesRequest
 	{
 	}
@@ -3798,8 +3571,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>ListDomainsForPackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDomainsForPackageRequest
 	{
 	}
@@ -3807,8 +3579,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListElasticsearchInstanceTypesRequest
 	{
 	}
@@ -3816,8 +3587,7 @@ namespace MyNS
 	/// <summary>
 	/// <p> Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation. <p> Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call. </p> <p> Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve. </p> </p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListElasticsearchVersionsRequest
 	{
 	}
@@ -3825,8 +3595,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>ListPackagesForDomain</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPackagesForDomainRequest
 	{
 	}
@@ -3834,8 +3603,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsRequest
 	{
 	}
@@ -3843,8 +3611,7 @@ namespace MyNS
 	/// <summary>
 	/// Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVpcEndpointAccessRequest
 	{
 	}
@@ -3852,8 +3619,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for request parameters to the <code><a>ListVpcEndpointsForDomain</a></code> operation. Specifies the domain whose VPC endpoints will be listed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVpcEndpointsForDomainRequest
 	{
 	}
@@ -3861,8 +3627,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for request parameters to the <code><a>ListVpcEndpoints</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListVpcEndpointsRequest
 	{
 	}
@@ -3870,30 +3635,27 @@ namespace MyNS
 	/// <summary>
 	/// Type of Log File, it can be one of the following: <ul> <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li> <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li> <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li> <li>AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.</li> </ul> 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum LogType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEX_SLOW_LOGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEX_SLOW_LOGS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_SLOW_LOGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_SLOW_LOGS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ES_APPLICATION_LOGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ES_APPLICATION_LOGS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUDIT_LOGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUDIT_LOGS = 3,
 	}
 	
 	/// <summary>
 	/// Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PurchaseReservedElasticsearchInstanceOfferingRequest
 	{
 		
@@ -3918,8 +3680,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RejectInboundCrossClusterSearchConnectionRequest
 	{
 	}
@@ -3927,8 +3688,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveTagsRequest
 	{
 		
@@ -3950,8 +3710,7 @@ namespace MyNS
 	/// <summary>
 	/// Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RevokeVpcEndpointAccessRequest
 	{
 		
@@ -3966,8 +3725,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartElasticsearchServiceSoftwareUpdateRequest
 	{
 		
@@ -3982,8 +3740,7 @@ namespace MyNS
 	/// <summary>
 	/// Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateElasticsearchDomainConfigRequest
 	{
 		
@@ -4033,8 +3790,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>UpdatePackage</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePackageRequest
 	{
 		
@@ -4063,8 +3819,7 @@ namespace MyNS
 	/// <summary>
 	/// Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVpcEndpointRequest
 	{
 		
@@ -4086,8 +3841,7 @@ namespace MyNS
 	/// <summary>
 	///  Container for request parameters to <code> <a>UpgradeElasticsearchDomain</a> </code> operation. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpgradeElasticsearchDomainRequest
 	{
 		
@@ -6477,9 +6231,7 @@ namespace MyNS
 		public CreatePackagePostBodyPackageSource PackageSource { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreatePackagePostBodyPackageType
 	{
 		

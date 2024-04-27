@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for address of a customer.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address
 	{
 		
@@ -90,8 +89,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for the ChangePlan rpc request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChangePlanRequest
 	{
 		
@@ -130,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for subscription seats.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Seats
 	{
 		
@@ -164,8 +161,7 @@ namespace MyNS
 	/// <summary>
 	/// When a Google customer's account is registered with a reseller, the customer's subscriptions for Google services are managed by this reseller. A customer is described by a primary domain name and a physical address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Customer
 	{
 		
@@ -231,27 +227,24 @@ namespace MyNS
 		public string ResourceUiUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomerCustomerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customerTypeUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customerTypeUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="domain")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		domain = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="team")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		team = 2,
 	}
 	
 	/// <summary>
 	/// JSON template for primary admin in case of TEAM customers
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrimaryAdmin
 	{
 		
@@ -265,8 +258,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a subscription renewal settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RenewalSettings
 	{
 		
@@ -287,8 +279,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for resellernotify getwatchdetails response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResellernotifyGetwatchdetailsResponse
 	{
 		
@@ -308,8 +299,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for resellernotify response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResellernotifyResource
 	{
 		
@@ -323,8 +313,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON template for a subscription.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscription
 	{
 		
@@ -517,8 +506,7 @@ namespace MyNS
 	/// <summary>
 	/// A subscription manages the relationship of a Google customer's payment plan with a product's SKU, user licenses, 30-day free trial status, and renewal options. A primary role of a reseller is to manage the Google customer's subscriptions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Subscriptions
 	{
 		
@@ -1179,10 +1167,10 @@ namespace MyNS
 	public enum Reseller_subscriptions_insertAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="actionUnspecified")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		actionUnspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="buy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		buy = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="switch")]
@@ -1192,13 +1180,13 @@ namespace MyNS
 	public enum Reseller_subscriptions_deleteDeletionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deletion_type_undefined")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deletion_type_undefined = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cancel")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cancel = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="transfer_to_direct")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		transfer_to_direct = 2,
 	}
 }

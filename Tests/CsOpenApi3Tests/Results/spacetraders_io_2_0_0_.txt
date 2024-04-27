@@ -1608,37 +1608,35 @@ namespace MyNS
 		public Ship_refinePostBodyProduce Produce { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Ship_refinePostBodyProduce
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IRON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IRON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPPER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPPER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SILVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SILVER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOLD = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALUMINUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALUMINUM = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATINUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATINUM = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URANITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URANITE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERITIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERITIUM = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FUEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FUEL = 8,
 	}
 	
@@ -1765,25 +1763,23 @@ namespace MyNS
 		public string Symbol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RegisterPostBodyFaction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COSMIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COSMIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GALACTIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GALACTIC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUANTUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUANTUM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOMINION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOMINION = 4,
 	}
 	
@@ -1876,40 +1872,38 @@ namespace MyNS
 		public string Symbol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Get_systemsReturnDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEUTRON_STAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEUTRON_STAR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RED_STAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RED_STAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORANGE_STAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORANGE_STAR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLUE_STAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLUE_STAR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="YOUNG_STAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		YOUNG_STAR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WHITE_DWARF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WHITE_DWARF = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLACK_HOLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BLACK_HOLE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HYPERGIANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HYPERGIANT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEBULA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEBULA = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSTABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSTABLE = 9,
 	}
 	
@@ -2059,340 +2053,338 @@ namespace MyNS
 		public Get_marketReturnDataExportsSymbol Symbol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Get_marketReturnDataExportsSymbol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRECIOUS_STONES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRECIOUS_STONES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUARTZ_SAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUARTZ_SAND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SILICON_CRYSTALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SILICON_CRYSTALS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMMONIA_ICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMMONIA_ICE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIQUID_HYDROGEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIQUID_HYDROGEN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIQUID_NITROGEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIQUID_NITROGEN = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ICE_WATER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ICE_WATER = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXOTIC_MATTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXOTIC_MATTER = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADVANCED_CIRCUITRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADVANCED_CIRCUITRY = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRAVITON_EMITTERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRAVITON_EMITTERS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IRON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IRON = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IRON_ORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IRON_ORE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPPER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPPER = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COPPER_ORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COPPER_ORE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALUMINUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALUMINUM = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALUMINUM_ORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALUMINUM_ORE = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SILVER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SILVER = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SILVER_ORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SILVER_ORE = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOLD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOLD = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOLD_ORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GOLD_ORE = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATINUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATINUM = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATINUM_ORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATINUM_ORE = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIAMONDS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIAMONDS = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URANITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URANITE = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URANITE_ORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URANITE_ORE = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERITIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERITIUM = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERITIUM_ORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERITIUM_ORE = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HYDROCARBON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HYDROCARBON = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANTIMATTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANTIMATTER = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FERTILIZERS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FERTILIZERS = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FABRICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FABRICS = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FOOD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FOOD = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JEWELRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JEWELRY = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MACHINERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MACHINERY = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIREARMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIREARMS = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSAULT_RIFLES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASSAULT_RIFLES = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MILITARY_EQUIPMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MILITARY_EQUIPMENT = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPLOSIVES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPLOSIVES = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAB_INSTRUMENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAB_INSTRUMENTS = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AMMUNITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AMMUNITION = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ELECTRONICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ELECTRONICS = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_PLATING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_PLATING = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EQUIPMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EQUIPMENT = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FUEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FUEL = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDICINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDICINE = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRUGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRUGS = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOTHING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOTHING = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICROPROCESSORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICROPROCESSORS = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLASTICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLASTICS = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POLYNUCLEOTIDES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POLYNUCLEOTIDES = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIOCOMPOSITES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIOCOMPOSITES = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NANOBOTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NANOBOTS = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AI_MAINFRAMES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AI_MAINFRAMES = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUANTUM_DRIVES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUANTUM_DRIVES = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROBOTIC_DRONES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROBOTIC_DRONES = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CYBER_IMPLANTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CYBER_IMPLANTS = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENE_THERAPEUTICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GENE_THERAPEUTICS = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NEURAL_CHIPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NEURAL_CHIPS = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOOD_REGULATORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOOD_REGULATORS = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIRAL_AGENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIRAL_AGENTS = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICRO_FUSION_GENERATORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MICRO_FUSION_GENERATORS = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUPERGRAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUPERGRAINS = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LASER_RIFLES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LASER_RIFLES = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOLOGRAPHICS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOLOGRAPHICS = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_SALVAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_SALVAGE = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RELIC_TECH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RELIC_TECH = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOVEL_LIFEFORMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOVEL_LIFEFORMS = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTANICAL_SPECIMENS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTANICAL_SPECIMENS = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CULTURAL_ARTIFACTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CULTURAL_ARTIFACTS = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REACTOR_SOLAR_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REACTOR_SOLAR_I = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REACTOR_FUSION_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REACTOR_FUSION_I = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REACTOR_FISSION_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REACTOR_FISSION_I = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REACTOR_CHEMICAL_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REACTOR_CHEMICAL_I = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REACTOR_ANTIMATTER_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REACTOR_ANTIMATTER_I = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENGINE_IMPULSE_DRIVE_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENGINE_IMPULSE_DRIVE_I = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENGINE_ION_DRIVE_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENGINE_ION_DRIVE_I = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENGINE_ION_DRIVE_II")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENGINE_ION_DRIVE_II = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENGINE_HYPER_DRIVE_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENGINE_HYPER_DRIVE_I = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_MINERAL_PROCESSOR_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_MINERAL_PROCESSOR_I = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_CARGO_HOLD_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_CARGO_HOLD_I = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_CREW_QUARTERS_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_CREW_QUARTERS_I = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_ENVOY_QUARTERS_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_ENVOY_QUARTERS_I = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_PASSENGER_CABIN_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_PASSENGER_CABIN_I = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_MICRO_REFINERY_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_MICRO_REFINERY_I = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_ORE_REFINERY_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_ORE_REFINERY_I = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_FUEL_REFINERY_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_FUEL_REFINERY_I = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_SCIENCE_LAB_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_SCIENCE_LAB_I = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_JUMP_DRIVE_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_JUMP_DRIVE_I = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_JUMP_DRIVE_II")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_JUMP_DRIVE_II = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_JUMP_DRIVE_III")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_JUMP_DRIVE_III = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_WARP_DRIVE_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_WARP_DRIVE_I = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_WARP_DRIVE_II")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_WARP_DRIVE_II = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_WARP_DRIVE_III")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_WARP_DRIVE_III = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_SHIELD_GENERATOR_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_SHIELD_GENERATOR_I = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODULE_SHIELD_GENERATOR_II")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODULE_SHIELD_GENERATOR_II = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_GAS_SIPHON_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_GAS_SIPHON_I = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_GAS_SIPHON_II")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_GAS_SIPHON_II = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_GAS_SIPHON_III")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_GAS_SIPHON_III = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_SURVEYOR_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_SURVEYOR_I = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_SURVEYOR_II")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_SURVEYOR_II = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_SURVEYOR_III")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_SURVEYOR_III = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_SENSOR_ARRAY_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_SENSOR_ARRAY_I = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_SENSOR_ARRAY_II")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_SENSOR_ARRAY_II = 102,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_SENSOR_ARRAY_III")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_SENSOR_ARRAY_III = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_MINING_LASER_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_MINING_LASER_I = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_MINING_LASER_II")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_MINING_LASER_II = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_MINING_LASER_III")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_MINING_LASER_III = 106,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_LASER_CANNON_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_LASER_CANNON_I = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_MISSILE_LAUNCHER_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_MISSILE_LAUNCHER_I = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOUNT_TURRET_I")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOUNT_TURRET_I = 109,
 	}
 	
@@ -2446,22 +2438,20 @@ namespace MyNS
 		public int TradeVolume { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Get_marketReturnDataTradeGoodsSupply
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCARCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCARCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIMITED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIMITED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODERATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODERATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABUNDANT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ABUNDANT = 3,
 	}
 	
@@ -2539,16 +2529,14 @@ namespace MyNS
 		public string WaypointSymbol { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Get_marketReturnDataTransactionsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PURCHASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PURCHASE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SELL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SELL = 1,
 	}
 	
@@ -2604,40 +2592,38 @@ namespace MyNS
 		public System.Nullable<Get_shipyardReturnDataShipTypesType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Get_shipyardReturnDataShipTypesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_PROBE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_PROBE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_MINING_DRONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_MINING_DRONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_INTERCEPTOR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_INTERCEPTOR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_LIGHT_HAULER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_LIGHT_HAULER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_COMMAND_FRIGATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_COMMAND_FRIGATE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_EXPLORER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_EXPLORER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_HEAVY_FREIGHTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_HEAVY_FREIGHTER = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_LIGHT_SHUTTLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_LIGHT_SHUTTLE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_ORE_HOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_ORE_HOUND = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHIP_REFINING_FREIGHTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHIP_REFINING_FREIGHTER = 9,
 	}
 	

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration parameters for a new instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceConfig
 	{
 		
@@ -77,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// A network.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkAddress
 	{
 		
@@ -104,8 +102,7 @@ namespace MyNS
 	/// <summary>
 	/// A resource budget.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceQuota
 	{
 		
@@ -131,8 +128,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for ListProvisioningQuotas.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListProvisioningQuotasResponse
 	{
 		
@@ -152,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// A provisioning quota for a given project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisioningQuota
 	{
 		
@@ -167,8 +162,7 @@ namespace MyNS
 	/// <summary>
 	/// A LUN range.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LunRange
 	{
 		
@@ -188,8 +182,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration parameters for a new network.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkConfig
 	{
 		
@@ -242,71 +235,64 @@ namespace MyNS
 		public VlanAttachment[] VlanAttachments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NetworkConfigBandwidth
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BANDWIDTH_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BW_1_GBPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BW_1_GBPS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BW_2_GBPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BW_2_GBPS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BW_5_GBPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BW_5_GBPS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BW_10_GBPS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BW_10_GBPS = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NetworkConfigServiceCidr
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_CIDR_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_CIDR_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH_26")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH_26 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH_27")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH_27 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIGH_28")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HIGH_28 = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NetworkConfigType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLIENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE = 2,
 	}
 	
 	/// <summary>
 	/// A GCP vlan attachment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VlanAttachment
 	{
 		
@@ -326,8 +312,7 @@ namespace MyNS
 	/// <summary>
 	/// A NFS export entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NfsExport
 	{
 		
@@ -374,27 +359,24 @@ namespace MyNS
 		public System.Nullable<NfsExportPermissions> Permissions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NfsExportPermissions
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSIONS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSIONS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="READ_WRITE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		READ_WRITE = 2,
 	}
 	
 	/// <summary>
 	/// An provisioning configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvisioningConfig
 	{
 		
@@ -426,8 +408,7 @@ namespace MyNS
 	/// <summary>
 	/// Configuration parameters for a new volume.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VolumeConfig
 	{
 		
@@ -492,43 +473,38 @@ namespace MyNS
 		public string UserNote { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VolumeConfigProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOCOL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOCOL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOCOL_FC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOCOL_FC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOCOL_NFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOCOL_NFS = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum VolumeConfigType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLASH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FLASH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISK = 2,
 	}
 	
 	/// <summary>
 	/// Request for SubmitProvisioningConfig.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SubmitProvisioningConfigRequest
 	{
 		

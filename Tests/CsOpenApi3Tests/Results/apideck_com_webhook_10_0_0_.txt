@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestResponse
 	{
 		
@@ -59,8 +58,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWebhookRequest
 	{
 		
@@ -105,9 +103,7 @@ namespace MyNS
 		public CreateWebhookRequestUnified_api Unified_api { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookEventType
 	{
 		
@@ -418,47 +414,43 @@ namespace MyNS
 		ats_application_deleted = 101,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateWebhookRequestStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CreateWebhookRequestUnified_api
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accounting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accounting = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ats")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ats = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calendar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calendar = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="crm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		crm = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="csp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		csp = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer-support")]
 		customerMinussupport = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecommerce = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="email-marketing")]
@@ -470,34 +462,34 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="file-storage")]
 		fileMinusstorage = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="form")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		form = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hris")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hris = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lead = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="payroll")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		payroll = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pos = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="procurement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		procurement = 16,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="project-management")]
 		projectMinusmanagement = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="script")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		script = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spreadsheet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spreadsheet = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="team-messaging")]
@@ -512,15 +504,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="transactional-email")]
 		transactionalMinusemail = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vault")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vault = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="data-warehouse")]
 		dataMinuswarehouse = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateWebhookResponse
 	{
 		
@@ -548,8 +539,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Webhook
 	{
 		
@@ -625,50 +615,46 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated_at { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookDisabled_reason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="retry_limit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		retry_limit = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="usage_limit")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		usage_limit = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookUnified_api
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accounting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accounting = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ats")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ats = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calendar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calendar = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="crm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		crm = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="csp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		csp = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer-support")]
 		customerMinussupport = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecommerce = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="email-marketing")]
@@ -680,34 +666,34 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="file-storage")]
 		fileMinusstorage = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="form")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		form = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hris")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hris = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lead = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="payroll")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		payroll = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pos = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="procurement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		procurement = 16,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="project-management")]
 		projectMinusmanagement = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="script")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		script = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spreadsheet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spreadsheet = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="team-messaging")]
@@ -722,15 +708,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="transactional-email")]
 		transactionalMinusemail = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vault")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vault = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="data-warehouse")]
 		dataMinuswarehouse = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteWebhookResponse
 	{
 		
@@ -758,14 +743,12 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteWebhookEventRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExecuteWebhookResponse
 	{
 		
@@ -798,8 +781,7 @@ namespace MyNS
 		public string Timestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebhookEventLogsResponse
 	{
 		
@@ -839,8 +821,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookEventLog
 	{
 		
@@ -994,34 +975,32 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookEventLogUnified_api
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accounting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accounting = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ats")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ats = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calendar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calendar = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="crm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		crm = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="csp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		csp = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer-support")]
 		customerMinussupport = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecommerce = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="email-marketing")]
@@ -1033,34 +1012,34 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="file-storage")]
 		fileMinusstorage = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="form")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		form = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hris")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hris = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lead = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="payroll")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		payroll = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pos = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="procurement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		procurement = 16,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="project-management")]
 		projectMinusmanagement = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="script")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		script = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spreadsheet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spreadsheet = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="team-messaging")]
@@ -1075,7 +1054,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="transactional-email")]
 		transactionalMinusemail = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vault")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vault = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="data-warehouse")]
@@ -1085,8 +1064,7 @@ namespace MyNS
 	/// <summary>
 	/// Links to navigate to previous or next pages through the API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Links
 	{
 		
@@ -1112,8 +1090,7 @@ namespace MyNS
 	/// <summary>
 	/// Response metadata
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Meta
 	{
 		
@@ -1152,8 +1129,7 @@ namespace MyNS
 		public string Previous { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebhookResponse
 	{
 		
@@ -1181,8 +1157,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetWebhooksResponse
 	{
 		
@@ -1222,8 +1197,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundResponse
 	{
 		
@@ -1264,8 +1238,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotImplementedResponse
 	{
 		
@@ -1306,8 +1279,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PaymentRequiredResponse
 	{
 		
@@ -1348,14 +1320,12 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResolveWebhookEventRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResolveWebhookResponse
 	{
 		
@@ -1391,21 +1361,18 @@ namespace MyNS
 	/// <summary>
 	/// The status of the webhook.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		disabled = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnauthorizedResponse
 	{
 		
@@ -1446,8 +1413,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnexpectedErrorResponse
 	{
 		
@@ -1491,34 +1457,32 @@ namespace MyNS
 	/// <summary>
 	/// Name of Apideck Unified API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UnifiedApiId
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accounting")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accounting = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ats")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ats = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="calendar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		calendar = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="crm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		crm = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="csp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		csp = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer-support")]
 		customerMinussupport = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ecommerce")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ecommerce = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="email-marketing")]
@@ -1530,34 +1494,34 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="file-storage")]
 		fileMinusstorage = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="form")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		form = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="hris")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		hris = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="lead")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lead = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="payroll")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		payroll = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pos")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pos = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="procurement")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		procurement = 16,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="project-management")]
 		projectMinusmanagement = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="script")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		script = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="spreadsheet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		spreadsheet = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="team-messaging")]
@@ -1572,15 +1536,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="transactional-email")]
 		transactionalMinusemail = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vault")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vault = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="data-warehouse")]
 		dataMinuswarehouse = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnprocessableResponse
 	{
 		
@@ -1621,8 +1584,7 @@ namespace MyNS
 		public string Type_name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWebhookRequest
 	{
 		
@@ -1653,8 +1615,7 @@ namespace MyNS
 		public CreateWebhookRequestStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateWebhookResponse
 	{
 		
@@ -1682,8 +1643,7 @@ namespace MyNS
 		public int Status_code { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookEvent
 	{
 		
@@ -1733,9 +1693,7 @@ namespace MyNS
 		public string Service_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum WebhookEventEvent_type
 	{
 		
@@ -2046,8 +2004,7 @@ namespace MyNS
 		ats_application_deleted = 101,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WebhookEventLogsFilter
 	{
 		

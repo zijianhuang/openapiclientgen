@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSavingsPlanResponse
 	{
 		
@@ -26,38 +25,32 @@ namespace MyNS
 		public string SavingsPlanId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteQueuedSavingsPlanResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSavingsPlanRatesResponse
 	{
 		
@@ -74,8 +67,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Savings Plan rate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanRate
 	{
 		
@@ -107,81 +99,72 @@ namespace MyNS
 		public object Properties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CurrencyCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CNY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CNY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USD = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanRateUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hrs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Hrs = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lambda-GB-Second")]
 		LambdaMinusGBMinusSecond = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Request")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Request = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanProductType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fargate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fargate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lambda")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Lambda = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SageMaker")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SageMaker = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanRateServiceCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonEC2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmazonEC2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonECS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmazonECS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonEKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmazonEKS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSLambda")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AWSLambda = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonSageMaker")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AmazonSageMaker = 4,
 	}
 	
 	/// <summary>
 	/// Information about a filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanRateFilter
 	{
 		
@@ -192,39 +175,36 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanRateFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		instanceType = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="productDescription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		productDescription = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tenancy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tenancy = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="productType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		productType = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="serviceCode")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		serviceCode = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="usageType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		usageType = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="operation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		operation = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSavingsPlansResponse
 	{
 		
@@ -238,8 +218,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Savings Plan.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlan
 	{
 		
@@ -298,9 +277,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanState
 	{
 		
@@ -310,38 +287,34 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="payment-failed")]
 		paymentMinusfailed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="retired")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		retired = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		queued = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued-deleted")]
 		queuedMinusdeleted = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Compute")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Compute = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Instance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EC2Instance = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SageMaker")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SageMaker = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanPaymentOption
 	{
 		
@@ -355,8 +328,7 @@ namespace MyNS
 		No_Upfront = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
@@ -364,8 +336,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanFilter
 	{
 		
@@ -376,25 +347,23 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlansFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		region = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ec2-instance-family")]
 		ec2MinusinstanceMinusfamily = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="commitment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		commitment = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="upfront")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		upfront = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="term")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		term = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="savings-plan-type")]
@@ -403,15 +372,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="payment-option")]
 		paymentMinusoption = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="start")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		start = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="end")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		end = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSavingsPlansOfferingRatesResponse
 	{
 		
@@ -425,8 +393,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Savings Plan offering rate.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanOfferingRate
 	{
 		
@@ -461,8 +428,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Savings Plan offering.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ParentSavingsPlanOffering
 	{
 		
@@ -488,8 +454,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanOfferingRateFilterElement
 	{
 		
@@ -500,33 +465,30 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanRateFilterAttribute
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceFamily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		instanceFamily = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		instanceType = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="productDescription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		productDescription = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tenancy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tenancy = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="productId")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		productId = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSavingsPlansOfferingsResponse
 	{
 		
@@ -540,8 +502,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a Savings Plan offering.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanOffering
 	{
 		
@@ -585,8 +546,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a filter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanOfferingFilterElement
 	{
 		
@@ -597,21 +557,18 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanOfferingFilterAttribute
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceFamily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		instanceFamily = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -619,20 +576,17 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSavingsPlanRequest
 	{
 		
@@ -663,8 +617,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteQueuedSavingsPlanRequest
 	{
 		
@@ -676,8 +629,7 @@ namespace MyNS
 		public string SavingsPlanId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSavingsPlanRatesRequest
 	{
 		
@@ -698,8 +650,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSavingsPlansOfferingRatesRequest
 	{
 		
@@ -734,8 +685,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSavingsPlansOfferingsRequest
 	{
 		
@@ -779,8 +729,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeSavingsPlansRequest
 	{
 		
@@ -803,8 +752,7 @@ namespace MyNS
 		public SavingsPlanFilter[] Filters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 		
@@ -816,24 +764,21 @@ namespace MyNS
 		public string ResourceArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanOfferingPropertyKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceFamily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		instanceFamily = 1,
 	}
 	
 	/// <summary>
 	/// Information about a property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanOfferingProperty
 	{
 		
@@ -847,8 +792,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanOfferingRateProperty
 	{
 		
@@ -859,33 +803,30 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SavingsPlanRatePropertyKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		instanceType = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceFamily")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		instanceFamily = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="productDescription")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		productDescription = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="tenancy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		tenancy = 4,
 	}
 	
 	/// <summary>
 	/// Information about a property.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SavingsPlanRateProperty
 	{
 		
@@ -896,8 +837,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -916,8 +856,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 		

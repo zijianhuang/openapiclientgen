@@ -376,13 +376,13 @@ namespace MyNS
 	public enum App_api_cari7_endpoints_CARI7_ambient_doseParticle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neutron")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neutron = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="photon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		photon = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="e-")]
@@ -397,7 +397,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="mu+")]
 		muPlus = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="proton")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		proton = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pi-")]
@@ -406,88 +406,88 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pi+")]
 		piPlus = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deuteron")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deuteron = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="triton")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		triton = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="helion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		helion = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alpha = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Li")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Li = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Be")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Be = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="B")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		B = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="C")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		C = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="N")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		N = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="O")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		O = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="F")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		F = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ne")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ne = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Na")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Na = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mg = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Al")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Al = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Si")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Si = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cl = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ar = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="K")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		K = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ca = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sc = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ti")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ti = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cr = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mn = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fe = 37,
 	}
 	
@@ -511,13 +511,13 @@ namespace MyNS
 	public enum App_api_cari7_endpoints_CARI7_effective_doseParticle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neutron")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neutron = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="photon")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		photon = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="e-")]
@@ -532,7 +532,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="mu+")]
 		muPlus = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="proton")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		proton = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pi-")]
@@ -541,88 +541,88 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pi+")]
 		piPlus = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deuteron")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		deuteron = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="triton")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		triton = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="helion")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		helion = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alpha = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Li")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Li = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Be")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Be = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="B")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		B = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="C")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		C = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="N")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		N = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="O")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		O = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="F")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		F = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ne")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ne = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Na")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Na = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mg")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mg = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Al")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Al = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Si")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Si = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="P")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		P = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="S")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		S = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cl = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ar")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ar = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="K")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		K = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ca = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sc = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ti")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ti = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="V")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		V = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cr = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mn = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Fe = 37,
 	}
 	
@@ -646,7 +646,7 @@ namespace MyNS
 	public enum App_api_parma_endpoints_PARMA_ambient_doseParticle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="e-")]
@@ -661,16 +661,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="mu-")]
 		muMinus = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gamma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gamma = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neutron")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neutron = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="proton")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		proton = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alpha = 8,
 	}
 	
@@ -694,7 +694,7 @@ namespace MyNS
 	public enum App_api_parma_endpoints_PARMA_differential_intensityParticle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="e-")]
@@ -709,16 +709,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="mu-")]
 		muMinus = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gamma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gamma = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neutron")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neutron = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="proton")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		proton = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alpha = 8,
 	}
 	
@@ -755,7 +755,7 @@ namespace MyNS
 	public enum App_api_parma_endpoints_PARMA_effective_doseParticle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="total")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		total = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="e-")]
@@ -770,16 +770,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="mu-")]
 		muMinus = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gamma")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gamma = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="neutron")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		neutron = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="proton")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		proton = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alpha = 8,
 	}
 	

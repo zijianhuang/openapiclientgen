@@ -20,44 +20,37 @@ namespace MyNS
 	/// <summary>
 	/// The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelJobResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IncompatibleVersionException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceInUseException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceException
 	{
 	}
@@ -65,8 +58,7 @@ namespace MyNS
 	/// <summary>
 	/// The CreateJobResponse structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobResponse
 	{
 		
@@ -77,8 +69,7 @@ namespace MyNS
 	/// <summary>
 	/// A section of the response body that provides information about the job that is created.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Job
 	{
 		
@@ -122,8 +113,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the file that you're transcoding.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobInput
 	{
 		
@@ -161,8 +151,7 @@ namespace MyNS
 	/// <summary>
 	/// The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Encryption
 	{
 		
@@ -182,8 +171,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings that determine when a clip begins and how long it lasts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeSpan
 	{
 		
@@ -197,8 +185,7 @@ namespace MyNS
 	/// <summary>
 	/// The captions to be created, if any.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InputCaptions
 	{
 		
@@ -212,8 +199,7 @@ namespace MyNS
 	/// <summary>
 	/// A source file for the input sidecar captions used during the transcoding process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaptionSource
 	{
 		
@@ -236,8 +222,7 @@ namespace MyNS
 	/// <summary>
 	/// The detected properties of the input file. Elastic Transcoder identifies these values from the input file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetectedProperties
 	{
 		
@@ -260,8 +245,7 @@ namespace MyNS
 	/// <summary>
 	/// <important> <p>Outputs recommended instead.</p> </important> <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobOutput
 	{
 		
@@ -332,8 +316,7 @@ namespace MyNS
 	/// <summary>
 	/// Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobWatermark
 	{
 		
@@ -350,8 +333,7 @@ namespace MyNS
 	/// <summary>
 	/// The .jpg or .png file associated with an audio file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JobAlbumArt
 	{
 		
@@ -365,8 +347,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.</p> <p>To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code> array.</p> <p>To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Artwork
 	{
 		
@@ -395,8 +376,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Clip
 	{
 		
@@ -407,8 +387,7 @@ namespace MyNS
 	/// <summary>
 	/// The captions to be created, if any.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Captions
 	{
 		
@@ -425,8 +404,7 @@ namespace MyNS
 	/// <summary>
 	/// The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CaptionFormat
 	{
 		
@@ -443,8 +421,7 @@ namespace MyNS
 	/// <summary>
 	///  Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Playlist
 	{
 		
@@ -473,8 +450,7 @@ namespace MyNS
 	/// <summary>
 	/// The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HlsContentProtection
 	{
 		
@@ -500,8 +476,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlayReadyDrm
 	{
 		
@@ -524,8 +499,7 @@ namespace MyNS
 		public string LicenseAcquisitionUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserMetadata
 	{
 	}
@@ -533,8 +507,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the timing of a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Timing
 	{
 		
@@ -551,8 +524,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>CreateJobOutput</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobOutput
 	{
 		
@@ -593,8 +565,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the master playlist.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobPlaylist
 	{
 		
@@ -614,8 +585,7 @@ namespace MyNS
 		public PlayReadyDrm PlayReadyDrm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
@@ -623,8 +593,7 @@ namespace MyNS
 	/// <summary>
 	/// When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePipelineResponse
 	{
 		
@@ -638,8 +607,7 @@ namespace MyNS
 	/// <summary>
 	/// The pipeline (queue) that is used to manage jobs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pipeline
 	{
 		
@@ -680,8 +648,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Notifications
 	{
 		
@@ -701,8 +668,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>PipelineOutputConfig</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PipelineOutputConfig
 	{
 		
@@ -719,8 +685,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>Permission</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Permission
 	{
 		
@@ -737,8 +702,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Warning
 	{
 		
@@ -752,8 +716,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>CreatePresetResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePresetResponse
 	{
 		
@@ -767,8 +730,7 @@ namespace MyNS
 	/// <summary>
 	/// Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Preset
 	{
 		
@@ -803,8 +765,7 @@ namespace MyNS
 	/// <summary>
 	/// Parameters required for transcoding audio.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioParameters
 	{
 		
@@ -830,8 +791,7 @@ namespace MyNS
 	/// <summary>
 	/// Options associated with your audio codec.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AudioCodecOptions
 	{
 		
@@ -851,8 +811,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>VideoParameters</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VideoParameters
 	{
 		
@@ -902,8 +861,7 @@ namespace MyNS
 		public PresetWatermark[] Watermarks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CodecOptions
 	{
 	}
@@ -911,8 +869,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p> <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p> <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PresetWatermark
 	{
 		
@@ -950,8 +907,7 @@ namespace MyNS
 	/// <summary>
 	/// Thumbnails for videos.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Thumbnails
 	{
 		
@@ -983,8 +939,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>DeletePipelineResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePipelineResponse
 	{
 	}
@@ -992,8 +947,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>DeletePresetResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePresetResponse
 	{
 	}
@@ -1001,8 +955,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ListJobsByPipelineResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsByPipelineResponse
 	{
 		
@@ -1016,8 +969,7 @@ namespace MyNS
 	/// <summary>
 	///  The <code>ListJobsByStatusResponse</code> structure. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsByStatusResponse
 	{
 		
@@ -1031,8 +983,7 @@ namespace MyNS
 	/// <summary>
 	/// A list of the pipelines associated with the current AWS account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPipelinesResponse
 	{
 		
@@ -1046,8 +997,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ListPresetsResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPresetsResponse
 	{
 		
@@ -1061,8 +1011,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ReadJobResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadJobResponse
 	{
 		
@@ -1073,8 +1022,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ReadPipelineResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadPipelineResponse
 	{
 		
@@ -1088,8 +1036,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ReadPresetResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadPresetResponse
 	{
 		
@@ -1100,8 +1047,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>TestRoleResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestRoleResponse
 	{
 		
@@ -1115,8 +1061,7 @@ namespace MyNS
 	/// <summary>
 	/// When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePipelineResponse
 	{
 		
@@ -1130,8 +1075,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>UpdatePipelineNotificationsResponse</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePipelineNotificationsResponse
 	{
 		
@@ -1142,8 +1086,7 @@ namespace MyNS
 	/// <summary>
 	/// When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePipelineStatusResponse
 	{
 		
@@ -1154,8 +1097,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>CancelJobRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CancelJobRequest
 	{
 	}
@@ -1163,8 +1105,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>CreateJobRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJobRequest
 	{
 		
@@ -1200,8 +1141,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>CreatePipelineRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePipelineRequest
 	{
 		
@@ -1245,8 +1185,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>CreatePresetRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePresetRequest
 	{
 		
@@ -1280,8 +1219,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>DeletePipelineRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePipelineRequest
 	{
 	}
@@ -1289,8 +1227,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>DeletePresetRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePresetRequest
 	{
 	}
@@ -1298,8 +1235,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ListJobsByPipelineRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsByPipelineRequest
 	{
 	}
@@ -1307,8 +1243,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ListJobsByStatusRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJobsByStatusRequest
 	{
 	}
@@ -1316,8 +1251,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ListPipelineRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPipelinesRequest
 	{
 	}
@@ -1325,8 +1259,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ListPresetsRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPresetsRequest
 	{
 	}
@@ -1334,8 +1267,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ReadJobRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadJobRequest
 	{
 	}
@@ -1343,8 +1275,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ReadPipelineRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadPipelineRequest
 	{
 	}
@@ -1352,8 +1283,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>ReadPresetRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReadPresetRequest
 	{
 	}
@@ -1361,8 +1291,7 @@ namespace MyNS
 	/// <summary>
 	///  The <code>TestRoleRequest</code> structure. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestRoleRequest
 	{
 		
@@ -1398,8 +1327,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>UpdatePipelineNotificationsRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePipelineNotificationsRequest
 	{
 		
@@ -1414,8 +1342,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>UpdatePipelineRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePipelineRequest
 	{
 		
@@ -1444,8 +1371,7 @@ namespace MyNS
 	/// <summary>
 	/// The <code>UpdatePipelineStatusRequest</code> structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePipelineStatusRequest
 	{
 		

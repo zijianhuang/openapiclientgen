@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorInvalidId
 	{
 		
@@ -58,8 +57,7 @@ namespace MyNS
 	/// <summary>
 	/// Invalid JSON
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorInvalidJson
 	{
 		
@@ -99,8 +97,7 @@ namespace MyNS
 	/// <summary>
 	/// Premature Redaction
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorPrematureRedaction
 	{
 		
@@ -137,8 +134,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorThrottled
 	{
 		
@@ -175,8 +171,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorUnauthorized
 	{
 		
@@ -200,8 +195,7 @@ namespace MyNS
 	/// <summary>
 	/// Unprovisioned
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorUnprovisioned
 	{
 		
@@ -241,8 +235,7 @@ namespace MyNS
 	/// <summary>
 	/// Unsupported Product
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorUnsupportedProduct
 	{
 		
@@ -279,8 +272,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RedactTransaction
 	{
 		
@@ -310,41 +302,37 @@ namespace MyNS
 		public RedactTransactionType Type { get; set; } = RedactTransactionType.outbound;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RedactTransactionProduct
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voice = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="number-insight")]
 		numberMinusinsight = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="verify")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		verify = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="verify-sdk")]
 		verifyMinussdk = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="messages")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		messages = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RedactTransactionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outbound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		outbound = 1,
 	}
 	

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the claim.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1Claim
 	{
 		
@@ -53,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a claim review.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview
 	{
 		
@@ -98,8 +96,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the publisher.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1Publisher
 	{
 		
@@ -119,8 +116,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the claim author.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor
 	{
 		
@@ -152,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the claim rating.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating
 	{
 		
@@ -197,8 +192,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the claim review author.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor
 	{
 		
@@ -218,8 +212,7 @@ namespace MyNS
 	/// <summary>
 	/// Fields for an individual `ClaimReview` element. Except for sub-messages that group fields together, each of these fields correspond those in https://schema.org/ClaimReview. We list the precise mapping for each field.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup
 	{
 		
@@ -275,8 +268,7 @@ namespace MyNS
 	/// <summary>
 	/// Holds one or more instances of `ClaimReview` markup for a webpage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage
 	{
 		
@@ -320,8 +312,7 @@ namespace MyNS
 	/// <summary>
 	/// Response from searching fact-checked claims.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponse
 	{
 		
@@ -341,8 +332,7 @@ namespace MyNS
 	/// <summary>
 	/// Response from listing `ClaimReview` markup.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse
 	{
 		
@@ -362,8 +352,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAppResponse
 	{
 		
@@ -34,8 +33,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationResponse
 	{
 		
@@ -67,56 +65,47 @@ namespace MyNS
 		public string CreationDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOf__string
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BadRequestException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PayloadTooLargeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ForbiddenException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MethodNotAllowedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCampaignResponse
 	{
 		
@@ -132,8 +121,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status, configuration, and other settings for a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignResponse
 	{
 		
@@ -244,8 +232,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TreatmentResource
 	{
 		
@@ -288,8 +275,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomDeliveryConfiguration
 	{
 		
@@ -304,57 +290,54 @@ namespace MyNS
 		public @__EndpointTypesElement[] EndpointTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum @__EndpointTypesElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUSH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUSH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GCM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GCM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_SANDBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS_SANDBOX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_VOIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS_VOIP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_VOIP_SANDBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS_VOIP_SANDBOX = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADM = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOICE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAIDU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAIDU = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_APP = 12,
 	}
 	
 	/// <summary>
 	/// Specifies the message configuration settings for a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageConfiguration
 	{
 		
@@ -389,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the content and settings for a push notification that's sent to recipients of a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Message
 	{
 		
@@ -431,27 +413,24 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Action
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPEN_APP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEEP_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEEP_LINK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL = 2,
 	}
 	
 	/// <summary>
 	/// Specifies the contents of a message that's sent through a custom channel to recipients of a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignCustomMessage
 	{
 		
@@ -462,8 +441,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignEmailMessage
 	{
 		
@@ -483,8 +461,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignSmsMessage
 	{
 		
@@ -507,24 +484,21 @@ namespace MyNS
 		public string TemplateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSACTIONAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMOTIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROMOTIONAL = 1,
 	}
 	
 	/// <summary>
 	/// In-app message configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignInAppMessage
 	{
 		
@@ -544,8 +518,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration for the message content.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppMessageContent
 	{
 		
@@ -571,8 +544,7 @@ namespace MyNS
 	/// <summary>
 	/// Text config for Message Body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppMessageBodyConfig
 	{
 		
@@ -598,27 +570,24 @@ namespace MyNS
 		public string TextColor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Alignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEFT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CENTER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RIGHT = 2,
 	}
 	
 	/// <summary>
 	/// Text config for Message Header.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppMessageHeaderConfig
 	{
 		
@@ -647,8 +616,7 @@ namespace MyNS
 	/// <summary>
 	/// Button Config for an in-app message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppMessageButton
 	{
 		
@@ -668,8 +636,7 @@ namespace MyNS
 	/// <summary>
 	/// Override button configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OverrideButtonConfiguration
 	{
 		
@@ -684,27 +651,24 @@ namespace MyNS
 		public string Link { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ButtonAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEEP_LINK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEEP_LINK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSE = 2,
 	}
 	
 	/// <summary>
 	/// Default button configuration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultButtonConfiguration
 	{
 		
@@ -735,36 +699,33 @@ namespace MyNS
 		public string TextColor { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Layout
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM_BANNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOTTOM_BANNER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP_BANNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOP_BANNER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVERLAYS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVERLAYS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_FEED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE_FEED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIDDLE_BANNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MIDDLE_BANNER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAROUSEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAROUSEL = 5,
 	}
 	
 	/// <summary>
 	/// Specifies the schedule settings for a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schedule
 	{
 		
@@ -797,8 +758,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for events that cause a campaign to be sent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignEventFilter
 	{
 		
@@ -820,8 +780,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the dimensions for an event filter that determines when a campaign is sent or a journey activity is performed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventDimensions
 	{
 		
@@ -835,8 +794,7 @@ namespace MyNS
 		public MapOfMetricDimension Metrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfAttributeDimension
 	{
 	}
@@ -844,8 +802,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the dimension type and values for a segment dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetDimension
 	{
 		
@@ -860,71 +817,63 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DimensionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUSIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUSIVE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfMetricDimension
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FilterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SYSTEM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDPOINT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENDPOINT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Frequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ONCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOURLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEKLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_APP_EVENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_APP_EVENT = 6,
 	}
 	
 	/// <summary>
 	/// Specifies the start and end times that define a time range when messages aren't sent to endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QuietTime
 	{
 		
@@ -938,8 +887,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status of a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignState
 	{
 		
@@ -947,39 +895,36 @@ namespace MyNS
 		public CampaignStatus CampaignStatus { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CampaignStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEDULED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXECUTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_NEXT_RUN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_NEXT_RUN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID = 6,
 	}
 	
 	/// <summary>
 	/// Specifies the message template to use for the message, for each type of channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateConfiguration
 	{
 		
@@ -1002,8 +947,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the name and version of the message template to use for the message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Template
 	{
 		
@@ -1017,8 +961,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignHook
 	{
 		
@@ -1032,24 +975,21 @@ namespace MyNS
 		public string WebUrl { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Mode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELIVERY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER = 1,
 	}
 	
 	/// <summary>
 	/// For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns in the application can send.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignLimits
 	{
 		
@@ -1072,8 +1012,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteTreatmentResource
 	{
 		
@@ -1103,8 +1042,7 @@ namespace MyNS
 		public string TreatmentName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEmailTemplateResponse
 	{
 		
@@ -1120,8 +1058,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a request to create a message template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateTemplateMessageBody
 	{
 		
@@ -1135,8 +1072,7 @@ namespace MyNS
 		public string RequestID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateExportJobResponse
 	{
 		
@@ -1152,8 +1088,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportJobResponse
 	{
 		
@@ -1224,8 +1159,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportJobResource
 	{
 		
@@ -1250,42 +1184,39 @@ namespace MyNS
 		public System.Nullable<System.Int32> SegmentVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREPARING_FOR_INITIALIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PREPARING_FOR_INITIALIZATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INITIALIZING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCESSING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_JOB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_JOB = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateImportJobResponse
 	{
 		
@@ -1301,8 +1232,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportJobResponse
 	{
 		
@@ -1373,8 +1303,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the resource settings for a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportJobResource
 	{
 		
@@ -1415,21 +1344,18 @@ namespace MyNS
 		public string SegmentName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Format
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSV")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CSV = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateInAppTemplateResponse
 	{
 		
@@ -1445,8 +1371,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a request to create a message template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateCreateMessageBody
 	{
 		
@@ -1460,8 +1385,7 @@ namespace MyNS
 		public string RequestID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJourneyResponse
 	{
 		
@@ -1477,8 +1401,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status, configuration, and other settings for a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyResponse
 	{
 		
@@ -1561,8 +1484,7 @@ namespace MyNS
 		public @__TimezoneEstimationMethodsElement[] TimezoneEstimationMethods { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfActivity
 	{
 	}
@@ -1570,8 +1492,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies limits on the messages that a journey can send and the number of times participants can enter a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyLimits
 	{
 		
@@ -1597,8 +1518,7 @@ namespace MyNS
 	/// <summary>
 	/// The number of messages that can be sent to an endpoint during the specified timeframe for all journeys.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyTimeframeCap
 	{
 		
@@ -1612,8 +1532,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the schedule settings for a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneySchedule
 	{
 		
@@ -1630,8 +1549,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartCondition
 	{
 		
@@ -1651,8 +1569,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for an event that causes a journey activity to start.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventStartCondition
 	{
 		
@@ -1669,8 +1586,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventFilter
 	{
 		
@@ -1692,8 +1608,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a segment to associate with an activity in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentCondition
 	{
 		
@@ -1705,36 +1620,33 @@ namespace MyNS
 		public string SegmentId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum State
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAUSED = 5,
 	}
 	
 	/// <summary>
 	/// The channel-specific configurations for the journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyChannelSettings
 	{
 		
@@ -1748,8 +1660,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the times when message are allowed to be sent to endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenHours
 	{
 		
@@ -1769,8 +1680,7 @@ namespace MyNS
 		public MapOfListOfOpenHoursRules CUSTOM { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfListOfOpenHoursRules
 	{
 	}
@@ -1778,8 +1688,7 @@ namespace MyNS
 	/// <summary>
 	/// The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should be set to true.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClosedDays
 	{
 		
@@ -1799,21 +1708,18 @@ namespace MyNS
 		public string[] CUSTOM { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum @__TimezoneEstimationMethodsElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PHONE_NUMBER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTAL_CODE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTAL_CODE = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePushTemplateResponse
 	{
 		
@@ -1829,8 +1735,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AndroidPushNotificationTemplate
 	{
 		
@@ -1865,8 +1770,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSPushNotificationTemplate
 	{
 		
@@ -1895,8 +1799,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultPushNotificationTemplate
 	{
 		
@@ -1916,8 +1819,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRecommenderConfigurationResponse
 	{
 		
@@ -1933,8 +1835,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecommenderConfigurationResponse
 	{
 		
@@ -1995,8 +1896,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> RecommendationsPerMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSegmentResponse
 	{
 		
@@ -2012,8 +1912,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the configuration, dimension, and other settings for a segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentResponse
 	{
 		
@@ -2077,8 +1976,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the dimension settings for a segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentDimensions
 	{
 		
@@ -2104,8 +2002,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentBehaviors
 	{
 		
@@ -2116,8 +2013,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RecencyDimension
 	{
 		
@@ -2136,43 +2032,38 @@ namespace MyNS
 		public RecencyType RecencyType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Duration
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HR_24")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HR_24 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_7")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_7 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_14")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_14 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_30")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAY_30 = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecencyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 1,
 	}
 	
 	/// <summary>
 	/// Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentDemographics
 	{
 		
@@ -2198,8 +2089,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies geographical dimension settings for a segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentLocation
 	{
 		
@@ -2213,8 +2103,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies GPS-based criteria for including or excluding endpoints from a segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GPSPointDimension
 	{
 		
@@ -2232,8 +2121,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the GPS coordinates of a location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GPSCoordinates
 	{
 		
@@ -2255,8 +2143,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentImportResource
 	{
 		
@@ -2299,8 +2186,7 @@ namespace MyNS
 		public int Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOf__integer
 	{
 	}
@@ -2308,8 +2194,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings that define the relationships between segment groups for a segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentGroupList
 	{
 		
@@ -2323,8 +2208,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the base segments and dimensions for a segment, and the relationships between these base segments and dimensions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentGroup
 	{
 		
@@ -2344,8 +2228,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the segment identifier and version of a segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentReference
 	{
 		
@@ -2360,37 +2243,32 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SegmentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSIONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSIONAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSmsTemplateResponse
 	{
 		
@@ -2403,8 +2281,7 @@ namespace MyNS
 		public CreateTemplateMessageBody CreateTemplateMessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVoiceTemplateResponse
 	{
 		
@@ -2417,8 +2294,7 @@ namespace MyNS
 		public CreateTemplateMessageBody CreateTemplateMessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAdmChannelResponse
 	{
 		
@@ -2434,8 +2310,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ADMChannelResponse
 	{
 		
@@ -2474,8 +2349,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApnsChannelResponse
 	{
 		
@@ -2491,8 +2365,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSChannelResponse
 	{
 		
@@ -2537,8 +2410,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApnsSandboxChannelResponse
 	{
 		
@@ -2554,8 +2426,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSSandboxChannelResponse
 	{
 		
@@ -2600,8 +2471,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApnsVoipChannelResponse
 	{
 		
@@ -2617,8 +2487,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSVoipChannelResponse
 	{
 		
@@ -2663,8 +2532,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApnsVoipSandboxChannelResponse
 	{
 		
@@ -2680,8 +2548,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSVoipSandboxChannelResponse
 	{
 		
@@ -2726,8 +2593,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAppResponse
 	{
 		
@@ -2740,8 +2606,7 @@ namespace MyNS
 		public ApplicationResponse ApplicationResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBaiduChannelResponse
 	{
 		
@@ -2757,8 +2622,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaiduChannelResponse
 	{
 		
@@ -2804,8 +2668,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCampaignResponse
 	{
 		
@@ -2818,8 +2681,7 @@ namespace MyNS
 		public CampaignResponse CampaignResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailChannelResponse
 	{
 		
@@ -2835,8 +2697,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the email channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailChannelResponse
 	{
 		
@@ -2890,8 +2751,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailTemplateResponse
 	{
 		
@@ -2907,8 +2767,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about an API request or response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageBody
 	{
 		
@@ -2919,8 +2778,7 @@ namespace MyNS
 		public string RequestID { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEndpointResponse
 	{
 		
@@ -2936,8 +2794,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the channel type and other settings for an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointResponse
 	{
 		
@@ -2987,8 +2844,7 @@ namespace MyNS
 		public EndpointUser User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfListOf__string
 	{
 	}
@@ -2996,8 +2852,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies demographic information about an endpoint, such as the applicable time zone and platform.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointDemographic
 	{
 		
@@ -3029,8 +2884,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies geographic information about an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointLocation
 	{
 		
@@ -3053,8 +2907,7 @@ namespace MyNS
 		public string Region { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOf__double
 	{
 	}
@@ -3062,8 +2915,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies data for one or more attributes that describe the user who's associated with an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointUser
 	{
 		
@@ -3074,8 +2926,7 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEventStreamResponse
 	{
 		
@@ -3091,8 +2942,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventStream
 	{
 		
@@ -3127,8 +2977,7 @@ namespace MyNS
 		public string RoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGcmChannelResponse
 	{
 		
@@ -3144,8 +2993,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GCMChannelResponse
 	{
 		
@@ -3193,8 +3041,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteInAppTemplateResponse
 	{
 		
@@ -3207,8 +3054,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteJourneyResponse
 	{
 		
@@ -3221,8 +3067,7 @@ namespace MyNS
 		public JourneyResponse JourneyResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePushTemplateResponse
 	{
 		
@@ -3235,8 +3080,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRecommenderConfigurationResponse
 	{
 		
@@ -3249,8 +3093,7 @@ namespace MyNS
 		public RecommenderConfigurationResponse RecommenderConfigurationResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSegmentResponse
 	{
 		
@@ -3263,8 +3106,7 @@ namespace MyNS
 		public SegmentResponse SegmentResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSmsChannelResponse
 	{
 		
@@ -3280,8 +3122,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the SMS channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSChannelResponse
 	{
 		
@@ -3332,8 +3173,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSmsTemplateResponse
 	{
 		
@@ -3346,8 +3186,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteUserEndpointsResponse
 	{
 		
@@ -3363,8 +3202,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about all the endpoints that are associated with a user ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointsResponse
 	{
 		
@@ -3376,8 +3214,7 @@ namespace MyNS
 		public EndpointResponse[] Item { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVoiceChannelResponse
 	{
 		
@@ -3393,8 +3230,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of the voice channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceChannelResponse
 	{
 		
@@ -3433,8 +3269,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVoiceTemplateResponse
 	{
 		
@@ -3447,8 +3282,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAdmChannelResponse
 	{
 		
@@ -3461,8 +3295,7 @@ namespace MyNS
 		public ADMChannelResponse ADMChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApnsChannelResponse
 	{
 		
@@ -3475,8 +3308,7 @@ namespace MyNS
 		public APNSChannelResponse APNSChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApnsSandboxChannelResponse
 	{
 		
@@ -3489,8 +3321,7 @@ namespace MyNS
 		public APNSSandboxChannelResponse APNSSandboxChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApnsVoipChannelResponse
 	{
 		
@@ -3503,8 +3334,7 @@ namespace MyNS
 		public APNSVoipChannelResponse APNSVoipChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApnsVoipSandboxChannelResponse
 	{
 		
@@ -3517,8 +3347,7 @@ namespace MyNS
 		public APNSVoipSandboxChannelResponse APNSVoipSandboxChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppResponse
 	{
 		
@@ -3531,8 +3360,7 @@ namespace MyNS
 		public ApplicationResponse ApplicationResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApplicationDateRangeKpiResponse
 	{
 		
@@ -3548,8 +3376,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationDateRangeKpiResponse
 	{
 		
@@ -3595,8 +3422,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaseKpiResult
 	{
 		
@@ -3611,8 +3437,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResultRow
 	{
 		
@@ -3634,8 +3459,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application, campaign, or journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResultRowValue
 	{
 		
@@ -3661,8 +3485,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApplicationSettingsResponse
 	{
 		
@@ -3678,8 +3501,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about an application, including the default settings for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationSettingsResource
 	{
 		
@@ -3709,8 +3531,7 @@ namespace MyNS
 	/// <summary>
 	/// The default sending limits for journeys in the application. To override these limits and define custom limits for a specific journey, use the Journey resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationSettingsJourneyLimits
 	{
 		
@@ -3724,8 +3545,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalCap { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppsResponse
 	{
 		
@@ -3741,8 +3561,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about all of your applications.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApplicationsResponse
 	{
 		
@@ -3753,8 +3572,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBaiduChannelResponse
 	{
 		
@@ -3767,8 +3585,7 @@ namespace MyNS
 		public BaiduChannelResponse BaiduChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignResponse
 	{
 		
@@ -3781,8 +3598,7 @@ namespace MyNS
 		public CampaignResponse CampaignResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignActivitiesResponse
 	{
 		
@@ -3798,8 +3614,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the activities that were performed by a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivitiesResponse
 	{
 		
@@ -3817,8 +3632,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about an activity that was performed by a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityResponse
 	{
 		
@@ -3877,8 +3691,7 @@ namespace MyNS
 		public MapOf__string ExecutionMetrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignDateRangeKpiResponse
 	{
 		
@@ -3894,8 +3707,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignDateRangeKpiResponse
 	{
 		
@@ -3945,8 +3757,7 @@ namespace MyNS
 		public System.DateTimeOffset StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignVersionResponse
 	{
 		
@@ -3959,8 +3770,7 @@ namespace MyNS
 		public CampaignResponse CampaignResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignVersionsResponse
 	{
 		
@@ -3976,8 +3786,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the configuration and other settings for all the campaigns that are associated with an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignsResponse
 	{
 		
@@ -3992,8 +3801,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignsResponse
 	{
 		
@@ -4006,8 +3814,7 @@ namespace MyNS
 		public CampaignsResponse CampaignsResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetChannelsResponse
 	{
 		
@@ -4023,8 +3830,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChannelsResponse
 	{
 		
@@ -4036,14 +3842,12 @@ namespace MyNS
 		public MapOfChannelResponse Channels { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfChannelResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailChannelResponse
 	{
 		
@@ -4056,8 +3860,7 @@ namespace MyNS
 		public EmailChannelResponse EmailChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailTemplateResponse
 	{
 		
@@ -4073,8 +3876,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailTemplateResponse
 	{
 		
@@ -4134,30 +3936,27 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TemplateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOICE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUSH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUSH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INAPP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INAPP = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEndpointResponse
 	{
 		
@@ -4170,8 +3969,7 @@ namespace MyNS
 		public EndpointResponse EndpointResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEventStreamResponse
 	{
 		
@@ -4184,8 +3982,7 @@ namespace MyNS
 		public EventStream EventStream { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExportJobResponse
 	{
 		
@@ -4198,8 +3995,7 @@ namespace MyNS
 		public ExportJobResponse ExportJobResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExportJobsResponse
 	{
 		
@@ -4215,8 +4011,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportJobsResponse
 	{
 		
@@ -4231,8 +4026,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGcmChannelResponse
 	{
 		
@@ -4245,8 +4039,7 @@ namespace MyNS
 		public GCMChannelResponse GCMChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImportJobResponse
 	{
 		
@@ -4259,8 +4052,7 @@ namespace MyNS
 		public ImportJobResponse ImportJobResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImportJobsResponse
 	{
 		
@@ -4276,8 +4068,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportJobsResponse
 	{
 		
@@ -4292,8 +4083,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInAppMessagesResponse
 	{
 		
@@ -4309,8 +4099,7 @@ namespace MyNS
 	/// <summary>
 	/// Get in-app messages response object.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppMessagesResponse
 	{
 		
@@ -4321,8 +4110,7 @@ namespace MyNS
 	/// <summary>
 	/// Targeted in-app message campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppMessageCampaign
 	{
 		
@@ -4354,8 +4142,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides all fields required for building an in-app message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppMessage
 	{
 		
@@ -4372,8 +4159,7 @@ namespace MyNS
 	/// <summary>
 	/// Schedule of the campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppCampaignSchedule
 	{
 		
@@ -4387,8 +4173,7 @@ namespace MyNS
 		public QuietTime QuietTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInAppTemplateResponse
 	{
 		
@@ -4404,8 +4189,7 @@ namespace MyNS
 	/// <summary>
 	/// In-App Template Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppTemplateResponse
 	{
 		
@@ -4459,8 +4243,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyResponse
 	{
 		
@@ -4473,8 +4256,7 @@ namespace MyNS
 		public JourneyResponse JourneyResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyDateRangeKpiResponse
 	{
 		
@@ -4490,8 +4272,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyDateRangeKpiResponse
 	{
 		
@@ -4541,8 +4322,7 @@ namespace MyNS
 		public System.DateTimeOffset StartTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyExecutionActivityMetricsResponse
 	{
 		
@@ -4558,8 +4338,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyExecutionActivityMetricsResponse
 	{
 		
@@ -4606,8 +4385,7 @@ namespace MyNS
 		public MapOf__string Metrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyExecutionMetricsResponse
 	{
 		
@@ -4623,8 +4401,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyExecutionMetricsResponse
 	{
 		
@@ -4657,8 +4434,7 @@ namespace MyNS
 		public MapOf__string Metrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyRunExecutionActivityMetricsResponse
 	{
 		
@@ -4674,8 +4450,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity for a particular journey run, and provides information about that query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyRunExecutionActivityMetricsResponse
 	{
 		
@@ -4729,8 +4504,7 @@ namespace MyNS
 		public string RunId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyRunExecutionMetricsResponse
 	{
 		
@@ -4746,8 +4520,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey run, and provides information about that query.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyRunExecutionMetricsResponse
 	{
 		
@@ -4787,8 +4560,7 @@ namespace MyNS
 		public string RunId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyRunsResponse
 	{
 		
@@ -4804,8 +4576,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information from all runs of a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyRunsResponse
 	{
 		
@@ -4823,8 +4594,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information from a specified run of a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyRunResponse
 	{
 		
@@ -4857,27 +4627,24 @@ namespace MyNS
 		public JourneyRunStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum JourneyRunStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCHEDULED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCELLED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPushTemplateResponse
 	{
 		
@@ -4893,8 +4660,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PushNotificationTemplateResponse
 	{
 		
@@ -4960,8 +4726,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommenderConfigurationResponse
 	{
 		
@@ -4974,8 +4739,7 @@ namespace MyNS
 		public RecommenderConfigurationResponse RecommenderConfigurationResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommenderConfigurationsResponse
 	{
 		
@@ -4991,8 +4755,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRecommenderConfigurationsResponse
 	{
 		
@@ -5007,8 +4770,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentResponse
 	{
 		
@@ -5021,8 +4783,7 @@ namespace MyNS
 		public SegmentResponse SegmentResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentExportJobsResponse
 	{
 		
@@ -5035,8 +4796,7 @@ namespace MyNS
 		public ExportJobsResponse ExportJobsResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentImportJobsResponse
 	{
 		
@@ -5049,8 +4809,7 @@ namespace MyNS
 		public ImportJobsResponse ImportJobsResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentVersionResponse
 	{
 		
@@ -5063,8 +4822,7 @@ namespace MyNS
 		public SegmentResponse SegmentResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentVersionsResponse
 	{
 		
@@ -5080,8 +4838,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about all the segments that are associated with an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SegmentsResponse
 	{
 		
@@ -5096,8 +4853,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentsResponse
 	{
 		
@@ -5110,8 +4866,7 @@ namespace MyNS
 		public SegmentsResponse SegmentsResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSmsChannelResponse
 	{
 		
@@ -5124,8 +4879,7 @@ namespace MyNS
 		public SMSChannelResponse SMSChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSmsTemplateResponse
 	{
 		
@@ -5141,8 +4895,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSTemplateResponse
 	{
 		
@@ -5196,8 +4949,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUserEndpointsResponse
 	{
 		
@@ -5210,8 +4962,7 @@ namespace MyNS
 		public EndpointsResponse EndpointsResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVoiceChannelResponse
 	{
 		
@@ -5224,8 +4975,7 @@ namespace MyNS
 		public VoiceChannelResponse VoiceChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVoiceTemplateResponse
 	{
 		
@@ -5241,8 +4991,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceTemplateResponse
 	{
 		
@@ -5299,8 +5048,7 @@ namespace MyNS
 		public string VoiceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJourneysResponse
 	{
 		
@@ -5316,8 +5064,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneysResponse
 	{
 		
@@ -5332,8 +5079,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -5349,8 +5095,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the tags (keys and values) for an application, campaign, message template, or segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagsModel
 	{
 		
@@ -5362,8 +5107,7 @@ namespace MyNS
 		public MapOf__string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTemplateVersionsResponse
 	{
 		
@@ -5379,8 +5123,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about all the versions of a specific message template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateVersionsResponse
 	{
 		
@@ -5404,8 +5147,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a specific version of a message template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateVersionResponse
 	{
 		
@@ -5447,8 +5189,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTemplatesResponse
 	{
 		
@@ -5464,8 +5205,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about all the message templates that are associated with your Amazon Pinpoint account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplatesResponse
 	{
 		
@@ -5483,8 +5223,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a message template that's associated with your Amazon Pinpoint account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateResponse
 	{
 		
@@ -5532,8 +5271,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhoneNumberValidateResponse
 	{
 		
@@ -5549,8 +5287,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a phone number.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberValidateResponse
 	{
 		
@@ -5597,8 +5334,7 @@ namespace MyNS
 		public string ZipCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEventStreamResponse
 	{
 		
@@ -5611,8 +5347,7 @@ namespace MyNS
 		public EventStream EventStream { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEventsResponse
 	{
 		
@@ -5628,8 +5363,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about endpoints and the events that they're associated with.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsResponse
 	{
 		
@@ -5637,20 +5371,17 @@ namespace MyNS
 		public MapOfItemResponse Results { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfItemResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfEventsBatch
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAttributesResponse
 	{
 		
@@ -5666,8 +5397,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributesResource
 	{
 		
@@ -5689,8 +5419,7 @@ namespace MyNS
 		public string[] Attributes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessagesResponse
 	{
 		
@@ -5706,8 +5435,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the results of a request to send a message to an endpoint address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageResponse
 	{
 		
@@ -5728,26 +5456,22 @@ namespace MyNS
 		public MapOfMessageResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfEndpointMessageResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfMessageResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfAddressConfiguration
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfEndpointSendConfiguration
 	{
 	}
@@ -5755,8 +5479,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings and content for the default message and any default messages that you tailored for specific channels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DirectMessageConfiguration
 	{
 		
@@ -5791,8 +5514,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a one-time message that's sent directly to an endpoint through the ADM (Amazon Device Messaging) channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ADMMessage
 	{
 		
@@ -5848,8 +5570,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSMessage
 	{
 		
@@ -5911,8 +5632,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud Push) channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaiduMessage
 	{
 		
@@ -5962,8 +5682,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the default message for all channels.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultMessage
 	{
 		
@@ -5977,8 +5696,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the default settings and content for a push notification that's sent directly to an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DefaultPushNotificationMessage
 	{
 		
@@ -6007,8 +5725,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the default settings and content for a one-time email message that's sent directly to an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailMessage
 	{
 		
@@ -6037,8 +5754,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the contents of an email message, represented as a raw MIME message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RawEmail
 	{
 		
@@ -6049,8 +5765,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the contents of an email message, composed of a subject, a text part, and an HTML part.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleEmail
 	{
 		
@@ -6067,8 +5782,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the subject or body of an email message, represented as textual email data and the applicable character set.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleEmailPart
 	{
 		
@@ -6082,8 +5796,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a one-time message that's sent directly to an endpoint through the GCM channel. The GCM channel enables Amazon Pinpoint to send messages to the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GCMMessage
 	{
 		
@@ -6145,8 +5858,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the default settings for a one-time SMS message that's sent directly to an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSMessage
 	{
 		
@@ -6181,8 +5893,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceMessage
 	{
 		
@@ -6202,8 +5913,7 @@ namespace MyNS
 		public string VoiceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendOTPMessageResponse
 	{
 		
@@ -6216,8 +5926,7 @@ namespace MyNS
 		public MessageResponse MessageResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendUsersMessagesResponse
 	{
 		
@@ -6233,8 +5942,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about which users and endpoints a message was sent to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendUsersMessageResponse
 	{
 		
@@ -6252,14 +5960,12 @@ namespace MyNS
 		public MapOfMapOfEndpointMessageResult Result { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfMapOfEndpointMessageResult
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAdmChannelResponse
 	{
 		
@@ -6272,8 +5978,7 @@ namespace MyNS
 		public ADMChannelResponse ADMChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApnsChannelResponse
 	{
 		
@@ -6286,8 +5991,7 @@ namespace MyNS
 		public APNSChannelResponse APNSChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApnsSandboxChannelResponse
 	{
 		
@@ -6300,8 +6004,7 @@ namespace MyNS
 		public APNSSandboxChannelResponse APNSSandboxChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApnsVoipChannelResponse
 	{
 		
@@ -6314,8 +6017,7 @@ namespace MyNS
 		public APNSVoipChannelResponse APNSVoipChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApnsVoipSandboxChannelResponse
 	{
 		
@@ -6328,8 +6030,7 @@ namespace MyNS
 		public APNSVoipSandboxChannelResponse APNSVoipSandboxChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApplicationSettingsResponse
 	{
 		
@@ -6342,8 +6043,7 @@ namespace MyNS
 		public ApplicationSettingsResource ApplicationSettingsResource { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBaiduChannelResponse
 	{
 		
@@ -6356,8 +6056,7 @@ namespace MyNS
 		public BaiduChannelResponse BaiduChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCampaignResponse
 	{
 		
@@ -6370,8 +6069,7 @@ namespace MyNS
 		public CampaignResponse CampaignResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmailChannelResponse
 	{
 		
@@ -6384,8 +6082,7 @@ namespace MyNS
 		public EmailChannelResponse EmailChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmailTemplateResponse
 	{
 		
@@ -6398,8 +6095,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEndpointResponse
 	{
 		
@@ -6412,54 +6108,51 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ChannelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUSH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUSH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GCM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GCM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_SANDBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS_SANDBOX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_VOIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS_VOIP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_VOIP_SANDBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APNS_VOIP_SANDBOX = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADM = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SMS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VOICE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMAIL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAIDU")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BAIDU = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_APP = 12,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEndpointsBatchResponse
 	{
 		
@@ -6475,8 +6168,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies an endpoint to create or update and the settings and attributes to set or change for the endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointBatchItem
 	{
 		
@@ -6517,8 +6209,7 @@ namespace MyNS
 		public EndpointUser User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGcmChannelResponse
 	{
 		
@@ -6531,8 +6222,7 @@ namespace MyNS
 		public GCMChannelResponse GCMChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInAppTemplateResponse
 	{
 		
@@ -6545,8 +6235,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJourneyResponse
 	{
 		
@@ -6559,14 +6248,12 @@ namespace MyNS
 		public JourneyResponse JourneyResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJourneyStateResponse
 	{
 		
@@ -6579,8 +6266,7 @@ namespace MyNS
 		public JourneyResponse JourneyResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePushTemplateResponse
 	{
 		
@@ -6593,8 +6279,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRecommenderConfigurationResponse
 	{
 		
@@ -6607,8 +6292,7 @@ namespace MyNS
 		public RecommenderConfigurationResponse RecommenderConfigurationResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSegmentResponse
 	{
 		
@@ -6621,8 +6305,7 @@ namespace MyNS
 		public SegmentResponse SegmentResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSmsChannelResponse
 	{
 		
@@ -6635,8 +6318,7 @@ namespace MyNS
 		public SMSChannelResponse SMSChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSmsTemplateResponse
 	{
 		
@@ -6649,8 +6331,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTemplateActiveVersionResponse
 	{
 		
@@ -6663,8 +6344,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVoiceChannelResponse
 	{
 		
@@ -6677,8 +6357,7 @@ namespace MyNS
 		public VoiceChannelResponse VoiceChannelResponse { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVoiceTemplateResponse
 	{
 		
@@ -6691,8 +6370,7 @@ namespace MyNS
 		public MessageBody MessageBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyOTPMessageResponse
 	{
 		
@@ -6708,8 +6386,7 @@ namespace MyNS
 	/// <summary>
 	/// Verify OTP Message Response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerificationResponse
 	{
 		
@@ -6720,8 +6397,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ADMChannelRequest
 	{
 		
@@ -6746,8 +6422,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSChannelRequest
 	{
 		
@@ -6779,8 +6454,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSSandboxChannelRequest
 	{
 		
@@ -6812,8 +6486,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSVoipChannelRequest
 	{
 		
@@ -6845,8 +6518,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APNSVoipSandboxChannelRequest
 	{
 		
@@ -6878,8 +6550,7 @@ namespace MyNS
 	/// <summary>
 	/// The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomMessageActivity
 	{
 		
@@ -6905,8 +6576,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the message content for a custom channel message that's sent to participants in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyCustomMessage
 	{
 		
@@ -6917,8 +6587,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the settings for a yes/no split activity in a journey. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p> <note><p>To create yes/no split activities that send participants down different paths based on push notification events (such as Open or Received events), your mobile app has to specify the User ID and Endpoint ID values. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html">Integrating Amazon Pinpoint with your application</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p></note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConditionalSplitActivity
 	{
 		
@@ -6938,8 +6607,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the conditions to evaluate for an activity in a journey, and how to evaluate those conditions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Condition
 	{
 		
@@ -6953,8 +6621,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a condition to evaluate for an activity in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SimpleCondition
 	{
 		
@@ -6971,8 +6638,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the conditions to evaluate for an event that applies to an activity in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventCondition
 	{
 		
@@ -6983,24 +6649,21 @@ namespace MyNS
 		public string MessageActivity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Operator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 1,
 	}
 	
 	/// <summary>
 	/// Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaitTime
 	{
 		
@@ -7014,8 +6677,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for an email activity in a journey. This type of activity sends an email message to participants.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailMessageActivity
 	{
 		
@@ -7035,8 +6697,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the "From" address for an email message that's sent to participants in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyEmailMessage
 	{
 		
@@ -7047,8 +6708,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HoldoutActivity
 	{
 		
@@ -7066,8 +6726,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Specifies the settings for a multivariate split activity in a journey. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.</p> <note><p>To create multivariate split activities that send participants down different paths based on push notification events (such as Open or Received events), your mobile app has to specify the User ID and Endpoint ID values. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html">Integrating Amazon Pinpoint with your application</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p></note>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiConditionalSplitActivity
 	{
 		
@@ -7084,8 +6743,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a condition to evaluate for an activity path in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MultiConditionalBranch
 	{
 		
@@ -7099,8 +6757,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a push notification activity in a journey. This type of activity sends a push notification to participants.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PushMessageActivity
 	{
 		
@@ -7120,8 +6777,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the message configuration for a push notification that's sent to participants in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyPushMessage
 	{
 		
@@ -7132,8 +6788,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a random split activity in a journey. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RandomSplitActivity
 	{
 		
@@ -7144,8 +6799,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a path in a random split activity in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RandomSplitEntry
 	{
 		
@@ -7159,8 +6813,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for an SMS activity in a journey. This type of activity sends a text message to participants.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSMessageActivity
 	{
 		
@@ -7180,8 +6833,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneySMSMessage
 	{
 		
@@ -7204,8 +6856,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a wait activity in a journey. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaitActivity
 	{
 		
@@ -7216,8 +6867,7 @@ namespace MyNS
 		public WaitTime WaitTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContactCenterActivity
 	{
 		
@@ -7228,8 +6878,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration and other settings for an activity in a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Activity
 	{
 		
@@ -7270,8 +6919,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies address-based configuration settings for a message that's sent directly to an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddressConfiguration
 	{
 		
@@ -7294,39 +6942,36 @@ namespace MyNS
 		public string TitleOverride { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AttributeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCLUSIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUSIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXCLUSIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONTAINS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEFORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BEFORE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AFTER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ON = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETWEEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BETWEEN = 6,
 	}
 	
 	/// <summary>
 	/// Specifies attribute-based criteria for including or excluding endpoints from a segment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttributeDimension
 	{
 		
@@ -7344,8 +6989,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BaiduChannelRequest
 	{
 		
@@ -7370,8 +7014,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the general settings and status of a channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ChannelResponse
 	{
 		
@@ -7406,8 +7049,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the display name of an application and the tags to associate with the application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateApplicationRequest
 	{
 		
@@ -7422,8 +7064,7 @@ namespace MyNS
 		public MapOf__string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAppRequest
 	{
 		
@@ -7439,8 +7080,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration and other settings for a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteCampaignRequest
 	{
 		
@@ -7496,8 +7136,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Priority { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCampaignRequest
 	{
 		
@@ -7513,8 +7152,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailTemplateRequest
 	{
 		
@@ -7540,8 +7178,7 @@ namespace MyNS
 		public string TextPart { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateEmailTemplateRequest
 	{
 		
@@ -7557,8 +7194,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExportJobRequest
 	{
 		
@@ -7583,8 +7219,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> SegmentVersion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateExportJobRequest
 	{
 		
@@ -7600,8 +7235,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImportJobRequest
 	{
 		
@@ -7642,8 +7276,7 @@ namespace MyNS
 		public string SegmentName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateImportJobRequest
 	{
 		
@@ -7659,8 +7292,7 @@ namespace MyNS
 	/// <summary>
 	/// InApp Template Request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InAppTemplateRequest
 	{
 		
@@ -7680,8 +7312,7 @@ namespace MyNS
 		public string TemplateDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateInAppTemplateRequest
 	{
 		
@@ -7697,8 +7328,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration and other settings for a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteJourneyRequest
 	{
 		
@@ -7764,8 +7394,7 @@ namespace MyNS
 		public @__TimezoneEstimationMethodsElement[] TimezoneEstimationMethods { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateJourneyRequest
 	{
 		
@@ -7781,8 +7410,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PushNotificationTemplateRequest
 	{
 		
@@ -7814,8 +7442,7 @@ namespace MyNS
 		public string TemplateDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreatePushTemplateRequest
 	{
 		
@@ -7831,8 +7458,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRecommenderConfiguration
 	{
 		
@@ -7872,8 +7498,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> RecommendationsPerMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateRecommenderConfigurationRequest
 	{
 		
@@ -7889,8 +7514,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteSegmentRequest
 	{
 		
@@ -7907,8 +7531,7 @@ namespace MyNS
 		public MapOf__string Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSegmentRequest
 	{
 		
@@ -7924,8 +7547,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSTemplateRequest
 	{
 		
@@ -7945,8 +7567,7 @@ namespace MyNS
 		public string TemplateDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateSmsTemplateRequest
 	{
 		
@@ -7962,8 +7583,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceTemplateRequest
 	{
 		
@@ -7986,8 +7606,7 @@ namespace MyNS
 		public string VoiceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateVoiceTemplateRequest
 	{
 		
@@ -8000,177 +7619,151 @@ namespace MyNS
 		public VoiceTemplateRequest VoiceTemplateRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAdmChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApnsChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApnsSandboxChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApnsVoipChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteApnsVoipSandboxChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAppRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteBaiduChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCampaignRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEmailTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEndpointRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteEventStreamRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteGcmChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteInAppTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteJourneyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeletePushTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRecommenderConfigurationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSegmentRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSmsChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteSmsTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteUserEndpointsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVoiceChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteVoiceTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DeliveryStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESSFUL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESSFUL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THROTTLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THROTTLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPORARY_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEMPORARY_FAILURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMANENT_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMANENT_FAILURE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_FAILURE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPT_OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPT_OUT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUPLICATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DUPLICATE = 6,
 	}
 	
 	/// <summary>
 	/// Specifies the status and settings of the email channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmailChannelRequest
 	{
 		
@@ -8201,8 +7794,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointBatchRequest
 	{
 		
@@ -8217,8 +7809,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the status code and message that result from processing data for an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointItemResponse
 	{
 		
@@ -8232,8 +7823,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the delivery status and results of sending a message directly to an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointMessageResult
 	{
 		
@@ -8267,8 +7857,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the channel type and other settings for an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointRequest
 	{
 		
@@ -8309,8 +7898,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the content, including message variables and attributes, to use in a message that's sent directly to an endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EndpointSendConfiguration
 	{
 		
@@ -8333,8 +7921,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about a session.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Session
 	{
 		
@@ -8362,8 +7949,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies information about an event that reports data to Amazon Pinpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Event
 	{
 		
@@ -8409,8 +7995,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides the status code and message that result from processing an event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventItemResponse
 	{
 		
@@ -8424,8 +8009,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the properties and attributes of an endpoint that's associated with an event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublicEndpoint
 	{
 		
@@ -8463,8 +8047,7 @@ namespace MyNS
 		public EndpointUser User { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfEvent
 	{
 	}
@@ -8472,8 +8055,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a batch of endpoints and events to process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsBatch
 	{
 		
@@ -8495,8 +8077,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a batch of events to process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EventsRequest
 	{
 		
@@ -8511,8 +8092,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GCMChannelRequest
 	{
 		
@@ -8529,318 +8109,266 @@ namespace MyNS
 		public string ServiceJson { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAdmChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApnsChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApnsSandboxChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApnsVoipChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApnsVoipSandboxChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApplicationDateRangeKpiRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetApplicationSettingsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBaiduChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignActivitiesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignDateRangeKpiRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignVersionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignVersionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetChannelsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEmailTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEndpointRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetEventStreamRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExportJobRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetExportJobsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetGcmChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImportJobRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetImportJobsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInAppMessagesRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInAppTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyDateRangeKpiRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyExecutionActivityMetricsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyExecutionMetricsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyRunExecutionActivityMetricsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyRunExecutionMetricsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetJourneyRunsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPushTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommenderConfigurationRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetRecommenderConfigurationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentExportJobsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentImportJobsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentVersionRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentVersionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSegmentsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSmsChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSmsTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetUserEndpointsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVoiceChannelRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetVoiceTemplateRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Include
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MapOfEventItemResponse
 	{
 	}
@@ -8848,8 +8376,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the results of a request to create or update an endpoint that's associated with an event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ItemResponse
 	{
 		
@@ -8863,8 +8390,7 @@ namespace MyNS
 	/// <summary>
 	/// Changes the status of a journey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class JourneyStateRequest
 	{
 		
@@ -8872,26 +8398,22 @@ namespace MyNS
 		public State State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListJourneysRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTemplateVersionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTemplatesRequest
 	{
 	}
@@ -8899,8 +8421,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration and other settings for a message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageRequest
 	{
 		
@@ -8930,8 +8451,7 @@ namespace MyNS
 	/// <summary>
 	/// Provides information about the results of sending a message directly to an endpoint address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageResult
 	{
 		
@@ -8962,8 +8482,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDimension
 	{
 		
@@ -8985,8 +8504,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies a phone number to validate and retrieve information about.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NumberValidateRequest
 	{
 		
@@ -8997,8 +8515,7 @@ namespace MyNS
 		public string PhoneNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PhoneNumberValidateRequest
 	{
 		
@@ -9014,8 +8531,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteEventStream
 	{
 		
@@ -9034,8 +8550,7 @@ namespace MyNS
 		public string RoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEventStreamRequest
 	{
 		
@@ -9048,8 +8563,7 @@ namespace MyNS
 		public WriteEventStream WriteEventStream { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutEventsRequest
 	{
 		
@@ -9065,8 +8579,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies one or more attributes to remove from all the endpoints that are associated with an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAttributesRequest
 	{
 		
@@ -9074,8 +8587,7 @@ namespace MyNS
 		public string[] Blacklist { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemoveAttributesRequest
 	{
 		
@@ -9091,8 +8603,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status and settings of the SMS channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SMSChannelRequest
 	{
 		
@@ -9106,24 +8617,21 @@ namespace MyNS
 		public string ShortCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NONE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendMessagesRequest
 	{
 		
@@ -9139,8 +8647,7 @@ namespace MyNS
 	/// <summary>
 	/// Send OTP message request parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendOTPMessageRequestParameters
 	{
 		
@@ -9198,8 +8705,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ValidityPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendOTPMessageRequest
 	{
 		
@@ -9215,8 +8721,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendUsersMessageRequest
 	{
 		
@@ -9244,8 +8749,7 @@ namespace MyNS
 		public MapOfEndpointSendConfiguration Users { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SendUsersMessagesRequest
 	{
 		
@@ -9258,8 +8762,7 @@ namespace MyNS
 		public SendUsersMessageRequest SendUsersMessageRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -9275,8 +8778,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies which version of a message template to use as the active version of the template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TemplateActiveVersionRequest
 	{
 		
@@ -9284,14 +8786,12 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAdmChannelRequest
 	{
 		
@@ -9304,8 +8804,7 @@ namespace MyNS
 		public ADMChannelRequest ADMChannelRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApnsChannelRequest
 	{
 		
@@ -9318,8 +8817,7 @@ namespace MyNS
 		public APNSChannelRequest APNSChannelRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApnsSandboxChannelRequest
 	{
 		
@@ -9332,8 +8830,7 @@ namespace MyNS
 		public APNSSandboxChannelRequest APNSSandboxChannelRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApnsVoipChannelRequest
 	{
 		
@@ -9346,8 +8843,7 @@ namespace MyNS
 		public APNSVoipChannelRequest APNSVoipChannelRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApnsVoipSandboxChannelRequest
 	{
 		
@@ -9363,8 +8859,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the default settings for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WriteApplicationSettingsRequest
 	{
 		
@@ -9387,8 +8882,7 @@ namespace MyNS
 		public ApplicationSettingsJourneyLimits JourneyLimits { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateApplicationSettingsRequest
 	{
 		
@@ -9401,8 +8895,7 @@ namespace MyNS
 		public WriteApplicationSettingsRequest WriteApplicationSettingsRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateBaiduChannelRequest
 	{
 		
@@ -9415,8 +8908,7 @@ namespace MyNS
 		public BaiduChannelRequest BaiduChannelRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCampaignRequest
 	{
 		
@@ -9429,8 +8921,7 @@ namespace MyNS
 		public WriteCampaignRequest WriteCampaignRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmailChannelRequest
 	{
 		
@@ -9443,8 +8934,7 @@ namespace MyNS
 		public EmailChannelRequest EmailChannelRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEmailTemplateRequest
 	{
 		
@@ -9457,8 +8947,7 @@ namespace MyNS
 		public EmailTemplateRequest EmailTemplateRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEndpointRequest
 	{
 		
@@ -9471,8 +8960,7 @@ namespace MyNS
 		public EndpointRequest EndpointRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateEndpointsBatchRequest
 	{
 		
@@ -9485,8 +8973,7 @@ namespace MyNS
 		public EndpointBatchRequest EndpointBatchRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateGcmChannelRequest
 	{
 		
@@ -9499,8 +8986,7 @@ namespace MyNS
 		public GCMChannelRequest GCMChannelRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateInAppTemplateRequest
 	{
 		
@@ -9513,8 +8999,7 @@ namespace MyNS
 		public InAppTemplateRequest InAppTemplateRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJourneyRequest
 	{
 		
@@ -9527,8 +9012,7 @@ namespace MyNS
 		public WriteJourneyRequest WriteJourneyRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateJourneyStateRequest
 	{
 		
@@ -9541,8 +9025,7 @@ namespace MyNS
 		public JourneyStateRequest JourneyStateRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdatePushTemplateRequest
 	{
 		
@@ -9558,8 +9041,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRecommenderConfiguration
 	{
 		
@@ -9599,8 +9081,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> RecommendationsPerMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRecommenderConfigurationRequest
 	{
 		
@@ -9613,8 +9094,7 @@ namespace MyNS
 		public UpdateRecommenderConfiguration UpdateRecommenderConfiguration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSegmentRequest
 	{
 		
@@ -9627,8 +9107,7 @@ namespace MyNS
 		public WriteSegmentRequest WriteSegmentRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSmsChannelRequest
 	{
 		
@@ -9641,8 +9120,7 @@ namespace MyNS
 		public SMSChannelRequest SMSChannelRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateSmsTemplateRequest
 	{
 		
@@ -9655,8 +9133,7 @@ namespace MyNS
 		public SMSTemplateRequest SMSTemplateRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateTemplateActiveVersionRequest
 	{
 		
@@ -9672,8 +9149,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the status and settings of the voice channel for an application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VoiceChannelRequest
 	{
 		
@@ -9681,8 +9157,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVoiceChannelRequest
 	{
 		
@@ -9695,8 +9170,7 @@ namespace MyNS
 		public VoiceChannelRequest VoiceChannelRequest { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateVoiceTemplateRequest
 	{
 		
@@ -9712,8 +9186,7 @@ namespace MyNS
 	/// <summary>
 	/// Verify OTP message request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyOTPMessageRequestParameters
 	{
 		
@@ -9739,8 +9212,7 @@ namespace MyNS
 		public string ReferenceId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VerifyOTPMessageRequest
 	{
 		
@@ -9753,39 +9225,36 @@ namespace MyNS
 		public VerifyOTPMessageRequestParameters VerifyOTPMessageRequestParameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DayOfWeek
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONDAY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TUESDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEDNESDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEDNESDAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="THURSDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		THURSDAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRIDAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SATURDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SATURDAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUNDAY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUNDAY = 6,
 	}
 	
 	/// <summary>
 	/// Specifies the start and end time for OpenHours.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OpenHoursRule
 	{
 		
@@ -9799,8 +9268,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies the rule settings for when messages can't be sent.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ClosedDaysRule
 	{
 		

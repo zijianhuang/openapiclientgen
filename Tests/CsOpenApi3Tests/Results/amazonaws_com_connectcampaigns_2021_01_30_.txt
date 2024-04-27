@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for Create Campaign API
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCampaignResponse
 	{
 		
@@ -55,8 +54,7 @@ namespace MyNS
 	/// <summary>
 	/// Tag map with key and value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
@@ -64,8 +62,7 @@ namespace MyNS
 	/// <summary>
 	/// Predictive Dialer config
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PredictiveDialerConfig
 	{
 		
@@ -84,8 +81,7 @@ namespace MyNS
 	/// <summary>
 	/// Progressive Dialer config
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProgressiveDialerConfig
 	{
 		
@@ -104,8 +100,7 @@ namespace MyNS
 	/// <summary>
 	/// Answering Machine Detection config
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnswerMachineDetectionConfig
 	{
 		
@@ -117,50 +112,42 @@ namespace MyNS
 		public bool EnableAnswerMachineDetection { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidStateException
 	{
 	}
@@ -168,8 +155,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeCampaignResponse
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCampaignResponse
 	{
 		
@@ -183,8 +169,7 @@ namespace MyNS
 	/// <summary>
 	/// An Amazon Connect campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Campaign
 	{
 		
@@ -262,8 +247,7 @@ namespace MyNS
 	/// <summary>
 	/// The possible types of dialer config parameters
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DialerConfig
 	{
 		
@@ -283,8 +267,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration used for outbound calls.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OutboundCallConfig
 	{
 		
@@ -332,8 +315,7 @@ namespace MyNS
 	/// <summary>
 	/// GetCampaignStateResponse
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignStateResponse
 	{
 		
@@ -344,33 +326,30 @@ namespace MyNS
 		public System.Nullable<GetCampaignStateResponseState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignStateResponseState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Initialized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Initialized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Running = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Paused = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Stopped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Stopped = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 4,
 	}
 	
 	/// <summary>
 	/// GetCampaignStateBatchResponse
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignStateBatchResponse
 	{
 		
@@ -398,8 +377,7 @@ namespace MyNS
 	/// <summary>
 	/// Failed response of campaign state
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailedCampaignStateResponse
 	{
 		
@@ -420,24 +398,21 @@ namespace MyNS
 		public System.Nullable<FailedCampaignStateResponseFailureCode> FailureCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailedCampaignStateResponseFailureCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnknownError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnknownError = 1,
 	}
 	
 	/// <summary>
 	/// Successful response of campaign state
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuccessfulCampaignStateResponse
 	{
 		
@@ -461,8 +436,7 @@ namespace MyNS
 	/// <summary>
 	/// GetConnectInstanceConfigResponse
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConnectInstanceConfigResponse
 	{
 		
@@ -476,8 +450,7 @@ namespace MyNS
 	/// <summary>
 	/// Instance config object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceConfig
 	{
 		
@@ -517,8 +490,7 @@ namespace MyNS
 	/// <summary>
 	/// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EncryptionConfig
 	{
 		
@@ -547,21 +519,18 @@ namespace MyNS
 		public string KeyArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionConfigEncryptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS = 0,
 	}
 	
 	/// <summary>
 	/// GetInstanceOnboardingJobStatusResponse
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInstanceOnboardingJobStatusResponse
 	{
 		
@@ -575,8 +544,7 @@ namespace MyNS
 	/// <summary>
 	/// Instance onboarding job status object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceOnboardingJobStatus
 	{
 		
@@ -607,52 +575,47 @@ namespace MyNS
 		public InstanceOnboardingJobStatusStatus Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceOnboardingJobStatusFailureCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_BRIDGE_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_BRIDGE_ACCESS_DENIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IAM_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IAM_ACCESS_DENIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS_ACCESS_DENIED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS_KEY_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS_KEY_NOT_FOUND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_FAILURE = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceOnboardingJobStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
 	/// <summary>
 	/// ListCampaignsResponse
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCampaignsResponse
 	{
 		
@@ -676,8 +639,7 @@ namespace MyNS
 	/// <summary>
 	/// An Amazon Connect campaign summary.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignSummary
 	{
 		
@@ -733,8 +695,7 @@ namespace MyNS
 	/// <summary>
 	/// Connect instance identifier filter
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InstanceIdFilter
 	{
 		
@@ -759,21 +720,18 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceIdFilterOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Eq")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Eq = 0,
 	}
 	
 	/// <summary>
 	/// ListTagsForResponse
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -784,8 +742,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidCampaignStateException
 	{
 	}
@@ -793,8 +750,7 @@ namespace MyNS
 	/// <summary>
 	/// PutDialRequestBatchResponse
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDialRequestBatchResponse
 	{
 		
@@ -822,8 +778,7 @@ namespace MyNS
 	/// <summary>
 	/// A failed request identified by the unique client token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FailedRequest
 	{
 		
@@ -850,27 +805,24 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailedRequestFailureCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidInput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidInput = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestThrottled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestThrottled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnknownError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnknownError = 2,
 	}
 	
 	/// <summary>
 	/// A successful request identified by the unique client token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SuccessfulRequest
 	{
 		
@@ -894,8 +846,7 @@ namespace MyNS
 	/// <summary>
 	/// A dial request for a campaign.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DialRequest
 	{
 		
@@ -943,8 +894,7 @@ namespace MyNS
 	/// <summary>
 	/// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Attributes
 	{
 	}
@@ -952,8 +902,7 @@ namespace MyNS
 	/// <summary>
 	/// The response for StartInstanceOnboardingJob API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartInstanceOnboardingJobResponse
 	{
 		
@@ -967,21 +916,18 @@ namespace MyNS
 	/// <summary>
 	/// Server-side encryption type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EncryptionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS = 0,
 	}
 	
 	/// <summary>
 	/// Filter model by type
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CampaignFilters
 	{
 		
@@ -995,33 +941,30 @@ namespace MyNS
 	/// <summary>
 	/// State of a campaign
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CampaignState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Initialized")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Initialized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Running")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Running = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Paused")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Paused = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Stopped")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Stopped = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Failed = 4,
 	}
 	
 	/// <summary>
 	/// The request for Create Campaign API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateCampaignRequest
 	{
 		
@@ -1075,8 +1018,7 @@ namespace MyNS
 	/// <summary>
 	/// DeleteCampaignRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteCampaignRequest
 	{
 	}
@@ -1084,8 +1026,7 @@ namespace MyNS
 	/// <summary>
 	/// DeleteCampaignRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteConnectInstanceConfigRequest
 	{
 	}
@@ -1093,8 +1034,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for DeleteInstanceOnboardingJob API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteInstanceOnboardingJobRequest
 	{
 	}
@@ -1102,8 +1042,7 @@ namespace MyNS
 	/// <summary>
 	/// DescribeCampaignRequests
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeCampaignRequest
 	{
 	}
@@ -1111,43 +1050,38 @@ namespace MyNS
 	/// <summary>
 	/// A predefined code indicating the error that caused the failure in getting state of campaigns
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GetCampaignStateBatchFailureCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResourceNotFound")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ResourceNotFound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnknownError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnknownError = 1,
 	}
 	
 	/// <summary>
 	/// A predefined code indicating the error that caused the failure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FailureCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidInput")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InvalidInput = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestThrottled")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RequestThrottled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UnknownError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UnknownError = 2,
 	}
 	
 	/// <summary>
 	/// GetCampaignStateBatchRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignStateBatchRequest
 	{
 		
@@ -1167,8 +1101,7 @@ namespace MyNS
 	/// <summary>
 	/// GetCampaignStateRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCampaignStateRequest
 	{
 	}
@@ -1176,8 +1109,7 @@ namespace MyNS
 	/// <summary>
 	/// GetConnectInstanceConfigRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetConnectInstanceConfigRequest
 	{
 	}
@@ -1185,8 +1117,7 @@ namespace MyNS
 	/// <summary>
 	/// GetInstanceOnboardingJobStatusRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInstanceOnboardingJobStatusRequest
 	{
 	}
@@ -1194,55 +1125,50 @@ namespace MyNS
 	/// <summary>
 	/// Enumeration of the possible failure codes for instance onboarding job
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceOnboardingJobFailureCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_BRIDGE_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_BRIDGE_ACCESS_DENIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IAM_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IAM_ACCESS_DENIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS_ACCESS_DENIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS_ACCESS_DENIED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMS_KEY_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KMS_KEY_NOT_FOUND = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_FAILURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTERNAL_FAILURE = 5,
 	}
 	
 	/// <summary>
 	/// Enumeration of the possible states for instance onboarding job
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InstanceOnboardingJobStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCEEDED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAILED = 2,
 	}
 	
 	/// <summary>
 	/// ListCampaignsRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListCampaignsRequest
 	{
 		
@@ -1275,8 +1201,7 @@ namespace MyNS
 	/// <summary>
 	/// ListTagsForResource
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
@@ -1284,8 +1209,7 @@ namespace MyNS
 	/// <summary>
 	/// PauseCampaignRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PauseCampaignRequest
 	{
 	}
@@ -1293,8 +1217,7 @@ namespace MyNS
 	/// <summary>
 	/// PutDialRequestBatchRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDialRequestBatchRequest
 	{
 		
@@ -1314,8 +1237,7 @@ namespace MyNS
 	/// <summary>
 	/// ResumeCampaignRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResumeCampaignRequest
 	{
 	}
@@ -1323,8 +1245,7 @@ namespace MyNS
 	/// <summary>
 	/// StartCampaignRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartCampaignRequest
 	{
 	}
@@ -1332,8 +1253,7 @@ namespace MyNS
 	/// <summary>
 	/// The request for StartInstanceOnboardingJob API.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartInstanceOnboardingJobRequest
 	{
 		
@@ -1349,8 +1269,7 @@ namespace MyNS
 	/// <summary>
 	/// StopCampaignRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopCampaignRequest
 	{
 	}
@@ -1358,8 +1277,7 @@ namespace MyNS
 	/// <summary>
 	/// TagResourceRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -1375,8 +1293,7 @@ namespace MyNS
 	/// <summary>
 	/// UntagResourceRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
@@ -1384,8 +1301,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateCampaignDialerConfigRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCampaignDialerConfigRequest
 	{
 		
@@ -1401,8 +1317,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateCampaignNameRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCampaignNameRequest
 	{
 		
@@ -1422,8 +1337,7 @@ namespace MyNS
 	/// <summary>
 	/// UpdateCampaignOutboundCallConfigRequest
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateCampaignOutboundCallConfigRequest
 	{
 		

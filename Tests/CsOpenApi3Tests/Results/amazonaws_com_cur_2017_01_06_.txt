@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReportDefinitionResponse
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Deletes the specified report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteReportDefinitionRequest
 	{
 		
@@ -44,14 +42,12 @@ namespace MyNS
 		public string ReportName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
@@ -59,8 +55,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReportDefinitionsResponse
 	{
 		
@@ -81,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportDefinition
 	{
 		
@@ -174,70 +168,60 @@ namespace MyNS
 		public string BillingViewArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportDefinitionTimeUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOURLY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportDefinitionFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="textORcsv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		textORcsv = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Parquet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Parquet = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportDefinitionCompression
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZIP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GZIP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Parquet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Parquet = 2,
 	}
 	
 	/// <summary>
 	/// Whether or not AWS includes resource IDs in the report. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SchemaElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESOURCES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SPLIT_COST_ALLOCATION_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SPLIT_COST_ALLOCATION_DATA = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportDefinitionS3Region
 	{
 		
@@ -329,40 +313,35 @@ namespace MyNS
 	/// <summary>
 	/// The types of manifest that you want AWS to create for this report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdditionalArtifact
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REDSHIFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REDSHIFT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUICKSIGHT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		QUICKSIGHT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ATHENA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ATHENA = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportVersioning
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_NEW_REPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATE_NEW_REPORT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVERWRITE_REPORT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OVERWRITE_REPORT = 1,
 	}
 	
 	/// <summary>
 	/// Requests a list of AWS Cost and Usage reports owned by the account.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeReportDefinitionsRequest
 	{
 		
@@ -386,14 +365,12 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyReportDefinitionResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ModifyReportDefinitionRequest
 	{
 		
@@ -421,8 +398,7 @@ namespace MyNS
 	/// <summary>
 	/// If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutReportDefinitionResponse
 	{
 	}
@@ -430,8 +406,7 @@ namespace MyNS
 	/// <summary>
 	/// Creates a Cost and Usage Report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutReportDefinitionRequest
 	{
 		
@@ -443,14 +418,12 @@ namespace MyNS
 		public ReportDefinition ReportDefinition { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DuplicateReportNameException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportLimitReachedException
 	{
 	}
@@ -458,9 +431,7 @@ namespace MyNS
 	/// <summary>
 	/// The region of the S3 bucket that AWS delivers the report into.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AWSRegion
 	{
 		
@@ -552,54 +523,48 @@ namespace MyNS
 	/// <summary>
 	/// The compression format that AWS uses for the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CompressionFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZIP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GZIP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GZIP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Parquet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Parquet = 2,
 	}
 	
 	/// <summary>
 	/// The length of time covered by the report. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum TimeUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HOURLY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DAILY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTHLY = 2,
 	}
 	
 	/// <summary>
 	/// The format that AWS saves the report in.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="textORcsv")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		textORcsv = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Parquet")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Parquet = 1,
 	}
 	

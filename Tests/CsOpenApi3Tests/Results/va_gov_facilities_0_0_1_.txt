@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Description of an address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Address
 	{
 		
@@ -65,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// Collection of addresses associated with a facility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Addresses
 	{
 		
@@ -86,8 +84,7 @@ namespace MyNS
 	/// <summary>
 	/// API invocation or processing error
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ApiError
 	{
 		
@@ -99,8 +96,7 @@ namespace MyNS
 		public ErrorMessage[] Errors { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ErrorMessage
 	{
 		
@@ -120,8 +116,7 @@ namespace MyNS
 	/// <summary>
 	/// Phone number information for scheduling an appointment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppointmentPhoneNumber
 	{
 		
@@ -153,8 +148,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed information of a facility service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetailedService
 	{
 		
@@ -222,8 +216,7 @@ namespace MyNS
 	/// <summary>
 	/// Details for a location offering a service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetailedServiceLocation
 	{
 		
@@ -261,8 +254,7 @@ namespace MyNS
 	/// <summary>
 	/// Email contact information for facility service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetailedServiceEmailContact
 	{
 		
@@ -282,8 +274,7 @@ namespace MyNS
 	/// <summary>
 	/// Standard hours of operation. Currently formatted as descriptive text suitable for display, with no guarantee of a standard parseable format. Hours of operation may vary due to holidays or other events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetailedServiceHours
 	{
 		
@@ -333,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// Service location address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DetailedServiceAddress
 	{
 		
@@ -396,8 +386,7 @@ namespace MyNS
 	/// <summary>
 	/// Distance to facility in miles using decimal format. Used when querying for facilities proximal to a location. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Distance
 	{
 		
@@ -421,8 +410,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON API response for a query for facility ids.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacilitiesIdsResponse
 	{
 		
@@ -436,8 +424,7 @@ namespace MyNS
 	/// <summary>
 	/// Metadata representation for data in response. This metadata includes paginated items that allow user to see the current page, objects perPage, total pages and total entries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacilitiesMetadata
 	{
 		
@@ -456,8 +443,7 @@ namespace MyNS
 	/// <summary>
 	/// Pagination data reflecting response that has been seperated into discrete pages.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pagination
 	{
 		
@@ -497,8 +483,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON API-compliant response object describing one or more VA facilities
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacilitiesResponse
 	{
 		
@@ -525,8 +510,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON API representation of a Facility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Facility
 	{
 		
@@ -558,8 +542,7 @@ namespace MyNS
 	/// <summary>
 	/// Details describing a facility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacilityAttributes
 	{
 		
@@ -679,43 +662,38 @@ namespace MyNS
 		public string Website { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FacilityAttributesActive_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="T")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		T = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FacilityAttributesFacility_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="va_benefits_facility")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		va_benefits_facility = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="va_cemetery")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		va_cemetery = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="va_health_facility")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		va_health_facility = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vet_center")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vet_center = 3,
 	}
 	
 	/// <summary>
 	/// Standard hours of operation. Currently formatted as descriptive text suitable for display, with no guarantee of a standard parseable format. Hours of operation may vary due to holidays or other events.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Hours
 	{
 		
@@ -765,8 +743,7 @@ namespace MyNS
 	/// <summary>
 	/// Current status of facility operations. The overall status of the facility, which can be: Normal Hours and Services, Facility Notice, Limited Hours and/or Services, or Closed. This field replaces active_status.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OperatingStatus
 	{
 		
@@ -795,30 +772,27 @@ namespace MyNS
 		public SupplementalStatus[] Supplemental_status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum OperatingStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NORMAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NORMAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOTICE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIMITED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LIMITED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOSED = 3,
 	}
 	
 	/// <summary>
 	/// Supplemental status for VA facility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupplementalStatus
 	{
 		
@@ -842,8 +816,7 @@ namespace MyNS
 	/// <summary>
 	/// Collection of all telephone contact numbers for given facility. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Phone
 	{
 		
@@ -899,8 +872,7 @@ namespace MyNS
 	/// <summary>
 	/// Scores that indicate patient satisfaction at given facility per service.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Satisfaction
 	{
 		
@@ -917,8 +889,7 @@ namespace MyNS
 	/// <summary>
 	/// Veteran-reported satisfaction score for health care services at VA health facilities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatientSatisfaction
 	{
 		
@@ -950,8 +921,7 @@ namespace MyNS
 	/// <summary>
 	/// All services offered by a VA health or benefits facility grouped by service type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Services
 	{
 		
@@ -983,8 +953,7 @@ namespace MyNS
 	/// <summary>
 	/// Collection of wait times reported for various services based on access to care survey.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WaitTimes
 	{
 		
@@ -1004,8 +973,7 @@ namespace MyNS
 	/// <summary>
 	/// Expected wait times for new and established patients for a given health care service at VA health facilities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatientWaitTime
 	{
 		
@@ -1030,88 +998,83 @@ namespace MyNS
 		public PatientWaitTimeService Service { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatientWaitTimeService
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Audiology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Audiology = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cardiology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Cardiology = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CaregiverSupport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CaregiverSupport = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Covid19Vaccine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Covid19Vaccine = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DentalServices")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DentalServices = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Dermatology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Dermatology = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EmergencyCare")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EmergencyCare = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gastroenterology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gastroenterology = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gynecology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gynecology = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MentalHealthCare")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MentalHealthCare = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ophthalmology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ophthalmology = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Optometry")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Optometry = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Orthopedics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Orthopedics = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nutrition")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Nutrition = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Podiatry")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Podiatry = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PrimaryCare")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PrimaryCare = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SpecialtyCare")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SpecialtyCare = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UrgentCare")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UrgentCare = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Urology")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Urology = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WomensHealth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WomensHealth = 19,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FacilityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="va_facilities")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		va_facilities = 0,
 	}
 	
 	/// <summary>
 	/// Links for first page, next page, previous and last page of response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PageLinks
 	{
 		
@@ -1157,8 +1120,7 @@ namespace MyNS
 	/// <summary>
 	/// Response that contains facility data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FacilityReadResponse
 	{
 		
@@ -1174,8 +1136,7 @@ namespace MyNS
 	/// <summary>
 	/// A general error json response for things like Authorization Errors or Bad Requests (ex. invalid parameter values).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenericError
 	{
 		
@@ -1190,8 +1151,7 @@ namespace MyNS
 	/// <summary>
 	/// GeoJSON API-compliant response object describing one or more VA facilities.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoFacilitiesResponse
 	{
 		
@@ -1209,8 +1169,7 @@ namespace MyNS
 	/// <summary>
 	/// GeoJSON-complaint Feature object describing a VA Facility
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoFacility
 	{
 		
@@ -1242,8 +1201,7 @@ namespace MyNS
 	/// <summary>
 	/// Geometric data giving the physical location of a VA Facility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Geometry
 	{
 		
@@ -1266,21 +1224,18 @@ namespace MyNS
 		public GeometryType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GeometryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Point")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Point = 0,
 	}
 	
 	/// <summary>
 	/// Details describing a facility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Properties
 	{
 		
@@ -1390,31 +1345,26 @@ namespace MyNS
 		public string Website { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GeoFacilityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Feature")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Feature = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GeoFacilitiesResponseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FeatureCollection")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FeatureCollection = 0,
 	}
 	
 	/// <summary>
 	/// Response that contains GeoFacility data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeoFacilityReadResponse
 	{
 		
@@ -1445,8 +1395,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON API-compliant object containing metadata about this response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Meta
 	{
 		
@@ -1460,8 +1409,7 @@ namespace MyNS
 	/// <summary>
 	/// JSON API-compliant object describing a nearby VA facility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Nearby
 	{
 		
@@ -1489,8 +1437,7 @@ namespace MyNS
 		public NearbyType Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NearbyAttributes
 	{
 		
@@ -1511,21 +1458,18 @@ namespace MyNS
 		public int Min_time { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NearbyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nearby_facility")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		nearby_facility = 0,
 	}
 	
 	/// <summary>
 	/// Response which contains minimum and maximum time it takes to reach facility.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NearbyResponse
 	{
 		
@@ -1786,16 +1730,16 @@ namespace MyNS
 	public enum GetFacilitiesByLocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="health")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		health = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cemetery")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cemetery = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="benefits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		benefits = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="vet_center")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		vet_center = 3,
 	}
 	

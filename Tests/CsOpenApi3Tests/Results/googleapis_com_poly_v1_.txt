@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents and describes an asset in the Poly library. An asset is a 3D model or scene created using [Tilt Brush](//www.tiltbrush.com), [Blocks](//vr.google.com/blocks/), or any 3D program that produces a file that can be upload to Poly.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Asset
 	{
 		
@@ -113,8 +112,7 @@ namespace MyNS
 	/// <summary>
 	/// The same asset can be represented in different formats, for example, a [WaveFront .obj](//en.wikipedia.org/wiki/Wavefront_.obj_file) file with its corresponding .mtl file or a [Khronos glTF](//www.khronos.org/gltf) file with its corresponding .glb binary data. A format refers to a specific representation of an asset and contains all information needed to retrieve and describe this representation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Format
 	{
 		
@@ -146,8 +144,7 @@ namespace MyNS
 	/// <summary>
 	/// Information on the complexity of this Format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormatComplexity
 	{
 		
@@ -167,8 +164,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a file in Poly, which can be a root, resource, or thumbnail file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class File
 	{
 		
@@ -191,27 +187,24 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssetLicense
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATIVE_COMMONS_BY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATIVE_COMMONS_BY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL_RIGHTS_RESERVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALL_RIGHTS_RESERVED = 2,
 	}
 	
 	/// <summary>
 	/// Hints for displaying the asset, based on information available when the asset was uploaded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PresentationParams
 	{
 		
@@ -234,27 +227,24 @@ namespace MyNS
 		public Quaternion OrientingRotation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PresentationParamsColorSpace
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINEAR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINEAR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GAMMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GAMMA = 2,
 	}
 	
 	/// <summary>
 	/// A [Quaternion](//en.wikipedia.org/wiki/Quaternion). Please note: if in the response you see "w: 1" and nothing else this is the default value of [0, 0, 0, 1] where x,y, and z are 0.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Quaternion
 	{
 		
@@ -286,8 +276,7 @@ namespace MyNS
 	/// <summary>
 	/// Info about the sources of this asset (i.e. assets that were remixed to create this asset).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RemixInfo
 	{
 		
@@ -298,30 +287,27 @@ namespace MyNS
 		public string[] SourceAsset { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssetVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VISIBILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VISIBILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLISTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLISTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC = 3,
 	}
 	
 	/// <summary>
 	/// A message generated by the asset import process.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetImportMessage
 	{
 		
@@ -350,48 +336,45 @@ namespace MyNS
 		public ObjParseError ObjParseError { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssetImportMessageCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_IMPORTABLE_FILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_IMPORTABLE_FILE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMPTY_MODEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EMPTY_MODEL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBJ_PARSE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBJ_PARSE_ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_ERROR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTRA_FILES_WITH_ARCHIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTRA_FILES_WITH_ARCHIVE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT_MATERIALS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEFAULT_MATERIALS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FATAL_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FATAL_ERROR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ELEMENT_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_ELEMENT_TYPE = 9,
 	}
 	
 	/// <summary>
 	/// A message resulting from reading an image file.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ImageError
 	{
 		
@@ -408,30 +391,27 @@ namespace MyNS
 		public string FilePath { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ImageErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_IMAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE_TOO_BIG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE_TOO_BIG = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRONG_IMAGE_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRONG_IMAGE_TYPE = 3,
 	}
 	
 	/// <summary>
 	/// Details of an error resulting from parsing an OBJ file
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ObjParseError
 	{
 		
@@ -472,96 +452,93 @@ namespace MyNS
 		public System.Nullable<System.Int32> StartIndex { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ObjParseErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCONSISTENT_VERTEX_REFS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INCONSISTENT_VERTEX_REFS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_COMMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_COMMAND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_NUMBER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_NUMBER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_VERTEX_REF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_VERTEX_REF = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_GEOMETRIC_VERTEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_GEOMETRIC_VERTEX = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_TOKEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_TOKEN = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_FEW_DIMENSIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_FEW_DIMENSIONS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_FEW_VERTICES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_FEW_VERTICES = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_DIMENSIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_MANY_DIMENSIONS = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED_COMMAND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSUPPORTED_COMMAND = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNUSED_TOKENS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNUSED_TOKENS = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERTEX_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERTEX_NOT_FOUND = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NUMBER_OUT_OF_RANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NUMBER_OUT_OF_RANGE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_VALUE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_TEXTURE_OPTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_TEXTURE_OPTION = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_PROBLEMS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TOO_MANY_PROBLEMS = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_FILE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_FILE_NAME = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_NOT_FOUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_NOT_FOUND = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_MATERIAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_MATERIAL = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO_MATERIAL_DEFINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NO_MATERIAL_DEFINED = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_SMOOTHING_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_SMOOTHING_GROUP = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING_VERTEX_COLORS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING_VERTEX_COLORS = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILE_SUBSTITUTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILE_SUBSTITUTION = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINE_TOO_LONG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LINE_TOO_LONG = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_FILE_PATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_FILE_PATH = 25,
 	}
 	
 	/// <summary>
 	/// A response message from a request to list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAssetsResponse
 	{
 		
@@ -587,8 +564,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message from a request to list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLikedAssetsResponse
 	{
 		
@@ -614,8 +590,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message from a request to list.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListUserAssetsResponse
 	{
 		
@@ -641,8 +616,7 @@ namespace MyNS
 	/// <summary>
 	/// Data about the user's asset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserAsset
 	{
 		
@@ -656,8 +630,7 @@ namespace MyNS
 	/// <summary>
 	/// A response message from a request to startImport. This is returned in the response field of the Operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartAssetImportResponse
 	{
 		
@@ -861,29 +834,29 @@ namespace MyNS
 	public enum Poly_assets_listMaxComplexity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLEXITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLEXITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPLEX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIUM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIUM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIMPLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SIMPLE = 3,
 	}
 	
 	public enum Poly_users_assets_listVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VISIBILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VISIBILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLISHED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLISHED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIVATE = 2,
 	}
 }

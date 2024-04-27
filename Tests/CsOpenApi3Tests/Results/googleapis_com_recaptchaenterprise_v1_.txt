@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Account defender risk assessment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about account verification, used for identity verification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo
 	{
 		
@@ -68,8 +66,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about a verification endpoint that can be used for 2FA.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1EndpointVerificationInfo
 	{
 		
@@ -98,48 +95,45 @@ namespace MyNS
 		public string RequestToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESULT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RESULT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS_USER_VERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SUCCESS_USER_VERIFIED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_USER_NOT_VERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_USER_NOT_VERIFIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_SITE_ONBOARDING_INCOMPLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_SITE_ONBOARDING_INCOMPLETE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_RECIPIENT_NOT_ALLOWED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_RECIPIENT_NOT_ALLOWED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_RECIPIENT_ABUSE_LIMIT_EXHAUSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_RECIPIENT_ABUSE_LIMIT_EXHAUSTED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CRITICAL_INTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_CRITICAL_INTERNAL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CUSTOMER_QUOTA_EXHAUSTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_CUSTOMER_QUOTA_EXHAUSTED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_VERIFICATION_BYPASSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_VERIFICATION_BYPASSED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_VERDICT_MISMATCH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR_VERDICT_MISMATCH = 9,
 	}
 	
 	/// <summary>
 	/// Settings specific to keys that can be used by Android apps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1AndroidKeySettings
 	{
 		
@@ -165,8 +159,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message to annotate an Assessment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest
 	{
 		
@@ -201,33 +194,30 @@ namespace MyNS
 		public GoogleCloudRecaptchaenterpriseV1TransactionEvent TransactionEvent { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestAnnotation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANNOTATION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANNOTATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEGITIMATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LEGITIMATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRAUDULENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRAUDULENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_CORRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_CORRECT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PASSWORD_INCORRECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PASSWORD_INCORRECT = 4,
 	}
 	
 	/// <summary>
 	/// Describes an event in the lifecycle of a payment transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1TransactionEvent
 	{
 		
@@ -256,75 +246,72 @@ namespace MyNS
 		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecaptchaenterpriseV1TransactionEventEventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTION_EVENT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSACTION_EVENT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERCHANT_APPROVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERCHANT_APPROVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MERCHANT_DENY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MERCHANT_DENY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANUAL_REVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANUAL_REVIEW = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHORIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTHORIZATION = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHORIZATION_DECLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTHORIZATION_DECLINE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENT_CAPTURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENT_CAPTURE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYMENT_CAPTURE_DECLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PAYMENT_CAPTURE_DECLINE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANCEL = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHARGEBACK_INQUIRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHARGEBACK_INQUIRY = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHARGEBACK_ALERT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHARGEBACK_ALERT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRAUD_NOTIFICATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FRAUD_NOTIFICATION = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHARGEBACK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHARGEBACK = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHARGEBACK_REPRESENTMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHARGEBACK_REPRESENTMENT = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHARGEBACK_REVERSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHARGEBACK_REVERSE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFUND_REQUEST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REFUND_REQUEST = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFUND_DECLINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REFUND_DECLINE = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFUND")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REFUND = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFUND_REVERSE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REFUND_REVERSE = 18,
 	}
 	
 	/// <summary>
 	/// Empty response for AnnotateAssessment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentResponse
 	{
 	}
@@ -332,8 +319,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains fields that are required to perform Apple-specific integrity checks.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1AppleDeveloperId
 	{
 		
@@ -359,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	/// A reCAPTCHA Enterprise assessment resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1Assessment
 	{
 		
@@ -428,8 +413,7 @@ namespace MyNS
 	/// <summary>
 	/// The event being assessed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1Event
 	{
 		
@@ -521,8 +505,7 @@ namespace MyNS
 	/// <summary>
 	/// Transaction data associated with a payment protected by reCAPTCHA Enterprise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1TransactionData
 	{
 		
@@ -608,8 +591,7 @@ namespace MyNS
 	/// <summary>
 	/// Structured address format for billing and shipping addresses.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1TransactionDataAddress
 	{
 		
@@ -653,8 +635,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about the transaction from the gateway.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1TransactionDataGatewayInfo
 	{
 		
@@ -686,8 +667,7 @@ namespace MyNS
 	/// <summary>
 	/// Line items being purchased in this transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1TransactionDataItem
 	{
 		
@@ -719,8 +699,7 @@ namespace MyNS
 	/// <summary>
 	/// Details about a user's account involved in the transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1TransactionDataUser
 	{
 		
@@ -764,8 +743,7 @@ namespace MyNS
 	/// <summary>
 	/// User information associated with a request protected by reCAPTCHA Enterprise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1UserInfo
 	{
 		
@@ -791,8 +769,7 @@ namespace MyNS
 	/// <summary>
 	/// An identifier associated with a user.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1UserId
 	{
 		
@@ -818,8 +795,7 @@ namespace MyNS
 	/// <summary>
 	/// Policy config assessment.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FirewallPolicyAssessment
 	{
 		
@@ -839,8 +815,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleRpcStatus
 	{
 		
@@ -866,8 +841,7 @@ namespace MyNS
 	/// <summary>
 	/// A FirewallPolicy represents a single matching pattern and resulting actions to take.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FirewallPolicy
 	{
 		
@@ -905,8 +879,7 @@ namespace MyNS
 	/// <summary>
 	/// An individual action. Each action represents what to do if a policy matches.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FirewallAction
 	{
 		
@@ -944,8 +917,7 @@ namespace MyNS
 	/// <summary>
 	/// An allow action continues processing a request unimpeded.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FirewallActionAllowAction
 	{
 	}
@@ -953,8 +925,7 @@ namespace MyNS
 	/// <summary>
 	/// A block action serves an HTTP error code a prevents the request from hitting the backend.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FirewallActionBlockAction
 	{
 	}
@@ -962,8 +933,7 @@ namespace MyNS
 	/// <summary>
 	/// A redirect action returns a 307 (temporary redirect) response, pointing the user to a ReCaptcha interstitial page to attach a token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FirewallActionRedirectAction
 	{
 	}
@@ -971,8 +941,7 @@ namespace MyNS
 	/// <summary>
 	/// A set header action sets a header and forwards the request to the backend. This can be used to trigger custom protection implemented on the backend.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FirewallActionSetHeaderAction
 	{
 		
@@ -992,8 +961,7 @@ namespace MyNS
 	/// <summary>
 	/// A substitute action transparently serves a different page than the one requested.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FirewallActionSubstituteAction
 	{
 		
@@ -1007,8 +975,7 @@ namespace MyNS
 	/// <summary>
 	/// Assessment for Fraud Prevention.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessment
 	{
 		
@@ -1040,8 +1007,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about behavioral trust of the transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentBehavioralTrustVerdict
 	{
 		
@@ -1055,8 +1021,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about card testing fraud, where an adversary is testing fraudulently obtained cards or brute forcing their details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentCardTestingVerdict
 	{
 		
@@ -1070,8 +1035,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about stolen instrument fraud, where the user is not the legitimate owner of the instrument being used for the purchase.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentStolenInstrumentVerdict
 	{
 		
@@ -1085,8 +1049,7 @@ namespace MyNS
 	/// <summary>
 	/// Fraud signals describing users and cards involved in the transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FraudSignals
 	{
 		
@@ -1106,8 +1069,7 @@ namespace MyNS
 	/// <summary>
 	/// Signals describing the payment card used in this transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals
 	{
 		
@@ -1121,8 +1083,7 @@ namespace MyNS
 	/// <summary>
 	/// Signals describing the user involved in this transaction.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1FraudSignalsUserSignals
 	{
 		
@@ -1142,8 +1103,7 @@ namespace MyNS
 	/// <summary>
 	/// Private password leak verification info.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification
 	{
 		
@@ -1175,8 +1135,7 @@ namespace MyNS
 	/// <summary>
 	/// Risk analysis result for an event.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1RiskAnalysis
 	{
 		
@@ -1202,8 +1161,7 @@ namespace MyNS
 	/// <summary>
 	/// Properties of the provided event token.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1TokenProperties
 	{
 		
@@ -1250,39 +1208,36 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Valid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecaptchaenterpriseV1TokenPropertiesInvalidReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_REASON_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID_REASON_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_INVALID_REASON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNKNOWN_INVALID_REASON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MALFORMED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MALFORMED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPIRED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DUPE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MISSING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MISSING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BROWSER_ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BROWSER_ERROR = 6,
 	}
 	
 	/// <summary>
 	/// Metrics related to challenges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1ChallengeMetrics
 	{
 		
@@ -1314,8 +1269,7 @@ namespace MyNS
 	/// <summary>
 	/// Settings specific to keys that can be used by iOS apps.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1IOSKeySettings
 	{
 		
@@ -1341,8 +1295,7 @@ namespace MyNS
 	/// <summary>
 	/// A key used to identify and configure applications (web and/or mobile) that use reCAPTCHA Enterprise.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1Key
 	{
 		
@@ -1404,8 +1357,7 @@ namespace MyNS
 	/// <summary>
 	/// Options for user acceptance testing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1TestingOptions
 	{
 		
@@ -1422,27 +1374,24 @@ namespace MyNS
 		public System.Nullable<System.Single> TestingScore { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecaptchaenterpriseV1TestingOptionsTestingChallenge
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TESTING_CHALLENGE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TESTING_CHALLENGE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOCAPTCHA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOCAPTCHA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSOLVABLE_CHALLENGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSOLVABLE_CHALLENGE = 2,
 	}
 	
 	/// <summary>
 	/// Settings specific to keys that can be used for WAF (Web Application Firewall).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1WafSettings
 	{
 		
@@ -1459,49 +1408,44 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRecaptchaenterpriseV1WafSettingsWafService> WafService { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecaptchaenterpriseV1WafSettingsWafFeature
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAF_FEATURE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAF_FEATURE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHALLENGE_PAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHALLENGE_PAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SESSION_TOKEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SESSION_TOKEN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_TOKEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_TOKEN = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPRESS = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecaptchaenterpriseV1WafSettingsWafService
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WAF_SERVICE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WAF_SERVICE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FASTLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FASTLY = 2,
 	}
 	
 	/// <summary>
 	/// Settings specific to keys that can be used by websites.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1WebKeySettings
 	{
 		
@@ -1536,49 +1480,44 @@ namespace MyNS
 		public System.Nullable<GoogleCloudRecaptchaenterpriseV1WebKeySettingsIntegrationType> IntegrationType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecaptchaenterpriseV1WebKeySettingsChallengeSecurityPreference
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHALLENGE_SECURITY_PREFERENCE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHALLENGE_SECURITY_PREFERENCE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USABILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USABILITY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BALANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BALANCE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECURITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SECURITY = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudRecaptchaenterpriseV1WebKeySettingsIntegrationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTEGRATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTEGRATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCORE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CHECKBOX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CHECKBOX = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVISIBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVISIBLE = 3,
 	}
 	
 	/// <summary>
 	/// Response to request to list firewall policies belonging to a key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1ListFirewallPoliciesResponse
 	{
 		
@@ -1598,8 +1537,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to request to list keys in a project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1ListKeysResponse
 	{
 		
@@ -1619,8 +1557,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a `ListRelatedAccountGroupMemberships` call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1ListRelatedAccountGroupMembershipsResponse
 	{
 		
@@ -1640,8 +1577,7 @@ namespace MyNS
 	/// <summary>
 	/// A membership in a group of related accounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1RelatedAccountGroupMembership
 	{
 		
@@ -1667,8 +1603,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a `ListRelatedAccountGroups` call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1ListRelatedAccountGroupsResponse
 	{
 		
@@ -1688,8 +1623,7 @@ namespace MyNS
 	/// <summary>
 	/// A group of related accounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1RelatedAccountGroup
 	{
 		
@@ -1703,8 +1637,7 @@ namespace MyNS
 	/// <summary>
 	/// Metrics for a single Key.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1Metrics
 	{
 		
@@ -1736,8 +1669,7 @@ namespace MyNS
 	/// <summary>
 	/// Metrics related to scoring.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1ScoreMetrics
 	{
 		
@@ -1757,8 +1689,7 @@ namespace MyNS
 	/// <summary>
 	/// Score distribution.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1ScoreDistribution
 	{
 		
@@ -1772,8 +1703,7 @@ namespace MyNS
 	/// <summary>
 	/// The migrate key request message.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1MigrateKeyRequest
 	{
 		
@@ -1787,8 +1717,7 @@ namespace MyNS
 	/// <summary>
 	/// Secret key is used only in legacy reCAPTCHA. It must be used in a 3rd party integration with legacy reCAPTCHA.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse
 	{
 		
@@ -1802,8 +1731,7 @@ namespace MyNS
 	/// <summary>
 	/// The request message to search related account group memberships.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1SearchRelatedAccountGroupMembershipsRequest
 	{
 		
@@ -1835,8 +1763,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a `SearchRelatedAccountGroupMemberships` call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudRecaptchaenterpriseV1SearchRelatedAccountGroupMembershipsResponse
 	{
 		
@@ -1856,8 +1783,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleProtobufEmpty
 	{
 	}

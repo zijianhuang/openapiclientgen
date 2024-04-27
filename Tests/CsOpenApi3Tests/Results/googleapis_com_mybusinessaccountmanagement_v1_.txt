@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for AccessControl.AcceptInvitation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcceptInvitationRequest
 	{
 	}
@@ -29,8 +28,7 @@ namespace MyNS
 	/// <summary>
 	/// An account is a container for your location. If you are the only user who manages locations for your business, you can use your personal Google Account. To share management of locations with multiple users, [create a business account] (https://support.google.com/business/answer/6085339?ref_topic=6085325).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Account
 	{
 		
@@ -98,8 +96,7 @@ namespace MyNS
 	/// <summary>
 	/// Additional information stored for an organization.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class OrganizationInfo
 	{
 		
@@ -125,8 +122,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PostalAddress
 	{
 		
@@ -197,109 +193,98 @@ namespace MyNS
 		public string Sublocality { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountPermissionLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_LEVEL_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERMISSION_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER_LEVEL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEMBER_LEVEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEMBER_LEVEL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_ROLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_ROLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARY_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMARY_OWNER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_MANAGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_MANAGER = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERSONAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PERSONAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATION_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATION_GROUP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		USER_GROUP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORGANIZATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ORGANIZATION = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountVerificationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFICATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFICATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFIED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNVERIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNVERIFIED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERIFICATION_REQUESTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERIFICATION_REQUESTED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AccountVettedState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VETTED_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VETTED_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_VETTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NOT_VETTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VETTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VETTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INVALID = 3,
 	}
 	
 	/// <summary>
 	/// An administrator of an Account or a location.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Admin
 	{
 		
@@ -334,33 +319,30 @@ namespace MyNS
 		public System.Nullable<AdminRole> Role { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdminRole
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADMIN_ROLE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ADMIN_ROLE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARY_OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMARY_OWNER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OWNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OWNER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE_MANAGER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SITE_MANAGER = 4,
 	}
 	
 	/// <summary>
 	/// Request message for AccessControl.DeclineInvitation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeclineInvitationRequest
 	{
 	}
@@ -368,8 +350,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -377,8 +358,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a pending invitation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Invitation
 	{
 		
@@ -416,8 +396,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a target location for a pending invitation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TargetLocation
 	{
 		
@@ -434,27 +413,24 @@ namespace MyNS
 		public string LocationName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InvitationTargetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TARGET_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TARGET_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCOUNTS_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACCOUNTS_ONLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCATIONS_ONLY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOCATIONS_ONLY = 2,
 	}
 	
 	/// <summary>
 	/// Response message for AccessControl.ListAccountAdmins.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountAdminsResponse
 	{
 		
@@ -468,8 +444,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for Accounts.ListAccounts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAccountsResponse
 	{
 		
@@ -489,8 +464,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for AccessControl.ListInvitations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListInvitationsResponse
 	{
 		
@@ -504,8 +478,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for AccessControl.ListLocationAdmins.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListLocationAdminsResponse
 	{
 		
@@ -519,8 +492,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for AccessControl.TransferLocation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TransferLocationRequest
 	{
 		

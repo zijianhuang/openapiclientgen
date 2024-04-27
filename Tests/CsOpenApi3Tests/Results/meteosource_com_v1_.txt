@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AirQuality_PointData
 	{
 		
@@ -60,8 +59,7 @@ namespace MyNS
 		public string Timezone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AirQuality_PointHourlyData
 	{
 		
@@ -164,8 +162,7 @@ namespace MyNS
 		public System.Nullable<System.Double> So2_surface { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FindPlacesModel
 	{
 		
@@ -245,8 +242,7 @@ namespace MyNS
 		public string Type { get; set; } = "settlement";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GeneralRequestError
 	{
 		
@@ -258,8 +254,7 @@ namespace MyNS
 		public string Detail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class HTTPValidationError
 	{
 		
@@ -267,8 +262,7 @@ namespace MyNS
 		public ValidationError[] Detail { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationError
 	{
 		
@@ -297,36 +291,33 @@ namespace MyNS
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Language
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cs")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		cs = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="en")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		en = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="de")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		de = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="es")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		es = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fr = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pl")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pl = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pt")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pt = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointAlerts
 	{
 		
@@ -334,8 +325,7 @@ namespace MyNS
 		public string Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointCurrentData
 	{
 		
@@ -488,8 +478,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Wind_chill { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointCurrentPrecipitationData
 	{
 		
@@ -516,8 +505,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointCurrentWindData
 	{
 		
@@ -550,8 +538,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Speed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDaily
 	{
 		
@@ -563,8 +550,7 @@ namespace MyNS
 		public Point_PointDailyData[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyData
 	{
 		
@@ -669,8 +655,7 @@ namespace MyNS
 		public string Weather { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAfternoonData
 	{
 		
@@ -827,8 +812,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Wind_chill { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAfternoonCloudCoverData
 	{
 		
@@ -861,8 +845,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAfternoonPrecipitationData
 	{
 		
@@ -889,8 +872,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAfternoonProbData
 	{
 		
@@ -916,8 +898,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Storm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAfternoonWindData
 	{
 		
@@ -948,8 +929,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Speed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAllDayData
 	{
 		
@@ -1178,8 +1158,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Wind_chill_min { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAllDayCloudCoverData
 	{
 		
@@ -1212,8 +1191,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAllDayPrecipitationData
 	{
 		
@@ -1240,8 +1218,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAllDayProbData
 	{
 		
@@ -1267,8 +1244,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Storm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAllDayWindData
 	{
 		
@@ -1299,8 +1275,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Speed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyAstroData
 	{
 		
@@ -1319,8 +1294,7 @@ namespace MyNS
 		public Point_PointDailySunData Sun { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyMoonData
 	{
 		
@@ -1355,8 +1329,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Set { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailySunData
 	{
 		
@@ -1385,8 +1358,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Set { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyEveningData
 	{
 		
@@ -1543,8 +1515,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Wind_chill { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyEveningCloudCoverData
 	{
 		
@@ -1577,8 +1548,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyEveningPrecipitationData
 	{
 		
@@ -1605,8 +1575,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyEveningProbData
 	{
 		
@@ -1632,8 +1601,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Storm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyEveningWindData
 	{
 		
@@ -1664,8 +1632,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Speed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyMorningData
 	{
 		
@@ -1822,8 +1789,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Wind_chill { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyMorningCloudCoverData
 	{
 		
@@ -1856,8 +1822,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyMorningPrecipitationData
 	{
 		
@@ -1884,8 +1849,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyMorningProbData
 	{
 		
@@ -1911,8 +1875,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Storm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyMorningWindData
 	{
 		
@@ -1943,8 +1906,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Speed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyStatsData
 	{
 		
@@ -1970,8 +1932,7 @@ namespace MyNS
 		public Point_PointDailyStatsWindData Wind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyStatsPrecipitationData
 	{
 		
@@ -1990,8 +1951,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Probability { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyStatsTemperatureData
 	{
 		
@@ -2031,8 +1991,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Record_min { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointDailyStatsWindData
 	{
 		
@@ -2072,8 +2031,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Max_speed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointData
 	{
 		
@@ -2135,8 +2093,7 @@ namespace MyNS
 		public string Units { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointHourly
 	{
 		
@@ -2148,8 +2105,7 @@ namespace MyNS
 		public Point_PointHourlyData[] Data { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointHourlyData
 	{
 		
@@ -2358,8 +2314,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Wind_chill { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointHourlyCloudCoverData
 	{
 		
@@ -2391,8 +2346,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointHourlyPrecipitationData
 	{
 		
@@ -2433,8 +2387,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointHourlyProbData
 	{
 		
@@ -2459,8 +2412,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Storm { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointHourlyWindData
 	{
 		
@@ -2491,8 +2443,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Speed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointMinutely
 	{
 		
@@ -2511,8 +2462,7 @@ namespace MyNS
 		public string Summary { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Point_PointMinutelyPrecipitationData
 	{
 		
@@ -2532,8 +2482,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Precipitation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeMachine_PointDailyStatsData
 	{
 		
@@ -2559,8 +2508,7 @@ namespace MyNS
 		public TimeMachine_PointDailyStatsWindData Wind { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeMachine_PointDailyStatsPrecipitationData
 	{
 		
@@ -2579,8 +2527,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Probability { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeMachine_PointDailyStatsTemperatureData
 	{
 		
@@ -2620,8 +2567,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Record_min { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeMachine_PointDailyStatsWindData
 	{
 		
@@ -2661,8 +2607,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Max_speed { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeMachine_TimeMachine
 	{
 		
@@ -2719,8 +2664,7 @@ namespace MyNS
 		public string Units { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeMachine_TimeMachineHourlyData
 	{
 		
@@ -2883,8 +2827,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Wind_chill { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeMachine_TimeMachineCloudCoverData
 	{
 		
@@ -2917,8 +2860,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeMachine_TimeMachinePrecipitationData
 	{
 		
@@ -2945,8 +2887,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeMachine_TimeMachineWindData
 	{
 		
@@ -2982,25 +2923,23 @@ namespace MyNS
 	/// <summary>
 	/// An enumeration.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Units
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="auto")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		auto = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="metric")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		metric = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="us")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		us = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uk")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uk = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ca")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ca = 4,
 	}
 	

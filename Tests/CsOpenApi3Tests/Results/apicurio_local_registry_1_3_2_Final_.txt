@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactMetaData
 	{
 		
@@ -111,76 +110,70 @@ namespace MyNS
 	/// <summary>
 	/// User-defined name-value pairs. Name and value must be strings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Properties
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArtifactMetaDataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPRECATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPRECATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArtifactMetaDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVRO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVRO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOBUF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOBUF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOBUF_FD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOBUF_FD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPENAPI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPENAPI = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASYNCAPI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASYNCAPI = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRAPHQL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRAPHQL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KCONNECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KCONNECT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WSDL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WSDL = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XSD = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XML = 10,
 	}
 	
 	/// <summary>
 	/// Describes the response received when searching for artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ArtifactSearchResults
 	{
 		
@@ -204,8 +197,7 @@ namespace MyNS
 	/// <summary>
 	/// Models a single artifact from the result set returned when searching for artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchedArtifact
 	{
 		
@@ -276,67 +268,62 @@ namespace MyNS
 	///* DEPRECATED
 	///
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArtifactState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPRECATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DEPRECATED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETED = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ArtifactType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVRO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AVRO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOBUF")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOBUF = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROTOBUF_FD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROTOBUF_FD = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPENAPI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OPENAPI = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASYNCAPI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASYNCAPI = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GRAPHQL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GRAPHQL = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="KCONNECT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		KCONNECT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WSDL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WSDL = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XSD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XSD = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="XML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		XML = 10,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EditableMetaData
 	{
 		
@@ -360,8 +347,7 @@ namespace MyNS
 	/// All error responses, whether `4xx` or `5xx` will include one of these as the response
 	///body.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -384,8 +370,7 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Rule
 	{
 		
@@ -400,43 +385,38 @@ namespace MyNS
 		public System.Nullable<RuleType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RuleType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VALIDITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VALIDITY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPATIBILITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COMPATIBILITY = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SearchOver
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="everything")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		everything = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="description")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		description = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="labels")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		labels = 3,
 	}
 	
 	/// <summary>
 	/// Models a single artifact from the result set returned when searching for artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SearchedVersion
 	{
 		
@@ -499,21 +479,18 @@ namespace MyNS
 		public int Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateState
 	{
 		
@@ -532,8 +509,7 @@ namespace MyNS
 		public ArtifactMetaDataState State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionMetaData
 	{
 		
@@ -611,8 +587,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes the response received when searching for artifacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class VersionSearchResults
 	{
 		
@@ -1778,16 +1753,16 @@ namespace MyNS
 	public enum CreateArtifactIfExists
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAIL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FAIL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UPDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETURN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURN_OR_UPDATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RETURN_OR_UPDATE = 3,
 	}
 }

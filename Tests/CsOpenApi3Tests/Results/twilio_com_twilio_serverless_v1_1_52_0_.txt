@@ -17,9 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Asset_version_enum_visibility
 	{
 		
@@ -33,66 +31,58 @@ namespace MyNS
 		_protected = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Build_enum_runtime
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="node8")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		node8 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="node10")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		node10 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="node12")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		node12 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="node14")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		node14 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="node16")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		node16 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="node18")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		node18 = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Build_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="building")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		building = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Build_status_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="building")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		building = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Function_version_enum_visibility
 	{
 		
@@ -106,24 +96,21 @@ namespace MyNS
 		_protected = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Log_enum_level
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="info")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		info = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="warn")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		warn = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		error = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1service
 	{
 		
@@ -206,8 +193,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1serviceasset
 	{
 		
@@ -278,8 +264,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1serviceassetasset_version
 	{
 		
@@ -353,9 +338,7 @@ namespace MyNS
 		public System.Nullable<Serverlessv1serviceassetasset_versionVisibility> Visibility { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Serverlessv1serviceassetasset_versionVisibility
 	{
 		
@@ -369,8 +352,7 @@ namespace MyNS
 		_protected = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1servicebuild
 	{
 		
@@ -456,8 +438,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1servicebuildbuild_status
 	{
 		
@@ -507,8 +488,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1serviceenvironment
 	{
 		
@@ -603,8 +583,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1serviceenvironmentdeployment
 	{
 		
@@ -687,8 +666,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1serviceenvironmentlog
 	{
 		
@@ -810,8 +788,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1serviceenvironmentvariable
 	{
 		
@@ -894,8 +871,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1servicefunction
 	{
 		
@@ -966,8 +942,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1servicefunctionfunction_version
 	{
 		
@@ -1044,9 +1019,7 @@ namespace MyNS
 		public System.Nullable<Serverlessv1servicefunctionfunction_versionVisibility> Visibility { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Serverlessv1servicefunctionfunction_versionVisibility
 	{
 		
@@ -1060,8 +1033,7 @@ namespace MyNS
 		_protected = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Serverlessv1servicefunctionfunction_versionfunction_version_content
 	{
 		

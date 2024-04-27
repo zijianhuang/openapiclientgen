@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Acl
 	{
 		
@@ -42,8 +41,7 @@ namespace MyNS
 		public string Kind { get; set; } = "plus#acl";
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PlusAclentryResource
 	{
 		
@@ -72,8 +70,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Activity
 	{
 		
@@ -297,8 +294,7 @@ namespace MyNS
 		public string AdHocVerified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Place
 	{
 		
@@ -748,8 +744,7 @@ namespace MyNS
 		public string Title { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ActivityFeed
 	{
 		
@@ -809,8 +804,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Comment
 	{
 		
@@ -1014,8 +1008,7 @@ namespace MyNS
 		public System.Nullable<System.UInt32> TotalItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CommentFeed
 	{
 		
@@ -1069,8 +1062,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Updated { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PeopleFeed
 	{
 		
@@ -1118,8 +1110,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> TotalItems { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Person
 	{
 		
@@ -1945,30 +1936,30 @@ namespace MyNS
 	public enum Plus_activities_searchOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="best")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		best = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="recent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		recent = 1,
 	}
 	
 	public enum Plus_comments_listSortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ascending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ascending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="descending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		descending = 1,
 	}
 	
 	public enum Plus_people_listByActivityCollection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plusoners")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		plusoners = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="resharers")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		resharers = 1,
 	}
 	
@@ -1982,20 +1973,20 @@ namespace MyNS
 	public enum Plus_people_listCollection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="connected")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		connected = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="visible")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		visible = 1,
 	}
 	
 	public enum Plus_people_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="alphabetical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		alphabetical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="best")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		best = 1,
 	}
 }

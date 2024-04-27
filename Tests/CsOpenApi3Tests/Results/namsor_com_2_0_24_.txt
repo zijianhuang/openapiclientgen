@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// The current billing period.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIBillingPeriodUsageOut
 	{
 		
@@ -89,8 +88,7 @@ namespace MyNS
 	/// <summary>
 	/// The list of classifiers and versions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIClassifierOut
 	{
 		
@@ -125,8 +123,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ShuttingDown { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIClassifierTaxonomyOut
 	{
 		
@@ -149,8 +146,7 @@ namespace MyNS
 		public string[] TaxonomyClasses { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIClassifiersStatusOut
 	{
 		
@@ -170,8 +166,7 @@ namespace MyNS
 	/// <summary>
 	/// The software version.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SoftwareVersionOut
 	{
 		
@@ -191,8 +186,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed usage as reported by the deduplicating API counter.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APICounterV2Out
 	{
 		
@@ -242,8 +236,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> TotalUsage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIKeyOut
 	{
 		
@@ -308,8 +301,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Vetted { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIPeriodUsageOut
 	{
 		
@@ -353,8 +345,7 @@ namespace MyNS
 	/// <summary>
 	/// The API Plan governing the subscription.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIPlanSubscriptionOut
 	{
 		
@@ -476,8 +467,7 @@ namespace MyNS
 	/// <summary>
 	/// List of API Services
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIServiceOut
 	{
 		
@@ -500,8 +490,7 @@ namespace MyNS
 		public string ServiceName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIServicesOut
 	{
 		
@@ -512,8 +501,7 @@ namespace MyNS
 		public APIServiceOut[] ApiServices { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIUsageAggregatedOut
 	{
 		
@@ -566,8 +554,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> TotalUsage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class APIUsageHistoryOut
 	{
 		
@@ -578,8 +565,7 @@ namespace MyNS
 		public APICounterV2Out[] DetailedUsage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCorridorIn
 	{
 		
@@ -593,8 +579,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent any transnational interaction between names (ex. remittance, communication, cross-border investment, airline travel
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CorridorIn
 	{
 		
@@ -608,8 +593,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameGeoIn
 	{
 		
@@ -626,8 +610,7 @@ namespace MyNS
 		public string LastName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FactIn
 	{
 		
@@ -638,8 +621,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCorridorOut
 	{
 		
@@ -653,8 +635,7 @@ namespace MyNS
 	/// <summary>
 	/// Represent multiple classifications for corridor sender and receiver (gender, country, origin, diaspora)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CorridorOut
 	{
 		
@@ -686,8 +667,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameDiasporaedOut
 	{
 		
@@ -770,8 +750,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY gender from a personal name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameGenderedOut
 	{
 		
@@ -827,27 +806,24 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FirstLastNameGenderedOutLikelyGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="male")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		male = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="female")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		female = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 2,
 	}
 	
 	/// <summary>
 	/// Represents the output of inferring the LIKELY country of Origin from a personal name.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameOriginedOut
 	{
 		
@@ -936,8 +912,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNameDiasporaedOut
 	{
 		
@@ -948,8 +923,7 @@ namespace MyNS
 		public FirstLastNameDiasporaedOut[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNameGenderIn
 	{
 		
@@ -960,8 +934,7 @@ namespace MyNS
 		public FirstLastNameGenderIn[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameGenderIn
 	{
 		
@@ -984,8 +957,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY gender from a list of personal names.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNameGenderedOut
 	{
 		
@@ -996,8 +968,7 @@ namespace MyNS
 		public FirstLastNameGenderedOut[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNameGeoIn
 	{
 		
@@ -1011,8 +982,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY country subclassification (regional names).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNameGeoSubclassificationOut
 	{
 		
@@ -1026,8 +996,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the geographic name origin at a country subclassification level (usually regional or state level).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameGeoSubclassificationOut
 	{
 		
@@ -1101,8 +1070,7 @@ namespace MyNS
 		public string[] SubclassificationTop { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNameGeoZippedIn
 	{
 		
@@ -1113,8 +1081,7 @@ namespace MyNS
 		public FirstLastNameGeoZippedIn[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameGeoZippedIn
 	{
 		
@@ -1134,8 +1101,7 @@ namespace MyNS
 		public string ZipCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNameIn
 	{
 		
@@ -1146,8 +1112,7 @@ namespace MyNS
 		public FirstLastNameIn[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameIn
 	{
 		
@@ -1164,8 +1129,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY origin from a list of personal names.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNameOriginedOut
 	{
 		
@@ -1179,8 +1143,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY country and phone code of personal names+phones.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNamePhoneCodedOut
 	{
 		
@@ -1194,8 +1157,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY country and phone code from a personal name and phone number.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNamePhoneCodedOut
 	{
 		
@@ -1290,8 +1252,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Verified { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNamePhoneNumberGeoIn
 	{
 		
@@ -1302,8 +1263,7 @@ namespace MyNS
 		public FirstLastNamePhoneNumberGeoIn[] PersonalNamesWithPhoneNumbers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNamePhoneNumberGeoIn
 	{
 		
@@ -1326,8 +1286,7 @@ namespace MyNS
 		public string PhoneNumber { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNamePhoneNumberIn
 	{
 		
@@ -1338,8 +1297,7 @@ namespace MyNS
 		public FirstLastNamePhoneNumberIn[] PersonalNamesWithPhoneNumbers { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNamePhoneNumberIn
 	{
 		
@@ -1359,8 +1317,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchFirstLastNameUSRaceEthnicityOut
 	{
 		
@@ -1374,8 +1331,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameUSRaceEthnicityOut
 	{
 		
@@ -1443,33 +1399,30 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum FirstLastNameUSRaceEthnicityOutRaceEthnicity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="W_NL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		W_NL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="A")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		A = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="B_NL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		B_NL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AI_AN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AI_AN = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PI = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchMatchPersonalFirstLastNameIn
 	{
 		
@@ -1480,8 +1433,7 @@ namespace MyNS
 		public MatchPersonalFirstLastNameIn[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MatchPersonalFirstLastNameIn
 	{
 		
@@ -1495,8 +1447,7 @@ namespace MyNS
 		public PersonalNameIn Name2 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameIn
 	{
 		
@@ -1507,8 +1458,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchNameGeoIn
 	{
 		
@@ -1519,8 +1469,7 @@ namespace MyNS
 		public NameGeoIn[] ProperNouns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NameGeoIn
 	{
 		
@@ -1534,8 +1483,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchNameIn
 	{
 		
@@ -1546,8 +1494,7 @@ namespace MyNS
 		public NameIn[] ProperNouns { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NameIn
 	{
 		
@@ -1558,8 +1505,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchNameMatchCandidatesOut
 	{
 		
@@ -1573,8 +1519,7 @@ namespace MyNS
 	/// <summary>
 	/// Classified matched names
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NameMatchCandidatesOut
 	{
 		
@@ -1612,8 +1557,7 @@ namespace MyNS
 	/// <summary>
 	/// The ordered list of name matching candidates
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NameMatchCandidateOut
 	{
 		
@@ -1642,8 +1586,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Probability { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchNameMatchedOut
 	{
 		
@@ -1657,8 +1600,7 @@ namespace MyNS
 	/// <summary>
 	/// Classified matched names
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NameMatchedOut
 	{
 		
@@ -1678,21 +1620,18 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NameMatchedOutMatchStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Match")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Match = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mismatch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Mismatch = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameCastegroupOut
 	{
 		
@@ -1706,8 +1645,7 @@ namespace MyNS
 	/// <summary>
 	/// Caste group-coded names
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameCastegroupOut
 	{
 		
@@ -1769,8 +1707,7 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameGenderedOut
 	{
 		
@@ -1784,8 +1721,7 @@ namespace MyNS
 	/// <summary>
 	/// Classified genderized names
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameGenderedOut
 	{
 		
@@ -1835,8 +1771,7 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameGeoIn
 	{
 		
@@ -1847,8 +1782,7 @@ namespace MyNS
 		public PersonalNameGeoIn[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameGeoIn
 	{
 		
@@ -1862,8 +1796,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameGeoOut
 	{
 		
@@ -1877,8 +1810,7 @@ namespace MyNS
 	/// <summary>
 	/// Classified geo names
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameGeoOut
 	{
 		
@@ -1961,8 +1893,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the LIKELY country subclassification (regional names).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameGeoSubclassificationOut
 	{
 		
@@ -1976,8 +1907,7 @@ namespace MyNS
 	/// <summary>
 	/// Classified names at sub country level (region or state)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameGeoSubclassificationOut
 	{
 		
@@ -2045,8 +1975,7 @@ namespace MyNS
 		public string[] SubclassificationTop { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameGeoSubdivisionIn
 	{
 		
@@ -2057,8 +1986,7 @@ namespace MyNS
 		public PersonalNameGeoSubdivisionIn[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameGeoSubdivisionIn
 	{
 		
@@ -2075,8 +2003,7 @@ namespace MyNS
 		public string SubdivisionIso { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameIn
 	{
 		
@@ -2087,8 +2014,7 @@ namespace MyNS
 		public PersonalNameIn[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameParsedOut
 	{
 		
@@ -2099,8 +2025,7 @@ namespace MyNS
 		public PersonalNameParsedOut[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameParsedOut
 	{
 		
@@ -2147,8 +2072,7 @@ namespace MyNS
 	/// <summary>
 	/// First / last name structure corresponding to the most likely parsing.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FirstLastNameOut
 	{
 		
@@ -2171,69 +2095,66 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PersonalNameParsedOutNameParserType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FN1LN1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FN1LN1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LN1FN1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LN1FN1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FN1LN2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FN1LN2 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LN2FN1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LN2FN1 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FN1LNx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FN1LNx = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LNxFN1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LNxFN1 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FN2LN1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FN2LN1 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LN1FN2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LN1FN2 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FN2LN2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FN2LN2 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LN2FN2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LN2FN2 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FN2LNx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FN2LNx = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LNxFN2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LNxFN2 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FNxLN1")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FNxLN1 = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LN1FNx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LN1FNx = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FNxLN2")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FNxLN2 = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LN2FNx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LN2FNx = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FNxLNx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FNxLNx = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LNxFNx")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LNxFNx = 17,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameReligionedOut
 	{
 		
@@ -2247,8 +2168,7 @@ namespace MyNS
 	/// <summary>
 	/// religious-coded names
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameReligionedOut
 	{
 		
@@ -2310,8 +2230,7 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchPersonalNameSubdivisionIn
 	{
 		
@@ -2322,8 +2241,7 @@ namespace MyNS
 		public PersonalNameSubdivisionIn[] PersonalNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PersonalNameSubdivisionIn
 	{
 		
@@ -2340,8 +2258,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the output of inferring the common type (anthroponym, toponym, brand, etc.) from a list of proper names.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchProperNounCategorizedOut
 	{
 		
@@ -2355,8 +2272,7 @@ namespace MyNS
 	/// <summary>
 	/// Classified typed proper names
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProperNounCategorizedOut
 	{
 		
@@ -2394,8 +2310,7 @@ namespace MyNS
 		public string Script { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FeedbackLoopOut
 	{
 		
@@ -2409,8 +2324,7 @@ namespace MyNS
 	/// <summary>
 	/// List of countries and regions
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegionISO
 	{
 		
@@ -2439,8 +2353,7 @@ namespace MyNS
 		public string Topregion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegionOut
 	{
 		

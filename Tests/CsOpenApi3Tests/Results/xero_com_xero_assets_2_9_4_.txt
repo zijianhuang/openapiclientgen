@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Asset
 	{
 		
@@ -115,62 +114,55 @@ namespace MyNS
 		public string WarrantyExpiryDate { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssetAssetStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Draft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Draft = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Registered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Registered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disposed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disposed = 2,
 	}
 	
 	/// <summary>
 	/// See Asset Status Codes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssetStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Draft")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Draft = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Registered")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Registered = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disposed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Disposed = 2,
 	}
 	
 	/// <summary>
 	/// See Asset Status Codes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AssetStatusQueryParam
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DRAFT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGISTERED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REGISTERED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISPOSED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISPOSED = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssetType
 	{
 		
@@ -220,8 +212,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Locks { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Assets
 	{
 		
@@ -232,8 +223,7 @@ namespace MyNS
 		public Pagination Pagination { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BookDepreciationDetail
 	{
 		
@@ -280,8 +270,7 @@ namespace MyNS
 		public System.Nullable<System.Double> ResidualValue { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BookDepreciationSetting
 	{
 		
@@ -334,62 +323,55 @@ namespace MyNS
 		public System.Nullable<System.Int32> EffectiveLifeYears { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BookDepreciationSettingAveragingMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FullMonth")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FullMonth = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActualDays")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ActualDays = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BookDepreciationSettingDepreciationCalculationMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Life")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Life = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BookDepreciationSettingDepreciationMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NoDepreciation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NoDepreciation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StraightLine")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StraightLine = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiminishingValue100")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DiminishingValue100 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiminishingValue150")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DiminishingValue150 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiminishingValue200")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DiminishingValue200 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FullDepreciation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FullDepreciation = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Error
 	{
 		
@@ -424,8 +406,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FieldValidationErrorsElement
 	{
 		
@@ -466,8 +447,7 @@ namespace MyNS
 		public string ValueProvided { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceValidationErrorsElement
 	{
 		
@@ -502,8 +482,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Pagination
 	{
 		
@@ -520,8 +499,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> PageSize { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Setting
 	{
 		
@@ -826,35 +804,35 @@ namespace MyNS
 	public enum GetAssetsOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssetType")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssetType = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssetName")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssetName = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssetNumber")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssetNumber = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PurchaseDate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PurchaseDate = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PurchasePrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PurchasePrice = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisposalDate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DisposalDate = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisposalPrice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DisposalPrice = 6,
 	}
 	
 	public enum GetAssetsSortDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 1,
 	}
 }

@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an AdMob ad unit.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdUnit
 	{
 		
@@ -65,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes an AdMob app for a specific platform (For example: Android or iOS).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class App
 	{
 		
@@ -107,30 +105,27 @@ namespace MyNS
 		public string Platform { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AppAppApprovalState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_APPROVAL_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_APPROVAL_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_REQUIRED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTION_REQUIRED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_REVIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN_REVIEW = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APPROVED = 3,
 	}
 	
 	/// <summary>
 	/// Information from the app store if the app is linked to an app store.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppLinkedAppInfo
 	{
 		
@@ -150,8 +145,7 @@ namespace MyNS
 	/// <summary>
 	/// Information provided for manual apps which are not linked to an application store (Example: Google Play, App Store).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppManualAppInfo
 	{
 		
@@ -165,8 +159,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -192,8 +185,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of a single date range. Both dates are inclusive.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DateRange
 	{
 		
@@ -213,8 +205,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to generate an AdMob mediation report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateMediationReportRequest
 	{
 		
@@ -228,8 +219,7 @@ namespace MyNS
 	/// <summary>
 	/// The specification for generating an AdMob Mediation report. For example, the specification to get observed ECPM sliced by ad source and app for the 'US' and 'CN' countries can look like the following example: { "date_range": { "start_date": {"year": 2021, "month": 9, "day": 1}, "end_date": {"year": 2021, "month": 9, "day": 30} }, "dimensions": ["AD_SOURCE", "APP", "COUNTRY"], "metrics": ["OBSERVED_ECPM"], "dimension_filters": [ { "dimension": "COUNTRY", "matches_any": {"values": [{"value": "US", "value": "CN"}]} } ], "sort_conditions": [ {"dimension":"APP", order: "ASCENDING"} ], "localization_settings": { "currency_code": "USD", "language_code": "en-US" } } For a better understanding, you can treat the preceding specification like the following pseudo SQL: SELECT AD_SOURCE, APP, COUNTRY, OBSERVED_ECPM FROM MEDIATION_REPORT WHERE DATE >= '2021-09-01' AND DATE <= '2021-09-30' AND COUNTRY IN ('US', 'CN') GROUP BY AD_SOURCE, APP, COUNTRY ORDER BY APP ASC;
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediationReportSpec
 	{
 		
@@ -285,8 +275,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes which report rows to match based on their dimension values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediationReportSpecDimensionFilter
 	{
 		
@@ -303,66 +292,63 @@ namespace MyNS
 		public StringList MatchesAny { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediationReportSpecDimensionFilterDimension
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEK = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_SOURCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_SOURCE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_SOURCE_INSTANCE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_SOURCE_INSTANCE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_UNIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_UNIT = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIATION_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEDIATION_GROUP = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNTRY = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORMAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORMAT = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATFORM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATFORM = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_OS_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE_OS_VERSION = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GMA_SDK_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GMA_SDK_VERSION = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_VERSION_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_VERSION_NAME = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVING_RESTRICTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVING_RESTRICTION = 15,
 	}
 	
 	/// <summary>
 	/// List of string values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StringList
 	{
 		
@@ -376,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// Localization settings for reports, such as currency and language. It affects how metrics are calculated.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocalizationSettings
 	{
 		
@@ -397,8 +382,7 @@ namespace MyNS
 	/// <summary>
 	/// Sorting direction to be applied on a dimension or a metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MediationReportSpecSortCondition
 	{
 		
@@ -421,61 +405,56 @@ namespace MyNS
 		public System.Nullable<MediationReportSpecSortConditionOrder> Order { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediationReportSpecSortConditionMetric
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_REQUESTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_REQUESTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLICKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLICKS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ESTIMATED_EARNINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ESTIMATED_EARNINGS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPRESSIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPRESSIONS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPRESSION_CTR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPRESSION_CTR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCHED_REQUESTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCHED_REQUESTS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH_RATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH_RATE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBSERVED_ECPM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBSERVED_ECPM = 8,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MediationReportSpecSortConditionOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORT_ORDER_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SORT_ORDER_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ASCENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESCENDING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DESCENDING = 2,
 	}
 	
 	/// <summary>
 	/// The streaming response for the AdMob mediation report where the first response contains the report header, then a stream of row responses, and finally a footer as the last response message. For example: [{ "header": { "date_range": { "start_date": {"year": 2018, "month": 9, "day": 1}, "end_date": {"year": 2018, "month": 9, "day": 1} }, "localization_settings": { "currency_code": "USD", "language_code": "en-US" } } }, { "row": { "dimension_values": { "DATE": {"value": "20180918"}, "APP": { "value": "ca-app-pub-8123415297019784~1001342552", "display_label": "My app name!" } }, "metric_values": { "ESTIMATED_EARNINGS": {"decimal_value": "1324746"} } } }, { "footer": {"matching_row_count": 1} }]
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateMediationReportResponse
 	{
 		
@@ -501,8 +480,7 @@ namespace MyNS
 	/// <summary>
 	/// Groups data available after report generation, for example, warnings and row counts. Always sent as the last message in the stream response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportFooter
 	{
 		
@@ -522,8 +500,7 @@ namespace MyNS
 	/// <summary>
 	/// Warnings associated with generation of the report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportWarning
 	{
 		
@@ -540,33 +517,30 @@ namespace MyNS
 		public System.Nullable<ReportWarningType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ReportWarningType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_BEFORE_ACCOUNT_TIMEZONE_CHANGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_BEFORE_ACCOUNT_TIMEZONE_CHANGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_DELAYED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_DELAYED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPORT_CURRENCY_NOT_ACCOUNT_CURRENCY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		REPORT_CURRENCY_NOT_ACCOUNT_CURRENCY = 4,
 	}
 	
 	/// <summary>
 	/// Groups data helps to treat the generated report. Always sent as a first message in the stream response.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportHeader
 	{
 		
@@ -592,8 +566,7 @@ namespace MyNS
 	/// <summary>
 	/// A row of the returning report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportRow
 	{
 		
@@ -613,8 +586,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a dimension value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportRowDimensionValue
 	{
 		
@@ -634,8 +606,7 @@ namespace MyNS
 	/// <summary>
 	/// Representation of a metric value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ReportRowMetricValue
 	{
 		
@@ -661,8 +632,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to generate an AdMob Network report.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateNetworkReportRequest
 	{
 		
@@ -676,8 +646,7 @@ namespace MyNS
 	/// <summary>
 	/// The specification for generating an AdMob Network report. For example, the specification to get clicks and estimated earnings for only the 'US' and 'CN' countries can look like the following example: { 'date_range': { 'start_date': {'year': 2021, 'month': 9, 'day': 1}, 'end_date': {'year': 2021, 'month': 9, 'day': 30} }, 'dimensions': ['DATE', 'APP', 'COUNTRY'], 'metrics': ['CLICKS', 'ESTIMATED_EARNINGS'], 'dimension_filters': [ { 'dimension': 'COUNTRY', 'matches_any': {'values': [{'value': 'US', 'value': 'CN'}]} } ], 'sort_conditions': [ {'dimension':'APP', order: 'ASCENDING'}, {'metric':'CLICKS', order: 'DESCENDING'} ], 'localization_settings': { 'currency_code': 'USD', 'language_code': 'en-US' } } For a better understanding, you can treat the preceding specification like the following pseudo SQL: SELECT DATE, APP, COUNTRY, CLICKS, ESTIMATED_EARNINGS FROM NETWORK_REPORT WHERE DATE >= '2021-09-01' AND DATE <= '2021-09-30' AND COUNTRY IN ('US', 'CN') GROUP BY DATE, APP, COUNTRY ORDER BY APP ASC, CLICKS DESC;
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkReportSpec
 	{
 		
@@ -733,8 +702,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes which report rows to match based on their dimension values.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkReportSpecDimensionFilter
 	{
 		
@@ -751,60 +719,57 @@ namespace MyNS
 		public StringList MatchesAny { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NetworkReportSpecDimensionFilterDimension
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MONTH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WEEK = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_UNIT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_UNIT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_TYPE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_TYPE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="COUNTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		COUNTRY = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORMAT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FORMAT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PLATFORM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PLATFORM = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_OS_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE_OS_VERSION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GMA_SDK_VERSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GMA_SDK_VERSION = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="APP_VERSION_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		APP_VERSION_NAME = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVING_RESTRICTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVING_RESTRICTION = 13,
 	}
 	
 	/// <summary>
 	/// Sorting direction to be applied on a dimension or a metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NetworkReportSpecSortCondition
 	{
 		
@@ -827,48 +792,45 @@ namespace MyNS
 		public MediationReportSpecSortConditionOrder Order { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NetworkReportSpecSortConditionMetric
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AD_REQUESTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AD_REQUESTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLICKS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLICKS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ESTIMATED_EARNINGS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ESTIMATED_EARNINGS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPRESSIONS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPRESSIONS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPRESSION_CTR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPRESSION_CTR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPRESSION_RPM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPRESSION_RPM = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCHED_REQUESTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCHED_REQUESTS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATCH_RATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATCH_RATE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SHOW_RATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SHOW_RATE = 9,
 	}
 	
 	/// <summary>
 	/// The streaming response for the AdMob Network report where the first response contains the report header, then a stream of row responses, and finally a footer as the last response message. For example: [{ "header": { "dateRange": { "startDate": {"year": 2018, "month": 9, "day": 1}, "endDate": {"year": 2018, "month": 9, "day": 1} }, "localizationSettings": { "currencyCode": "USD", "languageCode": "en-US" } } }, { "row": { "dimensionValues": { "DATE": {"value": "20180918"}, "APP": { "value": "ca-app-pub-8123415297019784~1001342552", displayLabel: "My app name!" } }, "metricValues": { "ESTIMATED_EARNINGS": {"microsValue": 6500000} } } }, { "footer": {"matchingRowCount": 1} }]
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GenerateNetworkReportResponse
 	{
 		
@@ -894,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the ad units list request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAdUnitsResponse
 	{
 		
@@ -915,8 +876,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the apps list request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAppsResponse
 	{
 		
@@ -936,8 +896,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for the publisher account list request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListPublisherAccountsResponse
 	{
 		
@@ -957,8 +916,7 @@ namespace MyNS
 	/// <summary>
 	/// A publisher account contains information relevant to the use of this API, such as the time zone used for the reports.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublisherAccount
 	{
 		

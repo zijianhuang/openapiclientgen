@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Carrier
 	{
 		
@@ -35,51 +34,48 @@ namespace MyNS
 		public System.Nullable<CarrierNetwork_type> Network_type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CarrierNetwork_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed_line")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fixed_line = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="fixed_line_or_mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		fixed_line_or_mobile = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		mobile = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pager")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pager = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="personal_number")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		personal_number = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="premium_rate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		premium_rate = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="shared_cost")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		shared_cost = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="toll_free")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		toll_free = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="uan")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		uan = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voicemail")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voicemail = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voip")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voip = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Mnp
 	{
 		
@@ -105,8 +101,7 @@ namespace MyNS
 		public string Number { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Roaming
 	{
 		
@@ -123,19 +118,17 @@ namespace MyNS
 		public System.Nullable<RoamingStatus> Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RoamingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="roaming")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		roaming = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_roaming")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		not_roaming = 2,
 	}
 	
@@ -655,16 +648,16 @@ namespace MyNS
 	public enum AnalyticsGroup_by
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="date")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		date = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="label")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		label = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subaccount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subaccount = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="country")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		country = 3,
 	}
 	
@@ -699,7 +692,7 @@ namespace MyNS
 	public enum ContactsGetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="read")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		read = 0,
 	}
 	
@@ -716,10 +709,10 @@ namespace MyNS
 	public enum ContactsPOSTAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="del")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		del = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="write")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		write = 1,
 	}
 	
@@ -765,39 +758,39 @@ namespace MyNS
 	public enum HooksPOSTAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscribe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		subscribe = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsubscribe")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unsubscribe = 1,
 	}
 	
 	public enum HooksPOSTEvent_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms_mo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms_mo = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="dlr")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		dlr = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voice_status")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voice_status = 3,
 	}
 	
 	public enum HooksPOSTRequest_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POST = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		JSON = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GET = 2,
 	}
 	
@@ -960,16 +953,14 @@ namespace MyNS
 		public string Text { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SmsReturnSms_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="economy")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		economy = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="direct")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		direct = 1,
 	}
 	

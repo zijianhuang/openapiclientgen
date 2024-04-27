@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Schema1
 	{
 		
@@ -2085,10 +2084,10 @@ namespace MyNS
 	public enum GetChargeStationsSort_order
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		desc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		asc = 1,
 	}
 	
@@ -2190,28 +2189,26 @@ namespace MyNS
 		public System.Nullable<PatchChargeStationVariablePatchBodyVariable> Variable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PatchChargeStationVariablePatchBodyVariable
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MeterValueSampleInterval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MeterValueSampleInterval = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="HeartbeatInterval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		HeartbeatInterval = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConnectionTimeOut")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConnectionTimeOut = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WebSocketPingInterval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WebSocketPingInterval = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TransactionMessageRetryInterval")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TransactionMessageRetryInterval = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TransactionMessageAttempts")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TransactionMessageAttempts = 5,
 	}
 	
@@ -2361,22 +2358,20 @@ namespace MyNS
 		public string Work { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostDriversPostBodySource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="physical")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		physical = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="slack")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		slack = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="telegram")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		telegram = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 3,
 	}
 	
@@ -2937,10 +2932,10 @@ namespace MyNS
 	public enum GetTransactionsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Started")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Started = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ended")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Ended = 1,
 	}
 	
@@ -2987,16 +2982,14 @@ namespace MyNS
 		public PostChargePostBodyAction Action { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum PostChargePostBodyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="START")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		START = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STOP = 1,
 	}
 	

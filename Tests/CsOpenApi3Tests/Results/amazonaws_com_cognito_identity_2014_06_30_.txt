@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An object representing an Amazon Cognito identity pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityPool
 	{
 		
@@ -68,8 +67,7 @@ namespace MyNS
 		public IdentityPoolTagsType IdentityPoolTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityProviders
 	{
 	}
@@ -77,8 +75,7 @@ namespace MyNS
 	/// <summary>
 	/// A provider representing an Amazon Cognito user pool and its client ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CognitoIdentityProvider
 	{
 		
@@ -92,8 +89,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ServerSideTokenCheck { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityPoolTagsType
 	{
 	}
@@ -101,8 +97,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the CreateIdentityPool action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateIdentityPoolInput
 	{
 		
@@ -142,38 +137,32 @@ namespace MyNS
 		public IdentityPoolTagsType IdentityPoolTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NotAuthorizedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TooManyRequestsException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalErrorException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
@@ -181,8 +170,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned in response to a successful <code>DeleteIdentities</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIdentitiesResponse
 	{
 		
@@ -193,8 +181,7 @@ namespace MyNS
 	/// <summary>
 	/// An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnprocessedIdentityId
 	{
 		
@@ -205,24 +192,21 @@ namespace MyNS
 		public ErrorCode ErrorCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccessDenied")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AccessDenied = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalServerError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalServerError = 1,
 	}
 	
 	/// <summary>
 	/// Input to the <code>DeleteIdentities</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIdentitiesInput
 	{
 		
@@ -237,8 +221,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the DeleteIdentityPool action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteIdentityPoolInput
 	{
 		
@@ -250,8 +233,7 @@ namespace MyNS
 		public string IdentityPoolId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
@@ -259,8 +241,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of the identity.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityDescription
 	{
 		
@@ -280,8 +261,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the <code>DescribeIdentity</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIdentityInput
 	{
 		
@@ -296,8 +276,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the DescribeIdentityPool action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeIdentityPoolInput
 	{
 		
@@ -312,8 +291,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCredentialsForIdentityResponse
 	{
 		
@@ -327,8 +305,7 @@ namespace MyNS
 	/// <summary>
 	/// Credentials for the provided identity ID.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Credentials
 	{
 		
@@ -348,8 +325,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the <code>GetCredentialsForIdentity</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCredentialsForIdentityInput
 	{
 		
@@ -367,20 +343,17 @@ namespace MyNS
 		public string CustomRoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LoginsMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidIdentityPoolConfigurationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExternalServiceException
 	{
 	}
@@ -388,8 +361,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned in response to a GetId request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdResponse
 	{
 		
@@ -400,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the GetId action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdInput
 	{
 		
@@ -422,8 +393,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned in response to a successful <code>GetIdentityPoolRoles</code> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityPoolRolesResponse
 	{
 		
@@ -437,14 +407,12 @@ namespace MyNS
 		public RoleMappingMap RoleMappings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RolesMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoleMappingMap
 	{
 	}
@@ -452,8 +420,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the <code>GetIdentityPoolRoles</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIdentityPoolRolesInput
 	{
 		
@@ -468,8 +435,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned in response to a successful GetOpenIdToken request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOpenIdTokenResponse
 	{
 		
@@ -483,8 +449,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the GetOpenIdToken action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOpenIdTokenInput
 	{
 		
@@ -502,8 +467,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOpenIdTokenForDeveloperIdentityResponse
 	{
 		
@@ -517,8 +481,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetOpenIdTokenForDeveloperIdentityInput
 	{
 		
@@ -546,20 +509,17 @@ namespace MyNS
 		public System.Nullable<System.Int32> TokenDuration { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PrincipalTags
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeveloperUserAlreadyRegisteredException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPrincipalTagAttributeMapResponse
 	{
 		
@@ -576,8 +536,7 @@ namespace MyNS
 		public PrincipalTags PrincipalTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPrincipalTagAttributeMapInput
 	{
 		
@@ -599,8 +558,7 @@ namespace MyNS
 	/// <summary>
 	/// The response to a ListIdentities request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentitiesResponse
 	{
 		
@@ -617,8 +575,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the ListIdentities action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentitiesInput
 	{
 		
@@ -646,8 +603,7 @@ namespace MyNS
 	/// <summary>
 	/// The result of a successful ListIdentityPools action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentityPoolsResponse
 	{
 		
@@ -661,8 +617,7 @@ namespace MyNS
 	/// <summary>
 	/// A description of the identity pool.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdentityPoolShortDescription
 	{
 		
@@ -676,8 +631,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the ListIdentityPools action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListIdentityPoolsInput
 	{
 		
@@ -692,8 +646,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -701,8 +654,7 @@ namespace MyNS
 		public IdentityPoolTagsType Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceInput
 	{
 		
@@ -717,8 +669,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned in response to a successful <code>LookupDeveloperIdentity</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupDeveloperIdentityResponse
 	{
 		
@@ -735,8 +686,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the <code>LookupDeveloperIdentityInput</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LookupDeveloperIdentityInput
 	{
 		
@@ -763,8 +713,7 @@ namespace MyNS
 	/// <summary>
 	/// Returned in response to a successful <code>MergeDeveloperIdentities</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MergeDeveloperIdentitiesResponse
 	{
 		
@@ -775,8 +724,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the <code>MergeDeveloperIdentities</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MergeDeveloperIdentitiesInput
 	{
 		
@@ -812,8 +760,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the <code>SetIdentityPoolRoles</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIdentityPoolRolesInput
 	{
 		
@@ -835,14 +782,12 @@ namespace MyNS
 		public RoleMappingMap RoleMappings { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModificationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetPrincipalTagAttributeMapResponse
 	{
 		
@@ -859,8 +804,7 @@ namespace MyNS
 		public PrincipalTags PrincipalTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetPrincipalTagAttributeMapInput
 	{
 		
@@ -885,14 +829,12 @@ namespace MyNS
 		public PrincipalTags PrincipalTags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceInput
 	{
 		
@@ -914,8 +856,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the <code>UnlinkDeveloperIdentity</code> action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnlinkDeveloperIdentityInput
 	{
 		
@@ -951,8 +892,7 @@ namespace MyNS
 	/// <summary>
 	/// Input to the UnlinkIdentity action.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UnlinkIdentityInput
 	{
 		
@@ -978,14 +918,12 @@ namespace MyNS
 		public string[] LoginsToRemove { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceInput
 	{
 		
@@ -1004,43 +942,38 @@ namespace MyNS
 		public string[] TagKeys { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AmbiguousRoleResolutionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthenticatedRole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AuthenticatedRole = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Deny")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Deny = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MappingRuleMatchType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Equals")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Equals = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Contains")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Contains = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StartsWith")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StartsWith = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotEqual")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NotEqual = 3,
 	}
 	
 	/// <summary>
 	/// A rule that maps a claim name, a claim value, and a match type to a role ARN.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MappingRule
 	{
 		
@@ -1073,24 +1006,21 @@ namespace MyNS
 		public string RoleARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RoleMappingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Token")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Token = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Rules = 1,
 	}
 	
 	/// <summary>
 	/// A container for rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RulesConfigurationType
 	{
 		
@@ -1105,8 +1035,7 @@ namespace MyNS
 	/// <summary>
 	/// A role mapping.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RoleMapping
 	{
 		

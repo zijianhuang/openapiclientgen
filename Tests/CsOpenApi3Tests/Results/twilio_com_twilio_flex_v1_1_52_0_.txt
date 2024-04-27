@@ -17,24 +17,21 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Configuration_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ok")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ok = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inprogress")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inprogress = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="notstarted")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		notstarted = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1channel
 	{
 		
@@ -117,8 +114,7 @@ namespace MyNS
 		public string User_sid { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1configuration
 	{
 		
@@ -456,8 +452,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1flex_flow
 	{
 		
@@ -558,49 +553,44 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Flexv1flex_flowChannel_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		web = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="facebook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		facebook = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="whatsapp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		whatsapp = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="line")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		line = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Flexv1flex_flowIntegration_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="studio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		studio = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="task")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		task = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_assessments
 	{
 		
@@ -695,8 +685,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Weight { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_assessments_comment
 	{
 		
@@ -782,8 +771,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Weight { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_conversations
 	{
 		
@@ -812,8 +800,7 @@ namespace MyNS
 		public string[] Segments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_questionnaires
 	{
 		
@@ -869,8 +856,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_questionnaires_category
 	{
 		
@@ -908,8 +894,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_questionnaires_question
 	{
 		
@@ -983,8 +968,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Usage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_segments
 	{
 		
@@ -1112,8 +1096,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_session
 	{
 		
@@ -1148,8 +1131,7 @@ namespace MyNS
 		public string Workspace_id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_settings_answersets
 	{
 		
@@ -1187,8 +1169,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_settings_comment
 	{
 		
@@ -1211,8 +1192,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1insights_user_roles
 	{
 		
@@ -1226,8 +1206,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1interaction
 	{
 		
@@ -1274,8 +1253,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1interactioninteraction_channel
 	{
 		
@@ -1328,61 +1306,56 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Flexv1interactioninteraction_channelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="setup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		setup = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Flexv1interactioninteraction_channelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voice = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		web = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="whatsapp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		whatsapp = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chat = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="messenger")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		messenger = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gbm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gbm = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1interactioninteraction_channelinteraction_channel_invite
 	{
 		
@@ -1433,8 +1406,7 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1interactioninteraction_channelinteraction_channel_participant
 	{
 		
@@ -1481,30 +1453,27 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Flexv1interactioninteraction_channelinteraction_channel_participantType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="supervisor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		supervisor = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="agent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		agent = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1provisioning_status
 	{
 		
@@ -1518,13 +1487,11 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Flexv1provisioning_statusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
@@ -1533,12 +1500,11 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-configured")]
 		notMinusconfigured = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Flexv1web_channel
 	{
 		
@@ -1597,191 +1563,169 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Flex_flow_enum_channel_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		web = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="facebook")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		facebook = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="whatsapp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		whatsapp = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="line")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		line = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		custom = 5,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Flex_flow_enum_integration_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="studio")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		studio = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="task")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		task = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_channel_enum_channel_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="setup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		setup = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_channel_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wrapup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wrapup = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_channel_enum_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="voice")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		voice = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sms = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		email = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		web = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="whatsapp")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		whatsapp = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="chat")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		chat = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="messenger")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		messenger = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="gbm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		gbm = 7,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_channel_enum_update_channel_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_channel_invite_enum_action
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="accept")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		accept = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="decline")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		decline = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_channel_invite_enum_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="taskrouter")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		taskrouter = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_channel_participant_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="closed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		closed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="wrapup")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		wrapup = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Interaction_channel_participant_enum_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="supervisor")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		supervisor = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		customer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="external")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		external = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="agent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		agent = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Provisioning_status_enum_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		active = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in-progress")]
@@ -1790,17 +1734,15 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-configured")]
 		notMinusconfigured = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		failed = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Web_channel_enum_chat_status
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="inactive")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		inactive = 0,
 	}
 	

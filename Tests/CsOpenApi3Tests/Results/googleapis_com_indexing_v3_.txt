@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Output for PublishUrlNotification
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PublishUrlNotificationResponse
 	{
 		
@@ -35,8 +34,7 @@ namespace MyNS
 	/// <summary>
 	/// Summary of the most recent Indexing API notifications successfully received, for a given URL.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlNotificationMetadata
 	{
 		
@@ -62,8 +60,7 @@ namespace MyNS
 	/// <summary>
 	/// `UrlNotification` is the resource used in all Indexing API calls. It describes one event in the life cycle of a Web Document.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UrlNotification
 	{
 		
@@ -86,19 +83,17 @@ namespace MyNS
 		public string Url { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum UrlNotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_NOTIFICATION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_NOTIFICATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_UPDATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_UPDATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_DELETED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		URL_DELETED = 2,
 	}
 	

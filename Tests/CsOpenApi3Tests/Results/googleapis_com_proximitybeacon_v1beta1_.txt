@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a unique identifier of a beacon as broadcast by the device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AdvertisedId
 	{
 		
@@ -38,33 +37,30 @@ namespace MyNS
 		public System.Nullable<AdvertisedIdType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AdvertisedIdType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDDYSTONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDDYSTONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IBEACON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IBEACON = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALTBEACON")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALTBEACON = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EDDYSTONE_EID")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EDDYSTONE_EID = 4,
 	}
 	
 	/// <summary>
 	/// A subset of attachment information served via the `beaconinfo.getforobserved` method, used when your users encounter your beacons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachmentInfo
 	{
 		
@@ -90,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// Details of a beacon device.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Beacon
 	{
 		
@@ -165,8 +160,7 @@ namespace MyNS
 	/// <summary>
 	/// Write-only registration parameters for beacons using Eddystone-EID format. Two ways of securely registering an Eddystone-EID beacon with the service are supported: 1. Perform an ECDH key exchange via this API, including a previous call to `GET /v1beta1/eidparams`. In this case the fields `beacon_ecdh_public_key` and `service_ecdh_public_key` should be populated and `beacon_identity_key` should not be populated. This method ensures that only the two parties in the ECDH key exchange can compute the identity key, which becomes a secret between them. 2. Derive or obtain the beacon's identity key via other secure means (perhaps an ECDH key exchange between the beacon and a mobile device or any other secure method), and then submit the resulting identity key to the service. In this case `beacon_identity_key` field should be populated, and neither of `beacon_ecdh_public_key` nor `service_ecdh_public_key` fields should be. The security of this method depends on how securely the parties involved (in particular the bluetooth client) handle the identity key, and obviously on how securely the identity key was generated. See [the Eddystone specification](https://github.com/google/eddystone/tree/master/eddystone-eid) at GitHub.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EphemeralIdRegistration
 	{
 		
@@ -207,33 +201,30 @@ namespace MyNS
 		public string ServiceEcdhPublicKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BeaconExpectedStability
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STABILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STABILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PORTABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PORTABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOBILE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROVING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROVING = 4,
 	}
 	
 	/// <summary>
 	/// Indoor level, a human-readable string as returned by Google Maps APIs, useful to indicate which floor of a building a beacon is located on.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IndoorLevel
 	{
 		
@@ -247,8 +238,7 @@ namespace MyNS
 	/// <summary>
 	/// An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the WGS84 standard. Values must be within normalized ranges.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LatLng
 	{
 		
@@ -265,30 +255,27 @@ namespace MyNS
 		public System.Nullable<System.Double> Longitude { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BeaconStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATUS_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DECOMMISSIONED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DECOMMISSIONED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INACTIVE = 3,
 	}
 	
 	/// <summary>
 	/// Project-specific data associated with a beacon.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BeaconAttachment
 	{
 		
@@ -326,8 +313,7 @@ namespace MyNS
 	/// <summary>
 	/// A subset of beacon information served via the `beaconinfo.getforobserved` method, which you call when users of your app encounter your beacons.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BeaconInfo
 	{
 		
@@ -353,8 +339,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values * A month and day value, with a zero year, such as an anniversary * A year on its own, with zero month and day values * A year and month value, with a zero day, such as a credit card expiration date Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Date
 	{
 		
@@ -380,8 +365,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for a request to delete attachments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAttachmentsResponse
 	{
 		
@@ -395,8 +379,7 @@ namespace MyNS
 	/// <summary>
 	/// Diagnostics for a single beacon.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Diagnostics
 	{
 		
@@ -422,8 +405,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -431,8 +413,7 @@ namespace MyNS
 	/// <summary>
 	/// Information a client needs to provision and register beacons that broadcast Eddystone-EID format beacon IDs, using Elliptic curve Diffie-Hellman key exchange. See [the Eddystone specification](https://github.com/google/eddystone/tree/master/eddystone-eid) at GitHub.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EphemeralIdRegistrationParams
 	{
 		
@@ -458,8 +439,7 @@ namespace MyNS
 	/// <summary>
 	/// Request for beacon and attachment information about beacons that a mobile client has encountered "in the wild".
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInfoForObservedBeaconsRequest
 	{
 		
@@ -479,8 +459,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents one beacon observed once.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Observation
 	{
 		
@@ -506,8 +485,7 @@ namespace MyNS
 	/// <summary>
 	/// Information about the requested beacons, optionally including attachment data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInfoForObservedBeaconsResponse
 	{
 		
@@ -521,8 +499,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to `ListBeaconAttachments` that contains the requested attachments.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBeaconAttachmentsResponse
 	{
 		
@@ -536,8 +513,7 @@ namespace MyNS
 	/// <summary>
 	/// Response that contains list beacon results and pagination help.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBeaconsResponse
 	{
 		
@@ -563,8 +539,7 @@ namespace MyNS
 	/// <summary>
 	/// Response that contains the requested diagnostics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDiagnosticsResponse
 	{
 		
@@ -584,8 +559,7 @@ namespace MyNS
 	/// <summary>
 	/// Response to ListNamespacesRequest that contains all the project's namespaces.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListNamespacesResponse
 	{
 		
@@ -599,8 +573,7 @@ namespace MyNS
 	/// <summary>
 	/// An attachment namespace defines read and write access for all the attachments created under it. Each namespace is globally unique, and owned by one project which is the only project that can create attachments under it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Namespace
 	{
 		
@@ -617,19 +590,17 @@ namespace MyNS
 		public System.Nullable<NamespaceServingVisibility> ServingVisibility { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum NamespaceServingVisibility
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VISIBILITY_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VISIBILITY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLISTED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNLISTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PUBLIC = 2,
 	}
 	
@@ -1267,16 +1238,16 @@ namespace MyNS
 	public enum Proximitybeacon_beacons_diagnostics_listAlertFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALERT_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALERT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WRONG_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WRONG_LOCATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW_BATTERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW_BATTERY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOW_ACTIVITY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOW_ACTIVITY = 3,
 	}
 }

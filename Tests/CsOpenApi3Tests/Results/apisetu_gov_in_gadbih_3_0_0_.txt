@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AcademicCertificateSchema
 	{
 		
@@ -734,8 +733,7 @@ namespace MyNS
 		public string Format { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CasteCertificateSchema
 	{
 		
@@ -862,22 +860,20 @@ namespace MyNS
 		public string SubCategory { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CasteCertificateSchemaCertificateDataCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ST")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OBC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OBC = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GC = 3,
 	}
 	
@@ -1235,8 +1231,7 @@ namespace MyNS
 		public string Format { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConsentArtifactSchema
 	{
 		
@@ -1712,13 +1707,11 @@ namespace MyNS
 		public string TokenNo { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CtcerPostBodyFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="pdf")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pdf = 0,
 	}
 	

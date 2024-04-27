@@ -17,14 +17,12 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFound
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAnomalyDetectorOutput
 	{
 	}
@@ -32,8 +30,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A dimension is a name/value pair that is part of the identity of a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric. For example, many Amazon EC2 metrics publish <code>InstanceId</code> as a dimension name, and the actual instance ID as the value for that dimension.</p> <p>You can assign up to 30 dimensions to a metric.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Dimension
 	{
 		
@@ -55,8 +52,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.</p> <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a Metrics Insights query or a math expression. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures.</p> <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>true</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.</p> <p>Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDataQuery
 	{
 		
@@ -89,8 +85,7 @@ namespace MyNS
 	/// <summary>
 	/// This structure defines the metric to be returned, along with the statistics, period, and units.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricStat
 	{
 		
@@ -122,8 +117,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a specific metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Metric
 	{
 		
@@ -137,55 +131,53 @@ namespace MyNS
 		public Dimension[] Dimensions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StandardUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Seconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Seconds = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Microseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Microseconds = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Milliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Milliseconds = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bytes = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilobytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilobytes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Megabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Megabytes = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gigabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gigabytes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terabytes = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bits = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilobits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilobits = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Megabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Megabits = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gigabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gigabits = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terabits = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Percent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Percent = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Count = 14,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bytes/Second")]
@@ -221,54 +213,46 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Count/Second")]
 		Count_Second = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 26,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServiceFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterValueException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MissingRequiredParameterException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidParameterCombinationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDashboardsOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DashboardNotFoundError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteInsightRulesOutput
 	{
 		
@@ -279,8 +263,7 @@ namespace MyNS
 	/// <summary>
 	/// This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PartialFailure
 	{
 		
@@ -297,14 +280,12 @@ namespace MyNS
 		public string FailureDescription { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMetricStreamOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlarmHistoryOutput
 	{
 		
@@ -318,8 +299,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the history of a specific alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AlarmHistoryItem
 	{
 		
@@ -342,43 +322,37 @@ namespace MyNS
 		public string HistoryData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AlarmType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CompositeAlarm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CompositeAlarm = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MetricAlarm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MetricAlarm = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum HistoryItemType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationUpdate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ConfigurationUpdate = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StateUpdate")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StateUpdate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Action")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Action = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidNextToken
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlarmsOutput
 	{
 		
@@ -395,8 +369,7 @@ namespace MyNS
 	/// <summary>
 	/// The details about a composite alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CompositeAlarm
 	{
 		
@@ -458,43 +431,38 @@ namespace MyNS
 		public System.Nullable<System.Int32> ActionsSuppressorExtensionPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StateValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALARM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ALARM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INSUFFICIENT_DATA = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ActionsSuppressedBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WaitPeriod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WaitPeriod = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExtensionPeriod")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ExtensionPeriod = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Alarm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Alarm = 2,
 	}
 	
 	/// <summary>
 	/// The details about a metric alarm.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricAlarm
 	{
 		
@@ -586,68 +554,61 @@ namespace MyNS
 		public System.DateTimeOffset StateTransitionedTimestamp { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Statistic
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SampleCount")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SampleCount = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Average")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Average = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Sum = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Minimum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Minimum = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Maximum")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Maximum = 4,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ComparisonOperator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreaterThanOrEqualToThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreaterThanOrEqualToThreshold = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreaterThanThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreaterThanThreshold = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThanThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThanThreshold = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThanOrEqualToThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThanOrEqualToThreshold = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThanLowerOrGreaterThanUpperThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThanLowerOrGreaterThanUpperThreshold = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LessThanLowerThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LessThanLowerThreshold = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GreaterThanUpperThreshold")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GreaterThanUpperThreshold = 6,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum EvaluationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARTIAL_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARTIAL_DATA = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlarmsForMetricOutput
 	{
 		
@@ -655,8 +616,7 @@ namespace MyNS
 		public MetricAlarm[] MetricAlarms { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAnomalyDetectorsOutput
 	{
 		
@@ -670,8 +630,7 @@ namespace MyNS
 	/// <summary>
 	/// An anomaly detection model associated with a particular CloudWatch metric, statistic, or metric math expression. You can use the model to display a band of expected, normal values when the metric is graphed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyDetector
 	{
 		
@@ -703,8 +662,7 @@ namespace MyNS
 	/// <summary>
 	/// The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AnomalyDetectorConfiguration
 	{
 		
@@ -718,8 +676,7 @@ namespace MyNS
 	/// <summary>
 	/// Specifies one range of days or times to exclude from use for training an anomaly detection model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Range
 	{
 		
@@ -738,27 +695,24 @@ namespace MyNS
 		public System.DateTimeOffset EndTime { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnomalyDetectorStateValue
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_TRAINING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PENDING_TRAINING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINED_INSUFFICIENT_DATA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINED_INSUFFICIENT_DATA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRAINED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRAINED = 2,
 	}
 	
 	/// <summary>
 	/// Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SingleMetricAnomalyDetector
 	{
 		
@@ -778,8 +732,7 @@ namespace MyNS
 	/// <summary>
 	/// Indicates the CloudWatch math expression that provides the time series the anomaly detector uses as input. The designated math expression must return a single time series.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricMathAnomalyDetector
 	{
 		
@@ -787,21 +740,18 @@ namespace MyNS
 		public MetricDataQuery[] MetricDataQueries { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AnomalyDetectorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_METRIC")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SINGLE_METRIC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="METRIC_MATH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		METRIC_MATH = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeInsightRulesOutput
 	{
 		
@@ -815,8 +765,7 @@ namespace MyNS
 	/// <summary>
 	/// This structure contains the definition for a Contributor Insights rule. For more information about this rule, see<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html"> Using Constributor Insights to analyze high-cardinality data</a> in the <i>Amazon CloudWatch User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsightRule
 	{
 		
@@ -852,8 +801,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ManagedRule { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableInsightRulesOutput
 	{
 		
@@ -861,8 +809,7 @@ namespace MyNS
 		public PartialFailure[] Failures { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableInsightRulesOutput
 	{
 		
@@ -870,14 +817,12 @@ namespace MyNS
 		public PartialFailure[] Failures { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDashboardOutput
 	{
 		
@@ -891,8 +836,7 @@ namespace MyNS
 		public string DashboardName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInsightRuleReportOutput
 	{
 		
@@ -918,8 +862,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>One of the unique contributors found by a Contributor Insights rule. If the rule contains multiple keys, then a unique contributor is a unique combination of values from all the keys in the rule.</p> <p>If the rule contains a single key, then each unique contributor is each unique value for this key.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsightRuleContributor
 	{
 		
@@ -948,8 +891,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>One data point related to one contributor.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsightRuleContributorDatapoint
 	{
 		
@@ -971,8 +913,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>One data point from the metric time series returned in a Contributor Insights rule report.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InsightRuleMetricDatapoint
 	{
 		
@@ -1005,8 +946,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Maximum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetricDataOutput
 	{
 		
@@ -1023,8 +963,7 @@ namespace MyNS
 	/// <summary>
 	/// A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDataResult
 	{
 		
@@ -1047,30 +986,27 @@ namespace MyNS
 		public MessageData[] Messages { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Complete")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Complete = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalError")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		InternalError = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PartialData")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PartialData = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Forbidden")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Forbidden = 3,
 	}
 	
 	/// <summary>
 	/// <p>A message returned by the <code>GetMetricData</code>API, including a code and a description.</p> <p>If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code> and a value of <code>Authentication too complex to retrieve cross region data</code>, you can correct the problem by running the <code>GetMetricData</code> operation in the same Region where the metric data is.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MessageData
 	{
 		
@@ -1081,8 +1017,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetricStatisticsOutput
 	{
 		
@@ -1096,8 +1031,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates the statistical data that CloudWatch computes from metric data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Datapoint
 	{
 		
@@ -1126,14 +1060,12 @@ namespace MyNS
 		public DatapointValueMap ExtendedStatistics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DatapointValueMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetricStreamOutput
 	{
 		
@@ -1177,8 +1109,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>This structure contains a metric namespace and optionally, a list of metric names, to either include in a metric stream or exclude from a metric stream.</p> <p>A metric stream's filters can include up to 1000 total names. This limit applies to the sum of namespace names and metric names in the filters. For example, this could include 10 metric namespace filters with 99 metrics each, or 20 namespace filters with 49 metrics specified in each filter.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricStreamFilter
 	{
 		
@@ -1189,13 +1120,11 @@ namespace MyNS
 		public string[] MetricNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricStreamOutputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="opentelemetry0.7")]
@@ -1205,8 +1134,7 @@ namespace MyNS
 	/// <summary>
 	/// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. This structure contains information for one metric that includes additional statistics in the stream. For more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricStreamStatisticsConfiguration
 	{
 		
@@ -1228,8 +1156,7 @@ namespace MyNS
 	/// <summary>
 	/// This object contains the information for one metric that is to be streamed with additional statistics.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricStreamStatisticsMetric
 	{
 		
@@ -1248,8 +1175,7 @@ namespace MyNS
 		public string MetricName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetricWidgetImageOutput
 	{
 		
@@ -1257,8 +1183,7 @@ namespace MyNS
 		public string MetricWidgetImage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDashboardsOutput
 	{
 		
@@ -1272,8 +1197,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a specific dashboard.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DashboardEntry
 	{
 		
@@ -1290,8 +1214,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Size { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListManagedInsightRulesOutput
 	{
 		
@@ -1305,8 +1228,7 @@ namespace MyNS
 	/// <summary>
 	///  Contains information about managed Contributor Insights rules, as returned by <code>ListManagedInsightRules</code>. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRuleDescription
 	{
 		
@@ -1323,8 +1245,7 @@ namespace MyNS
 	/// <summary>
 	///  The status of a managed Contributor Insights rule. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRuleState
 	{
 		
@@ -1343,8 +1264,7 @@ namespace MyNS
 		public string State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMetricStreamsOutput
 	{
 		
@@ -1358,8 +1278,7 @@ namespace MyNS
 	/// <summary>
 	/// This structure contains the configuration information about one metric stream.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricStreamEntry
 	{
 		
@@ -1385,8 +1304,7 @@ namespace MyNS
 		public MetricStreamOutputFormat OutputFormat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMetricsOutput
 	{
 		
@@ -1403,8 +1321,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents filters for a dimension.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionFilter
 	{
 		
@@ -1419,8 +1336,7 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceOutput
 	{
 		
@@ -1431,8 +1347,7 @@ namespace MyNS
 	/// <summary>
 	/// A key-value pair associated with a CloudWatch resource.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -1451,20 +1366,17 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAnomalyDetectorOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LimitExceededFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDashboardOutput
 	{
 		
@@ -1475,8 +1387,7 @@ namespace MyNS
 	/// <summary>
 	/// An error or warning for the operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DashboardValidationMessage
 	{
 		
@@ -1487,20 +1398,17 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DashboardInvalidInputError
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutInsightRuleOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutManagedInsightRulesOutput
 	{
 		
@@ -1511,8 +1419,7 @@ namespace MyNS
 	/// <summary>
 	///  Contains the information that's required to enable a managed Contributor Insights rule for an Amazon Web Services resource. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ManagedRule
 	{
 		
@@ -1537,8 +1444,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDatum
 	{
 		
@@ -1577,8 +1483,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a set of statistics that describes a specific metric. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatisticSet
 	{
 		
@@ -1611,8 +1516,7 @@ namespace MyNS
 		public double Maximum { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutMetricStreamOutput
 	{
 		
@@ -1620,44 +1524,37 @@ namespace MyNS
 		public string Arn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConcurrentModificationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidFormatFault
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMetricStreamsOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopMetricStreamsOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceOutput
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAlarmsInput
 	{
 		
@@ -1669,8 +1566,7 @@ namespace MyNS
 		public string[] AlarmNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAnomalyDetectorInput
 	{
 		
@@ -1693,8 +1589,7 @@ namespace MyNS
 		public MetricMathAnomalyDetector MetricMathAnomalyDetector { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteDashboardsInput
 	{
 		
@@ -1706,8 +1601,7 @@ namespace MyNS
 		public string[] DashboardNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteInsightRulesInput
 	{
 		
@@ -1719,8 +1613,7 @@ namespace MyNS
 		public string[] RuleNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteMetricStreamInput
 	{
 		
@@ -1732,21 +1625,18 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum ScanBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TimestampDescending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TimestampDescending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TimestampAscending")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TimestampAscending = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlarmHistoryInput
 	{
 		
@@ -1775,8 +1665,7 @@ namespace MyNS
 		public ScanBy ScanBy { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlarmsForMetricInput
 	{
 		
@@ -1810,8 +1699,7 @@ namespace MyNS
 		public StandardUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAlarmsInput
 	{
 		
@@ -1843,8 +1731,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeAnomalyDetectorsInput
 	{
 		
@@ -1867,8 +1754,7 @@ namespace MyNS
 		public AnomalyDetectorType[] AnomalyDetectorTypes { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DescribeInsightRulesInput
 	{
 		
@@ -1879,8 +1765,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableAlarmActionsInput
 	{
 		
@@ -1892,8 +1777,7 @@ namespace MyNS
 		public string[] AlarmNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DisableInsightRulesInput
 	{
 		
@@ -1905,8 +1789,7 @@ namespace MyNS
 		public string[] RuleNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableAlarmActionsInput
 	{
 		
@@ -1918,8 +1801,7 @@ namespace MyNS
 		public string[] AlarmNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EnableInsightRulesInput
 	{
 		
@@ -1931,8 +1813,7 @@ namespace MyNS
 		public string[] RuleNames { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetDashboardInput
 	{
 		
@@ -1944,8 +1825,7 @@ namespace MyNS
 		public string DashboardName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetInsightRuleReportInput
 	{
 		
@@ -1990,8 +1870,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels that are associated with returned metrics display the correct time for your time zone. </p> <p>The <code>Timezone</code> value affects a label only if you have a time-based dynamic expression in the label. For more information about dynamic expressions in labels, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LabelOptions
 	{
 		
@@ -1999,8 +1878,7 @@ namespace MyNS
 		public string Timezone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetricDataInput
 	{
 		
@@ -2038,8 +1916,7 @@ namespace MyNS
 		public LabelOptions LabelOptions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetricStatisticsInput
 	{
 		
@@ -2091,8 +1968,7 @@ namespace MyNS
 		public StandardUnit Unit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetricStreamInput
 	{
 		
@@ -2104,8 +1980,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetMetricWidgetImageInput
 	{
 		
@@ -2120,8 +1995,7 @@ namespace MyNS
 		public string OutputFormat { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDashboardsInput
 	{
 		
@@ -2132,8 +2006,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListManagedInsightRulesInput
 	{
 		
@@ -2151,8 +2024,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMetricStreamsInput
 	{
 		
@@ -2163,18 +2035,15 @@ namespace MyNS
 		public System.Nullable<System.Int32> MaxResults { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum RecentlyActive
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PT3H")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PT3H = 0,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListMetricsInput
 	{
 		
@@ -2200,8 +2069,7 @@ namespace MyNS
 		public string OwningAccount { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceInput
 	{
 		
@@ -2213,8 +2081,7 @@ namespace MyNS
 		public string ResourceARN { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutAnomalyDetectorInput
 	{
 		
@@ -2240,8 +2107,7 @@ namespace MyNS
 		public MetricMathAnomalyDetector MetricMathAnomalyDetector { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutCompositeAlarmInput
 	{
 		
@@ -2287,8 +2153,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> ActionsSuppressorExtensionPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutDashboardInput
 	{
 		
@@ -2307,8 +2172,7 @@ namespace MyNS
 		public string DashboardBody { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutInsightRuleInput
 	{
 		
@@ -2333,8 +2197,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutManagedInsightRulesInput
 	{
 		
@@ -2346,8 +2209,7 @@ namespace MyNS
 		public ManagedRule[] ManagedRules { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutMetricAlarmInput
 	{
 		
@@ -2430,8 +2292,7 @@ namespace MyNS
 		public string ThresholdMetricId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutMetricDataInput
 	{
 		
@@ -2450,8 +2311,7 @@ namespace MyNS
 		public MetricDatum[] MetricData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutMetricStreamInput
 	{
 		
@@ -2499,8 +2359,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IncludeLinkedAccountsMetrics { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetAlarmStateInput
 	{
 		
@@ -2529,8 +2388,7 @@ namespace MyNS
 		public string StateReasonData { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StartMetricStreamsInput
 	{
 		
@@ -2542,8 +2400,7 @@ namespace MyNS
 		public string[] Names { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StopMetricStreamsInput
 	{
 		
@@ -2555,8 +2412,7 @@ namespace MyNS
 		public string[] Names { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceInput
 	{
 		
@@ -2575,8 +2431,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceInput
 	{
 		
@@ -4044,7 +3899,7 @@ namespace MyNS
 	public enum GET_DeleteAlarmsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteAlarms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteAlarms = 0,
 	}
 	
@@ -4088,7 +3943,7 @@ namespace MyNS
 	public enum GET_DeleteAnomalyDetectorAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteAnomalyDetector")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteAnomalyDetector = 0,
 	}
 	
@@ -4109,7 +3964,7 @@ namespace MyNS
 	public enum GET_DeleteDashboardsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDashboards")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteDashboards = 0,
 	}
 	
@@ -4130,7 +3985,7 @@ namespace MyNS
 	public enum GET_DeleteInsightRulesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteInsightRules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteInsightRules = 0,
 	}
 	
@@ -4151,7 +4006,7 @@ namespace MyNS
 	public enum GET_DeleteMetricStreamAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteMetricStream")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DeleteMetricStream = 0,
 	}
 	
@@ -4172,7 +4027,7 @@ namespace MyNS
 	public enum GET_DescribeAlarmHistoryAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAlarmHistory")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAlarmHistory = 0,
 	}
 	
@@ -4193,7 +4048,7 @@ namespace MyNS
 	public enum GET_DescribeAlarmsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAlarms")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAlarms = 0,
 	}
 	
@@ -4214,49 +4069,49 @@ namespace MyNS
 	public enum GET_DescribeAlarmsForMetricUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Seconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Seconds = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Microseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Microseconds = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Milliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Milliseconds = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bytes = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilobytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilobytes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Megabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Megabytes = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gigabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gigabytes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terabytes = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bits = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilobits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilobits = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Megabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Megabits = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gigabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gigabits = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terabits = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Percent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Percent = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Count = 14,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bytes/Second")]
@@ -4292,14 +4147,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Count/Second")]
 		Count_Second = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 26,
 	}
 	
 	public enum GET_DescribeAlarmsForMetricAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAlarmsForMetric")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAlarmsForMetric = 0,
 	}
 	
@@ -4320,7 +4175,7 @@ namespace MyNS
 	public enum GET_DescribeAnomalyDetectorsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAnomalyDetectors")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeAnomalyDetectors = 0,
 	}
 	
@@ -4341,7 +4196,7 @@ namespace MyNS
 	public enum GET_DescribeInsightRulesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeInsightRules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DescribeInsightRules = 0,
 	}
 	
@@ -4362,7 +4217,7 @@ namespace MyNS
 	public enum GET_DisableAlarmActionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisableAlarmActions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DisableAlarmActions = 0,
 	}
 	
@@ -4383,7 +4238,7 @@ namespace MyNS
 	public enum GET_DisableInsightRulesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisableInsightRules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DisableInsightRules = 0,
 	}
 	
@@ -4404,7 +4259,7 @@ namespace MyNS
 	public enum GET_EnableAlarmActionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnableAlarmActions")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EnableAlarmActions = 0,
 	}
 	
@@ -4425,7 +4280,7 @@ namespace MyNS
 	public enum GET_EnableInsightRulesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnableInsightRules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EnableInsightRules = 0,
 	}
 	
@@ -4446,7 +4301,7 @@ namespace MyNS
 	public enum GET_GetDashboardAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetDashboard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetDashboard = 0,
 	}
 	
@@ -4467,7 +4322,7 @@ namespace MyNS
 	public enum GET_GetInsightRuleReportAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetInsightRuleReport")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetInsightRuleReport = 0,
 	}
 	
@@ -4495,7 +4350,7 @@ namespace MyNS
 	public enum GET_GetMetricDataAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetMetricData")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetMetricData = 0,
 	}
 	
@@ -4516,49 +4371,49 @@ namespace MyNS
 	public enum GET_GetMetricStatisticsUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Seconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Seconds = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Microseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Microseconds = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Milliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Milliseconds = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bytes = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilobytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilobytes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Megabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Megabytes = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gigabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gigabytes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terabytes = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bits = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilobits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilobits = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Megabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Megabits = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gigabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gigabits = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terabits = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Percent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Percent = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Count = 14,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bytes/Second")]
@@ -4594,14 +4449,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Count/Second")]
 		Count_Second = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 26,
 	}
 	
 	public enum GET_GetMetricStatisticsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetMetricStatistics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetMetricStatistics = 0,
 	}
 	
@@ -4622,7 +4477,7 @@ namespace MyNS
 	public enum GET_GetMetricStreamAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetMetricStream")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetMetricStream = 0,
 	}
 	
@@ -4643,7 +4498,7 @@ namespace MyNS
 	public enum GET_GetMetricWidgetImageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetMetricWidgetImage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetMetricWidgetImage = 0,
 	}
 	
@@ -4664,7 +4519,7 @@ namespace MyNS
 	public enum GET_ListDashboardsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListDashboards")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListDashboards = 0,
 	}
 	
@@ -4685,7 +4540,7 @@ namespace MyNS
 	public enum GET_ListManagedInsightRulesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListManagedInsightRules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListManagedInsightRules = 0,
 	}
 	
@@ -4706,7 +4561,7 @@ namespace MyNS
 	public enum GET_ListMetricStreamsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListMetricStreams")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListMetricStreams = 0,
 	}
 	
@@ -4727,7 +4582,7 @@ namespace MyNS
 	public enum GET_ListMetricsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListMetrics")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListMetrics = 0,
 	}
 	
@@ -4748,7 +4603,7 @@ namespace MyNS
 	public enum GET_ListTagsForResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListTagsForResource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ListTagsForResource = 0,
 	}
 	
@@ -4802,7 +4657,7 @@ namespace MyNS
 	public enum GET_PutAnomalyDetectorAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutAnomalyDetector")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutAnomalyDetector = 0,
 	}
 	
@@ -4823,7 +4678,7 @@ namespace MyNS
 	public enum GET_PutCompositeAlarmAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutCompositeAlarm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutCompositeAlarm = 0,
 	}
 	
@@ -4844,7 +4699,7 @@ namespace MyNS
 	public enum GET_PutDashboardAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutDashboard")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutDashboard = 0,
 	}
 	
@@ -4865,7 +4720,7 @@ namespace MyNS
 	public enum GET_PutInsightRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutInsightRule")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutInsightRule = 0,
 	}
 	
@@ -4886,7 +4741,7 @@ namespace MyNS
 	public enum GET_PutManagedInsightRulesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutManagedInsightRules")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutManagedInsightRules = 0,
 	}
 	
@@ -4907,49 +4762,49 @@ namespace MyNS
 	public enum GET_PutMetricAlarmUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Seconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Seconds = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Microseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Microseconds = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Milliseconds")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Milliseconds = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bytes = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilobytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilobytes = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Megabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Megabytes = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gigabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gigabytes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terabytes")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terabytes = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Bits = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Kilobits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Kilobits = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Megabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Megabits = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Gigabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Gigabits = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Terabits")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Terabits = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Percent")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Percent = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Count")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Count = 14,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bytes/Second")]
@@ -4985,14 +4840,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Count/Second")]
 		Count_Second = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 26,
 	}
 	
 	public enum GET_PutMetricAlarmAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutMetricAlarm")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutMetricAlarm = 0,
 	}
 	
@@ -5013,7 +4868,7 @@ namespace MyNS
 	public enum GET_PutMetricDataAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutMetricData")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutMetricData = 0,
 	}
 	
@@ -5034,7 +4889,7 @@ namespace MyNS
 	public enum GET_PutMetricStreamOutputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		json = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="opentelemetry0.7")]
@@ -5044,7 +4899,7 @@ namespace MyNS
 	public enum GET_PutMetricStreamAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutMetricStream")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PutMetricStream = 0,
 	}
 	
@@ -5065,7 +4920,7 @@ namespace MyNS
 	public enum GET_SetAlarmStateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetAlarmState")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SetAlarmState = 0,
 	}
 	
@@ -5086,7 +4941,7 @@ namespace MyNS
 	public enum GET_StartMetricStreamsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StartMetricStreams")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StartMetricStreams = 0,
 	}
 	
@@ -5107,7 +4962,7 @@ namespace MyNS
 	public enum GET_StopMetricStreamsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="StopMetricStreams")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		StopMetricStreams = 0,
 	}
 	
@@ -5128,7 +4983,7 @@ namespace MyNS
 	public enum GET_TagResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TagResource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TagResource = 0,
 	}
 	
@@ -5149,7 +5004,7 @@ namespace MyNS
 	public enum GET_UntagResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UntagResource")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UntagResource = 0,
 	}
 	

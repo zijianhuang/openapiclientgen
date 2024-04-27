@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// An alias to a repo revision.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AliasContext
 	{
 		
@@ -38,30 +37,27 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum AliasContextKind
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ANY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FIXED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FIXED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOVABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MOVABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OTHER = 3,
 	}
 	
 	/// <summary>
 	/// ------------------------------------------------------------------------------ ## Breakpoint (the resource) Represents the breakpoint specification, status and results.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Breakpoint
 	{
 		
@@ -174,24 +170,21 @@ namespace MyNS
 		public Variable[] VariableTable { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BreakpointAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAPTURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CAPTURE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOG")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOG = 1,
 	}
 	
 	/// <summary>
 	/// Represents a variable or an argument possibly of a compound object type. Note how the following variables are represented: 1) A simple variable: int x = 5 { name: "x", value: "5", type: "int" } // Captured variable 2) A compound object: struct T { int m1; int m2; }; T x = { 3, 7 }; { // Captured variable name: "x", type: "T", members { name: "m1", value: "3", type: "int" }, members { name: "m2", value: "7", type: "int" } } 3) A pointer where the pointee was captured: T x = { 3, 7 }; T* p = &x; { // Captured variable name: "p", type: "T*", value: "0x00500500", members { name: "m1", value: "3", type: "int" }, members { name: "m2", value: "7", type: "int" } } 4) A pointer where the pointee was not captured: T* p = new T; { // Captured variable name: "p", type: "T*", value: "0x00400400" status { is_error: true, description { format: "unavailable" } } } The status should describe the reason for the missing value, such as ``, ``, ``. Note that a null pointer should not have members. 5) An unnamed value: int* p = new int(7); { // Captured variable name: "p", value: "0x00500500", type: "int*", members { value: "7", type: "int" } } 6) An unnamed pointer where the pointee was not captured: int* p = new int(7); int** pp = &p; { // Captured variable name: "pp", value: "0x00500500", type: "int**", members { value: "0x00400400", type: "int*" status { is_error: true, description: { format: "unavailable" } } } } } To optimize computation, memory and network traffic, variables that repeat in the output multiple times can be stored once in a shared variable table and be referenced using the `var_table_index` field. The variables stored in the shared table are nameless and are essentially a partition of the complete variable. To reconstruct the complete variable, merge the referencing variable with the referenced variable. When using the shared variable table, the following variables: T x = { 3, 7 }; T* p = &x; T& r = x; { name: "x", var_table_index: 3, type: "T" } // Captured variables { name: "p", value "0x00500500", type="T*", var_table_index: 3 } { name: "r", type="T&", var_table_index: 3 } { // Shared variable table entry #3: members { name: "m1", value: "3", type: "int" }, members { name: "m2", value: "7", type: "int" } } Note that the pointer address is stored with the referencing variable and not with the referenced variable. This allows the referenced variable to be shared between pointers and references. The type field is optional. The debugger agent may or may not support it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Variable
 	{
 		
@@ -235,8 +228,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a contextual status message. The message can indicate an error or informational status, and refer to specific parts of the containing object. For example, the `Breakpoint.status` field can indicate an error referring to the `BREAKPOINT_SOURCE_LOCATION` with the message `Location not found`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StatusMessage
 	{
 		
@@ -262,8 +254,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a message with parameters.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FormatMessage
 	{
 		
@@ -280,42 +271,39 @@ namespace MyNS
 		public string[] Parameters { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StatusMessageRefersTo
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREAKPOINT_SOURCE_LOCATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREAKPOINT_SOURCE_LOCATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREAKPOINT_CONDITION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREAKPOINT_CONDITION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREAKPOINT_EXPRESSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREAKPOINT_EXPRESSION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREAKPOINT_AGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREAKPOINT_AGE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BREAKPOINT_CANARY_FAILED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BREAKPOINT_CANARY_FAILED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VARIABLE_NAME")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VARIABLE_NAME = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VARIABLE_VALUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VARIABLE_VALUE = 7,
 	}
 	
 	/// <summary>
 	/// Represents a location in the source code.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceLocation
 	{
 		
@@ -338,27 +326,24 @@ namespace MyNS
 		public string Path { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BreakpointLogLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INFO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INFO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="WARNING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WARNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ERROR = 2,
 	}
 	
 	/// <summary>
 	/// Represents a stack frame context.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class StackFrame
 	{
 		
@@ -387,33 +372,30 @@ namespace MyNS
 		public SourceLocation Location { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum BreakpointState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_CANARY_PENDING_AGENTS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_CANARY_PENDING_AGENTS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_CANARY_ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_CANARY_ACTIVE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_ROLLING_TO_ALL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_ROLLING_TO_ALL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_IS_FINAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STATE_IS_FINAL = 4,
 	}
 	
 	/// <summary>
 	/// A CloudRepoSourceContext denotes a particular revision in a cloud repo (a repo hosted by the Google Cloud Platform).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudRepoSourceContext
 	{
 		
@@ -445,8 +427,7 @@ namespace MyNS
 	/// <summary>
 	/// A unique identifier for a cloud repo.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RepoId
 	{
 		
@@ -466,8 +447,7 @@ namespace MyNS
 	/// <summary>
 	/// Selects a repo using a Google Cloud Platform project ID (e.g. winged-cargo-31) and a repo name within that project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectRepoId
 	{
 		
@@ -487,8 +467,7 @@ namespace MyNS
 	/// <summary>
 	/// A CloudWorkspaceId is a unique identifier for a cloud workspace. A cloud workspace is a place associated with a repo where modified files can be stored before they are committed.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWorkspaceId
 	{
 		
@@ -508,8 +487,7 @@ namespace MyNS
 	/// <summary>
 	/// A CloudWorkspaceSourceContext denotes a workspace at a particular snapshot.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CloudWorkspaceSourceContext
 	{
 		
@@ -529,8 +507,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents the debugged application. The application may include one or more replicated processes executing the same code. Each of these processes is attached with a debugger agent, carrying out the debugging commands. Agents attached to the same debuggee identify themselves as such by using exactly the same Debuggee message value when registering.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Debuggee
 	{
 		
@@ -607,33 +584,30 @@ namespace MyNS
 		public string Uniquifier { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum DebuggeeCanaryMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY_MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY_MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY_MODE_ALWAYS_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY_MODE_ALWAYS_ENABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY_MODE_ALWAYS_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY_MODE_ALWAYS_DISABLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY_MODE_DEFAULT_ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY_MODE_DEFAULT_ENABLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY_MODE_DEFAULT_DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY_MODE_DEFAULT_DISABLED = 4,
 	}
 	
 	/// <summary>
 	/// An ExtendedSourceContext is a SourceContext combined with additional details describing the context.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExtendedSourceContext
 	{
 		
@@ -653,8 +627,7 @@ namespace MyNS
 	/// <summary>
 	/// A SourceContext is a reference to a tree of files. A SourceContext together with a path point to a unique revision of a single file or directory.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SourceContext
 	{
 		
@@ -686,8 +659,7 @@ namespace MyNS
 	/// <summary>
 	/// A SourceContext referring to a Gerrit project.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GerritSourceContext
 	{
 		
@@ -725,8 +697,7 @@ namespace MyNS
 	/// <summary>
 	/// A GitSourceContext denotes a particular revision in a third party Git repository (e.g. GitHub).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GitSourceContext
 	{
 		
@@ -746,8 +717,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -755,8 +725,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for getting breakpoint information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetBreakpointResponse
 	{
 		
@@ -770,8 +739,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for listing active breakpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListActiveBreakpointsResponse
 	{
 		
@@ -797,8 +765,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for listing breakpoints.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListBreakpointsResponse
 	{
 		
@@ -818,8 +785,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for listing debuggees.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListDebuggeesResponse
 	{
 		
@@ -833,8 +799,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to register a debuggee.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterDebuggeeRequest
 	{
 		
@@ -848,8 +813,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for registering a debuggee.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegisterDebuggeeResponse
 	{
 		
@@ -869,8 +833,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for setting a breakpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetBreakpointResponse
 	{
 		
@@ -884,8 +847,7 @@ namespace MyNS
 	/// <summary>
 	/// Request to update an active breakpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateActiveBreakpointRequest
 	{
 		
@@ -899,8 +861,7 @@ namespace MyNS
 	/// <summary>
 	/// Response for updating an active breakpoint. The message is defined to allow future extensions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateActiveBreakpointResponse
 	{
 	}
@@ -1238,13 +1199,13 @@ namespace MyNS
 	public enum Clouddebugger_debugger_debuggees_breakpoints_setCanaryOption
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY_OPTION_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY_OPTION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY_OPTION_TRY_ENABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY_OPTION_TRY_ENABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANARY_OPTION_TRY_DISABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CANARY_OPTION_TRY_DISABLE = 2,
 	}
 }

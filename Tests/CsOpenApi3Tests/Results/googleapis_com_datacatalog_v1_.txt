@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Associates `members`, or principals, with a `role`.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Binding
 	{
 		
@@ -47,8 +46,7 @@ namespace MyNS
 	/// <summary>
 	/// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Expr
 	{
 		
@@ -80,8 +78,7 @@ namespace MyNS
 	/// <summary>
 	/// A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Empty
 	{
 	}
@@ -89,8 +86,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `GetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetIamPolicyRequest
 	{
 		
@@ -104,8 +100,7 @@ namespace MyNS
 	/// <summary>
 	/// Encapsulates settings provided to GetIamPolicy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetPolicyOptions
 	{
 		
@@ -119,8 +114,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification for the BigQuery connection.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1BigQueryConnectionSpec
 	{
 		
@@ -146,8 +140,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification for the BigQuery connection to a Cloud SQL instance.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1CloudSqlBigQueryConnectionSpec
 	{
 		
@@ -170,40 +163,35 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatacatalogV1CloudSqlBigQueryConnectionSpecType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1CloudSqlBigQueryConnectionSpecType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATABASE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATABASE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTGRES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		POSTGRES = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MYSQL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MYSQL = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1BigQueryConnectionSpecConnectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTION_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONNECTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_SQL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_SQL = 1,
 	}
 	
 	/// <summary>
 	/// Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see [Introduction to partitioned tables] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1BigQueryDateShardedSpec
 	{
 		
@@ -235,8 +223,7 @@ namespace MyNS
 	/// <summary>
 	/// Fields specific for BigQuery routines.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1BigQueryRoutineSpec
 	{
 		
@@ -250,8 +237,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a BigQuery table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1BigQueryTableSpec
 	{
 		
@@ -274,30 +260,27 @@ namespace MyNS
 		public GoogleCloudDatacatalogV1ViewSpec ViewSpec { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1BigQueryTableSpecTableSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE_SOURCE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE_SOURCE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGQUERY_VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGQUERY_VIEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGQUERY_TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGQUERY_TABLE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGQUERY_MATERIALIZED_VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGQUERY_MATERIALIZED_VIEW = 3,
 	}
 	
 	/// <summary>
 	/// Normal BigQuery table specification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1TableSpec
 	{
 		
@@ -311,8 +294,7 @@ namespace MyNS
 	/// <summary>
 	/// Table view specification.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ViewSpec
 	{
 		
@@ -326,8 +308,7 @@ namespace MyNS
 	/// <summary>
 	/// Business Context of the entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1BusinessContext
 	{
 		
@@ -347,8 +328,7 @@ namespace MyNS
 	/// <summary>
 	/// Contact people for the entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1Contacts
 	{
 		
@@ -362,8 +342,7 @@ namespace MyNS
 	/// <summary>
 	/// A contact person for the entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ContactsPerson
 	{
 		
@@ -383,8 +362,7 @@ namespace MyNS
 	/// <summary>
 	/// Entry overview fields for rich text descriptions of entries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1EntryOverview
 	{
 		
@@ -398,8 +376,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to Instance entries that are part of `CLOUD_BIGTABLE` system. (user_specified_type)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1CloudBigtableInstanceSpec
 	{
 		
@@ -413,8 +390,7 @@ namespace MyNS
 	/// <summary>
 	/// Spec that applies to clusters of an Instance of Cloud Bigtable.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1CloudBigtableInstanceSpecCloudBigtableClusterSpec
 	{
 		
@@ -446,8 +422,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to all entries that are part of `CLOUD_BIGTABLE` system (user_specified_type)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1CloudBigtableSystemSpec
 	{
 		
@@ -461,8 +436,7 @@ namespace MyNS
 	/// <summary>
 	/// A column within a schema. Columns can be nested inside other columns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ColumnSchema
 	{
 		
@@ -527,33 +501,30 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1ColumnSchemaHighestIndexingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXING_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXING_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXING_TYPE_NONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXING_TYPE_NONE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXING_TYPE_NON_UNIQUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXING_TYPE_NON_UNIQUE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXING_TYPE_UNIQUE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXING_TYPE_UNIQUE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDEXING_TYPE_PRIMARY_KEY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INDEXING_TYPE_PRIMARY_KEY = 4,
 	}
 	
 	/// <summary>
 	/// Column info specific to Looker System.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec
 	{
 		
@@ -564,36 +535,33 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpecType> Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpecType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOOKER_COLUMN_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOOKER_COLUMN_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSION_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DIMENSION_GROUP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILTER = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEASURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MEASURE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARAMETER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PARAMETER = 5,
 	}
 	
 	/// <summary>
 	/// Common statistics on the entry's usage. They can be set on any system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1CommonUsageStats
 	{
 		
@@ -607,8 +575,7 @@ namespace MyNS
 	/// <summary>
 	/// Cross-regional source used to import an existing taxonomy into a different region.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1CrossRegionalSource
 	{
 		
@@ -622,8 +589,7 @@ namespace MyNS
 	/// <summary>
 	/// Physical location of an entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DataSource
 	{
 		
@@ -652,27 +618,24 @@ namespace MyNS
 		public GoogleCloudDatacatalogV1StorageProperties StorageProperties { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1DataSourceService
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_STORAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_STORAGE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGQUERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGQUERY = 2,
 	}
 	
 	/// <summary>
 	/// Details the properties of the underlying storage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1StorageProperties
 	{
 		
@@ -692,8 +655,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to a data source connection. Valid only for entries with the `DATA_SOURCE_CONNECTION` type. Only one of internal specs can be set at the time, and cannot be changed later.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DataSourceConnectionSpec
 	{
 		
@@ -707,8 +669,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to a table resource. Valid only for entries with the `TABLE` type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DatabaseTableSpec
 	{
 		
@@ -734,8 +695,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to database view.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpec
 	{
 		
@@ -758,27 +718,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpecViewType> ViewType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpecViewType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIEW_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STANDARD_VIEW = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATERIALIZED_VIEW")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MATERIALIZED_VIEW = 2,
 	}
 	
 	/// <summary>
 	/// Entry specification for a Dataplex table.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DataplexTableSpec
 	{
 		
@@ -804,8 +761,7 @@ namespace MyNS
 	/// <summary>
 	/// Common Dataplex fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DataplexSpec
 	{
 		
@@ -837,8 +793,7 @@ namespace MyNS
 	/// <summary>
 	/// Native schema used by a resource represented as an entry. Used by query engines for deserializing and parsing source data.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1PhysicalSchema
 	{
 		
@@ -882,8 +837,7 @@ namespace MyNS
 	/// <summary>
 	/// Schema in Avro JSON format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1PhysicalSchemaAvroSchema
 	{
 		
@@ -897,8 +851,7 @@ namespace MyNS
 	/// <summary>
 	/// Marks a CSV-encoded data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1PhysicalSchemaCsvSchema
 	{
 	}
@@ -906,8 +859,7 @@ namespace MyNS
 	/// <summary>
 	/// Marks an ORC-encoded data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1PhysicalSchemaOrcSchema
 	{
 	}
@@ -915,8 +867,7 @@ namespace MyNS
 	/// <summary>
 	/// Marks a Parquet-encoded data source.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1PhysicalSchemaParquetSchema
 	{
 	}
@@ -924,8 +875,7 @@ namespace MyNS
 	/// <summary>
 	/// Schema in protocol buffer format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1PhysicalSchemaProtobufSchema
 	{
 		
@@ -939,8 +889,7 @@ namespace MyNS
 	/// <summary>
 	/// Schema in Thrift format.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1PhysicalSchemaThriftSchema
 	{
 		
@@ -954,8 +903,7 @@ namespace MyNS
 	/// <summary>
 	/// External table registered by Dataplex. Dataplex publishes data discovered from an asset into multiple other systems (BigQuery, DPMS) in form of tables. We call them "external tables". External tables are also synced into the Data Catalog. This message contains pointers to those external tables (fully qualified name, resource name et cetera) within the Data Catalog.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DataplexExternalTable
 	{
 		
@@ -984,64 +932,59 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatacatalogV1DataplexExternalTableSystem> System { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1DataplexExternalTableSystem
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTEGRATED_SYSTEM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INTEGRATED_SYSTEM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BIGQUERY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BIGQUERY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_PUBSUB")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_PUBSUB = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATAPROC_METASTORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATAPROC_METASTORE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATAPLEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATAPLEX = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_SPANNER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_SPANNER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_BIGTABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_BIGTABLE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_SQL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLOUD_SQL = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOOKER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOOKER = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VERTEX_AI")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VERTEX_AI = 9,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1DatabaseTableSpecType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="NATIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		NATIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXTERNAL = 2,
 	}
 	
 	/// <summary>
 	/// Entry specyfication for a Dataplex fileset.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DataplexFilesetSpec
 	{
 		
@@ -1055,8 +998,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to a dataset. Valid only for entries with the `DATASET` type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DatasetSpec
 	{
 		
@@ -1070,8 +1012,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification for vertex dataset resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1VertexDatasetSpec
 	{
 		
@@ -1088,57 +1029,54 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatacatalogV1VertexDatasetSpecDataType> DataType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1VertexDatasetSpecDataType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMAGE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMAGE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIDEO")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		VIDEO = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONVERSATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CONVERSATION = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIME_SERIES")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIME_SERIES = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOCUMENT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOCUMENT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_TO_SPEECH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_TO_SPEECH = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSLATION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TRANSLATION = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STORE_VISION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STORE_VISION = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTERPRISE_KNOWLEDGE_GRAPH")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTERPRISE_KNOWLEDGE_GRAPH = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEXT_PROMPT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TEXT_PROMPT = 12,
 	}
 	
 	/// <summary>
 	/// Wrapper for any item that can be contained in the dump.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1DumpItem
 	{
 		
@@ -1152,8 +1090,7 @@ namespace MyNS
 	/// <summary>
 	/// Wrapper containing Entry and information about Tags that should and should not be attached to it.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1TaggedEntry
 	{
 		
@@ -1179,8 +1116,7 @@ namespace MyNS
 	/// <summary>
 	/// Tags contain custom metadata and are attached to Data Catalog resources. Tags conform with the specification of their tag template. See [Data Catalog IAM](https://cloud.google.com/data-catalog/docs/concepts/iam) for information on the permissions needed to create or view tags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1Tag
 	{
 		
@@ -1218,8 +1154,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the value and additional information on a field within a Tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1TagField
 	{
 		
@@ -1275,8 +1210,7 @@ namespace MyNS
 	/// <summary>
 	/// An enum value.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1TagFieldEnumValue
 	{
 		
@@ -1290,8 +1224,7 @@ namespace MyNS
 	/// <summary>
 	/// Entry metadata. A Data Catalog entry represents another resource in Google Cloud Platform (such as a BigQuery dataset or a Pub/Sub topic) or outside of it. You can use the `linked_resource` field in the entry resource to refer to the original resource ID of the source system. An entry resource contains resource details, for example, its schema. Additionally, you can attach flexible metadata to an entry in the form of a Tag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1Entry
 	{
 		
@@ -1473,8 +1406,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to a fileset. Valid only for entries with the 'FILESET' type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1FilesetSpec
 	{
 		
@@ -1488,8 +1420,7 @@ namespace MyNS
 	/// <summary>
 	/// Describes a Cloud Storage fileset entry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1GcsFilesetSpec
 	{
 		
@@ -1509,8 +1440,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification of a single file in Cloud Storage.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1GcsFileSpec
 	{
 		
@@ -1536,8 +1466,7 @@ namespace MyNS
 	/// <summary>
 	/// Timestamps associated with this resource in a particular system.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1SystemTimestamps
 	{
 		
@@ -1563,8 +1492,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to entries that are part `LOOKER` system (user_specified_type)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1LookerSystemSpec
 	{
 		
@@ -1608,8 +1536,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to a model. Valid only for entries with the `MODEL` type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ModelSpec
 	{
 		
@@ -1623,8 +1550,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification for vertex model resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1VertexModelSpec
 	{
 		
@@ -1662,8 +1588,7 @@ namespace MyNS
 	/// <summary>
 	/// Detail description of the source information of a Vertex model.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1VertexModelSourceInfo
 	{
 		
@@ -1680,33 +1605,30 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatacatalogV1VertexModelSourceInfoSourceType> SourceType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1VertexModelSourceInfoSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODEL_SOURCE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODEL_SOURCE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTOML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AUTOML = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CUSTOM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BQML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BQML = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODEL_GARDEN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODEL_GARDEN = 4,
 	}
 	
 	/// <summary>
 	/// Entry metadata relevant only to the user and private to them.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1PersonalDetails
 	{
 		
@@ -1726,8 +1648,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to a routine. Valid only for entries with the `ROUTINE` type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1RoutineSpec
 	{
 		
@@ -1771,8 +1692,7 @@ namespace MyNS
 	/// <summary>
 	/// Input or output argument of a function or stored procedure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1RoutineSpecArgument
 	{
 		
@@ -1795,46 +1715,41 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1RoutineSpecArgumentMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		OUT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="INOUT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		INOUT = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1RoutineSpecRoutineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROUTINE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROUTINE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCALAR_FUNCTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SCALAR_FUNCTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCEDURE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PROCEDURE = 2,
 	}
 	
 	/// <summary>
 	/// Represents a schema, for example, a BigQuery, GoogleSQL, or Avro schema.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1Schema
 	{
 		
@@ -1848,8 +1763,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to a Service resource. Valid only for entries with the `SERVICE` type.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ServiceSpec
 	{
 		
@@ -1863,8 +1777,7 @@ namespace MyNS
 	/// <summary>
 	/// Specification that applies to entries that are part `SQL_DATABASE` system (user_specified_type)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1SqlDatabaseSystemSpec
 	{
 		
@@ -1887,66 +1800,63 @@ namespace MyNS
 		public string SqlEngine { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1EntryType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTRY_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTRY_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TABLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODEL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MODEL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_STREAM")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_STREAM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILESET")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FILESET = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLUSTER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CLUSTER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATABASE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATABASE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_SOURCE_CONNECTION")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATA_SOURCE_CONNECTION = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROUTINE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ROUTINE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LAKE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LAKE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ZONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ZONE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SERVICE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATABASE_SCHEMA")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DATABASE_SCHEMA = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DASHBOARD")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DASHBOARD = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPLORE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EXPLORE = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOOK")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		LOOK = 15,
 	}
 	
 	/// <summary>
 	/// The set of all usage signals that Data Catalog stores. Note: Usually, these signals are updated daily. In rare cases, an update may fail but will be performed again on the next day.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1UsageSignal
 	{
 		
@@ -1978,8 +1888,7 @@ namespace MyNS
 	/// <summary>
 	/// Detailed statistics on the entry's usage. Usage statistics have the following limitations: - Only BigQuery tables have them. - They only include BigQuery query jobs. - They might be underestimated because wildcard table references are not yet counted. For more information, see [Querying multiple tables using a wildcard table] (https://cloud.google.com/bigquery/docs/querying-wildcard-tables)
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1UsageStats
 	{
 		
@@ -2011,8 +1920,7 @@ namespace MyNS
 	/// <summary>
 	/// Entry group metadata. An `EntryGroup` resource represents a logical grouping of zero or more Data Catalog Entry resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1EntryGroup
 	{
 		
@@ -2044,8 +1952,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ExportTaxonomies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ExportTaxonomiesResponse
 	{
 		
@@ -2059,8 +1966,7 @@ namespace MyNS
 	/// <summary>
 	/// A nested protocol buffer that represents a taxonomy and the hierarchy of its policy tags. Used for taxonomy replacement, import, and export.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1SerializedTaxonomy
 	{
 		
@@ -2092,8 +1998,7 @@ namespace MyNS
 	/// <summary>
 	/// A nested protocol buffer that represents a policy tag and all its descendants.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1SerializedPolicyTag
 	{
 		
@@ -2122,8 +2027,7 @@ namespace MyNS
 		public string PolicyTag { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1FieldType
 	{
 		
@@ -2137,8 +2041,7 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatacatalogV1FieldTypePrimitiveType> PrimitiveType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1FieldTypeEnumType
 	{
 		
@@ -2149,8 +2052,7 @@ namespace MyNS
 		public GoogleCloudDatacatalogV1FieldTypeEnumTypeEnumValue[] AllowedValues { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1FieldTypeEnumTypeEnumValue
 	{
 		
@@ -2161,36 +2063,33 @@ namespace MyNS
 		public string DisplayName { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1FieldTypePrimitiveType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMITIVE_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		PRIMITIVE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOUBLE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DOUBLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		STRING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOL")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		BOOL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TIMESTAMP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TIMESTAMP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RICHTEXT")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RICHTEXT = 5,
 	}
 	
 	/// <summary>
 	/// Metadata message for long-running operation returned by the ImportEntries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ImportEntriesMetadata
 	{
 		
@@ -2210,8 +2109,7 @@ namespace MyNS
 	/// <summary>
 	/// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Status
 	{
 		
@@ -2234,33 +2132,30 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1ImportEntriesMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_QUEUED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_DONE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT_OBSOLETE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		IMPORT_OBSOLETE = 4,
 	}
 	
 	/// <summary>
 	/// Request message for ImportEntries method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ImportEntriesRequest
 	{
 		
@@ -2280,8 +2175,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for long-running operation returned by the ImportEntries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ImportEntriesResponse
 	{
 		
@@ -2301,8 +2195,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ImportTaxonomies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ImportTaxonomiesRequest
 	{
 		
@@ -2322,8 +2215,7 @@ namespace MyNS
 	/// <summary>
 	/// Inline source containing taxonomies to import.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1InlineSource
 	{
 		
@@ -2337,8 +2229,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ImportTaxonomies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ImportTaxonomiesResponse
 	{
 		
@@ -2352,8 +2243,7 @@ namespace MyNS
 	/// <summary>
 	/// A taxonomy is a collection of hierarchical policy tags that classify data along a common axis. For example, a "data sensitivity" taxonomy might contain the following policy tags: ``` + PII + Account number + Age + SSN + Zipcode + Financials + Revenue ``` A "data origin" taxonomy might contain the following policy tags: ``` + User data + Employee data + Partner data + Public data ```
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1Taxonomy
 	{
 		
@@ -2403,8 +2293,7 @@ namespace MyNS
 	/// <summary>
 	/// The source system of the Taxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1TaxonomyService
 	{
 		
@@ -2421,27 +2310,24 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatacatalogV1TaxonomyServiceName> Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1TaxonomyServiceName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGING_SYSTEM_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGING_SYSTEM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGING_SYSTEM_DATAPLEX")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGING_SYSTEM_DATAPLEX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="MANAGING_SYSTEM_OTHER")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		MANAGING_SYSTEM_OTHER = 2,
 	}
 	
 	/// <summary>
 	/// Response message for ListEntries.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ListEntriesResponse
 	{
 		
@@ -2461,8 +2347,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListEntryGroups.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ListEntryGroupsResponse
 	{
 		
@@ -2482,8 +2367,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListPolicyTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ListPolicyTagsResponse
 	{
 		
@@ -2503,8 +2387,7 @@ namespace MyNS
 	/// <summary>
 	/// Denotes one policy tag in a taxonomy, for example, SSN. Policy tags can be defined in a hierarchy. For example: ``` + Geolocation + LatLong + City + ZipCode ``` Where the "Geolocation" policy tag contains three children.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1PolicyTag
 	{
 		
@@ -2542,8 +2425,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ListTagsResponse
 	{
 		
@@ -2563,8 +2445,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for ListTaxonomies.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ListTaxonomiesResponse
 	{
 		
@@ -2584,8 +2465,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ModifyEntryContacts.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ModifyEntryContactsRequest
 	{
 		
@@ -2599,8 +2479,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ModifyEntryOverview.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ModifyEntryOverviewRequest
 	{
 		
@@ -2614,8 +2493,7 @@ namespace MyNS
 	/// <summary>
 	/// Long-running operation metadata message returned by the ReconcileTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ReconcileTagsMetadata
 	{
 		
@@ -2632,30 +2510,27 @@ namespace MyNS
 		public System.Nullable<GoogleCloudDatacatalogV1ReconcileTagsMetadataState> State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1ReconcileTagsMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECONCILIATION_STATE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECONCILIATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECONCILIATION_QUEUED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECONCILIATION_QUEUED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECONCILIATION_IN_PROGRESS")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECONCILIATION_IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="RECONCILIATION_DONE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		RECONCILIATION_DONE = 3,
 	}
 	
 	/// <summary>
 	/// Request message for ReconcileTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ReconcileTagsRequest
 	{
 		
@@ -2681,8 +2556,7 @@ namespace MyNS
 	/// <summary>
 	/// Long-running operation response message returned by ReconcileTags.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ReconcileTagsResponse
 	{
 		
@@ -2708,8 +2582,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for RenameTagTemplateFieldEnumValue.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1RenameTagTemplateFieldEnumValueRequest
 	{
 		
@@ -2723,8 +2596,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for RenameTagTemplateField.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1RenameTagTemplateFieldRequest
 	{
 		
@@ -2738,8 +2610,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for ReplaceTaxonomy.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1ReplaceTaxonomyRequest
 	{
 		
@@ -2753,8 +2624,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for SearchCatalog.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1SearchCatalogRequest
 	{
 		
@@ -2798,8 +2668,7 @@ namespace MyNS
 	/// <summary>
 	/// The criteria that select the subspace used for query matching.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1SearchCatalogRequestScope
 	{
 		
@@ -2843,8 +2712,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for SearchCatalog.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1SearchCatalogResponse
 	{
 		
@@ -2876,8 +2744,7 @@ namespace MyNS
 	/// <summary>
 	/// Result in the response to a search request. Each result captures details of one entry that matches the search.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1SearchCatalogResult
 	{
 		
@@ -2942,30 +2809,27 @@ namespace MyNS
 		public string UserSpecifiedSystem { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum GoogleCloudDatacatalogV1SearchCatalogResultSearchResultType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="SEARCH_RESULT_TYPE_UNSPECIFIED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SEARCH_RESULT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTRY")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTRY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="TAG_TEMPLATE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		TAG_TEMPLATE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENTRY_GROUP")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENTRY_GROUP = 3,
 	}
 	
 	/// <summary>
 	/// Request message for StarEntry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1StarEntryRequest
 	{
 	}
@@ -2973,8 +2837,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for StarEntry. Empty for now
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1StarEntryResponse
 	{
 	}
@@ -2982,8 +2845,7 @@ namespace MyNS
 	/// <summary>
 	/// A tag template defines a tag that can have one or more typed fields. The template is used to create tags that are attached to Google Cloud resources. [Tag template roles] (https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles) provide permissions to create, edit, and use the template. For example, see the [TagTemplate User] (https://cloud.google.com/data-catalog/docs/how-to/template-user) role that includes a permission to use the tag template to tag resources.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1TagTemplate
 	{
 		
@@ -3015,8 +2877,7 @@ namespace MyNS
 	/// <summary>
 	/// The template for an individual field within a tag template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1TagTemplateField
 	{
 		
@@ -3057,8 +2918,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for UnstarEntry.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1UnstarEntryRequest
 	{
 	}
@@ -3066,8 +2926,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for UnstarEntry. Empty for now
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GoogleCloudDatacatalogV1UnstarEntryResponse
 	{
 	}
@@ -3075,8 +2934,7 @@ namespace MyNS
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListOperationsResponse
 	{
 		
@@ -3096,8 +2954,7 @@ namespace MyNS
 	/// <summary>
 	/// This resource represents a long-running operation that is the result of a network API call.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Operation
 	{
 		
@@ -3135,8 +2992,7 @@ namespace MyNS
 	/// <summary>
 	/// An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Policy
 	{
 		
@@ -3162,8 +3018,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `SetIamPolicy` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SetIamPolicyRequest
 	{
 		
@@ -3177,8 +3032,7 @@ namespace MyNS
 	/// <summary>
 	/// Request message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsRequest
 	{
 		
@@ -3192,8 +3046,7 @@ namespace MyNS
 	/// <summary>
 	/// Response message for `TestIamPermissions` method.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TestIamPermissionsResponse
 	{
 		

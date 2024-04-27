@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateRumMetricDefinitionsResponse
 	{
 		
@@ -36,8 +35,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that defines one error caused by a <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateRumMetricDefinitionsError
 	{
 		
@@ -66,8 +64,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>Use this structure to define one extended metric or custom metric that RUM will send to CloudWatch or CloudWatch Evidently. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html"> Additional metrics that you can send to CloudWatch and CloudWatch Evidently</a>.</p> <p>This structure is validated differently for extended metrics and custom metrics. For extended metrics that are sent to the <code>AWS/RUM</code> namespace, the following validations apply:</p> <ul> <li> <p>The <code>Namespace</code> parameter must be omitted or set to <code>AWS/RUM</code>.</p> </li> <li> <p>Only certain combinations of values for <code>Name</code>, <code>ValueKey</code>, and <code>EventPattern</code> are valid. In addition to what is displayed in the list below, the <code>EventPattern</code> can also include information used by the <code>DimensionKeys</code> field.</p> <ul> <li> <p>If <code>Name</code> is <code>PerformanceNavigationDuration</code>, then <code>ValueKey</code>must be <code>event_details.duration</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.performance_navigation_event"]}</code> </p> </li> <li> <p>If <code>Name</code> is <code>PerformanceResourceDuration</code>, then <code>ValueKey</code>must be <code>event_details.duration</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.performance_resource_event"]}</code> </p> </li> <li> <p>If <code>Name</code> is <code>NavigationSatisfiedTransaction</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{ "event_type": ["com.amazon.rum.performance_navigation_event"], "event_details": { "duration": [{ "numeric": ["&gt;",2000] }] } }</code> </p> </li> <li> <p>If <code>Name</code> is <code>NavigationToleratedTransaction</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{ "event_type": ["com.amazon.rum.performance_navigation_event"], "event_details": { "duration": [{ "numeric": ["&gt;=",2000,"&lt;"8000] }] } }</code> </p> </li> <li> <p>If <code>Name</code> is <code>NavigationFrustratedTransaction</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{ "event_type": ["com.amazon.rum.performance_navigation_event"], "event_details": { "duration": [{ "numeric": ["&gt;=",8000] }] } }</code> </p> </li> <li> <p>If <code>Name</code> is <code>WebVitalsCumulativeLayoutShift</code>, then <code>ValueKey</code>must be <code>event_details.value</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.cumulative_layout_shift_event"]}</code> </p> </li> <li> <p>If <code>Name</code> is <code>WebVitalsFirstInputDelay</code>, then <code>ValueKey</code>must be <code>event_details.value</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.first_input_delay_event"]}</code> </p> </li> <li> <p>If <code>Name</code> is <code>WebVitalsLargestContentfulPaint</code>, then <code>ValueKey</code>must be <code>event_details.value</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.largest_contentful_paint_event"]}</code> </p> </li> <li> <p>If <code>Name</code> is <code>JsErrorCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.js_error_event"]}</code> </p> </li> <li> <p>If <code>Name</code> is <code>HttpErrorCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.http_event"]}</code> </p> </li> <li> <p>If <code>Name</code> is <code>SessionCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.session_start_event"]}</code> </p> </li> </ul> </li> </ul> <p>For custom metrics, the following validation rules apply:</p> <ul> <li> <p>The namespace can't be omitted and can't be <code>AWS/RUM</code>. You can use the <code>AWS/RUM</code> namespace only for extended metrics.</p> </li> <li> <p>All dimensions listed in the <code>DimensionKeys</code> field must be present in the value of <code>EventPattern</code>.</p> </li> <li> <p>The values that you specify for <code>ValueKey</code>, <code>EventPattern</code>, and <code>DimensionKeys</code> must be fields in RUM events, so all first-level keys in these fields must be one of the keys in the list later in this section.</p> </li> <li> <p>If you set a value for <code>EventPattern</code>, it must be a JSON object.</p> </li> <li> <p>For every non-empty <code>event_details</code>, there must be a non-empty <code>event_type</code>.</p> </li> <li> <p>If <code>EventPattern</code> contains an <code>event_details</code> field, it must also contain an <code>event_type</code>. For every built-in <code>event_type</code> that you use, you must use a value for <code>event_details</code> that corresponds to that <code>event_type</code>. For information about event details that correspond to event types, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-datacollected.html#CloudWatch-RUM-datacollected-eventDetails"> RUM event details</a>.</p> </li> <li> <p>In <code>EventPattern</code>, any JSON array must contain only one value.</p> </li> </ul> <p>Valid key values for first-level keys in the <code>ValueKey</code>, <code>EventPattern</code>, and <code>DimensionKeys</code> fields:</p> <ul> <li> <p> <code>account_id</code> </p> </li> <li> <p> <code>application_Id</code> </p> </li> <li> <p> <code>application_version</code> </p> </li> <li> <p> <code>application_name</code> </p> </li> <li> <p> <code>batch_id</code> </p> </li> <li> <p> <code>event_details</code> </p> </li> <li> <p> <code>event_id</code> </p> </li> <li> <p> <code>event_interaction</code> </p> </li> <li> <p> <code>event_timestamp</code> </p> </li> <li> <p> <code>event_type</code> </p> </li> <li> <p> <code>event_version</code> </p> </li> <li> <p> <code>log_stream</code> </p> </li> <li> <p> <code>metadata</code> </p> </li> <li> <p> <code>sessionId</code> </p> </li> <li> <p> <code>user_details</code> </p> </li> <li> <p> <code>userId</code> </p> </li> </ul>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDefinitionRequest
 	{
 		
@@ -94,8 +91,7 @@ namespace MyNS
 		public string ValueKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DimensionKeysMap
 	{
 	}
@@ -103,8 +99,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that displays the definition of one extended metric that RUM sends to CloudWatch or CloudWatch Evidently. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html"> Additional metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDefinition
 	{
 		
@@ -138,50 +133,42 @@ namespace MyNS
 		public string ValueKey { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ConflictException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ServiceQuotaExceededException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ResourceNotFoundException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InternalServerException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ThrottlingException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AccessDeniedException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteRumMetricDefinitionsResponse
 	{
 		
@@ -199,8 +186,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that defines one error caused by a <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchDeleteRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a> operation.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteRumMetricDefinitionsError
 	{
 		
@@ -226,8 +212,7 @@ namespace MyNS
 		public string MetricDefinitionId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetRumMetricDefinitionsResponse
 	{
 		
@@ -238,8 +223,7 @@ namespace MyNS
 		public string NextToken { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAppMonitorResponse
 	{
 		
@@ -247,49 +231,42 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum Telemetry
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="errors")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		errors = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="performance")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		performance = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="http")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		http = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum CustomEventsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DISABLED = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAppMonitorResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRumMetricsDestinationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppMonitorResponse
 	{
 		
@@ -300,8 +277,7 @@ namespace MyNS
 	/// <summary>
 	/// A RUM app monitor collects telemetry data from your application and sends that data to RUM. The data includes performance and reliability information such as page load time, client-side errors, and user behavior.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppMonitor
 	{
 		
@@ -339,8 +315,7 @@ namespace MyNS
 	/// <summary>
 	/// This structure contains much of the configuration data for the app monitor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppMonitorConfiguration
 	{
 		
@@ -375,8 +350,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains information about custom events for this app monitor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomEvents
 	{
 		
@@ -387,8 +361,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DataStorage
 	{
 		
@@ -399,8 +372,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CwLog
 	{
 		
@@ -411,30 +383,26 @@ namespace MyNS
 		public string CwLogGroup { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum StateEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DELETING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		ACTIVE = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagMap
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppMonitorDataResponse
 	{
 		
@@ -448,8 +416,7 @@ namespace MyNS
 	/// <summary>
 	/// <p>A structure that defines a key and values that you can use to filter the results. The only performance events that are returned are those that have values matching the ones that you specify in one of your <code>QueryFilter</code> structures.</p> <p>For example, you could specify <code>Browser</code> as the <code>Name</code> and specify <code>Chrome,Firefox</code> as the <code>Values</code> to return events generated only from those browsers.</p> <p>Specifying <code>Invert</code> as the <code>Name</code> works as a "not equal to" filter. For example, specify <code>Invert</code> as the <code>Name</code> and specify <code>Chrome</code> as the value to return all events except events from user sessions with the Chrome browser.</p>
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class QueryFilter
 	{
 		
@@ -460,8 +427,7 @@ namespace MyNS
 		public string[] Values { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAppMonitorsResponse
 	{
 		
@@ -475,8 +441,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that includes some data about app monitors and their settings.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppMonitorSummary
 	{
 		
@@ -496,8 +461,7 @@ namespace MyNS
 		public StateEnum State { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRumMetricsDestinationsResponse
 	{
 		
@@ -511,8 +475,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that displays information about one destination that CloudWatch RUM sends extended metrics to.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MetricDestinationSummary
 	{
 		
@@ -526,21 +489,18 @@ namespace MyNS
 		public string IamRoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum MetricDestination
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="CloudWatch")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CloudWatch = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Evidently")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Evidently = 1,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceResponse
 	{
 		
@@ -559,8 +519,7 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRumEventsResponse
 	{
 	}
@@ -568,8 +527,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains the information for one performance event that RUM collects from a user session with your application.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RumEvent
 	{
 		
@@ -605,32 +563,27 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRumMetricsDestinationResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAppMonitorResponse
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRumMetricDefinitionResponse
 	{
 	}
@@ -638,8 +591,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains information about the RUM app monitor.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AppMonitorDetails
 	{
 		
@@ -653,8 +605,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchCreateRumMetricDefinitionsRequest
 	{
 		
@@ -676,20 +627,17 @@ namespace MyNS
 		public MetricDefinitionRequest[] MetricDefinitions { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchDeleteRumMetricDefinitionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class BatchGetRumMetricDefinitionsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CreateAppMonitorRequest
 	{
 		
@@ -720,14 +668,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteAppMonitorRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DeleteRumMetricsDestinationRequest
 	{
 	}
@@ -735,8 +681,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that defines the time range that you want to retrieve results from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TimeRange
 	{
 		
@@ -751,8 +696,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Before { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppMonitorDataRequest
 	{
 		
@@ -773,26 +717,22 @@ namespace MyNS
 		public TimeRange TimeRange { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAppMonitorRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListAppMonitorsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListRumMetricsDestinationsRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ListTagsForResourceRequest
 	{
 	}
@@ -800,8 +740,7 @@ namespace MyNS
 	/// <summary>
 	/// A structure that contains information about the user session that this batch of events was collected from.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UserDetails
 	{
 		
@@ -812,8 +751,7 @@ namespace MyNS
 		public string UserId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRumEventsRequest
 	{
 		
@@ -846,8 +784,7 @@ namespace MyNS
 		public UserDetails UserDetails { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PutRumMetricsDestinationRequest
 	{
 		
@@ -865,8 +802,7 @@ namespace MyNS
 		public string IamRoleArn { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TagResourceRequest
 	{
 		
@@ -878,14 +814,12 @@ namespace MyNS
 		public TagMap Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UntagResourceRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateAppMonitorRequest
 	{
 		
@@ -902,8 +836,7 @@ namespace MyNS
 		public string Domain { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class UpdateRumMetricDefinitionRequest
 	{
 		

@@ -17,8 +17,7 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddSalesOrderLinesCommand
 	{
 		
@@ -26,8 +25,7 @@ namespace MyNS
 		public NewSalesOrderLineDto[] Lines { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderLineDto
 	{
 		
@@ -292,8 +290,7 @@ namespace MyNS
 		public string WarehouseLocationId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AddressDto
 	{
 		
@@ -346,8 +343,7 @@ namespace MyNS
 		public string PostalCode { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CdNamePairDto
 	{
 		
@@ -364,8 +360,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AttachmentDto
 	{
 		
@@ -379,8 +374,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Revision { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CdDescriptionPairDto
 	{
 		
@@ -397,8 +391,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ContactDto
 	{
 		
@@ -454,8 +447,7 @@ namespace MyNS
 	/// <summary>
 	/// The Visma.net.ERP.SalesOrders.Api.Dto.CustomerDto class Defines a customer
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerDto
 	{
 		
@@ -529,8 +521,7 @@ namespace MyNS
 		public string Status { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerLocationDto
 	{
 		
@@ -583,8 +574,7 @@ namespace MyNS
 		public string WarehouseId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerDtoPagedResult
 	{
 		
@@ -607,8 +597,7 @@ namespace MyNS
 		public CustomerDto[] Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class CustomerLocationItemDto
 	{
 		
@@ -754,8 +743,7 @@ namespace MyNS
 		public string WarehouseId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DtoLink
 	{
 		
@@ -766,8 +754,7 @@ namespace MyNS
 		public string Href { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class EmployeeDto
 	{
 		
@@ -784,8 +771,7 @@ namespace MyNS
 		public string InternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IdDescriptionPairDto
 	{
 		
@@ -805,30 +791,27 @@ namespace MyNS
 	/// <summary>
 	/// Defines expansion options for the inventory summary endpoint.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum InventoryAvailabilityExpansions
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Location")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Location = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Attribute")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Attribute = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 3,
 	}
 	
 	/// <summary>
 	/// Inventory summary for a specific inventory item
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryItemAvailabilityDto
 	{
 		
@@ -872,8 +855,7 @@ namespace MyNS
 	/// <summary>
 	/// Warehouse information for a specific inventory item
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class WarehouseAvailabilityDto
 	{
 		
@@ -964,8 +946,7 @@ namespace MyNS
 		public string WarehouseId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationAvailabilityDto
 	{
 		
@@ -1040,8 +1021,7 @@ namespace MyNS
 		public System.Nullable<System.Double> QuantityPurchaseOrders { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InventoryItemAvailabilityDtoPagedResult
 	{
 		
@@ -1067,8 +1047,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines a warehouse location
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class LocationDto
 	{
 		
@@ -1090,8 +1069,7 @@ namespace MyNS
 	///When the address information is provided, it is expected to provide all needed fields for the address(line1, line2, countryId etc).
 	///No default values from the customer will be set for the non defined address fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderAddressDto
 	{
 		
@@ -1152,8 +1130,7 @@ namespace MyNS
 		public string StateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderBillingDto
 	{
 		
@@ -1179,8 +1156,7 @@ namespace MyNS
 	///When the contact information is provided, it is expected to provide all needed fields for the contact(name, attention etc).
 	///No default values from the customer will be set for the non defined contact fields.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderContactDto
 	{
 		
@@ -1217,8 +1193,7 @@ namespace MyNS
 		public string Phone1 { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderCommand
 	{
 		
@@ -1385,8 +1360,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UseReplacementCostForMarginAndProfit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderCustomerDto
 	{
 		
@@ -1439,8 +1413,7 @@ namespace MyNS
 		public string TermsId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderFinancialInfoDto
 	{
 		
@@ -1489,8 +1462,7 @@ namespace MyNS
 		public string PostPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderFreightDto
 	{
 		
@@ -1516,8 +1488,7 @@ namespace MyNS
 		public string TaxCategoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderPaymentSettings
 	{
 		
@@ -1544,8 +1515,7 @@ namespace MyNS
 		public string PaymentReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderPrintDto
 	{
 		
@@ -1568,8 +1538,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> NoteOnInternalDocuments { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class NewSalesOrderShippingDto
 	{
 		
@@ -1683,8 +1652,7 @@ namespace MyNS
 	/// Defines an address when updating a sales order.
 	///Only the provided fields will be changed in address.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderAddressDto
 	{
 		
@@ -1751,8 +1719,7 @@ namespace MyNS
 		public string StateId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderBillingDto
 	{
 		
@@ -1775,8 +1742,7 @@ namespace MyNS
 	/// Defines an contact when updating a sales order.
 	///Only the provided fields will be changed in contact.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderContactDto
 	{
 		
@@ -1822,8 +1788,7 @@ namespace MyNS
 	/// <summary>
 	/// The Visma.net.ERP.SalesOrders.Api.Application.Commands.PatchSalesOrder.PatchSalesOrderCommand is a command for updating parts of a sales order
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderCommand
 	{
 		
@@ -1960,8 +1925,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> UseReplacementCostForMarginAndProfit { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderCustomerDto
 	{
 		
@@ -2008,8 +1972,7 @@ namespace MyNS
 		public string TermsId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderFinancialInfoDto
 	{
 		
@@ -2058,8 +2021,7 @@ namespace MyNS
 		public string PostPeriod { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderFreightDto
 	{
 		
@@ -2085,8 +2047,7 @@ namespace MyNS
 		public string TaxCategoryId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderPaymentSettingsDto
 	{
 		
@@ -2113,8 +2074,7 @@ namespace MyNS
 		public string PaymentReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderShippingDto
 	{
 		
@@ -2225,8 +2185,7 @@ namespace MyNS
 	/// <summary>
 	/// The sales order line which is set to patch
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderLineDto
 	{
 		
@@ -2489,8 +2448,7 @@ namespace MyNS
 	/// <summary>
 	/// The Visma.net.ERP.SalesOrders.Api.Application.Commands.PatchSalesOrderLines.PatchSalesOrderLinesCommand is a command for updating the lines of a sales order
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PatchSalesOrderLinesCommand
 	{
 		
@@ -2501,8 +2459,7 @@ namespace MyNS
 		public PatchSalesOrderLineDto[] Lines { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProblemDetails
 	{
 		
@@ -2525,8 +2482,7 @@ namespace MyNS
 	/// <summary>
 	/// The Visma.net.ERP.SalesOrders.Api.Dto.ProjectDto class defines a project reference for a sales order
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProjectDto
 	{
 		
@@ -2549,8 +2505,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> InternalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderBillingDto
 	{
 		
@@ -2561,8 +2516,7 @@ namespace MyNS
 		public ContactDto Contact { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderCommissionDto
 	{
 		
@@ -2591,8 +2545,7 @@ namespace MyNS
 		public string SalesPersonId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderCustomerDto
 	{
 		
@@ -2639,8 +2592,7 @@ namespace MyNS
 		public CdDescriptionPairDto TaxZone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderDiscountDto
 	{
 		
@@ -2714,8 +2666,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderDto
 	{
 		
@@ -2872,8 +2823,7 @@ namespace MyNS
 		public string Version { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderFinancialInfoDto
 	{
 		
@@ -2920,8 +2870,7 @@ namespace MyNS
 		public CdDescriptionPairDto Terms { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderFreightDto
 	{
 		
@@ -2976,8 +2925,7 @@ namespace MyNS
 		public System.Nullable<System.Double> Weight { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderOriginDto
 	{
 		
@@ -3000,8 +2948,7 @@ namespace MyNS
 		public string OrderType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderPaymentDto
 	{
 		
@@ -3021,8 +2968,7 @@ namespace MyNS
 		public string PaymentReference { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesPersonDto
 	{
 		
@@ -3039,8 +2985,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderShippingDto
 	{
 		
@@ -3112,8 +3057,7 @@ namespace MyNS
 		public CdDescriptionPairDto Zone { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderStatusDto
 	{
 		
@@ -3136,8 +3080,7 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Hold { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderTotalsDto
 	{
 		
@@ -3267,51 +3210,48 @@ namespace MyNS
 	/// <summary>
 	/// The Visma.net.ERP.SalesOrders.Api.Dto.SalesOrderExpansions enumeration defines individual parts of the Visma.net.ERP.SalesOrders.Api.Dto.SalesOrder.SalesOrderDto that can be filled
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public enum SalesOrderExpansions
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Billing")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Billing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Payment")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Payment = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="FinancialInformation")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		FinancialInformation = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Shipping")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Shipping = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Customer")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Customer = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Owner")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Owner = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Origin")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Origin = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Note")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Note = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Freight")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Freight = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="Attachments")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Attachments = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		All = 11,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderLineDto
 	{
 		
@@ -3597,8 +3537,7 @@ namespace MyNS
 		public LocationDto WarehouseLocation { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderLineInventoryDto
 	{
 		
@@ -3618,8 +3557,7 @@ namespace MyNS
 		public string Id { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SupplierDto
 	{
 		
@@ -3630,8 +3568,7 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderLineDtoPagedResult
 	{
 		
@@ -3654,8 +3591,7 @@ namespace MyNS
 		public SalesOrderLineDto[] Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderListDto
 	{
 		
@@ -3765,8 +3701,7 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderListDtoPagedResult
 	{
 		
@@ -3789,8 +3724,7 @@ namespace MyNS
 		public SalesOrderListDto[] Value { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderRotRutDistributionDto
 	{
 		
@@ -3819,8 +3753,7 @@ namespace MyNS
 		public string PersonalId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderRotRutDto
 	{
 		
@@ -3864,8 +3797,7 @@ namespace MyNS
 	/// <summary>
 	/// The Visma.net.ERP.SalesOrders.Api.Dto.SalesOrder.SalesOrderShipmentDto specifies a shipment line detail for a sales order
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderShipmentDto
 	{
 		
@@ -3933,8 +3865,7 @@ namespace MyNS
 	/// <summary>
 	/// The Visma.net.ERP.SalesOrders.Api.Dto.SalesOrder.SalesOrderTaxDto specifies a tax line detail for a sales order
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderTaxDto
 	{
 		
@@ -4002,8 +3933,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines an error response for validation problems
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class SalesOrderValidationProblemDetails
 	{
 		
@@ -4035,8 +3965,7 @@ namespace MyNS
 	/// <summary>
 	/// Defines details related to validation problems
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ValidationErrorCodeDetails
 	{
 		

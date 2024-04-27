@@ -20,8 +20,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the response to a successful <a>AssumeRole</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssumeRoleResponse
 	{
 		
@@ -41,8 +40,7 @@ namespace MyNS
 	/// <summary>
 	/// Amazon Web Services credentials for API authentication.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Credentials
 	{
 		
@@ -78,8 +76,7 @@ namespace MyNS
 	/// <summary>
 	/// The identifiers for the temporary security credentials that the operation returns.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssumedRoleUser
 	{
 		
@@ -101,8 +98,7 @@ namespace MyNS
 	/// <summary>
 	/// A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PolicyDescriptorType
 	{
 		
@@ -113,8 +109,7 @@ namespace MyNS
 	/// <summary>
 	/// You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class Tag
 	{
 		
@@ -136,8 +131,7 @@ namespace MyNS
 	/// <summary>
 	/// Reserved for future use.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ProvidedContext
 	{
 		
@@ -148,26 +142,22 @@ namespace MyNS
 		public string ContextAssertion { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class MalformedPolicyDocumentException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class PackedPolicyTooLargeException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class RegionDisabledException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class ExpiredTokenException
 	{
 	}
@@ -175,8 +165,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssumeRoleWithSAMLResponse
 	{
 		
@@ -208,14 +197,12 @@ namespace MyNS
 		public string SourceIdentity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IDPRejectedClaimException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidIdentityTokenException
 	{
 	}
@@ -223,8 +210,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssumeRoleWithWebIdentityResponse
 	{
 		
@@ -250,8 +236,7 @@ namespace MyNS
 		public string SourceIdentity { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class IDPCommunicationErrorException
 	{
 	}
@@ -259,8 +244,7 @@ namespace MyNS
 	/// <summary>
 	/// A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an Amazon Web Services request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DecodeAuthorizationMessageResponse
 	{
 		
@@ -268,14 +252,12 @@ namespace MyNS
 		public string DecodedMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class InvalidAuthorizationMessageException
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccessKeyInfoResponse
 	{
 		
@@ -286,8 +268,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the response to a successful <a>GetCallerIdentity</a> request, including information about the entity making the request.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCallerIdentityResponse
 	{
 		
@@ -304,8 +285,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the response to a successful <a>GetFederationToken</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFederationTokenResponse
 	{
 		
@@ -322,8 +302,7 @@ namespace MyNS
 	/// <summary>
 	/// Identifiers for the federated user that is associated with the credentials.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class FederatedUser
 	{
 		
@@ -345,8 +324,7 @@ namespace MyNS
 	/// <summary>
 	/// Contains the response to a successful <a>GetSessionToken</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. 
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSessionTokenResponse
 	{
 		
@@ -354,8 +332,7 @@ namespace MyNS
 		public Credentials Credentials { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssumeRoleRequest
 	{
 		
@@ -404,8 +381,7 @@ namespace MyNS
 		public ProvidedContext[] ProvidedContexts { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssumeRoleWithSAMLRequest
 	{
 		
@@ -440,8 +416,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> DurationSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class AssumeRoleWithWebIdentityRequest
 	{
 		
@@ -479,8 +454,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> DurationSeconds { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class DecodeAuthorizationMessageRequest
 	{
 		
@@ -492,8 +466,7 @@ namespace MyNS
 		public string EncodedMessage { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetAccessKeyInfoRequest
 	{
 		
@@ -505,14 +478,12 @@ namespace MyNS
 		public string AccessKeyId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetCallerIdentityRequest
 	{
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetFederationTokenRequest
 	{
 		
@@ -536,8 +507,7 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[System.SerializableAttribute()]
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class GetSessionTokenRequest
 	{
 		
@@ -914,7 +884,7 @@ namespace MyNS
 	public enum GET_AssumeRoleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssumeRole")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssumeRole = 0,
 	}
 	
@@ -935,7 +905,7 @@ namespace MyNS
 	public enum GET_AssumeRoleWithSAMLAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssumeRoleWithSAML")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssumeRoleWithSAML = 0,
 	}
 	
@@ -956,7 +926,7 @@ namespace MyNS
 	public enum GET_AssumeRoleWithWebIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssumeRoleWithWebIdentity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		AssumeRoleWithWebIdentity = 0,
 	}
 	
@@ -977,7 +947,7 @@ namespace MyNS
 	public enum GET_DecodeAuthorizationMessageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="DecodeAuthorizationMessage")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		DecodeAuthorizationMessage = 0,
 	}
 	
@@ -998,7 +968,7 @@ namespace MyNS
 	public enum GET_GetAccessKeyInfoAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetAccessKeyInfo")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetAccessKeyInfo = 0,
 	}
 	
@@ -1019,7 +989,7 @@ namespace MyNS
 	public enum GET_GetCallerIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetCallerIdentity")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetCallerIdentity = 0,
 	}
 	
@@ -1040,7 +1010,7 @@ namespace MyNS
 	public enum GET_GetFederationTokenAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetFederationToken")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetFederationToken = 0,
 	}
 	
@@ -1061,7 +1031,7 @@ namespace MyNS
 	public enum GET_GetSessionTokenAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetSessionToken")]
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		GetSessionToken = 0,
 	}
 	
